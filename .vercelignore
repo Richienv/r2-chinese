@@ -1,0 +1,7 @@
+# Prototype reference files — never part of the deployed app.
+Yulu Chinese App.dc.html
+support.js
+node_modules
+dist
+.env
+.env.*
