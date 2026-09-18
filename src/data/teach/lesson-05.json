@@ -1,0 +1,461 @@
+{
+  "lesson": 5,
+  "title": "只买对的，不买贵的",
+  "words": {
+    "家具": {
+      "zh": "家具",
+      "pinyin": "jiājù",
+      "en": "furniture",
+      "pos": "n.",
+      "when": "Remember 家具 like the word you’ll use when a clerk asks what you want in the shop — sofa, table, the whole set.",
+      "usage": "Most Chinese speakers use it for household pieces as a group, not one chair. In 课文1 the 售货员 opens with 您想买什么家具.",
+      "example": {
+        "zh": "小姐，您好！您想买什么家具？需要我为您介绍一下吗？",
+        "pinyin": "Xiǎojiě, nín hǎo! Nín xiǎng mǎi shénme jiājù? Xūyào wǒ wèi nín jièshào yíxià ma?",
+        "en": "Miss, hello! What furniture would you like to buy? Would you like me to give you an introduction?"
+      }
+    },
+    "沙发": {
+      "zh": "沙发",
+      "pinyin": "shāfā",
+      "en": "sofa",
+      "pos": "n.",
+      "when": "Remember 沙发 like the word you’ll use when you walk into that shop for one thing: the couch.",
+      "usage": "Most Chinese speakers use it for the living-room sofa. 王静 doesn’t browse — she says 我想买沙发.",
+      "example": {
+        "zh": "谢谢，我想买沙发。",
+        "pinyin": "Xièxie, wǒ xiǎng mǎi shāfā.",
+        "en": "Thank you, I'd like to buy a sofa."
+      }
+    },
+    "打折": {
+      "zh": "打折",
+      "pinyin": "dǎ zhé",
+      "en": "to give a discount",
+      "pos": "v.",
+      "when": "Remember 打折 like the word you’ll use when the ticket is cut — this sofa is a thousand cheaper than usual.",
+      "usage": "Most Chinese speakers use it when a shop is on sale. The clerk later jokes that 质量肯定不“打折” — the quality is not on sale.",
+      "example": {
+        "zh": "您看这个沙发怎么样？现在正在打折，比平时便宜了一千块。",
+        "pinyin": "Nín kàn zhège shāfā zěnmeyàng? Xiànzài zhèngzài dǎ zhé, bǐ píngshí piányile yìqiān kuài.",
+        "en": "What do you think of this sofa? It's on sale right now — a thousand yuan cheaper than usual."
+      }
+    },
+    "价格": {
+      "zh": "价格",
+      "pinyin": "jiàgé",
+      "en": "price",
+      "pos": "n.",
+      "when": "Remember 价格 like the word you’ll use when the sale looks fine but you still haven’t said yes.",
+      "usage": "Most Chinese speakers use it for the ticket price, not “cheap” or “expensive” themselves. 王静: 价格还可以 — the price is okay.",
+      "example": {
+        "zh": "价格还可以，就是不知道质量有没有保证。",
+        "pinyin": "Jiàgé hái kěyǐ, jiùshì bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.",
+        "en": "The price is okay, it's just that I'm not sure the quality is guaranteed."
+      }
+    },
+    "质量": {
+      "zh": "质量",
+      "pinyin": "zhìliàng",
+      "en": "quality",
+      "pos": "n.",
+      "when": "Remember 质量 like the word you’ll use when the discount makes you nervous about how well the thing is made.",
+      "usage": "Most Chinese speakers use it for build quality. 王静’s real worry is 质量有没有保证, not the thousand-yuan cut.",
+      "example": {
+        "zh": "价格还可以，就是不知道质量有没有保证。",
+        "pinyin": "Jiàgé hái kěyǐ, jiùshì bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.",
+        "en": "The price is okay, it's just that I'm not sure the quality is guaranteed."
+      }
+    },
+    "肯定": {
+      "zh": "肯定",
+      "pinyin": "kěndìng",
+      "en": "surely, certainly",
+      "pos": "adv.",
+      "when": "Remember 肯定 like the word you’ll use when you want to shut down a doubt — no, the quality is not on sale.",
+      "usage": "Most Chinese speakers drop it in for “definitely / no question.” In 课文1 the clerk says 质量肯定不“打折”. It can also be an adjective: a 肯定 answer is a yes.",
+      "example": {
+        "zh": "您放心，质量肯定不“打折”，这种沙发是今年最流行的。有很多种颜色可以选择，您可以看一下。",
+        "pinyin": "Nín fàng xīn, zhìliàng kěndìng bù “dǎ zhé”, zhè zhǒng shāfā shì jīnnián zuì liúxíng de. Yǒu hěn duō zhǒng yánsè kěyǐ xuǎnzé, nín kěyǐ kàn yíxià.",
+        "en": "Don't worry, the quality is definitely not \"discounted\" — this style of sofa is the most popular one this year. There are many colors to choose from, please take a look."
+      }
+    },
+    "流行": {
+      "zh": "流行",
+      "pinyin": "liúxíng",
+      "en": "to be popular",
+      "pos": "v.",
+      "when": "Remember 流行 like the word you’ll use when something is this year’s hit — the sofa everyone wants.",
+      "usage": "Most Chinese speakers use it for what’s in fashion now. The clerk’s pitch: 这种沙发是今年最流行的. Later 课文4 says being 流行 isn’t what matters.",
+      "example": {
+        "zh": "您放心，质量肯定不“打折”，这种沙发是今年最流行的。有很多种颜色可以选择，您可以看一下。",
+        "pinyin": "Nín fàng xīn, zhìliàng kěndìng bù “dǎ zhé”, zhè zhǒng shāfā shì jīnnián zuì liúxíng de. Yǒu hěn duō zhǒng yánsè kěyǐ xuǎnzé, nín kěyǐ kàn yíxià.",
+        "en": "Don't worry, the quality is definitely not \"discounted\" — this style of sofa is the most popular one this year. There are many colors to choose from, please take a look."
+      }
+    },
+    "顺便": {
+      "zh": "顺便",
+      "pinyin": "shùnbiàn",
+      "en": "in passing",
+      "pos": "adv.",
+      "when": "Remember 顺便 like the word you’ll use when you’re already at the mall, so you pick up a fridge on the same trip.",
+      "usage": "Most Chinese speakers use it for a side errand, not the main plan. 王静: 我们顺便也买一台吧 — while we’re here.",
+      "example": {
+        "zh": "咱家的冰箱太旧了，商场正好打折，我们顺便也买一台吧。",
+        "pinyin": "Zán jiā de bīngxiāng tài jiù le, shāngchǎng zhènghǎo dǎ zhé, wǒmen shùnbiàn yě mǎi yì tái ba.",
+        "en": "Our fridge is too old, and the mall happens to be having a sale — let's buy one while we're at it."
+      }
+    },
+    "台": {
+      "zh": "台",
+      "pinyin": "tái",
+      "en": "used for machines",
+      "pos": "m.",
+      "when": "Remember 台 like the measure you’ll use when you buy a fridge, a TV, a computer — one machine.",
+      "usage": "Most Chinese speakers count appliances with 台, not 个. 课文2: 买一台 — one fridge.",
+      "example": {
+        "zh": "咱家的冰箱太旧了，商场正好打折，我们顺便也买一台吧。",
+        "pinyin": "Zán jiā de bīngxiāng tài jiù le, shāngchǎng zhènghǎo dǎ zhé, wǒmen shùnbiàn yě mǎi yì tái ba.",
+        "en": "Our fridge is too old, and the mall happens to be having a sale — let's buy one while we're at it."
+      }
+    },
+    "光": {
+      "zh": "光",
+      "pinyin": "guāng",
+      "en": "only, merely",
+      "pos": "adv.",
+      "when": "Remember 光 like the word you’ll use when one purchase ate the budget — last week, just the sofa, over two thousand.",
+      "usage": "Most Chinese speakers use this 光 for “alone / merely,” not sunlight. 李进: 光买沙发就花了两千多.",
+      "example": {
+        "zh": "没错。上个星期光买沙发就花了两千多。",
+        "pinyin": "Méi cuò. Shàng ge xīngqī guāng mǎi shāfā jiù huāle liǎngqiān duō.",
+        "en": "No, I didn't. Last week alone we spent over two thousand just on the sofa."
+      }
+    },
+    "实在": {
+      "zh": "实在",
+      "pinyin": "shízài",
+      "en": "really",
+      "pos": "adv.",
+      "when": "Remember 实在 like the word you’ll use when the old fridge is too far gone to keep defending.",
+      "usage": "Most Chinese speakers use it to lean on “really / honestly.” 王静: 冰箱实在太旧了 — she’s done arguing.",
+      "example": {
+        "zh": "但是咱家的冰箱实在太旧了，制冷效果也不太好了，还是买个新的吧。",
+        "pinyin": "Dànshì zán jiā de bīngxiāng shízài tài jiù le, zhìlěng xiàoguǒ yě bú tài hǎo le, háishi mǎi ge xīn de ba.",
+        "en": "But our fridge really is too old — the cooling isn't very good anymore either. Let's just get a new one."
+      }
+    },
+    "制冷": {
+      "zh": "制冷",
+      "pinyin": "zhìlěng",
+      "en": "to refrigerate",
+      "pos": "v.",
+      "when": "Remember 制冷 like the word you’ll use when the fridge still runs but no longer gets cold.",
+      "usage": "Most Chinese speakers use it for a machine making cold, not “cold weather.” 课文2 pairs it with 效果: 制冷效果也不太好了.",
+      "example": {
+        "zh": "但是咱家的冰箱实在太旧了，制冷效果也不太好了，还是买个新的吧。",
+        "pinyin": "Dànshì zán jiā de bīngxiāng shízài tài jiù le, zhìlěng xiàoguǒ yě bú tài hǎo le, háishi mǎi ge xīn de ba.",
+        "en": "But our fridge really is too old — the cooling isn't very good anymore either. Let's just get a new one."
+      }
+    },
+    "效果": {
+      "zh": "效果",
+      "pinyin": "xiàoguǒ",
+      "en": "effect",
+      "pos": "n.",
+      "when": "Remember 效果 like the word you’ll use when you judge whether the cooling still works.",
+      "usage": "Most Chinese speakers use it for a result you can feel — cooling, a film, an ad. Here it’s 制冷效果, the fridge’s cooling.",
+      "example": {
+        "zh": "但是咱家的冰箱实在太旧了，制冷效果也不太好了，还是买个新的吧。",
+        "pinyin": "Dànshì zán jiā de bīngxiāng shízài tài jiù le, zhìlěng xiàoguǒ yě bú tài hǎo le, háishi mǎi ge xīn de ba.",
+        "en": "But our fridge really is too old — the cooling isn't very good anymore either. Let's just get a new one."
+      }
+    },
+    "现金": {
+      "zh": "现金",
+      "pinyin": "xiànjīn",
+      "en": "cash",
+      "pos": "n.",
+      "when": "Remember 现金 like the word you’ll use when the wallet isn’t enough and you have to switch to a card.",
+      "usage": "Most Chinese speakers use it for physical cash, opposite 信用卡. 李进: 我带的现金不够.",
+      "example": {
+        "zh": "那好吧，我带的现金不够，用你的信用卡吧。",
+        "pinyin": "Nà hǎo ba, wǒ dài de xiànjīn bú gòu, yòng nǐ de xìnyòngkǎ ba.",
+        "en": "All right then. The cash I brought isn't enough — let's use your credit card."
+      }
+    },
+    "邀请": {
+      "zh": "邀请",
+      "pinyin": "yāoqǐng",
+      "en": "to invite",
+      "pos": "v.",
+      "when": "Remember 邀请 like the word you’ll use when a teacher asks you over — you owe a gift.",
+      "usage": "Most Chinese speakers use it for a real invitation, not a casual “come by.” 课文3: 李老师邀请咱们去他家做客.",
+      "example": {
+        "zh": "李老师邀请咱们去他家做客，给他带点儿什么礼物好呢？",
+        "pinyin": "Lǐ lǎoshī yāoqǐng zánmen qù tā jiā zuò kè, gěi tā dài diǎnr shénme lǐwù hǎo ne?",
+        "en": "Teacher Li invited us over to his place — what would be good to bring him as a gift?"
+      }
+    },
+    "葡萄": {
+      "zh": "葡萄",
+      "pinyin": "pútao",
+      "en": "grape",
+      "pos": "n.",
+      "when": "Remember 葡萄 like the fruit inside the gift — they buy 葡萄酒, wine made from it.",
+      "usage": "Most Chinese speakers say 葡萄 for the fruit; slap on 酒 and it’s wine. 王静: 他很喜欢葡萄酒, so they grab two bottles.",
+      "example": {
+        "zh": "他很喜欢葡萄酒，我们就给他买两瓶葡萄酒吧。",
+        "pinyin": "Tā hěn xǐhuan pútaojiǔ, wǒmen jiù gěi tā mǎi liǎng píng pútaojiǔ ba.",
+        "en": "He really likes wine, let's just buy him two bottles of wine."
+      }
+    },
+    "艺术": {
+      "zh": "艺术",
+      "pinyin": "yìshù",
+      "en": "art",
+      "pos": "n.",
+      "when": "Remember 艺术 like the word you’ll use when the bottle looks designed, not just full.",
+      "usage": "Most Chinese speakers use it for art, and also for something that looks artistic. 王静 picks a wine because 酒瓶做得都这么艺术.",
+      "example": {
+        "zh": "我觉得这种不错，你看它酒瓶做得都这么艺术。而且电视上经常有它的广告，我想味道应该不错。",
+        "pinyin": "Wǒ juéde zhè zhǒng búcuò, nǐ kàn tā jiǔpíng zuò de dōu zhème yìshù. Érqiě diànshì shang jīngcháng yǒu tā de guǎnggào, wǒ xiǎng wèidào yīnggāi búcuò.",
+        "en": "I think this kind is good — look how artistic the bottle design is. And there are often ads for it on TV, so I'd guess the taste is pretty good too."
+      }
+    },
+    "广告": {
+      "zh": "广告",
+      "pinyin": "guǎnggào",
+      "en": "advertisement",
+      "pos": "n.",
+      "when": "Remember 广告 like the word you’ll use when TV keeps selling you that same bottle.",
+      "usage": "Most Chinese speakers use it for ads. 王静 trusts them; 李进 says 广告只会介绍优点 — ads only sell the pluses.",
+      "example": {
+        "zh": "广告只会介绍优点，却不会说它的缺点。实际上，很多东西并不像广告上说的那么好，所以不能完全相信广告。",
+        "pinyin": "Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn. Shíjìshang, hěn duō dōngxi bìng bú xiàng guǎnggào shang shuō de nàme hǎo, suǒyǐ bù néng wánquán xiāngxìn guǎnggào.",
+        "en": "Ads only tell you the merits, never the flaws. In fact, a lot of things aren't really as good as the ads say, so you can't completely trust advertisements."
+      }
+    },
+    "味道": {
+      "zh": "味道",
+      "pinyin": "wèidào",
+      "en": "taste",
+      "pos": "n.",
+      "when": "Remember 味道 like the word you’ll use when you guess the wine tastes good because the ads say so.",
+      "usage": "Most Chinese speakers use it for taste or smell. 王静: 我想味道应该不错 — she hasn’t tasted it yet.",
+      "example": {
+        "zh": "我觉得这种不错，你看它酒瓶做得都这么艺术。而且电视上经常有它的广告，我想味道应该不错。",
+        "pinyin": "Wǒ juéde zhè zhǒng búcuò, nǐ kàn tā jiǔpíng zuò de dōu zhème yìshù. Érqiě diànshì shang jīngcháng yǒu tā de guǎnggào, wǒ xiǎng wèidào yīnggāi búcuò.",
+        "en": "I think this kind is good — look how artistic the bottle design is. And there are often ads for it on TV, so I'd guess the taste is pretty good too."
+      }
+    },
+    "优点": {
+      "zh": "优点",
+      "pinyin": "yōudiǎn",
+      "en": "merit",
+      "pos": "n.",
+      "when": "Remember 优点 like the word you’ll use when an ad lists every plus and hides the rest.",
+      "usage": "Most Chinese speakers pair it with 缺点. 李进: 广告只会介绍优点，却不会说它的缺点.",
+      "example": {
+        "zh": "广告只会介绍优点，却不会说它的缺点。实际上，很多东西并不像广告上说的那么好，所以不能完全相信广告。",
+        "pinyin": "Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn. Shíjìshang, hěn duō dōngxi bìng bú xiàng guǎnggào shang shuō de nàme hǎo, suǒyǐ bù néng wánquán xiāngxìn guǎnggào.",
+        "en": "Ads only tell you the merits, never the flaws. In fact, a lot of things aren't really as good as the ads say, so you can't completely trust advertisements."
+      }
+    },
+    "实际": {
+      "zh": "实际",
+      "pinyin": "shíjì",
+      "en": "reality",
+      "pos": "n.",
+      "when": "Remember 实际 like the word you’ll use when you cut through the ad and name what’s really true.",
+      "usage": "Most Chinese speakers use 实际 for “reality,” and 实际上 for “in fact.” 课文3: 实际上，很多东西并不像广告上说的那么好.",
+      "example": {
+        "zh": "广告只会介绍优点，却不会说它的缺点。实际上，很多东西并不像广告上说的那么好，所以不能完全相信广告。",
+        "pinyin": "Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn. Shíjìshang, hěn duō dōngxi bìng bú xiàng guǎnggào shang shuō de nàme hǎo, suǒyǐ bù néng wánquán xiāngxìn guǎnggào.",
+        "en": "Ads only tell you the merits, never the flaws. In fact, a lot of things aren't really as good as the ads say, so you can't completely trust advertisements."
+      }
+    },
+    "考虑": {
+      "zh": "考虑",
+      "pinyin": "kǎolǜ",
+      "en": "to consider",
+      "pos": "v.",
+      "when": "Remember 考虑 like the word you’ll use when buying clothes — price only, or looks only, both miss.",
+      "usage": "Most Chinese speakers use it for thinking something through. 课文4: 只考虑价格当然不好.",
+      "example": {
+        "zh": "买衣服只考虑价格当然不好，但是只考虑买好看的也不一定对。",
+        "pinyin": "Mǎi yīfu zhǐ kǎolǜ jiàgé dāngrán bù hǎo, dànshì zhǐ kǎolǜ mǎi hǎokàn de yě bù yídìng duì.",
+        "en": "Only considering price when buying clothes is, of course, not good — but only considering good looks isn't necessarily right either."
+      }
+    },
+    "标准": {
+      "zh": "标准",
+      "pinyin": "biāozhǔn",
+      "en": "standard",
+      "pos": "n.",
+      "when": "Remember 标准 like the word you’ll use when you name your rule: buy the right one, not the expensive one.",
+      "usage": "Most Chinese speakers use it for a yardstick. The title line: 我买衣服的标准是“只买对的，不买贵的”.",
+      "example": {
+        "zh": "我买衣服的标准是“只买对的，不买贵的”。",
+        "pinyin": "Wǒ mǎi yīfu de biāozhǔn shì “zhǐ mǎi duì de, bù mǎi guì de”.",
+        "en": "My standard for buying clothes is \"only buy the right one, not the expensive one.\""
+      }
+    },
+    "样子": {
+      "zh": "样子",
+      "pinyin": "yàngzi",
+      "en": "look, appearance",
+      "pos": "n.",
+      "when": "Remember 样子 like the word you’ll use when the cut looks trendy but that isn’t your test.",
+      "usage": "Most Chinese speakers use it for how a thing looks. 课文4: 衣服的样子流行不流行并不是很重要.",
+      "example": {
+        "zh": "对我来说，衣服的样子流行不流行并不是很重要。",
+        "pinyin": "Duì wǒ lái shuō, yīfu de yàngzi liúxíng bu liúxíng bìng bú shì hěn zhòngyào.",
+        "en": "To me, whether the style of the clothes is trendy or not isn't very important."
+      }
+    },
+    "年龄": {
+      "zh": "年龄",
+      "pinyin": "niánlíng",
+      "en": "age",
+      "pos": "n.",
+      "when": "Remember 年龄 like the word you’ll use when older shoppers chase the sale and skip whether it fits.",
+      "usage": "Most Chinese speakers use it for age as a number-fact. 课文4: 很多年龄大的人喜欢在打折的时候买便宜的衣服.",
+      "example": {
+        "zh": "很多年龄大的人喜欢在打折的时候买便宜的衣服，但对那些衣服是不是适合自己却考虑得不多。",
+        "pinyin": "Hěn duō niánlíng dà de rén xǐhuan zài dǎ zhé de shíhou mǎi piányi de yīfu, dàn duì nàxiē yīfu shì bu shì shìhé zìjǐ què kǎolǜ de bù duō.",
+        "en": "Many older people like to buy cheap clothes when they're on sale, but they don't give much thought to whether those clothes actually suit them."
+      }
+    },
+    "浪费": {
+      "zh": "浪费",
+      "pinyin": "làngfèi",
+      "en": "to waste",
+      "pos": "v.",
+      "when": "Remember 浪费 like the word you’ll use when a cheap thing still doesn’t suit you — money gone for nothing.",
+      "usage": "Most Chinese speakers use it for wasting money, time, or food. 课文4: 即使花钱很少，也是一种浪费.",
+      "example": {
+        "zh": "这点是我理解不了的，因为如果不适合自己，即使花钱很少，也是一种浪费。",
+        "pinyin": "Zhè diǎn shì wǒ lǐjiě bu liǎo de, yīnwèi rúguǒ bú shìhé zìjǐ, jíshǐ huā qián hěn shǎo, yě shì yì zhǒng làngfèi.",
+        "en": "This is something I can't understand, because if something doesn't suit you, it's a kind of waste even if you spent very little money on it."
+      }
+    },
+    "购物": {
+      "zh": "购物",
+      "pinyin": "gòu wù",
+      "en": "to shop, to buy things",
+      "pos": "",
+      "when": "Remember 购物 like the word you’ll use for the whole shopping trip, especially 网上购物.",
+      "usage": "Most Chinese speakers use it for shopping as an activity — a bit more formal than just 买东西. 课文5: 网上购物变得越来越流行了.",
+      "example": {
+        "zh": "现在网上购物变得越来越流行了，年轻人尤其喜欢在网上买东西。",
+        "pinyin": "Xiànzài wǎng shang gòu wù biàn de yuè lái yuè liúxíng le, niánqīng rén yóuqí xǐhuan zài wǎng shang mǎi dōngxi.",
+        "en": "Nowadays online shopping is becoming more and more popular, and young people especially like to buy things online."
+      }
+    },
+    "尤其": {
+      "zh": "尤其",
+      "pinyin": "yóuqí",
+      "en": "especially",
+      "pos": "adv.",
+      "when": "Remember 尤其 like the word you’ll use when you zoom in — online shopping is popular, young people especially.",
+      "usage": "Most Chinese speakers put it in the second half to mark the standout. 课文5: 年轻人尤其喜欢在网上买东西. Not the same as 特别可爱.",
+      "example": {
+        "zh": "现在网上购物变得越来越流行了，年轻人尤其喜欢在网上买东西。",
+        "pinyin": "Xiànzài wǎng shang gòu wù biàn de yuè lái yuè liúxíng le, niánqīng rén yóuqí xǐhuan zài wǎng shang mǎi dōngxi.",
+        "en": "Nowadays online shopping is becoming more and more popular, and young people especially like to buy things online."
+      }
+    },
+    "受到": {
+      "zh": "受到",
+      "pinyin": "shòudào",
+      "en": "to receive",
+      "pos": "v.",
+      "when": "Remember 受到 like the word you’ll use when online shopping gets people’s love — it receives that liking.",
+      "usage": "Most Chinese speakers use 受到 + a noun (喜爱、影响、欢迎). 课文5: 能够受到人们的喜爱.",
+      "example": {
+        "zh": "网上购物能够受到人们的喜爱，原因主要有两个：",
+        "pinyin": "Wǎng shang gòu wù nénggòu shòudào rénmen de xǐ'ài, yuányīn zhǔyào yǒu liǎng ge:",
+        "en": "There are two main reasons online shopping has come to be so well-liked:"
+      }
+    },
+    "任何": {
+      "zh": "任何",
+      "pinyin": "rènhé",
+      "en": "any, whatever",
+      "pos": "pron.",
+      "when": "Remember 任何 like the word you’ll use when the hour doesn’t matter — shop at any time.",
+      "usage": "Most Chinese speakers use it for “any / whatever,” always before a noun. 课文5: 在任何时间上网购买.",
+      "example": {
+        "zh": "其次，人们可以在任何时间上网购买自己喜欢的东西，卖家可以把你买的东西寄到你办公室或者家里，非常方便。",
+        "pinyin": "Qící, rénmen kěyǐ zài rènhé shíjiān shàng wǎng gòumǎi zìjǐ xǐhuan de dōngxi, màijiā kěyǐ bǎ nǐ mǎi de dōngxi jìdào nǐ bàngōngshì huòzhě jiāli, fēicháng fāngbiàn.",
+        "en": "Second, people can shop online for things they like at any time, and sellers can mail what you bought to your office or home — extremely convenient."
+      }
+    },
+    "寄": {
+      "zh": "寄",
+      "pinyin": "jì",
+      "en": "to mail, to send",
+      "pos": "v.",
+      "when": "Remember 寄 like the word you’ll use when the seller mails the bag to your office or home.",
+      "usage": "Most Chinese speakers use it for sending by post. 课文5: 卖家可以把你买的东西寄到你办公室或者家里.",
+      "example": {
+        "zh": "其次，人们可以在任何时间上网购买自己喜欢的东西，卖家可以把你买的东西寄到你办公室或者家里，非常方便。",
+        "pinyin": "Qící, rénmen kěyǐ zài rènhé shíjiān shàng wǎng gòumǎi zìjǐ xǐhuan de dōngxi, màijiā kěyǐ bǎ nǐ mǎi de dōngxi jìdào nǐ bàngōngshì huòzhě jiāli, fēicháng fāngbiàn.",
+        "en": "Second, people can shop online for things they like at any time, and sellers can mail what you bought to your office or home — extremely convenient."
+      }
+    },
+    "购买": {
+      "zh": "购买",
+      "pinyin": "gòumǎi",
+      "en": "to buy, to purchase",
+      "pos": "v.",
+      "when": "Remember 购买 like the slightly formal twin of 买 — the reason the site draws people to purchase.",
+      "usage": "Most Chinese speakers use it in writing and ads. 课文5: 这是吸引人们购买的主要原因. Built from 购物 + 买.",
+      "example": {
+        "zh": "首先，网上的东西很多，而且比去商店买便宜，这是吸引人们购买的主要原因。",
+        "pinyin": "Shǒuxiān, wǎng shang de dōngxi hěn duō, érqiě bǐ qù shāngdiàn mǎi piányi, zhè shì xīyǐn rénmen gòumǎi de zhǔyào yuányīn.",
+        "en": "First, there's a huge selection online, and it's cheaper than buying at a store — this is the main reason that draws people to buy."
+      }
+    },
+    "商场": {
+      "zh": "商场",
+      "pinyin": "shāngchǎng",
+      "en": "shopping mall",
+      "pos": "n.",
+      "when": "Remember 商场 like the word you’ll use when the mall itself is on sale, so you go in for a fridge.",
+      "usage": "Most Chinese speakers use it for a shopping mall, bigger than a 商店. 课文2: 商场正好打折.",
+      "example": {
+        "zh": "咱家的冰箱太旧了，商场正好打折，我们顺便也买一台吧。",
+        "pinyin": "Zán jiā de bīngxiāng tài jiù le, shāngchǎng zhènghǎo dǎ zhé, wǒmen shùnbiàn yě mǎi yì tái ba.",
+        "en": "Our fridge is too old, and the mall happens to be having a sale — let's buy one while we're at it."
+      }
+    },
+    "咱": {
+      "zh": "咱",
+      "pinyin": "zán",
+      "en": "I, we, us",
+      "pos": "pron.",
+      "when": "Remember 咱 like the short “we” you’ll use for the family fridge — 咱家, our place.",
+      "usage": "Most Chinese speakers use 咱 / 咱们 to include the listener. 课文2: 咱家的冰箱太旧了.",
+      "example": {
+        "zh": "咱家的冰箱太旧了，商场正好打折，我们顺便也买一台吧。",
+        "pinyin": "Zán jiā de bīngxiāng tài jiù le, shāngchǎng zhènghǎo dǎ zhé, wǒmen shùnbiàn yě mǎi yì tái ba.",
+        "en": "Our fridge is too old, and the mall happens to be having a sale — let's buy one while we're at it."
+      }
+    },
+    "做客": {
+      "zh": "做客",
+      "pinyin": "zuò kè",
+      "en": "to be a guest",
+      "pos": "v.",
+      "when": "Remember 做客 like the word you’ll use when you’re invited over and need a gift in your hands.",
+      "usage": "Most Chinese speakers use it for being a guest at someone’s home. 课文3: 邀请咱们去他家做客.",
+      "example": {
+        "zh": "李老师邀请咱们去他家做客，给他带点儿什么礼物好呢？",
+        "pinyin": "Lǐ lǎoshī yāoqǐng zánmen qù tā jiā zuò kè, gěi tā dài diǎnr shénme lǐwù hǎo ne?",
+        "en": "Teacher Li invited us over to his place — what would be good to bring him as a gift?"
+      }
+    }
+  }
+}

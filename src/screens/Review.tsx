@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Glossed, useGloss } from '../components/ChineseText'
-import { CheckIcon, CloseIcon, SpeakerIcon } from '../components/Icons'
+import { CheckIcon, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { exampleFor, lookup } from '../lib/content'
-import { speak } from '../lib/speech'
 import { dueCards, type Card, type Rating } from '../lib/srs'
 import { useStore } from '../store/store'
 
@@ -96,7 +95,6 @@ export function ReviewFlow({
     if (shown) return
     setCanRate(false) // arm the guard in the same commit that reveals the card
     setShown(true)
-    speak(zh)
   }
 
   function rate(rating: Rating) {
@@ -263,29 +261,14 @@ export function ReviewFlow({
                   <div style={{ fontSize: 12, color: 'var(--muted-2)', marginTop: 5 }}>{word.pos}</div>
                 )}
               </div>
-              <div className="row" style={{ gap: 4 }}>
-                <button className="icon-round tap44" onClick={() => speak(zh)} aria-label="Hear it">
-                  <SpeakerIcon />
-                </button>
-                <SaveStar zh={zh} lesson={word ? undefined : 0} size={22} />
-              </div>
+              <SaveStar zh={zh} lesson={word ? undefined : 0} size={22} />
             </div>
 
             {example && (
               <div
                 style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid var(--line-3)' }}
               >
-                <div className="between" style={{ alignItems: 'flex-start', gap: 10 }}>
-                  <div className="kicker-ink">From the book</div>
-                  <button
-                    className="icon-round tap44"
-                    style={{ flex: 'none' }}
-                    onClick={() => speak(example.zh)}
-                    aria-label="Play example"
-                  >
-                    <SpeakerIcon size={16} />
-                  </button>
-                </div>
+                <div className="kicker-ink">From the book</div>
                 <div className="zh" style={{ fontSize: 16, lineHeight: 1.7, marginTop: 4 }} lang="zh-CN">
                   <Glossed text={example.zh} onWord={onWord} />
                 </div>

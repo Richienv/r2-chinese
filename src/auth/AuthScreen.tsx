@@ -33,6 +33,7 @@ export function AuthScreen() {
 
   return (
     <div className="app">
+      <div className="safe-top" />
       <div className="scroll" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingBottom: 40 }}>
         <div style={{ textAlign: 'center', marginBottom: 26 }}>
           <div
@@ -42,7 +43,7 @@ export function AuthScreen() {
             语
           </div>
           <h1 className="h1" style={{ marginTop: 18 }}>
-            Yǔlù
+            hsk4-r2
           </h1>
           <p className="sub" style={{ marginTop: 6 }}>
             {mode === 'in' ? 'Sign in to keep your progress' : 'Create an account to save your progress'}

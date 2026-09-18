@@ -1,0 +1,448 @@
+{
+  "lesson": 4,
+  "title": "不要太着急赚钱",
+  "words": {
+    "提": {
+      "zh": "提",
+      "pinyin": "tí",
+      "en": "to mention",
+      "pos": "v.",
+      "when": "Remember 提 like the word you’ll use when a topic stings and you want it dropped — 小李’s 别提了 after three job changes this year.",
+      "usage": "Most Chinese speakers use 提 for bringing something up in talk. 别提了 is the everyday “don’t even start.” Not the 提 inside 提前 or 提醒.",
+      "example": {
+        "zh": "别提了！我以为新工作比以前的好，没想到还没有以前好呢。",
+        "pinyin": "Biétí le! Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.",
+        "en": "Don't even bring it up! I thought the new job would be better than the old one, but it turned out to be even worse than before."
+      }
+    },
+    "以为": {
+      "zh": "以为",
+      "pinyin": "yǐwéi",
+      "en": "to think, to believe",
+      "pos": "v.",
+      "when": "Remember 以为 like the word you’ll use when you were sure — and the fact punched back. 小李 以为 the new job would be better.",
+      "usage": "Most Chinese speakers use 以为 for a belief that did not match reality. If it turned out true, they say 觉得 or 想, not 以为.",
+      "example": {
+        "zh": "我以为新工作比以前的好，没想到还没有以前好呢。",
+        "pinyin": "Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.",
+        "en": "I thought the new job would be better than the previous one, but it turned out to be even worse than before."
+      }
+    },
+    "份": {
+      "zh": "份",
+      "pinyin": "fèn",
+      "en": "used for jobs among other things",
+      "pos": "m.",
+      "when": "Remember 份 like the measure you’ll grab when you count jobs — 那份工作, 这份工作 — the way 小林 talks about 小李’s latest one.",
+      "usage": "Most Chinese speakers pair 份 with 工作 or 调查: one complete post or one complete report, not a generic 个.",
+      "example": {
+        "zh": "我也明白。但是那份工作的收入太少了！",
+        "pinyin": "Wǒ yě míngbai. Dànshì nà fèn gōngzuò de shōurù tài shǎo le!",
+        "en": "I understand that too. But the income from that job was too low!"
+      }
+    },
+    "完全": {
+      "zh": "完全",
+      "pinyin": "wánquán",
+      "en": "completely",
+      "pos": "adv.",
+      "when": "Remember 完全 like the word you’ll use when “sort of used to it” is not enough — 小林 says you need a year to 完全适应 a new job.",
+      "usage": "Most Chinese speakers drop 完全 in front of a verb or adjective to mean 100%, no leftover. 完全适应 = fully adjusted, not halfway.",
+      "example": {
+        "zh": "上次那份工作你只做了两个月就离开了，其实，完全适应一个新的工作需要一年时间，所以，经常换工作不一定好。",
+        "pinyin": "Shàng cì nà fèn gōngzuò nǐ zhǐ zuòle liǎng ge yuè jiù líkāi le, qíshí, wánquán shìyìng yí ge xīn de gōngzuò xūyào yì nián shíjiān, suǒyǐ, jīngcháng huàn gōngzuò bù yídìng hǎo.",
+        "en": "You only worked at that last job for two months before leaving. Actually, it takes a full year to completely adjust to a new job, so changing jobs often isn't necessarily a good thing."
+      }
+    },
+    "赚": {
+      "zh": "赚",
+      "pinyin": "zhuàn",
+      "en": "to earn",
+      "pos": "v.",
+      "when": "Remember 赚 like the word you’ll use when money is the verb — 赚钱 — and 小林 is telling 小李 not to chase it yet.",
+      "usage": "Most Chinese speakers glue 赚 to 钱: 赚钱. This lesson’s title is that warning: don’t be too anxious to 赚.",
+      "example": {
+        "zh": "你才到新公司，不要太急着赚钱，多学习才是最重要的。",
+        "pinyin": "Nǐ cái dào xīn gōngsī, búyào tài jízhe zhuàn qián, duō xuéxí cái shì zuì zhòngyào de.",
+        "en": "You just got to the new company — don't be too anxious to make money. Learning as much as you can is what matters most."
+      }
+    },
+    "调查": {
+      "zh": "调查",
+      "pinyin": "diàochá",
+      "en": "to survey, to investigate",
+      "pos": "v.",
+      "when": "Remember 调查 like the word you’ll use when the boss asks how long the report will take — 王经理’s 那份调查.",
+      "usage": "Most Chinese speakers use 调查 for a survey or investigation you still have to 做完, not a casual chat. Here it’s the unfinished report on the desk.",
+      "example": {
+        "zh": "那份调查还要多长时间才能做完？",
+        "pinyin": "Nà fèn diàochá hái yào duō cháng shíjiān cái néng zuòwán?",
+        "en": "How much longer will it take to finish that survey?"
+      }
+    },
+    "原来": {
+      "zh": "原来",
+      "pinyin": "yuánlái",
+      "en": "original",
+      "pos": "adj.",
+      "when": "Remember 原来 like the word you’ll use when you mean the old version — 原来的计划 was two weeks, before they promised to finish early.",
+      "usage": "Most Chinese speakers put 原来的 in front of a noun for “the original ___.” Later you’ll also hear 原来 as “so that’s why” — same characters, different beat.",
+      "example": {
+        "zh": "按原来的计划应该是两周，但是我们可以提前完成，周末保证做完。",
+        "pinyin": "Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng, zhōumò bǎozhèng zuòwán.",
+        "en": "According to the original plan it should be two weeks, but we can finish ahead of schedule — I guarantee it'll be done by the weekend."
+      }
+    },
+    "计划": {
+      "zh": "计划",
+      "pinyin": "jìhuà",
+      "en": "plan; to intend to",
+      "pos": "n./v.",
+      "when": "Remember 计划 like the word you’ll use when the calendar still says two weeks — 按原来的计划 — before anyone talks about finishing early.",
+      "usage": "Most Chinese speakers use 计划 as a noun for the plan itself, and as a verb for intending to do the day’s tasks (当天计划要做的事情).",
+      "example": {
+        "zh": "按原来的计划应该是两周，但是我们可以提前完成，周末保证做完。",
+        "pinyin": "Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng, zhōumò bǎozhèng zuòwán.",
+        "en": "According to the original plan it should be two weeks, but we can finish ahead of schedule — I guarantee it'll be done by the weekend."
+      }
+    },
+    "提前": {
+      "zh": "提前",
+      "pinyin": "tíqián",
+      "en": "to do (sth.) in advance or ahead of time",
+      "pos": "v.",
+      "when": "Remember 提前 like the word you’ll use when you beat the deadline — 小李 telling 王经理 they can 提前完成 the survey.",
+      "usage": "Most Chinese speakers put 提前 before the verb: 提前完成, 提前到. It’s “ahead of the clock,” not “in the past.”",
+      "example": {
+        "zh": "按原来的计划应该是两周，但是我们可以提前完成，周末保证做完。",
+        "pinyin": "Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng, zhōumò bǎozhèng zuòwán.",
+        "en": "According to the original plan it should be two weeks, but we can finish ahead of schedule — I guarantee it'll be done by the weekend."
+      }
+    },
+    "保证": {
+      "zh": "保证",
+      "pinyin": "bǎozhèng",
+      "en": "to guarantee",
+      "pos": "v.",
+      "when": "Remember 保证 like the word you’ll use when you stake your name on a time — 小李’s 周末保证做完.",
+      "usage": "Most Chinese speakers use 保证 to personally guarantee a result. After 保证 comes what you are promising, not a vague “I’ll try.”",
+      "example": {
+        "zh": "按原来的计划应该是两周，但是我们可以提前完成，周末保证做完。",
+        "pinyin": "Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng, zhōumò bǎozhèng zuòwán.",
+        "en": "According to the original plan it should be two weeks, but we can finish ahead of schedule — I guarantee it'll be done by the weekend."
+      }
+    },
+    "提醒": {
+      "zh": "提醒",
+      "pinyin": "tíxǐng",
+      "en": "to remind",
+      "pos": "v.",
+      "when": "Remember 提醒 like the word you’ll use when you jot the day’s tasks so the day doesn’t run you — 王经理 提醒自己 to arrange time.",
+      "usage": "Most Chinese speakers 提醒 someone to do something: 提醒自己 / 提醒你. It’s a tap on the shoulder, not a scolding.",
+      "example": {
+        "zh": "每天早上我都把当天计划要做的事情写在笔记本上，提醒自己安排好时间。你也可以试试这样做。",
+        "pinyin": "Měi tiān zǎoshang wǒ dōu bǎ dàngtiān jìhuà yào zuò de shìqing xiě zài bǐjìběn shang, tíxǐng zìjǐ ānpái hǎo shíjiān. Nǐ yě kěyǐ shìshi zhèyàng zuò.",
+        "en": "Every morning I write down the things I plan to do that day in a notebook, to remind myself to arrange my time well. You could try doing that too."
+      }
+    },
+    "乱": {
+      "zh": "乱",
+      "pinyin": "luàn",
+      "en": "hurry-scurry, confused",
+      "pos": "adj.",
+      "when": "Remember 乱 like the word you’ll feel in 手忙脚乱 — 小李’s desk when too many things are waiting and nothing has an order.",
+      "usage": "Most Chinese speakers use 乱 for a mess, and the idiom 手忙脚乱 when hands and feet are all over the place. Write the tasks; the 乱 drops.",
+      "example": {
+        "zh": "这个办法真不错！这样我就不会手忙脚乱了。",
+        "pinyin": "Zhège bànfǎ zhēn búcuò! Zhèyàng wǒ jiù bú huì shǒumáng-jiǎoluàn le.",
+        "en": "That's a really good method! That way I won't be so frazzled and disorganized."
+      }
+    },
+    "王": {
+      "zh": "王",
+      "pinyin": "Wáng",
+      "en": "Wang, a Chinese family name",
+      "pos": "proper noun",
+      "when": "Remember 王 as the surname on the manager in this lesson — 王经理, the one asking how long the survey will take.",
+      "usage": "Treat 王 as a family name, not a translation. In this 课文 it only appears in 王经理 (headings and speaker labels), never inside a spoken line.",
+      "example": {
+        "zh": "王经理和小李在说工作",
+        "pinyin": "Wáng jīnglǐ hé Xiǎo Lǐ zài shuō gōngzuò",
+        "en": "Manager Wang and Xiao Li talk about work"
+      }
+    },
+    "生意": {
+      "zh": "生意",
+      "pinyin": "shēngyi",
+      "en": "business, trade",
+      "pos": "n.",
+      "when": "Remember 生意 like the word you’ll use when a deal finally lands — 马经理’s 生意谈成了.",
+      "usage": "Most Chinese speakers say 做生意 for being in business and 生意谈成了 when the deal closes. It’s trade, not “life,” even though 生 is in there.",
+      "example": {
+        "zh": "我们和上次那个公司的生意终于谈成了。",
+        "pinyin": "Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.",
+        "en": "We finally closed the deal with that company from last time."
+      }
+    },
+    "谈": {
+      "zh": "谈",
+      "pinyin": "tán",
+      "en": "to talk, to discuss",
+      "pos": "v.",
+      "when": "Remember 谈 like the word you’ll use when you sit down to close a deal — 谈生意, and here 谈成了.",
+      "usage": "Most Chinese speakers 谈 a matter until it becomes something: 谈成, 谈到. It’s discuss-with-a-goal, not chat.",
+      "example": {
+        "zh": "我们和上次那个公司的生意终于谈成了。",
+        "pinyin": "Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.",
+        "en": "We finally closed the deal with that company from last time."
+      }
+    },
+    "并": {
+      "zh": "并",
+      "pinyin": "bìng",
+      "en": "used before a negative for emphasis",
+      "pos": "adv.",
+      "when": "Remember 并 like the word you’ll slip in front of 不 when you cancel a wrong idea — 做生意 并不容易, after 马经理 thought it was simple.",
+      "usage": "Most Chinese speakers put 并 only before 不 / 没 to push back: “actually, not.” It is not “and” in this lesson.",
+      "example": {
+        "zh": "我原来以为做生意很简单，后来才发现其实并不容易。",
+        "pinyin": "Wǒ yuánlái yǐwéi zuò shēngyi hěn jiǎndān, hòulái cái fāxiàn qíshí bìng bù róngyì.",
+        "en": "I originally thought doing business was simple, but later I realized it's actually not easy at all."
+      }
+    },
+    "积累": {
+      "zh": "积累",
+      "pinyin": "jīlěi",
+      "en": "to accumulate",
+      "pos": "v.",
+      "when": "Remember 积累 like the word you’ll use when experience piles up slowly — 王经理’s 多积累经验, not a quick 赚钱.",
+      "usage": "Most Chinese speakers 积累经验 / 积累知识: stuff that stacks over years. You don’t 积累 a bonus.",
+      "example": {
+        "zh": "慢慢来，万事开头难，重要的是要多积累经验。",
+        "pinyin": "Mànmàn lái, wànshì kāitóu nán, zhòngyào de shì yào duō jīlěi jīngyàn.",
+        "en": "Take it slowly — everything is hard at the beginning. What matters is accumulating more experience."
+      }
+    },
+    "经验": {
+      "zh": "经验",
+      "pinyin": "jīngyàn",
+      "en": "experience",
+      "pos": "n.",
+      "when": "Remember 经验 like the thing 王经理 says to stockpile when 万事开头难 — work experience, not a life story.",
+      "usage": "Most Chinese speakers mean know-how from having done the job. 工作经验 is the phrase you’ll hear in this lesson and again in 课文5.",
+      "example": {
+        "zh": "慢慢来，万事开头难，重要的是要多积累经验。",
+        "pinyin": "Mànmàn lái, wànshì kāitóu nán, zhòngyào de shì yào duō jīlěi jīngyàn.",
+        "en": "Take it slowly — everything is hard at the beginning. What matters is accumulating more experience."
+      }
+    },
+    "一切": {
+      "zh": "一切",
+      "pinyin": "yíqiè",
+      "en": "all, every",
+      "pos": "pron.",
+      "when": "Remember 一切 like the word you’ll use when you want the whole mess to come out right — 马经理’s 一切都会好的.",
+      "usage": "Most Chinese speakers use 一切 for “everything” as one blob: 一切都会好的. Not for counting single items.",
+      "example": {
+        "zh": "我相信经过我们大家的努力，公司的生意会越做越大，一切都会好的。",
+        "pinyin": "Wǒ xiāngxìn jīngguò wǒmen dàjiā de nǔlì, gōngsī de shēngyi huì yuè zuò yuè dà, yíqiè dōu huì hǎo de.",
+        "en": "I believe that through all of our efforts, the company's business will grow bigger and bigger — everything will be fine."
+      }
+    },
+    "按照": {
+      "zh": "按照",
+      "pinyin": "ànzhào",
+      "en": "according to",
+      "pos": "prep.",
+      "when": "Remember 按照 like the word you’ll use when the year is checked against the plan — 按照计划完成了.",
+      "usage": "Most Chinese speakers put 按照 + rule / plan / 要求 in front of the verb. Same job as 按, fuller and more formal.",
+      "example": {
+        "zh": "我们今年的工作都已经按照计划完成了。",
+        "pinyin": "Wǒmen jīnnián de gōngzuò dōu yǐjīng ànzhào jìhuà wánchéng le.",
+        "en": "This year, all of our work has already been completed according to plan."
+      }
+    },
+    "成功": {
+      "zh": "成功",
+      "pinyin": "chénggōng",
+      "en": "successful",
+      "pos": "adj.",
+      "when": "Remember 成功 like the word you’ll use when the hard stretch actually worked — 成功地解决了问题 after a tense few months.",
+      "usage": "Most Chinese speakers often adverb it: 成功地 + verb. The 课文 is a thank-you speech, not a trophy sitting on a shelf.",
+      "example": {
+        "zh": "这一段时间，尽管工作很紧张，中间也遇到了很多困难，但是因为有大家的努力，我们成功地解决了问题，顺利地完成了工作，非常感谢大家对我的帮助！",
+        "pinyin": "Zhè yí duàn shíjiān, jǐnguǎn gōngzuò hěn jǐnzhāng, zhōngjiān yě yùdàole hěn duō kùnnan, dànshì yīnwèi yǒu dàjiā de nǔlì, wǒmen chénggōng de jiějuéle wèntí, shùnlì de wánchéngle gōngzuò, fēicháng gǎnxiè dàjiā duì wǒ de bāngzhù!",
+        "en": "During this period, although work was very hectic and we ran into many difficulties along the way, because of everyone's hard work we successfully solved the problems and smoothly completed the work — thank you all so much for your help!"
+      }
+    },
+    "顺利": {
+      "zh": "顺利",
+      "pinyin": "shùnlì",
+      "en": "smooth",
+      "pos": "adj.",
+      "when": "Remember 顺利 like the word you’ll use when the work crossed the line without falling apart — 顺利地完成了工作.",
+      "usage": "Most Chinese speakers use 顺利 for a process that went smoothly. 顺利地完成 = finished without a snarl, even if the stretch was 紧张.",
+      "example": {
+        "zh": "这一段时间，尽管工作很紧张，中间也遇到了很多困难，但是因为有大家的努力，我们成功地解决了问题，顺利地完成了工作，非常感谢大家对我的帮助！",
+        "pinyin": "Zhè yí duàn shíjiān, jǐnguǎn gōngzuò hěn jǐnzhāng, zhōngjiān yě yùdàole hěn duō kùnnan, dànshì yīnwèi yǒu dàjiā de nǔlì, wǒmen chénggōng de jiějuéle wèntí, shùnlì de wánchéngle gōngzuò, fēicháng gǎnxiè dàjiā duì wǒ de bāngzhù!",
+        "en": "During this period, although work was very hectic and we ran into many difficulties along the way, because of everyone's hard work we successfully solved the problems and smoothly completed the work — thank you all so much for your help!"
+      }
+    },
+    "感谢": {
+      "zh": "感谢",
+      "pinyin": "gǎnxiè",
+      "en": "to thank",
+      "pos": "v.",
+      "when": "Remember 感谢 like the word you’ll use when you thank a whole room — 感谢大家 for three-plus months of work.",
+      "usage": "Most Chinese speakers 感谢 someone for something: 感谢大家对我的帮助. Heavier and more formal than 谢谢.",
+      "example": {
+        "zh": "感谢大家这三个多月的努力工作，希望明年能有更大的成绩！",
+        "pinyin": "Gǎnxiè dàjiā zhè sān ge duō yuè de nǔlì gōngzuò, xīwàng míngnián néng yǒu gèng dà de chéngjì!",
+        "en": "Thank you all for your hard work over these past three-plus months — I hope for even greater achievements next year!"
+      }
+    },
+    "消息": {
+      "zh": "消息",
+      "pinyin": "xiāoxi",
+      "en": "news",
+      "pos": "n.",
+      "when": "Remember 消息 like the word you’ll use when news walks into the room — 马经理’s 好消息 about the bonus.",
+      "usage": "Most Chinese speakers mean a piece of news you tell people, 一个好消息 / 坏消息. Not “information” in the abstract.",
+      "example": {
+        "zh": "另外，马经理让我告诉大家一个好消息，因为大家按时完成了工作，公司决定这个月给每人多发三千元奖金。",
+        "pinyin": "Lìngwài, Mǎ jīnglǐ ràng wǒ gàosu dàjiā yí ge hǎo xiāoxi, yīnwèi dàjiā ànshí wánchéngle gōngzuò, gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.",
+        "en": "Also, Manager Ma asked me to tell everyone some good news: because everyone finished the work on time, the company has decided to give each person an extra 3,000-yuan bonus this month."
+      }
+    },
+    "按时": {
+      "zh": "按时",
+      "pinyin": "ànshí",
+      "en": "on time, on schedule",
+      "pos": "adv.",
+      "when": "Remember 按时 like the word you’ll use when the deadline was actually hit — they 按时完成了工作, so the bonus lands.",
+      "usage": "Most Chinese speakers put 按时 before the verb: 按时完成, 按时到. On the clock — not “according to a document” (that’s 按照).",
+      "example": {
+        "zh": "另外，马经理让我告诉大家一个好消息，因为大家按时完成了工作，公司决定这个月给每人多发三千元奖金。",
+        "pinyin": "Lìngwài, Mǎ jīnglǐ ràng wǒ gàosu dàjiā yí ge hǎo xiāoxi, yīnwèi dàjiā ànshí wánchéngle gōngzuò, gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.",
+        "en": "Also, Manager Ma asked me to tell everyone some good news: because everyone finished the work on time, the company has decided to give each person an extra 3,000-yuan bonus this month."
+      }
+    },
+    "奖金": {
+      "zh": "奖金",
+      "pinyin": "jiǎngjīn",
+      "en": "money award, bonus",
+      "pos": "n.",
+      "when": "Remember 奖金 like the extra cash after the work is in — 三千元奖金 because everyone finished 按时.",
+      "usage": "Most Chinese speakers mean a bonus on top of 工资, not the salary itself. This lesson keeps dangling it in front of impatient 年轻人.",
+      "example": {
+        "zh": "另外，马经理让我告诉大家一个好消息，因为大家按时完成了工作，公司决定这个月给每人多发三千元奖金。",
+        "pinyin": "Lìngwài, Mǎ jīnglǐ ràng wǒ gàosu dàjiā yí ge hǎo xiāoxi, yīnwèi dàjiā ànshí wánchéngle gōngzuò, gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.",
+        "en": "Also, Manager Ma asked me to tell everyone some good news: because everyone finished the work on time, the company has decided to give each person an extra 3,000-yuan bonus this month."
+      }
+    },
+    "工资": {
+      "zh": "工资",
+      "pinyin": "gōngzī",
+      "en": "pay, salary",
+      "pos": "n.",
+      "when": "Remember 工资 like the monthly pay the lesson tells you not to stare at — 眼睛里只有工资和奖金.",
+      "usage": "Most Chinese speakers mean the regular salary. Young staff in 课文5 are warned: don’t have eyes only for 工资.",
+      "example": {
+        "zh": "年轻人刚开始工作的时候，不要太急着赚钱，不要眼睛里只有工资和奖金。",
+        "pinyin": "Niánqīng rén gāng kāishǐ gōngzuò de shíhou, búyào tài jízhe zhuàn qián, búyào yǎnjing li zhǐyǒu gōngzī hé jiǎngjīn.",
+        "en": "When young people are just starting out at work, they shouldn't be too anxious to make money, and shouldn't have eyes only for salary and bonuses."
+      }
+    },
+    "方法": {
+      "zh": "方法",
+      "pinyin": "fāngfǎ",
+      "en": "method, way",
+      "pos": "n.",
+      "when": "Remember 方法 like the word you’ll use when you mean how you talk to colleagues — 交流的方法, stacked above 收入 in the first years.",
+      "usage": "Most Chinese speakers use 方法 for a way of doing a thing. This lesson’s 同字词 set is 办法 / 法律 / 方法 — 方法 is the how.",
+      "example": {
+        "zh": "在工作的前几年，重要的是丰富自己的工作经验，学习与同事交流的方法，积累专业知识，这些比收入重要多了。",
+        "pinyin": "Zài gōngzuò de qián jǐ nián, zhòngyào de shì fēngfù zìjǐ de gōngzuò jīngyàn, xuéxí yǔ tóngshì jiāoliú de fāngfǎ, jīlěi zhuānyè zhīshi, zhèxiē bǐ shōurù zhòngyào duō le.",
+        "en": "In the first few years of work, what matters is enriching your own work experience, learning ways to communicate with colleagues, and building up professional knowledge — these are far more important than income."
+      }
+    },
+    "知识": {
+      "zh": "知识",
+      "pinyin": "zhīshi",
+      "en": "knowledge",
+      "pos": "n.",
+      "when": "Remember 知识 like the word you’ll use for what you stock in a field — 积累专业知识, not a paycheck.",
+      "usage": "Most Chinese speakers say 知识 for knowledge, and 专业知识 for the kind that makes you useful at work.",
+      "example": {
+        "zh": "在工作的前几年，重要的是丰富自己的工作经验，学习与同事交流的方法，积累专业知识，这些比收入重要多了。",
+        "pinyin": "Zài gōngzuò de qián jǐ nián, zhòngyào de shì fēngfù zìjǐ de gōngzuò jīngyàn, xuéxí yǔ tóngshì jiāoliú de fāngfǎ, jīlěi zhuānyè zhīshi, zhèxiē bǐ shōurù zhòngyào duō le.",
+        "en": "In the first few years of work, what matters is enriching your own work experience, learning ways to communicate with colleagues, and building up professional knowledge — these are far more important than income."
+      }
+    },
+    "不得不": {
+      "zh": "不得不",
+      "pinyin": "bù dé bù",
+      "en": "to have to, to have no choice but",
+      "pos": "",
+      "when": "Remember 不得不 like the phrase you’ll use when the job is ugly and you still have to do it — 课文5’s work you 不愿意做.",
+      "usage": "Most Chinese speakers use 不得不 + verb for “no way out.” Heavier than 必须: you would skip it if you could.",
+      "example": {
+        "zh": "但是很多时候，我们不得不去做一些自己不愿意做甚至是非常不喜欢的工作。",
+        "pinyin": "Dànshì hěn duō shíhou, wǒmen bù dé bú qù zuò yìxiē zìjǐ bú yuànyì zuò shènzhì shì fēicháng bù xǐhuan de gōngzuò.",
+        "en": "But very often, we have no choice but to do work that we're unwilling to do, or even work that we strongly dislike."
+      }
+    },
+    "甚至": {
+      "zh": "甚至",
+      "pinyin": "shènzhì",
+      "en": "even, so far as to",
+      "pos": "conj.",
+      "when": "Remember 甚至 like the word you’ll use when you push the example one notch worse — unwilling work, 甚至 work you strongly dislike.",
+      "usage": "Most Chinese speakers park 甚至 before the last, most extreme item in a list. Here it escalates 不愿意做 to 非常不喜欢.",
+      "example": {
+        "zh": "但是很多时候，我们不得不去做一些自己不愿意做甚至是非常不喜欢的工作。",
+        "pinyin": "Dànshì hěn duō shíhou, wǒmen bù dé bú qù zuò yìxiē zìjǐ bú yuànyì zuò shènzhì shì fēicháng bù xǐhuan de gōngzuò.",
+        "en": "But very often, we have no choice but to do work that we're unwilling to do, or even work that we strongly dislike."
+      }
+    },
+    "责任": {
+      "zh": "责任",
+      "pinyin": "zérèn",
+      "en": "responsibility, duty",
+      "pos": "n.",
+      "when": "Remember 责任 like the word inside 责任心 — the thing 课文5 says you need when the work is the work you didn’t want.",
+      "usage": "Most Chinese speakers talk about 责任 for a duty, and 对工作的责任心 for giving a damn about the job. Ability without 责任 still fails.",
+      "example": {
+        "zh": "这时，我们最需要的就是对工作的责任心。",
+        "pinyin": "Zhè shí, wǒmen zuì xūyào de jiù shì duì gōngzuò de zérènxīn.",
+        "en": "At times like this, what we need most is a sense of responsibility toward our work."
+      }
+    },
+    "按": {
+      "zh": "按",
+      "pinyin": "àn",
+      "en": "according to",
+      "pos": "prep.",
+      "when": "Remember 按 like the short “according to” you’ll hear in 按原来的计划 — same job as 按照, clipped.",
+      "usage": "Most Chinese speakers use 按 + 计划 / 要求 in speech. 按照 is the full form you’ll read in 课文4; 按 is the one 小李 says.",
+      "example": {
+        "zh": "按原来的计划应该是两周，但是我们可以提前完成，周末保证做完。",
+        "pinyin": "Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng, zhōumò bǎozhèng zuòwán.",
+        "en": "According to the original plan it should be two weeks, but we can finish ahead of schedule — I guarantee it'll be done by the weekend."
+      }
+    },
+    "成": {
+      "zh": "成",
+      "pinyin": "chéng",
+      "en": "to succeed, to accomplish",
+      "pos": "v.",
+      "when": "Remember 成 like the result you’ll tack on when the talk works — 生意谈成了, the deal is done.",
+      "usage": "Most Chinese speakers use 成 after a verb to mean it landed: 谈成, 做成. Related to 成功, but here it’s the ending, not the adjective.",
+      "example": {
+        "zh": "我们和上次那个公司的生意终于谈成了。",
+        "pinyin": "Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.",
+        "en": "We finally closed the deal with that company from last time."
+      }
+    }
+  }
+}

@@ -59,14 +59,6 @@ export const LockIcon = ({ size = 18 }: P) => (
   </svg>
 )
 
-export const SpeakerIcon = ({ size = 18 }: P) => (
-  <svg {...base(size)}>
-    <path d="M4 9.5h3.2L12 5.6v12.8L7.2 14.5H4z" />
-    <path d="M15.5 9.2a4 4 0 0 1 0 5.6" />
-    <path d="M18 6.8a7.4 7.4 0 0 1 0 10.4" />
-  </svg>
-)
-
 export const ChevronLeft = ({ size = 20 }: P) => (
   <svg {...base(size)}>
     <path d="M14.5 5 8 12l6.5 7" />
@@ -127,6 +119,22 @@ export const StarIcon = ({ size = 20, filled = false }: P & { filled?: boolean }
 export const BoltIcon = ({ size = 20 }: P) => (
   <svg {...base(size)}>
     <path d="M13.2 2.5 4.8 13.2h5.6l-.6 8.3 8.4-10.7h-5.6z" />
+  </svg>
+)
+
+export const HeartIcon = ({ size = 16, filled = true }: P & { filled?: boolean }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill={filled ? 'currentColor' : 'none'}
+    stroke="currentColor"
+    strokeWidth={filled ? 0 : 1.9}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden
+  >
+    <path d="M12 20s-7.2-4.35-9.2-8.4C1.3 8.8 2.7 5.6 6 5.2c1.9-.2 3.6.7 4.5 2.2C11.4 5.9 13.1 5 15 5.2c3.3.4 4.7 3.6 3.2 6.4C19.2 15.65 12 20 12 20z" />
   </svg>
 )
 

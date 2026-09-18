@@ -1,0 +1,526 @@
+{
+  "lesson": 2,
+  "title": "真正的朋友",
+  "words": {
+    "适应": {
+      "zh": "适应",
+      "pinyin": "shìyìng",
+      "en": "to get used to",
+      "pos": "v.",
+      "when": "Remember 适应 like the word you’ll use when a new country stops feeling strange — 小夏 asks 你适应这儿的生活了吗, and 马克 says he slowly 适应了.",
+      "usage": "Most Chinese speakers 适应 a place, a job, or a climate (适应这儿的生活). 课文1 is Mark after almost a year in China, not a sudden switch.",
+      "example": {
+        "zh": "来中国快一年了，你适应这儿的生活了吗？",
+        "pinyin": "Lái Zhōngguó kuài yì nián le, nǐ shìyìng zhèr de shēnghuó le ma?",
+        "en": "It's been almost a year since you came to China. Have you gotten used to life here?"
+      }
+    },
+    "交": {
+      "zh": "交",
+      "pinyin": "jiāo",
+      "en": "to make (friends)",
+      "pos": "v.",
+      "when": "Remember 交 like the word you’ll use when you make a new friend — 最近我还交了一个中国朋友, then 课文4 很难跟人交朋友.",
+      "usage": "Most Chinese speakers 交朋友 / 交了一个朋友. This 交 is the verb for making friends, not 交流 (a different 生词 later in the lesson).",
+      "example": {
+        "zh": "开始有点儿不习惯，后来就慢慢适应了，最近我还交了一个中国朋友。",
+        "pinyin": "Kāishǐ yǒudiǎnr bù xíguàn, hòulái jiù mànmàn shìyìng le, zuìjìn wǒ hái jiāole yí ge Zhōngguó péngyou.",
+        "en": "At first I was a little unused to it, but later I gradually got used to it. Recently I even made a Chinese friend."
+      }
+    },
+    "平时": {
+      "zh": "平时",
+      "pinyin": "píngshí",
+      "en": "normal times",
+      "pos": "n.",
+      "when": "Remember 平时 like the word you’ll use when you mean on ordinary days — 平时我们常常一起看书、逛街、踢足球.",
+      "usage": "Most Chinese speakers set 平时 against a special day: what you usually do, not this once. 课文1 is Mark’s routine with his new friend.",
+      "example": {
+        "zh": "我们是在图书馆认识的。平时我们常常一起看书、逛街、踢足球。有时候他还给我发一些幽默短信。",
+        "pinyin": "Wǒmen shì zài túshūguǎn rènshi de. Píngshí wǒmen chángcháng yìqǐ kàn shū, guàng jiē, tī zúqiú. Yǒu shíhou tā hái gěi wǒ fā yìxiē yōumò duǎnxìn.",
+        "en": "We met at the library. Normally we often read, stroll the streets, and play soccer together. Sometimes he even sends me some humorous text messages."
+      }
+    },
+    "逛": {
+      "zh": "逛",
+      "pinyin": "guàng",
+      "en": "to stroll, to roam",
+      "pos": "v.",
+      "when": "Remember 逛 like the word you’ll use when you wander the streets for fun — 平时……逛街, not a trip with a shopping list.",
+      "usage": "Most Chinese speakers 逛街 / 逛商场 for browsing around. In 课文1 it sits with 看书 and 踢足球 as what friends do together.",
+      "example": {
+        "zh": "我们是在图书馆认识的。平时我们常常一起看书、逛街、踢足球。有时候他还给我发一些幽默短信。",
+        "pinyin": "Wǒmen shì zài túshūguǎn rènshi de. Píngshí wǒmen chángcháng yìqǐ kàn shū, guàng jiē, tī zúqiú. Yǒu shíhou tā hái gěi wǒ fā yìxiē yōumò duǎnxìn.",
+        "en": "We met at the library. Normally we often read, stroll the streets, and play soccer together. Sometimes he even sends me some humorous text messages."
+      }
+    },
+    "短信": {
+      "zh": "短信",
+      "pinyin": "duǎnxìn",
+      "en": "text message",
+      "pos": "n.",
+      "when": "Remember 短信 like the word you’ll use for a phone text — 他还给我发一些幽默短信.",
+      "usage": "Most Chinese speakers 发短信 / 收短信. 课文1’s 幽默短信 is how Mark’s friend keeps in touch between 看书 and 足球.",
+      "example": {
+        "zh": "我们是在图书馆认识的。平时我们常常一起看书、逛街、踢足球。有时候他还给我发一些幽默短信。",
+        "pinyin": "Wǒmen shì zài túshūguǎn rènshi de. Píngshí wǒmen chángcháng yìqǐ kàn shū, guàng jiē, tī zúqiú. Yǒu shíhou tā hái gěi wǒ fā yìxiē yōumò duǎnxìn.",
+        "en": "We met at the library. Normally we often read, stroll the streets, and play soccer together. Sometimes he even sends me some humorous text messages."
+      }
+    },
+    "正好": {
+      "zh": "正好",
+      "pinyin": "zhènghǎo",
+      "en": "just in time, just right",
+      "pos": "adv.",
+      "when": "Remember 正好 like the word you’ll use when the timing clicks — 我们下午要去踢足球，正好一起去吧.",
+      "usage": "Most Chinese speakers use 正好 for “just the right moment / amount.” 课文1 is the chance to introduce 小夏; the 语言点 also has 正好二十块 for an exact total.",
+      "example": {
+        "zh": "没问题！我们下午要去踢足球，正好一起去吧。",
+        "pinyin": "Méi wèntí! Wǒmen xiàwǔ yào qù tī zúqiú, zhènghǎo yìqǐ qù ba.",
+        "en": "No problem! We're going to play soccer this afternoon — it's the perfect time, come along."
+      }
+    },
+    "夏": {
+      "zh": "夏",
+      "pinyin": "Xià",
+      "en": "Xia, a Chinese family name",
+      "pos": "pr.n.",
+      "when": "Remember 夏 as the family name in 小夏, who opens 课文1 by asking whether 马克 has settled in.",
+      "usage": "Treat it as a proper name. Don’t translate it. In this lesson 夏 is 小夏, the classmate asking about Mark’s Chinese friend.",
+      "example": {
+        "zh": "小夏和马克聊马克的中国朋友",
+        "pinyin": "Xiǎo Xià hé Mǎkè liáo Mǎkè de Zhōngguó péngyou",
+        "en": "Xiao Xia and Mark talk about Mark's Chinese friend"
+      }
+    },
+    "马克": {
+      "zh": "马克",
+      "pinyin": "Mǎkè",
+      "en": "Mark",
+      "pos": "pr.n.",
+      "when": "Remember 马克 as the name of the student who has been in China almost a year and just 交了一个中国朋友.",
+      "usage": "Treat it as a proper name. Don’t translate it. Watch 马上 — that 马 is not this 马克.",
+      "example": {
+        "zh": "开始有点儿不习惯，后来就慢慢适应了，最近我还交了一个中国朋友。",
+        "pinyin": "Kāishǐ yǒudiǎnr bù xíguàn, hòulái jiù mànmàn shìyìng le, zuìjìn wǒ hái jiāole yí ge Zhōngguó péngyou.",
+        "en": "At first I was a little unused to it, but later I gradually got used to it. Recently I even made a Chinese friend."
+      }
+    },
+    "聚会": {
+      "zh": "聚会",
+      "pinyin": "jùhuì",
+      "en": "to have a party; party, get-together",
+      "pos": "v./n.",
+      "when": "Remember 聚会 like the word you’ll use for a classmate get-together — 星期天同学聚会，你能来吗?",
+      "usage": "Most Chinese speakers 聚会 as both the event and the verb. 课文2 is a class reunion at the 饭店 by the school gate, not a random party.",
+      "example": {
+        "zh": "星期天同学聚会，你能来吗？",
+        "pinyin": "Xīngqītiān tóngxué jùhuì, nǐ néng lái ma?",
+        "en": "There's a classmate get-together on Sunday, can you come?"
+      }
+    },
+    "联系": {
+      "zh": "联系",
+      "pinyin": "liánxì",
+      "en": "to contact",
+      "pos": "v.",
+      "when": "Remember 联系 like the word you’ll use when you get in touch — 班里同学你联系得怎么样了, then 请她一起来.",
+      "usage": "Most Chinese speakers 联系 someone (跟她联系一下). 同字词：系 → 联系 / 关系 / 没关系. 课文2–3 keep using it for classmates who have not gone silent.",
+      "example": {
+        "zh": "能来。班里同学你联系得怎么样了？来多少人？",
+        "pinyin": "Néng lái. Bān li tóngxué nǐ liánxì de zěnmeyàng le? Lái duōshao rén?",
+        "en": "I can come. How's it going with contacting our classmates? How many people are coming?"
+      }
+    },
+    "差不多": {
+      "zh": "差不多",
+      "pinyin": "chàbuduō",
+      "en": "almost",
+      "pos": "adv.",
+      "when": "Remember 差不多 like the word you’ll use when the count is close enough — 差不多一半儿吧, about half the class is coming.",
+      "usage": "Most Chinese speakers use it for “almost / about the same.” 课文2 is a rough headcount. 比一比 with 几乎: 差不多 can sit before a number (差不多六十岁); 几乎 cannot.",
+      "example": {
+        "zh": "差不多一半儿吧，张远还专门从国外飞回来呢。",
+        "pinyin": "Chàbuduō yíbànr ba, Zhāng Yuǎn hái zhuānmén cóng guówài fēi huilai ne.",
+        "en": "About half, I'd guess. Zhang Yuan is even flying back specially from abroad."
+      }
+    },
+    "专门": {
+      "zh": "专门",
+      "pinyin": "zhuānmén",
+      "en": "specially",
+      "pos": "adv.",
+      "when": "Remember 专门 like the word you’ll use when someone makes a special trip — 张远还专门从国外飞回来呢.",
+      "usage": "Most Chinese speakers 专门 do something on purpose, for that one reason. 课文2’s 专门飞回来 is the extra effort that makes the 聚会 feel worth it.",
+      "example": {
+        "zh": "差不多一半儿吧，张远还专门从国外飞回来呢。",
+        "pinyin": "Chàbuduō yíbànr ba, Zhāng Yuǎn hái zhuānmén cóng guówài fēi huilai ne.",
+        "en": "About half, I'd guess. Zhang Yuan is even flying back specially from abroad."
+      }
+    },
+    "毕业": {
+      "zh": "毕业",
+      "pinyin": "bì yè",
+      "en": "to graduate",
+      "pos": "v.",
+      "when": "Remember 毕业 like the word you’ll use when school ends — 毕业都快十年了, and 王静 毕业后就去上海工作了.",
+      "usage": "Most Chinese speakers 毕业 from a school (大学毕业, 毕业后). 课文2–3 keep returning to the ten years since that class left campus.",
+      "example": {
+        "zh": "是吗？毕业都快十年了，真想大家啊！对了，今天早上，我在地铁站遇到了王静，她毕业后就去上海工作了，她这次是来旅游的。",
+        "pinyin": "Shì ma? Bì yè dōu kuài shí nián le, zhēn xiǎng dàjiā a! Duìle, jīntiān zǎoshang, wǒ zài dìtiě zhàn yùdàole Wáng Jìng, tā bì yè hòu jiù qù Shànghǎi gōngzuò le, tā zhè cì shì lái lǚyóu de.",
+        "en": "Really? It's been almost ten years since graduation, I really miss everyone! By the way, this morning I ran into Wang Jing at the subway station. She went to work in Shanghai after graduating, and this time she's here traveling."
+      }
+    },
+    "麻烦": {
+      "zh": "麻烦",
+      "pinyin": "máfan",
+      "en": "to bother",
+      "pos": "v.",
+      "when": "Remember 麻烦 like the word you’ll use when you politely ask a favour — 麻烦你跟她联系一下.",
+      "usage": "Most Chinese speakers 麻烦你 + verb to soften a request. 课文2 is 小李 asking 小林 to invite 王静, not complaining that something is a hassle.",
+      "example": {
+        "zh": "那太好了！麻烦你跟她联系一下，请她一起来参加同学聚会。聚会就在学校门口那个饭店，六点半。别迟到啊！",
+        "pinyin": "Nà tài hǎo le! Máfan nǐ gēn tā liánxì yíxià, qǐng tā yìqǐ lái cānjiā tóngxué jùhuì. Jùhuì jiù zài xuéxiào ménkǒu nàge fàndiàn, liù diǎn bàn. Bié chídào a!",
+        "en": "That's great! Would you mind contacting her and inviting her to come to the class gathering too. The gathering is at that restaurant by the school gate, at six thirty. Don't be late!"
+      }
+    },
+    "林": {
+      "zh": "林",
+      "pinyin": "Lín",
+      "en": "Lin, a Chinese family name",
+      "pos": "pr.n.",
+      "when": "Remember 林 as the family name in 小林, who ran into 王静 at the subway and will 联系 her for the 聚会.",
+      "usage": "Treat it as a proper name. Don’t translate it. In this lesson 林 is 小林, 小李’s classmate in 课文2.",
+      "example": {
+        "zh": "小李和小林聊同学聚会的事情",
+        "pinyin": "Xiǎo Lǐ hé Xiǎo Lín liáo tóngxué jùhuì de shìqing",
+        "en": "Xiao Li and Xiao Lin talk about the classmate gathering"
+      }
+    },
+    "张远": {
+      "zh": "张远",
+      "pinyin": "Zhāng Yuǎn",
+      "en": "Zhang Yuan, name of a person",
+      "pos": "pr.n.",
+      "when": "Remember 张远 as the classmate flying back 专门 from abroad for the Sunday 聚会.",
+      "usage": "Treat it as a proper name. Don’t translate it. He never speaks; 课文2 only names him as the one who made the long trip.",
+      "example": {
+        "zh": "差不多一半儿吧，张远还专门从国外飞回来呢。",
+        "pinyin": "Chàbuduō yíbànr ba, Zhāng Yuǎn hái zhuānmén cóng guówài fēi huilai ne.",
+        "en": "About half, I'd guess. Zhang Yuan is even flying back specially from abroad."
+      }
+    },
+    "上海": {
+      "zh": "上海",
+      "pinyin": "Shànghǎi",
+      "en": "Shanghai, a city of China",
+      "pos": "pr.n.",
+      "when": "Remember 上海 as the city 王静 moved to after 毕业 — 她毕业后就去上海工作了.",
+      "usage": "Treat it as a place name. In 课文2 she is only back 旅游, which is why they can still invite her to the 聚会.",
+      "example": {
+        "zh": "是吗？毕业都快十年了，真想大家啊！对了，今天早上，我在地铁站遇到了王静，她毕业后就去上海工作了，她这次是来旅游的。",
+        "pinyin": "Shì ma? Bì yè dōu kuài shí nián le, zhēn xiǎng dàjiā a! Duìle, jīntiān zǎoshang, wǒ zài dìtiě zhàn yùdàole Wáng Jìng, tā bì yè hòu jiù qù Shànghǎi gōngzuò le, tā zhè cì shì lái lǚyóu de.",
+        "en": "Really? It's been almost ten years since graduation, I really miss everyone! By the way, this morning I ran into Wang Jing at the subway station. She went to work in Shanghai after graduating, and this time she's here traveling."
+      }
+    },
+    "好像": {
+      "zh": "好像",
+      "pinyin": "hǎoxiàng",
+      "en": "as if",
+      "pos": "adv.",
+      "when": "Remember 好像 like the word you’ll use when a photo pulls you back — 好像重新回到了校园.",
+      "usage": "Most Chinese speakers use 好像 for “it seems / as if.” 课文3 is the feeling of being on campus again, not a guess about a fact.",
+      "example": {
+        "zh": "这是上大学时的照片。一看到这张照片，我就想起过去那段快乐的日子，好像重新回到了校园。",
+        "pinyin": "Zhè shì shàng dàxué shí de zhàopiàn. Yí kàndào zhè zhāng zhàopiàn, wǒ jiù xiǎngqǐ guòqù nà duàn kuàilè de rìzi, hǎoxiàng chóngxīn huídàole xiàoyuán.",
+        "en": "This is a photo from when I was in college. As soon as I see this photo, I remember that happy time in the past — it's as if I've returned to campus again."
+      }
+    },
+    "重新": {
+      "zh": "重新",
+      "pinyin": "chóngxīn",
+      "en": "again, once more",
+      "pos": "adv.",
+      "when": "Remember 重新 like the word you’ll use when you go back and do it over — 好像重新回到了校园.",
+      "usage": "Most Chinese speakers 重新 + verb for a fresh start of the same action. 课文3 is returning to campus in memory, not repeating a task.",
+      "example": {
+        "zh": "这是上大学时的照片。一看到这张照片，我就想起过去那段快乐的日子，好像重新回到了校园。",
+        "pinyin": "Zhè shì shàng dàxué shí de zhàopiàn. Yí kàndào zhè zhāng zhàopiàn, wǒ jiù xiǎngqǐ guòqù nà duàn kuàilè de rìzi, hǎoxiàng chóngxīn huídàole xiàoyuán.",
+        "en": "This is a photo from when I was in college. As soon as I see this photo, I remember that happy time in the past — it's as if I've returned to campus again."
+      }
+    },
+    "尽管": {
+      "zh": "尽管",
+      "pinyin": "jǐnguǎn",
+      "en": "although",
+      "pos": "conj.",
+      "when": "Remember 尽管 like the glue you’ll use when a fact should have stopped the friendship — 尽管已经毕业这么多年，我们还是经常联系的.",
+      "usage": "Most Chinese speakers open with 尽管 and finish with 但是 / 可是 / 却 / 还是. 课文3’s pair is 尽管……还是……: years since 毕业, still 联系.",
+      "example": {
+        "zh": "当然了，尽管已经毕业这么多年，我们还是经常联系的，每次都有说不完的话。",
+        "pinyin": "Dāngrán le, jǐnguǎn yǐjīng bì yè zhème duō nián, wǒmen hái shì jīngcháng liánxì de, měi cì dōu yǒu shuō bu wán de huà.",
+        "en": "Of course. Even though we've been graduated for so many years, we still keep in touch regularly, and every time we have endless things to talk about."
+      }
+    },
+    "真正": {
+      "zh": "真正",
+      "pinyin": "zhēnzhèng",
+      "en": "true, real",
+      "pos": "adj.",
+      "when": "Remember 真正 like the word you’ll use when a friend is the real thing — 真正的朋友, 真正的友谊, the lesson title.",
+      "usage": "Most Chinese speakers put 真正的 before the noun they mean in earnest. 课文3 names the prize; 课文5 asks 什么是真正的朋友.",
+      "example": {
+        "zh": "对。要知道，能有一个真正的朋友，有一段真正的友谊，是多么不容易！",
+        "pinyin": "Duì. Yào zhīdào, néng yǒu yí ge zhēnzhèng de péngyou, yǒu yí duàn zhēnzhèng de yǒuyì, shì duōme bù róngyì!",
+        "en": "Right. You know, how difficult it is to have a true friend and a true friendship!"
+      }
+    },
+    "友谊": {
+      "zh": "友谊",
+      "pinyin": "yǒuyì",
+      "en": "friendship",
+      "pos": "n.",
+      "when": "Remember 友谊 like the word you’ll use for the bond itself — 一段真正的友谊, not just 朋友 the person.",
+      "usage": "Most Chinese speakers keep 友谊 for the relationship (一段友谊). 课文3 pairs it with 真正的朋友; the culture note’s 有福同享 is the same idea.",
+      "example": {
+        "zh": "对。要知道，能有一个真正的朋友，有一段真正的友谊，是多么不容易！",
+        "pinyin": "Duì. Yào zhīdào, néng yǒu yí ge zhēnzhèng de péngyou, yǒu yí duàn zhēnzhèng de yǒuyì, shì duōme bù róngyì!",
+        "en": "Right. You know, how difficult it is to have a true friend and a true friendship!"
+      }
+    },
+    "丰富": {
+      "zh": "丰富",
+      "pinyin": "fēngfù",
+      "en": "to enrich",
+      "pos": "v.",
+      "when": "Remember 丰富 like the word you’ll use when friends make life fuller — 朋友可以丰富我们的生活.",
+      "usage": "Most Chinese speakers 丰富 a life, experience, or knowledge (丰富生活). 课文4 opens with this as the reason everyone 需要朋友.",
+      "example": {
+        "zh": "每个人都需要朋友，朋友可以丰富我们的生活。",
+        "pinyin": "Měi ge rén dōu xūyào péngyou, péngyou kěyǐ fēngfù wǒmen de shēnghuó.",
+        "en": "Everyone needs friends; friends can enrich our lives."
+      }
+    },
+    "无聊": {
+      "zh": "无聊",
+      "pinyin": "wúliáo",
+      "en": "boring",
+      "pos": "adj.",
+      "when": "Remember 无聊 like the word you’ll use when a day has no one in it — 离开朋友，我们的生活一定会非常无聊.",
+      "usage": "Most Chinese speakers feel 无聊 (bored / boring). 课文4 is life without friends; 课文5’s true friend shows up 当你无聊或者难过的时候.",
+      "example": {
+        "zh": "离开朋友，我们的生活一定会非常无聊。",
+        "pinyin": "Líkāi péngyou, wǒmen de shēnghuó yídìng huì fēicháng wúliáo.",
+        "en": "Without friends, our lives would definitely be very boring."
+      }
+    },
+    "讨厌": {
+      "zh": "讨厌",
+      "pinyin": "tǎoyàn",
+      "en": "to dislike",
+      "pos": "v.",
+      "when": "Remember 讨厌 like the word you’ll use when someone puts people off — 不一定让人讨厌, but a bad 脾气 still blocks friendship.",
+      "usage": "Most Chinese speakers 讨厌 a person or a habit. 课文4’s point: a bad temper may not make you 讨厌, but it still makes 交朋友 hard.",
+      "example": {
+        "zh": "一个脾气不好的人虽然不一定让人讨厌，但是却很难跟人交朋友。",
+        "pinyin": "Yí ge píqì bù hǎo de rén suīrán bùyídìng ràng rén tǎoyàn, dànshì què hěn nán gēn rén jiāo péngyou.",
+        "en": "A person with a bad temper won't necessarily make people dislike them, but it's still hard for them to make friends."
+      }
+    },
+    "却": {
+      "zh": "却",
+      "pinyin": "què",
+      "en": "but, yet",
+      "pos": "adv.",
+      "when": "Remember 却 like the turn you’ll drop after the subject — 但是却很难跟人交朋友.",
+      "usage": "Most Chinese speakers put 却 after the subject, before the verb, for a soft contrast. 课文4 pairs 虽然……但是却……; the 语言点 keeps that mild tone.",
+      "example": {
+        "zh": "一个脾气不好的人虽然不一定让人讨厌，但是却很难跟人交朋友。",
+        "pinyin": "Yí ge píqì bù hǎo de rén suīrán bùyídìng ràng rén tǎoyàn, dànshì què hěn nán gēn rén jiāo péngyou.",
+        "en": "A person with a bad temper won't necessarily make people dislike them, but it's still hard for them to make friends."
+      }
+    },
+    "周围": {
+      "zh": "周围",
+      "pinyin": "zhōuwéi",
+      "en": "surrounding",
+      "pos": "n.",
+      "when": "Remember 周围 like the word you’ll use for the people around you — 经常跟周围的人交流.",
+      "usage": "Most Chinese speakers talk about 周围的人 / 周围的环境. 课文4’s advice is to talk to whoever is nearby, not only old classmates.",
+      "example": {
+        "zh": "我们还要经常跟周围的人交流。",
+        "pinyin": "Wǒmen hái yào jīngcháng gēn zhōuwéi de rén jiāoliú.",
+        "en": "We also need to often communicate with the people around us."
+      }
+    },
+    "交流": {
+      "zh": "交流",
+      "pinyin": "jiāoliú",
+      "en": "to exchange, to communicate",
+      "pos": "v.",
+      "when": "Remember 交流 like the word you’ll use when talk goes both ways — 交流能让人们互相了解.",
+      "usage": "Most Chinese speakers 交流 ideas or feelings, not 交 a friend. Keep it distinct from 交. 课文4 says shared 兴趣 start from 交流.",
+      "example": {
+        "zh": "交流能让人们互相了解，如果有共同的兴趣、爱好或者习惯，就更容易成为朋友了。",
+        "pinyin": "Jiāoliú néng ràng rénmen hùxiāng liǎojiě, rúguǒ yǒu gòngtóng de xìngqù, àihào huòzhě xíguàn, jiù gèng róngyì chéngwéi péngyou le.",
+        "en": "Communication lets people understand each other — if you share common interests, hobbies, or habits, it's easier to become friends."
+      }
+    },
+    "理解": {
+      "zh": "理解",
+      "pinyin": "lǐjiě",
+      "en": "to understand",
+      "pos": "v.",
+      "when": "Remember 理解 like the word you’ll use when people read “friend” differently — 不同的人会有不同的理解, then 我的理解是.",
+      "usage": "Most Chinese speakers 理解 a person or an idea. 课文5 turns 理解 into a definition of 真正的朋友, not just “I get it.”",
+      "example": {
+        "zh": "不同的人会有不同的理解。",
+        "pinyin": "Bù tóng de rén huì yǒu bù tóng de lǐjiě.",
+        "en": "Different people have different understandings."
+      }
+    },
+    "镜子": {
+      "zh": "镜子",
+      "pinyin": "jìngzi",
+      "en": "mirror",
+      "pos": "n.",
+      "when": "Remember 镜子 like the word you’ll use when a friend shows you your 缺点 — 朋友应该像镜子.",
+      "usage": "Most Chinese speakers mean a real mirror, then the metaphor. 课文5’s second view of friendship is that honest reflection, not only 一起快乐.",
+      "example": {
+        "zh": "有些人觉得朋友就是能和自己一起快乐的人；有些人觉得朋友应该像镜子，能帮自己看到缺点。",
+        "pinyin": "Yǒuxiē rén juéde péngyou jiù shì néng hé zìjǐ yìqǐ kuàilè de rén; yǒuxiē rén juéde péngyou yīnggāi xiàng jìngzi, néng bāng zìjǐ kàndào quēdiǎn.",
+        "en": "Some people think a friend is someone who can be happy together with them; others think a friend should be like a mirror, able to help them see their own shortcomings."
+      }
+    },
+    "而": {
+      "zh": "而",
+      "pinyin": "ér",
+      "en": "(showing a contrast) while, yet",
+      "pos": "conj.",
+      "when": "Remember 而 like the glue you’ll use when you turn to your own view — 而我的理解是.",
+      "usage": "Most Chinese speakers join two clauses with 而 (parallel or contrast). Do not learn it from 而且 — that is a longer word. 课文5’s 而 marks the writer’s definition after other people’s.",
+      "example": {
+        "zh": "而我的理解是：当你遇到困难的时候，真正的朋友会站出来，及时给你帮助；当你无聊或者难过的时候，真正的朋友会陪在你身边，想办法让你感到幸福。",
+        "pinyin": "Ér wǒ de lǐjiě shì: Dāng nǐ yùdào kùnnan de shíhou, zhēnzhèng de péngyou huì zhàn chulai, jíshí gěi nǐ bāngzhù; dāng nǐ wúliáo huòzhě nánguò de shíhou, zhēnzhèng de péngyou huì péi zài nǐ shēnbiān, xiǎng bànfǎ ràng nǐ gǎndào xìngfú.",
+        "en": "My own understanding is this: when you encounter difficulty, a true friend will step forward and give you timely help; when you are bored or upset, a true friend will stay by your side and think of ways to make you feel happy."
+      }
+    },
+    "当": {
+      "zh": "当",
+      "pinyin": "dāng",
+      "en": "when, just at (a time or place)",
+      "pos": "prep.",
+      "when": "Remember 当 like the word you’ll use to pin a moment — 当你遇到困难的时候 / 当你无聊或者难过的时候.",
+      "usage": "Most Chinese speakers use 当……的时候 for “when.” Do not learn it from 当然 — that 当 is a different word. 课文5’s two 当 clauses are the test of a 真正的朋友.",
+      "example": {
+        "zh": "而我的理解是：当你遇到困难的时候，真正的朋友会站出来，及时给你帮助；当你无聊或者难过的时候，真正的朋友会陪在你身边，想办法让你感到幸福。",
+        "pinyin": "Ér wǒ de lǐjiě shì: Dāng nǐ yùdào kùnnan de shíhou, zhēnzhèng de péngyou huì zhàn chulai, jíshí gěi nǐ bāngzhù; dāng nǐ wúliáo huòzhě nánguò de shíhou, zhēnzhèng de péngyou huì péi zài nǐ shēnbiān, xiǎng bànfǎ ràng nǐ gǎndào xìngfú.",
+        "en": "My own understanding is this: when you encounter difficulty, a true friend will step forward and give you timely help; when you are bored or upset, a true friend will stay by your side and think of ways to make you feel happy."
+      }
+    },
+    "困难": {
+      "zh": "困难",
+      "pinyin": "kùnnan",
+      "en": "difficulty",
+      "pos": "n.",
+      "when": "Remember 困难 like the word you’ll use when trouble shows who stays — 当你遇到困难的时候，真正的朋友会站出来.",
+      "usage": "Most Chinese speakers 遇到困难 / 有困难. 课文5 makes 困难 the first test; help must also be 及时.",
+      "example": {
+        "zh": "而我的理解是：当你遇到困难的时候，真正的朋友会站出来，及时给你帮助；当你无聊或者难过的时候，真正的朋友会陪在你身边，想办法让你感到幸福。",
+        "pinyin": "Ér wǒ de lǐjiě shì: Dāng nǐ yùdào kùnnan de shíhou, zhēnzhèng de péngyou huì zhàn chulai, jíshí gěi nǐ bāngzhù; dāng nǐ wúliáo huòzhě nánguò de shíhou, zhēnzhèng de péngyou huì péi zài nǐ shēnbiān, xiǎng bànfǎ ràng nǐ gǎndào xìngfú.",
+        "en": "My own understanding is this: when you encounter difficulty, a true friend will step forward and give you timely help; when you are bored or upset, a true friend will stay by your side and think of ways to make you feel happy."
+      }
+    },
+    "及时": {
+      "zh": "及时",
+      "pinyin": "jíshí",
+      "en": "in time",
+      "pos": "adv.",
+      "when": "Remember 及时 like the word you’ll use when help arrives before it is too late — 及时给你帮助.",
+      "usage": "Most Chinese speakers 及时 + verb for doing it in time. 课文5’s true friend does not wait; the help is prompt, then they 陪 you when you are 无聊.",
+      "example": {
+        "zh": "而我的理解是：当你遇到困难的时候，真正的朋友会站出来，及时给你帮助；当你无聊或者难过的时候，真正的朋友会陪在你身边，想办法让你感到幸福。",
+        "pinyin": "Ér wǒ de lǐjiě shì: Dāng nǐ yùdào kùnnan de shíhou, zhēnzhèng de péngyou huì zhàn chulai, jíshí gěi nǐ bāngzhù; dāng nǐ wúliáo huòzhě nánguò de shíhou, zhēnzhèng de péngyou huì péi zài nǐ shēnbiān, xiǎng bànfǎ ràng nǐ gǎndào xìngfú.",
+        "en": "My own understanding is this: when you encounter difficulty, a true friend will step forward and give you timely help; when you are bored or upset, a true friend will stay by your side and think of ways to make you feel happy."
+      }
+    },
+    "陪": {
+      "zh": "陪",
+      "pinyin": "péi",
+      "en": "to accompany",
+      "pos": "v.",
+      "when": "Remember 陪 like the word you’ll use when someone stays with you — 真正的朋友会陪在你身边.",
+      "usage": "Most Chinese speakers 陪 someone (陪你去医院, 陪在身边). 课文5’s second test is company when you are 无聊 or 难过, not only help in 困难.",
+      "example": {
+        "zh": "而我的理解是：当你遇到困难的时候，真正的朋友会站出来，及时给你帮助；当你无聊或者难过的时候，真正的朋友会陪在你身边，想办法让你感到幸福。",
+        "pinyin": "Ér wǒ de lǐjiě shì: Dāng nǐ yùdào kùnnan de shíhou, zhēnzhèng de péngyou huì zhàn chulai, jíshí gěi nǐ bāngzhù; dāng nǐ wúliáo huòzhě nánguò de shíhou, zhēnzhèng de péngyou huì péi zài nǐ shēnbiān, xiǎng bànfǎ ràng nǐ gǎndào xìngfú.",
+        "en": "My own understanding is this: when you encounter difficulty, a true friend will step forward and give you timely help; when you are bored or upset, a true friend will stay by your side and think of ways to make you feel happy."
+      }
+    },
+    "不同": {
+      "zh": "不同",
+      "pinyin": "bùtóng",
+      "en": "different",
+      "pos": "adj.",
+      "when": "Remember 不同 like the word you’ll use when answers do not match — 不同的人会有不同的理解.",
+      "usage": "Most Chinese speakers say 不同的 + noun. Marked 补充生词 (不 + 相同). 课文5 uses it twice in one line: different people, different 理解 of 朋友.",
+      "example": {
+        "zh": "不同的人会有不同的理解。",
+        "pinyin": "Bù tóng de rén huì yǒu bù tóng de lǐjiě.",
+        "en": "Different people have different understandings."
+      }
+    },
+    "感到": {
+      "zh": "感到",
+      "pinyin": "gǎndào",
+      "en": "to feel",
+      "pos": "v.",
+      "when": "Remember 感到 like the word you’ll use when a feeling arrives — 想办法让你感到幸福.",
+      "usage": "Most Chinese speakers 感到 + adjective (感到幸福 / 高兴 / 难过). Marked 补充生词 (感觉 + 到). 课文5’s friend does not only sit there — they try to make you 感到幸福.",
+      "example": {
+        "zh": "而我的理解是：当你遇到困难的时候，真正的朋友会站出来，及时给你帮助；当你无聊或者难过的时候，真正的朋友会陪在你身边，想办法让你感到幸福。",
+        "pinyin": "Ér wǒ de lǐjiě shì: Dāng nǐ yùdào kùnnan de shíhou, zhēnzhèng de péngyou huì zhàn chulai, jíshí gěi nǐ bāngzhù; dāng nǐ wúliáo huòzhě nánguò de shíhou, zhēnzhèng de péngyou huì péi zài nǐ shēnbiān, xiǎng bànfǎ ràng nǐ gǎndào xìngfú.",
+        "en": "My own understanding is this: when you encounter difficulty, a true friend will step forward and give you timely help; when you are bored or upset, a true friend will stay by your side and think of ways to make you feel happy."
+      }
+    },
+    "街": {
+      "zh": "街",
+      "pinyin": "jiē",
+      "en": "street",
+      "pos": "n.",
+      "when": "Remember 街 like the word you’ll use for the street you 逛 — 平时我们常常一起……逛街.",
+      "usage": "Most Chinese speakers say 逛街 / 街上 / 一条街. Marked 补充生词 from 街道. Learn it from 逛街 in 课文1, not as a leftover character.",
+      "example": {
+        "zh": "我们是在图书馆认识的。平时我们常常一起看书、逛街、踢足球。有时候他还给我发一些幽默短信。",
+        "pinyin": "Wǒmen shì zài túshūguǎn rènshi de. Píngshí wǒmen chángcháng yìqǐ kàn shū, guàng jiē, tī zúqiú. Yǒu shíhou tā hái gěi wǒ fā yìxiē yōumò duǎnxìn.",
+        "en": "We met at the library. Normally we often read, stroll the streets, and play soccer together. Sometimes he even sends me some humorous text messages."
+      }
+    },
+    "身边": {
+      "zh": "身边",
+      "pinyin": "shēnbiān",
+      "en": "at or by one's side",
+      "pos": "n.",
+      "when": "Remember 身边 like the word you’ll use for who stays next to you — 真正的朋友会陪在你身边.",
+      "usage": "Most Chinese speakers keep someone 在身边. Marked 补充生词 (身体 + 旁边). 课文5’s 陪在你身边 is presence, the second half of 及时帮助.",
+      "example": {
+        "zh": "而我的理解是：当你遇到困难的时候，真正的朋友会站出来，及时给你帮助；当你无聊或者难过的时候，真正的朋友会陪在你身边，想办法让你感到幸福。",
+        "pinyin": "Ér wǒ de lǐjiě shì: Dāng nǐ yùdào kùnnan de shíhou, zhēnzhèng de péngyou huì zhàn chulai, jíshí gěi nǐ bāngzhù; dāng nǐ wúliáo huòzhě nánguò de shíhou, zhēnzhèng de péngyou huì péi zài nǐ shēnbiān, xiǎng bànfǎ ràng nǐ gǎndào xìngfú.",
+        "en": "My own understanding is this: when you encounter difficulty, a true friend will step forward and give you timely help; when you are bored or upset, a true friend will stay by your side and think of ways to make you feel happy."
+      }
+    },
+    "校园": {
+      "zh": "校园",
+      "pinyin": "xiàoyuán",
+      "en": "campus",
+      "pos": "n.",
+      "when": "Remember 校园 like the word you’ll use for the school grounds in a memory — 好像重新回到了校园.",
+      "usage": "Most Chinese speakers mean the campus as a place (回到校园, 校园里). Marked 补充生词 (学校 + 公园). 课文3’s photo sends 王静 back there.",
+      "example": {
+        "zh": "这是上大学时的照片。一看到这张照片，我就想起过去那段快乐的日子，好像重新回到了校园。",
+        "pinyin": "Zhè shì shàng dàxué shí de zhàopiàn. Yí kàndào zhè zhāng zhàopiàn, wǒ jiù xiǎngqǐ guòqù nà duàn kuàilè de rìzi, hǎoxiàng chóngxīn huídàole xiàoyuán.",
+        "en": "This is a photo from when I was in college. As soon as I see this photo, I remember that happy time in the past — it's as if I've returned to campus again."
+      }
+    }
+  }
+}

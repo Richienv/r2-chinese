@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { FlipCard } from '../components/FlipCard'
 import { Glossed, Line, useGloss } from '../components/ChineseText'
-import { CheckIcon, ChevronLeft, CloseIcon, SpeakerIcon } from '../components/Icons'
+import { FlipCard } from '../components/FlipCard'
+import { CheckIcon, ChevronLeft, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { Writer } from '../components/Writer'
 import { focusChar, getLesson, sameCharWords } from '../lib/content'
 import { clozeQuestion, vocabQuestions, type Question } from '../lib/quiz'
-import { speak } from '../lib/speech'
 import type { GrammarPoint, LessonText, Vocab } from '../lib/types'
 import { useStore } from '../store/store'
 
@@ -75,7 +74,6 @@ export function LessonFlow({
   const [i, setI] = useState(() => Math.min(startStep, steps.length - 1))
   const [cursor, setCursor] = useState(0)
   const cursorMemory = useRef<Record<number, number>>({})
-  const [flipped, setFlipped] = useState(false)
   const [quiz, setQuiz] = useState<Record<string, QuizState>>({})
   const committed = useRef(false)
   const bodyRef = useRef<HTMLDivElement>(null)
@@ -112,13 +110,11 @@ export function LessonFlow({
     cursorMemory.current[i] = cursor
     setI(next)
     setCursor(cursorMemory.current[next] ?? 0)
-    setFlipped(false)
   }
 
   function advance() {
     if (!atLastSub) {
       setCursor(cursor + 1)
-      setFlipped(false)
     } else if (isComplete) {
       onClose()
     } else {
@@ -129,7 +125,6 @@ export function LessonFlow({
   function back() {
     if (cursor > 0) {
       setCursor(cursor - 1)
-      setFlipped(false)
     } else if (i === 0) {
       onClose()
     } else {
@@ -147,7 +142,6 @@ export function LessonFlow({
       const prev = q[quizKey] ?? { wrong: [], solved: false }
       if (prev.solved) return q
       if (picked === answer) {
-        speak(answer)
         return { ...q, [quizKey]: { ...prev, solved: true } }
       }
       return { ...q, [quizKey]: { ...prev, wrong: [...new Set([...prev.wrong, picked])] } }
@@ -187,15 +181,7 @@ export function LessonFlow({
 
       <div className="overlay-body" ref={bodyRef}>
         {step.kind === 'text' && <TextView text={step.text} onWord={onWord} />}
-        {step.kind === 'vocab' && (
-          <VocabView
-            words={step.words}
-            cursor={cursor}
-            flipped={flipped}
-            onFlip={() => setFlipped((f) => !f)}
-            lesson={l.lesson}
-          />
-        )}
+        {step.kind === 'vocab' && <VocabView words={step.words} cursor={cursor} lesson={l.lesson} />}
         {step.kind === 'grammar' && (
           <GrammarView points={step.points} cursor={cursor} onWord={onWord} />
         )}
@@ -253,7 +239,7 @@ function TextView({ text, onWord }: { text: LessonText; onWord: (v: Vocab) => vo
     <>
       <StepHead
         kicker={`${text.label} · ${text.type === 'dialogue' ? 'Dialogue' : 'Passage'}`}
-        title={text.heading_zh || text.heading_en || 'Read and listen'}
+        title={text.heading_zh || text.heading_en || 'Read'}
       />
       {text.heading_en && text.heading_zh && (
         <p className="sub" style={{ marginTop: -10, marginBottom: 14 }}>
@@ -290,7 +276,7 @@ function TextView({ text, onWord }: { text: LessonText; onWord: (v: Vocab) => vo
       ))}
 
       <p style={{ fontSize: 12, color: 'var(--muted-3)', marginTop: 6 }}>
-        Tap a line to hear it · tap an underlined word for its meaning.
+        Tap an underlined word for its meaning.
       </p>
     </>
   )
@@ -299,14 +285,10 @@ function TextView({ text, onWord }: { text: LessonText; onWord: (v: Vocab) => vo
 function VocabView({
   words,
   cursor,
-  flipped,
-  onFlip,
   lesson,
 }: {
   words: Vocab[]
   cursor: number
-  flipped: boolean
-  onFlip: () => void
   lesson: number
 }) {
   const word = words[cursor]
@@ -315,21 +297,16 @@ function VocabView({
       <StepHead kicker={`New words · ${cursor + 1} of ${words.length}`} title="生词" />
       <FlipCard
         word={word}
-        flipped={flipped}
-        onFlip={onFlip}
+        teach
         footer={
-          <div
-            className="row"
-            style={{ marginTop: 14, gap: 8, justifyContent: 'center' }}
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="row" style={{ marginTop: 14, gap: 8, justifyContent: 'center' }}>
             <span style={{ fontSize: 12, color: 'var(--on-red-3)', fontWeight: 700 }}>Save to drill</span>
             <SaveStar zh={word.zh} lesson={lesson} size={22} onRed />
           </div>
         }
       />
       <p style={{ fontSize: 12, color: 'var(--muted-3)', marginTop: 18, textAlign: 'center' }}>
-        Tap the card to flip · Next steps through all {words.length} words.
+        汉字, pinyin, English, and a book sentence — Next steps through all {words.length} words.
       </p>
     </>
   )
@@ -363,13 +340,8 @@ function GrammarView({
       </h4>
       {p.examples.map((ex, i) => (
         <div className="card" key={i} style={{ marginBottom: 10, padding: 15 }}>
-          <div className="between" style={{ alignItems: 'flex-start' }}>
-            <div className="zh" style={{ fontSize: 16, lineHeight: 1.75, flex: 1 }} lang="zh-CN">
-              <Glossed text={ex.zh} onWord={onWord} />
-            </div>
-            <button className="icon-round tap44" onClick={() => speak(ex.zh)} aria-label="Play example">
-              <SpeakerIcon size={16} />
-            </button>
+          <div className="zh" style={{ fontSize: 16, lineHeight: 1.75 }} lang="zh-CN">
+            <Glossed text={ex.zh} onWord={onWord} />
           </div>
           <div style={{ fontSize: 12, color: 'var(--muted-2)', marginTop: 5 }}>{ex.pinyin}</div>
           <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 6 }}>{ex.en}</div>
@@ -437,17 +409,7 @@ function QuizView({
 
       {solved && (
         <div className="explain pop" style={{ marginTop: 14 }}>
-          <div className="between" style={{ alignItems: 'flex-start', gap: 10 }}>
-            <span>✅ {question.explanation}</span>
-            <button
-              className="icon-round tap44"
-              style={{ flex: 'none' }}
-              onClick={() => speak(question.answer)}
-              aria-label="Hear the answer"
-            >
-              <SpeakerIcon size={16} />
-            </button>
-          </div>
+          ✅ {question.explanation}
         </div>
       )}
     </>
@@ -484,13 +446,26 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
     <>
       <StepHead kicker="Notes" title="提示" />
 
+      {l.warmup.length > 0 && (
+        <section className="card" style={{ marginBottom: 14 }}>
+          <div className="kicker-ink">热身 · Warm-up</div>
+          <div style={{ display: 'grid', gap: 10, marginTop: 10 }}>
+            {l.warmup.map((item, i) => (
+              <p key={i} style={{ fontSize: 13, lineHeight: 1.65, color: '#3a3a40', margin: 0, whiteSpace: 'pre-wrap' }}>
+                {item}
+              </p>
+            ))}
+          </div>
+        </section>
+      )}
+
       {compare && (
         <section className="card" style={{ marginBottom: 14 }}>
           <div className="kicker-ink">Easily confused</div>
           <div className="zh" style={{ fontSize: 24, fontWeight: 700, margin: '8px 0 10px' }} lang="zh-CN">
             {compare.a} — {compare.b}
           </div>
-          <p style={{ fontSize: 13, lineHeight: 1.6, color: '#3a3a40', margin: 0 }}>{compare.note}</p>
+          <p style={{ fontSize: 13, lineHeight: 1.6, color: '#3a3a40', margin: 0, whiteSpace: 'pre-wrap' }}>{compare.note}</p>
         </section>
       )}
 
@@ -516,8 +491,12 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
               {examples.map((ex, i) => (
                 <div key={i} className="glass" style={{ borderRadius: 12, padding: 12 }}>
                   <div className="zh on-red" style={{ fontSize: 15, lineHeight: 1.7 }} lang="zh-CN">
-                    {ex}
+                    <Glossed text={ex.zh} onWord={onWord} />
                   </div>
+                  {ex.pinyin && (
+                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.72)', marginTop: 5 }}>{ex.pinyin}</div>
+                  )}
+                  {ex.en && <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.86)', marginTop: 6 }}>{ex.en}</div>}
                 </div>
               ))}
             </div>
@@ -526,7 +505,7 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
       )}
 
       {culture && (
-        <section className="card">
+        <section className="card" style={{ marginBottom: 14 }}>
           <div className="kicker-ink">Culture</div>
           <div className="zh" style={{ fontSize: 19, fontWeight: 700, margin: '8px 0 2px' }} lang="zh-CN">
             {culture.title_zh}
@@ -534,7 +513,20 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
           <div className="sub" style={{ marginBottom: 10 }}>
             {culture.title_en}
           </div>
-          <p style={{ fontSize: 13, lineHeight: 1.65, color: '#3a3a40', margin: 0 }}>{culture.summary}</p>
+          <p style={{ fontSize: 13, lineHeight: 1.65, color: '#3a3a40', margin: 0, whiteSpace: 'pre-wrap' }}>{culture.summary}</p>
+        </section>
+      )}
+
+      {l.extras.exercises.length > 0 && (
+        <section className="card">
+          <div className="kicker-ink">练习 · Exercises</div>
+          <ol style={{ margin: '10px 0 0', paddingLeft: 18 }}>
+            {l.extras.exercises.map((item, i) => (
+              <li key={i} style={{ fontSize: 13, lineHeight: 1.65, color: '#3a3a40', marginBottom: 10, whiteSpace: 'pre-wrap' }}>
+                {item}
+              </li>
+            ))}
+          </ol>
         </section>
       )}
     </>

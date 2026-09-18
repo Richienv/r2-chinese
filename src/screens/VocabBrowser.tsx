@@ -53,12 +53,12 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
           aria-label="Search vocabulary"
           style={{
             width: '100%',
-            height: 46,
+            height: 48,
             borderRadius: 14,
             border: '1px solid var(--line-2)',
             background: 'var(--surface)',
             padding: '0 16px',
-            fontSize: 15,
+            fontSize: 16,
             color: 'var(--ink)',
             fontFamily: 'var(--ui)',
           }}

@@ -62,7 +62,7 @@ export interface CompareNote {
 export interface SameCharNote {
   char: string
   words: string[]
-  examples: string[]
+  examples: GrammarExample[]
 }
 
 export interface CultureNote {

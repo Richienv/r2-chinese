@@ -1,0 +1,474 @@
+{
+  "lesson": 6,
+  "title": "一分钱一分货",
+  "words": {
+    "果汁": {
+      "zh": "果汁",
+      "pinyin": "guǒzhī",
+      "en": "fruit juice",
+      "pos": "n.",
+      "when": "Remember 果汁 like the word you’ll use when the whole trip was for juice — and you still came home without it.",
+      "usage": "Most Chinese speakers use it for fruit juice from a 超市, not a café drink name. 课文1: 妻子让我陪她去超市买果汁 — then 李进 leaves his phone at home and later 竟然 forgets the juice.",
+      "example": {
+        "zh": "昨天妻子让我陪她去超市买果汁。我把手机忘在家里了。",
+        "pinyin": "Zuótiān qīzi ràng wǒ péi tā qù chāoshì mǎi guǒzhī. Wǒ bǎ shǒujī wàng zài jiā li le.",
+        "en": "Yesterday my wife had me go with her to the supermarket to buy juice. I left my phone at home."
+      }
+    },
+    "售货员": {
+      "zh": "售货员",
+      "pinyin": "shòuhuòyuán",
+      "en": "salesperson",
+      "pos": "n.",
+      "when": "Remember 售货员 like the word you’ll use when a clerk starts introducing this and that the second you walk in.",
+      "usage": "Most Chinese speakers use it for the person on the shop floor, not the cashier in the back. 课文1: 一进门，售货员就热情地为我们介绍这、介绍那 — pants, a shirt, two pairs of socks, no juice.",
+      "example": {
+        "zh": "我们先去逛了会儿商场。一进门，售货员就热情地为我们介绍这、介绍那，她买了一条裤子、一件衬衫、两双袜子，然后我们就高高兴兴地回家了。",
+        "pinyin": "Wǒmen xiān qù guàngle huìr shāngchǎng. Yí jìn mén, shòuhuòyuán jiù rèqíng de wèi wǒmen jièshào zhè, jièshào nà, tā mǎile yì tiáo kùzi, yí jiàn chènshān, liǎng shuāng wàzi, ránhòu wǒmen jiù gāogāoxìngxìng de huí jiā le.",
+        "en": "We went and browsed the mall for a while first. As soon as we walked in, the salesperson enthusiastically introduced this and that to us — she bought a pair of pants, a shirt, and two pairs of socks, and then we happily went home."
+      }
+    },
+    "袜子": {
+      "zh": "袜子",
+      "pinyin": "wàzi",
+      "en": "socks",
+      "pos": "n.",
+      "when": "Remember 袜子 like the word you’ll use when you count pairs — 两双袜子 — not one sock.",
+      "usage": "Most Chinese speakers pair it with 双. In 课文1 it is the last thing the wife grabs after the 售货员’s pitch, before they walk out happy and juice-less.",
+      "example": {
+        "zh": "我们先去逛了会儿商场。一进门，售货员就热情地为我们介绍这、介绍那，她买了一条裤子、一件衬衫、两双袜子，然后我们就高高兴兴地回家了。",
+        "pinyin": "Wǒmen xiān qù guàngle huìr shāngchǎng. Yí jìn mén, shòuhuòyuán jiù rèqíng de wèi wǒmen jièshào zhè, jièshào nà, tā mǎile yì tiáo kùzi, yí jiàn chènshān, liǎng shuāng wàzi, ránhòu wǒmen jiù gāogāoxìngxìng de huí jiā le.",
+        "en": "We went and browsed the mall for a while first. As soon as we walked in, the salesperson enthusiastically introduced this and that to us — she bought a pair of pants, a shirt, and two pairs of socks, and then we happily went home."
+      }
+    },
+    "打扰": {
+      "zh": "打扰",
+      "pinyin": "dǎrǎo",
+      "en": "to disturb, to bother",
+      "pos": "v.",
+      "when": "Remember 打扰 like the word you’ll use when you want to shop in peace — 不希望被别人打扰.",
+      "usage": "Most Chinese speakers use 打扰 for bothering a person. 张远’s 课文1 line is the anti-售货员 shopper: look and choose yourself, don’t get worked by the clerk.",
+      "example": {
+        "zh": "买东西时我只看自己想买的，而且喜欢自己看、自己选，不希望被别人打扰。",
+        "pinyin": "Mǎi dōngxi shí wǒ zhǐ kàn zìjǐ xiǎng mǎi de, érqiě xǐhuan zìjǐ kàn, zìjǐ xuǎn, bù xīwàng bèi biérén dǎrǎo.",
+        "en": "When I shop I only look at what I myself want to buy, and I like to look and choose for myself — I don't want to be bothered by others."
+      }
+    },
+    "竟然": {
+      "zh": "竟然",
+      "pinyin": "jìngrán",
+      "en": "indicating unexpectedness",
+      "pos": "adv.",
+      "when": "Remember 竟然 like the word you’ll use when the ending is the last thing you expected — home, then 竟然忘了买果汁.",
+      "usage": "Most Chinese speakers drop 竟然 before a verb to mark surprise (没有想到). 课文1: 回家以后，我才发现，竟然忘了去商场的超市买果汁. This sitting’s 语言点.",
+      "example": {
+        "zh": "是啊！回家以后，我才发现，竟然忘了去商场的超市买果汁！",
+        "pinyin": "Shì a! Huí jiā yǐhòu, wǒ cái fāxiàn, jìngrán wàngle qù shāngchǎng de chāoshì mǎi guǒzhī!",
+        "en": "Right! After I got home, I realized that I had actually forgotten to go to the mall's supermarket to buy juice!"
+      }
+    },
+    "西红柿": {
+      "zh": "西红柿",
+      "pinyin": "xīhóngshì",
+      "en": "tomato",
+      "pos": "n.",
+      "when": "Remember 西红柿 like the word you’ll use at the stall — are they fresh, and how are they sold?",
+      "usage": "Most Chinese speakers use it for the everyday tomato (this book does not switch to 番茄). 课文2 opens on it; the clerk then upsells the “绿色” ones at twice yesterday’s price.",
+      "example": {
+        "zh": "西红柿新鲜吗？怎么卖？",
+        "pinyin": "Xīhóngshì xīnxiān ma? Zěnme mài?",
+        "en": "Are the tomatoes fresh? How are they sold?"
+      }
+    },
+    "百分之": {
+      "zh": "百分之",
+      "pinyin": "bǎi fēn zhī",
+      "en": "percent",
+      "pos": "",
+      "when": "Remember 百分之 like the stem you’ll lock to a number — here, 百分之百新鲜.",
+      "usage": "Most Chinese speakers say 百分之 + number (百分之百, 百分之六十). In 课文2 the clerk’s guarantee is a full 100%, not a vague “very fresh.”",
+      "example": {
+        "zh": "七块钱一斤，您放心，保证百分之百新鲜。",
+        "pinyin": "Qī kuài qián yì jīn, nín fàng xīn, bǎozhèng bǎi fēn zhī bǎi xīnxiān.",
+        "en": "Seven yuan per jin. Rest assured, we guarantee they're 100% fresh."
+      }
+    },
+    "倍": {
+      "zh": "倍",
+      "pinyin": "bèi",
+      "en": "times, -fold",
+      "pos": "m.",
+      "when": "Remember 倍 like the word you’ll use when today’s price is a multiple of yesterday’s — 两倍.",
+      "usage": "Most Chinese speakers put 倍 after a number and do not add a noun after it. 王静: 昨天才三块五，今天是昨天的两倍. This sitting’s 语言点.",
+      "example": {
+        "zh": "怎么这么贵啊！我记得昨天才三块五一斤，今天的价格是昨天的两倍。",
+        "pinyin": "Zěnme zhème guì a! Wǒ jìde zuótiān cái sān kuài wǔ yì jīn, jīntiān de jiàgé shì zuótiān de liǎng bèi.",
+        "en": "Why is it so expensive! I remember yesterday it was only three fifty a jin — today's price is double yesterday's."
+      }
+    },
+    "皮肤": {
+      "zh": "皮肤",
+      "pinyin": "pífū",
+      "en": "skin",
+      "pos": "n.",
+      "when": "Remember 皮肤 like the word you’ll use when the pricey tomatoes are sold as good for your skin.",
+      "usage": "Most Chinese speakers use it for skin as a body part. 课文2’s pitch after 一分钱一分货: 每天吃一两个…对皮肤有好处.",
+      "example": {
+        "zh": "您问的这种是“绿色”的。一分钱一分货。每天吃一两个这种新鲜的西红柿，对皮肤有好处。",
+        "pinyin": "Nín wèn de zhè zhǒng shì “lǜsè” de. Yì fēn qián yì fēn huò. Měi tiān chī yì liǎng ge zhè zhǒng xīnxiān de xīhóngshì, duì pífū yǒu hǎochù.",
+        "en": "The kind you're asking about is 'organic/green'. You get what you pay for. Eating one or two of these fresh tomatoes every day is good for your skin."
+      }
+    },
+    "好处": {
+      "zh": "好处",
+      "pinyin": "hǎochù",
+      "en": "benefit, advantage",
+      "pos": "n.",
+      "when": "Remember 好处 like the word you’ll use when you name what you get out of something — 对皮肤有好处.",
+      "usage": "Most Chinese speakers say 有好处 / 对…有好处, not “a benefit” as a count noun. The clerk’s 课文2 close: eat one or two a day and your skin wins.",
+      "example": {
+        "zh": "您问的这种是“绿色”的。一分钱一分货。每天吃一两个这种新鲜的西红柿，对皮肤有好处。",
+        "pinyin": "Nín wèn de zhè zhǒng shì “lǜsè” de. Yì fēn qián yì fēn huò. Měi tiān chī yì liǎng ge zhè zhǒng xīnxiān de xīhóngshì, duì pífū yǒu hǎochù.",
+        "en": "The kind you're asking about is 'organic/green'. You get what you pay for. Eating one or two of these fresh tomatoes every day is good for your skin."
+      }
+    },
+    "尝": {
+      "zh": "尝",
+      "pinyin": "cháng",
+      "en": "to taste",
+      "pos": "v.",
+      "when": "Remember 尝 like the word you’ll use when you will only buy a few first — 先买几个尝尝.",
+      "usage": "Most Chinese speakers overlap it (尝尝) for a small try. 王静 does not commit to the “绿色” price; she tastes first.",
+      "example": {
+        "zh": "好，那我先买几个尝尝。",
+        "pinyin": "Hǎo, nà wǒ xiān mǎi jǐ ge chángchang.",
+        "en": "Okay, then I'll buy a few to try first."
+      }
+    },
+    "轻": {
+      "zh": "轻",
+      "pinyin": "qīng",
+      "en": "light, of little weight",
+      "pos": "adj.",
+      "when": "Remember 轻 like the word you’ll use when the suitcase has to weigh less — 轻一点儿的.",
+      "usage": "Most Chinese speakers use this 轻 for low weight, not “gentle.” In 课文3 it is 李进’s only spec before the clerk starts stacking price and quality.",
+      "example": {
+        "zh": "我想买一个轻一点儿的。",
+        "pinyin": "Wǒ xiǎng mǎi yí ge qīng yìdiǎnr de.",
+        "en": "I'd like to buy one that's a bit lighter."
+      }
+    },
+    "方面": {
+      "zh": "方面",
+      "pinyin": "fāngmiàn",
+      "en": "aspect",
+      "pos": "n.",
+      "when": "Remember 方面 like the word you’ll use when you split a decision into angles — 从价格方面看.",
+      "usage": "Most Chinese speakers pair it with 从…方面. The 课文3 clerk stacks two: price 方面 and quality — both say the bag is 值得考虑.",
+      "example": {
+        "zh": "您看看这个，不管从价格方面看，还是从质量上看，都是值得考虑的。",
+        "pinyin": "Nín kànkan zhège, bùguǎn cóng jiàgé fāngmiàn kàn, háishi cóng zhìliàng shang kàn, dōu shì zhídé kǎolǜ de.",
+        "en": "Take a look at this one. Whether you look at it from the price angle or the quality angle, it's worth considering."
+      }
+    },
+    "值得": {
+      "zh": "值得",
+      "pinyin": "zhídé",
+      "en": "to be worth",
+      "pos": "v.",
+      "when": "Remember 值得 like the word you’ll use when something is worth the money or the time — 值得考虑.",
+      "usage": "Most Chinese speakers follow 值得 with a verb (值得买 / 值得考虑). 课文3’s suitcase is worth considering from price and quality. 整理 later splits 值得 from 值 (值 + money).",
+      "example": {
+        "zh": "您看看这个，不管从价格方面看，还是从质量上看，都是值得考虑的。",
+        "pinyin": "Nín kànkan zhège, bùguǎn cóng jiàgé fāngmiàn kàn, háishi cóng zhìliàng shang kàn, dōu shì zhídé kǎolǜ de.",
+        "en": "Take a look at this one. Whether you look at it from the price angle or the quality angle, it's worth considering."
+      }
+    },
+    "活动": {
+      "zh": "活动",
+      "pinyin": "huódòng",
+      "en": "activity, event",
+      "pos": "n.",
+      "when": "Remember 活动 like the word you’ll use when a mall is running a promo — 打折活动.",
+      "usage": "Most Chinese speakers use it for an organized event, not “being active.” First hit in 课文3 is the sale that drops the suitcase to 999; 课文4’s bookstore 举行s one too.",
+      "example": {
+        "zh": "现在我们商场正好有打折活动，打完折是999。另外，一年内我们都负责免费修理。",
+        "pinyin": "Xiànzài wǒmen shāngchǎng zhènghǎo yǒu dǎ zhé huódòng, dǎwán zhé shì jiǔbǎi jiǔshí jiǔ. Lìngwài, yì nián nèi wǒmen dōu fùzé miǎn fèi xiūlǐ.",
+        "en": "Right now our mall happens to be having a discount promotion — after the discount it's 999. Also, within one year we're responsible for free repairs."
+      }
+    },
+    "内": {
+      "zh": "内",
+      "pinyin": "nèi",
+      "en": "in, within",
+      "pos": "n.",
+      "when": "Remember 内 like the word you’ll use when a promise has a time box — 一年内免费修理.",
+      "usage": "Most Chinese speakers stick 内 after a time word (一年内, 三日之内). Here it is the after-sales window, not “inside a room.”",
+      "example": {
+        "zh": "现在我们商场正好有打折活动，打完折是999。另外，一年内我们都负责免费修理。",
+        "pinyin": "Xiànzài wǒmen shāngchǎng zhènghǎo yǒu dǎ zhé huódòng, dǎwán zhé shì jiǔbǎi jiǔshí jiǔ. Lìngwài, yì nián nèi wǒmen dōu fùzé miǎn fèi xiūlǐ.",
+        "en": "Right now our mall happens to be having a discount promotion — after the discount it's 999. Also, within one year we're responsible for free repairs."
+      }
+    },
+    "免费": {
+      "zh": "免费",
+      "pinyin": "miǎn fèi",
+      "en": "to be free of charge",
+      "pos": "v.",
+      "when": "Remember 免费 like the word you’ll use when the shop covers the cost — 免费修理, later 免费办会员卡.",
+      "usage": "Most Chinese speakers put 免费 in front of a verb. 课文3’s hook is free repairs for a year; 课文4 reuses it for the membership card.",
+      "example": {
+        "zh": "现在我们商场正好有打折活动，打完折是999。另外，一年内我们都负责免费修理。",
+        "pinyin": "Xiànzài wǒmen shāngchǎng zhènghǎo yǒu dǎ zhé huódòng, dǎwán zhé shì jiǔbǎi jiǔshí jiǔ. Lìngwài, yì nián nèi wǒmen dōu fùzé miǎn fèi xiūlǐ.",
+        "en": "Right now our mall happens to be having a discount promotion — after the discount it's 999. Also, within one year we're responsible for free repairs."
+      }
+    },
+    "修理": {
+      "zh": "修理",
+      "pinyin": "xiūlǐ",
+      "en": "to repair, to mend",
+      "pos": "v.",
+      "when": "Remember 修理 like the word you’ll use when the suitcase breaks and the shop has to fix it.",
+      "usage": "Most Chinese speakers use it for repairing objects (bags, phones), not people. 课文3 perk: 一年内我们都负责免费修理.",
+      "example": {
+        "zh": "现在我们商场正好有打折活动，打完折是999。另外，一年内我们都负责免费修理。",
+        "pinyin": "Xiànzài wǒmen shāngchǎng zhènghǎo yǒu dǎ zhé huódòng, dǎwán zhé shì jiǔbǎi jiǔshí jiǔ. Lìngwài, yì nián nèi wǒmen dōu fùzé miǎn fèi xiūlǐ.",
+        "en": "Right now our mall happens to be having a discount promotion — after the discount it's 999. Also, within one year we're responsible for free repairs."
+      }
+    },
+    "支持": {
+      "zh": "支持",
+      "pinyin": "zhīchí",
+      "en": "to support",
+      "pos": "v.",
+      "when": "Remember 支持 like the word you’ll use when a shop thanks customers for backing them — 感谢大家的支持.",
+      "usage": "Most Chinese speakers use it for support as backing, not a physical prop. 课文4’s bookstore announcement opens on it, then the 购书送好礼 event.",
+      "example": {
+        "zh": "顾客朋友们，为了感谢大家的支持，我们书店今天举行“购书送好礼”活动，购书满100元送一个笔记本，满200元送一本词典。",
+        "pinyin": "Gùkè péngyoumen, wèile gǎnxiè dàjiā de zhīchí, wǒmen shūdiàn jīntiān jǔxíng “Gòu shū sòng hǎo lǐ” huódòng, gòu shū mǎn yìbǎi yuán sòng yí ge bǐjìběn, mǎn èrbǎi yuán sòng yì běn cídiǎn.",
+        "en": "Dear customers, to thank everyone for your support, our bookstore is holding a 'Buy Books, Get Gifts' event today — spend 100 yuan on books and get a notebook, spend 200 yuan and get a dictionary."
+      }
+    },
+    "举行": {
+      "zh": "举行",
+      "pinyin": "jǔxíng",
+      "en": "to hold (a meeting, event, etc.)",
+      "pos": "v.",
+      "when": "Remember 举行 like the word you’ll use when an official event is being held — 举行“购书送好礼”活动.",
+      "usage": "Most Chinese speakers use 举行 for meetings, ceremonies, and formal events. The bookstore 举行s the promo; 课文5’s malls 举办 holiday 活动 — same family, this one is the more formal twin.",
+      "example": {
+        "zh": "顾客朋友们，为了感谢大家的支持，我们书店今天举行“购书送好礼”活动，购书满100元送一个笔记本，满200元送一本词典。",
+        "pinyin": "Gùkè péngyoumen, wèile gǎnxiè dàjiā de zhīchí, wǒmen shūdiàn jīntiān jǔxíng “Gòu shū sòng hǎo lǐ” huódòng, gòu shū mǎn yìbǎi yuán sòng yí ge bǐjìběn, mǎn èrbǎi yuán sòng yì běn cídiǎn.",
+        "en": "Dear customers, to thank everyone for your support, our bookstore is holding a 'Buy Books, Get Gifts' event today — spend 100 yuan on books and get a notebook, spend 200 yuan and get a dictionary."
+      }
+    },
+    "满": {
+      "zh": "满",
+      "pinyin": "mǎn",
+      "en": "to reach a quota or limit",
+      "pos": "v.",
+      "when": "Remember 满 like the word you’ll use when spending hits a threshold — 购书满100元送一个笔记本.",
+      "usage": "Most Chinese speakers use this 满 for “reach the amount,” not “full cup.” 课文4 stacks 满100 / 满200 / later 满500 as gift tiers.",
+      "example": {
+        "zh": "顾客朋友们，为了感谢大家的支持，我们书店今天举行“购书送好礼”活动，购书满100元送一个笔记本，满200元送一本词典。",
+        "pinyin": "Gùkè péngyoumen, wèile gǎnxiè dàjiā de zhīchí, wǒmen shūdiàn jīntiān jǔxíng “Gòu shū sòng hǎo lǐ” huódòng, gòu shū mǎn yìbǎi yuán sòng yí ge bǐjìběn, mǎn èrbǎi yuán sòng yì běn cídiǎn.",
+        "en": "Dear customers, to thank everyone for your support, our bookstore is holding a 'Buy Books, Get Gifts' event today — spend 100 yuan on books and get a notebook, spend 200 yuan and get a dictionary."
+      }
+    },
+    "其中": {
+      "zh": "其中",
+      "pinyin": "qízhōng",
+      "en": "among (which, them, etc.)",
+      "pos": "n.",
+      "when": "Remember 其中 like the word you’ll use when you zoom into part of a set — 其中，小说7.5折.",
+      "usage": "Most Chinese speakers use it as “among them / in that.” After “some books are on sale,” 其中 lists novels, maps, exam books. This sitting’s 语言点; 其 also sits in 其次 / 其实 / 其他 / 尤其.",
+      "example": {
+        "zh": "另外，一些图书还有打折活动，其中，小说7.5折，地图8折，留学考试用书6折。",
+        "pinyin": "Lìngwài, yìxiē túshū hái yǒu dǎ zhé huódòng, qízhōng, xiǎoshuō qīwǔ zhé, dìtú bā zhé, liúxué kǎoshì yòngshū liù zhé.",
+        "en": "In addition, some books are also on sale: novels are 25% off (7.5折), maps are 20% off (8折), and study-abroad exam-prep books are 40% off (6折)."
+      }
+    },
+    "小说": {
+      "zh": "小说",
+      "pinyin": "xiǎoshuō",
+      "en": "novel, fiction",
+      "pos": "n.",
+      "when": "Remember 小说 like the word you’ll use when the sale item is fiction — 小说7.5折.",
+      "usage": "Most Chinese speakers use it for novels/fiction as a book type. In 课文4 it is one slice 其中 the bookstore discounts, next to maps and 留学考试用书.",
+      "example": {
+        "zh": "另外，一些图书还有打折活动，其中，小说7.5折，地图8折，留学考试用书6折。",
+        "pinyin": "Lìngwài, yìxiē túshū hái yǒu dǎ zhé huódòng, qízhōng, xiǎoshuō qīwǔ zhé, dìtú bā zhé, liúxué kǎoshì yòngshū liù zhé.",
+        "en": "In addition, some books are also on sale: novels are 25% off (7.5折), maps are 20% off (8折), and study-abroad exam-prep books are 40% off (6折)."
+      }
+    },
+    "会员卡": {
+      "zh": "会员卡",
+      "pinyin": "huìyuánkǎ",
+      "en": "membership card",
+      "pos": "n.",
+      "when": "Remember 会员卡 like the word you’ll use when spending enough unlocks a card — 免费办会员卡.",
+      "usage": "Most Chinese speakers use it for a store membership card. 课文4: 购书满500元, 办 the card free, then future books are 8折. Tagged supra (above HSK 4) but it is in this lesson’s 生词 list.",
+      "example": {
+        "zh": "如果购书满500元可免费办会员卡，以后购书可打8折。",
+        "pinyin": "Rúguǒ gòu shū mǎn wǔbǎi yuán kě miǎn fèi bàn huìyuánkǎ, yǐhòu gòu shū kě dǎ bā zhé.",
+        "en": "If you spend 500 yuan or more on books, you can get a membership card for free, and afterward enjoy 20% off (8折) on future book purchases."
+      }
+    },
+    "所有": {
+      "zh": "所有",
+      "pinyin": "suǒyǒu",
+      "en": "all",
+      "pos": "adj.",
+      "when": "Remember 所有 like the word you’ll use when nobody in the group is left out — 所有的小朋友.",
+      "usage": "Most Chinese speakers put 所有 before 的 + noun. Birthday friends and 所有的小朋友 both 获得 a small gift in the 课文4 announcement.",
+      "example": {
+        "zh": "今天过生日的朋友和所有的小朋友还可以获得一份小礼物。",
+        "pinyin": "Jīntiān guò shēngrì de péngyou hé suǒyǒu de xiǎopéngyou hái kěyǐ huòdé yí fèn xiǎo lǐwù.",
+        "en": "Friends celebrating their birthday today and all children can also receive a small gift."
+      }
+    },
+    "获得": {
+      "zh": "获得",
+      "pinyin": "huòdé",
+      "en": "to get, to obtain",
+      "pos": "v.",
+      "when": "Remember 获得 like the word you’ll use when someone receives something official — 获得一份小礼物.",
+      "usage": "Most Chinese speakers use it for obtaining a result, prize, or gift, a bit more formal than 得到. The announcement: kids and birthday customers 获得 a small gift.",
+      "example": {
+        "zh": "今天过生日的朋友和所有的小朋友还可以获得一份小礼物。",
+        "pinyin": "Jīntiān guò shēngrì de péngyou hé suǒyǒu de xiǎopéngyou hái kěyǐ huòdé yí fèn xiǎo lǐwù.",
+        "en": "Friends celebrating their birthday today and all children can also receive a small gift."
+      }
+    },
+    "情况": {
+      "zh": "情况",
+      "pinyin": "qíngkuàng",
+      "en": "situation, circumstances",
+      "pos": "n.",
+      "when": "Remember 情况 like the word you’ll use when you set the conditions — 一般情况下.",
+      "usage": "Most Chinese speakers use it for a situation. 课文5’s 语言点 is (在)……下: 一般情况下, the more you spend, the better you buy — then the passage says that is not always true.",
+      "example": {
+        "zh": "人们常说“一分钱一分货”，意思是东西的质量和价格有很大的关系，也可以说“便宜没好货，好货不便宜”，一般情况下，你花的钱越多，买的东西也就越好。",
+        "pinyin": "Rénmen cháng shuō “yì fēn qián yì fēn huò”, yìsi shì dōngxi de zhìliàng hé jiàgé yǒu hěn dà de guānxi, yě kěyǐ shuō “piányi méi hǎo huò, hǎo huò bù piányi”, yìbān qíngkuàng xia, nǐ huā de qián yuè duō, mǎi de dōngxi yě jiù yuè hǎo.",
+        "en": "People often say 'you get what you pay for' (一分钱一分货), meaning that the quality of a thing is closely related to its price. It's also said that 'cheap goods aren't good, good goods aren't cheap' — generally speaking, the more money you spend, the better the thing you buy will be."
+      }
+    },
+    "例如": {
+      "zh": "例如",
+      "pinyin": "lìrú",
+      "en": "for example",
+      "pos": "v.",
+      "when": "Remember 例如 like the word you’ll use when you need a concrete case after a claim.",
+      "usage": "Most Chinese speakers park it at the start of an example. 课文5 says good things can also be cheap; 例如, winter clothes go on sale in spring.",
+      "example": {
+        "zh": "例如，春天来了，冬天的衣服就会打折，质量很好，还很便宜，花很少的钱就可以买到。",
+        "pinyin": "Lìrú, chūntiān lái le, dōngtiān de yīfu jiù huì dǎ zhé, zhìliàng hěn hǎo, hái hěn piányi, huā hěn shǎo de qián jiù kěyǐ mǎidào.",
+        "en": "For example, when spring arrives, winter clothes go on sale — the quality is still good and they're very cheap, so you can buy them by spending very little money."
+      }
+    },
+    "举办": {
+      "zh": "举办",
+      "pinyin": "jǔbàn",
+      "en": "to hold, to conduct",
+      "pos": "v.",
+      "when": "Remember 举办 like the word you’ll use when a mall puts on holiday events — 举办各种各样的活动.",
+      "usage": "Most Chinese speakers use 举办 for organizing activities and contests (less ceremonial than 举行). 课文5: holidays → malls 举办 events and 降低 prices.",
+      "example": {
+        "zh": "一到节日，商场也会举办各种各样的活动，降低价格，这个时候我们也可以买到又便宜又好的东西。",
+        "pinyin": "Yí dào jiérì, shāngchǎng yě huì jǔbàn gè zhǒng gè yàng de huódòng, jiàngdī jiàgé, zhège shíhou wǒmen yě kěyǐ mǎidào yòu piányi yòu hǎo de dōngxi.",
+        "en": "Whenever a holiday comes around, malls also hold all kinds of activities and lower prices — at these times we can also buy things that are both cheap and good."
+      }
+    },
+    "各": {
+      "zh": "各",
+      "pinyin": "gè",
+      "en": "various, different",
+      "pos": "pron.",
+      "when": "Remember 各 like the word you’ll use when the types keep multiplying — 各种各样的活动.",
+      "usage": "Most Chinese speakers use 各 for “each / various.” Here it builds 各种各样: every kind of holiday promo, the moment malls 降低价格.",
+      "example": {
+        "zh": "一到节日，商场也会举办各种各样的活动，降低价格，这个时候我们也可以买到又便宜又好的东西。",
+        "pinyin": "Yí dào jiérì, shāngchǎng yě huì jǔbàn gè zhǒng gè yàng de huódòng, jiàngdī jiàgé, zhège shíhou wǒmen yě kěyǐ mǎidào yòu piányi yòu hǎo de dōngxi.",
+        "en": "Whenever a holiday comes around, malls also hold all kinds of activities and lower prices — at these times we can also buy things that are both cheap and good."
+      }
+    },
+    "降低": {
+      "zh": "降低",
+      "pinyin": "jiàngdī",
+      "en": "to lower, to reduce",
+      "pos": "v.",
+      "when": "Remember 降低 like the word you’ll use when prices are cut on purpose — 降低价格.",
+      "usage": "Most Chinese speakers follow it with 价格, 成本, 要求. 课文5’s holiday move is not a random cheap find — malls 降低 the price so you can buy 又便宜又好的东西.",
+      "example": {
+        "zh": "一到节日，商场也会举办各种各样的活动，降低价格，这个时候我们也可以买到又便宜又好的东西。",
+        "pinyin": "Yí dào jiérì, shāngchǎng yě huì jǔbàn gè zhǒng gè yàng de huódòng, jiàngdī jiàgé, zhège shíhou wǒmen yě kěyǐ mǎidào yòu piányi yòu hǎo de dōngxi.",
+        "en": "Whenever a holiday comes around, malls also hold all kinds of activities and lower prices — at these times we can also buy things that are both cheap and good."
+      }
+    },
+    "购": {
+      "zh": "购",
+      "pinyin": "gòu",
+      "en": "to buy",
+      "pos": "v.",
+      "when": "Remember 购 like the formal buy you’ll hear on signs — 购书满100元, 欢迎选购.",
+      "usage": "Most Chinese speakers keep 买 for speech and 购 for written/shop language (购物, 购书). 扩展 from 购物; 课文4: 购书满500元可免费办会员卡.",
+      "example": {
+        "zh": "如果购书满500元可免费办会员卡，以后购书可打8折。",
+        "pinyin": "Rúguǒ gòu shū mǎn wǔbǎi yuán kě miǎn fèi bàn huìyuánkǎ, yǐhòu gòu shū kě dǎ bā zhé.",
+        "en": "If you spend 500 yuan or more on books, you can get a membership card for free, and afterward enjoy 20% off (8折) on future book purchases."
+      }
+    },
+    "货": {
+      "zh": "货",
+      "pinyin": "huò",
+      "en": "stuff",
+      "pos": "n.",
+      "when": "Remember 货 like the goods in the lesson title — 一分钱一分货, 便宜没好货.",
+      "usage": "Most Chinese speakers use 货 for merchandise. The title sense is “goods,” not the syllable inside 售货员. 扩展 from 售货员; first real 课文 drop is the clerk’s 一分钱一分货.",
+      "example": {
+        "zh": "您问的这种是“绿色”的。一分钱一分货。每天吃一两个这种新鲜的西红柿，对皮肤有好处。",
+        "pinyin": "Nín wèn de zhè zhǒng shì “lǜsè” de. Yì fēn qián yì fēn huò. Měi tiān chī yì liǎng ge zhè zhǒng xīnxiān de xīhóngshì, duì pífū yǒu hǎochù.",
+        "en": "The kind you're asking about is 'organic/green'. You get what you pay for. Eating one or two of these fresh tomatoes every day is good for your skin."
+      }
+    },
+    "价钱": {
+      "zh": "价钱",
+      "pinyin": "jiàqián",
+      "en": "price",
+      "pos": "n.",
+      "when": "Remember 价钱 like the everyday word for what something costs — next to 质量, before 值得买.",
+      "usage": "Most Chinese speakers use 价钱 and 价格 as price; 价钱 is more spoken. Lesson 6 never puts it in a 课文 line. Closest book hit is the 值得—值 note: 这个沙发价钱不贵，质量又好，值得买.",
+      "example": {
+        "zh": "这个沙发价钱不贵，质量又好，值得买",
+        "pinyin": "Zhège shāfā jiàqián bù guì, zhìliàng yòu hǎo, zhídé mǎi.",
+        "en": "This sofa isn't expensive and is good quality, it's worth buying."
+      }
+    },
+    "小朋友": {
+      "zh": "小朋友",
+      "pinyin": "xiǎopéngyou",
+      "en": "kid",
+      "pos": "n.",
+      "when": "Remember 小朋友 like the word you’ll use when a shop talks to children as a group.",
+      "usage": "Most Chinese speakers use it as a friendly word for kids. 课文4: birthday friends and 所有的小朋友 get a gift. 扩展 from 小 + 朋友.",
+      "example": {
+        "zh": "今天过生日的朋友和所有的小朋友还可以获得一份小礼物。",
+        "pinyin": "Jīntiān guò shēngrì de péngyou hé suǒyǒu de xiǎopéngyou hái kěyǐ huòdé yí fèn xiǎo lǐwù.",
+        "en": "Friends celebrating their birthday today and all children can also receive a small gift."
+      }
+    },
+    "折": {
+      "zh": "折",
+      "pinyin": "zhé",
+      "en": "discount",
+      "pos": "n.",
+      "when": "Remember 折 like the word you’ll use when a price is a fraction of the tag — 7.5折, 8折, 6折.",
+      "usage": "Most Chinese speakers say 几折, not “percent off.” 7.5折 is 75% of the original; 6折 is 60%. 扩展 from 打折; 课文4 lists novels / maps / exam books by 折.",
+      "example": {
+        "zh": "另外，一些图书还有打折活动，其中，小说7.5折，地图8折，留学考试用书6折。",
+        "pinyin": "Lìngwài, yìxiē túshū hái yǒu dǎ zhé huódòng, qízhōng, xiǎoshuō qīwǔ zhé, dìtú bā zhé, liúxué kǎoshì yòngshū liù zhé.",
+        "en": "In addition, some books are also on sale: novels are 25% off (7.5折), maps are 20% off (8折), and study-abroad exam-prep books are 40% off (6折)."
+      }
+    }
+  }
+}

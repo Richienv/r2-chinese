@@ -1,0 +1,487 @@
+{
+  "lesson": 3,
+  "title": "经理对我印象不错",
+  "words": {
+    "挺": {
+      "zh": "挺",
+      "pinyin": "tǐng",
+      "en": "quite, rather",
+      "pos": "adv.",
+      "when": "Remember 挺 like the word you’ll use when “quite” is enough — the interview questions were 挺容易的, not 非常难.",
+      "usage": "Most Chinese speakers wrap it as 挺……的 after an adjective. It’s spoken “pretty / rather,” a notch softer than 很.",
+      "example": {
+        "zh": "还可以，他们问的问题都挺容易的，就是我有点儿紧张。",
+        "pinyin": "Hái kěyǐ, tāmen wèn de wèntí dōu tǐng róngyì de, jiù shì wǒ yǒudiǎnr jǐnzhāng.",
+        "en": "Pretty good — the questions they asked were all quite easy, it's just that I was a little nervous."
+      }
+    },
+    "紧张": {
+      "zh": "紧张",
+      "pinyin": "jǐnzhāng",
+      "en": "nervous",
+      "pos": "adj.",
+      "when": "Remember 紧张 like the word you’ll use when your stomach drops before an interview — or when the calendar is packed.",
+      "usage": "Most Chinese speakers use it two ways in this lesson: nerves (我有点儿紧张) and a tight schedule (时间安排得很紧张).",
+      "example": {
+        "zh": "还可以，他们问的问题都挺容易的，就是我有点儿紧张。",
+        "pinyin": "Hái kěyǐ, tāmen wèn de wèntí dōu tǐng róngyì de, jiù shì wǒ yǒudiǎnr jǐnzhāng.",
+        "en": "Pretty good — the questions they asked were all quite easy, it's just that I was a little nervous."
+      }
+    },
+    "信心": {
+      "zh": "信心",
+      "pinyin": "xìnxīn",
+      "en": "confidence",
+      "pos": "n.",
+      "when": "Remember 信心 like the word you’ll use when you tell someone to trust themselves before they walk into the 面试.",
+      "usage": "Most Chinese speakers say 对自己有信心 — confidence you hold, not a verb. This 课文 pairs it with 相信自己的能力.",
+      "example": {
+        "zh": "面试的时候，一定要对自己有信心，要相信自己的能力。",
+        "pinyin": "Miànshì de shíhou, yídìng yào duì zìjǐ yǒu xìnxīn, yào xiāngxìn zìjǐ de nénglì.",
+        "en": "When you interview, you must have confidence in yourself and believe in your own ability."
+      }
+    },
+    "能力": {
+      "zh": "能力",
+      "pinyin": "nénglì",
+      "en": "ability, competence",
+      "pos": "n.",
+      "when": "Remember 能力 like the word you’ll use when a manager asks whether someone can actually do the job.",
+      "usage": "Most Chinese speakers mean competence, not just “can.” In this lesson: 相信自己的能力, then 能力符合要求.",
+      "example": {
+        "zh": "面试的时候，一定要对自己有信心，要相信自己的能力。",
+        "pinyin": "Miànshì de shíhou, yídìng yào duì zìjǐ yǒu xìnxīn, yào xiāngxìn zìjǐ de nénglì.",
+        "en": "When you interview, you must have confidence in yourself and believe in your own ability."
+      }
+    },
+    "招聘": {
+      "zh": "招聘",
+      "pinyin": "zhāopìn",
+      "en": "to recruit",
+      "pos": "v.",
+      "when": "Remember 招聘 like the word you’ll use when a company is hiring — the 招聘会 at the gym, the 招聘工作 on Xiao Li’s desk.",
+      "usage": "Most Chinese speakers use it from the employer side. They 招聘; you 应聘. 招聘会 is the job fair built on this verb.",
+      "example": {
+        "zh": "你说的对！3月15号上午8点在学校体育馆还有一个招聘会，你去吗？",
+        "pinyin": "Nǐ shuō de duì! Sānyuè shíwǔ hào shàngwǔ bā diǎn zài xuéxiào tǐyùguǎn hái yǒu yí ge zhāopìnhuì, nǐ qù ma?",
+        "en": "You're right! There's another job fair at the school gym at 8am on March 15th — are you going?"
+      }
+    },
+    "提供": {
+      "zh": "提供",
+      "pinyin": "tígōng",
+      "en": "to provide",
+      "pos": "v.",
+      "when": "Remember 提供 like the word you’ll use when a job fair is offering posts — 提供工作机会 — not handing you a gift.",
+      "usage": "Most Chinese speakers use it for “provide / offer” (opportunities, materials, a suggestion). Formal than 给.",
+      "example": {
+        "zh": "听说这次招聘会提供的工作机会很多，我们一起去看看吧。",
+        "pinyin": "Tīngshuō zhè cì zhāopìnhuì tígōng de gōngzuò jīhuì hěn duō, wǒmen yìqǐ qù kànkan ba.",
+        "en": "I heard this job fair offers a lot of job opportunities — let's go take a look together."
+      }
+    },
+    "小雨": {
+      "zh": "小雨",
+      "pinyin": "Xiǎoyǔ",
+      "en": "Xiaoyu, name of a person",
+      "pos": "proper noun",
+      "when": "Remember 小雨 as the classmate in 课文1 — the one who just walked out of an interview and wants you at the 招聘会.",
+      "usage": "Treat it as a person’s name. Don’t translate “little rain.” In this lesson it is only a speaker label plus the 课文 heading.",
+      "example": {
+        "zh": "小夏和小雨聊小雨面试的情况",
+        "pinyin": "Xiǎo Xià hé Xiǎoyǔ liáo Xiǎoyǔ miànshì de qíngkuàng",
+        "en": "Xiao Xia and Xiao Yu talk about Xiao Yu's interview"
+      }
+    },
+    "负责": {
+      "zh": "负责",
+      "pinyin": "fùzé",
+      "en": "to be in charge of",
+      "pos": "v.",
+      "when": "Remember 负责 like the word you’ll use when the manager asks who is running this 招聘.",
+      "usage": "Most Chinese speakers say 负责 + the task. 小李负责这次招聘 — then it gets handed to 小林.",
+      "example": {
+        "zh": "小林，这次招聘不是小李负责吗？",
+        "pinyin": "Xiǎo Lín, zhè cì zhāopìn bú shì Xiǎo Lǐ fùzé ma?",
+        "en": "Xiao Lin, isn't Xiao Li in charge of this recruitment?"
+      }
+    },
+    "本来": {
+      "zh": "本来",
+      "pinyin": "běnlái",
+      "en": "originally, at first",
+      "pos": "adv.",
+      "when": "Remember 本来 like the word you’ll use when the plan was Xiao Li’s job — and then he landed in hospital.",
+      "usage": "Most Chinese speakers use it for “originally / it should have been.” 本来是小李负责的, then 但是….",
+      "example": {
+        "zh": "本来是小李负责的，但是他突然生病住院了，所以就交给我来做了。",
+        "pinyin": "Běnlái shì Xiǎo Lǐ fùzé de, dànshì tā tūrán shēng bìng zhù yuàn le, suǒyǐ jiù jiāogěi wǒ lái zuò le.",
+        "en": "It was originally Xiao Li's responsibility, but he suddenly fell ill and was hospitalized, so it was handed over to me to do."
+      }
+    },
+    "应聘": {
+      "zh": "应聘",
+      "pinyin": "yìngpìn",
+      "en": "to apply for a job",
+      "pos": "v.",
+      "when": "Remember 应聘 like the word you’ll use when you are the one walking in — 15 people 来应聘, not the company 招聘.",
+      "usage": "Most Chinese speakers use it from the applicant side. 应聘的人 / 应聘时不要紧张.",
+      "example": {
+        "zh": "哦，这次应聘的人多吗？",
+        "pinyin": "Ò, zhè cì yìngpìn de rén duō ma?",
+        "en": "Oh, are there many people applying this time?"
+      }
+    },
+    "材料": {
+      "zh": "材料",
+      "pinyin": "cáiliào",
+      "en": "data, material",
+      "pos": "n.",
+      "when": "Remember 材料 like the word you’ll use when you hand the manager the CVs after 笔试 and 面试.",
+      "usage": "Most Chinese speakers mean the file / documents here, not bricks or “building materials.” 这是他们的材料.",
+      "example": {
+        "zh": "经理，这次来应聘的一共有15人。经过笔试和面试，有两个不错。这是他们的材料，您看看。",
+        "pinyin": "Jīnglǐ, zhè cì lái yìngpìn de yígòng yǒu shíwǔ rén. Jīngguò bǐshì hé miànshì, yǒu liǎng ge búcuò. Zhè shì tāmen de cáiliào, nín kànkan.",
+        "en": "Manager, a total of 15 people applied this time. After the written test and interview, two of them are quite good. Here are their materials — please take a look."
+      }
+    },
+    "符合": {
+      "zh": "符合",
+      "pinyin": "fúhé",
+      "en": "to accord with",
+      "pos": "v.",
+      "when": "Remember 符合 like the word you’ll use when someone’s ability actually matches what the job asks for.",
+      "usage": "Most Chinese speakers say 符合要求 / 符合条件 — “fits the standard,” not “agrees in an argument.”",
+      "example": {
+        "zh": "这两个人的能力都比较符合我们的要求。你通知他们下周一上午九点来我办公室吧。",
+        "pinyin": "Zhè liǎng ge rén de nénglì dōu bǐjiào fúhé wǒmen de yāoqiú. Nǐ tōngzhī tāmen xià zhōuyī shàngwǔ jiǔ diǎn lái wǒ bàngōngshì ba.",
+        "en": "Both of these people's abilities fit our requirements fairly well. Let them know to come to my office at 9am next Monday."
+      }
+    },
+    "通知": {
+      "zh": "通知",
+      "pinyin": "tōngzhī",
+      "en": "to inform",
+      "pos": "v.",
+      "when": "Remember 通知 like the word you’ll use when you tell the two good candidates to come at nine — or when the manager says you start tomorrow.",
+      "usage": "Most Chinese speakers use it as a verb (通知他们) and as a noun (一份通知). This 课文 is the verb.",
+      "example": {
+        "zh": "这两个人的能力都比较符合我们的要求。你通知他们下周一上午九点来我办公室吧。",
+        "pinyin": "Zhè liǎng ge rén de nénglì dōu bǐjiào fúhé wǒmen de yāoqiú. Nǐ tōngzhī tāmen xià zhōuyī shàngwǔ jiǔ diǎn lái wǒ bàngōngshì ba.",
+        "en": "Both of these people's abilities fit our requirements fairly well. Let them know to come to my office at 9am next Monday."
+      }
+    },
+    "马": {
+      "zh": "马",
+      "pinyin": "Mǎ",
+      "en": "Ma, a Chinese family name",
+      "pos": "proper noun",
+      "when": "Remember 马 as the family name on 马经理 — the boss asking who is running this 招聘.",
+      "usage": "Treat it as a surname. Don’t translate “horse.” No 课文 line uses 马 as the name; 马上 in 课文2 is a different word.",
+      "example": {
+        "zh": "马经理和小林聊招聘的事情",
+        "pinyin": "Mǎ jīnglǐ hé Xiǎo Lín liáo zhāopìn de shìqing",
+        "en": "Manager Ma and Xiao Lin talk about the recruitment"
+      }
+    },
+    "律师": {
+      "zh": "律师",
+      "pinyin": "lǜshī",
+      "en": "lawyer",
+      "pos": "n.",
+      "when": "Remember 律师 like the word you’ll use when Wang Jing says what she became the moment she graduated — 当律师 in Shanghai.",
+      "usage": "Most Chinese speakers mean a practicing lawyer. 当律师 is the job; 法律 is the subject she studied.",
+      "example": {
+        "zh": "我一毕业就去上海当律师了。",
+        "pinyin": "Wǒ yí bìyè jiù qù Shànghǎi dāng lǜshī le.",
+        "en": "As soon as I graduated I went to Shanghai to work as a lawyer."
+      }
+    },
+    "专业": {
+      "zh": "专业",
+      "pinyin": "zhuānyè",
+      "en": "major, specialty",
+      "pos": "n.",
+      "when": "Remember 专业 like the word you’ll use when the job matches what you studied — 法律专业, so the work fits.",
+      "usage": "Most Chinese speakers mean a university major, or “this is my specialty.” 学的就是法律专业.",
+      "example": {
+        "zh": "我很喜欢现在的工作，因为我学的就是法律专业，而且同事们都很喜欢我。另外，收入也不错。",
+        "pinyin": "Wǒ hěn xǐhuan xiànzài de gōngzuò, yīnwèi wǒ xué de jiù shì fǎlǜ zhuānyè, érqiě tóngshìmen dōu hěn xǐhuan wǒ. Lìngwài, shōurù yě búcuò.",
+        "en": "I really like my current job, because what I studied was law, and my colleagues all like me too. Besides, the income isn't bad either."
+      }
+    },
+    "另外": {
+      "zh": "另外",
+      "pinyin": "lìngwài",
+      "en": "besides, in addition",
+      "pos": "conj.",
+      "when": "Remember 另外 like the word you’ll use when the good news isn’t finished — job, colleagues, 另外 the pay.",
+      "usage": "Most Chinese speakers use it as “besides / and another thing” between sentences. It can also mean “another (one).” This 课文 is the conjunction.",
+      "example": {
+        "zh": "我很喜欢现在的工作，因为我学的就是法律专业，而且同事们都很喜欢我。另外，收入也不错。",
+        "pinyin": "Wǒ hěn xǐhuan xiànzài de gōngzuò, yīnwèi wǒ xué de jiù shì fǎlǜ zhuānyè, érqiě tóngshìmen dōu hěn xǐhuan wǒ. Lìngwài, shōurù yě búcuò.",
+        "en": "I really like my current job, because what I studied was law, and my colleagues all like me too. Besides, the income isn't bad either."
+      }
+    },
+    "收入": {
+      "zh": "收入",
+      "pinyin": "shōurù",
+      "en": "income",
+      "pos": "n.",
+      "when": "Remember 收入 like the word you’ll use when you add the money part after you already said you like the work.",
+      "usage": "Most Chinese speakers mean pay / income. 收入也不错 — not the verb “to receive a letter.”",
+      "example": {
+        "zh": "我很喜欢现在的工作，因为我学的就是法律专业，而且同事们都很喜欢我。另外，收入也不错。",
+        "pinyin": "Wǒ hěn xǐhuan xiànzài de gōngzuò, yīnwèi wǒ xué de jiù shì fǎlǜ zhuānyè, érqiě tóngshìmen dōu hěn xǐhuan wǒ. Lìngwài, shōurù yě búcuò.",
+        "en": "I really like my current job, because what I studied was law, and my colleagues all like me too. Besides, the income isn't bad either."
+      }
+    },
+    "咱们": {
+      "zh": "咱们",
+      "pinyin": "zánmen",
+      "en": "we, us",
+      "pos": "pron.",
+      "when": "Remember 咱们 like the word you’ll use when you include the person you’re talking to — Sunday, 咱们 classmate reunion.",
+      "usage": "Most Chinese speakers use 咱们 for “we, including you.” 我们 can leave the listener out.",
+      "example": {
+        "zh": "星期天咱们同学聚会，你能来参加吗？",
+        "pinyin": "Xīngqītiān zánmen tóngxué jùhuì, nǐ néng lái cānjiā ma?",
+        "en": "We're having a classmates' get-together on Sunday — can you come?"
+      }
+    },
+    "安排": {
+      "zh": "安排",
+      "pinyin": "ānpái",
+      "en": "to arrange",
+      "pos": "v.",
+      "when": "Remember 安排 like the word you’ll use when the timetable is the problem — 时间安排得很紧张 on this Beijing trip.",
+      "usage": "Most Chinese speakers use it as a verb (安排时间) and for the plan itself. Here the schedule is tight, not “nervous.”",
+      "example": {
+        "zh": "能来。虽然这次来北京，时间安排得很紧张，但我一定借这次机会去跟大家见见面。",
+        "pinyin": "Néng lái. Suīrán zhè cì lái Běijīng, shíjiān ānpái de hěn jǐnzhāng, dàn wǒ yídìng jiè zhè cì jīhuì qù gēn dàjiā jiànjian miàn.",
+        "en": "I can come. Although my schedule on this trip to Beijing is very tight, I'll definitely take this opportunity to meet up with everyone."
+      }
+    },
+    "首先": {
+      "zh": "首先",
+      "pinyin": "shǒuxiān",
+      "en": "first",
+      "pos": "pron.",
+      "when": "Remember 首先 like the word you’ll use when you start the interview list — first, wear formal clothes.",
+      "usage": "Most Chinese speakers pair it with 其次 in writing. Alone it also means “first of all / the first thing you do.”",
+      "example": {
+        "zh": "首先，要穿正式的衣服，这会给面试者留下一个好的印象，让他觉得你是一个认真的人。",
+        "pinyin": "Shǒuxiān, yào chuān zhèngshì de yīfu, zhè huì gěi miànshìzhě liúxià yí ge hǎo de yìnxiàng, ràng tā juéde nǐ shì yí ge rènzhēn de rén.",
+        "en": "First, wear formal clothing — this will leave the interviewer with a good impression and make them feel you're a conscientious person."
+      }
+    },
+    "正式": {
+      "zh": "正式",
+      "pinyin": "zhèngshì",
+      "en": "formal",
+      "pos": "adj.",
+      "when": "Remember 正式 like the word you’ll use when the interview needs a real outfit, not weekend clothes.",
+      "usage": "Most Chinese speakers use it for formal dress, a formal job, a formal start date. 穿正式的衣服.",
+      "example": {
+        "zh": "首先，要穿正式的衣服，这会给面试者留下一个好的印象，让他觉得你是一个认真的人。",
+        "pinyin": "Shǒuxiān, yào chuān zhèngshì de yīfu, zhè huì gěi miànshìzhě liúxià yí ge hǎo de yìnxiàng, ràng tā juéde nǐ shì yí ge rènzhēn de rén.",
+        "en": "First, wear formal clothing — this will leave the interviewer with a good impression and make them feel you're a conscientious person."
+      }
+    },
+    "留": {
+      "zh": "留",
+      "pinyin": "liú",
+      "en": "to leave",
+      "pos": "v.",
+      "when": "Remember 留 like the word you’ll use when you leave an impression behind — 留下一个好的印象 in formal clothes.",
+      "usage": "Most Chinese speakers say 留下印象 / 留在家里. This lesson is “leave (an impression),” not “stay and study.”",
+      "example": {
+        "zh": "首先，要穿正式的衣服，这会给面试者留下一个好的印象，让他觉得你是一个认真的人。",
+        "pinyin": "Shǒuxiān, yào chuān zhèngshì de yīfu, zhè huì gěi miànshìzhě liúxià yí ge hǎo de yìnxiàng, ràng tā juéde nǐ shì yí ge rènzhēn de rén.",
+        "en": "First, wear formal clothing — this will leave the interviewer with a good impression and make them feel you're a conscientious person."
+      }
+    },
+    "其次": {
+      "zh": "其次",
+      "pinyin": "qícì",
+      "en": "second, next",
+      "pos": "pron.",
+      "when": "Remember 其次 like the word you’ll use when 首先 is done — second, don’t be nervous when you 应聘.",
+      "usage": "Most Chinese speakers use it to number the next point, usually after 首先, more on the page than in chat.",
+      "example": {
+        "zh": "其次，应聘时不要紧张。",
+        "pinyin": "Qícì, yìngpìn shí búyào jǐnzhāng.",
+        "en": "Second, don't be nervous when interviewing."
+      }
+    },
+    "诚实": {
+      "zh": "诚实",
+      "pinyin": "chéngshí",
+      "en": "honest",
+      "pos": "adj.",
+      "when": "Remember 诚实 like the word you’ll use when the book says the most important interview rule is to tell the truth.",
+      "usage": "Most Chinese speakers describe a person or an answer as 诚实 — honest, not 认真 (conscientious) and not “frank.”",
+      "example": {
+        "zh": "当然，最重要的是回答问题要诚实。",
+        "pinyin": "Dāngrán, zuì zhòngyào de shì huídá wèntí yào chéngshí.",
+        "en": "Of course, the most important thing is to be honest when answering questions."
+      }
+    },
+    "改变": {
+      "zh": "改变",
+      "pinyin": "gǎibiàn",
+      "en": "to change",
+      "pos": "v.",
+      "when": "Remember 改变 like the word you’ll use when a first impression is already set — and changing it is hard.",
+      "usage": "Most Chinese speakers use it for changing a situation or an impression, not changing clothes (换).",
+      "example": {
+        "zh": "虽然第一印象不总是对的，但如果想改变却很困难。",
+        "pinyin": "Suīrán dì yī yìnxiàng bù zǒng shì duì de, dàn rúguǒ xiǎng gǎibiàn què hěn kùnnan.",
+        "en": "Although a first impression isn't always correct, it is very hard to change if you want to."
+      }
+    },
+    "感觉": {
+      "zh": "感觉",
+      "pinyin": "gǎnjué",
+      "en": "feeling",
+      "pos": "n.",
+      "when": "Remember 感觉 like the word you’ll use when a first impression shapes how people feel about you later.",
+      "usage": "Most Chinese speakers use it as a noun (感觉和判断) and as “I feel that….” This 课文 is the noun.",
+      "example": {
+        "zh": "你给别人的第一印象会影响他们以后对你的感觉和判断。",
+        "pinyin": "Nǐ gěi biérén de dì yī yìnxiàng huì yǐngxiǎng tāmen yǐhòu duì nǐ de gǎnjué hé pànduàn.",
+        "en": "The first impression you give others will affect their feelings about and judgment of you afterward."
+      }
+    },
+    "判断": {
+      "zh": "判断",
+      "pinyin": "pànduàn",
+      "en": "to judge, to decide",
+      "pos": "v.",
+      "when": "Remember 判断 like the word you’ll use when someone sizes you up after that first meeting.",
+      "usage": "Most Chinese speakers use it as a verb and a noun. This 课文 is 感觉和判断 — the judgment they form about you.",
+      "example": {
+        "zh": "你给别人的第一印象会影响他们以后对你的感觉和判断。",
+        "pinyin": "Nǐ gěi biérén de dì yī yìnxiàng huì yǐngxiǎng tāmen yǐhòu duì nǐ de gǎnjué hé pànduàn.",
+        "en": "The first impression you give others will affect their feelings about and judgment of you afterward."
+      }
+    },
+    "顾客": {
+      "zh": "顾客",
+      "pinyin": "gùkè",
+      "en": "customer, client",
+      "pos": "n.",
+      "when": "Remember 顾客 like the word you’ll use when a good first impression might mean you sell more.",
+      "usage": "Most Chinese speakers mean a customer in a shop or business, not a house guest (客人) and not a colleague.",
+      "example": {
+        "zh": "所以，给第一次见面的同事留下好的印象，以后的工作可能会更顺利；给第一次见面的顾客留下好的印象，你可能会卖出更多的东西。",
+        "pinyin": "Suǒyǐ, gěi dì yī cì jiàn miàn de tóngshì liúxià hǎo de yìnxiàng, yǐhòu de gōngzuò kěnéng huì gèng shùnlì; gěi dì yī cì jiàn miàn de gùkè liúxià hǎo de yìnxiàng, nǐ kěnéng huì màichū gèng duō de dōngxi.",
+        "en": "So, leaving a good impression on a colleague you meet for the first time may make future work go more smoothly; leaving a good impression on a customer you meet for the first time may let you sell more goods."
+      }
+    },
+    "准时": {
+      "zh": "准时",
+      "pinyin": "zhǔnshí",
+      "en": "punctual, on time",
+      "pos": "adj.",
+      "when": "Remember 准时 like the word you’ll use when being on time is the whole point — class, work, or a 约会.",
+      "usage": "Most Chinese speakers praise a person as 准时, or say 准时出发. The bad first impression in this 课文 is 不准时.",
+      "example": {
+        "zh": "所以不管是上课、上班，还是与别人约会，准时都非常重要。",
+        "pinyin": "Suǒyǐ bùguǎn shì shàng kè, shàng bān, háishi yǔ biérén yuēhuì, zhǔnshí dōu fēicháng zhòngyào.",
+        "en": "So whether it's attending class, going to work, or meeting someone for an appointment, being punctual is extremely important."
+      }
+    },
+    "不管": {
+      "zh": "不管",
+      "pinyin": "bùguǎn",
+      "en": "no matter (what, how, etc.)",
+      "pos": "conj.",
+      "when": "Remember 不管 like the word you’ll use when the result doesn’t change — class, work, or dating, 准时 still matters.",
+      "usage": "Most Chinese speakers pair it with 都 / 还是 / 什么. 不管是A还是B，…都….",
+      "example": {
+        "zh": "所以不管是上课、上班，还是与别人约会，准时都非常重要。",
+        "pinyin": "Suǒyǐ bùguǎn shì shàng kè, shàng bān, háishi yǔ biérén yuēhuì, zhǔnshí dōu fēicháng zhòngyào.",
+        "en": "So whether it's attending class, going to work, or meeting someone for an appointment, being punctual is extremely important."
+      }
+    },
+    "与": {
+      "zh": "与",
+      "pinyin": "yǔ",
+      "en": "with",
+      "pos": "prep.",
+      "when": "Remember 与 like the word you’ll use when you need a written “with” — 与别人约会.",
+      "usage": "Most Chinese speakers say 跟 / 和 out loud. 与 is the same “with,” more formal or on the page.",
+      "example": {
+        "zh": "所以不管是上课、上班，还是与别人约会，准时都非常重要。",
+        "pinyin": "Suǒyǐ bùguǎn shì shàng kè, shàng bān, háishi yǔ biérén yuēhuì, zhǔnshí dōu fēicháng zhòngyào.",
+        "en": "So whether it's attending class, going to work, or meeting someone for an appointment, being punctual is extremely important."
+      }
+    },
+    "约会": {
+      "zh": "约会",
+      "pinyin": "yuēhuì",
+      "en": "to date, to go to an appointment",
+      "pos": "v.",
+      "when": "Remember 约会 like the word you’ll use when you arranged to meet someone — a date or any appointment you must not be late for.",
+      "usage": "Most Chinese speakers use it for a romantic date and for “we have an appointment.” This 课文 pairs it with 准时.",
+      "example": {
+        "zh": "所以不管是上课、上班，还是与别人约会，准时都非常重要。",
+        "pinyin": "Suǒyǐ bùguǎn shì shàng kè, shàng bān, háishi yǔ biérén yuēhuì, zhǔnshí dōu fēicháng zhòngyào.",
+        "en": "So whether it's attending class, going to work, or meeting someone for an appointment, being punctual is extremely important."
+      }
+    },
+    "面试": {
+      "zh": "面试",
+      "pinyin": "miànshì",
+      "en": "interview",
+      "pos": "n.",
+      "when": "Remember 面试 like the word you’ll use when you sit across from the manager and they ask the questions.",
+      "usage": "Most Chinese speakers mean the job interview, after 笔试. Noun or verb: 参加面试 / 面试的时候.",
+      "example": {
+        "zh": "你上午的面试怎么样？",
+        "pinyin": "Nǐ shàngwǔ de miànshì zěnmeyàng?",
+        "en": "How was your interview this morning?"
+      }
+    },
+    "笔试": {
+      "zh": "笔试",
+      "pinyin": "bǐshì",
+      "en": "written exam",
+      "pos": "n.",
+      "when": "Remember 笔试 like the word you’ll use when the company tests you on paper before they talk to you.",
+      "usage": "Most Chinese speakers contrast it with 面试. 经过笔试和面试 — written first, then the conversation.",
+      "example": {
+        "zh": "经理，这次来应聘的一共有15人。经过笔试和面试，有两个不错。这是他们的材料，您看看。",
+        "pinyin": "Jīnglǐ, zhè cì lái yìngpìn de yígòng yǒu shíwǔ rén. Jīngguò bǐshì hé miànshì, yǒu liǎng ge búcuò. Zhè shì tāmen de cáiliào, nín kànkan.",
+        "en": "Manager, a total of 15 people applied this time. After the written test and interview, two of them are quite good. Here are their materials — please take a look."
+      }
+    },
+    "体育馆": {
+      "zh": "体育馆",
+      "pinyin": "tǐyùguǎn",
+      "en": "gymnasium",
+      "pos": "n.",
+      "when": "Remember 体育馆 like the word you’ll use when the job fair is in the school gym, not a classroom.",
+      "usage": "Most Chinese speakers mean a gymnasium / indoor stadium. 学校体育馆 is where this 招聘会 is held.",
+      "example": {
+        "zh": "你说的对！3月15号上午8点在学校体育馆还有一个招聘会，你去吗？",
+        "pinyin": "Nǐ shuō de duì! Sānyuè shíwǔ hào shàngwǔ bā diǎn zài xuéxiào tǐyùguǎn hái yǒu yí ge zhāopìnhuì, nǐ qù ma?",
+        "en": "You're right! There's another job fair at the school gym at 8am on March 15th — are you going?"
+      }
+    },
+    "印象": {
+      "zh": "印象",
+      "pinyin": "yìnxiàng",
+      "en": "impression",
+      "pos": "n.",
+      "when": "Remember 印象 like the word you’ll use when the manager walks away thinking you’re 不错 — or when you talk about a first impression.",
+      "usage": "Most Chinese speakers say 对…印象不错 or 留下一个好的印象. This lesson’s title is that sentence. The JSON filed the 生词 under Lesson 1.",
+      "example": {
+        "zh": "面试的时候，经理对我印象不错，还通知我明天就可以上班了。",
+        "pinyin": "Miànshì de shíhou, jīnglǐ duì wǒ yìnxiàng búcuò, hái tōngzhī wǒ míngtiān jiù kěyǐ shàng bān le.",
+        "en": "During the interview, the manager formed a good impression of me, and even told me I could start work tomorrow."
+      }
+    }
+  }
+}

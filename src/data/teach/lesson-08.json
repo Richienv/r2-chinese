@@ -1,0 +1,474 @@
+{
+  "lesson": 8,
+  "title": "生活中不缺少美",
+  "words": {
+    "巧克力": {
+      "zh": "巧克力",
+      "pinyin": "qiǎokèlì",
+      "en": "chocolate",
+      "pos": "n.",
+      "when": "Remember 巧克力 like the word you’ll use when 李老师 tastes that brown sweet and asks where it came from — not candy in general, this foreign gift.",
+      "usage": "Most Chinese speakers treat it as a noun you 买 / 吃 / 送. In 课文1 it is the present 高老师’s daughter brought back from abroad, the thing people haul home for 亲戚朋友.",
+      "example": {
+        "zh": "这种巧克力味道不错，你在哪儿买的？",
+        "pinyin": "Zhè zhǒng qiǎokèlì wèidào búcuò, nǐ zài nǎr mǎi de?",
+        "en": "This chocolate tastes pretty good. Where did you buy it?"
+      }
+    },
+    "亲戚": {
+      "zh": "亲戚",
+      "pinyin": "qīnqi",
+      "en": "relative, kinsfolk",
+      "pos": "n.",
+      "when": "Remember 亲戚 like the word you’ll use when the chocolate is not for classmates — it’s for family you don’t live with.",
+      "usage": "Most Chinese speakers pair 亲戚朋友 as “relatives and friends,” the people you owe a souvenir. In 课文1, returnees 送给亲戚朋友 foreign 巧克力.",
+      "example": {
+        "zh": "很多人出国后常常会买外国的巧克力，回来送给亲戚朋友。",
+        "pinyin": "Hěn duō rén chū guó hòu chángcháng huì mǎi wàiguó de qiǎokèlì, huílai sònggěi qīnqi péngyou.",
+        "en": "A lot of people often buy foreign chocolate when they go abroad, and bring it back as gifts for relatives and friends."
+      }
+    },
+    "伤心": {
+      "zh": "伤心",
+      "pinyin": "shāng xīn",
+      "en": "sad, sorrowful",
+      "pos": "adj.",
+      "when": "Remember 伤心 like the word you’ll use when someone is sad enough that a square of chocolate is supposed to help.",
+      "usage": "Most Chinese speakers use this 伤心 for a sore heart (伤心难过), not a broken object. 课文1 claims eating 巧克力 when you’re 伤心 can 使人的心情变得愉快; 课文5 later says black makes people 感到伤心.",
+      "example": {
+        "zh": "而且，听说伤心难过的时候吃块儿巧克力，还能使人的心情变得愉快。",
+        "pinyin": "Érqiě, tīngshuō shāng xīn nánguò de shíhou chī kuàir qiǎokèlì, hái néng shǐ rén de xīnqíng biàn de yúkuài.",
+        "en": "Also, I've heard that eating a piece of chocolate when you're sad can even make a person's mood turn cheerful."
+      }
+    },
+    "使": {
+      "zh": "使",
+      "pinyin": "shǐ",
+      "en": "to make, to cause",
+      "pos": "v.",
+      "when": "Remember 使 like the word you’ll use when chocolate is the cause — it makes a person’s mood turn cheerful.",
+      "usage": "Most Chinese speakers use 使 in writing the way 让 works in speech: 使 + person + VP. In 课文1 it is 使人的心情变得愉快. Do not learn it from 大使馆 — that 使 is only a character inside the embassy word.",
+      "example": {
+        "zh": "而且，听说伤心难过的时候吃块儿巧克力，还能使人的心情变得愉快。",
+        "pinyin": "Érqiě, tīngshuō shāng xīn nánguò de shíhou chī kuàir qiǎokèlì, hái néng shǐ rén de xīnqíng biàn de yúkuài.",
+        "en": "Also, I've heard that eating a piece of chocolate when you're sad can even make a person's mood turn cheerful."
+      }
+    },
+    "心情": {
+      "zh": "心情",
+      "pinyin": "xīnqíng",
+      "en": "mood, state of mind",
+      "pos": "n.",
+      "when": "Remember 心情 like the word you’ll use when chocolate is supposed to flip how you feel — 使人的心情变得愉快 — or when 马克 later asks 心情好些了吗.",
+      "usage": "Most Chinese speakers use 心情 for the weather inside you (好 / 不好 / 愉快), not 脾气. 课文1 first ties it to chocolate; 课文2–4 keep circling 选对心情.",
+      "example": {
+        "zh": "而且，听说伤心难过的时候吃块儿巧克力，还能使人的心情变得愉快。",
+        "pinyin": "Érqiě, tīngshuō shāng xīn nánguò de shíhou chī kuàir qiǎokèlì, hái néng shǐ rén de xīnqíng biàn de yúkuài.",
+        "en": "Also, I've heard that eating a piece of chocolate when you're sad can even make a person's mood turn cheerful."
+      }
+    },
+    "愉快": {
+      "zh": "愉快",
+      "pinyin": "yúkuài",
+      "en": "glad, cheerful",
+      "pos": "adj.",
+      "when": "Remember 愉快 like the word you’ll use when a mood flips from 伤心 to cheerful — the promise chocolate makes.",
+      "usage": "Most Chinese speakers use 愉快 for a glad, light feeling (心情愉快), not loud 高兴. 课文1: 使人的心情变得愉快; 课文5: yellow and white 让人心情愉快.",
+      "example": {
+        "zh": "而且，听说伤心难过的时候吃块儿巧克力，还能使人的心情变得愉快。",
+        "pinyin": "Érqiě, tīngshuō shāng xīn nánguò de shíhou chī kuàir qiǎokèlì, hái néng shǐ rén de xīnqíng biàn de yúkuài.",
+        "en": "Also, I've heard that eating a piece of chocolate when you're sad can even make a person's mood turn cheerful."
+      }
+    },
+    "景色": {
+      "zh": "景色",
+      "pinyin": "jǐngsè",
+      "en": "scene, view",
+      "pos": "n.",
+      "when": "Remember 景色 like the word you’ll use when 小夏 looks around and the view itself is the comfort after the match.",
+      "usage": "Most Chinese speakers use 景色 for scenery you stand in (景色真美), not one tree. 课文2 opens on that beautiful view and good air.",
+      "example": {
+        "zh": "这里的景色真美，空气也好。",
+        "pinyin": "Zhèli de jǐngsè zhēn měi, kōngqì yě hǎo.",
+        "en": "The scenery here is really beautiful, and the air is good too."
+      }
+    },
+    "放松": {
+      "zh": "放松",
+      "pinyin": "fàngsōng",
+      "en": "to relax",
+      "pos": "v.",
+      "when": "Remember 放松 like the word you’ll use when 小夏 finally unclenches — 好久都没这么放松了 after the last football match.",
+      "usage": "Most Chinese speakers use it as a verb for letting the body or mind go slack. In 课文2 the scenery works: he hasn’t been this 放松 since that game.",
+      "example": {
+        "zh": "好多了，上次足球比赛后，好久都没这么放松了。",
+        "pinyin": "Hǎoduō le, shàng cì zúqiú bǐsài hòu, hǎojiǔ dōu méi zhème fàngsōng le.",
+        "en": "Much better. I haven't felt this relaxed in a long time, not since the last soccer match."
+      }
+    },
+    "压力": {
+      "zh": "压力",
+      "pinyin": "yālì",
+      "en": "pressure, stress",
+      "pos": "n.",
+      "when": "Remember 压力 like the word you’ll use when 马克 tells 小夏 not to carry the last match on his back.",
+      "usage": "Most Chinese speakers say 有压力 / 不要有压力 for stress you hold, not a physics load. 课文2: 你不要有压力，好好儿准备下次比赛就好了.",
+      "example": {
+        "zh": "你不要有压力，好好儿准备下次比赛就好了。",
+        "pinyin": "Nǐ búyào yǒu yālì, hǎohāor zhǔnbèi xià cì bǐsài jiù hǎo le.",
+        "en": "Don't put pressure on yourself. Just prepare well for the next match and it'll be fine."
+      }
+    },
+    "回忆": {
+      "zh": "回忆",
+      "pinyin": "huíyì",
+      "en": "to call to mind, to recall",
+      "pos": "v.",
+      "when": "Remember 回忆 like the word you’ll use when 小夏 sits alone replaying the match instead of walking out of it.",
+      "usage": "Most Chinese speakers use 回忆 as a verb for calling a past event back (回忆那次比赛). In 课文2 he has been doing it alone in his room.",
+      "example": {
+        "zh": "这段时间我总是一个人坐在房间里回忆那次比赛。",
+        "pinyin": "Zhè duàn shíjiān wǒ zǒngshì yí ge rén zuò zài fángjiān li huíyì nà cì bǐsài.",
+        "en": "Lately I've always been sitting alone in my room thinking back on that match."
+      }
+    },
+    "发生": {
+      "zh": "发生",
+      "pinyin": "fāshēng",
+      "en": "to happen, to take place",
+      "pos": "v.",
+      "when": "Remember 发生 like the word you’ll use when 马克 shuts the file — the match 已经发生了.",
+      "usage": "Most Chinese speakers use 发生 for events that take place, with no object after it (事情已经发生了). 课文2: what’s done is done; let it 成为过去.",
+      "example": {
+        "zh": "事情已经发生了，过去的就让它成为过去吧。",
+        "pinyin": "Shìqing yǐjīng fāshēng le, guòqù de jiù ràng tā chéngwéi guòqù ba.",
+        "en": "It already happened — just let the past be the past."
+      }
+    },
+    "成为": {
+      "zh": "成为",
+      "pinyin": "chéngwéi",
+      "en": "to become",
+      "pos": "v.",
+      "when": "Remember 成为 like the word you’ll use when 马克 tells 小夏 to let the past become the past.",
+      "usage": "Most Chinese speakers use 成为 + noun for turning into a role or state (成为过去). 课文2’s line is 让它成为过去吧 — not 变成 for a small change of look.",
+      "example": {
+        "zh": "事情已经发生了，过去的就让它成为过去吧。",
+        "pinyin": "Shìqing yǐjīng fāshēng le, guòqù de jiù ràng tā chéngwéi guòqù ba.",
+        "en": "It already happened — just let the past be the past."
+      }
+    },
+    "只要": {
+      "zh": "只要",
+      "pinyin": "zhǐyào",
+      "en": "as long as, provided",
+      "pos": "conj.",
+      "when": "Remember 只要 like the glue you’ll use when one condition is enough — 只要这次你好好儿准备.",
+      "usage": "Most Chinese speakers open 只要……就……: the 只要 clause is the essential condition. 课文2 drops 就 and still works; 课文4 repeats 只要有心，生活中的美到处都是.",
+      "example": {
+        "zh": "只要这次你好好儿准备，一定能把比赛踢好。",
+        "pinyin": "Zhǐyào zhè cì nǐ hǎohāor zhǔnbèi, yídìng néng bǎ bǐsài tīhǎo.",
+        "en": "As long as you prepare well this time, you'll definitely be able to play the match well."
+      }
+    },
+    "师傅": {
+      "zh": "师傅",
+      "pinyin": "shīfu",
+      "en": "a polite title for one with accomplished skills in a trade or handicraft",
+      "pos": "n.",
+      "when": "Remember 师傅 like the word you’ll use when you hail the taxi driver — 师傅，我去大使馆.",
+      "usage": "Most Chinese speakers call a skilled worker or driver 师傅, not by name. In 课文3 马克 uses it as the polite title before asking if they took a wrong turn.",
+      "example": {
+        "zh": "师傅，我去大使馆，你是不是走错了？",
+        "pinyin": "Shīfu, wǒ qù dàshǐguǎn, nǐ shì bu shì zǒucuò le?",
+        "en": "Sir, I'm going to the embassy — did you make a wrong turn?"
+      }
+    },
+    "大使馆": {
+      "zh": "大使馆",
+      "pinyin": "dàshǐguǎn",
+      "en": "embassy",
+      "pos": "n.",
+      "when": "Remember 大使馆 like the word you’ll use when you tell the driver the destination — the embassy, not a hotel.",
+      "usage": "Most Chinese speakers use 大使馆 for a country’s embassy building. 课文3: 我去大使馆. The 使 inside is not the verb 使 from 课文1.",
+      "example": {
+        "zh": "师傅，我去大使馆，你是不是走错了？",
+        "pinyin": "Shīfu, wǒ qù dàshǐguǎn, nǐ shì bu shì zǒucuò le?",
+        "en": "Sir, I'm going to the embassy — did you make a wrong turn?"
+      }
+    },
+    "堵车": {
+      "zh": "堵车",
+      "pinyin": "dǔ chē",
+      "en": "traffic jam",
+      "pos": "v.",
+      "when": "Remember 堵车 like the word you’ll use when the road ahead is jammed at 上班时间 — the reason the driver leaves the main road.",
+      "usage": "Most Chinese speakers treat 堵车 as the jam itself (有点儿堵车, 遇到堵车). 课文3 is all traffic: another road, wasted time, mood also “堵”.",
+      "example": {
+        "zh": "现在是上班时间，前面有点儿堵车，我们走另外一条路，距离差不多。",
+        "pinyin": "Xiànzài shì shàng bān shíjiān, qiánmiàn yǒudiǎnr dǔ chē, wǒmen zǒu lìngwài yì tiáo lù, jùlí chàbuduō.",
+        "en": "It's rush hour right now, and there's a bit of a jam up ahead, so we're taking a different road — the distance is about the same."
+      }
+    },
+    "距离": {
+      "zh": "距离",
+      "pinyin": "jùlí",
+      "en": "distance",
+      "pos": "n.",
+      "when": "Remember 距离 like the word you’ll use when the driver promises the detour is about as far — 距离差不多.",
+      "usage": "Most Chinese speakers use 距离 for how far two points sit. In 课文3 the other road’s 距离 is 差不多, so 马克 can relax.",
+      "example": {
+        "zh": "现在是上班时间，前面有点儿堵车，我们走另外一条路，距离差不多。",
+        "pinyin": "Xiànzài shì shàng bān shíjiān, qiánmiàn yǒudiǎnr dǔ chē, wǒmen zǒu lìngwài yì tiáo lù, jùlí chàbuduō.",
+        "en": "It's rush hour right now, and there's a bit of a jam up ahead, so we're taking a different road — the distance is about the same."
+      }
+    },
+    "耐心": {
+      "zh": "耐心",
+      "pinyin": "nàixīn",
+      "en": "patience",
+      "pos": "n.",
+      "when": "Remember 耐心 like the word you’ll use when a jam makes people snap — they 变得没有耐心.",
+      "usage": "Most Chinese speakers use 耐心 as a noun you 有 / 没有, not a verb. 课文3: one 堵车 and people lose it; long-term it hits 脾气 and 性格.",
+      "example": {
+        "zh": "一遇到堵车，人们就容易变得没有耐心。",
+        "pinyin": "Yí yùdào dǔ chē, rénmen jiù róngyì biànde méiyǒu nàixīn.",
+        "en": "As soon as people run into a traffic jam, they easily become impatient."
+      }
+    },
+    "生命": {
+      "zh": "生命",
+      "pinyin": "shēngmìng",
+      "en": "life",
+      "pos": "n.",
+      "when": "Remember 生命 like the word you’ll use when green grass is not décor — it is 生命的颜色.",
+      "usage": "Most Chinese speakers use 生命 for life as being alive, not 生活 (daily life). 课文4: 草绿了，那是生命的颜色.",
+      "example": {
+        "zh": "草绿了，那是生命的颜色；花开了，那是大自然的礼物。",
+        "pinyin": "Cǎo lǜ le, nà shì shēngmìng de yánsè; huā kāi le, nà shì dàzìrán de lǐwù.",
+        "en": "The grass turns green — that is the color of life; flowers bloom — that is a gift from nature."
+      }
+    },
+    "缺少": {
+      "zh": "缺少",
+      "pinyin": "quēshǎo",
+      "en": "to lack",
+      "pos": "v.",
+      "when": "Remember 缺少 like the word you’ll use when the lesson title hits — life is not short of beauty.",
+      "usage": "Most Chinese speakers use 缺少 for a lack (不缺少美，缺少的是发现美的眼睛). 课文4’s point: the missing piece is eyes that notice, not beauty itself.",
+      "example": {
+        "zh": "生活中不缺少美，缺少的是发现美的眼睛。",
+        "pinyin": "Shēnghuó zhōng bù quēshǎo měi, quēshǎo de shì fāxiàn měi de yǎnjing.",
+        "en": "Life is not short of beauty; what it lacks are eyes that can discover beauty."
+      }
+    },
+    "到处": {
+      "zh": "到处",
+      "pinyin": "dàochù",
+      "en": "everywhere",
+      "pos": "adv.",
+      "when": "Remember 到处 like the word you’ll use when beauty is not in one park — 到处都是 if you 有心.",
+      "usage": "Most Chinese speakers drop 到处 before the verb to mean everywhere (到处都是). 课文4: 只要有心，生活中的美到处都是.",
+      "example": {
+        "zh": "只要有心，生活中的美到处都是。",
+        "pinyin": "Zhǐyào yǒuxīn, shēnghuó zhōng de měi dàochù dōu shì.",
+        "en": "As long as you set your mind to it, beauty is everywhere in life."
+      }
+    },
+    "态度": {
+      "zh": "态度",
+      "pinyin": "tàidù",
+      "en": "attitude",
+      "pos": "n.",
+      "when": "Remember 态度 like the word you’ll use when the window is a choice — 生活的态度要自己选择.",
+      "usage": "Most Chinese speakers use 态度 for how you face life or people (生活态度, 选对生活的态度). 课文4 makes attitude the thing you pick; 课文5 ties 积极向上 to girls who wear white.",
+      "example": {
+        "zh": "生活的态度要自己选择，因此，遇到烦恼时，你应该想一些办法让自己从不高兴的心情中走出来。",
+        "pinyin": "Shēnghuó de tàidù yào zìjǐ xuǎnzé, yīncǐ, yùdào fánnǎo shí, nǐ yīnggāi xiǎng yìxiē bànfǎ ràng zìjǐ cóng bù gāoxìng de xīnqíng zhōng zǒu chulai.",
+        "en": "You have to choose your own attitude toward life; therefore, when you run into troubles, you should think of ways to pull yourself out of an unhappy mood."
+      }
+    },
+    "因此": {
+      "zh": "因此",
+      "pinyin": "yīncǐ",
+      "en": "therefore, so",
+      "pos": "conj.",
+      "when": "Remember 因此 like the glue you’ll use when attitude is the cause — 因此 you need a way out of a bad mood.",
+      "usage": "Most Chinese speakers use 因此 like 所以 (“because of this”) and never pair it with 因为. 课文4: 生活的态度要自己选择，因此，遇到烦恼时……",
+      "example": {
+        "zh": "生活的态度要自己选择，因此，遇到烦恼时，你应该想一些办法让自己从不高兴的心情中走出来。",
+        "pinyin": "Shēnghuó de tàidù yào zìjǐ xuǎnzé, yīncǐ, yùdào fánnǎo shí, nǐ yīnggāi xiǎng yìxiē bànfǎ ràng zìjǐ cóng bù gāoxìng de xīnqíng zhōng zǒu chulai.",
+        "en": "You have to choose your own attitude toward life; therefore, when you run into troubles, you should think of ways to pull yourself out of an unhappy mood."
+      }
+    },
+    "科学": {
+      "zh": "科学",
+      "pinyin": "kēxué",
+      "en": "science",
+      "pos": "n.",
+      "when": "Remember 科学 like the word you’ll use when a color-and-personality claim needs a lab behind it.",
+      "usage": "Most Chinese speakers use 科学 for science as a field; 课文5 opens 科学研究证明. It is the authority, not a gadget.",
+      "example": {
+        "zh": "科学研究证明，女孩子对衣服颜色的选择往往与她们的性格有关。",
+        "pinyin": "Kēxué yánjiū zhèngmíng, nǚháizi duì yīfu yánsè de xuǎnzé wǎngwǎng yǔ tāmen de xìnggé yǒuguān.",
+        "en": "Scientific research shows that girls' choice of clothing color is often related to their personality."
+      }
+    },
+    "证明": {
+      "zh": "证明",
+      "pinyin": "zhèngmíng",
+      "en": "to prove",
+      "pos": "v.",
+      "when": "Remember 证明 like the word you’ll use when research is doing the proving — 科学研究证明.",
+      "usage": "Most Chinese speakers use 证明 as a verb: evidence shows X. 课文5: science 证明 that girls’ clothing colors 往往 relate to 性格.",
+      "example": {
+        "zh": "科学研究证明，女孩子对衣服颜色的选择往往与她们的性格有关。",
+        "pinyin": "Kēxué yánjiū zhèngmíng, nǚháizi duì yīfu yánsè de xuǎnzé wǎngwǎng yǔ tāmen de xìnggé yǒuguān.",
+        "en": "Scientific research shows that girls' choice of clothing color is often related to their personality."
+      }
+    },
+    "往往": {
+      "zh": "往往",
+      "pinyin": "wǎngwǎng",
+      "en": "often, usually",
+      "pos": "adv.",
+      "when": "Remember 往往 like the word you’ll use when a pattern keeps happening — color choice 往往 ties to personality.",
+      "usage": "Most Chinese speakers use 往往 for a regularity from experience, not a future wish (that’s 经常). 课文5: 女孩子对衣服颜色的选择往往与她们的性格有关.",
+      "example": {
+        "zh": "科学研究证明，女孩子对衣服颜色的选择往往与她们的性格有关。",
+        "pinyin": "Kēxué yánjiū zhèngmíng, nǚháizi duì yīfu yánsè de xuǎnzé wǎngwǎng yǔ tāmen de xìnggé yǒuguān.",
+        "en": "Scientific research shows that girls' choice of clothing color is often related to their personality."
+      }
+    },
+    "阳光": {
+      "zh": "阳光",
+      "pinyin": "yángguāng",
+      "en": "optimistic, cheerful",
+      "pos": "adj.",
+      "when": "Remember 阳光 like the word you’ll use when a girl’s character feels sunny — 性格比较阳光 — not the weather in Lesson 9’s title.",
+      "usage": "Most Chinese speakers use this lesson’s 阳光 as an adjective for an upbeat person. 课文5: girls who wear white are 阳光; 积极向上 is their 共同特点.",
+      "example": {
+        "zh": "喜欢穿白色衣服的女孩子性格比较阳光，生活态度积极向上是她们的共同特点；而喜欢穿红色衣服的女孩子性格比较浪漫。",
+        "pinyin": "Xǐhuan chuān báisè yīfu de nǚháizi xìnggé bǐjiào yángguāng, shēnghuó tàidù jījí xiàngshàng shì tāmen de gòngtóng tèdiǎn; ér xǐhuan chuān hóngsè yīfu de nǚháizi xìnggé bǐjiào làngmàn.",
+        "en": "Girls who like wearing white tend to have a sunny, optimistic personality — a positive, forward-looking attitude toward life is their common trait; girls who like wearing red, on the other hand, tend to have a more romantic personality."
+      }
+    },
+    "积极": {
+      "zh": "积极",
+      "pinyin": "jījí",
+      "en": "positive",
+      "pos": "adj.",
+      "when": "Remember 积极 like the word you’ll use when an attitude leans forward — 生活态度积极向上.",
+      "usage": "Most Chinese speakers pair 积极 with 向上 / 参加 for a positive, take-part stance, the opposite of sitting it out. 课文5 makes it the shared trait of the white-clothes girls.",
+      "example": {
+        "zh": "喜欢穿白色衣服的女孩子性格比较阳光，生活态度积极向上是她们的共同特点；而喜欢穿红色衣服的女孩子性格比较浪漫。",
+        "pinyin": "Xǐhuan chuān báisè yīfu de nǚháizi xìnggé bǐjiào yángguāng, shēnghuó tàidù jījí xiàngshàng shì tāmen de gòngtóng tèdiǎn; ér xǐhuan chuān hóngsè yīfu de nǚháizi xìnggé bǐjiào làngmàn.",
+        "en": "Girls who like wearing white tend to have a sunny, optimistic personality — a positive, forward-looking attitude toward life is their common trait; girls who like wearing red, on the other hand, tend to have a more romantic personality."
+      }
+    },
+    "特点": {
+      "zh": "特点",
+      "pinyin": "tèdiǎn",
+      "en": "characteristic",
+      "pos": "n.",
+      "when": "Remember 特点 like the word you’ll use when you name what those sunny girls share — 共同特点.",
+      "usage": "Most Chinese speakers use 特点 for a characteristic you can point to. 课文5: 积极向上 is their 共同特点; the 因此 grammar line later says teachers should follow each student’s 特点.",
+      "example": {
+        "zh": "喜欢穿白色衣服的女孩子性格比较阳光，生活态度积极向上是她们的共同特点；而喜欢穿红色衣服的女孩子性格比较浪漫。",
+        "pinyin": "Xǐhuan chuān báisè yīfu de nǚháizi xìnggé bǐjiào yángguāng, shēnghuó tàidù jījí xiàngshàng shì tāmen de gòngtóng tèdiǎn; ér xǐhuan chuān hóngsè yīfu de nǚháizi xìnggé bǐjiào làngmàn.",
+        "en": "Girls who like wearing white tend to have a sunny, optimistic personality — a positive, forward-looking attitude toward life is their common trait; girls who like wearing red, on the other hand, tend to have a more romantic personality."
+      }
+    },
+    "女性": {
+      "zh": "女性",
+      "pinyin": "nǚxìng",
+      "en": "woman",
+      "pos": "n.",
+      "when": "Remember 女性 like the word you’ll use when chocolate fans are named as a group — 尤其是女性.",
+      "usage": "Most Chinese speakers use 女性 for women as a category (not one 女人). 课文1: lots of people love chocolate, 尤其是女性, because it is mostly sweet.",
+      "example": {
+        "zh": "是啊，因为很多人都爱吃巧克力，尤其是女性。",
+        "pinyin": "Shì a, yīnwèi hěn duō rén dōu ài chī qiǎokèlì, yóuqí shì nǚxìng.",
+        "en": "Yes, because a lot of people love eating chocolate, especially women."
+      }
+    },
+    "美": {
+      "zh": "美",
+      "pinyin": "měi",
+      "en": "beautiful",
+      "pos": "adj.",
+      "when": "Remember 美 like the word you’ll use when 小夏 says the view is 真美, and again when the title says life does not 缺少美.",
+      "usage": "Most Chinese speakers use 美 as “beautiful” (景色真美) and as “beauty” (不缺少美). 课文2 is the adjective; 课文4 turns it into the thing you must have eyes to find.",
+      "example": {
+        "zh": "这里的景色真美，空气也好。",
+        "pinyin": "Zhèli de jǐngsè zhēn měi, kōngqì yě hǎo.",
+        "en": "The scenery here is really beautiful, and the air is good too."
+      }
+    },
+    "长期": {
+      "zh": "长期",
+      "pinyin": "chángqī",
+      "en": "long time",
+      "pos": "n.",
+      "when": "Remember 长期 like the word you’ll use when one jam is not the point — 长期这样 it starts changing 脾气.",
+      "usage": "Most Chinese speakers use 长期 for a long stretch of time (长期这样). In 课文3, living with 堵车 long-term can hit temper and even 性格.",
+      "example": {
+        "zh": "长期这样，还会影响脾气甚至性格。",
+        "pinyin": "Chángqī zhèyàng, hái huì yǐngxiǎng píqi shènzhì xìnggé.",
+        "en": "Over the long run, this can even affect one's temper or personality."
+      }
+    },
+    "堵": {
+      "zh": "堵",
+      "pinyin": "dǔ",
+      "en": "to block up",
+      "pos": "v.",
+      "when": "Remember 堵 like the word you’ll use when 马克 puns — the road is jammed, so the mood is “堵” too.",
+      "usage": "Most Chinese speakers use standalone 堵 for blocking up (堵车 is the compound). 课文3 writes 心情也“堵” in quotes so you hear the verb, not only the traffic word.",
+      "example": {
+        "zh": "那就好，堵车浪费时间，遇到堵车，心情也\"堵\"。",
+        "pinyin": "Nà jiù hǎo, dǔ chē làngfèi shíjiān, yùdào dǔ chē, xīnqíng yě \"dǔ\".",
+        "en": "That's good then. Traffic jams waste time — when you hit a jam, your mood gets \"jammed\" too."
+      }
+    },
+    "窗": {
+      "zh": "窗",
+      "pinyin": "chuāng",
+      "en": "window",
+      "pos": "n.",
+      "when": "Remember 窗 like the word you’ll use when the view outside is fixed — 窗外是什么样子 — but you still pick which 窗户 to stand at.",
+      "usage": "Most Chinese speakers use 窗 in 窗外 / 窗口; 窗户 is the everyday noun (Lesson 7). 课文4’s metaphor starts from 窗外.",
+      "example": {
+        "zh": "窗外是什么样子，我们无法改变，但我们可以选择站在哪个窗户前。",
+        "pinyin": "Chuāng wài shì shénme yàngzi, wǒmen wúfǎ gǎibiàn, dàn wǒmen kěyǐ xuǎnzé zhàn zài nǎ ge chuānghu qián.",
+        "en": "We cannot change what it looks like outside the window, but we can choose which window to stand in front of."
+      }
+    },
+    "得到": {
+      "zh": "得到",
+      "pinyin": "dédào",
+      "en": "to gain",
+      "pos": "v.",
+      "when": "Remember 得到 like the word you’ll use when green actually gives the eyes something — 得到休息.",
+      "usage": "Most Chinese speakers use 得到 for receiving a result (得到休息), not just 获得 in the abstract. 课文5: 绿色让我们的眼睛得到休息.",
+      "example": {
+        "zh": "绿色让我们的眼睛得到休息。",
+        "pinyin": "Lǜsè ràng wǒmen de yǎnjing dédào xiūxi.",
+        "en": "Green lets our eyes rest."
+      }
+    },
+    "有关": {
+      "zh": "有关",
+      "pinyin": "yǒuguān",
+      "en": "to have sth. to do with",
+      "pos": "v.",
+      "when": "Remember 有关 like the word you’ll use when color is not random — it 与性格有关.",
+      "usage": "Most Chinese speakers frame it as 与 / 和 …… 有关 (“has to do with”). 课文5: 选择往往与她们的性格有关. Do not confuse it with 没有关系.",
+      "example": {
+        "zh": "科学研究证明，女孩子对衣服颜色的选择往往与她们的性格有关。",
+        "pinyin": "Kēxué yánjiū zhèngmíng, nǚháizi duì yīfu yánsè de xuǎnzé wǎngwǎng yǔ tāmen de xìnggé yǒuguān.",
+        "en": "Scientific research shows that girls' choice of clothing color is often related to their personality."
+      }
+    }
+  }
+}

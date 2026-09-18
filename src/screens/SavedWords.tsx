@@ -1,7 +1,6 @@
-import { ChevronLeft, BoltIcon, SpeakerIcon } from '../components/Icons'
+import { ChevronLeft, BoltIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { lookup } from '../lib/content'
-import { speak } from '../lib/speech'
 import { useStore } from '../store/store'
 
 /**
@@ -86,20 +85,7 @@ export function SavedWords({
                         </>
                       )}
                     </div>
-                    <div className="row" style={{ gap: 4 }}>
-                      <span
-                        className="icon-round tap44"
-                        role="button"
-                        aria-label={`Say ${zh}`}
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          speak(zh)
-                        }}
-                      >
-                        <SpeakerIcon size={16} />
-                      </span>
-                      <SaveStar zh={zh} size={20} />
-                    </div>
+                    <SaveStar zh={zh} size={20} />
                   </div>
                 )
               })}

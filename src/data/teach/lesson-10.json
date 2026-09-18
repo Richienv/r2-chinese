@@ -1,0 +1,396 @@
+{
+  "lesson": 10,
+  "title": "幸福的标准",
+  "words": {
+    "礼拜天": {
+      "zh": "礼拜天",
+      "pinyin": "lǐbàitiān",
+      "en": "Sunday",
+      "pos": "n.",
+      "when": "Remember 礼拜天 like the word you’ll use when 孙月 asks 王静 out shopping — not Monday, the free day.",
+      "usage": "Most Chinese speakers treat it as spoken Sunday, same slot as 星期天. 课文1 opens on it: 礼拜天有空儿吗?",
+      "example": {
+        "zh": "礼拜天有空儿吗？陪我去逛街怎么样？我想去给丈夫买个生日礼物。",
+        "pinyin": "Lǐbàitiān yǒu kòngr ma? Péi wǒ qù guàng jiē zěnmeyàng? Wǒ xiǎng qù gěi zhàngfu mǎi ge shēngrì lǐwù.",
+        "en": "Are you free on Sunday? How about coming shopping with me? I want to buy a birthday present for my husband."
+      }
+    },
+    "空儿": {
+      "zh": "空儿",
+      "pinyin": "kòngr",
+      "en": "free time, spare time",
+      "pos": "n.",
+      "when": "Remember 空儿 like the word you’ll use when you ask if someone has a gap — 有空儿吗 before you drag them shopping.",
+      "usage": "Most Chinese speakers say 有空儿 / 没空儿, with the 儿. It is spare time, not an empty room (空). 孙月’s first ask in 课文1.",
+      "example": {
+        "zh": "礼拜天有空儿吗？陪我去逛街怎么样？我想去给丈夫买个生日礼物。",
+        "pinyin": "Lǐbàitiān yǒu kòngr ma? Péi wǒ qù guàng jiē zěnmeyàng? Wǒ xiǎng qù gěi zhàngfu mǎi ge shēngrì lǐwù.",
+        "en": "Are you free on Sunday? How about coming shopping with me? I want to buy a birthday present for my husband."
+      }
+    },
+    "母亲": {
+      "zh": "母亲",
+      "pinyin": "mǔqīn",
+      "en": "mother",
+      "pos": "n.",
+      "when": "Remember 母亲 like the word you’ll use when 王静 names who she still looks after at home — more formal than 妈妈.",
+      "usage": "Most Chinese speakers use 母亲 in careful speech or writing. 课文1: 家里还有母亲和儿子需要照顾, then she is also 母亲 in front of her child.",
+      "example": {
+        "zh": "我现在上有老，下有小。除了工作以外，家里还有母亲和儿子需要照顾。",
+        "pinyin": "Wǒ xiànzài shàng yǒu lǎo, xià yǒu xiǎo. Chúle gōngzuò yǐwài, jiā li hái yǒu mǔqīn hé érzi xūyào zhàogù.",
+        "en": "I have elderly parents to look after and a young child to raise. Besides work, I also need to take care of my mother and son at home."
+      }
+    },
+    "不过": {
+      "zh": "不过",
+      "pinyin": "búguò",
+      "en": "but, yet",
+      "pos": "conj.",
+      "when": "Remember 不过 like the soft turn you’ll use when life is hard, then you flip it — 王静 is exhausted, 不过现在我很幸福.",
+      "usage": "Most Chinese speakers start the second clause with it, gentler than 但是. The 语言点 also uses it as an adverb “only”: 我们不过谈了点儿工作. 课文1 is the conjunction.",
+      "example": {
+        "zh": "没事儿，谢谢！不过现在我很幸福，因为在母亲面前我可以做一个永远长不大的孩子；在孩子面前我又是个能照顾他的母亲，这让我有了努力的方向。",
+        "pinyin": "Méi shìr, xièxie! Búguò xiànzài wǒ hěn xìngfú, yīnwèi zài mǔqīn miànqián wǒ kěyǐ zuò yí ge yǒngyuǎn zhǎng bu dà de háizi; zài háizi miànqián wǒ yòu shì ge néng zhàogù tā de mǔqīn, zhè ràng wǒ yǒule nǔlì de fāngxiàng.",
+        "en": "I'm fine, thanks! But actually I'm very happy now, because in front of my mother I get to be a child who never has to grow up, and in front of my child I'm a mother who can take care of him — that gives me a direction to work toward."
+      }
+    },
+    "永远": {
+      "zh": "永远",
+      "pinyin": "yǒngyuǎn",
+      "en": "forever",
+      "pos": "adv.",
+      "when": "Remember 永远 like the word you’ll use when 王静 gets to stay a child in front of her mom — 永远长不大.",
+      "usage": "Most Chinese speakers park it before a verb or adjective: 永远爱你, 永远的朋友. 课文1’s picture is 做一个永远长不大的孩子, not “for a long time.”",
+      "example": {
+        "zh": "没事儿，谢谢！不过现在我很幸福，因为在母亲面前我可以做一个永远长不大的孩子；在孩子面前我又是个能照顾他的母亲，这让我有了努力的方向。",
+        "pinyin": "Méi shìr, xièxie! Búguò xiànzài wǒ hěn xìngfú, yīnwèi zài mǔqīn miànqián wǒ kěyǐ zuò yí ge yǒngyuǎn zhǎng bu dà de háizi; zài háizi miànqián wǒ yòu shì ge néng zhàogù tā de mǔqīn, zhè ràng wǒ yǒule nǔlì de fāngxiàng.",
+        "en": "I'm fine, thanks! But actually I'm very happy now, because in front of my mother I get to be a child who never has to grow up, and in front of my child I'm a mother who can take care of him — that gives me a direction to work toward."
+      }
+    },
+    "方向": {
+      "zh": "方向",
+      "pinyin": "fāngxiàng",
+      "en": "direction, orientation",
+      "pos": "n.",
+      "when": "Remember 方向 like the word you’ll use when dual roles finally point you — child to your mom, mom to your child, 努力的方向.",
+      "usage": "Most Chinese speakers use it for compass direction and for a life aim. 课文1 is the second: 这让我有了努力的方向, not “which way to the station.”",
+      "example": {
+        "zh": "没事儿，谢谢！不过现在我很幸福，因为在母亲面前我可以做一个永远长不大的孩子；在孩子面前我又是个能照顾他的母亲，这让我有了努力的方向。",
+        "pinyin": "Méi shìr, xièxie! Búguò xiànzài wǒ hěn xìngfú, yīnwèi zài mǔqīn miànqián wǒ kěyǐ zuò yí ge yǒngyuǎn zhǎng bu dà de háizi; zài háizi miànqián wǒ yòu shì ge néng zhàogù tā de mǔqīn, zhè ràng wǒ yǒule nǔlì de fāngxiàng.",
+        "en": "I'm fine, thanks! But actually I'm very happy now, because in front of my mother I get to be a child who never has to grow up, and in front of my child I'm a mother who can take care of him — that gives me a direction to work toward."
+      }
+    },
+    "优秀": {
+      "zh": "优秀",
+      "pinyin": "yōuxiù",
+      "en": "excellent, outstanding",
+      "pos": "adj.",
+      "when": "Remember 优秀 like the word you’ll use when 李老师 lists why 高老师 is already lucky — the daughter is 那么优秀.",
+      "usage": "Most Chinese speakers put it after 很 / 那么 or before a noun: 优秀的学生. 课文2 pairs it with the next two beats, 硕士 and 翻译.",
+      "example": {
+        "zh": "你有一个漂亮的女儿，还那么优秀，硕士毕业后就当了翻译。",
+        "pinyin": "Nǐ yǒu yí ge piàoliang de nǚ'ér, hái nàme yōuxiù, shuòshì bìyè hòu jiù dāngle fānyì.",
+        "en": "You have a beautiful daughter who's so outstanding too — right after getting her master's degree she became a translator."
+      }
+    },
+    "硕士": {
+      "zh": "硕士",
+      "pinyin": "shuòshì",
+      "en": "Master, person who has a master's degree",
+      "pos": "n.",
+      "when": "Remember 硕士 like the degree between 学士 and 博士 — 高老师’s daughter finishes it, then walks into a job.",
+      "usage": "Most Chinese speakers say 读硕士 / 硕士毕业. 课文2: 硕士毕业后就当了翻译 — the diploma, then the title.",
+      "example": {
+        "zh": "你有一个漂亮的女儿，还那么优秀，硕士毕业后就当了翻译。",
+        "pinyin": "Nǐ yǒu yí ge piàoliang de nǚ'ér, hái nàme yōuxiù, shuòshì bìyè hòu jiù dāngle fānyì.",
+        "en": "You have a beautiful daughter who's so outstanding too — right after getting her master's degree she became a translator."
+      }
+    },
+    "翻译": {
+      "zh": "翻译",
+      "pinyin": "fānyì",
+      "en": "translator, interpreter",
+      "pos": "n.",
+      "when": "Remember 翻译 like the job title you’ll use when the master’s ends — 当了翻译, the person, not the verb yet.",
+      "usage": "The book lists the noun. Speakers also use it as a verb (把汉语翻译成英语). 课文2 is the noun: she became a translator.",
+      "example": {
+        "zh": "你有一个漂亮的女儿，还那么优秀，硕士毕业后就当了翻译。",
+        "pinyin": "Nǐ yǒu yí ge piàoliang de nǚ'ér, hái nàme yōuxiù, shuòshì bìyè hòu jiù dāngle fānyì.",
+        "en": "You have a beautiful daughter who's so outstanding too — right after getting her master's degree she became a translator."
+      }
+    },
+    "确实": {
+      "zh": "确实",
+      "pinyin": "quèshí",
+      "en": "truly, indeed",
+      "pos": "adv.",
+      "when": "Remember 确实 like the word you’ll use when you stop being modest and admit it — 我女儿确实不错.",
+      "usage": "Most Chinese speakers drop it in to confirm a fact, not to start a contrast. 课文2 is 高老师 agreeing; the 语言点 repeats it as “indeed.”",
+      "example": {
+        "zh": "我女儿确实不错，记得她刚拿到第一个月工资时，就兴奋地拉着我和她爸俩去商场，给我们买礼物，那时我和她爸心里别提多美了！",
+        "pinyin": "Wǒ nǚ'ér quèshí búcuò, jìde tā gāng nádào dì yī ge yuè gōngzī shí, jiù xīngfèn de lāzhe wǒ hé tā bà liǎ qù shāngchǎng, gěi wǒmen mǎi lǐwù, nà shí wǒ hé tā bà xīn li biétí duō měi le!",
+        "en": "My daughter really is great. I remember when she got her first month's salary, she excitedly dragged her father and me to the mall and bought us presents — her dad and I were happier than words could say!"
+      }
+    },
+    "兴奋": {
+      "zh": "兴奋",
+      "pinyin": "xīngfèn",
+      "en": "excited",
+      "pos": "adj.",
+      "when": "Remember 兴奋 like the word you’ll use when the first paycheck hits — she is 兴奋地拉着 both parents to the mall.",
+      "usage": "Most Chinese speakers say 很兴奋 or 兴奋地 + verb. 课文2 is the adverbial: excitement you can see, not “interesting.”",
+      "example": {
+        "zh": "我女儿确实不错，记得她刚拿到第一个月工资时，就兴奋地拉着我和她爸俩去商场，给我们买礼物，那时我和她爸心里别提多美了！",
+        "pinyin": "Wǒ nǚ'ér quèshí búcuò, jìde tā gāng nádào dì yī ge yuè gōngzī shí, jiù xīngfèn de lāzhe wǒ hé tā bà liǎ qù shāngchǎng, gěi wǒmen mǎi lǐwù, nà shí wǒ hé tā bà xīn li biétí duō měi le!",
+        "en": "My daughter really is great. I remember when she got her first month's salary, she excitedly dragged her father and me to the mall and bought us presents — her dad and I were happier than words could say!"
+      }
+    },
+    "拉": {
+      "zh": "拉",
+      "pinyin": "lā",
+      "en": "to pull, to drag",
+      "pos": "v.",
+      "when": "Remember 拉 like the word you’ll use when she physically tows dad and 高老师 to the 商场 — 拉着我们俩.",
+      "usage": "Most Chinese speakers use it for a hand-pull (拉手, 拉着走), also “give a ride” (开车拉你). 课文2 is the drag: 兴奋地拉着我和她爸.",
+      "example": {
+        "zh": "我女儿确实不错，记得她刚拿到第一个月工资时，就兴奋地拉着我和她爸俩去商场，给我们买礼物，那时我和她爸心里别提多美了！",
+        "pinyin": "Wǒ nǚ'ér quèshí búcuò, jìde tā gāng nádào dì yī ge yuè gōngzī shí, jiù xīngfèn de lāzhe wǒ hé tā bà liǎ qù shāngchǎng, gěi wǒmen mǎi lǐwù, nà shí wǒ hé tā bà xīn li biétí duō měi le!",
+        "en": "My daughter really is great. I remember when she got her first month's salary, she excitedly dragged her father and me to the mall and bought us presents — her dad and I were happier than words could say!"
+      }
+    },
+    "建议": {
+      "zh": "建议",
+      "pinyin": "jiànyì",
+      "en": "suggestion, advice",
+      "pos": "n.",
+      "when": "Remember 建议 like the word you’ll use when 小夏 still has no post-graduation plan — 正想听听你的建议.",
+      "usage": "The book lists the noun: 一个建议, 听听建议. Speakers also verb it (我建议你…). 课文3 is the noun 小夏 asks for.",
+      "example": {
+        "zh": "我还没想好呢，正想听听你的建议。你觉得在选择职业时，收入重要吗？",
+        "pinyin": "Wǒ hái méi xiǎnghǎo ne, zhèng xiǎng tīngting nǐ de jiànyì. Nǐ juéde zài xuǎnzé zhíyè shí, shōurù zhòngyào ma?",
+        "en": "I haven't decided yet — I was just about to ask for your advice. Do you think income matters when choosing a career?"
+      }
+    },
+    "职业": {
+      "zh": "职业",
+      "pinyin": "zhíyè",
+      "en": "occupation, profession",
+      "pos": "n.",
+      "when": "Remember 职业 like the word you’ll use when the question is the whole career, not one job posting — 选择职业时.",
+      "usage": "Most Chinese speakers mean profession as a path (教师是一种职业), wider than 工作. 课文3: income vs interest when you 选择职业.",
+      "example": {
+        "zh": "我还没想好呢，正想听听你的建议。你觉得在选择职业时，收入重要吗？",
+        "pinyin": "Wǒ hái méi xiǎnghǎo ne, zhèng xiǎng tīngting nǐ de jiànyì. Nǐ juéde zài xuǎnzé zhíyè shí, shōurù zhòngyào ma?",
+        "en": "I haven't decided yet — I was just about to ask for your advice. Do you think income matters when choosing a career?"
+      }
+    },
+    "关键": {
+      "zh": "关键",
+      "pinyin": "guānjiàn",
+      "en": "hinge, crux",
+      "pos": "n.",
+      "when": "Remember 关键 like the word you’ll use when 小雨 ranks what actually matters — 兴趣才是关键, not the paycheck.",
+      "usage": "Most Chinese speakers use 才是关键 / A是B的关键 for the hinge. It can also be an adjective (很关键). 课文3 is the noun: interest is the crux.",
+      "example": {
+        "zh": "在我看来，赚钱多少不是最重要的，兴趣才是关键。只有做自己喜欢的事，才会觉得幸福，将来也会有更好的发展。",
+        "pinyin": "Zài wǒ kànlái, zhuàn qián duō shǎo bú shì zuì zhòngyào de, xìngqù cái shì guānjiàn. Zhǐyǒu zuò zìjǐ xǐhuan de shì, cái huì juéde xìngfú, jiānglái yě huì yǒu gèng hǎo de fāzhǎn.",
+        "en": "In my opinion, how much money you make isn't the most important thing — interest is the key. Only by doing what you love will you feel happy, and you'll also have better prospects in the future."
+      }
+    },
+    "将来": {
+      "zh": "将来",
+      "pinyin": "jiānglái",
+      "en": "future",
+      "pos": "n.",
+      "when": "Remember 将来 like the word you’ll use when 小雨 looks past graduation — do what you love, 将来也会有更好的发展.",
+      "usage": "Most Chinese speakers use it for the time still ahead (将来想做什么), not 未来 in a sci-fi sense. 课文3 parks it as the later payoff.",
+      "example": {
+        "zh": "在我看来，赚钱多少不是最重要的，兴趣才是关键。只有做自己喜欢的事，才会觉得幸福，将来也会有更好的发展。",
+        "pinyin": "Zài wǒ kànlái, zhuàn qián duō shǎo bú shì zuì zhòngyào de, xìngqù cái shì guānjiàn. Zhǐyǒu zuò zìjǐ xǐhuan de shì, cái huì juéde xìngfú, jiānglái yě huì yǒu gèng hǎo de fāzhǎn.",
+        "en": "In my opinion, how much money you make isn't the most important thing — interest is the key. Only by doing what you love will you feel happy, and you'll also have better prospects in the future."
+      }
+    },
+    "发展": {
+      "zh": "发展",
+      "pinyin": "fāzhǎn",
+      "en": "to develop, to promote",
+      "pos": "v.",
+      "when": "Remember 发展 like the word you’ll use when the job should grow you, not just pay you — 更好的发展.",
+      "usage": "The book lists a verb, but 课文3 uses it as a noun: 有更好的发展, “prospects.” Speakers also say 发展经济. Here it is the career arc after 兴趣.",
+      "example": {
+        "zh": "在我看来，赚钱多少不是最重要的，兴趣才是关键。只有做自己喜欢的事，才会觉得幸福，将来也会有更好的发展。",
+        "pinyin": "Zài wǒ kànlái, zhuàn qián duō shǎo bú shì zuì zhòngyào de, xìngqù cái shì guānjiàn. Zhǐyǒu zuò zìjǐ xǐhuan de shì, cái huì juéde xìngfú, jiānglái yě huì yǒu gèng hǎo de fāzhǎn.",
+        "en": "In my opinion, how much money you make isn't the most important thing — interest is the key. Only by doing what you love will you feel happy, and you'll also have better prospects in the future."
+      }
+    },
+    "躺": {
+      "zh": "躺",
+      "pinyin": "tǎng",
+      "en": "to lie (on one's back)",
+      "pos": "v.",
+      "when": "Remember 躺 like the word you’ll use when 小雨’s happiness is horizontal — 躺在床上看看书 after the hot shower.",
+      "usage": "Most Chinese speakers lie 躺 on a bed or sofa, on the back; 趴 is face-down. 课文3: 躺在床上, then 困了睡睡觉.",
+      "example": {
+        "zh": "幸福其实很简单，它不是只要有钱就能买到的。我觉得工作结束回家后，洗个热水澡，然后躺在床上看看书、听听音乐，困了睡睡觉，就很幸福。",
+        "pinyin": "Xìngfú qíshí hěn jiǎndān, tā bú shì zhǐyào yǒu qián jiù néng mǎidào de. Wǒ juéde gōngzuò jiéshù huí jiā hòu, xǐ ge rè shuǐzǎo, ránhòu tǎng zài chuáng shang kànkan shū, tīngting yīnyuè, kùnle shuìshui jiào, jiù hěn xìngfú.",
+        "en": "Happiness is actually very simple — it's not something you can just buy with money. I think that after finishing work and going home, taking a hot shower, then lying in bed reading a little, listening to some music, and sleeping when I'm tired — that's happiness."
+      }
+    },
+    "困": {
+      "zh": "困",
+      "pinyin": "kùn",
+      "en": "sleepy",
+      "pos": "adj.",
+      "when": "Remember 困 like the word you’ll use when the eyes go — 困了睡睡觉, not “trapped” and not 困难.",
+      "usage": "Most Chinese speakers use this 困 for sleepy (我困了). 困难 is a different word. 课文3’s happiness is: get sleepy, then sleep.",
+      "example": {
+        "zh": "幸福其实很简单，它不是只要有钱就能买到的。我觉得工作结束回家后，洗个热水澡，然后躺在床上看看书、听听音乐，困了睡睡觉，就很幸福。",
+        "pinyin": "Xìngfú qíshí hěn jiǎndān, tā bú shì zhǐyào yǒu qián jiù néng mǎidào de. Wǒ juéde gōngzuò jiéshù huí jiā hòu, xǐ ge rè shuǐzǎo, ránhòu tǎng zài chuáng shang kànkan shū, tīngting yīnyuè, kùnle shuìshui jiào, jiù hěn xìngfú.",
+        "en": "Happiness is actually very simple — it's not something you can just buy with money. I think that after finishing work and going home, taking a hot shower, then lying in bed reading a little, listening to some music, and sleeping when I'm tired — that's happiness."
+      }
+    },
+    "经济": {
+      "zh": "经济",
+      "pinyin": "jīngjì",
+      "en": "economy",
+      "pos": "n.",
+      "when": "Remember 经济 like the word you’ll use when people think a bigger house and nicer clothes = happiness — 经济条件越好.",
+      "usage": "Most Chinese speakers use it for the economy or for money circumstances: 经济条件, 经济压力, 学经济. 课文4 binds it to 条件.",
+      "example": {
+        "zh": "有的人希望穿得再好一些，房子再大一些，认为经济条件越好人就越幸福。",
+        "pinyin": "Yǒude rén xīwàng chuān de zài hǎo yìxiē, fángzi zài dà yìxiē, rènwéi jīngjì tiáojiàn yuè hǎo rén jiù yuè xìngfú.",
+        "en": "Some people hope to dress a bit better and have a bigger house, believing that the better one's economic conditions, the happier one will be."
+      }
+    },
+    "条件": {
+      "zh": "条件",
+      "pinyin": "tiáojiàn",
+      "en": "condition",
+      "pos": "n.",
+      "when": "Remember 条件 like the word you’ll use when “how well-off” is the yardstick — 经济条件, not a weather condition.",
+      "usage": "Most Chinese speakers stack it: 经济条件, 生活条件, 条件很好. 课文4’s claim is 经济条件越好, 人就越幸福.",
+      "example": {
+        "zh": "有的人希望穿得再好一些，房子再大一些，认为经济条件越好人就越幸福。",
+        "pinyin": "Yǒude rén xīwàng chuān de zài hǎo yìxiē, fángzi zài dà yìxiē, rènwéi jīngjì tiáojiàn yuè hǎo rén jiù yuè xìngfú.",
+        "en": "Some people hope to dress a bit better and have a bigger house, believing that the better one's economic conditions, the happier one will be."
+      }
+    },
+    "富": {
+      "zh": "富",
+      "pinyin": "fù",
+      "en": "rich, wealthy",
+      "pos": "adj.",
+      "when": "Remember 富 like the word you’ll use when the passage splits people by money — 富人 who still are not 愉快.",
+      "usage": "Most Chinese speakers say 富 / 富人 / 富裕, opposite 穷. Do not grab 丰富 (rich in content). 课文4: 很多富人过得并不愉快.",
+      "example": {
+        "zh": "其实有很多富人过得并不愉快，而有些穷人却过得很快乐。",
+        "pinyin": "Qíshí yǒu hěn duō fù rén guò de bìng bù yúkuài, ér yǒuxiē qióng rén què guò de hěn kuàilè.",
+        "en": "In fact many rich people are not happy at all, while some poor people live quite happily."
+      }
+    },
+    "穷": {
+      "zh": "穷",
+      "pinyin": "qióng",
+      "en": "poor, impoverished",
+      "pos": "adj.",
+      "when": "Remember 穷 like the flip of 富 — 穷人 in the same line who 却过得很快乐.",
+      "usage": "Most Chinese speakers use 穷 / 穷人 opposite 富. 课文4’s point is money and mood do not travel together.",
+      "example": {
+        "zh": "其实有很多富人过得并不愉快，而有些穷人却过得很快乐。",
+        "pinyin": "Qíshí yǒu hěn duō fù rén guò de bìng bù yúkuài, ér yǒuxiē qióng rén què guò de hěn kuàilè.",
+        "en": "In fact many rich people are not happy at all, while some poor people live quite happily."
+      }
+    },
+    "等": {
+      "zh": "等",
+      "pinyin": "děng",
+      "en": "etc., and so on",
+      "pos": "part.",
+      "when": "Remember 等 like the closer you’ll use after a short list — 时间、感情、生活经历等, then you stop.",
+      "usage": "This lesson’s 等 is the listing particle, not “to wait.” Most Chinese speakers hang it at the end of 例如 / 比如 lists. 课文4: things money cannot buy.",
+      "example": {
+        "zh": "有钱不一定幸福，因为很多东西都是不能用钱买到的，例如时间、感情、生活经历等。",
+        "pinyin": "Yǒu qián bù yídìng xìngfú, yīnwèi hěn duō dōngxi dōu shì bù néng yòng qián mǎidào de, lìrú shíjiān, gǎnqíng, shēnghuó jīnglì děng.",
+        "en": "Having money doesn't necessarily mean happiness, because many things cannot be bought with money — for example, time, feelings, and life experience."
+      }
+    },
+    "由于": {
+      "zh": "由于",
+      "pinyin": "yóuyú",
+      "en": "because, since",
+      "pos": "conj.",
+      "when": "Remember 由于 like the reason-word you’ll use when no money blocks the doctor — 由于缺钱而不能及时去看医生.",
+      "usage": "Most Chinese speakers put 由于 in the first clause, often with 所以, more written than 因为. 课文4: 由于缺钱. The 语言点 also allows 由于 + noun (由于工作的需要).",
+      "example": {
+        "zh": "当你生病了，如果由于缺钱而不能及时去看医生，你的健康都很难得到保证，就更别说幸福了。",
+        "pinyin": "Dāng nǐ shēng bìng le, rúguǒ yóuyú quē qián ér bù néng jíshí qù kàn yīshēng, nǐ de jiànkāng dōu hěn nán dédào bǎozhèng, jiù gèng biéshuō xìngfú le.",
+        "en": "When you fall ill, if you cannot see a doctor in time for lack of money, your health can hardly be guaranteed, let alone your happiness."
+      }
+    },
+    "比如": {
+      "zh": "比如",
+      "pinyin": "bǐrú",
+      "en": "for example, such as",
+      "pos": "v.",
+      "when": "Remember 比如 like the word you’ll use when childhood happiness needs a prop — 比如一块橡皮、一块糖.",
+      "usage": "Most Chinese speakers drop it in before one or two examples, same job as 例如. The book tags it a verb. 课文5 / 注释5 open the eraser-and-candy list with it.",
+      "example": {
+        "zh": "还有人说，小时候幸福是一件东西，比如一块橡皮、一块糖，得到了就很幸福。",
+        "pinyin": "Hái yǒu rén shuō, xiǎo shíhou xìngfú shì yí jiàn dōngxi, bǐrú yí kuài xiàngpí, yí kuài táng, dédàole jiù hěn xìngfú.",
+        "en": "Others say that in childhood happiness is a thing — for example, an eraser or a piece of candy — and getting it makes you very happy."
+      }
+    },
+    "橡皮": {
+      "zh": "橡皮",
+      "pinyin": "xiàngpí",
+      "en": "eraser, rubber",
+      "pos": "n.",
+      "when": "Remember 橡皮 like the childhood prize in 课文5 — 一块橡皮, the little thing that used to count as happiness.",
+      "usage": "Most Chinese speakers mean the eraser in the pencil case, counted with 块. Pair it with 糖: both are 小时候的东西.",
+      "example": {
+        "zh": "还有人说，小时候幸福是一件东西，比如一块橡皮、一块糖，得到了就很幸福。",
+        "pinyin": "Hái yǒu rén shuō, xiǎo shíhou xìngfú shì yí jiàn dōngxi, bǐrú yí kuài xiàngpí, yí kuài táng, dédàole jiù hěn xìngfú.",
+        "en": "Others say that in childhood happiness is a thing — for example, an eraser or a piece of candy — and getting it makes you very happy."
+      }
+    },
+    "糖": {
+      "zh": "糖",
+      "pinyin": "táng",
+      "en": "sugar, candy",
+      "pos": "n.",
+      "when": "Remember 糖 like the other childhood prize next to the eraser — 一块糖, get it and you were happy.",
+      "usage": "Most Chinese speakers use 糖 for sugar and for sweets (奶糖, 一块糖). 课文5 is the candy, counted with 块, not a spoon of sugar.",
+      "example": {
+        "zh": "还有人说，小时候幸福是一件东西，比如一块橡皮、一块糖，得到了就很幸福。",
+        "pinyin": "Hái yǒu rén shuō, xiǎo shíhou xìngfú shì yí jiàn dōngxi, bǐrú yí kuài xiàngpí, yí kuài táng, dédàole jiù hěn xìngfú.",
+        "en": "Others say that in childhood happiness is a thing — for example, an eraser or a piece of candy — and getting it makes you very happy."
+      }
+    },
+    "低": {
+      "zh": "低",
+      "pinyin": "dī",
+      "en": "low",
+      "pos": "adj.",
+      "when": "Remember 低 like the bottom of 高低 — after you grow up, attitude sets how high or low 幸福感 sits.",
+      "usage": "Most Chinese speakers pair it with 高 (高低, 工资低). 课文5 only uses it inside 高低. Do not grab 降低 from later shopping texts.",
+      "example": {
+        "zh": "还有人说，小时候幸福是一件东西，比如一块橡皮、一块糖，得到了就很幸福；长大后幸福是一种态度，生活的态度决定了我们幸福感的高低。",
+        "pinyin": "Hái yǒu rén shuō, xiǎo shíhou xìngfú shì yí jiàn dōngxi, bǐrú yí kuài xiàngpí, yí kuài táng, dédàole jiù hěn xìngfú; zhǎngdà hòu xìngfú shì yì zhǒng tàidù, shēnghuó de tàidù juédìngle wǒmen xìngfúgǎn de gāodī.",
+        "en": "Others say that in childhood happiness is a thing — for example an eraser or a piece of candy — and getting it makes you very happy; after growing up happiness is an attitude, and one's attitude toward life determines how high or low our sense of happiness is."
+      }
+    },
+    "答案": {
+      "zh": "答案",
+      "pinyin": "dá'àn",
+      "en": "answer, key",
+      "pos": "n.",
+      "when": "Remember 答案 like the word you’ll use when the lesson title asks for a key — and 课文5 says there is no 标准答案.",
+      "usage": "Most Chinese speakers mean the answer to a question or test (写答案, 标准答案). 课文5: 幸福并没有一个标准答案.",
+      "example": {
+        "zh": "其实，幸福并没有一个标准答案，每个人对幸福都有不同的理解。",
+        "pinyin": "Qíshí, xìngfú bìng méiyǒu yí ge biāozhǔn dá'àn, měi ge rén duì xìngfú dōu yǒu bù tóng de lǐjiě.",
+        "en": "In fact, happiness has no standard answer; every person has a different understanding of happiness."
+      }
+    }
+  }
+}

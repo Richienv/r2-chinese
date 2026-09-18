@@ -1,108 +1,200 @@
-import { BookIcon, CheckIcon, ChevronRight, PlayIcon } from '../components/Icons'
-import { book, lessons, totalVocab } from '../lib/content'
-import { useStore } from '../store/store'
+import { type CSSProperties, useLayoutEffect, useRef, useState } from 'react'
+import { CheckIcon, LockIcon, PlayIcon } from '../components/Icons'
+import { lessons } from '../lib/content'
+import { NODE_LABEL, PATH_NODES, isLessonReached, isNodePlayable, nextPlayable, nodeCaption } from '../lib/wordsSession'
+import { useStore, type PathNode } from '../store/store'
 
-export function Learn({
+const W = 396
+const CX = [118, 278, 108, 288, 116, 270]
+const CURRENT = 70
+const REST = 58
+const GAP = 8
+
+function nodeClassName(state: 'done' | 'on' | 'lock') {
+  if (state === 'done') return 'path-node path-node-done'
+  if (state === 'on') return 'path-node path-node-on'
+  return 'path-node path-node-lock'
+}
+
+function unitLayout(currentIndex: number, fillHeight?: number) {
+  const sizes = PATH_NODES.map((_, i) => (i === currentIndex ? CURRENT : REST))
+  const topPad = currentIndex === 0 ? 44 : 10
+  const bottom = 10
+  const compact =
+    topPad + sizes.reduce((sum, size, i) => sum + (i === 0 ? size : GAP + size), 0) + bottom
+  const gaps = PATH_NODES.length - 1
+  let gap = GAP
+  if (fillHeight && fillHeight > compact && gaps > 0) {
+    gap = Math.min(52, GAP + (fillHeight - compact) / gaps)
+  }
+
+  const xs: number[] = []
+  const ys: number[] = []
+  let y = topPad + sizes[0] / 2
+  for (let i = 0; i < PATH_NODES.length; i++) {
+    xs.push(CX[i])
+    ys.push(y)
+    if (i < PATH_NODES.length - 1) y += sizes[i] / 2 + gap + sizes[i + 1] / 2
+  }
+  const last = PATH_NODES.length - 1
+  return { xs, ys, sizes, height: ys[last] + sizes[last] / 2 + bottom }
+}
+
+function railPath(xs: number[], ys: number[]) {
+  let d = `M${xs[0]} ${ys[0]}`
+  for (let i = 1; i < xs.length; i++) {
+    const mid = (ys[i - 1] + ys[i]) / 2
+    d += ` C${xs[i - 1]} ${mid} ${xs[i]} ${mid} ${xs[i]} ${ys[i]}`
+  }
+  return d
+}
+
+export function LessonPath({
+  lesson,
+  current,
+  nodeDone,
   onLesson,
-  onVocab,
+  onPlay,
+  fill,
 }: {
-  onLesson: (n: number) => void
-  onVocab: () => void
+  lesson: (typeof lessons)[number]
+  current: { lesson: number; node: PathNode }
+  nodeDone: (lesson: number, node: PathNode) => boolean
+  onLesson?: (lesson: number) => void
+  onPlay?: (lesson: number, node: PathNode) => void
+  fill?: boolean
 }) {
-  const s = useStore()
-  const current = lessons.find((l) => !s.lessonsDone.includes(l.lesson)) ?? lessons[lessons.length - 1]
-  const pct = s.lessonsDone.length / lessons.length
+  const slotRef = useRef<HTMLDivElement>(null)
+  const [fillHeight, setFillHeight] = useState(0)
+
+  useLayoutEffect(() => {
+    if (!fill) return
+    const el = slotRef.current
+    if (!el) return
+    const sync = () => setFillHeight(el.clientHeight)
+    sync()
+    const ro = new ResizeObserver(sync)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [fill])
+
+  const currentIndex = PATH_NODES.findIndex((n) => current.lesson === lesson.lesson && current.node === n)
+  const { xs, ys, sizes, height } = unitLayout(currentIndex, fill ? fillHeight || undefined : undefined)
+  const litTo = PATH_NODES.reduce((acc, n, i) => (nodeDone(lesson.lesson, n) ? i + 1 : acc), 0)
+  const litEnd = current.lesson === lesson.lesson ? Math.max(litTo, currentIndex) : litTo
+  const showLit = current.lesson === lesson.lesson || litTo > 0
+  const litXs = showLit ? xs.slice(0, Math.max(1, litEnd + 1)) : []
+  const litYs = ys.slice(0, litXs.length)
+  const lessonOpen = isLessonReached(lesson.lesson, nodeDone)
 
   return (
-    <>
-      <header style={{ padding: '18px 0 14px' }}>
-        <h1 className="h2">HSK 4A Course</h1>
-        <div className="sub" style={{ marginTop: 4 }}>
-          {book.title_zh} · {lessons.length} lessons
-        </div>
-      </header>
-
-      <div className="bar-ink">
-        <i style={{ width: `${pct * 100}%` }} />
-      </div>
-      <div style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 700, margin: '8px 0 18px' }}>
-        {Math.round(pct * 100)}% complete
-      </div>
-
-      <section className="metal hero">
-        <div className="kicker">Up next</div>
-        <div className="between" style={{ alignItems: 'flex-end' }}>
-          <div style={{ minWidth: 0 }}>
-            <h2 className="hero-title on-red">{current.title.zh}</h2>
-            <div style={{ fontSize: 13, color: 'var(--on-red-2)', fontWeight: 600 }}>
-              Lesson {current.lesson} · {current.vocab.length} new words · {current.grammar.length}{' '}
-              grammar points
-            </div>
-          </div>
-          <button className="play-round" onClick={() => onLesson(current.lesson)} aria-label="Start lesson">
-            <PlayIcon size={20} />
-          </button>
-        </div>
-      </section>
-
-      {/* browse all vocabulary */}
+    <section className={fill ? 'path-lesson path-lesson-fill' : 'path-lesson'}>
       <button
-        className="card between"
-        style={{ width: '100%', marginTop: 14, textAlign: 'left' }}
-        onClick={onVocab}
+        type="button"
+        className={`path-banner metal tap44${lessonOpen ? '' : ' path-banner-lock'}`}
+        disabled={!lessonOpen}
+        onClick={() => {
+          if (!lessonOpen) return
+          onLesson?.(lesson.lesson)
+        }}
+        aria-label={lessonOpen ? undefined : `${lesson.title.zh}, locked`}
       >
-        <div className="row">
-          <div className="lesson-badge metal metal-sm" style={{ borderRadius: 14, width: 42, height: 42 }}>
-            <BookIcon size={19} />
-          </div>
-          <div>
-            <div style={{ fontWeight: 800, fontSize: 16 }}>Browse vocabulary</div>
-            <div className="sub" style={{ fontSize: 13 }}>
-              Search all {totalVocab} words in the course
-            </div>
-          </div>
+        <div className="path-banner-copy">
+          <div className="kicker">第 {lesson.lesson} 课</div>
+          <h2 className="zh path-banner-zh" lang="zh-CN">
+            {lesson.title.zh}
+          </h2>
+          <div className="path-banner-en">{lesson.title.en}</div>
         </div>
-        <ChevronRight />
+        <span className="path-banner-read">课文</span>
       </button>
 
-      <h3 className="kicker-ink" style={{ margin: '24px 0 12px' }}>
-        Unit 1 · 标准教程 HSK 4上
-      </h3>
+      <div className="path-unit-slot" ref={slotRef}>
+      <div className="path-unit" style={{ height }}>
+        <svg className="path-rail" viewBox={`0 0 ${W} ${height}`} preserveAspectRatio="none" aria-hidden>
+          <path className="path-rail-track" d={railPath(xs, ys)} />
+          {litXs.length > 0 && <path className="path-rail-lit" d={railPath(litXs, litYs)} />}
+        </svg>
 
-      <div style={{ display: 'grid', gap: 10 }}>
-        {lessons.map((l) => {
-          const done = s.lessonsDone.includes(l.lesson)
-          const isCurrent = l.lesson === current.lesson
+        {PATH_NODES.map((node, i) => {
+          const done = nodeDone(lesson.lesson, node)
+          const on = current.lesson === lesson.lesson && current.node === node
+          const playable = isNodePlayable(lesson.lesson, node, nodeDone)
+          const state = done ? 'done' : on ? 'on' : 'lock'
+          const r = sizes[i] / 2
+          const caption = nodeCaption(lesson.lesson, node)
+          const label = NODE_LABEL[node]
+          const side = xs[i] < W / 2 ? 'left' : 'right'
           return (
             <button
-              key={l.lesson}
-              className="metal metal-sm lesson-row"
-              style={isCurrent ? { boxShadow: 'var(--metal-emboss), 0 0 0 2px rgba(255,255,255,.5)' } : undefined}
-              onClick={() => onLesson(l.lesson)}
+              key={node}
+              type="button"
+              className={`${nodeClassName(state)} tap44`}
+              data-state={state}
+              data-node={node}
+              data-side={side}
+              disabled={!playable}
+              style={
+                {
+                  '--path-d': `${sizes[i]}px`,
+                  left: `${(xs[i] / W) * 100}%`,
+                  top: ys[i] - r,
+                  marginLeft: -r,
+                } as CSSProperties
+              }
+              onClick={() => {
+                if (!playable) return
+                onPlay?.(lesson.lesson, node)
+              }}
+              aria-label={`${label.zh}${caption.hint ? ` ${caption.hint}` : ''}${done ? ', done' : on ? ', start' : ', locked'}`}
             >
-              <span
-                className={`lesson-badge ${done ? 'glass' : ''}`}
-                style={done ? undefined : { background: '#fff', color: 'var(--red-mid)' }}
-              >
-                {done ? <CheckIcon /> : <PlayIcon size={16} />}
+              {on && <span className="path-start">START</span>}
+              <span className="path-glyph" aria-hidden>
+                {done ? <CheckIcon size={22} /> : on ? <PlayIcon size={22} /> : <LockIcon size={16} />}
               </span>
-              <span style={{ minWidth: 0, flex: 1 }}>
-                <span className="zh on-red" style={{ display: 'block', fontSize: 17, fontWeight: 700 }} lang="zh-CN">
-                  {l.title.zh}
+              <span className="path-meta">
+                <span className="path-en zh" lang="zh-CN">
+                  {caption.zh}
                 </span>
-                <span
-                  style={{ display: 'block', fontSize: 12, color: 'var(--on-red-3)', fontWeight: 600, marginTop: 2 }}
-                >
-                  Lesson {l.lesson} · {l.title.en}
+                <span className="path-zh zh" lang="zh-CN">
+                  {caption.hint}
                 </span>
-              </span>
-              <span style={{ fontSize: 11, fontWeight: 800, color: 'var(--on-red-2)' }}>
-                {done ? 'Done' : isCurrent ? 'Start' : 'Open'}
               </span>
             </button>
           )
         })}
       </div>
-    </>
+      </div>
+    </section>
+  )
+}
+
+export function Learn({
+  onLesson,
+  onPlay,
+  isNodeDone,
+}: {
+  onLesson: (lesson: number) => void
+  onVocab?: () => void
+  onPlay?: (lesson: number, node: PathNode) => void
+  isNodeDone?: (lesson: number, node: PathNode) => boolean
+}) {
+  const store = useStore()
+  const nodeDone = isNodeDone ?? store.isNodeDone
+  const current = nextPlayable(nodeDone)
+
+  return (
+    <div className="path-page">
+      {lessons.map((lesson) => (
+        <LessonPath
+          key={lesson.lesson}
+          lesson={lesson}
+          current={current}
+          nodeDone={nodeDone}
+          onLesson={onLesson}
+          onPlay={onPlay}
+        />
+      ))}
+    </div>
   )
 }

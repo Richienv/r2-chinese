@@ -8,7 +8,7 @@ The prototype (`Yulu Chinese App.dc.html`) and its runtime (`support.js`) stay
 in the repo as the visual reference. Neither is imported, bundled or deployed —
 `.vercelignore` excludes both.
 
-Live: <https://r2-learn-chinese.vercel.app>
+Live: <https://hsk4-r2.vercel.app>
 
 ## Stack
 

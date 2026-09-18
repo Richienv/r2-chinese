@@ -1,9 +1,8 @@
 import { useGloss } from '../components/ChineseText'
-import { ChevronLeft, SpeakerIcon } from '../components/Icons'
+import { ChevronLeft } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { Writer } from '../components/Writer'
 import { lessonOf, lookup, vocabIndex } from '../lib/content'
-import { speak } from '../lib/speech'
 import type { Vocab } from '../lib/types'
 
 export function CharacterOverlay({ char, onClose }: { char: string; onClose: () => void }) {
@@ -39,10 +38,6 @@ export function CharacterOverlay({ char, onClose }: { char: string; onClose: () 
 
         <Writer char={char} />
 
-        <button className="btn btn-ghost" style={{ marginTop: 20 }} onClick={() => speak(char)}>
-          <SpeakerIcon /> Hear pronunciation
-        </button>
-
         <h3 className="kicker-ink" style={{ margin: '26px 0 12px' }}>
           Words with {char}
         </h3>
@@ -52,7 +47,7 @@ export function CharacterOverlay({ char, onClose }: { char: string; onClose: () 
             return (
               <button
                 key={w.zh}
-                className="card between"
+                className="card"
                 style={{ padding: 14, width: '100%', textAlign: 'left' }}
                 onClick={() => onWord(vocab)}
               >
@@ -65,17 +60,6 @@ export function CharacterOverlay({ char, onClose }: { char: string; onClose: () 
                   </div>
                   <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 4 }}>{w.en}</div>
                 </div>
-                <span
-                  className="icon-round tap44"
-                  role="button"
-                  aria-label={`Say ${w.zh}`}
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    speak(w.zh)
-                  }}
-                >
-                  <SpeakerIcon size={16} />
-                </span>
               </button>
             )
           })}

@@ -1,11 +1,45 @@
-import { useMemo, useState } from 'react'
-import { exampleFor, segment } from '../lib/content'
-import { speak } from '../lib/speech'
+import { useMemo, useState, type CSSProperties } from 'react'
+import { exampleFor, segment, type Example } from '../lib/content'
 import type { TextLine, Vocab } from '../lib/types'
 import { DrillFlow } from '../screens/Drill'
-import { BoltIcon, PencilIcon, SpeakerIcon } from './Icons'
+import { BoltIcon, PencilIcon } from './Icons'
 import { SaveStar } from './SaveStar'
 import { Sheet } from './Sheet'
+
+/** Book sentence with 汉字 + pinyin + English always visible. Never invent. */
+export function BookExample({
+  example,
+  style,
+  tone = 'card',
+}: {
+  example: Example
+  style?: CSSProperties
+  /** `quiet` sits on the metal teach card as a caption. `card` is paper, still caption-weight. */
+  tone?: 'card' | 'quiet'
+}) {
+  if (tone === 'quiet') {
+    return (
+      <div className="teach-example" style={style}>
+        <div className="teach-example-zh zh" lang="zh-CN">
+          {example.zh}
+        </div>
+        <div className="teach-example-py">{example.pinyin}</div>
+        <div className="teach-example-en">{example.en}</div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="card pop book-example" style={style}>
+      <div className="kicker-ink">From the book</div>
+      <div className="book-example-zh zh" lang="zh-CN">
+        {example.zh}
+      </div>
+      <div className="book-example-py">{example.pinyin}</div>
+      <div className="book-example-en">{example.en}</div>
+    </div>
+  )
+}
 
 /** A run of Chinese where every known word is tappable for a gloss. */
 export function Glossed({ text, onWord }: { text: string; onWord: (v: Vocab) => void }) {
@@ -56,61 +90,23 @@ export function GlossSheet({
   return (
     <Sheet onClose={onClose}>
       <div className="between" style={{ alignItems: 'flex-start' }}>
-        <div style={{ minWidth: 0 }}>
-          <div className="zh" style={{ fontSize: 38, fontWeight: 700, lineHeight: 1.1 }} lang="zh-CN">
+        <div className="teach-gloss" style={{ minWidth: 0 }}>
+          <div className="zh teach-gloss-hz" lang="zh-CN">
             {word.zh}
           </div>
-          <div style={{ color: 'var(--warm-hot)', fontWeight: 800, fontSize: 17, marginTop: 4 }}>
-            {word.pinyin}
-          </div>
+          <div className="teach-gloss-py">{word.pinyin}</div>
+          {word.pos ? <div className="teach-gloss-pos">{word.pos}</div> : null}
         </div>
-        <div className="row" style={{ gap: 4 }}>
-          <SaveStar zh={word.zh} size={22} />
-          <button
-            className="icon-round tap44"
-            onClick={() => speak(word.zh)}
-            aria-label="Hear pronunciation"
-          >
-            <SpeakerIcon />
-          </button>
-        </div>
+        <SaveStar zh={word.zh} size={22} />
       </div>
-      <div style={{ marginTop: 12, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-        {word.pos && <span className="pill-ink">{word.pos}</span>}
-      </div>
-      <p style={{ fontSize: 16, lineHeight: 1.5, marginTop: 12, marginBottom: 0 }}>{word.en}</p>
+      <p className="teach-gloss-en">{word.en}</p>
       {word.note && (
         <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.5, marginTop: 8 }}>
           {word.note}
         </p>
       )}
 
-      {example && (
-        <div
-          style={{
-            marginTop: 14,
-            paddingTop: 12,
-            borderTop: '1px solid var(--line-3)',
-          }}
-        >
-          <div className="kicker-ink" style={{ marginBottom: 6 }}>
-            From the book
-          </div>
-          <div className="between" style={{ alignItems: 'flex-start', gap: 10 }}>
-            <div className="zh" style={{ fontSize: 16, lineHeight: 1.7, flex: 1 }} lang="zh-CN">
-              {example.zh}
-            </div>
-            <button
-              className="icon-round tap44"
-              onClick={() => speak(example.zh)}
-              aria-label="Play example"
-            >
-              <SpeakerIcon size={16} />
-            </button>
-          </div>
-          <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 6 }}>{example.en}</div>
-        </div>
-      )}
+      {example && <BookExample example={example} style={{ marginTop: 16 }} />}
 
       <div className="row" style={{ marginTop: 18, gap: 10 }}>
         {onDrill && (
@@ -137,32 +133,25 @@ export function GlossSheet({
 }
 
 /**
- * One line of a dialogue or passage. Tapping the bubble speaks it; tapping a
- * word inside opens its gloss.
+ * One line of a dialogue or passage. Tapping an underlined word opens its gloss.
  */
 export function Line({
   line,
   self,
-  showPinyin,
-  showEnglish,
+  showPinyin = true,
+  showEnglish = true,
   onWord,
 }: {
   line: TextLine
   self: boolean
-  showPinyin: boolean
-  showEnglish: boolean
+  showPinyin?: boolean
+  showEnglish?: boolean
   onWord: (v: Vocab) => void
 }) {
   return (
     <div className="line" data-self={self}>
       {line.speaker && <div className="speaker">{line.speaker.slice(0, 1)}</div>}
-      <div
-        className="bubble"
-        role="button"
-        tabIndex={0}
-        onClick={() => speak(line.zh)}
-        onKeyDown={(e) => e.key === 'Enter' && speak(line.zh)}
-      >
+      <div className="bubble">
         <div className="hz">
           <Glossed text={line.zh} onWord={onWord} />
         </div>

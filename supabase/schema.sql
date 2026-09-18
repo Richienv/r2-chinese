@@ -1,4 +1,4 @@
--- Yǔlù — per-user progress storage.
+-- hsk4-r2 — per-user progress storage.
 -- Run this once in your Supabase project: Dashboard → SQL Editor → paste → Run.
 --
 -- One JSONB blob per account holds the whole progress object the app already

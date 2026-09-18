@@ -1,0 +1,474 @@
+{
+  "lesson": 9,
+  "title": "阳光总在风雨后",
+  "words": {
+    "饼干": {
+      "zh": "饼干",
+      "pinyin": "bǐnggān",
+      "en": "biscuit",
+      "pos": "n.",
+      "when": "Remember 饼干 like the word you’ll use when Sun Yue’s diet is already crumbling and the snack bag is in her hands.",
+      "usage": "Most Chinese speakers use it for packaged sweet biscuits, not a hot baked good. 课文1 opens on the bag — 怎么又买了这么多饼干和巧克力 — then she dumps them on Wang Jing.",
+      "example": {
+        "zh": "怎么又买了这么多饼干和巧克力？",
+        "pinyin": "Zěnme yòu mǎile zhème duō bǐnggān hé qiǎokèlì?",
+        "en": "Why did you buy so many biscuits and chocolate again?"
+      }
+    },
+    "难道": {
+      "zh": "难道",
+      "pinyin": "nándào",
+      "en": "used in a rhetorical question for emphasis",
+      "pos": "adv.",
+      "when": "Remember 难道 like the word you’ll use when you already know the answer and you’re calling someone out — “don’t tell me you quit?”",
+      "usage": "Most Chinese speakers drop it into a rhetorical question, not a real one. Negative 难道你不… pushes “you ARE still doing it, right?” Wang Jing: 难道你不减肥了？",
+      "example": {
+        "zh": "难道你不减肥了？",
+        "pinyin": "Nándào nǐ bù jiǎnféi le?",
+        "en": "Don't tell me you're not dieting anymore?"
+      }
+    },
+    "得": {
+      "zh": "得",
+      "pinyin": "děi",
+      "en": "must, have to",
+      "pos": "mod.",
+      "when": "Remember 得 (děi) like the word you’ll use when the diet rule is non-negotiable: eat less, or it doesn’t count.",
+      "usage": "Most Chinese speakers use this 得 as “have to,” right before the verb. Don’t mix it with the 得 in 打得真好. Wang Jing’s line is the modal: 就得少吃东西.",
+      "example": {
+        "zh": "如果你想减肥，就得少吃东西，而且要多运动。",
+        "pinyin": "Rúguǒ nǐ xiǎng jiǎnféi, jiù děi shǎo chī dōngxi, érqiě yào duō yùndòng.",
+        "en": "If you want to lose weight, you have to eat less, and you also need to exercise more."
+      }
+    },
+    "坚持": {
+      "zh": "坚持",
+      "pinyin": "jiānchí",
+      "en": "to insist, to persist",
+      "pos": "v.",
+      "when": "Remember 坚持 like the word you’ll use when one month of dieting felt useless and a friend tells you to keep going anyway.",
+      "usage": "Most Chinese speakers use it for sticking with a hard plan, not “I insist I’m right.” 课文1: 只能坚持，才会慢慢有效果 — persist first, results later.",
+      "example": {
+        "zh": "要想减肥成功，只能坚持，才会慢慢有效果。",
+        "pinyin": "Yào xiǎng jiǎnféi chénggōng, zhǐ néng jiānchí, cái huì mànmàn yǒu xiàoguǒ.",
+        "en": "If you want to lose weight successfully, you just have to stick with it — only then will you gradually see results."
+      }
+    },
+    "放弃": {
+      "zh": "放弃",
+      "pinyin": "fàngqì",
+      "en": "to give up",
+      "pos": "v.",
+      "when": "Remember 放弃 like the word you’ll use when you’re about to quit the diet — biscuits in hand — and a friend talks you back.",
+      "usage": "Most Chinese speakers use it for dropping a plan or a job, not misplacing a thing. Sun Yue had already 打算放弃; 课文3 later uses it for quitting the lawyer job.",
+      "example": {
+        "zh": "我本来已经打算放弃了，但是你刚才的话让我改变了主意。",
+        "pinyin": "Wǒ běnlái yǐjīng dǎsuàn fàngqì le, dànshì nǐ gāngcái de huà ràng wǒ gǎibiànle zhǔyi.",
+        "en": "I had already planned to give up, but what you just said changed my mind."
+      }
+    },
+    "主意": {
+      "zh": "主意",
+      "pinyin": "zhǔyi",
+      "en": "idea, plan",
+      "pos": "n.",
+      "when": "Remember 主意 like the word you’ll use when someone’s mind flips in one conversation — quit the diet, then give the snacks away.",
+      "usage": "Most Chinese speakers say 改变主意 / 没主意 for a decision, not a brilliant invention. Neutral tone: 主意, not 注意.",
+      "example": {
+        "zh": "我本来已经打算放弃了，但是你刚才的话让我改变了主意。",
+        "pinyin": "Wǒ běnlái yǐjīng dǎsuàn fàngqì le, dànshì nǐ gāngcái de huà ràng wǒ gǎibiànle zhǔyi.",
+        "en": "I had already planned to give up, but what you just said changed my mind."
+      }
+    },
+    "网球": {
+      "zh": "网球",
+      "pinyin": "wǎngqiú",
+      "en": "tennis",
+      "pos": "n.",
+      "when": "Remember 网球 like the word you’ll use when the sport looks effortless from the stands — Zhang Yuan’s whole career.",
+      "usage": "Most Chinese speakers use it for the sport and the ball. Li Jin opens 课文2 with 你网球打得真好, then admits he still 打得不怎么样.",
+      "example": {
+        "zh": "你网球打得真好，还得过那么多国际大奖！",
+        "pinyin": "Nǐ wǎngqiú dǎ de zhēn hǎo, hái déguo nàme duō guójì dà jiǎng!",
+        "en": "You play tennis so well, and you've even won so many international awards!"
+      }
+    },
+    "国际": {
+      "zh": "国际",
+      "pinyin": "guójì",
+      "en": "international",
+      "pos": "n.",
+      "when": "Remember 国际 like the word you’ll use when the trophy isn’t a school cup — it’s an international prize.",
+      "usage": "Most Chinese speakers stick it in front of 大奖, 比赛, 新闻. Here it grades Zhang Yuan’s wins: 国际大奖, not a local league.",
+      "example": {
+        "zh": "你网球打得真好，还得过那么多国际大奖！",
+        "pinyin": "Nǐ wǎngqiú dǎ de zhēn hǎo, hái déguo nàme duō guójì dà jiǎng!",
+        "en": "You play tennis so well, and you've even won so many international awards!"
+      }
+    },
+    "轻松": {
+      "zh": "轻松",
+      "pinyin": "qīngsōng",
+      "en": "relaxed, effortless",
+      "pos": "adj.",
+      "when": "Remember 轻松 like the word you’ll use when a win looks easy from the stands and the player laughs it off.",
+      "usage": "Most Chinese speakers use it for “relaxed / no sweat.” 课文2 reduplicates it: 轻轻松松就赢了 — the look of ease, not the work behind it.",
+      "example": {
+        "zh": "每次看你比赛，感觉你轻轻松松就赢了。",
+        "pinyin": "Měi cì kàn nǐ bǐsài, gǎnjué nǐ qīngqīngsōngsōng jiù yíng le.",
+        "en": "Every time I watch you compete, it feels like you win effortlessly."
+      }
+    },
+    "赢": {
+      "zh": "赢",
+      "pinyin": "yíng",
+      "en": "to win",
+      "pos": "v.",
+      "when": "Remember 赢 like the word you’ll use when the match is over and one side takes it — Zhang Yuan, every time Li Jin watches.",
+      "usage": "Most Chinese speakers use it for beating someone in a contest, opposite 输. Pair it with 比赛: 轻轻松松就赢了.",
+      "example": {
+        "zh": "每次看你比赛，感觉你轻轻松松就赢了。",
+        "pinyin": "Měi cì kàn nǐ bǐsài, gǎnjué nǐ qīngqīngsōngsōng jiù yíng le.",
+        "en": "Every time I watch you compete, it feels like you win effortlessly."
+      }
+    },
+    "随便": {
+      "zh": "随便",
+      "pinyin": "suíbiàn",
+      "en": "casual, at random",
+      "pos": "adj.",
+      "when": "Remember 随便 like the word you’ll use when you want to kill the myth that success just happened.",
+      "usage": "Most Chinese speakers use 随随便便 for “casually, without trying.” Zhang Yuan’s line is the lesson’s thesis: 没有人随随便便就能成功的.",
+      "example": {
+        "zh": "那是你没看到我辛苦练习的一面，没有人随随便便就能成功的。",
+        "pinyin": "Nà shì nǐ méi kàndào wǒ xīnkǔ liànxí de yí miàn, méiyǒu rén suísuíbiànbiàn jiù néng chénggōng de.",
+        "en": "That's just because you haven't seen how hard I practice — nobody can succeed effortlessly, without trying."
+      }
+    },
+    "汗": {
+      "zh": "汗",
+      "pinyin": "hàn",
+      "en": "sweat, perspiration",
+      "pos": "n.",
+      "when": "Remember 汗 like the word you’ll use when you finally notice the work behind the flowers — the sweat before the win.",
+      "usage": "Most Chinese speakers say 出汗 / 汗水 for perspiration. 课文2 pairs it with 鲜花: 成功时获得的鲜花 vs 成功前流下的汗水.",
+      "example": {
+        "zh": "看来我只看到了你成功时获得的鲜花，却没注意到你成功前流下的汗水。",
+        "pinyin": "Kànlái wǒ zhǐ kàndàole nǐ chénggōng shí huòdé de xiānhuā, què méi zhùyì dào nǐ chénggōng qián liúxia de hànshuǐ.",
+        "en": "It seems I only ever saw the flowers you received when you succeeded, but never noticed the sweat you shed before that success."
+      }
+    },
+    "通过": {
+      "zh": "通过",
+      "pinyin": "tōngguò",
+      "en": "through, by means of",
+      "pos": "prep.",
+      "when": "Remember 通过 like the word you’ll use when success only arrives by means of effort, not by walking past it.",
+      "usage": "Most Chinese speakers use this 通过 as “via / by means of.” Zhang Yuan: 任何成功都要通过努力才能得到. Don’t swap in 经过 — that one stresses the process, not the method.",
+      "example": {
+        "zh": "任何成功都要通过努力才能得到。",
+        "pinyin": "Rènhé chénggōng dōu yào tōngguò nǔlì cái néng dédào.",
+        "en": "Any success can only be achieved through hard work."
+      }
+    },
+    "篇": {
+      "zh": "篇",
+      "pinyin": "piān",
+      "en": "used for writings, papers or articles",
+      "pos": "m.",
+      "when": "Remember 篇 like the measure you’ll use when the thing in the newspaper is an article, not a photo.",
+      "usage": "Most Chinese speakers count writings with 一篇: 新闻, 小说, 作文. Xiao Lin: 一篇关于她的新闻 — Wang Hong made the paper.",
+      "example": {
+        "zh": "我在报纸上看到一篇关于她的新闻，她现在已经是一个有名的作家了。",
+        "pinyin": "Wǒ zài bàozhǐ shang kàndào yì piān guānyú tā de xīnwén, tā xiànzài yǐjīng shì yí ge yǒumíng de zuòjiā le.",
+        "en": "I saw an article about her in the newspaper — she's already a famous writer now."
+      }
+    },
+    "作家": {
+      "zh": "作家",
+      "pinyin": "zuòjiā",
+      "en": "writer",
+      "pos": "n.",
+      "when": "Remember 作家 like the word you’ll use when someone isn’t “writing a bit” — they’re a published writer.",
+      "usage": "Most Chinese speakers reserve it for the profession. Wang Hong 已经是一个有名的作家了 after quitting law to 专门写小说.",
+      "example": {
+        "zh": "我在报纸上看到一篇关于她的新闻，她现在已经是一个有名的作家了。",
+        "pinyin": "Wǒ zài bàozhǐ shang kàndào yì piān guānyú tā de xīnwén, tā xiànzài yǐjīng shì yí ge yǒumíng de zuòjiā le.",
+        "en": "I saw an article about her in the newspaper — she's already a famous writer now."
+      }
+    },
+    "当时": {
+      "zh": "当时",
+      "pinyin": "dāngshí",
+      "en": "then, at that time",
+      "pos": "n.",
+      "when": "Remember 当时 like the word you’ll use when you jump back to the moment her family said no — not “these days.”",
+      "usage": "Most Chinese speakers point at a past scene with 当时. 课文3: 当时她的父母和亲戚都不支持她 — that time, not now.",
+      "example": {
+        "zh": "当时她的父母和亲戚都不支持她，可是她坚持自己的选择，现在终于向所有人证明了她的选择是正确的。",
+        "pinyin": "Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā, kěshì tā jiānchí zìjǐ de xuǎnzé, xiànzài zhōngyú xiàng suǒyǒu rén zhèngmíngle tā de xuǎnzé shì zhèngquè de.",
+        "en": "At the time, her parents and relatives didn't support her, but she stuck to her own choice, and now she's finally proven to everyone that her choice was right."
+      }
+    },
+    "可是": {
+      "zh": "可是",
+      "pinyin": "kěshì",
+      "en": "but, however",
+      "pos": "conj.",
+      "when": "Remember 可是 like the glue you’ll use when the first half is bleak and the second half refuses to quit.",
+      "usage": "Most Chinese speakers use it as spoken “but,” often after 虽然. 课文3: family didn’t support her, 可是她坚持自己的选择.",
+      "example": {
+        "zh": "当时她的父母和亲戚都不支持她，可是她坚持自己的选择，现在终于向所有人证明了她的选择是正确的。",
+        "pinyin": "Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā, kěshì tā jiānchí zìjǐ de xuǎnzé, xiànzài zhōngyú xiàng suǒyǒu rén zhèngmíngle tā de xuǎnzé shì zhèngquè de.",
+        "en": "At the time, her parents and relatives didn't support her, but she stuck to her own choice, and now she's finally proven to everyone that her choice was right."
+      }
+    },
+    "正确": {
+      "zh": "正确",
+      "pinyin": "zhèngquè",
+      "en": "right, correct",
+      "pos": "adj.",
+      "when": "Remember 正确 like the word you’ll use when a risky choice is finally proven right, not merely “nice.”",
+      "usage": "Most Chinese speakers use it for correct answers and right decisions. Wang Hong 向所有人证明了她的选择是正确的.",
+      "example": {
+        "zh": "当时她的父母和亲戚都不支持她，可是她坚持自己的选择，现在终于向所有人证明了她的选择是正确的。",
+        "pinyin": "Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā, kěshì tā jiānchí zìjǐ de xuǎnzé, xiànzài zhōngyú xiàng suǒyǒu rén zhèngmíngle tā de xuǎnzé shì zhèngquè de.",
+        "en": "At the time, her parents and relatives didn't support her, but she stuck to her own choice, and now she's finally proven to everyone that her choice was right."
+      }
+    },
+    "理想": {
+      "zh": "理想",
+      "pinyin": "lǐxiǎng",
+      "en": "ideal",
+      "pos": "n.",
+      "when": "Remember 理想 like the word you’ll use when you name the life you’re chasing — writer, not lawyer — and what you’ll drop for it.",
+      "usage": "Most Chinese speakers use it for an ideal or ambition. Xiao Li: 为了自己的理想，放弃一些东西也是值得的.",
+      "example": {
+        "zh": "看来为了自己的理想，放弃一些东西也是值得的。",
+        "pinyin": "Kànlái wèile zìjǐ de lǐxiǎng, fàngqì yìxiē dōngxi yě shì zhídé de.",
+        "en": "It seems that giving up some things for the sake of your own ideals is worth it after all."
+      }
+    },
+    "王红": {
+      "zh": "王红",
+      "pinyin": "Wáng Hóng",
+      "en": "Wang Hong, name of a person",
+      "pos": "pr.n.",
+      "when": "Remember 王红 as the classmate in the newspaper — the one who quit law and became a writer.",
+      "usage": "Treat it as a proper name. Don’t translate it. 课文3’s whole story is hers.",
+      "example": {
+        "zh": "你还记得王红吗？",
+        "pinyin": "Nǐ hái jìde Wáng Hóng ma?",
+        "en": "Do you still remember Wang Hong?"
+      }
+    },
+    "勇敢": {
+      "zh": "勇敢",
+      "pinyin": "yǒnggǎn",
+      "en": "brave, courageous",
+      "pos": "adj.",
+      "when": "Remember 勇敢 like the word you’ll use when the advice is “just do it” and stop rehearsing failure.",
+      "usage": "Most Chinese speakers use it for courage in action. 课文4 opens: 那就勇敢地去做; 课文5 closes with 勇敢地面对困难.",
+      "example": {
+        "zh": "如果你想做什么事情，那就勇敢地去做，不要担心结果，不要考虑会不会失败。",
+        "pinyin": "Rúguǒ nǐ xiǎng zuò shénme shìqing, nà jiù yǒnggǎn de qù zuò, búyào dān xīn jiéguǒ, búyào kǎolǜ huì bu huì shībài.",
+        "en": "If you want to do something, then go ahead and do it bravely — don't worry about the outcome, and don't think about whether you'll fail or not."
+      }
+    },
+    "结果": {
+      "zh": "结果",
+      "pinyin": "jiéguǒ",
+      "en": "result",
+      "pos": "n.",
+      "when": "Remember 结果 like the word you’ll use when you’re tempted to stare at the scoreboard instead of the work.",
+      "usage": "Most Chinese speakers use the noun for the outcome. 课文4: 不要担心结果. The grammar page also uses 结果 as “and then / as it turned out.”",
+      "example": {
+        "zh": "如果你想做什么事情，那就勇敢地去做，不要担心结果，不要考虑会不会失败。",
+        "pinyin": "Rúguǒ nǐ xiǎng zuò shénme shìqing, nà jiù yǒnggǎn de qù zuò, búyào dān xīn jiéguǒ, búyào kǎolǜ huì bu huì shībài.",
+        "en": "If you want to do something, then go ahead and do it bravely — don't worry about the outcome, and don't think about whether you'll fail or not."
+      }
+    },
+    "失败": {
+      "zh": "失败",
+      "pinyin": "shībài",
+      "en": "to fail",
+      "pos": "v.",
+      "when": "Remember 失败 like the word you’ll use when the attempt dies and the book still says that’s usable.",
+      "usage": "Most Chinese speakers use it for failing at a goal, not breaking an object. 课文4: don’t 考虑会不会失败; if you 太看重结果, 失败 brings 烦恼.",
+      "example": {
+        "zh": "要是太看重结果，失败就会给人们带来很多烦恼。",
+        "pinyin": "Yàoshi tài kànzhòng jiéguǒ, shībài jiù huì gěi rénmen dàilai hěn duō fánnǎo.",
+        "en": "If you place too much importance on the outcome, failure will bring people a lot of distress."
+      }
+    },
+    "过程": {
+      "zh": "过程",
+      "pinyin": "guòchéng",
+      "en": "course, process",
+      "pos": "n.",
+      "when": "Remember 过程 like the word you’ll use when you move attention off the prize and onto the doing.",
+      "usage": "Most Chinese speakers use it for the process or course of something. 课文4: 把注意力放在做事情的过程上 — that’s where the joy is.",
+      "example": {
+        "zh": "我们应该把注意力放在做事情的过程上，这样你会在做的过程中发现解决问题的快乐，这是其他任何东西都给不了的。",
+        "pinyin": "Wǒmen yīnggāi bǎ zhùyìlì fàng zài zuò shìqing de guòchéng shang, zhèyàng nǐ huì zài zuò de guòchéng zhōng fāxiàn jiějué wèntí de kuàilè, zhè shì qítā rènhé dōngxi dōu gěi bu liǎo de.",
+        "en": "We should focus our attention on the process of doing things — that way you'll discover the joy of solving problems during the process, and that's something nothing else can give you."
+      }
+    },
+    "至少": {
+      "zh": "至少",
+      "pinyin": "zhìshǎo",
+      "en": "at least",
+      "pos": "adv.",
+      "when": "Remember 至少 like the word you’ll use when failure still leaves you one solid thing: you tried.",
+      "usage": "Most Chinese speakers use it as a floor — “at least this much.” 课文4: 即使最后失败了…因为至少你已经努力过.",
+      "example": {
+        "zh": "即使最后失败了也没有关系，因为至少你已经努力过，而且我们还可以从失败中总结出有用的经验，有了这些积累，成功自然离我们越来越近。",
+        "pinyin": "Jíshǐ zuìhòu shībàile yě méiyǒu guānxi, yīnwèi zhìshǎo nǐ yǐjīng nǔlìguo, érqiě wǒmen hái kěyǐ cóng shībài zhōng zǒngjié chū yǒuyòng de jīngyàn, yǒule zhèxiē jīlěi, chénggōng zìrán lí wǒmen yuè lái yuè jìn.",
+        "en": "Even if you fail in the end, it's fine, because at least you've tried, and moreover we can sum up useful experience from failure — with that accumulation, success naturally gets closer and closer to us."
+      }
+    },
+    "总结": {
+      "zh": "总结",
+      "pinyin": "zǒngjié",
+      "en": "to sum up",
+      "pos": "v.",
+      "when": "Remember 总结 like the word you’ll use when you mine a failure for the one useful lesson before you try again.",
+      "usage": "Most Chinese speakers use it for summing up experience, a meeting, a year. 课文4: 从失败中总结出有用的经验.",
+      "example": {
+        "zh": "即使最后失败了也没有关系，因为至少你已经努力过，而且我们还可以从失败中总结出有用的经验，有了这些积累，成功自然离我们越来越近。",
+        "pinyin": "Jíshǐ zuìhòu shībàile yě méiyǒu guānxi, yīnwèi zhìshǎo nǐ yǐjīng nǔlìguo, érqiě wǒmen hái kěyǐ cóng shībài zhōng zǒngjié chū yǒuyòng de jīngyàn, yǒule zhèxiē jīlěi, chénggōng zìrán lí wǒmen yuè lái yuè jìn.",
+        "en": "Even if you fail in the end, it's fine, because at least you've tried, and moreover we can sum up useful experience from failure — with that accumulation, success naturally gets closer and closer to us."
+      }
+    },
+    "取": {
+      "zh": "取",
+      "pinyin": "qǔ",
+      "en": "to gain, to seek",
+      "pos": "v.",
+      "when": "Remember 取 like the word you’ll use when success is something you fetch through effort — 取得成功 — not something that arrives.",
+      "usage": "Most Chinese speakers glue it to 得: 取得成功 / 取得成绩. 课文5: 取得成功的人往往都经历过许多失败. The drill also uses 取行李箱 — pick up a suitcase.",
+      "example": {
+        "zh": "取得成功的人往往都经历过许多失败，他们和普通人的区别就是他们都坚持了下来。",
+        "pinyin": "Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài, tāmen hé pǔtōng rén de qūbié jiù shì tāmen dōu jiānchíle xialai.",
+        "en": "People who achieve success have usually gone through many failures; the difference between them and ordinary people is simply that they kept persisting."
+      }
+    },
+    "经历": {
+      "zh": "经历",
+      "pinyin": "jīnglì",
+      "en": "to go through, to experience",
+      "pos": "v.",
+      "when": "Remember 经历 like the word you’ll use when success people have already walked through a pile of failures.",
+      "usage": "Most Chinese speakers use it for going through events. 课文5: 都经历过许多失败. Noun sense “an experience” exists; this lesson is the verb.",
+      "example": {
+        "zh": "取得成功的人往往都经历过许多失败，他们和普通人的区别就是他们都坚持了下来。",
+        "pinyin": "Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài, tāmen hé pǔtōng rén de qūbié jiù shì tāmen dōu jiānchíle xialai.",
+        "en": "People who achieve success have usually gone through many failures; the difference between them and ordinary people is simply that they kept persisting."
+      }
+    },
+    "许多": {
+      "zh": "许多",
+      "pinyin": "xǔduō",
+      "en": "many, plenty of",
+      "pos": "num.",
+      "when": "Remember 许多 like the word you’ll use when “a few failures” isn’t honest — there were plenty.",
+      "usage": "Most Chinese speakers use it like “many,” before a noun, no measure word required. 许多失败, not 许多个失败.",
+      "example": {
+        "zh": "取得成功的人往往都经历过许多失败，他们和普通人的区别就是他们都坚持了下来。",
+        "pinyin": "Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài, tāmen hé pǔtōng rén de qūbié jiù shì tāmen dōu jiānchíle xialai.",
+        "en": "People who achieve success have usually gone through many failures; the difference between them and ordinary people is simply that they kept persisting."
+      }
+    },
+    "区别": {
+      "zh": "区别",
+      "pinyin": "qūbié",
+      "en": "difference, distinction",
+      "pos": "n.",
+      "when": "Remember 区别 like the word you’ll use when you name what separates winners from everyone else — they didn’t quit.",
+      "usage": "Most Chinese speakers use it for a difference you can point to. 课文5: 他们和普通人的区别就是他们都坚持了下来.",
+      "example": {
+        "zh": "取得成功的人往往都经历过许多失败，他们和普通人的区别就是他们都坚持了下来。",
+        "pinyin": "Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài, tāmen hé pǔtōng rén de qūbié jiù shì tāmen dōu jiānchíle xialai.",
+        "en": "People who achieve success have usually gone through many failures; the difference between them and ordinary people is simply that they kept persisting."
+      }
+    },
+    "暂时": {
+      "zh": "暂时",
+      "pinyin": "zànshí",
+      "en": "temporary, for the time being",
+      "pos": "n.",
+      "when": "Remember 暂时 like the word you’ll use when the storm is still on and you need to call it temporary.",
+      "usage": "Most Chinese speakers use it as “for the time being.” 课文5: 困难只是暂时的 — then the title line 阳光总在风雨后.",
+      "example": {
+        "zh": "困难只是暂时的，“阳光总在风雨后”，只有我们勇敢地面对困难，才能有希望取得成功。",
+        "pinyin": "Kùnnan zhǐ shì zànshí de, “Yángguāng zǒng zài fēngyǔ hòu”, zhǐyǒu wǒmen yǒnggǎn de miànduì kùnnan, cái néng yǒu xīwàng qǔdé chénggōng.",
+        "en": "Difficulty is only temporary — “the sun will shine again after the storm” — only by bravely facing our difficulties can we have any hope of achieving success."
+      }
+    },
+    "面对": {
+      "zh": "面对",
+      "pinyin": "miànduì",
+      "en": "to face, to confront",
+      "pos": "v.",
+      "when": "Remember 面对 like the word you’ll use when you stop dodging the hard thing and stand in front of it.",
+      "usage": "Most Chinese speakers use it for facing a person, a problem, or 困难. The title pays off here: 只有我们勇敢地面对困难，才能有希望取得成功.",
+      "example": {
+        "zh": "困难只是暂时的，“阳光总在风雨后”，只有我们勇敢地面对困难，才能有希望取得成功。",
+        "pinyin": "Kùnnan zhǐ shì zànshí de, “Yángguāng zǒng zài fēngyǔ hòu”, zhǐyǒu wǒmen yǒnggǎn de miànduì kùnnan, cái néng yǒu xīwàng qǔdé chénggōng.",
+        "en": "Difficulty is only temporary — “the sun will shine again after the storm” — only by bravely facing our difficulties can we have any hope of achieving success."
+      }
+    },
+    "爱迪生": {
+      "zh": "爱迪生",
+      "pinyin": "Àidíshēng",
+      "en": "Thomas Alva Edison (1847-1931), an American inventor",
+      "pos": "pr.n.",
+      "when": "Remember 爱迪生 as Edison — the 课文5 inventor who tried over a thousand materials before the lamp lit.",
+      "usage": "Treat it as a proper name. The book uses him as the 坚持 example: 找了上千种材料后才找到了能点亮电灯的材料.",
+      "example": {
+        "zh": "爱迪生就是在找了上千种材料后才找到了能点亮电灯的材料。",
+        "pinyin": "Àidíshēng jiù shì zài zhǎole shàng qiān zhǒng cáiliào hòu cái zhǎodàole néng diǎnliàng diàndēng de cáiliào.",
+        "en": "Edison, for example, only found the material that could light up the electric lamp after searching through over a thousand kinds of materials."
+      }
+    },
+    "餐": {
+      "zh": "餐",
+      "pinyin": "cān",
+      "en": "meal",
+      "pos": "n.",
+      "when": "Remember 餐 like the bound “meal” half of 餐厅 — the character you already know, now standing alone.",
+      "usage": "Most Chinese speakers rarely say bare 餐; they say 早餐, 午餐, 西餐, 餐厅. Lesson 9 lists it as a known-character 补充生词 from 餐厅. No 课文9 line uses it.",
+      "example": {
+        "zh": "目前很多商场集购物、休闲、娱乐、餐饮等多种功能于一体，可以满足一个家庭所有成员的需求。",
+        "pinyin": "Mùqián hěn duō shāngchǎng jí gòuwù, xiūxián, yúlè, cānyǐn děng duō zhǒng gōngnéng yú yì tǐ, kěyǐ mǎnzú yí ge jiātíng suǒyǒu chéngyuán de xūqiú.",
+        "en": "Nowadays, many shopping malls are multifunctional places for shopping, leisure, entertainment and dining, etc., which can meet the needs of every member of a family."
+      }
+    },
+    "父母": {
+      "zh": "父母",
+      "pinyin": "fùmǔ",
+      "en": "parents",
+      "pos": "n.",
+      "when": "Remember 父母 like the word you’ll use when both parents speak as one side — they didn’t support Wang Hong.",
+      "usage": "Most Chinese speakers use the pair for “parents,” more formal than 爸妈. Built from 父亲 + 母亲. 课文3: 当时她的父母和亲戚都不支持她.",
+      "example": {
+        "zh": "当时她的父母和亲戚都不支持她，可是她坚持自己的选择，现在终于向所有人证明了她的选择是正确的。",
+        "pinyin": "Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā, kěshì tā jiānchí zìjǐ de xuǎnzé, xiànzài zhōngyú xiàng suǒyǒu rén zhèngmíngle tā de xuǎnzé shì zhèngquè de.",
+        "en": "At the time, her parents and relatives didn't support her, but she stuck to her own choice, and now she's finally proven to everyone that her choice was right."
+      }
+    },
+    "奖": {
+      "zh": "奖",
+      "pinyin": "jiǎng",
+      "en": "award, praise",
+      "pos": "n.",
+      "when": "Remember 奖 like the word you’ll use when you strip 大奖 down to the prize itself.",
+      "usage": "Most Chinese speakers say 奖, 大奖, 奖金. Li Jin’s opener has it inside 国际大奖; the 补充 list pulls 奖 from 奖金.",
+      "example": {
+        "zh": "你网球打得真好，还得过那么多国际大奖！",
+        "pinyin": "Nǐ wǎngqiú dǎ de zhēn hǎo, hái déguo nàme duō guójì dà jiǎng!",
+        "en": "You play tennis so well, and you've even won so many international awards!"
+      }
+    }
+  }
+}

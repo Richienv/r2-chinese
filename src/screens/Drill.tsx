@@ -1,9 +1,8 @@
 import { useMemo, useRef, useState } from 'react'
-import { CheckIcon, CloseIcon, SpeakerIcon } from '../components/Icons'
+import { CheckIcon, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { exampleFor, lookup } from '../lib/content'
 import { buildDrillQueue, requeue } from '../lib/drill'
-import { speak } from '../lib/speech'
 import { useStore } from '../store/store'
 
 const REP_OPTIONS = [5, 8, 10]
@@ -107,7 +106,6 @@ export function DrillFlow({
   function reveal() {
     if (shown) return
     setShown(true)
-    speak(zh)
   }
 
   function gotIt() {
@@ -251,9 +249,6 @@ export function DrillFlow({
         </button>
 
         <div className="row" style={{ justifyContent: 'center', gap: 16, marginTop: 16 }}>
-          <button className="icon-round tap44" onClick={() => speak(zh)} aria-label="Hear it">
-            <SpeakerIcon />
-          </button>
           <SaveStar zh={zh} lesson={word ? undefined : 0} size={22} />
         </div>
       </div>

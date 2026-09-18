@@ -1,0 +1,487 @@
+{
+  "lesson": 1,
+  "title": "简单的爱情",
+  "words": {
+    "法律": {
+      "zh": "法律",
+      "pinyin": "fǎlǜ",
+      "en": "law",
+      "pos": "n.",
+      "when": "Remember 法律 like the word you’ll use when you name your major the way 王静 does — she studies 法律, 李进 studies 新闻, so they are not in the same class.",
+      "usage": "Most Chinese speakers use it for law as a subject or as the legal system, not for one statute. In 课文1 it is Wang Jing’s field, the reason the couple only met at a football match.",
+      "example": {
+        "zh": "是的，他学的是新闻，我学的是法律，我和他不是一个班。",
+        "pinyin": "Shì de, tā xué de shì xīnwén, wǒ xué de shì fǎlǜ, wǒ hé tā bú shì yí ge bān.",
+        "en": "Yes, he studies journalism and I study law — we're not in the same class."
+      }
+    },
+    "俩": {
+      "zh": "俩",
+      "pinyin": "liǎ",
+      "pos": "num.-m.",
+      "en": "two, both",
+      "when": "Remember 俩 like the word you’ll use when you mean “the two of you” as a pair — 孙月 asks 那你们俩是怎么认识的?",
+      "usage": "Most Chinese speakers stick 俩 right after a pronoun (你们俩, 我们俩) and never add 个. It counts people as a couple, not objects. 课文5 uses it the same way: 我们俩几乎没红过脸.",
+      "example": {
+        "zh": "那你们俩是怎么认识的？",
+        "pinyin": "Nà nǐmen liǎ shì zěnme rènshi de?",
+        "en": "So how did the two of you meet?"
+      }
+    },
+    "印象": {
+      "zh": "印象",
+      "pinyin": "yìnxiàng",
+      "pos": "n.",
+      "en": "impression",
+      "when": "Remember 印象 like the word you’ll use when a first look at someone sticks — 李进 scored two goals and 王静 says 我对他印象很深.",
+      "usage": "Most Chinese speakers pair it with 深 / 好 / 不错 for the feeling a person leaves, not a photo. This lesson’s sense is the mark he left at that class football match.",
+      "example": {
+        "zh": "我们班跟他们班比赛，他一个人踢进两个球，我对他印象很深，后来就慢慢熟悉了。",
+        "pinyin": "Wǒmen bān gēn tāmen bān bǐsài, tā yí ge rén tījìn liǎng ge qiú, wǒ duì tā yìnxiàng hěn shēn, hòulái jiù mànmàn shúxi le.",
+        "en": "Our class played against his class, and he scored two goals by himself — it made a deep impression on me, and later we gradually got to know each other well."
+      }
+    },
+    "深": {
+      "zh": "深",
+      "pinyin": "shēn",
+      "pos": "adj.",
+      "en": "deep",
+      "when": "Remember 深 like the word you’ll use when an impression is not shallow — 印象很深 after that football match, not deep water.",
+      "usage": "Most Chinese speakers use this 深 for intensity of feeling (印象深, 感情深). In 课文1 it grades how strongly 李进 stayed in 王静’s mind.",
+      "example": {
+        "zh": "我们班跟他们班比赛，他一个人踢进两个球，我对他印象很深，后来就慢慢熟悉了。",
+        "pinyin": "Wǒmen bān gēn tāmen bān bǐsài, tā yí ge rén tījìn liǎng ge qiú, wǒ duì tā yìnxiàng hěn shēn, hòulái jiù mànmàn shúxi le.",
+        "en": "Our class played against his class, and he scored two goals by himself — it made a deep impression on me, and later we gradually got to know each other well."
+      }
+    },
+    "熟悉": {
+      "zh": "熟悉",
+      "pinyin": "shúxi",
+      "pos": "v.",
+      "en": "to be familiar with",
+      "when": "Remember 熟悉 like the word you’ll use when two classmates slowly stop being strangers — 后来就慢慢熟悉了 after the match.",
+      "usage": "Most Chinese speakers use it for people or places you have come to know well, not for “I know this fact.” 课文1’s 慢慢熟悉了 is the slide from 印象很深 into actually knowing him.",
+      "example": {
+        "zh": "我们班跟他们班比赛，他一个人踢进两个球，我对他印象很深，后来就慢慢熟悉了。",
+        "pinyin": "Wǒmen bān gēn tāmen bān bǐsài, tā yí ge rén tījìn liǎng ge qiú, wǒ duì tā yìnxiàng hěn shēn, hòulái jiù mànmàn shúxi le.",
+        "en": "Our class played against his class, and he scored two goals by himself — it made a deep impression on me, and later we gradually got to know each other well."
+      }
+    },
+    "不仅": {
+      "zh": "不仅",
+      "pinyin": "bùjǐn",
+      "pos": "conj.",
+      "en": "not only",
+      "when": "Remember 不仅 like the glue you’ll use when one good thing about him is not enough — 不仅足球踢得好，性格也不错.",
+      "usage": "Most Chinese speakers open with 不仅 and finish with 也 / 还 / 而且. 课文1 uses 不仅……也…… to explain why 王静 likes 李进; 课文5 repeats the pattern for 共同生活.",
+      "example": {
+        "zh": "他不仅足球踢得好，性格也不错。",
+        "pinyin": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě búcuò.",
+        "en": "Not only does he play soccer well, his personality is great too."
+      }
+    },
+    "性格": {
+      "zh": "性格",
+      "pinyin": "xìnggé",
+      "pos": "n.",
+      "en": "character, personality",
+      "when": "Remember 性格 like the word you’ll use when you praise how someone is, not how they look — 性格也不错 is why 王静 likes him.",
+      "usage": "Most Chinese speakers use it for temperament (性格好 / 不错 / 开朗). This lesson then raises the stakes: 课文5 says a marriage also needs 性格上互相吸引.",
+      "example": {
+        "zh": "他不仅足球踢得好，性格也不错。",
+        "pinyin": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě búcuò.",
+        "en": "Not only does he play soccer well, his personality is great too."
+      }
+    },
+    "开玩笑": {
+      "zh": "开玩笑",
+      "pinyin": "kāi wánxiào",
+      "pos": "",
+      "en": "to be kidding",
+      "when": "Remember 开玩笑 like the word you’ll use when news sounds impossible — 李老师 says 你是在开玩笑吧? because they have only known each other a month.",
+      "usage": "Most Chinese speakers say 开玩笑 or 你别开玩笑了 when something cannot be serious. Here Teacher Li is not telling a joke; he is shocked that 王静 is already getting married.",
+      "example": {
+        "zh": "你是在开玩笑吧？你们不是才认识一个月？",
+        "pinyin": "Nǐ shì zài kāi wánxiào ba? Nǐmen bú shì cái rènshi yí ge yuè?",
+        "en": "Are you kidding? Haven't you only known each other for a month?"
+      }
+    },
+    "从来": {
+      "zh": "从来",
+      "pinyin": "cónglái",
+      "pos": "adv.",
+      "en": "always, all along",
+      "when": "Remember 从来 like the word you’ll use when a feeling has never happened before — 我从来没这么快乐过, even though they have not known each other long.",
+      "usage": "Most Chinese speakers lock 从来 to 不 / 没 (从来不, 从来没…过) for something true from the past until now. 课文2’s sense is “never this happy,” not a positive “always.”",
+      "example": {
+        "zh": "虽然我们认识的时间不长，但我从来没这么快乐过。",
+        "pinyin": "Suīrán wǒmen rènshi de shíjiān bù cháng, dàn wǒ cónglái méi zhème kuàilèguo.",
+        "en": "Although we haven't known each other long, I've never been this happy before."
+      }
+    },
+    "最好": {
+      "zh": "最好",
+      "pinyin": "zuìhǎo",
+      "pos": "adv.",
+      "en": "had better",
+      "when": "Remember 最好 like the word you’ll use when you give couple-advice — 李老师 says two people 最好能有共同的兴趣和爱好.",
+      "usage": "Most Chinese speakers use 最好 as “had better / it is best to,” a soft recommendation, not “the number-one thing.” Teacher Li is steering 王静, not ranking hobbies.",
+      "example": {
+        "zh": "两个人在一起，最好能有共同的兴趣和爱好。",
+        "pinyin": "Liǎng ge rén zài yìqǐ, zuìhǎo néng yǒu gòngtóng de xìngqù hé àihào.",
+        "en": "When two people are together, it's best if they have common interests and hobbies."
+      }
+    },
+    "共同": {
+      "zh": "共同",
+      "pinyin": "gòngtóng",
+      "pos": "adj.",
+      "en": "common, shared",
+      "when": "Remember 共同 like the word you’ll use when a couple shares a life, not just a class — 共同的兴趣和爱好, later 共同生活.",
+      "usage": "Most Chinese speakers put it before a noun (共同的爱好) or before 生活 to mean “together / shared.” This lesson’s thread is what two people have in common after they pair up.",
+      "example": {
+        "zh": "两个人在一起，最好能有共同的兴趣和爱好。",
+        "pinyin": "Liǎng ge rén zài yìqǐ, zuìhǎo néng yǒu gòngtóng de xìngqù hé àihào.",
+        "en": "When two people are together, it's best if they have common interests and hobbies."
+      }
+    },
+    "适合": {
+      "zh": "适合",
+      "pinyin": "shìhé",
+      "pos": "v.",
+      "en": "to suit, to fit",
+      "when": "Remember 适合 like the word you’ll use when someone is the right person, not the right size — 找到适合你的人了.",
+      "usage": "Most Chinese speakers use 适合 + person/thing (适合你, 适合这份工作). In 课文2 it is a match for marriage; 李老师 is blessing the choice, not talking about clothes.",
+      "example": {
+        "zh": "看来你真的找到适合你的人了。",
+        "pinyin": "Kànlái nǐ zhēn de zhǎodào shìhé nǐ de rén le.",
+        "en": "It looks like you've really found the right person for you."
+      }
+    },
+    "幸福": {
+      "zh": "幸福",
+      "pinyin": "xìngfú",
+      "pos": "adj.",
+      "en": "happy",
+      "when": "Remember 幸福 like the word you’ll use when you bless a couple — 祝你们幸福 — and when married life itself feels happy.",
+      "usage": "Most Chinese speakers use it as a wedding wish (祝你幸福) and as 很幸福 / 挺幸福. 课文2 is the blessing; 课文3’s 生活一直挺幸福的 is the same word as a felt state. Listed adj., but 祝你们幸福 reads like the noun “happiness.”",
+      "example": {
+        "zh": "祝你们幸福！",
+        "pinyin": "Zhù nǐmen xìngfú!",
+        "en": "Wishing you happiness!"
+      }
+    },
+    "生活": {
+      "zh": "生活",
+      "pinyin": "shēnghuó",
+      "pos": "n./v.",
+      "en": "life; to live",
+      "when": "Remember 生活 like the word you’ll use when you mean married life together — 我们的生活一直挺幸福的, later 共同生活.",
+      "usage": "Most Chinese speakers use the noun for a couple’s daily life, and the verb for living together. 课文3 is life after the wedding, not “being alive.”",
+      "example": {
+        "zh": "这么多年，我们的生活一直挺幸福的。",
+        "pinyin": "Zhème duō nián, wǒmen de shēnghuó yìzhí tǐng xìngfú de.",
+        "en": "All these years, our life together has been quite happy."
+      }
+    },
+    "刚": {
+      "zh": "刚",
+      "pinyin": "gāng",
+      "pos": "adv.",
+      "en": "just, not long",
+      "when": "Remember 刚 like the word you’ll use when the honeymoon has only just started — 刚结婚的时候, when every day still felt 新鲜.",
+      "usage": "Most Chinese speakers put 刚 after the subject and before the verb for “only recently.” 比一比: 刚才 is a time noun and cannot take 上个月刚结婚. 高老师 means the first days of marriage, not this morning.",
+      "example": {
+        "zh": "我和丈夫刚结婚的时候，每天都觉得很新鲜，在一起有说不完的话。",
+        "pinyin": "Wǒ hé zhàngfu gāng jié hūn de shíhou, měi tiān dōu juéde hěn xīnxiān, zài yìqǐ yǒu shuō bu wán de huà.",
+        "en": "When my husband and I had just gotten married, every day felt fresh and exciting, and we had endless things to talk about together."
+      }
+    },
+    "浪漫": {
+      "zh": "浪漫",
+      "pinyin": "làngmàn",
+      "pos": "adj.",
+      "en": "romantic",
+      "when": "Remember 浪漫 like the word you’ll use when marriage needs more than roses — 只有浪漫和新鲜感是不够的.",
+      "usage": "Most Chinese speakers use it for romantic atmosphere. 课文3 says romance alone cannot carry 共同生活; 课文4 then asks 什么是浪漫 across young, middle-aged, and old voices.",
+      "example": {
+        "zh": "两个人共同生活，只有浪漫和新鲜感是不够的。",
+        "pinyin": "Liǎng ge rén gòngtóng shēnghuó, zhǐ yǒu làngmàn hé xīnxiāngǎn shì bú gòu de.",
+        "en": "When two people live together, romance and novelty alone aren't enough."
+      }
+    },
+    "够": {
+      "zh": "够",
+      "pinyin": "gòu",
+      "pos": "v.",
+      "en": "to be enough",
+      "when": "Remember 够 like the word you’ll use when romance is not sufficient — 只有浪漫和新鲜感是不够的.",
+      "usage": "Most Chinese speakers say 够了 or 不够. In 课文3, 不够 is 李老师’s verdict: novelty cannot carry two people living together.",
+      "example": {
+        "zh": "两个人共同生活，只有浪漫和新鲜感是不够的。",
+        "pinyin": "Liǎng ge rén gòngtóng shēnghuó, zhǐ yǒu làngmàn hé xīnxiāngǎn shì bú gòu de.",
+        "en": "When two people live together, romance and novelty alone aren't enough."
+      }
+    },
+    "缺点": {
+      "zh": "缺点",
+      "pinyin": "quēdiǎn",
+      "pos": "n.",
+      "en": "shortcoming",
+      "when": "Remember 缺点 like the word you’ll use when all you can see in your husband are his faults — 每天看到的都是他的缺点.",
+      "usage": "Most Chinese speakers use it for a person’s flaws, not a product defect. 课文3’s medicine is 接受他的缺点, not listing more of them.",
+      "example": {
+        "zh": "您说的对！我现在每天看到的都是他的缺点。",
+        "pinyin": "Nín shuō de duì! Wǒ xiànzài měi tiān kàndào de dōu shì tā de quēdiǎn.",
+        "en": "You're right! Now all I see every day are his shortcomings."
+      }
+    },
+    "接受": {
+      "zh": "接受",
+      "pinyin": "jiēshòu",
+      "pos": "v.",
+      "en": "to accept",
+      "when": "Remember 接受 like the word you’ll use when you stop fighting a partner’s flaws — 只有接受了他的缺点，你们才能更好地一起生活.",
+      "usage": "Most Chinese speakers use it for accepting a person, an offer, or a fact. In 课文3 it is emotional acceptance, the condition for living together better after many years.",
+      "example": {
+        "zh": "只有接受了他的缺点，你们才能更好地一起生活。",
+        "pinyin": "Zhǐyǒu jiēshòule tā de quēdiǎn, nǐmen cái néng gèng hǎo de yìqǐ shēnghuó.",
+        "en": "Only by accepting his shortcomings can you two live together better."
+      }
+    },
+    "羡慕": {
+      "zh": "羡慕",
+      "pinyin": "xiànmù",
+      "pos": "v.",
+      "en": "to envy, to admire",
+      "when": "Remember 羡慕 like the word you’ll use when girls look at other people’s romance — 很多女孩子羡慕浪漫的爱情.",
+      "usage": "Most Chinese speakers 羡慕 a life they wish they had (羡慕你): warm envy, not hate. 课文5 closes the same thread: 很多人都特别羡慕我们.",
+      "example": {
+        "zh": "很多女孩子羡慕浪漫的爱情。",
+        "pinyin": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
+        "en": "Many girls admire romantic love."
+      }
+    },
+    "爱情": {
+      "zh": "爱情",
+      "pinyin": "àiqíng",
+      "pos": "n.",
+      "en": "love (between a man and a woman)",
+      "when": "Remember 爱情 like the word you’ll use when you mean love between two people — the title feeling of 简单的爱情, not 爱 as in loving a sport.",
+      "usage": "Most Chinese speakers keep 爱情 for romantic love. 课文4 says simple 爱情 is what 感动 us; 课文5 says it is an important 原因 for marriage, but not the whole of 共同生活.",
+      "example": {
+        "zh": "很多女孩子羡慕浪漫的爱情。",
+        "pinyin": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
+        "en": "Many girls admire romantic love."
+      }
+    },
+    "星星": {
+      "zh": "星星",
+      "pinyin": "xīngxing",
+      "pos": "n.",
+      "en": "star",
+      "when": "Remember 星星 like the word you’ll use when young romance means don’t hand her stars if she asked for the moon.",
+      "usage": "Most Chinese speakers use reduplicated 星星 for stars in the sky (casual). In 课文4 it is the wrong gift: 月亮 vs 星星. Marked * 补充生词 in the book.",
+      "example": {
+        "zh": "年轻人说：浪漫是她想要月亮时，你不会给她星星；",
+        "pinyin": "Niánqīng rén shuō: Làngmàn shì tā xiǎng yào yuèliang shí, nǐ bú huì gěi tā xīngxing;",
+        "en": "Young people say: romance is that when she wants the moon, you won't give her stars instead;"
+      }
+    },
+    "即使": {
+      "zh": "即使",
+      "pinyin": "jíshǐ",
+      "pos": "conj.",
+      "en": "even if",
+      "when": "Remember 即使 like the glue you’ll use when romance still holds after overtime — 即使晚上加班到零点……也还亮着灯.",
+      "usage": "Most Chinese speakers pair 即使……也…… for “even if.” 课文4’s middle-aged romance is that the lamp is still on even after midnight overtime; 课文5 uses it again for ordinary things sounding funny from his mouth.",
+      "example": {
+        "zh": "中年人说：浪漫是即使晚上加班到零点，到家时，自己家里也还亮着灯；",
+        "pinyin": "Zhōngnián rén shuō: Làngmàn shì jíshǐ wǎnshang jiā bān dào líng diǎn, dào jiā shí, zìjǐ jiā li yě hái liàngzhe dēng;",
+        "en": "middle-aged people say: romance is that even if you work overtime until midnight, the light at home is still on when you get there;"
+      }
+    },
+    "加班": {
+      "zh": "加班",
+      "pinyin": "jiā bān",
+      "pos": "v.",
+      "en": "to work overtime",
+      "when": "Remember 加班 like the word you’ll use when work runs past quitting time — 加班到零点, the test of whether someone waited up.",
+      "usage": "Most Chinese speakers 加班 for extra hours at the office. In 课文4 it is not the job talking; it is the condition in 即使……也…… that still leaves the lamp 亮着.",
+      "example": {
+        "zh": "中年人说：浪漫是即使晚上加班到零点，到家时，自己家里也还亮着灯；",
+        "pinyin": "Zhōngnián rén shuō: Làngmàn shì jíshǐ wǎnshang jiā bān dào líng diǎn, dào jiā shí, zìjǐ jiā li yě hái liàngzhe dēng;",
+        "en": "middle-aged people say: romance is that even if you work overtime until midnight, the light at home is still on when you get there;"
+      }
+    },
+    "亮": {
+      "zh": "亮",
+      "pinyin": "liàng",
+      "pos": "v.",
+      "en": "to shine, to be lit",
+      "when": "Remember 亮 like the word you’ll use when a lamp is still on for you — 家里也还亮着灯, not the 亮 inside 月亮.",
+      "usage": "Most Chinese speakers say 灯亮着 / 亮着灯 for a light that is on. Marked * 补充生词. Do not learn it from the 月亮 line — that is a false substring hit.",
+      "example": {
+        "zh": "中年人说：浪漫是即使晚上加班到零点，到家时，自己家里也还亮着灯；",
+        "pinyin": "Zhōngnián rén shuō: Làngmàn shì jíshǐ wǎnshang jiā bān dào líng diǎn, dào jiā shí, zìjǐ jiā li yě hái liàngzhe dēng;",
+        "en": "middle-aged people say: romance is that even if you work overtime until midnight, the light at home is still on when you get there;"
+      }
+    },
+    "感动": {
+      "zh": "感动",
+      "pinyin": "gǎndòng",
+      "pos": "v.",
+      "en": "to touch, to move",
+      "when": "Remember 感动 like the word you’ll use when simple love hits you — 让我们感动的，就是生活中简单的爱情.",
+      "usage": "Most Chinese speakers are 感动 by a scene or a person (让人感动, 被感动). Here the moving thing is ordinary married love, the lesson title, not a grand gesture. 同字词：感 → 感到 / 感动 / 感冒 / 感兴趣.",
+      "example": {
+        "zh": "其实，让我们感动的，就是生活中简单的爱情。",
+        "pinyin": "Qíshí, ràng wǒmen gǎndòng de, jiù shì shēnghuó zhōng jiǎndān de àiqíng.",
+        "en": "In fact, what moves us is the simple love found in everyday life."
+      }
+    },
+    "自然": {
+      "zh": "自然",
+      "pinyin": "zìrán",
+      "pos": "adv.",
+      "en": "naturally, certainly",
+      "when": "Remember 自然 like the word you’ll use when one topic pulls the next without thinking — 说到结婚，人们就会很自然地想起爱情.",
+      "usage": "Most Chinese speakers use 自然地 for “as a matter of course.” This is the adverb in 课文5, not 大自然. The book’s point: marriage talk slides into 爱情 by itself.",
+      "example": {
+        "zh": "说到结婚，人们就会很自然地想起爱情。",
+        "pinyin": "Shuōdào jié hūn, rénmen jiù huì hěn zìrán de xiǎngqǐ àiqíng.",
+        "en": "When it comes to marriage, people naturally think of love."
+      }
+    },
+    "原因": {
+      "zh": "原因",
+      "pinyin": "yuányīn",
+      "pos": "n.",
+      "en": "reason",
+      "when": "Remember 原因 like the word you’ll use when you name why people marry — 爱情是结婚的重要原因, then the passage adds 性格上互相吸引.",
+      "usage": "Most Chinese speakers ask 什么原因 / 重要原因. In 课文5, 爱情 is an important reason, not the only one — living together still needs personality pulling both ways.",
+      "example": {
+        "zh": "爱情是结婚的重要原因，但两个人共同生活，不仅需要浪漫的爱情，更需要性格上互相吸引。",
+        "pinyin": "Àiqíng shì jié hūn de zhòngyào yuányīn, dàn liǎng ge rén gòngtóng shēnghuó, bùjǐn xūyào làngmàn de àiqíng, gèng xūyào xìnggé shang hùxiāng xīyǐn.",
+        "en": "Love is an important reason for marriage, but for two people living together, they need not only romantic love, but even more a mutual attraction of personalities."
+      }
+    },
+    "互相": {
+      "zh": "互相",
+      "pinyin": "hùxiāng",
+      "pos": "adv.",
+      "en": "mutually",
+      "when": "Remember 互相 like the word you’ll use when attraction has to go both ways — 性格上互相吸引.",
+      "usage": "Most Chinese speakers put 互相 before a verb (互相帮助, 互相吸引). A one-way crush is not 互相. This is the (在)……上 grammar line in 课文5.",
+      "example": {
+        "zh": "爱情是结婚的重要原因，但两个人共同生活，不仅需要浪漫的爱情，更需要性格上互相吸引。",
+        "pinyin": "Àiqíng shì jié hūn de zhòngyào yuányīn, dàn liǎng ge rén gòngtóng shēnghuó, bùjǐn xūyào làngmàn de àiqíng, gèng xūyào xìnggé shang hùxiāng xīyǐn.",
+        "en": "Love is an important reason for marriage, but for two people living together, they need not only romantic love, but even more a mutual attraction of personalities."
+      }
+    },
+    "吸引": {
+      "zh": "吸引",
+      "pinyin": "xīyǐn",
+      "pos": "v.",
+      "en": "to attract",
+      "when": "Remember 吸引 like the word you’ll use when personalities pull two people together — 性格上互相吸引, more than 浪漫的爱情.",
+      "usage": "Most Chinese speakers 吸引 tourists or 被他吸引. In 课文5 it is character attracting character, the “in this respect” sense of (在)……上.",
+      "example": {
+        "zh": "爱情是结婚的重要原因，但两个人共同生活，不仅需要浪漫的爱情，更需要性格上互相吸引。",
+        "pinyin": "Àiqíng shì jié hūn de zhòngyào yuányīn, dàn liǎng ge rén gòngtóng shēnghuó, bùjǐn xūyào làngmàn de àiqíng, gèng xūyào xìnggé shang hùxiāng xīyǐn.",
+        "en": "Love is an important reason for marriage, but for two people living together, they need not only romantic love, but even more a mutual attraction of personalities."
+      }
+    },
+    "幽默": {
+      "zh": "幽默",
+      "pinyin": "yōumò",
+      "pos": "adj.",
+      "en": "humourous",
+      "when": "Remember 幽默 like the word you’ll use when even ordinary things sound funny from his mouth — 我丈夫是个很幽默的人.",
+      "usage": "Most Chinese speakers describe a person as 幽默 / 很幽默. In 课文5 that humour is why 即使是很普通的事情 become interesting, and why they almost never 红脸.",
+      "example": {
+        "zh": "我丈夫是个很幽默的人。",
+        "pinyin": "Wǒ zhàngfu shì ge hěn yōumò de rén.",
+        "en": "My husband is a very humorous person."
+      }
+    },
+    "脾气": {
+      "zh": "脾气",
+      "pinyin": "píqi",
+      "pos": "n.",
+      "en": "temper, disposition",
+      "when": "Remember 脾气 like the word you’ll use when you praise a temper that does not start fights — 他的脾气也不错, so 我们俩几乎没红过脸.",
+      "usage": "Most Chinese speakers say 脾气好 / 不好 / 大. 课文5’s 脾气不错 is a calm disposition after almost ten years of marriage, the last reason people 羡慕 them.",
+      "example": {
+        "zh": "而且他的脾气也不错，结婚快十年了，我们俩几乎没因为什么事红过脸，很多人都特别羡慕我们。",
+        "pinyin": "Érqiě tā de píqi yě búcuò, jié hūn kuài shí nián le, wǒmen liǎ jīhū méi yīnwèi shénme shì hóngguo liǎn, hěn duō rén dōu tèbié xiànmù wǒmen.",
+        "en": "Also, his temper is quite good — we've been married almost ten years, and the two of us have almost never quarreled (lit. \"turned red-faced\") over anything; a lot of people are especially envious of us."
+      }
+    },
+    "孙月": {
+      "zh": "孙月",
+      "pinyin": "Sūn Yuè",
+      "pos": "pr.n.",
+      "en": "Sun Yue, name of a person",
+      "when": "Remember 孙月 as the name of 王静’s friend who opens 课文1 by asking how she met 李进.",
+      "usage": "Treat it as a proper name. Don’t translate it — just recognise 孙月 as the classmate asking the questions. She is a speaker, not a word inside the dialogue lines.",
+      "example": {
+        "zh": "孙月和王静聊王静的男朋友",
+        "pinyin": "Sūn Yuè hé Wáng Jìng liáo Wáng Jìng de nánpéngyou",
+        "en": "Sun Yue and Wang Jing Talk About Wang Jing's Boyfriend"
+      }
+    },
+    "王静": {
+      "zh": "王静",
+      "pinyin": "Wáng Jìng",
+      "pos": "pr.n.",
+      "en": "Wang Jing, name of a person",
+      "when": "Remember 王静 as the name of the law student getting married — 李进’s girlfriend, the one who speaks in 课文1–2.",
+      "usage": "Treat it as a proper name. Don’t translate it. She is the couple the teachers discuss; the hanzi never appear inside 课文1–5 line text, only in headings and as the speaker label.",
+      "example": {
+        "zh": "王静跟李老师聊她要结婚的事情",
+        "pinyin": "Wáng Jìng gēn Lǐ lǎoshī liáo tā yào jiéhūn de shìqing",
+        "en": "Wang Jing Talks with Teacher Li About Getting Married"
+      }
+    },
+    "李进": {
+      "zh": "李进",
+      "pinyin": "Lǐ Jìn",
+      "pos": "pr.n.",
+      "en": "Li Jin, name of a person",
+      "when": "Remember 李进 as the name of 王静’s boyfriend — the journalism student who scored two goals.",
+      "usage": "Treat it as a proper name. Don’t translate it. 课文1 introduces him; he never speaks in this lesson. Keep him distinct from 李老师 (family name 李 only).",
+      "example": {
+        "zh": "听说你男朋友李进跟你是一个学校的，是你同学吗？",
+        "pinyin": "Tīngshuō nǐ nánpéngyou Lǐ Jìn gēn nǐ shì yí ge xuéxiào de, shì nǐ tóngxué ma?",
+        "en": "I heard your boyfriend Li Jin is from the same school as you — is he your classmate?"
+      }
+    },
+    "李": {
+      "zh": "李",
+      "pinyin": "Lǐ",
+      "pos": "pr.n.",
+      "en": "Li, a Chinese family name",
+      "when": "Remember 李 as the family name you’ll hear in 李老师, the teacher who has been married twenty years and advises 王静.",
+      "usage": "Treat it as a proper name. Don’t translate it. In this lesson 李 is Teacher Li. A raw 李 search also hits 李进 — use 李老师, not the boyfriend’s full name.",
+      "example": {
+        "zh": "李老师，我下个月5号就要结婚了。",
+        "pinyin": "Lǐ lǎoshī, wǒ xià ge yuè wǔ hào jiù yào jié hūn le.",
+        "en": "Teacher Li, I'm getting married on the 5th of next month."
+      }
+    },
+    "高": {
+      "zh": "高",
+      "pinyin": "Gāo",
+      "pos": "pr.n.",
+      "en": "Gao, a Chinese family name",
+      "when": "Remember 高 as the family name you’ll hear in 高老师, who finds her husband’s 缺点 after the honeymoon.",
+      "usage": "Treat it as a proper name. Don’t translate it. Watch 高兴 — that 高 is not this surname, and 课文5’s 高兴起来 is a false hit for exampleFor.",
+      "example": {
+        "zh": "高老师和李老师聊结婚后的生活",
+        "pinyin": "Gāo lǎoshī hé Lǐ lǎoshī liáo jiéhūn hòu de shēnghuó",
+        "en": "Teacher Gao and Teacher Li Talk About Life After Marriage"
+      }
+    }
+  }
+}

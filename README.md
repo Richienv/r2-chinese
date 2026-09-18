@@ -1,7 +1,7 @@
-# Handoff: Yǔlù — Mandarin Learning App (mobile)
+# Handoff: hsk4-r2 — Mandarin Learning App (mobile)
 
 ## Overview
-Yǔlù (语录) is a mobile Mandarin-learning app for **intermediate–advanced learners (HSK 4–6)**. It combines a structured HSK course, spaced-repetition review, and real Chinese handwriting practice (live stroke-order) with a warm, encouraging tone. The prototype covers six connected screens plus two full task flows (a lesson and a review session), all with working state.
+hsk4-r2 is a mobile Mandarin-learning app for **intermediate–advanced learners (HSK 4–6)**. It combines a structured HSK course, spaced-repetition review, and real Chinese handwriting practice (live stroke-order) with a warm, encouraging tone. The prototype covers six connected screens plus two full task flows (a lesson and a review session), all with working state.
 
 Signature visual identity: a **3D "metallic red" theme** — deep glossy red gradients with baked-in highlights and inner shadows — used for every primary surface (hero cards, lesson rows, stat cards, streak calendar, character tiles). Neutral surfaces sit on a warm **cream** background (#F4EFE4).
 

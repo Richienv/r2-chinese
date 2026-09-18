@@ -1,0 +1,487 @@
+{
+  "lesson": 7,
+  "title": "最好的医生是自己",
+  "words": {
+    "流血": {
+      "zh": "流血",
+      "pinyin": "liú xiě",
+      "en": "to bleed",
+      "pos": "v.",
+      "when": "Remember 流血 like the word you’ll use when blood is coming out — a nosebleed you can see, not a vague “I feel sick.”",
+      "usage": "Most Chinese speakers use it for blood leaving the body, often 鼻子流血. In 课文1 小李 sees 小林’s nose 流血 and tells him to wipe it now.",
+      "example": {
+        "zh": "你的鼻子怎么流血了？快用纸擦擦。",
+        "pinyin": "Nǐ de bízi zěnme liú xiě le? Kuài yòng zhǐ cāca.",
+        "en": "Why is your nose bleeding? Quick, wipe it with a tissue."
+      }
+    },
+    "擦": {
+      "zh": "擦",
+      "pinyin": "cā",
+      "en": "to wipe",
+      "pos": "v.",
+      "when": "Remember 擦 like the word you’ll use when you wipe something off a face or a table — a tissue, not a wash.",
+      "usage": "Most Chinese speakers use it for wiping with paper or a cloth. In 课文1 it reduplicates as 擦擦: grab 纸 and wipe the nosebleed.",
+      "example": {
+        "zh": "你的鼻子怎么流血了？快用纸擦擦。",
+        "pinyin": "Nǐ de bízi zěnme liú xiě le? Kuài yòng zhǐ cāca.",
+        "en": "Why is your nose bleeding? Quick, wipe it with a tissue."
+      }
+    },
+    "气候": {
+      "zh": "气候",
+      "pinyin": "qìhòu",
+      "en": "climate",
+      "pos": "n.",
+      "when": "Remember 气候 like the word you’ll use when you mean a region’s usual weather — dry north, humid south — not today’s forecast.",
+      "usage": "Most Chinese speakers use it for the climate of a place. In 课文1 小林 still can’t get used to 北方的气候, and 估计 that’s why his nose is bleeding.",
+      "example": {
+        "zh": "我还不习惯北方的气候，估计是天气太干。",
+        "pinyin": "Wǒ hái bù xíguàn běifāng de qìhòu, gūjì shì tiānqì tài gān.",
+        "en": "I'm still not used to the climate in the north; I reckon it's because the weather is too dry."
+      }
+    },
+    "估计": {
+      "zh": "估计",
+      "pinyin": "gūjì",
+      "en": "to estimate, to reckon",
+      "pos": "v.",
+      "when": "Remember 估计 like the word you’ll use when you don’t know for sure, but you’re making a rough call from what you can see.",
+      "usage": "Most Chinese speakers use it as a verb that takes a clause: 估计是… / 估计他…. In 课文1 小林 估计 the nosebleed is the dry weather — a guess, not a diagnosis. Later 比一比 sets it next to 可能.",
+      "example": {
+        "zh": "我还不习惯北方的气候，估计是天气太干。",
+        "pinyin": "Wǒ hái bù xíguàn běifāng de qìhòu, gūjì shì tiānqì tài gān.",
+        "en": "I'm still not used to the climate in the north; I reckon it's because the weather is too dry."
+      }
+    },
+    "咳嗽": {
+      "zh": "咳嗽",
+      "pinyin": "késou",
+      "en": "to cough",
+      "pos": "v.",
+      "when": "Remember 咳嗽 like the word you’ll use when a throat keeps catching — “it’s just a cough,” or a cough that won’t quit.",
+      "usage": "Most Chinese speakers use it as the everyday verb (and noun) for coughing. In 课文1 小李 skipped the doctor: 我只是咳嗽, plus a bit of a headache. 课文2’s 小雨 is still coughing from smoking.",
+      "example": {
+        "zh": "没有，我只是咳嗽，有点儿头疼，不严重，多喝点儿水就好了。",
+        "pinyin": "Méiyǒu, wǒ zhǐ shì késou, yǒudiǎnr tóu téng, bù yánzhòng, duō hē diǎnr shuǐ jiù hǎo le.",
+        "en": "No. I just have a cough and a bit of a headache — it's not serious, I'll be fine once I drink more water."
+      }
+    },
+    "严重": {
+      "zh": "严重",
+      "pinyin": "yánzhòng",
+      "en": "serious, grave",
+      "pos": "adj.",
+      "when": "Remember 严重 like the word you’ll use when you grade how bad it is — a cold, an injury — and you’re saying it isn’t (or is) grave.",
+      "usage": "Most Chinese speakers downplay illness with 不严重. In 课文1 小李’s cough and headache are 不严重; more water should fix it.",
+      "example": {
+        "zh": "没有，我只是咳嗽，有点儿头疼，不严重，多喝点儿水就好了。",
+        "pinyin": "Méiyǒu, wǒ zhǐ shì késou, yǒudiǎnr tóu téng, bù yánzhòng, duō hē diǎnr shuǐ jiù hǎo le.",
+        "en": "No. I just have a cough and a bit of a headache — it's not serious, I'll be fine once I drink more water."
+      }
+    },
+    "窗户": {
+      "zh": "窗户",
+      "pinyin": "chuānghu",
+      "en": "window",
+      "pos": "n.",
+      "when": "Remember 窗户 like the word you’ll use when you mean the window you open in a room — glass in the wall, not a screen.",
+      "usage": "Most Chinese speakers use it for a real window. In 课文1 小林’s spring advice is 打开窗户换换空气 so you catch fewer colds.",
+      "example": {
+        "zh": "春天天气时冷时热，特别容易感冒。这时候一定要多注意保暖，另外，最好经常打开窗户换换空气。",
+        "pinyin": "Chūntiān tiānqì shí lěng shí rè, tèbié róngyì gǎnmào. Zhè shíhou yídìng yào duō zhùyì bǎonuǎn, lìngwài, zuìhǎo jīngcháng dǎkāi chuānghu huànhuan kōngqì.",
+        "en": "In spring the weather is sometimes cold and sometimes hot, so it's especially easy to catch a cold. At times like this you must be careful to keep warm, and besides, it's best to open the windows often to get some fresh air."
+      }
+    },
+    "空气": {
+      "zh": "空气",
+      "pinyin": "kōngqì",
+      "en": "air",
+      "pos": "n.",
+      "when": "Remember 空气 like the word you’ll use when you mean the air in the room — stale, dry, or fresh after you open a window.",
+      "usage": "Most Chinese speakers use it for the air you breathe. In 课文1 you 打开窗户换换空气. Later 同字词 pairs 空气 with 气候 in the 气 family.",
+      "example": {
+        "zh": "春天天气时冷时热，特别容易感冒。这时候一定要多注意保暖，另外，最好经常打开窗户换换空气。",
+        "pinyin": "Chūntiān tiānqì shí lěng shí rè, tèbié róngyì gǎnmào. Zhè shíhou yídìng yào duō zhùyì bǎonuǎn, lìngwài, zuìhǎo jīngcháng dǎkāi chuānghu huànhuan kōngqì.",
+        "en": "In spring the weather is sometimes cold and sometimes hot, so it's especially easy to catch a cold. At times like this you must be careful to keep warm, and besides, it's best to open the windows often to get some fresh air."
+      }
+    },
+    "抽烟": {
+      "zh": "抽烟",
+      "pinyin": "chōu yān",
+      "en": "to smoke",
+      "pos": "",
+      "when": "Remember 抽烟 like the word you’ll use when someone lights a cigarette — the habit a doctor tells you to drop.",
+      "usage": "Most Chinese speakers use this verb-object as “smoke (cigarettes).” In 课文2 the doctor tells 小雨 不要再抽烟了; 小夏 says it does the body no good at all.",
+      "example": {
+        "zh": "还是老样子，他让我以后不要再抽烟了。",
+        "pinyin": "Hái shì lǎo yàngzi, tā ràng wǒ yǐhòu bú yào zài chōu yān le.",
+        "en": "Still the same as before. He told me not to smoke anymore."
+      }
+    },
+    "动作": {
+      "zh": "动作",
+      "pinyin": "dòngzuò",
+      "en": "action, movement",
+      "pos": "n.",
+      "when": "Remember 动作 like the word you’ll use when a body’s movement is the look — the gesture of smoking, a step, a match move.",
+      "usage": "Most Chinese speakers use it for a physical action you can watch. In 课文2 小雨 knows smoking is bad, but 抽烟这个动作看上去很帅.",
+      "example": {
+        "zh": "我也知道，可是我觉得抽烟这个动作看上去很帅。",
+        "pinyin": "Wǒ yě zhīdào, kěshì wǒ juéde chōu yān zhège dòngzuò kàn shangqu hěn shuài.",
+        "en": "I know that too, but I feel like the action of smoking looks cool."
+      }
+    },
+    "帅": {
+      "zh": "帅",
+      "pinyin": "shuài",
+      "en": "handsome",
+      "pos": "adj.",
+      "when": "Remember 帅 like the word you’ll use when a person or a gesture looks cool — a face, a photo, or smoking as a pose.",
+      "usage": "Most Chinese speakers use it for “handsome / cool-looking.” In 课文2 小雨 keeps smoking because the 动作 看上去很帅 — looks, not health.",
+      "example": {
+        "zh": "我也知道，可是我觉得抽烟这个动作看上去很帅。",
+        "pinyin": "Wǒ yě zhīdào, kěshì wǒ juéde chōu yān zhège dòngzuò kàn shangqu hěn shuài.",
+        "en": "I know that too, but I feel like the action of smoking looks cool."
+      }
+    },
+    "出现": {
+      "zh": "出现",
+      "pinyin": "chūxiàn",
+      "en": "to appear, to emerge",
+      "pos": "v.",
+      "when": "Remember 出现 like the word you’ll use when a problem shows up that wasn’t there before — health, not a person walking in.",
+      "usage": "Most Chinese speakers use it for something coming into being. In 课文2 小夏 warns: wait until 身体出现问题, and 后悔 is already too late.",
+      "example": {
+        "zh": "等你身体出现问题了，后悔就来不及了。",
+        "pinyin": "Děng nǐ shēntǐ chūxiàn wèntí le, hòuhuǐ jiù láibují le.",
+        "en": "By the time your health develops problems, it'll be too late to regret it."
+      }
+    },
+    "后悔": {
+      "zh": "后悔",
+      "pinyin": "hòuhuǐ",
+      "en": "to regret",
+      "pos": "v.",
+      "when": "Remember 后悔 like the word you’ll use when you wish you could undo a choice — smoking, skipping exercise, waiting too long.",
+      "usage": "Most Chinese speakers use it as “to regret.” In 课文2 it locks with 来不及: once the body goes wrong, 后悔就来不及了. 课文4 says the same about waiting to 锻炼.",
+      "example": {
+        "zh": "等你身体出现问题了，后悔就来不及了。",
+        "pinyin": "Děng nǐ shēntǐ chūxiàn wèntí le, hòuhuǐ jiù láibují le.",
+        "en": "By the time your health develops problems, it'll be too late to regret it."
+      }
+    },
+    "来不及": {
+      "zh": "来不及",
+      "pinyin": "láibují",
+      "en": "to have not enough time to, to be too late to",
+      "pos": "v.",
+      "when": "Remember 来不及 like the word you’ll use when the clock already won — too late to regret, too late to leave, too late to meet.",
+      "usage": "Most Chinese speakers use it alone or before a verb: 来不及了 / 来不及开会. In 课文2 the warning is 后悔就来不及了 — quit smoking now.",
+      "example": {
+        "zh": "等你身体出现问题了，后悔就来不及了。",
+        "pinyin": "Děng nǐ shēntǐ chūxiàn wèntí le, hòuhuǐ jiù láibují le.",
+        "en": "By the time your health develops problems, it'll be too late to regret it."
+      }
+    },
+    "反对": {
+      "zh": "反对",
+      "pinyin": "fǎnduì",
+      "en": "to oppose, to object to",
+      "pos": "v.",
+      "when": "Remember 反对 like the word you’ll use when someone is against what you’re doing — family against smoking, a vote against a plan.",
+      "usage": "Most Chinese speakers use it as “to oppose,” with an object: 反对我抽烟. In 课文2 the family 一直反对 the habit; 小雨 still thought it was nothing.",
+      "example": {
+        "zh": "其实家人也一直反对我抽烟，我自己却觉得没什么。但最近总是咳嗽，所以我有些担心了。",
+        "pinyin": "Qíshí jiārén yě yìzhí fǎnduì wǒ chōu yān, wǒ zìjǐ què juéde méi shénme. Dàn zuìjìn zǒngshì késou, suǒyǐ wǒ yǒuxiē dān xīn le.",
+        "en": "Actually, my family has always been against my smoking too, but I myself feel it's not a big deal. But lately I've been coughing all the time, so I've gotten a bit worried."
+      }
+    },
+    "大夫": {
+      "zh": "大夫",
+      "pinyin": "dàifu",
+      "en": "doctor",
+      "pos": "n.",
+      "when": "Remember 大夫 like the word you’ll use for a doctor in everyday talk — the person who looks at your twitching eye, not the university 教授.",
+      "usage": "Most Chinese speakers use 大夫 as the colloquial word for a doctor (same person as 医生). In 课文3 the 大夫 says 小李’s eye jumps because he stares at a computer too long.",
+      "example": {
+        "zh": "我最近眼睛总是跳，大夫说是因为我长时间看电脑，眼睛太累。",
+        "pinyin": "Wǒ zuìjìn yǎnjing zǒngshì tiào, dàifu shuō shì yīnwèi wǒ cháng shíjiān kàn diànnǎo, yǎnjing tài lèi.",
+        "en": "My eye has been twitching lately. The doctor said it's because I look at the computer for long periods and my eyes get too tired."
+      }
+    },
+    "植物": {
+      "zh": "植物",
+      "pinyin": "zhíwù",
+      "en": "plant",
+      "pos": "n.",
+      "when": "Remember 植物 like the word you’ll use when you mean green living things — houseplants, trees, something far away to rest your eyes.",
+      "usage": "Most Chinese speakers use it for plants in general. In 课文3 the doctor says look into the distance, 尤其是多看看绿色的植物.",
+      "example": {
+        "zh": "医生也这么说，他还告诉我要多向远处看看，尤其是多看看绿色的植物。",
+        "pinyin": "Yīshēng yě zhème shuō, tā hái gàosu wǒ yào duō xiàng yuǎn chù kànkan, yóuqí shì duō kànkan lǜsè de zhíwù.",
+        "en": "The doctor said the same thing. He also told me to look into the distance more often, especially to look at green plants."
+      }
+    },
+    "研究": {
+      "zh": "研究",
+      "pinyin": "yánjiū",
+      "en": "to study, to do research",
+      "pos": "v.",
+      "when": "Remember 研究 like the word you’ll use when findings, not opinions, are doing the talking — “research has found…”",
+      "usage": "Most Chinese speakers use it for doing research, and 研究发现 for “studies show.” In 课文3 研究发现 sitting still over six hours a day hurts your health.",
+      "example": {
+        "zh": "长时间对着电脑不仅对眼睛不好，身体也会不舒服。研究发现，如果人一天静坐超过6小时，就会影响身体健康。",
+        "pinyin": "Cháng shíjiān duìzhe diànnǎo bùjǐn duì yǎnjing bù hǎo, shēntǐ yě huì bù shūfu. Yánjiū fāxiàn, rúguǒ rén yì tiān jìng zuò chāoguò liù xiǎoshí, jiù huì yǐngxiǎng shēntǐ jiànkāng.",
+        "en": "Facing a computer for long periods isn't just bad for the eyes — the body feels uncomfortable too. Research has found that if a person sits still for more than 6 hours a day, it will affect their health."
+      }
+    },
+    "超过": {
+      "zh": "超过",
+      "pinyin": "chāoguò",
+      "en": "to exceed, to surpass",
+      "pos": "v.",
+      "when": "Remember 超过 like the word you’ll use when an amount goes past a line — six hours at a desk, two-thirds of a vote.",
+      "usage": "Most Chinese speakers use it for exceeding a number or overtaking someone. In 课文3 the danger line is 一天静坐超过6小时.",
+      "example": {
+        "zh": "长时间对着电脑不仅对眼睛不好，身体也会不舒服。研究发现，如果人一天静坐超过6小时，就会影响身体健康。",
+        "pinyin": "Cháng shíjiān duìzhe diànnǎo bùjǐn duì yǎnjing bù hǎo, shēntǐ yě huì bù shūfu. Yánjiū fāxiàn, rúguǒ rén yì tiān jìng zuò chāoguò liù xiǎoshí, jiù huì yǐngxiǎng shēntǐ jiànkāng.",
+        "en": "Facing a computer for long periods isn't just bad for the eyes — the body feels uncomfortable too. Research has found that if a person sits still for more than 6 hours a day, it will affect their health."
+      }
+    },
+    "散步": {
+      "zh": "散步",
+      "pinyin": "sàn bù",
+      "en": "to take a walk",
+      "pos": "v.",
+      "when": "Remember 散步 like the word you’ll use when the plan is a walk, not a run — after lunch, after dinner, around the park.",
+      "usage": "Most Chinese speakers treat it as a separable verb: 散步 / 散散步. In 课文3 小林 says 午饭后就去附近的公园散散步吧 — the lesson’s own 离合词重叠. 课文5 then calls 散步 the best exercise.",
+      "example": {
+        "zh": "好，咱们午饭后就去附近的公园散散步吧。",
+        "pinyin": "Hǎo, zánmen wǔfàn hòu jiù qù fùjìn de gōngyuán sànsan bù ba.",
+        "en": "Okay, let's go for a walk in the nearby park after lunch."
+      }
+    },
+    "指": {
+      "zh": "指",
+      "pinyin": "zhǐ",
+      "en": "to refer to",
+      "pos": "v.",
+      "when": "Remember 指 like the word you’ll use when you define what a word really means — “health 指 …” — not when you point a finger.",
+      "usage": "Most Chinese speakers use this 课文 sense as “to refer to / mean.” In 课文4 the old view is 健康就是指身体不生病.",
+      "example": {
+        "zh": "过去，人们认为健康就是指身体不生病。",
+        "pinyin": "Guòqù, rénmen rènwéi jiànkāng jiù shì zhǐ shēntǐ bù shēng bìng.",
+        "en": "In the past, people believed that health simply meant the body not getting sick."
+      }
+    },
+    "精神": {
+      "zh": "精神",
+      "pinyin": "jīngshén",
+      "en": "spirit, mind",
+      "pos": "n.",
+      "when": "Remember 精神 like the word you’ll use when health isn’t only the body — mood, mind, the part that isn’t a fever.",
+      "usage": "Most Chinese speakers use it for mind/spirit. In 课文4 people now realize 健康还指精神上的健康; only body plus 精神 is real health.",
+      "example": {
+        "zh": "但是，现在人们认识到，健康还指精神上的健康。",
+        "pinyin": "Dànshì, xiànzài rénmen rènshi dào, jiànkāng hái zhǐ jīngshén shang de jiànkāng.",
+        "en": "But now people have come to realize that health also refers to being healthy mentally."
+      }
+    },
+    "教授": {
+      "zh": "教授",
+      "pinyin": "jiàoshòu",
+      "en": "professor",
+      "pos": "n.",
+      "when": "Remember 教授 like the word you’ll use when the speaker is a university professor — the 1-and-0 health talk, not the clinic 大夫.",
+      "usage": "Most Chinese speakers use it for the academic title. In 课文4 有一位教授 uses 数字 to 说明 how important health is.",
+      "example": {
+        "zh": "有一位教授用数字来说明健康有多么重要：要是健康是1，其他都是1后面的0；如果没有1，不管有多少0也没用。",
+        "pinyin": "Yǒu yí wèi jiàoshòu yòng shùzì lái shuōmíng jiànkāng yǒu duōme zhòngyào: Yàoshi jiànkāng shì yī, qítā dōu shì yī hòumiàn de líng; rúguǒ méiyǒu yī, bùguǎn yǒu duōshao líng yě méi yòng.",
+        "en": "One professor used numbers to explain just how important health is: if health is the number 1, everything else is a 0 after it; if there's no 1, no matter how many 0s there are, they're useless."
+      }
+    },
+    "数字": {
+      "zh": "数字",
+      "pinyin": "shùzì",
+      "en": "number",
+      "pos": "n.",
+      "when": "Remember 数字 like the word you’ll use when numbers are doing the explaining — a 1, a row of 0s — not a single numeral character.",
+      "usage": "Most Chinese speakers use it for numbers as a set. In 课文4 the 教授 用数字来说明健康有多么重要.",
+      "example": {
+        "zh": "有一位教授用数字来说明健康有多么重要：要是健康是1，其他都是1后面的0；如果没有1，不管有多少0也没用。",
+        "pinyin": "Yǒu yí wèi jiàoshòu yòng shùzì lái shuōmíng jiànkāng yǒu duōme zhòngyào: Yàoshi jiànkāng shì yī, qítā dōu shì yī hòumiàn de líng; rúguǒ méiyǒu yī, bùguǎn yǒu duōshao líng yě méi yòng.",
+        "en": "One professor used numbers to explain just how important health is: if health is the number 1, everything else is a 0 after it; if there's no 1, no matter how many 0s there are, they're useless."
+      }
+    },
+    "说明": {
+      "zh": "说明",
+      "pinyin": "shuōmíng",
+      "en": "to explain, to show",
+      "pos": "v.",
+      "when": "Remember 说明 like the word you’ll use when you’re showing why something matters — with a number, a story, an example.",
+      "usage": "Most Chinese speakers use it for “explain / show.” In 课文4 the 教授 用数字来说明健康有多么重要.",
+      "example": {
+        "zh": "有一位教授用数字来说明健康有多么重要：要是健康是1，其他都是1后面的0；如果没有1，不管有多少0也没用。",
+        "pinyin": "Yǒu yí wèi jiàoshòu yòng shùzì lái shuōmíng jiànkāng yǒu duōme zhòngyào: Yàoshi jiànkāng shì yī, qítā dōu shì yī hòumiàn de líng; rúguǒ méiyǒu yī, bùguǎn yǒu duōshao líng yě méi yòng.",
+        "en": "One professor used numbers to explain just how important health is: if health is the number 1, everything else is a 0 after it; if there's no 1, no matter how many 0s there are, they're useless."
+      }
+    },
+    "要是": {
+      "zh": "要是",
+      "pinyin": "yàoshi",
+      "en": "if, supposing",
+      "pos": "conj.",
+      "when": "Remember 要是 like the glue you’ll use when you set up an if — 要是健康是1 — and the next clause is what follows.",
+      "usage": "Most Chinese speakers use 要是……(的话), 就…… for an everyday “if.” In 课文4: 要是健康是1，其他都是1后面的0.",
+      "example": {
+        "zh": "要是健康是1，其他都是1后面的0。",
+        "pinyin": "Yàoshi jiànkāng shì yī, qítā dōu shì yī hòumiàn de líng.",
+        "en": "If health is the number 1, everything else is a 0 that comes after it."
+      }
+    },
+    "既": {
+      "zh": "既",
+      "pinyin": "jì",
+      "en": "(used together with “又”) both...and...",
+      "pos": "adv.",
+      "when": "Remember 既 like the first half of “both…and…” — start with 既, then 又 / 也 / 还 for the second thing.",
+      "usage": "Most Chinese speakers pair it: 既……又……. In 课文5 walking 既可以活动身体，又可以减肥 — two wins, and it isn’t as 辛苦 as running.",
+      "example": {
+        "zh": "散步是生活中最简单的锻炼方法，既可以活动身体，又可以减肥，而且不会像跑步那样辛苦。",
+        "pinyin": "Sàn bù shì shēnghuó zhōng zuì jiǎndān de duànliàn fāngfǎ, jì kěyǐ huódòng shēntǐ, yòu kěyǐ jiǎn féi, érqiě bú huì xiàng pǎo bù nàyàng xīnkǔ.",
+        "en": "Taking a walk is the simplest form of exercise in life — it lets you move your body and lose weight, and it isn't as tiring as running."
+      }
+    },
+    "减肥": {
+      "zh": "减肥",
+      "pinyin": "jiǎn féi",
+      "en": "to lose weight",
+      "pos": "v.",
+      "when": "Remember 减肥 like the word you’ll use when the goal is a smaller waist — a walk, a swim — not a crash-diet lecture.",
+      "usage": "Most Chinese speakers use this verb-object for losing weight. In 课文5 a walk 又可以减肥. The 热身 table already listed 减肥 as why people swim.",
+      "example": {
+        "zh": "散步是生活中最简单的锻炼方法，既可以活动身体，又可以减肥，而且不会像跑步那样辛苦。",
+        "pinyin": "Sàn bù shì shēnghuó zhōng zuì jiǎndān de duànliàn fāngfǎ, jì kěyǐ huódòng shēntǐ, yòu kěyǐ jiǎn féi, érqiě bú huì xiàng pǎo bù nàyàng xīnkǔ.",
+        "en": "Taking a walk is the simplest form of exercise in life — it lets you move your body and lose weight, and it isn't as tiring as running."
+      }
+    },
+    "辛苦": {
+      "zh": "辛苦",
+      "pinyin": "xīnkǔ",
+      "en": "hard, toilsome",
+      "pos": "adj.",
+      "when": "Remember 辛苦 like the word you’ll use when an effort is tiring — running vs walking, or thanking someone who worked hard.",
+      "usage": "Most Chinese speakers use it as “hard / tiring,” and also 辛苦你了 to thank someone. In 课文5 walking 不会像跑步那样辛苦.",
+      "example": {
+        "zh": "散步是生活中最简单的锻炼方法，既可以活动身体，又可以减肥，而且不会像跑步那样辛苦。",
+        "pinyin": "Sàn bù shì shēnghuó zhōng zuì jiǎndān de duànliàn fāngfǎ, jì kěyǐ huódòng shēntǐ, yòu kěyǐ jiǎn féi, érqiě bú huì xiàng pǎo bù nàyàng xīnkǔ.",
+        "en": "Taking a walk is the simplest form of exercise in life — it lets you move your body and lose weight, and it isn't as tiring as running."
+      }
+    },
+    "肚子": {
+      "zh": "肚子",
+      "pinyin": "dùzi",
+      "en": "belly, stomach",
+      "pos": "n.",
+      "when": "Remember 肚子 like the word you’ll use when you mean the belly that just ate — full, needs a walk — not the formal organ 胃.",
+      "usage": "Most Chinese speakers use it for the belly. In 课文5 肚子吃饱了需要活动 — after dinner the stomach wants movement, and the family wants to talk.",
+      "example": {
+        "zh": "肚子吃饱了需要活动，家人忙了一天需要交流，夫妻说说一天的工作能加深感情，听孩子谈谈学校里有意思的事，一天的烦恼就都跑掉了。",
+        "pinyin": "Dùzi chībǎo le xūyào huódòng, jiārén mángle yì tiān xūyào jiāoliú, fūqī shuōshuo yì tiān de gōngzuò néng jiāshēn gǎnqíng, tīng háizi tántan xuéxiào li yǒuyìsi de shì, yì tiān de fánnǎo jiù dōu pǎodiào le.",
+        "en": "A full stomach needs movement, and a family that's been busy all day needs to talk — a couple chatting about their day's work can deepen their affection, and listening to the kids talk about interesting things at school makes a whole day's worries just melt away."
+      }
+    },
+    "感情": {
+      "zh": "感情",
+      "pinyin": "gǎnqíng",
+      "en": "affection, love",
+      "pos": "n.",
+      "when": "Remember 感情 like the word you’ll use when you mean the feeling between people — a couple after dinner — not 爱情 on its own.",
+      "usage": "Most Chinese speakers use it for affection / emotional ties. In 课文5 spouses talking about the day’s work 能加深感情.",
+      "example": {
+        "zh": "肚子吃饱了需要活动，家人忙了一天需要交流，夫妻说说一天的工作能加深感情，听孩子谈谈学校里有意思的事，一天的烦恼就都跑掉了。",
+        "pinyin": "Dùzi chībǎo le xūyào huódòng, jiārén mángle yì tiān xūyào jiāoliú, fūqī shuōshuo yì tiān de gōngzuò néng jiāshēn gǎnqíng, tīng háizi tántan xuéxiào li yǒuyìsi de shì, yì tiān de fánnǎo jiù dōu pǎodiào le.",
+        "en": "A full stomach needs movement, and a family that's been busy all day needs to talk — a couple chatting about their day's work can deepen their affection, and listening to the kids talk about interesting things at school makes a whole day's worries just melt away."
+      }
+    },
+    "烦恼": {
+      "zh": "烦恼",
+      "pinyin": "fánnǎo",
+      "en": "worried, vexed",
+      "pos": "adj.",
+      "when": "Remember 烦恼 like the word you’ll use when a day’s worries are sitting on you — and a family walk makes them run off.",
+      "usage": "Most Chinese speakers use it as “worried” and also as a noun for those worries. In 课文5 一天的烦恼就都跑掉了 after dinner 散步. The 生词表 marks it adj.; the line uses it as a noun.",
+      "example": {
+        "zh": "肚子吃饱了需要活动，家人忙了一天需要交流，夫妻说说一天的工作能加深感情，听孩子谈谈学校里有意思的事，一天的烦恼就都跑掉了。",
+        "pinyin": "Dùzi chībǎo le xūyào huódòng, jiārén mángle yì tiān xūyào jiāoliú, fūqī shuōshuo yì tiān de gōngzuò néng jiāshēn gǎnqíng, tīng háizi tántan xuéxiào li yǒuyìsi de shì, yì tiān de fánnǎo jiù dōu pǎodiào le.",
+        "en": "A full stomach needs movement, and a family that's been busy all day needs to talk — a couple chatting about their day's work can deepen their affection, and listening to the kids talk about interesting things at school makes a whole day's worries just melt away."
+      }
+    },
+    "掉": {
+      "zh": "掉",
+      "pinyin": "diào",
+      "en": "used after certain verbs, indicating the result of an action",
+      "pos": "v.",
+      "when": "Remember 掉 like the ending you’ll stick on a verb when the thing is gone — worries 跑掉, a phone 丢掉 — the result, not a new action.",
+      "usage": "Most Chinese speakers add it after a verb as a result complement. In 课文5 the day’s 烦恼 跑掉了 — the worries drop away on the walk.",
+      "example": {
+        "zh": "肚子吃饱了需要活动，家人忙了一天需要交流，夫妻说说一天的工作能加深感情，听孩子谈谈学校里有意思的事，一天的烦恼就都跑掉了。",
+        "pinyin": "Dùzi chībǎo le xūyào huódòng, jiārén mángle yì tiān xūyào jiāoliú, fūqī shuōshuo yì tiān de gōngzuò néng jiāshēn gǎnqíng, tīng háizi tántan xuéxiào li yǒuyìsi de shì, yì tiān de fánnǎo jiù dōu pǎodiào le.",
+        "en": "A full stomach needs movement, and a family that's been busy all day needs to talk — a couple chatting about their day's work can deepen their affection, and listening to the kids talk about interesting things at school makes a whole day's worries just melt away."
+      }
+    },
+    "保": {
+      "zh": "保",
+      "pinyin": "bǎo",
+      "en": "to guarantee",
+      "pos": "v.",
+      "when": "Remember 保 like the character you’ll meet inside 保暖 and 保证 — keep / protect / guarantee, not a word you usually say alone.",
+      "usage": "The book’s * gloss is “to guarantee” (from 保证). In this 课文 you actually read 保暖: keep warm in spring so you don’t catch a cold. Same character, different compound.",
+      "example": {
+        "zh": "春天天气时冷时热，特别容易感冒。这时候一定要多注意保暖，另外，最好经常打开窗户换换空气。",
+        "pinyin": "Chūntiān tiānqì shí lěng shí rè, tèbié róngyì gǎnmào. Zhè shíhou yídìng yào duō zhùyì bǎonuǎn, lìngwài, zuìhǎo jīngcháng dǎkāi chuānghu huànhuan kōngqì.",
+        "en": "In spring the weather is sometimes cold and sometimes hot, so it's especially easy to catch a cold. At times like this you must be careful to keep warm, and besides, it's best to open the windows often to get some fresh air."
+      }
+    },
+    "处": {
+      "zh": "处",
+      "pinyin": "chù",
+      "en": "someplace",
+      "pos": "n.",
+      "when": "Remember 处 like the place-piece you’ll hear in 远处 / 到处 — a spot, not the 处 trapped inside 好处.",
+      "usage": "The book’s * gloss is “someplace” (from 到处). In 课文3 the doctor says 多向远处看看. 课文2’s 好处 also contains 处 — that is a different word; don’t learn 处 from it.",
+      "example": {
+        "zh": "医生也这么说，他还告诉我要多向远处看看，尤其是多看看绿色的植物。",
+        "pinyin": "Yīshēng yě zhème shuō, tā hái gàosu wǒ yào duō xiàng yuǎn chù kànkan, yóuqí shì duō kànkan lǜsè de zhíwù.",
+        "en": "The doctor said the same thing. He also told me to look into the distance more often, especially to look at green plants."
+      }
+    },
+    "加": {
+      "zh": "加",
+      "pinyin": "jiā",
+      "en": "to add",
+      "pos": "v.",
+      "when": "Remember 加 like the character you’ll use when something is added or made more — 增加 a number, or 加深感情 after a family talk.",
+      "usage": "The book’s * gloss is “to add” (from 增加). In 课文5 the walk 能加深感情 — 加 here deepens the couple’s affection, not a price.",
+      "example": {
+        "zh": "肚子吃饱了需要活动，家人忙了一天需要交流，夫妻说说一天的工作能加深感情，听孩子谈谈学校里有意思的事，一天的烦恼就都跑掉了。",
+        "pinyin": "Dùzi chībǎo le xūyào huódòng, jiārén mángle yì tiān xūyào jiāoliú, fūqī shuōshuo yì tiān de gōngzuò néng jiāshēn gǎnqíng, tīng háizi tántan xuéxiào li yǒuyìsi de shì, yì tiān de fánnǎo jiù dōu pǎodiào le.",
+        "en": "A full stomach needs movement, and a family that's been busy all day needs to talk — a couple chatting about their day's work can deepen their affection, and listening to the kids talk about interesting things at school makes a whole day's worries just melt away."
+      }
+    },
+    "纸": {
+      "zh": "纸",
+      "pinyin": "zhǐ",
+      "en": "paper",
+      "pos": "n.",
+      "when": "Remember 纸 like the word you’ll use when you need a scrap of paper or a tissue — the thing you wipe a nosebleed with.",
+      "usage": "Most Chinese speakers use it for paper. In 课文1 小李 says 快用纸擦擦. The book marks it * from 报纸; it is not in the main 生词 sitting.",
+      "example": {
+        "zh": "你的鼻子怎么流血了？快用纸擦擦。",
+        "pinyin": "Nǐ de bízi zěnme liú xiě le? Kuài yòng zhǐ cāca.",
+        "en": "Why is your nose bleeding? Quick, wipe it with a tissue."
+      }
+    }
+  }
+}

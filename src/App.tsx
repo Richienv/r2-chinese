@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { BarsIcon, BookIcon, HomeIcon, UserIcon } from './components/Icons'
 import { CharacterOverlay } from './screens/Character'
 import { DrillFlow } from './screens/Drill'
@@ -10,15 +10,19 @@ import { Progress } from './screens/Progress'
 import { ReviewFlow } from './screens/Review'
 import { SavedWords } from './screens/SavedWords'
 import { VocabBrowser } from './screens/VocabBrowser'
-import { load, normalize, useStore, StoreProvider, type Persisted } from './store/store'
+import { WordsSession } from './screens/WordsSession'
+import { load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
 import { AuthProvider, useAuth } from './auth/AuthProvider'
 import { AuthScreen } from './auth/AuthScreen'
 import { isAuthEnabled } from './lib/supabase'
 import { fetchProgress } from './lib/sync'
+import { useEdgeSwipeClose, useOverlayLock, useVisualViewportInset } from './lib/phone'
 
 type Tab = 'home' | 'learn' | 'stats' | 'profile'
 type Overlay =
   | { kind: 'lesson'; lesson: number; startStep?: number }
+  | { kind: 'words'; lesson: number; node?: PathNode }
+  | { kind: 'path'; lesson: number; node: PathNode }
   | { kind: 'review'; words?: string[]; title?: string }
   | { kind: 'character'; char: string }
   | { kind: 'drill'; words: string[]; title: string }
@@ -44,6 +48,11 @@ function Shell() {
   const mainRef = useRef<HTMLElement>(null)
   const navRef = useRef<HTMLElement>(null)
   const open = overlay !== null
+  const closeOverlay = useCallback(() => setOverlay(null), [])
+
+  useVisualViewportInset()
+  useOverlayLock(open)
+  useEdgeSwipeClose(open, closeOverlay)
 
   function setTab(next: Tab) {
     setTabState(next)
@@ -76,25 +85,32 @@ function Shell() {
       <main className="scroll" ref={mainRef}>
         {tab === 'home' && (
           <Home
-            onLesson={(lesson, startStep) => setOverlay({ kind: 'lesson', lesson, startStep })}
+            onSession={(lesson, node) => setOverlay({ kind: 'path', lesson, node })}
+            onLesson={(lesson) => setOverlay({ kind: 'lesson', lesson })}
             onReview={() => setOverlay({ kind: 'review' })}
-            onChar={(char) => setOverlay({ kind: 'character', char })}
-            onSaved={() => setOverlay({ kind: 'saved' })}
           />
         )}
         {tab === 'learn' && (
           <Learn
             onLesson={(lesson) => setOverlay({ kind: 'lesson', lesson })}
             onVocab={() => setOverlay({ kind: 'vocab' })}
+            onPlay={(lesson, node) => setOverlay({ kind: 'path', lesson, node })}
+            isNodeDone={(lesson, node) => store.isNodeDone(lesson, node)}
           />
         )}
         {tab === 'stats' && <Progress />}
         {tab === 'profile' && <Profile />}
       </main>
 
-      <nav className="tabbar" ref={navRef}>
+      <nav className="tabbar" ref={navRef} aria-label="Main">
         {TABS.map((t) => (
-          <button key={t.key} data-on={tab === t.key} onClick={() => setTab(t.key)}>
+          <button
+            key={t.key}
+            type="button"
+            data-on={tab === t.key}
+            aria-current={tab === t.key ? 'page' : undefined}
+            onClick={() => setTab(t.key)}
+          >
             {t.icon}
             {t.label}
           </button>
@@ -106,6 +122,13 @@ function Shell() {
           lesson={overlay.lesson}
           startStep={overlay.startStep}
           onWords={(words, title) => setOverlay({ kind: 'review', words, title })}
+          onClose={() => setOverlay(null)}
+        />
+      )}
+      {(overlay?.kind === 'path' || overlay?.kind === 'words') && (
+        <WordsSession
+          lesson={overlay.lesson}
+          node={overlay.kind === 'path' ? overlay.node : overlay.node ?? 't1'}
           onClose={() => setOverlay(null)}
         />
       )}

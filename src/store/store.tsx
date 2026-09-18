@@ -19,10 +19,59 @@ function storageKey(userId?: string): string {
   return userId ? `${KEY}.${userId}` : KEY
 }
 
+export type PathNode = 't1' | 't2' | 't3' | 't4' | 't5' | 'wrap'
+
+const PATH_NODES: readonly PathNode[] = ['t1', 't2', 't3', 't4', 't5', 'wrap']
+
+function isPathNode(v: unknown): v is PathNode {
+  return PATH_NODES.includes(v as PathNode)
+}
+
+/** Old 4-node path → 课文-units. Lesson-1 Words maps to 课文1 so progress is kept. */
+function migrateNode(node: string): PathNode | undefined {
+  if (isPathNode(node)) return node
+  if (node === 'words') return 't1'
+  if (node === 'sentences') return 't2'
+  if (node === 'things') return 't3'
+  if (node === 'checkpoint' || node === 'test') return 'wrap'
+  return undefined
+}
+
+/** Coerce a leftover or partial blob onto `{ [lesson]: PathNode[] }`. */
+function normalizePathDone(parsed: Partial<Persisted> | null | undefined): Record<string, PathNode[]> {
+  const out: Record<string, PathNode[]> = {}
+  const raw = parsed?.pathDone
+  if (raw && typeof raw === 'object' && !Array.isArray(raw)) {
+    for (const [k, v] of Object.entries(raw)) {
+      if (!Array.isArray(v)) continue
+      const nodes = [...new Set(v.map((n) => (typeof n === 'string' ? migrateNode(n) : undefined)).filter((n): n is PathNode => !!n))]
+      if (nodes.length) out[k] = nodes
+    }
+  }
+  // One-session leftover from an earlier `nodesDone: "1:words"` sketch — do not keep that key.
+  const leftover = (parsed as { nodesDone?: unknown } | null | undefined)?.nodesDone
+  if (Array.isArray(leftover)) {
+    for (const key of leftover) {
+      if (typeof key !== 'string') continue
+      const [lesson, node] = key.split(':')
+      const mapped = node ? migrateNode(node) : undefined
+      if (!lesson || !mapped) continue
+      const list = out[lesson] ?? []
+      if (!list.includes(mapped)) out[lesson] = [...list, mapped]
+    }
+  }
+  return out
+}
+
 /** Merge a partial persisted blob (from storage or the server) onto the defaults. */
 export function normalize(parsed: Partial<Persisted> | null | undefined): Persisted {
   if (!parsed) return empty
-  return { ...empty, ...parsed, prefs: { ...empty.prefs, ...parsed.prefs } }
+  return {
+    ...empty,
+    ...parsed,
+    prefs: { ...empty.prefs, ...parsed.prefs },
+    pathDone: normalizePathDone(parsed),
+  }
 }
 
 export interface Prefs {
@@ -48,6 +97,11 @@ export interface Persisted {
   inProgress: { lesson: number; step: number } | null
   /** last bottom-tab, restored on reload */
   lastTab: string
+  /**
+   * Path nodes finished per lesson. Key is String(lesson), e.g. { "1": ["t1"] }.
+   * Additive — older saves without this key normalize to {}. Never finishLesson.
+   */
+  pathDone: Record<string, PathNode[]>
   prefs: Prefs
 }
 
@@ -62,6 +116,7 @@ const empty: Persisted = {
   starred: [],
   inProgress: null,
   lastTab: 'home',
+  pathDone: {},
   prefs: { showPinyin: true, showEnglish: true, soundOn: true },
 }
 
@@ -129,6 +184,9 @@ interface Store extends Persisted {
   rate: (zh: string, rating: Rating) => void
   addCards: (lesson: number, words: { zh: string }[]) => void
   awardXp: (n: number) => void
+  isNodeDone: (lesson: number, node: PathNode) => boolean
+  /** persist a path node; does not call finishLesson */
+  markNodeDone: (lesson: number, node: PathNode) => void
   setPref: <K extends keyof Prefs>(key: K, value: Prefs[K]) => void
   reset: () => void
 }
@@ -243,6 +301,20 @@ export function StoreProvider({
 
   const awardXp = useCallback((n: number) => setState((s) => ({ ...s, xp: s.xp + n })), [])
 
+  const isNodeDone = useCallback(
+    (lesson: number, node: PathNode) => (state.pathDone[String(lesson)] ?? []).includes(node),
+    [state.pathDone],
+  )
+
+  const markNodeDone = useCallback((lesson: number, node: PathNode) => {
+    const key = String(lesson)
+    setState((s) => {
+      const prev = s.pathDone[key] ?? []
+      if (prev.includes(node)) return s
+      return { ...s, pathDone: { ...s.pathDone, [key]: [...prev, node] } }
+    })
+  }, [])
+
   const logDrill = useCallback((reps: number, xp: number) => {
     setState((s) => ({ ...s, xp: s.xp + xp, log: bump(s.log, { cards: reps }) }))
   }, [])
@@ -303,6 +375,8 @@ export function StoreProvider({
       rate,
       addCards,
       awardXp,
+      isNodeDone,
+      markNodeDone,
       setPref,
       reset,
     }
@@ -312,6 +386,8 @@ export function StoreProvider({
     rate,
     addCards,
     awardXp,
+    isNodeDone,
+    markNodeDone,
     setPref,
     reset,
     toggleStar,
