@@ -75,7 +75,7 @@ function railPath(xs: number[], ys: number[]) {
 export function KerjaEmptyState() {
   return (
     <section className="kerja-empty metal">
-      <div className="kicker">Mandarin Kerja Nyata</div>
+      <div className="kicker">1000 words</div>
       <h2 className="zh" lang="zh-CN">
         {KERJA_BOOK.titleZh}
       </h2>

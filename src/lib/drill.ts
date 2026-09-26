@@ -6,6 +6,12 @@ import type { Vocab } from './types'
  * Unlike SRS this does not touch a card's schedule — it is deliberate massed
  * practice, so the only rule is "don't show the same word twice in a row".
  */
+/** The tapped word first, then every other saved card, so the session alternates. */
+export function mixWithSaved(zh: string, starred: string[]): string[] {
+  const rest = starred.filter((w) => w && w !== zh)
+  return [zh, ...rest]
+}
+
 export function buildDrillQueue(words: string[], reps: number): string[] {
   const unique = [...new Set(words)].filter(Boolean)
   if (unique.length === 0) return []

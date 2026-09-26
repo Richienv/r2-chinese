@@ -9,7 +9,7 @@ import type { Question } from './quiz'
 const PROGRESS_KEY = 'yulu.kerja.v1'
 
 export const KERJA_BOOK = {
-  title: 'Mandarin Kerja Nyata',
+  title: '1000 words',
   titleZh: '把话说清楚，把事情做好。',
   edition: 'Field edition 2026',
   blurb: 'Workplace Mandarin for HR and management',

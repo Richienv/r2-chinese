@@ -1,4 +1,4 @@
-import { CourseChooser } from '../components/CourseChooser'
+import { CourseBack, CourseGate } from '../components/CourseChooser'
 import { useCourse } from '../lib/course'
 import { lessons } from '../lib/content'
 import { dueCards } from '../lib/srs'
@@ -22,14 +22,22 @@ export function Home({
   onJiaochengSession: (lesson: number, node: PathNode) => void
 }) {
   const s = useStore()
-  const { course } = useCourse()
+  const { course, entered } = useCourse()
   const next = nextPlayable(s.isNodeDone)
   const reviewsDue = dueCards(s.cardList).length
   const lesson = lessons.find((l) => l.lesson === next.lesson) ?? lessons[0]
 
+  if (!entered) {
+    return (
+      <div className="home-page">
+        <CourseGate />
+      </div>
+    )
+  }
+
   return (
     <div className="home-page">
-      <CourseChooser />
+      <CourseBack />
 
       {course === 'kerja' ? (
         <KerjaHomePath onPlay={onKerjaSession} />

@@ -653,6 +653,75 @@ button {
   font-variant-numeric: tabular-nums;
 }
 
+.course-gate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100dvh - 120px);
+  padding: 12px 0 24px;
+  gap: 8px;
+}
+
+.course-gate-title {
+  margin: 0 0 14px;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.course-gate-list {
+  display: grid;
+  gap: 12px;
+}
+
+.course-gate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  padding: 18px 18px 16px;
+  border: 0;
+  border-radius: 22px;
+  text-align: left;
+  color: #fff;
+  background-image: var(--metal-sheen), var(--metal-base);
+  box-shadow: var(--metal-emboss);
+}
+
+.course-gate-name {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.course-gate-zh {
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--on-red-2);
+}
+
+.course-gate-blurb {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--on-red-3);
+}
+
+.course-back {
+  align-self: flex-start;
+  margin: 0 0 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 750;
+  color: var(--red-deep);
+}
+
 .course-switch {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -2,6 +2,7 @@ import { HearButton } from '../components/Hear'
 import { ChevronLeft, BoltIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { lookup } from '../lib/content'
+import { mixWithSaved } from '../lib/drill'
 import { VOICE, WORD_RATE } from '../lib/voices'
 import { useStore } from '../store/store'
 
@@ -62,7 +63,10 @@ export function SavedWords({
                       type="button"
                       aria-label={`Drill ${zh}`}
                       style={{ flex: 1, minWidth: 0, textAlign: 'left', padding: 0 }}
-                      onClick={() => onDrill([zh], `Drill ${zh}`)}
+                      onClick={() => {
+                        const mixed = mixWithSaved(zh, words)
+                        onDrill(mixed, mixed.length > 1 ? `Drill ${mixed.length} saved` : `Drill ${zh}`)
+                      }}
                     >
                       <div className="zh" style={{ fontSize: 20, fontWeight: 700 }} lang="zh-CN">
                         {zh}

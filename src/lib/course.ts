@@ -28,15 +28,15 @@ export const COURSE_META: Record<
   },
   kerja: {
     id: 'kerja',
-    title: 'Mandarin Kerja Nyata',
+    title: '1000 words',
     titleZh: '把话说清楚，把事情做好。',
-    blurb: 'HR and management · 2026 edition',
+    blurb: 'Workplace Mandarin for HR and management',
   },
   jiaocheng: {
     id: 'jiaocheng',
-    title: '汉语教程 Level 2',
+    title: 'Jiaocheng 2',
     titleZh: '汉语教程 · 第二册',
-    blurb: '第3版 · 上+下 as one path',
+    blurb: 'Book 2, part 1 and part 2',
   },
 }
 
@@ -52,13 +52,17 @@ function readCourse(): CourseId {
 
 interface CourseStore {
   course: CourseId
+  /** False until the learner picks a course on the opening page. */
+  entered: boolean
   setCourse: (id: CourseId) => void
+  leaveCourse: () => void
 }
 
 const Ctx = createContext<CourseStore | null>(null)
 
 export function CourseProvider({ children }: { children: ReactNode }) {
   const [course, setCourseState] = useState<CourseId>(() => readCourse())
+  const [entered, setEntered] = useState(false)
 
   useEffect(() => {
     try {
@@ -70,9 +74,17 @@ export function CourseProvider({ children }: { children: ReactNode }) {
 
   const setCourse = useCallback((id: CourseId) => {
     setCourseState(id)
+    setEntered(true)
   }, [])
 
-  const value = useMemo(() => ({ course, setCourse }), [course, setCourse])
+  const leaveCourse = useCallback(() => {
+    setEntered(false)
+  }, [])
+
+  const value = useMemo(
+    () => ({ course, entered, setCourse, leaveCourse }),
+    [course, entered, setCourse, leaveCourse],
+  )
   return createElement(Ctx.Provider, { value }, children)
 }
 

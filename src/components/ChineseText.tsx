@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react'
-import { exampleFor, lookup, segmentForGloss, unknownVocab, type Example } from '../lib/content'
+import { exampleFor, lessonOf, lookup, segmentForGloss, unknownVocab, type Example } from '../lib/content'
+import { mixWithSaved } from '../lib/drill'
 import { speak, speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
+import { useStore } from '../store/store'
 import type { LessonText, TextLine, Vocab } from '../lib/types'
 import { LINE_RATE, VOICE, WORD_RATE, voiceForSpeaker } from '../lib/voices'
 import { DrillFlow } from '../screens/Drill'
@@ -173,7 +175,7 @@ export function GlossSheet({
         )}
       </div>
       <p style={{ fontSize: 12, color: 'var(--muted-3)', marginTop: 10, lineHeight: 1.45 }}>
-        Star to add to your drill list.
+        Drill this saves the word, like the star, and mixes it with your other saved cards.
       </p>
       <button className="btn btn-ghost" style={{ marginTop: 10 }} onClick={onClose}>
         Close
@@ -280,12 +282,13 @@ export function DialogueAudio({ text }: { text: LessonText }) {
 
 /**
  * Wraps gloss-on-tap for any screen. The returned node renders both the gloss
- * sheet and, stacked above it, a one-word rapid drill — so a learner can go
- * from reading a line to drilling a word without leaving the screen.
+ * sheet and a mixed drill. Drill this stars the word, then alternates it
+ * with the other saved cards.
  */
 export function useGloss(onStrokes?: (char: string) => void) {
+  const store = useStore()
   const [word, setWord] = useState<Vocab | null>(null)
-  const [drill, setDrill] = useState<string | null>(null)
+  const [drill, setDrill] = useState<string[] | null>(null)
   const sheet = (
     <>
       {word && (
@@ -294,8 +297,9 @@ export function useGloss(onStrokes?: (char: string) => void) {
           onClose={() => setWord(null)}
           onWord={setWord}
           onDrill={(zh) => {
+            if (!store.isStarred(zh)) store.toggleStar(zh, lessonOf(zh) ?? 0)
             setWord(null)
-            setDrill(zh)
+            setDrill(mixWithSaved(zh, store.starred))
           }}
           onStrokes={
             onStrokes
@@ -308,7 +312,11 @@ export function useGloss(onStrokes?: (char: string) => void) {
         />
       )}
       {drill && (
-        <DrillFlow words={[drill]} title={`Drill ${drill}`} onClose={() => setDrill(null)} />
+        <DrillFlow
+          words={drill}
+          title={drill.length > 1 ? `Drill ${drill.length} saved` : `Drill ${drill[0]}`}
+          onClose={() => setDrill(null)}
+        />
       )}
     </>
   )

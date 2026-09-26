@@ -1,5 +1,5 @@
 import { type CSSProperties, useLayoutEffect, useRef, useState } from 'react'
-import { CourseChooser } from '../components/CourseChooser'
+import { CourseBack, CourseGate } from '../components/CourseChooser'
 import { CheckIcon, LockIcon, PlayIcon } from '../components/Icons'
 import { useCourse } from '../lib/course'
 import { lessons } from '../lib/content'
@@ -192,13 +192,21 @@ export function Learn({
   isNodeDone?: (lesson: number, node: PathNode) => boolean
 }) {
   const store = useStore()
-  const { course } = useCourse()
+  const { course, entered } = useCourse()
   const nodeDone = isNodeDone ?? store.isNodeDone
   const current = nextPlayable(nodeDone)
 
+  if (!entered) {
+    return (
+      <div className="path-page">
+        <CourseGate />
+      </div>
+    )
+  }
+
   return (
     <div className="path-page">
-      <CourseChooser />
+      <CourseBack />
       {course === 'kerja' ? (
         <KerjaLearn onPlay={(chapter, node) => onKerjaPlay?.(chapter, node)} />
       ) : course === 'jiaocheng' ? (
