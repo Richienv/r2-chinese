@@ -9,98 +9,98 @@
       "zh": "考勤",
       "pinyin": "kǎoqín",
       "pos": "v.",
-      "en": "catatan kehadiran",
-      "note": "Book headword pinyin printed as kǎoqín. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 考勤记录. Hindari: 考勤 bukan penilaian kualitas kerja.",
-      "when": "Remember 考勤 like the word you’ll use when umum dipakai untuk sistem atau laporan hadir dan tidak hadir.",
-      "usage": "Most Chinese speakers use 考勤 in this office/HR speaking sense. Book pairing: 考勤记录. 考勤 bukan penilaian kualitas kerja.",
+      "en": "attendance record",
+      "note": "Book headword pinyin printed as kǎoqín. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 考勤记录. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 考勤 like the word you’ll use in HR/office talk for catatan kehadiran.",
+      "usage": "Most Chinese speakers use 考勤 in this workplace sense. Book pairing: 考勤记录. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "请先核对本月的考勤记录。",
         "pinyin": "Qǐng xiān héduì běnyuè de kǎoqínjìlù.",
-        "en": "Mohon periksa dulu catatan kehadiran bulan ini."
+        "en": "Please check this month’s attendance record first."
       }
     },
     {
       "zh": "打卡",
       "pinyin": "dǎkǎ",
       "pos": "v.",
-      "en": "mencatat jam",
-      "note": "Book headword pinyin printed as dǎkǎ. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 上下班打卡. Hindari: 打卡 dalam konteks kerja berbeda dari check-in wisata. masuk atau keluar",
-      "when": "Remember 打卡 like the word you’ll use when dipakai untuk check-in kerja melalui sistem, kartu, atau aplikasi.",
-      "usage": "Most Chinese speakers use 打卡 in this office/HR speaking sense. Book pairing: 上下班打卡. 打卡 dalam konteks kerja berbeda dari check-in wisata. masuk atau keluar",
+      "en": "to clock in",
+      "note": "Book headword pinyin printed as dǎkǎ. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 上下班打卡. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 打卡 like the word you’ll use in HR/office talk for mencatat jam.",
+      "usage": "Most Chinese speakers use 打卡 in this workplace sense. Book pairing: 上下班打卡. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "如果忘记打卡，请按流程补记录。",
         "pinyin": "Rúguǒ wàngjì dǎkǎ, qǐng àn liúchéng bǔ jìlù.",
-        "en": "Kalau lupa mencatat kehadiran, ikuti prosedur koreksinya."
+        "en": "if lupa mencatat kehadiran, ikuti prosedur koreksinya."
       }
     },
     {
       "zh": "请假",
       "pinyin": "qǐngjià",
       "pos": "v.",
-      "en": "meminta izin tidak",
-      "note": "Book headword pinyin printed as qǐngjià. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 请一天假. Hindari: 请假 adalah permohonan; tunggu persetujuan bila prosesnya mensyaratkan. bekerja",
-      "when": "Remember 请假 like the word you’ll use when sampaikan tanggal, alasan secukupnya, dan pengalihan pekerjaan..",
-      "usage": "Most Chinese speakers use 请假 in this office/HR speaking sense. Book pairing: 请一天假. 请假 adalah permohonan; tunggu persetujuan bila prosesnya mensyaratkan. bekerja",
+      "en": "to ask for leave",
+      "note": "Book headword pinyin printed as qǐngjià. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 请一天假. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 请假 like the word you’ll use in HR/office talk for meminta izin tidak.",
+      "usage": "Most Chinese speakers use 请假 in this workplace sense. Book pairing: 请一天假. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "我想下周二请一天假，可以吗？",
         "pinyin": "Wǒ xiǎng xià zhōuèr qǐng yītiān jiǎ, kěyǐ ma?",
-        "en": "Saya ingin izin satu hari Selasa depan, boleh?"
+        "en": "I want izin satu hari Selasa depan, boleh?"
       }
     },
     {
       "zh": "调休",
       "pinyin": "tiáoxiū",
       "pos": "v.",
-      "en": "libur pengganti",
-      "note": "Book headword pinyin printed as tiáoxiū. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 申请调休. Hindari: Jangan anggap otomatis tersedia untuk setiap lembur. konfirmasi / lanjutan",
-      "when": "Remember 调休 like the word you’ll use when dipakai ketika waktu istirahat digeser sesuai kebijakan atau kesepakatan yang berlaku.",
-      "usage": "Most Chinese speakers use 调休 in this office/HR speaking sense. Book pairing: 申请调休. Jangan anggap otomatis tersedia untuk setiap lembur. konfirmasi / lanjutan",
+      "en": "time off in lieu",
+      "note": "Book headword pinyin printed as tiáoxiū. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 申请调休. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 调休 like the word you’ll use in HR/office talk for libur pengganti.",
+      "usage": "Most Chinese speakers use 调休 in this workplace sense. Book pairing: 申请调休. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "这次加班能否按公司流程申请调休？",
         "pinyin": "Zhècì jiābān néngfǒu àn gōngsī liúchéng shēnqǐng diàoxiū?",
-        "en": "libur pengganti"
+        "en": "time off in lieu"
       }
     },
     {
       "zh": "年假",
       "pinyin": "niánjià",
       "pos": "v.",
-      "en": "cuti tahunan",
-      "note": "Book headword pinyin printed as niánjià. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 申请年假. Hindari: Jangan mengasumsikan jumlah hari tanpa dokumen.",
-      "when": "Remember 年假 like the word you’ll use when tanyakan saldo dan proses pengajuan yang berlaku di perusahaan.",
-      "usage": "Most Chinese speakers use 年假 in this office/HR speaking sense. Book pairing: 申请年假. Jangan mengasumsikan jumlah hari tanpa dokumen.",
+      "en": "annual leave",
+      "note": "Book headword pinyin printed as niánjià. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 申请年假. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 年假 like the word you’ll use in HR/office talk for cuti tahunan.",
+      "usage": "Most Chinese speakers use 年假 in this workplace sense. Book pairing: 申请年假. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "我计划下个月申请两天年假。",
         "pinyin": "Wǒ jìhuà xiàgèyuè shēnqǐng liǎngtiān nián jiǎ.",
-        "en": "Saya berencana mengajukan dua hari cuti tahunan bulan depan."
+        "en": "I berencana mengajukan dua hari leave tahunan bulan depan."
       }
     },
     {
       "zh": "病假",
       "pinyin": "bìngjià",
       "pos": "v.",
-      "en": "izin sakit",
-      "note": "Book headword pinyin printed as bìngjià. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 请病假. Hindari: Hindari meminta rincian medis yang tidak perlu.",
-      "when": "Remember 病假 like the word you’ll use when jelaskan kondisi seperlunya dan tanyakan dokumen yang dibutuhkan.",
-      "usage": "Most Chinese speakers use 病假 in this office/HR speaking sense. Book pairing: 请病假. Hindari meminta rincian medis yang tidak perlu.",
+      "en": "sick leave",
+      "note": "Book headword pinyin printed as bìngjià. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 请病假. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 病假 like the word you’ll use in HR/office talk for izin sakit.",
+      "usage": "Most Chinese speakers use 病假 in this workplace sense. Book pairing: 请病假. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "他今天身体不舒服，已经按流程请病假了。",
         "pinyin": "Tā jīntiān shēntǐ bù shūfú, yǐjīng àn liúchéng qǐng bìngjià le.",
-        "en": "Dia kurang sehat hari ini dan sudah mengajukan izin sakit sesuai prosedur."
+        "en": "Dia kurang sehat Today and already mengajukan izin sakit sesuai prosedur."
       }
     },
     {
       "zh": "加班",
       "pinyin": "jiābān",
       "pos": "v.",
-      "en": "lembur",
-      "note": "Book headword pinyin printed as jiābān. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 安排加班. Hindari: Jangan menyamakan setiap pesan malam dengan lembur yang disetujui.",
-      "when": "Remember 加班 like the word you’ll use when gunakan saat kerja di luar jam biasa dan konfirmasi pengaturannya.",
-      "usage": "Most Chinese speakers use 加班 in this office/HR speaking sense. Book pairing: 安排加班. Jangan menyamakan setiap pesan malam dengan lembur yang disetujui.",
+      "en": "overtime",
+      "note": "Book headword pinyin printed as jiābān. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 安排加班. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 加班 like the word you’ll use in HR/office talk for lembur.",
+      "usage": "Most Chinese speakers use 加班 in this workplace sense. Book pairing: 安排加班. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "如果需要加班，请提前说明原因和时间。",
         "pinyin": "Rúguǒ xūyào jiābān, qǐng tíqián shuōmíng yuányīn hé shíjiān.",
-        "en": "Kalau perlu lembur, jelaskan alasan dan waktunya lebih dulu."
+        "en": "if need lembur, jelaskan alasan and waktunya lebih dulu."
       }
     },
     {
@@ -108,9 +108,9 @@
       "pinyin": "quēqín",
       "pos": "v.",
       "en": "tidak hadir",
-      "note": "Book headword pinyin printed as quēqín. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 缺勤记录. Hindari: 缺勤 tidak otomatis berarti tanpa izin. konfirmasi / lanjutan",
-      "when": "Remember 缺勤 like the word you’ll use when istilah catatan ketidakhadiran; sebab dan statusnya harus diperiksa..",
-      "usage": "Most Chinese speakers use 缺勤 in this office/HR speaking sense. Book pairing: 缺勤记录. 缺勤 tidak otomatis berarti tanpa izin. konfirmasi / lanjutan",
+      "note": "Book headword pinyin printed as quēqín. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 缺勤记录. Watch-out: 缺勤 tidak otomatis means tanpa izin. konfirmasi / lanjutan",
+      "when": "Remember 缺勤 like the word you’ll use in HR/office talk for tidak hadir.",
+      "usage": "Most Chinese speakers use 缺勤 in this workplace sense. Book pairing: 缺勤记录. Watch-out: 缺勤 tidak otomatis means tanpa izin. konfirmasi / lanjutan",
       "example": {
         "zh": "这条缺勤记录可能有误，请核对一下。",
         "pinyin": "Zhè tiáo quēqín jìlù kěnéng yǒuwù, qǐng héduì yīxià.",
@@ -121,24 +121,24 @@
       "zh": "审批",
       "pinyin": "shěnpī",
       "pos": "v.",
-      "en": "persetujuan resmi",
-      "note": "Book headword pinyin printed as shěnpī. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 等待审批. Hindari: 提交 tidak sama dengan 已批准. dalam alur kerja",
-      "when": "Remember 审批 like the word you’ll use when pakai untuk permohonan yang memerlukan keputusan pihak berwenang.",
-      "usage": "Most Chinese speakers use 审批 in this office/HR speaking sense. Book pairing: 等待审批. 提交 tidak sama dengan 已批准. dalam alur kerja",
+      "en": "approval",
+      "note": "Book headword pinyin printed as shěnpī. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 等待审批. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 审批 like the word you’ll use in HR/office talk for persetujuan resmi.",
+      "usage": "Most Chinese speakers use 审批 in this workplace sense. Book pairing: 等待审批. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "请假申请还在等待审批。",
         "pinyin": "Qǐngjià shēnqǐng hái zài děngdài shěnpī.",
-        "en": "Permohonan cuti masih menunggu persetujuan."
+        "en": "The leave request is still waiting for approval."
       }
     },
     {
       "zh": "提前",
       "pinyin": "tíqián",
       "pos": "v.",
-      "en": "lebih awal atau",
-      "note": "Book headword pinyin printed as tíqián. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 提前通知. Hindari: 提前 adalah keterangan waktu; bukan verb untuk memajukan jam sendirian. sebelumnya Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
-      "when": "Remember 提前 like the word you’ll use when berguna untuk mengatur waktu pemberitahuan dan serah terima.",
-      "usage": "Most Chinese speakers use 提前 in this office/HR speaking sense. Book pairing: 提前通知. 提前 adalah keterangan waktu; bukan verb untuk memajukan jam sendirian. sebelumnya Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
+      "en": "in advance",
+      "note": "Book headword pinyin printed as tíqián. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 提前通知. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 提前 like the word you’ll use in HR/office talk for lebih awal atau.",
+      "usage": "Most Chinese speakers use 提前 in this workplace sense. Book pairing: 提前通知. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "如果计划请假，请尽量提前通知团队。",
         "pinyin": "Rúguǒ jìhuà qǐngjià, qǐng jǐnliàng tíqián tōngzhī tuánduì.",
@@ -149,8 +149,8 @@
   "dialogues": [],
   "notes": [
     {
-      "title": "Module aim — Absensi dan cuti: minta, jelaskan, konfirmasi",
-      "body": "MODUL 05 / HR (book pages 67-69). Indonesian title: Absensi dan cuti: minta, jelaskan, konfirmasi."
+      "title": "Module aim — Attendance and leave: ask, explain, confirm",
+      "body": "Module 05 / HR (book pages 67-69). The book’s own title: Absensi dan cuti: minta, jelaskan, konfirmasi."
     },
     {
       "title": "Latihan 90 detik",

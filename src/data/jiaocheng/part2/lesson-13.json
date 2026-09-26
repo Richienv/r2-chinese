@@ -1,0 +1,1033 @@
+{
+  "id": "jiaocheng-2-2-13",
+  "book": "2-2",
+  "index": 13,
+  "bookLesson": 25,
+  "titleZh": "吉利的数字",
+  "titleEn": "Lucky numbers",
+  "sourcePages": "200-221",
+  "words": [
+    {
+      "zh": "数字",
+      "pinyin": "shùzì",
+      "pos": "n.",
+      "en": "number",
+      "note": "Book headword pinyin printed as shùzì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 数字 like the word you’ll use when you need “number”.",
+      "usage": "Most Chinese speakers use 数字 for “number”.",
+      "example": {
+        "zh": "你知道中国人喜欢什么数字吗？",
+        "pinyin": "nǐ zhī dào zhōng guó rén xǐ huān shén me shù zì ma？",
+        "en": "Do you know what numbers Chinese people like?"
+      }
+    },
+    {
+      "zh": "连……也……",
+      "pinyin": "lián…yě…",
+      "pos": "",
+      "en": "even…",
+      "note": "Book headword pinyin printed as lián…yě…. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 连……也…… like the word you’ll use when you need “even…”.",
+      "usage": "Most Chinese speakers use 连……也…… for “even…”.",
+      "example": {
+        "zh": "你怎么连这么简单的问题也不知道？",
+        "pinyin": "nǐ zěn me lián zhè me jiǎn dān de wèn tí yě bù zhī dào？",
+        "en": "How come you don’t even know such a simple question?"
+      }
+    },
+    {
+      "zh": "简单",
+      "pinyin": "jiǎndān",
+      "pos": "adj.",
+      "en": "simple",
+      "note": "Book headword pinyin printed as jiǎndān. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 简单 like the word you’ll use when you need “simple”.",
+      "usage": "Most Chinese speakers use 简单 for “simple”.",
+      "example": {
+        "zh": "这么简单的问题",
+        "pinyin": "zhè me jiǎn dān de wèn tí",
+        "en": "such a simple question"
+      }
+    },
+    {
+      "zh": "一半(儿)",
+      "pinyin": "yíbànr",
+      "pos": "num.",
+      "en": "one half",
+      "note": "Book headword pinyin printed as yíbànr. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 一半(儿) like the word you’ll use when you need “one half”.",
+      "usage": "Most Chinese speakers use 一半(儿) for “one half”.",
+      "example": {
+        "zh": "世界上的事我知道一半儿",
+        "pinyin": "shì jiè shàng de shì wǒ zhī dào yí bàn ér",
+        "en": "I know half of what there is in the world"
+      }
+    },
+    {
+      "zh": "中国通",
+      "pinyin": "Zhōngguótōng",
+      "pos": "",
+      "en": "China hand; person with expert knowledge of China",
+      "note": "Book headword pinyin printed as Zhōngguótōng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 中国通 like the word you’ll use when you need “China hand”.",
+      "usage": "Most Chinese speakers use 中国通 for “China hand”.",
+      "example": {
+        "zh": "大家都叫我“中国通”。",
+        "pinyin": "dà jiā dōu jiào wǒ“zhōng guó tōng”。",
+        "en": "Everyone calls me a “China hand.”"
+      }
+    },
+    {
+      "zh": "通",
+      "pinyin": "tōng",
+      "pos": "suf./v.",
+      "en": "expert; to know; to understand",
+      "note": "Sub-entry under parent headword. Book headword pinyin printed as tōng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 通 like the word you’ll use when you need “expert”.",
+      "usage": "Most Chinese speakers use 通 for “expert”.",
+      "example": {
+        "zh": "中国通",
+        "pinyin": "zhōng guó tōng",
+        "en": "China expert"
+      }
+    },
+    {
+      "zh": "少",
+      "pinyin": "shào",
+      "pos": "",
+      "en": "young; younger",
+      "note": "Book headword pinyin printed as shào. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 少 like the word you’ll use when you need “young”.",
+      "usage": "Most Chinese speakers use 少 for “young”.",
+      "example": {
+        "zh": "笑一笑，十年少。",
+        "pinyin": "xiào yī xiào，shí nián shào。",
+        "en": "A good laugh makes you ten years younger."
+      }
+    },
+    {
+      "zh": "可",
+      "pinyin": "kě",
+      "pos": "adv.",
+      "en": "(emphasis) by all means",
+      "note": "Book headword pinyin printed as kě. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 可 like the word you’ll use when you need “(emphasis) by all means”.",
+      "usage": "Most Chinese speakers use 可 for “(emphasis) by all means”.",
+      "example": {
+        "zh": "你可别告诉别人。",
+        "pinyin": "nǐ kě bié gào sù bié rén。",
+        "en": "You mustn’t tell anyone."
+      }
+    },
+    {
+      "zh": "别人",
+      "pinyin": "biéren",
+      "pos": "pron.",
+      "en": "others; other people",
+      "note": "Book headword pinyin printed as biéren. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 别人 like the word you’ll use when you need “others”.",
+      "usage": "Most Chinese speakers use 别人 for “others”.",
+      "example": {
+        "zh": "你可别告诉别人。",
+        "pinyin": "nǐ kě bié gào sù bié rén。",
+        "en": "You mustn’t tell anyone else."
+      }
+    },
+    {
+      "zh": "伟大",
+      "pinyin": "wěidà",
+      "pos": "adj.",
+      "en": "great",
+      "note": "Book headword pinyin printed as wěidà. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 伟大 like the word you’ll use when you need “great”.",
+      "usage": "Most Chinese speakers use 伟大 for “great”.",
+      "example": {
+        "zh": "这是我的伟大发现",
+        "pinyin": "zhè shì wǒ de wěi dà fā xiàn",
+        "en": "This is my great discovery"
+      }
+    },
+    {
+      "zh": "发现",
+      "pinyin": "fāxiàn",
+      "pos": "v.",
+      "en": "to find; to discover",
+      "note": "Book headword pinyin printed as fāxiàn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 发现 like the word you’ll use when you need “to find”.",
+      "usage": "Most Chinese speakers use 发现 for “to find”.",
+      "example": {
+        "zh": "伟大发现",
+        "pinyin": "wěi dà fā xiàn",
+        "en": "great discovery"
+      }
+    },
+    {
+      "zh": "申请",
+      "pinyin": "shēnqǐng",
+      "pos": "v.",
+      "en": "to apply for",
+      "note": "Book headword pinyin printed as shēnqǐng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 申请 like the word you’ll use when you need “to apply for”.",
+      "usage": "Most Chinese speakers use 申请 for “to apply for”.",
+      "example": {
+        "zh": "我正准备去申请专利呢。",
+        "pinyin": "wǒ zhèng zhǔn bèi qù shēn qǐng zhuān lì ne。",
+        "en": "I’m getting ready to apply for a patent."
+      }
+    },
+    {
+      "zh": "专利",
+      "pinyin": "zhuānlì",
+      "pos": "n.",
+      "en": "patent",
+      "note": "Book headword pinyin printed as zhuānlì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 专利 like the word you’ll use when you need “patent”.",
+      "usage": "Most Chinese speakers use 专利 for “patent”.",
+      "example": {
+        "zh": "申请专利",
+        "pinyin": "shēn qǐng zhuān lì",
+        "en": "apply for a patent"
+      }
+    },
+    {
+      "zh": "认为",
+      "pinyin": "rènwéi",
+      "pos": "v.",
+      "en": "to think; to believe",
+      "note": "Book headword pinyin printed as rènwéi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 认为 like the word you’ll use when you need “to think”.",
+      "usage": "Most Chinese speakers use 认为 for “to think”.",
+      "example": {
+        "zh": "中国人认为这个数字最吉利。",
+        "pinyin": "zhōng guó rén rèn wéi zhè ge shù zì zuì jí lì。",
+        "en": "Chinese people think this number is the luckiest."
+      }
+    },
+    {
+      "zh": "吉利",
+      "pinyin": "jílì",
+      "pos": "adj.",
+      "en": "auspicious; propitious; lucky",
+      "note": "Book headword pinyin printed as jílì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 吉利 like the word you’ll use when you need “auspicious”.",
+      "usage": "Most Chinese speakers use 吉利 for “auspicious”.",
+      "example": {
+        "zh": "这个数字最吉利。",
+        "pinyin": "zhè ge shù zì zuì jí lì。",
+        "en": "This number is the luckiest."
+      }
+    },
+    {
+      "zh": "音",
+      "pinyin": "yīn",
+      "pos": "n.",
+      "en": "sound",
+      "note": "Book headword pinyin printed as yīn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 音 like the word you’ll use when you need “sound”.",
+      "usage": "Most Chinese speakers use 音 for “sound”.",
+      "example": {
+        "zh": "“八”的谐音不是“发”吗？",
+        "pinyin": "“bā”de xié yīn bú shì“fā”ma？",
+        "en": "Isn’t the homophone of “eight” “fā”?"
+      }
+    },
+    {
+      "zh": "笨",
+      "pinyin": "bèn",
+      "pos": "adj.",
+      "en": "stupid; foolish",
+      "note": "Book headword pinyin printed as bèn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 笨 like the word you’ll use when you need “stupid”.",
+      "usage": "Most Chinese speakers use 笨 for “stupid”.",
+      "example": {
+        "zh": "笨蛋！连这都听不出来。",
+        "pinyin": "bèn dàn！lián zhè dōu tīng bù chū lái。",
+        "en": "Dummy! You can’t even hear that."
+      }
+    },
+    {
+      "zh": "谐音",
+      "pinyin": "xiéyīn",
+      "pos": "v.",
+      "en": "to be homophonous",
+      "note": "Book headword pinyin printed as xiéyīn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 谐音 like the word you’ll use when you need “to be homophonous”.",
+      "usage": "Most Chinese speakers use 谐音 for “to be homophonous”.",
+      "example": {
+        "zh": "“八”的谐音不是“发”吗？",
+        "pinyin": "“bā”de xié yīn bú shì“fā”ma？",
+        "en": "Isn’t eight’s homophone “fā”?"
+      }
+    },
+    {
+      "zh": "发",
+      "pinyin": "fā",
+      "pos": "v.",
+      "en": "to get rich; to make a fortune",
+      "note": "Book headword pinyin printed as fā. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 发 like the word you’ll use when you need “to get rich”.",
+      "usage": "Most Chinese speakers use 发 for “to get rich”.",
+      "example": {
+        "zh": "“发”就是“发财”。",
+        "pinyin": "“fā”jiù shì“fā cái”。",
+        "en": "“Fā” means get rich."
+      }
+    },
+    {
+      "zh": "巧克力",
+      "pinyin": "qiǎokèlì",
+      "pos": "n.",
+      "en": "chocolate",
+      "note": "Book headword pinyin printed as qiǎokèlì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 巧克力 like the word you’ll use when you need “chocolate”.",
+      "usage": "Most Chinese speakers use 巧克力 for “chocolate”.",
+      "example": {
+        "zh": "可以买房子，买汽车，买巧克力，买土豆儿",
+        "pinyin": "kě yǐ mǎi fáng zi，mǎi qì chē，mǎi qiǎo kè lì，mǎi tǔ dòu ér",
+        "en": "can buy a house, a car, chocolate, potatoes"
+      }
+    },
+    {
+      "zh": "土豆(儿)",
+      "pinyin": "tǔdòur",
+      "pos": "n.",
+      "en": "potato",
+      "note": "Book headword pinyin printed as tǔdòur. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 土豆(儿) like the word you’ll use when you need “potato”.",
+      "usage": "Most Chinese speakers use 土豆(儿) for “potato”.",
+      "example": {
+        "zh": "买巧克力，买土豆儿",
+        "pinyin": "mǎi qiǎo kè lì，mǎi tǔ dòu ér",
+        "en": "buy chocolate, buy potatoes"
+      }
+    },
+    {
+      "zh": "胡说",
+      "pinyin": "húshuō",
+      "pos": "v.",
+      "en": "to talk nonsense",
+      "note": "Book headword pinyin printed as húshuō. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 胡说 like the word you’ll use when you need “to talk nonsense”.",
+      "usage": "Most Chinese speakers use 胡说 for “to talk nonsense”.",
+      "example": {
+        "zh": "你胡说什么呀！",
+        "pinyin": "nǐ hú shuō shén me ya！",
+        "en": "What nonsense are you talking!"
+      }
+    },
+    {
+      "zh": "长久",
+      "pinyin": "chángjiǔ",
+      "pos": "adj.",
+      "en": "permanent; long-lasting",
+      "note": "Book headword pinyin printed as chángjiǔ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 长久 like the word you’ll use when you need “permanent”.",
+      "usage": "Most Chinese speakers use 长久 for “permanent”.",
+      "example": {
+        "zh": "谁不希望友谊长久",
+        "pinyin": "shuí bù xī wàng yǒu yì cháng jiǔ",
+        "en": "Who doesn’t hope friendship lasts long"
+      }
+    },
+    {
+      "zh": "友谊",
+      "pinyin": "yǒuyì",
+      "pos": "n.",
+      "en": "friendship",
+      "note": "Book headword pinyin printed as yǒuyì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 友谊 like the word you’ll use when you need “friendship”.",
+      "usage": "Most Chinese speakers use 友谊 for “friendship”.",
+      "example": {
+        "zh": "友谊长久",
+        "pinyin": "yǒu yì cháng jiǔ",
+        "en": "lasting friendship"
+      }
+    },
+    {
+      "zh": "爱情",
+      "pinyin": "àiqíng",
+      "pos": "n.",
+      "en": "love (between lovers)",
+      "note": "Book headword pinyin printed as àiqíng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 爱情 like the word you’ll use when you need “love (between lovers)”.",
+      "usage": "Most Chinese speakers use 爱情 for “love (between lovers)”.",
+      "example": {
+        "zh": "爱情长久",
+        "pinyin": "ài qíng cháng jiǔ",
+        "en": "lasting love"
+      }
+    },
+    {
+      "zh": "活",
+      "pinyin": "huó",
+      "pos": "v.",
+      "en": "to live; to be alive",
+      "note": "Book headword pinyin printed as huó. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 活 like the word you’ll use when you need “to live”.",
+      "usage": "Most Chinese speakers use 活 for “to live”.",
+      "example": {
+        "zh": "活得长久",
+        "pinyin": "huó dé cháng jiǔ",
+        "en": "live a long life"
+      }
+    },
+    {
+      "zh": "顺",
+      "pinyin": "shùn",
+      "pos": "adj.",
+      "en": "smooth",
+      "note": "Book headword pinyin printed as shùn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 顺 like the word you’ll use when you need “smooth”.",
+      "usage": "Most Chinese speakers use 顺 for “smooth”.",
+      "example": {
+        "zh": "六六大顺",
+        "pinyin": "liù liù dà shùn",
+        "en": "six-six great smoothness (everything goes smoothly)"
+      }
+    },
+    {
+      "zh": "宴会",
+      "pinyin": "yànhuì",
+      "pos": "n.",
+      "en": "banquet; dinner party",
+      "note": "Book headword pinyin printed as yànhuì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 宴会 like the word you’ll use when you need “banquet”.",
+      "usage": "Most Chinese speakers use 宴会 for “banquet”.",
+      "example": {
+        "zh": "中国人在宴会上的规矩可多了。",
+        "pinyin": "zhōng guó rén zài yàn huì shàng de guī jǔ kě duō le。",
+        "en": "Chinese people have lots of rules at banquets."
+      }
+    },
+    {
+      "zh": "规矩",
+      "pinyin": "guīju",
+      "pos": "n.",
+      "en": "rule; custom; established standard",
+      "note": "Book headword pinyin printed as guīju. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 规矩 like the word you’ll use when you need “rule”.",
+      "usage": "Most Chinese speakers use 规矩 for “rule”.",
+      "example": {
+        "zh": "宴会上的规矩",
+        "pinyin": "yàn huì shàng de guī jǔ",
+        "en": "banquet rules"
+      }
+    },
+    {
+      "zh": "首先",
+      "pinyin": "shǒuxiān",
+      "pos": "pron.",
+      "en": "first of all",
+      "note": "Book headword pinyin printed as shǒuxiān. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 首先 like the word you’ll use when you need “first of all”.",
+      "usage": "Most Chinese speakers use 首先 for “first of all”.",
+      "example": {
+        "zh": "首先，要请重要的客人、老师、领导和长辈坐上座。",
+        "pinyin": "shǒu xiān，yào qǐng zhòng yào de kè rén、lǎo shī、lǐng dǎo hé zhǎng bèi zuò shàng zuò。",
+        "en": "First, invite important guests, teachers, leaders, and elders to the seat of honor."
+      }
+    },
+    {
+      "zh": "重要",
+      "pinyin": "zhòngyào",
+      "pos": "adj.",
+      "en": "important",
+      "note": "Book headword pinyin printed as zhòngyào. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 重要 like the word you’ll use when you need “important”.",
+      "usage": "Most Chinese speakers use 重要 for “important”.",
+      "example": {
+        "zh": "重要的客人",
+        "pinyin": "zhòng yào de kè rén",
+        "en": "important guests"
+      }
+    },
+    {
+      "zh": "领导",
+      "pinyin": "lǐngdǎo",
+      "pos": "n.",
+      "en": "leader",
+      "note": "Book headword pinyin printed as lǐngdǎo. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 领导 like the word you’ll use when you need “leader”.",
+      "usage": "Most Chinese speakers use 领导 for “leader”.",
+      "example": {
+        "zh": "老师、领导和长辈",
+        "pinyin": "lǎo shī、lǐng dǎo hé zhǎng bèi",
+        "en": "teachers, leaders, and elders"
+      }
+    },
+    {
+      "zh": "长辈",
+      "pinyin": "zhǎngbèi",
+      "pos": "n.",
+      "en": "elder; senior",
+      "note": "Book headword pinyin printed as zhǎngbèi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 长辈 like the word you’ll use when you need “elder”.",
+      "usage": "Most Chinese speakers use 长辈 for “elder”.",
+      "example": {
+        "zh": "领导和长辈",
+        "pinyin": "lǐng dǎo hé zhǎng bèi",
+        "en": "leaders and elders"
+      }
+    },
+    {
+      "zh": "上座",
+      "pinyin": "shàngzuò",
+      "pos": "n.",
+      "en": "seat of honor; VIP seat",
+      "note": "Book headword pinyin printed as shàngzuò. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 上座 like the word you’ll use when you need “seat of honor”.",
+      "usage": "Most Chinese speakers use 上座 for “seat of honor”.",
+      "example": {
+        "zh": "坐上座",
+        "pinyin": "zuò shàng zuò",
+        "en": "sit in the seat of honor"
+      }
+    },
+    {
+      "zh": "上菜",
+      "pinyin": "shàng cài",
+      "pos": "",
+      "en": "to serve dishes",
+      "note": "Book headword pinyin printed as shàng cài. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 上菜 like the word you’ll use when you need “to serve dishes”.",
+      "usage": "Most Chinese speakers use 上菜 for “to serve dishes”.",
+      "example": {
+        "zh": "上菜时，如果是鱼的话",
+        "pinyin": "shàng cài shí，rú guǒ shì yú de huà",
+        "en": "When serving dishes, if it’s fish"
+      }
+    },
+    {
+      "zh": "如果",
+      "pinyin": "rúguǒ",
+      "pos": "conj.",
+      "en": "if; in case",
+      "note": "Book headword pinyin printed as rúguǒ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 如果 like the word you’ll use when you need “if”.",
+      "usage": "Most Chinese speakers use 如果 for “if”.",
+      "example": {
+        "zh": "如果是鱼的话",
+        "pinyin": "rú guǒ shì yú de huà",
+        "en": "if it’s fish"
+      }
+    },
+    {
+      "zh": "敬酒",
+      "pinyin": "jìng jiǔ",
+      "pos": "",
+      "en": "to propose a toast",
+      "note": "Book headword pinyin printed as jìng jiǔ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 敬酒 like the word you’ll use when you need “to propose a toast”.",
+      "usage": "Most Chinese speakers use 敬酒 for “to propose a toast”.",
+      "example": {
+        "zh": "大家都要先给他敬酒。",
+        "pinyin": "dà jiā dōu yào xiān gěi tā jìng jiǔ。",
+        "en": "Everyone should toast him first."
+      }
+    },
+    {
+      "zh": "上次",
+      "pinyin": "shàng cì",
+      "pos": "",
+      "en": "last time",
+      "note": "Book headword pinyin printed as shàng cì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 上次 like the word you’ll use when you need “last time”.",
+      "usage": "Most Chinese speakers use 上次 for “last time”.",
+      "example": {
+        "zh": "上次我参加了一个中国朋友的婚礼",
+        "pinyin": "shàng cì wǒ cān jiā le yí gè zhōng guó péng yǒu de hūn lǐ",
+        "en": "Last time I went to a Chinese friend’s wedding"
+      }
+    },
+    {
+      "zh": "下次",
+      "pinyin": "xià cì",
+      "pos": "",
+      "en": "next time",
+      "note": "Sub-entry under parent headword. Book headword pinyin printed as xià cì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 下次 like the word you’ll use when you need “next time”.",
+      "usage": "Most Chinese speakers use 下次 for “next time”.",
+      "example": {
+        "zh": "上次 / 下次",
+        "pinyin": "shàng cì / xià cì",
+        "en": "last time / next time"
+      }
+    },
+    {
+      "zh": "干杯",
+      "pinyin": "gān bēi",
+      "pos": "v.",
+      "en": "to drink a toast; bottoms up",
+      "note": "Book headword pinyin printed as gān bēi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 干杯 like the word you’ll use when you need “to drink a toast”.",
+      "usage": "Most Chinese speakers use 干杯 for “to drink a toast”.",
+      "example": {
+        "zh": "一定要干杯，把杯子里的酒一口喝光。",
+        "pinyin": "yí dìng yào gān bēi，bǎ bēi zi lǐ de jiǔ yī kǒu hē guāng。",
+        "en": "You must toast bottoms-up and finish the cup in one go."
+      }
+    },
+    {
+      "zh": "感情",
+      "pinyin": "gǎnqíng",
+      "pos": "n.",
+      "en": "feeling; emotion",
+      "note": "Book headword pinyin printed as gǎnqíng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 感情 like the word you’ll use when you need “feeling”.",
+      "usage": "Most Chinese speakers use 感情 for “feeling”.",
+      "example": {
+        "zh": "感情有，茶当酒",
+        "pinyin": "gǎn qíng yǒu，chá dāng jiǔ",
+        "en": "If there’s feeling, tea can stand for wine"
+      }
+    },
+    {
+      "zh": "当",
+      "pinyin": "dàng",
+      "pos": "v.",
+      "en": "to serve as; to be",
+      "note": "Book headword pinyin printed as dàng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 当 like the word you’ll use when you need “to serve as”.",
+      "usage": "Most Chinese speakers use 当 for “to serve as”.",
+      "example": {
+        "zh": "茶当酒",
+        "pinyin": "chá dāng jiǔ",
+        "en": "tea serving as wine"
+      }
+    },
+    {
+      "zh": "代替",
+      "pinyin": "dàitì",
+      "pos": "v.",
+      "en": "to replace; to substitute",
+      "note": "Book headword pinyin printed as dàitì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 代替 like the word you’ll use when you need “to replace”.",
+      "usage": "Most Chinese speakers use 代替 for “to replace”.",
+      "example": {
+        "zh": "你用茶代替就行了。",
+        "pinyin": "nǐ yòng chá dài tì jiù xíng le。",
+        "en": "Just use tea as a substitute."
+      }
+    },
+    {
+      "zh": "哈",
+      "pinyin": "hā",
+      "pos": "onom.",
+      "en": "(sound of laughter) ha-ha",
+      "note": "Book headword pinyin printed as hā. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 哈 like the word you’ll use when you need “(sound of laughter) ha-ha”.",
+      "usage": "Most Chinese speakers use 哈 for “(sound of laughter) ha-ha”.",
+      "example": {
+        "zh": "哈哈！又吹起来了。",
+        "pinyin": "hā hā！yòu chuī qǐ lái le。",
+        "en": "Ha-ha! Bragging again."
+      }
+    },
+    {
+      "zh": "吹",
+      "pinyin": "chuī",
+      "pos": "v.",
+      "en": "to boast; to talk big; to brag",
+      "note": "Book headword pinyin printed as chuī. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 吹 like the word you’ll use when you need “to boast”.",
+      "usage": "Most Chinese speakers use 吹 for “to boast”.",
+      "example": {
+        "zh": "又吹起来了。",
+        "pinyin": "yòu chuī qǐ lái le。",
+        "en": "Bragging again."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "(一)",
+      "headingZh": "吉利的数字",
+      "headingEn": "Lucky numbers",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "这是联欢会上麦克和爱德华说的小相声",
+          "pinyin": "zhè shì lián huān huì shàng mài kè hé ài dé huá shuō de xiǎo xiàng shēng",
+          "en": "This is the crosstalk Mike and Edward performed at the get-together"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "你知道中国人喜欢什么数字吗？",
+          "pinyin": "nǐ zhī dào zhōng guó rén xǐ huān shén me shù zì ma？",
+          "en": "Do you know what numbers Chinese people like?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "不知道。",
+          "pinyin": "bù zhī dào。",
+          "en": "No."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "你怎么连这么简单的问题也不知道？不过，不知道也好。",
+          "pinyin": "nǐ zěn me lián zhè me jiǎn dān de wèn tí yě bù zhī dào？bù guò，bù zhī dào yě hǎo。",
+          "en": "How come you don’t even know such a simple question? Still, not knowing is fine too."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "什么话！",
+          "pinyin": "shén me huà！",
+          "en": "What kind of talk is that!"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "以后你什么问题不知道就来问我好了。",
+          "pinyin": "yǐ hòu nǐ shén me wèn tí bù zhī dào jiù lái wèn wǒ hǎo le。",
+          "en": "From now on, whenever you don’t know something, just come ask me."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "知道。世界上的事我知道一半儿，中国的事我没有不知道的。",
+          "pinyin": "zhī dào。shì jiè shàng de shì wǒ zhī dào yí bàn ér，zhōng guó de shì wǒ méi yǒu bù zhī dào de。",
+          "en": "I know. I know half of what’s in the world, and there’s nothing about China I don’t know."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "是吗？",
+          "pinyin": "shì ma？",
+          "en": "Really?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "你没听见大家都叫我什么吗？",
+          "pinyin": "nǐ méi tīng jiàn dà jiā dōu jiào wǒ shén me ma？",
+          "en": "Haven’t you heard what everyone calls me?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "叫你什么？",
+          "pinyin": "jiào nǐ shén me？",
+          "en": "Calls you what?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "“中国通”。",
+          "pinyin": "“zhōng guó tōng”。",
+          "en": "“China hand.”"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "你才学了三个半月的汉语，怎么就成“中国通”了？",
+          "pinyin": "nǐ cái xué le sān gè bàn yuè de hàn yǔ，zěn me jiù chéng“zhōng guó tōng”le？",
+          "en": "You’ve only studied Chinese for three and a half months — how are you a “China hand” already?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "这不是说相声吗？你怎么连这也不懂？",
+          "pinyin": "zhè bú shì shuō xiàng shēng ma？nǐ zěn me lián zhè yě bù dǒng？",
+          "en": "This is crosstalk, isn’t it? How don’t you even get that?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "谁说我不懂？相声是笑的艺术。说相声就是要大家笑，“笑一笑，十年少”嘛。",
+          "pinyin": "shuí shuō wǒ bù dǒng？xiàng shēng shì xiào de yì shù。shuō xiàng shēng jiù shì yào dà jiā xiào，“xiào yī xiào，shí nián shào”ma。",
+          "en": "Who says I don’t? Crosstalk is the art of laughter. Doing it is to make everyone laugh — ‘a laugh makes you ten years younger.’"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "对呀。谁听了我们的相声，谁就会笑起来，谁就会变年轻，今年二十，明年十岁。",
+          "pinyin": "duì ya。shuí tīng le wǒ men de xiàng shēng，shuí jiù huì xiào qǐ lái，shuí jiù huì biàn nián qīng，jīn nián èr shí，míng nián shí suì。",
+          "en": "Right. Whoever hears our crosstalk will laugh and get younger — twenty this year, ten next year."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "什么？",
+          "pinyin": "shén me？",
+          "en": "What?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "你不是说“笑一笑，十年少”吗？",
+          "pinyin": "nǐ bú shì shuō“xiào yī xiào，shí nián shào”ma？",
+          "en": "Didn’t you say ‘a laugh makes you ten years younger’?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "别开玩笑了。你还是说说中国人喜欢什么数字吧。",
+          "pinyin": "bié kāi wán xiào le。nǐ hái shì shuō shuō zhōng guó rén xǐ huān shén me shù zì ba。",
+          "en": "Stop joking. Just tell me what numbers Chinese people like."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "我告诉你，你可别告诉别人。这是我的伟大发现，我正准备去申请专利呢。",
+          "pinyin": "wǒ gào sù nǐ，nǐ kě bié gào sù bié rén。zhè shì wǒ de wěi dà fā xiàn，wǒ zhèng zhǔn bèi qù shēn qǐng zhuān lì ne。",
+          "en": "I’ll tell you — don’t tell anyone. This is my great discovery; I’m about to apply for a patent."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "你快说吧，我不会告诉别人的。",
+          "pinyin": "nǐ kuài shuō ba，wǒ bú huì gào sù bié rén de。",
+          "en": "Hurry up — I won’t tell."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "中国人最喜欢的数字是“八”。",
+          "pinyin": "zhōng guó rén zuì xǐ huān de shù zì shì“bā”。",
+          "en": "The number Chinese people like most is eight."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "八？为什么喜欢“八”？",
+          "pinyin": "bā？wèi shén me xǐ huān“bā”？",
+          "en": "Eight? Why eight?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "中国人认为这个数字最吉利。",
+          "pinyin": "zhōng guó rén rèn wéi zhè ge shù zì zuì jí lì。",
+          "en": "Chinese people think this number is the luckiest."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "“八”怎么吉利呢？",
+          "pinyin": "“bā”zěn me jí lì ne？",
+          "en": "How is eight lucky?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "你听！“八、八、八”，你听出来是什么了吗？",
+          "pinyin": "nǐ tīng！“bā、bā、bā”，nǐ tīng chū lái shì shén me le ma？",
+          "en": "Listen! “Bā, bā, bā” — do you hear what it is?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "“发、发、发”！",
+          "pinyin": "“fā、fā、fā”！",
+          "en": "“Fā, fā, fā”!"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "笨蛋！连这都听不出来。“八”的谐音不是“发”吗？“八、八、八”就是“发、发、发”呀。",
+          "pinyin": "bèn dàn！lián zhè dōu tīng bù chū lái。“bā”de xié yīn bú shì“fā”ma？“bā、bā、bā”jiù shì“fā、fā、fā”ya。",
+          "en": "Dummy! You can’t even hear that. Isn’t eight’s homophone “fā”? “Eight eight eight” is “get rich, get rich, get rich.”"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "你的汉语水平太低。汉语的“发”是什么意思你知道不？",
+          "pinyin": "nǐ de hàn yǔ shuǐ píng tài dī。hàn yǔ de“fā”shì shén me yì si nǐ zhī dào bù？",
+          "en": "Your Chinese is too weak. Do you know what “fā” means?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "不知道。",
+          "pinyin": "bù zhī dào。",
+          "en": "No."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "“发”就是“发财”。现在谁不想发财呀？发了财就可以买房子，买汽车，买巧克力，买土豆儿，买什么就买什么。",
+          "pinyin": "“fā”jiù shì“fā cái”。xiàn zài shuí bù xiǎng fā cái ya？fā le cái jiù kě yǐ mǎi fáng zi，mǎi qì chē，mǎi qiǎo kè lì，mǎi tǔ dòu ér，mǎi shén me jiù mǎi shén me。",
+          "en": "“Fā” means get rich. Who doesn’t want that now? Once rich you can buy a house, car, chocolate, potatoes — whatever you want."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "你胡说什么呀！",
+          "pinyin": "nǐ hú shuō shén me ya！",
+          "en": "What nonsense!"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "只要有钱就能买好多好东西。",
+          "pinyin": "zhǐ yào yǒu qián jiù néng mǎi hǎo duō hǎo dōng xī。",
+          "en": "As long as you have money you can buy lots of good things."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "我还知道，中国人喜欢“518”这个数，也喜欢“五月十八号”这一天，因为“518”的谐音是“我要发”。",
+          "pinyin": "wǒ hái zhī dào，zhōng guó rén xǐ huān“518”zhè ge shù，yě xǐ huān“wǔ yuè shí bā hào”zhè yī tiān，yīn wèi“518”de xié yīn shì“wǒ yào fā”。",
+          "en": "I also know Chinese people like 518, and May 18, because 518 sounds like “I want to get rich.”"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "对！对！怎么？你也知道啊！",
+          "pinyin": "duì！duì！zěn me？nǐ yě zhī dào a！",
+          "en": "Right! Right! What — you know too?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "是啊，我还知道中国人也喜欢“六”和“九”。",
+          "pinyin": "shì a，wǒ hái zhī dào zhōng guó rén yě xǐ huān“liù”hé“jiǔ”。",
+          "en": "Yeah — and they also like six and nine."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "为什么？",
+          "pinyin": "wèi shén me？",
+          "en": "Why?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "“九”与“长久”的“久”谐音。谁不希望友谊长久，爱情长久，活得长久啊？中国人还常说“六六大顺”。所以我知道中国人也喜欢“六”和“九”。",
+          "pinyin": "“jiǔ”yǔ“cháng jiǔ”de“jiǔ”xié yīn。shuí bù xī wàng yǒu yì cháng jiǔ，ài qíng cháng jiǔ，huó dé cháng jiǔ a？zhōng guó rén hái cháng shuō“liù liù dà shùn”。suǒ yǐ wǒ zhī dào zhōng guó rén yě xǐ huān“liù”hé“jiǔ”。",
+          "en": "Nine is a homophone of “long-lasting.” Who doesn’t want lasting friendship, lasting love, a long life? People also say “six-six great smoothness.” So I know they like six and nine too."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "哈哈！又吹起来了。",
+          "pinyin": "hā hā！yòu chuī qǐ lái le。",
+          "en": "Ha-ha! Bragging again."
+        }
+      ]
+    },
+    {
+      "label": "(二)",
+      "headingZh": "宴会上的规矩",
+      "headingEn": "Rules at a banquet",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "麦克",
+          "zh": "中国人在宴会上的规矩可多了。",
+          "pinyin": "zhōng guó rén zài yàn huì shàng de guī jǔ kě duō le。",
+          "en": "Chinese people have lots of rules at banquets."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "都有什么规矩？",
+          "pinyin": "dōu yǒu shén me guī jǔ？",
+          "en": "What rules are there?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "首先，要请重要的客人、老师、领导和长辈坐上座。",
+          "pinyin": "shǒu xiān，yào qǐng zhòng yào de kè rén、lǎo shī、lǐng dǎo hé zhǎng bèi zuò shàng zuò。",
+          "en": "First, seat important guests, teachers, leaders, and elders in the seat of honor."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "这是应该的。",
+          "pinyin": "zhè shì yīng gāi de。",
+          "en": "That makes sense."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "上菜时，如果是鱼的话，鱼头要对着上座，让重要的客人先吃第一口。喝酒的时候，大家都要先给他敬酒。",
+          "pinyin": "shàng cài shí，rú guǒ shì yú de huà，yú tóu yào duì zhe shàng zuò，ràng zhòng yào de kè rén xiān chī dì yī kǒu。hē jiǔ de shí hòu，dà jiā dōu yào xiān gěi tā jìng jiǔ。",
+          "en": "When serving fish, the fish head faces the seat of honor, and the important guest takes the first bite. When drinking, everyone toasts him first."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "上次我参加了一个中国朋友的婚礼，大家都让我先吃。是不是也把我看成重要的客人了？",
+          "pinyin": "shàng cì wǒ cān jiā le yí gè zhōng guó péng yǒu de hūn lǐ，dà jiā dōu ràng wǒ xiān chī。shì bú shì yě bǎ wǒ kàn chéng zhòng yào de kè rén le？",
+          "en": "Last time at a Chinese friend’s wedding everyone let me eat first. Did they also see me as an important guest?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "是。要是你到中国人家里去做客，他们就会准备好多菜，让你怎么也吃不完。给你倒酒的时候，一定要干杯，把杯子里的酒一口喝光。",
+          "pinyin": "shì。yào shì nǐ dào zhōng guó rén jiā lǐ qù zuò kè，tā men jiù huì zhǔn bèi hǎo duō cài，ràng nǐ zěn me yě chī bù wán。gěi nǐ dào jiǔ de shí hòu，yí dìng yào gān bēi，bǎ bēi zi lǐ de jiǔ yī kǒu hē guāng。",
+          "en": "Yes. If you visit a Chinese home, they’ll prepare so much food you can’t finish. When they pour you wine, you must toast bottoms-up and finish the cup."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "要是不会喝酒怎么办呢？",
+          "pinyin": "yào shì bú huì hē jiǔ zěn me bàn ne？",
+          "en": "What if you can’t drink?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "那也没关系。他们会说“感情有，茶当酒”。你用茶代替就行了。",
+          "pinyin": "nà yě méi guān xì。tā men huì shuō“gǎn qíng yǒu，chá dāng jiǔ”。nǐ yòng chá dài tì jiù xíng le。",
+          "en": "That’s fine too. They’ll say “if there’s feeling, tea can stand for wine.” Just use tea instead."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "你怎么知道得这么多啊！",
+          "pinyin": "nǐ zěn me zhī dào dé zhè me duō a！",
+          "en": "How do you know so much?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "“中国通”嘛，当然知道得比你多了。",
+          "pinyin": "“zhōng guó tōng”ma，dāng rán zhī dào dé bǐ nǐ duō le。",
+          "en": "I’m a “China hand,” of course I know more than you."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "哈哈！又吹起来了。",
+          "pinyin": "hā hā！yòu chuī qǐ lái le。",
+          "en": "Ha-ha! Bragging again."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "相声",
+      "body": "crosstalk. 中国人喜欢的一种艺术形式，用说笑话、说唱、问答等引起观众发笑，表演时常常两个人说，也可以一个人说或几个人说。",
+      "example": {
+        "zh": "这不是说相声吗？",
+        "pinyin": "zhè bú shì shuō xiàng shēng ma？",
+        "en": "This is crosstalk, isn’t it?"
+      }
+    },
+    {
+      "title": "什么话！",
+      "body": "What does that mean? / How can you say that! “什么话”可以用来表示批评和责难，意思是“你不该说这种话”。",
+      "example": {
+        "zh": "什么话！",
+        "pinyin": "shén me huà！",
+        "en": "What kind of talk is that!"
+      }
+    },
+    {
+      "title": "以后你什么问题不知道就来问我好了。",
+      "body": "Whenever you have a question in the future, just come to me. “……好了”表示同意、赞成的语气。",
+      "example": {
+        "zh": "你想来就来好了。",
+        "pinyin": "nǐ xiǎng lái jiù lái hǎo le。",
+        "en": "If you want to come, just come."
+      }
+    },
+    {
+      "title": "笑一笑，十年少。",
+      "body": "A good laugh makes you ten years younger. 汉语俗语。意思是笑可以使人变得年轻。",
+      "example": {
+        "zh": "笑一笑，十年少。",
+        "pinyin": "xiào yī xiào，shí nián shào。",
+        "en": "A good laugh makes you ten years younger."
+      }
+    },
+    {
+      "title": "“六”与“九”",
+      "body": "six and nine. 汉语的“六”的大写是“陆”（liù），“陆”也念“lù”，与汉字“禄”是谐音字，“禄”是“富贵”的意思；“九”与“久”谐音，寓意“长久”。",
+      "example": {
+        "zh": "中国人也喜欢“六”和“九”。",
+        "pinyin": "zhōng guó rén yě xǐ huān“liù”hé“jiǔ”。",
+        "en": "Chinese people also like six and nine."
+      }
+    },
+    {
+      "title": "反问句",
+      "body": "Rhetorical questions (e.g. 你怎么连……也不……？).",
+      "example": {
+        "zh": "你怎么连这么简单的问题也不知道？",
+        "pinyin": "nǐ zěn me lián zhè me jiǎn dān de wèn tí yě bù zhī dào？",
+        "en": "How come you don’t even know such a simple question?"
+      }
+    },
+    {
+      "title": "连……也/都……",
+      "body": "Emphatic “even…” construction.",
+      "example": {
+        "zh": "你怎么连这么简单的问题也不知道？",
+        "pinyin": "nǐ zěn me lián zhè me jiǎn dān de wèn tí yě bù zhī dào？",
+        "en": "How come you don’t even know such a simple question?"
+      }
+    },
+    {
+      "title": "双重否定",
+      "body": "Emphasizing affirmation via double negation (e.g. 没有不知道的).",
+      "example": {
+        "zh": "中国的事我没有不知道的。",
+        "pinyin": "zhōng guó de shì wǒ méi yǒu bù zhī dào de。",
+        "en": "There’s nothing about China I don’t know."
+      }
+    }
+  ]
+}

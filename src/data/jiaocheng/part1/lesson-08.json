@@ -1,0 +1,825 @@
+{
+  "id": "jiaocheng-2-1-08",
+  "book": "2-1",
+  "index": 8,
+  "bookLesson": 8,
+  "titleZh": "冬天快要到了",
+  "titleEn": "Winter is coming",
+  "sourcePages": "125-142",
+  "words": [
+    {
+      "zh": "爱",
+      "pinyin": "ài",
+      "pos": "v.",
+      "en": "to love; to like",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 爱 like loving winter sports — 我爱滑冰.",
+      "usage": "Most Chinese speakers mean love/like strongly.",
+      "example": {
+        "zh": "我爱滑冰，也爱滑雪。",
+        "pinyin": "Wǒ ài huábīng, yě ài huáxuě.",
+        "en": "I love skating and skiing."
+      }
+    },
+    {
+      "zh": "滑冰",
+      "pinyin": "huá bīng",
+      "pos": "v.",
+      "en": "to skate",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 滑冰 like ice skating. Book prints spaced.",
+      "usage": "Most Chinese speakers mean ice-skate.",
+      "example": {
+        "zh": "我只会滑冰，不会滑雪。",
+        "pinyin": "Wǒ zhǐ huì huábīng, bú huì huáxuě.",
+        "en": "I can only ice-skate, not ski."
+      }
+    },
+    {
+      "zh": "滑雪",
+      "pinyin": "huá xuě",
+      "pos": "v.",
+      "en": "to ski",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 滑雪 like skiing. Book prints spaced.",
+      "usage": "Most Chinese speakers mean ski.",
+      "example": {
+        "zh": "冬天可以滑雪。",
+        "pinyin": "Dōngtiān kěyǐ huáxuě.",
+        "en": "In winter you can ski."
+      }
+    },
+    {
+      "zh": "家乡",
+      "pinyin": "jiāxiāng",
+      "pos": "n.",
+      "en": "hometown",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 家乡 like hometown scenery — 我们家乡.",
+      "usage": "Most Chinese speakers mean hometown/native place.",
+      "example": {
+        "zh": "我们家乡有山有水，是有名的风景区。",
+        "pinyin": "Wǒmen jiāxiāng yǒu shān yǒu shuǐ, shì yǒumíng de fēngjǐngqū.",
+        "en": "Our hometown has mountains and water — a famous scenic area."
+      }
+    },
+    {
+      "zh": "水",
+      "pinyin": "shuǐ",
+      "pos": "n.",
+      "en": "water",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 水 like waters/rivers — 有山有水.",
+      "usage": "Most Chinese speakers mean water.",
+      "example": {
+        "zh": "有山有水。",
+        "pinyin": "Yǒu shān yǒu shuǐ.",
+        "en": "Has mountains and water."
+      }
+    },
+    {
+      "zh": "有名",
+      "pinyin": "yǒumíng",
+      "pos": "adj.",
+      "en": "famous",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 有名 like famous places — 有名的风景区.",
+      "usage": "Most Chinese speakers mean well-known.",
+      "example": {
+        "zh": "是有名的风景区。",
+        "pinyin": "Shì yǒumíng de fēngjǐngqū.",
+        "en": "It’s a famous scenic area."
+      }
+    },
+    {
+      "zh": "风景",
+      "pinyin": "fēngjǐng",
+      "pos": "n.",
+      "en": "scenic view; landscape",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 风景 like scenery — 风景区.",
+      "usage": "Most Chinese speakers mean scenery.",
+      "example": {
+        "zh": "有名的风景区。",
+        "pinyin": "Yǒumíng de fēngjǐngqū.",
+        "en": "A famous scenic area."
+      }
+    },
+    {
+      "zh": "区",
+      "pinyin": "qū",
+      "pos": "n.",
+      "en": "area; region",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 区 like district — 风景区.",
+      "usage": "Most Chinese speakers mean area/zone.",
+      "example": {
+        "zh": "风景区。",
+        "pinyin": "Fēngjǐngqū.",
+        "en": "Scenic area."
+      }
+    },
+    {
+      "zh": "旅游",
+      "pinyin": "lǚyóu",
+      "pos": "v.",
+      "en": "to travel; to tour",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 旅游 like tourists — 去旅游的人.",
+      "usage": "Most Chinese speakers mean travel for leisure.",
+      "example": {
+        "zh": "一年四季都有去旅游的人。",
+        "pinyin": "Yì nián sì jì dōu yǒu qù lǚyóu de rén.",
+        "en": "There are tourists all year round."
+      }
+    },
+    {
+      "zh": "尤其",
+      "pinyin": "yóuqí",
+      "pos": "adv.",
+      "en": "especially",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 尤其 like ‘especially’ — 尤其是夏天.",
+      "usage": "Most Chinese speakers highlight with 尤其.",
+      "example": {
+        "zh": "尤其是夏天，山里很凉快。",
+        "pinyin": "Yóuqí shì xiàtiān, shān lǐ hěn liángkuai.",
+        "en": "Especially in summer, the mountains are nice and cool."
+      }
+    },
+    {
+      "zh": "凉快",
+      "pinyin": "liángkuai",
+      "pos": "adj.",
+      "en": "nice and cool",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 凉快 like pleasantly cool — 山里很凉快.",
+      "usage": "Most Chinese speakers mean comfortably cool.",
+      "example": {
+        "zh": "山里很凉快。",
+        "pinyin": "Shān lǐ hěn liángkuai.",
+        "en": "It’s nice and cool in the mountains."
+      }
+    },
+    {
+      "zh": "避暑",
+      "pinyin": "bì shǔ",
+      "pos": "v.",
+      "en": "to spend a holiday at a summer resort",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 避暑 like escaping summer heat. Book prints spaced.",
+      "usage": "Most Chinese speakers 避暑 in mountains.",
+      "example": {
+        "zh": "去避暑的人特别多。",
+        "pinyin": "Qù bìshǔ de rén tèbié duō.",
+        "en": "Especially many people go to escape the heat."
+      }
+    },
+    {
+      "zh": "人家",
+      "pinyin": "rénjia",
+      "pos": "n.",
+      "en": "household; family",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 人家 like households — 很多人家.",
+      "usage": "Most Chinese speakers mean other people / households.",
+      "example": {
+        "zh": "很多人家都靠经营旅馆、饭店发了财。",
+        "pinyin": "Hěn duō rénjia dōu kào jīngyíng lǚguǎn, fàndiàn fā le cái.",
+        "en": "Many households got rich running hotels and restaurants."
+      }
+    },
+    {
+      "zh": "靠",
+      "pinyin": "kào",
+      "pos": "v.",
+      "en": "to rely on",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 靠 like relying on business — 靠经营…发财.",
+      "usage": "Most Chinese speakers mean rely on / lean on.",
+      "example": {
+        "zh": "靠经营旅馆、饭店发了财。",
+        "pinyin": "Kào jīngyíng lǚguǎn, fàndiàn fā le cái.",
+        "en": "Got rich by running hotels and restaurants."
+      }
+    },
+    {
+      "zh": "经营",
+      "pinyin": "jīngyíng",
+      "pos": "v.",
+      "en": "to manage; to run",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 经营 like running a business.",
+      "usage": "Most Chinese speakers 经营 a shop/hotel.",
+      "example": {
+        "zh": "靠经营旅馆、饭店发了财。",
+        "pinyin": "Kào jīngyíng lǚguǎn, fàndiàn fā le cái.",
+        "en": "Got rich by running hotels and restaurants."
+      }
+    },
+    {
+      "zh": "发财",
+      "pinyin": "fā cái",
+      "pos": "v.",
+      "en": "to get rich; to make a fortune",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 发财 like getting rich. Book prints spaced.",
+      "usage": "Most Chinese speakers mean make a fortune.",
+      "example": {
+        "zh": "发了财。",
+        "pinyin": "Fā le cái.",
+        "en": "Got rich."
+      }
+    },
+    {
+      "zh": "树叶",
+      "pinyin": "shùyè",
+      "pos": "n.",
+      "en": "leaf",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 树叶 like autumn leaves — 树叶都红了.",
+      "usage": "Most Chinese speakers mean leaves.",
+      "example": {
+        "zh": "你看，树叶都红了。",
+        "pinyin": "Nǐ kàn, shùyè dōu hóng le.",
+        "en": "Look — the leaves have all turned red."
+      }
+    },
+    {
+      "zh": "树",
+      "pinyin": "shù",
+      "pos": "n.",
+      "en": "tree",
+      "note": "The leaves have all turned red.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 树 under 树叶.",
+      "example": {
+        "zh": "Most Chinese speakers mean tree.",
+        "pinyin": "树叶都红了。",
+        "en": "Shùyè dōu hóng le."
+      }
+    },
+    {
+      "zh": "叶",
+      "pinyin": "yè",
+      "pos": "n.",
+      "en": "leaf",
+      "note": "The red leaves are so beautiful!",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 叶 under 树叶.",
+      "example": {
+        "zh": "Most Chinese speakers mean leaf.",
+        "pinyin": "红叶真漂亮！",
+        "en": "Hóngyè zhēn piàoliang!"
+      }
+    },
+    {
+      "zh": "捡",
+      "pinyin": "jiǎn",
+      "pos": "v.",
+      "en": "to pick",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 捡 like picking up leaves — 捡几片红叶.",
+      "usage": "Most Chinese speakers mean pick up from the ground.",
+      "example": {
+        "zh": "我去捡几片红叶。",
+        "pinyin": "Wǒ qù jiǎn jǐ piàn hóngyè.",
+        "en": "I’ll go pick a few red leaves."
+      }
+    },
+    {
+      "zh": "红叶",
+      "pinyin": "hóngyè",
+      "pos": "n.",
+      "en": "red autumn leaves",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 红叶 like autumn maple leaves.",
+      "usage": "Most Chinese speakers mean red autumn foliage.",
+      "example": {
+        "zh": "红叶真漂亮！",
+        "pinyin": "Hóngyè zhēn piàoliang!",
+        "en": "The red leaves are so beautiful!"
+      }
+    },
+    {
+      "zh": "着急",
+      "pinyin": "zháo jí",
+      "pos": "adj.",
+      "en": "anxious; worried",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 着急 like rushing — 着什么急？ Book prints spaced.",
+      "usage": "Most Chinese speakers mean anxious/in a hurry.",
+      "example": {
+        "zh": "着什么急？还早着呢。",
+        "pinyin": "Zháo shénme jí? Hái zǎo zhe ne.",
+        "en": "What’s the rush? It’s still early."
+      }
+    },
+    {
+      "zh": "着呢",
+      "pinyin": "zhene",
+      "pos": "part.",
+      "en": "(used to indicate degree) very; quite",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 着呢 like high degree — 还早着呢.",
+      "usage": "Most Chinese speakers put Adj+着呢 for ‘very…’.",
+      "example": {
+        "zh": "还早着呢。",
+        "pinyin": "Hái zǎo zhe ne.",
+        "en": "It’s still quite early."
+      }
+    },
+    {
+      "zh": "表",
+      "pinyin": "biǎo",
+      "pos": "n.",
+      "en": "watch",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 表 like a wristwatch — 你的表.",
+      "usage": "Most Chinese speakers mean watch (timepiece).",
+      "example": {
+        "zh": "你的表是不是坏了？",
+        "pinyin": "Nǐ de biǎo shì bu shì huài le?",
+        "en": "Is your watch broken?"
+      }
+    },
+    {
+      "zh": "坏",
+      "pinyin": "huài",
+      "pos": "adj.",
+      "en": "(go) bad; broken",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 坏 like broken — 表坏了.",
+      "usage": "Most Chinese speakers mean broken/bad.",
+      "example": {
+        "zh": "你的表是不是坏了？",
+        "pinyin": "Nǐ de biǎo shì bu shì huài le?",
+        "en": "Is your watch broken?"
+      }
+    },
+    {
+      "zh": "哎呀",
+      "pinyin": "āiya",
+      "pos": "interj.",
+      "en": "expressing surprise or amazement",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 哎呀 like a surprised exclamation.",
+      "usage": "Most Chinese speakers gasp 哎呀.",
+      "example": {
+        "zh": "哎呀，我的表停了。",
+        "pinyin": "Āiya, wǒ de biǎo tíng le.",
+        "en": "Oh no — my watch has stopped."
+      }
+    },
+    {
+      "zh": "停",
+      "pinyin": "tíng",
+      "pos": "v.",
+      "en": "to stop",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 停 like a stopped watch — 表停了.",
+      "usage": "Most Chinese speakers mean stop/cease.",
+      "example": {
+        "zh": "我的表停了，可能没电了。",
+        "pinyin": "Wǒ de biǎo tíng le, kěnéng méi diàn le.",
+        "en": "My watch stopped — maybe the battery is dead."
+      }
+    },
+    {
+      "zh": "该",
+      "pinyin": "gāi",
+      "pos": "aux.",
+      "en": "should; ought to; need",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 该…了 like ‘it’s time to’ — 该换电池了.",
+      "usage": "Most Chinese speakers 该+V+了.",
+      "example": {
+        "zh": "该换电池了。",
+        "pinyin": "Gāi huàn diànchí le.",
+        "en": "Time to change the battery."
+      }
+    },
+    {
+      "zh": "电池",
+      "pinyin": "diànchí",
+      "pos": "n.",
+      "en": "battery",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 电池 like watch battery.",
+      "usage": "Most Chinese speakers mean battery.",
+      "example": {
+        "zh": "该换电池了。",
+        "pinyin": "Gāi huàn diànchí le.",
+        "en": "Time to change the battery."
+      }
+    },
+    {
+      "zh": "迟到",
+      "pinyin": "chídào",
+      "pos": "v.",
+      "en": "to be (or arrive) late",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 迟到 like being late to class.",
+      "usage": "Most Chinese speakers mean arrive late.",
+      "example": {
+        "zh": "再不快点儿就迟到了。",
+        "pinyin": "Zài bù kuài diǎnr jiù chídào le.",
+        "en": "If we don’t hurry we’ll be late."
+      }
+    },
+    {
+      "zh": "好事",
+      "pinyin": "hǎoshì",
+      "pos": "n.",
+      "en": "happy event",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 好事 like good news — 有什么好事啦？",
+      "usage": "Most Chinese speakers mean good news/happy matter.",
+      "example": {
+        "zh": "有什么好事啦？这么高兴。",
+        "pinyin": "Yǒu shénme hǎoshì la? Zhème gāoxìng.",
+        "en": "Got some good news? You’re so happy."
+      }
+    },
+    {
+      "zh": "坏事",
+      "pinyin": "huàishì",
+      "pos": "n.",
+      "en": "bad thing",
+      "note": "Got some good news?",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 坏事 as opposite of 好事.",
+      "example": {
+        "zh": "Most Chinese speakers mean bad deed/matter.",
+        "pinyin": "有什么好事啦？",
+        "en": "Yǒu shénme hǎoshì la?"
+      }
+    },
+    {
+      "zh": "啦",
+      "pinyin": "la",
+      "pos": "part.",
+      "en": "a modal particle expressing exclamation or interrogation",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 啦 like 了+啊 — 好事啦？",
+      "usage": "Most Chinese speakers use 啦 for soft question/exclaim.",
+      "example": {
+        "zh": "有什么好事啦？",
+        "pinyin": "Yǒu shénme hǎoshì la?",
+        "en": "Got some good news?"
+      }
+    },
+    {
+      "zh": "母亲",
+      "pinyin": "mǔqīn",
+      "pos": "n.",
+      "en": "mother",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 母亲 like mother (formal) — 我母亲来信了.",
+      "usage": "Most Chinese speakers use 母亲 more formally than 妈妈.",
+      "example": {
+        "zh": "我母亲来信了。",
+        "pinyin": "Wǒ mǔqīn lái xìn le.",
+        "en": "My mother wrote."
+      }
+    },
+    {
+      "zh": "父亲",
+      "pinyin": "fùqīn",
+      "pos": "n.",
+      "en": "father",
+      "note": "My mother wrote.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 父亲 under 母亲 pairing.",
+      "example": {
+        "zh": "Most Chinese speakers use 父亲 formally.",
+        "pinyin": "我母亲来信了。",
+        "en": "Wǒ mǔqīn lái xìn le."
+      }
+    },
+    {
+      "zh": "地",
+      "pinyin": "de",
+      "pos": "part.",
+      "en": "used after an adjective or phrase to form an adverbial adjunct before a verb",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 地 like adverbial marker — 高兴地说.",
+      "usage": "Most Chinese speakers Adj+地+V.",
+      "example": {
+        "zh": "她在信上高兴地说。",
+        "pinyin": "Tā zài xìn shàng gāoxìng de shuō.",
+        "en": "In the letter she said happily…"
+      }
+    },
+    {
+      "zh": "结婚",
+      "pinyin": "jié hūn",
+      "pos": "v.",
+      "en": "to marry",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 结婚 like getting married. Book prints spaced.",
+      "usage": "Most Chinese speakers mean marry.",
+      "example": {
+        "zh": "我姐姐下个月就要结婚了。",
+        "pinyin": "Wǒ jiějie xià ge yuè jiù yào jiéhūn le.",
+        "en": "My sister is getting married next month."
+      }
+    },
+    {
+      "zh": "离婚",
+      "pinyin": "lí hūn",
+      "pos": "v.",
+      "en": "to divorce",
+      "note": "About to get married.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 离婚 as opposite of 结婚.",
+      "example": {
+        "zh": "Most Chinese speakers mean divorce.",
+        "pinyin": "就要结婚了。",
+        "en": "Jiù yào jiéhūn le."
+      }
+    },
+    {
+      "zh": "未婚夫",
+      "pinyin": "wèihūnfū",
+      "pos": "n.",
+      "en": "fiancé",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 未婚夫 like fiancé.",
+      "usage": "Most Chinese speakers mean fiancé.",
+      "example": {
+        "zh": "她未婚夫不愿意让她工作了。",
+        "pinyin": "Tā wèihūnfū bú yuànyì ràng tā gōngzuò le.",
+        "en": "Her fiancé doesn’t want her to work anymore."
+      }
+    },
+    {
+      "zh": "未婚妻",
+      "pinyin": "wèihūnqī",
+      "pos": "n.",
+      "en": "fiancée",
+      "note": "Her fiancé doesn’t want her to work anymore.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 未婚妻 under 未婚夫.",
+      "example": {
+        "zh": "Most Chinese speakers mean fiancée.",
+        "pinyin": "她未婚夫不愿意让她工作了。",
+        "en": "Tā wèihūnfū bú yuànyì ràng tā gōngzuò le."
+      }
+    },
+    {
+      "zh": "将来",
+      "pinyin": "jiānglái",
+      "pos": "n.",
+      "en": "future",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 将来 like the future — 将来你也会这样吗？",
+      "usage": "Most Chinese speakers mean future time.",
+      "example": {
+        "zh": "将来你也会这样吗？",
+        "pinyin": "Jiānglái nǐ yě huì zhèyàng ma?",
+        "en": "Will you be like that in the future too?"
+      }
+    },
+    {
+      "zh": "这样",
+      "pinyin": "zhèyàng",
+      "pos": "pron.",
+      "en": "such; so; like this; this way",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 这样 like ‘this way’ — 也会这样吗？",
+      "usage": "Most Chinese speakers mean like this.",
+      "example": {
+        "zh": "将来你也会这样吗？",
+        "pinyin": "Jiānglái nǐ yě huì zhèyàng ma?",
+        "en": "Will you be like that too?"
+      }
+    },
+    {
+      "zh": "那样",
+      "pinyin": "nàyàng",
+      "pos": "pron.",
+      "en": "such; so; like that; that way",
+      "note": "After marrying you won’t work?",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 那样 as opposite of 这样.",
+      "example": {
+        "zh": "Most Chinese speakers mean like that.",
+        "pinyin": "结了婚就不工作了吗？",
+        "en": "Jié le hūn jiù bù gōngzuò le ma?"
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "快走吧，要上课了",
+      "headingEn": "Hurry — class is about to start",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "田芳",
+          "zh": "啊，刮风了。今天天气真冷！",
+          "pinyin": "A, guā fēng le. Jīntiān tiānqì zhēn lěng!",
+          "en": "Oh, the wind’s up. It’s really cold today!"
+        },
+        {
+          "speaker": "张东",
+          "zh": "是啊，冬天快要到了。",
+          "pinyin": "Shì a, dōngtiān kuài yào dào le.",
+          "en": "Yeah — winter’s almost here."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "我不喜欢冬天，冬天太冷了！",
+          "pinyin": "Wǒ bù xǐhuan dōngtiān, dōngtiān tài lěng le!",
+          "en": "I don’t like winter — it’s too cold!"
+        },
+        {
+          "speaker": "张东",
+          "zh": "我喜欢冬天。我爱滑冰，也爱滑雪。我们家乡有山有水，是有名的风景区。夏天可以游泳，冬天可以滑雪，一年四季都有去旅游的人，尤其是夏天，山里很凉快，去避暑的人特别多。很多人家都靠经营旅馆、饭店发了财。",
+          "pinyin": "Wǒ xǐhuan dōngtiān. Wǒ ài huábīng, yě ài huáxuě. Wǒmen jiāxiāng yǒu shān yǒu shuǐ, shì yǒumíng de fēngjǐngqū. Xiàtiān kěyǐ yóuyǒng, dōngtiān kěyǐ huáxuě, yì nián sì jì dōu yǒu qù lǚyóu de rén, yóuqí shì xiàtiān, shān lǐ hěn liángkuai, qù bìshǔ de rén tèbié duō. Hěn duō rénjia dōu kào jīngyíng lǚguǎn, fàndiàn fā le cái.",
+          "en": "I like winter. I love skating and skiing. Our hometown is a famous scenic area — swim in summer, ski in winter, tourists year-round, especially summer when people escape the heat. Many families got rich running hotels."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "我只会滑冰，不会滑雪。我真想到你们家乡去学学滑雪。你看，树叶都红了。红叶真漂亮！等一下儿，我去捡几片红叶。",
+          "pinyin": "Wǒ zhǐ huì huábīng, bú huì huáxuě. Wǒ zhēn xiǎng dào nǐmen jiāxiāng qù xuéxue huáxuě. Nǐ kàn, shùyè dōu hóng le. Hóngyè zhēn piàoliang! Děng yíxiàr, wǒ qù jiǎn jǐ piàn hóngyè.",
+          "en": "I can only skate. I’d love to learn skiing in your hometown. Look — red leaves! Wait, I’ll pick a few."
+        },
+        {
+          "speaker": "张东",
+          "zh": "别捡了，快走吧，要上课了。",
+          "pinyin": "Bié jiǎn le, kuài zǒu ba, yào shàngkè le.",
+          "en": "Stop picking — hurry, class is about to start."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "着什么急？还早着呢。",
+          "pinyin": "Zháo shénme jí? Hái zǎo zhe ne.",
+          "en": "What’s the rush? It’s still early."
+        },
+        {
+          "speaker": "张东",
+          "zh": "你看看表，几点了？",
+          "pinyin": "Nǐ kànkan biǎo, jǐ diǎn le?",
+          "en": "Check your watch — what time is it?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "刚七点半。",
+          "pinyin": "Gāng qī diǎn bàn.",
+          "en": "Just 7:30."
+        },
+        {
+          "speaker": "张东",
+          "zh": "什么？你的表是不是坏了？",
+          "pinyin": "Shénme? Nǐ de biǎo shì bu shì huài le?",
+          "en": "What? Is your watch broken?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "哎呀，我的表停了，可能没电了，该换电池了。什么时间了？",
+          "pinyin": "Āiya, wǒ de biǎo tíng le, kěnéng méi diàn le, gāi huàn diànchí le. Shénme shíjiān le?",
+          "en": "Oh no — it stopped, maybe dead battery. What time is it?"
+        },
+        {
+          "speaker": "张东",
+          "zh": "都七点五十了。快走吧，再不快点儿就迟到了。",
+          "pinyin": "Dōu qī diǎn wǔshí le. Kuài zǒu ba, zài bù kuài diǎnr jiù chídào le.",
+          "en": "Already 7:50. Hurry or we’ll be late."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "我姐姐下个月就要结婚了",
+      "headingEn": "My sister is getting married next month",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "玛丽",
+          "zh": "山本，有什么好事啦？这么高兴。",
+          "pinyin": "Shānběn, yǒu shénme hǎoshì la? Zhème gāoxìng.",
+          "en": "Sachiko, good news? You’re so happy."
+        },
+        {
+          "speaker": "山本",
+          "zh": "我母亲来信了。她在信上高兴地说，我姐姐下个月就要结婚了。",
+          "pinyin": "Wǒ mǔqīn lái xìn le. Tā zài xìn shàng gāoxìng de shuō, wǒ jiějie xià ge yuè jiù yào jiéhūn le.",
+          "en": "Mom wrote — happily saying my sister’s getting married next month."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "上次你说你姐姐刚找到工作，怎么这么快就要结婚了？",
+          "pinyin": "Shàng cì nǐ shuō nǐ jiějie gāng zhǎodào gōngzuò, zěnme zhème kuài jiù yào jiéhūn le?",
+          "en": "Last time you said she just found a job — marrying so soon?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "她未婚夫不愿意让她工作了。",
+          "pinyin": "Tā wèihūnfū bú yuànyì ràng tā gōngzuò le.",
+          "en": "Her fiancé doesn’t want her to work anymore."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "这么说，你姐姐结婚以后就不工作了？",
+          "pinyin": "Zhème shuō, nǐ jiějie jiéhūn yǐhòu jiù bù gōngzuò le?",
+          "en": "So after marriage she won’t work?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "对。",
+          "pinyin": "Duì.",
+          "en": "Right."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "将来你也会这样吗？结了婚就不工作了吗？",
+          "pinyin": "Jiānglái nǐ yě huì zhèyàng ma? Jié le hūn jiù bù gōngzuò le ma?",
+          "en": "Will you be like that too? Stop working after marriage?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "不。我喜欢工作。要是不让我工作，我就不结婚。",
+          "pinyin": "Bù. Wǒ xǐhuan gōngzuò. Yàoshi bú ràng wǒ gōngzuò, wǒ jiù bù jiéhūn.",
+          "en": "No. I like working. If I’m not allowed to work, I won’t marry."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "着什么急？",
+      "body": "句中“什么”用于反问，表示不满，不同意对方说的某一句话。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "着什么急？还早着呢。",
+        "pinyin": "Zháo shénme jí? Hái zǎo zhe ne.",
+        "en": "What’s the rush? It’s still early."
+      }
+    },
+    {
+      "title": "还早着呢",
+      "body": "“着呢”用在形容词或某些心理动词后表示程度，相当于“很”。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "还早着呢。",
+        "pinyin": "Hái zǎo zhe ne.",
+        "en": "It’s still quite early."
+      }
+    },
+    {
+      "title": "该…了",
+      "body": "“该…了”表示根据情理或经验推测必然的或可能的结果。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "该换电池了。",
+        "pinyin": "Gāi huàn diànchí le.",
+        "en": "It’s time to change the battery."
+      }
+    },
+    {
+      "title": "都…了",
+      "body": "“都…了”中间多为时间词和数量词，表示时间晚、年龄大、数量多。“都”是“已经”的意思。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "都七点五十了。",
+        "pinyin": "Dōu qī diǎn wǔshí le.",
+        "en": "It’s already 7:50."
+      }
+    },
+    {
+      "title": "有什么好事啦？",
+      "body": "“啦”是“了”和“啊”的复合形式。这里表示疑问的语气。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "有什么好事啦？",
+        "pinyin": "Yǒu shénme hǎoshì la?",
+        "en": "Got some good news?"
+      }
+    },
+    {
+      "title": "语气助词“了”（2）：变化",
+      "body": "语气助词“了”用在句尾还表示变化。“不…了”也表示变化。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "树叶已经红了。",
+        "pinyin": "Shùyè yǐjing hóng le.",
+        "en": "The leaves have already turned red."
+      }
+    },
+    {
+      "title": "要…了 / 就要…了 / 快要…了 / 快…了",
+      "body": "表示动作即将发生。句中有表示具体时间的词语作状语时不能用“快要…了”，应用“就要…了”。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "冬天快要到了。",
+        "pinyin": "Dōngtiān kuài yào dào le.",
+        "en": "Winter is about to arrive."
+      }
+    },
+    {
+      "title": "状语与结构助词“地”",
+      "body": "结构助词“地”是句中状语的标志。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "她高兴地说，姐姐下个月就要结婚了。",
+        "pinyin": "Tā gāoxìng de shuō, jiějie xià ge yuè jiù yào jiéhūn le.",
+        "en": "She said happily that her sister is getting married next month."
+      }
+    }
+  ]
+}

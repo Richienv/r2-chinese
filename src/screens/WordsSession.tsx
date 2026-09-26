@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { DialogueAudio, Line, useGloss } from '../components/ChineseText'
+import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
 import { ChineseHear, hasHanzi, HearButton, useAutoSpeak, useAutoSpeakLines, useSpeechActive } from '../components/Hear'
 import { CheckIcon, CloseIcon, HeartIcon, LockIcon } from '../components/Icons'
 import { getLesson, type Example } from '../lib/content'
@@ -318,6 +318,7 @@ function MatchView({
   const wrong = state?.wrong ?? []
   const solved = state?.solved ?? false
   const missed = state?.missed ?? false
+  const { onWord, sheet } = useGloss()
   const contextZh = question.context?.zh?.trim() ?? ''
   const chineseChoices = question.options
     .map((o) => o.label)
@@ -334,7 +335,7 @@ function MatchView({
       {question.context && (
         <div className="card session-prompt">
           <p className="zh" lang="zh-CN" style={{ fontSize: 22, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
-            {question.context.zh}
+            <Glossed text={question.context.zh} onWord={onWord} />
           </p>
           {question.context.pinyin && (
             <p className="sub" style={{ margin: '6px 0 0', color: 'var(--red-mid)' }}>
@@ -412,6 +413,7 @@ function MatchView({
           </strong>
         </div>
       )}
+      {sheet}
     </>
   )
 }
@@ -431,6 +433,7 @@ function NoteView({
   n: number
   of: number
 }) {
+  const { onWord, sheet } = useGloss()
   const head =
     kicker && kicker !== 'Grammar'
       ? kicker
@@ -455,7 +458,7 @@ function NoteView({
       {example && (
         <div className="card session-prompt">
           <p className="zh" lang="zh-CN" style={{ fontSize: 20, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
-            {example.zh}
+            <Glossed text={example.zh} onWord={onWord} />
           </p>
           {example.pinyin && (
             <p className="sub" style={{ margin: '6px 0 0', color: 'var(--red-mid)' }}>
@@ -473,6 +476,7 @@ function NoteView({
           <ChineseHear text={spoken} label="Hear it" />
         </div>
       )}
+      {sheet}
     </>
   )
 }

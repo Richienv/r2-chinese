@@ -1,0 +1,756 @@
+{
+  "id": "jiaocheng-2-2-12",
+  "book": "2-2",
+  "index": 12,
+  "bookLesson": 24,
+  "titleZh": "有困难找警察",
+  "titleEn": "Go to the police when you are in trouble",
+  "sourcePages": "184-199",
+  "words": [
+    {
+      "zh": "到处",
+      "pinyin": "dàochù",
+      "pos": "adv.",
+      "en": "at all places; everywhere",
+      "note": "Book headword pinyin printed as dàochù. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 到处 like the word you’ll use when you need “at all places”.",
+      "usage": "Most Chinese speakers use 到处 for “at all places”.",
+      "example": {
+        "zh": "街上到处都写着“有困难找警察”",
+        "pinyin": "jiē shàng dào chù dōu xiě zhe“yǒu kùn nán zhǎo jǐng chá”",
+        "en": "Everywhere on the street it says “Go to the police when you are in trouble”"
+      }
+    },
+    {
+      "zh": "困难",
+      "pinyin": "kùnnan",
+      "pos": "n.",
+      "en": "difficulty; trouble",
+      "note": "Book headword pinyin printed as kùnnan. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 困难 like the word you’ll use when you need “difficulty”.",
+      "usage": "Most Chinese speakers use 困难 for “difficulty”.",
+      "example": {
+        "zh": "有困难找警察",
+        "pinyin": "yǒu kùn nán zhǎo jǐng chá",
+        "en": "Go to the police when you are in trouble"
+      }
+    },
+    {
+      "zh": "警察",
+      "pinyin": "jǐngchá",
+      "pos": "n.",
+      "en": "police",
+      "note": "Book headword pinyin printed as jǐngchá. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 警察 like the word you’ll use when you need “police”.",
+      "usage": "Most Chinese speakers use 警察 for “police”.",
+      "example": {
+        "zh": "有困难找警察",
+        "pinyin": "yǒu kùn nán zhǎo jǐng chá",
+        "en": "Go to the police when you are in trouble"
+      }
+    },
+    {
+      "zh": "十字路口儿",
+      "pinyin": "shízì lùkǒur",
+      "pos": "",
+      "en": "intersection; crossroads",
+      "note": "Book headword pinyin printed as shízì lùkǒur. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 十字路口儿 like the word you’ll use when you need “intersection”.",
+      "usage": "Most Chinese speakers use 十字路口儿 for “intersection”.",
+      "example": {
+        "zh": "在一个十字路口儿，我看见一对老夫妻",
+        "pinyin": "zài yí gè shí zì lù kǒu ér，wǒ kàn jiàn yī duì lǎo fū qī",
+        "en": "At a crossroads I saw an elderly couple"
+      }
+    },
+    {
+      "zh": "对",
+      "pinyin": "duì",
+      "pos": "m.",
+      "en": "couple; pair",
+      "note": "Book headword pinyin printed as duì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 对 like the word you’ll use when you need “couple”.",
+      "usage": "Most Chinese speakers use 对 for “couple”.",
+      "example": {
+        "zh": "一对老夫妻",
+        "pinyin": "yī duì lǎo fū qī",
+        "en": "an elderly couple"
+      }
+    },
+    {
+      "zh": "夫妻",
+      "pinyin": "fūqī",
+      "pos": "n.",
+      "en": "husband and wife",
+      "note": "Book headword pinyin printed as fūqī. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 夫妻 like the word you’ll use when you need “husband and wife”.",
+      "usage": "Most Chinese speakers use 夫妻 for “husband and wife”.",
+      "example": {
+        "zh": "一对老夫妻",
+        "pinyin": "yī duì lǎo fū qī",
+        "en": "an elderly couple"
+      }
+    },
+    {
+      "zh": "看样子",
+      "pinyin": "kàn yàngzi",
+      "pos": "",
+      "en": "it seems that…",
+      "note": "Book headword pinyin printed as kàn yàngzi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 看样子 like the word you’ll use when you need “it seems that…”.",
+      "usage": "Most Chinese speakers use 看样子 for “it seems that…”.",
+      "example": {
+        "zh": "看样子腿脚不太好。",
+        "pinyin": "kàn yàng zi tuǐ jiǎo bù tài hǎo。",
+        "en": "It seemed their legs weren’t great."
+      }
+    },
+    {
+      "zh": "腿脚",
+      "pinyin": "tuǐjiǎo",
+      "pos": "n.",
+      "en": "legs and feet; ability to walk",
+      "note": "Book headword pinyin printed as tuǐjiǎo. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 腿脚 like the word you’ll use when you need “legs and feet”.",
+      "usage": "Most Chinese speakers use 腿脚 for “legs and feet”.",
+      "example": {
+        "zh": "看样子腿脚不太好。",
+        "pinyin": "kàn yàng zi tuǐ jiǎo bù tài hǎo。",
+        "en": "It seemed their walking ability wasn’t great."
+      }
+    },
+    {
+      "zh": "来往",
+      "pinyin": "láiwǎng",
+      "pos": "v.",
+      "en": "to come and go",
+      "note": "Book headword pinyin printed as láiwǎng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 来往 like the word you’ll use when you need “to come and go”.",
+      "usage": "Most Chinese speakers use 来往 for “to come and go”.",
+      "example": {
+        "zh": "看到来往的车那么多",
+        "pinyin": "kàn dào lái wǎng de chē nà me duō",
+        "en": "seeing so many coming and going cars"
+      }
+    },
+    {
+      "zh": "敢",
+      "pinyin": "gǎn",
+      "pos": "aux.",
+      "en": "dare",
+      "note": "Book headword pinyin printed as gǎn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 敢 like the word you’ll use when you need “dare”.",
+      "usage": "Most Chinese speakers use 敢 for “dare”.",
+      "example": {
+        "zh": "也没敢过来。",
+        "pinyin": "yě méi gǎn guò lái。",
+        "en": "they didn’t dare cross."
+      }
+    },
+    {
+      "zh": "立即",
+      "pinyin": "lìjí",
+      "pos": "adv.",
+      "en": "immediately; at once",
+      "note": "Book headword pinyin printed as lìjí. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 立即 like the word you’ll use when you need “immediately”.",
+      "usage": "Most Chinese speakers use 立即 for “immediately”.",
+      "example": {
+        "zh": "就立即跑了过去",
+        "pinyin": "jiù lì jí pǎo le guò qù",
+        "en": "immediately ran over"
+      }
+    },
+    {
+      "zh": "扶",
+      "pinyin": "fú",
+      "pos": "v.",
+      "en": "to assist; to support with the hand",
+      "note": "Book headword pinyin printed as fú. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 扶 like the word you’ll use when you need “to assist”.",
+      "usage": "Most Chinese speakers use 扶 for “to assist”.",
+      "example": {
+        "zh": "扶着这两位老人",
+        "pinyin": "fú zhe zhè liǎng wèi lǎo rén",
+        "en": "supporting the two elderly people"
+      }
+    },
+    {
+      "zh": "老人",
+      "pinyin": "lǎorén",
+      "pos": "n.",
+      "en": "old person",
+      "note": "Book headword pinyin printed as lǎorén. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 老人 like the word you’ll use when you need “old person”.",
+      "usage": "Most Chinese speakers use 老人 for “old person”.",
+      "example": {
+        "zh": "扶着这两位老人",
+        "pinyin": "fú zhe zhè liǎng wèi lǎo rén",
+        "en": "supporting the two elderly people"
+      }
+    },
+    {
+      "zh": "情景",
+      "pinyin": "qíngjǐng",
+      "pos": "n.",
+      "en": "scene; sight",
+      "note": "Book headword pinyin printed as qíngjǐng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 情景 like the word you’ll use when you need “scene”.",
+      "usage": "Most Chinese speakers use 情景 for “scene”.",
+      "example": {
+        "zh": "看到这种情景，我非常感动。",
+        "pinyin": "kàn dào zhè zhǒng qíng jǐng，wǒ fēi cháng gǎn dòng。",
+        "en": "Seeing this scene, I was very moved."
+      }
+    },
+    {
+      "zh": "感动",
+      "pinyin": "gǎndòng",
+      "pos": "adj./v.",
+      "en": "moved; touched; to affect; to move",
+      "note": "Book headword pinyin printed as gǎndòng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 感动 like the word you’ll use when you need “moved”.",
+      "usage": "Most Chinese speakers use 感动 for “moved”.",
+      "example": {
+        "zh": "我非常感动。",
+        "pinyin": "wǒ fēi cháng gǎn dòng。",
+        "en": "I was very moved."
+      }
+    },
+    {
+      "zh": "可",
+      "pinyin": "kě",
+      "pos": "adv.",
+      "en": "to need (to do); to be worth (doing)",
+      "note": "Book headword pinyin printed as kě. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 可 like the word you’ll use when you need “to need (to do)”.",
+      "usage": "Most Chinese speakers use 可 for “to need (to do)”.",
+      "example": {
+        "zh": "有什么可感动的？",
+        "pinyin": "yǒu shén me kě gǎn dòng de？",
+        "en": "What’s worth being moved about?"
+      }
+    },
+    {
+      "zh": "发生",
+      "pinyin": "fāshēng",
+      "pos": "v.",
+      "en": "to happen; to take place",
+      "note": "Book headword pinyin printed as fāshēng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 发生 like the word you’ll use when you need “to happen”.",
+      "usage": "Most Chinese speakers use 发生 for “to happen”.",
+      "example": {
+        "zh": "还发生过警察打人的事儿。",
+        "pinyin": "hái fā shēng guò jǐng chá dǎ rén de shì ér。",
+        "en": "there have also been cases of police hitting people."
+      }
+    },
+    {
+      "zh": "句",
+      "pinyin": "jù",
+      "pos": "m.",
+      "en": "a measure word for sentences",
+      "note": "Book headword pinyin printed as jù. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 句 like the word you’ll use when you need “a measure word for sentences”.",
+      "usage": "Most Chinese speakers use 句 for “a measure word for sentences”.",
+      "example": {
+        "zh": "想到“有困难找警察”这句话",
+        "pinyin": "xiǎng dào“yǒu kùn nán zhǎo jǐng chá”zhè jù huà",
+        "en": "thought of the sentence “Go to the police when in trouble”"
+      }
+    },
+    {
+      "zh": "滚",
+      "pinyin": "gǔn",
+      "pos": "v.",
+      "en": "to roll",
+      "note": "Book headword pinyin printed as gǔn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 滚 like the word you’ll use when you need “to roll”.",
+      "usage": "Most Chinese speakers use 滚 for “to roll”.",
+      "example": {
+        "zh": "把球滚到大街上去了",
+        "pinyin": "bǎ qiú gǔn dào dà jiē shàng qù le",
+        "en": "rolled the ball onto the street"
+      }
+    },
+    {
+      "zh": "抱",
+      "pinyin": "bào",
+      "pos": "v.",
+      "en": "to hold; to carry in one’s arms",
+      "note": "Book headword pinyin printed as bào. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 抱 like the word you’ll use when you need “to hold”.",
+      "usage": "Most Chinese speakers use 抱 for “to hold”.",
+      "example": {
+        "zh": "把小男孩儿抱到马路边",
+        "pinyin": "bǎ xiǎo nán hái er bào dào mǎ lù biān",
+        "en": "carried the little boy to the roadside"
+      }
+    },
+    {
+      "zh": "叔叔",
+      "pinyin": "shūshu",
+      "pos": "n.",
+      "en": "uncle; form of address for a man about one’s father’s age",
+      "note": "Book headword pinyin printed as shūshu. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 叔叔 like the word you’ll use when you need “uncle”.",
+      "usage": "Most Chinese speakers use 叔叔 for “uncle”.",
+      "example": {
+        "zh": "叔叔，鞋带儿开了。",
+        "pinyin": "shū shū，xié dài ér kāi le。",
+        "en": "Uncle, my shoelace is undone."
+      }
+    },
+    {
+      "zh": "鞋带(儿)",
+      "pinyin": "xiédàir",
+      "pos": "n.",
+      "en": "shoelace",
+      "note": "Book headword pinyin printed as xiédàir. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 鞋带(儿) like the word you’ll use when you need “shoelace”.",
+      "usage": "Most Chinese speakers use 鞋带(儿) for “shoelace”.",
+      "example": {
+        "zh": "给孩子把鞋带儿系好",
+        "pinyin": "gěi hái zi bǎ xié dài ér jì hǎo",
+        "en": "tied the child’s shoelace"
+      }
+    },
+    {
+      "zh": "鞋",
+      "pinyin": "xié",
+      "pos": "n.",
+      "en": "shoe",
+      "note": "Sub-entry under parent headword. Book headword pinyin printed as xié. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 鞋 like the word you’ll use when you need “shoe”.",
+      "usage": "Most Chinese speakers use 鞋 for “shoe”.",
+      "example": {
+        "zh": "鞋带儿",
+        "pinyin": "xié dài ér",
+        "en": "shoelace"
+      }
+    },
+    {
+      "zh": "脚",
+      "pinyin": "jiǎo",
+      "pos": "n.",
+      "en": "foot",
+      "note": "Book headword pinyin printed as jiǎo. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 脚 like the word you’ll use when you need “foot”.",
+      "usage": "Most Chinese speakers use 脚 for “foot”.",
+      "example": {
+        "zh": "腿脚不太好",
+        "pinyin": "tuǐ jiǎo bù tài hǎo",
+        "en": "legs/feet not great"
+      }
+    },
+    {
+      "zh": "伸",
+      "pinyin": "shēn",
+      "pos": "v.",
+      "en": "to reach; to stretch",
+      "note": "Book headword pinyin printed as shēn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 伸 like the word you’ll use when you need “to reach”.",
+      "usage": "Most Chinese speakers use 伸 for “to reach”.",
+      "example": {
+        "zh": "（context in book scene of tying shoes / reaching）叔叔，鞋带儿开了。",
+        "pinyin": "（c o n t e x t i n b o o k s c e n e o f t y i n g s h o e s / r e a c h i n g）shū shū，xié dài ér kāi le。",
+        "en": "Uncle, my shoelace is undone."
+      }
+    },
+    {
+      "zh": "面前",
+      "pinyin": "miànqián",
+      "pos": "n.",
+      "en": "in front of; before",
+      "note": "Book headword pinyin printed as miànqián. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 面前 like the word you’ll use when you need “in front of”.",
+      "usage": "Most Chinese speakers use 面前 for “in front of”.",
+      "example": {
+        "zh": "（grammar/exercises and text scenes）就像照顾自己的孩子一样。",
+        "pinyin": "（g r a m m a r/e x e r c i s e s a n d t e x t s c e n e s）jiù xiàng zhào gù zì jǐ de hái zi yī yàng。",
+        "en": "as if taking care of his own child."
+      }
+    },
+    {
+      "zh": "弯",
+      "pinyin": "wān",
+      "pos": "v./adj.",
+      "en": "to bend; to curl; crooked",
+      "note": "Book headword pinyin printed as wān. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 弯 like the word you’ll use when you need “to bend”.",
+      "usage": "Most Chinese speakers use 弯 for “to bend”.",
+      "example": {
+        "zh": "（tying shoelace scene）给孩子把鞋带儿系好",
+        "pinyin": "（t y i n g s h o e l a c e s c e n e）gěi hái zi bǎ xié dài ér jì hǎo",
+        "en": "tied the child’s shoelace for him"
+      }
+    },
+    {
+      "zh": "腰",
+      "pinyin": "yāo",
+      "pos": "n.",
+      "en": "waist",
+      "note": "Book headword pinyin printed as yāo. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 腰 like the word you’ll use when you need “waist”.",
+      "usage": "Most Chinese speakers use 腰 for “waist”.",
+      "example": {
+        "zh": "（bending to tie shoes）给孩子把鞋带儿系好",
+        "pinyin": "（b e n d i n g t o t i e s h o e s）gěi hái zi bǎ xié dài ér jì hǎo",
+        "en": "tied the child’s shoelace"
+      }
+    },
+    {
+      "zh": "照顾",
+      "pinyin": "zhàogù",
+      "pos": "v.",
+      "en": "to take care of",
+      "note": "Book headword pinyin printed as zhàogù. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 照顾 like the word you’ll use when you need “to take care of”.",
+      "usage": "Most Chinese speakers use 照顾 for “to take care of”.",
+      "example": {
+        "zh": "就像照顾自己的孩子一样。",
+        "pinyin": "jiù xiàng zhào gù zì jǐ de hái zi yī yàng。",
+        "en": "as if taking care of his own child."
+      }
+    },
+    {
+      "zh": "梅",
+      "pinyin": "méi",
+      "pos": "n.",
+      "en": "plum; plum blossom",
+      "note": "Book headword pinyin printed as méi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 梅 like the word you’ll use when you need “plum”.",
+      "usage": "Most Chinese speakers use 梅 for “plum”.",
+      "example": {
+        "zh": "这幅《红梅图》画得真好！",
+        "pinyin": "zhè fú《hóng méi tú》huà dé zhēn hǎo！",
+        "en": "This painting Red Plum is really well done!"
+      }
+    },
+    {
+      "zh": "图",
+      "pinyin": "tú",
+      "pos": "n.",
+      "en": "picture; painting",
+      "note": "Book headword pinyin printed as tú. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 图 like the word you’ll use when you need “picture”.",
+      "usage": "Most Chinese speakers use 图 for “picture”.",
+      "example": {
+        "zh": "这幅《红梅图》",
+        "pinyin": "zhè fú《hóng méi tú》",
+        "en": "this Red Plum painting"
+      }
+    },
+    {
+      "zh": "画家",
+      "pinyin": "huàjiā",
+      "pos": "n.",
+      "en": "painter; artist",
+      "note": "Book headword pinyin printed as huàjiā. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 画家 like the word you’ll use when you need “painter”.",
+      "usage": "Most Chinese speakers use 画家 for “painter”.",
+      "example": {
+        "zh": "这是一位画家朋友送的。",
+        "pinyin": "zhè shì yī wèi huà jiā péng yǒu sòng de。",
+        "en": "It was a gift from a painter friend."
+      }
+    },
+    {
+      "zh": "松",
+      "pinyin": "sōng",
+      "pos": "n.",
+      "en": "pine",
+      "note": "Book headword pinyin printed as sōng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 松 like the word you’ll use when you need “pine”.",
+      "usage": "Most Chinese speakers use 松 for “pine”.",
+      "example": {
+        "zh": "梅、松、竹是中国画家最喜欢画的。",
+        "pinyin": "méi、sōng、zhú shì zhōng guó huà jiā zuì xǐ huān huà de。",
+        "en": "Plum, pine, and bamboo are what Chinese painters love most to paint."
+      }
+    },
+    {
+      "zh": "竹",
+      "pinyin": "zhú",
+      "pos": "n.",
+      "en": "bamboo",
+      "note": "Book headword pinyin printed as zhú. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 竹 like the word you’ll use when you need “bamboo”.",
+      "usage": "Most Chinese speakers use 竹 for “bamboo”.",
+      "example": {
+        "zh": "梅、松、竹是中国画家最喜欢画的。",
+        "pinyin": "méi、sōng、zhú shì zhōng guó huà jiā zuì xǐ huān huà de。",
+        "en": "Plum, pine, and bamboo are what Chinese painters love most to paint."
+      }
+    },
+    {
+      "zh": "叫作",
+      "pinyin": "jiàozuò",
+      "pos": "v.",
+      "en": "to be called; to be known as",
+      "note": "Book headword pinyin printed as jiàozuò. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 叫作 like the word you’ll use when you need “to be called”.",
+      "usage": "Most Chinese speakers use 叫作 for “to be called”.",
+      "example": {
+        "zh": "中国人把松竹梅叫作“岁寒三友”。",
+        "pinyin": "zhōng guó rén bǎ sōng zhú méi jiào zuò“suì hán sān yǒu”。",
+        "en": "Chinese people call pine, bamboo, and plum “the three friends of winter.”"
+      }
+    },
+    {
+      "zh": "岁寒三友",
+      "pinyin": "suìhán sānyǒu",
+      "pos": "",
+      "en": "the three friends in cold weather",
+      "note": "Book headword pinyin printed as suìhán sānyǒu. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 岁寒三友 like the word you’ll use when you need “the three friends in cold weather”.",
+      "usage": "Most Chinese speakers use 岁寒三友 for “the three friends in cold weather”.",
+      "example": {
+        "zh": "把松竹梅叫作“岁寒三友”",
+        "pinyin": "bǎ sōng zhú méi jiào zuò“suì hán sān yǒu”",
+        "en": "call pine, bamboo, and plum “the three friends of winter”"
+      }
+    },
+    {
+      "zh": "字画",
+      "pinyin": "zìhuà",
+      "pos": "n.",
+      "en": "calligraphy and painting",
+      "note": "Book headword pinyin printed as zìhuà. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 字画 like the word you’ll use when you need “calligraphy and painting”.",
+      "usage": "Most Chinese speakers use 字画 for “calligraphy and painting”.",
+      "example": {
+        "zh": "看到喜欢的字画，总要买一些带回去。",
+        "pinyin": "kàn dào xǐ huān de zì huà，zǒng yào mǎi yī xiē dài huí qù。",
+        "en": "whenever I see calligraphy and paintings I like, I always buy some to take back."
+      }
+    },
+    {
+      "zh": "过奖",
+      "pinyin": "guòjiǎng",
+      "pos": "v.",
+      "en": "to flatter",
+      "note": "Book headword pinyin printed as guòjiǎng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 过奖 like the word you’ll use when you need “to flatter”.",
+      "usage": "Most Chinese speakers use 过奖 for “to flatter”.",
+      "example": {
+        "zh": "哪里。您过奖了。",
+        "pinyin": "nǎ lǐ。nín guò jiǎng le。",
+        "en": "Not at all. You’re flattering me."
+      }
+    },
+    {
+      "zh": "兰笛",
+      "pinyin": "Lándí",
+      "pos": "专名",
+      "en": "Randi / Landi",
+      "note": "Book headword pinyin printed as Lándí. Dialogue/example pinyin not printed in the book; standard pinyin added. 专名.",
+      "when": "Remember 兰笛 like the word you’ll use when you need “Randi / Landi”.",
+      "usage": "Most Chinese speakers use 兰笛 for “Randi / Landi”.",
+      "example": {
+        "zh": "昨天我在街上遇到一件事儿。",
+        "pinyin": "zuó tiān wǒ zài jiē shàng yù dào yī jiàn shì ér。",
+        "en": "Yesterday I ran into something on the street."
+      }
+    },
+    {
+      "zh": "谢大力",
+      "pinyin": "Xiè Dàlì",
+      "pos": "专名",
+      "en": "Xie Dali",
+      "note": "Book headword pinyin printed as Xiè Dàlì. Dialogue/example pinyin not printed in the book; standard pinyin added. 专名.",
+      "when": "Remember 谢大力 like the word you’ll use when you need “Xie Dali”.",
+      "usage": "Most Chinese speakers use 谢大力 for “Xie Dali”.",
+      "example": {
+        "zh": "王老师正与外国朋友谢大力先生谈话……",
+        "pinyin": "wáng lǎo shī zhèng yǔ wài guó péng yǒu xiè dà lì xiān shēng tán huà……",
+        "en": "Mr. Wang is talking with his foreign friend Mr. Xie Dali..."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "(一)",
+      "headingZh": "有困难找警察",
+      "headingEn": "Go to the police when you are in trouble",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "几个同学在聊天儿，他们谈到“有困难找警察”这句话……",
+          "pinyin": "jǐ gè tóng xué zài liáo tiān ér，tā men tán dào“yǒu kùn nán zhǎo jǐng chá”zhè jù huà……",
+          "en": "A few students are chatting about the saying “Go to the police when you are in trouble”..."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "街上到处都写着“有困难找警察”，你找过警察吗？",
+          "pinyin": "jiē shàng dào chù dōu xiě zhe“yǒu kùn nán zhǎo jǐng chá”，nǐ zhǎo guò jǐng chá ma？",
+          "en": "Everywhere on the street it says “Go to the police when in trouble” — have you ever gone to the police?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "没有。",
+          "pinyin": "méi yǒu。",
+          "en": "No."
+        },
+        {
+          "speaker": "兰笛",
+          "zh": "昨天我在街上遇到一件事儿。",
+          "pinyin": "zuó tiān wǒ zài jiē shàng yù dào yī jiàn shì ér。",
+          "en": "Yesterday I ran into something on the street."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "什么事儿？",
+          "pinyin": "shén me shì ér？",
+          "en": "What happened?"
+        },
+        {
+          "speaker": "兰笛",
+          "zh": "在一个十字路口儿，我看见一对老夫妻，看样子腿脚不太好。他们要过马路，但是看到来往的车那么多，等了半天，也没敢过来。这时，一个交通警察看见了，就立即跑了过去，扶着这两位老人，一步一步地走过来。看到这种情景，我非常感动。",
+          "pinyin": "zài yí gè shí zì lù kǒu ér，wǒ kàn jiàn yī duì lǎo fū qī，kàn yàng zi tuǐ jiǎo bù tài hǎo。tā men yào guò mǎ lù，dàn shì kàn dào lái wǎng de chē nà me duō，děng le bàn tiān，yě méi gǎn guò lái。zhè shí，yí gè jiāo tōng jǐng chá kàn jiàn le，jiù lì jí pǎo le guò qù，fú zhe zhè liǎng wèi lǎo rén，yí bù yí bù dì zǒu guò lái。kàn dào zhè zhǒng qíng jǐng，wǒ fēi cháng gǎn dòng。",
+          "en": "At a crossroads I saw an elderly couple who seemed to have trouble walking. They wanted to cross, but with so many cars they waited a long time and didn’t dare. Then a traffic officer saw them, ran over at once, supported them, and walked them across step by step. Seeing that, I was very moved."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "这是警察应该做的事儿，有什么可感动的？",
+          "pinyin": "zhè shì jǐng chá yīng gāi zuò de shì ér，yǒu shén me kě gǎn dòng de？",
+          "en": "That’s what police should do — what’s worth being moved about?"
+        },
+        {
+          "speaker": "兰笛",
+          "zh": "可是，有的地方，还发生过警察打人的事儿。",
+          "pinyin": "kě shì，yǒu de dì fāng，hái fā shēng guò jǐng chá dǎ rén de shì ér。",
+          "en": "But in some places there have also been cases of police hitting people."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "我觉得中国的警察还是不错的。我有个同学，去年秋天去重庆旅行，不小心把钱包儿和护照都丢了，身上一分钱也没有了，非常着急。正在不知道怎么办的时候，他想到“有困难找警察”这句话，就去找警察。警察为他安排了住的地方，还借给他钱买了回北京的机票，又开车把他送到机场。",
+          "pinyin": "wǒ jué de zhōng guó de jǐng chá hái shì bù cuò de。wǒ yǒu gè tóng xué，qù nián qiū tiān qù chóng qìng lǚ xíng，bù xiǎo xīn bǎ qián bāo ér hé hù zhào dōu diū le，shēn shàng yī fēn qián yě méi yǒu le，fēi cháng zháo jí。zhèng zài bù zhī dào zěn me bàn de shí hòu，tā xiǎng dào“yǒu kùn nán zhǎo jǐng chá”zhè jù huà，jiù qù zhǎo jǐng chá。jǐng chá wèi tā ān pái le zhù de dì fāng，hái jiè gěi tā qián mǎi le huí běi jīng de jī piào，yòu kāi chē bǎ tā sòng dào jī chǎng。",
+          "en": "I think Chinese police are still pretty good. A classmate of mine traveled to Chongqing last autumn, accidentally lost his wallet and passport, had no money left, and was very anxious. Not knowing what to do, he thought of “Go to the police when in trouble” and went to them. They arranged a place to stay, lent him money for a ticket back to Beijing, and drove him to the airport."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "真的吗？",
+          "pinyin": "zhēn de ma？",
+          "en": "Really?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "当然是真的！我还在网上看到这样一件事儿：一个四五岁的小男孩儿把球滚到大街上去了。他要跑过去拿，被警察看见了。警察就帮孩子把球捡了回来，然后把小男孩儿抱到马路边儿去了。一看，鞋带儿开了，就蹲下来，给孩子把鞋带儿系好，就像照顾自己的孩子一样。这时孩子的妈妈也跑了过来，看到这种情景，感动得不知道说什么好。",
+          "pinyin": "dāng rán shì zhēn de！wǒ hái zài wǎng shàng kàn dào zhè yàng yī jiàn shì ér：yí gè sì wǔ suì de xiǎo nán hái er bǎ qiú gǔn dào dà jiē shàng qù le。tā yào pǎo guò qù ná，bèi jǐng chá kàn jiàn le。jǐng chá jiù bāng hái zi bǎ qiú jiǎn le huí lái，rán hòu bǎ xiǎo nán hái er bào dào mǎ lù biān ér qù le。yī kàn，xié dài ér kāi le，jiù dūn xià lái，gěi hái zi bǎ xié dài ér jì hǎo，jiù xiàng zhào gù zì jǐ de hái zi yī yàng。zhè shí hái zi de mā mā yě pǎo le guò lái，kàn dào zhè zhǒng qíng jǐng，gǎn dòng dé bù zhī dào shuō shén me hǎo。",
+          "en": "Of course! I also saw online: a four- or five-year-old rolled a ball onto the street and was about to run after it when an officer saw him. The officer got the ball back, carried the boy to the roadside, saw his shoelace was undone, crouched down and tied it — just like caring for his own child. Then the mother ran over; seeing that, she was so moved she didn’t know what to say."
+        }
+      ]
+    },
+    {
+      "label": "(二)",
+      "headingZh": "我们把松竹梅叫作“岁寒三友”",
+      "headingEn": "We call pine, bamboo, and plum “the three friends of winter”",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "在王老师家的客厅里，王老师正与外国朋友谢大力先生谈话……",
+          "pinyin": "zài wáng lǎo shī jiā de kè tīng lǐ，wáng lǎo shī zhèng yǔ wài guó péng yǒu xiè dà lì xiān shēng tán huà……",
+          "en": "In Teacher Wang’s living room, he is talking with his foreign friend Mr. Xie Dali..."
+        },
+        {
+          "speaker": "谢大力",
+          "zh": "这幅《红梅图》画得真好！",
+          "pinyin": "zhè fú《hóng méi tú》huà dé zhēn hǎo！",
+          "en": "This painting Red Plum is really well done!"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "这是一位画家朋友送的。",
+          "pinyin": "zhè shì yī wèi huà jiā péng yǒu sòng de。",
+          "en": "It was a gift from a painter friend."
+        },
+        {
+          "speaker": "谢大力",
+          "zh": "虽然是冬天，但是一看到这幅画儿就感到像春天一样。",
+          "pinyin": "suī rán shì dōng tiān，dàn shì yī kàn dào zhè fú huà ér jiù gǎn dào xiàng chūn tiān yī yàng。",
+          "en": "Even though it’s winter, looking at this painting feels like spring."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "梅、松、竹是中国画家最喜欢画的。中国人把松竹梅叫作“岁寒三友”。听说先生很喜欢中国画和中国书法。",
+          "pinyin": "méi、sōng、zhú shì zhōng guó huà jiā zuì xǐ huān huà de。zhōng guó rén bǎ sōng zhú méi jiào zuò“suì hán sān yǒu”。tīng shuō xiān shēng hěn xǐ huān zhōng guó huà hé zhōng guó shū fǎ。",
+          "en": "Plum, pine, and bamboo are what Chinese painters love most. Chinese people call them “the three friends of winter.” I hear you like Chinese painting and calligraphy."
+        },
+        {
+          "speaker": "谢大力",
+          "zh": "是。我每次到中国来，看到喜欢的字画，总要买一些带回去。",
+          "pinyin": "shì。wǒ měi cì dào zhōng guó lái，kàn dào xǐ huān de zì huà，zǒng yào mǎi yī xiē dài huí qù。",
+          "en": "Yes. Every time I come to China, when I see calligraphy and paintings I like, I always buy some to take back."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "我跟您一样，也非常喜欢书法和中国画。",
+          "pinyin": "wǒ gēn nín yī yàng，yě fēi cháng xǐ huān shū fǎ hé zhōng guó huà。",
+          "en": "Same as you — I also love calligraphy and Chinese painting."
+        },
+        {
+          "speaker": "谢大力",
+          "zh": "我看您的字写得很漂亮。",
+          "pinyin": "wǒ kàn nín de zì xiě dé hěn piào liàng。",
+          "en": "I think your calligraphy is very beautiful."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "哪里。您过奖了。",
+          "pinyin": "nǎ lǐ。nín guò jiǎng le。",
+          "en": "Not at all. You’re flattering me."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "看样子腿脚不太好。",
+      "body": "It seemed they had walking difficulties. “看样子”是插入语，表示对客观情况的估计和推测，用法与“看上去”“看起来”“看来”相近。",
+      "example": {
+        "zh": "看样子腿脚不太好。",
+        "pinyin": "kàn yàng zi tuǐ jiǎo bù tài hǎo。",
+        "en": "It seemed their walking ability wasn’t great."
+      }
+    },
+    {
+      "title": "就像照顾自己的孩子一样。",
+      "body": "as if he is taking care of his own kid. “像……一样”表示比喻或说明情况相似。",
+      "example": {
+        "zh": "就像照顾自己的孩子一样。",
+        "pinyin": "jiù xiàng zhào gù zì jǐ de hái zi yī yàng。",
+        "en": "as if taking care of his own child."
+      }
+    },
+    {
+      "title": "无关联词语复句",
+      "body": "Complex sentences without conjunctions — clauses linked by meaning/order.",
+      "example": {
+        "zh": "警察为他安排了住的地方，还借给他钱买了回北京的机票，又开车把他送到机场。",
+        "pinyin": "jǐng chá wèi tā ān pái le zhù de dì fāng，hái jiè gěi tā qián mǎi le huí běi jīng de jī piào，yòu kāi chē bǎ tā sòng dào jī chǎng。",
+        "en": "The police arranged lodging, lent him money for a ticket, and drove him to the airport."
+      }
+    },
+    {
+      "title": "数量词重叠",
+      "body": "Reduplication of measure phrases (e.g. 一步一步).",
+      "example": {
+        "zh": "扶着这两位老人，一步一步地走过来。",
+        "pinyin": "fú zhe zhè liǎng wèi lǎo rén，yí bù yí bù dì zǒu guò lái。",
+        "en": "supporting the two elderly people, walking over step by step."
+      }
+    },
+    {
+      "title": "状态补语（2）",
+      "body": "Complements of state (2).",
+      "example": {
+        "zh": "这幅《红梅图》画得真好！",
+        "pinyin": "zhè fú《hóng méi tú》huà dé zhēn hǎo！",
+        "en": "This painting Red Plum is really well done!"
+      }
+    }
+  ]
+}

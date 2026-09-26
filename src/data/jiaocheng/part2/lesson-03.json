@@ -1,0 +1,883 @@
+{
+  "id": "jiaocheng-2-2-03",
+  "book": "2-2",
+  "index": 3,
+  "bookLesson": 15,
+  "titleZh": "会议厅的门开着呢",
+  "titleEn": "The door of the conference hall is open",
+  "sourcePages": "34-47",
+  "words": [
+    {
+      "zh": "女士",
+      "pinyin": "nǚshì",
+      "pos": "n.",
+      "en": "lady; madam",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 女士 like the word you'll use when you point out a woman you just saw go in — polite, not 女人.",
+      "usage": "Most Chinese speakers use 女士 for a polite lady/madam, especially when describing or addressing someone they don't know well. In this text Mary asks about 一位女士 at the front desk.",
+      "example": {
+        "zh": "请问，刚才进去一位女士，你看见没有？",
+        "pinyin": "Qǐngwèn, gāngcái jìnqù yí wèi nǚshì, nǐ kànjiàn méiyǒu?",
+        "en": "Excuse me — a lady just went in; did you see her?"
+      }
+    },
+    {
+      "zh": "服务员",
+      "pinyin": "fúwùyuán",
+      "pos": "n.",
+      "en": "waiter/waitress; service staff",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 服务员 like the word you'll use when you ask the front-desk clerk, not a friend.",
+      "usage": "Most Chinese speakers call hotel, restaurant, and desk staff 服务员. Here the interlocutor at the conference center is the 服务员.",
+      "example": {
+        "zh": "会议厅的门开着呢，你们进去找吧。",
+        "pinyin": "Huìyìtīng de mén kāizhe ne, nǐmen jìnqù zhǎo ba.",
+        "en": "The conference-hall door is open — go in and look."
+      }
+    },
+    {
+      "zh": "长",
+      "pinyin": "zhǎng",
+      "pos": "v.",
+      "en": "to look; to appear",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Tone is zhǎng (not cháng 'long'). Pattern in book: 长得…….",
+      "when": "Remember 长 like the word you'll use when someone asks 长得什么样 — how does she look.",
+      "usage": "Most Chinese speakers use 长得 + adjective/phrase for appearance (长得很漂亮, 长得什么样). This is the look/grow reading, not 'long.'",
+      "example": {
+        "zh": "什么女士？长得什么样？",
+        "pinyin": "Shénme nǚshì? Zhǎng de shénme yàng?",
+        "en": "Which lady? What does she look like?"
+      }
+    },
+    {
+      "zh": "样（子）",
+      "pinyin": "yàng(zi)",
+      "pos": "n.",
+      "en": "appearance",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Book prints 样（子）.",
+      "when": "Remember 样（子） like the word you'll use when you ask what someone looks like — 什么样.",
+      "usage": "Most Chinese speakers say 长得什么样 / 什么样子 for appearance. The 子 is optional in speech.",
+      "example": {
+        "zh": "什么女士？长得什么样？",
+        "pinyin": "Shénme nǚshì? Zhǎng de shénme yàng?",
+        "en": "Which lady? What does she look like?"
+      }
+    },
+    {
+      "zh": "个子",
+      "pinyin": "gèzi",
+      "pos": "n.",
+      "en": "height; stature",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 个子 like the word you'll use when you sketch someone's height — 个子高高的.",
+      "usage": "Most Chinese speakers describe height with 个子 + 高/矮 (often 高高的). Pair with approximate height: 大概有一米七左右.",
+      "example": {
+        "zh": "她个子高高的，大概有一米七左右，黄头发，大眼睛，戴着一副眼镜儿。",
+        "pinyin": "Tā gèzi gāogāo de, dàgài yǒu yì mǐ qī zuǒyòu, huáng tóufa, dà yǎnjing, dàizhe yí fù yǎnjìngr.",
+        "en": "She's quite tall — about 1.7 meters — blond hair, big eyes, wearing glasses."
+      }
+    },
+    {
+      "zh": "左右",
+      "pinyin": "zuǒyòu",
+      "pos": "n.",
+      "en": "about; or so (after a numeral)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Book gloss: used after a numeral to indicate an approximate number.",
+      "when": "Remember 左右 like the word you'll glue after a number when the figure is approximate — 一米七左右.",
+      "usage": "Most Chinese speakers put 左右 after measures and times (三点左右, 二十分钟左右). It softens exactness; it is not 'left and right' here.",
+      "example": {
+        "zh": "她个子高高的，大概有一米七左右，黄头发，大眼睛，戴着一副眼镜儿。",
+        "pinyin": "Tā gèzi gāogāo de, dàgài yǒu yì mǐ qī zuǒyòu, huáng tóufa, dà yǎnjing, dàizhe yí fù yǎnjìngr.",
+        "en": "She's quite tall — about 1.7 meters — blond hair, big eyes, wearing glasses."
+      }
+    },
+    {
+      "zh": "戴",
+      "pinyin": "dài",
+      "pos": "v.",
+      "en": "to wear (accessories)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 戴 like the word you'll use for glasses, a watch, a flower — not for a coat.",
+      "usage": "Most Chinese speakers 戴 accessories (眼镜儿, 手表, 红花) and 穿 clothes. This lesson pairs 戴着一副眼镜儿 and 戴着红花.",
+      "example": {
+        "zh": "她个子高高的，大概有一米七左右，黄头发，大眼睛，戴着一副眼镜儿。",
+        "pinyin": "Tā gèzi gāogāo de, dàgài yǒu yì mǐ qī zuǒyòu, huáng tóufa, dà yǎnjing, dàizhe yí fù yǎnjìngr.",
+        "en": "She's quite tall — about 1.7 meters — blond hair, big eyes, wearing glasses."
+      }
+    },
+    {
+      "zh": "着",
+      "pinyin": "zhe",
+      "pos": "part.",
+      "en": "indicating the continuation of an action or a state",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 着 like the particle you'll stick after a verb when something is ongoing or still in that state — 开着呢, 穿着.",
+      "usage": "Most Chinese speakers use Verb + 着 for ongoing action or resulting state, often with 正/在/呢 for description. This lesson's grammar focus.",
+      "example": {
+        "zh": "会议厅的门开着呢，你们进去找吧。",
+        "pinyin": "Huìyìtīng de mén kāizhe ne, nǐmen jìnqù zhǎo ba.",
+        "en": "The conference-hall door is open — go in and look."
+      }
+    },
+    {
+      "zh": "副",
+      "pinyin": "fù",
+      "pos": "mw.",
+      "en": "pair",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 副 like the measure you'll use for glasses — 一副眼镜儿.",
+      "usage": "Most Chinese speakers count glasses, gloves, and some matched sets with 副. Pattern: 一副眼镜儿.",
+      "example": {
+        "zh": "戴着一副眼镜儿。",
+        "pinyin": "Dàizhe yí fù yǎnjìngr.",
+        "en": "Wearing a pair of glasses."
+      }
+    },
+    {
+      "zh": "穿",
+      "pinyin": "chuān",
+      "pos": "v.",
+      "en": "to wear (clothes)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 穿 like the word you'll use for suits, skirts, jackets — clothing on the body.",
+      "usage": "Most Chinese speakers 穿 clothes and 戴 accessories. 穿着 marks the clothes still on: 穿着一件红色的西服.",
+      "example": {
+        "zh": "上身穿着一件红色的西服，下边穿着一条黑色的裙子。",
+        "pinyin": "Shàngshēn chuānzhe yí jiàn hóngsè de xīfú, xiàbian chuānzhe yì tiáo hēisè de qúnzi.",
+        "en": "On top she's wearing a red suit; below, a black skirt."
+      }
+    },
+    {
+      "zh": "西服",
+      "pinyin": "xīfú",
+      "pos": "n.",
+      "en": "Western suit",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 西服 like the word you'll use for a Western-style suit — red or navy in this lesson.",
+      "usage": "Most Chinese speakers mean a Western suit (not 旗袍). Here: 红色的西服, 深蓝色的西服.",
+      "example": {
+        "zh": "上身穿着一件红色的西服，下边穿着一条黑色的裙子。",
+        "pinyin": "Shàngshēn chuānzhe yí jiàn hóngsè de xīfú, xiàbian chuānzhe yì tiáo hēisè de qúnzi.",
+        "en": "On top she's wearing a red suit; below, a black skirt."
+      }
+    },
+    {
+      "zh": "裙子",
+      "pinyin": "qúnzi",
+      "pos": "n.",
+      "en": "skirt",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 裙子 like the word you'll use when the outfit's lower half is a skirt.",
+      "usage": "Most Chinese speakers measure skirts with 条: 一条黑色的裙子.",
+      "example": {
+        "zh": "下边穿着一条黑色的裙子。",
+        "pinyin": "Xiàbian chuānzhe yì tiáo hēisè de qúnzi.",
+        "en": "Below, she's wearing a black skirt."
+      }
+    },
+    {
+      "zh": "干",
+      "pinyin": "gàn",
+      "pos": "v.",
+      "en": "to do",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 干 like the casual 'do' in 干什么的 — what's her job.",
+      "usage": "Most Chinese speakers ask 是干什么的 for occupation in everyday talk. Blunter than 做什么工作.",
+      "example": {
+        "zh": "是干什么的？",
+        "pinyin": "Shì gàn shénme de?",
+        "en": "What does she do?"
+      }
+    },
+    {
+      "zh": "主持人",
+      "pinyin": "zhǔchírén",
+      "pos": "n.",
+      "en": "presenter; anchorperson",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 主持人 like the word you'll use for the TV host holding the mic.",
+      "usage": "Most Chinese speakers call the on-air host 主持人. Related verb under this entry: 主持.",
+      "example": {
+        "zh": "是电视台的主持人。",
+        "pinyin": "Shì diànshìtái de zhǔchírén.",
+        "en": "She's a TV presenter."
+      }
+    },
+    {
+      "zh": "主持",
+      "pinyin": "zhǔchí",
+      "pos": "v.",
+      "en": "to host; to preside over",
+      "note": "Listed under the numbered 生词 entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 主持 like the verb behind 主持人 — to host or preside.",
+      "usage": "Most Chinese speakers 主持 a meeting, show, or wedding. Here it is the verb stem of 主持人.",
+      "example": {
+        "zh": "是电视台的主持人。",
+        "pinyin": "Shì diànshìtái de zhǔchírén.",
+        "en": "She's a TV presenter."
+      }
+    },
+    {
+      "zh": "小伙子",
+      "pinyin": "xiǎohuǒzi",
+      "pos": "n.",
+      "en": "young man; lad",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 小伙子 like the word you'll use for the young guys carrying the camera.",
+      "usage": "Most Chinese speakers call a young man 小伙子 (also 小伙儿). Measure with 个.",
+      "example": {
+        "zh": "后边是不是还跟着两个小伙子，扛着摄像机？",
+        "pinyin": "Hòubian shì bú shì hái gēnzhe liǎng gè xiǎohuǒzi, kángzhe shèxiàngjī?",
+        "en": "Are there two young guys following behind, carrying a video camera?"
+      }
+    },
+    {
+      "zh": "小伙儿",
+      "pinyin": "xiǎohuǒr",
+      "pos": "n.",
+      "en": "young man; lad",
+      "note": "Listed under the numbered 生词 entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 小伙儿 like the more spoken twin of 小伙子 — same young-man sense.",
+      "usage": "Most Chinese speakers use 小伙儿 and 小伙子 interchangeably in speech; this lesson also has 帅小伙儿 for the groom.",
+      "example": {
+        "zh": "新郎是一个帅小伙儿，穿着一身深蓝色的西服，系着红领带。",
+        "pinyin": "Xīnláng shì yí gè shuài xiǎohuǒr, chuānzhe yì shēn shēnlánsè de xīfú, jìzhe hóng lǐngdài.",
+        "en": "The groom is a handsome young man in a dark-blue suit with a red tie."
+      }
+    },
+    {
+      "zh": "扛",
+      "pinyin": "káng",
+      "pos": "v.",
+      "en": "to carry on one's shoulder; to shoulder",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 扛 like the word you'll use when a camera is on someone's shoulder — heavier than 拿.",
+      "usage": "Most Chinese speakers 扛 heavy things on the shoulder (摄像机, 箱子). Not the same as 拿 in the hand.",
+      "example": {
+        "zh": "后边是不是还跟着两个小伙子，扛着摄像机？",
+        "pinyin": "Hòubian shì bú shì hái gēnzhe liǎng gè xiǎohuǒzi, kángzhe shèxiàngjī?",
+        "en": "Are there two young guys following behind, carrying a video camera?"
+      }
+    },
+    {
+      "zh": "摄像机",
+      "pinyin": "shèxiàngjī",
+      "pos": "n.",
+      "en": "video camera",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 摄像机 like the word you'll use for the video camera pointed at the host.",
+      "usage": "Most Chinese speakers mean a video/TV camera (not 照相机). Here: 扛着摄像机, 对着摄像机讲话.",
+      "example": {
+        "zh": "后边是不是还跟着两个小伙子，扛着摄像机？",
+        "pinyin": "Hòubian shì bú shì hái gēnzhe liǎng gè xiǎohuǒzi, kángzhe shèxiàngjī?",
+        "en": "Are there two young guys following behind, carrying a video camera?"
+      }
+    },
+    {
+      "zh": "会议厅",
+      "pinyin": "huìyìtīng",
+      "pos": "n.",
+      "en": "conference hall; assembly hall",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 会议厅 like the word on this lesson's title — the hall whose door is open.",
+      "usage": "Most Chinese speakers mean a conference/assembly hall. Related: 厅 'hall.'",
+      "example": {
+        "zh": "会议厅的门开着呢，你们进去找吧。",
+        "pinyin": "Huìyìtīng de mén kāizhe ne, nǐmen jìnqù zhǎo ba.",
+        "en": "The conference-hall door is open — go in and look."
+      }
+    },
+    {
+      "zh": "厅",
+      "pinyin": "tīng",
+      "pos": "n.",
+      "en": "hall",
+      "note": "Listed under the numbered 生词 entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 厅 like the hall piece inside 会议厅, 餐厅, 客厅.",
+      "usage": "Most Chinese speakers use 厅 as a bound hall noun in compounds. Standalone 厅 is rarer in learner speech.",
+      "example": {
+        "zh": "会议厅的门开着呢，你们进去找吧。",
+        "pinyin": "Huìyìtīng de mén kāizhe ne, nǐmen jìnqù zhǎo ba.",
+        "en": "The conference-hall door is open — go in and look."
+      }
+    },
+    {
+      "zh": "麦克风",
+      "pinyin": "màikèfēng",
+      "pos": "n.",
+      "en": "microphone",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 麦克风 like the word you'll use when someone is holding a mic to speak on camera.",
+      "usage": "Most Chinese speakers say 麦克风 (also 话筒). Pattern here: 手里拿着麦克风.",
+      "example": {
+        "zh": "你们看，是不是手里拿着麦克风，对着摄像机讲话的那位？",
+        "pinyin": "Nǐmen kàn, shì bú shì shǒuli názhe màikèfēng, duìzhe shèxiàngjī jiǎng huà de nà wèi?",
+        "en": "Look — is it the one holding a microphone and speaking to the camera?"
+      }
+    },
+    {
+      "zh": "讲话",
+      "pinyin": "jiǎng huà",
+      "pos": "v.",
+      "en": "to speak; to talk",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Book prints pinyin as two syllables (separable).",
+      "when": "Remember 讲话 like the word you'll use when someone is speaking into a mic on camera.",
+      "usage": "Most Chinese speakers use 讲话 for giving remarks/talking; can separate (讲完话). Here: 对着摄像机讲话.",
+      "example": {
+        "zh": "你们看，是不是手里拿着麦克风，对着摄像机讲话的那位？",
+        "pinyin": "Nǐmen kàn, shì bú shì shǒuli názhe màikèfēng, duìzhe shèxiàngjī jiǎng huà de nà wèi?",
+        "en": "Look — is it the one holding a microphone and speaking to the camera?"
+      }
+    },
+    {
+      "zh": "婚礼",
+      "pinyin": "hūnlǐ",
+      "pos": "n.",
+      "en": "wedding",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 婚礼 like the word you'll use for the Chinese wedding Mike attended.",
+      "usage": "Most Chinese speakers mean the wedding ceremony/event: 参加婚礼. This text is full of wedding scene description.",
+      "example": {
+        "zh": "张东带我去参加了一个中国人的婚礼。",
+        "pinyin": "Zhāng Dōng dài wǒ qù cānjiā le yí gè Zhōngguó rén de hūnlǐ.",
+        "en": "Zhang Dong took me to a Chinese person's wedding."
+      }
+    },
+    {
+      "zh": "热闹",
+      "pinyin": "rènao",
+      "pos": "adj.",
+      "en": "lively; bustling",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 热闹 like the word you'll use when a wedding or street feels buzzing and full of life.",
+      "usage": "Most Chinese speakers praise events as 很热闹; reduplicated 热热闹闹的 paints the scene. Not 'hot and noisy' as complaint here.",
+      "example": {
+        "zh": "怎么样？听说中国人的婚礼很热闹。",
+        "pinyin": "Zěnmeyàng? Tīngshuō Zhōngguó rén de hūnlǐ hěn rènao.",
+        "en": "How was it? I heard Chinese weddings are very lively."
+      }
+    },
+    {
+      "zh": "挂",
+      "pinyin": "guà",
+      "pos": "v.",
+      "en": "to hang",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 挂 like the word you'll use for lanterns hanging in the room — 挂着大红灯笼.",
+      "usage": "Most Chinese speakers 挂 things on walls or from the ceiling. Verb + 着 keeps them hanging: 挂着.",
+      "example": {
+        "zh": "屋子里挂着大红灯笼，墙上贴着一个很大的红双喜字。",
+        "pinyin": "Wūzi li guàzhe dà hóng dēnglong, qiáng shàng tiēzhe yí gè hěn dà de hóng shuāngxǐ zì.",
+        "en": "Big red lanterns were hanging in the room, and a huge red double-happiness character was pasted on the wall."
+      }
+    },
+    {
+      "zh": "灯笼",
+      "pinyin": "dēnglong",
+      "pos": "n.",
+      "en": "lantern",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 灯笼 like the red lanterns hanging at the wedding.",
+      "usage": "Most Chinese speakers picture festival/wedding 大红灯笼. Measure often with 个 or bare plural description.",
+      "example": {
+        "zh": "屋子里挂着大红灯笼，墙上贴着一个很大的红双喜字。",
+        "pinyin": "Wūzi li guàzhe dà hóng dēnglong, qiáng shàng tiēzhe yí gè hěn dà de hóng shuāngxǐ zì.",
+        "en": "Big red lanterns were hanging in the room, and a huge red double-happiness character was pasted on the wall."
+      }
+    },
+    {
+      "zh": "墙",
+      "pinyin": "qiáng",
+      "pos": "n.",
+      "en": "wall",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 墙 like the wall that gets the 红双喜字 — 墙上贴着.",
+      "usage": "Most Chinese speakers locate wall decorations with 墙上. Grammar examples also use 往墙上贴着.",
+      "example": {
+        "zh": "墙上贴着一个很大的红双喜字。",
+        "pinyin": "Qiáng shàng tiēzhe yí gè hěn dà de hóng shuāngxǐ zì.",
+        "en": "A huge red double-happiness character was pasted on the wall."
+      }
+    },
+    {
+      "zh": "双",
+      "pinyin": "shuāng",
+      "pos": "adj.",
+      "en": "two; double",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 双 like the 'double' in 双喜 — the wedding character.",
+      "usage": "Most Chinese speakers meet 双 in 双喜, 一双筷子, etc. Here it builds 红双喜字.",
+      "example": {
+        "zh": "墙上贴着一个很大的红双喜字。",
+        "pinyin": "Qiáng shàng tiēzhe yí gè hěn dà de hóng shuāngxǐ zì.",
+        "en": "A huge red double-happiness character was pasted on the wall."
+      }
+    },
+    {
+      "zh": "喜",
+      "pinyin": "xǐ",
+      "pos": "adj.",
+      "en": "happy; celebratory",
+      "note": "Headword pinyin printed in the book; part of speech not printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 喜 like the celebratory piece in 双喜, 喜酒, and 喜糖.",
+      "usage": "Most Chinese speakers meet 喜 as a combining form in wedding vocabulary (喜酒, 喜糖, 双喜). Not a free 'happy' adjective like 高兴 here.",
+      "example": {
+        "zh": "墙上贴着一个很大的红双喜字。",
+        "pinyin": "Qiáng shàng tiēzhe yí gè hěn dà de hóng shuāngxǐ zì.",
+        "en": "A huge red double-happiness character was pasted on the wall."
+      }
+    },
+    {
+      "zh": "摆",
+      "pinyin": "bǎi",
+      "pos": "v.",
+      "en": "to put; to place",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 摆 like the word you'll use when dishes are laid out on the table — 摆着很多酒和菜.",
+      "usage": "Most Chinese speakers 摆 food, drinks, and displays into place. 摆着 keeps them there for the scene.",
+      "example": {
+        "zh": "桌子上摆着很多酒和菜。",
+        "pinyin": "Zhuōzi shàng bǎizhe hěn duō jiǔ hé cài.",
+        "en": "A lot of wine and dishes were set out on the table."
+      }
+    },
+    {
+      "zh": "新娘",
+      "pinyin": "xīnniáng",
+      "pos": "n.",
+      "en": "bride",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 新娘 like the word you'll use for the bride in red with a flower in her hair.",
+      "usage": "Most Chinese speakers pair 新娘 with 新郎. This text describes her clothes and how she serves candy.",
+      "example": {
+        "zh": "新娘长得很漂亮，穿着一件红棉袄，头上还戴着红花。",
+        "pinyin": "Xīnniáng zhǎng de hěn piàoliang, chuānzhe yí jiàn hóng mián'ǎo, tóu shàng hái dàizhe hóng huā.",
+        "en": "The bride was very pretty, wearing a red cotton-padded jacket with a red flower on her head."
+      }
+    },
+    {
+      "zh": "棉袄",
+      "pinyin": "mián'ǎo",
+      "pos": "n.",
+      "en": "cotton-padded jacket",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 棉袄 like the traditional padded jacket the bride wears in red.",
+      "usage": "Most Chinese speakers mean a cotton-padded jacket. Measure with 件: 一件红棉袄.",
+      "example": {
+        "zh": "新娘长得很漂亮，穿着一件红棉袄，头上还戴着红花。",
+        "pinyin": "Xīnniáng zhǎng de hěn piàoliang, chuānzhe yí jiàn hóng mián'ǎo, tóu shàng hái dàizhe hóng huā.",
+        "en": "The bride was very pretty, wearing a red cotton-padded jacket with a red flower on her head."
+      }
+    },
+    {
+      "zh": "新郎",
+      "pinyin": "xīnláng",
+      "pos": "n.",
+      "en": "bridegroom",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 新郎 like the word you'll use for the groom pouring 喜酒.",
+      "usage": "Most Chinese speakers pair 新郎 with 新娘. Here he is a 帅小伙儿 in a dark-blue suit.",
+      "example": {
+        "zh": "新郎是一个帅小伙儿，穿着一身深蓝色的西服，系着红领带。",
+        "pinyin": "Xīnláng shì yí gè shuài xiǎohuǒr, chuānzhe yì shēn shēnlánsè de xīfú, jìzhe hóng lǐngdài.",
+        "en": "The groom is a handsome young man in a dark-blue suit with a red tie."
+      }
+    },
+    {
+      "zh": "帅",
+      "pinyin": "shuài",
+      "pos": "adj.",
+      "en": "handsome",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 帅 like the word you'll use when the groom looks sharp — 帅小伙儿.",
+      "usage": "Most Chinese speakers call a good-looking man 帅 / 很帅. Here it modifies 小伙儿.",
+      "example": {
+        "zh": "新郎是一个帅小伙儿，穿着一身深蓝色的西服，系着红领带。",
+        "pinyin": "Xīnláng shì yí gè shuài xiǎohuǒr, chuānzhe yì shēn shēnlánsè de xīfú, jìzhe hóng lǐngdài.",
+        "en": "The groom is a handsome young man in a dark-blue suit with a red tie."
+      }
+    },
+    {
+      "zh": "系",
+      "pinyin": "jì",
+      "pos": "v.",
+      "en": "to tie",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Reading is jì (tie), not xì.",
+      "when": "Remember 系 like the word you'll use when a tie is knotted — 系着红领带.",
+      "usage": "Most Chinese speakers 系领带 / 系鞋带. With 着: the tie stays tied on.",
+      "example": {
+        "zh": "穿着一身深蓝色的西服，系着红领带。",
+        "pinyin": "Chuānzhe yì shēn shēnlánsè de xīfú, jìzhe hóng lǐngdài.",
+        "en": "Wearing a dark-blue suit with a red tie tied on."
+      }
+    },
+    {
+      "zh": "领带",
+      "pinyin": "lǐngdài",
+      "pos": "n.",
+      "en": "necktie",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 领带 like the red necktie on the groom's suit.",
+      "usage": "Most Chinese speakers 系领带. Color often fronted: 红领带.",
+      "example": {
+        "zh": "系着红领带。",
+        "pinyin": "Jìzhe hóng lǐngdài.",
+        "en": "Wearing a red necktie."
+      }
+    },
+    {
+      "zh": "热情",
+      "pinyin": "rèqíng",
+      "pos": "adj.",
+      "en": "warm-hearted; enthusiastic",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 热情 like the word you'll use when the bride warmly serves candy to guests.",
+      "usage": "Most Chinese speakers describe people as 很热情 or use 热情地 + verb. Here: 新娘热情地请客人吃糖.",
+      "example": {
+        "zh": "新娘热情地请客人吃糖，新郎忙着给客人倒喜酒。",
+        "pinyin": "Xīnniáng rèqíng de qǐng kèrén chī táng, xīnláng mángzhe gěi kèrén dào xǐjiǔ.",
+        "en": "The bride warmly invited guests to eat candy; the groom was busy pouring wedding wine."
+      }
+    },
+    {
+      "zh": "客人",
+      "pinyin": "kèrén",
+      "pos": "n.",
+      "en": "guest",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 客人 like the word you'll use for wedding guests being served candy and wine.",
+      "usage": "Most Chinese speakers mean guests (not customer 顾客 in this scene). Bride and groom attend to 客人.",
+      "example": {
+        "zh": "新娘热情地请客人吃糖，新郎忙着给客人倒喜酒。",
+        "pinyin": "Xīnniáng rèqíng de qǐng kèrén chī táng, xīnláng mángzhe gěi kèrén dào xǐjiǔ.",
+        "en": "The bride warmly invited guests to eat candy; the groom was busy pouring wedding wine."
+      }
+    },
+    {
+      "zh": "倒",
+      "pinyin": "dào",
+      "pos": "v.",
+      "en": "to pour",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 倒 like the word you'll use when pouring wine for guests — 倒喜酒.",
+      "usage": "Most Chinese speakers 倒酒 / 倒茶 / 倒水. Direction is pour-out.",
+      "example": {
+        "zh": "新郎忙着给客人倒喜酒。",
+        "pinyin": "Xīnláng mángzhe gěi kèrén dào xǐjiǔ.",
+        "en": "The groom was busy pouring wedding wine for the guests."
+      }
+    },
+    {
+      "zh": "停",
+      "pinyin": "tíng",
+      "pos": "v.",
+      "en": "to stop",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 停 like the word inside 不停地 — without stopping.",
+      "usage": "Most Chinese speakers use 不停地 + verb for continuous chatter or motion. Here: 孩子们不停地说着、笑着.",
+      "example": {
+        "zh": "孩子们不停地说着、笑着，热热闹闹的，气氛非常好。",
+        "pinyin": "Háizimen bù tíng de shuōzhe, xiàozhe, rèrènāonāo de, qìfēn fēicháng hǎo.",
+        "en": "The children kept talking and laughing without stop — lively and buzzing; the atmosphere was wonderful."
+      }
+    },
+    {
+      "zh": "气氛",
+      "pinyin": "qìfēn",
+      "pos": "n.",
+      "en": "atmosphere; ambience",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 气氛 like the word you'll use when the whole room's mood feels right — 气氛非常好.",
+      "usage": "Most Chinese speakers judge events with 气氛很好 / 气氛非常好. It is the room's mood, not 空气.",
+      "example": {
+        "zh": "孩子们不停地说着、笑着，热热闹闹的，气氛非常好。",
+        "pinyin": "Háizimen bù tíng de shuōzhe, xiàozhe, rèrènāonāo de, qìfēn fēicháng hǎo.",
+        "en": "The children kept talking and laughing without stop — lively and buzzing; the atmosphere was wonderful."
+      }
+    },
+    {
+      "zh": "讲台",
+      "pinyin": "jiǎngtái",
+      "pos": "n.",
+      "en": "platform; rostrum",
+      "note": "补充生词 (练习). Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 讲台 like the front platform the teacher stands by — 在讲台旁边站着.",
+      "usage": "Most Chinese speakers mean the raised desk/platform at the front of a classroom. From lesson 15 综合填空 补充生词.",
+      "example": {
+        "zh": "今天早上，我一走进教室，就看见王老师在讲台旁边站着。",
+        "pinyin": "Jīntiān zǎoshang, wǒ yì zǒujìn jiàoshì, jiù kànjian Wáng lǎoshī zài jiǎngtái pángbiān zhànzhe.",
+        "en": "This morning, as soon as I walked into the classroom, I saw Teacher Wang standing beside the platform."
+      }
+    },
+    {
+      "zh": "保重",
+      "pinyin": "bǎozhòng",
+      "pos": "v.",
+      "en": "to take care (of one's health)",
+      "note": "补充生词 (练习). Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 保重 like the set phrase for telling someone to look after their health — 保重身体.",
+      "usage": "Most Chinese speakers say 保重 / 保重身体 when parting from someone who has been ill. From lesson 15 综合填空 补充生词.",
+      "example": {
+        "zh": "好了。老师，您要保重身体！",
+        "pinyin": "Hǎo le. Lǎoshī, nín yào bǎozhòng shēntǐ!",
+        "en": "I'm fine. Teacher, you must take care of your health!"
+      }
+    },
+    {
+      "zh": "铃",
+      "pinyin": "líng",
+      "pos": "n.",
+      "en": "bell",
+      "note": "补充生词 (练习). Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 铃 like the school bell that starts class — 上课铃响了.",
+      "usage": "Most Chinese speakers say 上课铃 / 下课铃 for the class period bell. From lesson 15 综合填空 补充生词.",
+      "example": {
+        "zh": "上课铃响了。",
+        "pinyin": "Shàngkè líng xiǎng le.",
+        "en": "The class bell rang."
+      }
+    },
+    {
+      "zh": "椅子",
+      "pinyin": "yǐzi",
+      "pos": "n.",
+      "en": "chair",
+      "note": "补充生词 (练习). Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 椅子 like the seat Yamamoto carries over for the teacher — 搬了一把椅子.",
+      "usage": "Most Chinese speakers use 一把椅子 as the measure. From lesson 15 综合填空 补充生词.",
+      "example": {
+        "zh": "山本搬了一把椅子，走到老师面前，说：“老师，今天请您坐着讲吧。”",
+        "pinyin": "Shānběn bān le yì bǎ yǐzi, zǒudào lǎoshī miànqián, shuō: \"Lǎoshī, jīntiān qǐng nín zuòzhe jiǎng ba.\"",
+        "en": "Yamamoto carried a chair over, walked up to the teacher, and said, \"Teacher, please sit while you teach today.\""
+      }
+    },
+    {
+      "zh": "班长",
+      "pinyin": "bānzhǎng",
+      "pos": "n.",
+      "en": "class monitor",
+      "note": "补充生词 (练习). Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 班长 like the classmate who speaks for the whole class — 班长带着全班同学.",
+      "usage": "Most Chinese speakers use 班长 for the elected class monitor. From lesson 15 综合填空 补充生词.",
+      "example": {
+        "zh": "这时，班长带着全班同学一起大声地说。",
+        "pinyin": "Zhè shí, bānzhǎng dàizhe quán bān tóngxué yìqǐ dàshēng de shuō.",
+        "en": "Just then, the class monitor led the whole class in saying it loudly together."
+      }
+    },
+    {
+      "zh": "激动",
+      "pinyin": "jīdòng",
+      "pos": "adj.",
+      "en": "excited; moved",
+      "note": "补充生词 (练习). Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 激动 like feeling stirred — 有点儿激动地看着我们.",
+      "usage": "Most Chinese speakers use 激动 for strong emotion (moved/excited), often 激动地 + verb. From lesson 15 综合填空 补充生词.",
+      "example": {
+        "zh": "王老师有点儿激动地看着我们说：“谢谢大家！谢谢同学们！”",
+        "pinyin": "Wáng lǎoshī yǒudiǎnr jīdòng de kànzhe wǒmen shuō: \"Xièxie dàjiā! Xièxie tóngxuémen!\"",
+        "en": "Teacher Wang looked at us a little excitedly and said, \"Thank you, everyone! Thank you, classmates!\""
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "会议厅的门开着呢",
+      "headingEn": "The door of the conference hall is open",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "玛丽",
+          "zh": "请问，刚才进去一位女士，你看见没有？",
+          "pinyin": "Qǐngwèn, gāngcái jìnqù yí wèi nǚshì, nǐ kànjiàn méiyǒu?",
+          "en": "Excuse me — a lady just went in; did you see her?"
+        },
+        {
+          "speaker": "服务员",
+          "zh": "什么女士？长得什么样？",
+          "pinyin": "Shénme nǚshì? Zhǎng de shénme yàng?",
+          "en": "Which lady? What does she look like?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "她个子高高的，大概有一米七左右，黄头发，大眼睛，戴着一副眼镜儿。上身穿着一件红色的西服，下边穿着一条黑色的裙子。",
+          "pinyin": "Tā gèzi gāogāo de, dàgài yǒu yì mǐ qī zuǒyòu, huáng tóufa, dà yǎnjing, dàizhe yí fù yǎnjìngr. Shàngshēn chuānzhe yí jiàn hóngsè de xīfú, xiàbian chuānzhe yì tiáo hēisè de qúnzi.",
+          "en": "She's quite tall — about 1.7 meters — blond hair, big eyes, wearing glasses. On top she's wearing a red suit; below, a black skirt."
+        },
+        {
+          "speaker": "服务员",
+          "zh": "是干什么的？",
+          "pinyin": "Shì gàn shénme de?",
+          "en": "What does she do?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "是电视台的主持人。",
+          "pinyin": "Shì diànshìtái de zhǔchírén.",
+          "en": "She's a TV presenter."
+        },
+        {
+          "speaker": "服务员",
+          "zh": "后边是不是还跟着两个小伙子，扛着摄像机？",
+          "pinyin": "Hòubian shì bú shì hái gēnzhe liǎng gè xiǎohuǒzi, kángzhe shèxiàngjī?",
+          "en": "Are there two young guys following behind, carrying a video camera?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "对。",
+          "pinyin": "Duì.",
+          "en": "Yes."
+        },
+        {
+          "speaker": "服务员",
+          "zh": "会议厅的门开着呢，你们进去找吧。",
+          "pinyin": "Huìyìtīng de mén kāizhe ne, nǐmen jìnqù zhǎo ba.",
+          "en": "The conference-hall door is open — go in and look."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "里边正开着会呢吗？",
+          "pinyin": "Lǐbian zhèng kāizhe huì ne ma?",
+          "en": "Is there a meeting going on inside?"
+        },
+        {
+          "speaker": "服务员",
+          "zh": "没有。你们看，是不是手里拿着麦克风，对着摄像机讲话的那位？",
+          "pinyin": "Méiyǒu. Nǐmen kàn, shì bú shì shǒuli názhe màikèfēng, duìzhe shèxiàngjī jiǎng huà de nà wèi?",
+          "en": "No. Look — is it the one holding a microphone and speaking to the camera?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "对，就是她。他们正等着我们呢。",
+          "pinyin": "Duì, jiù shì tā. Tāmen zhèng děngzhe wǒmen ne.",
+          "en": "Yes, that's her. They're waiting for us."
+        },
+        {
+          "speaker": "服务员",
+          "zh": "你们进去吧。",
+          "pinyin": "Nǐmen jìnqù ba.",
+          "en": "Go on in."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "谢谢啦！",
+          "pinyin": "Xièxie la!",
+          "en": "Thanks!"
+        },
+        {
+          "speaker": "服务员",
+          "zh": "不客气。",
+          "pinyin": "Bú kèqi.",
+          "en": "You're welcome."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "墙上贴着红双喜字",
+      "headingEn": "A double-happiness character is pasted on the wall",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "玛丽",
+          "zh": "你昨天去哪儿了？",
+          "pinyin": "Nǐ zuótiān qù nǎr le?",
+          "en": "Where did you go yesterday?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "张东带我去参加了一个中国人的婚礼。",
+          "pinyin": "Zhāng Dōng dài wǒ qù cānjiā le yí gè Zhōngguó rén de hūnlǐ.",
+          "en": "Zhang Dong took me to a Chinese person's wedding."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "怎么样？听说中国人的婚礼很热闹。",
+          "pinyin": "Zěnmeyàng? Tīngshuō Zhōngguó rén de hūnlǐ hěn rènao.",
+          "en": "How was it? I heard Chinese weddings are very lively."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "是！我是第一次参加这样的婚礼。屋子里挂着大红灯笼，墙上贴着一个很大的红双喜字。桌子上摆着很多酒和菜。新娘长得很漂亮，穿着一件红棉袄，头上还戴着红花。新郎是一个帅小伙儿，穿着一身深蓝色的西服，系着红领带。他们笑着对我们说：“欢迎！欢迎！”新娘热情地请客人吃糖，新郎忙着给客人倒喜酒。孩子们不停地说着、笑着，热热闹闹的，气氛非常好。",
+          "pinyin": "Shì! Wǒ shì dì-yī cì cānjiā zhèyàng de hūnlǐ. Wūzi li guàzhe dà hóng dēnglong, qiáng shàng tiēzhe yí gè hěn dà de hóng shuāngxǐ zì. Zhuōzi shàng bǎizhe hěn duō jiǔ hé cài. Xīnniáng zhǎng de hěn piàoliang, chuānzhe yí jiàn hóng mián'ǎo, tóu shàng hái dàizhe hóng huā. Xīnláng shì yí gè shuài xiǎohuǒr, chuānzhe yì shēn shēnlánsè de xīfú, jìzhe hóng lǐngdài. Tāmen xiàozhe duì wǒmen shuō: \"Huānyíng! Huānyíng!\" Xīnniáng rèqíng de qǐng kèrén chī táng, xīnláng mángzhe gěi kèrén dào xǐjiǔ. Háizimen bù tíng de shuōzhe, xiàozhe, rèrènāonāo de, qìfēn fēicháng hǎo.",
+          "en": "Yes! It was my first time at a wedding like that. Big red lanterns hung in the room; a huge red double-happiness character was pasted on the wall; lots of wine and dishes were set on the table. The bride was very pretty in a red cotton-padded jacket with a red flower on her head. The groom was a handsome young man in a dark-blue suit with a red tie. Smiling, they said to us, \"Welcome! Welcome!\" The bride warmly invited guests to eat candy; the groom was busy pouring wedding wine. The children kept talking and laughing — lively and buzzing; the atmosphere was wonderful."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "“喜酒”是什么酒？",
+          "pinyin": "\"Xǐjiǔ\" shì shénme jiǔ?",
+          "en": "What kind of wine is \"xijiǔ\"?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "结婚时喝的酒中国人叫喜酒，吃的糖叫喜糖。所以，中国人要问“什么时候吃你的喜糖啊”，就是问你什么时候结婚。",
+          "pinyin": "Jiéhūn shí hē de jiǔ Zhōngguó rén jiào xǐjiǔ, chī de táng jiào xǐtáng. Suǒyǐ, Zhōngguó rén yào wèn \"shénme shíhou chī nǐ de xǐtáng a\", jiù shì wèn nǐ shénme shíhou jiéhūn.",
+          "en": "The wine people drink at a wedding, Chinese call xijiǔ; the candy is xitáng. So when Chinese ask \"When do we eat your wedding candy?\", they mean \"When are you getting married?\""
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "是吗？",
+          "pinyin": "Shì ma?",
+          "en": "Is that so?"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "动作的进行或状态的持续：动词 + 着",
+      "body": "动词后边加动态助词“着”，主要用于表示动作的进行或状态的持续。交际中主要用于描写。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "同学们走着，说着，笑着，可热闹啦。",
+        "pinyin": "Tóngxuémen zǒuzhe, shuōzhe, xiàozhe, kě rènao la.",
+        "en": "The classmates were walking, talking, and laughing — so lively!"
+      }
+    },
+    {
+      "title": "着：动作进行 vs 动作后的存续状态",
+      "body": "同一动词可描写正在进行（他正往墙上贴着红双喜字 / 她正在里面穿着衣服呢），也可描写动作完成后事物仍处在该状态（墙上贴着红双喜字 / 她穿着一件红西服）。Example-sentence pinyin not printed; standard pinyin added.",
+      "example": {
+        "zh": "墙上贴着红双喜字。",
+        "pinyin": "Qiáng shàng tiēzhe hóng shuāngxǐ zì.",
+        "en": "A red double-happiness character is pasted on the wall."
+      }
+    },
+    {
+      "title": "动词 + 着的否定：没（有）+ 动词 + 着",
+      "body": "否定式是“没（有）+ 动词 + 着”，交际中较少用。Example-sentence pinyin not printed; standard pinyin added.",
+      "example": {
+        "zh": "教室的门没开着。",
+        "pinyin": "Jiàoshì de mén méi kāizhe.",
+        "en": "The classroom door is not open."
+      }
+    },
+    {
+      "title": "动词 + 着的正反疑问：动词 + 着（+ 宾语）+ 没有",
+      "body": "正反疑问式是“动词 + 着（+ 宾语）+ 没有”。Example-sentence pinyin not printed; standard pinyin added.",
+      "example": {
+        "zh": "门开着没有？",
+        "pinyin": "Mén kāizhe méiyǒu?",
+        "en": "Is the door open?"
+      }
+    },
+    {
+      "title": "连动句里的动词 + 着",
+      "body": "“动词 + 着”用于连动句的第二个动词前，用来说明第二个动作进行时的状态或方式。Example-sentence pinyin not printed; standard pinyin added.",
+      "example": {
+        "zh": "她笑着对我说：“欢迎！欢迎！”",
+        "pinyin": "Tā xiàozhe duì wǒ shuō: \"Huānyíng! Huānyíng!\"",
+        "en": "Smiling, she said to me, \"Welcome! Welcome!\""
+      }
+    },
+    {
+      "title": "动词 + 着常和“正在 / 正 / 在 / 呢”连用",
+      "body": "“动词 + 着”常和“正在”“正”“在”“呢”等词连用。Example-sentence pinyin not printed; standard pinyin added.",
+      "example": {
+        "zh": "里边正上着课呢。",
+        "pinyin": "Lǐbian zhèng shàngzhe kè ne.",
+        "en": "Class is going on inside."
+      }
+    }
+  ]
+}

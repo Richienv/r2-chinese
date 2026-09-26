@@ -9,14 +9,14 @@
       "zh": "自我介绍",
       "pinyin": "zìwǒ jièshào",
       "pos": "v.",
-      "en": "perkenalan diri",
-      "note": "Book headword pinyin printed as zìwǒ jièshào. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 做自我介绍. Hindari: Jangan menceritakan CV baris demi baris.",
-      "when": "Remember 自我介绍 like the word you’ll use when dalam wawancara, ringkas latar, fokus kerja, dan bukti hasil.",
-      "usage": "Most Chinese speakers use 自我介绍 in this office/HR speaking sense. Book pairing: 做自我介绍. Jangan menceritakan CV baris demi baris.",
+      "en": "self-introduction",
+      "note": "Book headword pinyin printed as zìwǒ jièshào. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 做自我介绍. Watch-out: Don't retell CV baris demi baris.",
+      "when": "Remember 自我介绍 like the word you’ll use in HR/office talk for perkenalan diri.",
+      "usage": "Most Chinese speakers use 自我介绍 in this workplace sense. Book pairing: 做自我介绍. Watch-out: Don't retell CV baris demi baris.",
       "example": {
         "zh": "请先用两分钟做一个自我介绍。",
         "pinyin": "Qǐng xiānyòng liǎngfēnzhōng zuò yígè zìwǒjièshào.",
-        "en": "Silakan perkenalkan diri selama dua menit terlebih dahulu."
+        "en": "Please introduce yourself for two minutes first."
       }
     },
     {
@@ -24,9 +24,9 @@
       "pinyin": "gōngzuò jīngyàn",
       "pos": "v.",
       "en": "pengalaman kerja",
-      "note": "Book headword pinyin printed as gōngzuò jīngyàn. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 相关工作经验. Hindari: 项目 pribadi tidak otomatis berarti pengalaman kerja formal.",
-      "when": "Remember 工作经验 like the word you’ll use when pakailah untuk pengalaman kerja nyata; bisa ditanyakan durasi dan ruang lingkupnya.",
-      "usage": "Most Chinese speakers use 工作经验 in this office/HR speaking sense. Book pairing: 相关工作经验. 项目 pribadi tidak otomatis berarti pengalaman kerja formal.",
+      "note": "Book headword pinyin printed as gōngzuò jīngyàn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 相关工作经验. Watch-out: 项目 pribadi tidak otomatis means pengalaman kerja formal.",
+      "when": "Remember 工作经验 like the word you’ll use in HR/office talk for pengalaman kerja.",
+      "usage": "Most Chinese speakers use 工作经验 in this workplace sense. Book pairing: 相关工作经验. Watch-out: 项目 pribadi tidak otomatis means pengalaman kerja formal.",
       "example": {
         "zh": "你有相关的工作经验吗？",
         "pinyin": "Nǐ yǒu xiāngguān de gōngzuò jīngyàn ma?",
@@ -37,14 +37,14 @@
       "zh": "项目经历",
       "pinyin": "xiàngmù jīnglì",
       "pos": "v.",
-      "en": "pengalaman proyek",
-      "note": "Book headword pinyin printed as xiàngmù jīnglì. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 介绍项目经历. Hindari: Ikut proyek berbeda dari memimpin proyek.",
-      "when": "Remember 项目经历 like the word you’ll use when bisa mencakup proyek kerja, studi, atau usaha; jelaskan statusnya dengan jujur.",
-      "usage": "Most Chinese speakers use 项目经历 in this office/HR speaking sense. Book pairing: 介绍项目经历. Ikut proyek berbeda dari memimpin proyek.",
+      "en": "project experience",
+      "note": "Book headword pinyin printed as xiàngmù jīnglì. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 介绍项目经历. Watch-out: Joining a project is different from leadingin proyek.",
+      "when": "Remember 项目经历 like the word you’ll use in HR/office talk for pengalaman proyek.",
+      "usage": "Most Chinese speakers use 项目经历 in this workplace sense. Book pairing: 介绍项目经历. Watch-out: Joining a project is different from leadingin proyek.",
       "example": {
         "zh": "请介绍一个你参与过的项目。",
         "pinyin": "Qǐng jièshào yígè nǐ cānyù guò de xiàngmù.",
-        "en": "Ceritakan satu proyek yang pernah kamu ikuti."
+        "en": "Tell us about a project you took part in."
       }
     },
     {
@@ -52,13 +52,13 @@
       "pinyin": "fùzé",
       "pos": "v.",
       "en": "bertanggung jawab",
-      "note": "Book headword pinyin printed as fùzé. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 负责招聘流程. Hindari: Jangan pakai 负责 seluruh proyek jika hanya membantu. atas konkret / lanjutan",
-      "when": "Remember 负责 like the word you’ll use when pakai untuk mendeskripsikan bagian tugas yang benar-benar ditangani.",
-      "usage": "Most Chinese speakers use 负责 in this office/HR speaking sense. Book pairing: 负责招聘流程. Jangan pakai 负责 seluruh proyek jika hanya membantu. atas konkret / lanjutan",
+      "note": "Book headword pinyin printed as fùzé. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 负责招聘流程. Watch-out: Don't use 负责 for the whole project if you only helped. atas konkret / lanjutan",
+      "when": "Remember 负责 like the word you’ll use in HR/office talk for bertanggung jawab.",
+      "usage": "Most Chinese speakers use 负责 in this workplace sense. Book pairing: 负责招聘流程. Watch-out: Don't use 负责 for the whole project if you only helped. atas konkret / lanjutan",
       "example": {
         "zh": "她负责面试安排和候选人沟通。",
         "pinyin": "Tā fùzé miànshì ānpái hé hòuxuǎnrén gōutōng.",
-        "en": "Dia bertanggung jawab atas jadwal wawancara dan komunikasi kandidat."
+        "en": "She is responsible for the interview schedule and candidate communication."
       }
     },
     {
@@ -66,41 +66,41 @@
       "pinyin": "shàncháng",
       "pos": "v.",
       "en": "mahir dalam",
-      "note": "Book headword pinyin printed as shàncháng. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 擅长沟通. Hindari: 擅长 lebih kuat daripada 喜欢 (suka); perlu bukti kemampuan.",
-      "when": "Remember 擅长 like the word you’ll use when cocok untuk kemampuan yang bisa dibuktikan dengan contoh.",
-      "usage": "Most Chinese speakers use 擅长 in this office/HR speaking sense. Book pairing: 擅长沟通. 擅长 lebih kuat daripada 喜欢 (suka); perlu bukti kemampuan.",
+      "note": "Book headword pinyin printed as shàncháng. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 擅长沟通. Watch-out: 擅长 is stronger than 喜欢 (to like); it needs proof of skill.",
+      "when": "Remember 擅长 like the word you’ll use in HR/office talk for mahir dalam.",
+      "usage": "Most Chinese speakers use 擅长 in this workplace sense. Book pairing: 擅长沟通. Watch-out: 擅长 is stronger than 喜欢 (to like); it needs proof of skill.",
       "example": {
         "zh": "你最擅长处理哪类问题？",
         "pinyin": "Nǐ zuì shàncháng chǔlǐ nǎlèi wèntí?",
-        "en": "Kamu paling mahir menangani jenis masalah apa?"
+        "en": "you paling mahir menangani jenis problem apa?"
       }
     },
     {
       "zh": "优势",
       "pinyin": "yōushì",
       "pos": "v.",
-      "en": "kelebihan yang",
-      "note": "Book headword pinyin printed as yōushì. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 个人优势. Hindari: Jangan hanya menyebut sifat tanpa contoh. relevan",
-      "when": "Remember 优势 like the word you’ll use when gunakan untuk menjelaskan nilai tambah terhadap kebutuhan posisi.",
-      "usage": "Most Chinese speakers use 优势 in this office/HR speaking sense. Book pairing: 个人优势. Jangan hanya menyebut sifat tanpa contoh. relevan",
+      "en": "strength",
+      "note": "Book headword pinyin printed as yōushì. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 个人优势. Watch-out: Don't only name sifat tanpa contoh. relevan",
+      "when": "Remember 优势 like the word you’ll use in HR/office talk for kelebihan that.",
+      "usage": "Most Chinese speakers use 优势 in this workplace sense. Book pairing: 个人优势. Watch-out: Don't only name sifat tanpa contoh. relevan",
       "example": {
         "zh": "我的优势是能把复杂问题讲清楚。",
         "pinyin": "Wǒ de yōushì shì néng bǎ fùzá wèntí jiǎngqīngchǔ.",
-        "en": "Kelebihan saya adalah bisa menjelaskan masalah rumit dengan jelas."
+        "en": "My strength is that I can explain a complicated problem clearly."
       }
     },
     {
       "zh": "挑战",
       "pinyin": "tiǎozhàn",
       "pos": "v.",
-      "en": "tantangan",
-      "note": "Book headword pinyin printed as tiǎozhàn. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 面对挑战. Hindari: Tantangan bukan alasan menyalahkan rekan.",
-      "when": "Remember 挑战 like the word you’ll use when berguna untuk membahas masalah yang pernah dihadapi dan cara mengatasinya.",
-      "usage": "Most Chinese speakers use 挑战 in this office/HR speaking sense. Book pairing: 面对挑战. Tantangan bukan alasan menyalahkan rekan.",
+      "en": "challenge",
+      "note": "Book headword pinyin printed as tiǎozhàn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 面对挑战. Watch-out: A challenge is not a reason to blame a colleague.",
+      "when": "Remember 挑战 like the word you’ll use in HR/office talk for tantangan.",
+      "usage": "Most Chinese speakers use 挑战 in this workplace sense. Book pairing: 面对挑战. Watch-out: A challenge is not a reason to blame a colleague.",
       "example": {
         "zh": "这个项目最大的挑战是什么？",
         "pinyin": "Zhège xiàngmù zuìdà de tiǎozhàn shì shénme?",
-        "en": "Apa tantangan terbesar dalam proyek ini?"
+        "en": "What was the biggest challenge in this project?"
       }
     },
     {
@@ -108,9 +108,9 @@
       "pinyin": "qīwàng",
       "pos": "v.",
       "en": "harapan atau",
-      "note": "Book headword pinyin printed as qīwàng. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 薪资期望. Hindari: 期望 bukan kepastian yang sudah disetujui. ekspektasi konkret / lanjutan",
-      "when": "Remember 期望 like the word you’ll use when gunakan saat membahas peran, perkembangan, maupun gaji dengan konteks jelas.",
-      "usage": "Most Chinese speakers use 期望 in this office/HR speaking sense. Book pairing: 薪资期望. 期望 bukan kepastian yang sudah disetujui. ekspektasi konkret / lanjutan",
+      "note": "Book headword pinyin printed as qīwàng. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 薪资期望. Watch-out: 期望 is not a certainty that has already been agreed. ekspektasi konkret / lanjutan",
+      "when": "Remember 期望 like the word you’ll use in HR/office talk for harapan atau.",
+      "usage": "Most Chinese speakers use 期望 in this workplace sense. Book pairing: 薪资期望. Watch-out: 期望 is not a certainty that has already been agreed. ekspektasi konkret / lanjutan",
       "example": {
         "zh": "你的薪资期望是多少？",
         "pinyin": "Nǐ de xīnzī qīwàng shì duōshǎo?",
@@ -122,35 +122,35 @@
       "pinyin": "tíwèn",
       "pos": "v.",
       "en": "to apply",
-      "note": "Book headword pinyin printed as tíwèn. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 欢迎提问. Hindari: Kalimat 你有问题吗 bisa terdengar kaku tanpa konteks. pertanyaan",
-      "when": "Remember 提问 like the word you’ll use when pakai ketika mengundang pertanyaan atau menggali detail pekerjaan.",
-      "usage": "Most Chinese speakers use 提问 in this office/HR speaking sense. Book pairing: 欢迎提问. Kalimat 你有问题吗 bisa terdengar kaku tanpa konteks. pertanyaan",
+      "note": "Book headword pinyin printed as tíwèn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 欢迎提问. Watch-out: Kalimat 你有问题吗 bisa terdengar kaku tanpa konteks. pertanyaan",
+      "when": "Remember 提问 like the word you’ll use in HR/office talk for to apply.",
+      "usage": "Most Chinese speakers use 提问 in this workplace sense. Book pairing: 欢迎提问. Watch-out: Kalimat 你有问题吗 bisa terdengar kaku tanpa konteks. pertanyaan",
       "example": {
         "zh": "关于团队和岗位，你还有什么问题想问吗？",
         "pinyin": "Guānyú tuánduì hé gǎngwèi, nǐ háiyǒu shénme wèntí xiǎng wèn ma?",
-        "en": "Tentang tim dan posisi, apa lagi yang ingin kamu tanyakan?"
+        "en": "Tentang team and role/position, apa lagi that want you tanyakan?"
       }
     },
     {
       "zh": "后续",
       "pinyin": "hòuxù",
       "pos": "v.",
-      "en": "langkah berikutnya",
-      "note": "Book headword pinyin printed as hòuxù. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 后续安排. Hindari: Jangan menjanjikan hasil jika baru menjelaskan proses. Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
-      "when": "Remember 后续 like the word you’ll use when berguna untuk menutup wawancara dengan waktu dan proses yang jelas.",
-      "usage": "Most Chinese speakers use 后续 in this office/HR speaking sense. Book pairing: 后续安排. Jangan menjanjikan hasil jika baru menjelaskan proses. Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
+      "en": "next step",
+      "note": "Book headword pinyin printed as hòuxù. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 后续安排. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 后续 like the word you’ll use in HR/office talk for langkah berikutnya.",
+      "usage": "Most Chinese speakers use 后续 in this workplace sense. Book pairing: 后续安排. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "我们会在周五前通知你后续安排。",
         "pinyin": "Wǒmen huì zài zhōuwǔ qián tōngzhī nǐ hòuxù ānpái.",
-        "en": "Kami akan memberi kabar tentang langkah berikutnya sebelum Jumat."
+        "en": "We will tell you the next steps before Friday."
       }
     }
   ],
   "dialogues": [],
   "notes": [
     {
-      "title": "Module aim — Wawancara: tanya jawab yang konkret",
-      "body": "MODUL 02 / HR (book pages 58-60). Indonesian title: Wawancara: tanya jawab yang konkret."
+      "title": "Module aim — Interviews: concrete questions and answers",
+      "body": "Module 02 / HR (book pages 58-60). The book’s own title: Wawancara: tanya jawab yang konkret."
     },
     {
       "title": "Latihan 90 detik",

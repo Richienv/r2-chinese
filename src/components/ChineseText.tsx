@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react'
-import { exampleFor, segment, type Example } from '../lib/content'
+import { exampleFor, lookup, segmentForGloss, unknownVocab, type Example } from '../lib/content'
 import { speak, speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
 import type { LessonText, TextLine, Vocab } from '../lib/types'
 import { LINE_RATE, VOICE, WORD_RATE, voiceForSpeaker } from '../lib/voices'
@@ -9,12 +9,16 @@ import { BoltIcon, PencilIcon } from './Icons'
 import { SaveStar } from './SaveStar'
 import { Sheet } from './Sheet'
 
+const HANZI_ONLY = /^[\u3400-\u9fff\uf900-\ufaff]+$/
+
 /** Book sentence with 汉字 + pinyin + English always visible. Never invent. */
 export function BookExample({
   example,
   style,
   tone = 'card',
   autoplay = false,
+  onWord,
+  glossable = true,
 }: {
   example: Example
   style?: CSSProperties
@@ -22,18 +26,26 @@ export function BookExample({
   tone?: 'card' | 'quiet'
   /** When true, speak the line on mount. Keep false under GlossSheet / FlipCard word autoplay. */
   autoplay?: boolean
+  onWord?: (v: Vocab) => void
+  /** When false, keep plain text (nested gloss inside an open sheet). */
+  glossable?: boolean
 }) {
+  const gloss = useGloss()
+  const handle = onWord ?? (glossable ? gloss.onWord : undefined)
+  const zhNode = handle ? <Glossed text={example.zh} onWord={handle} /> : example.zh
+
   if (tone === 'quiet') {
     return (
       <div className="teach-example" style={style}>
         <div className="teach-example-zh zh" lang="zh-CN">
-          {example.zh}
+          {zhNode}
         </div>
         <div className="teach-example-py">{example.pinyin}</div>
         <div className="teach-example-en">{example.en}</div>
         <div style={{ marginTop: 10 }}>
           <ChineseHear text={example.zh} autoplay={autoplay} label="Hear the line" rate={LINE_RATE} tone="on-red" />
         </div>
+        {glossable && !onWord && gloss.sheet}
       </div>
     )
   }
@@ -42,47 +54,50 @@ export function BookExample({
     <div className="card pop book-example" style={style}>
       <div className="kicker-ink">From the book</div>
       <div className="book-example-zh zh" lang="zh-CN">
-        {example.zh}
+        {zhNode}
       </div>
       <div className="book-example-py">{example.pinyin}</div>
       <div className="book-example-en">{example.en}</div>
       <div style={{ marginTop: 12 }}>
         <ChineseHear text={example.zh} autoplay={autoplay} label="Hear the line" rate={LINE_RATE} />
       </div>
+      {glossable && !onWord && gloss.sheet}
     </div>
   )
 }
 
-/** A run of Chinese where every known word is tappable for a gloss. */
+/** A run of Chinese where known and unknown 汉字 are tappable for a gloss / add-to-drill. */
 export function Glossed({ text, onWord }: { text: string; onWord: (v: Vocab) => void }) {
-  const tokens = useMemo(() => segment(text), [text])
+  const tokens = useMemo(() => segmentForGloss(text), [text])
   return (
     <>
-      {tokens.map((t, i) =>
-        t.vocab ? (
+      {tokens.map((t, i) => {
+        const vocab = t.vocab ?? (HANZI_ONLY.test(t.text) ? lookup(t.text) : undefined)
+        const tappable = vocab || HANZI_ONLY.test(t.text)
+        if (!tappable) return <span key={i}>{t.text}</span>
+        const target = vocab ?? unknownVocab(t.text)
+        return (
           <span
             key={i}
-            className="word"
+            className={vocab ? 'word' : 'word word-unknown'}
             role="button"
             tabIndex={0}
             onClick={(e) => {
               e.stopPropagation()
-              onWord(t.vocab!)
+              onWord(target)
             }}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault()
                 e.stopPropagation()
-                onWord(t.vocab!)
+                onWord(target)
               }
             }}
           >
             {t.text}
           </span>
-        ) : (
-          <span key={i}>{t.text}</span>
-        ),
-      )}
+        )
+      })}
     </>
   )
 }
@@ -92,13 +107,17 @@ export function GlossSheet({
   onClose,
   onDrill,
   onStrokes,
+  onWord,
 }: {
   word: Vocab
   onClose: () => void
   onDrill?: (zh: string) => void
   onStrokes?: (char: string) => void
+  /** Tap another word inside the book example to switch the sheet. */
+  onWord?: (v: Vocab) => void
 }) {
   const example = exampleFor(word.zh)
+  const known = Boolean(word.en?.trim())
   useEffect(() => {
     const key = `${VOICE.xiaoxiao}|${WORD_RATE}|${word.zh}`
     void speak(word.zh, { voice: VOICE.xiaoxiao, rate: WORD_RATE, key })
@@ -111,7 +130,7 @@ export function GlossSheet({
           <div className="zh teach-gloss-hz" lang="zh-CN">
             {word.zh}
           </div>
-          <div className="teach-gloss-py">{word.pinyin}</div>
+          {word.pinyin ? <div className="teach-gloss-py">{word.pinyin}</div> : null}
           {word.pos ? <div className="teach-gloss-pos">{word.pos}</div> : null}
         </div>
         <SaveStar zh={word.zh} size={22} />
@@ -119,14 +138,22 @@ export function GlossSheet({
       <div style={{ marginTop: 12 }}>
         <HearButton text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
       </div>
-      <p className="teach-gloss-en">{word.en}</p>
+      {known ? (
+        <p className="teach-gloss-en">{word.en}</p>
+      ) : (
+        <p className="teach-gloss-en" style={{ color: 'var(--muted)' }}>
+          Meaning not in the book yet — you can still add it to drill.
+        </p>
+      )}
       {word.note && (
         <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.5, marginTop: 8 }}>
           {word.note}
         </p>
       )}
 
-      {example && <BookExample example={example} style={{ marginTop: 16 }} />}
+      {example && (
+        <BookExample example={example} style={{ marginTop: 16 }} onWord={onWord} glossable={Boolean(onWord)} />
+      )}
 
       <div className="row" style={{ marginTop: 18, gap: 10 }}>
         {onDrill && (
@@ -145,6 +172,9 @@ export function GlossSheet({
           </button>
         )}
       </div>
+      <p style={{ fontSize: 12, color: 'var(--muted-3)', marginTop: 10, lineHeight: 1.45 }}>
+        Star to add to your drill list.
+      </p>
       <button className="btn btn-ghost" style={{ marginTop: 10 }} onClick={onClose}>
         Close
       </button>
@@ -262,6 +292,7 @@ export function useGloss(onStrokes?: (char: string) => void) {
         <GlossSheet
           word={word}
           onClose={() => setWord(null)}
+          onWord={setWord}
           onDrill={(zh) => {
             setWord(null)
             setDrill(zh)

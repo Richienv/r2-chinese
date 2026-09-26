@@ -1,0 +1,677 @@
+{
+  "id": "jiaocheng-2-2-09",
+  "book": "2-2",
+  "index": 9,
+  "bookLesson": 21,
+  "titleZh": "山这么高，你爬得上去吗",
+  "titleEn": "The mountain is so high. Are you sure you can climb it",
+  "sourcePages": "134-149",
+  "words": [
+    {
+      "zh": "缆车",
+      "pinyin": "lǎnchē",
+      "pos": "n.",
+      "en": "cable car",
+      "note": "Book headword pinyin printed as lǎnchē. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 缆车 when choosing cable car vs hiking up a mountain.",
+      "usage": "坐缆车上去.",
+      "example": {
+        "zh": "咱们怎么上山？坐缆车上去还是爬上去？",
+        "pinyin": "zán men zěn me shàng shān？zuò lǎn chē shàng qù hái shì pá shàng qù？",
+        "en": "How are we going up? Cable car or climbing?"
+      }
+    },
+    {
+      "zh": "喘气",
+      "pinyin": "chuǎn qì",
+      "pos": "v.",
+      "en": "to breathe; to pant",
+      "note": "Book headword pinyin printed as chuǎn qì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 喘气 / 喘不上气 when someone is out of breath.",
+      "usage": "喘不上气来.",
+      "example": {
+        "zh": "我看你累得都喘不上气来了",
+        "pinyin": "wǒ kàn nǐ lèi dé dōu chuǎn bù shàng qì lái le",
+        "en": "I see you’re so tired you can’t catch your breath"
+      }
+    },
+    {
+      "zh": "动",
+      "pinyin": "dòng",
+      "pos": "v.",
+      "en": "to move",
+      "note": "Book headword pinyin printed as dòng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 动 in potential complements 得动 / 不动.",
+      "usage": "爬得动 / 爬不动.",
+      "example": {
+        "zh": "还爬得动吗？",
+        "pinyin": "hái pá dé dòng ma？",
+        "en": "Can you still keep climbing?"
+      }
+    },
+    {
+      "zh": "到底",
+      "pinyin": "dào dǐ",
+      "pos": "v.",
+      "en": "to the end; to the finish",
+      "note": "Book headword pinyin printed as dào dǐ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 到底 when finishing something all the way.",
+      "usage": "坚持到底.",
+      "example": {
+        "zh": "要坚持到底",
+        "pinyin": "yào jiān chí dào dǐ",
+        "en": "you must persevere to the end"
+      }
+    },
+    {
+      "zh": "胜利",
+      "pinyin": "shènglì",
+      "pos": "v.",
+      "en": "to succeed; to win a victory",
+      "note": "Book headword pinyin printed as shènglì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 胜利 for winning / success.",
+      "usage": "坚持就是胜利.",
+      "example": {
+        "zh": "坚持就是胜利。",
+        "pinyin": "jiān chí jiù shì shèng lì。",
+        "en": "Perseverance is victory."
+      }
+    },
+    {
+      "zh": "加油(儿)",
+      "pinyin": "jiā yóur",
+      "pos": "v.",
+      "en": "(cheer sb. on) come on; make more efforts",
+      "note": "Book headword pinyin printed as jiā yóur. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 加油儿 when cheering someone on.",
+      "usage": "加油儿！ See 注释.",
+      "example": {
+        "zh": "王老师，加油儿啊！",
+        "pinyin": "wáng lǎo shī，jiā yóu ér a！",
+        "en": "Teacher Wang, come on!"
+      }
+    },
+    {
+      "zh": "出汗",
+      "pinyin": "chū hàn",
+      "pos": "",
+      "en": "to sweat",
+      "note": "Book headword pinyin printed as chū hàn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 出汗 when you sweat from effort.",
+      "usage": "出了一身汗.",
+      "example": {
+        "zh": "刚爬一会儿就出了一身汗",
+        "pinyin": "gāng pá yī huì er jiù chū le yī shēn hàn",
+        "en": "After climbing only a little I was already sweating all over"
+      }
+    },
+    {
+      "zh": "汗",
+      "pinyin": "hàn",
+      "pos": "n.",
+      "en": "sweat",
+      "note": "Sub-entry under parent headword. Book headword pinyin printed as hàn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 汗 as the noun sweat.",
+      "usage": "一身汗.",
+      "example": {
+        "zh": "刚爬一会儿就出了一身汗",
+        "pinyin": "gāng pá yī huì er jiù chū le yī shēn hàn",
+        "en": "After climbing only a little I was already sweating all over"
+      }
+    },
+    {
+      "zh": "接着",
+      "pinyin": "jiēzhe",
+      "pos": "adv.",
+      "en": "following; carrying on",
+      "note": "Book headword pinyin printed as jiēzhe. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 接着 when you continue after a pause.",
+      "usage": "再接着 + verb.",
+      "example": {
+        "zh": "我休息一会儿再接着爬",
+        "pinyin": "wǒ xiū xī yī huì er zài jiē zhe pá",
+        "en": "I’ll rest a bit then keep climbing"
+      }
+    },
+    {
+      "zh": "比",
+      "pinyin": "bǐ",
+      "pos": "v.",
+      "en": "to compare",
+      "note": "Book headword pinyin printed as bǐ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 比 in 比得了 / 比不了.",
+      "usage": "比不了 + noun.",
+      "example": {
+        "zh": "比不了你们年轻人啦。",
+        "pinyin": "bǐ bù liǎo nǐ men nián qīng rén la。",
+        "en": "I can’t compare with you young people."
+      }
+    },
+    {
+      "zh": "危险",
+      "pinyin": "wēixiǎn",
+      "pos": "adj./n.",
+      "en": "dangerous; danger",
+      "note": "Book headword pinyin printed as wēixiǎn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 危险 for danger.",
+      "usage": "太危险了 / 要注意安全.",
+      "example": {
+        "zh": "别从那儿上，太危险了。",
+        "pinyin": "bié cóng nà ér shàng，tài wēi xiǎn le。",
+        "en": "Don’t go up that way — it’s too dangerous."
+      }
+    },
+    {
+      "zh": "积极",
+      "pinyin": "jījí",
+      "pos": "adj.",
+      "en": "active",
+      "note": "Book headword pinyin printed as jījí. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 积极 when someone takes part eagerly.",
+      "usage": "积极地 + verb.",
+      "example": {
+        "zh": "大家都在积极地准备呢。",
+        "pinyin": "dà jiā dōu zài jī jí dì zhǔn bèi ne。",
+        "en": "Everyone is actively preparing."
+      }
+    },
+    {
+      "zh": "相声",
+      "pinyin": "xiàngsheng",
+      "pos": "n.",
+      "en": "crosstalk; comic dialogue",
+      "note": "Book headword pinyin printed as xiàngsheng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 相声 for the comic dialogue form.",
+      "usage": "说相声.",
+      "example": {
+        "zh": "我和麦克说个相声。",
+        "pinyin": "wǒ hé mài kè shuō gè xiàng shēng。",
+        "en": "Mike and I are doing a crosstalk."
+      }
+    },
+    {
+      "zh": "台词",
+      "pinyin": "táicí",
+      "pos": "n.",
+      "en": "actor’s lines",
+      "note": "Book headword pinyin printed as táicí. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 台词 for scripted lines.",
+      "usage": "背台词 / 记不住台词.",
+      "example": {
+        "zh": "我总记不住台词，正背台词呢。",
+        "pinyin": "wǒ zǒng jì bú zhù tái cí，zhèng bèi tái cí ne。",
+        "en": "I can never remember the lines; I’m memorizing them now."
+      }
+    },
+    {
+      "zh": "背",
+      "pinyin": "bèi",
+      "pos": "v.",
+      "en": "to recite from memory; to learn by heart",
+      "note": "Book headword pinyin printed as bèi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 背 when memorizing text by heart.",
+      "usage": "背台词 / 背会.",
+      "example": {
+        "zh": "正背台词呢。",
+        "pinyin": "zhèng bèi tái cí ne。",
+        "en": "I’m memorizing the lines now."
+      }
+    },
+    {
+      "zh": "话剧",
+      "pinyin": "huàjù",
+      "pos": "n.",
+      "en": "drama; stage play",
+      "note": "Book headword pinyin printed as huàjù. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 话剧 for spoken stage drama.",
+      "usage": "小话剧 / 排练话剧.",
+      "example": {
+        "zh": "你们的小话剧呢？",
+        "pinyin": "nǐ men de xiǎo huà jù ne？",
+        "en": "What about your little play?"
+      }
+    },
+    {
+      "zh": "排练",
+      "pinyin": "páiliàn",
+      "pos": "v.",
+      "en": "to rehearse",
+      "note": "Book headword pinyin printed as páiliàn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 排练 when practicing a performance.",
+      "usage": "正在排练.",
+      "example": {
+        "zh": "我们也正在排练呢。",
+        "pinyin": "wǒ men yě zhèng zài pái liàn ne。",
+        "en": "We’re rehearsing too."
+      }
+    },
+    {
+      "zh": "纠正",
+      "pinyin": "jiūzhèng",
+      "pos": "v.",
+      "en": "to correct",
+      "note": "Book headword pinyin printed as jiūzhèng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 纠正 when fixing pronunciation or mistakes.",
+      "usage": "给我纠正.",
+      "example": {
+        "zh": "我请田芳一句一句地给我纠正。",
+        "pinyin": "wǒ qǐng tián fāng yī jù yī jù dì gěi wǒ jiū zhèng。",
+        "en": "I asked Tian Fang to correct me line by line."
+      }
+    },
+    {
+      "zh": "受伤",
+      "pinyin": "shòu shāng",
+      "pos": "v.",
+      "en": "to be injured; to be wounded",
+      "note": "Book headword pinyin printed as shòu shāng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 受伤 for getting injured.",
+      "usage": "腿受伤了.",
+      "example": {
+        "zh": "玛丽腿受伤了，参加不了了。",
+        "pinyin": "mǎ lì tuǐ shòu shāng le，cān jiā bù liǎo le。",
+        "en": "Mary hurt her leg and can’t take part."
+      }
+    },
+    {
+      "zh": "演",
+      "pinyin": "yǎn",
+      "pos": "v.",
+      "en": "to play; to act; to perform",
+      "note": "Book headword pinyin printed as yǎn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 演 for performing a role.",
+      "usage": "演得好 / 演不好.",
+      "example": {
+        "zh": "我担心自己演不好。",
+        "pinyin": "wǒ dān xīn zì jǐ yǎn bù hǎo。",
+        "en": "I’m worried I won’t act well."
+      }
+    },
+    {
+      "zh": "自信",
+      "pinyin": "zìxìn",
+      "pos": "n./adj.",
+      "en": "self-confidence; confident",
+      "note": "Book headword pinyin printed as zìxìn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 自信 for confidence.",
+      "usage": "要有自信.",
+      "example": {
+        "zh": "要有自信，相信自己能演好。",
+        "pinyin": "yào yǒu zì xìn，xiāng xìn zì jǐ néng yǎn hǎo。",
+        "en": "You need confidence — believe you can act well."
+      }
+    },
+    {
+      "zh": "相信",
+      "pinyin": "xiāngxìn",
+      "pos": "v.",
+      "en": "to believe",
+      "note": "Book headword pinyin printed as xiāngxìn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 相信 when you trust someone/something.",
+      "usage": "相信自己.",
+      "example": {
+        "zh": "相信自己能演好。",
+        "pinyin": "xiāng xìn zì jǐ néng yǎn hǎo。",
+        "en": "Believe you can act well."
+      }
+    },
+    {
+      "zh": "只要……就……",
+      "pinyin": "zhǐyào…jiù…",
+      "pos": "",
+      "en": "as long as… will…",
+      "note": "Book headword pinyin printed as zhǐyào…jiù…. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 只要……就…… for a sufficient condition.",
+      "usage": "只要 + condition，就 + result. See 语法.",
+      "example": {
+        "zh": "只要我们好好儿练，就一定能演好。",
+        "pinyin": "zhǐ yào wǒ men hǎo hǎo ér liàn，jiù yí dìng néng yǎn hǎo。",
+        "en": "As long as we practice hard, we’ll definitely perform well."
+      }
+    },
+    {
+      "zh": "世上",
+      "pinyin": "shìshàng",
+      "pos": "n.",
+      "en": "in the world; on earth",
+      "note": "Book headword pinyin printed as shìshàng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 世上 in the proverb 世上无难事…",
+      "usage": "世上无难事.",
+      "example": {
+        "zh": "世上无难事，只怕有心人",
+        "pinyin": "shì shàng wú nán shì，zhǐ pà yǒu xīn rén",
+        "en": "Nothing in the world is difficult for one who sets their mind to it"
+      }
+    },
+    {
+      "zh": "无",
+      "pinyin": "wú",
+      "pos": "v.",
+      "en": "to not have; there is not",
+      "note": "Book headword pinyin printed as wú. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 无 as literary ‘not have’.",
+      "usage": "无难事.",
+      "example": {
+        "zh": "世上无难事，只怕有心人",
+        "pinyin": "shì shàng wú nán shì，zhǐ pà yǒu xīn rén",
+        "en": "Nothing in the world is difficult for one who sets their mind to it"
+      }
+    },
+    {
+      "zh": "怕",
+      "pinyin": "pà",
+      "pos": "v.",
+      "en": "to fear; to be afraid of",
+      "note": "Book headword pinyin printed as pà. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 怕 in 只怕…",
+      "usage": "只怕有心人.",
+      "example": {
+        "zh": "世上无难事，只怕有心人",
+        "pinyin": "shì shàng wú nán shì，zhǐ pà yǒu xīn rén",
+        "en": "Nothing in the world is difficult for one who sets their mind to it"
+      }
+    },
+    {
+      "zh": "心",
+      "pinyin": "xīn",
+      "pos": "n.",
+      "en": "heart",
+      "note": "Book headword pinyin printed as xīn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 心 in 有心人.",
+      "usage": "有心人.",
+      "example": {
+        "zh": "只怕有心人",
+        "pinyin": "zhǐ pà yǒu xīn rén",
+        "en": "only fears those with determination"
+      }
+    },
+    {
+      "zh": "争取",
+      "pinyin": "zhēngqǔ",
+      "pos": "v.",
+      "en": "to strive for; to try to realize",
+      "note": "Book headword pinyin printed as zhēngqǔ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 争取 when striving for a goal.",
+      "usage": "争取 + noun/result.",
+      "example": {
+        "zh": "我一定努力，争取演出成功。",
+        "pinyin": "wǒ yí dìng nǔ lì，zhēng qǔ yǎn chū chéng gōng。",
+        "en": "I’ll work hard and strive for a successful performance."
+      }
+    },
+    {
+      "zh": "恐怕",
+      "pinyin": "kǒngpà",
+      "pos": "adv.",
+      "en": "afraid that…; probably; maybe",
+      "note": "Book headword pinyin printed as kǒngpà. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 恐怕 for a soft worry / likelihood.",
+      "usage": "恐怕 + clause.",
+      "example": {
+        "zh": "很长时间没唱了，恐怕唱不好。",
+        "pinyin": "hěn zhǎng shí jiān méi chàng le，kǒng pà chàng bù hǎo。",
+        "en": "I haven’t sung for a long time; I’m afraid I won’t sing well."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "(一)",
+      "headingZh": "山这么高，你爬得上去吗",
+      "headingEn": "The mountain is so high. Are you sure you can climb it",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "王老师和林老师跟同学们一起去爬山……",
+          "pinyin": "wáng lǎo shī hé lín lǎo shī gēn tóng xué men yì qǐ qù pá shān……",
+          "en": "Mr. Wang and Ms. Lin are going mountain climbing with the students..."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "王老师，咱们怎么上山？坐缆车上去还是爬上去？",
+          "pinyin": "wáng lǎo shī，zán men zěn me shàng shān？zuò lǎn chē shàng qù hái shì pá shàng qù？",
+          "en": "Teacher Wang, how are we going up? Cable car or climbing?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "别坐缆车了。跟同学们一起爬上去吧。",
+          "pinyin": "bié zuò lǎn chē le。gēn tóng xué men yì qǐ pá shàng qù ba。",
+          "en": "Let’s not take the cable car. Let’s climb with the students."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "山这么高，你爬得上去吗？",
+          "pinyin": "shān zhè me gāo，nǐ pá dé shàng qù ma？",
+          "en": "The mountain is so high — can you make it up?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "没问题。爬得上去。",
+          "pinyin": "méi wèn tí。pá dé shàng qù。",
+          "en": "No problem. I can climb it."
+        },
+        {
+          "speaker": "",
+          "zh": "老师和同学们一起爬山……",
+          "pinyin": "lǎo shī hé tóng xué men yì qǐ pá shān……",
+          "en": "The teachers and students are climbing together..."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "美英，我看你累得都喘不上气来了，还爬得动吗？",
+          "pinyin": "měi yīng，wǒ kàn nǐ lèi dé dōu chuǎn bù shàng qì lái le，hái pá dé dòng ma？",
+          "en": "Meiying, you’re so tired you can hardly breathe — can you still climb?"
+        },
+        {
+          "speaker": "李美英",
+          "zh": "爬得动。",
+          "pinyin": "pá dé dòng。",
+          "en": "I can still climb."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "别着急，一步一步地往上爬，爬不动的时候就休息一会儿。走，咱们一起爬，要坚持到底，坚持就是胜利。……王老师，加油儿啊！",
+          "pinyin": "bié zháo jí，yí bù yí bù dì wǎng shàng pá，pá bù dòng de shí hòu jiù xiū xī yī huì er。zǒu，zán men yì qǐ pá，yào jiān chí dào dǐ，jiān chí jiù shì shèng lì。……wáng lǎo shī，jiā yóu ér a！",
+          "en": "Don’t rush — climb step by step, and rest when you can’t go on. Come on, let’s climb together; stick it out to the end — perseverance is victory. … Teacher Wang, come on!"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "刚爬一会儿就出了一身汗，我休息一会儿再接着爬，比不了你们年轻人啦。",
+          "pinyin": "gāng pá yī huì er jiù chū le yī shēn hàn，wǒ xiū xī yī huì er zài jiē zhe pá，bǐ bù liǎo nǐ men nián qīng rén la。",
+          "en": "After just a little climbing I’m sweating all over; I’ll rest then continue. I can’t compare with you young people."
+        },
+        {
+          "speaker": "李美英",
+          "zh": "啊，看，王老师也爬上来了。",
+          "pinyin": "a，kàn，wáng lǎo shī yě pá shàng lái le。",
+          "en": "Ah, look — Teacher Wang made it up too."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "麦克，别从那儿上，太危险了。要注意安全。",
+          "pinyin": "mài kè，bié cóng nà ér shàng，tài wēi xiǎn le。yào zhù yì ān quán。",
+          "en": "Mike, don’t go up that way — too dangerous. Watch your safety."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "知道了。",
+          "pinyin": "zhī dào le。",
+          "en": "Got it."
+        }
+      ]
+    },
+    {
+      "label": "(二)",
+      "headingZh": "我担心自己演不好",
+      "headingEn": "I’m worried I won’t perform well",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "同学们都在积极准备节目，参加联欢会……",
+          "pinyin": "tóng xué men dōu zài jī jí zhǔn bèi jié mù，cān jiā lián huān huì……",
+          "en": "The students are all actively preparing programs for the get-together..."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "爱德华，咱们班参加联欢会的节目准备得怎么样了？",
+          "pinyin": "ài dé huá，zán men bān cān jiā lián huān huì de jié mù zhǔn bèi dé zěn me yàng le？",
+          "en": "Edward, how is our class’s program for the get-together coming along?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "大家都在积极地准备呢。",
+          "pinyin": "dà jiā dōu zài jī jí dì zhǔn bèi ne。",
+          "en": "Everyone is actively preparing."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "你表演什么节目？",
+          "pinyin": "nǐ biǎo yǎn shén me jié mù？",
+          "en": "What are you performing?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "我和麦克说个相声。可是我总记不住台词，正背台词呢。",
+          "pinyin": "wǒ hé mài kè shuō gè xiàng shēng。kě shì wǒ zǒng jì bú zhù tái cí，zhèng bèi tái cí ne。",
+          "en": "Mike and I are doing a crosstalk. But I can never remember the lines; I’m memorizing them now."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "背会了吗？",
+          "pinyin": "bèi huì le ma？",
+          "en": "Have you got them memorized?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "快了。山本，你们的小话剧呢？",
+          "pinyin": "kuài le。shān běn，nǐ men de xiǎo huà jù ne？",
+          "en": "Almost. Yamamoto, what about your little play?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "我们也正在排练呢。有的音我发不准，我请田芳一句一句地给我纠正。",
+          "pinyin": "wǒ men yě zhèng zài pái liàn ne。yǒu de yīn wǒ fā bù zhǔn，wǒ qǐng tián fāng yī jù yī jù dì gěi wǒ jiū zhèng。",
+          "en": "We’re rehearsing too. Some sounds I can’t pronounce right; I asked Tian Fang to correct me line by line."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "谁跟你一起表演？",
+          "pinyin": "shuí gēn nǐ yì qǐ biǎo yǎn？",
+          "en": "Who’s performing with you?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "原来是玛丽，可是玛丽腿受伤了，参加不了了。我请罗兰跟我一起表演。",
+          "pinyin": "yuán lái shì mǎ lì，kě shì mǎ lì tuǐ shòu shāng le，cān jiā bù liǎo le。wǒ qǐng luó lán gēn wǒ yì qǐ biǎo yǎn。",
+          "en": "It was Mary, but she hurt her leg and can’t take part. I asked Roland to perform with me."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "我担心自己演不好。",
+          "pinyin": "wǒ dān xīn zì jǐ yǎn bù hǎo。",
+          "en": "I’m worried I won’t act well."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "要有自信，相信自己能演好。",
+          "pinyin": "yào yǒu zì xìn，xiāng xìn zì jǐ néng yǎn hǎo。",
+          "en": "Have confidence — believe you can act well."
+        },
+        {
+          "speaker": "山本",
+          "zh": "只要我们好好儿练，就一定能演好。“世上无难事，只怕有心人”嘛！",
+          "pinyin": "zhǐ yào wǒ men hǎo hǎo ér liàn，jiù yí dìng néng yǎn hǎo。“shì shàng wú nán shì，zhǐ pà yǒu xīn rén”ma！",
+          "en": "As long as we practice hard, we’ll do well. ‘Nothing is hard for one who sets their mind to it!’"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "我一定努力，争取演出成功。",
+          "pinyin": "wǒ yí dìng nǔ lì，zhēng qǔ yǎn chū chéng gōng。",
+          "en": "I’ll work hard and strive for a successful show."
+        },
+        {
+          "speaker": "山本",
+          "zh": "老师，您也给我们表演个节目吧。",
+          "pinyin": "lǎo shī，nín yě gěi wǒ men biǎo yǎn gè jié mù ba。",
+          "en": "Teacher, why don’t you perform something for us too?"
+        },
+        {
+          "speaker": "林老师",
+          "zh": "我准备了一首歌，不过，很长时间没唱了，恐怕唱不好。",
+          "pinyin": "wǒ zhǔn bèi le yī shǒu gē，bù guò，hěn zhǎng shí jiān méi chàng le，kǒng pà chàng bù hǎo。",
+          "en": "I’ve prepared a song, but I haven’t sung in a long time; I’m afraid I won’t sing well."
+        },
+        {
+          "speaker": "山本",
+          "zh": "老师，这个地方这么小，坐得下二百多人吗？",
+          "pinyin": "lǎo shī，zhè ge dì fāng zhè me xiǎo，zuò dé xià èr bǎi duō rén ma？",
+          "en": "Teacher, this place is so small — can it seat over two hundred people?"
+        },
+        {
+          "speaker": "林老师",
+          "zh": "联欢会在楼下小礼堂举行，那儿能坐下三四百人呢。",
+          "pinyin": "lián huān huì zài lóu xià xiǎo lǐ táng jǔ xíng，nà ér néng zuò xià sān sì bǎi rén ne。",
+          "en": "The get-together is in the small auditorium downstairs — that can seat three or four hundred."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "没问题。",
+      "body": "No problem. 没有困难，能够做到。用于表达鼓励、同意等。",
+      "example": {
+        "zh": "没问题。爬得上去。",
+        "pinyin": "méi wèn tí。pá dé shàng qù。",
+        "en": "No problem. I can climb it."
+      }
+    },
+    {
+      "title": "加油儿！",
+      "body": "Come on! 比喻进一步努力。",
+      "example": {
+        "zh": "王老师，加油儿啊！",
+        "pinyin": "wáng lǎo shī，jiā yóu ér a！",
+        "en": "Teacher Wang, come on!"
+      }
+    },
+    {
+      "title": "世上无难事，只怕有心人。",
+      "body": "Nothing in the world is difficult for one who sets their mind to it.",
+      "example": {
+        "zh": "世上无难事，只怕有心人",
+        "pinyin": "shì shàng wú nán shì，zhǐ pà yǒu xīn rén",
+        "en": "Nothing in the world is difficult for one who sets their mind to it"
+      }
+    },
+    {
+      "title": "可能补语（2）",
+      "body": "Complements of potentiality (2) — directional potential complements like 爬得上去 / 爬不上去, 爬得动 / 爬不动.",
+      "example": {
+        "zh": "山这么高，你爬得上去吗？",
+        "pinyin": "shān zhè me gāo，nǐ pá dé shàng qù ma？",
+        "en": "The mountain is so high — can you make it up?"
+      }
+    },
+    {
+      "title": "可能补语与状态补语",
+      "body": "Potential complements indicate a possible result; state complements evaluate an already realized result. Negation and A-not-A forms differ (演不好 vs 演得不好; 演得好演不好 vs 演得好不好).",
+      "example": {
+        "zh": "我担心自己演不好。",
+        "pinyin": "wǒ dān xīn zì jǐ yǎn bù hǎo。",
+        "en": "I’m worried I won’t act well."
+      }
+    },
+    {
+      "title": "只要……就……",
+      "body": "as long as… will… “只要”引出必要条件，“就”后是结果。",
+      "example": {
+        "zh": "只要我们好好儿练，就一定能演好。",
+        "pinyin": "zhǐ yào wǒ men hǎo hǎo ér liàn，jiù yí dìng néng yǎn hǎo。",
+        "en": "As long as we practice hard, we’ll definitely perform well."
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
-import { DialogueAudio, Line, useGloss } from '../components/ChineseText'
+import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
 import { ChineseHear, hasHanzi, HearButton, useAutoSpeak, useAutoSpeakLines, useSpeechActive } from '../components/Hear'
 import { CheckIcon, CloseIcon, HeartIcon, LockIcon, PlayIcon } from '../components/Icons'
 import {
@@ -491,10 +491,14 @@ function ReadView({ text }: { text: LessonText }) {
   const heading = text.heading_zh || text.heading_en || text.label
   return (
     <>
-      <StepHead
-        kicker={`${text.label} · ${text.type === 'dialogue' ? 'Dialogue' : 'Passage'}`}
-        title={heading}
-      />
+      <header className="session-step-head">
+        <div className="kicker-ink">
+          {text.label} · {text.type === 'dialogue' ? 'Dialogue' : 'Passage'}
+        </div>
+        <h2 className="session-step-title" lang={hasHanzi(heading) ? 'zh-CN' : undefined}>
+          {hasHanzi(heading) ? <Glossed text={heading} onWord={onWord} /> : heading}
+        </h2>
+      </header>
       {text.heading_en && text.heading_zh && <p className="session-read-en">{text.heading_en}</p>}
       <DialogueAudio text={text} />
       <div className="session-read">
@@ -527,6 +531,7 @@ function NoteView({
   n: number
   of: number
 }) {
+  const { onWord, sheet } = useGloss()
   const head = of > 1 ? `Note · ${n} of ${of}` : 'Note'
   const exampleZh = hearableZh(example?.zh)
   const titleZh = hearableZh(title)
@@ -534,14 +539,19 @@ function NoteView({
 
   return (
     <>
-      <StepHead kicker={head} title={title} />
-      <p className="sub" style={{ textWrap: 'pretty', lineHeight: 1.55 }}>
-        {body}
+      <header className="session-step-head">
+        <div className="kicker-ink">{head}</div>
+        <h2 className="session-step-title" lang={hasHanzi(title) ? 'zh-CN' : undefined}>
+          {hasHanzi(title) ? <Glossed text={title} onWord={onWord} /> : title}
+        </h2>
+      </header>
+      <p className="sub" style={{ textWrap: 'pretty', lineHeight: 1.55 }} lang={hasHanzi(body) ? 'zh-CN' : undefined}>
+        {hasHanzi(body) ? <Glossed text={body} onWord={onWord} /> : body}
       </p>
       {example && exampleZh && (
         <div className="card session-prompt">
           <p className="zh" lang="zh-CN" style={{ fontSize: 20, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
-            {example.zh}
+            <Glossed text={example.zh} onWord={onWord} />
           </p>
           {example.pinyin && (
             <p className="sub" style={{ margin: '6px 0 0', color: 'var(--red-mid)' }}>
@@ -564,6 +574,7 @@ function NoteView({
           <ChineseHear text={bodyZh} label="Hear it" />
         </div>
       )}
+      {sheet}
     </>
   )
 }
@@ -584,6 +595,7 @@ function MatchView({
   const wrong = state?.wrong ?? []
   const solved = state?.solved ?? false
   const missed = state?.missed ?? false
+  const { onWord, sheet } = useGloss()
   const contextZh = question.context?.zh?.trim() ?? ''
   const chineseChoices = question.options
     .map((o) => o.label)
@@ -600,7 +612,7 @@ function MatchView({
       {question.context && (
         <div className="card session-prompt">
           <p className="zh" lang="zh-CN" style={{ fontSize: 22, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
-            {question.context.zh}
+            <Glossed text={question.context.zh} onWord={onWord} />
           </p>
           <div style={{ marginTop: 12 }}>
             <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
@@ -660,6 +672,7 @@ function MatchView({
           </strong>
         </div>
       )}
+      {sheet}
     </>
   )
 }

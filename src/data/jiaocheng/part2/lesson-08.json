@@ -1,0 +1,682 @@
+{
+  "id": "jiaocheng-2-2-08",
+  "book": "2-2",
+  "index": 8,
+  "bookLesson": 20,
+  "titleZh": "我看得懂，但是听不懂",
+  "titleEn": "I can understand the scenes, but not the lines",
+  "sourcePages": "114-133",
+  "words": [
+    {
+      "zh": "演出",
+      "pinyin": "yǎnchū",
+      "pos": "v.",
+      "en": "to perform; to put on a show",
+      "note": "Book headword pinyin printed as yǎnchū. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 演出 when you’re talking about a show or performance you watched.",
+      "usage": "Verb or noun-like: 看演出 / 演出成功. In 课文1, 山本 guesses meaning from the 京剧演出.",
+      "example": {
+        "zh": "看了演出能猜出大概的意思。",
+        "pinyin": "kàn le yǎn chū néng cāi chū dà gài de yì si。",
+        "en": "After watching the performance, I can guess the general meaning."
+      }
+    },
+    {
+      "zh": "猜",
+      "pinyin": "cāi",
+      "pos": "v.",
+      "en": "to guess",
+      "note": "Book headword pinyin printed as cāi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 猜 when you figure something out without fully understanding.",
+      "usage": "Often 猜出 + object. Here: 猜出大概的意思.",
+      "example": {
+        "zh": "看了演出能猜出大概的意思。",
+        "pinyin": "kàn le yǎn chū néng cāi chū dà gài de yì si。",
+        "en": "After watching the performance, I can guess the general meaning."
+      }
+    },
+    {
+      "zh": "演员",
+      "pinyin": "yǎnyuán",
+      "pos": "n.",
+      "en": "actor; actress",
+      "note": "Book headword pinyin printed as yǎnyuán. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 演员 for stage/film performers.",
+      "usage": "京剧演员唱 / 演. Not the same as the broader 人物 on stage.",
+      "example": {
+        "zh": "一点儿也听不懂演员唱的是什么",
+        "pinyin": "yì diǎn ér yě tīng bù dǒng yǎn yuán chàng de shì shén me",
+        "en": "I can’t understand at all what the actors are singing"
+      }
+    },
+    {
+      "zh": "武打",
+      "pinyin": "wǔdǎ",
+      "pos": "n.",
+      "en": "acrobatic fighting",
+      "note": "Book headword pinyin printed as wǔdǎ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 武打 for stage combat / martial-arts fighting scenes.",
+      "usage": "Often 武打动作 in opera or film talk.",
+      "example": {
+        "zh": "武打动作也很精彩。",
+        "pinyin": "wǔ dǎ dòng zuò yě hěn jīng cǎi。",
+        "en": "The martial-arts fighting moves are also wonderful."
+      }
+    },
+    {
+      "zh": "动作",
+      "pinyin": "dòngzuò",
+      "pos": "n.",
+      "en": "movement; motion",
+      "note": "Book headword pinyin printed as dòngzuò. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 动作 for bodily movements on stage or in sports.",
+      "usage": "Pairs with 武打 / 精彩.",
+      "example": {
+        "zh": "武打动作也很精彩。",
+        "pinyin": "wǔ dǎ dòng zuò yě hěn jīng cǎi。",
+        "en": "The martial-arts fighting moves are also wonderful."
+      }
+    },
+    {
+      "zh": "精彩",
+      "pinyin": "jīngcǎi",
+      "pos": "adj.",
+      "en": "wonderful; splendid",
+      "note": "Book headword pinyin printed as jīngcǎi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 精彩 when a performance moment is excellent.",
+      "usage": "Predicative: 很精彩.",
+      "example": {
+        "zh": "武打动作也很精彩。",
+        "pinyin": "wǔ dǎ dòng zuò yě hěn jīng cǎi。",
+        "en": "The martial-arts fighting moves are also wonderful."
+      }
+    },
+    {
+      "zh": "表现",
+      "pinyin": "biǎoxiàn",
+      "pos": "v.",
+      "en": "to show; to display; to manifest",
+      "note": "Book headword pinyin printed as biǎoxiàn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 表现 when something displays or expresses qualities.",
+      "usage": "表现 + noun phrase (地位 / 性格).",
+      "example": {
+        "zh": "京剧用各种脸谱来表现人物的社会地位和性格",
+        "pinyin": "jīng jù yòng gè zhǒng liǎn pǔ lái biǎo xiàn rén wù de shè huì dì wèi hé xìng gé",
+        "en": "Peking Opera uses all kinds of face paint to show a character’s social status and personality"
+      }
+    },
+    {
+      "zh": "人物",
+      "pinyin": "rénwù",
+      "pos": "n.",
+      "en": "character; person in a book, play, etc.",
+      "note": "Book headword pinyin printed as rénwù. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 人物 for fictional or stage characters.",
+      "usage": "人物的社会地位 / 性格.",
+      "example": {
+        "zh": "京剧用各种脸谱来表现人物的社会地位和性格",
+        "pinyin": "jīng jù yòng gè zhǒng liǎn pǔ lái biǎo xiàn rén wù de shè huì dì wèi hé xìng gé",
+        "en": "Peking Opera uses all kinds of face paint to show a character’s social status and personality"
+      }
+    },
+    {
+      "zh": "社会",
+      "pinyin": "shèhuì",
+      "pos": "n.",
+      "en": "society",
+      "note": "Book headword pinyin printed as shèhuì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 社会 in compounds like 社会地位.",
+      "usage": "Here 社会地位 = social status.",
+      "example": {
+        "zh": "表现人物的社会地位和性格",
+        "pinyin": "biǎo xiàn rén wù de shè huì dì wèi hé xìng gé",
+        "en": "to show a character’s social status and personality"
+      }
+    },
+    {
+      "zh": "地位",
+      "pinyin": "dìwèi",
+      "pos": "n.",
+      "en": "status",
+      "note": "Book headword pinyin printed as dìwèi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 地位 for rank or standing.",
+      "usage": "社会地位 is the set phrase.",
+      "example": {
+        "zh": "表现人物的社会地位和性格",
+        "pinyin": "biǎo xiàn rén wù de shè huì dì wèi hé xìng gé",
+        "en": "to show a character’s social status and personality"
+      }
+    },
+    {
+      "zh": "性格",
+      "pinyin": "xìnggé",
+      "pos": "n.",
+      "en": "temperament; disposition; personality",
+      "note": "Book headword pinyin printed as xìnggé. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 性格 when talking about someone’s personality.",
+      "usage": "Often paired with 地位 in the 脸谱 line.",
+      "example": {
+        "zh": "表现人物的社会地位和性格，十分有趣。",
+        "pinyin": "biǎo xiàn rén wù de shè huì dì wèi hé xìng gé，shí fēn yǒu qù。",
+        "en": "to show a character’s social status and personality — very interesting."
+      }
+    },
+    {
+      "zh": "十分",
+      "pinyin": "shífēn",
+      "pos": "adv.",
+      "en": "quite; very",
+      "note": "Book headword pinyin printed as shífēn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 十分 as a formal-ish “very”.",
+      "usage": "十分 + adj. (十分有趣 / 十分美).",
+      "example": {
+        "zh": "十分有趣。",
+        "pinyin": "shí fēn yǒu qù。",
+        "en": "very interesting."
+      }
+    },
+    {
+      "zh": "有趣",
+      "pinyin": "yǒuqù",
+      "pos": "adj.",
+      "en": "interesting; amusing",
+      "note": "Book headword pinyin printed as yǒuqù. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 有趣 when something is fun/interesting to watch or think about.",
+      "usage": "Predicative after 十分 / 很.",
+      "example": {
+        "zh": "十分有趣。",
+        "pinyin": "shí fēn yǒu qù。",
+        "en": "very interesting."
+      }
+    },
+    {
+      "zh": "服装",
+      "pinyin": "fúzhuāng",
+      "pos": "n.",
+      "en": "clothing; costume",
+      "note": "Book headword pinyin printed as fúzhuāng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 服装 for clothes or stage costumes.",
+      "usage": "京剧的服装.",
+      "example": {
+        "zh": "京剧的服装也很美",
+        "pinyin": "jīng jù de fú zhuāng yě hěn měi",
+        "en": "Peking Opera costumes are also beautiful"
+      }
+    },
+    {
+      "zh": "影响",
+      "pinyin": "yǐngxiǎng",
+      "pos": "v./n.",
+      "en": "to influence; influence",
+      "note": "Book headword pinyin printed as yǐngxiǎng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 影响 when someone/something shapes another person.",
+      "usage": "受……的影响 is common; also noun 影响.",
+      "example": {
+        "zh": "我是受中文老师的影响",
+        "pinyin": "wǒ shì shòu zhōng wén lǎo shī de yǐng xiǎng",
+        "en": "I was influenced by my Chinese teacher"
+      }
+    },
+    {
+      "zh": "传统",
+      "pinyin": "chuántǒng",
+      "pos": "adj./n.",
+      "en": "traditional; tradition",
+      "note": "Book headword pinyin printed as chuántǒng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 传统 for traditional culture or tradition itself.",
+      "usage": "传统艺术 / 传统文化.",
+      "example": {
+        "zh": "京剧是中国的传统艺术",
+        "pinyin": "jīng jù shì zhōng guó de chuán tǒng yì shù",
+        "en": "Peking Opera is a traditional Chinese art"
+      }
+    },
+    {
+      "zh": "艺术",
+      "pinyin": "yìshù",
+      "pos": "n.",
+      "en": "art",
+      "note": "Book headword pinyin printed as yìshù. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 艺术 for art forms.",
+      "usage": "传统艺术.",
+      "example": {
+        "zh": "京剧是中国的传统艺术",
+        "pinyin": "jīng jù shì zhōng guó de chuán tǒng yì shù",
+        "en": "Peking Opera is a traditional Chinese art"
+      }
+    },
+    {
+      "zh": "了解",
+      "pinyin": "liǎojiě",
+      "pos": "v.",
+      "en": "to understand; to know",
+      "note": "Book headword pinyin printed as liǎojiě. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 了解 when you want to know/understand a topic better.",
+      "usage": "了解 + noun (文化 / 情况).",
+      "example": {
+        "zh": "也应该多了解一些中国文化。",
+        "pinyin": "yě yīng gāi duō liǎo jiě yī xiē zhōng guó wén huà。",
+        "en": "you should also learn more about Chinese culture."
+      }
+    },
+    {
+      "zh": "的话",
+      "pinyin": "de huà",
+      "pos": "part.",
+      "en": "(used at the end of a conditional clause) if",
+      "note": "Book headword pinyin printed as de huà. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 的话 tagged on a condition (often with 要是 / 如果).",
+      "usage": "Clause + 的话，result.",
+      "example": {
+        "zh": "要是有时间的话，咱们一起去看一次，好吗？",
+        "pinyin": "yào shì yǒu shí jiān de huà，zán men yì qǐ qù kàn yī cì，hǎo ma？",
+        "en": "If we have time, shall we go see it together?"
+      }
+    },
+    {
+      "zh": "约",
+      "pinyin": "yuē",
+      "pos": "v.",
+      "en": "to make an appointment in advance; to invite in advance",
+      "note": "Book headword pinyin printed as yuē. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 约 when you arrange to meet someone.",
+      "usage": "约 + person + time/activity.",
+      "example": {
+        "zh": "昨天我给山本打电话，约她晚上一起去看京剧。",
+        "pinyin": "zuó tiān wǒ gěi shān běn dǎ diàn huà，yuē tā wǎn shàng yì qǐ qù kàn jīng jù。",
+        "en": "Yesterday I called Yamamoto and asked her to go see Peking Opera with me in the evening."
+      }
+    },
+    {
+      "zh": "了",
+      "pinyin": "liǎo",
+      "pos": "v.",
+      "en": "(with 得/不 after a verb) can / ability to finish",
+      "note": "Book headword pinyin printed as liǎo. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 了 (liǎo) in potential complements 得了 / 不了.",
+      "usage": "Verb + 得/不 + 了. Not the aspect particle le.",
+      "example": {
+        "zh": "她说晚上有事，去不了。",
+        "pinyin": "tā shuō wǎn shàng yǒu shì，qù bù liǎo。",
+        "en": "She said she had something to do and couldn’t go."
+      }
+    },
+    {
+      "zh": "担心",
+      "pinyin": "dānxīn",
+      "pos": "v.",
+      "en": "to be anxious about; to worry about",
+      "note": "Book headword pinyin printed as dānxīn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 担心 when you’re anxious something won’t work out.",
+      "usage": "担心 + clause / noun.",
+      "example": {
+        "zh": "我担心买不到票",
+        "pinyin": "wǒ dān xīn mǎi bú dào piào",
+        "en": "I was worried we couldn’t get tickets"
+      }
+    },
+    {
+      "zh": "排",
+      "pinyin": "pái",
+      "pos": "m.",
+      "en": "row; line",
+      "note": "Book headword pinyin printed as pái. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 排 as the measure word for seating rows.",
+      "usage": "前十排 / 十二排.",
+      "example": {
+        "zh": "山本说要买前十排的",
+        "pinyin": "shān běn shuō yào mǎi qián shí pái de",
+        "en": "Yamamoto said she wanted seats in the first ten rows"
+      }
+    },
+    {
+      "zh": "估计",
+      "pinyin": "gūjì",
+      "pos": "v.",
+      "en": "to reckon; to estimate",
+      "note": "Book headword pinyin printed as gūjì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 估计 when you estimate a number or situation.",
+      "usage": "估计 + clause.",
+      "example": {
+        "zh": "这个剧场不大，估计坐不下一千人。",
+        "pinyin": "zhè ge jù chǎng bù dà，gū jì zuò bù xià yī qiān rén。",
+        "en": "This theater isn’t big; I reckon it can’t seat a thousand people."
+      }
+    },
+    {
+      "zh": "下",
+      "pinyin": "xià",
+      "pos": "v.",
+      "en": "(after a verb) indicate room/space capacity",
+      "note": "Book headword pinyin printed as xià. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 下 in potential complements 得下 / 不下 for capacity.",
+      "usage": "Verb + 得/不 + 下.",
+      "example": {
+        "zh": "估计坐不下一千人。",
+        "pinyin": "gū jì zuò bù xià yī qiān rén。",
+        "en": "I reckon it can’t seat a thousand people."
+      }
+    },
+    {
+      "zh": "开演",
+      "pinyin": "kāiyǎn",
+      "pos": "v.",
+      "en": "(of a play, movie, etc.) to begin",
+      "note": "Book headword pinyin printed as kāiyǎn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 开演 for when a performance starts.",
+      "usage": "离开演还有……",
+      "example": {
+        "zh": "离开演还有十多分钟",
+        "pinyin": "lí kāi yǎn hái yǒu shí duō fēn zhōng",
+        "en": "There were still a little over ten minutes before the show started"
+      }
+    },
+    {
+      "zh": "满",
+      "pinyin": "mǎn",
+      "pos": "adj.",
+      "en": "full; filled",
+      "note": "Book headword pinyin printed as mǎn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 满 when a space is filled.",
+      "usage": "坐满 / 满了.",
+      "example": {
+        "zh": "人差不多都坐满了。",
+        "pinyin": "rén chà bu duō dōu zuò mǎn le。",
+        "en": "The seats were almost all full."
+      }
+    },
+    {
+      "zh": "节目单",
+      "pinyin": "jiémùdān",
+      "pos": "n.",
+      "en": "playbill; program",
+      "note": "Book headword pinyin printed as jiémùdān. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 节目单 for the printed program at a show.",
+      "usage": "看节目单.",
+      "example": {
+        "zh": "我拿了一张节目单。",
+        "pinyin": "wǒ ná le yī zhāng jié mù dān。",
+        "en": "I took a program sheet."
+      }
+    },
+    {
+      "zh": "古代",
+      "pinyin": "gǔdài",
+      "pos": "n.",
+      "en": "ancient times",
+      "note": "Book headword pinyin printed as gǔdài. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 古代 for remote historical periods (before 1840 in the book’s note).",
+      "usage": "古代神话 / 古代故事. See 注释.",
+      "example": {
+        "zh": "这是一个古代神话故事。",
+        "pinyin": "zhè shì yí gè gǔ dài shén huà gù shì。",
+        "en": "This is an ancient myth story."
+      }
+    },
+    {
+      "zh": "神话",
+      "pinyin": "shénhuà",
+      "pos": "n.",
+      "en": "mythology; myth",
+      "note": "Book headword pinyin printed as shénhuà. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 神话 for myths.",
+      "usage": "神话故事.",
+      "example": {
+        "zh": "这是一个古代神话故事。",
+        "pinyin": "zhè shì yí gè gǔ dài shén huà gù shì。",
+        "en": "This is an ancient myth story."
+      }
+    },
+    {
+      "zh": "天上",
+      "pinyin": "tiānshang",
+      "pos": "n.",
+      "en": "sky; heaven",
+      "note": "Book headword pinyin printed as tiānshang. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 天上 for the heavens / sky realm in stories.",
+      "usage": "天上的仙女.",
+      "example": {
+        "zh": "说的是天上一个仙女",
+        "pinyin": "shuō de shì tiān shàng yí gè xiān nǚ",
+        "en": "It tells of a fairy maiden in heaven"
+      }
+    },
+    {
+      "zh": "仙女",
+      "pinyin": "xiānnǚ",
+      "pos": "n.",
+      "en": "fairy maiden; female immortal",
+      "note": "Book headword pinyin printed as xiānnǚ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 仙女 for fairy maidens in myths.",
+      "usage": "Common in 神话 stories.",
+      "example": {
+        "zh": "天上一个仙女，很羡慕人间的生活",
+        "pinyin": "tiān shàng yí gè xiān nǚ，hěn xiàn mù rén jiān de shēng huó",
+        "en": "a fairy maiden in heaven who greatly envied life in the human world"
+      }
+    },
+    {
+      "zh": "羡慕",
+      "pinyin": "xiànmù",
+      "pos": "v.",
+      "en": "to admire; to envy",
+      "note": "Book headword pinyin printed as xiànmù. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 羡慕 when you wish you had what someone else has.",
+      "usage": "羡慕 + noun.",
+      "example": {
+        "zh": "很羡慕人间的生活",
+        "pinyin": "hěn xiàn mù rén jiān de shēng huó",
+        "en": "greatly envied life in the human world"
+      }
+    },
+    {
+      "zh": "人间",
+      "pinyin": "rénjiān",
+      "pos": "n.",
+      "en": "world; human world",
+      "note": "Book headword pinyin printed as rénjiān. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 人间 for the mortal world vs 天上.",
+      "usage": "来到人间 / 人间的生活.",
+      "example": {
+        "zh": "很羡慕人间的生活，就偷偷儿来到人间",
+        "pinyin": "hěn xiàn mù rén jiān de shēng huó，jiù tōu tōu ér lái dào rén jiān",
+        "en": "envied life in the human world, so she secretly came to the human world"
+      }
+    },
+    {
+      "zh": "偷偷(儿)",
+      "pinyin": "tōutōur",
+      "pos": "adv.",
+      "en": "stealthily; covertly",
+      "note": "Book headword pinyin printed as tōutōur. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 偷偷儿 when an action is done on the sly.",
+      "usage": "偷偷儿 + verb. Book lists 偷偷(儿).",
+      "example": {
+        "zh": "就偷偷儿来到人间",
+        "pinyin": "jiù tōu tōu ér lái dào rén jiān",
+        "en": "so she secretly came to the human world"
+      }
+    },
+    {
+      "zh": "内容",
+      "pinyin": "nèiróng",
+      "pos": "n.",
+      "en": "content; substance",
+      "note": "Book headword pinyin printed as nèiróng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 内容 for the substance of a text or story.",
+      "usage": "节目单/故事的内容.",
+      "example": {
+        "zh": "后边的内容我也看不懂。",
+        "pinyin": "hòu biān de nèi róng wǒ yě kàn bù dǒng。",
+        "en": "I can’t understand the later content either."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "(一)",
+      "headingZh": "我看得懂，但是听不懂",
+      "headingEn": "I can understand the scenes, but not the lines",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "玛丽",
+          "zh": "你看过京剧吗？",
+          "pinyin": "nǐ kàn guò jīng jù ma？",
+          "en": "Have you seen Peking Opera?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "看过一次。",
+          "pinyin": "kàn guò yī cì。",
+          "en": "I’ve seen it once."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "看得懂吗？",
+          "pinyin": "kàn de dǒng ma？",
+          "en": "Could you understand it?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "看得懂，但是听不懂。看了演出能猜出大概的意思。",
+          "pinyin": "kàn de dǒng，dàn shì tīng bù dǒng。kàn le yǎn chū néng cāi chū dà gài de yì si。",
+          "en": "I can understand the scenes, but not the singing. After watching the performance I can guess the general meaning."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "我也是，一点儿也听不懂演员唱的是什么，只是觉得很热闹。",
+          "pinyin": "wǒ yě shì，yì diǎn ér yě tīng bù dǒng yǎn yuán chàng de shì shén me，zhǐ shì jué de hěn rè nào。",
+          "en": "Me too — I can’t understand at all what the actors are singing; I just feel it’s lively."
+        },
+        {
+          "speaker": "山本",
+          "zh": "我觉得京剧唱得特别好听，武打动作也很精彩。我还喜欢京剧的脸谱，京剧用各种脸谱来表现人物的社会地位和性格，十分有趣。",
+          "pinyin": "wǒ jué de jīng jù chàng dé tè bié hǎo tīng，wǔ dǎ dòng zuò yě hěn jīng cǎi。wǒ hái xǐ huān jīng jù de liǎn pǔ，jīng jù yòng gè zhǒng liǎn pǔ lái biǎo xiàn rén wù de shè huì dì wèi hé xìng gé，shí fēn yǒu qù。",
+          "en": "I think Peking Opera singing sounds especially good, and the martial-arts moves are wonderful too. I also like the face paint — Peking Opera uses all kinds of face paint to show characters’ social status and personality; it’s very interesting."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "京剧的服装也很美，我想买一套带回国去。",
+          "pinyin": "jīng jù de fú zhuāng yě hěn měi，wǒ xiǎng mǎi yī tào dài huí guó qù。",
+          "en": "The costumes are beautiful too; I want to buy a set to take home."
+        },
+        {
+          "speaker": "山本",
+          "zh": "你怎么这么喜欢京剧呢？",
+          "pinyin": "nǐ zěn me zhè me xǐ huān jīng jù ne？",
+          "en": "Why do you like Peking Opera so much?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "我是受中文老师的影响，他可是一个京剧迷。我想，京剧是中国的传统艺术，要把汉语学好，也应该多了解一些中国文化。",
+          "pinyin": "wǒ shì shòu zhōng wén lǎo shī de yǐng xiǎng，tā kě shì yí gè jīng jù mí。wǒ xiǎng，jīng jù shì zhōng guó de chuán tǒng yì shù，yào bǎ hàn yǔ xué hǎo，yě yīng gāi duō liǎo jiě yī xiē zhōng guó wén huà。",
+          "en": "I was influenced by my Chinese teacher — he’s a real Peking Opera fan. I think Peking Opera is a traditional Chinese art; to learn Chinese well, you should also learn more about Chinese culture."
+        },
+        {
+          "speaker": "山本",
+          "zh": "要是有时间的话，咱们一起去看一次，好吗？",
+          "pinyin": "yào shì yǒu shí jiān de huà，zán men yì qǐ qù kàn yī cì，hǎo ma？",
+          "en": "If we have time, shall we go see it together?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "好啊。",
+          "pinyin": "hǎo a。",
+          "en": "Sure."
+        }
+      ]
+    },
+    {
+      "label": "(二)",
+      "headingZh": "她有事，去不了",
+      "headingEn": "She has something to do and can’t go",
+      "type": "passage",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "昨天我给山本打电话，约她晚上一起去看京剧。但是她说晚上有事，去不了。所以我们就决定今天晚上去。",
+          "pinyin": "zuó tiān wǒ gěi shān běn dǎ diàn huà，yuē tā wǎn shàng yì qǐ qù kàn jīng jù。dàn shì tā shuō wǎn shàng yǒu shì，qù bù liǎo。suǒ yǐ wǒ men jiù jué dìng jīn tiān wǎn shàng qù。",
+          "en": "Yesterday I called Yamamoto and asked her to go see Peking Opera in the evening. But she said she had something to do and couldn’t go. So we decided to go this evening instead."
+        },
+        {
+          "speaker": "",
+          "zh": "我们是下午五点半出发的。正是下班时间，路上人多车也多。公共汽车上不去，我们只好打的。我担心买不到票，但是山本说，票好买，肯定买得到。",
+          "pinyin": "wǒ men shì xià wǔ wǔ diǎn bàn chū fā de。zhèng shì xià bān shí jiān，lù shàng rén duō chē yě duō。gōng gòng qì chē shàng bù qù，wǒ men zhǐ hǎo dǎ dī。wǒ dān xīn mǎi bú dào piào，dàn shì shān běn shuō，piào hǎo mǎi，kěn dìng mǎi dé dào。",
+          "en": "We set out at 5:30 in the afternoon. It was rush hour — lots of people and cars. We couldn’t get on the bus, so we had to take a taxi. I worried we couldn’t get tickets, but Yamamoto said tickets were easy to buy — we’d definitely get some."
+        },
+        {
+          "speaker": "",
+          "zh": "到了剧场，山本说要买前十排的，因为她的眼睛不太好，坐得太远看不清楚。但是，前十排的票都卖完了，没买到，我们买的是十二排的。",
+          "pinyin": "dào le jù chǎng，shān běn shuō yào mǎi qián shí pái de，yīn wèi tā de yǎn jīng bù tài hǎo，zuò dé tài yuǎn kàn bù qīng chǔ。dàn shì，qián shí pái de piào dōu mài wán le，méi mǎi dào，wǒ men mǎi de shì shí èr pái de。",
+          "en": "At the theater, Yamamoto said she wanted the first ten rows because her eyes aren’t great and she can’t see clearly if she sits too far. But tickets for the first ten rows were sold out; we bought row twelve."
+        },
+        {
+          "speaker": "",
+          "zh": "这个剧场不大，估计坐不下一千人。离开演还有十多分钟，人差不多都坐满了。",
+          "pinyin": "zhè ge jù chǎng bù dà，gū jì zuò bù xià yī qiān rén。lí kāi yǎn hái yǒu shí duō fēn zhōng，rén chà bu duō dōu zuò mǎn le。",
+          "en": "This theater isn’t big; I reckon it can’t seat a thousand. With a little over ten minutes before curtain, the seats were almost full."
+        },
+        {
+          "speaker": "",
+          "zh": "我拿了一张节目单。上面全是中文，没有英文，我看不懂。山本看了看说：“这是一个古代神话故事。说的是天上一个仙女，很羡慕人间的生活，就偷偷儿来到人间，跟一个小伙子结了婚。后边的内容我也看不懂。不过，不用担心，看不懂节目单，一定看得懂表演。”",
+          "pinyin": "wǒ ná le yī zhāng jié mù dān。shàng miàn quán shì zhōng wén，méi yǒu yīng wén，wǒ kàn bù dǒng。shān běn kàn le kàn shuō：“zhè shì yí gè gǔ dài shén huà gù shì。shuō de shì tiān shàng yí gè xiān nǚ，hěn xiàn mù rén jiān de shēng huó，jiù tōu tōu ér lái dào rén jiān，gēn yí gè xiǎo huǒ zi jié le hūn。hòu biān de nèi róng wǒ yě kàn bù dǒng。bù guò，bù yòng dān xīn，kàn bù dǒng jié mù dān，yí dìng kàn de dǒng biǎo yǎn。”",
+          "en": "I took a program — all Chinese, no English; I couldn’t read it. Yamamoto looked and said: “It’s an ancient myth. A fairy maiden in heaven envied life on earth, so she secretly came to the human world and married a young man. I can’t read the later parts either. But don’t worry — even if you can’t read the program, you’ll understand the performance.”"
+        },
+        {
+          "speaker": "",
+          "zh": "看完以后，我大概看懂了这个故事。我对山本说，以后周末，我们还来看吧，京剧真有意思。",
+          "pinyin": "kàn wán yǐ hòu，wǒ dà gài kàn dǒng le zhè ge gù shì。wǒ duì shān běn shuō，yǐ hòu zhōu mò，wǒ men hái lái kàn ba，jīng jù zhēn yǒu yì si。",
+          "en": "After watching, I roughly understood the story. I told Yamamoto we should come again on weekends — Peking Opera is really interesting."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "古代",
+      "body": "ancient times. 距离现在较远的时代。区别于“近代”和“现代”。汉语里“古代”指1840年以前，“近代”指1840—1919年，“现代”则指1919—1949年，“当代”指目前这个时代。",
+      "example": {
+        "zh": "这是一个古代神话故事。",
+        "pinyin": "zhè shì yí gè gǔ dài shén huà gù shì。",
+        "en": "This is an ancient myth story."
+      }
+    },
+    {
+      "title": "可能补语（1）",
+      "body": "Complements of potentiality (1). 可能补语表示主客观条件能否允许进行某种动作或实现某种结果和变化。肯定式：动词+得+结果补语/趋向补语；否定式：动词+不+结果补语/趋向补语。",
+      "example": {
+        "zh": "看得懂，但是听不懂。",
+        "pinyin": "kàn de dǒng，dàn shì tīng bù dǒng。",
+        "en": "I can understand the scenes, but not the singing."
+      }
+    },
+    {
+      "title": "动词+得/不+“了”（liǎo）",
+      "body": "Indicating whether an action can take place or be completed. 1) 动作行为能否发生：去得了/去不了。2) 能否完成（“了”有“完”的意思）：吃得了/吃不了。",
+      "example": {
+        "zh": "她说晚上有事，去不了。",
+        "pinyin": "tā shuō wǎn shàng yǒu shì，qù bù liǎo。",
+        "en": "She said she had something to do and couldn’t go."
+      }
+    },
+    {
+      "title": "动词+得/不+“下”",
+      "body": "Indicating whether the space is big enough to accommodate.",
+      "example": {
+        "zh": "这个剧场不大，估计坐不下一千人。",
+        "pinyin": "zhè ge jù chǎng bù dà，gū jì zuò bù xià yī qiān rén。",
+        "en": "This theater isn’t big; I reckon it can’t seat a thousand people."
+      }
+    },
+    {
+      "title": "能愿动词“能”和可能补语",
+      "body": "Compare 能/不能+动词 vs potential complements. Ability/condition: both OK (能去 / 去得了). Dissuasion: only 不能+动词. Insufficient conditions: normally potential complement only (拿不了 / 看不见).",
+      "example": {
+        "zh": "今天我有时间，去得了。",
+        "pinyin": "jīn tiān wǒ yǒu shí jiān，qù dé le。",
+        "en": "I have time today; I can go."
+      }
+    }
+  ]
+}

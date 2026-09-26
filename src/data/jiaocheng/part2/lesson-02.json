@@ -1,0 +1,866 @@
+{
+  "id": "jiaocheng-2-2-02",
+  "book": "2-2",
+  "index": 2,
+  "bookLesson": 14,
+  "titleZh": "钥匙忘拔下来了",
+  "titleEn": "I forgot to pull out the keys",
+  "sourcePages": "15-33",
+  "words": [
+    {
+      "zh": "图书城",
+      "pinyin": "túshūchéng",
+      "pos": "n.",
+      "en": "book mall",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 图书城 like the big book destination you bike to on Sunday — 到图书城去买书.",
+      "usage": "Most Chinese speakers use 图书城 for a large book-shopping complex, not a single shop. In this lesson it is where 我和麦克 spend the morning.",
+      "example": {
+        "zh": "星期天，我和麦克一起骑车到图书城去买书。",
+        "pinyin": "Xīngqītiān, wǒ hé Màikè yìqǐ qíchē dào túshūchéng qù mǎi shū.",
+        "en": "On Sunday, Mike and I rode bikes together to the book mall to buy books."
+      }
+    },
+    {
+      "zh": "图书",
+      "pinyin": "túshū",
+      "pos": "n.",
+      "en": "book",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Listed under 图书城 in the 生词 list.",
+      "when": "Remember 图书 like the formal ‘books’ inside 图书城 — the headword’s core noun.",
+      "usage": "Most Chinese speakers use 图书 in compounds (图书馆, 图书城). Everyday ‘a book’ is often just 书; here it sits under 图书城 in the 生词 list.",
+      "example": {
+        "zh": "星期天，我和麦克一起骑车到图书城去买书。",
+        "pinyin": "Xīngqītiān, wǒ hé Màikè yìqǐ qíchē dào túshūchéng qù mǎi shū.",
+        "en": "On Sunday, Mike and I rode bikes together to the book mall to buy books."
+      }
+    },
+    {
+      "zh": "进去",
+      "pinyin": "jìnqu",
+      "pos": "v.",
+      "en": "to enter",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 进去 like wanting to step into every shop — 都想进去看看.",
+      "usage": "Most Chinese speakers use 进去 after a verb or alone for motion in (away from the speaker’s viewpoint). Here it is entering bookstores.",
+      "example": {
+        "zh": "每个书店我们都想进去看看。",
+        "pinyin": "Měi ge shūdiàn wǒmen dōu xiǎng jìnqu kànkan.",
+        "en": "We wanted to go into every bookstore and take a look."
+      }
+    },
+    {
+      "zh": "另",
+      "pinyin": "lìng",
+      "pos": "pron.",
+      "en": "other; another",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 另 like switching shops — 另一个书店.",
+      "usage": "Most Chinese speakers put 另 before a measure+noun (另一个). Related 另外 is ‘besides / in addition’.",
+      "example": {
+        "zh": "我们从一个书店走出来，又走进另一个书店。",
+        "pinyin": "Wǒmen cóng yí ge shūdiàn zǒu chūlai, yòu zǒu jìn lìng yí ge shūdiàn.",
+        "en": "We walked out of one bookstore and into another."
+      }
+    },
+    {
+      "zh": "另外",
+      "pinyin": "lìngwài",
+      "pos": "pron.",
+      "en": "in addition; besides",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Listed under 另 in the 生词 list; 课文 uses 另 in 另一个书店.",
+      "when": "Remember 另外 like the list partner of 另 — ‘another / besides’ when you add something else.",
+      "usage": "Most Chinese speakers use 另外 to add a further point or item. Listed under 另 in this lesson’s 生词.",
+      "example": {
+        "zh": "我们从一个书店走出来，又走进另一个书店。",
+        "pinyin": "Wǒmen cóng yí ge shūdiàn zǒu chūlai, yòu zǒu jìn lìng yí ge shūdiàn.",
+        "en": "We walked out of one bookstore and into another."
+      }
+    },
+    {
+      "zh": "各种各样",
+      "pinyin": "gèzhǒng-gèyàng",
+      "pos": "phrase",
+      "en": "all kinds of",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 各种各样 like the shelves full of every type of book — 各种各样的书.",
+      "usage": "Most Chinese speakers put 各种各样的 before a noun for wide variety. No POS printed in the book.",
+      "example": {
+        "zh": "看到书店里有各种各样的书，我很兴奋。",
+        "pinyin": "Kàndào shūdiàn li yǒu gèzhǒng-gèyàng de shū, wǒ hěn xīngfèn.",
+        "en": "Seeing all kinds of books in the store, I was very excited."
+      }
+    },
+    {
+      "zh": "各",
+      "pinyin": "gè",
+      "pos": "pron.",
+      "en": "various; different",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Listed under 各种各样 in the 生词 list.",
+      "when": "Remember 各 like the ‘each / various’ piece inside 各种各样.",
+      "usage": "Most Chinese speakers use 各 before a measure (各个, 各种). Listed under 各种各样.",
+      "example": {
+        "zh": "看到书店里有各种各样的书，我很兴奋。",
+        "pinyin": "Kàndào shūdiàn li yǒu gèzhǒng-gèyàng de shū, wǒ hěn xīngfèn.",
+        "en": "Seeing all kinds of books in the store, I was very excited."
+      }
+    },
+    {
+      "zh": "样",
+      "pinyin": "yàng",
+      "pos": "m.",
+      "en": "kind; type",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Listed under 各种各样 in the 生词 list.",
+      "when": "Remember 样 like the measure for kinds in 各种各样.",
+      "usage": "Most Chinese speakers use 样 as ‘kind/type’ (这样, 一样, 各种各样). Listed under 各种各样.",
+      "example": {
+        "zh": "看到书店里有各种各样的书，我很兴奋。",
+        "pinyin": "Kàndào shūdiàn li yǒu gèzhǒng-gèyàng de shū, wǒ hěn xīngfèn.",
+        "en": "Seeing all kinds of books in the store, I was very excited."
+      }
+    },
+    {
+      "zh": "兴奋",
+      "pinyin": "xīngfèn",
+      "pos": "adj.",
+      "en": "excited",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 兴奋 like how you feel seeing so many books — 我很兴奋.",
+      "usage": "Most Chinese speakers use 兴奋 for excited / pumped-up emotion. This lesson’s sense is bookstore excitement, not a medical term.",
+      "example": {
+        "zh": "看到书店里有各种各样的书，我很兴奋。",
+        "pinyin": "Kàndào shūdiàn li yǒu gèzhǒng-gèyàng de shū, wǒ hěn xīngfèn.",
+        "en": "Seeing all kinds of books in the store, I was very excited."
+      }
+    },
+    {
+      "zh": "书架",
+      "pinyin": "shūjià",
+      "pos": "n.",
+      "en": "bookshelf",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 书架 like the place you 拿下来 and 抽出来 books from.",
+      "usage": "Most Chinese speakers use 书架 for a bookshelf. The 课文 keeps switching shelves while browsing.",
+      "example": {
+        "zh": "从这个书架上拿下来一本看看，再放上去，又从另一个书架上抽出来一本看看。",
+        "pinyin": "Cóng zhège shūjià shang ná xiàlai yì běn kànkan, zài fàng shàngqu, yòu cóng lìng yí ge shūjià shang chōu chūlai yì běn kànkan.",
+        "en": "I took a book down from this shelf to look at it, put it back up, then pulled another out from a different shelf to look at."
+      }
+    },
+    {
+      "zh": "下来",
+      "pinyin": "xiàlai",
+      "pos": "v.",
+      "en": "used after a verb to indicate motion towards a lower or nearer position",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 下来 like finishing a downward/toward-you motion — 拿下来, and later 拔下来.",
+      "usage": "Most Chinese speakers attach 下来 after a verb as a compound directional complement (toward a lower or nearer place). Neutral tone on lai in the book’s headword style.",
+      "example": {
+        "zh": "从这个书架上拿下来一本看看，再放上去，又从另一个书架上抽出来一本看看。",
+        "pinyin": "Cóng zhège shūjià shang ná xiàlai yì běn kànkan, zài fàng shàngqu, yòu cóng lìng yí ge shūjià shang chōu chūlai yì běn kànkan.",
+        "en": "I took a book down from this shelf to look at it, put it back up, then pulled another out from a different shelf to look at."
+      }
+    },
+    {
+      "zh": "抽",
+      "pinyin": "chōu",
+      "pos": "v.",
+      "en": "to take out from in between; to take a part of the whole",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 抽 like sliding a book out from the shelf — 抽出来一本看看.",
+      "usage": "Most Chinese speakers 抽 something out from between others (抽出来). Here it is pulling a book from the shelf.",
+      "example": {
+        "zh": "从这个书架上拿下来一本看看，再放上去，又从另一个书架上抽出来一本看看。",
+        "pinyin": "Cóng zhège shūjià shang ná xiàlai yì běn kànkan, zài fàng shàngqu, yòu cóng lìng yí ge shūjià shang chōu chūlai yì běn kànkan.",
+        "en": "I took a book down from this shelf to look at it, put it back up, then pulled another out from a different shelf to look at."
+      }
+    },
+    {
+      "zh": "挑",
+      "pinyin": "tiāo",
+      "pos": "v.",
+      "en": "to choose; to select; to pick out",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 挑 like carefully picking history books — 我挑了几本历史书.",
+      "usage": "Most Chinese speakers 挑 among options with a bit of care. Mike 选; the narrator 挑.",
+      "example": {
+        "zh": "我挑了几本历史书，麦克选了一些中文小说儿。",
+        "pinyin": "Wǒ tiāo le jǐ běn lìshǐ shū, Màikè xuǎn le yìxiē Zhōngwén xiǎoshuōr.",
+        "en": "I picked out a few history books, and Mike chose some Chinese novels."
+      }
+    },
+    {
+      "zh": "小说(儿)",
+      "pinyin": "xiǎoshuōr",
+      "pos": "n.",
+      "en": "novel",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Book lists 小说（儿）; 课文 uses 小说儿.",
+      "when": "Remember 小说(儿) like what Mike chooses — 中文小说儿.",
+      "usage": "Most Chinese speakers say 小说 for novels; the book lists 小说（儿） with optional 儿化, and 课文 uses 小说儿.",
+      "example": {
+        "zh": "我挑了几本历史书，麦克选了一些中文小说儿。",
+        "pinyin": "Wǒ tiāo le jǐ běn lìshǐ shū, Màikè xuǎn le yìxiē Zhōngwén xiǎoshuōr.",
+        "en": "I picked out a few history books, and Mike chose some Chinese novels."
+      }
+    },
+    {
+      "zh": "放寒假",
+      "pinyin": "fàng hánjià",
+      "pos": "phrase",
+      "en": "to take one's winter vacation",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 放寒假 like the approaching break that makes you buy books to take home.",
+      "usage": "Most Chinese speakers 放寒假 / 放暑假 for school holidays. No POS printed; listed as a set phrase.",
+      "example": {
+        "zh": "快放寒假了，我们都想买一些书带回国去。",
+        "pinyin": "Kuài fàng hánjià le, wǒmen dōu xiǎng mǎi yìxiē shū dài huí guó qù.",
+        "en": "Winter vacation is almost here, and we both want to buy some books to take back home."
+      }
+    },
+    {
+      "zh": "放",
+      "pinyin": "fàng",
+      "pos": "v.",
+      "en": "to stop (study, work, etc.); to have a holiday",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Listed under 放寒假; this lesson’s sense is ‘have a holiday,’ not ‘put/place.’",
+      "when": "Remember 放 like the holiday verb in 放寒假 — school lets out.",
+      "usage": "Most Chinese speakers 放假 / 放寒假 for breaks. Listed under 放寒假; not ‘put’ here.",
+      "example": {
+        "zh": "快放寒假了，我们都想买一些书带回国去。",
+        "pinyin": "Kuài fàng hánjià le, wǒmen dōu xiǎng mǎi yìxiē shū dài huí guó qù.",
+        "en": "Winter vacation is almost here, and we both want to buy some books to take back home."
+      }
+    },
+    {
+      "zh": "寒假",
+      "pinyin": "hánjià",
+      "pos": "n.",
+      "en": "winter vacation",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Listed under 放寒假 in the 生词 list.",
+      "when": "Remember 寒假 like the winter break you’re shopping for — 快放寒假了.",
+      "usage": "Most Chinese speakers contrast 寒假 with 暑假. Listed under 放寒假.",
+      "example": {
+        "zh": "快放寒假了，我们都想买一些书带回国去。",
+        "pinyin": "Kuài fàng hánjià le, wǒmen dōu xiǎng mǎi yìxiē shū dài huí guó qù.",
+        "en": "Winter vacation is almost here, and we both want to buy some books to take back home."
+      }
+    },
+    {
+      "zh": "暑假",
+      "pinyin": "shǔjià",
+      "pos": "n.",
+      "en": "summer vacation",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Listed under 放寒假; does not appear in 课文. Example reuses the 放寒假 课文 line as the parallel holiday pattern.",
+      "when": "Remember 暑假 like the summer twin of 寒假 in the same 生词 entry — same 放…假 pattern.",
+      "usage": "Most Chinese speakers pair 暑假 with 寒假. Not used in this 课文; listed under 放寒假 as a related form.",
+      "example": {
+        "zh": "快放寒假了，我们都想买一些书带回国去。",
+        "pinyin": "Kuài fàng hánjià le, wǒmen dōu xiǎng mǎi yìxiē shū dài huí guó qù.",
+        "en": "Winter vacation is almost here, and we both want to buy some books to take back home."
+      }
+    },
+    {
+      "zh": "回去",
+      "pinyin": "huíqu",
+      "pos": "v.",
+      "en": "(used after a verb to express a sense of returning) back; to go back; to return",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 回去 like taking gifts back — 带回去送朋友.",
+      "usage": "Most Chinese speakers attach 回去 after a verb for return motion (away from here toward ‘back’). Neutral qu in the headword style.",
+      "example": {
+        "zh": "除了买书以外，我们还想买一些小礼品，带回去送朋友。",
+        "pinyin": "Chúle mǎi shū yǐwài, wǒmen hái xiǎng mǎi yìxiē xiǎo lǐpǐn, dài huíqu sòng péngyou.",
+        "en": "Besides buying books, we also wanted to buy some small gifts to take back for friends."
+      }
+    },
+    {
+      "zh": "除了……以外",
+      "pinyin": "chúle…… yǐwài",
+      "pos": "pattern",
+      "en": "besides; apart from",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 除了……以外 like adding gifts on top of books — 除了买书以外，还想买礼品.",
+      "usage": "Most Chinese speakers frame an exception/addition with 除了 A 以外，还 B. Book prints the pattern as one 生词 entry.",
+      "example": {
+        "zh": "除了买书以外，我们还想买一些小礼品，带回去送朋友。",
+        "pinyin": "Chúle mǎi shū yǐwài, wǒmen hái xiǎng mǎi yìxiē xiǎo lǐpǐn, dài huíqu sòng péngyou.",
+        "en": "Besides buying books, we also wanted to buy some small gifts to take back for friends."
+      }
+    },
+    {
+      "zh": "以外",
+      "pinyin": "yǐwài",
+      "pos": "n.",
+      "en": "beyond; outside; except",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Printed under 除了……以外; book English for the pattern is besides; apart from.",
+      "when": "Remember 以外 like the second half of 除了……以外.",
+      "usage": "Most Chinese speakers lock 以外 with 除了 (or use 之外). Listed under the pattern in the 生词 list.",
+      "example": {
+        "zh": "除了买书以外，我们还想买一些小礼品，带回去送朋友。",
+        "pinyin": "Chúle mǎi shū yǐwài, wǒmen hái xiǎng mǎi yìxiē xiǎo lǐpǐn, dài huíqu sòng péngyou.",
+        "en": "Besides buying books, we also wanted to buy some small gifts to take back for friends."
+      }
+    },
+    {
+      "zh": "礼品",
+      "pinyin": "lǐpǐn",
+      "pos": "n.",
+      "en": "present; gift",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 礼品 like the small gifts for friends — 小礼品.",
+      "usage": "Most Chinese speakers use 礼品 for gifts (a bit more ‘present/gift item’ than casual 礼物). Here: souvenirs from the mall.",
+      "example": {
+        "zh": "除了买书以外，我们还想买一些小礼品，带回去送朋友。",
+        "pinyin": "Chúle mǎi shū yǐwài, wǒmen hái xiǎng mǎi yìxiē xiǎo lǐpǐn, dài huíqu sòng péngyou.",
+        "en": "Besides buying books, we also wanted to buy some small gifts to take back for friends."
+      }
+    },
+    {
+      "zh": "于是",
+      "pinyin": "yúshì",
+      "pos": "conj.",
+      "en": "so; hence; thereupon",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 于是 like the ‘so’ that walks you into the mall after deciding on gifts.",
+      "usage": "Most Chinese speakers use 于是 to show what follows from the previous situation. Book POS (连).",
+      "example": {
+        "zh": "于是我们又走进一家商场去。",
+        "pinyin": "Yúshì wǒmen yòu zǒu jìn yì jiā shāngchǎng qù.",
+        "en": "So we walked into a shopping mall as well."
+      }
+    },
+    {
+      "zh": "商场",
+      "pinyin": "shāngchǎng",
+      "pos": "n.",
+      "en": "shopping mall",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 商场 like the department-store stop after the book mall.",
+      "usage": "Most Chinese speakers use 商场 for a shopping mall / department store. Distinct from 图书城 in this story.",
+      "example": {
+        "zh": "于是我们又走进一家商场去。",
+        "pinyin": "Yúshì wǒmen yòu zǒu jìn yì jiā shāngchǎng qù.",
+        "en": "So we walked into a shopping mall as well."
+      }
+    },
+    {
+      "zh": "商品",
+      "pinyin": "shāngpǐn",
+      "pos": "n.",
+      "en": "commodity; goods",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 商品 like ‘anything for sale’ — 什么商品都有.",
+      "usage": "Most Chinese speakers use 商品 for goods/merchandise. Here the mall is packed with them.",
+      "example": {
+        "zh": "这家商场里边什么商品都有。",
+        "pinyin": "Zhè jiā shāngchǎng lǐbian shénme shāngpǐn dōu yǒu.",
+        "en": "This mall had every kind of goods."
+      }
+    },
+    {
+      "zh": "脸谱",
+      "pinyin": "liǎnpǔ",
+      "pos": "n.",
+      "en": "facial makeup",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 脸谱 like the Peking-opera face designs on the little ornaments you buy.",
+      "usage": "Most Chinese speakers use 脸谱 for opera facial makeup patterns. See 注释 for the cultural note.",
+      "example": {
+        "zh": "我买了一些京剧脸谱的小饰物，还买了一些丝织品。",
+        "pinyin": "Wǒ mǎi le yìxiē Jīngjù liǎnpǔ de xiǎo shìwù, hái mǎi le yìxiē sīzhīpǐn.",
+        "en": "I bought some small Peking-opera facial-makeup ornaments, and also some silk fabrics."
+      }
+    },
+    {
+      "zh": "饰物",
+      "pinyin": "shìwù",
+      "pos": "n.",
+      "en": "articles for personal adornment; ornament",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 饰物 like the small opera-face trinkets — 小饰物.",
+      "usage": "Most Chinese speakers use 饰物 for ornaments / personal adornments. Here: 京剧脸谱的小饰物.",
+      "example": {
+        "zh": "我买了一些京剧脸谱的小饰物，还买了一些丝织品。",
+        "pinyin": "Wǒ mǎi le yìxiē Jīngjù liǎnpǔ de xiǎo shìwù, hái mǎi le yìxiē sīzhīpǐn.",
+        "en": "I bought some small Peking-opera facial-makeup ornaments, and also some silk fabrics."
+      }
+    },
+    {
+      "zh": "丝织品",
+      "pinyin": "sīzhīpǐn",
+      "pos": "n.",
+      "en": "silk fabric",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 丝织品 like the silk goods you buy alongside the ornaments.",
+      "usage": "Most Chinese speakers use 丝织品 for silk textiles/products — classic China gifts.",
+      "example": {
+        "zh": "我买了一些京剧脸谱的小饰物，还买了一些丝织品。",
+        "pinyin": "Wǒ mǎi le yìxiē Jīngjù liǎnpǔ de xiǎo shìwù, hái mǎi le yìxiē sīzhīpǐn.",
+        "en": "I bought some small Peking-opera facial-makeup ornaments, and also some silk fabrics."
+      }
+    },
+    {
+      "zh": "钥匙链(儿)",
+      "pinyin": "yàoshiliànr",
+      "pos": "n.",
+      "en": "key chain",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Book lists 钥匙链（儿）; 课文 uses 钥匙链儿.",
+      "when": "Remember 钥匙链(儿) like Mike’s haul of pretty key chains.",
+      "usage": "Most Chinese speakers say 钥匙链 / 钥匙链儿 for keychains. Book lists 钥匙链（儿）; 课文 uses 钥匙链儿.",
+      "example": {
+        "zh": "麦克买了很多漂亮的钥匙链儿，还买了不少小玩具，有小熊猫、小汽车什么的。",
+        "pinyin": "Màikè mǎi le hěn duō piàoliang de yàoshiliànr, hái mǎi le bù shǎo xiǎo wánjù, yǒu xiǎo xióngmāo, xiǎo qìchē shénme de.",
+        "en": "Mike bought lots of pretty key chains and quite a few little toys — little pandas, little cars, and so on."
+      }
+    },
+    {
+      "zh": "玩具",
+      "pinyin": "wánjù",
+      "pos": "n.",
+      "en": "toy",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 玩具 like the little toys Mike will give to kids.",
+      "usage": "Most Chinese speakers use 玩具 for toys. Here: 小熊猫、小汽车什么的.",
+      "example": {
+        "zh": "麦克买了很多漂亮的钥匙链儿，还买了不少小玩具，有小熊猫、小汽车什么的。",
+        "pinyin": "Màikè mǎi le hěn duō piàoliang de yàoshiliànr, hái mǎi le bù shǎo xiǎo wánjù, yǒu xiǎo xióngmāo, xiǎo qìchē shénme de.",
+        "en": "Mike bought lots of pretty key chains and quite a few little toys — little pandas, little cars, and so on."
+      }
+    },
+    {
+      "zh": "熊猫",
+      "pinyin": "xióngmāo",
+      "pos": "n.",
+      "en": "panda",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 熊猫 like the toy pandas in Mike’s bag — 小熊猫.",
+      "usage": "Most Chinese speakers use 熊猫 for pandas. In 课文 it is a toy, 小熊猫.",
+      "example": {
+        "zh": "麦克买了很多漂亮的钥匙链儿，还买了不少小玩具，有小熊猫、小汽车什么的。",
+        "pinyin": "Màikè mǎi le hěn duō piàoliang de yàoshiliànr, hái mǎi le bù shǎo xiǎo wánjù, yǒu xiǎo xióngmāo, xiǎo qìchē shénme de.",
+        "en": "Mike bought lots of pretty key chains and quite a few little toys — little pandas, little cars, and so on."
+      }
+    },
+    {
+      "zh": "肯定",
+      "pinyin": "kěndìng",
+      "pos": "adv.",
+      "en": "definitely",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 肯定 like Mike’s certainty — 他们肯定喜欢.",
+      "usage": "Most Chinese speakers use 肯定 as ‘definitely / for sure’ before a verb or adjective. Book POS (副).",
+      "example": {
+        "zh": "他说，这些玩具带回去送给小朋友们，他们肯定喜欢。",
+        "pinyin": "Tā shuō, zhèxiē wánjù dài huíqu sòng gěi xiǎo péngyoumen, tāmen kěndìng xǐhuan.",
+        "en": "He said if we take these toys back for the kids, they’ll definitely like them."
+      }
+    },
+    {
+      "zh": "售货员",
+      "pinyin": "shòuhuòyuán",
+      "pos": "n.",
+      "en": "shop assistant",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 售货员 like the clerk who hands you each a carton.",
+      "usage": "Most Chinese speakers use 售货员 for a shop assistant / salesperson.",
+      "example": {
+        "zh": "售货员看我们买的东西多，不好拿，就给我们一人找了一个小纸箱。",
+        "pinyin": "Shòuhuòyuán kàn wǒmen mǎi de dōngxi duō, bù hǎo ná, jiù gěi wǒmen yì rén zhǎo le yí ge xiǎo zhǐxiāng.",
+        "en": "Seeing we had bought a lot and it was hard to carry, the shop assistant found a small carton for each of us."
+      }
+    },
+    {
+      "zh": "纸箱",
+      "pinyin": "zhǐxiāng",
+      "pos": "n.",
+      "en": "carton",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 纸箱 like the cardboard box that holds books and gifts — and that you haul up ten floors.",
+      "usage": "Most Chinese speakers use 纸箱 for a cardboard carton. Later you 提着一箱子东西 upstairs.",
+      "example": {
+        "zh": "售货员看我们买的东西多，不好拿，就给我们一人找了一个小纸箱。",
+        "pinyin": "Shòuhuòyuán kàn wǒmen mǎi de dōngxi duō, bù hǎo ná, jiù gěi wǒmen yì rén zhǎo le yí ge xiǎo zhǐxiāng.",
+        "en": "Seeing we had bought a lot and it was hard to carry, the shop assistant found a small carton for each of us."
+      }
+    },
+    {
+      "zh": "纸",
+      "pinyin": "zhǐ",
+      "pos": "n.",
+      "en": "paper",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Listed under 纸箱 in the 生词 list.",
+      "when": "Remember 纸 like the ‘paper’ inside 纸箱.",
+      "usage": "Most Chinese speakers use 纸 for paper. Listed under 纸箱 in the 生词 list.",
+      "example": {
+        "zh": "售货员看我们买的东西多，不好拿，就给我们一人找了一个小纸箱。",
+        "pinyin": "Shòuhuòyuán kàn wǒmen mǎi de dōngxi duō, bù hǎo ná, jiù gěi wǒmen yì rén zhǎo le yí ge xiǎo zhǐxiāng.",
+        "en": "Seeing we had bought a lot and it was hard to carry, the shop assistant found a small carton for each of us."
+      }
+    },
+    {
+      "zh": "饭馆(儿)",
+      "pinyin": "fànguǎnr",
+      "pos": "n.",
+      "en": "restaurant",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Book lists 饭馆（儿）; 课文 uses 饭馆儿.",
+      "when": "Remember 饭馆(儿) like the small place you duck into for dumplings — 小饭馆儿.",
+      "usage": "Most Chinese speakers say 饭馆 / 饭馆儿 for a restaurant. Book lists 饭馆（儿）; 课文 uses 饭馆儿.",
+      "example": {
+        "zh": "从商场出来，已经十二点多了。我和麦克走进一个小饭馆儿去吃午饭。",
+        "pinyin": "Cóng shāngchǎng chūlai, yǐjīng shí’èr diǎn duō le. Wǒ hé Màikè zǒu jìn yí ge xiǎo fànguǎnr qù chī wǔfàn.",
+        "en": "When we left the mall it was already past twelve. Mike and I went into a small restaurant for lunch."
+      }
+    },
+    {
+      "zh": "盘",
+      "pinyin": "pán",
+      "pos": "m.",
+      "en": "plate; dish",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 盘 like ordering dumplings by the plate — 一盘饺子.",
+      "usage": "Most Chinese speakers use 盘 as the measure for platefuls of food.",
+      "example": {
+        "zh": "我们要了一盘饺子和几个菜，吃得很舒服。",
+        "pinyin": "Wǒmen yào le yì pán jiǎozi hé jǐ ge cài, chī de hěn shūfu.",
+        "en": "We ordered a plate of dumplings and a few dishes, and ate very comfortably."
+      }
+    },
+    {
+      "zh": "累",
+      "pinyin": "lèi",
+      "pos": "adj.",
+      "en": "tired",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 累 like post-ride fatigue — 又累又困.",
+      "usage": "Most Chinese speakers use 累 for tiredness after effort. Paired with 困 in the 课文.",
+      "example": {
+        "zh": "吃完饭，我们就骑车回来了。回到学校，我又累又困，想赶快回到宿舍去洗个澡，休息休息。",
+        "pinyin": "Chī wán fàn, wǒmen jiù qíchē huílai le. Huídào xuéxiào, wǒ yòu lèi yòu kùn, xiǎng gǎnkuài huídào sùshè qù xǐ ge zǎo, xiūxi xiūxi.",
+        "en": "After eating we rode back. Back at school I was tired and sleepy, and wanted to get to the dorm quickly to shower and rest."
+      }
+    },
+    {
+      "zh": "困",
+      "pinyin": "kùn",
+      "pos": "adj.",
+      "en": "sleepy",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 困 like wanting a nap after the climb of a day — 又累又困.",
+      "usage": "Most Chinese speakers use 困 for sleepy / drowsy. Different from 困难.",
+      "example": {
+        "zh": "吃完饭，我们就骑车回来了。回到学校，我又累又困，想赶快回到宿舍去洗个澡，休息休息。",
+        "pinyin": "Chī wán fàn, wǒmen jiù qíchē huílai le. Huídào xuéxiào, wǒ yòu lèi yòu kùn, xiǎng gǎnkuài huídào sùshè qù xǐ ge zǎo, xiūxi xiūxi.",
+        "en": "After eating we rode back. Back at school I was tired and sleepy, and wanted to get to the dorm quickly to shower and rest."
+      }
+    },
+    {
+      "zh": "电梯",
+      "pinyin": "diàntī",
+      "pos": "n.",
+      "en": "lift; elevator",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 电梯 like the broken lift that forces the stair climb — 电梯维修.",
+      "usage": "Most Chinese speakers use 电梯 for elevators. The notice says use 楼梯 instead.",
+      "example": {
+        "zh": "走进楼来，看见电梯门口贴了张通知：“电梯维修，请走楼梯。”",
+        "pinyin": "Zǒu jìn lóu lai, kànjian diàntī ménkǒu tiē le zhāng tōngzhī: “Diàntī wéixiū, qǐng zǒu lóutī.”",
+        "en": "Coming into the building, I saw a notice on the elevator door: “Elevator under repair — please use the stairs.”"
+      }
+    },
+    {
+      "zh": "维修",
+      "pinyin": "wéixiū",
+      "pos": "v.",
+      "en": "to maintain and repair",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 维修 like the elevator notice — 电梯维修，请走楼梯.",
+      "usage": "Most Chinese speakers use 维修 for maintenance/repair (of machines, buildings). Related 修 is the shorter ‘repair’.",
+      "example": {
+        "zh": "走进楼来，看见电梯门口贴了张通知：“电梯维修，请走楼梯。”",
+        "pinyin": "Zǒu jìn lóu lai, kànjian diàntī ménkǒu tiē le zhāng tōngzhī: “Diàntī wéixiū, qǐng zǒu lóutī.”",
+        "en": "Coming into the building, I saw a notice on the elevator door: “Elevator under repair — please use the stairs.”"
+      }
+    },
+    {
+      "zh": "修",
+      "pinyin": "xiū",
+      "pos": "v.",
+      "en": "to repair",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Listed under 维修 in the 生词 list.",
+      "when": "Remember 修 like the core of 维修 — fixing something that’s broken.",
+      "usage": "Most Chinese speakers 修 bikes, phones, elevators. Listed under 维修.",
+      "example": {
+        "zh": "走进楼来，看见电梯门口贴了张通知：“电梯维修，请走楼梯。”",
+        "pinyin": "Zǒu jìn lóu lai, kànjian diàntī ménkǒu tiē le zhāng tōngzhī: “Diàntī wéixiū, qǐng zǒu lóutī.”",
+        "en": "Coming into the building, I saw a notice on the elevator door: “Elevator under repair — please use the stairs.”"
+      }
+    },
+    {
+      "zh": "楼梯",
+      "pinyin": "lóutī",
+      "pos": "n.",
+      "en": "stairs; stairway",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 楼梯 like the only way up — 请走楼梯.",
+      "usage": "Most Chinese speakers use 楼梯 for stairs. Ten floors with a carton in hand.",
+      "example": {
+        "zh": "走进楼来，看见电梯门口贴了张通知：“电梯维修，请走楼梯。”",
+        "pinyin": "Zǒu jìn lóu lai, kànjian diàntī ménkǒu tiē le zhāng tōngzhī: “Diàntī wéixiū, qǐng zǒu lóutī.”",
+        "en": "Coming into the building, I saw a notice on the elevator door: “Elevator under repair — please use the stairs.”"
+      }
+    },
+    {
+      "zh": "只好",
+      "pinyin": "zhǐhǎo",
+      "pos": "adv.",
+      "en": "have to; cannot but",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 只好 like having no choice but to climb — 只好爬上去.",
+      "usage": "Most Chinese speakers use 只好 when the only workable option is left. Book POS (副).",
+      "example": {
+        "zh": "我住十层，没办法，只好爬上去。我手里提着一箱子东西，一步一步地往上爬。",
+        "pinyin": "Wǒ zhù shí céng, méi bànfǎ, zhǐhǎo pá shàngqu. Wǒ shǒuli tí zhe yì xiāngzi dōngxi, yí bù yí bù de wǎng shàng pá.",
+        "en": "I live on the tenth floor; there was nothing for it but to climb. Carrying a box of things, I climbed up step by step."
+      }
+    },
+    {
+      "zh": "提",
+      "pinyin": "tí",
+      "pos": "v.",
+      "en": "to carry (in one's hand with the arm hanging down)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 提 like lugging the carton upstairs — 提着一箱子东西.",
+      "usage": "Most Chinese speakers 提 bags/boxes with the arm down. Not 抬 (two people / heavier lift).",
+      "example": {
+        "zh": "我住十层，没办法，只好爬上去。我手里提着一箱子东西，一步一步地往上爬。",
+        "pinyin": "Wǒ zhù shí céng, méi bànfǎ, zhǐhǎo pá shàngqu. Wǒ shǒuli tí zhe yì xiāngzi dōngxi, yí bù yí bù de wǎng shàng pá.",
+        "en": "I live on the tenth floor; there was nothing for it but to climb. Carrying a box of things, I climbed up step by step."
+      }
+    },
+    {
+      "zh": "步",
+      "pinyin": "bù",
+      "pos": "n.",
+      "en": "step",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 步 like climbing one step at a time — 一步一步地往上爬.",
+      "usage": "Most Chinese speakers use 步 for steps; 一步一步地 means slowly, step by step.",
+      "example": {
+        "zh": "我住十层，没办法，只好爬上去。我手里提着一箱子东西，一步一步地往上爬。",
+        "pinyin": "Wǒ zhù shí céng, méi bànfǎ, zhǐhǎo pá shàngqu. Wǒ shǒuli tí zhe yì xiāngzi dōngxi, yí bù yí bù de wǎng shàng pá.",
+        "en": "I live on the tenth floor; there was nothing for it but to climb. Carrying a box of things, I climbed up step by step."
+      }
+    },
+    {
+      "zh": "钥匙",
+      "pinyin": "yàoshi",
+      "pos": "n.",
+      "en": "key",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 钥匙 like the whole punchline — still in the bike lock downstairs.",
+      "usage": "Most Chinese speakers use 钥匙 for keys. Title and climax of this lesson.",
+      "example": {
+        "zh": "啊！我忽然想起来了，钥匙还在楼下自行车上插着呢，我忘拔下来了。",
+        "pinyin": "À! Wǒ hūrán xiǎng qǐlai le, yàoshi hái zài lóuxià zìxíngchē shang chā zhe ne, wǒ wàng bá xiàlai le.",
+        "en": "Ah! I suddenly remembered — the keys were still stuck in the bike downstairs; I’d forgotten to pull them out."
+      }
+    },
+    {
+      "zh": "却",
+      "pinyin": "què",
+      "pos": "adv.",
+      "en": "but; however",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 却 like the turn at the door — 要开门的时候，却发现钥匙不见了.",
+      "usage": "Most Chinese speakers use 却 for a contrastive ‘however’ before the unexpected result.",
+      "example": {
+        "zh": "到了门口，我放下箱子，要拿出钥匙开门的时候，却发现钥匙不见了，找了半天也没有找到。",
+        "pinyin": "Dào le ménkǒu, wǒ fàngxia xiāngzi, yào ná chu yàoshi kāi mén de shíhou, què fāxiàn yàoshi bú jiàn le, zhǎo le bàntiān yě méiyǒu zhǎodào.",
+        "en": "At the door I put the box down; when I went to take out my keys, I discovered they were gone — I looked forever and still couldn’t find them."
+      }
+    },
+    {
+      "zh": "忽然",
+      "pinyin": "hūrán",
+      "pos": "adv.",
+      "en": "suddenly",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 忽然 like the flash of memory — 忽然想起来了.",
+      "usage": "Most Chinese speakers use 忽然 for a sudden realization or change.",
+      "example": {
+        "zh": "啊！我忽然想起来了，钥匙还在楼下自行车上插着呢，我忘拔下来了。",
+        "pinyin": "À! Wǒ hūrán xiǎng qǐlai le, yàoshi hái zài lóuxià zìxíngchē shang chā zhe ne, wǒ wàng bá xiàlai le.",
+        "en": "Ah! I suddenly remembered — the keys were still stuck in the bike downstairs; I’d forgotten to pull them out."
+      }
+    },
+    {
+      "zh": "起来",
+      "pinyin": "qǐlai",
+      "pos": "v.",
+      "en": "used after a verb to indicate the completion of an action",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 起来 like recalling something — 想起来了 (completion of remembering).",
+      "usage": "Most Chinese speakers attach 起来 after verbs for upward motion or for starting/completion senses; here 想起来 = remember. Neutral lai in headword style.",
+      "example": {
+        "zh": "啊！我忽然想起来了，钥匙还在楼下自行车上插着呢，我忘拔下来了。",
+        "pinyin": "À! Wǒ hūrán xiǎng qǐlai le, yàoshi hái zài lóuxià zìxíngchē shang chā zhe ne, wǒ wàng bá xiàlai le.",
+        "en": "Ah! I suddenly remembered — the keys were still stuck in the bike downstairs; I’d forgotten to pull them out."
+      }
+    },
+    {
+      "zh": "插",
+      "pinyin": "chā",
+      "pos": "v.",
+      "en": "to stick in; to insert",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 插 like keys still stuck in the bike — 插着呢.",
+      "usage": "Most Chinese speakers 插 keys, plugs, flowers into something. Here: left in the lock.",
+      "example": {
+        "zh": "啊！我忽然想起来了，钥匙还在楼下自行车上插着呢，我忘拔下来了。",
+        "pinyin": "À! Wǒ hūrán xiǎng qǐlai le, yàoshi hái zài lóuxià zìxíngchē shang chā zhe ne, wǒ wàng bá xiàlai le.",
+        "en": "Ah! I suddenly remembered — the keys were still stuck in the bike downstairs; I’d forgotten to pull them out."
+      }
+    },
+    {
+      "zh": "拔",
+      "pinyin": "bá",
+      "pos": "v.",
+      "en": "to pull out; to pluck",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 拔 like what you forgot to do — 忘拔下来了.",
+      "usage": "Most Chinese speakers 拔 to pull something out (keys, weeds, plugs). Pairs with 下来 in the title.",
+      "example": {
+        "zh": "啊！我忽然想起来了，钥匙还在楼下自行车上插着呢，我忘拔下来了。",
+        "pinyin": "À! Wǒ hūrán xiǎng qǐlai le, yàoshi hái zài lóuxià zìxíngchē shang chā zhe ne, wǒ wàng bá xiàlai le.",
+        "en": "Ah! I suddenly remembered — the keys were still stuck in the bike downstairs; I’d forgotten to pull them out."
+      }
+    },
+    {
+      "zh": "哭笑不得",
+      "pinyin": "kūxiào-bùdé",
+      "pos": "phrase",
+      "en": "to not know whether to laugh or to cry; to find sth. both funny and annoying",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 哭笑不得 like standing at the tenth-floor door with no keys — funny and maddening at once.",
+      "usage": "Most Chinese speakers use 哭笑不得 for that mixed laugh/cry reaction. No POS printed in the book.",
+      "example": {
+        "zh": "这时，我真是哭笑不得。",
+        "pinyin": "Zhè shí, wǒ zhēn shì kūxiào-bùdé.",
+        "en": "Right then I really didn’t know whether to laugh or cry."
+      }
+    },
+    {
+      "zh": "串(儿)",
+      "pinyin": "chuànr",
+      "pos": "m.",
+      "en": "string; bunch; cluster",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Book lists 串（儿）; 课文 uses 串儿.",
+      "when": "Remember 串(儿) like a bunch of keys — 那串儿钥匙.",
+      "usage": "Most Chinese speakers use 一串(儿) for things on a string/ring (keys, grapes). Book lists 串（儿）; 课文 uses 串儿.",
+      "example": {
+        "zh": "我刚要跑下楼去，就看见麦克也爬上来了，他手里拿的正是我的那串儿钥匙。",
+        "pinyin": "Wǒ gāng yào pǎo xià lóu qù, jiù kànjian Màikè yě pá shànglai le, tā shǒuli ná de zhèng shì wǒ de nà chuànr yàoshi.",
+        "en": "I was just about to run downstairs when I saw Mike climbing up too — and what he was holding was exactly that bunch of keys of mine."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文",
+      "headingZh": "钥匙忘拔下来了",
+      "headingEn": "I forgot to pull out the keys",
+      "type": "passage",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "星期天，我和麦克一起骑车到图书城去买书。图书城离我们学校比较远。那天刮风，我们骑了一个多小时才骑到。图书城很大，里边有很多书店。每个书店我们都想进去看看。我们从一个书店走出来，又走进另一个书店。看到书店里有各种各样的书，我很兴奋。从这个书架上拿下来一本看看，再放上去，又从另一个书架上抽出来一本看看。我挑了几本历史书，麦克选了一些中文小说儿。快放寒假了，我们都想买一些书带回国去。",
+          "pinyin": "Xīngqītiān, wǒ hé Màikè yìqǐ qíchē dào túshūchéng qù mǎi shū. Túshūchéng lí wǒmen xuéxiào bǐjiào yuǎn. Nà tiān guāfēng, wǒmen qí le yí ge duō xiǎoshí cái qí dào. Túshūchéng hěn dà, lǐbian yǒu hěn duō shūdiàn. Měi ge shūdiàn wǒmen dōu xiǎng jìnqu kànkan. Wǒmen cóng yí ge shūdiàn zǒu chūlai, yòu zǒu jìn lìng yí ge shūdiàn. Kàndào shūdiàn li yǒu gèzhǒng-gèyàng de shū, wǒ hěn xīngfèn. Cóng zhège shūjià shang ná xiàlai yì běn kànkan, zài fàng shàngqu, yòu cóng lìng yí ge shūjià shang chōu chūlai yì běn kànkan. Wǒ tiāo le jǐ běn lìshǐ shū, Màikè xuǎn le yìxiē Zhōngwén xiǎoshuōr. Kuài fàng hánjià le, wǒmen dōu xiǎng mǎi yìxiē shū dài huí guó qù.",
+          "en": "On Sunday, Mike and I rode bikes to the book mall to buy books. It’s quite far from our school. It was windy, and we rode more than an hour before we arrived. The mall is huge, with many bookstores — we wanted to go into every one. We’d leave one shop and walk into another. Seeing all kinds of books, I was excited: take one down from a shelf, put it back, pull another out. I picked history books; Mike chose Chinese novels. Winter break was coming, and we both wanted books to take home."
+        },
+        {
+          "speaker": "",
+          "zh": "除了买书以外，我们还想买一些小礼品，带回去送朋友。于是我们又走进一家商场去。",
+          "pinyin": "Chúle mǎi shū yǐwài, wǒmen hái xiǎng mǎi yìxiē xiǎo lǐpǐn, dài huíqu sòng péngyou. Yúshì wǒmen yòu zǒu jìn yì jiā shāngchǎng qù.",
+          "en": "Besides books, we also wanted small gifts for friends — so we walked into a shopping mall too."
+        },
+        {
+          "speaker": "",
+          "zh": "这家商场里边什么商品都有。我买了一些京剧脸谱的小饰物，还买了一些丝织品。麦克买了很多漂亮的钥匙链儿，还买了不少小玩具，有小熊猫、小汽车什么的。他说，这些玩具带回去送给小朋友们，他们肯定喜欢。",
+          "pinyin": "Zhè jiā shāngchǎng lǐbian shénme shāngpǐn dōu yǒu. Wǒ mǎi le yìxiē Jīngjù liǎnpǔ de xiǎo shìwù, hái mǎi le yìxiē sīzhīpǐn. Màikè mǎi le hěn duō piàoliang de yàoshiliànr, hái mǎi le bù shǎo xiǎo wánjù, yǒu xiǎo xióngmāo, xiǎo qìchē shénme de. Tā shuō, zhèxiē wánjù dài huíqu sòng gěi xiǎo péngyoumen, tāmen kěndìng xǐhuan.",
+          "en": "The mall had every kind of goods. I bought small Peking-opera facial-makeup ornaments and some silk fabrics. Mike bought pretty key chains and lots of little toys — toy pandas, toy cars, and so on. He said the kids back home would definitely like them."
+        },
+        {
+          "speaker": "",
+          "zh": "售货员看我们买的东西多，不好拿，就给我们一人找了一个小纸箱。我们买的书和礼品正好都能放进去。",
+          "pinyin": "Shòuhuòyuán kàn wǒmen mǎi de dōngxi duō, bù hǎo ná, jiù gěi wǒmen yì rén zhǎo le yí ge xiǎo zhǐxiāng. Wǒmen mǎi de shū hé lǐpǐn zhènghǎo dōu néng fàng jìnqu.",
+          "en": "Seeing how much we’d bought and how hard it was to carry, the shop assistant found a small carton for each of us. Our books and gifts fit in perfectly."
+        },
+        {
+          "speaker": "",
+          "zh": "从商场出来，已经十二点多了。我和麦克走进一个小饭馆儿去吃午饭。我们要了一盘饺子和几个菜，吃得很舒服。",
+          "pinyin": "Cóng shāngchǎng chūlai, yǐjīng shí’èr diǎn duō le. Wǒ hé Màikè zǒu jìn yí ge xiǎo fànguǎnr qù chī wǔfàn. Wǒmen yào le yì pán jiǎozi hé jǐ ge cài, chī de hěn shūfu.",
+          "en": "Leaving the mall, it was already past twelve. Mike and I went into a small restaurant for lunch. We ordered a plate of dumplings and a few dishes and ate very comfortably."
+        },
+        {
+          "speaker": "",
+          "zh": "吃完饭，我们就骑车回来了。回到学校，我又累又困，想赶快回到宿舍去洗个澡，休息休息。我从车上拿下小纸箱。走进楼来，看见电梯门口贴了张通知：“电梯维修，请走楼梯。”我住十层，没办法，只好爬上去。我手里提着一箱子东西，一步一步地往上爬。爬了半天才爬到十层。到了门口，我放下箱子，要拿出钥匙开门的时候，却发现钥匙不见了，找了半天也没有找到。啊！我忽然想起来了，钥匙还在楼下自行车上插着呢，我忘拔下来了。这时，我真是哭笑不得。",
+          "pinyin": "Chī wán fàn, wǒmen jiù qíchē huílai le. Huídào xuéxiào, wǒ yòu lèi yòu kùn, xiǎng gǎnkuài huídào sùshè qù xǐ ge zǎo, xiūxi xiūxi. Wǒ cóng chē shang ná xia xiǎo zhǐxiāng. Zǒu jìn lóu lai, kànjian diàntī ménkǒu tiē le zhāng tōngzhī: “Diàntī wéixiū, qǐng zǒu lóutī.” Wǒ zhù shí céng, méi bànfǎ, zhǐhǎo pá shàngqu. Wǒ shǒuli tí zhe yì xiāngzi dōngxi, yí bù yí bù de wǎng shàng pá. Pá le bàntiān cái pá dào shí céng. Dào le ménkǒu, wǒ fàngxia xiāngzi, yào ná chu yàoshi kāi mén de shíhou, què fāxiàn yàoshi bú jiàn le, zhǎo le bàntiān yě méiyǒu zhǎodào. À! Wǒ hūrán xiǎng qǐlai le, yàoshi hái zài lóuxià zìxíngchē shang chā zhe ne, wǒ wàng bá xiàlai le. Zhè shí, wǒ zhēn shì kūxiào-bùdé.",
+          "en": "After lunch we rode back. At school I was tired and sleepy and wanted to shower and rest. I took the carton off the bike. In the building a notice said the elevator was under repair — use the stairs. I live on the tenth floor, so I had to climb, box in hand, step by step. It took forever. At the door, about to unlock, I found the keys were gone. Ah! I suddenly remembered — they were still in the bike downstairs; I’d forgotten to pull them out. I didn’t know whether to laugh or cry."
+        },
+        {
+          "speaker": "",
+          "zh": "我刚要跑下楼去，就看见麦克也爬上来了，他手里拿的正是我的那串儿钥匙。",
+          "pinyin": "Wǒ gāng yào pǎo xià lóu qù, jiù kànjian Màikè yě pá shànglai le, tā shǒuli ná de zhèng shì wǒ de nà chuànr yàoshi.",
+          "en": "I was just about to run downstairs when I saw Mike climbing up — holding exactly that bunch of keys of mine."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "脸谱",
+      "body": "中国京剧和其他戏曲中角色脸上画的各种图案，用来表现人物的性格和特点。The characters in Peking opera and other forms of traditional Chinese opera have various patterns painted on their faces to show their temperaments and characteristics. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我买了一些京剧脸谱的小饰物，还买了一些丝织品。",
+        "pinyin": "Wǒ mǎi le yìxiē Jīngjù liǎnpǔ de xiǎo shìwù, hái mǎi le yìxiē sīzhīpǐn.",
+        "en": "I bought some small Peking-opera facial-makeup ornaments, and also some silk fabrics."
+      }
+    },
+    {
+      "title": "动作趋向的表达：复合趋向补语",
+      "body": "趋向动词“上、下、进、出、回、过、起”加上“来”或“去”，放在另一动词后面作补语，叫复合趋向补语，表示动作的趋向。常用：上来/上去、下来/下去、进来/进去、出来/出去、回来/回去、过来/过去、起来。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "从这个书架上拿下来一本看看，再放上去，又从另一个书架上抽出来一本看看。",
+        "pinyin": "Cóng zhège shūjià shang ná xiàlai yì běn kànkan, zài fàng shàngqu, yòu cóng lìng yí ge shūjià shang chōu chūlai yì běn kànkan.",
+        "en": "I took a book down from this shelf to look at it, put it back up, then pulled another out from a different shelf to look at."
+      }
+    },
+    {
+      "title": "复合趋向补语：处所宾语的位置",
+      "body": "动词有宾语时，如果宾语表示处所，一定要放在“来”或“去”之前：动词 + 趋向动词 + 处所宾语 + 来/去。不能说 *走进去图书馆了。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "她走出学校去了。",
+        "pinyin": "Tā zǒu chū xuéxiào qù le.",
+        "en": "She walked out of the school."
+      }
+    },
+    {
+      "title": "复合趋向补语：事物宾语的位置",
+      "body": "如果宾语表示事物，可以放在“来/去”之后，也可以放在“来/去”之前。例如：带回来一件礼物 / 带回一件礼物来。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我们买的书和礼品正好都能放进去。",
+        "pinyin": "Wǒmen mǎi de shū hé lǐpǐn zhènghǎo dōu néng fàng jìnqu.",
+        "en": "The books and gifts we’d bought fit in perfectly."
+      }
+    },
+    {
+      "title": "复合趋向补语与“了”",
+      "body": "如果动词后没有宾语，“了”可以放在动词和补语之间，也可以放在句尾（站了起来 / 站起来了）。如果动词后有表示处所的宾语，“了”放在句末（开上山去了）。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我忘拔下来了。",
+        "pinyin": "Wǒ wàng bá xiàlai le.",
+        "en": "I forgot to pull them out."
+      }
+    }
+  ]
+}

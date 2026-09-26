@@ -1,0 +1,659 @@
+{
+  "id": "jiaocheng-2-1-07",
+  "book": "2-1",
+  "index": 7,
+  "bookLesson": 7,
+  "titleZh": "我们那儿的冬天跟北京一样冷",
+  "titleEn": "The winter in my hometown is as cold as in Beijing",
+  "sourcePages": "108-124",
+  "words": [
+    {
+      "zh": "国家",
+      "pinyin": "guójiā",
+      "pos": "n.",
+      "en": "country",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 国家 like your country vs Beijing — 你们国家.",
+      "usage": "Most Chinese speakers mean nation/country.",
+      "example": {
+        "zh": "你们国家的时间跟北京不一样吧？",
+        "pinyin": "Nǐmen guójiā de shíjiān gēn Běijīng bù yíyàng ba?",
+        "en": "Your country’s time isn’t the same as Beijing’s, right?"
+      }
+    },
+    {
+      "zh": "一样",
+      "pinyin": "yíyàng",
+      "pos": "adj.",
+      "en": "same",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 一样 like ‘the same’ — 跟北京一样冷.",
+      "usage": "Most Chinese speakers use A跟B一样. This lesson’s grammar focus.",
+      "example": {
+        "zh": "冬天跟北京一样冷。",
+        "pinyin": "Dōngtiān gēn Běijīng yíyàng lěng.",
+        "en": "Winter is as cold as in Beijing."
+      }
+    },
+    {
+      "zh": "时差",
+      "pinyin": "shíchā",
+      "pos": "n.",
+      "en": "time difference",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 时差 like jet lag hours — 七个小时的时差.",
+      "usage": "Most Chinese speakers mean time-zone difference.",
+      "example": {
+        "zh": "我们那儿跟北京有七个小时的时差呢！",
+        "pinyin": "Wǒmen nàr gēn Běijīng yǒu qī ge xiǎoshí de shíchā ne!",
+        "en": "There’s a seven-hour time difference with Beijing!"
+      }
+    },
+    {
+      "zh": "夜",
+      "pinyin": "yè",
+      "pos": "n.",
+      "en": "night",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 夜 like night time — 夜里一点多.",
+      "usage": "Most Chinese speakers mean night.",
+      "example": {
+        "zh": "我们那儿才夜里一点多。",
+        "pinyin": "Wǒmen nàr cái yèlǐ yì diǎn duō.",
+        "en": "It’s only a little past one at night there."
+      }
+    },
+    {
+      "zh": "季节",
+      "pinyin": "jìjié",
+      "pos": "n.",
+      "en": "season",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 季节 like four seasons — 春夏秋冬.",
+      "usage": "Most Chinese speakers mean season of the year.",
+      "example": {
+        "zh": "季节跟北京一样吗？",
+        "pinyin": "Jìjié gēn Běijīng yíyàng ma?",
+        "en": "Are the seasons the same as Beijing’s?"
+      }
+    },
+    {
+      "zh": "季",
+      "pinyin": "jì",
+      "pos": "n.",
+      "en": "season",
+      "note": "Also spring, summer, autumn, winter — four seasons.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 季 under 季节 — 四个季节.",
+      "example": {
+        "zh": "Most Chinese speakers count 四季.",
+        "pinyin": "也是春、夏、秋、冬四个季节。",
+        "en": "Yě shì chūn, xià, qiū, dōng sì ge jìjié."
+      }
+    },
+    {
+      "zh": "春（天）",
+      "pinyin": "chūn(tiān)",
+      "pos": "n.",
+      "en": "spring",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 春天 like spring season.",
+      "usage": "Most Chinese speakers say 春天 or 春.",
+      "example": {
+        "zh": "春、夏、秋、冬四个季节。",
+        "pinyin": "Chūn, xià, qiū, dōng sì ge jìjié.",
+        "en": "Spring, summer, autumn, winter."
+      }
+    },
+    {
+      "zh": "夏（天）",
+      "pinyin": "xià(tiān)",
+      "pos": "n.",
+      "en": "summer",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 夏天 like hot summer — 夏天很热.",
+      "usage": "Most Chinese speakers say 夏天 or 夏.",
+      "example": {
+        "zh": "北京的夏天很热。",
+        "pinyin": "Běijīng de xiàtiān hěn rè.",
+        "en": "Beijing summers are very hot."
+      }
+    },
+    {
+      "zh": "秋（天）",
+      "pinyin": "qiū(tiān)",
+      "pos": "n.",
+      "en": "autumn",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 秋天 like autumn season.",
+      "usage": "Most Chinese speakers say 秋天 or 秋.",
+      "example": {
+        "zh": "春、夏、秋、冬。",
+        "pinyin": "Chūn, xià, qiū, dōng.",
+        "en": "Spring, summer, autumn, winter."
+      }
+    },
+    {
+      "zh": "热",
+      "pinyin": "rè",
+      "pos": "adj.",
+      "en": "hot",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 热 like summer heat — 没有这么热.",
+      "usage": "Most Chinese speakers mean hot (weather/objects).",
+      "example": {
+        "zh": "我们那儿夏天没有这么热。",
+        "pinyin": "Wǒmen nàr xiàtiān méiyǒu zhème rè.",
+        "en": "Summers there aren’t this hot."
+      }
+    },
+    {
+      "zh": "冷",
+      "pinyin": "lěng",
+      "pos": "adj.",
+      "en": "cold",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 冷 like winter cold — 一样冷.",
+      "usage": "Most Chinese speakers mean cold.",
+      "example": {
+        "zh": "冬天跟北京一样冷。",
+        "pinyin": "Dōngtiān gēn Běijīng yíyàng lěng.",
+        "en": "Winter is as cold as in Beijing."
+      }
+    },
+    {
+      "zh": "刮风",
+      "pinyin": "guā fēng",
+      "pos": "v.",
+      "en": "(of wind) to blow",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 刮风 like windy weather. Book prints spaced.",
+      "usage": "Most Chinese speakers say 刮大风.",
+      "example": {
+        "zh": "但是不常刮大风。",
+        "pinyin": "Dànshì bù cháng guā dà fēng.",
+        "en": "But strong winds don’t blow often."
+      }
+    },
+    {
+      "zh": "风",
+      "pinyin": "fēng",
+      "pos": "n.",
+      "en": "wind",
+      "note": "Strong winds don’t blow often.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 风 under 刮风.",
+      "example": {
+        "zh": "Most Chinese speakers mean wind.",
+        "pinyin": "不常刮大风。",
+        "en": "Bù cháng guā dà fēng."
+      }
+    },
+    {
+      "zh": "下雪",
+      "pinyin": "xià xuě",
+      "pos": "v.",
+      "en": "to snow",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 下雪 like snowfall. Book prints spaced.",
+      "usage": "Most Chinese speakers mean snow falling.",
+      "example": {
+        "zh": "不但常常下雪，而且下得很大。",
+        "pinyin": "Búdàn chángcháng xià xuě, érqiě xià de hěn dà.",
+        "en": "Not only does it often snow, it snows heavily."
+      }
+    },
+    {
+      "zh": "下",
+      "pinyin": "xià",
+      "pos": "v.",
+      "en": "(of rain or snow) to fall",
+      "note": "It falls heavily.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 下 under 下雪 — 下得很大.",
+      "example": {
+        "zh": "Most Chinese speakers 下雨/下雪.",
+        "pinyin": "下得很大。",
+        "en": "Xià de hěn dà."
+      }
+    },
+    {
+      "zh": "雪",
+      "pinyin": "xuě",
+      "pos": "n.",
+      "en": "snow",
+      "note": "It often snows.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 雪 under 下雪.",
+      "example": {
+        "zh": "Most Chinese speakers mean snow.",
+        "pinyin": "常常下雪。",
+        "en": "Chángcháng xià xuě."
+      }
+    },
+    {
+      "zh": "下雨",
+      "pinyin": "xià yǔ",
+      "pos": "v.",
+      "en": "to rain",
+      "note": "Beijing doesn’t often get snow in winter.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 下雨 listed with 下雪 pattern.",
+      "example": {
+        "zh": "Most Chinese speakers mean rain falling.",
+        "pinyin": "北京冬天不常下雪。",
+        "en": "Běijīng dōngtiān bù cháng xià xuě."
+      }
+    },
+    {
+      "zh": "不但……而且……",
+      "pinyin": "búdàn… érqiě…",
+      "pos": "conj.",
+      "en": "not only… but also",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 不但…而且… for progressive addition.",
+      "usage": "Most Chinese speakers link clauses with this pattern. Grammar focus.",
+      "example": {
+        "zh": "不但常常下雪，而且下得很大。",
+        "pinyin": "Búdàn chángcháng xià xuě, érqiě xià de hěn dà.",
+        "en": "Not only does it often snow, it snows heavily."
+      }
+    },
+    {
+      "zh": "分",
+      "pinyin": "fēn",
+      "pos": "n.",
+      "en": "score; mark",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 分 like test scores — 95分.",
+      "usage": "Most Chinese speakers mean points/marks.",
+      "example": {
+        "zh": "综合课考了95分。",
+        "pinyin": "Zōnghé kè kǎo le jiǔshíwǔ fēn.",
+        "en": "I got 95 on the comprehensive course."
+      }
+    },
+    {
+      "zh": "得",
+      "pinyin": "dé",
+      "pos": "v.",
+      "en": "to get",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 得 like getting a score — 只得了80分.",
+      "usage": "Most Chinese speakers 得+分 for scores.",
+      "example": {
+        "zh": "只得了80分。",
+        "pinyin": "Zhǐ dé le bāshí fēn.",
+        "en": "I only got 80."
+      }
+    },
+    {
+      "zh": "听写",
+      "pinyin": "tīngxiě",
+      "pos": "v.",
+      "en": "to dictate",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 听写 like dictation test — 听写我没考好.",
+      "usage": "Most Chinese speakers mean dictation (listening→writing).",
+      "example": {
+        "zh": "听写我没考好，有的汉字不会写。",
+        "pinyin": "Tīngxiě wǒ méi kǎo hǎo, yǒude Hànzì bú huì xiě.",
+        "en": "I didn’t do well on dictation — some characters I can’t write."
+      }
+    },
+    {
+      "zh": "周末",
+      "pinyin": "zhōumò",
+      "pos": "n.",
+      "en": "weekend",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 周末 like weekend plans — 周末有什么打算？",
+      "usage": "Most Chinese speakers mean Sat–Sun.",
+      "example": {
+        "zh": "周末有什么打算？",
+        "pinyin": "Zhōumò yǒu shénme dǎsuàn?",
+        "en": "Any plans for the weekend?"
+      }
+    },
+    {
+      "zh": "出去",
+      "pinyin": "chūqù",
+      "pos": "v.",
+      "en": "to go out",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 出去 like going out — 出去玩儿吗？",
+      "usage": "Most Chinese speakers mean go out (from here).",
+      "example": {
+        "zh": "出去玩儿吗？",
+        "pinyin": "Chūqù wánr ma?",
+        "en": "Going out to have fun?"
+      }
+    },
+    {
+      "zh": "历史",
+      "pinyin": "lìshǐ",
+      "pos": "n.",
+      "en": "history",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 历史 like Chinese history interest.",
+      "usage": "Most Chinese speakers mean history.",
+      "example": {
+        "zh": "你怎么对历史产生兴趣了？",
+        "pinyin": "Nǐ zěnme duì lìshǐ chǎnshēng xìngqù le?",
+        "en": "How did you get interested in history?"
+      }
+    },
+    {
+      "zh": "产生",
+      "pinyin": "chǎnshēng",
+      "pos": "v.",
+      "en": "to produce; to generate",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 产生 like ‘give rise to’ — 产生兴趣.",
+      "usage": "Most Chinese speakers 产生兴趣/问题.",
+      "example": {
+        "zh": "学了京剧以后，我就对中国历史产生了兴趣。",
+        "pinyin": "Xué le Jīngjù yǐhòu, wǒ jiù duì Zhōngguó lìshǐ chǎnshēng le xìngqù.",
+        "en": "After studying Beijing opera I became interested in Chinese history."
+      }
+    },
+    {
+      "zh": "画册",
+      "pinyin": "huàcè",
+      "pos": "n.",
+      "en": "album of paintings",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 画册 like an illustrated book — 一本画册.",
+      "usage": "Most Chinese speakers mean picture album/illustrated volume.",
+      "example": {
+        "zh": "我在书店买到了一本画册，是介绍中国历史的。",
+        "pinyin": "Wǒ zài shūdiàn mǎidào le yì běn huàcè, shì jièshào Zhōngguó lìshǐ de.",
+        "en": "I bought an illustrated book on Chinese history at the bookstore."
+      }
+    },
+    {
+      "zh": "研究",
+      "pinyin": "yánjiū",
+      "pos": "v.",
+      "en": "to study; to research",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 研究 like academic research — 研究中国历史吗？",
+      "usage": "Most Chinese speakers mean research/study seriously.",
+      "example": {
+        "zh": "你打算研究中国历史吗？",
+        "pinyin": "Nǐ dǎsuàn yánjiū Zhōngguó lìshǐ ma?",
+        "en": "Do you plan to research Chinese history?"
+      }
+    },
+    {
+      "zh": "只是",
+      "pinyin": "zhǐshì",
+      "pos": "adv.",
+      "en": "only",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 只是 like ‘only / just’ — 只是感兴趣.",
+      "usage": "Most Chinese speakers soften with 只是.",
+      "example": {
+        "zh": "我只是对中国历史感兴趣。",
+        "pinyin": "Wǒ zhǐshì duì Zhōngguó lìshǐ gǎn xìngqù.",
+        "en": "I’m only interested in Chinese history."
+      }
+    },
+    {
+      "zh": "老",
+      "pinyin": "lǎo",
+      "pos": "adj.",
+      "en": "old",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 老 like ‘old things’ — 你喜欢老的.",
+      "usage": "Most Chinese speakers mean old (age/things).",
+      "example": {
+        "zh": "你喜欢老的，我喜欢新的。",
+        "pinyin": "Nǐ xǐhuan lǎo de, wǒ xǐhuan xīn de.",
+        "en": "You like old things; I like new ones."
+      }
+    },
+    {
+      "zh": "改革",
+      "pinyin": "gǎigé",
+      "pos": "v.",
+      "en": "to reform",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 改革 like reform — 改革开放.",
+      "usage": "Most Chinese speakers pair 改革开放.",
+      "example": {
+        "zh": "对中国改革开放以后的一切都很感兴趣。",
+        "pinyin": "Duì Zhōngguó gǎigé kāifàng yǐhòu de yíqiè dōu hěn gǎn xìngqù.",
+        "en": "I’m very interested in everything since China’s reform and opening."
+      }
+    },
+    {
+      "zh": "开放",
+      "pinyin": "kāifàng",
+      "pos": "v.",
+      "en": "to open",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 开放 with 改革 — 改革开放.",
+      "usage": "Most Chinese speakers mean open up (policy/place).",
+      "example": {
+        "zh": "对中国改革开放以后的一切都很感兴趣。",
+        "pinyin": "Duì Zhōngguó gǎigé kāifàng yǐhòu de yíqiè dōu hěn gǎn xìngqù.",
+        "en": "I’m very interested in everything since China’s reform and opening."
+      }
+    },
+    {
+      "zh": "一切",
+      "pinyin": "yíqiè",
+      "pos": "pron.",
+      "en": "all; everything",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 一切 like ‘everything’ — 一切都很感兴趣.",
+      "usage": "Most Chinese speakers mean all/everything.",
+      "example": {
+        "zh": "我对…都很感兴趣。",
+        "pinyin": "Wǒ duì… dōu hěn gǎn xìngqù.",
+        "en": "I’m interested in all of it."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "我们那儿的冬天跟北京一样冷",
+      "headingEn": "The winter in my hometown is as cold as in Beijing",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "田芳",
+          "zh": "罗兰，你们国家的时间跟北京不一样吧？",
+          "pinyin": "Luólán, nǐmen guójiā de shíjiān gēn Běijīng bù yíyàng ba?",
+          "en": "Roland, your country’s time isn’t the same as Beijing’s, right?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "当然不一样。我们那儿跟北京有七个小时的时差呢！",
+          "pinyin": "Dāngrán bù yíyàng. Wǒmen nàr gēn Běijīng yǒu qī ge xiǎoshí de shíchā ne!",
+          "en": "Of course not. There’s a seven-hour difference!"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "你们那儿早还是北京早？",
+          "pinyin": "Nǐmen nàr zǎo háishi Běijīng zǎo?",
+          "en": "Is it earlier there, or in Beijing?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "北京比我们那儿早七个小时。现在北京是上午八点多，我们那儿才夜里一点多。",
+          "pinyin": "Běijīng bǐ wǒmen nàr zǎo qī ge xiǎoshí. Xiànzài Běijīng shì shàngwǔ bā diǎn duō, wǒmen nàr cái yèlǐ yì diǎn duō.",
+          "en": "Beijing is seven hours ahead. It’s a little past 8 a.m. here; only a little past 1 a.m. there."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "季节跟北京一样吗？",
+          "pinyin": "Jìjié gēn Běijīng yíyàng ma?",
+          "en": "Are the seasons the same as Beijing’s?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "季节跟北京一样，也是春、夏、秋、冬四个季节。",
+          "pinyin": "Jìjié gēn Běijīng yíyàng, yě shì chūn, xià, qiū, dōng sì ge jìjié.",
+          "en": "Same — spring, summer, autumn, winter."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "气候跟北京一样不一样？",
+          "pinyin": "Qìhòu gēn Běijīng yíyàng bù yíyàng?",
+          "en": "Is the climate the same as Beijing’s or not?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "不一样。北京的夏天很热，我们那儿夏天没有这么热。",
+          "pinyin": "Bù yíyàng. Běijīng de xiàtiān hěn rè, wǒmen nàr xiàtiān méiyǒu zhème rè.",
+          "en": "Different. Beijing summers are hot; ours aren’t this hot."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "冬天冷不冷？",
+          "pinyin": "Dōngtiān lěng bu lěng?",
+          "en": "Is winter cold?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "冬天跟北京一样冷，但是不常刮大风。",
+          "pinyin": "Dōngtiān gēn Běijīng yíyàng lěng, dànshì bù cháng guā dà fēng.",
+          "en": "As cold as Beijing, but strong winds aren’t common."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "常下雪吗？",
+          "pinyin": "Cháng xià xuě ma?",
+          "en": "Does it snow often?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "不但常常下雪，而且下得很大。北京呢？",
+          "pinyin": "Búdàn chángcháng xià xuě, érqiě xià de hěn dà. Běijīng ne?",
+          "en": "Not only often, but heavily. What about Beijing?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "北京冬天不常下雪。",
+          "pinyin": "Běijīng dōngtiān bù cháng xià xuě.",
+          "en": "Beijing doesn’t often get snow in winter."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "我跟你不一样",
+      "headingEn": "I'm not the same as you",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "麦克",
+          "zh": "玛丽，这次你考得怎么样？",
+          "pinyin": "Mǎlì, zhè cì nǐ kǎo de zěnmeyàng?",
+          "en": "Mary, how did you do this time?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "还可以，综合课考了95分，听力跟阅读一样，都是90分，口语考得不太好，只考了85分。你呢？",
+          "pinyin": "Hái kěyǐ, zōnghé kè kǎo le jiǔshíwǔ fēn, tīnglì gēn yuèdú yíyàng, dōu shì jiǔshí fēn, kǒuyǔ kǎo de bú tài hǎo, zhǐ kǎo le bāshíwǔ fēn. Nǐ ne?",
+          "en": "Okay — 95 on comprehensive, listening and reading both 90, oral only 85. You?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "你比我考得好。我的阅读跟你考得一样，综合课和听力课都没有你考得好，只得了80分。",
+          "pinyin": "Nǐ bǐ wǒ kǎo de hǎo. Wǒ de yuèdú gēn nǐ kǎo de yíyàng, zōnghé kè hé tīnglì kè dōu méiyǒu nǐ kǎo de hǎo, zhǐ dé le bāshí fēn.",
+          "en": "You did better. Reading same as you; comprehensive and listening worse — only 80."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "听写我没考好，有的汉字不会写。",
+          "pinyin": "Tīngxiě wǒ méi kǎo hǎo, yǒude Hànzì bú huì xiě.",
+          "en": "Dictation wasn’t good — some characters I can’t write."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "好了，不谈考试了。我问你，周末有什么打算？出去玩儿吗？",
+          "pinyin": "Hǎo le, bù tán kǎoshì le. Wǒ wèn nǐ, zhōumò yǒu shénme dǎsuàn? Chūqù wánr ma?",
+          "en": "Okay, enough exams. Weekend plans? Going out?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "出去。最近，我常到历史博物馆去参观。",
+          "pinyin": "Chūqù. Zuìjìn, wǒ cháng dào lìshǐ bówùguǎn qù cānguān.",
+          "en": "Yes. Lately I’ve been visiting the history museum."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "是吗？你怎么对历史产生兴趣了？",
+          "pinyin": "Shì ma? Nǐ zěnme duì lìshǐ chǎnshēng xìngqù le?",
+          "en": "Really? How’d you get interested in history?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "学了京剧以后，我就对中国历史产生了兴趣。有一天，我在书店买到了一本画册，是介绍中国历史的。看了以后，就想到历史博物馆去看看。",
+          "pinyin": "Xué le Jīngjù yǐhòu, wǒ jiù duì Zhōngguó lìshǐ chǎnshēng le xìngqù. Yǒu yì tiān, wǒ zài shūdiàn mǎidào le yì běn huàcè, shì jièshào Zhōngguó lìshǐ de. Kàn le yǐhòu, jiù xiǎng dào lìshǐ bówùguǎn qù kànkan.",
+          "en": "After Beijing opera I got interested. I bought an illustrated history book, then wanted to visit the museum."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "你打算研究中国历史吗？",
+          "pinyin": "Nǐ dǎsuàn yánjiū Zhōngguó lìshǐ ma?",
+          "en": "Planning to research Chinese history?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "不，我只是对中国历史感兴趣。",
+          "pinyin": "Bù, wǒ zhǐshì duì Zhōngguó lìshǐ gǎn xìngqù.",
+          "en": "No — I’m only interested in it."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "我跟你不一样，你喜欢老的，我喜欢新的。我对中国改革开放以后的一切都很感兴趣。",
+          "pinyin": "Wǒ gēn nǐ bù yíyàng, nǐ xǐhuan lǎo de, wǒ xǐhuan xīn de. Wǒ duì Zhōngguó gǎigé kāifàng yǐhòu de yíqiè dōu hěn gǎn xìngqù.",
+          "en": "I’m different — you like old things, I like new. I’m into everything since reform and opening."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "好了，不谈考试了",
+      "body": "在对话中，“好了”用来劝止或提醒对方自己要停止某一谈话（或动作）。后边常有相应的语句出现。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "好了，不谈考试了。",
+        "pinyin": "Hǎo le, bù tán kǎoshì le.",
+        "en": "Okay, let’s not talk about exams anymore."
+      }
+    },
+    {
+      "title": "我只是对中国历史感兴趣",
+      "body": "“只是”表示范围限于某一情况：我只是对中国历史感兴趣。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我只是对中国历史感兴趣。",
+        "pinyin": "Wǒ zhǐshì duì Zhōngguó lìshǐ gǎn xìngqù.",
+        "en": "I’m only interested in Chinese history."
+      }
+    },
+    {
+      "title": "比较句：跟……一样/不一样",
+      "body": "汉语用“A跟B一样”表示比较的结果相同；“A跟B不一样”表示不同。也可作定语。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "冬天跟北京一样冷。",
+        "pinyin": "Dōngtiān gēn Běijīng yíyàng lěng.",
+        "en": "Winter is as cold as in Beijing."
+      }
+    },
+    {
+      "title": "不但……而且……",
+      "body": "“不但……而且……”连接两个分句，表示递进关系。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "不但常常下雪，而且下得很大。",
+        "pinyin": "Búdàn chángcháng xià xuě, érqiě xià de hěn dà.",
+        "en": "Not only does it often snow, it snows heavily."
+      }
+    }
+  ]
+}

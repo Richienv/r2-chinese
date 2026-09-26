@@ -1,0 +1,713 @@
+{
+  "id": "jiaocheng-2-1-05",
+  "book": "2-1",
+  "index": 5,
+  "bookLesson": 5,
+  "titleZh": "我来了两个多月了",
+  "titleEn": "I’ve been here for more than two months",
+  "sourcePages": "68-85",
+  "words": [
+    {
+      "zh": "生活",
+      "pinyin": "shēnghuó",
+      "pos": "v./n.",
+      "en": "to live; life",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 生活 like daily life here — 对这儿的生活差不多已经习惯了.",
+      "usage": "Most Chinese speakers mean life/living. 课文（一） opens with adapting to life.",
+      "example": {
+        "zh": "对这儿的生活差不多已经习惯了。",
+        "pinyin": "Duì zhèr de shēnghuó chàbuduō yǐjing xíguàn le.",
+        "en": "I’ve almost gotten used to life here."
+      }
+    },
+    {
+      "zh": "差不多",
+      "pinyin": "chàbuduō",
+      "pos": "adv.",
+      "en": "nearly; almost",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 差不多 like ‘almost’ — 差不多已经习惯了.",
+      "usage": "Most Chinese speakers soften claims with 差不多.",
+      "example": {
+        "zh": "对这儿的生活差不多已经习惯了。",
+        "pinyin": "Duì zhèr de shēnghuó chàbuduō yǐjing xíguàn le.",
+        "en": "I’ve almost gotten used to life here."
+      }
+    },
+    {
+      "zh": "习惯",
+      "pinyin": "xíguàn",
+      "pos": "v./n.",
+      "en": "to be accustomed/used to; habit",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 习惯 like getting used to a place — 还不太习惯.",
+      "usage": "Most Chinese speakers 习惯 / 不习惯 a climate or routine.",
+      "example": {
+        "zh": "有的地方还不太习惯。",
+        "pinyin": "Yǒude dìfang hái bú tài xíguàn.",
+        "en": "Some things I’m still not quite used to."
+      }
+    },
+    {
+      "zh": "不过",
+      "pinyin": "búguò",
+      "pos": "conj.",
+      "en": "but; however",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 不过 like a soft ‘but’ — 不过有的地方还不太习惯.",
+      "usage": "Most Chinese speakers use 不过 to contrast lightly.",
+      "example": {
+        "zh": "不过有的地方还不太习惯。",
+        "pinyin": "Búguò yǒude dìfang hái bú tài xíguàn.",
+        "en": "But some things I’m still not quite used to."
+      }
+    },
+    {
+      "zh": "气候",
+      "pinyin": "qìhòu",
+      "pos": "n.",
+      "en": "climate",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 气候 like the dry weather here — 气候特别干燥.",
+      "usage": "Most Chinese speakers mean climate (longer-term than 天气).",
+      "example": {
+        "zh": "总觉得这儿的气候特别干燥。",
+        "pinyin": "Zǒng juéde zhèr de qìhòu tèbié gānzào.",
+        "en": "I always feel the climate here is especially dry."
+      }
+    },
+    {
+      "zh": "干燥",
+      "pinyin": "gānzào",
+      "pos": "adj.",
+      "en": "dry; arid",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 干燥 like dry air — 气候特别干燥.",
+      "usage": "Most Chinese speakers describe dry climates/skin as 干燥.",
+      "example": {
+        "zh": "总觉得这儿的气候特别干燥。",
+        "pinyin": "Zǒng juéde zhèr de qìhòu tèbié gānzào.",
+        "en": "I always feel the climate here is especially dry."
+      }
+    },
+    {
+      "zh": "干净",
+      "pinyin": "gānjìng",
+      "pos": "adj.",
+      "en": "clean; neat and tidy",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 干净 like cleanliness — 不太干净.",
+      "usage": "Most Chinese speakers mean clean/tidy. OCR may misread as 千净.",
+      "example": {
+        "zh": "宿舍周围不太干净，也不太安静。",
+        "pinyin": "Sùshè zhōuwéi bú tài gānjìng, yě bú tài ānjìng.",
+        "en": "Around the dorm it’s not very clean, and not very quiet either."
+      }
+    },
+    {
+      "zh": "菜",
+      "pinyin": "cài",
+      "pos": "n.",
+      "en": "food; dish",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 菜 like cafeteria dishes — 食堂里的菜太油腻.",
+      "usage": "Most Chinese speakers mean dishes/food in a meal.",
+      "example": {
+        "zh": "食堂里的菜太油腻。",
+        "pinyin": "Shítáng lǐ de cài tài yóunì.",
+        "en": "The cafeteria food is too greasy."
+      }
+    },
+    {
+      "zh": "油腻",
+      "pinyin": "yóunì",
+      "pos": "adj.",
+      "en": "oily; greasy",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 油腻 like greasy food — 菜太油腻.",
+      "usage": "Most Chinese speakers complain food is 油腻.",
+      "example": {
+        "zh": "食堂里的菜太油腻。",
+        "pinyin": "Shítáng lǐ de cài tài yóunì.",
+        "en": "The cafeteria food is too greasy."
+      }
+    },
+    {
+      "zh": "牛奶",
+      "pinyin": "niúnǎi",
+      "pos": "n.",
+      "en": "milk",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 牛奶 like a quick breakfast — 喝杯牛奶就去上课了.",
+      "usage": "Most Chinese speakers mean cow’s milk.",
+      "example": {
+        "zh": "喝杯牛奶就去上课了。",
+        "pinyin": "Hē bēi niúnǎi jiù qù shàngkè le.",
+        "en": "I just drink a glass of milk and go to class."
+      }
+    },
+    {
+      "zh": "课间",
+      "pinyin": "kèjiān",
+      "pos": "n.",
+      "en": "break (between classes)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 课间 like the break between classes — 课间休息的时候.",
+      "usage": "Most Chinese speakers mean the between-class break.",
+      "example": {
+        "zh": "课间休息的时候，我可以去喝杯咖啡。",
+        "pinyin": "Kèjiān xiūxi de shíhou, wǒ kěyǐ qù hē bēi kāfēi.",
+        "en": "During the break between classes I can go get coffee."
+      }
+    },
+    {
+      "zh": "块",
+      "pinyin": "kuài",
+      "pos": "m.",
+      "en": "piece; chunk; lump",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 块 like a piece of snack — 一块点心.",
+      "usage": "Most Chinese speakers count pieces with 块.",
+      "example": {
+        "zh": "吃一块点心。",
+        "pinyin": "Chī yí kuài diǎnxin.",
+        "en": "Eat a piece of pastry."
+      }
+    },
+    {
+      "zh": "点心",
+      "pinyin": "diǎnxin",
+      "pos": "n.",
+      "en": "pastry; snack",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 点心 like a snack with coffee — 一块点心.",
+      "usage": "Most Chinese speakers mean light snacks/pastries.",
+      "example": {
+        "zh": "喝杯咖啡，吃一块点心。",
+        "pinyin": "Hē bēi kāfēi, chī yí kuài diǎnxin.",
+        "en": "Drink coffee and eat a pastry."
+      }
+    },
+    {
+      "zh": "从来",
+      "pinyin": "cónglái",
+      "pos": "adv.",
+      "en": "from the past to the present; always",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 从来 like ‘never / always’ with 不 — 从来不睡午觉.",
+      "usage": "Most Chinese speakers pair 从来 with 不/没 for ‘never’.",
+      "example": {
+        "zh": "中午我从来不睡午觉。",
+        "pinyin": "Zhōngwǔ wǒ cónglái bú shuì wǔjiào.",
+        "en": "I never take a midday nap."
+      }
+    },
+    {
+      "zh": "午觉",
+      "pinyin": "wǔjiào",
+      "pos": "n.",
+      "en": "afternoon nap",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 午觉 like a midday nap — 睡午觉.",
+      "usage": "Most Chinese speakers 睡午觉 after lunch.",
+      "example": {
+        "zh": "中午我从来不睡午觉。",
+        "pinyin": "Zhōngwǔ wǒ cónglái bú shuì wǔjiào.",
+        "en": "I never take a midday nap."
+      }
+    },
+    {
+      "zh": "游泳",
+      "pinyin": "yóu yǒng",
+      "pos": "v.",
+      "en": "to swim",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 游泳 like gym sports — 跑步、游泳、打球. Book prints spaced.",
+      "usage": "Most Chinese speakers mean swimming. Separable verb.",
+      "example": {
+        "zh": "跑步、游泳、打球或者跟老师学打太极拳。",
+        "pinyin": "Pǎobù, yóuyǒng, dǎqiú huòzhě gēn lǎoshī xué dǎ tàijíquán.",
+        "en": "Running, swimming, ball games, or learning tai chi with a teacher."
+      }
+    },
+    {
+      "zh": "散步",
+      "pinyin": "sàn bù",
+      "pos": "v.",
+      "en": "to go for a walk",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 散步 like an after-dinner walk — 散一会儿步. Book prints spaced.",
+      "usage": "Most Chinese speakers 散步 after meals.",
+      "example": {
+        "zh": "晚饭后我常常散一会儿步。",
+        "pinyin": "Wǎnfàn hòu wǒ chángcháng sàn yíhuìr bù.",
+        "en": "After dinner I often take a short walk."
+      }
+    },
+    {
+      "zh": "功课",
+      "pinyin": "gōngkè",
+      "pos": "n.",
+      "en": "schoolwork; homework",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 功课 like review work — 复习功课.",
+      "usage": "Most Chinese speakers mean schoolwork/homework.",
+      "example": {
+        "zh": "然后就开始复习功课。",
+        "pinyin": "Ránhòu jiù kāishǐ fùxí gōngkè.",
+        "en": "Then I start reviewing schoolwork."
+      }
+    },
+    {
+      "zh": "记",
+      "pinyin": "jì",
+      "pos": "v.",
+      "en": "to remember",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 记 like memorizing — 生词要记住.",
+      "usage": "Most Chinese speakers 记 + complement 住.",
+      "example": {
+        "zh": "生词要记住。",
+        "pinyin": "Shēngcí yào jìzhù.",
+        "en": "You have to remember the vocabulary."
+      }
+    },
+    {
+      "zh": "住",
+      "pinyin": "zhù",
+      "pos": "v.",
+      "en": "used as the complement of a verb indicating fastness or steadiness",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 住 as result complement — 记住.",
+      "usage": "Most Chinese speakers use V+住 for firm result (记住, 抓住).",
+      "example": {
+        "zh": "生词要记住。",
+        "pinyin": "Shēngcí yào jìzhù.",
+        "en": "You have to remember the vocabulary."
+      }
+    },
+    {
+      "zh": "一般",
+      "pinyin": "yìbān",
+      "pos": "adj.",
+      "en": "usual; general; common",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 一般 like ‘usually’ — 每天晚上一般要复习.",
+      "usage": "Most Chinese speakers mean ordinary/usually.",
+      "example": {
+        "zh": "每天晚上一般要复习、预习两三个小时。",
+        "pinyin": "Měi tiān wǎnshang yìbān yào fùxí, yùxí liǎng-sān ge xiǎoshí.",
+        "en": "In the evening I usually review and preview for two or three hours."
+      }
+    },
+    {
+      "zh": "感谢",
+      "pinyin": "gǎnxiè",
+      "pos": "v.",
+      "en": "to thank",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 感谢 like thanking parents — 感谢父母.",
+      "usage": "Most Chinese speakers 感谢 someone for a chance/help.",
+      "example": {
+        "zh": "我很感谢父母给我这个机会。",
+        "pinyin": "Wǒ hěn gǎnxiè fùmǔ gěi wǒ zhège jīhuì.",
+        "en": "I’m very grateful to my parents for giving me this chance."
+      }
+    },
+    {
+      "zh": "父母",
+      "pinyin": "fùmǔ",
+      "pos": "n.",
+      "en": "father and mother; parents",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 父母 like parents — 感谢父母.",
+      "usage": "Most Chinese speakers mean both parents.",
+      "example": {
+        "zh": "我很感谢父母给我这个机会。",
+        "pinyin": "Wǒ hěn gǎnxiè fùmǔ gěi wǒ zhège jīhuì.",
+        "en": "I’m very grateful to my parents for giving me this chance."
+      }
+    },
+    {
+      "zh": "机会",
+      "pinyin": "jīhuì",
+      "pos": "n.",
+      "en": "chance; opportunity",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 机会 like the chance to study abroad — 这个机会.",
+      "usage": "Most Chinese speakers mean opportunity.",
+      "example": {
+        "zh": "让我来中国留学。",
+        "pinyin": "Ràng wǒ lái Zhōngguó liúxué.",
+        "en": "Letting me come to China to study."
+      }
+    },
+    {
+      "zh": "原来",
+      "pinyin": "yuánlái",
+      "pos": "n./adj.",
+      "en": "original; at first",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 原来 like the original plan — 原来打算学一年.",
+      "usage": "Most Chinese speakers mean originally / as it turns out.",
+      "example": {
+        "zh": "原来打算学一年。",
+        "pinyin": "Yuánlái dǎsuàn xué yì nián.",
+        "en": "Originally I planned to study for one year."
+      }
+    },
+    {
+      "zh": "延长",
+      "pinyin": "yáncháng",
+      "pos": "v.",
+      "en": "to lengthen; to extend",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 延长 like extending study time — 再延长一年.",
+      "usage": "Most Chinese speakers 延长 a period/plan.",
+      "example": {
+        "zh": "准备再延长一年。",
+        "pinyin": "Zhǔnbèi zài yáncháng yì nián.",
+        "en": "I’m preparing to extend another year."
+      }
+    },
+    {
+      "zh": "练",
+      "pinyin": "liàn",
+      "pos": "v.",
+      "en": "to practice",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 练 like practicing qigong — 练气功.",
+      "usage": "Most Chinese speakers 练 a skill or exercise.",
+      "example": {
+        "zh": "因为我练气功，所以每天五点多就起来了。",
+        "pinyin": "Yīnwèi wǒ liàn qìgōng, suǒyǐ měi tiān wǔ diǎn duō jiù qǐlai le.",
+        "en": "Because I practice qigong, I get up a little after five every day."
+      }
+    },
+    {
+      "zh": "气功",
+      "pinyin": "qìgōng",
+      "pos": "n.",
+      "en": "qigong, a system of exercise",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 气功 like the exercise 王老师 practices.",
+      "usage": "Most Chinese speakers mean qigong breathing exercise.",
+      "example": {
+        "zh": "练气功对身体很有好处。",
+        "pinyin": "Liàn qìgōng duì shēntǐ hěn yǒu hǎochu.",
+        "en": "Practicing qigong is very good for your health."
+      }
+    },
+    {
+      "zh": "好",
+      "pinyin": "hǎo",
+      "pos": "adv.",
+      "en": "quite",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember this 好 like ‘quite a few’ — 好几年. Grammar note in 注释.",
+      "usage": "Most Chinese speakers put 好 before 几/多/久 for emphasis.",
+      "example": {
+        "zh": "已经练了好几年了。",
+        "pinyin": "Yǐjing liàn le hǎo jǐ nián le.",
+        "en": "I’ve already practiced for quite a few years."
+      }
+    },
+    {
+      "zh": "不一定",
+      "pinyin": "bù yídìng",
+      "pos": "adv.",
+      "en": "not sure; not regular",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 不一定 like ‘not necessarily’ — 不一定.",
+      "usage": "Most Chinese speakers mean not fixed / not necessarily. Book prints spaced.",
+      "example": {
+        "zh": "不一定。有时候练一个钟头，有时候半个钟头。",
+        "pinyin": "Bù yídìng. Yǒushíhou liàn yí ge zhōngtóu, yǒushíhou bàn ge zhōngtóu.",
+        "en": "It depends. Sometimes an hour, sometimes half an hour."
+      }
+    },
+    {
+      "zh": "钟头",
+      "pinyin": "zhōngtóu",
+      "pos": "n.",
+      "en": "hour",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 钟头 like spoken ‘hour’ — 一个钟头.",
+      "usage": "Most Chinese speakers use 钟头 colloquially for 小时.",
+      "example": {
+        "zh": "有时候练一个钟头。",
+        "pinyin": "Yǒushíhou liàn yí ge zhōngtóu.",
+        "en": "Sometimes I practice for an hour."
+      }
+    },
+    {
+      "zh": "效果",
+      "pinyin": "xiàoguǒ",
+      "pos": "n.",
+      "en": "effect; result",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 效果 like results of practice — 效果怎么样？",
+      "usage": "Most Chinese speakers mean effectiveness/results.",
+      "example": {
+        "zh": "效果怎么样？",
+        "pinyin": "Xiàoguǒ zěnmeyàng?",
+        "en": "How are the results?"
+      }
+    },
+    {
+      "zh": "挺",
+      "pinyin": "tǐng",
+      "pos": "adv.",
+      "en": "quite; rather",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 挺 like ‘pretty’ — 挺好的.",
+      "usage": "Most Chinese speakers soften praise with 挺.",
+      "example": {
+        "zh": "挺好的。",
+        "pinyin": "Tǐng hǎo de.",
+        "en": "Pretty good."
+      }
+    },
+    {
+      "zh": "好处",
+      "pinyin": "hǎochu",
+      "pos": "n.",
+      "en": "benefit; advantage",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 好处 like benefits — 对身体很有好处.",
+      "usage": "Most Chinese speakers mean advantage/benefit.",
+      "example": {
+        "zh": "练气功对身体很有好处。",
+        "pinyin": "Liàn qìgōng duì shēntǐ hěn yǒu hǎochu.",
+        "en": "Practicing qigong is very good for your health."
+      }
+    },
+    {
+      "zh": "坏处",
+      "pinyin": "huàichu",
+      "pos": "n.",
+      "en": "harm; disadvantage",
+      "note": "Practicing qigong is very good for your health.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 坏处 as the opposite of 好处.",
+      "example": {
+        "zh": "Most Chinese speakers contrast 好处/坏处. Listed under 好处.",
+        "pinyin": "练气功对身体很有好处。",
+        "en": "Liàn qìgōng duì shēntǐ hěn yǒu hǎochu."
+      }
+    },
+    {
+      "zh": "慢性病",
+      "pinyin": "mànxìngbìng",
+      "pos": "n.",
+      "en": "chronic disease",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 慢性病 like long-term illness — 好几种慢性病.",
+      "usage": "Most Chinese speakers mean chronic illness.",
+      "example": {
+        "zh": "以前我有好几种慢性病呢。",
+        "pinyin": "Yǐqián wǒ yǒu hǎo jǐ zhǒng mànxìngbìng ne.",
+        "en": "I used to have several chronic illnesses."
+      }
+    },
+    {
+      "zh": "高血压",
+      "pinyin": "gāoxuèyā",
+      "pos": "n.",
+      "en": "hypertension",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 高血压 like high blood pressure.",
+      "usage": "Most Chinese speakers mean high blood pressure.",
+      "example": {
+        "zh": "高血压、失眠。",
+        "pinyin": "Gāoxuèyā, shīmián.",
+        "en": "Hypertension, insomnia."
+      }
+    },
+    {
+      "zh": "失眠",
+      "pinyin": "shī mián",
+      "pos": "v.",
+      "en": "to suffer from insomnia",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 失眠 like can’t sleep. Book prints spaced.",
+      "usage": "Most Chinese speakers mean insomnia.",
+      "example": {
+        "zh": "高血压、失眠，坚持练了几年，我的这些病差不多都好了。",
+        "pinyin": "Gāoxuèyā, shīmián, jiānchí liàn le jǐ nián, wǒ de zhèxiē bìng chàbuduō dōu hǎo le.",
+        "en": "Hypertension, insomnia — after a few years of practice, they’re almost all better."
+      }
+    },
+    {
+      "zh": "必须",
+      "pinyin": "bìxū",
+      "pos": "adv.",
+      "en": "must; have to",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 必须 like ‘must’ — 必须坚持天天练.",
+      "usage": "Most Chinese speakers mean obligatory.",
+      "example": {
+        "zh": "练气功必须坚持天天练。",
+        "pinyin": "Liàn qìgōng bìxū jiānchí tiāntiān liàn.",
+        "en": "To practice qigong you must stick to it every day."
+      }
+    },
+    {
+      "zh": "打鱼",
+      "pinyin": "dǎ yú",
+      "pos": "v.",
+      "en": "to go fishing",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 打鱼 from the idiom 三天打鱼，两天晒网.",
+      "usage": "Most Chinese speakers know this from the proverb.",
+      "example": {
+        "zh": "“三天打鱼，两天晒网”不行。",
+        "pinyin": "“Sān tiān dǎ yú, liǎng tiān shài wǎng” bù xíng.",
+        "en": "“Three days fishing, two days drying nets” won’t work."
+      }
+    },
+    {
+      "zh": "晒",
+      "pinyin": "shài",
+      "pos": "v.",
+      "en": "to dry (in the sun)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 晒 like drying nets — 晒网.",
+      "usage": "Most Chinese speakers 晒 clothes/nets in the sun.",
+      "example": {
+        "zh": "“三天打鱼，两天晒网”不行。",
+        "pinyin": "“Sān tiān dǎ yú, liǎng tiān shài wǎng” bù xíng.",
+        "en": "“Three days fishing, two days drying nets” won’t work."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "我来了两个多月了",
+      "headingEn": "I've been here for more than two months",
+      "type": "passage",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "我来了两个多月了，对这儿的生活差不多已经习惯了，不过有的地方还不太习惯。总觉得这儿的气候特别干燥，宿舍周围不太干净，也不太安静，食堂里的菜太油腻。",
+          "pinyin": "Wǒ lái le liǎng ge duō yuè le, duì zhèr de shēnghuó chàbuduō yǐjing xíguàn le, búguò yǒude dìfang hái bú tài xíguàn. Zǒng juéde zhèr de qìhòu tèbié gānzào, sùshè zhōuwéi bú tài gānjìng, yě bú tài ānjìng, shítáng lǐ de cài tài yóunì.",
+          "en": "I’ve been here more than two months and I’m almost used to life here, but some things still feel unfamiliar. The climate feels especially dry; around the dorm it’s not very clean or quiet; cafeteria food is too greasy."
+        },
+        {
+          "speaker": "",
+          "zh": "我每天早上七点多才起床，所以常常没时间吃早饭，喝杯牛奶就去上课了。不过，课间休息的时候，我可以去喝杯咖啡，吃一块点心。中午我去食堂吃午饭。因为吃饭的人很多，所以常常要等四五分钟才能买到饭。吃完饭，我回宿舍看书或者听一会儿音乐。中午我从来不睡午觉。",
+          "pinyin": "Wǒ měi tiān zǎoshang qī diǎn duō cái qǐchuáng, suǒyǐ chángcháng méi shíjiān chī zǎofàn, hē bēi niúnǎi jiù qù shàngkè le. Búguò, kèjiān xiūxi de shíhou, wǒ kěyǐ qù hē bēi kāfēi, chī yí kuài diǎnxin. Zhōngwǔ wǒ qù shítáng chī wǔfàn. Yīnwèi chīfàn de rén hěn duō, suǒyǐ chángcháng yào děng sì-wǔ fēnzhōng cái néng mǎidào fàn. Chī wán fàn, wǒ huí sùshè kànshū huòzhě tīng yíhuìr yīnyuè. Zhōngwǔ wǒ cónglái bú shuì wǔjiào.",
+          "en": "I get up a little after seven, so I often skip breakfast and just drink milk before class. During breaks I can get coffee and a snack. At noon I eat in the cafeteria — often wait four or five minutes. After lunch I read or listen to music in the dorm. I never nap at noon."
+        },
+        {
+          "speaker": "",
+          "zh": "下午，有时候上两节课，有时候自己学习。四点以后我去体育馆锻炼身体，跑步、游泳、打球或者跟老师学打太极拳。我很喜欢运动，每天都坚持锻炼一个小时，所以身体很好。晚饭后我常常散一会儿步，有时跟朋友聊聊天儿，然后就开始复习功课。听半个小时课文录音，练习会话，预习生词和课文。生词要记住，课文要念熟，所以每天晚上一般要复习、预习两三个小时，常常学到十一点多才睡觉。我每天都很忙，但过得很愉快。我很感谢父母给我这个机会，让我来中国留学。原来打算学一年，现在我觉得一年时间太短了，准备再延长一年。",
+          "pinyin": "Xiàwǔ, yǒushíhou shàng liǎng jié kè, yǒushíhou zìjǐ xuéxí. Sì diǎn yǐhòu wǒ qù tǐyùguǎn duànliàn shēntǐ, pǎobù, yóuyǒng, dǎqiú huòzhě gēn lǎoshī xué dǎ tàijíquán. Wǒ hěn xǐhuan yùndòng, měi tiān dōu jiānchí duànliàn yí ge xiǎoshí, suǒyǐ shēntǐ hěn hǎo. Wǎnfàn hòu wǒ chángcháng sàn yíhuìr bù, yǒushí gēn péngyou liáo liaotiānr, ránhòu jiù kāishǐ fùxí gōngkè. Tīng bàn ge xiǎoshí kèwén lùyīn, liànxí huìhuà, yùxí shēngcí hé kèwén. Shēngcí yào jìzhù, kèwén yào niàn shú, suǒyǐ měi tiān wǎnshang yìbān yào fùxí, yùxí liǎng-sān ge xiǎoshí, chángcháng xué dào shíyī diǎn duō cái shuìjiào. Wǒ měi tiān dōu hěn máng, dàn guò de hěn yúkuài. Wǒ hěn gǎnxiè fùmǔ gěi wǒ zhège jīhuì, ràng wǒ lái Zhōngguó liúxué. Yuánlái dǎsuàn xué yì nián, xiànzài wǒ juéde yì nián shíjiān tài duǎn le, zhǔnbèi zài yáncháng yì nián.",
+          "en": "In the afternoon I sometimes have two classes, sometimes study alone. After four I exercise at the gym — run, swim, play ball, or learn tai chi. I stick to an hour a day, so I’m healthy. After dinner I walk or chat, then review: half an hour of recordings, conversation practice, preview vocab and text. Vocab must stick; texts must be fluent — usually two or three hours, often until past eleven. I’m busy but happy. I’m grateful to my parents for this chance. I planned one year; now it feels too short, so I’ll extend another year."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "我每天都练一个小时",
+      "headingEn": "I practice for an hour every day",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "关经理",
+          "zh": "你好，王老师。每天都起得这么早吗？",
+          "pinyin": "Nǐ hǎo, Wáng lǎoshī. Měi tiān dōu qǐ de zhème zǎo ma?",
+          "en": "Hello, Teacher Wang. Do you get up this early every day?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "对，因为我练气功，所以每天五点多就起来了。",
+          "pinyin": "Duì, yīnwèi wǒ liàn qìgōng, suǒyǐ měi tiān wǔ diǎn duō jiù qǐlai le.",
+          "en": "Yes — because I practice qigong, I get up a little after five."
+        },
+        {
+          "speaker": "关经理",
+          "zh": "练了多长时间了？",
+          "pinyin": "Liàn le duō cháng shíjiān le?",
+          "en": "How long have you been practicing?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "已经练了好几年了。",
+          "pinyin": "Yǐjing liàn le hǎo jǐ nián le.",
+          "en": "For quite a few years already."
+        },
+        {
+          "speaker": "关经理",
+          "zh": "每天练多长时间？",
+          "pinyin": "Měi tiān liàn duō cháng shíjiān?",
+          "en": "How long each day?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "不一定。有时候练一个钟头，有时候半个钟头。",
+          "pinyin": "Bù yídìng. Yǒushíhou liàn yí ge zhōngtóu, yǒushíhou bàn ge zhōngtóu.",
+          "en": "It varies — sometimes an hour, sometimes half an hour."
+        },
+        {
+          "speaker": "关经理",
+          "zh": "效果怎么样？",
+          "pinyin": "Xiàoguǒ zěnmeyàng?",
+          "en": "How are the results?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "挺好的。练气功对身体很有好处。以前我有好几种慢性病呢，高血压、失眠，坚持练了几年，我的这些病差不多都好了。你也来练练吧。",
+          "pinyin": "Tǐng hǎo de. Liàn qìgōng duì shēntǐ hěn yǒu hǎochu. Yǐqián wǒ yǒu hǎo jǐ zhǒng mànxìngbìng ne, gāoxuèyā, shīmián, jiānchí liàn le jǐ nián, wǒ de zhèxiē bìng chàbuduō dōu hǎo le. Nǐ yě lái liànlian ba.",
+          "en": "Pretty good. Qigong helps a lot. I used to have several chronic problems — hypertension, insomnia — after years of practice they’re almost gone. You should try it too."
+        },
+        {
+          "speaker": "关经理",
+          "zh": "练气功必须坚持天天练，“三天打鱼，两天晒网”不行。我也很想练，但是工作太忙，没有时间。",
+          "pinyin": "Liàn qìgōng bìxū jiānchí tiāntiān liàn, “sān tiān dǎ yú, liǎng tiān shài wǎng” bù xíng. Wǒ yě hěn xiǎng liàn, dànshì gōngzuò tài máng, méiyǒu shíjiān.",
+          "en": "You have to practice every day — “three days fishing, two days drying nets” won’t do. I’d like to, but work is too busy."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "副词“好”强调数量多、时间久",
+      "body": "副词“好”用在“一”“几”“多”“久”等词前，强调数量多、时间久。例如：已经练了好几年了。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "已经练了好几年了。",
+        "pinyin": "Yǐjing liàn le hǎo jǐ nián le.",
+        "en": "I’ve already practiced for quite a few years."
+      }
+    },
+    {
+      "title": "三天打鱼，两天晒网",
+      "body": "谚语。比喻做事时断时续，不能坚持。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "“三天打鱼，两天晒网”不行。",
+        "pinyin": "“Sān tiān dǎ yú, liǎng tiān shài wǎng” bù xíng.",
+        "en": "“Three days fishing, two days drying nets” won’t work."
+      }
+    },
+    {
+      "title": "时量补语：动作或状态持续时间",
+      "body": "表达动作或状态持续的时间时汉语用时量补语。询问要说“多长时间（了）”。动词不带宾语时：主语＋动词（+了）＋时量补语。带宾语时可重复动词，或把时量放在动词和宾语之间。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我每天都坚持锻炼一个小时。",
+        "pinyin": "Wǒ měi tiān dōu jiānchí duànliàn yí ge xiǎoshí.",
+        "en": "I stick to exercising for one hour every day."
+      }
+    },
+    {
+      "title": "时量补语与宾语",
+      "body": "动词带宾语（或离合词）时，可以重复动词，时量补语放在重复的动词后边；也可以不重复，时量补语放在动词和宾语之间。宾语是人称代词时，时量补语要放在宾语后边。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "她学汉语学了两个多月了。",
+        "pinyin": "Tā xué Hànyǔ xué le liǎng ge duō yuè le.",
+        "en": "She’s been studying Chinese for more than two months."
+      }
+    }
+  ]
+}

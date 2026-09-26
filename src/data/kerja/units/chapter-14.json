@@ -10,27 +10,27 @@
       "pinyin": "dànshì",
       "pos": "conj.",
       "en": "but",
-      "note": "Book headword pinyin printed as dànshì. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 但是 perlu dua ide yang berlawanan; jangan gunakan untuk menambah informasi searah.",
-      "when": "Remember 但是 like the word you’ll use when kontras netral dan jelas antara dua pernyataan. Aman untuk sebagian besar situasi.",
-      "usage": "Most Chinese speakers use 但是 in this office/HR speaking sense. 但是 perlu dua ide yang berlawanan; jangan gunakan untuk menambah informasi searah.",
+      "note": "Book headword pinyin printed as dànshì. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: 但是 needs two opposing ideas; don't use to add information in the same direction.",
+      "when": "Remember 但是 like the word you’ll use in HR/office talk for but.",
+      "usage": "Most Chinese speakers use 但是 in this workplace sense. Watch-out: 但是 needs two opposing ideas; don't use to add information in the same direction.",
       "example": {
         "zh": "这个计划很好，但是预算不够。",
         "pinyin": "Zhège jìhuà hěn hǎo, dànshì yùsuàn bùgòu.",
-        "en": "Rencana ini bagus, tetapi anggarannya tidak cukup."
+        "en": "This plan is good, but the budget is not enough."
       }
     },
     {
       "zh": "不过",
       "pinyin": "búguò",
       "pos": "conj.",
-      "en": "hanya saja, namun",
-      "note": "Book headword pinyin printed as búguò. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jika penolakannya besar dan tegas, 不过 saja bisa terlalu lunak.",
-      "when": "Remember 不过 like the word you’ll use when kontras yang sering terasa lebih ringan atau membatasi pernyataan pertama. Cocok untuk keberatan kecil.",
-      "usage": "Most Chinese speakers use 不过 in this office/HR speaking sense. Jika penolakannya besar dan tegas, 不过 saja bisa terlalu lunak.",
+      "en": "however; only",
+      "note": "Book headword pinyin printed as búguò. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: Jika penolakannya besar dan tegas, 不过 saja bisa terlalu lunak.",
+      "when": "Remember 不过 like the word you’ll use in HR/office talk for hanya saja, namun.",
+      "usage": "Most Chinese speakers use 不过 in this workplace sense. Watch-out: Jika penolakannya besar dan tegas, 不过 saja bisa terlalu lunak.",
       "example": {
         "zh": "我可以参加，不过要晚到十分钟。",
         "pinyin": "Wǒ kěyǐ cānjiā, bùguò yào wǎndào shífēnzhōng.",
-        "en": "Saya bisa ikut, hanya saja akan terlambat sepuluh menit."
+        "en": "I can join, but I will be ten minutes late."
       }
     },
     {
@@ -38,27 +38,27 @@
       "pinyin": "kěshì",
       "pos": "conj.",
       "en": "tapi",
-      "note": "Book headword pinyin printed as kěshì. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 可是 tetap memperkenalkan pertentangan; jangan pakai sebagai pengisi jeda tanpa isi.",
-      "when": "Remember 可是 like the word you’ll use when kontras lisan yang terasa lebih personal daripada 但是. Umum saat ada hambatan dalam cerita.",
-      "usage": "Most Chinese speakers use 可是 in this office/HR speaking sense. 可是 tetap memperkenalkan pertentangan; jangan pakai sebagai pengisi jeda tanpa isi.",
+      "note": "Book headword pinyin printed as kěshì. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: 可是 still introduces a contrast; don't use as an empty pause.",
+      "when": "Remember 可是 like the word you’ll use in HR/office talk for tapi.",
+      "usage": "Most Chinese speakers use 可是 in this workplace sense. Watch-out: 可是 still introduces a contrast; don't use as an empty pause.",
       "example": {
         "zh": "我想今天定下来，可是经理还没回复。",
         "pinyin": "Wǒ xiǎng jīntiān dìng xiàlái, kěshì jīnglǐ hái méi huífù.",
-        "en": "Saya ingin menetapkannya hari ini, tapi manajer belum membalas."
+        "en": "I want menetapkannya Today, tapi manager not yet membalas."
       }
     },
     {
       "zh": "虽然",
       "pinyin": "suīrán",
       "pos": "conj.",
-      "en": "walaupun",
-      "note": "Book headword pinyin printed as suīrán. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jangan berhenti setelah klausa 虽然; lanjutkan dengan hasil yang berkontras.",
-      "when": "Remember 虽然 like the word you’ll use when memperkenalkan fakta yang secara intuitif mengarah ke hasil lain. Dalam pola dasar sering dipasangkan dengan 但是.",
-      "usage": "Most Chinese speakers use 虽然 in this office/HR speaking sense. Jangan berhenti setelah klausa 虽然; lanjutkan dengan hasil yang berkontras.",
+      "en": "although",
+      "note": "Book headword pinyin printed as suīrán. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: Don't stop after the clause 虽然; continue with a contrasting result.",
+      "when": "Remember 虽然 like the word you’ll use in HR/office talk for walaupun.",
+      "usage": "Most Chinese speakers use 虽然 in this workplace sense. Watch-out: Don't stop after the clause 虽然; continue with a contrasting result.",
       "example": {
         "zh": "虽然今天很忙，但是我能抽出十分钟。",
         "pinyin": "Suīrán jīntiān hěn máng, dànshì wǒnéng chōuchū shífēnzhōng.",
-        "en": "Walaupun hari ini sibuk, saya bisa meluangkan sepuluh menit."
+        "en": "Even though today is busy, I can spare ten minutes."
       }
     },
     {
@@ -66,13 +66,13 @@
       "pinyin": "jǐnguǎn",
       "pos": "conj.",
       "en": "although",
-      "note": "Book headword pinyin printed as jǐnguǎn. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 尽管 juga bisa berarti “silakan saja” dalam konteks lain; baca struktur kalimatnya.",
-      "when": "Remember 尽管 like the word you’ll use when mirip 虽然, tetapi sering terdengar sedikit lebih kuat atau formal. Dalam lisan sering diikuti 还是.",
-      "usage": "Most Chinese speakers use 尽管 in this office/HR speaking sense. 尽管 juga bisa berarti “silakan saja” dalam konteks lain; baca struktur kalimatnya.",
+      "note": "Book headword pinyin printed as jǐnguǎn. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: 尽管 can also mean 'go ahead' in another context; read the sentence structure.",
+      "when": "Remember 尽管 like the word you’ll use in HR/office talk for although.",
+      "usage": "Most Chinese speakers use 尽管 in this workplace sense. Watch-out: 尽管 can also mean 'go ahead' in another context; read the sentence structure.",
       "example": {
         "zh": "尽管时间很紧，我们还是完成了面试。",
         "pinyin": "Jǐnguǎn shíjiān hěn jǐn, wǒmen háishì wánchéng le miànshì.",
-        "en": "Meski waktunya mepet, kami tetap menyelesaikan wawancara."
+        "en": "Even though time was tight, we still finished the interviews."
       }
     },
     {
@@ -80,9 +80,9 @@
       "pinyin": "què",
       "pos": "adv.",
       "en": "malah, tetapi justru",
-      "note": "Book headword pinyin printed as què. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jangan taruh 却 di awal seluruh cerita tanpa hal yang dikontraskan.",
-      "when": "Remember 却 like the word you’ll use when menandai hasil yang berlawanan dengan dugaan, biasanya di klausa kedua sebelum kata kerja.",
-      "usage": "Most Chinese speakers use 却 in this office/HR speaking sense. Jangan taruh 却 di awal seluruh cerita tanpa hal yang dikontraskan.",
+      "note": "Book headword pinyin printed as què. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: Don't put 却 at the start of the whole story with nothing to contrast.",
+      "when": "Remember 却 like the word you’ll use in HR/office talk for malah, tetapi justru.",
+      "usage": "Most Chinese speakers use 却 in this workplace sense. Watch-out: Don't put 却 at the start of the whole story with nothing to contrast.",
       "example": {
         "zh": "他准备得很充分，却忘了带材料。",
         "pinyin": "Tā zhǔnbèi dé hěn chōngfèn, què wàng le dài cáiliào.",
@@ -93,14 +93,14 @@
       "zh": "反而",
       "pinyin": "fǎn'ér",
       "pos": "adv.",
-      "en": "justru sebaliknya",
-      "note": "Book headword pinyin printed as fǎn'ér. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 反而 membutuhkan ekspektasi awal yang bisa dipahami; tanpa itu terdengar janggal.",
-      "when": "Remember 反而 like the word you’ll use when dipakai ketika tindakan atau keadaan menghasilkan arah yang berlawanan dari harapan.",
-      "usage": "Most Chinese speakers use 反而 in this office/HR speaking sense. 反而 membutuhkan ekspektasi awal yang bisa dipahami; tanpa itu terdengar janggal.",
+      "en": "on the contrary",
+      "note": "Book headword pinyin printed as fǎn'ér. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: 反而 membutuhkan ekspektasi awal that can dipahami; tanpa itu terdengar janggal.",
+      "when": "Remember 反而 like the word you’ll use in HR/office talk for justru sebaliknya.",
+      "usage": "Most Chinese speakers use 反而 in this workplace sense. Watch-out: 反而 membutuhkan ekspektasi awal that can dipahami; tanpa itu terdengar janggal.",
       "example": {
         "zh": "我们开了更多会，效率反而更低了。",
         "pinyin": "Wǒmen kāi le gèng duōhuì, xiàolǜ fǎnér gèng dī le.",
-        "en": "Kami mengadakan lebih banyak rapat, justru efisiensinya turun."
+        "en": "We held more meetings, and efficiency actually got worse."
       }
     },
     {
@@ -108,21 +108,21 @@
       "pinyin": "qíshí",
       "pos": "adv.",
       "en": "actually",
-      "note": "Book headword pinyin printed as qíshí. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jangan buka tiap pendapat dengan 其实; ada kesan kamu sedang mengoreksi orang. jelaskan apakah maknanya berubah. Kalau hasilnya tidak masuk akal, hubungan logisnya perlu diperbaiki.",
-      "when": "Remember 其实 like the word you’ll use when meluruskan kesan atau asumsi yang mungkin salah, sering sebelum menyatakan posisi pribadi.",
-      "usage": "Most Chinese speakers use 其实 in this office/HR speaking sense. Jangan buka tiap pendapat dengan 其实; ada kesan kamu sedang mengoreksi orang. jelaskan apakah maknanya berubah. Kalau hasilnya tidak masuk akal, hubungan logisnya perlu diperbaiki.",
+      "note": "Book headword pinyin printed as qíshí. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: Don't open every opinion with 其实; it sounds like you are correcting someone. jelaskan maknanya berubah. , hubungan logisnya need diperbaiki.",
+      "when": "Remember 其实 like the word you’ll use in HR/office talk for actually.",
+      "usage": "Most Chinese speakers use 其实 in this workplace sense. Watch-out: Don't open every opinion with 其实; it sounds like you are correcting someone. jelaskan maknanya berubah. , hubungan logisnya need diperbaiki.",
       "example": {
         "zh": "其实我不是反对，只是想再看一下数据。",
         "pinyin": "Qíshí wǒ búshì fǎnduì, zhǐshì xiǎng zài kàn yīxià shùjù.",
-        "en": "Sebenarnya saya bukan menolak; saya hanya ingin melihat datanya lagi."
+        "en": "Actually I'm not refusing; I just want to look at the data again."
       }
     }
   ],
   "dialogues": [],
   "notes": [
     {
-      "title": "Module aim — Kontras dan koreksi",
-      "body": "Penghubung 04 / 06 (book pages 42-43). Indonesian title: Kontras dan koreksi."
+      "title": "Module aim — Contrast and correction",
+      "body": "Connector module 04 / 06 (book pages 42-43). The book’s own title: Contrast and correction."
     },
     {
       "title": "Tes koneksi (book exercise)",

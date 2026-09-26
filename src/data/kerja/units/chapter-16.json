@@ -9,14 +9,14 @@
       "zh": "我觉得",
       "pinyin": "wǒ juéde",
       "pos": "phrase",
-      "en": "menurut saya, saya",
-      "note": "Book headword pinyin printed as wǒ juéde. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 我觉得 adalah opini; jangan gunakan seolah menggantikan data yang sudah merasa diverifikasi.",
-      "when": "Remember 我觉得 like the word you’ll use when membuka opini pribadi dengan nada cukup ringan. Cocok untuk diskusi awal atau memberi masukan tanpa memaksakan keputusan.",
-      "usage": "Most Chinese speakers use 我觉得 in this office/HR speaking sense. 我觉得 adalah opini; jangan gunakan seolah menggantikan data yang sudah merasa diverifikasi.",
+      "en": "I think; in my view",
+      "note": "Book headword pinyin printed as wǒ juéde. Example-sentence pinyin not printed in the book; standard pinyin added. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 我觉得 like the word you’ll use in HR/office talk for menurut saya, saya.",
+      "usage": "Most Chinese speakers use 我觉得 in this workplace sense. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "我觉得这个时间比较合适。",
         "pinyin": "Wǒ juéde zhège shíjiān bǐjiào héshì.",
-        "en": "Menurut saya, waktu ini cukup cocok."
+        "en": "I think this time works pretty well."
       }
     },
     {
@@ -24,55 +24,55 @@
       "pinyin": "wǒ rènwéi",
       "pos": "phrase",
       "en": "I believe; I hold that",
-      "note": "Book headword pinyin printed as wǒ rènwéi. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jika hanya selera pribadi tanpa alasan, 我觉得 biasanya lebih natural.",
-      "when": "Remember 我认为 like the word you’ll use when menyatakan penilaian yang lebih tegas dan biasanya disertai alasan. Cocok dalam rapat atau pembahasan kebijakan.",
-      "usage": "Most Chinese speakers use 我认为 in this office/HR speaking sense. Jika hanya selera pribadi tanpa alasan, 我觉得 biasanya lebih natural.",
+      "note": "Book headword pinyin printed as wǒ rènwéi. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: Jika hanya selera pribadi tanpa alasan, 我觉得 biasanya lebih natural.",
+      "when": "Remember 我认为 like the word you’ll use in HR/office talk for I believe; I hold that.",
+      "usage": "Most Chinese speakers use 我认为 in this workplace sense. Watch-out: Jika hanya selera pribadi tanpa alasan, 我觉得 biasanya lebih natural.",
       "example": {
         "zh": "我认为我们应该先问清楚原因。",
         "pinyin": "Wǒ rènwéi wǒmen yīnggāi xiānwèn qīngchǔ yuányīn.",
-        "en": "Saya berpendapat kita sebaiknya menanyakan alasannya dulu dengan jelas."
+        "en": "I think we should ask about the reason first."
       }
     },
     {
       "zh": "在我看来",
       "pinyin": "zài wǒ kànlái",
       "pos": "phrase",
-      "en": "dari sudut pandang",
-      "note": "Book headword pinyin printed as zài wǒ kànlái. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jangan jadikan frasa ini pengganti bukti ketika keputusan bergantung pada data. saya",
-      "when": "Remember 在我看来 like the word you’ll use when menjelaskan bahwa penilaian berasal dari perspektifmu, bukan keputusan organisasi.",
-      "usage": "Most Chinese speakers use 在我看来 in this office/HR speaking sense. Jangan jadikan frasa ini pengganti bukti ketika keputusan bergantung pada data. saya",
+      "en": "from my point of view",
+      "note": "Book headword pinyin printed as zài wǒ kànlái. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: Don't turn this phrase into a substitute for evidence when the decision depends on data. I",
+      "when": "Remember 在我看来 like the word you’ll use in HR/office talk for dari sudut pandang.",
+      "usage": "Most Chinese speakers use 在我看来 in this workplace sense. Watch-out: Don't turn this phrase into a substitute for evidence when the decision depends on data. I",
       "example": {
         "zh": "在我看来，现在还需要更多信息。",
         "pinyin": "Zàiwǒkànlái, xiànzài hái xūyào gèng duō xìnxī.",
-        "en": "Dari sudut pandang saya, saat ini kita masih perlu informasi lebih banyak."
+        "en": "From my point of view, we still need more information."
       }
     },
     {
       "zh": "据我了解",
       "pinyin": "jù wǒ liǎojiě",
       "pos": "phrase",
-      "en": "sejauh yang saya",
-      "note": "Book headword pinyin printed as jù wǒ liǎojiě. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Ini bukan konfirmasi resmi; beri sumber atau cek ulang jika informasinya penting. ketahui",
-      "when": "Remember 据我了解 like the word you’ll use when membatasi klaim pada informasi yang kamu miliki saat ini. Berguna ketika belum memegang konfirmasi akhir.",
-      "usage": "Most Chinese speakers use 据我了解 in this office/HR speaking sense. Ini bukan konfirmasi resmi; beri sumber atau cek ulang jika informasinya penting. ketahui",
+      "en": "as far as I know",
+      "note": "Book headword pinyin printed as jù wǒ liǎojiě. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: This is not an official confirmation; give a source or double-check if it matters. ketahui",
+      "when": "Remember 据我了解 like the word you’ll use in HR/office talk for sejauh that I.",
+      "usage": "Most Chinese speakers use 据我了解 in this workplace sense. Watch-out: This is not an official confirmation; give a source or double-check if it matters. ketahui",
       "example": {
         "zh": "据我了解，这个岗位下周才开始面试。",
         "pinyin": "Jù wǒ liǎojiě, zhège gǎngwèi xiàzhōu cái kāishǐ miànshì.",
-        "en": "Sejauh yang saya tahu, wawancara untuk posisi ini baru mulai pekan depan."
+        "en": "Sejauh that I tahu, interview for role/position ini baru mulai pekan depan."
       }
     },
     {
       "zh": "也就是说",
       "pinyin": "yě jiù shì shuō",
       "pos": "phrase",
-      "en": "artinya, jadi",
-      "note": "Book headword pinyin printed as yě jiù shì shuō. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jangan ubah tafsiranmu menjadi fakta; minta konfirmasi bila belum pasti. maksudnya",
-      "when": "Remember 也就是说 like the word you’ll use when menarik makna atau kesimpulan dari informasi sebelumnya. Tambahkan pertanyaan jika kamu sedang mengecek pemahaman.",
-      "usage": "Most Chinese speakers use 也就是说 in this office/HR speaking sense. Jangan ubah tafsiranmu menjadi fakta; minta konfirmasi bila belum pasti. maksudnya",
+      "en": "that is to say; so",
+      "note": "Book headword pinyin printed as yě jiù shì shuō. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: Don't turn your reading into a fact; ask for confirmation if you are not sure. maksudnya",
+      "when": "Remember 也就是说 like the word you’ll use in HR/office talk for artinya, jadi.",
+      "usage": "Most Chinese speakers use 也就是说 in this workplace sense. Watch-out: Don't turn your reading into a fact; ask for confirmation if you are not sure. maksudnya",
       "example": {
         "zh": "你明天不在办公室，也就是说，我们要改成线上会议？",
         "pinyin": "Nǐ míngtiān bù zài bàngōngshì, yějiùshìshuō, wǒmen yào gǎichéng xiànshàng huìyì?",
-        "en": "Besok kamu tidak di kantor; artinya kita perlu ubah menjadi rapat daring?"
+        "en": "You are not in the office tomorrow, so we should switch to an online meeting?"
       }
     },
     {
@@ -80,49 +80,49 @@
       "pinyin": "huàn jù huà shuō",
       "pos": "phrase",
       "en": "in other words",
-      "note": "Book headword pinyin printed as huàn jù huà shuō. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Frasa ini untuk parafrasa, bukan membuka argumen baru yang tidak berkaitan.",
-      "when": "Remember 换句话说 like the word you’ll use when mengungkapkan ulang ide yang sama dengan susunan yang lebih mudah dipahami.",
-      "usage": "Most Chinese speakers use 换句话说 in this office/HR speaking sense. Frasa ini untuk parafrasa, bukan membuka argumen baru yang tidak berkaitan.",
+      "note": "Book headword pinyin printed as huàn jù huà shuō. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: This phrase is for a paraphrase, not a new unrelated point.",
+      "when": "Remember 换句话说 like the word you’ll use in HR/office talk for in other words.",
+      "usage": "Most Chinese speakers use 换句话说 in this workplace sense. Watch-out: This phrase is for a paraphrase, not a new unrelated point.",
       "example": {
         "zh": "这周只做测试，换句话说，这周还不正式使用。",
         "pinyin": "Zhèzhōu zhǐ zuò cèshì, huànjùhuàshuō, zhèzhōu hái bù zhèngshì shǐyòng.",
-        "en": "Pekan ini hanya untuk uji coba; dengan kata lain, pekan ini belum dipakai secara resmi."
+        "en": "This week is only a trial; in other words, it is not official yet."
       }
     },
     {
       "zh": "具体来说",
       "pinyin": "jùtǐ lái shuō",
       "pos": "phrase",
-      "en": "pelanggan.",
-      "note": "Book headword pinyin printed as jùtǐ lái shuō. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Setelah 具体来说 berikan detail nyata, bukan ulangi kalimat umum.",
-      "when": "Remember 具体来说 like the word you’ll use when memecah pernyataan umum menjadi rincian yang bisa ditindaklanjuti.",
-      "usage": "Most Chinese speakers use 具体来说 in this office/HR speaking sense. Setelah 具体来说 berikan detail nyata, bukan ulangi kalimat umum.",
+      "en": "specifically",
+      "note": "Book headword pinyin printed as jùtǐ lái shuō. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: after 具体来说 give a real detail; don't repeat the general line.",
+      "when": "Remember 具体来说 like the word you’ll use in HR/office talk for pelanggan..",
+      "usage": "Most Chinese speakers use 具体来说 in this workplace sense. Watch-out: after 具体来说 give a real detail; don't repeat the general line.",
       "example": {
         "zh": "我们需要更多人。具体来说，还需要两名客服。",
         "pinyin": "Wǒmen xūyào gèngduōrén. jùtǐláishuō, hái xūyào liǎngmíng kèfú.",
-        "en": "Kami perlu lebih banyak orang. Lebih tepatnya, masih perlu dua staf layanan lebih tepatnya"
+        "en": "We need more people. Specifically, we still need two more service staff"
       }
     },
     {
       "zh": "总的来说",
       "pinyin": "zǒng de lái shuō",
       "pos": "phrase",
-      "en": "secara keseluruhan",
-      "note": "Book headword pinyin printed as zǒng de lái shuō. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jangan pakai untuk menyimpulkan sebelum semua poin penting dibahas. jelaskan apakah maknanya berubah. Kalau hasilnya tidak masuk akal, hubungan logisnya perlu diperbaiki.",
-      "when": "Remember 总的来说 like the word you’ll use when menutup beberapa temuan dengan kesan atau simpulan utama. Cocok di akhir laporan lisan.",
-      "usage": "Most Chinese speakers use 总的来说 in this office/HR speaking sense. Jangan pakai untuk menyimpulkan sebelum semua poin penting dibahas. jelaskan apakah maknanya berubah. Kalau hasilnya tidak masuk akal, hubungan logisnya perlu diperbaiki.",
+      "en": "overall",
+      "note": "Book headword pinyin printed as zǒng de lái shuō. Example-sentence pinyin not printed in the book; standard pinyin added. Watch-out: Don't use to summarize before the important points are covered. jelaskan maknanya berubah. , hubungan logisnya need diperbaiki.",
+      "when": "Remember 总的来说 like the word you’ll use in HR/office talk for secara keseluruhan.",
+      "usage": "Most Chinese speakers use 总的来说 in this workplace sense. Watch-out: Don't use to summarize before the important points are covered. jelaskan maknanya berubah. , hubungan logisnya need diperbaiki.",
       "example": {
         "zh": "总的来说，这次面试很顺利。",
         "pinyin": "Zǒngdeláishuō, zhècì miànshì hěn shùnlì.",
-        "en": "Secara keseluruhan, wawancara kali ini berjalan lancar."
+        "en": "Overall, this round of interviews went smoothly."
       }
     }
   ],
   "dialogues": [],
   "notes": [
     {
-      "title": "Module aim — Posisi pendapat dan klarifikasi",
-      "body": "Penghubung 06 / 06 (book pages 46-47). Indonesian title: Posisi pendapat dan klarifikasi."
+      "title": "Module aim — Stance and clarification",
+      "body": "Connector module 06 / 06 (book pages 46-47). The book’s own title: Stance and clarification."
     },
     {
       "title": "Tes koneksi (book exercise)",

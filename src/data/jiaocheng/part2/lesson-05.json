@@ -1,0 +1,936 @@
+{
+  "id": "jiaocheng-2-2-05",
+  "book": "2-2",
+  "index": 5,
+  "bookLesson": 17,
+  "titleZh": "把“福”字倒着贴在门上",
+  "titleEn": "Paste “fú” upside down on the door",
+  "sourcePages": "64-81",
+  "words": [
+    {
+      "zh": "品尝",
+      "pinyin": "pǐncháng",
+      "pos": "v.",
+      "en": "to taste",
+      "note": "Book headword pinyin printed as pǐncháng. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 品尝 like the word you’ll use when you invite people to try specialty dishes at a class party.",
+      "usage": "Most Chinese speakers use 品尝 for tasting food carefully or politely inviting others to try something — in 课文1 the class will 品尝各国的特色菜, and the monitor wants homemade dishes brought so everyone can 品尝.",
+      "example": {
+        "zh": "晚会上我们要唱中文歌，用汉语讲故事，表演节目，品尝各国的特色菜。",
+        "pinyin": "Wǎnhuì shang wǒmen yào chàng Zhōngwén gē, yòng Hànyǔ jiǎng gùshi, biǎoyǎn jiémù, pǐncháng gèguó de tèsè cài.",
+        "en": "At the evening party we will sing Chinese songs, tell stories in Chinese, perform programs, and taste specialty dishes from various countries."
+      }
+    },
+    {
+      "zh": "特色",
+      "pinyin": "tèsè",
+      "pos": "n.",
+      "en": "salient feature; hallmark",
+      "note": "Book headword pinyin printed as tèsè. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 特色 like the word you’ll use when you talk about what makes each country’s food special at the party.",
+      "usage": "Most Chinese speakers use 特色 for a distinctive feature; here it modifies 菜 as 特色菜 — hallmark / specialty dishes, not a vague “interesting.”",
+      "example": {
+        "zh": "晚会上我们要唱中文歌，用汉语讲故事，表演节目，品尝各国的特色菜。",
+        "pinyin": "Wǎnhuì shang wǒmen yào chàng Zhōngwén gē, yòng Hànyǔ jiǎng gùshi, biǎoyǎn jiémù, pǐncháng gèguó de tèsè cài.",
+        "en": "At the evening party we will sing Chinese songs, tell stories in Chinese, perform programs, and taste specialty dishes from various countries."
+      }
+    },
+    {
+      "zh": "班长",
+      "pinyin": "bānzhǎng",
+      "pos": "n.",
+      "en": "class monitor",
+      "note": "Book headword pinyin printed as bānzhǎng. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 班长 like the word you’ll use when the class leader assigns party jobs — like bringing homemade dishes.",
+      "usage": "Most Chinese speakers use 班长 for the elected class monitor who coordinates class activities. In 课文1 the 班长 requires everyone to bring dishes they made themselves.",
+      "example": {
+        "zh": "班长要求我们那天把自己亲手做的菜带到晚会上来，让大家品尝。",
+        "pinyin": "Bānzhǎng yāoqiú wǒmen nà tiān bǎ zìjǐ qīnshǒu zuò de cài dài dào wǎnhuì shang lái, ràng dàjiā pǐncháng.",
+        "en": "The class monitor asked us to bring dishes we made with our own hands to the party that day for everyone to taste."
+      }
+    },
+    {
+      "zh": "把",
+      "pinyin": "bǎ",
+      "pos": "prep.",
+      "en": "used when the object is placed before the verb and is the recipient of the action",
+      "note": "Book headword pinyin printed as bǎ. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 把 like the word you’ll use when you need the object before the verb so a result like 在/到/给/成 can follow cleanly.",
+      "usage": "Most Chinese speakers use 把 to front a definite object before the verb when the action produces a clear result or change of place/ownership/state. This lesson’s core is 把字句 (1): (主语+) 把+宾语+动词+在/到/给/成+宾语(+了).",
+      "example": {
+        "zh": "我们最好借一个大教室，把它布置成会场。",
+        "pinyin": "Wǒmen zuìhǎo jiè yí ge dà jiàoshì, bǎ tā bùzhì chéng huìchǎng.",
+        "en": "We’d better borrow a big classroom and decorate it into a meeting venue."
+      }
+    },
+    {
+      "zh": "亲手",
+      "pinyin": "qīnshǒu",
+      "pos": "adv.",
+      "en": "with one’s own hands; in person",
+      "note": "Book headword pinyin printed as qīnshǒu. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 亲手 like the word you’ll use when you stress that you cooked or made something yourself, not bought it ready-made.",
+      "usage": "Most Chinese speakers put 亲手 before a verb of making to mean “with one’s own hands.” In 课文1 the monitor wants dishes you 亲手做.",
+      "example": {
+        "zh": "班长要求我们那天把自己亲手做的菜带到晚会上来，让大家品尝。",
+        "pinyin": "Bānzhǎng yāoqiú wǒmen nà tiān bǎ zìjǐ qīnshǒu zuò de cài dài dào wǎnhuì shang lái, ràng dàjiā pǐncháng.",
+        "en": "The class monitor asked us to bring dishes we made with our own hands to the party that day for everyone to taste."
+      }
+    },
+    {
+      "zh": "最好",
+      "pinyin": "zuìhǎo",
+      "pos": "adv.",
+      "en": "had better; it would be best",
+      "note": "Book headword pinyin printed as zuìhǎo. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 最好 like the word you’ll use when you give a practical suggestion for the best plan — borrow a big classroom.",
+      "usage": "Most Chinese speakers use 最好 + verb to mean “had better / it would be best to….” Mary’s line opens with 我们最好借一个大教室.",
+      "example": {
+        "zh": "玛丽说：“我们最好借一个大教室，把它布置成会场。”",
+        "pinyin": "Mǎlì shuō: “Wǒmen zuìhǎo jiè yí ge dà jiàoshì, bǎ tā bùzhì chéng huìchǎng.”",
+        "en": "Mary said: “We’d better borrow a big classroom and decorate it into a meeting venue.”"
+      }
+    },
+    {
+      "zh": "它",
+      "pinyin": "tā",
+      "pos": "pron.",
+      "en": "it",
+      "note": "Book headword pinyin printed as tā. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 它 like the word you’ll use when you refer back to a thing already named — the classroom, the painting, the 福 character.",
+      "usage": "Most Chinese speakers use 它 for non-human “it.” Lesson lines repeatedly 把它布置成会场 / 把它挂在中间 / 把它倒着贴.",
+      "example": {
+        "zh": "我们最好借一个大教室，把它布置成会场。",
+        "pinyin": "Wǒmen zuìhǎo jiè yí ge dà jiàoshì, bǎ tā bùzhì chéng huìchǎng.",
+        "en": "We’d better borrow a big classroom and decorate it into a meeting venue."
+      }
+    },
+    {
+      "zh": "布置",
+      "pinyin": "bùzhì",
+      "pos": "v.",
+      "en": "to fix up; to arrange; to decorate",
+      "note": "Book headword pinyin printed as bùzhì. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 布置 like the word you’ll use when you set up a room as a venue — desks, banners, lights for a party.",
+      "usage": "Most Chinese speakers use 布置 for arranging/decorating a space for an event. Key pattern here: 把教室布置成会场 / 布置得真漂亮.",
+      "example": {
+        "zh": "我们最好借一个大教室，把它布置成会场。",
+        "pinyin": "Wǒmen zuìhǎo jiè yí ge dà jiàoshì, bǎ tā bùzhì chéng huìchǎng.",
+        "en": "We’d better borrow a big classroom and decorate it into a meeting venue."
+      }
+    },
+    {
+      "zh": "会场",
+      "pinyin": "huìchǎng",
+      "pos": "n.",
+      "en": "meeting venue",
+      "note": "Book headword pinyin printed as huìchǎng. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 会场 like the word you’ll use when you turn an ordinary classroom into the place where the gathering will happen.",
+      "usage": "Most Chinese speakers use 会场 for the hall/venue of a meeting or assembly. In 课文1 the goal is to 布置成会场.",
+      "example": {
+        "zh": "我们最好借一个大教室，把它布置成会场。",
+        "pinyin": "Wǒmen zuìhǎo jiè yí ge dà jiàoshì, bǎ tā bùzhì chéng huìchǎng.",
+        "en": "We’d better borrow a big classroom and decorate it into a meeting venue."
+      }
+    },
+    {
+      "zh": "管理员",
+      "pinyin": "guǎnlǐyuán",
+      "pos": "n.",
+      "en": "custodian; manager",
+      "note": "Book headword pinyin printed as guǎnlǐyuán. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 管理员 like the word you’ll use when you ask the building caretaker for permission to borrow a classroom.",
+      "usage": "Most Chinese speakers use 管理员 for a manager/custodian of a place. In 课文1 the class finds the 管理员 to borrow the big classroom.",
+      "example": {
+        "zh": "前天，我们找到管理员，告诉了她借教室的事儿，她答应把那个大教室借给我们。",
+        "pinyin": "Qiántiān, wǒmen zhǎodào guǎnlǐyuán, gàosu le tā jiè jiàoshì de shìr, tā dāying bǎ nàge dà jiàoshì jiè gěi wǒmen.",
+        "en": "The day before yesterday we found the custodian, told her about borrowing the classroom, and she agreed to lend us that big classroom."
+      }
+    },
+    {
+      "zh": "管理",
+      "pinyin": "guǎnlǐ",
+      "pos": "v.",
+      "en": "to manage",
+      "note": "Book headword pinyin printed as guǎnlǐ. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added. Sub-entry under 管理员.",
+      "when": "Remember 管理 like the word you’ll use when you talk about managing/taking care of a place (related headword under 管理员).",
+      "usage": "Most Chinese speakers use 管理 for managing or administering. Listed under 管理员 in this lesson’s 生词.",
+      "example": {
+        "zh": "前天，我们找到管理员，告诉了她借教室的事儿，她答应把那个大教室借给我们。",
+        "pinyin": "Qiántiān, wǒmen zhǎodào guǎnlǐyuán, gàosu le tā jiè jiàoshì de shìr, tā dāying bǎ nàge dà jiàoshì jiè gěi wǒmen.",
+        "en": "The day before yesterday we found the custodian, told her about borrowing the classroom, and she agreed to lend us that big classroom."
+      }
+    },
+    {
+      "zh": "告诉",
+      "pinyin": "gàosu",
+      "pos": "v.",
+      "en": "to tell; to inform; to let know",
+      "note": "Book headword pinyin printed as gàosu. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 告诉 like the word you’ll use when you inform someone of a plan — borrowing the room, or keeping Anna’s birthday surprise secret.",
+      "usage": "Most Chinese speakers use 告诉 as “tell / let know.” Neutral tone on 诉 is the usual textbook reading gàosu.",
+      "example": {
+        "zh": "前天，我们找到管理员，告诉了她借教室的事儿，她答应把那个大教室借给我们。",
+        "pinyin": "Qiántiān, wǒmen zhǎodào guǎnlǐyuán, gàosu le tā jiè jiàoshì de shìr, tā dāying bǎ nàge dà jiàoshì jiè gěi wǒmen.",
+        "en": "The day before yesterday we found the custodian, told her about borrowing the classroom, and she agreed to lend us that big classroom."
+      }
+    },
+    {
+      "zh": "答应",
+      "pinyin": "dāying",
+      "pos": "v.",
+      "en": "to agree; to permit",
+      "note": "Book headword pinyin printed as dāying. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 答应 like the word you’ll use when someone says yes to a request — the custodian agrees to lend the classroom.",
+      "usage": "Most Chinese speakers use 答应 for agreeing to a request or promise. Neutral tone on 应 is common: dāying.",
+      "example": {
+        "zh": "前天，我们找到管理员，告诉了她借教室的事儿，她答应把那个大教室借给我们。",
+        "pinyin": "Qiántiān, wǒmen zhǎodào guǎnlǐyuán, gàosu le tā jiè jiàoshì de shìr, tā dāying bǎ nàge dà jiàoshì jiè gěi wǒmen.",
+        "en": "The day before yesterday we found the custodian, told her about borrowing the classroom, and she agreed to lend us that big classroom."
+      }
+    },
+    {
+      "zh": "打扫",
+      "pinyin": "dǎsǎo",
+      "pos": "v.",
+      "en": "to sweep; to clean",
+      "note": "Book headword pinyin printed as dǎsǎo. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 打扫 like the word you’ll use when staff clean the room before your party setup.",
+      "usage": "Most Chinese speakers use 打扫 for cleaning a room. Pattern: 把教室打扫了一下儿.",
+      "example": {
+        "zh": "昨天下午服务员把教室打扫了一下儿，把门和窗户也都擦得干干净净的。",
+        "pinyin": "Zuótiān xiàwǔ fúwùyuán bǎ jiàoshì dǎsǎo le yíxiàr, bǎ mén hé chuānghu yě dōu cā de gāngānjìngjìng de.",
+        "en": "Yesterday afternoon the attendants cleaned the classroom a bit and wiped the doors and windows spotlessly clean."
+      }
+    },
+    {
+      "zh": "窗户",
+      "pinyin": "chuānghu",
+      "pos": "n.",
+      "en": "window",
+      "note": "Book headword pinyin printed as chuānghu. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 窗户 like the word you’ll use when you clean or mention windows together with doors when tidying a room.",
+      "usage": "Most Chinese speakers use 窗户 for window(s). In 课文1 doors and 窗户 are wiped clean.",
+      "example": {
+        "zh": "昨天下午服务员把教室打扫了一下儿，把门和窗户也都擦得干干净净的。",
+        "pinyin": "Zuótiān xiàwǔ fúwùyuán bǎ jiàoshì dǎsǎo le yíxiàr, bǎ mén hé chuānghu yě dōu cā de gāngānjìngjìng de.",
+        "en": "Yesterday afternoon the attendants cleaned the classroom a bit and wiped the doors and windows spotlessly clean."
+      }
+    },
+    {
+      "zh": "窗",
+      "pinyin": "chuāng",
+      "pos": "n.",
+      "en": "window",
+      "note": "Book headword pinyin printed as chuāng. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added. Sub-entry under 窗户.",
+      "when": "Remember 窗 like the word you’ll use when you need the monosyllable for “window” (listed under 窗户).",
+      "usage": "Most Chinese speakers use 窗 as the bound/monosyllabic form related to 窗户. Sub-entry in this lesson.",
+      "example": {
+        "zh": "昨天下午服务员把教室打扫了一下儿，把门和窗户也都擦得干干净净的。",
+        "pinyin": "Zuótiān xiàwǔ fúwùyuán bǎ jiàoshì dǎsǎo le yíxiàr, bǎ mén hé chuānghu yě dōu cā de gāngānjìngjìng de.",
+        "en": "Yesterday afternoon the attendants cleaned the classroom a bit and wiped the doors and windows spotlessly clean."
+      }
+    },
+    {
+      "zh": "擦",
+      "pinyin": "cā",
+      "pos": "v.",
+      "en": "to wipe; to rub",
+      "note": "Book headword pinyin printed as cā. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 擦 like the word you’ll use when you wipe doors and windows until they look spotless.",
+      "usage": "Most Chinese speakers use 擦 for wiping surfaces. Complement: 擦得干干净净的.",
+      "example": {
+        "zh": "昨天下午服务员把教室打扫了一下儿，把门和窗户也都擦得干干净净的。",
+        "pinyin": "Zuótiān xiàwǔ fúwùyuán bǎ jiàoshì dǎsǎo le yíxiàr, bǎ mén hé chuānghu yě dōu cā de gāngānjìngjìng de.",
+        "en": "Yesterday afternoon the attendants cleaned the classroom a bit and wiped the doors and windows spotlessly clean."
+      }
+    },
+    {
+      "zh": "桌子",
+      "pinyin": "zhuōzi",
+      "pos": "n.",
+      "en": "table; desk",
+      "note": "Book headword pinyin printed as zhuōzi. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 桌子 like the word you’ll use when you rearrange desks into a big circle for the party, or paste 福 on the table.",
+      "usage": "Most Chinese speakers use 桌子 for table/desk. 课文1: 把桌子摆成了一个大圆圈儿; Mike also jokes about pasting 福 on 桌子上.",
+      "example": {
+        "zh": "我们把桌子摆成了一个大圆圈儿，爱德华把“圣诞—新年快乐”几个大字贴在了黑板上。",
+        "pinyin": "Wǒmen bǎ zhuōzi bǎi chéng le yí ge dà yuánquānr, Àidéhuá bǎ “Shèngdàn—Xīnnián kuàilè” jǐ ge dà zì tiē zài le hēibǎn shang.",
+        "en": "We arranged the desks into a big circle, and Edward pasted the big characters “Merry Christmas—Happy New Year” on the blackboard."
+      }
+    },
+    {
+      "zh": "圆圈（儿）",
+      "pinyin": "yuánquānr",
+      "pos": "n.",
+      "en": "circle; ring",
+      "note": "Book headword pinyin printed as yuánquānr. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 圆圈（儿） like the word you’ll use when you form desks into a ring so the party seating faces inward.",
+      "usage": "Most Chinese speakers use 圆圈儿 for a circle/ring shape. Pattern: 摆成了一个大圆圈儿.",
+      "example": {
+        "zh": "我们把桌子摆成了一个大圆圈儿，爱德华把“圣诞—新年快乐”几个大字贴在了黑板上。",
+        "pinyin": "Wǒmen bǎ zhuōzi bǎi chéng le yí ge dà yuánquānr, Àidéhuá bǎ “Shèngdàn—Xīnnián kuàilè” jǐ ge dà zì tiē zài le hēibǎn shang.",
+        "en": "We arranged the desks into a big circle, and Edward pasted the big characters “Merry Christmas—Happy New Year” on the blackboard."
+      }
+    },
+    {
+      "zh": "黑板",
+      "pinyin": "hēibǎn",
+      "pos": "n.",
+      "en": "blackboard",
+      "note": "Book headword pinyin printed as hēibǎn. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 黑板 like the word you’ll use when you stick large festive characters on the classroom blackboard.",
+      "usage": "Most Chinese speakers use 黑板 for the classroom blackboard. Edward pastes big characters 贴在了黑板上.",
+      "example": {
+        "zh": "我们把桌子摆成了一个大圆圈儿，爱德华把“圣诞—新年快乐”几个大字贴在了黑板上。",
+        "pinyin": "Wǒmen bǎ zhuōzi bǎi chéng le yí ge dà yuánquānr, Àidéhuá bǎ “Shèngdàn—Xīnnián kuàilè” jǐ ge dà zì tiē zài le hēibǎn shang.",
+        "en": "We arranged the desks into a big circle, and Edward pasted the big characters “Merry Christmas—Happy New Year” on the blackboard."
+      }
+    },
+    {
+      "zh": "音响",
+      "pinyin": "yīnxiǎng",
+      "pos": "n.",
+      "en": "stereo system",
+      "note": "Book headword pinyin printed as yīnxiǎng. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 音响 like the word you’ll use when classmates move speakers into the classroom for singing and dancing.",
+      "usage": "Most Chinese speakers use 音响 for a stereo / sound system. 课文1: 把音响也搬到教室里来了.",
+      "example": {
+        "zh": "李美英说，晚会上她要和几个同学唱歌，跳舞，所以把音响也搬到教室里来了。",
+        "pinyin": "Lǐ Měiyīng shuō, wǎnhuì shang tā yào hé jǐ ge tóngxué chànggē, tiàowǔ, suǒyǐ bǎ yīnxiǎng yě bān dào jiàoshì li lái le.",
+        "en": "Li Meiying said that at the party she and a few classmates would sing and dance, so they also moved the stereo into the classroom."
+      }
+    },
+    {
+      "zh": "彩灯",
+      "pinyin": "cǎidēng",
+      "pos": "n.",
+      "en": "colored light/lamp",
+      "note": "Book headword pinyin printed as cǎidēng. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 彩灯 like the word you’ll use when you decorate the Christmas tree with colored lights.",
+      "usage": "Most Chinese speakers use 彩灯 for decorative colored lights. Paired with 彩带 on the tree.",
+      "example": {
+        "zh": "爱德华昨天从商店买回来一棵圣诞树，我们把它摆在了教室的前边，用彩灯和彩带把它装饰得非常漂亮。",
+        "pinyin": "Àidéhuá zuótiān cóng shāngdiàn mǎi huílai yì kē shèngdànshù, wǒmen bǎ tā bǎi zài le jiàoshì de qiánbian, yòng cǎidēng hé cǎidài bǎ tā zhuāngshì de fēicháng piàoliang.",
+        "en": "Yesterday Edward bought a Christmas tree from the store; we placed it at the front of the classroom and decorated it beautifully with colored lights and ribbons."
+      }
+    },
+    {
+      "zh": "彩带",
+      "pinyin": "cǎidài",
+      "pos": "n.",
+      "en": "colored ribbon/streamer",
+      "note": "Book headword pinyin printed as cǎidài. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 彩带 like the word you’ll use when you wrap the tree with colored streamers along with the lights.",
+      "usage": "Most Chinese speakers use 彩带 for colorful ribbons/streamers used in decoration.",
+      "example": {
+        "zh": "爱德华昨天从商店买回来一棵圣诞树，我们把它摆在了教室的前边，用彩灯和彩带把它装饰得非常漂亮。",
+        "pinyin": "Àidéhuá zuótiān cóng shāngdiàn mǎi huílai yì kē shèngdànshù, wǒmen bǎ tā bǎi zài le jiàoshì de qiánbian, yòng cǎidēng hé cǎidài bǎ tā zhuāngshì de fēicháng piàoliang.",
+        "en": "Yesterday Edward bought a Christmas tree from the store; we placed it at the front of the classroom and decorated it beautifully with colored lights and ribbons."
+      }
+    },
+    {
+      "zh": "份",
+      "pinyin": "fèn",
+      "pos": "m.w.",
+      "en": "share; portion; part",
+      "note": "Book headword pinyin printed as fèn. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 份 like the word you’ll use when you count gifts as portions — 一份生日礼物.",
+      "usage": "Most Chinese speakers use 份 as a measure word for gifts, documents, and portions. Here: 一份生日礼物.",
+      "example": {
+        "zh": "所以同学们还为她准备了一份生日礼物和一个生日蛋糕，但是我们还没把这事儿告诉她。",
+        "pinyin": "Suǒyǐ tóngxuémen hái wèi tā zhǔnbèi le yí fèn shēngrì lǐwù hé yí ge shēngrì dàngāo, dànshì wǒmen hái méi bǎ zhè shìr gàosu tā.",
+        "en": "So the classmates also prepared a birthday gift and a birthday cake for her, but we haven’t told her about it yet."
+      }
+    },
+    {
+      "zh": "惊喜",
+      "pinyin": "jīngxǐ",
+      "pos": "n.",
+      "en": "pleasant surprise",
+      "note": "Book headword pinyin printed as jīngxǐ. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 惊喜 like the word you’ll use when you plan to give Anna her gift at the party as a surprise.",
+      "usage": "Most Chinese speakers use 惊喜 for a pleasant surprise. 课文1: 给她一个惊喜.",
+      "example": {
+        "zh": "我们想，到晚会上再把生日礼物送给她，给她一个惊喜，让她在中国过一个快乐的生日。",
+        "pinyin": "Wǒmen xiǎng, dào wǎnhuì shang zài bǎ shēngrì lǐwù sòng gěi tā, gěi tā yí ge jīngxǐ, ràng tā zài Zhōngguó guò yí ge kuàilè de shēngrì.",
+        "en": "We thought we’d give her the birthday gift at the party as a surprise, so she could have a happy birthday in China."
+      }
+    },
+    {
+      "zh": "幅",
+      "pinyin": "fú",
+      "pos": "m.w.",
+      "en": "a measure word for paintings, calligraphy works, etc.",
+      "note": "Book headword pinyin printed as fú. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 幅 like the word you’ll use when you count a painting — 这幅画儿 — when deciding where to hang it.",
+      "usage": "Most Chinese speakers use 幅 for paintings and calligraphy. Opening of 课文2: 这幅画儿挂在什么地方比较好?",
+      "example": {
+        "zh": "哎，这幅画儿挂在什么地方比较好？",
+        "pinyin": "Āi, zhè fú huàr guà zài shénme dìfang bǐjiào hǎo?",
+        "en": "Hey, where would be a better place to hang this painting?"
+      }
+    },
+    {
+      "zh": "水仙",
+      "pinyin": "shuǐxiān",
+      "pos": "n.",
+      "en": "narcissus",
+      "note": "Book headword pinyin printed as shuǐxiān. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 水仙 like the word you’ll use when Spring Festival flowers someone is supposed to deliver for the home.",
+      "usage": "Most Chinese speakers use 水仙 for the narcissus flower, a common New Year decoration. Wang asks whether Xiaolin has brought the 水仙花 yet.",
+      "example": {
+        "zh": "对了，小林还没把水仙花送来吧？",
+        "pinyin": "Duì le, Xiǎolín hái méi bǎ shuǐxiānhuā sòng lái ba?",
+        "en": "By the way, Xiaolin still hasn’t brought the narcissus, right?"
+      }
+    },
+    {
+      "zh": "开",
+      "pinyin": "kāi",
+      "pos": "v.",
+      "en": "to bloom",
+      "note": "Book headword pinyin printed as kāi. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 开 like the word you’ll use when you praise flowers that have opened beautifully — 开得可好了.",
+      "usage": "Most Chinese speakers also use 开 for flowers blooming (not only “to open” a door). Sense in this lesson: 开得可好了.",
+      "example": {
+        "zh": "已经送来了，我把它摆在卧室里了。你来看，开得可好了。",
+        "pinyin": "Yǐjīng sòng lái le, wǒ bǎ tā bǎi zài wòshì li le. Nǐ lái kàn, kāi de kě hǎo le.",
+        "en": "They’re already here — I put them in the bedroom. Come look, they’re blooming so well."
+      }
+    },
+    {
+      "zh": "福",
+      "pinyin": "fú",
+      "pos": "n.",
+      "en": "happiness; good fortune; blessing",
+      "note": "Book headword pinyin printed as fú. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 福 like the word you’ll use when you paste the character 福 on the door for Spring Festival luck.",
+      "usage": "Most Chinese speakers treat 福 as the fortune/blessing character pasted at New Year. Cultural punchline: paste it upside down so people say 福倒了 ≈ 福到了.",
+      "example": {
+        "zh": "我把“福”字贴在门上吧。",
+        "pinyin": "Wǒ bǎ “fú” zì tiē zài mén shang ba.",
+        "en": "I’ll paste the character “fú” on the door."
+      }
+    },
+    {
+      "zh": "字",
+      "pinyin": "zì",
+      "pos": "n.",
+      "en": "word; character",
+      "note": "Book headword pinyin printed as zì. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 字 like the word you’ll use when you talk about a written Chinese character — the 福字 or a mistaken 兴/旺.",
+      "usage": "Most Chinese speakers use 字 for a written character. Everywhere in this lesson: “福”字, and checking whether 兴 was written as 旺.",
+      "example": {
+        "zh": "我把“福”字贴在门上吧。",
+        "pinyin": "Wǒ bǎ “fú” zì tiē zài mén shang ba.",
+        "en": "I’ll paste the character “fú” on the door."
+      }
+    },
+    {
+      "zh": "对联（儿）",
+      "pinyin": "duìliánr",
+      "pos": "n.",
+      "en": "antithetical couplet",
+      "note": "Book headword pinyin printed as duìliánr. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 对联（儿） like the word you’ll use when you paste New Year couplets on both sides of the gate.",
+      "usage": "Most Chinese speakers use 对联儿 for the matching Spring Festival couplets flanking a door. 课文2 heading and dialogue center on pasting 对联儿.",
+      "example": {
+        "zh": "把你写的对联儿也贴上去吧。",
+        "pinyin": "Bǎ nǐ xiě de duìliánr yě tiē shàngqu ba.",
+        "en": "Paste the couplets you wrote up there too."
+      }
+    },
+    {
+      "zh": "新春",
+      "pinyin": "xīnchūn",
+      "pos": "n.",
+      "en": "(new) spring; Lunar New Year and the following days",
+      "note": "Book headword pinyin printed as xīnchūn. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 新春 like the word you’ll use when you read a couplet blessing for the new spring season.",
+      "usage": "Most Chinese speakers use 新春 for the Lunar New Year season. Couplet line: 新年新春吉祥.",
+      "example": {
+        "zh": "应该是“新年新春吉祥，百行百业兴旺”。",
+        "pinyin": "Yīnggāi shì “Xīnnián xīnchūn jíxiáng, bǎi háng bǎi yè xīngwàng”.",
+        "en": "It should be “Auspicious new year and new spring; every trade and profession prospers.”"
+      }
+    },
+    {
+      "zh": "吉祥",
+      "pinyin": "jíxiáng",
+      "pos": "adj.",
+      "en": "auspicious; lucky",
+      "note": "Book headword pinyin printed as jíxiáng. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 吉祥 like the word you’ll use when you wish luck in a New Year couplet.",
+      "usage": "Most Chinese speakers use 吉祥 for auspicious/lucky wording on greetings and couplets.",
+      "example": {
+        "zh": "应该是“新年新春吉祥，百行百业兴旺”。",
+        "pinyin": "Yīnggāi shì “Xīnnián xīnchūn jíxiáng, bǎi háng bǎi yè xīngwàng”.",
+        "en": "It should be “Auspicious new year and new spring; every trade and profession prospers.”"
+      }
+    },
+    {
+      "zh": "行业",
+      "pinyin": "hángyè",
+      "pos": "n.",
+      "en": "trade; profession",
+      "note": "Book headword pinyin printed as hángyè. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added. 课文 uses the couplet pairing 百行百业 (not the contiguous compound 行业 in one slot).",
+      "when": "Remember 行业 like the word you’ll use when the couplet blesses every line of work — 百行百业.",
+      "usage": "Most Chinese speakers use 行业 for a trade/profession. In this lesson the book shows it through the couplet wording 百行百业.",
+      "example": {
+        "zh": "应该是“新年新春吉祥，百行百业兴旺”。",
+        "pinyin": "Yīnggāi shì “Xīnnián xīnchūn jíxiáng, bǎi háng bǎi yè xīngwàng”.",
+        "en": "It should be “Auspicious new year and new spring; every trade and profession prospers.”"
+      }
+    },
+    {
+      "zh": "兴旺",
+      "pinyin": "xīngwàng",
+      "pos": "adj.",
+      "en": "prosperous",
+      "note": "Book headword pinyin printed as xīngwàng. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 兴旺 like the word you’ll use when you finish the couplet with a wish that all businesses thrive.",
+      "usage": "Most Chinese speakers use 兴旺 for prosperous/flourishing. Wang mistook and wrote 旺 for 兴; the full line ends in 兴旺.",
+      "example": {
+        "zh": "应该是“新年新春吉祥，百行百业兴旺”。",
+        "pinyin": "Yīnggāi shì “Xīnnián xīnchūn jíxiáng, bǎi háng bǎi yè xīngwàng”.",
+        "en": "It should be “Auspicious new year and new spring; every trade and profession prospers.”"
+      }
+    },
+    {
+      "zh": "哦",
+      "pinyin": "ò",
+      "pos": "interj.",
+      "en": "(expressing realization or understanding) oh",
+      "note": "Book headword pinyin printed as ò. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 哦 like the word you’ll use when you suddenly get it — Wang realizes he wrote the wrong character; Mike gets the 福倒了 pun.",
+      "usage": "Most Chinese speakers use 哦 as an interjection of sudden realization. Book note: “哦”是叹词，表示醒悟、领会.",
+      "example": {
+        "zh": "哦，可不是嘛，写错了。",
+        "pinyin": "Ò, kěbúshì ma, xiě cuò le.",
+        "en": "Oh, exactly — I wrote it wrong."
+      }
+    },
+    {
+      "zh": "可不是",
+      "pinyin": "kěbúshì",
+      "pos": "adv.",
+      "en": "(expressing agreement) right; exactly",
+      "note": "Book headword pinyin printed as kěbúshì. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 可不是 like the word you’ll use when you strongly agree — “you’re right / exactly.”",
+      "usage": "Most Chinese speakers use 可不是 (嘛) to agree emphatically with what was just said. Book example line: 哦，可不是嘛.",
+      "example": {
+        "zh": "哦，可不是嘛，写错了。",
+        "pinyin": "Ò, kěbúshì ma, xiě cuò le.",
+        "en": "Oh, exactly — I wrote it wrong."
+      }
+    },
+    {
+      "zh": "仔细",
+      "pinyin": "zǐxì",
+      "pos": "adj.",
+      "en": "careful; attentive",
+      "note": "Book headword pinyin printed as zǐxì. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 仔细 like the word you’ll use when you tell someone to look carefully at a character they don’t recognize yet.",
+      "usage": "Most Chinese speakers use 仔细 for careful/attentive looking or doing. Tian Fang: 你仔细看看.",
+      "example": {
+        "zh": "你仔细看看，认识不认识？",
+        "pinyin": "Nǐ zǐxì kànkan, rènshi bu rènshi?",
+        "en": "Look carefully — do you recognize it or not?"
+      }
+    },
+    {
+      "zh": "幸福",
+      "pinyin": "xìngfú",
+      "pos": "n./adj.",
+      "en": "happiness; happy; fortunate",
+      "note": "Book headword pinyin printed as xìngfú. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 幸福 like the word you’ll use when you link the character 福 to 幸福, or wait for happiness to find you.",
+      "usage": "Most Chinese speakers use 幸福 as happiness / happy. Tian Fang: 这不是幸福的“福”字吗?; Mike waits for 幸福来找我.",
+      "example": {
+        "zh": "这不是幸福的“福”字吗？过春节的时候，差不多家家都贴“福”字。",
+        "pinyin": "Zhè bú shì xìngfú de “fú” zì ma? Guò Chūnjié de shíhou, chàbuduō jiājiā dōu tiē “fú” zì.",
+        "en": "Isn’t this the “fú” of 幸福 (happiness)? At Spring Festival, almost every household pastes the character “fú.”"
+      }
+    },
+    {
+      "zh": "倒",
+      "pinyin": "dào",
+      "pos": "v.",
+      "en": "to invert; to turn upside down",
+      "note": "Book headword pinyin printed as dào. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 倒 like the word you’ll use when you paste 福 upside down on purpose for the 倒/到 pun.",
+      "usage": "Most Chinese speakers use 倒 for inverting. Cultural key: 福倒了 sounds like 福到了. Also adverbial 倒着贴.",
+      "example": {
+        "zh": "为什么把“福”字倒着贴在门上呢？",
+        "pinyin": "Wèishénme bǎ “fú” zì dàozhe tiē zài mén shang ne?",
+        "en": "Why paste the character “fú” upside down on the door?"
+      }
+    },
+    {
+      "zh": "声音",
+      "pinyin": "shēngyīn",
+      "pos": "n.",
+      "en": "sound; voice",
+      "note": "Book headword pinyin printed as shēngyīn. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 声音 like the word you’ll use when you explain a pun that works by sound — 倒 and 到.",
+      "usage": "Most Chinese speakers use 声音 for sound/voice. Tian Fang: 听声音就是“福到了”.",
+      "example": {
+        "zh": "这样，人们一看见就会说“福倒了”，听声音就是“福到了”。",
+        "pinyin": "Zhèyàng, rénmen yì kànjiàn jiù huì shuō “fú dào le”, tīng shēngyīn jiù shì “fú dào le”.",
+        "en": "That way, as soon as people see it they say “fú is upside down,” which by sound is “fú has arrived.”"
+      }
+    },
+    {
+      "zh": "椅子",
+      "pinyin": "yǐzi",
+      "pos": "n.",
+      "en": "chair",
+      "note": "Book headword pinyin printed as yǐzi. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 椅子 like the word you’ll use when Mike jokingly lists everywhere he’ll paste 福 — including chairs.",
+      "usage": "Most Chinese speakers use 椅子 for chair. Appears in Mike’s comic list of places to paste 福.",
+      "example": {
+        "zh": "哦，那我也去买一些“福”字来，把它倒着贴在门上、床上、桌子上、椅子上、沙发上、冰箱上、洗衣机上、空调上……等着幸福来找我。",
+        "pinyin": "Ò, nà wǒ yě qù mǎi yìxiē “fú” zì lái, bǎ tā dàozhe tiē zài mén shang, chuáng shang, zhuōzi shang, yǐzi shang, shāfā shang, bīngxiāng shang, xǐyījī shang, kōngtiáo shang… děngzhe xìngfú lái zhǎo wǒ.",
+        "en": "Oh, then I’ll go buy some “fú” characters too and paste them upside down on the door, bed, table, chairs, sofa, fridge, washing machine, air conditioner… and wait for happiness to find me."
+      }
+    },
+    {
+      "zh": "沙发",
+      "pinyin": "shāfā",
+      "pos": "n.",
+      "en": "sofa",
+      "note": "Book headword pinyin printed as shāfā. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 沙发 like the word you’ll use when another place Mike wants to plaster with upside-down 福.",
+      "usage": "Most Chinese speakers use 沙发 for sofa. In Mike’s list of paste spots.",
+      "example": {
+        "zh": "哦，那我也去买一些“福”字来，把它倒着贴在门上、床上、桌子上、椅子上、沙发上、冰箱上、洗衣机上、空调上……等着幸福来找我。",
+        "pinyin": "Ò, nà wǒ yě qù mǎi yìxiē “fú” zì lái, bǎ tā dàozhe tiē zài mén shang, chuáng shang, zhuōzi shang, yǐzi shang, shāfā shang, bīngxiāng shang, xǐyījī shang, kōngtiáo shang… děngzhe xìngfú lái zhǎo wǒ.",
+        "en": "Oh, then I’ll go buy some “fú” characters too and paste them upside down on the door, bed, table, chairs, sofa, fridge, washing machine, air conditioner… and wait for happiness to find me."
+      }
+    },
+    {
+      "zh": "冰箱",
+      "pinyin": "bīngxiāng",
+      "pos": "n.",
+      "en": "refrigerator",
+      "note": "Book headword pinyin printed as bīngxiāng. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 冰箱 like the word you’ll use when Mike’s joke list of places to paste 福 keeps growing — fridge next.",
+      "usage": "Most Chinese speakers use 冰箱 for refrigerator.",
+      "example": {
+        "zh": "哦，那我也去买一些“福”字来，把它倒着贴在门上、床上、桌子上、椅子上、沙发上、冰箱上、洗衣机上、空调上……等着幸福来找我。",
+        "pinyin": "Ò, nà wǒ yě qù mǎi yìxiē “fú” zì lái, bǎ tā dàozhe tiē zài mén shang, chuáng shang, zhuōzi shang, yǐzi shang, shāfā shang, bīngxiāng shang, xǐyījī shang, kōngtiáo shang… děngzhe xìngfú lái zhǎo wǒ.",
+        "en": "Oh, then I’ll go buy some “fú” characters too and paste them upside down on the door, bed, table, chairs, sofa, fridge, washing machine, air conditioner… and wait for happiness to find me."
+      }
+    },
+    {
+      "zh": "洗衣机",
+      "pinyin": "xǐyījī",
+      "pos": "n.",
+      "en": "washing machine",
+      "note": "Book headword pinyin printed as xǐyījī. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 洗衣机 like the word you’ll use when yet another appliance in Mike’s upside-down-福 marathon.",
+      "usage": "Most Chinese speakers use 洗衣机 for washing machine.",
+      "example": {
+        "zh": "哦，那我也去买一些“福”字来，把它倒着贴在门上、床上、桌子上、椅子上、沙发上、冰箱上、洗衣机上、空调上……等着幸福来找我。",
+        "pinyin": "Ò, nà wǒ yě qù mǎi yìxiē “fú” zì lái, bǎ tā dàozhe tiē zài mén shang, chuáng shang, zhuōzi shang, yǐzi shang, shāfā shang, bīngxiāng shang, xǐyījī shang, kōngtiáo shang… děngzhe xìngfú lái zhǎo wǒ.",
+        "en": "Oh, then I’ll go buy some “fú” characters too and paste them upside down on the door, bed, table, chairs, sofa, fridge, washing machine, air conditioner… and wait for happiness to find me."
+      }
+    },
+    {
+      "zh": "空调",
+      "pinyin": "kōngtiáo",
+      "pos": "n.",
+      "en": "air conditioner",
+      "note": "Book headword pinyin printed as kōngtiáo. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added.",
+      "when": "Remember 空调 like the word you’ll use when the last appliance Mike names before waiting for happiness to find him.",
+      "usage": "Most Chinese speakers use 空调 for air conditioner.",
+      "example": {
+        "zh": "哦，那我也去买一些“福”字来，把它倒着贴在门上、床上、桌子上、椅子上、沙发上、冰箱上、洗衣机上、空调上……等着幸福来找我。",
+        "pinyin": "Ò, nà wǒ yě qù mǎi yìxiē “fú” zì lái, bǎ tā dàozhe tiē zài mén shang, chuáng shang, zhuōzi shang, yǐzi shang, shāfā shang, bīngxiāng shang, xǐyījī shang, kōngtiáo shang… děngzhe xìngfú lái zhǎo wǒ.",
+        "en": "Oh, then I’ll go buy some “fú” characters too and paste them upside down on the door, bed, table, chairs, sofa, fridge, washing machine, air conditioner… and wait for happiness to find me."
+      }
+    },
+    {
+      "zh": "李美英",
+      "pinyin": "Lǐ Měiyīng",
+      "pos": "pr.n.",
+      "en": "Li Meiying, name of a person",
+      "note": "Book headword pinyin printed as Lǐ Měiyīng. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added. 专名 Proper Noun.",
+      "when": "Remember 李美英 like the word you’ll use when you name the classmate who will sing and dance and bring the stereo.",
+      "usage": "Book 专名: personal name appearing in 课文1.",
+      "example": {
+        "zh": "李美英说，晚会上她要和几个同学唱歌，跳舞，所以把音响也搬到教室里来了。",
+        "pinyin": "Lǐ Měiyīng shuō, wǎnhuì shang tā yào hé jǐ ge tóngxué chànggē, tiàowǔ, suǒyǐ bǎ yīnxiǎng yě bān dào jiàoshì li lái le.",
+        "en": "Li Meiying said that at the party she and a few classmates would sing and dance, so they also moved the stereo into the classroom."
+      }
+    },
+    {
+      "zh": "安娜",
+      "pinyin": "Ānnà",
+      "pos": "pr.n.",
+      "en": "Anna",
+      "note": "Book headword pinyin printed as Ānnà. Headword pinyin copied from book tones where printed; dialogue/passage and example-sentence pinyin not printed in the book — standard pinyin added. 专名 Proper Noun.",
+      "when": "Remember 安娜 like the word you’ll use when the youngest classmate whose birthday falls on December 25 — the surprise gift is for her.",
+      "usage": "Book 专名: Anna, the classmate with a Christmas birthday in 课文1.",
+      "example": {
+        "zh": "安娜是我们班最小的同学，她的生日正好是十二月二十五号。",
+        "pinyin": "Ānnà shì wǒmen bān zuì xiǎo de tóngxué, tā de shēngrì zhènghǎo shì shí'èr yuè èrshíwǔ hào.",
+        "en": "Anna is the youngest student in our class; her birthday is exactly December 25."
+      }
+    },
+    {
+      "zh": "篇",
+      "pinyin": "piān",
+      "pos": "m.w.",
+      "en": "a measure word for writings, publications, etc.",
+      "note": "补充生词 (练习). Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 篇 like the measure for a text or essay — 这篇课文 / 这篇文章.",
+      "usage": "Most Chinese speakers count essays and texts with 篇 (一篇文章, 这篇课文). From lesson 17 练习 补充生词.",
+      "example": {
+        "zh": "她把这篇课文翻译成了英文。",
+        "pinyin": "Tā bǎ zhè piān kèwén fānyì chéng le Yīngwén.",
+        "en": "She translated this text into English."
+      }
+    },
+    {
+      "zh": "文章",
+      "pinyin": "wénzhāng",
+      "pos": "n.",
+      "en": "article; essay",
+      "note": "补充生词 (练习). Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 文章 like a written piece you translate — 这篇文章.",
+      "usage": "Most Chinese speakers use 文章 for an article or essay. From lesson 17 练习 补充生词.",
+      "example": {
+        "zh": "他要把这篇文章翻译成中文。",
+        "pinyin": "Tā yào bǎ zhè piān wénzhāng fānyì chéng Zhōngwén.",
+        "en": "He wants to translate this article into Chinese."
+      }
+    },
+    {
+      "zh": "拍",
+      "pinyin": "pāi",
+      "pos": "v.",
+      "en": "to photograph; to shoot (a film)",
+      "note": "补充生词 (练习). Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 拍 like turning a novel into a film — 拍成电影.",
+      "usage": "Most Chinese speakers 拍电影 / 拍照; here 拍成电影 is 'shoot as a film'. From lesson 17 练习 补充生词.",
+      "example": {
+        "zh": "把小说儿拍成电影",
+        "pinyin": "bǎ xiǎoshuōr pāi chéng diànyǐng",
+        "en": "turn a novel into a film / shoot a novel as a movie"
+      }
+    },
+    {
+      "zh": "书房",
+      "pinyin": "shūfáng",
+      "pos": "n.",
+      "en": "study (room)",
+      "note": "补充生词 (练习). Headword pinyin printed in the book. Book sentence for this word was not printed as a full example line (only gloss / substitution cue); example omitted. Substitution cue printed: 书房里.",
+      "when": "Remember 书房 like where you hang a painting — 挂在书房里.",
+      "usage": "Most Chinese speakers mean a study / home library room. From lesson 17 练习 补充生词; book only prints the substitution cue 书房里, not a full sentence."
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文1",
+      "headingZh": "我们把教室布置成了会场",
+      "headingEn": "We decorated the classroom into a meeting venue",
+      "type": "passage",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "圣诞节和新年快到了，我们班准备在圣诞节前举行一个联欢晚会，请老师们也来参加。晚会上我们要唱中文歌，用汉语讲故事，表演节目，品尝各国的特色菜。班长要求我们那天把自己亲手做的菜带到晚会上来，让大家品尝。",
+          "pinyin": "Shèngdànjié hé xīnnián kuài dào le, wǒmen bān zhǔnbèi zài Shèngdànjié qián jǔxíng yí ge liánhuān wǎnhuì, qǐng lǎoshīmen yě lái cānjiā. Wǎnhuì shang wǒmen yào chàng Zhōngwén gē, yòng Hànyǔ jiǎng gùshi, biǎoyǎn jiémù, pǐncháng gèguó de tèsè cài. Bānzhǎng yāoqiú wǒmen nà tiān bǎ zìjǐ qīnshǒu zuò de cài dài dào wǎnhuì shang lái, ràng dàjiā pǐncháng.",
+          "en": "Christmas and New Year are almost here. Our class plans to hold a get-together before Christmas and invite the teachers too. At the party we’ll sing Chinese songs, tell stories in Chinese, perform, and taste specialty dishes from various countries. The class monitor asked us to bring homemade dishes that day for everyone to taste."
+        },
+        {
+          "speaker": "",
+          "zh": "玛丽说：“我们最好借一个大教室，把它布置成会场。”",
+          "pinyin": "Mǎlì shuō: “Wǒmen zuìhǎo jiè yí ge dà jiàoshì, bǎ tā bùzhì chéng huìchǎng.”",
+          "en": "Mary said: “We’d better borrow a big classroom and decorate it into a meeting venue.”"
+        },
+        {
+          "speaker": "",
+          "zh": "前天，我们找到管理员，告诉了她借教室的事儿，她答应把那个大教室借给我们。昨天下午服务员把教室打扫了一下儿，把门和窗户也都擦得干干净净的。",
+          "pinyin": "Qiántiān, wǒmen zhǎodào guǎnlǐyuán, gàosu le tā jiè jiàoshì de shìr, tā dāying bǎ nàge dà jiàoshì jiè gěi wǒmen. Zuótiān xiàwǔ fúwùyuán bǎ jiàoshì dǎsǎo le yíxiàr, bǎ mén hé chuānghu yě dōu cā de gāngānjìngjìng de.",
+          "en": "The day before yesterday we found the custodian, told her about borrowing a classroom, and she agreed to lend us that big one. Yesterday afternoon the attendants cleaned the classroom a bit and wiped the doors and windows spotlessly clean."
+        },
+        {
+          "speaker": "",
+          "zh": "我们把桌子摆成了一个大圆圈儿，爱德华把“圣诞—新年快乐”几个大字贴在了黑板上。",
+          "pinyin": "Wǒmen bǎ zhuōzi bǎi chéng le yí ge dà yuánquānr, Àidéhuá bǎ “Shèngdàn—Xīnnián kuàilè” jǐ ge dà zì tiē zài le hēibǎn shang.",
+          "en": "We arranged the desks into a big circle, and Edward pasted the big characters “Merry Christmas—Happy New Year” on the blackboard."
+        },
+        {
+          "speaker": "",
+          "zh": "李美英说，晚会上她要和几个同学唱歌，跳舞，所以把音响也搬到教室里来了。爱德华昨天从商店买回来一棵圣诞树，我们把它摆在了教室的前边，用彩灯和彩带把它装饰得非常漂亮。",
+          "pinyin": "Lǐ Měiyīng shuō, wǎnhuì shang tā yào hé jǐ ge tóngxué chànggē, tiàowǔ, suǒyǐ bǎ yīnxiǎng yě bān dào jiàoshì li lái le. Àidéhuá zuótiān cóng shāngdiàn mǎi huílai yì kē shèngdànshù, wǒmen bǎ tā bǎi zài le jiàoshì de qiánbian, yòng cǎidēng hé cǎidài bǎ tā zhuāngshì de fēicháng piàoliang.",
+          "en": "Li Meiying said she and a few classmates would sing and dance at the party, so they also moved the stereo into the classroom. Yesterday Edward bought a Christmas tree; we placed it at the front of the classroom and decorated it beautifully with colored lights and ribbons."
+        },
+        {
+          "speaker": "",
+          "zh": "安娜是我们班最小的同学，她的生日正好是十二月二十五号，所以同学们还为她准备了一份生日礼物和一个生日蛋糕，但是我们还没把这事儿告诉她。我们想，到晚会上再把生日礼物送给她，给她一个惊喜，让她在中国过一个快乐的生日。",
+          "pinyin": "Ānnà shì wǒmen bān zuì xiǎo de tóngxué, tā de shēngrì zhènghǎo shì shí'èr yuè èrshíwǔ hào, suǒyǐ tóngxuémen hái wèi tā zhǔnbèi le yí fèn shēngrì lǐwù hé yí ge shēngrì dàngāo, dànshì wǒmen hái méi bǎ zhè shìr gàosu tā. Wǒmen xiǎng, dào wǎnhuì shang zài bǎ shēngrì lǐwù sòng gěi tā, gěi tā yí ge jīngxǐ, ràng tā zài Zhōngguó guò yí ge kuàilè de shēngrì.",
+          "en": "Anna is the youngest in our class; her birthday is December 25, so classmates prepared a birthday gift and cake but haven’t told her yet. We plan to give her the gift at the party as a surprise so she can have a happy birthday in China."
+        },
+        {
+          "speaker": "",
+          "zh": "我们把教室布置好以后，请老师来看了看，老师高兴地说：“你们把教室布置得真漂亮！”",
+          "pinyin": "Wǒmen bǎ jiàoshì bùzhì hǎo yǐhòu, qǐng lǎoshī lái kàn le kan, lǎoshī gāoxìng de shuō: “Nǐmen bǎ jiàoshì bùzhì de zhēn piàoliang!”",
+          "en": "After we finished decorating the classroom, we invited the teacher to take a look. The teacher said happily: “You’ve decorated the classroom so beautifully!”"
+        },
+        {
+          "speaker": "",
+          "zh": "为了开好这个联欢会，同学们都认真地做了准备。明天晚上六点钟，我们的晚会就要开始了，欢迎大家来参加。",
+          "pinyin": "Wèile kāi hǎo zhège liánhuānhuì, tóngxuémen dōu rènzhēn de zuò le zhǔnbèi. Míngtiān wǎnshang liù diǎn zhōng, wǒmen de wǎnhuì jiù yào kāishǐ le, huānyíng dàjiā lái cānjiā.",
+          "en": "To make the get-together a success, the classmates prepared carefully. Tomorrow evening at six our party will begin — everyone is welcome to come."
+        }
+      ]
+    },
+    {
+      "label": "课文2",
+      "headingZh": "把对联儿贴在大门两边",
+      "headingEn": "Paste the couplets on both sides of the gate",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "高老师",
+          "zh": "哎，这幅画儿挂在什么地方比较好？",
+          "pinyin": "Āi, zhè fú huàr guà zài shénme dìfang bǐjiào hǎo?",
+          "en": "Hey, where would be a better place to hang this painting?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "我想把它挂在中间。对了，小林还没把水仙花送来吧？",
+          "pinyin": "Wǒ xiǎng bǎ tā guà zài zhōngjiān. Duì le, Xiǎolín hái méi bǎ shuǐxiānhuā sòng lái ba?",
+          "en": "I want to hang it in the middle. By the way, Xiaolin still hasn’t brought the narcissus, right?"
+        },
+        {
+          "speaker": "高老师",
+          "zh": "已经送来了，我把它摆在卧室里了。你来看，开得可好了。",
+          "pinyin": "Yǐjīng sòng lái le, wǒ bǎ tā bǎi zài wòshì li le. Nǐ lái kàn, kāi de kě hǎo le.",
+          "en": "They’re already here — I put them in the bedroom. Come look, they’re blooming so well."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "把它摆在客厅里比较好。我把“福”字贴在门上吧。",
+          "pinyin": "Bǎ tā bǎi zài kètīng li bǐjiào hǎo. Wǒ bǎ “fú” zì tiē zài mén shang ba.",
+          "en": "It’s better to put them in the living room. I’ll paste the character “fú” on the door."
+        },
+        {
+          "speaker": "高老师",
+          "zh": "把你写的对联儿也贴上去吧。（读对联儿）“新年新春吉祥，百行百业……”你是不是把“兴”字写成“旺”字了？",
+          "pinyin": "Bǎ nǐ xiě de duìliánr yě tiē shàngqu ba. (Dú duìliánr) “Xīnnián xīnchūn jíxiáng, bǎi háng bǎi yè……” Nǐ shì bu shì bǎ “xīng” zì xiě chéng “wàng” zì le?",
+          "en": "Paste the couplets you wrote up there too. (Reading the couplet) “Auspicious new year and new spring; every trade and profession……” Did you write the character “xīng” as “wàng”?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "哦，可不是嘛，写错了。应该是“新年新春吉祥，百行百业兴旺”。",
+          "pinyin": "Ò, kěbúshì ma, xiě cuò le. Yīnggāi shì “Xīnnián xīnchūn jíxiáng, bǎi háng bǎi yè xīngwàng”.",
+          "en": "Oh, exactly — I wrote it wrong. It should be “Auspicious new year and new spring; every trade and profession prospers.”"
+        }
+      ]
+    },
+    {
+      "label": "课文3",
+      "headingZh": "把“福”字倒着贴在门上",
+      "headingEn": "Paste the character “fú” upside down on the door",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "麦克",
+          "zh": "田芳，这就是你说的对联儿吗？",
+          "pinyin": "Tián Fāng, zhè jiù shì nǐ shuō de duìliánr ma?",
+          "en": "Tian Fang, are these the couplets you mentioned?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "是啊。",
+          "pinyin": "Shì a.",
+          "en": "Yes."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "门上这个字怎么念？",
+          "pinyin": "Mén shang zhège zì zěnme niàn?",
+          "en": "How do you read this character on the door?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "你仔细看看，认识不认识？",
+          "pinyin": "Nǐ zǐxì kànkan, rènshi bu rènshi?",
+          "en": "Look carefully — do you recognize it or not?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "没学过。",
+          "pinyin": "Méi xué guo.",
+          "en": "I haven’t learned it."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "这不是幸福的“福”字吗？过春节的时候，差不多家家都贴“福”字。",
+          "pinyin": "Zhè bú shì xìngfú de “fú” zì ma? Guò Chūnjié de shíhou, chàbuduō jiājiā dōu tiē “fú” zì.",
+          "en": "Isn’t this the “fú” of 幸福 (happiness)? At Spring Festival, almost every household pastes the character “fú.”"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "这是幸福的“福”字？为什么把“福”字倒着贴在门上呢？",
+          "pinyin": "Zhè shì xìngfú de “fú” zì? Wèishénme bǎ “fú” zì dàozhe tiē zài mén shang ne?",
+          "en": "This is the “fú” of happiness? Why paste it upside down on the door?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "这样，人们一看见就会说“福倒了”，听声音就是“福到了”。",
+          "pinyin": "Zhèyàng, rénmen yì kànjiàn jiù huì shuō “fú dào le”, tīng shēngyīn jiù shì “fú dào le”.",
+          "en": "That way, as soon as people see it they say “fú is upside down,” which by sound is “fú has arrived.”"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "哦，那我也去买一些“福”字来，把它倒着贴在门上、床上、桌子上、椅子上、沙发上、冰箱上、洗衣机上、空调上……等着幸福来找我。",
+          "pinyin": "Ò, nà wǒ yě qù mǎi yìxiē “fú” zì lái, bǎ tā dàozhe tiē zài mén shang, chuáng shang, zhuōzi shang, yǐzi shang, shāfā shang, bīngxiāng shang, xǐyījī shang, kōngtiáo shang… děngzhe xìngfú lái zhǎo wǒ.",
+          "en": "Oh, then I’ll buy some “fú” characters too and paste them upside down on the door, bed, table, chairs, sofa, fridge, washing machine, air conditioner… and wait for happiness to find me."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "哦，可不是嘛。",
+      "body": "Book 注释 (1): “哦”是叹词，表示醒悟、领会。English: “哦” is an interjection indicating sudden realization or understanding. Pairing line: 哦，可不是嘛。",
+      "example": {
+        "zh": "哦，可不是嘛，写错了。",
+        "pinyin": "Ò, kěbúshì ma, xiě cuò le.",
+        "en": "Oh, exactly — I wrote it wrong."
+      }
+    },
+    {
+      "title": "差不多家家都贴“福”字",
+      "body": "Book 注释 (2): During the Spring Festival, the character “福” is pasted on the door of almost every household. 汉语中有些单音节名词也可以重叠使用，重叠以后表示“每+名词”的意思。Examples in book: 家家=每家, 天天=每天, 人人=每人.",
+      "example": {
+        "zh": "过春节的时候，差不多家家都贴对联儿。",
+        "pinyin": "Guò Chūnjié de shíhou, chàbuduō jiājiā dōu tiē duìliánr.",
+        "en": "At Spring Festival, almost every household pastes couplets. (家家 = 每家)"
+      }
+    },
+    {
+      "title": "“把”字句（1）",
+      "body": "A 把-sentence is a verbal-predicate sentence where the preposition 把 and its object function as an adverbial. When the verb takes result complements 在/到/给/成, their object must follow immediately, so the verb’s own object is moved before the verb with 把. Structure: (主语+) 把+宾语+动词+在/到/给/成+宾语(+了). 把 “提宾” keeps the sentence balanced when post-verbal material would otherwise be too long/complex. This type expresses change of position, ownership, or state for a definite object.",
+      "example": {
+        "zh": "她把花儿摆在客厅里了。",
+        "pinyin": "Tā bǎ huār bǎi zài kètīng li le.",
+        "en": "She put the flowers in the living room. (Not *她摆花儿在客厅里了。)"
+      }
+    },
+    {
+      "title": "把 + 在 / 到 / 给 / 成 — book examples",
+      "body": "Grammar examples from the lesson (correct vs starred incorrect): placement 在, movement 到, transfer 给, transformation 成.",
+      "example": {
+        "zh": "我把衣服放到箱子里去了。 / 我把作业交给老师了。 / 她把这篇课文翻译成了英文。",
+        "pinyin": "Wǒ bǎ yīfu fàng dào xiāngzi li qù le. / Wǒ bǎ zuòyè jiāo gěi lǎoshī le. / Tā bǎ zhè piān kèwén fānyì chéng le Yīngwén.",
+        "en": "I put the clothes into the suitcase. / I handed the homework to the teacher. / She translated this text into English."
+      }
+    }
+  ]
+}

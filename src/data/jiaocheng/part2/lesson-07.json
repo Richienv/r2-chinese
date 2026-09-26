@@ -1,0 +1,965 @@
+{
+  "id": "jiaocheng-2-2-07",
+  "book": "2-2",
+  "index": 7,
+  "bookLesson": 19,
+  "titleZh": "我的腿被自行车撞伤了",
+  "titleEn": "My leg got injured in a bike crash",
+  "sourcePages": "98-113",
+  "words": [
+    {
+      "zh": "腿",
+      "pinyin": "tuǐ",
+      "pos": "n.",
+      "en": "leg",
+      "note": "Book headword pinyin printed as tuǐ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 腿 like the word you’ll use when you talk about someone’s leg — especially after a fall or crash.",
+      "usage": "Most Chinese speakers name the body part with 腿 (你的腿怎么了？). Pair with 摔伤 / 撞伤 for injury talk.",
+      "example": {
+        "zh": "你的腿怎么了？",
+        "pinyin": "nǐ de tuǐ zěnme le？",
+        "en": "What happened to your leg?"
+      }
+    },
+    {
+      "zh": "上街",
+      "pinyin": "shàng jiē",
+      "pos": "",
+      "en": "to go to the street / go out onto the street",
+      "note": "No POS printed for the headword; 街 listed under it. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 上街 like the phrase you’ll use when someone goes out onto the street (often by bike or on foot).",
+      "usage": "Common with 骑车上街. Book lists 街 as the noun inside the phrase.",
+      "example": {
+        "zh": "骑车上街的时候，一定要特别小心。",
+        "pinyin": "qí chē shàng jiē de shíhou， yídìng yào tèbié xiǎoxīn。",
+        "en": "When you bike out on the street, you must be especially careful."
+      }
+    },
+    {
+      "zh": "街",
+      "pinyin": "jiē",
+      "pos": "n.",
+      "en": "street",
+      "note": "Sub-entry under 上街. Book headword pinyin printed as jiē. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 街 like the everyday noun for street.",
+      "usage": "Used in 上街 / 街上.",
+      "example": {
+        "zh": "街上人多车也多",
+        "pinyin": "jiē shang rén duō chē yě duō",
+        "en": "There are many people and cars on the street"
+      }
+    },
+    {
+      "zh": "被",
+      "pinyin": "bèi",
+      "pos": "prep.",
+      "en": "by (passive marker)",
+      "note": "Book headword pinyin printed as bèi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 被 like the marker you’ll use when the subject is the receiver of an action.",
+      "usage": "Core of the 被-sentence. Agent after 被 can sometimes be omitted.",
+      "example": {
+        "zh": "星期天我骑车上街的时候，被一个小伙子撞倒了",
+        "pinyin": "Xīngqītiān wǒ qí chē shàng jiē de shíhou， bèi yí gè xiǎohuǒzi zhuàngdǎo le",
+        "en": "On Sunday when I was biking on the street, I was knocked down by a young man"
+      }
+    },
+    {
+      "zh": "撞",
+      "pinyin": "zhuàng",
+      "pos": "v.",
+      "en": "to knock; to collide; to bump against",
+      "note": "Book headword pinyin printed as zhuàng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 撞 like the verb for bumping or colliding into something/someone.",
+      "usage": "Often in compounds 撞倒 / 撞伤.",
+      "example": {
+        "zh": "被一个小伙子撞倒了",
+        "pinyin": "bèi yí gè xiǎohuǒzi zhuàngdǎo le",
+        "en": "was knocked down by a young man"
+      }
+    },
+    {
+      "zh": "倒",
+      "pinyin": "dǎo",
+      "pos": "v.",
+      "en": "to fall; to topple; to tumble down",
+      "note": "Book sense is fall/topple (dǎo), not dào. Book headword pinyin printed as dǎo. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 倒 (dǎo) when something or someone falls over.",
+      "usage": "In 撞倒: knock so that someone falls.",
+      "example": {
+        "zh": "我被撞倒后",
+        "pinyin": "wǒ bèi zhuàngdǎo hòu",
+        "en": "After I was knocked down"
+      }
+    },
+    {
+      "zh": "伤",
+      "pinyin": "shāng",
+      "pos": "v.",
+      "en": "to hurt; to injure",
+      "note": "Book headword pinyin printed as shāng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 伤 when you talk about getting hurt or injuring a body part.",
+      "usage": "Appears in 摔伤 / 撞伤 / 伤着 / 伤到.",
+      "example": {
+        "zh": "从车上摔下来把腿摔伤了",
+        "pinyin": "cóng chē shang shuāi xiàlai bǎ tuǐ shuāishāng le",
+        "en": "I fell off the bike and injured my leg"
+      }
+    },
+    {
+      "zh": "要紧",
+      "pinyin": "yàojǐn",
+      "pos": "adj.",
+      "en": "serious",
+      "note": "Book headword pinyin printed as yàojǐn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 要紧 when you ask whether a problem or injury is serious.",
+      "usage": "Often in 要紧吗？ Pair with 不要紧.",
+      "example": {
+        "zh": "要紧吗？",
+        "pinyin": "yàojǐn ma？",
+        "en": "Is it serious?"
+      }
+    },
+    {
+      "zh": "不要紧",
+      "pinyin": "bú yàojǐn",
+      "pos": "",
+      "en": "not serious; doesn’t matter",
+      "note": "Sub-entry under 要紧. Book pinyin printed without tone marks as bu yaojin. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 不要紧 when you reassure someone that it’s not serious.",
+      "usage": "Reply to 要紧吗？",
+      "example": {
+        "zh": "流了一点儿血，不要紧。",
+        "pinyin": "liú le yìdiǎnr xiě， bú yàojǐn。",
+        "en": "It bled a little; it’s nothing serious."
+      }
+    },
+    {
+      "zh": "流",
+      "pinyin": "liú",
+      "pos": "v.",
+      "en": "to shed; to flow",
+      "note": "Book headword pinyin printed as liú. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 流 when liquid (here blood) flows or is shed.",
+      "usage": "In injury talk: 流血.",
+      "example": {
+        "zh": "流了一点儿血，不要紧。",
+        "pinyin": "liú le yìdiǎnr xiě， bú yàojǐn。",
+        "en": "It bled a little; it’s nothing serious."
+      }
+    },
+    {
+      "zh": "血",
+      "pinyin": "xiě",
+      "pos": "n.",
+      "en": "blood",
+      "note": "Book prints xiě (colloquial reading in this lesson), not xuè. Book headword pinyin printed as xiě. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 血 (xiě) when talking about bleeding from a cut or scrape.",
+      "usage": "With 流: 流了一点儿血.",
+      "example": {
+        "zh": "流了一点儿血",
+        "pinyin": "liú le yìdiǎnr xiě",
+        "en": "It bled a little"
+      }
+    },
+    {
+      "zh": "骨头",
+      "pinyin": "gǔtou",
+      "pos": "n.",
+      "en": "bone",
+      "note": "Book prints gutou (neutral tou). Book headword pinyin printed as gǔtou. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 骨头 when checking whether bones were hurt after a fall.",
+      "usage": "Pattern: 伤着骨头了没有？ / 没伤到骨头.",
+      "example": {
+        "zh": "伤着骨头了没有？",
+        "pinyin": "shāngzhe gǔtou le méiyǒu？",
+        "en": "Did you hurt any bones?"
+      }
+    },
+    {
+      "zh": "躺",
+      "pinyin": "tǎng",
+      "pos": "v.",
+      "en": "to lie on one’s back",
+      "note": "Book headword pinyin printed as tǎng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 躺 when someone is lying on the ground or in bed.",
+      "usage": "Often 躺在地上 after a fall.",
+      "example": {
+        "zh": "小伙子看我躺在地上",
+        "pinyin": "xiǎohuǒzi kàn wǒ tǎng zài dì shang",
+        "en": "the young man saw me lying on the ground"
+      }
+    },
+    {
+      "zh": "不好意思",
+      "pinyin": "bù hǎoyìsi",
+      "pos": "",
+      "en": "to feel sorry / embarrassed",
+      "note": "No POS printed. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 不好意思 when someone feels awkward or apologetic.",
+      "usage": "挺不好意思的 after causing trouble.",
+      "example": {
+        "zh": "他也觉得挺不好意思的。",
+        "pinyin": "tā yě juéde tǐng bù hǎoyìsi de。",
+        "en": "He also felt quite embarrassed."
+      }
+    },
+    {
+      "zh": "故意",
+      "pinyin": "gùyì",
+      "pos": "adv.",
+      "en": "on purpose",
+      "note": "Book headword pinyin printed as gùyì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 故意 when saying something was (or wasn’t) intentional.",
+      "usage": "Common: 不是故意的.",
+      "example": {
+        "zh": "你又不是故意的。",
+        "pinyin": "nǐ yòu bú shì gùyì de。",
+        "en": "And it wasn’t on purpose anyway."
+      }
+    },
+    {
+      "zh": "小心",
+      "pinyin": "xiǎoxīn",
+      "pos": "adj./v.",
+      "en": "cautious; to be careful",
+      "note": "Book headword pinyin printed as xiǎoxīn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 小心 when warning someone to watch out.",
+      "usage": "特别小心 on busy streets.",
+      "example": {
+        "zh": "一定要特别小心。",
+        "pinyin": "yídìng yào tèbié xiǎoxīn。",
+        "en": "You must be especially careful."
+      }
+    },
+    {
+      "zh": "唉",
+      "pinyin": "ài",
+      "pos": "interj.",
+      "en": "interjection expressing sadness or regret",
+      "note": "Book headword pinyin printed as ài. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 唉 as the sigh you’ll use when something is unfortunate.",
+      "usage": "Opens complaints: 唉，别提了…",
+      "example": {
+        "zh": "唉，别提了，我的钱包儿让小偷儿偷走了。",
+        "pinyin": "āi， bié tí le， wǒ de qiánbāor ràng xiǎotōur tōuzǒu le。",
+        "en": "Sigh, don’t bring it up — my wallet was stolen by a thief."
+      }
+    },
+    {
+      "zh": "钱包（儿）",
+      "pinyin": "qiánbāor",
+      "pos": "n.",
+      "en": "wallet; purse",
+      "note": "Book lists 钱包（儿） / qiánbāor. Book headword pinyin printed as qiánbāor. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 钱包儿 for wallet/purse — the thing that gets stolen in this lesson.",
+      "usage": "Often with 儿 in northern speech: 钱包儿.",
+      "example": {
+        "zh": "我的钱包儿让小偷儿偷走了。",
+        "pinyin": "wǒ de qiánbāor ràng xiǎotōur tōuzǒu le。",
+        "en": "My wallet was stolen by a thief."
+      }
+    },
+    {
+      "zh": "让",
+      "pinyin": "ràng",
+      "pos": "prep.",
+      "en": "by (passive marker)",
+      "note": "Book headword pinyin printed as ràng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 让 as a spoken passive marker like 被, with an agent required.",
+      "usage": "Spoken passive: …让小偷儿偷走了.",
+      "example": {
+        "zh": "我的钱包儿让小偷儿偷走了。",
+        "pinyin": "wǒ de qiánbāor ràng xiǎotōur tōuzǒu le。",
+        "en": "My wallet was stolen by a thief."
+      }
+    },
+    {
+      "zh": "小偷（儿）",
+      "pinyin": "xiǎotōur",
+      "pos": "n.",
+      "en": "thief",
+      "note": "Book lists 小偷（儿） / xiǎotōur. Book headword pinyin printed as xiǎotōur. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 小偷儿 for thief.",
+      "usage": "Agent in passive: 让小偷儿偷走了.",
+      "example": {
+        "zh": "我的钱包儿让小偷儿偷走了。",
+        "pinyin": "wǒ de qiánbāor ràng xiǎotōur tōuzǒu le。",
+        "en": "My wallet was stolen by a thief."
+      }
+    },
+    {
+      "zh": "偷",
+      "pinyin": "tōu",
+      "pos": "v.",
+      "en": "to steal",
+      "note": "Book headword pinyin printed as tōu. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 偷 for the act of stealing.",
+      "usage": "Result: 偷走.",
+      "example": {
+        "zh": "我的钱包儿让小偷儿偷走了。",
+        "pinyin": "wǒ de qiánbāor ràng xiǎotōur tōuzǒu le。",
+        "en": "My wallet was stolen by a thief."
+      }
+    },
+    {
+      "zh": "遇到",
+      "pinyin": "yùdào",
+      "pos": "",
+      "en": "to come across; to encounter",
+      "note": "No POS printed. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 遇到 when you run into people or bad luck events.",
+      "usage": "遇到倒霉事 / 遇到一个算命的.",
+      "example": {
+        "zh": "但我最近遇到好几件倒霉事儿了。",
+        "pinyin": "dàn wǒ zuì jìn yùdào hǎo jǐ jiàn dǎoméi shìr le。",
+        "en": "But I’ve run into quite a few unlucky things lately."
+      }
+    },
+    {
+      "zh": "叫",
+      "pinyin": "jiào",
+      "pos": "prep.",
+      "en": "by (passive marker)",
+      "note": "Here as passive 叫, not “to call”. Book headword pinyin printed as jiào. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 叫 as another spoken passive marker (agent required).",
+      "usage": "…就叫人骑走了.",
+      "example": {
+        "zh": "我刚买了一辆自行车，就叫人骑走了",
+        "pinyin": "wǒ gāng mǎi le yī liàng zìxíngchē， jiù jiào rén qízǒu le",
+        "en": "I had just bought a bike and it was ridden away by someone"
+      }
+    },
+    {
+      "zh": "淋",
+      "pinyin": "lín",
+      "pos": "v.",
+      "en": "to pour; to drench",
+      "note": "Book headword pinyin printed as lín. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 淋 when rain soaks people.",
+      "usage": "被淋得像落汤鸡似的.",
+      "example": {
+        "zh": "个个都被淋得像落汤鸡似的",
+        "pinyin": "gè gè dōu bèi lín de xiàng luòtāngjī shìde",
+        "en": "every one of us got soaked like a drowned rat"
+      }
+    },
+    {
+      "zh": "落汤鸡",
+      "pinyin": "luòtāngjī",
+      "pos": "n.",
+      "en": "(of a person) like a drenched chicken; soaked through",
+      "note": "Book headword pinyin printed as luòtāngjī. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 落汤鸡 for being soaked to the skin.",
+      "usage": "Simile: 像落汤鸡似的.",
+      "example": {
+        "zh": "个个都被淋得像落汤鸡似的",
+        "pinyin": "gè gè dōu bèi lín de xiàng luòtāngjī shìde",
+        "en": "every one of us got soaked like a drowned rat"
+      }
+    },
+    {
+      "zh": "……似的",
+      "pinyin": "……shìde",
+      "pos": "part.",
+      "en": "like…; as if…",
+      "note": "Book prints ……似的. Book headword pinyin printed as ……shìde. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember ……似的 when making a “like…” simile.",
+      "usage": "Often 像…似的.",
+      "example": {
+        "zh": "个个都被淋得像落汤鸡似的",
+        "pinyin": "gè gè dōu bèi lín de xiàng luòtāngjī shìde",
+        "en": "every one of us got soaked like a drowned rat"
+      }
+    },
+    {
+      "zh": "湿",
+      "pinyin": "shī",
+      "pos": "adj.",
+      "en": "wet; moist; damp; humid",
+      "note": "Book headword pinyin printed as shī. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 湿 when clothes or things are wet.",
+      "usage": "衣服全都湿了.",
+      "example": {
+        "zh": "衣服全都湿了。",
+        "pinyin": "yīfu quán dōu shī le。",
+        "en": "Our clothes were all soaked."
+      }
+    },
+    {
+      "zh": "首都",
+      "pinyin": "shǒudū",
+      "pos": "n.",
+      "en": "capital (of a country)",
+      "note": "Book headword pinyin printed as shǒudū. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 首都 for a country’s capital; here in place names.",
+      "usage": "首都剧场 / 首都机场.",
+      "example": {
+        "zh": "要去“首都剧场”",
+        "pinyin": "yào qù“ Shǒudū Jùchǎng”",
+        "en": "wanted to go to “Capital Theatre”"
+      }
+    },
+    {
+      "zh": "剧场",
+      "pinyin": "jùchǎng",
+      "pos": "n.",
+      "en": "theater",
+      "note": "Book headword pinyin printed as jùchǎng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 剧场 for theater (building for plays).",
+      "usage": "Contrasts with 机场 in the mix-up joke.",
+      "example": {
+        "zh": "把“剧场”说成“机场”了",
+        "pinyin": "bǎ“ jùchǎng” shuōchéng“ jīchǎng” le",
+        "en": "said “theater” as “airport”"
+      }
+    },
+    {
+      "zh": "司机",
+      "pinyin": "sījī",
+      "pos": "n.",
+      "en": "driver",
+      "note": "Book headword pinyin printed as sījī. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 司机 for a (taxi/car) driver.",
+      "usage": "差点儿被司机拉到…",
+      "example": {
+        "zh": "差点儿被司机拉到“首都机场”",
+        "pinyin": "chàdiǎnr bèi sījī lādào“ Shǒudū Jīchǎng”",
+        "en": "almost got taken to “Capital Airport” by the driver"
+      }
+    },
+    {
+      "zh": "拉",
+      "pinyin": "lā",
+      "pos": "v.",
+      "en": "to carry; to transport",
+      "note": "Taxi-driver sense: take/drive a passenger somewhere. Book headword pinyin printed as lā. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 拉 when a taxi takes you somewhere.",
+      "usage": "拉到 + place.",
+      "example": {
+        "zh": "差点儿被司机拉到“首都机场”",
+        "pinyin": "chàdiǎnr bèi sījī lādào“ Shǒudū Jīchǎng”",
+        "en": "almost got taken to “Capital Airport” by the driver"
+      }
+    },
+    {
+      "zh": "机场",
+      "pinyin": "jīchǎng",
+      "pos": "n.",
+      "en": "airport",
+      "note": "Book headword pinyin printed as jīchǎng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 机场 for airport.",
+      "usage": "Contrasts with 剧场.",
+      "example": {
+        "zh": "把“剧场”说成“机场”了",
+        "pinyin": "bǎ“ jùchǎng” shuōchéng“ jīchǎng” le",
+        "en": "said “theater” as “airport”"
+      }
+    },
+    {
+      "zh": "可气",
+      "pinyin": "kěqì",
+      "pos": "adj.",
+      "en": "annoying",
+      "note": "Book headword pinyin printed as kěqì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 可气 when something is irritating.",
+      "usage": "你说可气不可气？",
+      "example": {
+        "zh": "你说可气不可气？",
+        "pinyin": "nǐ shuō kěqì bu kěqì？",
+        "en": "Don’t you think that was annoying?"
+      }
+    },
+    {
+      "zh": "算命",
+      "pinyin": "suàn mìng",
+      "pos": "v.",
+      "en": "(superstition) to tell sb.’s fortune",
+      "note": "Book prints suàn mìng as two syllables. Book headword pinyin printed as suàn mìng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 算命 for fortune-telling.",
+      "usage": "遇到一个算命的 / 给我算了一下儿.",
+      "example": {
+        "zh": "前几天我遇到一个算命的，就叫他给我算了一下儿。",
+        "pinyin": "qián jǐ tiān wǒ yùdào yí gè suàn mìng de， jiù jiào tā gěi wǒ suàn le yíxiàr。",
+        "en": "A few days ago I ran into a fortune-teller and had him read my fortune."
+      }
+    },
+    {
+      "zh": "运气",
+      "pinyin": "yùnqi",
+      "pos": "n.",
+      "en": "luck",
+      "note": "Book prints yùnqi (neutral qi). Book headword pinyin printed as yùnqi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 运气 for luck.",
+      "usage": "今年运气不太好.",
+      "example": {
+        "zh": "他说我今年运气不太好，明年就好了。",
+        "pinyin": "tā shuō wǒ jīnnián yùnqi bù tài hǎo， míngnián jiù hǎo le。",
+        "en": "He said my luck isn’t great this year, but next year will be better."
+      }
+    },
+    {
+      "zh": "傻",
+      "pinyin": "shǎ",
+      "pos": "adj.",
+      "en": "brainless; foolish; stupid",
+      "note": "Book headword pinyin printed as shǎ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 傻 when calling a choice foolish.",
+      "usage": "朋友们都说我傻.",
+      "example": {
+        "zh": "朋友们都说我傻，花钱受骗。",
+        "pinyin": "péngyou men dōu shuō wǒ shǎ， huā qián shòu piàn。",
+        "en": "Friends all said I was foolish — spending money and getting cheated."
+      }
+    },
+    {
+      "zh": "花",
+      "pinyin": "huā",
+      "pos": "v.",
+      "en": "to spend",
+      "note": "Money sense here. Book headword pinyin printed as huā. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 花 when spending money.",
+      "usage": "花钱受骗.",
+      "example": {
+        "zh": "花钱受骗",
+        "pinyin": "huā qián shòu piàn",
+        "en": "spend money and get cheated"
+      }
+    },
+    {
+      "zh": "受骗",
+      "pinyin": "shòu piàn",
+      "pos": "v.",
+      "en": "to be deceived; to be fooled",
+      "note": "Book prints shòu piàn; lists 受 / 骗 under it. Book headword pinyin printed as shòu piàn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 受骗 when someone gets cheated.",
+      "usage": "Often after 花钱.",
+      "example": {
+        "zh": "朋友们都说我傻，花钱受骗。",
+        "pinyin": "péngyou men dōu shuō wǒ shǎ， huā qián shòu piàn。",
+        "en": "Friends all said I was foolish — spending money and getting cheated."
+      }
+    },
+    {
+      "zh": "受",
+      "pinyin": "shòu",
+      "pos": "v.",
+      "en": "to receive; to suffer",
+      "note": "Sub-entry under 受骗. Book headword pinyin printed as shòu. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 受 as “receive/suffer” in compounds like 受骗.",
+      "usage": "Builds 受骗.",
+      "example": {
+        "zh": "花钱受骗",
+        "pinyin": "huā qián shòu piàn",
+        "en": "spend money and get cheated"
+      }
+    },
+    {
+      "zh": "骗",
+      "pinyin": "piàn",
+      "pos": "v.",
+      "en": "to lie; to deceive",
+      "note": "Sub-entry under 受骗. Book headword pinyin printed as piàn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 骗 for deceive/cheat.",
+      "usage": "In 受骗.",
+      "example": {
+        "zh": "花钱受骗",
+        "pinyin": "huā qián shòu piàn",
+        "en": "spend money and get cheated"
+      }
+    },
+    {
+      "zh": "抽烟",
+      "pinyin": "chōu yān",
+      "pos": "",
+      "en": "to smoke",
+      "note": "No POS printed; 抽 / 烟 listed under it. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 抽烟 for smoking cigarettes.",
+      "usage": "在山上抽烟 led to a fine.",
+      "example": {
+        "zh": "因为在山上抽烟，又被公园管理员罚了五十块钱。",
+        "pinyin": "yīnwèi zài shān shang chōu yān， yòu bèi gōngyuán guǎnlǐyuán fá le wǔshí kuài qián。",
+        "en": "Because I smoked on the mountain, I was also fined fifty yuan by the park attendant."
+      }
+    },
+    {
+      "zh": "抽",
+      "pinyin": "chōu",
+      "pos": "v.",
+      "en": "to draw; to pump",
+      "note": "Sub-entry under 抽烟; here draw on a cigarette. Book headword pinyin printed as chōu. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 抽 in 抽烟 / 不抽了.",
+      "usage": "戒掉…不抽了.",
+      "example": {
+        "zh": "我决定把烟戒掉，不抽了。",
+        "pinyin": "wǒ juédìng bǎ yān jièdiào， bù chōu le。",
+        "en": "I decided to quit smoking and not smoke anymore."
+      }
+    },
+    {
+      "zh": "烟",
+      "pinyin": "yān",
+      "pos": "n.",
+      "en": "cigarette",
+      "note": "Sub-entry under 抽烟. Book headword pinyin printed as yān. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 烟 for cigarette(s).",
+      "usage": "把烟戒掉 / 我的烟还能抽到下星期.",
+      "example": {
+        "zh": "我的烟还能抽到下星期",
+        "pinyin": "wǒ de yān hái néng chōu dào xià xīngqī",
+        "en": "My cigarettes will still last until next week"
+      }
+    },
+    {
+      "zh": "罚",
+      "pinyin": "fá",
+      "pos": "v.",
+      "en": "to punish; to fine",
+      "note": "Book headword pinyin printed as fá. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 罚 when someone is fined or punished.",
+      "usage": "被…罚了五十块钱.",
+      "example": {
+        "zh": "又被公园管理员罚了五十块钱",
+        "pinyin": "yòu bèi gōngyuán guǎnlǐyuán fá le wǔshí kuài qián",
+        "en": "was also fined fifty yuan by the park attendant"
+      }
+    },
+    {
+      "zh": "点",
+      "pinyin": "diǎn",
+      "pos": "v.",
+      "en": "to light; to kindle",
+      "note": "Book headword pinyin printed as diǎn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 点 when lighting something on fire.",
+      "usage": "点着了 (catch fire / get lit).",
+      "example": {
+        "zh": "要是山上的树被你点着了，就更倒霉了。",
+        "pinyin": "yào shì shān shang de shù bèi nǐ diǎnzhao le， jiù gèng dǎoméi le。",
+        "en": "If the trees on the mountain had been set on fire by you, that would be even unluckier."
+      }
+    },
+    {
+      "zh": "决定",
+      "pinyin": "juédìng",
+      "pos": "v./n.",
+      "en": "to decide; decision",
+      "note": "Book headword pinyin printed as juédìng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 决定 when making up your mind.",
+      "usage": "我决定把烟戒掉.",
+      "example": {
+        "zh": "所以从下星期起，我决定把烟戒掉，不抽了。",
+        "pinyin": "suǒyǐ cóng xià xīngqī qǐ， wǒ juédìng bǎ yān jièdiào， bù chōu le。",
+        "en": "So starting next week, I’ve decided to quit smoking and not smoke anymore."
+      }
+    },
+    {
+      "zh": "戒烟",
+      "pinyin": "jiè yān",
+      "pos": "",
+      "en": "to give up smoking",
+      "note": "No POS printed; 戒 listed under it. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 戒烟 / 把烟戒掉 for quitting smoking.",
+      "usage": "Lesson punchline: decide to quit (from next week).",
+      "example": {
+        "zh": "我决定把烟戒掉，不抽了。",
+        "pinyin": "wǒ juédìng bǎ yān jièdiào， bù chōu le。",
+        "en": "I decided to quit smoking and not smoke anymore."
+      }
+    },
+    {
+      "zh": "戒",
+      "pinyin": "jiè",
+      "pos": "v.",
+      "en": "to give up; to quit",
+      "note": "Sub-entry under 戒烟. Book headword pinyin printed as jiè. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 戒 in 戒烟 / 戒掉.",
+      "usage": "把烟戒掉.",
+      "example": {
+        "zh": "我决定把烟戒掉",
+        "pinyin": "wǒ juédìng bǎ yān jièdiào",
+        "en": "I decided to quit smoking"
+      }
+    },
+    {
+      "zh": "浪费",
+      "pinyin": "làngfèi",
+      "pos": "v.",
+      "en": "to waste",
+      "note": "Book headword pinyin printed as làngfèi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 浪费 when not finishing something would be a waste.",
+      "usage": "不抽完就浪费了.",
+      "example": {
+        "zh": "要是不抽完就浪费了。",
+        "pinyin": "yào shì bù chōuwán jiù làngfèi le。",
+        "en": "If I don’t finish them, that would be a waste."
+      }
+    },
+    {
+      "zh": "大山",
+      "pinyin": "Dàshān",
+      "pos": "proper noun",
+      "en": "Dashan, name of a person",
+      "note": "专名. Book headword pinyin printed as Dàshān. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 大山 as the character name in dialogue (二).",
+      "usage": "Speaker in the unlucky-events dialogue.",
+      "example": {
+        "zh": "真倒霉！",
+        "pinyin": "zhēn dǎoméi！",
+        "en": "What bad luck!"
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "(一)",
+      "headingZh": "我的腿被自行车撞伤了",
+      "headingEn": "My leg got injured in a bike crash",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "罗兰",
+          "zh": "你的腿怎么了？",
+          "pinyin": "nǐ de tuǐ zěnme le？",
+          "en": "What happened to your leg?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "星期天我骑车上街的时候，被一个小伙子撞倒了，从车上摔下来把腿摔伤了。",
+          "pinyin": "Xīngqītiān wǒ qí chē shàng jiē de shíhou， bèi yí gè xiǎohuǒzi zhuàngdǎo le， cóng chē shang shuāi xiàlai bǎ tuǐ shuāishāng le。",
+          "en": "On Sunday when I was biking on the street, I was knocked down by a young man, fell off the bike, and injured my leg."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "要紧吗？",
+          "pinyin": "yàojǐn ma？",
+          "en": "Is it serious?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "流了一点儿血，不要紧。",
+          "pinyin": "liú le yìdiǎnr xiě， bú yàojǐn。",
+          "en": "It bled a little; it’s nothing serious."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "还疼吗？",
+          "pinyin": "hái téng ma？",
+          "en": "Does it still hurt?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "还有点儿疼。",
+          "pinyin": "hái yǒudiǎnr téng。",
+          "en": "It still hurts a bit."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "伤着骨头了没有？",
+          "pinyin": "shāngzhe gǔtou le méiyǒu？",
+          "en": "Did you hurt any bones?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "我被撞倒后，小伙子看我躺在地上，马上叫了辆出租车，把我送到了医院。大夫给我检查了一下儿，还好，没伤到骨头。",
+          "pinyin": "wǒ bèi zhuàngdǎo hòu， xiǎohuǒzi kàn wǒ tǎng zài dì shang， mǎshàng jiào le liàng chūzūchē， bǎ wǒ sòng dào le yīyuàn。 dàifu gěi wǒ jiǎnchá le yíxiàr， hái hǎo， méi shāng dào gǔtou。",
+          "en": "After I was knocked down, the young man saw me lying on the ground, quickly called a taxi, and took me to the hospital. The doctor checked me — luckily, no bones were hurt."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "那个小伙子是哪儿的？",
+          "pinyin": "nà gè xiǎohuǒzi shì nǎ r de？",
+          "en": "Where was that young man from?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "是北京大学的学生。昨天他还来看过我。他也觉得挺不好意思的。我说，没什么，你又不是故意的。",
+          "pinyin": "shì Běijīng Dàxué de xuésheng。 zuótiān tā hái lái kànguo wǒ。 tā yě juéde tǐng bù hǎoyìsi de。 wǒ shuō， méi shénme， nǐ yòu bú shì gùyì de。",
+          "en": "He’s a student at Peking University. He even came to see me yesterday. He also felt quite embarrassed. I said it was nothing — and it wasn’t on purpose anyway."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "街上人多车也多，骑车上街的时候，一定要特别小心。",
+          "pinyin": "jiē shang rén duō chē yě duō， qí chē shàng jiē de shíhou， yídìng yào tèbié xiǎoxīn。",
+          "en": "There are many people and cars on the street; when you bike out, you must be especially careful."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "可不是！",
+          "pinyin": "kě bú shì！",
+          "en": "Isn’t that the truth!"
+        }
+      ]
+    },
+    {
+      "label": "(二)",
+      "headingZh": "钱包儿让小偷儿偷走了",
+      "headingEn": "My wallet was stolen by a thief",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "大山遇到了不少倒霉事……",
+          "pinyin": "Dàshān yùdào le bù shǎo dǎoméi shì……",
+          "en": "Dashan has experienced quite a few unlucky events..."
+        },
+        {
+          "speaker": "大山",
+          "zh": "真倒霉！",
+          "pinyin": "zhēn dǎoméi！",
+          "en": "What bad luck!"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "怎么了？",
+          "pinyin": "zěnme le？",
+          "en": "What happened?"
+        },
+        {
+          "speaker": "大山",
+          "zh": "唉，别提了，我的钱包儿让小偷儿偷走了。",
+          "pinyin": "āi， bié tí le， wǒ de qiánbāor ràng xiǎotōur tōuzǒu le。",
+          "en": "Sigh, don’t bring it up — my wallet was stolen by a thief."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "丢了多少钱？",
+          "pinyin": "diū le duō shǎo qián？",
+          "en": "How much money did you lose?"
+        },
+        {
+          "speaker": "大山",
+          "zh": "钱不多，才几十块钱。但我最近遇到好几件倒霉事儿了。",
+          "pinyin": "qián bù duō， cái jǐ shí kuài qián。 dàn wǒ zuì jìn yùdào hǎo jǐ jiàn dǎoméi shìr le。",
+          "en": "Not much, only a few tens of yuan. But I’ve run into quite a few unlucky things lately."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "都遇到什么倒霉事儿了？",
+          "pinyin": "dōu yùdào shénme dǎoméi shìr le？",
+          "en": "What unlucky things have you run into?"
+        },
+        {
+          "speaker": "大山",
+          "zh": "我刚买了一辆自行车，就叫人骑走了，到现在也没送回来。",
+          "pinyin": "wǒ gāng mǎi le yī liàng zìxíngchē， jiù jiào rén qízǒu le， dào xiàn zài yě méi sòng huílai。",
+          "en": "I had just bought a bike and someone rode it away; it still hasn’t been returned."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "你还等着给你送回来呀？",
+          "pinyin": "nǐ hái děngzhe gěi nǐ sòng huílai ya？",
+          "en": "You’re still waiting for them to bring it back?"
+        },
+        {
+          "speaker": "大山",
+          "zh": "上星期跟朋友一起去长城，出发时天气好好儿的，没想到，刚到就下雨了。雨下得还特别大，我们又没带雨伞，个个都被淋得像落汤鸡似的，衣服全都湿了。前天我坐出租车要去“首都剧场”，差点儿被司机拉到“首都机场”。他说我的音发得不准，把“剧场”说成“机场”了。你说可气不可气？",
+          "pinyin": "shàng xīngqī gēn péngyou yī qǐ qù Chángchéng， chūfā shí tiān qì hǎohāor de， méi xiǎngdào， gāng dào jiù xiàyǔ le。 yǔ xià de hái tèbié dà， wǒmen yòu méi dài yǔsǎn， gè gè dōu bèi lín de xiàng luòtāngjī shìde， yīfu quán dōu shī le。 qiántiān wǒ zuò chūzūchē yào qù“ Shǒudū Jùchǎng”， chàdiǎnr bèi sījī lādào“ Shǒudū Jīchǎng”。 tā shuō wǒ de yīn fā de bù zhǔn， bǎ“ jùchǎng” shuōchéng“ jīchǎng” le。 nǐ shuō kěqì bu kěqì？",
+          "en": "Last week I went to the Great Wall with friends. When we set out the weather was fine; unexpectedly it started raining as soon as we arrived. It rained hard, and we hadn’t brought umbrellas — every one of us got soaked like a drowned rat, clothes all wet. The day before yesterday I took a taxi to “Capital Theatre” and almost got taken to “Capital Airport.” He said my pronunciation was off and I’d said “theater” as “airport.” Don’t you think that was annoying?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "怎么倒霉的事儿都让你碰上了？",
+          "pinyin": "zěnme dǎoméi de shìr dōu ràng nǐ pèngshang le？",
+          "en": "How come all the unlucky things happen to you?"
+        },
+        {
+          "speaker": "大山",
+          "zh": "所以，前几天我遇到一个算命的，就叫他给我算了一下儿。",
+          "pinyin": "suǒyǐ， qián jǐ tiān wǒ yùdào yí gè suàn mìng de， jiù jiào tā gěi wǒ suàn le yíxiàr。",
+          "en": "So a few days ago I ran into a fortune-teller and had him read my fortune."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "结果怎么样？",
+          "pinyin": "jiéguǒ zěnmeyàng？",
+          "en": "How did it turn out?"
+        },
+        {
+          "speaker": "大山",
+          "zh": "他说我今年运气不太好，明年就好了。为了感谢他，我给了他一百块钱。朋友们都说我傻，花钱受骗。没想到，那天跟大家一起去爬山，因为在山上抽烟，又被公园管理员罚了五十块钱。你说倒霉不倒霉？",
+          "pinyin": "tā shuō wǒ jīnnián yùnqi bù tài hǎo， míngnián jiù hǎo le。 wèi le gǎnxiè tā， wǒ gěi le tā yìbǎi kuài qián。 péngyou men dōu shuō wǒ shǎ， huā qián shòu piàn。 méi xiǎngdào， nà tiān gēn dà jiā yī qǐ qù páshān， yīnwèi zài shān shang chōu yān， yòu bèi gōngyuán guǎnlǐyuán fá le wǔshí kuài qián。 nǐ shuō dǎoméi bu dǎoméi？",
+          "en": "He said my luck isn’t great this year, but next year will be better. To thank him I gave him a hundred yuan. Friends all said I was foolish — spending money and getting cheated. Then that day when we went hiking, because I smoked on the mountain I was also fined fifty yuan by the park attendant. Wouldn’t you say that’s unlucky?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "要是山上的树被你点着了，就更倒霉了。",
+          "pinyin": "yào shì shān shang de shù bèi nǐ diǎnzhao le， jiù gèng dǎoméi le。",
+          "en": "If the trees on the mountain had been set on fire by you, that would be even unluckier."
+        },
+        {
+          "speaker": "大山",
+          "zh": "你说得也对。所以从下星期起，我决定把烟戒掉，不抽了。",
+          "pinyin": "nǐ shuō de yě duì。 suǒyǐ cóng xià xīngqī qǐ， wǒ juédìng bǎ yān jièdiào， bù chōu le。",
+          "en": "You’re right too. So starting next week, I’ve decided to quit smoking and not smoke anymore."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "为什么从下星期开始呢？",
+          "pinyin": "wèishénme cóng xià xīngqī kāishǐ ne？",
+          "en": "Why start from next week?"
+        },
+        {
+          "speaker": "大山",
+          "zh": "我的烟还能抽到下星期，要是不抽完就浪费了。",
+          "pinyin": "wǒ de yān hái néng chōu dào xià xīngqī， yào shì bù chōuwán jiù làngfèi le。",
+          "en": "My cigarettes will still last until next week; if I don’t finish them, that would be a waste."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "还好，没伤着骨头。",
+      "body": "I was lucky, no injury to the bone. 副词“还”用在形容词前，表示从好的方面说，情况或程度勉强过得去。 The adverb “还” is used before an adjective to mean that, considered positively, a certain condition or degree is passable. (Dialogue line on p.98 prints 没伤到骨头; note head prints 没伤着骨头.)",
+      "example": {
+        "zh": "屋子不太大，打扫得还干净。",
+        "pinyin": "wū zi bù tài dà， dǎsǎo de hái gàn jìng。",
+        "en": "The room isn’t too big; it’s cleaned passably well."
+      }
+    },
+    {
+      "title": "钱不多，才几十块钱。",
+      "body": "Not too much, only a few tens. 副词“才”在这里表示数量小，次数少。 The adverb “才” here indicates that the quantity or the number of times is small.",
+      "example": {
+        "zh": "我们班才五个女同学。",
+        "pinyin": "wǒmen bān cái wǔ gè nǚ tóng xué。",
+        "en": "Our class has only five female students. (small quantity)"
+      }
+    },
+    {
+      "title": "你说可气不可气？",
+      "body": "Don’t you think it was annoying? 汉语用“你说”加一个问句，表示征询对方的意见。 “你说” plus a question indicates an inquiry about the other person’s opinion.",
+      "example": {
+        "zh": "你说可气不可气？",
+        "pinyin": "nǐ shuō kěqì bu kěqì？",
+        "en": "Don’t you think it was annoying?"
+      }
+    },
+    {
+      "title": "可气",
+      "body": "annoying. “可+动词”(构成形容词)中，“可”是前缀，表示应该、值得。“可”常与表示心理状态的单音节动词组合。例如：可气、可喜、可怕、可爱、可笑、可疑。 In the adjectival construction “可 + verb”, “可” is a prefix meaning “should” / “worth (doing)”, often with monosyllabic psychological verbs.",
+      "example": {
+        "zh": "你说可气不可气？",
+        "pinyin": "nǐ shuō kěqì bu kěqì？",
+        "en": "Don’t you think it was annoying?"
+      }
+    },
+    {
+      "title": "被动意义的表达：“被”字句",
+      "body": "Indicating the passive voice: the 被-sentence. “被”字句是介词“被”及其宾语作状语来表示被动意义的动词谓语句。 Structure: 主语+被(叫/让)+宾语+动词+其他成分. Agent after 被 may be omitted when not emphasized; 叫/让 require an agent. Negation/modals go before 被(叫/让), not before the verb; 了 is not used at the end of the negative sentence.",
+      "example": {
+        "zh": "我的钱包儿被小偷儿偷走了。",
+        "pinyin": "wǒ de qiánbāor bèi xiǎotōur tōuzǒu le。",
+        "en": "My wallet was stolen by a thief."
+      }
+    },
+    {
+      "title": "又",
+      "body": "The adverb “又” (again / and what’s more). 副词“又”可以表示补充、追加；在否定句或反问句中，还有强调语气的作用。",
+      "example": {
+        "zh": "没关系，你又不是故意的。",
+        "pinyin": "méi guān xì， nǐ yòu bú shì gùyì de。",
+        "en": "It’s all right — and it wasn’t on purpose anyway."
+      }
+    }
+  ]
+}

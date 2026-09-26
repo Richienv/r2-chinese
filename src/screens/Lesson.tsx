@@ -344,7 +344,7 @@ function GrammarView({
 
       <section className="metal" style={{ padding: 18 }}>
         <div className="zh on-red" style={{ fontSize: 24, fontWeight: 700, lineHeight: 1.3 }} lang="zh-CN">
-          {p.point}
+          <Glossed text={p.point} onWord={onWord} />
         </div>
         <div style={{ color: 'var(--gold)', fontWeight: 700, fontSize: 13, marginTop: 4 }}>{p.pinyin}</div>
         {hasHanzi(p.point) && (

@@ -1,0 +1,790 @@
+{
+  "id": "jiaocheng-2-1-09",
+  "book": "2-1",
+  "index": 9,
+  "bookLesson": 9,
+  "titleZh": "快上来吧，要开车了",
+  "titleEn": "The bus is starting up, so let’s hurry",
+  "sourcePages": "143-159",
+  "words": [
+    {
+      "zh": "开会",
+      "pinyin": "kāi huì",
+      "pos": "v.",
+      "en": "to have/attend a meeting",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 开会 like attending a conference. Book prints spaced.",
+      "usage": "Most Chinese speakers mean hold/attend a meeting.",
+      "example": {
+        "zh": "你不是到台湾开汉语教学研讨会去了吗？",
+        "pinyin": "Nǐ bú shì dào Táiwān kāi Hànyǔ jiàoxué yántǎohuì qù le ma?",
+        "en": "Didn’t you go to Taiwan for a Chinese-teaching seminar?"
+      }
+    },
+    {
+      "zh": "教学",
+      "pinyin": "jiàoxué",
+      "pos": "n.",
+      "en": "teaching",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 教学 like teaching — 汉语教学.",
+      "usage": "Most Chinese speakers mean teaching/instruction.",
+      "example": {
+        "zh": "汉语教学研讨会。",
+        "pinyin": "Hànyǔ jiàoxué yántǎohuì.",
+        "en": "Chinese-teaching seminar."
+      }
+    },
+    {
+      "zh": "研讨会",
+      "pinyin": "yántǎohuì",
+      "pos": "n.",
+      "en": "seminar; symposium",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 研讨会 like an academic seminar.",
+      "usage": "Most Chinese speakers mean seminar/symposium.",
+      "example": {
+        "zh": "开汉语教学研讨会。",
+        "pinyin": "Kāi Hànyǔ jiàoxué yántǎohuì.",
+        "en": "Attend a Chinese-teaching seminar."
+      }
+    },
+    {
+      "zh": "研讨",
+      "pinyin": "yántǎo",
+      "pos": "v.",
+      "en": "to study and discuss",
+      "note": "Seminar.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 研讨 under 研讨会.",
+      "example": {
+        "zh": "Most Chinese speakers mean discuss/research together.",
+        "pinyin": "研讨会。",
+        "en": "Yántǎohuì."
+      }
+    },
+    {
+      "zh": "经过",
+      "pinyin": "jīngguò",
+      "pos": "v.",
+      "en": "to pass; to go through (a place)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 经过 like passing through — 经过香港.",
+      "usage": "Most Chinese speakers mean pass by/go via.",
+      "example": {
+        "zh": "我回来的时候，经过香港。",
+        "pinyin": "Wǒ huílai de shíhou, jīngguò Xiānggǎng.",
+        "en": "On the way back I passed through Hong Kong."
+      }
+    },
+    {
+      "zh": "向",
+      "pinyin": "xiàng",
+      "pos": "prep.",
+      "en": "to; towards; in the direction of",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 向 like ‘toward’ — 向您问好.",
+      "usage": "Most Chinese speakers 向+person+问好.",
+      "example": {
+        "zh": "她让我向您问好。",
+        "pinyin": "Tā ràng wǒ xiàng nín wènhǎo.",
+        "en": "She asked me to say hello to you."
+      }
+    },
+    {
+      "zh": "问好",
+      "pinyin": "wèn hǎo",
+      "pos": "v.",
+      "en": "to send one’s regards to; to say hello to",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 问好 like sending regards. Book prints spaced.",
+      "usage": "Most Chinese speakers 向…问好.",
+      "example": {
+        "zh": "她让我向您问好。",
+        "pinyin": "Tā ràng wǒ xiàng nín wènhǎo.",
+        "en": "She asked me to say hello to you."
+      }
+    },
+    {
+      "zh": "捎",
+      "pinyin": "shāo",
+      "pos": "v.",
+      "en": "to take along something to or for someone; to bring to someone",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 捎 like bringing something along — 捎来一些东西.",
+      "usage": "Most Chinese speakers 捎东西 for someone.",
+      "example": {
+        "zh": "还让我给您捎来一些东西。",
+        "pinyin": "Hái ràng wǒ gěi nín shāo lái yìxiē dōngxi.",
+        "en": "And asked me to bring you some things."
+      }
+    },
+    {
+      "zh": "送",
+      "pinyin": "sòng",
+      "pos": "v.",
+      "en": "to deliver; to give",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 送 like delivering / seeing off — 送来 / 送送你.",
+      "usage": "Most Chinese speakers mean give/deliver/see off.",
+      "example": {
+        "zh": "我想给您送去。",
+        "pinyin": "Wǒ xiǎng gěi nín sòng qù.",
+        "en": "I’d like to bring them over to you."
+      }
+    },
+    {
+      "zh": "过去",
+      "pinyin": "guòqù",
+      "pos": "v.",
+      "en": "to go over; to pass by",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 过去 like going over there — 我过去取吧.",
+      "usage": "Most Chinese speakers mean go over (direction).",
+      "example": {
+        "zh": "谢谢，我过去取吧。",
+        "pinyin": "Xièxie, wǒ guòqù qǔ ba.",
+        "en": "Thanks — I’ll come over and get them."
+      }
+    },
+    {
+      "zh": "过来",
+      "pinyin": "guòlái",
+      "pos": "v.",
+      "en": "to come over; to come by",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 过来 like coming over — 你过来吧.",
+      "usage": "Most Chinese speakers mean come over here.",
+      "example": {
+        "zh": "那好，你过来吧。",
+        "pinyin": "Nà hǎo, nǐ guòlái ba.",
+        "en": "Alright, come over then."
+      }
+    },
+    {
+      "zh": "辛苦",
+      "pinyin": "xīnkǔ",
+      "pos": "adj./v.",
+      "en": "hard; strenuous; to bother; to take pains",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 辛苦 like thanking for effort — 辛苦你了.",
+      "usage": "Most Chinese speakers thank with 辛苦了.",
+      "example": {
+        "zh": "辛苦你了，小林！",
+        "pinyin": "Xīnkǔ nǐ le, Xiǎo Lín!",
+        "en": "Thanks for your trouble, Xiao Lin!"
+      }
+    },
+    {
+      "zh": "麻烦",
+      "pinyin": "máfan",
+      "pos": "v./adj.",
+      "en": "to trouble; troublesome",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 麻烦 like troubling someone — 麻烦你跑一趟.",
+      "usage": "Most Chinese speakers 麻烦+person.",
+      "example": {
+        "zh": "还麻烦你跑一趟。",
+        "pinyin": "Hái máfan nǐ pǎo yí tàng.",
+        "en": "And I troubled you to make a trip."
+      }
+    },
+    {
+      "zh": "趟",
+      "pinyin": "tàng",
+      "pos": "m.",
+      "en": "a measure word for trips",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 趟 like trip measure — 跑一趟.",
+      "usage": "Most Chinese speakers count trips with 趟.",
+      "example": {
+        "zh": "麻烦你跑一趟。",
+        "pinyin": "Máfan nǐ pǎo yí tàng.",
+        "en": "Trouble you to make a trip."
+      }
+    },
+    {
+      "zh": "进去",
+      "pinyin": "jìnqù",
+      "pos": "v.",
+      "en": "to go in",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 进去 like going inside — 不进去了.",
+      "usage": "Most Chinese speakers mean go in (away from speaker).",
+      "example": {
+        "zh": "不进去了。",
+        "pinyin": "Bú jìnqù le.",
+        "en": "I won’t go in."
+      }
+    },
+    {
+      "zh": "爱人",
+      "pinyin": "àiren",
+      "pos": "n.",
+      "en": "husband or wife",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 爱人 like spouse — 我爱人还在楼下.",
+      "usage": "Most Chinese speakers mean husband/wife (formal/older usage).",
+      "example": {
+        "zh": "我爱人还在楼下等我呢。",
+        "pinyin": "Wǒ àiren hái zài lóuxià děng wǒ ne.",
+        "en": "My spouse is still waiting downstairs."
+      }
+    },
+    {
+      "zh": "办事",
+      "pinyin": "bàn shì",
+      "pos": "v.",
+      "en": "to handle affairs",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 办事 like running errands. Book prints spaced.",
+      "usage": "Most Chinese speakers 办点儿事儿.",
+      "example": {
+        "zh": "我们要出去办点儿事儿。",
+        "pinyin": "Wǒmen yào chūqù bàn diǎnr shìr.",
+        "en": "We’re going out to take care of something."
+      }
+    },
+    {
+      "zh": "慢",
+      "pinyin": "màn",
+      "pos": "adj.",
+      "en": "slow",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 慢 like 慢走 — polite farewell.",
+      "usage": "Most Chinese speakers say 慢走 when seeing someone off.",
+      "example": {
+        "zh": "慢走！",
+        "pinyin": "Màn zǒu!",
+        "en": "Take care! (lit. walk slowly)"
+      }
+    },
+    {
+      "zh": "上来",
+      "pinyin": "shànglái",
+      "pos": "v.",
+      "en": "to come up",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 上来 like getting on the bus — 快上来吧.",
+      "usage": "Most Chinese speakers mean come up (toward speaker).",
+      "example": {
+        "zh": "下边的同学快上来吧。",
+        "pinyin": "Xiàbian de tóngxué kuài shànglái ba.",
+        "en": "Students below, hurry up onto the bus."
+      }
+    },
+    {
+      "zh": "马上",
+      "pinyin": "mǎshàng",
+      "pos": "adv.",
+      "en": "at once; immediately",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 马上 like immediately — 马上要开车了.",
+      "usage": "Most Chinese speakers mean right away.",
+      "example": {
+        "zh": "马上要开车了。",
+        "pinyin": "Mǎshàng yào kāichē le.",
+        "en": "The bus is about to leave."
+      }
+    },
+    {
+      "zh": "开车",
+      "pinyin": "kāichē",
+      "pos": "v.",
+      "en": "to drive a car, bus, etc.; (of a vehicle) to start to move",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 开车 like the bus starting — 要开车了.",
+      "usage": "Most Chinese speakers mean drive / (vehicle) depart.",
+      "example": {
+        "zh": "就要开车了。",
+        "pinyin": "Jiù yào kāichē le.",
+        "en": "The bus is about to start."
+      }
+    },
+    {
+      "zh": "照相机",
+      "pinyin": "zhàoxiàngjī",
+      "pos": "n.",
+      "en": "camera",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 照相机 like a camera — 忘带照相机.",
+      "usage": "Most Chinese speakers mean camera.",
+      "example": {
+        "zh": "她忘带照相机了。",
+        "pinyin": "Tā wàng dài zhàoxiàngjī le.",
+        "en": "She forgot to bring her camera."
+      }
+    },
+    {
+      "zh": "照相",
+      "pinyin": "zhào xiàng",
+      "pos": "v.",
+      "en": "to take a photo",
+      "note": "Forgot the camera.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 照相 under 照相机.",
+      "example": {
+        "zh": "Most Chinese speakers mean take photos.",
+        "pinyin": "忘带照相机了。",
+        "en": "Wàng dài zhàoxiàngjī le."
+      }
+    },
+    {
+      "zh": "座位",
+      "pinyin": "zuòwèi",
+      "pos": "n.",
+      "en": "seat",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 座位 like a seat on the bus.",
+      "usage": "Most Chinese speakers mean seat.",
+      "example": {
+        "zh": "这儿还有座位。",
+        "pinyin": "Zhèr hái yǒu zuòwèi.",
+        "en": "There’s still a seat here."
+      }
+    },
+    {
+      "zh": "注意",
+      "pinyin": "zhùyì",
+      "pos": "v.",
+      "en": "to pay attention to",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 注意 like ‘attention please’ — 请大家注意.",
+      "usage": "Most Chinese speakers mean pay attention.",
+      "example": {
+        "zh": "请大家注意，我再说一下儿。",
+        "pinyin": "Qǐng dàjiā zhùyì, wǒ zài shuō yíxiàr.",
+        "en": "Everyone please pay attention — let me say this again."
+      }
+    },
+    {
+      "zh": "出土",
+      "pinyin": "chū tǔ",
+      "pos": "v.",
+      "en": "(of antiques) to be unearthed; to be excavated",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 出土 like unearthed relics. Book prints spaced.",
+      "usage": "Most Chinese speakers 出土文物.",
+      "example": {
+        "zh": "参观出土文物展览。",
+        "pinyin": "Cānguān chūtǔ wénwù zhǎnlǎn.",
+        "en": "Visit an exhibition of unearthed cultural relics."
+      }
+    },
+    {
+      "zh": "文物",
+      "pinyin": "wénwù",
+      "pos": "n.",
+      "en": "cultural relic; antique",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 文物 like cultural relics.",
+      "usage": "Most Chinese speakers mean cultural artifacts.",
+      "example": {
+        "zh": "出土文物展览。",
+        "pinyin": "Chūtǔ wénwù zhǎnlǎn.",
+        "en": "Unearthed relics exhibition."
+      }
+    },
+    {
+      "zh": "展览",
+      "pinyin": "zhǎnlǎn",
+      "pos": "v.",
+      "en": "to put on display; to exhibit",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 展览 like an exhibition.",
+      "usage": "Most Chinese speakers mean exhibit/display.",
+      "example": {
+        "zh": "去参观出土文物展览。",
+        "pinyin": "Qù cānguān chūtǔ wénwù zhǎnlǎn.",
+        "en": "Go visit the unearthed relics exhibition."
+      }
+    },
+    {
+      "zh": "展览馆",
+      "pinyin": "zhǎnlǎnguǎn",
+      "pos": "n.",
+      "en": "exhibition hall",
+      "note": "Take the bus to the exhibition hall.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 展览馆 like exhibition center.",
+      "example": {
+        "zh": "Most Chinese speakers mean exhibition hall.",
+        "pinyin": "坐车去展览馆参观。",
+        "en": "Zuò chē qù zhǎnlǎnguǎn cānguān."
+      }
+    },
+    {
+      "zh": "大约",
+      "pinyin": "dàyuē",
+      "pos": "adv.",
+      "en": "approximately",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 大约 like ‘about’ — 大约两个半小时.",
+      "usage": "Most Chinese speakers mean roughly.",
+      "example": {
+        "zh": "这个展览大约要参观两个半小时。",
+        "pinyin": "Zhège zhǎnlǎn dàyuē yào cānguān liǎng ge bàn xiǎoshí.",
+        "en": "The exhibition takes about two and a half hours."
+      }
+    },
+    {
+      "zh": "要求",
+      "pinyin": "yāoqiú",
+      "pos": "v./n.",
+      "en": "to ask; to demand; requirement",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 要求 like a requirement — 要求大家准时上车.",
+      "usage": "Most Chinese speakers mean require/request.",
+      "example": {
+        "zh": "要求大家四点准时上车。",
+        "pinyin": "Yāoqiú dàjiā sì diǎn zhǔnshí shàng chē.",
+        "en": "Everyone is required to board at four sharp."
+      }
+    },
+    {
+      "zh": "声",
+      "pinyin": "shēng",
+      "pos": "m./n.",
+      "en": "a measure word for sounds; sound; voice",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 声 like 说一声 — one utterance.",
+      "usage": "Most Chinese speakers use 一声 for ‘a word’.",
+      "example": {
+        "zh": "不回来的同学跟我说一声。",
+        "pinyin": "Bù huílai de tóngxué gēn wǒ shuō yì shēng.",
+        "en": "Anyone not coming back, tell me."
+      }
+    },
+    {
+      "zh": "清楚",
+      "pinyin": "qīngchu",
+      "pos": "adj.",
+      "en": "clear",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 清楚 like clear understanding — 听清楚了没有？",
+      "usage": "Most Chinese speakers mean clear/understood.",
+      "example": {
+        "zh": "听清楚了没有？",
+        "pinyin": "Tīng qīngchu le méiyǒu?",
+        "en": "Did you hear clearly?"
+      }
+    },
+    {
+      "zh": "师傅",
+      "pinyin": "shīfu",
+      "pos": "n.",
+      "en": "master (a polite title for one with accomplished skills)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 师傅 like addressing a driver — 师傅，开车吧.",
+      "usage": "Most Chinese speakers call skilled workers 师傅.",
+      "example": {
+        "zh": "师傅，开车吧。",
+        "pinyin": "Shīfu, kāichē ba.",
+        "en": "Driver, let’s go."
+      }
+    },
+    {
+      "zh": "大使馆",
+      "pinyin": "dàshǐguǎn",
+      "pos": "n.",
+      "en": "embassy",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 大使馆 like the embassy — 想到大使馆去.",
+      "usage": "Most Chinese speakers mean embassy.",
+      "example": {
+        "zh": "我想到大使馆去看朋友。",
+        "pinyin": "Wǒ xiǎng dào dàshǐguǎn qù kàn péngyou.",
+        "en": "I’d like to go to the embassy to see a friend."
+      }
+    },
+    {
+      "zh": "大使",
+      "pinyin": "dàshǐ",
+      "pos": "n.",
+      "en": "ambassador",
+      "note": "Embassy.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 大使 under 大使馆.",
+      "example": {
+        "zh": "Most Chinese speakers mean ambassador.",
+        "pinyin": "大使馆。",
+        "en": "Dàshǐguǎn."
+      }
+    },
+    {
+      "zh": "台湾",
+      "pinyin": "Táiwān",
+      "pos": "prop.",
+      "en": "Taiwan, a province in China",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun from 专名.",
+      "usage": "Place name in 课文（一）.",
+      "example": {
+        "zh": "到台湾开汉语教学研讨会。",
+        "pinyin": "Dào Táiwān kāi Hànyǔ jiàoxué yántǎohuì.",
+        "en": "Go to Taiwan for a Chinese-teaching seminar."
+      }
+    },
+    {
+      "zh": "香港",
+      "pinyin": "Xiānggǎng",
+      "pos": "prop.",
+      "en": "Hong Kong",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun from 专名.",
+      "usage": "Place name — 经过香港.",
+      "example": {
+        "zh": "经过香港，到小赵家去看了看。",
+        "pinyin": "Jīngguò Xiānggǎng, dào Xiǎo Zhào jiā qù kàn le kan.",
+        "en": "Passed through Hong Kong and visited Xiao Zhao’s home."
+      }
+    },
+    {
+      "zh": "赵",
+      "pinyin": "Zhào",
+      "pos": "prop.",
+      "en": "Zhao, a Chinese family name",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun from 专名.",
+      "usage": "Family name — 小赵.",
+      "example": {
+        "zh": "到小赵家去看了看。",
+        "pinyin": "Dào Xiǎo Zhào jiā qù kàn le kan.",
+        "en": "Visited Xiao Zhao’s home."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "我给您捎来了一些东西",
+      "headingEn": "I've brought some things for you",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "林老师",
+          "zh": "王老师吗？我是小林。",
+          "pinyin": "Wáng lǎoshī ma? Wǒ shì Xiǎo Lín.",
+          "en": "Teacher Wang? This is Xiao Lin."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "啊，小林。你不是到台湾开汉语教学研讨会去了吗？",
+          "pinyin": "A, Xiǎo Lín. Nǐ bú shì dào Táiwān kāi Hànyǔ jiàoxué yántǎohuì qù le ma?",
+          "en": "Ah, Xiao Lin. Didn’t you go to Taiwan for a Chinese-teaching seminar?"
+        },
+        {
+          "speaker": "林老师",
+          "zh": "我开完会回来了。昨天晚上刚到家。我回来的时候，经过香港，到小赵家去看了看。",
+          "pinyin": "Wǒ kāi wán huì huílai le. Zuótiān wǎnshang gāng dào jiā. Wǒ huílai de shíhou, jīngguò Xiānggǎng, dào Xiǎo Zhào jiā qù kàn le kan.",
+          "en": "I’m back from the meeting — just got home last night. On the way I passed through Hong Kong and visited Xiao Zhao."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "是吗？小赵好吗？",
+          "pinyin": "Shì ma? Xiǎo Zhào hǎo ma?",
+          "en": "Really? How’s Xiao Zhao?"
+        },
+        {
+          "speaker": "林老师",
+          "zh": "挺好的。她让我向您问好，还让我给您捎来一些东西。我想给您送去。",
+          "pinyin": "Tǐng hǎo de. Tā ràng wǒ xiàng nín wènhǎo, hái ràng wǒ gěi nín shāo lái yìxiē dōngxi. Wǒ xiǎng gěi nín sòng qù.",
+          "en": "She’s fine. She sends regards and asked me to bring you some things. I’d like to deliver them."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "谢谢，我过去取吧。",
+          "pinyin": "Xièxie, wǒ guòqù qǔ ba.",
+          "en": "Thanks — I’ll come get them."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "不用。我正好要下楼去，顺便就给您带去了。",
+          "pinyin": "Bú yòng. Wǒ zhènghǎo yào xià lóu qù, shùnbiàn jiù gěi nín dài qù le.",
+          "en": "No need. I’m heading downstairs anyway — I’ll bring them by."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "那好，你过来吧。",
+          "pinyin": "Nà hǎo, nǐ guòlái ba.",
+          "en": "Alright, come over."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "王老师，这是小赵带给您的东西。",
+          "pinyin": "Wáng lǎoshī, zhè shì Xiǎo Zhào dài gěi nín de dōngxi.",
+          "en": "Teacher Wang, these are from Xiao Zhao."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "辛苦你了，小林！还麻烦你跑一趟。外边冷，快进屋来坐吧。",
+          "pinyin": "Xīnkǔ nǐ le, Xiǎo Lín! Hái máfan nǐ pǎo yí tàng. Wàibian lěng, kuài jìn wū lái zuò ba.",
+          "en": "Thanks for the trouble! Come in — it’s cold outside."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "不进去了。我爱人还在楼下等我呢，我们要出去办点儿事儿。",
+          "pinyin": "Bú jìnqù le. Wǒ àiren hái zài lóuxià děng wǒ ne, wǒmen yào chūqù bàn diǎnr shìr.",
+          "en": "I won’t go in. My spouse is waiting downstairs — we’re running an errand."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "我送送你。",
+          "pinyin": "Wǒ sòngsong nǐ.",
+          "en": "I’ll see you out."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "不用送了，请回吧。",
+          "pinyin": "Bú yòng sòng le, qǐng huí ba.",
+          "en": "No need — please go back."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "慢走！",
+          "pinyin": "Màn zǒu!",
+          "en": "Take care!"
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "快上来吧，要开车了",
+      "headingEn": "The bus is starting up, so let's hurry",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "林老师",
+          "zh": "下边的同学快上来吧，马上要开车了。",
+          "pinyin": "Xiàbian de tóngxué kuài shànglái ba, mǎshàng yào kāichē le.",
+          "en": "Students below, hurry up — we’re about to leave."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "老师，我不上去了，我到后边的五号车去可以吗？我朋友在那儿。",
+          "pinyin": "Lǎoshī, wǒ bú shàngqù le, wǒ dào hòubian de wǔ hào chē qù kěyǐ ma? Wǒ péngyou zài nàr.",
+          "en": "Teacher, may I go to bus No. 5 behind? My friend’s there."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "你过去吧。玛丽怎么还没上来呢？",
+          "pinyin": "Nǐ guòqù ba. Mǎlì zěnme hái méi shànglái ne?",
+          "en": "Go ahead. Why hasn’t Mary gotten on yet?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "她忘带照相机了，又回宿舍去拿了，一会儿就回来。啊，她跑来了。玛丽，快点儿，就要开车了。",
+          "pinyin": "Tā wàng dài zhàoxiàngjī le, yòu huí sùshè qù ná le, yíhuìr jiù huílai. A, tā pǎo lái le. Mǎlì, kuài diǎnr, jiù yào kāichē le.",
+          "en": "She forgot her camera and went back to the dorm — she’ll be right back. Oh, here she comes. Mary, hurry!"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "对不起，我来晚了。",
+          "pinyin": "Duìbuqǐ, wǒ lái wǎn le.",
+          "en": "Sorry I’m late."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "没关系。",
+          "pinyin": "Méiguānxi.",
+          "en": "It’s fine."
+        },
+        {
+          "speaker": "山本",
+          "zh": "玛丽，这儿还有座位，你过来吧。",
+          "pinyin": "Mǎlì, zhèr hái yǒu zuòwèi, nǐ guòlái ba.",
+          "en": "Mary, there’s a seat here — come over."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "请大家注意，我再说一下儿。我们今天去参观出土文物展览。这个展览大约要参观两个半小时。参观完以后，四点钟坐车回来。要求大家四点准时上车。不回来的同学跟我说一声。听清楚了没有？",
+          "pinyin": "Qǐng dàjiā zhùyì, wǒ zài shuō yíxiàr. Wǒmen jīntiān qù cānguān chūtǔ wénwù zhǎnlǎn. Zhège zhǎnlǎn dàyuē yào cānguān liǎng ge bàn xiǎoshí. Cānguān wán yǐhòu, sì diǎn zhōng zuò chē huílai. Yāoqiú dàjiā sì diǎn zhǔnshí shàng chē. Bù huílai de tóngxué gēn wǒ shuō yì shēng. Tīng qīngchu le méiyǒu?",
+          "en": "Attention — we’re visiting an unearthed relics exhibition, about 2.5 hours. Return by bus at 4; be on time. Anyone not coming back, tell me. Clear?"
+        },
+        {
+          "speaker": "留学生",
+          "zh": "听清楚了。",
+          "pinyin": "Tīng qīngchu le.",
+          "en": "Clear."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "大家要记住开车的时间。都上来了吗？好，师傅，开车吧。",
+          "pinyin": "Dàjiā yào jìzhù kāichē de shíjiān. Dōu shànglái le ma? Hǎo, shīfu, kāichē ba.",
+          "en": "Remember departure time. Everyone on? Driver, let’s go."
+        },
+        {
+          "speaker": "山本",
+          "zh": "老师，您到这儿来坐吧。",
+          "pinyin": "Lǎoshī, nín dào zhèr lái zuò ba.",
+          "en": "Teacher, please sit here."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "我不过去了，就坐这儿了，你快坐下吧。",
+          "pinyin": "Wǒ bú guòqù le, jiù zuò zhèr le, nǐ kuài zuòxia ba.",
+          "en": "I’ll stay here — you sit down."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "老师，参观完以后，我想到大使馆去看朋友，不回学校去了，可以吗？",
+          "pinyin": "Lǎoshī, cānguān wán yǐhòu, wǒ xiǎng dào dàshǐguǎn qù kàn péngyou, bù huí xuéxiào qù le, kěyǐ ma?",
+          "en": "After the visit, may I go to the embassy to see a friend instead of returning to school?"
+        },
+        {
+          "speaker": "林老师",
+          "zh": "可以。",
+          "pinyin": "Kěyǐ.",
+          "en": "Sure."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "小林",
+      "body": "中国人比较熟悉的人之间常用“小＋姓”称呼年轻人；用“老＋姓”称呼年纪大的人。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "王老师吗？我是小林。",
+        "pinyin": "Wáng lǎoshī ma? Wǒ shì Xiǎo Lín.",
+        "en": "Teacher Wang? This is Xiao Lin."
+      }
+    },
+    {
+      "title": "还麻烦你跑一趟",
+      "body": "“趟”是动量词，表示走动的次数。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "还麻烦你跑一趟。",
+        "pinyin": "Hái máfan nǐ pǎo yí tàng.",
+        "en": "And I troubled you to make a trip."
+      }
+    },
+    {
+      "title": "慢走！",
+      "body": "送客人时说的客套话。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "慢走！",
+        "pinyin": "Màn zǒu!",
+        "en": "Take care!"
+      }
+    },
+    {
+      "title": "跟我说一声",
+      "body": "这里的“声”是量词，表示声音发出的次数。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "不回来的同学跟我说一声。",
+        "pinyin": "Bù huílai de tóngxué gēn wǒ shuō yì shēng.",
+        "en": "Anyone not coming back, tell me."
+      }
+    },
+    {
+      "title": "简单趋向补语：动词＋来/去",
+      "body": "动词“来”和“去”用在一些动词后作补语表示动作趋向。向着说话人用“来”；背着说话人用“去”。宾语是处所词时，放在动词之后、“来/去”之前。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "快上来吧，马上要开车了。",
+        "pinyin": "Kuài shànglái ba, mǎshàng yào kāichē le.",
+        "en": "Hurry up onto the bus — we’re about to leave."
+      }
+    }
+  ]
+}

@@ -1,0 +1,805 @@
+{
+  "id": "jiaocheng-2-1-12",
+  "book": "2-1",
+  "index": 12,
+  "bookLesson": 12,
+  "titleZh": "我的护照你找到了没有",
+  "titleEn": "Did you find my passport",
+  "sourcePages": "196-210",
+  "words": [
+    {
+      "zh": "护照",
+      "pinyin": "hùzhào",
+      "pos": "n.",
+      "en": "passport",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 护照 like the missing passport.",
+      "usage": "Most Chinese speakers 护照.",
+      "example": {
+        "zh": "我的护照你找到了没有？",
+        "pinyin": "Wǒ de hùzhào nǐ zhǎodào le méiyǒu?",
+        "en": "Did you find my passport?"
+      }
+    },
+    {
+      "zh": "半天",
+      "pinyin": "bàntiān",
+      "pos": "num.-m.",
+      "en": "quite a while; half a day",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 半天 like searching a long time.",
+      "usage": "Most Chinese speakers 半天 for ‘ages’.",
+      "example": {
+        "zh": "我找了半天也没找着。",
+        "pinyin": "Wǒ zhǎo le bàntiān yě méi zhǎozhao.",
+        "en": "I’ve looked forever and still can’t find it."
+      }
+    },
+    {
+      "zh": "着",
+      "pinyin": "zháo",
+      "pos": "v.",
+      "en": "(result complement) to touch/attain",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 着 like 找着 — successfully find.",
+      "usage": "Most Chinese speakers V+着 (zháo) for attainment.",
+      "example": {
+        "zh": "没找着。",
+        "pinyin": "Méi zhǎozhao.",
+        "en": "Didn’t find it."
+      }
+    },
+    {
+      "zh": "放",
+      "pinyin": "fàng",
+      "pos": "v.",
+      "en": "to put; to place",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 放 like where he put the passport.",
+      "usage": "Most Chinese speakers 放在….",
+      "example": {
+        "zh": "放在我的手提包儿里了。",
+        "pinyin": "Fàng zài wǒ de shǒutíbāor li le.",
+        "en": "I put it in my handbag."
+      }
+    },
+    {
+      "zh": "签证",
+      "pinyin": "qiānzhèng",
+      "pos": "n.",
+      "en": "visa",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 签证 like after getting the visa.",
+      "usage": "Most Chinese speakers 签证.",
+      "example": {
+        "zh": "昨天你办完签证放在什么地方了？",
+        "pinyin": "Zuótiān nǐ bànwán qiānzhèng fàng zài shénme dìfang le?",
+        "en": "Where did you put it after getting the visa yesterday?"
+      }
+    },
+    {
+      "zh": "手提包（儿）",
+      "pinyin": "shǒutíbāo(r)",
+      "pos": "n.",
+      "en": "handbag",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 手提包儿 like the bag.",
+      "usage": "Most Chinese speakers 手提包. Related 包儿.",
+      "example": {
+        "zh": "放在我的手提包儿里了。",
+        "pinyin": "Fàng zài wǒ de shǒutíbāor li le.",
+        "en": "Put it in my handbag."
+      }
+    },
+    {
+      "zh": "包（儿）",
+      "pinyin": "bāo(r)",
+      "pos": "n.",
+      "en": "bag",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 包儿 like the bag.",
+      "usage": "Most Chinese speakers 包.",
+      "example": {
+        "zh": "你的包儿呢？",
+        "pinyin": "Nǐ de bāor ne?",
+        "en": "Where’s your bag?"
+      }
+    },
+    {
+      "zh": "交",
+      "pinyin": "jiāo",
+      "pos": "v.",
+      "en": "to hand over",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 交 like handing the bag to her.",
+      "usage": "Most Chinese speakers 交给.",
+      "example": {
+        "zh": "一回到家不是就交给你了吗？",
+        "pinyin": "Yì huí dào jiā bú shì jiù jiāo gěi nǐ le ma?",
+        "en": "Didn’t I hand it to you as soon as I got home?"
+      }
+    },
+    {
+      "zh": "好好儿",
+      "pinyin": "hǎohāor",
+      "pos": "adv./adj.",
+      "en": "carefully; properly",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 好好儿 like searching carefully.",
+      "usage": "Most Chinese speakers 好好儿找找.",
+      "example": {
+        "zh": "我再好好儿找找。",
+        "pinyin": "Wǒ zài hǎohāor zhǎozhao.",
+        "en": "I’ll look carefully again."
+      }
+    },
+    {
+      "zh": "大衣",
+      "pinyin": "dàyī",
+      "pos": "n.",
+      "en": "overcoat",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 大衣 like the coat pocket.",
+      "usage": "Most Chinese speakers 大衣.",
+      "example": {
+        "zh": "在你的大衣口袋里找到的。",
+        "pinyin": "Zài nǐ de dàyī kǒudai li zhǎodào de.",
+        "en": "Found it in your overcoat pocket."
+      }
+    },
+    {
+      "zh": "口袋",
+      "pinyin": "kǒudai",
+      "pos": "n.",
+      "en": "pocket",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 口袋 like coat pocket.",
+      "usage": "Most Chinese speakers 口袋.",
+      "example": {
+        "zh": "放到口袋里的。",
+        "pinyin": "Fàng dào kǒudai li de.",
+        "en": "Put it in the pocket."
+      }
+    },
+    {
+      "zh": "丢三落四",
+      "pinyin": "diūsān-làsì",
+      "pos": "v.",
+      "en": "to be always losing/forgetting things",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 丢三落四 like being forgetful lately.",
+      "usage": "Most Chinese speakers 丢三落四. Related 丢/落.",
+      "example": {
+        "zh": "你最近总是丢三落四的。",
+        "pinyin": "Nǐ zuìjìn zǒngshì diūsān-làsì de.",
+        "en": "You’ve been so forgetful lately."
+      }
+    },
+    {
+      "zh": "丢",
+      "pinyin": "diū",
+      "pos": "v.",
+      "en": "to lose",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 丢 like losing things.",
+      "usage": "Most Chinese speakers 丢.",
+      "example": {
+        "zh": "丢三落四。",
+        "pinyin": "Diūsān-làsì.",
+        "en": "Always losing things."
+      }
+    },
+    {
+      "zh": "落",
+      "pinyin": "là",
+      "pos": "v.",
+      "en": "to be missing; to forget to bring",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 落 like leaving something behind.",
+      "usage": "Most Chinese speakers 落下.",
+      "example": {
+        "zh": "丢三落四。",
+        "pinyin": "Diūsān-làsì.",
+        "en": "Always losing things."
+      }
+    },
+    {
+      "zh": "可",
+      "pinyin": "kě",
+      "pos": "adv.",
+      "en": "used for emphasis",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 可 like emphatic 可是个球迷.",
+      "usage": "Most Chinese speakers 可+是.",
+      "example": {
+        "zh": "我可是个球迷。",
+        "pinyin": "Wǒ kě shì ge qiúmí.",
+        "en": "I really am a football fan."
+      }
+    },
+    {
+      "zh": "球迷",
+      "pinyin": "qiúmí",
+      "pos": "n.",
+      "en": "(ball game) fan",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 球迷 like football fan.",
+      "usage": "Most Chinese speakers 球迷.",
+      "example": {
+        "zh": "我可是个球迷。",
+        "pinyin": "Wǒ kě shì ge qiúmí.",
+        "en": "I really am a football fan."
+      }
+    },
+    {
+      "zh": "程度",
+      "pinyin": "chéngdù",
+      "pos": "n.",
+      "en": "extent; degree",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 程度 like how crazy a fan — 迷到什么程度.",
+      "usage": "Most Chinese speakers 程度.",
+      "example": {
+        "zh": "迷到什么程度？",
+        "pinyin": "Mí dào shénme chéngdù?",
+        "en": "Crazy to what degree?"
+      }
+    },
+    {
+      "zh": "为了",
+      "pinyin": "wèile",
+      "pos": "prep.",
+      "en": "for; in order to",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 为了 like for watching matches.",
+      "usage": "Most Chinese speakers 为了.",
+      "example": {
+        "zh": "为了看球，饭我可以不吃。",
+        "pinyin": "Wèile kàn qiú, fàn wǒ kěyǐ bù chī.",
+        "en": "For football I can skip meals."
+      }
+    },
+    {
+      "zh": "正常",
+      "pinyin": "zhèngcháng",
+      "pos": "adj.",
+      "en": "normal; usual; regular",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 正常 like fans seeming abnormal.",
+      "usage": "Most Chinese speakers 正常.",
+      "example": {
+        "zh": "都有点儿不正常。",
+        "pinyin": "Dōu yǒudiǎnr bù zhèngcháng.",
+        "en": "All a bit abnormal."
+      }
+    },
+    {
+      "zh": "承认",
+      "pinyin": "chéngrèn",
+      "pos": "v.",
+      "en": "to admit",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 承认 like admitting fan craziness.",
+      "usage": "Most Chinese speakers 承认.",
+      "example": {
+        "zh": "我也承认。",
+        "pinyin": "Wǒ yě chéngrèn.",
+        "en": "I admit it too."
+      }
+    },
+    {
+      "zh": "发狂",
+      "pinyin": "fā kuáng",
+      "pos": "v.",
+      "en": "to go mad; to be crazy",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 发狂 like crazy fan level.",
+      "usage": "Most Chinese speakers 发狂.",
+      "example": {
+        "zh": "迷到了发狂的程度。",
+        "pinyin": "Mí dào le fākuáng de chéngdù.",
+        "en": "Crazy to the point of madness."
+      }
+    },
+    {
+      "zh": "锦标赛",
+      "pinyin": "jǐnbiāosài",
+      "pos": "n.",
+      "en": "tournament",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 锦标赛 like Euro tournament.",
+      "usage": "Most Chinese speakers 锦标赛.",
+      "example": {
+        "zh": "欧锦赛期间。",
+        "pinyin": "Ōu Jǐnbiāosài qījiān.",
+        "en": "During the European Championship."
+      }
+    },
+    {
+      "zh": "期间",
+      "pinyin": "qījiān",
+      "pos": "n.",
+      "en": "period",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 期间 like during the tournament.",
+      "usage": "Most Chinese speakers …期间.",
+      "example": {
+        "zh": "欧锦赛期间。",
+        "pinyin": "Ōu Jǐnbiāosài qījiān.",
+        "en": "During the European Championship."
+      }
+    },
+    {
+      "zh": "像",
+      "pinyin": "xiàng",
+      "pos": "v.",
+      "en": "to look as if; to seem",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 像 like seeming sick.",
+      "usage": "Most Chinese speakers 像….",
+      "example": {
+        "zh": "我像生了病一样。",
+        "pinyin": "Wǒ xiàng shēng le bìng yíyàng.",
+        "en": "I was like I was sick."
+      }
+    },
+    {
+      "zh": "生病",
+      "pinyin": "shēng bìng",
+      "pos": "v.",
+      "en": "to fall ill",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 生病 like falling ill.",
+      "usage": "Most Chinese speakers 生病.",
+      "example": {
+        "zh": "像生了病一样。",
+        "pinyin": "Xiàng shēng le bìng yíyàng.",
+        "en": "Like falling ill."
+      }
+    },
+    {
+      "zh": "白天",
+      "pinyin": "báitiān",
+      "pos": "n.",
+      "en": "day; daytime",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 白天 like wanting to sleep by day.",
+      "usage": "Most Chinese speakers 白天.",
+      "example": {
+        "zh": "白天想睡觉。",
+        "pinyin": "Báitiān xiǎng shuìjiào.",
+        "en": "Want to sleep in the daytime."
+      }
+    },
+    {
+      "zh": "精神",
+      "pinyin": "jīngshen",
+      "pos": "n./adj.",
+      "en": "spirit; vigorous",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 精神 like energetic at night.",
+      "usage": "Most Chinese speakers 有精神.",
+      "example": {
+        "zh": "一到晚上就特别有精神。",
+        "pinyin": "Yí dào wǎnshang jiù tèbié yǒu jīngshen.",
+        "en": "Especially energetic at night."
+      }
+    },
+    {
+      "zh": "贴",
+      "pinyin": "tiē",
+      "pos": "v.",
+      "en": "to paste; to attach; to glue",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 贴 like posting a notice.",
+      "usage": "Most Chinese speakers 贴通知.",
+      "example": {
+        "zh": "在门上贴了一张通知。",
+        "pinyin": "Zài mén shang tiē le yì zhāng tōngzhī.",
+        "en": "Posted a notice on the door."
+      }
+    },
+    {
+      "zh": "通知",
+      "pinyin": "tōngzhī",
+      "pos": "n./v.",
+      "en": "notice; to give notice",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 通知 like the closed notice.",
+      "usage": "Most Chinese speakers 通知.",
+      "example": {
+        "zh": "贴了一张通知——“暂停营业”。",
+        "pinyin": "Tiē le yì zhāng tōngzhī —— “zàntíng yíngyè”.",
+        "en": "Posted a notice — “Temporarily closed.”"
+      }
+    },
+    {
+      "zh": "暂停",
+      "pinyin": "zàntíng",
+      "pos": "v.",
+      "en": "to suspend; to stop for the time being",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 暂停 like temporarily closed.",
+      "usage": "Most Chinese speakers 暂停.",
+      "example": {
+        "zh": "暂停营业。",
+        "pinyin": "Zàntíng yíngyè.",
+        "en": "Temporarily closed for business."
+      }
+    },
+    {
+      "zh": "营业",
+      "pinyin": "yíngyè",
+      "pos": "v.",
+      "en": "to do business",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 营业 like being open for business.",
+      "usage": "Most Chinese speakers 营业.",
+      "example": {
+        "zh": "暂停营业。",
+        "pinyin": "Zàntíng yíngyè.",
+        "en": "Temporarily closed for business."
+      }
+    },
+    {
+      "zh": "算",
+      "pinyin": "suàn",
+      "pos": "v.",
+      "en": "to count as; to reckon",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 算 like 还不算最迷的.",
+      "usage": "Most Chinese speakers 不算.",
+      "example": {
+        "zh": "我还不算最迷的。",
+        "pinyin": "Wǒ hái bú suàn zuì mí de.",
+        "en": "I’m still not the craziest."
+      }
+    },
+    {
+      "zh": "现场",
+      "pinyin": "xiànchǎng",
+      "pos": "n.",
+      "en": "the scene; on-site",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 现场 like live at the World Cup.",
+      "usage": "Most Chinese speakers 现场.",
+      "example": {
+        "zh": "去现场亲眼看看世界杯。",
+        "pinyin": "Qù xiànchǎng qīnyǎn kànkan Shìjièbēi.",
+        "en": "Go see the World Cup live on-site."
+      }
+    },
+    {
+      "zh": "亲眼",
+      "pinyin": "qīnyǎn",
+      "pos": "adv.",
+      "en": "with one's own eyes",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 亲眼 like seeing with own eyes.",
+      "usage": "Most Chinese speakers 亲眼看见.",
+      "example": {
+        "zh": "亲眼看看世界杯。",
+        "pinyin": "Qīnyǎn kànkan Shìjièbēi.",
+        "en": "See the World Cup with one’s own eyes."
+      }
+    },
+    {
+      "zh": "准",
+      "pinyin": "zhǔn",
+      "pos": "v.",
+      "en": "to allow; to permit",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 准 like the boss not allowing leave.",
+      "usage": "Most Chinese speakers 不准.",
+      "example": {
+        "zh": "老板不准。",
+        "pinyin": "Lǎobǎn bù zhǔn.",
+        "en": "The boss wouldn’t allow it."
+      }
+    },
+    {
+      "zh": "辞职",
+      "pinyin": "cí zhí",
+      "pos": "v.",
+      "en": "to resign",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 辞职 like quitting for the World Cup.",
+      "usage": "Most Chinese speakers 辞职.",
+      "example": {
+        "zh": "他就辞职不干了。",
+        "pinyin": "Tā jiù cízhí bù gàn le.",
+        "en": "So he resigned."
+      }
+    },
+    {
+      "zh": "最后",
+      "pinyin": "zuìhòu",
+      "pos": "n.",
+      "en": "final; last",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 最后 like in the end.",
+      "usage": "Most Chinese speakers 最后.",
+      "example": {
+        "zh": "最后去成了吗？",
+        "pinyin": "Zuìhòu qùchéng le ma?",
+        "en": "Did he make it in the end?"
+      }
+    },
+    {
+      "zh": "成",
+      "pinyin": "chéng",
+      "pos": "v.",
+      "en": "to succeed",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 成 like 去成了 — succeeded in going.",
+      "usage": "Most Chinese speakers V+成.",
+      "example": {
+        "zh": "去成了。",
+        "pinyin": "Qùchéng le.",
+        "en": "He made it."
+      }
+    },
+    {
+      "zh": "佩服",
+      "pinyin": "pèifú",
+      "pos": "v.",
+      "en": "to think highly of; to admire",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 佩服 like admiring the friend.",
+      "usage": "Most Chinese speakers 佩服.",
+      "example": {
+        "zh": "我真佩服他。",
+        "pinyin": "Wǒ zhēn pèifú tā.",
+        "en": "I really admire him."
+      }
+    },
+    {
+      "zh": "棒",
+      "pinyin": "bàng",
+      "pos": "adj.",
+      "en": "good; amazing",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 棒 like awesome.",
+      "usage": "Most Chinese speakers 太棒了.",
+      "example": {
+        "zh": "太棒了！",
+        "pinyin": "Tài bàng le!",
+        "en": "Awesome!"
+      }
+    },
+    {
+      "zh": "欧洲",
+      "pinyin": "Ōuzhōu",
+      "pos": "n.",
+      "en": "Europe",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun.",
+      "usage": "专名.",
+      "example": {
+        "zh": "欧锦赛。",
+        "pinyin": "Ōu Jǐnbiāosài.",
+        "en": "European Championship."
+      }
+    },
+    {
+      "zh": "世界杯",
+      "pinyin": "Shìjièbēi",
+      "pos": "n.",
+      "en": "World Cup",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun.",
+      "usage": "专名.",
+      "example": {
+        "zh": "去现场看世界杯。",
+        "pinyin": "Qù xiànchǎng kàn Shìjièbēi.",
+        "en": "Go see the World Cup live."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "我的护照你找到了没有",
+      "headingEn": "Did you find my passport",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "关建平",
+          "zh": "我的护照你找到了没有？",
+          "pinyin": "Wǒ de hùzhào nǐ zhǎodào le méiyǒu?",
+          "en": "Did you find my passport?"
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "没有，我找了半天也没找着。你是不是放在办公室了？",
+          "pinyin": "Méiyǒu, wǒ zhǎo le bàntiān yě méi zhǎozhao. Nǐ shì bu shì fàng zài bàngōngshì le?",
+          "en": "No — looked forever, can’t find it. Did you leave it at the office?"
+        },
+        {
+          "speaker": "关建平",
+          "zh": "护照我从来不往办公室里放。",
+          "pinyin": "Hùzhào wǒ cónglái bù wǎng bàngōngshì li fàng.",
+          "en": "I never put my passport in the office."
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "昨天你办完签证放在什么地方了？",
+          "pinyin": "Zuótiān nǐ bànwán qiānzhèng fàng zài shénme dìfang le?",
+          "en": "Where did you put it after getting the visa yesterday?"
+        },
+        {
+          "speaker": "关建平",
+          "zh": "放在我的手提包儿里了。",
+          "pinyin": "Fàng zài wǒ de shǒutíbāor li le.",
+          "en": "In my handbag."
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "你的包儿呢？",
+          "pinyin": "Nǐ de bāor ne?",
+          "en": "Where’s your bag?"
+        },
+        {
+          "speaker": "关建平",
+          "zh": "我一回到家不是就交给你了吗？",
+          "pinyin": "Wǒ yì huí dào jiā bú shì jiù jiāo gěi nǐ le ma?",
+          "en": "Didn’t I hand it to you as soon as I got home?"
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "对。我再好好儿找找。啊，找到了！",
+          "pinyin": "Duì. Wǒ zài hǎohāor zhǎozhao. A, zhǎodào le!",
+          "en": "Right. I’ll look carefully again. Ah — found it!"
+        },
+        {
+          "speaker": "关建平",
+          "zh": "是在包儿里找到的吗？",
+          "pinyin": "Shì zài bāor li zhǎodào de ma?",
+          "en": "In the bag?"
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "不是，在你的大衣口袋里找到的。",
+          "pinyin": "Bú shì, zài nǐ de dàyī kǒudai li zhǎodào de.",
+          "en": "No — in your overcoat pocket."
+        },
+        {
+          "speaker": "关建平",
+          "zh": "啊，我忘了。是我昨天晚上放到口袋里的。",
+          "pinyin": "A, wǒ wàng le. Shì wǒ zuótiān wǎnshang fàng dào kǒudai li de.",
+          "en": "Ah, I forgot — I put it in the pocket last night."
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "你最近总是丢三落四的。",
+          "pinyin": "Nǐ zuìjìn zǒngshì diūsān-làsì de.",
+          "en": "You’ve been so forgetful lately."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "我是球迷",
+      "headingEn": "I'm a football fan",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "A",
+          "zh": "你喜欢足球吗？",
+          "pinyin": "Nǐ xǐhuan zúqiú ma?",
+          "en": "Do you like football?"
+        },
+        {
+          "speaker": "B",
+          "zh": "一般。你呢？",
+          "pinyin": "Yìbān. Nǐ ne?",
+          "en": "So-so. You?"
+        },
+        {
+          "speaker": "A",
+          "zh": "你还不知道啊，我可是个球迷。",
+          "pinyin": "Nǐ hái bù zhīdào a, wǒ kě shì ge qiúmí.",
+          "en": "You don’t know yet — I’m a real football fan."
+        },
+        {
+          "speaker": "B",
+          "zh": "迷到什么程度？",
+          "pinyin": "Mí dào shénme chéngdù?",
+          "en": "Crazy to what degree?"
+        },
+        {
+          "speaker": "A",
+          "zh": "为了看球，饭我可以不吃，觉我可以不睡，工作我可以不干。",
+          "pinyin": "Wèile kàn qiú, fàn wǒ kěyǐ bù chī, jiào wǒ kěyǐ bù shuì, gōngzuò wǒ kěyǐ bù gàn.",
+          "en": "For matches I can skip meals, sleep, even work."
+        },
+        {
+          "speaker": "B",
+          "zh": "我看球迷一个个都有点儿不正常。",
+          "pinyin": "Wǒ kàn qiúmí yí ge ge dōu yǒudiǎnr bù zhèngcháng.",
+          "en": "I think football fans all seem a bit abnormal."
+        },
+        {
+          "speaker": "A",
+          "zh": "我也承认，有时候迷到了发狂的程度。欧锦赛期间，我像生了病一样。白天想睡觉，一到晚上就特别有精神。",
+          "pinyin": "Wǒ yě chéngrèn, yǒushíhou mí dào le fākuáng de chéngdù. Ōu Jǐnbiāosài qījiān, wǒ xiàng shēng le bìng yíyàng. Báitiān xiǎng shuìjiào, yí dào wǎnshang jiù tèbié yǒu jīngshen.",
+          "en": "I admit it — sometimes crazy mad. During the Euros I was like sick: sleepy by day, wired at night."
+        },
+        {
+          "speaker": "B",
+          "zh": "你白天不工作吗？",
+          "pinyin": "Nǐ báitiān bù gōngzuò ma?",
+          "en": "Don’t you work daytime?"
+        },
+        {
+          "speaker": "A",
+          "zh": "这个商店是我自己开的，我在门上贴了一张通知——“暂停营业”。",
+          "pinyin": "Zhège shāngdiàn shì wǒ zìjǐ kāi de, wǒ zài mén shang tiē le yì zhāng tōngzhī —— “zàntíng yíngyè”.",
+          "en": "I own the shop — posted “Temporarily closed” on the door."
+        },
+        {
+          "speaker": "B",
+          "zh": "你还真是个球迷。",
+          "pinyin": "Nǐ hái zhēn shì ge qiúmí.",
+          "en": "You really are a fan."
+        },
+        {
+          "speaker": "A",
+          "zh": "我还不算最迷的。我有一个朋友，在一家外国公司工作，为了能去现场亲眼看看世界杯，他向老板请假，老板不准，他就辞职不干了。",
+          "pinyin": "Wǒ hái bú suàn zuì mí de. Wǒ yǒu yí ge péngyou, zài yì jiā wàiguó gōngsī gōngzuò, wèile néng qù xiànchǎng qīnyǎn kànkan Shìjièbēi, tā xiàng lǎobǎn qǐngjià, lǎobǎn bù zhǔn, tā jiù cízhí bù gàn le.",
+          "en": "I’m not even the worst. A friend at a foreign firm asked leave for the World Cup live; boss said no — he quit."
+        },
+        {
+          "speaker": "B",
+          "zh": "最后去成了吗？",
+          "pinyin": "Zuìhòu qùchéng le ma?",
+          "en": "Did he make it in the end?"
+        },
+        {
+          "speaker": "A",
+          "zh": "去成了。我真佩服他。能去现场看世界杯，太棒了！",
+          "pinyin": "Qùchéng le. Wǒ zhēn pèifú tā. Néng qù xiànchǎng kàn Shìjièbēi, tài bàng le!",
+          "en": "He did. I really admire him. Seeing the World Cup live — awesome!"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "我找了半天也没找着。",
+      "body": "句中“半天”的意思是说话人觉得时间比较长。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我找了半天也没找着。",
+        "pinyin": "Wǒ zhǎo le bàntiān yě méi zhǎozhao.",
+        "en": "I’ve looked forever and still can’t find it."
+      }
+    },
+    {
+      "title": "我看球迷一个个都有点儿不正常。",
+      "body": "句中“我看”的意思是“我认为”“我想”，表示下文要谈自己的想法。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我看球迷一个个都有点儿不正常。",
+        "pinyin": "Wǒ kàn qiúmí yí ge ge dōu yǒudiǎnr bù zhèngcháng.",
+        "en": "I think football fans all seem a bit abnormal."
+      }
+    },
+    {
+      "title": "主谓谓语句（2）",
+      "body": "主语₁＋谓语₁（主语₂＋谓语₂）可说明/描写主语；名词₁常是谓语₂动词的宾语（护照你找到了没有；饭我可以不吃）。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我的护照你找到了没有？",
+        "pinyin": "Wǒ de hùzhào nǐ zhǎodào le méiyǒu?",
+        "en": "Did you find my passport?"
+      }
+    },
+    {
+      "title": "结果补语（2）：在、着、好、成",
+      "body": "动词＋在（处置到某处）；＋着 zháo（达到目的）；＋好（完成妥当）；＋成（成功）。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "在你的大衣口袋里找到的。",
+        "pinyin": "Zài nǐ de dàyī kǒudai li zhǎodào de.",
+        "en": "Found it in your overcoat pocket."
+      }
+    }
+  ]
+}

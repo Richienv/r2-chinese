@@ -1,0 +1,687 @@
+{
+  "id": "jiaocheng-2-2-01",
+  "book": "2-2",
+  "index": 1,
+  "bookLesson": 13,
+  "titleZh": "我的眼镜儿摔坏了",
+  "titleEn": "I've broken my glasses",
+  "sourcePages": "1-14",
+  "words": [
+    {
+      "zh": "照",
+      "pinyin": "zhào",
+      "pos": "v.",
+      "en": "to take (a photo)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 照 like the word you’ll use when you talk about taking a photo — 照的照片, 照得怎么样.",
+      "usage": "Most Chinese speakers use 照 for taking photos (often 照相 / 照照片). In 课文（一） Mary and Mike judge how the Great Wall shots 照得.",
+      "example": {
+        "zh": "我们在长城照的照片选好了吗？下午去洗吧。",
+        "pinyin": "Wǒmen zài Chángchéng zhào de zhàopiàn xuǎnhǎo le ma? Xiàwǔ qù xǐ ba.",
+        "en": "Have we chosen the photos we took on the Great Wall? Let’s go develop them this afternoon."
+      }
+    },
+    {
+      "zh": "选",
+      "pinyin": "xuǎn",
+      "pos": "v.",
+      "en": "to choose; to select; to pick out",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 选 like the word you’ll use when you pick which photos to keep before developing.",
+      "usage": "Most Chinese speakers 选 among options (选好了吗, 一起选). Here it is choosing Great Wall photos, not electing someone.",
+      "example": {
+        "zh": "还没选呢。咱们一起选吧。",
+        "pinyin": "Hái méi xuǎn ne. Zánmen yìqǐ xuǎn ba.",
+        "en": "We haven’t chosen yet. Let’s choose together."
+      }
+    },
+    {
+      "zh": "洗",
+      "pinyin": "xǐ",
+      "pos": "v.",
+      "en": "to develop (film)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 洗 like the word you’ll use for getting photos developed — 去洗, 照片洗好了 — not washing clothes here.",
+      "usage": "Most Chinese speakers still say 洗照片 for photo developing. This lesson’s sense is the shop job after 选好了.",
+      "example": {
+        "zh": "我们在长城照的照片选好了吗？下午去洗吧。",
+        "pinyin": "Wǒmen zài Chángchéng zhào de zhàopiàn xuǎnhǎo le ma? Xiàwǔ qù xǐ ba.",
+        "en": "Have we chosen the photos we took on the Great Wall? Let’s go develop them this afternoon."
+      }
+    },
+    {
+      "zh": "闭",
+      "pinyin": "bì",
+      "pos": "v.",
+      "en": "to close",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 闭 like the word you’ll use when eyes are shut in a bad photo — 眼睛都闭上了.",
+      "usage": "Most Chinese speakers 闭眼睛 / 闭上 for closing eyes. In 课文（一） the subject looks asleep because the eyes 闭上了.",
+      "example": {
+        "zh": "你再看看这张，眼睛都闭上了，像睡着了一样。",
+        "pinyin": "Nǐ zài kànkan zhè zhāng, yǎnjing dōu bìshàng le, xiàng shuìzháo le yíyàng.",
+        "en": "Look at this one again — the eyes are closed, like they’re asleep."
+      }
+    },
+    {
+      "zh": "虚",
+      "pinyin": "xū",
+      "pos": "adj.",
+      "en": "unclear; blurred",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 虚 like the word you’ll use when a photo is out of focus — 照虚了, 一点儿也不清楚.",
+      "usage": "Most Chinese speakers say a shot 照虚了 for blur. Pair with 清楚 as the opposite in this dialogue.",
+      "example": {
+        "zh": "这张照得也不太好，照虚了，一点儿也不清楚。",
+        "pinyin": "Zhè zhāng zhào de yě bú tài hǎo, zhào xū le, yìdiǎnr yě bù qīngchu.",
+        "en": "This one’s not great either — it’s blurred, not clear at all."
+      }
+    },
+    {
+      "zh": "删",
+      "pinyin": "shān",
+      "pos": "v.",
+      "en": "to delete",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 删 like the word you’ll use when you trash the bad digital shots — 照得不好的都删了吧.",
+      "usage": "Most Chinese speakers 删 files and photos on a computer or phone. Here Mary clears the duds before enlarging the keepers.",
+      "example": {
+        "zh": "照得不好的都删了吧。",
+        "pinyin": "Zhào de bù hǎo de dōu shān le ba.",
+        "en": "Let’s delete all the ones that didn’t come out well."
+      }
+    },
+    {
+      "zh": "油画",
+      "pinyin": "yóuhuà",
+      "pos": "n.",
+      "en": "oil painting",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 油画 like the praise you’ll reach for when a photo looks that polished — 像油画一样.",
+      "usage": "Most Chinese speakers mean a painted oil picture; here it is a simile for how good two shots look.",
+      "example": {
+        "zh": "这两张照得最好，像油画一样。",
+        "pinyin": "Zhè liǎng zhāng zhào de zuì hǎo, xiàng yóuhuà yíyàng.",
+        "en": "These two came out best — like oil paintings."
+      }
+    },
+    {
+      "zh": "放大",
+      "pinyin": "fàngdà",
+      "pos": "v.",
+      "en": "to magnify; to enlarge; to blow up",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 放大 like the word you’ll use when you blow up a print — 放大几张吧, then 放成十寸.",
+      "usage": "Most Chinese speakers 放大 photos or images. After choosing keepers, Mary wants a few enlarged.",
+      "example": {
+        "zh": "放大几张吧。",
+        "pinyin": "Fàngdà jǐ zhāng ba.",
+        "en": "Let’s enlarge a few."
+      }
+    },
+    {
+      "zh": "寸",
+      "pinyin": "cùn",
+      "pos": "m.",
+      "en": "a unit of length (=1/30 meter)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 寸 like the size you’ll name at the photo shop — 十寸的.",
+      "usage": "Most Chinese speakers still use 寸 for photo print sizes (五寸, 六寸, 十寸). Pair with 放成…的.",
+      "example": {
+        "zh": "放成十寸的就行了。",
+        "pinyin": "Fàngchéng shí cùn de jiù xíng le.",
+        "en": "Ten-inch prints will do."
+      }
+    },
+    {
+      "zh": "差(一)点儿",
+      "pinyin": "chà (yì) diǎnr",
+      "pos": "adv.",
+      "en": "nearly; almost",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 差(一)点儿 like the word you’ll use when you almost hit a bad outcome — 差点儿迟到.",
+      "usage": "Most Chinese speakers use 差点儿 / 差一点儿 before a verb for “nearly.” For undesirable events, affirmative and negative often both mean it did not happen (see 注释).",
+      "example": {
+        "zh": "哎呀，差点儿迟到。",
+        "pinyin": "Āiyā, chàdiǎnr chídào.",
+        "en": "Oh no — I was almost late."
+      }
+    },
+    {
+      "zh": "碰",
+      "pinyin": "pèng",
+      "pos": "v.",
+      "en": "to come across; to run into",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 碰 like the word you’ll use when you run into trouble on the road — 又碰上一起交通事故.",
+      "usage": "Most Chinese speakers 碰见 / 碰上 people or incidents. Here 小白 hit a traffic accident in the jam.",
+      "example": {
+        "zh": "一下雪就堵车，又碰上一起交通事故。",
+        "pinyin": "Yí xià xuě jiù dǔchē, yòu pèngshàng yì qǐ jiāotōng shìgù.",
+        "en": "As soon as it snows there’s a jam, and I ran into a traffic accident too."
+      }
+    },
+    {
+      "zh": "起",
+      "pinyin": "qǐ",
+      "pos": "m.",
+      "en": "a measure word for accidents, etc.",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 起 like the measure you’ll use for one accident — 一起交通事故.",
+      "usage": "Most Chinese speakers count accidents and similar events with 起 (一起事故). Not the verb “to rise” in this entry.",
+      "example": {
+        "zh": "又碰上一起交通事故。",
+        "pinyin": "Yòu pèngshàng yì qǐ jiāotōng shìgù.",
+        "en": "And I ran into a traffic accident too."
+      }
+    },
+    {
+      "zh": "事故",
+      "pinyin": "shìgù",
+      "pos": "n.",
+      "en": "accident",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 事故 like the word you’ll use for a traffic crash — 交通事故, 今天的事故.",
+      "usage": "Most Chinese speakers mean an accident/incident (often 交通事故). 课文（二） blames a bike for today’s 事故.",
+      "example": {
+        "zh": "今天的事故就是一辆自行车引起的。",
+        "pinyin": "Jīntiān de shìgù jiù shì yí liàng zìxíngchē yǐnqǐ de.",
+        "en": "Today’s accident was caused by a bicycle."
+      }
+    },
+    {
+      "zh": "整整",
+      "pinyin": "zhěngzhěng",
+      "pos": "adv.",
+      "en": "full; whole",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 整整 like the word you’ll use when stressing a full stretch of time — 整整堵了二十分钟.",
+      "usage": "Most Chinese speakers put 整整 before a quantity to stress “a whole …” (整整一天, 整整二十分钟).",
+      "example": {
+        "zh": "我的车在路上整整堵了二十分钟。",
+        "pinyin": "Wǒ de chē zài lùshang zhěngzhěng dǔ le èrshí fēnzhōng.",
+        "en": "My car was stuck in traffic for a full twenty minutes."
+      }
+    },
+    {
+      "zh": "眼镜(儿)",
+      "pinyin": "yǎnjìngr",
+      "pos": "n.",
+      "en": "glasses",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Book prints 眼镜(儿).",
+      "when": "Remember 眼镜(儿) like the word you’ll use for the pair that fell and broke — 眼镜儿摔坏了.",
+      "usage": "Most Chinese speakers say 眼镜儿 in northern speech; the book lists 眼镜(儿) with pinyin yǎnjìngr. Title and 课文（二） hinge on this word.",
+      "example": {
+        "zh": "我的眼镜儿摔坏了。",
+        "pinyin": "Wǒ de yǎnjìngr shuāihuài le.",
+        "en": "I’ve broken my glasses."
+      }
+    },
+    {
+      "zh": "别提了",
+      "pinyin": "biétí le",
+      "pos": "phrase",
+      "en": "don’t mention it",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 别提了 like the sigh you’ll open with when the story is too annoying to retell — 别提了，今天倒霉得很.",
+      "usage": "Most Chinese speakers use 别提了 to shut down a sore topic with an exclamatory tone (see 注释). No POS printed in the 生词 list.",
+      "example": {
+        "zh": "别提了，今天倒霉得很。",
+        "pinyin": "Bié tí le, jīntiān dǎoméi de hěn.",
+        "en": "Don’t mention it — today is really unlucky."
+      }
+    },
+    {
+      "zh": "倒霉",
+      "pinyin": "dǎo méi",
+      "pos": "adj.",
+      "en": "unlucky",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 倒霉 like the word you’ll use when the whole morning goes wrong — 倒霉得很.",
+      "usage": "Most Chinese speakers say 倒霉 / 真倒霉 for bad luck. Here 小白 stacks lateness, a jam, a fall, and broken glasses.",
+      "example": {
+        "zh": "别提了，今天倒霉得很。",
+        "pinyin": "Bié tí le, jīntiān dǎoméi de hěn.",
+        "en": "Don’t mention it — today is really unlucky."
+      }
+    },
+    {
+      "zh": "摔跤",
+      "pinyin": "shuāi jiāo",
+      "pos": "v.",
+      "en": "to have a fall; to lose one’s balance",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 摔跤 like the word you’ll use when you actually take a tumble — 摔了一跤.",
+      "usage": "Most Chinese speakers say 摔了一跤 for falling down. Related headword 摔 is listed under the same entry.",
+      "example": {
+        "zh": "我刚出门就摔了一跤，眼镜儿也掉在地上摔坏了。",
+        "pinyin": "Wǒ gāng chūmén jiù shuāi le yì jiāo, yǎnjìngr yě diào zài dìshang shuāihuài le.",
+        "en": "I’d just left the house when I took a fall, and my glasses dropped on the ground and broke."
+      }
+    },
+    {
+      "zh": "摔",
+      "pinyin": "shuāi",
+      "pos": "v.",
+      "en": "to fall; to tumble",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 摔 like the verb in 摔坏了 — the glasses fell and broke.",
+      "usage": "Most Chinese speakers use 摔 for falling or causing something to fall/break (摔了一跤, 摔坏). Listed under 摔跤 in the book.",
+      "example": {
+        "zh": "眼镜儿也掉在地上摔坏了。",
+        "pinyin": "Yǎnjìngr yě diào zài dìshang shuāihuài le.",
+        "en": "And the glasses dropped on the ground and broke."
+      }
+    },
+    {
+      "zh": "掉",
+      "pinyin": "diào",
+      "pos": "v.",
+      "en": "to drop",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 掉 like the word you’ll use when something falls off you — 掉在地上.",
+      "usage": "Most Chinese speakers use 掉 for dropping / falling off. Here the glasses 掉在地上 then 摔坏了.",
+      "example": {
+        "zh": "眼镜儿也掉在地上摔坏了。",
+        "pinyin": "Yǎnjìngr yě diào zài dìshang shuāihuài le.",
+        "en": "And the glasses dropped on the ground and broke."
+      }
+    },
+    {
+      "zh": "地上",
+      "pinyin": "dìshang",
+      "pos": "n.",
+      "en": "on the ground",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 地上 like the place the glasses hit — 掉在地上.",
+      "usage": "Most Chinese speakers say 地上 for on the ground/floor. Book pinyin uses neutral-tone shang: dìshang.",
+      "example": {
+        "zh": "眼镜儿也掉在地上摔坏了。",
+        "pinyin": "Yǎnjìngr yě diào zài dìshang shuāihuài le.",
+        "en": "And the glasses dropped on the ground and broke."
+      }
+    },
+    {
+      "zh": "上班",
+      "pinyin": "shàng bān",
+      "pos": "v.",
+      "en": "to go to work",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 上班 like the word you’ll use for the commute — 骑车上班.",
+      "usage": "Most Chinese speakers 上班 for going to work / being on shift. Related 下班 is listed under the same number.",
+      "example": {
+        "zh": "所以，我还是愿意骑车上班。",
+        "pinyin": "Suǒyǐ, wǒ háishi yuànyì qí chē shàngbān.",
+        "en": "So I’d still rather bike to work."
+      }
+    },
+    {
+      "zh": "下班",
+      "pinyin": "xià bān",
+      "pos": "v.",
+      "en": "to get off work",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Listed under 上班 in 生词; example from 选词填空 (pp. 练习).",
+      "when": "Remember 下班 like the word you’ll use when rush hour starts — 一到下班时间.",
+      "usage": "Most Chinese speakers 下班 for getting off work. Pair with 上班 in the 生词 list; the filled exercise line is 一到下班时间路上就堵车。",
+      "example": {
+        "zh": "一到下班时间路上就堵车。",
+        "pinyin": "Yí dào xiàbān shíjiān lùshang jiù dǔchē.",
+        "en": "As soon as it’s time to get off work, the roads jam up."
+      }
+    },
+    {
+      "zh": "保证",
+      "pinyin": "bǎozhèng",
+      "pos": "v.",
+      "en": "to guarantee",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 保证 like the word you’ll use when biking keeps you on time — 能保证时间.",
+      "usage": "Most Chinese speakers 保证 a result or promise. Here cycling 保证时间 versus driving in snow.",
+      "example": {
+        "zh": "骑车能保证时间，还可以锻炼身体。",
+        "pinyin": "Qí chē néng bǎozhèng shíjiān, hái kěyǐ duànliàn shēntǐ.",
+        "en": "Biking can guarantee you’ll make time, and you can exercise too."
+      }
+    },
+    {
+      "zh": "遵守",
+      "pinyin": "zūnshǒu",
+      "pos": "v.",
+      "en": "to abide by",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 遵守 like the word you’ll use for following traffic rules — 遵守交通规则.",
+      "usage": "Most Chinese speakers 遵守 rules and laws (遵守规则, 遵守纪律). 课文（二） blames riders who don’t.",
+      "example": {
+        "zh": "有的人又不遵守交通规则。",
+        "pinyin": "Yǒu de rén yòu bù zūnshǒu jiāotōng guīzé.",
+        "en": "And some people don’t follow the traffic rules."
+      }
+    },
+    {
+      "zh": "规则",
+      "pinyin": "guīzé",
+      "pos": "n.",
+      "en": "rule; regulation",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 规则 like the traffic rules people break — 交通规则.",
+      "usage": "Most Chinese speakers mean rules/regulations. Pair with 遵守 in this lesson.",
+      "example": {
+        "zh": "有的人又不遵守交通规则。",
+        "pinyin": "Yǒu de rén yòu bù zūnshǒu jiāotōng guīzé.",
+        "en": "And some people don’t follow the traffic rules."
+      }
+    },
+    {
+      "zh": "造成",
+      "pinyin": "zàochéng",
+      "pos": "v.",
+      "en": "to cause; to bring about",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 造成 like the word you’ll use when naming what creates the jam — 造成交通拥挤.",
+      "usage": "Most Chinese speakers 造成 a (usually bad) result. Here too many bikes and broken rules 造成 crowding.",
+      "example": {
+        "zh": "也是造成交通拥挤的主要原因之一。",
+        "pinyin": "Yě shì zàochéng jiāotōng yōngjǐ de zhǔyào yuányīn zhī yī.",
+        "en": "It’s also one of the main reasons traffic gets crowded."
+      }
+    },
+    {
+      "zh": "拥挤",
+      "pinyin": "yōngjǐ",
+      "pos": "v./adj.",
+      "en": "to be crowded; crowded",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 拥挤 like the word you’ll use for packed city traffic — 交通拥挤.",
+      "usage": "Most Chinese speakers use 拥挤 for crowded places or traffic. Book POS is 动、形.",
+      "example": {
+        "zh": "也是造成交通拥挤的主要原因之一。",
+        "pinyin": "Yě shì zàochéng jiāotōng yōngjǐ de zhǔyào yuányīn zhī yī.",
+        "en": "It’s also one of the main reasons traffic gets crowded."
+      }
+    },
+    {
+      "zh": "主要",
+      "pinyin": "zhǔyào",
+      "pos": "adj.",
+      "en": "main",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 主要 like the word you’ll use when ranking causes — 主要原因.",
+      "usage": "Most Chinese speakers mark the chief factor with 主要 (主要原因, 主要问题).",
+      "example": {
+        "zh": "也是造成交通拥挤的主要原因之一。",
+        "pinyin": "Yě shì zàochéng jiāotōng yōngjǐ de zhǔyào yuányīn zhī yī.",
+        "en": "It’s also one of the main reasons traffic gets crowded."
+      }
+    },
+    {
+      "zh": "原因",
+      "pinyin": "yuányīn",
+      "pos": "n.",
+      "en": "reason",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 原因 like the word you’ll use when explaining why traffic jams — 主要原因之一.",
+      "usage": "Most Chinese speakers mean reason/cause. Pair with 主要 and 之一 in 课文（二）.",
+      "example": {
+        "zh": "也是造成交通拥挤的主要原因之一。",
+        "pinyin": "Yě shì zàochéng jiāotōng yōngjǐ de zhǔyào yuányīn zhī yī.",
+        "en": "It’s also one of the main reasons traffic gets crowded."
+      }
+    },
+    {
+      "zh": "之一",
+      "pinyin": "zhī yī",
+      "pos": "phrase",
+      "en": "one of",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 之一 like the tag you’ll stick after a noun to mean one among several — 原因之一.",
+      "usage": "Most Chinese speakers put 之一 after a noun phrase (…的主要原因之一). No POS printed in the 生词 list.",
+      "example": {
+        "zh": "也是造成交通拥挤的主要原因之一。",
+        "pinyin": "Yě shì zàochéng jiāotōng yōngjǐ de zhǔyào yuányīn zhī yī.",
+        "en": "It’s also one of the main reasons traffic gets crowded."
+      }
+    },
+    {
+      "zh": "引起",
+      "pinyin": "yǐnqǐ",
+      "pos": "v.",
+      "en": "to cause; to lead to",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 引起 like the word you’ll use when naming what triggered the crash — 自行车引起的.",
+      "usage": "Most Chinese speakers 引起 an event or reaction. Here a bicycle 引起 today’s 事故.",
+      "example": {
+        "zh": "今天的事故就是一辆自行车引起的。",
+        "pinyin": "Jīntiān de shìgù jiù shì yí liàng zìxíngchē yǐnqǐ de.",
+        "en": "Today’s accident was caused by a bicycle."
+      }
+    },
+    {
+      "zh": "赶快",
+      "pinyin": "gǎnkuài",
+      "pos": "adv.",
+      "en": "hurriedly; quickly",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 赶快 like the urgency you’ll use for what the city should do next — 赶快发展地铁.",
+      "usage": "Most Chinese speakers 赶快 + verb for “hurry up and …”. Here it urges faster metro development.",
+      "example": {
+        "zh": "我看最好还是赶快发展地铁。",
+        "pinyin": "Wǒ kàn zuìhǎo háishi gǎnkuài fāzhǎn dìtiě.",
+        "en": "I think the best thing is still to develop the subway quickly."
+      }
+    },
+    {
+      "zh": "发展",
+      "pinyin": "fāzhǎn",
+      "pos": "v.",
+      "en": "to develop",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 发展 like the word you’ll use for expanding the metro system — 发展地铁.",
+      "usage": "Most Chinese speakers 发展 an industry, city, or system. Closing line of 课文（二）: 赶快发展地铁.",
+      "example": {
+        "zh": "我看最好还是赶快发展地铁。",
+        "pinyin": "Wǒ kàn zuìhǎo háishi gǎnkuài fāzhǎn dìtiě.",
+        "en": "I think the best thing is still to develop the subway quickly."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "要洗的照片选好了吗",
+      "headingEn": "Have you chosen the photos to develop?",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "玛丽",
+          "zh": "我们在长城照的照片选好了吗？下午去洗吧。",
+          "pinyin": "Wǒmen zài Chángchéng zhào de zhàopiàn xuǎnhǎo le ma? Xiàwǔ qù xǐ ba.",
+          "en": "Have we chosen the photos we took on the Great Wall? Let’s go develop them this afternoon."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "还没选呢。咱们一起选吧。",
+          "pinyin": "Hái méi xuǎn ne. Zánmen yìqǐ xuǎn ba.",
+          "en": "We haven’t chosen yet. Let’s choose together."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "快放到电脑上看看，照得怎么样。",
+          "pinyin": "Kuài fàng dào diànnǎo shàng kànkan, zhào de zěnmeyàng.",
+          "en": "Quick, put them on the computer and see how they came out."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "这些照得都非常好，张张都很漂亮。",
+          "pinyin": "Zhèxiē zhào de dōu fēicháng hǎo, zhāng zhāng dōu hěn piàoliang.",
+          "en": "These all came out really well — every single one is beautiful."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "这张没照好，人照小了。你再看看这张，眼睛都闭上了，像睡着了一样。",
+          "pinyin": "Zhè zhāng méi zhàohǎo, rén zhào xiǎo le. Nǐ zài kànkan zhè zhāng, yǎnjing dōu bìshàng le, xiàng shuìzháo le yíyàng.",
+          "en": "This one didn’t come out well — the people look too small. Look at this one again: the eyes are closed, like they’re asleep."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "这张怎么样？",
+          "pinyin": "Zhè zhāng zěnmeyàng?",
+          "en": "How about this one?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "不怎么样。",
+          "pinyin": "Bù zěnmeyàng.",
+          "en": "Not so great."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "这张照得也不太好，照虚了，一点儿也不清楚。",
+          "pinyin": "Zhè zhāng zhào de yě bú tài hǎo, zhào xū le, yìdiǎnr yě bù qīngchu.",
+          "en": "This one’s not great either — it’s blurred, not clear at all."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "照得不好的都删了吧。这两张照得最好，像油画一样。放大几张吧。",
+          "pinyin": "Zhào de bù hǎo de dōu shān le ba. Zhè liǎng zhāng zhào de zuì hǎo, xiàng yóuhuà yíyàng. Fàngdà jǐ zhāng ba.",
+          "en": "Let’s delete the ones that didn’t come out well. These two are the best — like oil paintings. Let’s enlarge a few."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "你看放成多大的？",
+          "pinyin": "Nǐ kàn fàngchéng duō dà de?",
+          "en": "What size do you think we should make them?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "放成十寸的就行了。",
+          "pinyin": "Fàngchéng shí cùn de jiù xíng le.",
+          "en": "Ten-inch prints will do."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "我的眼镜儿摔坏了",
+      "headingEn": "I've broken my glasses",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "小白",
+          "zh": "哎呀，差点儿迟到。",
+          "pinyin": "Āiyā, chàdiǎnr chídào.",
+          "en": "Oh no — I was almost late."
+        },
+        {
+          "speaker": "小黄",
+          "zh": "是开车来的吗？",
+          "pinyin": "Shì kāi chē lái de ma?",
+          "en": "Did you drive here?"
+        },
+        {
+          "speaker": "小白",
+          "zh": "是，一下雪就堵车，又碰上一起交通事故，我的车在路上整整堵了二十分钟。",
+          "pinyin": "Shì, yí xià xuě jiù dǔchē, yòu pèngshàng yì qǐ jiāotōng shìgù, wǒ de chē zài lùshang zhěngzhěng dǔ le èrshí fēnzhōng.",
+          "en": "Yes — as soon as it snows there’s a jam, and I ran into a traffic accident too; my car was stuck for a full twenty minutes."
+        },
+        {
+          "speaker": "小黄",
+          "zh": "你的眼镜儿怎么了？",
+          "pinyin": "Nǐ de yǎnjìngr zěnme le?",
+          "en": "What happened to your glasses?"
+        },
+        {
+          "speaker": "小白",
+          "zh": "别提了，今天倒霉得很。我刚出门就摔了一跤，眼镜儿也掉在地上摔坏了。",
+          "pinyin": "Bié tí le, jīntiān dǎoméi de hěn. Wǒ gāng chūmén jiù shuāi le yì jiāo, yǎnjìngr yě diào zài dìshang shuāihuài le.",
+          "en": "Don’t mention it — today is really unlucky. I’d just left the house when I took a fall, and my glasses dropped on the ground and broke."
+        },
+        {
+          "speaker": "小黄",
+          "zh": "你几点从家里出来的？",
+          "pinyin": "Nǐ jǐ diǎn cóng jiāli chūlái de?",
+          "en": "What time did you leave home?"
+        },
+        {
+          "speaker": "小白",
+          "zh": "六点钟就从家里出来了，你看，快八点了才到。",
+          "pinyin": "Liù diǎn zhōng jiù cóng jiāli chūlái le, nǐ kàn, kuài bā diǎn le cái dào.",
+          "en": "I left at six — look, it’s almost eight and I’m only just arriving."
+        },
+        {
+          "speaker": "小黄",
+          "zh": "所以，我还是愿意骑车上班，骑车能保证时间，还可以锻炼身体。",
+          "pinyin": "Suǒyǐ, wǒ háishi yuànyì qí chē shàngbān, qí chē néng bǎozhèng shíjiān, hái kěyǐ duànliàn shēntǐ.",
+          "en": "So I’d still rather bike to work — biking can guarantee you’ll make time, and you can exercise too."
+        },
+        {
+          "speaker": "小白",
+          "zh": "可是，你别忘了，骑车的人太多，有的人又不遵守交通规则，也是造成交通拥挤的主要原因之一。今天的事故就是一辆自行车引起的。",
+          "pinyin": "Kěshì, nǐ bié wàng le, qí chē de rén tài duō, yǒu de rén yòu bù zūnshǒu jiāotōng guīzé, yě shì zàochéng jiāotōng yōngjǐ de zhǔyào yuányīn zhī yī. Jīntiān de shìgù jiù shì yí liàng zìxíngchē yǐnqǐ de.",
+          "en": "But don’t forget — there are too many cyclists, and some don’t follow the traffic rules; that’s also one of the main reasons traffic gets crowded. Today’s accident was caused by a bicycle."
+        },
+        {
+          "speaker": "小黄",
+          "zh": "有汽车的人也一年比一年多，城市交通是一个大问题。我看最好还是赶快发展地铁。",
+          "pinyin": "Yǒu qìchē de rén yě yì nián bǐ yì nián duō, chéngshì jiāotōng shì yí ge dà wèntí. Wǒ kàn zuìhǎo háishi gǎnkuài fāzhǎn dìtiě.",
+          "en": "And there are more and more car owners year by year — city traffic is a big problem. I think the best thing is still to develop the subway quickly."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "差(一)点儿",
+      "body": "副词，在句中作状语。不好的事情：表示几乎发生但没发生，有庆幸语气；后边动词用肯定式或否定式意思相同（都是没发生）。好事：否定式表示最后实现了（庆幸）；肯定式表示最后没实现（惋惜）。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "哎呀，差点儿迟到。",
+        "pinyin": "Āiyā, chàdiǎnr chídào.",
+        "en": "Oh no — I was almost late."
+      }
+    },
+    {
+      "title": "别提了。",
+      "body": "“别提了”的意思是别说了。表示某人或某事非常让人不满或苦恼，使说话人不愿说起，有感叹语气。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "嗨，别提了，昨天又拉肚子了。",
+        "pinyin": "Hāi, bié tí le, zuótiān yòu lā dùzi le.",
+        "en": "Hai, don’t mention it — I had diarrhea again yesterday."
+      }
+    },
+    {
+      "title": "今天倒霉得很。",
+      "body": "副词“很”作补语表示程度高（……得很）。课文里 倒霉得很 强调今天运气极差。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "听说北京的冬天冷得很。",
+        "pinyin": "Tīngshuō Běijīng de dōngtiān lěng de hěn.",
+        "en": "I hear Beijing winters are very cold."
+      }
+    },
+    {
+      "title": "被动意义的表达：被动句",
+      "body": "主语可以是动作发出者（主动句）或接受者（被动句）。强调或说明动作对象怎么样时可用被动句：受事主语 + 动词 + 其他成分（不一定出现“被”）。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我的眼镜儿摔坏了。",
+        "pinyin": "Wǒ de yǎnjìngr shuāihuài le.",
+        "en": "I’ve broken my glasses. / My glasses got broken."
+      }
+    },
+    {
+      "title": "量词重叠",
+      "body": "名量词、动量词都可以重叠，表示“每一 + 量词”。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "这些照片张张照得都很好。",
+        "pinyin": "Zhèxiē zhàopiàn zhāng zhāng zhào de dōu hěn hǎo.",
+        "en": "Every one of these photos came out very well."
+      }
+    },
+    {
+      "title": "一年比一年",
+      "body": "“一年比一年”作状语，说明随着时间推移事物变化程度递进。同类格式还有“一天比一天”。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "有汽车的人一年比一年多。",
+        "pinyin": "Yǒu qìchē de rén yì nián bǐ yì nián duō.",
+        "en": "There are more and more car owners year by year."
+      }
+    }
+  ]
+}

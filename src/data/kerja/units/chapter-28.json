@@ -9,14 +9,14 @@
       "zh": "汇报",
       "pinyin": "huìbào",
       "pos": "v.",
-      "en": "melaporkan kepada",
-      "note": "Book headword pinyin printed as huìbào. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 汇报进展. Hindari: 汇报 bukan menuang semua detail tanpa prioritas. pihak terkait",
-      "when": "Remember 汇报 like the word you’ll use when struktur yang jelas: status, bukti, kendala, dan langkah berikutnya.",
-      "usage": "Most Chinese speakers use 汇报 in this office/HR speaking sense. Book pairing: 汇报进展. 汇报 bukan menuang semua detail tanpa prioritas. pihak terkait",
+      "en": "to report",
+      "note": "Book headword pinyin printed as huìbào. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 汇报进展. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 汇报 like the word you’ll use in HR/office talk for melaporkan kepada.",
+      "usage": "Most Chinese speakers use 汇报 in this workplace sense. Book pairing: 汇报进展. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "我先汇报本周招聘进展。",
         "pinyin": "Wǒxiān huìbào běnzhōu zhāopìn jìnzhǎn.",
-        "en": "Saya laporkan dulu progres rekrutmen minggu ini."
+        "en": "I laporkan dulu progres rekrutmen This week."
       }
     },
     {
@@ -24,9 +24,9 @@
       "pinyin": "shùjù",
       "pos": "v.",
       "en": "data",
-      "note": "Book headword pinyin printed as shùjù. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 查看数据. Hindari: Angka tanpa definisi mudah disalahartikan.",
-      "when": "Remember 数据 like the word you’ll use when sebut periode, sumber, dan ukuran agar angka bisa dinilai.",
-      "usage": "Most Chinese speakers use 数据 in this office/HR speaking sense. Book pairing: 查看数据. Angka tanpa definisi mudah disalahartikan.",
+      "note": "Book headword pinyin printed as shùjù. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 查看数据. Watch-out: Angka tanpa definisi mudah disalahartikan.",
+      "when": "Remember 数据 like the word you’ll use in HR/office talk for data.",
+      "usage": "Most Chinese speakers use 数据 in this workplace sense. Book pairing: 查看数据. Watch-out: Angka tanpa definisi mudah disalahartikan.",
       "example": {
         "zh": "先看过去三个月的数据，再讨论调整。",
         "pinyin": "Xiānkàn guòqù sāngè yuè de shùjù, zài tǎolùn tiáozhěng.",
@@ -37,28 +37,28 @@
       "zh": "结果",
       "pinyin": "jiéguǒ",
       "pos": "n./conj.",
-      "en": "hasil",
-      "note": "Book headword pinyin printed as jiéguǒ. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 最终结果. Hindari: 目标 adalah sasaran; 结果 adalah yang terjadi.",
-      "when": "Remember 结果 like the word you’ll use when gunakan untuk apa yang benar-benar terjadi, bukan prediksi.",
-      "usage": "Most Chinese speakers use 结果 in this office/HR speaking sense. Book pairing: 最终结果. 目标 adalah sasaran; 结果 adalah yang terjadi.",
+      "en": "result",
+      "note": "Book headword pinyin printed as jiéguǒ. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 最终结果. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 结果 like the word you’ll use in HR/office talk for hasil.",
+      "usage": "Most Chinese speakers use 结果 in this workplace sense. Book pairing: 最终结果. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "面试的最终结果还没有确定。",
         "pinyin": "Miànshì de zuìzhōng jiéguǒ hái méiyǒu quèdìng.",
-        "en": "Hasil akhir wawancara belum ditetapkan."
+        "en": "The final interview result is not decided yet."
       }
     },
     {
       "zh": "原因",
       "pinyin": "yuányīn",
       "pos": "v.",
-      "en": "penyebab atau",
-      "note": "Book headword pinyin printed as yuányīn. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 分析原因. Hindari: Jangan menyatakan dugaan sebagai sebab pasti. alasan usulan kemudian / lanjutan",
-      "when": "Remember 原因 like the word you’ll use when bedakan sebab yang sudah terbukti dari dugaan sementara.",
-      "usage": "Most Chinese speakers use 原因 in this office/HR speaking sense. Book pairing: 分析原因. Jangan menyatakan dugaan sebagai sebab pasti. alasan usulan kemudian / lanjutan",
+      "en": "cause; reason",
+      "note": "Book headword pinyin printed as yuányīn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 分析原因. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 原因 like the word you’ll use in HR/office talk for penyebab atau.",
+      "usage": "Most Chinese speakers use 原因 in this workplace sense. Book pairing: 分析原因. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "我们还需要分析离职率上升的原因。",
         "pinyin": "Wǒmen hái xūyào fēnxī lízhí lǜ shàngshēng de yuányīn.",
-        "en": "Kita masih perlu menganalisis penyebab kenaikan tingkat keluar karyawan."
+        "en": "We still need to look at why the turnover rate went up."
       }
     },
     {
@@ -66,91 +66,91 @@
       "pinyin": "qūshì",
       "pos": "v.",
       "en": "pola perubahan",
-      "note": "Book headword pinyin printed as qūshì. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 变化趋势. Hindari: Satu minggu saja jarang cukup untuk menyebut tren.",
-      "when": "Remember 趋势 like the word you’ll use when pakai untuk arah perubahan sepanjang waktu, bukan satu titik data.",
-      "usage": "Most Chinese speakers use 趋势 in this office/HR speaking sense. Book pairing: 变化趋势. Satu minggu saja jarang cukup untuk menyebut tren.",
+      "note": "Book headword pinyin printed as qūshì. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 变化趋势. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 趋势 like the word you’ll use in HR/office talk for pola perubahan.",
+      "usage": "Most Chinese speakers use 趋势 in this workplace sense. Book pairing: 变化趋势. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "从这几周的数据看，趋势正在改善。",
         "pinyin": "Cóng zhè jǐzhōu de shùjù kàn, qūshì zhèngzài gǎishàn.",
-        "en": "Dari data beberapa minggu ini, trennya sedang membaik."
+        "en": "from data beberapa This week, trennya sedang membaik."
       }
     },
     {
       "zh": "建议",
       "pinyin": "jiànyì",
       "pos": "v.",
-      "en": "rekomendasi",
-      "note": "Book headword pinyin printed as jiànyì. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 提出建议. Hindari: 建议 bukan keputusan final.",
-      "when": "Remember 建议 like the word you’ll use when sampaikan tindakan spesifik dan alasan yang mendukungnya.",
-      "usage": "Most Chinese speakers use 建议 in this office/HR speaking sense. Book pairing: 提出建议. 建议 bukan keputusan final.",
+      "en": "suggestion",
+      "note": "Book headword pinyin printed as jiànyì. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 提出建议. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 建议 like the word you’ll use in HR/office talk for rekomendasi.",
+      "usage": "Most Chinese speakers use 建议 in this workplace sense. Book pairing: 提出建议. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "我的建议是先试行两周，再看反馈。",
         "pinyin": "Wǒ de jiànyì shì xiān shìxíng liǎngzhōu, zài kàn fǎnkuì.",
-        "en": "Saran saya: uji coba dua minggu dulu, lalu lihat umpan balik."
+        "en": "Saran I: uji coba dua minggu dulu, then lihat umpan balik."
       }
     },
     {
       "zh": "方案",
       "pinyin": "fāng'àn",
       "pos": "v.",
-      "en": "rencana atau opsi",
-      "note": "Book headword pinyin printed as fāng'àn. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 比较方案. Hindari: 方案 bukan hasil yang sudah tercapai. solusi",
-      "when": "Remember 方案 like the word you’ll use when berguna ketika membandingkan langkah, biaya, dan dampak..",
-      "usage": "Most Chinese speakers use 方案 in this office/HR speaking sense. Book pairing: 比较方案. 方案 bukan hasil yang sudah tercapai. solusi",
+      "en": "plan; option",
+      "note": "Book headword pinyin printed as fāng'àn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 比较方案. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 方案 like the word you’ll use in HR/office talk for rencana atau opsi.",
+      "usage": "Most Chinese speakers use 方案 in this workplace sense. Book pairing: 比较方案. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "我们准备了两个方案供经理选择。",
         "pinyin": "Wǒmen zhǔnbèi le liǎnggè fāngàn gōng jīnglǐ xuǎnzé.",
-        "en": "Kami menyiapkan dua opsi untuk dipilih manajer."
+        "en": "We prepared two options for the manager to choose from."
       }
     },
     {
       "zh": "风险",
       "pinyin": "fēngxiǎn",
       "pos": "v.",
-      "en": "risiko",
-      "note": "Book headword pinyin printed as fēngxiǎn. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 识别风险. Hindari: Risiko adalah kemungkinan, bukan kepastian. usulan kemudian / lanjutan",
-      "when": "Remember 风险 like the word you’ll use when jelaskan kemungkinan, dampak, dan cara menanganinya..",
-      "usage": "Most Chinese speakers use 风险 in this office/HR speaking sense. Book pairing: 识别风险. Risiko adalah kemungkinan, bukan kepastian. usulan kemudian / lanjutan",
+      "en": "risk",
+      "note": "Book headword pinyin printed as fēngxiǎn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 识别风险. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 风险 like the word you’ll use in HR/office talk for risiko.",
+      "usage": "Most Chinese speakers use 风险 in this workplace sense. Book pairing: 识别风险. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "如果本周不补人，排班会有风险。",
         "pinyin": "Rúguǒ běnzhōu bùbǔrén, páibān huì yǒu fēngxiǎn.",
-        "en": "Kalau minggu ini belum ada tambahan orang, jadwal kerja akan berisiko."
+        "en": "If we do not add people this week, the schedule will be at risk."
       }
     },
     {
       "zh": "决策",
       "pinyin": "juécè",
       "pos": "v.",
-      "en": "keputusan strategis",
-      "note": "Book headword pinyin printed as juécè. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 做出决策. Hindari: Usulan tim belum tentu keputusan resmi. atau formal",
-      "when": "Remember 决策 like the word you’ll use when gunakan ketika otoritas dan dasar keputusan jelas..",
-      "usage": "Most Chinese speakers use 决策 in this office/HR speaking sense. Book pairing: 做出决策. Usulan tim belum tentu keputusan resmi. atau formal",
+      "en": "decision",
+      "note": "Book headword pinyin printed as juécè. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 做出决策. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 决策 like the word you’ll use in HR/office talk for keputusan strategis.",
+      "usage": "Most Chinese speakers use 决策 in this workplace sense. Book pairing: 做出决策. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "请在看完数据后再做出决策。",
         "pinyin": "Qǐng zài kàn wán shùjù hòu zài zuòchū juécè.",
-        "en": "Mohon putuskan setelah melihat datanya."
+        "en": "Please decide after you have looked at the data."
       }
     },
     {
       "zh": "结论",
       "pinyin": "jiélùn",
       "pos": "v.",
-      "en": "kesimpulan",
-      "note": "Book headword pinyin printed as jiélùn. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 得出结论. Hindari: 结论 harus sesuai bukti yang dipaparkan. Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
-      "when": "Remember 结论 like the word you’ll use when tutup laporan dengan jawaban singkat atas pertanyaan utama.",
-      "usage": "Most Chinese speakers use 结论 in this office/HR speaking sense. Book pairing: 得出结论. 结论 harus sesuai bukti yang dipaparkan. Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
+      "en": "conclusion",
+      "note": "Book headword pinyin printed as jiélùn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 得出结论. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 结论 like the word you’ll use in HR/office talk for kesimpulan.",
+      "usage": "Most Chinese speakers use 结论 in this workplace sense. Book pairing: 得出结论. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "目前的结论是先优化流程，不急着扩招。",
         "pinyin": "Mùqián de jiélùn shì xiān yōuhuà liúchéng, bùjí zhe kuòzhāo.",
-        "en": "Kesimpulan saat ini: optimalkan proses dulu, belum perlu buru-buru menambah"
+        "en": "The conclusion for now is to improve the process first, and not rush to hire more people."
       }
     }
   ],
   "dialogues": [],
   "notes": [
     {
-      "title": "Module aim — Laporan dan keputusan: fakta dulu, usulan kemudian",
-      "body": "MODUL 10 / HR (book pages 82-84). Indonesian title: Laporan dan keputusan: fakta dulu, usulan kemudian."
+      "title": "Module aim — Reports and decisions: facts first, then a proposal",
+      "body": "Module 10 / HR (book pages 82-84). The book’s own title: Laporan dan keputusan: fakta dulu, usulan kemudian."
     },
     {
       "title": "Latihan 90 detik",

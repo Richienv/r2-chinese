@@ -1,0 +1,706 @@
+{
+  "id": "jiaocheng-2-1-03",
+  "book": "2-1",
+  "index": 3,
+  "bookLesson": 3,
+  "titleZh": "我吃了早饭就来了",
+  "titleEn": "I came right after breakfast",
+  "sourcePages": "35-50",
+  "words": [
+    {
+      "zh": "套",
+      "pinyin": "tào",
+      "pos": "m.",
+      "en": "(a measure word for series or sets of things) set; suite",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 套 like the apartment measure — 几套房子, 一套.",
+      "usage": "Most Chinese speakers count apartments/suits as 套. 课文 is house-hunting.",
+      "example": {
+        "zh": "上次您看了几套房子？",
+        "pinyin": "Shàng cì nín kàn le jǐ tào fángzi?",
+        "en": "How many apartments did you see last time?"
+      }
+    },
+    {
+      "zh": "房子",
+      "pinyin": "fángzi",
+      "pos": "n.",
+      "en": "house; apartment",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 房子 like the place to rent — 看房子, 租房子.",
+      "usage": "Most Chinese speakers mean a house or flat. Here: rental apartments.",
+      "example": {
+        "zh": "我再带您去看几套吧。",
+        "pinyin": "Wǒ zài dài nín qù kàn jǐ tào ba.",
+        "en": "Let me take you to see a few more."
+      }
+    },
+    {
+      "zh": "满意",
+      "pinyin": "mǎnyì",
+      "pos": "adj.",
+      "en": "satisfied",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 满意 like the verdict after viewing — 都不太满意.",
+      "usage": "Most Chinese speakers 满意 / 不满意 with a choice. 要是你也满意，咱们就租了.",
+      "example": {
+        "zh": "看了三套，都不太满意。",
+        "pinyin": "Kàn le sān tào, dōu bú tài mǎnyì.",
+        "en": "I saw three — none were very satisfactory."
+      }
+    },
+    {
+      "zh": "有的",
+      "pinyin": "yǒude",
+      "pos": "pron.",
+      "en": "some; part of a group of people or things",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 有的 like ‘some (of them)’ — 有的太小，有的…….",
+      "usage": "Most Chinese speakers pair 有的…有的… for some…others….",
+      "example": {
+        "zh": "有的太小，有的周围环境太乱。",
+        "pinyin": "Yǒude tài xiǎo, yǒude zhōuwéi huánjìng tài luàn.",
+        "en": "Some are too small; some have chaotic surroundings."
+      }
+    },
+    {
+      "zh": "周围",
+      "pinyin": "zhōuwéi",
+      "pos": "n.",
+      "en": "surrounding area",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 周围 like the area around the flat — 周围环境.",
+      "usage": "Most Chinese speakers describe 周围环境 for neighborhood quality.",
+      "example": {
+        "zh": "周围环境怎么样？",
+        "pinyin": "Zhōuwéi huánjìng zěnmeyàng?",
+        "en": "How’s the surrounding environment?"
+      }
+    },
+    {
+      "zh": "环境",
+      "pinyin": "huánjìng",
+      "pos": "n.",
+      "en": "environment; surroundings",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 环境 like neighborhood feel — 环境特别好.",
+      "usage": "Most Chinese speakers judge housing by 环境. Paired with 周围.",
+      "example": {
+        "zh": "环境特别好。",
+        "pinyin": "Huánjìng tèbié hǎo.",
+        "en": "The environment is especially good."
+      }
+    },
+    {
+      "zh": "乱",
+      "pinyin": "luàn",
+      "pos": "adj.",
+      "en": "disorderly; in chaos",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 乱 like messy surroundings — 环境太乱.",
+      "usage": "Most Chinese speakers mean disorderly/chaotic. Here: noisy messy area.",
+      "example": {
+        "zh": "有的周围环境太乱。",
+        "pinyin": "Yǒude zhōuwéi huánjìng tài luàn.",
+        "en": "Some have chaotic surroundings."
+      }
+    },
+    {
+      "zh": "厨房",
+      "pinyin": "chúfáng",
+      "pos": "n.",
+      "en": "kitchen",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 厨房 like one room that is 还可以.",
+      "usage": "Most Chinese speakers mean kitchen. Compared with 客厅面积.",
+      "example": {
+        "zh": "厨房、卧室还可以，但是客厅面积小了点儿。",
+        "pinyin": "Chúfáng, wòshì hái kěyǐ, dànshì kètīng miànjī xiǎo le diǎnr.",
+        "en": "The kitchen and bedroom are okay, but the living room is a bit small."
+      }
+    },
+    {
+      "zh": "卧室",
+      "pinyin": "wòshì",
+      "pos": "n.",
+      "en": "bedroom",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 卧室 like the bedroom that is 还可以.",
+      "usage": "Most Chinese speakers mean bedroom in apartment talk.",
+      "example": {
+        "zh": "厨房、卧室还可以。",
+        "pinyin": "Chúfáng, wòshì hái kěyǐ.",
+        "en": "The kitchen and bedroom are okay."
+      }
+    },
+    {
+      "zh": "客厅",
+      "pinyin": "kètīng",
+      "pos": "n.",
+      "en": "living room",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 客厅 like the room that’s too small — 客厅面积.",
+      "usage": "Most Chinese speakers mean living room. Size measured in 平米.",
+      "example": {
+        "zh": "客厅面积小了点儿。",
+        "pinyin": "Kètīng miànjī xiǎo le diǎnr.",
+        "en": "The living room is a bit small."
+      }
+    },
+    {
+      "zh": "面积",
+      "pinyin": "miànjī",
+      "pos": "n.",
+      "en": "area; floor space",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 面积 like floor area — 客厅面积, 30多平米.",
+      "usage": "Most Chinese speakers quote apartment size as 面积.",
+      "example": {
+        "zh": "楼上18层有一套，客厅30多平（方）米。",
+        "pinyin": "Lóushàng shíbā céng yǒu yí tào, kètīng sānshí duō píng(fāng)mǐ.",
+        "en": "There’s one on the 18th floor — living room over 30 square meters."
+      }
+    },
+    {
+      "zh": "层",
+      "pinyin": "céng",
+      "pos": "m.",
+      "en": "storey; floor",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 层 like floor number — 18层.",
+      "usage": "Most Chinese speakers count floors with 层.",
+      "example": {
+        "zh": "楼上18层有一套。",
+        "pinyin": "Lóushàng shíbā céng yǒu yí tào.",
+        "en": "There’s one on the 18th floor upstairs."
+      }
+    },
+    {
+      "zh": "平（方）米",
+      "pinyin": "píng(fāng)mǐ",
+      "pos": "m.",
+      "en": "square meter",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 平（方）米 like the area unit — 30多平米.",
+      "usage": "Most Chinese speakers say 平米 / 平方米 for floor area.",
+      "example": {
+        "zh": "客厅30多平（方）米。",
+        "pinyin": "Kètīng sānshí duō píng(fāng)mǐ.",
+        "en": "The living room is over 30 square meters."
+      }
+    },
+    {
+      "zh": "上去",
+      "pinyin": "shàngqu",
+      "pos": "v.",
+      "en": "to go up",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 上去 like going upstairs to see — 咱们上去看看吧.",
+      "usage": "Most Chinese speakers 上去 for going up. Directional complement.",
+      "example": {
+        "zh": "咱们上去看看吧。",
+        "pinyin": "Zánmen shàngqu kànkan ba.",
+        "en": "Let’s go up and take a look."
+      }
+    },
+    {
+      "zh": "阳光",
+      "pinyin": "yángguāng",
+      "pos": "n.",
+      "en": "sunshine",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 阳光 like daylight in the flat — 上下午都有阳光.",
+      "usage": "Most Chinese speakers care about 阳光 when renting. 注释 on 还是 choice.",
+      "example": {
+        "zh": "我还是想要上下午都有阳光的。",
+        "pinyin": "Wǒ háishi xiǎng yào shàngxiàwǔ dōu yǒu yángguāng de.",
+        "en": "I’d still rather have one with sun morning and afternoon."
+      }
+    },
+    {
+      "zh": "还是",
+      "pinyin": "háishi",
+      "pos": "adv.",
+      "en": "had better",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 还是 like the choice after comparing — 我还是想要….",
+      "usage": "Most Chinese speakers use 还是 for ‘better to… / still prefer…’ after weighing options (见注释).",
+      "example": {
+        "zh": "我还是想要上下午都有阳光的。",
+        "pinyin": "Wǒ háishi xiǎng yào shàngxiàwǔ dōu yǒu yángguāng de.",
+        "en": "I’d still rather have one with sun morning and afternoon."
+      }
+    },
+    {
+      "zh": "妻子",
+      "pinyin": "qīzi",
+      "pos": "n.",
+      "en": "wife",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 妻子 like 小张’s wife in 课文（二）.",
+      "usage": "Most Chinese speakers mean wife (more formal than 老婆).",
+      "example": {
+        "zh": "怎么现在才下班？",
+        "pinyin": "Zěnme xiànzài cái xiàbān?",
+        "en": "How come you’re only getting off work now?"
+      }
+    },
+    {
+      "zh": "堵车",
+      "pinyin": "dǔ chē",
+      "pos": "v.",
+      "en": "traffic jam; traffic congestion",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 堵车 like the jam that made her late — 路上堵车堵得厉害.",
+      "usage": "Most Chinese speakers 堵车 for traffic jams. Book prints spaced dǔ chē.",
+      "example": {
+        "zh": "路上堵车堵得厉害。",
+        "pinyin": "Lùshang dǔchē dǔ de lìhai.",
+        "en": "The traffic jam on the way was terrible."
+      }
+    },
+    {
+      "zh": "赶",
+      "pinyin": "gǎn",
+      "pos": "v.",
+      "en": "to make a dash for; to hurry",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 赶 like rushing home — 就往回赶.",
+      "usage": "Most Chinese speakers 赶回去 / 往回赶 when rushing.",
+      "example": {
+        "zh": "我下了班就往回赶，到现在才到家。",
+        "pinyin": "Wǒ xià le bān jiù wǎng huí gǎn, dào xiànzài cái dào jiā.",
+        "en": "I headed home as soon as I got off — only just arriving now."
+      }
+    },
+    {
+      "zh": "才",
+      "pinyin": "cái",
+      "pos": "adv.",
+      "en": "just",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 才 like late/only then — 怎么现在才下班, 才到家 (grammar vs 就).",
+      "usage": "Most Chinese speakers use 才 for lateness or ‘only then.’ Contrast with 就.",
+      "example": {
+        "zh": "怎么现在才下班？",
+        "pinyin": "Zěnme xiànzài cái xiàbān?",
+        "en": "How come you’re only getting off work now?"
+      }
+    },
+    {
+      "zh": "要是",
+      "pinyin": "yàoshi",
+      "pos": "conj.",
+      "en": "if; in case",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 要是 like if — 要是你也满意，咱们就租了.",
+      "usage": "Most Chinese speakers use 要是……就…… for hypotheticals (语法).",
+      "example": {
+        "zh": "要是你也满意，咱们就租了。",
+        "pinyin": "Yàoshi nǐ yě mǎnyì, zánmen jiù zū le.",
+        "en": "If you’re happy with it too, we’ll rent it."
+      }
+    },
+    {
+      "zh": "租",
+      "pinyin": "zū",
+      "pos": "v.",
+      "en": "to rent",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 租 like signing the lease — 咱们就租了.",
+      "usage": "Most Chinese speakers 租房子. Related 房租.",
+      "example": {
+        "zh": "要是你也满意，咱们就租了。",
+        "pinyin": "Yàoshi nǐ yě mǎnyì, zánmen jiù zū le.",
+        "en": "If you’re happy with it too, we’ll rent it."
+      }
+    },
+    {
+      "zh": "房租",
+      "pinyin": "fángzū",
+      "pos": "n.",
+      "en": "rent; rental",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 房租 like the monthly price — 房租多少钱？",
+      "usage": "Most Chinese speakers ask 房租 for rent amount.",
+      "example": {
+        "zh": "房租多少钱？",
+        "pinyin": "Fángzū duōshao qián?",
+        "en": "How much is the rent?"
+      }
+    },
+    {
+      "zh": "虽然",
+      "pinyin": "suīrán",
+      "pos": "conj.",
+      "en": "though; although",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 虽然 like conceding cost — 虽然贵了点儿，但是房子真好.",
+      "usage": "Most Chinese speakers use 虽然……但是…… (语法).",
+      "example": {
+        "zh": "虽然贵了点儿，但是房子真好。",
+        "pinyin": "Suīrán guì le diǎnr, dànshì fángzi zhēn hǎo.",
+        "en": "Though it’s a bit expensive, the apartment is really nice."
+      }
+    },
+    {
+      "zh": "真",
+      "pinyin": "zhēn",
+      "pos": "adv./adj.",
+      "en": "really; indeed; true; real",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 真 like emphasis — 房子真好.",
+      "usage": "Most Chinese speakers 真 + adj for strong praise.",
+      "example": {
+        "zh": "虽然贵了点儿，但是房子真好。",
+        "pinyin": "Suīrán guì le diǎnr, dànshì fángzi zhēn hǎo.",
+        "en": "Though it’s a bit expensive, the apartment is really nice."
+      }
+    },
+    {
+      "zh": "条",
+      "pinyin": "tiáo",
+      "pos": "m.",
+      "en": "a measure word for rivers, fish, legs, etc.",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 条 like the river measure — 一条小河.",
+      "usage": "Most Chinese speakers count rivers/roads with 条.",
+      "example": {
+        "zh": "山下边有一条小河。",
+        "pinyin": "Shān xiàbian yǒu yì tiáo xiǎo hé.",
+        "en": "Below the mountain there’s a small river."
+      }
+    },
+    {
+      "zh": "河",
+      "pinyin": "hé",
+      "pos": "n.",
+      "en": "river",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 河 like the river by the park.",
+      "usage": "Most Chinese speakers mean river. 河边是公园.",
+      "example": {
+        "zh": "河边是一个很大的公园。",
+        "pinyin": "Hé biān shì yí ge hěn dà de gōngyuán.",
+        "en": "Beside the river is a big park."
+      }
+    },
+    {
+      "zh": "交通",
+      "pinyin": "jiāotōng",
+      "pos": "n.",
+      "en": "transportation",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 交通 like getting to work — 交通很方便.",
+      "usage": "Most Chinese speakers judge housing by 交通.",
+      "example": {
+        "zh": "交通方便不方便？",
+        "pinyin": "Jiāotōng fāngbiàn bu fāngbiàn?",
+        "en": "Is the transportation convenient?"
+      }
+    },
+    {
+      "zh": "方便",
+      "pinyin": "fāngbiàn",
+      "pos": "adj.",
+      "en": "convenient",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 方便 like easy access — 很方便.",
+      "usage": "Most Chinese speakers 方便 for convenience.",
+      "example": {
+        "zh": "交通很方便。",
+        "pinyin": "Jiāotōng hěn fāngbiàn.",
+        "en": "Transportation is very convenient."
+      }
+    },
+    {
+      "zh": "公共汽车",
+      "pinyin": "gōnggòng qìchē",
+      "pos": "n.",
+      "en": "bus",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 公共汽车 like the bus stop downstairs.",
+      "usage": "Most Chinese speakers say 公共汽车 / 公交. Book prints spaced form.",
+      "example": {
+        "zh": "楼下就有公共汽车站。",
+        "pinyin": "Lóuxià jiù yǒu gōnggòng qìchē zhàn.",
+        "en": "There’s a bus stop right downstairs."
+      }
+    },
+    {
+      "zh": "站",
+      "pinyin": "zhàn",
+      "pos": "n.",
+      "en": "station; stop",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 站 like a stop — 公共汽车站, 地铁站.",
+      "usage": "Most Chinese speakers mean station/stop.",
+      "example": {
+        "zh": "坐车十分钟就到公司了。",
+        "pinyin": "Zuò chē shí fēnzhōng jiù dào gōngsī le.",
+        "en": "Ten minutes by bus and you’re at the company."
+      }
+    },
+    {
+      "zh": "车站",
+      "pinyin": "chēzhàn",
+      "pos": "n.",
+      "en": "(railway) station; (bus) stop",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 车站 like the stop next to the subway.",
+      "usage": "Most Chinese speakers mean bus/train station.",
+      "example": {
+        "zh": "汽车站旁边就是地铁站。",
+        "pinyin": "Qìchēzhàn pángbiān jiù shì dìtiě zhàn.",
+        "en": "Right beside the bus stop is the subway station."
+      }
+    },
+    {
+      "zh": "旁边",
+      "pinyin": "pángbiān",
+      "pos": "n.",
+      "en": "side",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 旁边 like next to — 旁边就是地铁站.",
+      "usage": "Most Chinese speakers locate things 在…旁边.",
+      "example": {
+        "zh": "汽车站旁边就是地铁站。",
+        "pinyin": "Qìchēzhàn pángbiān jiù shì dìtiě zhàn.",
+        "en": "Right beside the bus stop is the subway station."
+      }
+    },
+    {
+      "zh": "地铁",
+      "pinyin": "dìtiě",
+      "pos": "n.",
+      "en": "subway; tube train",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 地铁 like the subway stop nearby.",
+      "usage": "Most Chinese speakers mean metro/subway.",
+      "example": {
+        "zh": "汽车站旁边就是地铁站。",
+        "pinyin": "Qìchēzhàn pángbiān jiù shì dìtiě zhàn.",
+        "en": "Right beside the bus stop is the subway station."
+      }
+    },
+    {
+      "zh": "附近",
+      "pinyin": "fùjìn",
+      "pos": "n.",
+      "en": "nearby; vicinity",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 附近 like nearby amenities — 附近有学校、医院…",
+      "usage": "Most Chinese speakers list what’s 附近.",
+      "example": {
+        "zh": "附近有学校、医院和体育馆。",
+        "pinyin": "Fùjìn yǒu xuéxiào, yīyuàn hé tǐyùguǎn.",
+        "en": "Nearby there are schools, a hospital, and a gymnasium."
+      }
+    },
+    {
+      "zh": "体育馆",
+      "pinyin": "tǐyùguǎn",
+      "pos": "n.",
+      "en": "gymnasium",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 体育馆 like one of the nearby facilities.",
+      "usage": "Most Chinese speakers mean sports hall/gymnasium.",
+      "example": {
+        "zh": "附近有学校、医院和体育馆。",
+        "pinyin": "Fùjìn yǒu xuéxiào, yīyuàn hé tǐyùguǎn.",
+        "en": "Nearby there are schools, a hospital, and a gymnasium."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "我吃了早饭就来了",
+      "headingEn": "I came right after breakfast",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "业务员",
+          "zh": "张先生，这么早！",
+          "pinyin": "Zhāng xiānsheng, zhème zǎo!",
+          "en": "Mr. Zhang — so early!"
+        },
+        {
+          "speaker": "小张",
+          "zh": "是啊。我吃了早饭就来了。",
+          "pinyin": "Shì a. Wǒ chī le zǎofàn jiù lái le.",
+          "en": "Yeah. I came right after breakfast."
+        },
+        {
+          "speaker": "业务员",
+          "zh": "我也是。接了您的电话，八点半就到这儿了。上次您看了几套房子？",
+          "pinyin": "Wǒ yě shì. Jiē le nín de diànhuà, bā diǎn bàn jiù dào zhèr le. Shàng cì nín kàn le jǐ tào fángzi?",
+          "en": "Me too. After your call I was here by 8:30. How many apartments did you see last time?"
+        },
+        {
+          "speaker": "小张",
+          "zh": "看了三套，都不太满意。有的太小，有的周围环境太乱。",
+          "pinyin": "Kàn le sān tào, dōu bú tài mǎnyì. Yǒude tài xiǎo, yǒude zhōuwéi huánjìng tài luàn.",
+          "en": "Three — none were great. Some too small; some with chaotic surroundings."
+        },
+        {
+          "speaker": "业务员",
+          "zh": "我再带您去看几套吧。",
+          "pinyin": "Wǒ zài dài nín qù kàn jǐ tào ba.",
+          "en": "Let me take you to see a few more."
+        },
+        {
+          "speaker": "小张",
+          "zh": "这几套房子，厨房、卧室还可以，但是客厅面积小了点儿。有没有大一点儿的？",
+          "pinyin": "Zhè jǐ tào fángzi, chúfáng, wòshì hái kěyǐ, dànshì kètīng miànjī xiǎo le diǎnr. Yǒu méiyǒu dà yìdiǎnr de?",
+          "en": "These ones — kitchen and bedroom are okay, but the living room is a bit small. Any bigger ones?"
+        },
+        {
+          "speaker": "业务员",
+          "zh": "有，楼上18层有一套，客厅30多平（方）米。咱们上去看看吧。",
+          "pinyin": "Yǒu, lóushàng shíbā céng yǒu yí tào, kètīng sānshí duō píng(fāng)mǐ. Zánmen shàngqu kànkan ba.",
+          "en": "Yes — one on the 18th floor, living room over 30㎡. Let’s go up and look."
+        },
+        {
+          "speaker": "小张",
+          "zh": "这套房子下午就没有阳光了吧？",
+          "pinyin": "Zhè tào fángzi xiàwǔ jiù méiyǒu yángguāng le ba?",
+          "en": "This one won’t have sun in the afternoon, right?"
+        },
+        {
+          "speaker": "业务员",
+          "zh": "是的。",
+          "pinyin": "Shì de.",
+          "en": "That’s right."
+        },
+        {
+          "speaker": "小张",
+          "zh": "我还是想要上下午都有阳光的。",
+          "pinyin": "Wǒ háishi xiǎng yào shàngxiàwǔ dōu yǒu yángguāng de.",
+          "en": "I’d still rather have one with sun morning and afternoon."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "我早就下班了",
+      "headingEn": "I got off work long ago",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "小张",
+          "zh": "怎么现在才下班？",
+          "pinyin": "Zěnme xiànzài cái xiàbān?",
+          "en": "How come you’re only getting off work now?"
+        },
+        {
+          "speaker": "妻子",
+          "zh": "我早就下班了。路上堵车堵得厉害。我下了班就往回赶，到现在才到家。你今天看了几套房子？",
+          "pinyin": "Wǒ zǎo jiù xiàbān le. Lùshang dǔchē dǔ de lìhai. Wǒ xià le bān jiù wǎng huí gǎn, dào xiànzài cái dào jiā. Nǐ jīntiān kàn le jǐ tào fángzi?",
+          "en": "I got off long ago. Terrible jam on the way — I rushed back after work and only just got home. How many apartments did you see today?"
+        },
+        {
+          "speaker": "小张",
+          "zh": "看了七八套。有一套我觉得不错。等你休息的时候，再一起去看看。要是你也满意，咱们就租了。",
+          "pinyin": "Kàn le qī-bā tào. Yǒu yí tào wǒ juéde búcuò. Děng nǐ xiūxi de shíhou, zài yìqǐ qù kànkan. Yàoshi nǐ yě mǎnyì, zánmen jiù zū le.",
+          "en": "Seven or eight. One seemed nice. When you’re free we’ll go look together. If you like it too, we’ll rent it."
+        },
+        {
+          "speaker": "妻子",
+          "zh": "房租多少钱？",
+          "pinyin": "Fángzū duōshao qián?",
+          "en": "How much is the rent?"
+        },
+        {
+          "speaker": "小张",
+          "zh": "一个月五千块。",
+          "pinyin": "Yí ge yuè wǔ qiān kuài.",
+          "en": "Five thousand a month."
+        },
+        {
+          "speaker": "妻子",
+          "zh": "怎么这么贵？",
+          "pinyin": "Zěnme zhème guì?",
+          "en": "Why so expensive?"
+        },
+        {
+          "speaker": "小张",
+          "zh": "虽然贵了点儿，但是房子真好。",
+          "pinyin": "Suīrán guì le diǎnr, dànshì fángzi zhēn hǎo.",
+          "en": "A bit pricey, but the apartment is really nice."
+        },
+        {
+          "speaker": "妻子",
+          "zh": "周围环境怎么样？",
+          "pinyin": "Zhōuwéi huánjìng zěnmeyàng?",
+          "en": "How’s the surrounding environment?"
+        },
+        {
+          "speaker": "小张",
+          "zh": "环境特别好。西边是山，山下边有一条小河，河边是一个很大的公园。周围非常安静。",
+          "pinyin": "Huánjìng tèbié hǎo. Xībian shì shān, shān xiàbian yǒu yì tiáo xiǎo hé, hé biān shì yí ge hěn dà de gōngyuán. Zhōuwéi fēicháng ānjìng.",
+          "en": "Especially good. Mountains to the west, a small river below, a big park by the river. Very quiet around."
+        },
+        {
+          "speaker": "妻子",
+          "zh": "交通方便不方便？",
+          "pinyin": "Jiāotōng fāngbiàn bu fāngbiàn?",
+          "en": "Is transportation convenient?"
+        },
+        {
+          "speaker": "小张",
+          "zh": "交通很方便。楼下就有公共汽车站，坐车十分钟就到公司了。汽车站旁边就是地铁站。附近有学校、医院和体育馆……",
+          "pinyin": "Jiāotōng hěn fāngbiàn. Lóuxià jiù yǒu gōnggòng qìchē zhàn, zuò chē shí fēnzhōng jiù dào gōngsī le. Qìchēzhàn pángbiān jiù shì dìtiě zhàn. Fùjìn yǒu xuéxiào, yīyuàn hé tǐyùguǎn……",
+          "en": "Very convenient. Bus stop downstairs — ten minutes to the company. Subway right beside. Schools, hospital, gym nearby…"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "这几套房子，厨房、卧室还可以，但是客厅面积小了点儿。",
+      "body": "“形容词＋了（一）点儿”指跟某一个标准相比，程度不合适。表示不满意。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "客厅面积小了点儿。",
+        "pinyin": "Kètīng miànjī xiǎo le diǎnr.",
+        "en": "The living room is a bit small."
+      }
+    },
+    {
+      "title": "我还是想要上下午都有阳光的。",
+      "body": "“还是”表示比较后做出选择，有“这样比较好或这么办比较好”的意思。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我还是想要上下午都有阳光的。",
+        "pinyin": "Wǒ háishi xiǎng yào shàngxiàwǔ dōu yǒu yángguāng de.",
+        "en": "I’d still rather have one with sun morning and afternoon."
+      }
+    },
+    {
+      "title": "“就”和“才”",
+      "body": "副词“就”和“才”都可以放在动词前面作状语。“就”可表即将发生，也表早、快、容易、顺利；“才”可表刚刚发生，也表晚、慢、不容易、不顺利。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我吃了早饭就来了。",
+        "pinyin": "Wǒ chī le zǎofàn jiù lái le.",
+        "en": "I came right after breakfast."
+      }
+    },
+    {
+      "title": "要是……就……",
+      "body": "“要是……就……”连接两个分句，表示在假设情况下产生某种结果。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "要是你也满意，咱们就租了。",
+        "pinyin": "Yàoshi nǐ yě mǎnyì, zánmen jiù zū le.",
+        "en": "If you’re happy with it too, we’ll rent it."
+      }
+    },
+    {
+      "title": "虽然……但是……",
+      "body": "“虽然……但是……”连接两个分句，表示转折关系。先肯定“虽然”后的事实，再突出“但是”后的意思。“但是”可以单用。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "虽然贵了点儿，但是房子真好。",
+        "pinyin": "Suīrán guì le diǎnr, dànshì fángzi zhēn hǎo.",
+        "en": "Though it’s a bit expensive, the apartment is really nice."
+      }
+    }
+  ]
+}

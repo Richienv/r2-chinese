@@ -1867,6 +1867,17 @@ button {
   background: #fdeee2;
 }
 
+.word-unknown {
+  border-bottom-style: dashed;
+  border-bottom-color: #e5d8c8;
+}
+
+button.word.teach-hit-tap {
+  all: unset;
+  cursor: pointer;
+  border-bottom: 1.5px dotted currentColor;
+}
+
 /* flip card */
 .flip {
   perspective: 1200px;

@@ -1,0 +1,657 @@
+{
+  "id": "jiaocheng-2-2-06",
+  "book": "2-2",
+  "index": 6,
+  "bookLesson": 18,
+  "titleZh": "请把护照和机票给我",
+  "titleEn": "Please give me your passport and air ticket",
+  "sourcePages": "82-88",
+  "words": [
+    {
+      "zh": "办理",
+      "pinyin": "bànlǐ",
+      "pos": "v.",
+      "en": "to handle; to go through",
+      "note": "Book headword pinyin printed as bànlǐ. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 办理 like the word you’ll use at the airport check-in desk — go through formalities before you fly.",
+      "usage": "Most Chinese speakers pair 办理 with 手续 (办理登机手续). In 课文1, 关建平 tells 夏雨 they will check in and consign the bags first.",
+      "example": {
+        "zh": "我们先去办理登机手续，把行李托运了。",
+        "pinyin": "Wǒmen xiān qù bànlǐ dēngjī shǒuxù, bǎ xíngli tuōyùn le.",
+        "en": "Let’s go handle the boarding formalities first and check the luggage."
+      }
+    },
+    {
+      "zh": "登机",
+      "pinyin": "dēng jī",
+      "pos": "v.",
+      "en": "to board a plane",
+      "note": "Book lists 登机 without a POS mark (verb-object). Headword pinyin printed as dēng jī. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 登机 like the airport step after check-in — boarding the plane, often inside 登机手续 / 登机牌儿.",
+      "usage": "Most Chinese speakers keep 登机 as a set VO: 登机手续, 登机牌. In 课文1 it sits inside 办理登机手续.",
+      "example": {
+        "zh": "我们先去办理登机手续，把行李托运了。",
+        "pinyin": "Wǒmen xiān qù bànlǐ dēngjī shǒuxù, bǎ xíngli tuōyùn le.",
+        "en": "Let’s go handle the boarding formalities first and check the luggage."
+      }
+    },
+    {
+      "zh": "手续",
+      "pinyin": "shǒuxù",
+      "pos": "n.",
+      "en": "procedures; formalities",
+      "note": "Book headword pinyin printed as shǒuxù. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 手续 like the paperwork steps you must 办理 before the airline takes your bags.",
+      "usage": "Most Chinese speakers say 办手续 / 办理……手续. In 课文1 it is specifically 登机手续 at the counter.",
+      "example": {
+        "zh": "我们先去办理登机手续，把行李托运了。",
+        "pinyin": "Wǒmen xiān qù bànlǐ dēngjī shǒuxù, bǎ xíngli tuōyùn le.",
+        "en": "Let’s go handle the boarding formalities first and check the luggage."
+      }
+    },
+    {
+      "zh": "行李",
+      "pinyin": "xíngli",
+      "pos": "n.",
+      "en": "baggage; luggage",
+      "note": "Book headword pinyin printed as xíngli (neutral li). Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 行李 like the bags you 托运 or put in the overhead bin — not a small purse alone.",
+      "usage": "Most Chinese speakers use 行李 for travel bags. 课文1 checks them; later 关建平 says 把手提包放到行李箱里去吧.",
+      "example": {
+        "zh": "我们先去办理登机手续，把行李托运了。",
+        "pinyin": "Wǒmen xiān qù bànlǐ dēngjī shǒuxù, bǎ xíngli tuōyùn le.",
+        "en": "Let’s go handle the boarding formalities first and check the luggage."
+      }
+    },
+    {
+      "zh": "托运",
+      "pinyin": "tuōyùn",
+      "pos": "v.",
+      "en": "to consign for shipment; to check (baggage)",
+      "note": "Book headword pinyin printed as tuōyùn. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 托运 like handing a suitcase to the airline so it rides in the hold, not in the cabin.",
+      "usage": "Most Chinese speakers 托运 行李 / 箱子. In 课文1 the clerk asks which suitcase to check and says 把它放上去吧.",
+      "example": {
+        "zh": "请把护照和机票给我。哪个箱子要托运？把它放上去吧。这是登机牌儿，请拿好。",
+        "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ. Nǎge xiāngzi yào tuōyùn? Bǎ tā fàng shàngqù ba. Zhè shì dēngjīpáir, qǐng ná hǎo.",
+        "en": "Please give me your passport and air ticket. Which suitcase needs to be checked? Put it up there. Here’s the boarding pass — please take it."
+      }
+    },
+    {
+      "zh": "护照",
+      "pinyin": "hùzhào",
+      "pos": "n.",
+      "en": "passport",
+      "note": "Book headword pinyin printed as hùzhào. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 护照 like the ID the check-in clerk asks for with your 机票.",
+      "usage": "Most Chinese speakers hand over 护照 at the counter. Lesson title and 课文1 open on 请把护照和机票给我.",
+      "example": {
+        "zh": "请把护照和机票给我。",
+        "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ.",
+        "en": "Please give me your passport and air ticket."
+      }
+    },
+    {
+      "zh": "机票",
+      "pinyin": "jīpiào",
+      "pos": "n.",
+      "en": "air ticket",
+      "note": "Book headword pinyin printed as jīpiào. Sub-entry 票 listed under it. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 机票 like the flight ticket you show with your passport at check-in.",
+      "usage": "Most Chinese speakers say 机票 for a plane ticket (not 车票). Paired with 护照 in the lesson title and 课文1.",
+      "example": {
+        "zh": "请把护照和机票给我。",
+        "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ.",
+        "en": "Please give me your passport and air ticket."
+      }
+    },
+    {
+      "zh": "票",
+      "pinyin": "piào",
+      "pos": "n.",
+      "en": "ticket",
+      "note": "Book sub-entry under 机票; pinyin printed as piào. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 票 like the general “ticket” morpheme inside 机票, 车票, etc.",
+      "usage": "Most Chinese speakers rarely say bare 票 for a flight — they specify 机票. Learn it here as the bound piece under 机票.",
+      "example": {
+        "zh": "请把护照和机票给我。",
+        "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ.",
+        "en": "Please give me your passport and air ticket."
+      }
+    },
+    {
+      "zh": "登机牌儿",
+      "pinyin": "dēngjīpáir",
+      "pos": "n.",
+      "en": "boarding pass",
+      "note": "Book prints 登机牌(儿); headword pinyin as dēngjīpáir. Kept erhua form matching 课文. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 登机牌儿 like the card the clerk hands you after check-in — 请拿好.",
+      "usage": "Most Chinese speakers say 登机牌 / 登机牌儿. In 课文1: 这是登机牌儿，请拿好.",
+      "example": {
+        "zh": "这是登机牌儿，请拿好。",
+        "pinyin": "Zhè shì dēngjīpáir, qǐng ná hǎo.",
+        "en": "Here’s the boarding pass — please take it."
+      }
+    },
+    {
+      "zh": "装",
+      "pinyin": "zhuāng",
+      "pos": "v.",
+      "en": "to load; to pack; to hold",
+      "note": "Book headword pinyin printed as zhuāng. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 装 like putting something into a pocket, bag, or device — 装的是什么 / 把电池装上.",
+      "usage": "Most Chinese speakers use 装 for packing/holding and for installing (装电池). 课文1 asks what’s in the pocket; later 关建平 把电池装上.",
+      "example": {
+        "zh": "这位女士，你口袋里装的是什么？",
+        "pinyin": "Zhè wèi nǚshì, nǐ kǒudài li zhuāng de shì shénme?",
+        "en": "Ma’am, what do you have in your pocket?"
+      }
+    },
+    {
+      "zh": "掏",
+      "pinyin": "tāo",
+      "pos": "v.",
+      "en": "to draw out; to pull out; to fish out",
+      "note": "Book headword pinyin printed as tāo. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 掏 like digging something out of a pocket at security — 都掏出来.",
+      "usage": "Most Chinese speakers 掏口袋 / 掏出来. Security line in 课文1: 请把口袋里的东西都掏出来.",
+      "example": {
+        "zh": "请把口袋里的东西都掏出来。",
+        "pinyin": "Qǐng bǎ kǒudài li de dōngxi dōu tāo chūlái.",
+        "en": "Please take everything out of your pockets."
+      }
+    },
+    {
+      "zh": "硬币",
+      "pinyin": "yìngbì",
+      "pos": "n.",
+      "en": "coin",
+      "note": "Book headword pinyin printed as yìngbì. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 硬币 like metal coins that set off the security gate with a few keys.",
+      "usage": "Most Chinese speakers contrast 硬币 with 纸币. 夏雨 finds 几把钥匙和两个硬币 in her pocket.",
+      "example": {
+        "zh": "啊，是几把钥匙和两个硬币。",
+        "pinyin": "À, shì jǐ bǎ yàoshi hé liǎng ge yìngbì.",
+        "en": "Ah, it’s a few keys and two coins."
+      }
+    },
+    {
+      "zh": "暗",
+      "pinyin": "àn",
+      "pos": "adj.",
+      "en": "dim; dark",
+      "note": "Book headword pinyin printed as àn. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 暗 like the cabin feeling 有点儿暗 before someone turns the reading light on.",
+      "usage": "Most Chinese speakers say 有点儿暗 / 太暗了. 课文2 opens: 这里边有点儿暗.",
+      "example": {
+        "zh": "这里边有点儿暗。",
+        "pinyin": "Zhè lǐbian yǒudiǎnr àn.",
+        "en": "It’s a bit dark in here."
+      }
+    },
+    {
+      "zh": "开关",
+      "pinyin": "kāiguān",
+      "pos": "n.",
+      "en": "switch",
+      "note": "Book headword pinyin printed as kāiguān. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 开关 like the control you hunt for on the seat armrest to turn the light on.",
+      "usage": "Most Chinese speakers ask 开关在哪儿. In 课文2, 夏雨 can’t find it; 关建平 says it’s on the 扶手.",
+      "example": {
+        "zh": "开关在哪儿呢？",
+        "pinyin": "Kāiguān zài nǎr ne?",
+        "en": "Where’s the switch?"
+      }
+    },
+    {
+      "zh": "扶手",
+      "pinyin": "fúshǒu",
+      "pos": "n.",
+      "en": "armrest",
+      "note": "Book headword pinyin printed as fúshǒu. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 扶手 like the arm of the airplane seat where the light switch sits.",
+      "usage": "Most Chinese speakers say 座位的扶手. 课文2: 在座位的扶手上.",
+      "example": {
+        "zh": "在座位的扶手上。",
+        "pinyin": "Zài zuòwèi de fúshǒu shàng.",
+        "en": "On the armrest of the seat."
+      }
+    },
+    {
+      "zh": "空姐",
+      "pinyin": "kōngjiě",
+      "pos": "n.",
+      "en": "air hostess; flight attendant",
+      "note": "Book headword pinyin printed as kōngjiě. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 空姐 like the flight attendant who tells everyone to fasten seat belts before takeoff.",
+      "usage": "Most Chinese speakers still say 空姐 casually (also 乘务员). In 课文2 she announces takeoff and 把手机关上.",
+      "example": {
+        "zh": "飞机马上就要起飞了，请大家把安全带系好，把手机关上……",
+        "pinyin": "Fēijī mǎshàng jiù yào qǐfēi le, qǐng dàjiā bǎ ānquándài jì hǎo, bǎ shǒujī guān shàng……",
+        "en": "The plane is about to take off; please fasten your seat belts and turn off your phones…"
+      }
+    },
+    {
+      "zh": "起飞",
+      "pinyin": "qǐfēi",
+      "pos": "v.",
+      "en": "to take off (of a plane)",
+      "note": "Book headword pinyin printed as qǐfēi. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 起飞 like the moment the plane leaves the ground — 马上就要起飞了.",
+      "usage": "Most Chinese speakers use 起飞 for aircraft (not cars). 课文2: 飞机马上就要起飞了.",
+      "example": {
+        "zh": "飞机马上就要起飞了，请大家把安全带系好，把手机关上……",
+        "pinyin": "Fēijī mǎshàng jiù yào qǐfēi le, qǐng dàjiā bǎ ānquándài jì hǎo, bǎ shǒujī guān shàng……",
+        "en": "The plane is about to take off; please fasten your seat belts and turn off your phones…"
+      }
+    },
+    {
+      "zh": "安全带",
+      "pinyin": "ānquándài",
+      "pos": "n.",
+      "en": "safety belt; seat belt",
+      "note": "Book headword pinyin printed as ānquándài; sub-entries 安全 / 带 listed under it. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 安全带 like the belt you 系好 before takeoff — 夏雨 still doesn’t know how.",
+      "usage": "Most Chinese speakers 系安全带. 课文2: 请大家把安全带系好; 夏雨: 我还不会系安全带呢.",
+      "example": {
+        "zh": "我还不会系安全带呢。",
+        "pinyin": "Wǒ hái bú huì xì ānquándài ne.",
+        "en": "I still don’t know how to fasten a seat belt."
+      }
+    },
+    {
+      "zh": "安全",
+      "pinyin": "ānquán",
+      "pos": "adj.",
+      "en": "safe; secure",
+      "note": "Book sub-entry under 安全带; pinyin printed as ānquán. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 安全 like the “safe” half of 安全带 — also appears in 安全检查门 in the stage direction.",
+      "usage": "Most Chinese speakers use 安全 as “safe/security.” Here learn it as the morpheme inside 安全带; the gate scene uses 安全检查门.",
+      "example": {
+        "zh": "请大家把安全带系好。",
+        "pinyin": "Qǐng dàjiā bǎ ānquándài jì hǎo.",
+        "en": "Please fasten your seat belts."
+      }
+    },
+    {
+      "zh": "带",
+      "pinyin": "dài",
+      "pos": "n.",
+      "en": "belt",
+      "note": "Book sub-entry under 安全带; pinyin printed as dài (noun sense here). Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 带 like the “belt” piece of 安全带 — not the verb “to bring.”",
+      "usage": "Most Chinese speakers meet noun 带 inside compounds (安全带, 皮带). Keep this sitting’s sense as the belt, not 带东西.",
+      "example": {
+        "zh": "我还不会系安全带呢。",
+        "pinyin": "Wǒ hái bú huì xì ānquándài ne.",
+        "en": "I still don’t know how to fasten a seat belt."
+      }
+    },
+    {
+      "zh": "插头",
+      "pinyin": "chātóu",
+      "pos": "n.",
+      "en": "plug",
+      "note": "Book headword pinyin printed as chātóu. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 插头 like the seat-belt tongue you push in — 往里一插就行了.",
+      "usage": "Most Chinese speakers use 插头 for an electrical plug; here the book uses it for the seat-belt buckle tongue in 课文2.",
+      "example": {
+        "zh": "把这个插头往里一插就行了。",
+        "pinyin": "Bǎ zhège chātóu wǎng lǐ yì chā jiù xíng le.",
+        "en": "Just push this plug in and you’re done."
+      }
+    },
+    {
+      "zh": "卡子",
+      "pinyin": "qiǎzi",
+      "pos": "n.",
+      "en": "buckle; clip",
+      "note": "Book headword pinyin printed as qiǎzi. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 卡子 like the seat-belt release you 扳一下儿 to open.",
+      "usage": "Most Chinese speakers use 卡子 for a clip/buckle. 课文2: 把卡子扳一下儿就打开了.",
+      "example": {
+        "zh": "把卡子扳一下儿就打开了。",
+        "pinyin": "Bǎ qiǎzi bān yíxiàr jiù dǎkāi le.",
+        "en": "Just flip the buckle and it opens."
+      }
+    },
+    {
+      "zh": "扳",
+      "pinyin": "bān",
+      "pos": "v.",
+      "en": "to turn; to pull (something fixed)",
+      "note": "Book headword pinyin printed as bān; gloss: change the direction of a fixed object / turn. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 扳 like flipping the seat-belt buckle — 扳一下儿.",
+      "usage": "Most Chinese speakers 扳 for turning a fixed lever/buckle. In 课文2 it opens the 卡子.",
+      "example": {
+        "zh": "把卡子扳一下儿就打开了。",
+        "pinyin": "Bǎ qiǎzi bān yíxiàr jiù dǎkāi le.",
+        "en": "Just flip the buckle and it opens."
+      }
+    },
+    {
+      "zh": "凉",
+      "pinyin": "liáng",
+      "pos": "adj.",
+      "en": "cool; cold (of food/drink, etc.)",
+      "note": "Book headword pinyin printed as liáng. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 凉 like coffee that sat too long on the tray — 都凉了, drink it.",
+      "usage": "Most Chinese speakers say food/drink 凉了. 课文2: 咖啡都凉了，快把它喝了吧.",
+      "example": {
+        "zh": "啊，打开了。你看，咖啡都凉了，快把它喝了吧。",
+        "pinyin": "À, dǎkāi le. Nǐ kàn, kāfēi dōu liáng le, kuài bǎ tā hē le ba.",
+        "en": "Ah, it’s open. Look, the coffee’s gone cold — drink it up."
+      }
+    },
+    {
+      "zh": "杯子",
+      "pinyin": "bēizi",
+      "pos": "n.",
+      "en": "cup",
+      "note": "Book headword pinyin printed as bēizi. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 杯子 like the cup 关建平 knocks over when he pulls out the magazine.",
+      "usage": "Most Chinese speakers use 杯子 for a cup/glass. 课文2: 你把杯子碰倒了，咖啡全洒了.",
+      "example": {
+        "zh": "你把杯子碰倒了，咖啡全洒了。",
+        "pinyin": "Nǐ bǎ bēizi pèngdǎo le, kāfēi quán sǎ le.",
+        "en": "You knocked the cup over — the coffee all spilled."
+      }
+    },
+    {
+      "zh": "洒",
+      "pinyin": "sǎ",
+      "pos": "v.",
+      "en": "to spill",
+      "note": "Book headword pinyin printed as sǎ. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 洒 like liquid spreading across the tray table after the cup falls.",
+      "usage": "Most Chinese speakers 洒 for spilling liquid. 课文2 closes the spill with 咖啡全洒了 and 快拿纸把桌子擦擦.",
+      "example": {
+        "zh": "你把杯子碰倒了，咖啡全洒了。",
+        "pinyin": "Nǐ bǎ bēizi pèngdǎo le, kāfēi quán sǎ le.",
+        "en": "You knocked the cup over — the coffee all spilled."
+      }
+    },
+    {
+      "zh": "关建平",
+      "pinyin": "Guān Jiànpíng",
+      "pos": "prop. n.",
+      "en": "Guan Jianping (personal name)",
+      "note": "Listed under 专名. Book pinyin printed as Guān Jiànpíng. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Treat it as a proper name — the husband flying with 夏雨.",
+      "usage": "Treat it as a proper name. Don’t translate it; he is a speaker and appears in stage directions.",
+      "example": {
+        "zh": "我们先去办理登机手续，把行李托运了。",
+        "pinyin": "Wǒmen xiān qù bànlǐ dēngjī shǒuxù, bǎ xíngli tuōyùn le.",
+        "en": "Let’s go handle the boarding formalities first and check the luggage."
+      }
+    },
+    {
+      "zh": "夏雨",
+      "pinyin": "Xià Yǔ",
+      "pos": "prop. n.",
+      "en": "Xia Yu (personal name)",
+      "note": "Listed under 专名. Book pinyin printed as Xià Yǔ. Example-sentence / dialogue-line pinyin not printed in the book; standard pinyin added.",
+      "when": "Treat it as a proper name — 关建平’s wife, first time flying.",
+      "usage": "Treat it as a proper name. Don’t translate it; she is a speaker throughout both 课文.",
+      "example": {
+        "zh": "没有什么呀！",
+        "pinyin": "Méiyǒu shénme ya!",
+        "en": "Nothing (particular)!"
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文1",
+      "headingZh": "请把护照和机票给我",
+      "headingEn": "Please give me your passport and air ticket",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "关建平和妻子夏雨一起坐飞机去国外旅行，夏雨是第一次乘飞机……",
+          "pinyin": "Guān Jiànpíng hé qīzi Xià Yǔ yìqǐ zuò fēijī qù guówài lǚxíng, Xià Yǔ shì dì-yī cì chéng fēijī……",
+          "en": "Guan Jianping and his wife Xia Yu are heading abroad by plane. This is Xia Yu’s first time flying…"
+        },
+        {
+          "speaker": "关建平",
+          "zh": "我们先去办理登机手续，把行李托运了。",
+          "pinyin": "Wǒmen xiān qù bànlǐ dēngjī shǒuxù, bǎ xíngli tuōyùn le.",
+          "en": "Let’s go handle the boarding formalities first and check the luggage."
+        },
+        {
+          "speaker": "服务员",
+          "zh": "请把护照和机票给我。哪个箱子要托运？把它放上去吧。这是登机牌儿，请拿好。",
+          "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ. Nǎge xiāngzi yào tuōyùn? Bǎ tā fàng shàngqù ba. Zhè shì dēngjīpáir, qǐng ná hǎo.",
+          "en": "Please give me your passport and air ticket. Which suitcase needs to be checked? Put it up there. Here’s the boarding pass — please take it."
+        },
+        {
+          "speaker": "关建平",
+          "zh": "谢谢！",
+          "pinyin": "Xièxie!",
+          "en": "Thank you!"
+        },
+        {
+          "speaker": "",
+          "zh": "夏雨通过安全检查门时，安全检查门发出响声……",
+          "pinyin": "Xià Yǔ tōngguò ānquán jiǎnchá mén shí, ānquán jiǎnchá mén fāchū xiǎngshēng……",
+          "en": "The alarm goes off as Xia Yu passes through the security portal…"
+        },
+        {
+          "speaker": "服务员",
+          "zh": "这位女士，你口袋里装的是什么？",
+          "pinyin": "Zhè wèi nǚshì, nǐ kǒudài li zhuāng de shì shénme?",
+          "en": "Ma’am, what do you have in your pocket?"
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "没有什么呀！",
+          "pinyin": "Méiyǒu shénme ya!",
+          "en": "Nothing (particular)!"
+        },
+        {
+          "speaker": "服务员",
+          "zh": "请把口袋里的东西都掏出来。",
+          "pinyin": "Qǐng bǎ kǒudài li de dōngxi dōu tāo chūlái.",
+          "en": "Please take everything out of your pockets."
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "啊，是几把钥匙和两个硬币。",
+          "pinyin": "À, shì jǐ bǎ yàoshi hé liǎng ge yìngbì.",
+          "en": "Ah, it’s a few keys and two coins."
+        },
+        {
+          "speaker": "服务员",
+          "zh": "好了。请进去吧。",
+          "pinyin": "Hǎo le. Qǐng jìnqù ba.",
+          "en": "All right. Please go in."
+        },
+        {
+          "speaker": "",
+          "zh": "在飞机上",
+          "pinyin": "Zài fēijī shàng",
+          "en": "On the plane"
+        },
+        {
+          "speaker": "关建平",
+          "zh": "把手提包放到行李箱里去吧。",
+          "pinyin": "Bǎ shǒutíbāo fàng dào xínglixiāng li qù ba.",
+          "en": "Put the handbag up in the overhead bin."
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "等一下儿，先把相机拿出来，我想在飞机上照两张照片。",
+          "pinyin": "Děng yíxiàr, xiān bǎ xiàngjī ná chūlái, wǒ xiǎng zài fēijī shàng zhào liǎng zhāng zhàopiàn.",
+          "en": "Wait a second — take the camera out first; I want to take a couple of photos on the plane."
+        },
+        {
+          "speaker": "",
+          "zh": "关建平把相机从手提包里拿出来",
+          "pinyin": "Guān Jiànpíng bǎ xiàngjī cóng shǒutíbāo li ná chūlái",
+          "en": "Guan Jianping takes the camera out of the handbag"
+        },
+        {
+          "speaker": "关建平",
+          "zh": "给你。对了，相机里还没有电池呢，我先把电池装上。",
+          "pinyin": "Gěi nǐ. Duì le, xiàngjī li hái méiyǒu diànchí ne, wǒ xiān bǎ diànchí zhuāng shàng.",
+          "en": "Here. Oh right — there are no batteries in the camera yet; I’ll put them in first."
+        }
+      ]
+    },
+    {
+      "label": "课文2",
+      "headingZh": "你把灯打开",
+      "headingEn": "Turn on the light",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "夏雨",
+          "zh": "这里边有点儿暗。",
+          "pinyin": "Zhè lǐbian yǒudiǎnr àn.",
+          "en": "It’s a bit dark in here."
+        },
+        {
+          "speaker": "关建平",
+          "zh": "你把灯打开。",
+          "pinyin": "Nǐ bǎ dēng dǎkāi.",
+          "en": "Turn on the light."
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "开关在哪儿呢？",
+          "pinyin": "Kāiguān zài nǎr ne?",
+          "en": "Where’s the switch?"
+        },
+        {
+          "speaker": "关建平",
+          "zh": "在座位的扶手上。",
+          "pinyin": "Zài zuòwèi de fúshǒu shàng.",
+          "en": "On the armrest of the seat."
+        },
+        {
+          "speaker": "空姐",
+          "zh": "飞机马上就要起飞了，请大家把安全带系好，把手机关上……",
+          "pinyin": "Fēijī mǎshàng jiù yào qǐfēi le, qǐng dàjiā bǎ ānquándài jì hǎo, bǎ shǒujī guān shàng……",
+          "en": "The plane is about to take off; please fasten your seat belts and turn off your phones…"
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "我还不会系安全带呢。",
+          "pinyin": "Wǒ hái bú huì xì ānquándài ne.",
+          "en": "I still don’t know how to fasten a seat belt."
+        },
+        {
+          "speaker": "关建平",
+          "zh": "把这个插头往里一插就行了。",
+          "pinyin": "Bǎ zhège chātóu wǎng lǐ yì chā jiù xíng le.",
+          "en": "Just push this plug in and you’re done."
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "怎么打开呢？",
+          "pinyin": "Zěnme dǎkāi ne?",
+          "en": "How do you open it?"
+        },
+        {
+          "speaker": "关建平",
+          "zh": "把卡子扳一下儿就打开了。",
+          "pinyin": "Bǎ qiǎzi bān yíxiàr jiù dǎkāi le.",
+          "en": "Just flip the buckle and it opens."
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "啊，打开了。你看，咖啡都凉了，快把它喝了吧。",
+          "pinyin": "À, dǎkāi le. Nǐ kàn, kāfēi dōu liáng le, kuài bǎ tā hē le ba.",
+          "en": "Ah, it’s open. Look, the coffee’s gone cold — drink it up."
+        },
+        {
+          "speaker": "",
+          "zh": "关建平把小桌下边的画报抽出来，不小心把杯子碰倒了",
+          "pinyin": "Guān Jiànpíng bǎ xiǎozhuō xiàbian de huàbào chōu chūlái, bù xiǎoxīn bǎ bēizi pèngdǎo le",
+          "en": "Guan Jianping pulls the pictorial from under the tray table and knocks the cup over by accident"
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "哎呀！",
+          "pinyin": "Āiyā!",
+          "en": "Oh no!"
+        },
+        {
+          "speaker": "关建平",
+          "zh": "怎么了？",
+          "pinyin": "Zěnme le?",
+          "en": "What’s wrong?"
+        },
+        {
+          "speaker": "夏雨",
+          "zh": "你把杯子碰倒了，咖啡全洒了。",
+          "pinyin": "Nǐ bǎ bēizi pèngdǎo le, kāfēi quán sǎ le.",
+          "en": "You knocked the cup over — the coffee all spilled."
+        },
+        {
+          "speaker": "关建平",
+          "zh": "快拿纸把桌子擦擦。",
+          "pinyin": "Kuài ná zhǐ bǎ zhuōzi cācā.",
+          "en": "Quick, get some paper and wipe the table."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "没有什么呀！",
+      "body": "注释：句中的“什么”不表示疑问，而表示不肯定的事物。English: “什么” here does not ask a question; it refers to something indefinite / nothing particular.",
+      "example": {
+        "zh": "没有什么呀！",
+        "pinyin": "Méiyǒu shénme ya!",
+        "en": "Nothing (particular)!"
+      }
+    },
+    {
+      "title": "把字句（2）：主语是动作发出者",
+      "body": "使用“把”字句的要求（1）：主语一定是谓语动词所示动作的发出者。",
+      "example": {
+        "zh": "我把相机给姐姐了。",
+        "pinyin": "Wǒ bǎ xiàngjī gěi jiějie le.",
+        "en": "I gave the camera to my older sister."
+      }
+    },
+    {
+      "title": "把字句（2）：“把”的宾语须特指",
+      "body": "“把”的宾语同时也是谓语动词涉及的对象，而且必须是特指的（明指或暗指）。明指：宾语前有“这”“那”或定语等；暗指：语境中双方清楚所指。",
+      "example": {
+        "zh": "请把护照和机票给我。",
+        "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ.",
+        "en": "Please give me your passport and air ticket."
+      }
+    },
+    {
+      "title": "把字句（2）：动词后须有其他成分",
+      "body": "动词后面一定有其他成分，说明动作产生的结果或影响，如“了”、重叠动词、宾语、补语等。",
+      "example": {
+        "zh": "快把桌子擦擦。",
+        "pinyin": "Kuài bǎ zhuōzi cācā.",
+        "en": "Quick, wipe the table."
+      }
+    },
+    {
+      "title": "把字句（2）：否定与能愿在“把”前",
+      "body": "否定副词“不”“没（有）”或能愿动词应放在“把”的前边，不能放在动词的前边。",
+      "example": {
+        "zh": "你没把口袋里的东西都掏出来。",
+        "pinyin": "Nǐ méi bǎ kǒudài li de dōngxi dōu tāo chūlái.",
+        "en": "You didn’t take everything out of your pockets."
+      }
+    },
+    {
+      "title": "把字句（2）：谓语须能使宾语变化",
+      "body": "“把”字句的谓语动词必须是能使宾语发生某种变化、产生某种结果的及物动词。因此“有、是、在、来、去、觉得、毕业”等不能作“把”字句的主要动词。",
+      "example": {
+        "zh": "把要托运的行李放上去吧。",
+        "pinyin": "Bǎ yào tuōyùn de xíngli fàng shàngqù ba.",
+        "en": "Put the luggage that needs to be checked up there."
+      }
+    }
+  ]
+}

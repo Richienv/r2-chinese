@@ -1,3 +1,4 @@
+import { Glossed, useGloss } from '../components/ChineseText'
 import { HearButton, useAutoSpeak } from '../components/Hear'
 import { SaveStar } from '../components/SaveStar'
 import type { Example } from '../lib/content'
@@ -31,14 +32,16 @@ export function TeachView({
   n: number
   of: number
 }) {
+  const { onWord, sheet } = useGloss()
   const kicker = `Word · ${n} of ${of} · ${TEACH_KICKER[phase]}`
   return (
     <div className="teach-stage" data-phase={phase}>
       <StepHead kicker={kicker} title={TEACH_TITLE[phase]} />
       {phase === 'meet' && <MeetBeat word={word} lesson={lesson} />}
       {phase === 'hook' && <HookBeat word={word} hook={hook} />}
-      {phase === 'example' && <ExampleBeat word={word} example={example} />}
+      {phase === 'example' && <ExampleBeat word={word} example={example} onWord={onWord} />}
       {phase === 'seal' && <SealBeat word={word} />}
+      {sheet}
     </div>
   )
 }
@@ -103,7 +106,15 @@ function HookBeat({ word, hook }: { word: Vocab; hook: WordHook }) {
   )
 }
 
-function ExampleBeat({ word, example }: { word: Vocab; example: Example | null }) {
+function ExampleBeat({
+  word,
+  example,
+  onWord,
+}: {
+  word: Vocab
+  example: Example | null
+  onWord: (v: Vocab) => void
+}) {
   useAutoSpeak(example?.zh ?? '', VOICE.xiaoxiao, LINE_RATE)
   if (!example) {
     return (
@@ -125,7 +136,20 @@ function ExampleBeat({ word, example }: { word: Vocab; example: Example | null }
             className={b.hit ? 'teach-tok teach-hit' : 'teach-tok'}
             style={{ animationDelay: `${90 + i * 95}ms` }}
           >
-            {b.text}
+            {b.hit ? (
+              <button
+                type="button"
+                className="word teach-hit-tap"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  onWord(word)
+                }}
+              >
+                {b.text}
+              </button>
+            ) : (
+              <Glossed text={b.text} onWord={onWord} />
+            )}
           </span>
         ))}
       </p>

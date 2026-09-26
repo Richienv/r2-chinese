@@ -1,0 +1,670 @@
+{
+  "id": "jiaocheng-2-1-01",
+  "book": "2-1",
+  "index": 1,
+  "bookLesson": 1,
+  "titleZh": "田芳去哪儿了",
+  "titleEn": "Where has Tian Fang gone",
+  "sourcePages": "1-17",
+  "words": [
+    {
+      "zh": "喂",
+      "pinyin": "wèi",
+      "pos": "interj.",
+      "en": "hello",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 喂 like the word you’ll use when you pick up the phone — 喂，是田芳吗？",
+      "usage": "Most Chinese speakers open a phone call with 喂. In 课文（一）张东 greets before asking for 田芳.",
+      "example": {
+        "zh": "喂，是田芳吗？",
+        "pinyin": "Wèi, shì Tián Fāng ma?",
+        "en": "Hello — is that Tian Fang?"
+      }
+    },
+    {
+      "zh": "阿姨",
+      "pinyin": "āyí",
+      "pos": "n.",
+      "en": "aunt",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 阿姨 like the polite address you’ll use for your friend’s mother — 阿姨，您好！",
+      "usage": "Most Chinese speakers call an older woman 阿姨 even when she isn’t a blood aunt. Here 张东 addresses 田芳妈.",
+      "example": {
+        "zh": "阿姨，您好！田芳去哪儿了？",
+        "pinyin": "Āyí, nín hǎo! Tián Fāng qù nǎr le?",
+        "en": "Auntie, hello! Where has Tian Fang gone?"
+      }
+    },
+    {
+      "zh": "了",
+      "pinyin": "le",
+      "pos": "part.",
+      "en": "a particle used at the end of a sentence to indicate change or the emergence of a new situation",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. This lesson’s grammar focus: sentence-final 了 (1).",
+      "when": "Remember 了 like the ending you’ll add when something has happened or a new situation is in — 去哪儿了, 关机了.",
+      "usage": "Most Chinese speakers put 了 at the end to affirm occurrence, completion, or change. Pair with 了没有 for yes/no about past events.",
+      "example": {
+        "zh": "田芳去哪儿了？",
+        "pinyin": "Tián Fāng qù nǎr le?",
+        "en": "Where has Tian Fang gone?"
+      }
+    },
+    {
+      "zh": "中学",
+      "pinyin": "zhōngxué",
+      "pos": "n.",
+      "en": "middle school",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 中学 like the school level before university — 中学同学.",
+      "usage": "Most Chinese speakers mean junior/senior secondary school. Here a 中学同学 is about to go abroad.",
+      "example": {
+        "zh": "她的一个中学同学要出国，她去看看她。",
+        "pinyin": "Tā de yí ge zhōngxué tóngxué yào chūguó, tā qù kànkan tā.",
+        "en": "One of her middle-school classmates is going abroad, so she went to see her."
+      }
+    },
+    {
+      "zh": "出国",
+      "pinyin": "chū guó",
+      "pos": "v.",
+      "en": "to go abroad",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Book prints spaced chū guó.",
+      "when": "Remember 出国 like the word you’ll use when someone leaves the country — 要出国.",
+      "usage": "Most Chinese speakers use 出国 for going overseas (study, work, travel). Related 出 is listed under this entry.",
+      "example": {
+        "zh": "她的一个中学同学要出国，她去看看她。",
+        "pinyin": "Tā de yí ge zhōngxué tóngxué yào chūguó, tā qù kànkan tā.",
+        "en": "One of her middle-school classmates is going abroad, so she went to see her."
+      }
+    },
+    {
+      "zh": "出",
+      "pinyin": "chū",
+      "pos": "v.",
+      "en": "to move from inside to outside",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 出 like the move-out half of 出国 — from inside a place/country to outside.",
+      "usage": "Most Chinese speakers use 出 as the directional ‘exit’ verb. Here it is the 出 in 出国.",
+      "example": {
+        "zh": "她的一个中学同学要出国。",
+        "pinyin": "Tā de yí ge zhōngxué tóngxué yào chūguó.",
+        "en": "One of her middle-school classmates is going abroad."
+      }
+    },
+    {
+      "zh": "打（电话）",
+      "pinyin": "dǎ (diànhuà)",
+      "pos": "v.",
+      "en": "to make (a phone call)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Book prints 打（电话）.",
+      "when": "Remember 打（电话） like the verb you’ll use for calling someone — 打电话, 打她的手机.",
+      "usage": "Most Chinese speakers 打电话 / 打手机. Object can be 电话, 手机, or the person.",
+      "example": {
+        "zh": "你打她的手机吧。",
+        "pinyin": "Nǐ dǎ tā de shǒujī ba.",
+        "en": "Why don’t you call her mobile."
+      }
+    },
+    {
+      "zh": "关机",
+      "pinyin": "guānjī",
+      "pos": "v.",
+      "en": "to turn off one’s mobile phone",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 关机 like the word you’ll use when a phone won’t ring — 她关机了.",
+      "usage": "Most Chinese speakers 关机 for powering off a phone (or ending a PC). Related 关 is under this entry.",
+      "example": {
+        "zh": "我打了，可是她关机了。",
+        "pinyin": "Wǒ dǎ le, kěshì tā guānjī le.",
+        "en": "I called, but her phone was off."
+      }
+    },
+    {
+      "zh": "关",
+      "pinyin": "guān",
+      "pos": "v.",
+      "en": "to turn off; to switch off",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 关 like the switch-off half of 关机 — turn power off.",
+      "usage": "Most Chinese speakers 关 lights, machines, phones. Here it is the 关 in 关机.",
+      "example": {
+        "zh": "你怎么关机了？",
+        "pinyin": "Nǐ zěnme guānjī le?",
+        "en": "Why was your phone off?"
+      }
+    },
+    {
+      "zh": "饿",
+      "pinyin": "è",
+      "pos": "adj.",
+      "en": "hungry",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 饿 like the word you’ll hear when mom urges dinner — 饿了吧？",
+      "usage": "Most Chinese speakers say 饿了 for ‘I’m hungry.’ 课文（二）田芳妈 greets her with 饿了吧？",
+      "example": {
+        "zh": "饿了吧？快吃饭吧！",
+        "pinyin": "È le ba? Kuài chī fàn ba!",
+        "en": "Hungry, right? Come eat!"
+      }
+    },
+    {
+      "zh": "对了",
+      "pinyin": "duìle",
+      "pos": "v.",
+      "en": "by the way; and",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 对了 like the ‘oh right / by the way’ you’ll drop when you suddenly remember — 啊，对了，张东给你打电话了没有？",
+      "usage": "Most Chinese speakers use 对了 mid-conversation to shift to a remembered point. Not ‘correct’ here.",
+      "example": {
+        "zh": "啊，对了，张东给你打电话了没有？",
+        "pinyin": "A, duìle, Zhāng Dōng gěi nǐ dǎ diànhuà le méiyǒu?",
+        "en": "Oh — by the way, did Zhang Dong call you?"
+      }
+    },
+    {
+      "zh": "忘",
+      "pinyin": "wàng",
+      "pos": "v.",
+      "en": "to forget",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 忘 like the word you’ll use when you left the phone off — 我忘开机了.",
+      "usage": "Most Chinese speakers 忘 + verb/noun. 课文 pairs 忘开机了.",
+      "example": {
+        "zh": "啊！对了，我忘开机了。",
+        "pinyin": "A! Duìle, wǒ wàng kāijī le.",
+        "en": "Ah! Right — I forgot to turn my phone back on."
+      }
+    },
+    {
+      "zh": "开机",
+      "pinyin": "kāijī",
+      "pos": "v.",
+      "en": "to turn on one’s mobile phone",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 开机 like the opposite of 关机 — power the phone on.",
+      "usage": "Most Chinese speakers 开机 for phones and computers. Related 开 is under this entry.",
+      "example": {
+        "zh": "我忘开机了。",
+        "pinyin": "Wǒ wàng kāijī le.",
+        "en": "I forgot to turn the phone on."
+      }
+    },
+    {
+      "zh": "开",
+      "pinyin": "kāi",
+      "pos": "v.",
+      "en": "to turn on; to switch on",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 开 like the switch-on half of 开机.",
+      "usage": "Most Chinese speakers 开 devices and doors. Here it is the 开 in 开机.",
+      "example": {
+        "zh": "我忘开机了。",
+        "pinyin": "Wǒ wàng kāijī le.",
+        "en": "I forgot to turn the phone on."
+      }
+    },
+    {
+      "zh": "又",
+      "pinyin": "yòu",
+      "pos": "adv.",
+      "en": "again",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Grammar contrast with 再 is in this lesson.",
+      "when": "Remember 又 like the ‘again’ for something that already repeated — 电话又响了, 又输了.",
+      "usage": "Most Chinese speakers use 又 for a repeated past/present action; 再 for a future repeat (see 语法).",
+      "example": {
+        "zh": "快！电话又响了，你去接吧。",
+        "pinyin": "Kuài! Diànhuà yòu xiǎng le, nǐ qù jiē ba.",
+        "en": "Quick — the phone’s ringing again; go answer it."
+      }
+    },
+    {
+      "zh": "响",
+      "pinyin": "xiǎng",
+      "pos": "v.",
+      "en": "to make a sound; to ring",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 响 like the word you’ll use when the phone rings — 电话又响了.",
+      "usage": "Most Chinese speakers say 电话响了 / 闹钟响了. Here the second call comes in.",
+      "example": {
+        "zh": "快！电话又响了，你去接吧。",
+        "pinyin": "Kuài! Diànhuà yòu xiǎng le, nǐ qù jiē ba.",
+        "en": "Quick — the phone’s ringing again; go answer it."
+      }
+    },
+    {
+      "zh": "接",
+      "pinyin": "jiē",
+      "pos": "v.",
+      "en": "to get; to receive",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 接 like the word you’ll use for answering a call — 你去接吧, 接电话.",
+      "usage": "Most Chinese speakers 接电话 for picking up. Also 接到 for receiving generally.",
+      "example": {
+        "zh": "快！电话又响了，你去接吧。",
+        "pinyin": "Kuài! Diànhuà yòu xiǎng le, nǐ qù jiē ba.",
+        "en": "Quick — the phone’s ringing again; go answer it."
+      }
+    },
+    {
+      "zh": "踢",
+      "pinyin": "tī",
+      "pos": "v.",
+      "en": "to kick; to play (football)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 踢 like the verb in 踢足球 — go play soccer.",
+      "usage": "Most Chinese speakers 踢足球 / 踢球. 课文：我去踢足球了.",
+      "example": {
+        "zh": "我去踢足球了。",
+        "pinyin": "Wǒ qù tī zúqiú le.",
+        "en": "I went to play soccer."
+      }
+    },
+    {
+      "zh": "比赛",
+      "pinyin": "bǐsài",
+      "pos": "v./n.",
+      "en": "to contest; match; game",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 比赛 like the match itself — 跟留学生代表队比赛了.",
+      "usage": "Most Chinese speakers use 比赛 as noun or verb for a contest. Here the team played a game.",
+      "example": {
+        "zh": "今天我们跟留学生代表队比赛了。",
+        "pinyin": "Jīntiān wǒmen gēn liúxuéshēng dàibiǎoduì bǐsài le.",
+        "en": "Today we played against the international-student team."
+      }
+    },
+    {
+      "zh": "队",
+      "pinyin": "duì",
+      "pos": "n.",
+      "en": "team",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 队 like the squad — 你们队又输了吧？",
+      "usage": "Most Chinese speakers name sports sides 队 (足球队, 代表队). 课文 asks if 你们队 lost again.",
+      "example": {
+        "zh": "你们队又输了吧？",
+        "pinyin": "Nǐmen duì yòu shū le ba?",
+        "en": "Your team lost again, right?"
+      }
+    },
+    {
+      "zh": "输",
+      "pinyin": "shū",
+      "pos": "v.",
+      "en": "to lose (a game)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 输 like the opposite of 赢 — lose the match.",
+      "usage": "Most Chinese speakers 输了 for losing a game. 田芳 assumes they lost again.",
+      "example": {
+        "zh": "你们队又输了吧？",
+        "pinyin": "Nǐmen duì yòu shū le ba?",
+        "en": "Your team lost again, right?"
+      }
+    },
+    {
+      "zh": "赢",
+      "pinyin": "yíng",
+      "pos": "v.",
+      "en": "to win (a game)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 赢 like the good result — 这次我们赢了.",
+      "usage": "Most Chinese speakers 赢了 for winning. 张东 corrects: this time they won.",
+      "example": {
+        "zh": "没有。这次我们赢了。",
+        "pinyin": "Méiyǒu. Zhè cì wǒmen yíng le.",
+        "en": "No. This time we won."
+      }
+    },
+    {
+      "zh": "比",
+      "pinyin": "bǐ",
+      "pos": "v.",
+      "en": "（in a score） to",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Book gloss: (in a score) to.",
+      "when": "Remember 比 like the score link — 几比几？二比一.",
+      "usage": "Most Chinese speakers read scores as A比B (二比一 = 2–1). Not the comparison 比 here.",
+      "example": {
+        "zh": "几比几？",
+        "pinyin": "Jǐ bǐ jǐ?",
+        "en": "What was the score?"
+      }
+    },
+    {
+      "zh": "祝贺",
+      "pinyin": "zhùhè",
+      "pos": "v.",
+      "en": "to congratulate",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 祝贺 like the cheer after a win — 祝贺你们！",
+      "usage": "Most Chinese speakers 祝贺 + person for congratulations. 田芳 congratulates the team.",
+      "example": {
+        "zh": "祝贺你们！",
+        "pinyin": "Zhùhè nǐmen!",
+        "en": "Congratulations!"
+      }
+    },
+    {
+      "zh": "哎",
+      "pinyin": "āi",
+      "pos": "interj.",
+      "en": "an interjection used as a reminder",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 哎 like the soft ‘hey / so…’ before a new ask — 哎，你有什么事儿吗？",
+      "usage": "Most Chinese speakers use 哎 to catch attention or shift topic. Here 田芳 pivots to why he called.",
+      "example": {
+        "zh": "哎，你有什么事儿吗？",
+        "pinyin": "Āi, nǐ yǒu shénme shìr ma?",
+        "en": "Hey — what’s up? Do you need something?"
+      }
+    },
+    {
+      "zh": "上",
+      "pinyin": "shàng",
+      "pos": "v.",
+      "en": "to attend (a class, program, etc.)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 上 like attending a course — 上托福班.",
+      "usage": "Most Chinese speakers 上课 / 上班 / 上…班 for attending. Here: TOEFL class.",
+      "example": {
+        "zh": "你不是要上托福班吗？",
+        "pinyin": "Nǐ bú shì yào shàng Tuōfú bān ma?",
+        "en": "Didn’t you want to attend a TOEFL class?"
+      }
+    },
+    {
+      "zh": "托福",
+      "pinyin": "Tuōfú",
+      "pos": "n.",
+      "en": "TOEFL",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 托福 like the exam name — 托福班, 考托福.",
+      "usage": "Most Chinese speakers keep 托福 as the proper name for TOEFL. Capitalize in English gloss.",
+      "example": {
+        "zh": "你是不是也想考托福？",
+        "pinyin": "Nǐ shì bu shì yě xiǎng kǎo Tuōfú?",
+        "en": "Do you also want to take the TOEFL?"
+      }
+    },
+    {
+      "zh": "已经",
+      "pinyin": "yǐjīng",
+      "pos": "adv.",
+      "en": "already",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 已经 like ‘already done’ — 已经报了.",
+      "usage": "Most Chinese speakers put 已经 before the verb for completed/prior action. 田芳已经报了名.",
+      "example": {
+        "zh": "已经报了。",
+        "pinyin": "Yǐjīng bào le.",
+        "en": "I’ve already registered."
+      }
+    },
+    {
+      "zh": "考",
+      "pinyin": "kǎo",
+      "pos": "v.",
+      "en": "to take a test",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 考 like sitting an exam — 考托福.",
+      "usage": "Most Chinese speakers 考 + exam name. Related 考试 appears in 补充生词 (not listed here).",
+      "example": {
+        "zh": "你是不是也想考托福？",
+        "pinyin": "Nǐ shì bu shì yě xiǎng kǎo Tuōfú?",
+        "en": "Do you also want to take the TOEFL?"
+      }
+    },
+    {
+      "zh": "陪",
+      "pinyin": "péi",
+      "pos": "v.",
+      "en": "to accompany",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 陪 like coming along with someone — 你陪我一起去.",
+      "usage": "Most Chinese speakers 陪 someone to a place. 张东 asks 田芳 to go register with him.",
+      "example": {
+        "zh": "我想明天去报名，你陪我一起去，好吗？",
+        "pinyin": "Wǒ xiǎng míngtiān qù bàomíng, nǐ péi wǒ yìqǐ qù, hǎo ma?",
+        "en": "I want to go register tomorrow — will you come with me?"
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "田芳去哪儿了",
+      "headingEn": "Where has Tian Fang gone",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "张东",
+          "zh": "喂，是田芳吗？",
+          "pinyin": "Wèi, shì Tián Fāng ma?",
+          "en": "Hello — is that Tian Fang?"
+        },
+        {
+          "speaker": "田芳妈",
+          "zh": "田芳不在。是张东吧？",
+          "pinyin": "Tián Fāng bú zài. Shì Zhāng Dōng ba?",
+          "en": "Tian Fang isn’t here. Is this Zhang Dong?"
+        },
+        {
+          "speaker": "张东",
+          "zh": "阿姨，您好！田芳去哪儿了？",
+          "pinyin": "Āyí, nín hǎo! Tián Fāng qù nǎr le?",
+          "en": "Auntie, hello! Where has Tian Fang gone?"
+        },
+        {
+          "speaker": "田芳妈",
+          "zh": "她四点多就去同学家了。她的一个中学同学要出国，她去看看她。",
+          "pinyin": "Tā sì diǎn duō jiù qù tóngxué jiā le. Tā de yí ge zhōngxué tóngxué yào chūguó, tā qù kànkan tā.",
+          "en": "She left for a classmate’s place after four. One of her middle-school classmates is going abroad, so she went to see her."
+        },
+        {
+          "speaker": "张东",
+          "zh": "她什么时候能回来？",
+          "pinyin": "Tā shénme shíhou néng huílai?",
+          "en": "When can she come back?"
+        },
+        {
+          "speaker": "田芳妈",
+          "zh": "她没说，你打她的手机吧。",
+          "pinyin": "Tā méi shuō, nǐ dǎ tā de shǒujī ba.",
+          "en": "She didn’t say — why don’t you call her mobile."
+        },
+        {
+          "speaker": "张东",
+          "zh": "我打了，可是她关机了。",
+          "pinyin": "Wǒ dǎ le, kěshì tā guānjī le.",
+          "en": "I called, but her phone was off."
+        },
+        {
+          "speaker": "田芳妈",
+          "zh": "是吗？你过一会儿再打吧。",
+          "pinyin": "Shì ma? Nǐ guò yíhuìr zài dǎ ba.",
+          "en": "Is that so? Try again in a little while."
+        },
+        {
+          "speaker": "张东",
+          "zh": "阿姨，田芳回来了没有？",
+          "pinyin": "Āyí, Tián Fāng huílai le méiyǒu?",
+          "en": "Auntie — has Tian Fang come back yet?"
+        },
+        {
+          "speaker": "田芳妈",
+          "zh": "还没有呢。",
+          "pinyin": "Hái méiyǒu ne.",
+          "en": "Not yet."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "他又来电话了",
+      "headingEn": "He’s calling again",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "田芳",
+          "zh": "妈，我回来了。",
+          "pinyin": "Mā, wǒ huílai le.",
+          "en": "Mom, I’m back."
+        },
+        {
+          "speaker": "田芳妈",
+          "zh": "饿了吧？快吃饭吧！啊，对了，张东给你打电话了没有？",
+          "pinyin": "È le ba? Kuài chī fàn ba! A, duìle, Zhāng Dōng gěi nǐ dǎ diànhuà le méiyǒu?",
+          "en": "Hungry, right? Come eat! Oh — by the way, did Zhang Dong call you?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "没有啊。",
+          "pinyin": "Méiyǒu a.",
+          "en": "No."
+        },
+        {
+          "speaker": "田芳妈",
+          "zh": "他来电话找你，说打你的手机，你关机了。",
+          "pinyin": "Tā lái diànhuà zhǎo nǐ, shuō dǎ nǐ de shǒujī, nǐ guānjī le.",
+          "en": "He called looking for you — said he tried your mobile and it was off."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "啊！对了，我忘开机了。",
+          "pinyin": "A! Duìle, wǒ wàng kāijī le.",
+          "en": "Ah! Right — I forgot to turn my phone back on."
+        },
+        {
+          "speaker": "田芳妈",
+          "zh": "快！电话又响了，你去接吧。",
+          "pinyin": "Kuài! Diànhuà yòu xiǎng le, nǐ qù jiē ba.",
+          "en": "Quick — the phone’s ringing again; go answer it."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "喂，张东，下午你给我打电话了吧？",
+          "pinyin": "Wèi, Zhāng Dōng, xiàwǔ nǐ gěi wǒ dǎ diànhuà le ba?",
+          "en": "Hello, Zhang Dong — you called me this afternoon, right?"
+        },
+        {
+          "speaker": "张东",
+          "zh": "打了，你怎么关机了？",
+          "pinyin": "Dǎ le, nǐ zěnme guānjī le?",
+          "en": "I did — why was your phone off?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "对不起，我忘开机了。下午你做什么了？",
+          "pinyin": "Duìbuqǐ, wǒ wàng kāijī le. Xiàwǔ nǐ zuò shénme le?",
+          "en": "Sorry — I forgot to turn it on. What did you do this afternoon?"
+        },
+        {
+          "speaker": "张东",
+          "zh": "我去踢足球了。今天我们跟留学生代表队比赛了。",
+          "pinyin": "Wǒ qù tī zúqiú le. Jīntiān wǒmen gēn liúxuéshēng dàibiǎoduì bǐsài le.",
+          "en": "I went to play soccer. Today we played against the international-student team."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "你们队又输了吧？",
+          "pinyin": "Nǐmen duì yòu shū le ba?",
+          "en": "Your team lost again, right?"
+        },
+        {
+          "speaker": "张东",
+          "zh": "没有。这次我们赢了。",
+          "pinyin": "Méiyǒu. Zhè cì wǒmen yíng le.",
+          "en": "No. This time we won."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "几比几？",
+          "pinyin": "Jǐ bǐ jǐ?",
+          "en": "What was the score?"
+        },
+        {
+          "speaker": "张东",
+          "zh": "二比一。",
+          "pinyin": "Èr bǐ yī.",
+          "en": "Two to one."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "祝贺你们！哎，你有什么事儿吗？",
+          "pinyin": "Zhùhè nǐmen! Āi, nǐ yǒu shénme shìr ma?",
+          "en": "Congratulations! Hey — what’s up? Do you need something?"
+        },
+        {
+          "speaker": "张东",
+          "zh": "我想问问你，你不是要上托福班吗？报名了没有？",
+          "pinyin": "Wǒ xiǎng wènwen nǐ, nǐ bú shì yào shàng Tuōfú bān ma? Bàomíng le méiyǒu?",
+          "en": "I wanted to ask — didn’t you want to attend a TOEFL class? Have you registered?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "已经报了。你是不是也想考托福？",
+          "pinyin": "Yǐjīng bào le. Nǐ shì bu shì yě xiǎng kǎo Tuōfú?",
+          "en": "I’ve already registered. Do you also want to take the TOEFL?"
+        },
+        {
+          "speaker": "张东",
+          "zh": "是。我想明天去报名，你陪我一起去，好吗？",
+          "pinyin": "Shì. Wǒ xiǎng míngtiān qù bàomíng, nǐ péi wǒ yìqǐ qù, hǎo ma?",
+          "en": "Yes. I want to go register tomorrow — will you come with me?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "好的。",
+          "pinyin": "Hǎo de.",
+          "en": "Okay."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "下午你给我打电话了吧？",
+      "body": "语气助词“吧”在这里表示疑问的语气。The modal particle “吧” is used here to express an inquisitive tone. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "下午你给我打电话了吧？",
+        "pinyin": "Xiàwǔ nǐ gěi wǒ dǎ diànhuà le ba?",
+        "en": "You called me this afternoon, right?"
+      }
+    },
+    {
+      "title": "你不是要上托福班吗？",
+      "body": "“不是……吗？”是个反问句，强调肯定。不要求回答。“不是……吗” is a rhetorical question emphasizing the affirmative tone; therefore, no reply is required. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "你不是要上托福班吗？",
+        "pinyin": "Nǐ bú shì yào shàng Tuōfú bān ma?",
+        "en": "Didn’t you want to attend a TOEFL class?"
+      }
+    },
+    {
+      "title": "你是不是也想考托福？",
+      "body": "在用“是不是”的正反问句里，“是不是”可以用在谓语前，也可用在句首或句尾。In an affirmative-negative question, “是不是” can be used before the predicate or at the beginning or end of the sentence. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "你是不是想家了？",
+        "pinyin": "Nǐ shì bu shì xiǎng jiā le?",
+        "en": "Are you homesick?"
+      }
+    },
+    {
+      "title": "语气助词“了”（1）",
+      "body": "语气助词“了”用在句尾，表示肯定的语气，有成句的作用。说明事情的发生、动作的完成、情况的出现和状态的变化等。正反问：……了+没有？“还没（有）……呢”表示事件现在还没有开始或完成，含有即将开始或完成的意思。注意：动词前用“没（有）”否定时句末不能用“了”；表达经常性动作时句末也不能用“了”。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "田芳的手机关机了。",
+        "pinyin": "Tián Fāng de shǒujī guānjī le.",
+        "en": "Tian Fang’s phone was turned off."
+      }
+    },
+    {
+      "title": "“再”和“又”",
+      "body": "副词“再”和“又”都可以放在动词前边作状语，表示动作或情况的重复。不同的是：“再”用于表示尚未重复的动作或情况；“又”一般用来表示已经重复的动作或情况。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "今天我去看她了，明天我想再去。",
+        "pinyin": "Jīntiān wǒ qù kàn tā le, míngtiān wǒ xiǎng zài qù.",
+        "en": "I went to see her today; tomorrow I want to go again."
+      }
+    }
+  ]
+}

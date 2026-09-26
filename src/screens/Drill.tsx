@@ -1,9 +1,9 @@
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { ChineseHear, HearButton } from '../components/Hear'
 import { CheckIcon, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { exampleFor, lookup } from '../lib/content'
-import { buildDrillQueue, requeue } from '../lib/drill'
+import { buildDrillQuestion, buildDrillQueue, requeue } from '../lib/drill'
 import { unlockSpeech } from '../lib/speech'
 import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 import { useStore } from '../store/store'
@@ -11,11 +11,12 @@ import { useStore } from '../store/store'
 const REP_OPTIONS = [5, 8, 10]
 const DEFAULT_REPS = 5
 const XP_PER_REP = 1
+/** Let correct/wrong spring play before revealing the gloss. */
+const REVEAL_MS = 420
 
 /**
- * Rapid drill — cycle each word 5–10 times with a two-tap "again / got it"
- * verdict. Deliberate massed practice: it credits the daily goal but never
- * changes an SRS schedule, so drilling and spaced review stay independent.
+ * Rapid drill — multiple-choice recall (answer first, then reveal). Credits the
+ * daily goal but never changes an SRS schedule.
  */
 export function DrillFlow({
   words,
@@ -30,12 +31,45 @@ export function DrillFlow({
   const [reps, setReps] = useState(DEFAULT_REPS)
   const [queue, setQueue] = useState<string[] | null>(null)
   const [n, setN] = useState(0)
-  const [shown, setShown] = useState(false)
+  const [phase, setPhase] = useState<'ask' | 'feedback' | 'reveal'>('ask')
+  const [picked, setPicked] = useState<string | null>(null)
+  const [correctPick, setCorrectPick] = useState(false)
   const [gotFirstTry, setGotFirstTry] = useState(0)
   const [triedAgain, setTriedAgain] = useState<Set<number>>(new Set())
   const committed = useRef(false)
+  const revealTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const uniqueCount = useMemo(() => new Set(words.filter(Boolean)).size, [words])
+  const zh = queue?.[Math.min(n, Math.max(queue.length - 1, 0))] ?? ''
+  const question = useMemo(() => (zh ? buildDrillQuestion(zh, n) : null), [zh, n])
+  const word = zh ? lookup(zh) : undefined
+  const example = zh ? exampleFor(zh) : null
+
+  useEffect(() => {
+    return () => {
+      if (revealTimer.current) clearTimeout(revealTimer.current)
+    }
+  }, [])
+
+  function resetBeat() {
+    setPhase('ask')
+    setPicked(null)
+    setCorrectPick(false)
+    if (revealTimer.current) {
+      clearTimeout(revealTimer.current)
+      revealTimer.current = null
+    }
+  }
+
+  function finish() {
+    if (!committed.current) {
+      committed.current = true
+      const total = uniqueCount * reps
+      const doneReps = Math.min(n, total)
+      if (doneReps > 0) store.logDrill(doneReps, doneReps * XP_PER_REP)
+    }
+    onClose()
+  }
 
   // Setup screen — pick reps, then start.
   if (!queue) {
@@ -53,7 +87,7 @@ export function DrillFlow({
               {uniqueCount === 1 ? 'Drill this word' : `Drill ${uniqueCount} words`}
             </h2>
             <p className="sub" style={{ marginTop: 6 }}>
-              Rapid repetition — see it, recall it, again.
+              Answer first — meaning stays hidden until you pick.
             </p>
 
             <div className="kicker-ink" style={{ margin: '28px 0 10px' }}>
@@ -102,37 +136,35 @@ export function DrillFlow({
 
   const total = uniqueCount * reps
   const done = n >= queue.length
-  const zh = queue[Math.min(n, queue.length - 1)]
-  const word = lookup(zh)
-  const example = exampleFor(zh)
 
-  function reveal() {
-    if (shown) return
-    setShown(true)
+  function answer(optionId: string) {
+    if (!question || question.mode === 'no-gloss') return
+    if (phase !== 'ask' || picked) return
+    const ok = optionId === question.answerId
+    setPicked(optionId)
+    setCorrectPick(ok)
+    setPhase('feedback')
+    if (ok && !triedAgain.has(n)) setGotFirstTry((g) => g + 1)
+    revealTimer.current = setTimeout(() => setPhase('reveal'), REVEAL_MS)
+  }
+
+  function acknowledgeNoGloss(knew: boolean) {
+    if (phase !== 'ask') return
+    if (knew && !triedAgain.has(n)) setGotFirstTry((g) => g + 1)
+    setCorrectPick(knew)
+    setPhase('reveal')
   }
 
   function gotIt() {
-    if (!triedAgain.has(n)) setGotFirstTry((g) => g + 1)
-    setShown(false)
+    resetBeat()
     setN(n + 1)
   }
 
   function again() {
     setTriedAgain((s) => new Set(s).add(n))
     setQueue((q) => (q ? requeue(q, n, zh) : q))
-    setShown(false)
+    resetBeat()
     setN(n + 1)
-  }
-
-  // Credit only the reps actually answered (n), so quitting early doesn't award
-  // the full planned total. Committed once, guarded against a double-commit.
-  function finish() {
-    if (!committed.current) {
-      committed.current = true
-      const doneReps = Math.min(n, total)
-      if (doneReps > 0) store.logDrill(doneReps, doneReps * XP_PER_REP)
-    }
-    onClose()
   }
 
   if (done) {
@@ -161,13 +193,12 @@ export function DrillFlow({
           <button
             className="btn btn-ghost"
             onClick={() => {
-              // Bank the round just finished before starting a fresh one.
               const doneReps = Math.min(n, total)
               if (doneReps > 0) store.logDrill(doneReps, doneReps * XP_PER_REP)
               committed.current = false
               setQueue(buildDrillQueue(words, reps))
               setN(0)
-              setShown(false)
+              resetBeat()
               setGotFirstTry(0)
               setTriedAgain(new Set())
             }}
@@ -182,6 +213,11 @@ export function DrillFlow({
     )
   }
 
+  if (!question) return null
+
+  const revealed = phase === 'reveal'
+  const noGloss = question.mode === 'no-gloss'
+
   return (
     <div className="overlay" style={{ zIndex: 90 }}>
       <Head title={title ?? 'Drill'} onClose={finish} />
@@ -195,40 +231,52 @@ export function DrillFlow({
       </div>
 
       <div
-        className="overlay-body"
+        className="overlay-body yl-enter"
         key={n}
         style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
       >
-        <button
-          className="card zh"
-          onClick={reveal}
-          onPointerDown={() => unlockSpeech()}
-          aria-label={shown ? undefined : `Reveal ${zh}`}
+        <div
+          className="card"
           style={{
             background: 'var(--paper)',
             borderRadius: 26,
             padding: 26,
             textAlign: 'center',
             width: '100%',
-            display: 'block',
-            cursor: shown ? 'default' : 'pointer',
           }}
         >
+          <div className="kicker-ink" style={{ marginBottom: 10 }}>
+            {noGloss
+              ? 'No book meaning yet'
+              : question.mode === 'zh-to-en'
+                ? 'What does this mean?'
+                : 'Which word means this?'}
+          </div>
           <div
-            style={{ fontSize: 84, fontWeight: 700, lineHeight: 1.05, letterSpacing: '-1px' }}
-            lang="zh-CN"
+            className={question.promptLang === 'zh' ? 'zh' : undefined}
+            style={{
+              fontSize: question.promptLang === 'zh' ? 72 : 28,
+              fontWeight: 700,
+              lineHeight: 1.15,
+              letterSpacing: question.promptLang === 'zh' ? '-1px' : '-0.3px',
+            }}
+            lang={question.promptLang === 'zh' ? 'zh-CN' : undefined}
           >
-            {zh}
+            {question.prompt}
           </div>
 
-          {shown ? (
-            <div className="pop" style={{ marginTop: 14 }}>
-              <div style={{ color: 'var(--warm-hot)', fontWeight: 800, fontSize: 22 }}>
-                {word?.pinyin}
-              </div>
-              <div style={{ fontSize: 17, fontWeight: 600, marginTop: 8, lineHeight: 1.4 }}>
-                {word?.en}
-              </div>
+          {revealed && (
+            <div className="yl-enter-up" style={{ marginTop: 14 }}>
+              {word?.pinyin ? (
+                <div style={{ color: 'var(--warm-hot)', fontWeight: 800, fontSize: 22 }}>{word.pinyin}</div>
+              ) : null}
+              {word?.en ? (
+                <div style={{ fontSize: 17, fontWeight: 600, marginTop: 8, lineHeight: 1.4 }}>{word.en}</div>
+              ) : (
+                <div style={{ fontSize: 14, color: 'var(--muted)', marginTop: 8, lineHeight: 1.45 }}>
+                  Meaning not in the book yet — still saved for drill when you star it.
+                </div>
+              )}
               {example && (
                 <div
                   style={{
@@ -250,10 +298,48 @@ export function DrillFlow({
                 </div>
               )}
             </div>
-          ) : (
-            <div style={{ fontSize: 13, color: 'var(--muted-2)', marginTop: 16 }}>Tap to reveal</div>
           )}
-        </button>
+        </div>
+
+        {!noGloss && !revealed && (
+          <div className="session-options" style={{ marginTop: 16 }}>
+            {question.options.map((o) => {
+              const isAnswer = o.id === question.answerId
+              const isWrong = picked === o.id && !isAnswer
+              const showCorrect = phase === 'feedback' && isAnswer
+              const motion = showCorrect ? ' yl-correct' : isWrong ? ' yl-wrong' : ''
+              const st = showCorrect ? 'correct' : isWrong ? 'wrong' : undefined
+              return (
+                <button
+                  key={isWrong ? `${o.id}-miss` : o.id}
+                  type="button"
+                  className={`option${question.mode === 'en-to-zh' ? ' zh' : ''}${motion}`}
+                  data-state={st}
+                  disabled={phase !== 'ask'}
+                  onPointerDown={() => unlockSpeech()}
+                  onClick={() => answer(o.id)}
+                  lang={question.mode === 'en-to-zh' ? 'zh-CN' : undefined}
+                >
+                  {o.label}
+                </button>
+              )
+            })}
+          </div>
+        )}
+
+        {noGloss && phase === 'ask' && (
+          <p className="sub" style={{ marginTop: 16, textAlign: 'center', textWrap: 'pretty' }}>
+            No book gloss for this card yet — mark how the recall felt, then continue.
+          </p>
+        )}
+
+        {phase === 'feedback' && !noGloss && (
+          <div className="yl-enter-up" style={{ textAlign: 'center', marginTop: 12 }} aria-live="polite">
+            <strong style={{ fontSize: 16, fontWeight: 800, color: 'var(--red-deep)' }}>
+              {correctPick ? 'Nice!' : 'Not quite'}
+            </strong>
+          </div>
+        )}
 
         <div className="row" style={{ justifyContent: 'center', gap: 16, marginTop: 16 }}>
           <ChineseHear text={zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
@@ -262,7 +348,7 @@ export function DrillFlow({
       </div>
 
       <div className="overlay-foot">
-        {shown ? (
+        {revealed ? (
           <div className="grid2">
             <button className="rating" data-k="again" onClick={again}>
               Again
@@ -271,10 +357,19 @@ export function DrillFlow({
               Got it
             </button>
           </div>
+        ) : noGloss ? (
+          <div className="grid2">
+            <button className="rating" data-k="again" onClick={() => acknowledgeNoGloss(false)}>
+              Again
+            </button>
+            <button className="rating" data-k="good" onClick={() => acknowledgeNoGloss(true)}>
+              Got it
+            </button>
+          </div>
         ) : (
-          <button className="btn" onClick={reveal}>
-            Show answer
-          </button>
+          <p style={{ fontSize: 12, color: 'var(--muted-3)', textAlign: 'center', margin: 0 }}>
+            Pick an answer to continue
+          </p>
         )}
       </div>
     </div>

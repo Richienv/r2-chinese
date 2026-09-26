@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
-import type { Example } from './content'
+import { registerVocab, type Example } from './content'
 import type { TeachPhase, WordHook } from './teach'
 import type { LessonText, TextLine, Vocab } from './types'
 import type { PathNode } from '../store/store'
@@ -11,8 +11,8 @@ const PROGRESS_KEY = 'yulu.kerja.v1'
 export const KERJA_BOOK = {
   title: 'Mandarin Kerja Nyata',
   titleZh: '把话说清楚，把事情做好。',
-  edition: 'Edisi Lapangan 2026',
-  blurb: 'Kamus percakapan HR & manajemen berbahasa Mandarin',
+  edition: 'Field edition 2026',
+  blurb: 'Workplace Mandarin for HR and management',
 } as const
 
 export interface KerjaExample {
@@ -424,4 +424,11 @@ const HANZI = /[\u3400-\u9FFF]/
 export function hearableZh(text: string | undefined | null): string {
   const t = text?.trim() ?? ''
   return t && HANZI.test(t) ? t : ''
+}
+
+/** Seed the shared gloss/drill lexicon so Kerja words star into the same list. */
+for (const ch of kerjaChapters) {
+  for (const w of ch.words) {
+    registerVocab(toVocab(w), wordExample(w))
+  }
 }

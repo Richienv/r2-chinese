@@ -10,9 +10,9 @@
       "pinyin": "wùhuì",
       "pos": "v.",
       "en": "kesalahpahaman",
-      "note": "Book headword pinyin printed as wùhuì. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 产生误会. Hindari: Jangan gunakan untuk menepis keluhan nyata tanpa memeriksa.",
-      "when": "Remember 误会 like the word you’ll use when pakai jika informasi atau maksud belum dipahami sama; jangan langsung menyalahkan.",
-      "usage": "Most Chinese speakers use 误会 in this office/HR speaking sense. Book pairing: 产生误会. Jangan gunakan untuk menepis keluhan nyata tanpa memeriksa.",
+      "note": "Book headword pinyin printed as wùhuì. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 产生误会. Watch-out: Don't use for menepis keluhan nyata tanpa memeriksa.",
+      "when": "Remember 误会 like the word you’ll use in HR/office talk for kesalahpahaman.",
+      "usage": "Most Chinese speakers use 误会 in this workplace sense. Book pairing: 产生误会. Watch-out: Don't use for menepis keluhan nyata tanpa memeriksa.",
       "example": {
         "zh": "我觉得这里可能有个误会，我们核对一下事实。",
         "pinyin": "Wǒ juéde zhèlǐ kěnéng yǒugè wùhuì, wǒmen héduì yīxià shìshí.",
@@ -23,14 +23,14 @@
       "zh": "分歧",
       "pinyin": "fēnqí",
       "pos": "v.",
-      "en": "perbedaan pendapat",
-      "note": "Book headword pinyin printed as fēnqí. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 存在分歧. Hindari: 分歧 tidak otomatis konflik pribadi.",
-      "when": "Remember 分歧 like the word you’ll use when cocok untuk ketidaksepakatan pada rencana, prioritas, atau penilaian.",
-      "usage": "Most Chinese speakers use 分歧 in this office/HR speaking sense. Book pairing: 存在分歧. 分歧 tidak otomatis konflik pribadi.",
+      "en": "disagreement",
+      "note": "Book headword pinyin printed as fēnqí. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 存在分歧. Watch-out: 分歧 tidak otomatis konflik pribadi.",
+      "when": "Remember 分歧 like the word you’ll use in HR/office talk for perbedaan pendapat.",
+      "usage": "Most Chinese speakers use 分歧 in this workplace sense. Book pairing: 存在分歧. Watch-out: 分歧 tidak otomatis konflik pribadi.",
       "example": {
         "zh": "我们对时间安排有分歧，可以讨论两个方案。",
         "pinyin": "Wǒmen duì shíjiān ānpái yǒu fēnqí, kěyǐ tǎolùn liǎnggè fāngàn.",
-        "en": "Kita berbeda pendapat soal jadwal; kita bisa membahas dua opsi."
+        "en": "We disagree on the schedule; we can discuss two options."
       }
     },
     {
@@ -38,13 +38,13 @@
       "pinyin": "gōutōng",
       "pos": "v.",
       "en": "berkomunikasi",
-      "note": "Book headword pinyin printed as gōutōng. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 直接沟通. Hindari: Jangan gunakan 沟通 hanya untuk memberi perintah. untuk menyamakan pemahaman",
-      "when": "Remember 沟通 like the word you’ll use when tekankan proses dua arah: menjelaskan dan mendengarkan..",
-      "usage": "Most Chinese speakers use 沟通 in this office/HR speaking sense. Book pairing: 直接沟通. Jangan gunakan 沟通 hanya untuk memberi perintah. untuk menyamakan pemahaman",
+      "note": "Book headword pinyin printed as gōutōng. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 直接沟通. Watch-out: Don't use 沟通 hanya for memberi perintah. for menyamakan pemahaman",
+      "when": "Remember 沟通 like the word you’ll use in HR/office talk for berkomunikasi.",
+      "usage": "Most Chinese speakers use 沟通 in this workplace sense. Book pairing: 直接沟通. Watch-out: Don't use 沟通 hanya for memberi perintah. for menyamakan pemahaman",
       "example": {
         "zh": "这件事最好先和相关同事直接沟通。",
         "pinyin": "Zhèjiàn shì zuìhǎo xiān hé xiāngguān tóngshì zhíjiē gōutōng.",
-        "en": "Sebaiknya hal ini dibicarakan langsung dengan rekan terkait."
+        "en": "Sebaiknya hal ini dibicarakan langsung with colleague terkait."
       }
     },
     {
@@ -52,37 +52,37 @@
       "pinyin": "lìchǎng",
       "pos": "v.",
       "en": "posisi atau sudut",
-      "note": "Book headword pinyin printed as lìchǎng. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 理解立场. Hindari: 立场 berbeda dari fakta yang bisa diverifikasi. pandang menyerang / lanjutan",
-      "when": "Remember 立场 like the word you’ll use when berguna untuk menjelaskan alasan masing-masing pihak tanpa menghakimi.",
-      "usage": "Most Chinese speakers use 立场 in this office/HR speaking sense. Book pairing: 理解立场. 立场 berbeda dari fakta yang bisa diverifikasi. pandang menyerang / lanjutan",
+      "note": "Book headword pinyin printed as lìchǎng. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 理解立场. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 立场 like the word you’ll use in HR/office talk for posisi atau sudut.",
+      "usage": "Most Chinese speakers use 立场 in this workplace sense. Book pairing: 理解立场. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "我理解你的立场，也想说明团队的限制。",
         "pinyin": "Wǒ lǐjiě nǐ de lìchǎng, yě xiǎng shuōmíng tuánduì de xiànzhì.",
-        "en": "Saya memahami sudut pandangmu dan ingin menjelaskan batasan tim."
+        "en": "I memahami sudut pandangmu and want menjelaskan batasan team."
       }
     },
     {
       "zh": "尊重",
       "pinyin": "zūnzhòng",
       "pos": "v.",
-      "en": "menghormati",
-      "note": "Book headword pinyin printed as zūnzhòng. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 互相尊重. Hindari: 尊重 bukan berarti semua usul disetujui.",
-      "when": "Remember 尊重 like the word you’ll use when pakai untuk menetapkan cara berbicara yang profesional saat berbeda pendapat.",
-      "usage": "Most Chinese speakers use 尊重 in this office/HR speaking sense. Book pairing: 互相尊重. 尊重 bukan berarti semua usul disetujui.",
+      "en": "to respect",
+      "note": "Book headword pinyin printed as zūnzhòng. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 互相尊重. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 尊重 like the word you’ll use in HR/office talk for menghormati.",
+      "usage": "Most Chinese speakers use 尊重 in this workplace sense. Book pairing: 互相尊重. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "即使意见不同，我们也要互相尊重。",
         "pinyin": "Jíshǐ yìjiàn bùtóng, wǒmen yě yào hùxiāng zūnzhòng.",
-        "en": "Walau pendapat berbeda, kita tetap perlu saling menghormati."
+        "en": "Even if we disagree, we still need to respect each other."
       }
     },
     {
       "zh": "私下",
       "pinyin": "sīxià",
       "pos": "v.",
-      "en": "secara pribadi, di",
-      "note": "Book headword pinyin printed as sīxià. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 私下沟通. Hindari: 私下 bukan alasan menyembunyikan pelanggaran yang harus dilaporkan. luar forum umum",
-      "when": "Remember 私下 like the word you’ll use when cocok untuk membahas feedback sensitif dalam ruang yang tepat.",
-      "usage": "Most Chinese speakers use 私下 in this office/HR speaking sense. Book pairing: 私下沟通. 私下 bukan alasan menyembunyikan pelanggaran yang harus dilaporkan. luar forum umum",
+      "en": "in private",
+      "note": "Book headword pinyin printed as sīxià. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 私下沟通. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 私下 like the word you’ll use in HR/office talk for secara pribadi, di.",
+      "usage": "Most Chinese speakers use 私下 in this workplace sense. Book pairing: 私下沟通. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "这类反馈我们私下沟通会更合适。",
         "pinyin": "Zhè lèi fǎnkuì wǒmen sīxià gōutōng huì gèng héshì.",
@@ -93,38 +93,38 @@
       "zh": "澄清",
       "pinyin": "chéngqīng",
       "pos": "v.",
-      "en": "meluruskan atau",
-      "note": "Book headword pinyin printed as chéngqīng. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 澄清事实. Hindari: 澄清 bukan memaksa orang menerima versimu. memperjelas",
-      "when": "Remember 澄清 like the word you’ll use when dipakai saat pernyataan, keputusan, atau tanggung jawab ambigu.",
-      "usage": "Most Chinese speakers use 澄清 in this office/HR speaking sense. Book pairing: 澄清事实. 澄清 bukan memaksa orang menerima versimu. memperjelas",
+      "en": "to clarify",
+      "note": "Book headword pinyin printed as chéngqīng. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 澄清事实. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 澄清 like the word you’ll use in HR/office talk for meluruskan atau.",
+      "usage": "Most Chinese speakers use 澄清 in this workplace sense. Book pairing: 澄清事实. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "我想先澄清一下昨天的分工。",
         "pinyin": "Wǒ xiǎng xiān chéngqīng yīxià zuótiān de fēngōng.",
-        "en": "Saya ingin meluruskan pembagian tugas kemarin terlebih dahulu."
+        "en": "I want meluruskan pembagian tugas kemarin terlebih dahulu."
       }
     },
     {
       "zh": "调整",
       "pinyin": "tiáozhěng",
       "pos": "v.",
-      "en": "menyesuaikan",
-      "note": "Book headword pinyin printed as tiáozhěng. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 调整安排. Hindari: Sebut apa yang berubah dan sejak kapan. menyerang / lanjutan",
-      "when": "Remember 调整 like the word you’ll use when gunakan untuk perubahan jadwal, cara kerja, atau pembagian tugas.",
-      "usage": "Most Chinese speakers use 调整 in this office/HR speaking sense. Book pairing: 调整安排. Sebut apa yang berubah dan sejak kapan. menyerang / lanjutan",
+      "en": "to adjust",
+      "note": "Book headword pinyin printed as tiáozhěng. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 调整安排. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 调整 like the word you’ll use in HR/office talk for menyesuaikan.",
+      "usage": "Most Chinese speakers use 调整 in this workplace sense. Book pairing: 调整安排. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "如果大家同意，我们可以调整会议安排。",
         "pinyin": "Rúguǒ dàjiā tóngyì, wǒmen kěyǐ tiáozhěng huìyì ānpái.",
-        "en": "Jika semua setuju, kita bisa menyesuaikan jadwal rapat."
+        "en": "If everyone agrees, we can adjust the meeting plan."
       }
     },
     {
       "zh": "解决",
       "pinyin": "jiějué",
       "pos": "v.",
-      "en": "menyelesaikan",
-      "note": "Book headword pinyin printed as jiějué. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 解决问题. Hindari: 讨论 bukan berarti masalah sudah 解决. masalah",
-      "when": "Remember 解决 like the word you’ll use when pakai setelah ada tindakan dan hasil, bukan hanya setelah rapat.",
-      "usage": "Most Chinese speakers use 解决 in this office/HR speaking sense. Book pairing: 解决问题. 讨论 bukan berarti masalah sudah 解决. masalah",
+      "en": "to resolve",
+      "note": "Book headword pinyin printed as jiějué. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 解决问题. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 解决 like the word you’ll use in HR/office talk for menyelesaikan.",
+      "usage": "Most Chinese speakers use 解决 in this workplace sense. Book pairing: 解决问题. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "先找出原因，再讨论怎么解决问题。",
         "pinyin": "Xiān zhǎochū yuányīn, zài tǎolùn zěnme jiějuéwèntí.",
@@ -135,22 +135,22 @@
       "zh": "升级",
       "pinyin": "shēngjí",
       "pos": "v.",
-      "en": "menaikkan penanga",
-      "note": "Book headword pinyin printed as shēngjí. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 升级处理. Hindari: Jangan menggunakan eskalasi sebagai ancaman. nan ke level berwenang Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
-      "when": "Remember 升级 like the word you’ll use when dalam kerja, berarti eskalasi bila penyelesaian awal belum cukup.",
-      "usage": "Most Chinese speakers use 升级 in this office/HR speaking sense. Book pairing: 升级处理. Jangan menggunakan eskalasi sebagai ancaman. nan ke level berwenang Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
+      "en": "to escalate",
+      "note": "Book headword pinyin printed as shēngjí. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing: 升级处理. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
+      "when": "Remember 升级 like the word you’ll use in HR/office talk for menaikkan penanga.",
+      "usage": "Most Chinese speakers use 升级 in this workplace sense. Book pairing: 升级处理. Watch out: keep this workplace meaning, and do not swap it for a nearby word.",
       "example": {
         "zh": "如果双方无法解决，我们再按流程升级处理。",
         "pinyin": "Rúguǒ shuāngfāng wúfǎ jiějué, wǒmen zài àn liúchéng shēngjí chǔlǐ.",
-        "en": "Jika kedua pihak belum bisa menyelesaikannya, kita eskalasi sesuai prosedur."
+        "en": "If the two sides cannot resolve it, we will escalate it by the process."
       }
     }
   ],
   "dialogues": [],
   "notes": [
     {
-      "title": "Module aim — Konflik kerja: luruskan fakta tanpa menyerang",
-      "body": "MODUL 07 / HR (book pages 73-75). Indonesian title: Konflik kerja: luruskan fakta tanpa menyerang."
+      "title": "Module aim — Workplace conflict: straighten the facts without attacking",
+      "body": "Module 07 / HR (book pages 73-75). The book’s own title: Konflik kerja: luruskan fakta tanpa menyerang."
     },
     {
       "title": "Latihan 90 detik",

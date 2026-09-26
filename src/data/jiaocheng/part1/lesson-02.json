@@ -1,0 +1,659 @@
+{
+  "id": "jiaocheng-2-1-02",
+  "book": "2-1",
+  "index": 2,
+  "bookLesson": 2,
+  "titleZh": "玛丽哭了",
+  "titleEn": "Mary cried",
+  "sourcePages": "18-34",
+  "words": [
+    {
+      "zh": "病人",
+      "pinyin": "bìngrén",
+      "pos": "n.",
+      "en": "patient",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 病人 like the word you’ll use for the person seeing the doctor — 课文（一）的病人.",
+      "usage": "Most Chinese speakers call a patient 病人 in clinic talk. Here the dialogue speaker is labeled 病人.",
+      "example": {
+        "zh": "你怎么了？",
+        "pinyin": "Nǐ zěnme le?",
+        "en": "What’s wrong with you?"
+      }
+    },
+    {
+      "zh": "肚子",
+      "pinyin": "dùzi",
+      "pos": "n.",
+      "en": "stomach; abdomen",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 肚子 like the belly that hurts — 肚子疼得厉害.",
+      "usage": "Most Chinese speakers say 肚子疼 / 肚子痛 for stomach pain. Clinic 课文 opens with this.",
+      "example": {
+        "zh": "肚子疼得厉害，在家吃了两片药，还不行。",
+        "pinyin": "Dùzi téng de lìhai, zài jiā chī le liǎng piàn yào, hái bù xíng.",
+        "en": "My stomach hurts badly — I took two tablets at home and it still didn’t help."
+      }
+    },
+    {
+      "zh": "厉害",
+      "pinyin": "lìhai",
+      "pos": "adj.",
+      "en": "serious; severe",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 厉害 like ‘badly / severe’ after 得 — 疼得厉害.",
+      "usage": "Most Chinese speakers use Adj/V + 得厉害 for high intensity. Here the pain is severe.",
+      "example": {
+        "zh": "肚子疼得厉害。",
+        "pinyin": "Dùzi téng de lìhai.",
+        "en": "My stomach hurts badly."
+      }
+    },
+    {
+      "zh": "了",
+      "pinyin": "le",
+      "pos": "part.",
+      "en": "an aspect particle used after a verb or an adjective to indicate the completion of a real or expected action or change",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added. Verb/adjective + 了 (completion) — this lesson’s grammar focus; different sense from Lesson 1 sentence-final 了.",
+      "when": "Remember this 了 like the aspect marker after a verb — 吃了, 拉了, 哭了.",
+      "usage": "Most Chinese speakers put 了 after the verb for completed action. Object usually needs a measure or other attribute (见语法).",
+      "example": {
+        "zh": "在家吃了两片药，还不行。",
+        "pinyin": "Zài jiā chī le liǎng piàn yào, hái bù xíng.",
+        "en": "I took two tablets at home and it still didn’t help."
+      }
+    },
+    {
+      "zh": "片",
+      "pinyin": "piàn",
+      "pos": "m.",
+      "en": "(a measure word for slices, tablets, etc.) piece",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 片 like the tablet measure — 两片药.",
+      "usage": "Most Chinese speakers count pills and slices with 片. Pattern: 一次两片.",
+      "example": {
+        "zh": "一天三次，一次两片，饭后吃。",
+        "pinyin": "Yì tiān sān cì, yí cì liǎng piàn, fàn hòu chī.",
+        "en": "Three times a day, two tablets each time, after meals."
+      }
+    },
+    {
+      "zh": "拉肚子",
+      "pinyin": "lā dùzi",
+      "pos": "v.",
+      "en": "to suffer from diarrhoea; to have loose bowels",
+      "note": "Headword pinyin printed in the book; part of speech not printed. Example-sentence pinyin not printed; standard pinyin added. Book prints spaced lā dùzi.",
+      "when": "Remember 拉肚子 like the clinic question — 拉肚子了吗？",
+      "usage": "Most Chinese speakers say 拉肚子 for diarrhea. Related 拉 is under this entry.",
+      "example": {
+        "zh": "拉肚子了吗？",
+        "pinyin": "Lā dùzi le ma?",
+        "en": "Do you have diarrhea?"
+      }
+    },
+    {
+      "zh": "拉",
+      "pinyin": "lā",
+      "pos": "v.",
+      "en": "to have a bowel movement",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 拉 like the verb half of 拉肚子 — 拉了.",
+      "usage": "Most Chinese speakers use 拉 for having a bowel movement in this medical sense.",
+      "example": {
+        "zh": "拉了。",
+        "pinyin": "Lā le.",
+        "en": "Yes, I did."
+      }
+    },
+    {
+      "zh": "鱼",
+      "pinyin": "yú",
+      "pos": "n.",
+      "en": "fish",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 鱼 like the food the patient ate — 一些鱼.",
+      "usage": "Most Chinese speakers mean fish as food here. Paired with 牛肉 in the diet history.",
+      "example": {
+        "zh": "就吃了一些鱼和牛肉。",
+        "pinyin": "Jiù chī le yìxiē yú hé niúròu.",
+        "en": "I only ate some fish and beef."
+      }
+    },
+    {
+      "zh": "牛肉",
+      "pinyin": "niúròu",
+      "pos": "n.",
+      "en": "beef",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 牛肉 like the other food in 就吃了一些鱼和牛肉.",
+      "usage": "Most Chinese speakers mean beef meat. Clinic history pairs it with 鱼.",
+      "example": {
+        "zh": "就吃了一些鱼和牛肉。",
+        "pinyin": "Jiù chī le yìxiē yú hé niúròu.",
+        "en": "I only ate some fish and beef."
+      }
+    },
+    {
+      "zh": "化验",
+      "pinyin": "huàyàn",
+      "pos": "v.",
+      "en": "to test; to assay",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 化验 like the lab test — 去化验一下儿大便.",
+      "usage": "Most Chinese speakers 化验 samples at the hospital. Results: 化验结果出来了.",
+      "example": {
+        "zh": "你先去化验一下儿大便，然后我再给你检查检查。",
+        "pinyin": "Nǐ xiān qù huàyàn yíxiàr dàbiàn, ránhòu wǒ zài gěi nǐ jiǎncha jiǎncha.",
+        "en": "First go have a stool test, then I’ll examine you."
+      }
+    },
+    {
+      "zh": "大便",
+      "pinyin": "dàbiàn",
+      "pos": "n./v.",
+      "en": "feces; to defecate",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 大便 like the stool sample for 化验.",
+      "usage": "Most Chinese speakers use 大便 in clinical talk. Related 小便 is listed under this entry.",
+      "example": {
+        "zh": "你先去化验一下儿大便。",
+        "pinyin": "Nǐ xiān qù huàyàn yíxiàr dàbiàn.",
+        "en": "First go have a stool test."
+      }
+    },
+    {
+      "zh": "小便",
+      "pinyin": "xiǎobiàn",
+      "pos": "n./v.",
+      "en": "urine; to urinate",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 小便 like the urine counterpart of 大便.",
+      "usage": "Most Chinese speakers use 小便 in clinical talk. Listed under 大便 in the book.",
+      "example": {
+        "zh": "化验一下儿大便。",
+        "pinyin": "Huàyàn yíxiàr dàbiàn.",
+        "en": "Have a stool test."
+      }
+    },
+    {
+      "zh": "检查",
+      "pinyin": "jiǎnchá",
+      "pos": "v.",
+      "en": "to examine; to check up",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 检查 like the doctor’s exam after the lab — 给你检查检查.",
+      "usage": "Most Chinese speakers 检查身体 / 检查一下. Reduplication softens the ask.",
+      "example": {
+        "zh": "然后我再给你检查检查。",
+        "pinyin": "Ránhòu wǒ zài gěi nǐ jiǎncha jiǎncha.",
+        "en": "Then I’ll examine you."
+      }
+    },
+    {
+      "zh": "结果",
+      "pinyin": "jiéguǒ",
+      "pos": "n.",
+      "en": "result",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 结果 like the lab outcome — 化验结果出来了吗？",
+      "usage": "Most Chinese speakers mean outcome/result. Here: test results.",
+      "example": {
+        "zh": "化验结果出来了吗？",
+        "pinyin": "Huàyàn jiéguǒ chūlai le ma?",
+        "en": "Are the lab results out?"
+      }
+    },
+    {
+      "zh": "出来",
+      "pinyin": "chūlai",
+      "pos": "v.",
+      "en": "to emerge; to materialize",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 出来 like results appearing — 出来了.",
+      "usage": "Most Chinese speakers use 出来 for something coming out or becoming available. Lab results 出来了.",
+      "example": {
+        "zh": "出来了。",
+        "pinyin": "Chūlai le.",
+        "en": "They’re out."
+      }
+    },
+    {
+      "zh": "得",
+      "pinyin": "dé",
+      "pos": "v.",
+      "en": "to be attacked (by a disease); to contract (a disease)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 得 like catching an illness — 得了肠炎.",
+      "usage": "Most Chinese speakers 得病 / 得了 + illness name. Not the structural 得 here.",
+      "example": {
+        "zh": "大夫，我是不是得了肠炎？",
+        "pinyin": "Dàifu, wǒ shì bu shì dé le chángyán?",
+        "en": "Doctor, have I got enteritis?"
+      }
+    },
+    {
+      "zh": "肠炎",
+      "pinyin": "chángyán",
+      "pos": "n.",
+      "en": "enteritis",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 肠炎 like the illness the patient fears.",
+      "usage": "Most Chinese speakers mean intestinal inflammation. Doctor says it is not 肠炎.",
+      "example": {
+        "zh": "不是肠炎，只是消化不好。",
+        "pinyin": "Bú shì chángyán, zhǐ shì xiāohuà bù hǎo.",
+        "en": "It’s not enteritis — just poor digestion."
+      }
+    },
+    {
+      "zh": "消化",
+      "pinyin": "xiāohuà",
+      "pos": "v.",
+      "en": "to digest",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 消化 like digestion — 消化不好.",
+      "usage": "Most Chinese speakers say 消化不好 for indigestion. Doctor’s diagnosis here.",
+      "example": {
+        "zh": "不是肠炎，只是消化不好。",
+        "pinyin": "Bú shì chángyán, zhǐ shì xiāohuà bù hǎo.",
+        "en": "It’s not enteritis — just poor digestion."
+      }
+    },
+    {
+      "zh": "开（药）",
+      "pinyin": "kāi (yào)",
+      "pos": "v.",
+      "en": "to prescribe (medicine)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 开（药） like the doctor writing a prescription — 开一些药.",
+      "usage": "Most Chinese speakers 开药 for prescribing. Pattern: 给你开一些药.",
+      "example": {
+        "zh": "先给你开一些药，再给你打一针。",
+        "pinyin": "Xiān gěi nǐ kāi yìxiē yào, zài gěi nǐ dǎ yì zhēn.",
+        "en": "I’ll prescribe some medicine first, then give you a shot."
+      }
+    },
+    {
+      "zh": "打针",
+      "pinyin": "dǎ zhēn",
+      "pos": "v.",
+      "en": "to give or have an injection",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 打针 like getting a shot — 打一针.",
+      "usage": "Most Chinese speakers 打针 / 打一针 at the clinic. After the prescription here.",
+      "example": {
+        "zh": "再给你打一针。",
+        "pinyin": "Zài gěi nǐ dǎ yì zhēn.",
+        "en": "Then give you a shot."
+      }
+    },
+    {
+      "zh": "后",
+      "pinyin": "hòu",
+      "pos": "n.",
+      "en": "after; later",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 后 like after meals — 饭后吃.",
+      "usage": "Most Chinese speakers use 饭后 / …后 for ‘after.’ Medicine instructions: 饭后吃.",
+      "example": {
+        "zh": "一天三次，一次两片，饭后吃。",
+        "pinyin": "Yì tiān sān cì, yí cì liǎng piàn, fàn hòu chī.",
+        "en": "Three times a day, two tablets each time, after meals."
+      }
+    },
+    {
+      "zh": "哭",
+      "pinyin": "kū",
+      "pos": "v.",
+      "en": "to cry; to weep",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 哭 like Mary’s tears — 你怎么哭了？",
+      "usage": "Most Chinese speakers 哭了 for crying. Lesson title: 玛丽哭了.",
+      "example": {
+        "zh": "玛丽，你怎么哭了？病了吗？",
+        "pinyin": "Mǎlì, nǐ zěnme kū le? Bìng le ma?",
+        "en": "Mary, why are you crying? Are you sick?"
+      }
+    },
+    {
+      "zh": "寂寞",
+      "pinyin": "jìmò",
+      "pos": "adj.",
+      "en": "lonely",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 寂寞 like the lonely feeling that makes Mary homesick.",
+      "usage": "Most Chinese speakers 感到寂寞 for loneliness. Cause in 因为…所以….",
+      "example": {
+        "zh": "因为感到寂寞，所以心情不好，很难过。",
+        "pinyin": "Yīnwèi gǎndào jìmò, suǒyǐ xīnqíng bù hǎo, hěn nánguò.",
+        "en": "Because I feel lonely, I’m in a bad mood and very sad."
+      }
+    },
+    {
+      "zh": "所以",
+      "pinyin": "suǒyǐ",
+      "pos": "conj.",
+      "en": "so; therefore",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 所以 like the result half of 因为……所以…….",
+      "usage": "Most Chinese speakers link cause→result with 所以. Grammar focus this lesson.",
+      "example": {
+        "zh": "因为感到寂寞，所以心情不好。",
+        "pinyin": "Yīnwèi gǎndào jìmò, suǒyǐ xīnqíng bù hǎo.",
+        "en": "Because I feel lonely, I’m in a bad mood."
+      }
+    },
+    {
+      "zh": "别",
+      "pinyin": "bié",
+      "pos": "adv.",
+      "en": "don't",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 别 like soft don’t — 别难过了.",
+      "usage": "Most Chinese speakers use 别 + verb to stop or discourage an action. 注释: 别……了 for comfort.",
+      "example": {
+        "zh": "别难过了。",
+        "pinyin": "Bié nánguò le.",
+        "en": "Don’t feel so bad."
+      }
+    },
+    {
+      "zh": "难过",
+      "pinyin": "nánguò",
+      "pos": "adj.",
+      "en": "sad; unhappy",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 难过 like Mary’s sad mood — 很难过, 别难过了.",
+      "usage": "Most Chinese speakers 难过 for feeling upset. Roland comforts: 别难过了.",
+      "example": {
+        "zh": "别难过了。",
+        "pinyin": "Bié nánguò le.",
+        "en": "Don’t feel so bad."
+      }
+    },
+    {
+      "zh": "礼堂",
+      "pinyin": "lǐtáng",
+      "pos": "n.",
+      "en": "auditorium",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 礼堂 like the hall with the dance — 礼堂有舞会.",
+      "usage": "Most Chinese speakers mean a school/community auditorium. Tonight’s 舞会 is there.",
+      "example": {
+        "zh": "今天晚上礼堂有舞会，我们一起去跳跳舞吧。",
+        "pinyin": "Jīntiān wǎnshang lǐtáng yǒu wǔhuì, wǒmen yìqǐ qù tiàotiaowǔ ba.",
+        "en": "There’s a dance in the auditorium tonight — let’s go dance a bit."
+      }
+    },
+    {
+      "zh": "舞会",
+      "pinyin": "wǔhuì",
+      "pos": "n.",
+      "en": "ball; dancing party",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 舞会 like the evening event Roland suggests.",
+      "usage": "Most Chinese speakers mean a dance party. Paired with 礼堂 and 跳舞.",
+      "example": {
+        "zh": "今天晚上礼堂有舞会。",
+        "pinyin": "Jīntiān wǎnshang lǐtáng yǒu wǔhuì.",
+        "en": "There’s a dance in the auditorium tonight."
+      }
+    },
+    {
+      "zh": "跳舞",
+      "pinyin": "tiào wǔ",
+      "pos": "v.",
+      "en": "to dance",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 跳舞 like going to dance — 跳跳舞 (reduplicated, see 注释).",
+      "usage": "Most Chinese speakers 跳舞 / 跳跳舞. Separable verb; overlap form softens the invite.",
+      "example": {
+        "zh": "我们一起去跳跳舞吧。",
+        "pinyin": "Wǒmen yìqǐ qù tiàotiaowǔ ba.",
+        "en": "Let’s go dance a bit together."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "你怎么了",
+      "headingEn": "What’s wrong with you",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "大夫",
+          "zh": "你怎么了？",
+          "pinyin": "Nǐ zěnme le?",
+          "en": "What’s wrong with you?"
+        },
+        {
+          "speaker": "病人",
+          "zh": "肚子疼得厉害，在家吃了两片药，还不行。",
+          "pinyin": "Dùzi téng de lìhai, zài jiā chī le liǎng piàn yào, hái bù xíng.",
+          "en": "My stomach hurts badly — I took two tablets at home and it still didn’t help."
+        },
+        {
+          "speaker": "大夫",
+          "zh": "拉肚子了吗？",
+          "pinyin": "Lā dùzi le ma?",
+          "en": "Do you have diarrhea?"
+        },
+        {
+          "speaker": "病人",
+          "zh": "拉了。",
+          "pinyin": "Lā le.",
+          "en": "Yes, I did."
+        },
+        {
+          "speaker": "大夫",
+          "zh": "昨天吃什么了？",
+          "pinyin": "Zuótiān chī shénme le?",
+          "en": "What did you eat yesterday?"
+        },
+        {
+          "speaker": "病人",
+          "zh": "就吃了一些鱼和牛肉。",
+          "pinyin": "Jiù chī le yìxiē yú hé niúròu.",
+          "en": "I only ate some fish and beef."
+        },
+        {
+          "speaker": "大夫",
+          "zh": "喝什么了？",
+          "pinyin": "Hē shénme le?",
+          "en": "What did you drink?"
+        },
+        {
+          "speaker": "病人",
+          "zh": "喝了一瓶啤酒。",
+          "pinyin": "Hē le yì píng píjiǔ.",
+          "en": "I drank a bottle of beer."
+        },
+        {
+          "speaker": "大夫",
+          "zh": "发烧吗？",
+          "pinyin": "Fāshāo ma?",
+          "en": "Do you have a fever?"
+        },
+        {
+          "speaker": "病人",
+          "zh": "不发烧。",
+          "pinyin": "Bù fāshāo.",
+          "en": "No fever."
+        },
+        {
+          "speaker": "大夫",
+          "zh": "你先去化验一下儿大便，然后我再给你检查检查。",
+          "pinyin": "Nǐ xiān qù huàyàn yíxiàr dàbiàn, ránhòu wǒ zài gěi nǐ jiǎncha jiǎncha.",
+          "en": "First go have a stool test, then I’ll examine you."
+        },
+        {
+          "speaker": "病人",
+          "zh": "好吧。",
+          "pinyin": "Hǎo ba.",
+          "en": "Okay."
+        },
+        {
+          "speaker": "大夫",
+          "zh": "化验结果出来了吗？",
+          "pinyin": "Huàyàn jiéguǒ chūlai le ma?",
+          "en": "Are the lab results out?"
+        },
+        {
+          "speaker": "病人",
+          "zh": "出来了。",
+          "pinyin": "Chūlai le.",
+          "en": "They’re out."
+        },
+        {
+          "speaker": "病人",
+          "zh": "大夫，我是不是得了肠炎？",
+          "pinyin": "Dàifu, wǒ shì bu shì dé le chángyán?",
+          "en": "Doctor, have I got enteritis?"
+        },
+        {
+          "speaker": "大夫",
+          "zh": "我看了化验结果。不是肠炎，只是消化不好。先给你开一些药，再给你打一针。",
+          "pinyin": "Wǒ kàn le huàyàn jiéguǒ. Bú shì chángyán, zhǐ shì xiāohuà bù hǎo. Xiān gěi nǐ kāi yìxiē yào, zài gěi nǐ dǎ yì zhēn.",
+          "en": "I’ve looked at the results. It’s not enteritis — just poor digestion. I’ll prescribe some medicine first, then give you a shot."
+        },
+        {
+          "speaker": "病人",
+          "zh": "这药怎么吃？",
+          "pinyin": "Zhè yào zěnme chī?",
+          "en": "How do I take this medicine?"
+        },
+        {
+          "speaker": "护士",
+          "zh": "一天三次，一次两片，饭后吃。",
+          "pinyin": "Yì tiān sān cì, yí cì liǎng piàn, fàn hòu chī.",
+          "en": "Three times a day, two tablets each time, after meals."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "玛丽哭了",
+      "headingEn": "Mary cried",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "罗兰",
+          "zh": "玛丽，你怎么哭了？病了吗？",
+          "pinyin": "Mǎlì, nǐ zěnme kū le? Bìng le ma?",
+          "en": "Mary, why are you crying? Are you sick?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "不是。想家了。因为感到寂寞，所以心情不好，很难过。",
+          "pinyin": "Bú shì. Xiǎng jiā le. Yīnwèi gǎndào jìmò, suǒyǐ xīnqíng bù hǎo, hěn nánguò.",
+          "en": "No. I’m homesick. Because I feel lonely, I’m in a bad mood and very sad."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "别难过了。",
+          "pinyin": "Bié nánguò le.",
+          "en": "Don’t feel so bad."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "你不想家吗？",
+          "pinyin": "Nǐ bù xiǎng jiā ma?",
+          "en": "Don’t you get homesick?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "我也常想家，但是不感到寂寞。",
+          "pinyin": "Wǒ yě cháng xiǎng jiā, dànshì bù gǎndào jìmò.",
+          "en": "I miss home often too, but I don’t feel lonely."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "我有姐姐，还有弟弟。在家时，我们常常一起玩儿，所以感到寂寞时总想他们。",
+          "pinyin": "Wǒ yǒu jiějie, hái yǒu dìdi. Zài jiā shí, wǒmen chángcháng yìqǐ wánr, suǒyǐ gǎndào jìmò shí zǒng xiǎng tāmen.",
+          "en": "I have an older sister and a younger brother. At home we often play together, so when I feel lonely I always think of them."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "今天晚上礼堂有舞会，我们一起去跳跳舞吧。玩儿玩儿就好了。",
+          "pinyin": "Jīntiān wǎnshang lǐtáng yǒu wǔhuì, wǒmen yìqǐ qù tiàotiaowǔ ba. Wánrwanr jiù hǎo le.",
+          "en": "There’s a dance in the auditorium tonight — let’s go dance a bit. Playing around a little will help."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "什么时候去？",
+          "pinyin": "Shénme shíhou qù?",
+          "en": "When shall we go?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "吃了晚饭就去吧。你在宿舍等我，我来叫你。",
+          "pinyin": "Chī le wǎnfàn jiù qù ba. Nǐ zài sùshè děng wǒ, wǒ lái jiào nǐ.",
+          "en": "Let’s go after dinner. Wait for me in the dorm — I’ll come get you."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "好吧。",
+          "pinyin": "Hǎo ba.",
+          "en": "Okay."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "你怎么了？",
+      "body": "询问已发生的情况及其过程、原因、理由时用“怎么了”。“怎么了” is used to inquire about a situation that has happened and its process, cause and reason. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "你怎么了？",
+        "pinyin": "Nǐ zěnme le?",
+        "en": "What’s wrong with you?"
+      }
+    },
+    {
+      "title": "就吃了一些鱼和牛肉。",
+      "body": "“就”用在动宾词组前，表示动作涉及的范围小、数量少，有“仅仅，只”的意思。“就” is used before a verb-object phrase to indicate that the scope or quantity that the action involves is limited, suggesting “only/merely.” Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "就吃了一些鱼和牛肉。",
+        "pinyin": "Jiù chī le yìxiē yú hé niúròu.",
+        "en": "I only ate some fish and beef."
+      }
+    },
+    {
+      "title": "别难过了。",
+      "body": "“别……了”用于口语，表示安慰或劝告。“别……了” is used in spoken Chinese to console or persuade someone. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "别难过了。",
+        "pinyin": "Bié nánguò le.",
+        "en": "Don’t feel so bad."
+      }
+    },
+    {
+      "title": "跳跳舞",
+      "body": "“跳跳舞”是离合动词“跳舞”的重叠形式。“跳跳舞” is the reduplicated form of the separable verb “跳舞”. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我们一起去跳跳舞吧。",
+        "pinyin": "Wǒmen yìqǐ qù tiàotiaowǔ ba.",
+        "en": "Let’s go dance a bit together."
+      }
+    },
+    {
+      "title": "动作的完成：动词＋了",
+      "body": "动词后边加上动态助词“了”可以表示动作完成。“动词＋了”要带宾语时，宾语前要有数量词或其他词语作定语；若无，句末常需语气助词“了”，或用“V了O就V…”表示意念中的完成。正反问：……了没有？／动词＋没＋动词。否定：没（有）＋动词（后不再用“了”）。连动句中第一动词后不能有“了”。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我吃了一些鱼和牛肉。",
+        "pinyin": "Wǒ chī le yìxiē yú hé niúròu.",
+        "en": "I ate some fish and beef."
+      }
+    },
+    {
+      "title": "因为……所以……",
+      "body": "“因为……所以……”连接一个因果复句，表达事情的原因和结果。“因为”和“所以”也都可以单独使用。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "因为感到寂寞，所以心情不好。",
+        "pinyin": "Yīnwèi gǎndào jìmò, suǒyǐ xīnqíng bù hǎo.",
+        "en": "Because I feel lonely, I’m in a bad mood."
+      }
+    }
+  ]
+}

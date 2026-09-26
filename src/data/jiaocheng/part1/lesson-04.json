@@ -1,0 +1,566 @@
+{
+  "id": "jiaocheng-2-1-04",
+  "book": "2-1",
+  "index": 4,
+  "bookLesson": 4,
+  "titleZh": "我都做对了",
+  "titleEn": "I got them all correct",
+  "sourcePages": "51-67",
+  "words": [
+    {
+      "zh": "考试",
+      "pinyin": "kǎo shì",
+      "pos": "v.",
+      "en": "to take an exam",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 考试 like taking the test — 考得怎么样？",
+      "usage": "Most Chinese speakers 考试 / 考得…. Book prints spaced kǎo shì.",
+      "example": {
+        "zh": "你今天考得怎么样？",
+        "pinyin": "Nǐ jīntiān kǎo de zěnmeyàng?",
+        "en": "How did you do on today’s exam?"
+      }
+    },
+    {
+      "zh": "题",
+      "pinyin": "tí",
+      "pos": "n.",
+      "en": "question; problem",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 题 like exam questions — 题太多了, 两道题.",
+      "usage": "Most Chinese speakers count questions with 道.",
+      "example": {
+        "zh": "题太多了，我没有做完。",
+        "pinyin": "Tí tài duō le, wǒ méiyǒu zuòwán.",
+        "en": "There were too many questions — I didn’t finish."
+      }
+    },
+    {
+      "zh": "完",
+      "pinyin": "wán",
+      "pos": "v.",
+      "en": "to finish; to be over",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 完 like the result complement — 做完, 看完.",
+      "usage": "Most Chinese speakers V+完 for finishing. Core 结果补语 this lesson.",
+      "example": {
+        "zh": "你做完了没有？",
+        "pinyin": "Nǐ zuòwán le méiyǒu?",
+        "en": "Did you finish?"
+      }
+    },
+    {
+      "zh": "道",
+      "pinyin": "dào",
+      "pos": "m.",
+      "en": "a measure word for questions, orders, etc.",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 道 like counting problems — 两道题.",
+      "usage": "Most Chinese speakers 一道题 / 几道题.",
+      "example": {
+        "zh": "做错了两道题。",
+        "pinyin": "Zuòcuò le liǎng dào tí.",
+        "en": "I got two questions wrong."
+      }
+    },
+    {
+      "zh": "成绩",
+      "pinyin": "chéngjì",
+      "pos": "n.",
+      "en": "(exam) result; achievement",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 成绩 like the grade — 成绩不会太好.",
+      "usage": "Most Chinese speakers mean exam/score results.",
+      "example": {
+        "zh": "所以成绩不会太好。",
+        "pinyin": "Suǒyǐ chéngjì bú huì tài hǎo.",
+        "en": "So the grade won’t be great."
+      }
+    },
+    {
+      "zh": "句子",
+      "pinyin": "jùzi",
+      "pos": "n.",
+      "en": "sentence",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 句子 like listening sentences — 很多句子我没听懂.",
+      "usage": "Most Chinese speakers mean sentence.",
+      "example": {
+        "zh": "很多句子我没听懂。",
+        "pinyin": "Hěn duō jùzi wǒ méi tīngdǒng.",
+        "en": "I didn’t understand many of the sentences."
+      }
+    },
+    {
+      "zh": "看见",
+      "pinyin": "kàn jiàn",
+      "pos": "v.",
+      "en": "to see; to catch sight of",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 看见 like spotting something — 我没看见你的词典.",
+      "usage": "Most Chinese speakers 看见 for successfully seeing. Related 见 under this entry.",
+      "example": {
+        "zh": "我没看见你的词典。",
+        "pinyin": "Wǒ méi kànjiàn nǐ de cídiǎn.",
+        "en": "I didn’t see your dictionary."
+      }
+    },
+    {
+      "zh": "见",
+      "pinyin": "jiàn",
+      "pos": "v.",
+      "en": "to see; to catch sight of",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 见 like the result half of 看见/听见.",
+      "usage": "Most Chinese speakers use 见 as result complement of perception.",
+      "example": {
+        "zh": "我没看见你的词典。",
+        "pinyin": "Wǒ méi kànjiàn nǐ de cídiǎn.",
+        "en": "I didn’t see your dictionary."
+      }
+    },
+    {
+      "zh": "干什么",
+      "pinyin": "gàn shénme",
+      "pos": "v.",
+      "en": "why; for what purpose",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 干什么 like ‘what for’ — 你找词典干什么？",
+      "usage": "Most Chinese speakers ask 干什么 for purpose. Related 干.",
+      "example": {
+        "zh": "你找词典干什么？",
+        "pinyin": "Nǐ zhǎo cídiǎn gàn shénme?",
+        "en": "What do you need the dictionary for?"
+      }
+    },
+    {
+      "zh": "干",
+      "pinyin": "gàn",
+      "pos": "v.",
+      "en": "to do; to work",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 干 like the do in 干什么.",
+      "usage": "Most Chinese speakers 干什么 / 干活.",
+      "example": {
+        "zh": "你找词典干什么？",
+        "pinyin": "Nǐ zhǎo cídiǎn gàn shénme?",
+        "en": "What do you need the dictionary for?"
+      }
+    },
+    {
+      "zh": "词",
+      "pinyin": "cí",
+      "pos": "n.",
+      "en": "word",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 词 like looking up a word — 查一个词.",
+      "usage": "Most Chinese speakers mean vocabulary word.",
+      "example": {
+        "zh": "我查一个词，看看写对了没有。",
+        "pinyin": "Wǒ chá yí ge cí, kànkan xiěduì le méiyǒu.",
+        "en": "I’m looking up a word to see if I wrote it right."
+      }
+    },
+    {
+      "zh": "糟糕",
+      "pinyin": "zāogāo",
+      "pos": "adj.",
+      "en": "terrible; too bad",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 糟糕 like ‘oh no’ when you find the mistake.",
+      "usage": "Most Chinese speakers exclaim 糟糕.",
+      "example": {
+        "zh": "糟糕，写错了。",
+        "pinyin": "Zāogāo, xiěcuò le.",
+        "en": "Oh no — I wrote it wrong."
+      }
+    },
+    {
+      "zh": "成",
+      "pinyin": "chéng",
+      "pos": "v.",
+      "en": "to become; to turn into",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 成 like writing A as B — 写成这个“的”了.",
+      "usage": "Most Chinese speakers V+成 for turning into / writing as. 结果补语.",
+      "example": {
+        "zh": "是这个“得”，我写成这个“的”了。",
+        "pinyin": "Shì zhège “de”, wǒ xiěchéng zhège “de” le.",
+        "en": "It should be this 得 — I wrote it as 的."
+      }
+    },
+    {
+      "zh": "回信",
+      "pinyin": "huí xìn",
+      "pos": "v.",
+      "en": "to reply to an email",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 回信 like answering a letter/email — 还给妹妹回信.",
+      "usage": "Most Chinese speakers 回信 / 回邮件. Book prints spaced.",
+      "example": {
+        "zh": "还得给我妹妹回信。",
+        "pinyin": "Hái děi gěi wǒ mèimei huíxìn.",
+        "en": "I still have to reply to my sister."
+      }
+    },
+    {
+      "zh": "故事",
+      "pinyin": "gùshi",
+      "pos": "n.",
+      "en": "story",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 故事 like the little stories in the book.",
+      "usage": "Most Chinese speakers mean story. 课文（二） practices with 故事.",
+      "example": {
+        "zh": "书里都是小故事，很有意思。",
+        "pinyin": "Shū li dōu shì xiǎo gùshi, hěn yǒu yìsi.",
+        "en": "The book is all little stories — very interesting."
+      }
+    },
+    {
+      "zh": "有意思",
+      "pinyin": "yǒu yìsi",
+      "pos": "adj.",
+      "en": "interesting",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 有意思 like interesting/fun.",
+      "usage": "Most Chinese speakers 有意思 for interesting. Book prints spaced.",
+      "example": {
+        "zh": "很有意思。",
+        "pinyin": "Hěn yǒu yìsi.",
+        "en": "Very interesting."
+      }
+    },
+    {
+      "zh": "页",
+      "pinyin": "yè",
+      "pos": "m.",
+      "en": "page",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 页 like pages read — 才看了三十页.",
+      "usage": "Most Chinese speakers count book pages with 页.",
+      "example": {
+        "zh": "还没看完呢，才看了三十页。",
+        "pinyin": "Hái méi kànwán ne, cái kàn le sānshí yè.",
+        "en": "Not finished yet — only thirty pages."
+      }
+    },
+    {
+      "zh": "笑",
+      "pinyin": "xiào",
+      "pos": "v.",
+      "en": "to smile; to laugh",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 笑 like wanting to laugh at funny parts.",
+      "usage": "Most Chinese speakers 想笑 / 笑了.",
+      "example": {
+        "zh": "看到有意思的地方，就想笑。",
+        "pinyin": "Kàndào yǒu yìsi de dìfang, jiù xiǎng xiào.",
+        "en": "When I hit interesting parts, I wanted to laugh."
+      }
+    },
+    {
+      "zh": "会话",
+      "pinyin": "huìhuà",
+      "pos": "v.",
+      "en": "to converse",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 会话 like conversation practice — 练习会话.",
+      "usage": "Most Chinese speakers 会话 for spoken dialogue practice.",
+      "example": {
+        "zh": "咱们可以用这些故事练习会话。",
+        "pinyin": "Zánmen kěyǐ yòng zhèxiē gùshi liànxí huìhuà.",
+        "en": "We can use these stories to practice conversation."
+      }
+    },
+    {
+      "zh": "念",
+      "pinyin": "niàn",
+      "pos": "v.",
+      "en": "to read aloud",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 念 like reading a story aloud — 我念完一个故事.",
+      "usage": "Most Chinese speakers 念书 / 念 for reading aloud.",
+      "example": {
+        "zh": "我念了一个故事，玛丽听懂了。",
+        "pinyin": "Wǒ niàn le yí ge gùshi, Mǎlì tīngdǒng le.",
+        "en": "I read a story; Mary understood."
+      }
+    },
+    {
+      "zh": "答",
+      "pinyin": "dá",
+      "pos": "v.",
+      "en": "to answer",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 答 like answering questions — 答对, 答错.",
+      "usage": "Most Chinese speakers 答对了 / 回答.",
+      "example": {
+        "zh": "问了她五个问题，她都答对了。",
+        "pinyin": "Wèn le tā wǔ ge wèntí, tā dōu dáduì le.",
+        "en": "I asked five questions; she got them all right."
+      }
+    },
+    {
+      "zh": "办法",
+      "pinyin": "bànfǎ",
+      "pos": "n.",
+      "en": "way; method",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 办法 like a good method — 这是个好办法.",
+      "usage": "Most Chinese speakers 办法 for a way to do something.",
+      "example": {
+        "zh": "这是个好办法。",
+        "pinyin": "Zhè shì ge hǎo bànfǎ.",
+        "en": "That’s a good idea."
+      }
+    },
+    {
+      "zh": "合上",
+      "pinyin": "héshàng",
+      "pos": "v.",
+      "en": "to shut; to close",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 合上 like closing the book — 合上书.",
+      "usage": "Most Chinese speakers 合上书. Related 上 as result complement.",
+      "example": {
+        "zh": "她念了一个故事，合上书。",
+        "pinyin": "Tā niàn le yí ge gùshi, héshàng shū.",
+        "en": "She read a story and closed the book."
+      }
+    },
+    {
+      "zh": "上",
+      "pinyin": "shàng",
+      "pos": "v.",
+      "en": "used as the complement of a verb indicating the attainment of an objective or result of an action",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember this 上 like result complement — 合上, 穿上 (语法).",
+      "usage": "Most Chinese speakers V+上 for closing/putting on/contact. Grammar focus.",
+      "example": {
+        "zh": "合上书。",
+        "pinyin": "Héshàng shū.",
+        "en": "Close the book."
+      }
+    },
+    {
+      "zh": "打开",
+      "pinyin": "dǎ kāi",
+      "pos": "v.",
+      "en": "to open; to unfold",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 打开 like opening the book/computer again.",
+      "usage": "Most Chinese speakers 打开书 / 打开电脑.",
+      "example": {
+        "zh": "她打开书，又念了一遍。",
+        "pinyin": "Tā dǎkāi shū, yòu niàn le yí biàn.",
+        "en": "She opened the book and read it again."
+      }
+    },
+    {
+      "zh": "听见",
+      "pinyin": "tīng jiàn",
+      "pos": "v.",
+      "en": "to hear",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 听见 like catching a sound — 听见安娜在门外叫.",
+      "usage": "Most Chinese speakers 听见 for successfully hearing.",
+      "example": {
+        "zh": "就听见安娜在门外叫我们。",
+        "pinyin": "Jiù tīngjiàn Ānnà zài mén wài jiào wǒmen.",
+        "en": "Then we heard Anna calling us outside the door."
+      }
+    },
+    {
+      "zh": "作业",
+      "pinyin": "zuòyè",
+      "pos": "n.",
+      "en": "homework",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 作业 like homework still unfinished.",
+      "usage": "Most Chinese speakers 做作业 / 作业.",
+      "example": {
+        "zh": "我今天的作业还没有做完呢。",
+        "pinyin": "Wǒ jīntiān de zuòyè hái méiyǒu zuòwán ne.",
+        "en": "I still haven’t finished today’s homework."
+      }
+    },
+    {
+      "zh": "熟",
+      "pinyin": "shú",
+      "pos": "adj.",
+      "en": "familiar; well acquainted",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 熟 like reading until familiar — 读得不太熟.",
+      "usage": "Most Chinese speakers 熟 for familiarity (课文熟).",
+      "example": {
+        "zh": "课文也读得不太熟。",
+        "pinyin": "Kèwén yě dú de bú tài shú.",
+        "en": "I’m not that familiar with the text either."
+      }
+    },
+    {
+      "zh": "安娜",
+      "pinyin": "Ānnà",
+      "pos": "n.",
+      "en": "Anna",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 安娜 like the classmate who invites them to the movie.",
+      "usage": "Proper noun listed under 专名.",
+      "example": {
+        "zh": "安娜在门外叫我们。",
+        "pinyin": "Ānnà zài mén wài jiào wǒmen.",
+        "en": "Anna is calling us outside the door."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "我都做对了",
+      "headingEn": "I got them all correct",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "玛丽",
+          "zh": "你今天考得怎么样？",
+          "pinyin": "Nǐ jīntiān kǎo de zěnmeyàng?",
+          "en": "How did you do on today’s exam?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "这次没考好。题太多了，我没有做完。你做完了没有？",
+          "pinyin": "Zhè cì méi kǎo hǎo. Tí tài duō le, wǒ méiyǒu zuòwán. Nǐ zuòwán le méiyǒu?",
+          "en": "I didn’t do well. Too many questions — I didn’t finish. Did you finish?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "我都做完了，但是没都做对，做错了两道题，所以成绩不会太好。",
+          "pinyin": "Wǒ dōu zuòwán le, dànshì méi dōu zuòduì, zuòcuò le liǎng dào tí, suǒyǐ chéngjì bú huì tài hǎo.",
+          "en": "I finished them all, but I didn’t get them all right — two wrong, so the grade won’t be great."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "语法题不太难，我觉得都做对了。听力比较难，很多句子我没听懂。",
+          "pinyin": "Yǔfǎ tí bú tài nán, wǒ juéde dōu zuòduì le. Tīnglì bǐjiào nán, hěn duō jùzi wǒ méi tīngdǒng.",
+          "en": "The grammar questions weren’t hard — I think I got them all right. Listening was harder; I didn’t understand many sentences."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "我也不知道做对了没有。我的词典呢？",
+          "pinyin": "Wǒ yě bù zhīdào zuòduì le méiyǒu. Wǒ de cídiǎn ne?",
+          "en": "I don’t know if I got them right either. Where’s my dictionary?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "我没看见你的词典。你找词典干什么？",
+          "pinyin": "Wǒ méi kànjiàn nǐ de cídiǎn. Nǐ zhǎo cídiǎn gàn shénme?",
+          "en": "I didn’t see your dictionary. What do you need it for?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "我查一个词，看看写对了没有。……糟糕，写错了，是这个“得”，我写成这个“的”了。",
+          "pinyin": "Wǒ chá yí ge cí, kànkan xiěduì le méiyǒu. …… Zāogāo, xiěcuò le, shì zhège “de”, wǒ xiěchéng zhège “de” le.",
+          "en": "I’m looking up a word to check. … Oh no — wrong. It should be 得; I wrote 的."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "别查了，休息休息吧。快打开电脑，看看电视剧吧。",
+          "pinyin": "Bié chá le, xiūxi xiūxi ba. Kuài dǎkāi diànnǎo, kànkan diànshìjù ba.",
+          "en": "Stop looking — rest a bit. Open the computer and watch a show."
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "我的衣服还没有洗完呢，还得给我妹妹回信。",
+          "pinyin": "Wǒ de yīfu hái méiyǒu xǐwán ne, hái děi gěi wǒ mèimei huíxìn.",
+          "en": "I still haven’t finished washing clothes, and I have to reply to my sister."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "看完电视剧再洗吧。",
+          "pinyin": "Kànwán diànshìjù zài xǐ ba.",
+          "en": "Wash after the show."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "看完电影再做作业",
+      "headingEn": "Do homework after the movie",
+      "type": "passage",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "吃完晚饭，我和玛丽回到宿舍。玛丽说，田芳借给她一本书，书里都是小故事，很有意思。我问她：“你看完了没有？”她说：“还没看完呢，才看了三十页。”",
+          "pinyin": "Chīwán wǎnfàn, wǒ hé Mǎlì huí dào sùshè. Mǎlì shuō, Tián Fāng jiè gěi tā yì běn shū, shū li dōu shì xiǎo gùshi, hěn yǒu yìsi. Wǒ wèn tā: “Nǐ kànwán le méiyǒu?” Tā shuō: “Hái méi kànwán ne, cái kàn le sānshí yè.”",
+          "en": "After dinner Mary and I went back to the dorm. Mary said Tian Fang had lent her a book of little stories — very interesting. I asked if she’d finished; she said not yet — only thirty pages."
+        },
+        {
+          "speaker": "",
+          "zh": "我问玛丽：“都看懂了吗？”她回答：“有的看懂了，有的没看懂。”“可以让我看看吗？”“当然可以。”",
+          "pinyin": "Wǒ wèn Mǎlì: “Dōu kàndǒng le ma?” Tā huídá: “Yǒude kàndǒng le, yǒude méi kàndǒng.” “Kěyǐ ràng wǒ kànkan ma?” “Dāngrán kěyǐ.”",
+          "en": "I asked if she’d understood it all. She said some parts yes, some no. “May I look?” “Of course.”"
+        },
+        {
+          "speaker": "",
+          "zh": "我看了两个故事，也觉得很有意思。看到有意思的地方，就想笑。我对玛丽说：“咱们可以用这些故事练习会话。”玛丽说：“怎么练习？”",
+          "pinyin": "Wǒ kàn le liǎng ge gùshi, yě juéde hěn yǒu yìsi. Kàndào yǒu yìsi de dìfang, jiù xiǎng xiào. Wǒ duì Mǎlì shuō: “Zánmen kěyǐ yòng zhèxiē gùshi liànxí huìhuà.” Mǎlì shuō: “Zěnme liànxí?”",
+          "en": "I read two stories and also found them interesting — funny parts made me want to laugh. I said we could practice conversation with them. Mary asked how."
+        },
+        {
+          "speaker": "",
+          "zh": "“我念完一个故事，问你几个问题，看你能不能答对；你念完一个故事，也问我几个问题，看我能不能答对。”玛丽说：“这是个好办法。”",
+          "pinyin": "“Wǒ niànwán yí ge gùshi, wèn nǐ jǐ ge wèntí, kàn nǐ néng bu néng dáduì; nǐ niànwán yí ge gùshi, yě wèn wǒ jǐ ge wèntí, kàn wǒ néng bu néng dáduì.” Mǎlì shuō: “Zhè shì ge hǎo bànfǎ.”",
+          "en": "“I’ll read a story and ask you questions; then you read one and ask me.” Mary said that was a good idea."
+        },
+        {
+          "speaker": "",
+          "zh": "我念了一个故事，玛丽听懂了。问了她五个问题，她都答对了。她念了一个故事，合上书，问我听懂了没有。我说，有的地方没听懂。她打开书，又念了一遍，我才听懂。她也问了五个问题，我答对了四个，答错了一个。",
+          "pinyin": "Wǒ niàn le yí ge gùshi, Mǎlì tīngdǒng le. Wèn le tā wǔ ge wèntí, tā dōu dáduì le. Tā niàn le yí ge gùshi, héshàng shū, wèn wǒ tīngdǒng le méiyǒu. Wǒ shuō, yǒude dìfang méi tīngdǒng. Tā dǎkāi shū, yòu niàn le yí biàn, wǒ cái tīngdǒng. Tā yě wèn le wǔ ge wèntí, wǒ dáduì le sì ge, dácuò le yí ge.",
+          "en": "I read a story; Mary understood and got all five questions right. She read one, closed the book, and asked if I’d understood — some parts no. She opened it, read again, then I got it. Of her five questions I got four right, one wrong."
+        },
+        {
+          "speaker": "",
+          "zh": "我们还没有练习完，就听见安娜在门外叫我们。我开开门问她：“什么事？”“晚上礼堂有电影，你们看吗？”“什么电影？”“是个新电影，我不知道叫什么名字。田芳说，这个电影非常好。”“想看。但是我今天的作业还没有做完呢，课文也读得不太熟。”安娜说：“我也没做完呢，看完电影再做吧。”",
+          "pinyin": "Wǒmen hái méiyǒu liànxí wán, jiù tīngjiàn Ānnà zài mén wài jiào wǒmen. Wǒ kāikāi mén wèn tā: “Shénme shì?” “Wǎnshang lǐtáng yǒu diànyǐng, nǐmen kàn ma?” “Shénme diànyǐng?” “Shì ge xīn diànyǐng, wǒ bù zhīdào jiào shénme míngzi. Tián Fāng shuō, zhège diànyǐng fēicháng hǎo.” “Xiǎng kàn. Dànshì wǒ jīntiān de zuòyè hái méiyǒu zuòwán ne, kèwén yě dú de bú tài shú.” Ānnà shuō: “Wǒ yě méi zuòwán ne, kànwán diànyǐng zài zuò ba.”",
+          "en": "Before we finished practicing, we heard Anna at the door. Movie in the auditorium tonight? A new one Tian Fang praised. I wanted to go but hadn’t finished homework or learned the text well. Anna hadn’t finished either — “do it after the movie.”"
+        },
+        {
+          "speaker": "",
+          "zh": "说完，我们三个就去礼堂看电影了。我们看到九点才看完。九点半我才开始做作业。做完作业已经十点半了。",
+          "pinyin": "Shuōwán, wǒmen sān ge jiù qù lǐtáng kàn diànyǐng le. Wǒmen kàn dào jiǔ diǎn cái kànwán. Jiǔ diǎn bàn wǒ cái kāishǐ zuò zuòyè. Zuòwán zuòyè yǐjīng shí diǎn bàn le.",
+          "en": "So the three of us went. The movie ended at nine; I started homework at 9:30 and finished at 10:30."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "动作结果的表达：结果补语",
+      "body": "动词“完、懂、见、开、上、到、给、成”和形容词“好、对、错、熟、早、晚”等都可以放在动词后边作结果补语。肯定：动词＋结果补语（＋了）；否定：没（有）＋动词＋结果补语（后去掉“了”）；正反问：动词＋结果补语（＋宾语）了＋没有？宾语在结果补语后；动态助词“了”在结果补语后、宾语前。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我都做对了。",
+        "pinyin": "Wǒ dōu zuòduì le.",
+        "en": "I got them all correct."
+      }
+    },
+    {
+      "title": "结果补语（1）：上、成、到",
+      "body": "动词＋“上”可表接触或附着；动词＋“成”表使一事物成为另一事物；动词＋“到”表达到目的或使事物到达某处。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "是这个“得”，我写成这个“的”了。",
+        "pinyin": "Shì zhège “de”, wǒ xiěchéng zhège “de” le.",
+        "en": "It should be 得 — I wrote it as 的."
+      }
+    },
+    {
+      "title": "主谓词组作定语",
+      "body": "主谓词组作定语时要加“的”。Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "田芳借给你的那本书你看完了没有？",
+        "pinyin": "Tián Fāng jiè gěi nǐ de nà běn shū nǐ kànwán le méiyǒu?",
+        "en": "Have you finished the book Tian Fang lent you?"
+      }
+    }
+  ]
+}

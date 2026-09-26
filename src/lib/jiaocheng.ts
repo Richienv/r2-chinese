@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
-import type { Example } from './content'
+import { registerVocab, type Example } from './content'
 import type { TeachPhase, WordHook } from './teach'
 import type { LessonText, TextLine, Vocab } from './types'
 import type { PathNode } from '../store/store'
@@ -461,4 +461,11 @@ const HANZI = /[\u3400-\u9FFF]/
 export function hearableZh(text: string | undefined | null): string {
   const t = text?.trim() ?? ''
   return t && HANZI.test(t) ? t : ''
+}
+
+/** Seed the shared gloss/drill lexicon so 汉语教程 words star into the same list. */
+for (const lesson of jiaochengLessons) {
+  for (const w of lesson.words) {
+    registerVocab(toVocab(w), wordExample(w))
+  }
 }

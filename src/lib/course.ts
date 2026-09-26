@@ -30,7 +30,7 @@ export const COURSE_META: Record<
     id: 'kerja',
     title: 'Mandarin Kerja Nyata',
     titleZh: '把话说清楚，把事情做好。',
-    blurb: 'HR & Manajemen · Edisi 2026',
+    blurb: 'HR and management · 2026 edition',
   },
   jiaocheng: {
     id: 'jiaocheng',

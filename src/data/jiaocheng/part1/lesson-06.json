@@ -1,0 +1,826 @@
+{
+  "id": "jiaocheng-2-1-06",
+  "book": "2-1",
+  "index": 6,
+  "bookLesson": 6,
+  "titleZh": "我比你更喜欢音乐",
+  "titleEn": "I like music more than you do",
+  "sourcePages": "86-107",
+  "words": [
+    {
+      "zh": "变化",
+      "pinyin": "biànhuà",
+      "pos": "v./n.",
+      "en": "to change; change",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 变化 like big changes — 这几年变化很大.",
+      "usage": "Most Chinese speakers mean change (n./v.).",
+      "example": {
+        "zh": "上海很好，这几年变化很大。",
+        "pinyin": "Shànghǎi hěn hǎo, zhè jǐ nián biànhuà hěn dà.",
+        "en": "Shanghai is great — it’s changed a lot these past few years."
+      }
+    },
+    {
+      "zh": "变",
+      "pinyin": "biàn",
+      "pos": "v.",
+      "en": "to change; to become different",
+      "note": "Now it’s become even more beautiful than before.",
+      "when": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "usage": "Remember 变 under 变化 — 变得更漂亮了.",
+      "example": {
+        "zh": "Most Chinese speakers 变 + complement.",
+        "pinyin": "现在比过去变得更漂亮了。",
+        "en": "Xiànzài bǐ guòqù biàn de gèng piàoliang le."
+      }
+    },
+    {
+      "zh": "暑假",
+      "pinyin": "shǔjià",
+      "pos": "n.",
+      "en": "summer vacation",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 暑假 like summer break — 今年暑假.",
+      "usage": "Most Chinese speakers mean summer holiday.",
+      "example": {
+        "zh": "今年暑假我还在那儿玩儿了一个多月呢。",
+        "pinyin": "Jīnnián shǔjià wǒ hái zài nàr wánr le yí ge duō yuè ne.",
+        "en": "This summer vacation I even spent more than a month there."
+      }
+    },
+    {
+      "zh": "还",
+      "pinyin": "hái",
+      "pos": "adv.",
+      "en": "used for emphasis",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember this 还 like emphatic ‘even’ — 还在那儿玩儿.",
+      "usage": "Most Chinese speakers use 还 for still/even.",
+      "example": {
+        "zh": "今年暑假我还在那儿玩儿了一个多月呢。",
+        "pinyin": "Jīnnián shǔjià wǒ hái zài nàr wánr le yí ge duō yuè ne.",
+        "en": "This summer vacation I even spent more than a month there."
+      }
+    },
+    {
+      "zh": "比",
+      "pinyin": "bǐ",
+      "pos": "prep.",
+      "en": "than; (superior or inferior) to",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 比 like comparisons — 上海比北京大吧？",
+      "usage": "Most Chinese speakers use A比B+Adj. This lesson’s grammar focus.",
+      "example": {
+        "zh": "上海比北京大吧？",
+        "pinyin": "Shànghǎi bǐ Běijīng dà ba?",
+        "en": "Shanghai is bigger than Beijing, right?"
+      }
+    },
+    {
+      "zh": "人口",
+      "pinyin": "rénkǒu",
+      "pos": "n.",
+      "en": "population",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 人口 like city population — 人口比北京多.",
+      "usage": "Most Chinese speakers mean population count.",
+      "example": {
+        "zh": "不过人口比北京多。",
+        "pinyin": "Búguò rénkǒu bǐ Běijīng duō.",
+        "en": "But the population is larger than Beijing’s."
+      }
+    },
+    {
+      "zh": "最",
+      "pinyin": "zuì",
+      "pos": "adv.",
+      "en": "most; to the highest degree",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 最 like superlative — 人口最多的城市.",
+      "usage": "Most Chinese speakers mark the extreme with 最.",
+      "example": {
+        "zh": "上海是中国人口最多的城市。",
+        "pinyin": "Shànghǎi shì Zhōngguó rénkǒu zuì duō de chéngshì.",
+        "en": "Shanghai is China’s most populous city."
+      }
+    },
+    {
+      "zh": "城市",
+      "pinyin": "chéngshì",
+      "pos": "n.",
+      "en": "city",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 城市 like a city — 人口最多的城市.",
+      "usage": "Most Chinese speakers mean city (vs 镇).",
+      "example": {
+        "zh": "上海是中国人口最多的城市。",
+        "pinyin": "Shànghǎi shì Zhōngguó rénkǒu zuì duō de chéngshì.",
+        "en": "Shanghai is China’s most populous city."
+      }
+    },
+    {
+      "zh": "增加",
+      "pinyin": "zēngjiā",
+      "pos": "v.",
+      "en": "to increase",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 增加 like new buildings — 增加了不少新建筑.",
+      "usage": "Most Chinese speakers mean increase/add.",
+      "example": {
+        "zh": "这几年，增加了不少新建筑。",
+        "pinyin": "Zhè jǐ nián, zēngjiā le bù shǎo xīn jiànzhù.",
+        "en": "These past few years, quite a few new buildings have been added."
+      }
+    },
+    {
+      "zh": "建筑",
+      "pinyin": "jiànzhù",
+      "pos": "v./n.",
+      "en": "to construct; architecture",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 建筑 like buildings — 新建筑.",
+      "usage": "Most Chinese speakers mean buildings/architecture.",
+      "example": {
+        "zh": "增加了不少新建筑。",
+        "pinyin": "Zēngjiā le bù shǎo xīn jiànzhù.",
+        "en": "Quite a few new buildings have been added."
+      }
+    },
+    {
+      "zh": "过去",
+      "pinyin": "guòqù",
+      "pos": "n.",
+      "en": "past",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 过去 like ‘before’ — 比过去变得更漂亮.",
+      "usage": "Most Chinese speakers mean the past (time).",
+      "example": {
+        "zh": "现在比过去变得更漂亮了。",
+        "pinyin": "Xiànzài bǐ guòqù biàn de gèng piàoliang le.",
+        "en": "Now it’s become even more beautiful than before."
+      }
+    },
+    {
+      "zh": "更",
+      "pinyin": "gèng",
+      "pos": "adv.",
+      "en": "more; even more",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 更 like ‘even more’ — 更漂亮 / 更喜欢.",
+      "usage": "Most Chinese speakers intensify comparisons with 更.",
+      "example": {
+        "zh": "我比你更喜欢音乐。",
+        "pinyin": "Wǒ bǐ nǐ gèng xǐhuan yīnyuè.",
+        "en": "I like music even more than you do."
+      }
+    },
+    {
+      "zh": "漂亮",
+      "pinyin": "piàoliang",
+      "pos": "adj.",
+      "en": "beautiful",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 漂亮 like looking nice — 更漂亮了.",
+      "usage": "Most Chinese speakers praise looks/places as 漂亮.",
+      "example": {
+        "zh": "现在比过去变得更漂亮了。",
+        "pinyin": "Xiànzài bǐ guòqù biàn de gèng piàoliang le.",
+        "en": "Now it’s become even more beautiful than before."
+      }
+    },
+    {
+      "zh": "冬（天）",
+      "pinyin": "dōng(tiān)",
+      "pos": "n.",
+      "en": "winter",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 冬天 like winter weather comparison.",
+      "usage": "Most Chinese speakers say 冬天 or 冬.",
+      "example": {
+        "zh": "上海的冬天是不是比北京暖和一点儿？",
+        "pinyin": "Shànghǎi de dōngtiān shì bu shì bǐ Běijīng nuǎnhuo yìdiǎnr?",
+        "en": "Is Shanghai’s winter a bit warmer than Beijing’s?"
+      }
+    },
+    {
+      "zh": "暖和",
+      "pinyin": "nuǎnhuo",
+      "pos": "adj.",
+      "en": "warm",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 暖和 like pleasantly warm — 比北京暖和.",
+      "usage": "Most Chinese speakers mean comfortably warm (weather/indoors).",
+      "example": {
+        "zh": "上海不一定比北京暖和。",
+        "pinyin": "Shànghǎi bù yídìng bǐ Běijīng nuǎnhuo.",
+        "en": "Shanghai isn’t necessarily warmer than Beijing."
+      }
+    },
+    {
+      "zh": "可是",
+      "pinyin": "kěshì",
+      "pos": "conj.",
+      "en": "but",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 可是 like ‘but’ — 可是，我看天气预报.",
+      "usage": "Most Chinese speakers use 可是 for contrast.",
+      "example": {
+        "zh": "可是，我看天气预报，上海的气温比北京高得多。",
+        "pinyin": "Kěshì, wǒ kàn tiānqì yùbào, Shànghǎi de qìwēn bǐ Běijīng gāo de duō.",
+        "en": "But looking at the forecast, Shanghai’s temperature is much higher than Beijing’s."
+      }
+    },
+    {
+      "zh": "天气",
+      "pinyin": "tiānqì",
+      "pos": "n.",
+      "en": "weather",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 天气 like the forecast — 天气预报.",
+      "usage": "Most Chinese speakers mean weather (day-to-day).",
+      "example": {
+        "zh": "我看天气预报。",
+        "pinyin": "Wǒ kàn tiānqì yùbào.",
+        "en": "I look at the weather forecast."
+      }
+    },
+    {
+      "zh": "预报",
+      "pinyin": "yùbào",
+      "pos": "v./n.",
+      "en": "to forecast; forecast",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 预报 like weather forecast — 天气预报.",
+      "usage": "Most Chinese speakers 预报 weather/news.",
+      "example": {
+        "zh": "我看天气预报。",
+        "pinyin": "Wǒ kàn tiānqì yùbào.",
+        "en": "I look at the weather forecast."
+      }
+    },
+    {
+      "zh": "气温",
+      "pinyin": "qìwēn",
+      "pos": "n.",
+      "en": "temperature",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 气温 like air temperature — 气温比北京高.",
+      "usage": "Most Chinese speakers mean (air) temperature.",
+      "example": {
+        "zh": "上海的气温比北京高好几度。",
+        "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo hǎo jǐ dù.",
+        "en": "Shanghai’s temperature is several degrees higher than Beijing’s."
+      }
+    },
+    {
+      "zh": "高",
+      "pinyin": "gāo",
+      "pos": "adj.",
+      "en": "high",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 高 like higher temperature — 高得多.",
+      "usage": "Most Chinese speakers mean tall/high.",
+      "example": {
+        "zh": "上海的气温比北京高得多。",
+        "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo de duō.",
+        "en": "Shanghai’s temperature is much higher than Beijing’s."
+      }
+    },
+    {
+      "zh": "度",
+      "pinyin": "dù",
+      "pos": "n.",
+      "en": "degree",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 度 like temperature degrees — 好几度.",
+      "usage": "Most Chinese speakers count °C as 度.",
+      "example": {
+        "zh": "高好几度。",
+        "pinyin": "Gāo hǎo jǐ dù.",
+        "en": "Higher by several degrees."
+      }
+    },
+    {
+      "zh": "屋子",
+      "pinyin": "wūzi",
+      "pos": "n.",
+      "en": "room",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 屋子 like indoor space — 屋子里没有暖气.",
+      "usage": "Most Chinese speakers mean room/house interior.",
+      "example": {
+        "zh": "因为屋子里没有暖气，所以感觉还没有北京暖和。",
+        "pinyin": "Yīnwèi wūzi lǐ méiyǒu nuǎnqì, suǒyǐ gǎnjué hái méiyǒu Běijīng nuǎnhuo.",
+        "en": "Because there’s no heating indoors, it still doesn’t feel as warm as Beijing."
+      }
+    },
+    {
+      "zh": "暖气",
+      "pinyin": "nuǎnqì",
+      "pos": "n.",
+      "en": "heating system",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 暖气 like central heating — 没有暖气.",
+      "usage": "Most Chinese speakers mean radiators/central heat.",
+      "example": {
+        "zh": "一般的家庭没有，不过旅馆和饭店里有。",
+        "pinyin": "Yìbān de jiātíng méiyǒu, búguò lǚguǎn hé fàndiàn lǐ yǒu.",
+        "en": "Ordinary homes don’t have it, but hotels and restaurants do."
+      }
+    },
+    {
+      "zh": "感觉",
+      "pinyin": "gǎnjué",
+      "pos": "v./n.",
+      "en": "to feel; feeling; sense",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 感觉 like how it feels — 感觉还没有北京暖和.",
+      "usage": "Most Chinese speakers mean feel/sensation.",
+      "example": {
+        "zh": "感觉还没有北京暖和。",
+        "pinyin": "Gǎnjué hái méiyǒu Běijīng nuǎnhuo.",
+        "en": "It still doesn’t feel as warm as Beijing."
+      }
+    },
+    {
+      "zh": "家庭",
+      "pinyin": "jiātíng",
+      "pos": "n.",
+      "en": "family",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 家庭 like household — 一般的家庭.",
+      "usage": "Most Chinese speakers mean family/household.",
+      "example": {
+        "zh": "一般的家庭没有。",
+        "pinyin": "Yìbān de jiātíng méiyǒu.",
+        "en": "Ordinary families don’t have it."
+      }
+    },
+    {
+      "zh": "旅馆",
+      "pinyin": "lǚguǎn",
+      "pos": "n.",
+      "en": "hotel",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 旅馆 like a hotel with heating.",
+      "usage": "Most Chinese speakers mean hotel/inn.",
+      "example": {
+        "zh": "旅馆和饭店里有。",
+        "pinyin": "Lǚguǎn hé fàndiàn lǐ yǒu.",
+        "en": "Hotels and restaurants have it."
+      }
+    },
+    {
+      "zh": "饭店",
+      "pinyin": "fàndiàn",
+      "pos": "n.",
+      "en": "hotel; restaurant",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 饭店 like hotel/restaurant — paired with 旅馆.",
+      "usage": "Most Chinese speakers mean hotel or larger restaurant.",
+      "example": {
+        "zh": "旅馆和饭店里有。",
+        "pinyin": "Lǚguǎn hé fàndiàn lǐ yǒu.",
+        "en": "Hotels and restaurants have it."
+      }
+    },
+    {
+      "zh": "迷",
+      "pinyin": "mí",
+      "pos": "n./v.",
+      "en": "fan; to indulge in; to be crazy about",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 迷 like a music fan — 音乐迷.",
+      "usage": "Most Chinese speakers mean enthusiast/fan.",
+      "example": {
+        "zh": "我是个音乐迷。",
+        "pinyin": "Wǒ shì ge yīnyuè mí.",
+        "en": "I’m a music fan."
+      }
+    },
+    {
+      "zh": "光",
+      "pinyin": "guāng",
+      "pos": "adv.",
+      "en": "only; alone",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 光 like ‘just’ — 光交响乐就下载了.",
+      "usage": "Most Chinese speakers mean only/just (adverb).",
+      "example": {
+        "zh": "光交响乐就下载了好几百首呢。",
+        "pinyin": "Guāng jiāoxiǎngyuè jiù xiàzǎi le hǎo jǐ bǎi shǒu ne.",
+        "en": "Just of symphonies I’ve downloaded several hundred."
+      }
+    },
+    {
+      "zh": "交响乐",
+      "pinyin": "jiāoxiǎngyuè",
+      "pos": "n.",
+      "en": "symphony",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 交响乐 like symphonic music on the computer.",
+      "usage": "Most Chinese speakers mean symphony/orchestral music.",
+      "example": {
+        "zh": "光交响乐就下载了好几百首呢。",
+        "pinyin": "Guāng jiāoxiǎngyuè jiù xiàzǎi le hǎo jǐ bǎi shǒu ne.",
+        "en": "Just of symphonies I’ve downloaded several hundred."
+      }
+    },
+    {
+      "zh": "下载",
+      "pinyin": "xiàzǎi",
+      "pos": "v.",
+      "en": "to download",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 下载 like downloading music.",
+      "usage": "Most Chinese speakers mean download (files).",
+      "example": {
+        "zh": "下载了好几百首呢。",
+        "pinyin": "Xiàzǎi le hǎo jǐ bǎi shǒu ne.",
+        "en": "Downloaded several hundred pieces."
+      }
+    },
+    {
+      "zh": "首",
+      "pinyin": "shǒu",
+      "pos": "m.",
+      "en": "a measure word for songs or poems",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 首 like song measure — 几百首.",
+      "usage": "Most Chinese speakers count songs with 首.",
+      "example": {
+        "zh": "好几百首。",
+        "pinyin": "Hǎo jǐ bǎi shǒu.",
+        "en": "Several hundred (pieces)."
+      }
+    },
+    {
+      "zh": "也许",
+      "pinyin": "yěxǔ",
+      "pos": "adv.",
+      "en": "perhaps; maybe; probably",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 也许 like ‘maybe’ — 也许比你更喜欢.",
+      "usage": "Most Chinese speakers soften claims with 也许.",
+      "example": {
+        "zh": "也许比你更喜欢。",
+        "pinyin": "Yěxǔ bǐ nǐ gèng xǐhuan.",
+        "en": "Maybe I like it even more than you."
+      }
+    },
+    {
+      "zh": "古典",
+      "pinyin": "gǔdiǎn",
+      "pos": "adj.",
+      "en": "classical",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 古典 like classical music — 古典音乐.",
+      "usage": "Most Chinese speakers mean classical (style/music).",
+      "example": {
+        "zh": "我喜欢古典音乐。",
+        "pinyin": "Wǒ xǐhuan gǔdiǎn yīnyuè.",
+        "en": "I like classical music."
+      }
+    },
+    {
+      "zh": "现代",
+      "pinyin": "xiàndài",
+      "pos": "n./adj.",
+      "en": "modern times; modern",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 现代 like modern music — 现代音乐.",
+      "usage": "Most Chinese speakers mean modern/contemporary.",
+      "example": {
+        "zh": "你喜欢古典音乐还是喜欢现代音乐？",
+        "pinyin": "Nǐ xǐhuan gǔdiǎn yīnyuè háishi xǐhuan xiàndài yīnyuè?",
+        "en": "Do you like classical or modern music?"
+      }
+    },
+    {
+      "zh": "世界",
+      "pinyin": "shìjiè",
+      "pos": "n.",
+      "en": "world",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 世界 like world-famous pieces — 世界名曲.",
+      "usage": "Most Chinese speakers mean world.",
+      "example": {
+        "zh": "喜欢听世界名曲。",
+        "pinyin": "Xǐhuan tīng shìjiè míngqǔ.",
+        "en": "I like listening to world-famous pieces."
+      }
+    },
+    {
+      "zh": "名曲",
+      "pinyin": "míngqǔ",
+      "pos": "n.",
+      "en": "famous song or melody",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 名曲 like famous tunes.",
+      "usage": "Most Chinese speakers mean well-known musical works.",
+      "example": {
+        "zh": "喜欢听世界名曲，还喜欢听民歌。",
+        "pinyin": "Xǐhuan tīng shìjiè míngqǔ, hái xǐhuan tīng míngē.",
+        "en": "I like world-famous pieces, and folk songs too."
+      }
+    },
+    {
+      "zh": "民歌",
+      "pinyin": "míngē",
+      "pos": "n.",
+      "en": "folk song",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 民歌 like folk songs vs pop lyrics.",
+      "usage": "Most Chinese speakers mean folk songs.",
+      "example": {
+        "zh": "我觉得流行歌曲的歌词没有民歌写得好。",
+        "pinyin": "Wǒ juéde liúxíng gēqǔ de gēcí méiyǒu míngē xiě de hǎo.",
+        "en": "I feel pop lyrics aren’t written as well as folk songs."
+      }
+    },
+    {
+      "zh": "流行",
+      "pinyin": "liúxíng",
+      "pos": "adj.",
+      "en": "popular",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 流行 like pop — 流行歌曲.",
+      "usage": "Most Chinese speakers mean trendy/popular.",
+      "example": {
+        "zh": "你喜欢流行歌曲吗？",
+        "pinyin": "Nǐ xǐhuan liúxíng gēqǔ ma?",
+        "en": "Do you like pop songs?"
+      }
+    },
+    {
+      "zh": "歌曲",
+      "pinyin": "gēqǔ",
+      "pos": "n.",
+      "en": "song",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 歌曲 like songs — 流行歌曲.",
+      "usage": "Most Chinese speakers mean songs (composed).",
+      "example": {
+        "zh": "有些流行歌曲的歌词写得还是不错的。",
+        "pinyin": "Yǒuxiē liúxíng gēqǔ de gēcí xiě de háishi búcuò de.",
+        "en": "Some pop lyrics are still pretty good."
+      }
+    },
+    {
+      "zh": "年轻",
+      "pinyin": "niánqīng",
+      "pos": "adj.",
+      "en": "young",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 年轻 like young people — 你们年轻人.",
+      "usage": "Most Chinese speakers mean young.",
+      "example": {
+        "zh": "可能没有你们年轻人那么喜欢。",
+        "pinyin": "Kěnéng méiyǒu nǐmen niánqīngrén nàme xǐhuan.",
+        "en": "Maybe not as much as you young people."
+      }
+    },
+    {
+      "zh": "歌词",
+      "pinyin": "gēcí",
+      "pos": "n.",
+      "en": "lyrics",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 歌词 like song words — 歌词写得好.",
+      "usage": "Most Chinese speakers mean lyrics.",
+      "example": {
+        "zh": "流行歌曲的歌词没有民歌写得好。",
+        "pinyin": "Liúxíng gēqǔ de gēcí méiyǒu míngē xiě de hǎo.",
+        "en": "Pop lyrics aren’t written as well as folk songs."
+      }
+    },
+    {
+      "zh": "有些",
+      "pinyin": "yǒuxiē",
+      "pos": "pron.",
+      "en": "some",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 有些 like ‘some’ — 有些流行歌曲.",
+      "usage": "Most Chinese speakers mean some (of a group).",
+      "example": {
+        "zh": "有些流行歌曲的歌词写得还是不错的。",
+        "pinyin": "Yǒuxiē liúxíng gēqǔ de gēcí xiě de háishi búcuò de.",
+        "en": "Some pop lyrics are still pretty good."
+      }
+    },
+    {
+      "zh": "遥远",
+      "pinyin": "yáoyuǎn",
+      "pos": "adj.",
+      "en": "distant",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 遥远 from the folk lyric 在那遥远的地方.",
+      "usage": "Most Chinese speakers mean far away.",
+      "example": {
+        "zh": "“在那遥远的地方…”，写得多好！",
+        "pinyin": "“Zài nà yáoyuǎn de dìfang…”, xiě de duō hǎo!",
+        "en": "“In that distant place…” — how well written!"
+      }
+    },
+    {
+      "zh": "上海",
+      "pinyin": "Shànghǎi",
+      "pos": "prop.",
+      "en": "Shanghai, a city in China",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun from 专名.",
+      "usage": "City name in 课文（一）.",
+      "example": {
+        "zh": "我想坐火车去上海旅行。",
+        "pinyin": "Wǒ xiǎng zuò huǒchē qù Shànghǎi lǚxíng.",
+        "en": "I’d like to take the train to Shanghai."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "北京比上海大吧",
+      "headingEn": "Beijing is bigger than Shanghai, right?",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "山本",
+          "zh": "田芳，上海怎么样？我想坐火车去上海旅行。",
+          "pinyin": "Tián Fāng, Shànghǎi zěnmeyàng? Wǒ xiǎng zuò huǒchē qù Shànghǎi lǚxíng.",
+          "en": "Tian Fang, how’s Shanghai? I’d like to take the train there."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "上海很好，这几年变化很大。今年暑假我还在那儿玩儿了一个多月呢。我一个同学家就在上海。",
+          "pinyin": "Shànghǎi hěn hǎo, zhè jǐ nián biànhuà hěn dà. Jīnnián shǔjià wǒ hái zài nàr wánr le yí ge duō yuè ne. Wǒ yí ge tóngxué jiā jiù zài Shànghǎi.",
+          "en": "Shanghai’s great — big changes these years. This summer I spent over a month there. A classmate’s family lives there."
+        },
+        {
+          "speaker": "山本",
+          "zh": "上海比北京大吧？",
+          "pinyin": "Shànghǎi bǐ Běijīng dà ba?",
+          "en": "Shanghai is bigger than Beijing, right?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "不，上海没有北京大，不过人口比北京多。上海是中国人口最多的城市。这几年，增加了不少新建筑，现在比过去变得更漂亮了。",
+          "pinyin": "Bù, Shànghǎi méiyǒu Běijīng dà, búguò rénkǒu bǐ Běijīng duō. Shànghǎi shì Zhōngguó rénkǒu zuì duō de chéngshì. Zhè jǐ nián, zēngjiā le bù shǎo xīn jiànzhù, xiànzài bǐ guòqù biàn de gèng piàoliang le.",
+          "en": "No — Shanghai isn’t as big as Beijing, but has more people. It’s China’s most populous city. Lots of new buildings; it’s gotten prettier than before."
+        },
+        {
+          "speaker": "山本",
+          "zh": "上海的公园有北京的多吗？",
+          "pinyin": "Shànghǎi de gōngyuán yǒu Běijīng de duō ma?",
+          "en": "Does Shanghai have as many parks as Beijing?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "上海的公园没有北京的多，也没有北京的公园这么大。",
+          "pinyin": "Shànghǎi de gōngyuán méiyǒu Běijīng de duō, yě méiyǒu Běijīng de gōngyuán zhème dà.",
+          "en": "Not as many as Beijing’s, and not as big either."
+        },
+        {
+          "speaker": "山本",
+          "zh": "上海的冬天是不是比北京暖和一点儿？",
+          "pinyin": "Shànghǎi de dōngtiān shì bu shì bǐ Běijīng nuǎnhuo yìdiǎnr?",
+          "en": "Is Shanghai’s winter a bit warmer than Beijing’s?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "上海不一定比北京暖和。",
+          "pinyin": "Shànghǎi bù yídìng bǐ Běijīng nuǎnhuo.",
+          "en": "Not necessarily."
+        },
+        {
+          "speaker": "山本",
+          "zh": "可是，我看天气预报，上海的气温比北京高得多。",
+          "pinyin": "Kěshì, wǒ kàn tiānqì yùbào, Shànghǎi de qìwēn bǐ Běijīng gāo de duō.",
+          "en": "But the forecast shows Shanghai’s temperature is much higher."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "是，上海的气温比北京高好几度，不过因为屋子里没有暖气，所以感觉还没有北京暖和。",
+          "pinyin": "Shì, Shànghǎi de qìwēn bǐ Běijīng gāo hǎo jǐ dù, búguò yīnwèi wūzi lǐ méiyǒu nuǎnqì, suǒyǐ gǎnjué hái méiyǒu Běijīng nuǎnhuo.",
+          "en": "Yes, several degrees higher — but without indoor heating it still doesn’t feel as warm as Beijing."
+        },
+        {
+          "speaker": "山本",
+          "zh": "上海人家里没有暖气？",
+          "pinyin": "Shànghǎi rén jiā lǐ méiyǒu nuǎnqì?",
+          "en": "Shanghai homes don’t have heating?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "一般的家庭没有，不过旅馆和饭店里有。",
+          "pinyin": "Yìbān de jiātíng méiyǒu, búguò lǚguǎn hé fàndiàn lǐ yǒu.",
+          "en": "Ordinary homes don’t; hotels and restaurants do."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "我比你更喜欢音乐",
+      "headingEn": "I like music more than you do",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "林老师",
+          "zh": "王老师，你喜欢音乐吗？",
+          "pinyin": "Wáng lǎoshī, nǐ xǐhuan yīnyuè ma?",
+          "en": "Teacher Wang, do you like music?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "喜欢啊！我是个音乐迷，我电脑里，光交响乐就下载了好几百首呢。",
+          "pinyin": "Xǐhuan a! Wǒ shì ge yīnyuè mí, wǒ diànnǎo lǐ, guāng jiāoxiǎngyuè jiù xiàzǎi le hǎo jǐ bǎi shǒu ne.",
+          "en": "I do! I’m a music fan — just symphonies, I’ve downloaded hundreds."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "我也很喜欢音乐，也许比你更喜欢。你喜欢古典音乐还是喜欢现代音乐？",
+          "pinyin": "Wǒ yě hěn xǐhuan yīnyuè, yěxǔ bǐ nǐ gèng xǐhuan. Nǐ xǐhuan gǔdiǎn yīnyuè háishi xǐhuan xiàndài yīnyuè?",
+          "en": "I love music too — maybe even more than you. Classical or modern?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "我喜欢古典音乐。喜欢听世界名曲，还喜欢听民歌。",
+          "pinyin": "Wǒ xǐhuan gǔdiǎn yīnyuè. Xǐhuan tīng shìjiè míngqǔ, hái xǐhuan tīng míngē.",
+          "en": "Classical — world-famous pieces and folk songs."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "我也喜欢古典音乐。你喜欢流行歌曲吗？",
+          "pinyin": "Wǒ yě xǐhuan gǔdiǎn yīnyuè. Nǐ xǐhuan liúxíng gēqǔ ma?",
+          "en": "I like classical too. Do you like pop songs?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "怎么说呢？可能没有你们年轻人那么喜欢。我觉得流行歌曲的歌词没有民歌写得好。",
+          "pinyin": "Zěnme shuō ne? Kěnéng méiyǒu nǐmen niánqīngrén nàme xǐhuan. Wǒ juéde liúxíng gēqǔ de gēcí méiyǒu míngē xiě de hǎo.",
+          "en": "How to put it? Maybe not as much as you young people. I feel pop lyrics aren’t as well written as folk songs."
+        },
+        {
+          "speaker": "林老师",
+          "zh": "有些流行歌曲的歌词写得还是不错的。",
+          "pinyin": "Yǒuxiē liúxíng gēqǔ de gēcí xiě de háishi búcuò de.",
+          "en": "Some pop lyrics are still pretty good."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "可是，我还是觉得民歌的歌词好。你听咱们的民歌，“在那遥远的地方…”，写得多好！",
+          "pinyin": "Kěshì, wǒ háishi juéde míngē de gēcí hǎo. Nǐ tīng zánmen de míngē, “Zài nà yáoyuǎn de dìfang…”, xiě de duō hǎo!",
+          "en": "Still, I prefer folk lyrics. Listen to ours — “In that distant place…” — so well written!"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "这几年 / 几表示概数",
+      "body": "“这几年”的意思是“最近几年”。疑问代词“几”在这里表示10以下的概数。课文中“上海的气温比北京高好几度”的“几”也表示概数。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "这几年变化很大。",
+        "pinyin": "Zhè jǐ nián biànhuà hěn dà.",
+        "en": "It’s changed tremendously over these years."
+      }
+    },
+    {
+      "title": "…得多",
+      "body": "“…得多”用在比较句中，表示事物之间的差别大。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "上海的气温比北京高得多。",
+        "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo de duō.",
+        "en": "Shanghai’s temperature is much higher than Beijing’s."
+      }
+    },
+    {
+      "title": "怎么说呢？",
+      "body": "表示不好说，不知怎样说。后面有实际说的具体内容。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "怎么说呢？可能没有你们年轻人那么喜欢。",
+        "pinyin": "Zěnme shuō ne? Kěnéng méiyǒu nǐmen niánqīngrén nàme xǐhuan.",
+        "en": "How should I put it? Maybe not as much as you young people."
+      }
+    },
+    {
+      "title": "比较句：“比”字句",
+      "body": "比较两个事物之间的差别时用“比”字句。类型一：A比B+形容词（形容词前不能用很、真、非常）。类型二：A比B+动词+宾语。差别可用一点儿/一些（小）或很多/得多/多了（大）。否定一般用“没有”，不用“不比”（“不比”用于反驳）。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "飞机比汽车快。",
+        "pinyin": "Fēijī bǐ qìchē kuài.",
+        "en": "Planes are faster than cars."
+      }
+    },
+    {
+      "title": "有/没有…这么/那么…",
+      "body": "动词“有”表示达到或估量。肯定式多用于疑问句或反问句，否定式多用于陈述句：A有/没有B（+这么/那么）＋形容词。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "上海没有北京大。",
+        "pinyin": "Shànghǎi méiyǒu Běijīng dà.",
+        "en": "Shanghai isn’t as big as Beijing."
+      }
+    }
+  ]
+}

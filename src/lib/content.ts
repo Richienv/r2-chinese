@@ -21,6 +21,15 @@ for (const v of vocabIndex) {
 }
 for (const l of lessons) for (const v of l.vocab) byZh.set(v.zh, v)
 
+export interface Example {
+  zh: string
+  pinyin: string
+  en: string
+}
+
+/** Course-extra examples (Kerja / 汉语教程) keyed by zh — never invent glosses. */
+const extraExamples = new Map<string, Example>()
+
 export function lookup(word: string): Vocab | undefined {
   return byZh.get(word)
 }
@@ -30,6 +39,8 @@ export function lessonOf(word: string): number | undefined {
 }
 
 const MAX_WORD = 4
+/** Grows when longer Kerja / 汉语教程 entries register. */
+let maxWordLen = MAX_WORD
 
 export interface Token {
   text: string
@@ -37,9 +48,9 @@ export interface Token {
 }
 
 /**
- * Greedy longest-match segmentation against the book vocabulary. Anything that
- * isn't a known word is emitted as a run of plain characters, so a line always
- * reassembles to its original text.
+ * Greedy longest-match segmentation against the book vocabulary (incl. 1-char).
+ * Anything that isn't a known word is emitted as a run of plain characters, so
+ * a line always reassembles to its original text.
  */
 export function segment(line: string): Token[] {
   const out: Token[] = []
@@ -48,7 +59,7 @@ export function segment(line: string): Token[] {
   while (i < line.length) {
     let hit: Vocab | undefined
     let len = 0
-    for (let n = Math.min(MAX_WORD, line.length - i); n >= 2; n--) {
+    for (let n = Math.min(maxWordLen, line.length - i); n >= 1; n--) {
       const candidate = byZh.get(line.slice(i, i + n))
       if (candidate) {
         hit = candidate
@@ -72,10 +83,43 @@ export function segment(line: string): Token[] {
   return out
 }
 
-export interface Example {
-  zh: string
-  pinyin: string
-  en: string
+const HANZI_RUN = /[\u3400-\u9fff\uf900-\ufaff]+/g
+
+/**
+ * Expand plain segment runs so unknown 汉字 are still tappable. Consecutive
+ * unknown Hanzi stay one token (capped) so a learner can add a compound that
+ * isn't in the book; punctuation stays untappable.
+ */
+export function segmentForGloss(line: string): Token[] {
+  const out: Token[] = []
+  for (const tok of segment(line)) {
+    if (tok.vocab) {
+      out.push(tok)
+      continue
+    }
+    let last = 0
+    const text = tok.text
+    HANZI_RUN.lastIndex = 0
+    let m: RegExpExecArray | null
+    while ((m = HANZI_RUN.exec(text))) {
+      if (m.index > last) out.push({ text: text.slice(last, m.index) })
+      const run = m[0]
+      // Cap long unknown runs into ≤4-char chunks so taps stay word-sized.
+      for (let i = 0; i < run.length; ) {
+        const n = Math.min(4, run.length - i)
+        out.push({ text: run.slice(i, i + n) })
+        i += n
+      }
+      last = m.index + run.length
+    }
+    if (last < text.length) out.push({ text: text.slice(last) })
+  }
+  return out
+}
+
+/** Stub gloss for an unknown span — never invents English. */
+export function unknownVocab(zh: string): Vocab {
+  return { zh, pinyin: '', pos: '', en: '', note: '' }
 }
 
 const exampleCache = new Map<string, Example | null>()
@@ -98,7 +142,28 @@ const TOKEN_COMPOUNDS = [
 ]
 
 const tokenLexicon = new Set<string>([...byZh.keys(), ...overlayKeys(), ...TOKEN_COMPOUNDS])
-const maxToken = [...tokenLexicon].reduce((n, w) => Math.max(n, w.length), 4)
+let maxToken = [...tokenLexicon].reduce((n, w) => Math.max(n, w.length), 4)
+
+/**
+ * Merge Kerja / 汉语教程 (or other) entries into the shared gloss lexicon so
+ * one starred-drill list works across courses. Never overwrites a richer HSK
+ * gloss with an emptier one; never invents English.
+ */
+export function registerVocab(word: Vocab, example?: Example | null) {
+  if (!word.zh) return
+  const prev = byZh.get(word.zh)
+  if (!prev) {
+    byZh.set(word.zh, word)
+  } else if (!prev.en && word.en) {
+    byZh.set(word.zh, { ...prev, ...word, en: word.en })
+  } else if (word.pinyin && !prev.pinyin) {
+    byZh.set(word.zh, { ...prev, pinyin: word.pinyin, pos: prev.pos || word.pos, note: prev.note || word.note })
+  }
+  if (example?.zh?.trim()) extraExamples.set(word.zh, example)
+  tokenLexicon.add(word.zh)
+  if (word.zh.length > maxToken) maxToken = word.zh.length
+  if (word.zh.length > maxWordLen) maxWordLen = word.zh.length
+}
 
 function insideLongerToken(haystack: string, index: number, word: string): boolean {
   const wordEnd = index + word.length
@@ -126,10 +191,12 @@ export function hasWordToken(haystack: string, word: string): boolean {
   return false
 }
 
-/** Overlay example first; else the book's shortest sentence that contains the word as a token. */
+/** Overlay / course example first; else the book's shortest sentence that contains the word as a token. */
 export function exampleFor(word: string, lesson?: number): Example | null {
   const overlay = overlayWord(word, lesson)
   if (overlay?.example?.zh) return overlay.example
+  const extra = extraExamples.get(word)
+  if (extra?.zh) return extra
   const cached = exampleCache.get(word)
   if (cached !== undefined) return cached
   let best: Example | null = null

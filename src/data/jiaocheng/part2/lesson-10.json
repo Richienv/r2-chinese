@@ -1,0 +1,711 @@
+{
+  "id": "jiaocheng-2-2-10",
+  "book": "2-2",
+  "index": 10,
+  "bookLesson": 22,
+  "titleZh": "我想起来了",
+  "titleEn": "I remember now",
+  "sourcePages": "150-166",
+  "words": [
+    {
+      "zh": "熟",
+      "pinyin": "shú",
+      "pos": "adj.",
+      "en": "familiar",
+      "note": "Book headword pinyin printed as shú. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 熟 like the word you’ll use when you need “familiar”.",
+      "usage": "Most Chinese speakers use 熟 for “familiar”.",
+      "example": {
+        "zh": "声音有点儿熟，但一下子想不起来是谁了。",
+        "pinyin": "shēng yīn yǒu diǎn ér shú，dàn yī xià zi xiǎng bù qǐ lái shì shuí le。",
+        "en": "The voice is a bit familiar, but I can’t recall who it is all of a sudden."
+      }
+    },
+    {
+      "zh": "一下子",
+      "pinyin": "yíxiàzi",
+      "pos": "adv.",
+      "en": "in a short while; all at once; all of a sudden",
+      "note": "Book headword pinyin printed as yíxiàzi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 一下子 like the word you’ll use when you need “in a short while”.",
+      "usage": "Most Chinese speakers use 一下子 for “in a short while”.",
+      "example": {
+        "zh": "一下子想不起来是谁了。",
+        "pinyin": "yī xià zi xiǎng bù qǐ lái shì shuí le。",
+        "en": "I can’t recall who it is all of a sudden."
+      }
+    },
+    {
+      "zh": "应",
+      "pinyin": "yìng",
+      "pos": "v.",
+      "en": "to accept (an invitation)",
+      "note": "Book headword pinyin printed as yìng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 应 like the word you’ll use when you need “to accept (an invitation)”.",
+      "usage": "Most Chinese speakers use 应 for “to accept (an invitation)”.",
+      "example": {
+        "zh": "我是应国际广播电台的邀请来北京工作的。",
+        "pinyin": "wǒ shì yīng guó jì guǎng bō diàn tái de yāo qǐng lái běi jīng gōng zuò de。",
+        "en": "I came to Beijing to work at the invitation of China Radio International."
+      }
+    },
+    {
+      "zh": "国际",
+      "pinyin": "guójì",
+      "pos": "adj.",
+      "en": "international",
+      "note": "Book headword pinyin printed as guójì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 国际 like the word you’ll use when you need “international”.",
+      "usage": "Most Chinese speakers use 国际 for “international”.",
+      "example": {
+        "zh": "应国际广播电台的邀请",
+        "pinyin": "yīng guó jì guǎng bō diàn tái de yāo qǐng",
+        "en": "at the invitation of the international radio station"
+      }
+    },
+    {
+      "zh": "广播",
+      "pinyin": "guǎngbō",
+      "pos": "n.",
+      "en": "radio; broadcast",
+      "note": "Book headword pinyin printed as guǎngbō. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 广播 like the word you’ll use when you need “radio”.",
+      "usage": "Most Chinese speakers use 广播 for “radio”.",
+      "example": {
+        "zh": "国际广播电台",
+        "pinyin": "guó jì guǎng bō diàn tái",
+        "en": "China Radio International / international radio station"
+      }
+    },
+    {
+      "zh": "电台",
+      "pinyin": "diàntái",
+      "pos": "n.",
+      "en": "radio station",
+      "note": "Book headword pinyin printed as diàntái. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 电台 like the word you’ll use when you need “radio station”.",
+      "usage": "Most Chinese speakers use 电台 for “radio station”.",
+      "example": {
+        "zh": "国际广播电台",
+        "pinyin": "guó jì guǎng bō diàn tái",
+        "en": "radio station"
+      }
+    },
+    {
+      "zh": "邀请",
+      "pinyin": "yāoqǐng",
+      "pos": "v.",
+      "en": "to invite",
+      "note": "Book headword pinyin printed as yāoqǐng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 邀请 like the word you’ll use when you need “to invite”.",
+      "usage": "Most Chinese speakers use 邀请 for “to invite”.",
+      "example": {
+        "zh": "应……的邀请",
+        "pinyin": "yīng……de yāo qǐng",
+        "en": "at the invitation of…"
+      }
+    },
+    {
+      "zh": "待",
+      "pinyin": "dāi",
+      "pos": "v.",
+      "en": "to stay",
+      "note": "Book headword pinyin printed as dāi. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 待 like the word you’ll use when you need “to stay”.",
+      "usage": "Most Chinese speakers use 待 for “to stay”.",
+      "example": {
+        "zh": "要待多长时间？",
+        "pinyin": "yào dài duō zhǎng shí jiān？",
+        "en": "How long will you stay?"
+      }
+    },
+    {
+      "zh": "签",
+      "pinyin": "qiān",
+      "pos": "v.",
+      "en": "to sign",
+      "note": "Book headword pinyin printed as qiān. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 签 like the word you’ll use when you need “to sign”.",
+      "usage": "Most Chinese speakers use 签 for “to sign”.",
+      "example": {
+        "zh": "我跟他们签了两年的合同。",
+        "pinyin": "wǒ gēn tā men qiān le liǎng nián de hé tóng。",
+        "en": "I signed a two-year contract with them."
+      }
+    },
+    {
+      "zh": "合同",
+      "pinyin": "hétong",
+      "pos": "n.",
+      "en": "contract",
+      "note": "Book headword pinyin printed as hétong. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 合同 like the word you’ll use when you need “contract”.",
+      "usage": "Most Chinese speakers use 合同 for “contract”.",
+      "example": {
+        "zh": "签了两年的合同",
+        "pinyin": "qiān le liǎng nián de hé tóng",
+        "en": "signed a two-year contract"
+      }
+    },
+    {
+      "zh": "中外",
+      "pinyin": "zhōngwài",
+      "pos": "n.",
+      "en": "China and foreign countries",
+      "note": "Book headword pinyin printed as zhōngwài. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 中外 like the word you’ll use when you need “China and foreign countries”.",
+      "usage": "Most Chinese speakers use 中外 for “China and foreign countries”.",
+      "example": {
+        "zh": "一家中外合资公司",
+        "pinyin": "yī jiā zhōng wài hé zī gōng sī",
+        "en": "a Sino-foreign joint-venture company"
+      }
+    },
+    {
+      "zh": "合资",
+      "pinyin": "hézī",
+      "pos": "v.",
+      "en": "joint venture",
+      "note": "Book headword pinyin printed as hézī. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 合资 like the word you’ll use when you need “joint venture”.",
+      "usage": "Most Chinese speakers use 合资 for “joint venture”.",
+      "example": {
+        "zh": "中外合资公司",
+        "pinyin": "zhōng wài hé zī gōng sī",
+        "en": "joint-venture company"
+      }
+    },
+    {
+      "zh": "做客",
+      "pinyin": "zuò kè",
+      "pos": "v.",
+      "en": "to be a guest",
+      "note": "Book headword pinyin printed as zuò kè. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 做客 like the word you’ll use when you need “to be a guest”.",
+      "usage": "Most Chinese speakers use 做客 for “to be a guest”.",
+      "example": {
+        "zh": "我们想请您来我家做客。",
+        "pinyin": "wǒ men xiǎng qǐng nín lái wǒ jiā zuò kè。",
+        "en": "We’d like to invite you to be a guest at our home."
+      }
+    },
+    {
+      "zh": "空儿",
+      "pinyin": "kòngr",
+      "pos": "n.",
+      "en": "free time",
+      "note": "Book headword pinyin printed as kòngr. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 空儿 like the word you’ll use when you need “free time”.",
+      "usage": "Most Chinese speakers use 空儿 for “free time”.",
+      "example": {
+        "zh": "您星期六下午有没有空儿？",
+        "pinyin": "nín xīng qī liù xià wǔ yǒu méi yǒu kòng ér？",
+        "en": "Are you free Saturday afternoon?"
+      }
+    },
+    {
+      "zh": "搬家",
+      "pinyin": "bān jiā",
+      "pos": "v.",
+      "en": "to move house",
+      "note": "Book headword pinyin printed as bān jiā. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 搬家 like the word you’ll use when you need “to move house”.",
+      "usage": "Most Chinese speakers use 搬家 for “to move house”.",
+      "example": {
+        "zh": "我早就搬家了",
+        "pinyin": "wǒ zǎo jiù bān jiā le",
+        "en": "I moved long ago"
+      }
+    },
+    {
+      "zh": "地址",
+      "pinyin": "dìzhǐ",
+      "pos": "n.",
+      "en": "address",
+      "note": "Book headword pinyin printed as dìzhǐ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 地址 like the word you’ll use when you need “address”.",
+      "usage": "Most Chinese speakers use 地址 for “address”.",
+      "example": {
+        "zh": "你把我的地址记下来。",
+        "pinyin": "nǐ bǎ wǒ de dì zhǐ jì xià lái。",
+        "en": "Write down my address."
+      }
+    },
+    {
+      "zh": "业务",
+      "pinyin": "yèwù",
+      "pos": "n.",
+      "en": "business",
+      "note": "Book headword pinyin printed as yèwù. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 业务 like the word you’ll use when you need “business”.",
+      "usage": "Most Chinese speakers use 业务 for “business”.",
+      "example": {
+        "zh": "你们公司的业务是什么？",
+        "pinyin": "nǐ men gōng sī de yè wù shì shén me？",
+        "en": "What business is your company in?"
+      }
+    },
+    {
+      "zh": "搞",
+      "pinyin": "gǎo",
+      "pos": "v.",
+      "en": "to do; to engage in",
+      "note": "Book headword pinyin printed as gǎo. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 搞 like the word you’ll use when you need “to do”.",
+      "usage": "Most Chinese speakers use 搞 for “to do”.",
+      "example": {
+        "zh": "我们公司是搞中外文化交流的。",
+        "pinyin": "wǒ men gōng sī shì gǎo zhōng wài wén huà jiāo liú de。",
+        "en": "Our company does China–foreign cultural exchange."
+      }
+    },
+    {
+      "zh": "交流",
+      "pinyin": "jiāoliú",
+      "pos": "v.",
+      "en": "to communicate; to exchange",
+      "note": "Book headword pinyin printed as jiāoliú. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 交流 like the word you’ll use when you need “to communicate”.",
+      "usage": "Most Chinese speakers use 交流 for “to communicate”.",
+      "example": {
+        "zh": "中外文化交流",
+        "pinyin": "zhōng wài wén huà jiāo liú",
+        "en": "China–foreign cultural exchange"
+      }
+    },
+    {
+      "zh": "成立",
+      "pinyin": "chénglì",
+      "pos": "v.",
+      "en": "to set up; to found",
+      "note": "Book headword pinyin printed as chénglì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 成立 like the word you’ll use when you need “to set up”.",
+      "usage": "Most Chinese speakers use 成立 for “to set up”.",
+      "example": {
+        "zh": "公司成立不久",
+        "pinyin": "gōng sī chéng lì bù jiǔ",
+        "en": "The company was founded not long ago"
+      }
+    },
+    {
+      "zh": "不久",
+      "pinyin": "bùjiǔ",
+      "pos": "adj.",
+      "en": "soon; before long; not long after",
+      "note": "Book headword pinyin printed as bùjiǔ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 不久 like the word you’ll use when you need “soon”.",
+      "usage": "Most Chinese speakers use 不久 for “soon”.",
+      "example": {
+        "zh": "公司成立不久",
+        "pinyin": "gōng sī chéng lì bù jiǔ",
+        "en": "not long after the company was founded"
+      }
+    },
+    {
+      "zh": "开展",
+      "pinyin": "kāizhǎn",
+      "pos": "v.",
+      "en": "to start; to launch",
+      "note": "Book headword pinyin printed as kāizhǎn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 开展 like the word you’ll use when you need “to start”.",
+      "usage": "Most Chinese speakers use 开展 for “to start”.",
+      "example": {
+        "zh": "业务也刚开展起来。",
+        "pinyin": "yè wù yě gāng kāi zhǎn qǐ lái。",
+        "en": "Business has only just started to take off."
+      }
+    },
+    {
+      "zh": "继续",
+      "pinyin": "jìxù",
+      "pos": "v.",
+      "en": "to continue; to go on with",
+      "note": "Book headword pinyin printed as jìxù. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 继续 like the word you’ll use when you need “to continue”.",
+      "usage": "Most Chinese speakers use 继续 for “to continue”.",
+      "example": {
+        "zh": "所以打算继续学下去。",
+        "pinyin": "suǒ yǐ dǎ suàn jì xù xué xià qù。",
+        "en": "So we plan to keep studying."
+      }
+    },
+    {
+      "zh": "一定",
+      "pinyin": "yídìng",
+      "pos": "adj.",
+      "en": "proper; fair; considerable",
+      "note": "Book headword pinyin printed as yídìng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 一定 like the word you’ll use when you need “proper”.",
+      "usage": "Most Chinese speakers use 一定 for “proper”.",
+      "example": {
+        "zh": "有一定的基础",
+        "pinyin": "yǒu yí dìng de jī chǔ",
+        "en": "have a fair foundation"
+      }
+    },
+    {
+      "zh": "基础",
+      "pinyin": "jīchǔ",
+      "pos": "n.",
+      "en": "foundation; basis",
+      "note": "Book headword pinyin printed as jīchǔ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 基础 like the word you’ll use when you need “foundation”.",
+      "usage": "Most Chinese speakers use 基础 for “foundation”.",
+      "example": {
+        "zh": "有一定的基础",
+        "pinyin": "yǒu yí dìng de jī chǔ",
+        "en": "have a fair foundation"
+      }
+    },
+    {
+      "zh": "光",
+      "pinyin": "guāng",
+      "pos": "adj.",
+      "en": "used up; empty",
+      "note": "Book headword pinyin printed as guāng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 光 like the word you’ll use when you need “used up”.",
+      "usage": "Most Chinese speakers use 光 for “used up”.",
+      "example": {
+        "zh": "汉语差不多都忘光了",
+        "pinyin": "hàn yǔ chà bu duō dōu wàng guāng le",
+        "en": "I’ve almost forgotten all my Chinese"
+      }
+    },
+    {
+      "zh": "只有……才……",
+      "pinyin": "zhǐyǒu…cái…",
+      "pos": "",
+      "en": "only if… can…",
+      "note": "Book headword pinyin printed as zhǐyǒu…cái…. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 只有……才…… like the word you’ll use when you need “only if… can…”.",
+      "usage": "Most Chinese speakers use 只有……才…… for “only if… can…”.",
+      "example": {
+        "zh": "只有坚持下去，多听、多说、多练才能学好。",
+        "pinyin": "zhǐ yǒu jiān chí xià qù，duō tīng、duō shuō、duō liàn cái néng xué hǎo。",
+        "en": "Only by persevering — listening, speaking, and practicing more — can you learn well."
+      }
+    },
+    {
+      "zh": "抽",
+      "pinyin": "chōu",
+      "pos": "v.",
+      "en": "to find (time)",
+      "note": "Book headword pinyin printed as chōu. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 抽 like the word you’ll use when you need “to find (time)”.",
+      "usage": "Most Chinese speakers use 抽 for “to find (time)”.",
+      "example": {
+        "zh": "不知道老师能不能抽出时间来。",
+        "pinyin": "bù zhī dào lǎo shī néng bù néng chōu chū shí jiān lái。",
+        "en": "I wonder if you can find the time."
+      }
+    },
+    {
+      "zh": "同意",
+      "pinyin": "tóngyì",
+      "pos": "v.",
+      "en": "to agree",
+      "note": "Book headword pinyin printed as tóngyì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 同意 like the word you’ll use when you need “to agree”.",
+      "usage": "Most Chinese speakers use 同意 for “to agree”.",
+      "example": {
+        "zh": "要是老师同意的话",
+        "pinyin": "yào shì lǎo shī tóng yì de huà",
+        "en": "if you agree"
+      }
+    },
+    {
+      "zh": "海伦",
+      "pinyin": "Hǎilún",
+      "pos": "专名",
+      "en": "Helen",
+      "note": "Book headword pinyin printed as Hǎilún. Dialogue/example pinyin not printed in the book; standard pinyin added. 专名.",
+      "when": "Remember 海伦 as the student who calls 王老师.",
+      "usage": "专名 in dialogue (一)(二).",
+      "example": {
+        "zh": "啊，我想起来了，海伦！",
+        "pinyin": "a，wǒ xiǎng qǐ lái le，hǎi lún！",
+        "en": "Ah, I remember now — Helen!"
+      }
+    },
+    {
+      "zh": "保罗",
+      "pinyin": "Bǎoluó",
+      "pos": "专名",
+      "en": "Paul",
+      "note": "Book headword pinyin printed as Bǎoluó. Dialogue/example pinyin not printed in the book; standard pinyin added. 专名.",
+      "when": "Remember 保罗 as Helen’s partner in the dialogues.",
+      "usage": "专名.",
+      "example": {
+        "zh": "保罗也来了。",
+        "pinyin": "bǎo luó yě lái le。",
+        "en": "Paul came too."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "(一)",
+      "headingZh": "我想起来了",
+      "headingEn": "I remember now",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "一天，王老师突然接到一个电话，原来是他三年前的学生打来的……",
+          "pinyin": "yī tiān，wáng lǎo shī tū rán jiē dào yí gè diàn huà，yuán lái shì tā sān nián qián de xué shēng dǎ lái de……",
+          "en": "One day Mr. Wang suddenly got a call from a student he’d taught three years earlier..."
+        },
+        {
+          "speaker": "海伦",
+          "zh": "喂，是王老师吗？",
+          "pinyin": "wèi，shì wáng lǎo shī ma？",
+          "en": "Hello, is this Teacher Wang?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "是。你是……",
+          "pinyin": "shì。nǐ shì……",
+          "en": "Yes. You are…"
+        },
+        {
+          "speaker": "海伦",
+          "zh": "老师，您听得出来我是谁吗？",
+          "pinyin": "lǎo shī，nín tīng dé chū lái wǒ shì shuí ma？",
+          "en": "Teacher, can you tell who I am from my voice?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "你是……对不起，声音有点儿熟，但一下子想不起来是谁了。",
+          "pinyin": "nǐ shì……duì bù qǐ，shēng yīn yǒu diǎn ér shú，dàn yī xià zi xiǎng bù qǐ lái shì shuí le。",
+          "en": "You’re… sorry, the voice is a bit familiar, but I can’t recall who all of a sudden."
+        },
+        {
+          "speaker": "海伦",
+          "zh": "我是您三年前的学生，您还参加过我的婚礼呢。",
+          "pinyin": "wǒ shì nín sān nián qián de xué shēng，nín hái cān jiā guò wǒ de hūn lǐ ne。",
+          "en": "I’m your student from three years ago — you even came to my wedding."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "啊，我想起来了，海伦！你现在在哪儿？",
+          "pinyin": "a，wǒ xiǎng qǐ lái le，hǎi lún！nǐ xiàn zài zài nǎ ér？",
+          "en": "Ah, I remember now — Helen! Where are you now?"
+        },
+        {
+          "speaker": "海伦",
+          "zh": "我就在北京。",
+          "pinyin": "wǒ jiù zài běi jīng。",
+          "en": "I’m in Beijing."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "你是怎么知道这个电话号码的？",
+          "pinyin": "nǐ shì zěn me zhī dào zhè ge diàn huà hào mǎ de？",
+          "en": "How did you get this phone number?"
+        },
+        {
+          "speaker": "海伦",
+          "zh": "是罗兰告诉我的。",
+          "pinyin": "shì luó lán gào sù wǒ de。",
+          "en": "Roland told me."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "是吗？你是来旅行的吗？",
+          "pinyin": "shì ma？nǐ shì lái lǚ xíng de ma？",
+          "en": "Is that so? Are you here traveling?"
+        },
+        {
+          "speaker": "海伦",
+          "zh": "不是。我是应国际广播电台的邀请来北京工作的。",
+          "pinyin": "bú shì。wǒ shì yīng guó jì guǎng bō diàn tái de yāo qǐng lái běi jīng gōng zuò de。",
+          "en": "No. I came to Beijing to work at the invitation of China Radio International."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "要待多长时间？",
+          "pinyin": "yào dài duō zhǎng shí jiān？",
+          "en": "How long will you stay?"
+        },
+        {
+          "speaker": "海伦",
+          "zh": "我跟他们签了两年的合同。",
+          "pinyin": "wǒ gēn tā men qiān le liǎng nián de hé tóng。",
+          "en": "I signed a two-year contract with them."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "保罗呢？",
+          "pinyin": "bǎo luó ne？",
+          "en": "What about Paul?"
+        },
+        {
+          "speaker": "海伦",
+          "zh": "保罗也来了。他在北京的一家中外合资公司工作。老师，我们想请您来我家做客。",
+          "pinyin": "bǎo luó yě lái le。tā zài běi jīng de yī jiā zhōng wài hé zī gōng sī gōng zuò。lǎo shī，wǒ men xiǎng qǐng nín lái wǒ jiā zuò kè。",
+          "en": "Paul came too. He works at a Sino-foreign joint venture in Beijing. Teacher, we’d like to invite you to our home."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "好啊。",
+          "pinyin": "hǎo a。",
+          "en": "Sure."
+        },
+        {
+          "speaker": "海伦",
+          "zh": "不知道您星期六下午有没有空儿？",
+          "pinyin": "bù zhī dào nín xīng qī liù xià wǔ yǒu méi yǒu kòng ér？",
+          "en": "I wonder if you’re free Saturday afternoon?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "这个星期六下午可以。",
+          "pinyin": "zhè ge xīng qī liù xià wǔ kě yǐ。",
+          "en": "This Saturday afternoon works."
+        },
+        {
+          "speaker": "海伦",
+          "zh": "那我让保罗开车去接您。您还住在原来的地方吗？",
+          "pinyin": "nà wǒ ràng bǎo luó kāi chē qù jiē nín。nín hái zhù zài yuán lái de dì fāng ma？",
+          "en": "Then I’ll have Paul drive over to pick you up. Do you still live where you used to?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "不，我早就搬家了，搬到学校附近一个新建的住宅小区了。我告诉你，你把我的地址记下来。保罗来的时候，给我来个电话，我去门口接他。",
+          "pinyin": "bù，wǒ zǎo jiù bān jiā le，bān dào xué xiào fù jìn yí gè xīn jiàn de zhù zhái xiǎo qū le。wǒ gào sù nǐ，nǐ bǎ wǒ de dì zhǐ jì xià lái。bǎo luó lái de shí hòu，gěi wǒ lái gè diàn huà，wǒ qù mén kǒu jiē tā。",
+          "en": "No, I moved long ago, to a new residential compound near the school. Let me tell you — write down my address. When Paul comes, call me and I’ll meet him at the gate."
+        },
+        {
+          "speaker": "海伦",
+          "zh": "好的。",
+          "pinyin": "hǎo de。",
+          "en": "Okay."
+        }
+      ]
+    },
+    {
+      "label": "(二)",
+      "headingZh": "我们还想学下去",
+      "headingEn": "We still want to keep studying",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "",
+          "zh": "在海伦家",
+          "pinyin": "zài hǎi lún jiā",
+          "en": "At Helen’s"
+        },
+        {
+          "speaker": "海伦",
+          "zh": "老师，您喝点儿什么？茶还是咖啡？",
+          "pinyin": "lǎo shī，nín hē diǎn ér shén me？chá hái shì kā fēi？",
+          "en": "Teacher, what would you like to drink — tea or coffee?"
+        },
+        {
+          "speaker": "王老师",
+          "zh": "我茶和咖啡都喝不了，一喝晚上就睡不着觉。就喝点儿水吧。你们这儿真不错！",
+          "pinyin": "wǒ chá hé kā fēi dōu hē bù liǎo，yī hē wǎn shàng jiù shuì bù zhe jué。jiù hē diǎn ér shuǐ ba。nǐ men zhè ér zhēn bù cuò！",
+          "en": "I can’t drink tea or coffee — if I do I can’t sleep at night. Just some water. Your place is really nice!"
+        },
+        {
+          "speaker": "海伦",
+          "zh": "这是保罗的公司给我们租的房子。要是让我们自己花钱可租不起。",
+          "pinyin": "zhè shì bǎo luó de gōng sī gěi wǒ men zū de fáng zi。yào shì ràng wǒ men zì jǐ huā qián kě zū bù qǐ。",
+          "en": "Paul’s company rented this place for us. If we had to pay ourselves, we couldn’t afford it."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "保罗，你们公司的业务是什么？",
+          "pinyin": "bǎo luó，nǐ men gōng sī de yè wù shì shén me？",
+          "en": "Paul, what business is your company in?"
+        },
+        {
+          "speaker": "保罗",
+          "zh": "我们公司是搞中外文化交流的。公司成立不久，业务也刚开展起来。",
+          "pinyin": "wǒ men gōng sī shì gǎo zhōng wài wén huà jiāo liú de。gōng sī chéng lì bù jiǔ，yè wù yě gāng kāi zhǎn qǐ lái。",
+          "en": "Our company does China–foreign cultural exchange. It was founded not long ago, and business has only just started."
+        },
+        {
+          "speaker": "海伦",
+          "zh": "老师，我和保罗的工作都需要用汉语，所以打算继续学下去。我们想利用在北京工作的机会把汉语学好。",
+          "pinyin": "lǎo shī，wǒ hé bǎo luó de gōng zuò dōu xū yào yòng hàn yǔ，suǒ yǐ dǎ suàn jì xù xué xià qù。wǒ men xiǎng lì yòng zài běi jīng gōng zuò de jī huì bǎ hàn yǔ xué hǎo。",
+          "en": "Teacher, both our jobs need Chinese, so we plan to keep studying. We want to use working in Beijing to learn Chinese well."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "你们俩原来都学得不错，有一定的基础，坚持学下去的话，一定能学好。",
+          "pinyin": "nǐ men liǎ yuán lái dōu xué dé bù cuò，yǒu yí dìng de jī chǔ，jiān chí xué xià qù de huà，yí dìng néng xué hǎo。",
+          "en": "You two already studied pretty well and have a fair foundation; if you keep at it, you’ll definitely learn well."
+        },
+        {
+          "speaker": "海伦",
+          "zh": "时间过得真快！离开中国都三年多了。刚回国的时候，还常听听录音，读读课文。后来因为忙，也没坚持下来。很长时间不说，汉语差不多都忘光了，要用的时候，好多词都想不起来了。",
+          "pinyin": "shí jiān guò dé zhēn kuài！lí kāi zhōng guó dōu sān nián duō le。gāng huí guó de shí hòu，hái cháng tīng tīng lù yīn，dú dú kè wén。hòu lái yīn wèi máng，yě méi jiān chí xià lái。hěn zhǎng shí jiān bù shuō，hàn yǔ chà bu duō dōu wàng guāng le，yào yòng de shí hòu，hǎo duō cí dōu xiǎng bù qǐ lái le。",
+          "en": "Time flies! It’s been over three years since we left China. Right after going home we still often listened to recordings and read texts. Later we got busy and didn’t stick with it. After not speaking for so long, we’ve almost forgotten everything — when we need words, lots of them won’t come to mind."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "是。学外语，只有坚持下去，多听、多说、多练才能学好。",
+          "pinyin": "shì。xué wài yǔ，zhǐ yǒu jiān chí xià qù，duō tīng、duō shuō、duō liàn cái néng xué hǎo。",
+          "en": "Yes. To learn a foreign language, only by persevering — listening, speaking, and practicing more — can you learn well."
+        },
+        {
+          "speaker": "海伦",
+          "zh": "我们还想请老师业余教我们，不知道老师能不能抽出时间来。",
+          "pinyin": "wǒ men hái xiǎng qǐng lǎo shī yè yú jiào wǒ men，bù zhī dào lǎo shī néng bù néng chōu chū shí jiān lái。",
+          "en": "We’d also like to ask you to teach us in your spare time; I wonder if you can find the time."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "我工作比较忙，抽不出时间来。你们打算怎么学？",
+          "pinyin": "wǒ gōng zuò bǐ jiào máng，chōu bù chū shí jiān lái。nǐ men dǎ suàn zěn me xué？",
+          "en": "I’m rather busy with work and can’t find the time. How do you plan to study?"
+        },
+        {
+          "speaker": "海伦",
+          "zh": "白天我们都没有时间，只有晚上才抽得出时间。要是老师同意的话，我们想到老师家里去上课。",
+          "pinyin": "bái tiān wǒ men dōu méi yǒu shí jiān，zhǐ yǒu wǎn shàng cái chōu dé chū shí jiān。yào shì lǎo shī tóng yì de huà，wǒ men xiǎng dào lǎo shī jiā lǐ qù shàng kè。",
+          "en": "We have no time in the daytime — only evenings we can free up. If you agree, we’d like to come to your home for class."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "要是让我们自己花钱可租不起。",
+      "body": "If we had to pay ourselves, we really couldn’t afford to rent it. Note explains the potential complement 租不起 and emphatic 可.",
+      "example": {
+        "zh": "要是让我们自己花钱可租不起。",
+        "pinyin": "yào shì ràng wǒ men zì jǐ huā qián kě zū bù qǐ。",
+        "en": "If we had to pay ourselves, we really couldn’t afford to rent it."
+      }
+    },
+    {
+      "title": "我们公司是搞中外文化交流的。",
+      "body": "Our company engages in China–foreign cultural exchange. “搞” means to do / engage in (colloquial).",
+      "example": {
+        "zh": "我们公司是搞中外文化交流的。",
+        "pinyin": "wǒ men gōng sī shì gǎo zhōng wài wén huà jiāo liú de。",
+        "en": "Our company does China–foreign cultural exchange."
+      }
+    },
+    {
+      "title": "趋向补语的引申用法",
+      "body": "Extended uses of directional complements: 想起来 / 想不起来, 学下去 / 坚持下去, 开展起来, 忘光了, etc.",
+      "example": {
+        "zh": "啊，我想起来了，海伦！",
+        "pinyin": "a，wǒ xiǎng qǐ lái le，hǎi lún！",
+        "en": "Ah, I remember now — Helen!"
+      }
+    },
+    {
+      "title": "只有……才……",
+      "body": "only if… can… Necessary condition with 只有…才…",
+      "example": {
+        "zh": "只有坚持下去，多听、多说、多练才能学好。",
+        "pinyin": "zhǐ yǒu jiān chí xià qù，duō tīng、duō shuō、duō liàn cái néng xué hǎo。",
+        "en": "Only by persevering — listening, speaking, and practicing more — can you learn well."
+      }
+    }
+  ]
+}

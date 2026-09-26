@@ -1,0 +1,1001 @@
+{
+  "id": "jiaocheng-2-1-10",
+  "book": "2-1",
+  "index": 10,
+  "bookLesson": 10,
+  "titleZh": "我听过钢琴协奏曲《黄河》",
+  "titleEn": "I've heard the piano concerto Yellow River",
+  "sourcePages": "160-178",
+  "words": [
+    {
+      "zh": "过",
+      "pinyin": "guo",
+      "pos": "part.",
+      "en": "used after a verb to indicate a past action or state",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 过 like past experience — 吃过、去过、听过.",
+      "usage": "Most Chinese speakers V+过 for experience. Grammar focus.",
+      "example": {
+        "zh": "我吃过中药。",
+        "pinyin": "Wǒ chīguo Zhōngyào.",
+        "en": "I’ve taken Chinese medicine."
+      }
+    },
+    {
+      "zh": "住院",
+      "pinyin": "zhù yuàn",
+      "pos": "v.",
+      "en": "to be hospitalized",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 住院 like staying in hospital.",
+      "usage": "Most Chinese speakers 住院.",
+      "example": {
+        "zh": "我还住过一次院呢。",
+        "pinyin": "Wǒ hái zhùguo yí cì yuàn ne.",
+        "en": "I’ve even been hospitalized once."
+      }
+    },
+    {
+      "zh": "中医",
+      "pinyin": "Zhōngyī",
+      "pos": "n.",
+      "en": "traditional Chinese medicine; practitioner of TCM",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 中医 like Chinese medicine doctor.",
+      "usage": "Most Chinese speakers 中医.",
+      "example": {
+        "zh": "看过中医。",
+        "pinyin": "Kànguo Zhōngyī.",
+        "en": "Seen a TCM doctor."
+      }
+    },
+    {
+      "zh": "苦",
+      "pinyin": "kǔ",
+      "pos": "adj.",
+      "en": "bitter",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 苦 like bitter medicine.",
+      "usage": "Most Chinese speakers 苦.",
+      "example": {
+        "zh": "听说中药很苦。",
+        "pinyin": "Tīngshuō Zhōngyào hěn kǔ.",
+        "en": "I hear Chinese medicine is very bitter."
+      }
+    },
+    {
+      "zh": "中成药",
+      "pinyin": "Zhōngchéngyào",
+      "pos": "n.",
+      "en": "Chinese patent medicine",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 中成药 like ready-made Chinese medicine.",
+      "usage": "Most Chinese speakers 中成药.",
+      "example": {
+        "zh": "我喝的是中成药，甜甜的。",
+        "pinyin": "Wǒ hē de shì Zhōngchéngyào, tiántián de.",
+        "en": "What I drank was patent medicine — sweet."
+      }
+    },
+    {
+      "zh": "甜",
+      "pinyin": "tián",
+      "pos": "adj.",
+      "en": "sweet",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 甜 like sweet medicine.",
+      "usage": "Most Chinese speakers 甜.",
+      "example": {
+        "zh": "一点儿也不苦。",
+        "pinyin": "Yìdiǎnr yě bù kǔ.",
+        "en": "Not bitter at all."
+      }
+    },
+    {
+      "zh": "摸",
+      "pinyin": "mō",
+      "pos": "v.",
+      "en": "to feel; to touch",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 摸 like feeling the pulse — 摸脉.",
+      "usage": "Most Chinese speakers 摸脉.",
+      "example": {
+        "zh": "用手摸一摸脉。",
+        "pinyin": "Yòng shǒu mōyimo mài.",
+        "en": "Feel the pulse with the hand."
+      }
+    },
+    {
+      "zh": "脉",
+      "pinyin": "mài",
+      "pos": "n.",
+      "en": "pulse; arteries and veins",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 脉 like pulse.",
+      "usage": "Most Chinese speakers 号脉/摸脉.",
+      "example": {
+        "zh": "摸一摸脉。",
+        "pinyin": "Mōyimo mài.",
+        "en": "Feel the pulse."
+      }
+    },
+    {
+      "zh": "药方",
+      "pinyin": "yàofāng",
+      "pos": "n.",
+      "en": "prescription",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 药方 like a prescription.",
+      "usage": "Most Chinese speakers 开药方.",
+      "example": {
+        "zh": "就给你开药方。",
+        "pinyin": "Jiù gěi nǐ kāi yàofāng.",
+        "en": "Then writes you a prescription."
+      }
+    },
+    {
+      "zh": "按摩",
+      "pinyin": "ànmó",
+      "pos": "v.",
+      "en": "to massage",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 按摩 like massage treatment.",
+      "usage": "Most Chinese speakers 按摩.",
+      "example": {
+        "zh": "我做过按摩。",
+        "pinyin": "Wǒ zuòguo ànmó.",
+        "en": "I’ve had massage."
+      }
+    },
+    {
+      "zh": "针灸",
+      "pinyin": "zhēnjiǔ",
+      "pos": "v./n.",
+      "en": "acupuncture and moxibustion",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 针灸 like acupuncture.",
+      "usage": "Most Chinese speakers 针灸.",
+      "example": {
+        "zh": "没针灸过，但是见过。",
+        "pinyin": "Méi zhēnjiǔ guo, dànshì jiànguo.",
+        "en": "Never had acupuncture, but I’ve seen it."
+      }
+    },
+    {
+      "zh": "方法",
+      "pinyin": "fāngfǎ",
+      "pos": "n.",
+      "en": "method",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 方法 like treatment methods.",
+      "usage": "Most Chinese speakers 方法.",
+      "example": {
+        "zh": "用按摩、针灸等方法治病。",
+        "pinyin": "Yòng ànmó, zhēnjiǔ děng fāngfǎ zhì bìng.",
+        "en": "Treat illness with massage, acupuncture, etc."
+      }
+    },
+    {
+      "zh": "治",
+      "pinyin": "zhì",
+      "pos": "v.",
+      "en": "to treat; to cure",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 治 like treating illness.",
+      "usage": "Most Chinese speakers 治病.",
+      "example": {
+        "zh": "给病人治病。",
+        "pinyin": "Gěi bìngrén zhì bìng.",
+        "en": "Treat patients."
+      }
+    },
+    {
+      "zh": "针",
+      "pinyin": "zhēn",
+      "pos": "n.",
+      "en": "needle",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 针 like acupuncture needles.",
+      "usage": "Most Chinese speakers 针.",
+      "example": {
+        "zh": "很细很细的针。",
+        "pinyin": "Hěn xì hěn xì de zhēn.",
+        "en": "Very thin needles."
+      }
+    },
+    {
+      "zh": "扎针",
+      "pinyin": "zhā zhēn",
+      "pos": "v.",
+      "en": "to give or have an acupuncture treatment",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 扎针 like needling — not 打针.",
+      "usage": "Most Chinese speakers 扎针.",
+      "example": {
+        "zh": "不是打针，是扎针。",
+        "pinyin": "Bú shì dǎ zhēn, shì zhā zhēn.",
+        "en": "Not an injection — acupuncture needling."
+      }
+    },
+    {
+      "zh": "细",
+      "pinyin": "xì",
+      "pos": "adj.",
+      "en": "thin",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 细 like thin needles.",
+      "usage": "Most Chinese speakers 细.",
+      "example": {
+        "zh": "很细很细的针。",
+        "pinyin": "Hěn xì hěn xì de zhēn.",
+        "en": "Very thin needles."
+      }
+    },
+    {
+      "zh": "曾经",
+      "pinyin": "céngjīng",
+      "pos": "adv.",
+      "en": "once; used to",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 曾经 like once before — 曾经来过中国.",
+      "usage": "Most Chinese speakers 曾经.",
+      "example": {
+        "zh": "听说你曾经来过中国。",
+        "pinyin": "Tīngshuō nǐ céngjīng láiguo Zhōngguó.",
+        "en": "I hear you’ve been to China before."
+      }
+    },
+    {
+      "zh": "第",
+      "pinyin": "dì",
+      "pos": "pref.",
+      "en": "a prefix indicating ordinal numbers",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 第 like 第一次.",
+      "usage": "Most Chinese speakers 第+number.",
+      "example": {
+        "zh": "这是第一次。",
+        "pinyin": "Zhè shì dì yí cì.",
+        "en": "This is the first time."
+      }
+    },
+    {
+      "zh": "中餐",
+      "pinyin": "Zhōngcān",
+      "pos": "n.",
+      "en": "Chinese food",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 中餐 like Chinese meals.",
+      "usage": "Most Chinese speakers 中餐.",
+      "example": {
+        "zh": "习惯吃中餐了吗？",
+        "pinyin": "Xíguàn chī Zhōngcān le ma?",
+        "en": "Used to Chinese food yet?"
+      }
+    },
+    {
+      "zh": "烤鸭",
+      "pinyin": "kǎoyā",
+      "pos": "n.",
+      "en": "roast duck",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 烤鸭 like Beijing roast duck.",
+      "usage": "Most Chinese speakers 北京烤鸭. Related 烤.",
+      "example": {
+        "zh": "最喜欢吃的是北京烤鸭。",
+        "pinyin": "Zuì xǐhuan chī de shì Běijīng kǎoyā.",
+        "en": "Favorite is Beijing roast duck."
+      }
+    },
+    {
+      "zh": "烤",
+      "pinyin": "kǎo",
+      "pos": "v.",
+      "en": "to roast; to bake",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 烤 like roasting.",
+      "usage": "Most Chinese speakers 烤.",
+      "example": {
+        "zh": "烤白薯。",
+        "pinyin": "Kǎo báishǔ.",
+        "en": "Roasted sweet potato."
+      }
+    },
+    {
+      "zh": "白薯",
+      "pinyin": "báishǔ",
+      "pos": "n.",
+      "en": "sweet potato",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 白薯 like roasted sweet potato snack.",
+      "usage": "Most Chinese speakers 白薯.",
+      "example": {
+        "zh": "爱吃烤白薯。",
+        "pinyin": "Ài chī kǎo báishǔ.",
+        "en": "Love roasted sweet potato."
+      }
+    },
+    {
+      "zh": "糖葫芦",
+      "pinyin": "tánghúlu",
+      "pos": "n.",
+      "en": "sugar-coated haws on a stick",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 糖葫芦 like the northern snack.",
+      "usage": "Most Chinese speakers 糖葫芦. Related 糖.",
+      "example": {
+        "zh": "糖葫芦什么的。",
+        "pinyin": "Tánghúlu shénme de.",
+        "en": "Candied haws and such."
+      }
+    },
+    {
+      "zh": "糖",
+      "pinyin": "táng",
+      "pos": "n.",
+      "en": "sugar",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 糖 like the sugar in 糖葫芦.",
+      "usage": "Most Chinese speakers 糖.",
+      "example": {
+        "zh": "糖葫芦。",
+        "pinyin": "Tánghúlu.",
+        "en": "Candied haws."
+      }
+    },
+    {
+      "zh": "什么的",
+      "pinyin": "shénme de",
+      "pos": "part.",
+      "en": "and so on",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 什么的 like ‘and so on’.",
+      "usage": "Most Chinese speakers …什么的.",
+      "example": {
+        "zh": "烤白薯、糖葫芦什么的。",
+        "pinyin": "Kǎo báishǔ, tánghúlu shénme de.",
+        "en": "Roasted sweet potato, candied haws, and so on."
+      }
+    },
+    {
+      "zh": "亲耳",
+      "pinyin": "qīn'ěr",
+      "pos": "adv.",
+      "en": "(to hear) with one's own ears",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 亲耳 like hearing live — 亲耳听过.",
+      "usage": "Most Chinese speakers 亲耳听见.",
+      "example": {
+        "zh": "我亲耳听过一位中国钢琴家演奏的《黄河》。",
+        "pinyin": "Wǒ qīn'ěr tīngguo yí wèi Zhōngguó gāngqínjiā yǎnzòu de 《Huáng Hé》.",
+        "en": "I personally heard a Chinese pianist play Yellow River."
+      }
+    },
+    {
+      "zh": "钢琴",
+      "pinyin": "gāngqín",
+      "pos": "n.",
+      "en": "piano",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 钢琴 like piano concerto.",
+      "usage": "Most Chinese speakers 钢琴.",
+      "example": {
+        "zh": "钢琴家。",
+        "pinyin": "Gāngqínjiā.",
+        "en": "Pianist."
+      }
+    },
+    {
+      "zh": "家",
+      "pinyin": "jiā",
+      "pos": "suf.",
+      "en": "-ist; specialist (suffix)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 家 like 钢琴家.",
+      "usage": "Most Chinese speakers …家 for specialist.",
+      "example": {
+        "zh": "中国钢琴家。",
+        "pinyin": "Zhōngguó gāngqínjiā.",
+        "en": "Chinese pianist."
+      }
+    },
+    {
+      "zh": "演奏",
+      "pinyin": "yǎnzòu",
+      "pos": "v.",
+      "en": "to perform (music)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 演奏 like performing a concerto.",
+      "usage": "Most Chinese speakers 演奏.",
+      "example": {
+        "zh": "演奏的《黄河》。",
+        "pinyin": "Yǎnzòu de 《Huáng Hé》.",
+        "en": "Performed Yellow River."
+      }
+    },
+    {
+      "zh": "极了",
+      "pinyin": "jí le",
+      "pos": "adv.",
+      "en": "extremely",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 极了 like 好极了.",
+      "usage": "Most Chinese speakers Adj+极了.",
+      "example": {
+        "zh": "好极了。",
+        "pinyin": "Hǎo jí le.",
+        "en": "Extremely good."
+      }
+    },
+    {
+      "zh": "小提琴",
+      "pinyin": "xiǎotíqín",
+      "pos": "n.",
+      "en": "violin",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 小提琴 like violin concerto 《梁祝》.",
+      "usage": "Most Chinese speakers 小提琴.",
+      "example": {
+        "zh": "小提琴协奏曲。",
+        "pinyin": "Xiǎotíqín xiézòuqǔ.",
+        "en": "Violin concerto."
+      }
+    },
+    {
+      "zh": "协奏曲",
+      "pinyin": "xiézòuqǔ",
+      "pos": "n.",
+      "en": "concerto",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 协奏曲 like piano/violin concerto.",
+      "usage": "Most Chinese speakers 协奏曲. Related 曲.",
+      "example": {
+        "zh": "钢琴协奏曲《黄河》。",
+        "pinyin": "Gāngqín xiézòuqǔ 《Huáng Hé》.",
+        "en": "Piano concerto Yellow River."
+      }
+    },
+    {
+      "zh": "曲",
+      "pinyin": "qǔ",
+      "pos": "n.",
+      "en": "melody; tune",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 曲 like the 曲 in 协奏曲/名曲.",
+      "usage": "Most Chinese speakers 曲.",
+      "example": {
+        "zh": "协奏曲。",
+        "pinyin": "Xiézòuqǔ.",
+        "en": "Concerto."
+      }
+    },
+    {
+      "zh": "好听",
+      "pinyin": "hǎotīng",
+      "pos": "adj.",
+      "en": "pleasing to the ear; melodious",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 好听 like sounding good.",
+      "usage": "Most Chinese speakers 好听.",
+      "example": {
+        "zh": "好听吗？",
+        "pinyin": "Hǎotīng ma?",
+        "en": "Does it sound good?"
+      }
+    },
+    {
+      "zh": "还",
+      "pinyin": "huán",
+      "pos": "v.",
+      "en": "to return; to give back",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 还 like returning a borrowed USB — 还给我.",
+      "usage": "Most Chinese speakers 还.",
+      "example": {
+        "zh": "听完就还给我。",
+        "pinyin": "Tīngwán jiù huán gěi wǒ.",
+        "en": "Return it after listening."
+      }
+    },
+    {
+      "zh": "嘛",
+      "pinyin": "ma",
+      "pos": "part.",
+      "en": "indicating that the reason is obvious",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 嘛 like obvious reason particle.",
+      "usage": "Most Chinese speakers …嘛.",
+      "example": {
+        "zh": "“好借好还，再借不难”嘛。",
+        "pinyin": "“Hǎo jiè hǎo huán, zài jiè bù nán” ma.",
+        "en": "‘Return what you borrow and borrowing again is easy,’ you know."
+      }
+    },
+    {
+      "zh": "哈尔滨",
+      "pinyin": "Hā'ěrbīn",
+      "pos": "n.",
+      "en": "Harbin",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun — northern city visited.",
+      "usage": "专名.",
+      "example": {
+        "zh": "北边去过哈尔滨。",
+        "pinyin": "Běibian qùguo Hā'ěrbīn.",
+        "en": "Been to Harbin in the north."
+      }
+    },
+    {
+      "zh": "海南岛",
+      "pinyin": "Hǎinán Dǎo",
+      "pos": "n.",
+      "en": "Hainan Island",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun — southern destination.",
+      "usage": "专名.",
+      "example": {
+        "zh": "南边到过海南岛。",
+        "pinyin": "Nánbian dàoguo Hǎinán Dǎo.",
+        "en": "Been to Hainan Island in the south."
+      }
+    },
+    {
+      "zh": "泰山",
+      "pinyin": "Tài Shān",
+      "pos": "n.",
+      "en": "Mount Tai",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun.",
+      "usage": "专名.",
+      "example": {
+        "zh": "东边上过泰山。",
+        "pinyin": "Dōngbian shàngguo Tài Shān.",
+        "en": "Climbed Mount Tai in the east."
+      }
+    },
+    {
+      "zh": "西安",
+      "pinyin": "Xī'ān",
+      "pos": "n.",
+      "en": "Xi'an",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun.",
+      "usage": "专名.",
+      "example": {
+        "zh": "西边去过西安和敦煌。",
+        "pinyin": "Xībian qùguo Xī'ān hé Dūnhuáng.",
+        "en": "Been to Xi’an and Dunhuang in the west."
+      }
+    },
+    {
+      "zh": "敦煌",
+      "pinyin": "Dūnhuáng",
+      "pos": "n.",
+      "en": "Dunhuang",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun.",
+      "usage": "专名.",
+      "example": {
+        "zh": "去过西安和敦煌。",
+        "pinyin": "Qùguo Xī'ān hé Dūnhuáng.",
+        "en": "Been to Xi’an and Dunhuang."
+      }
+    },
+    {
+      "zh": "颐和园",
+      "pinyin": "Yíhé Yuán",
+      "pos": "n.",
+      "en": "the Summer Palace",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun.",
+      "usage": "专名.",
+      "example": {
+        "zh": "只去过颐和园、故宫和长城。",
+        "pinyin": "Zhǐ qùguo Yíhé Yuán, Gùgōng hé Chángchéng.",
+        "en": "Only been to the Summer Palace, Forbidden City, and Great Wall."
+      }
+    },
+    {
+      "zh": "故宫",
+      "pinyin": "Gùgōng",
+      "pos": "n.",
+      "en": "the Forbidden City",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun.",
+      "usage": "专名.",
+      "example": {
+        "zh": "颐和园、故宫和长城。",
+        "pinyin": "Yíhé Yuán, Gùgōng hé Chángchéng.",
+        "en": "Summer Palace, Forbidden City, Great Wall."
+      }
+    },
+    {
+      "zh": "长城",
+      "pinyin": "Chángchéng",
+      "pos": "n.",
+      "en": "the Great Wall",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun.",
+      "usage": "专名.",
+      "example": {
+        "zh": "去过长城。",
+        "pinyin": "Qùguo Chángchéng.",
+        "en": "Been to the Great Wall."
+      }
+    },
+    {
+      "zh": "《黄河》",
+      "pinyin": "《Huáng Hé》",
+      "pos": "n.",
+      "en": "Yellow River (piano concerto)",
+      "note": "Work title (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper title of the piano concerto.",
+      "usage": "专名/作品名.",
+      "example": {
+        "zh": "听过钢琴协奏曲《黄河》。",
+        "pinyin": "Tīngguo gāngqín xiézòuqǔ 《Huáng Hé》.",
+        "en": "Heard the piano concerto Yellow River."
+      }
+    },
+    {
+      "zh": "《梁祝》",
+      "pinyin": "《Liáng Zhù》",
+      "pos": "n.",
+      "en": "Butterfly Lovers (violin concerto)",
+      "note": "Work title (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper title of the violin concerto.",
+      "usage": "专名/作品名.",
+      "example": {
+        "zh": "听过小提琴协奏曲《梁祝》吗？",
+        "pinyin": "Tīngguo xiǎotíqín xiézòuqǔ 《Liáng Zhù》 ma?",
+        "en": "Heard the violin concerto Butterfly Lovers?"
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "我吃过中药",
+      "headingEn": "I've taken Chinese medicine",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "爱德华",
+          "zh": "山本，你的感冒好了吗？",
+          "pinyin": "Shānběn, nǐ de gǎnmào hǎo le ma?",
+          "en": "Yamamoto, is your cold better?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "好了。来中国以后我已经得过三次感冒了。",
+          "pinyin": "Hǎo le. Lái Zhōngguó yǐhòu wǒ yǐjīng déguo sān cì gǎnmào le.",
+          "en": "Yes. Since coming to China I’ve already had three colds."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "我一次病也没有得过。",
+          "pinyin": "Wǒ yí cì bìng yě méiyǒu déguo.",
+          "en": "I haven’t been sick even once."
+        },
+        {
+          "speaker": "山本",
+          "zh": "你身体真不错。我还住过一次院呢，看过中医，也吃过中药。",
+          "pinyin": "Nǐ shēntǐ zhēn búcuò. Wǒ hái zhùguo yí cì yuàn ne, kànguo Zhōngyī, yě chīguo Zhōngyào.",
+          "en": "You’re really healthy. I’ve even been hospitalized, seen a TCM doctor, and taken Chinese medicine."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "听说中药很苦，是吗？",
+          "pinyin": "Tīngshuō Zhōngyào hěn kǔ, shì ma?",
+          "en": "I hear Chinese medicine is bitter — is that true?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "有的苦，有的不苦。我喝的是中成药，甜甜的，一点儿也不苦。吃了这些中药，我的病就好了。",
+          "pinyin": "Yǒude kǔ, yǒude bù kǔ. Wǒ hē de shì Zhōngchéngyào, tiántián de, yìdiǎnr yě bù kǔ. Chī le zhèxiē Zhōngyào, wǒ de bìng jiù hǎo le.",
+          "en": "Some are, some aren’t. Mine was patent medicine — sweet, not bitter at all. After it I got better."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "我听说中医看病很有意思。",
+          "pinyin": "Wǒ tīngshuō Zhōngyī kàn bìng hěn yǒu yìsi.",
+          "en": "I hear TCM consultations are interesting."
+        },
+        {
+          "speaker": "山本",
+          "zh": "中医看病不化验，只用手摸一摸脉就给你开药方。还用按摩、针灸等方法给病人治病。",
+          "pinyin": "Zhōngyī kàn bìng bù huàyàn, zhǐ yòng shǒu mōyimo mài jiù gěi nǐ kāi yàofāng. Hái yòng ànmó, zhēnjiǔ děng fāngfǎ gěi bìngrén zhì bìng.",
+          "en": "No lab tests — just feel the pulse and write a prescription. Also massage, acupuncture, and so on."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "是打针吗？",
+          "pinyin": "Shì dǎ zhēn ma?",
+          "en": "Is that an injection?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "不是打针，是扎针。",
+          "pinyin": "Bú shì dǎ zhēn, shì zhā zhēn.",
+          "en": "Not an injection — acupuncture needling."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "你针灸过吗？",
+          "pinyin": "Nǐ zhēnjiǔ guo ma?",
+          "en": "Have you had acupuncture?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "我做过按摩，没针灸过，但是见过。",
+          "pinyin": "Wǒ zuòguo ànmó, méi zhēnjiǔ guo, dànshì jiànguo.",
+          "en": "I’ve had massage, not acupuncture, but I’ve seen it."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "是什么样的针呢？",
+          "pinyin": "Shì shénme yàng de zhēn ne?",
+          "en": "What kind of needles?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "是一种很细很细的针。",
+          "pinyin": "Shì yì zhǒng hěn xì hěn xì de zhēn.",
+          "en": "Very thin needles."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "没见过。",
+          "pinyin": "Méi jiànguo.",
+          "en": "Never seen them."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "你以前来过中国吗",
+      "headingEn": "Have you been to China before?",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "罗兰",
+          "zh": "山本，听说你曾经来过中国，是吗？",
+          "pinyin": "Shānběn, tīngshuō nǐ céngjīng láiguo Zhōngguó, shì ma?",
+          "en": "Yamamoto, I hear you’ve been to China before — true?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "是啊，来过一次。你呢？",
+          "pinyin": "Shì a, láiguo yí cì. Nǐ ne?",
+          "en": "Yes, once. You?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "我没有来过，这是第一次。你都去过什么地方？",
+          "pinyin": "Wǒ méiyǒu láiguo, zhè shì dì yí cì. Nǐ dōu qùguo shénme dìfang?",
+          "en": "Never — this is my first time. Where have you been?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "我已经去过好多地方了。北边去过哈尔滨，南边到过海南岛，东边上过泰山，西边去过西安和敦煌。",
+          "pinyin": "Wǒ yǐjīng qùguo hǎo duō dìfang le. Běibian qùguo Hā'ěrbīn, nánbian dàoguo Hǎinán Dǎo, dōngbian shàngguo Tài Shān, xībian qùguo Xī'ān hé Dūnhuáng.",
+          "en": "Lots of places — Harbin north, Hainan south, Mount Tai east, Xi’an and Dunhuang west."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "你去过的地方真不少。来中国以后，我只去过颐和园、故宫和长城。",
+          "pinyin": "Nǐ qùguo de dìfang zhēn bù shǎo. Lái Zhōngguó yǐhòu, wǒ zhǐ qùguo Yíhé Yuán, Gùgōng hé Chángchéng.",
+          "en": "That’s a lot. Since arriving I’ve only done Summer Palace, Forbidden City, Great Wall."
+        },
+        {
+          "speaker": "山本",
+          "zh": "习惯吃中餐了吗？",
+          "pinyin": "Xíguàn chī Zhōngcān le ma?",
+          "en": "Used to Chinese food?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "早就习惯了。",
+          "pinyin": "Zǎo jiù xíguàn le.",
+          "en": "Long ago."
+        },
+        {
+          "speaker": "山本",
+          "zh": "你吃过哪些中国菜？",
+          "pinyin": "Nǐ chīguo nǎxiē Zhōngguó cài?",
+          "en": "Which Chinese dishes have you tried?"
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "吃过很多。最喜欢吃的是北京烤鸭。你爱吃什么？",
+          "pinyin": "Chīguo hěn duō. Zuì xǐhuan chī de shì Běijīng kǎoyā. Nǐ ài chī shénme?",
+          "en": "Many. Favorite is Beijing roast duck. You?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "中国菜我都爱吃。还爱吃烤白薯、糖葫芦什么的。",
+          "pinyin": "Zhōngguó cài wǒ dōu ài chī. Hái ài chī kǎo báishǔ, tánghúlu shénme de.",
+          "en": "I love all Chinese food — also roasted sweet potato, candied haws, etc."
+        },
+        {
+          "speaker": "罗兰",
+          "zh": "看过京剧吗？",
+          "pinyin": "Kànguo Jīngjù ma?",
+          "en": "Seen Peking Opera?"
+        },
+        {
+          "speaker": "山本",
+          "zh": "没看过。听说京剧很有意思，我很想去看看。",
+          "pinyin": "Méi kànguo. Tīngshuō Jīngjù hěn yǒu yìsi, wǒ hěn xiǎng qù kànkan.",
+          "en": "Not yet. I hear it’s interesting — I’d love to go."
+        }
+      ]
+    },
+    {
+      "label": "课文（三）",
+      "headingZh": "我听过钢琴协奏曲《黄河》",
+      "headingEn": "I've heard the piano concerto Yellow River",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "田芳",
+          "zh": "爱德华，你说你是个音乐迷，你听过中国音乐吗？",
+          "pinyin": "Àidéhuá, nǐ shuō nǐ shì ge yīnyuè mí, nǐ tīngguo Zhōngguó yīnyuè ma?",
+          "en": "Edward, you say you’re a music fan — heard Chinese music?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "当然听过！",
+          "pinyin": "Dāngrán tīngguo!",
+          "en": "Of course!"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "听过什么？",
+          "pinyin": "Tīngguo shénme?",
+          "en": "What?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "在加拿大时，我亲耳听过一位中国钢琴家演奏的《黄河》。",
+          "pinyin": "Zài Jiānádà shí, wǒ qīn'ěr tīngguo yí wèi Zhōngguó gāngqínjiā yǎnzòu de 《Huáng Hé》.",
+          "en": "In Canada I personally heard a Chinese pianist play Yellow River."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "你觉得怎么样？",
+          "pinyin": "Nǐ juéde zěnmeyàng?",
+          "en": "What did you think?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "好极了，真想再听一遍。",
+          "pinyin": "Hǎo jí le, zhēn xiǎng zài tīng yí biàn.",
+          "en": "Wonderful — I’d love to hear it again."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "听过小提琴协奏曲《梁祝》吗？",
+          "pinyin": "Tīngguo xiǎotíqín xiézòuqǔ 《Liáng Zhù》 ma?",
+          "en": "Heard Butterfly Lovers?"
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "听说过，但是没听过。好听吗？",
+          "pinyin": "Tīngshuō guo, dànshì méi tīngguo. Hǎotīng ma?",
+          "en": "Heard of it, not heard it. Good?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "你听了就知道了。",
+          "pinyin": "Nǐ tīng le jiù zhīdào le.",
+          "en": "You’ll know when you hear it."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "我很想听听，你这儿有吗？",
+          "pinyin": "Wǒ hěn xiǎng tīngting, nǐ zhèr yǒu ma?",
+          "en": "I’d love to — do you have it?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "有。我这个优盘里就有。",
+          "pinyin": "Yǒu. Wǒ zhège yōupán li jiù yǒu.",
+          "en": "Yes — on this USB."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "借给我听听吧。",
+          "pinyin": "Jiè gěi wǒ tīngting ba.",
+          "en": "Lend it to me?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "你拿去吧。听完就还给我。",
+          "pinyin": "Nǐ náqù ba. Tīngwán jiù huán gěi wǒ.",
+          "en": "Take it. Return it after."
+        },
+        {
+          "speaker": "爱德华",
+          "zh": "一定。“好借好还，再借不难”嘛。",
+          "pinyin": "Yídìng. “Hǎo jiè hǎo huán, zài jiè bù nán” ma.",
+          "en": "Sure. ‘Return what you borrow and borrowing again is easy.’"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "我一次病也没有得过。",
+      "body": "“一…也／都＋没／不…”表示完全否定。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我一次病也没有得过。",
+        "pinyin": "Wǒ yí cì bìng yě méiyǒu déguo.",
+        "en": "I haven’t been sick even once."
+      }
+    },
+    {
+      "title": "“好借好还，再借不难”嘛。",
+      "body": "谚语。别人借给你的东西要及时还，以后再借就不难。“嘛”用在句末强调肯定、理应如此。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "“好借好还，再借不难”嘛。",
+        "pinyin": "“Hǎo jiè hǎo huán, zài jiè bù nán” ma.",
+        "en": "‘Return what you borrow and borrowing again is easy.’"
+      }
+    },
+    {
+      "title": "《黄河》",
+      "body": "《黄河》是根据《黄河大合唱》改编的钢琴协奏曲，中国音乐经典之作。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我亲耳听过一位中国钢琴家演奏的《黄河》。",
+        "pinyin": "Wǒ qīn'ěr tīngguo yí wèi Zhōngguó gāngqínjiā yǎnzòu de 《Huáng Hé》.",
+        "en": "I personally heard a Chinese pianist play Yellow River."
+      }
+    },
+    {
+      "title": "……极了",
+      "body": "“极了”放在形容词和一些动词后边，表示最高的程度。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "好极了。",
+        "pinyin": "Hǎo jí le.",
+        "en": "Extremely good."
+      }
+    },
+    {
+      "title": "《梁祝》",
+      "body": "全称《梁山伯与祝英台》，何占豪、陈钢创作的著名小提琴协奏曲。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "听过小提琴协奏曲《梁祝》吗？",
+        "pinyin": "Tīngguo xiǎotíqín xiézòuqǔ 《Liáng Zhù》 ma?",
+        "en": "Heard Butterfly Lovers?"
+      }
+    },
+    {
+      "title": "动词＋过",
+      "body": "动词后动态助词“过”表示过去经历；动作一般不持续，强调曾经有过的经验。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "你以前来过中国吗？",
+        "pinyin": "Nǐ yǐqián láiguo Zhōngguó ma?",
+        "en": "Have you been to China before?"
+      }
+    },
+    {
+      "title": "动量补语",
+      "body": "表示动作次数用动量补语（如一次、一遍）。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "来过一次。",
+        "pinyin": "Láiguo yí cì.",
+        "en": "Been once."
+      }
+    },
+    {
+      "title": "序数的表达",
+      "body": "用“第＋数词”表示序数（第一次）。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "这是第一次。",
+        "pinyin": "Zhè shì dì yí cì.",
+        "en": "This is the first time."
+      }
+    }
+  ]
+}

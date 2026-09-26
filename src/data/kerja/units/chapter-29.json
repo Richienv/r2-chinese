@@ -196,13 +196,13 @@
           "speaker": "员工",
           "zh": "可以。我周五汇报一下效果。",
           "pinyin": "Kěyǐ. Wǒ Zhōuwǔ huìbào yíxià xiàoguǒ.",
-          "en": "Bisa. Jumat saya akan melaporkan hasilnya."
+          "en": "Yes. I will report how it went on Friday."
         },
         {
           "speaker": "经理",
           "zh": "好，我会根据结果再给你反馈。",
           "pinyin": "Hǎo, wǒ huì gēnjù jiéguǒ zài gěi nǐ fǎnkuì.",
-          "en": "Baik, saya akan memberi feedback lagi berdasarkan hasilnya."
+          "en": "Okay. I will give you feedback again based on the result."
         }
       ]
     },
@@ -404,35 +404,35 @@
   "notes": [
     {
       "title": "Eight workplace simulations",
-      "body": "DIALOG KERJA / SIMULASI 01–08 (pages 85–92). Full HR/management roleplays. Chinese lines are from the book only; English is a faithful gloss of the book’s Indonesian."
+      "body": "Workplace dialogues, simulations 01–08 (pages 85–92). The Chinese is from the book. The English is the meaning of those lines."
     },
     {
-      "title": "Yang perlu kamu tiru — SIMULASI 01",
-      "body": "Pola aman: jelaskan kebutuhan → konfirmasi syarat → baru publikasikan. 先…再… membantu urutan kerja."
+      "title": "Copy this — simulation 01",
+      "body": "A safe order: state the need, confirm the requirements, then publish. 先…再… keeps that work order."
     },
     {
-      "title": "Yang perlu kamu tiru — SIMULASI 02",
-      "body": "具体负责什么 memisahkan kontribusi pribadi dari proyek tim. Jawaban yang kuat menyebut tindakan, bukan hanya sifat."
+      "title": "Copy this — simulation 02",
+      "body": "具体负责什么 separates what you personally did from the team project. A strong answer names actions, not only personal qualities."
     },
     {
       "title": "Yang perlu kamu tiru — SIMULASI 03",
       "body": "权限开通后才… menjaga ekspektasi. Menyebut satu kontak utama mencegah rekan baru terombang-ambing."
     },
     {
-      "title": "Yang perlu kamu tiru — SIMULASI 04",
-      "body": "Urutan: fakta → penyebab → percobaan perbaikan → tanggal tinjau. Hindari label pribadi seperti 'kamu tidak teliti'."
+      "title": "Copy this — simulation 04",
+      "body": "Order: facts, then the cause, then what you tried, then a review date. Avoid personal labels such as 'you are careless'."
     },
     {
-      "title": "Yang perlu kamu tiru — SIMULASI 05",
-      "body": "请假 adalah permohonan. 提交申请, 确认交接, dan 审批结果 adalah tiga status berbeda. Latihan: baca sekali. Tutup PDF, lalu ulangi dialog dengan data baru. Ganti satu detail kecil saja: hari, jumlah kandidat, prioritas, atau alasan. Ulangi sampai kamu tidak perlu menerjemahkan tiap kata dari Indonesia."
+      "title": "Copy this — simulation 05",
+      "body": "请假 is a request. Submitting it, confirming the handover, and the approval result are three different statuses. Read it once, close the page, then say the dialogue again with one new detail: the day, the number of candidates, the priority, or the reason."
     },
     {
-      "title": "Yang perlu kamu tiru — SIMULASI 06",
-      "body": "我以为… menyatakan asumsi, bukan fakta. Cocokkan dengan catatan sebelum menyimpulkan siapa yang salah."
+      "title": "Copy this — simulation 06",
+      "body": "我以为… states an assumption, not a fact. Check it against the record before you decide who was wrong."
     },
     {
-      "title": "Yang perlu kamu tiru — SIMULASI 07",
-      "body": "Tanyakan 税前/税后, komponen tetap, bonus, dan syaratnya secara terpisah. Jangan simpulkan paket dari angka total saja."
+      "title": "Copy this — simulation 07",
+      "body": "Ask about before-tax and after-tax pay, fixed parts, bonus, and the conditions separately. Do not guess the whole package from one total."
     }
   ]
 }

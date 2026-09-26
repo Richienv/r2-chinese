@@ -1,0 +1,780 @@
+{
+  "id": "jiaocheng-2-2-11",
+  "book": "2-2",
+  "index": 11,
+  "bookLesson": 23,
+  "titleZh": "寒假你打算去哪儿旅行",
+  "titleEn": "Where are you planning to travel during the winter vacation",
+  "sourcePages": "167-183",
+  "words": [
+    {
+      "zh": "渴",
+      "pinyin": "kě",
+      "pos": "adj.",
+      "en": "thirsty",
+      "note": "Book headword pinyin printed as kě. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 渴 like the word you’ll use when you need “thirsty”.",
+      "usage": "Most Chinese speakers use 渴 for “thirsty”.",
+      "example": {
+        "zh": "我也又饿又渴。",
+        "pinyin": "wǒ yě yòu è yòu kě。",
+        "en": "I’m hungry and thirsty too."
+      }
+    },
+    {
+      "zh": "点(菜)",
+      "pinyin": "diǎn (cài)",
+      "pos": "v.",
+      "en": "to order (food in a restaurant)",
+      "note": "Book headword pinyin printed as diǎn (cài). Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 点(菜) like the word you’ll use when you need “to order (food in a restaurant)”.",
+      "usage": "Most Chinese speakers use 点(菜) for “to order (food in a restaurant)”.",
+      "example": {
+        "zh": "你点吧，什么都可以。",
+        "pinyin": "nǐ diǎn ba，shén me dōu kě yǐ。",
+        "en": "You order — anything is fine."
+      }
+    },
+    {
+      "zh": "好吃",
+      "pinyin": "hǎochī",
+      "pos": "adj.",
+      "en": "delicious; tasty",
+      "note": "Book headword pinyin printed as hǎochī. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 好吃 like the word you’ll use when you need “delicious”.",
+      "usage": "Most Chinese speakers use 好吃 for “delicious”.",
+      "example": {
+        "zh": "那就什么好吃吃什么。",
+        "pinyin": "nà jiù shén me hǎo chī chī shén me。",
+        "en": "Then we’ll eat whatever is tasty."
+      }
+    },
+    {
+      "zh": "辣子鸡丁",
+      "pinyin": "làzi jīdīng",
+      "pos": "",
+      "en": "diced chicken with chili",
+      "note": "Book headword pinyin printed as làzi jīdīng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 辣子鸡丁 like the word you’ll use when you need “diced chicken with chili”.",
+      "usage": "Most Chinese speakers use 辣子鸡丁 for “diced chicken with chili”.",
+      "example": {
+        "zh": "这儿的辣子鸡丁和糖醋鱼都不错。",
+        "pinyin": "zhè ér de là zi jī dīng hé táng cù yú dōu bù cuò。",
+        "en": "The chili diced chicken and sweet-and-sour fish here are both pretty good."
+      }
+    },
+    {
+      "zh": "糖醋鱼",
+      "pinyin": "tángcùyú",
+      "pos": "",
+      "en": "sweet and sour fish",
+      "note": "Book headword pinyin printed as tángcùyú. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 糖醋鱼 like the word you’ll use when you need “sweet and sour fish”.",
+      "usage": "Most Chinese speakers use 糖醋鱼 for “sweet and sour fish”.",
+      "example": {
+        "zh": "这儿的辣子鸡丁和糖醋鱼都不错。",
+        "pinyin": "zhè ér de là zi jī dīng hé táng cù yú dōu bù cuò。",
+        "en": "The chili diced chicken and sweet-and-sour fish here are both pretty good."
+      }
+    },
+    {
+      "zh": "周",
+      "pinyin": "zhōu",
+      "pos": "n.",
+      "en": "week",
+      "note": "Book headword pinyin printed as zhōu. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 周 like the word you’ll use when you need “week”.",
+      "usage": "Most Chinese speakers use 周 for “week”.",
+      "example": {
+        "zh": "下周考完试就要放寒假了。",
+        "pinyin": "xià zhōu kǎo wán shì jiù yào fàng hán jià le。",
+        "en": "After exams next week, winter vacation starts."
+      }
+    },
+    {
+      "zh": "外地",
+      "pinyin": "wàidì",
+      "pos": "n.",
+      "en": "other parts of the country",
+      "note": "Book headword pinyin printed as wàidì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 外地 like the word you’ll use when you need “other parts of the country”.",
+      "usage": "Most Chinese speakers use 外地 for “other parts of the country”.",
+      "example": {
+        "zh": "学校要组织留学生去外地旅行",
+        "pinyin": "xué xiào yào zǔ zhī liú xué shēng qù wài dì lǚ xíng",
+        "en": "The school is organizing a trip for international students to other parts of the country"
+      }
+    },
+    {
+      "zh": "好玩儿",
+      "pinyin": "hǎowánr",
+      "pos": "adj.",
+      "en": "fun; amusing",
+      "note": "Book headword pinyin printed as hǎowánr. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 好玩儿 like the word you’ll use when you need “fun”.",
+      "usage": "Most Chinese speakers use 好玩儿 for “fun”.",
+      "example": {
+        "zh": "哪儿好玩儿就去哪儿。",
+        "pinyin": "nǎ ér hǎo wán ér jiù qù nǎ ér。",
+        "en": "I’ll go wherever is fun."
+      }
+    },
+    {
+      "zh": "零下",
+      "pinyin": "líng xià",
+      "pos": "",
+      "en": "below zero",
+      "note": "Book headword pinyin printed as líng xià. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 零下 like the word you’ll use when you need “below zero”.",
+      "usage": "Most Chinese speakers use 零下 for “below zero”.",
+      "example": {
+        "zh": "现在那儿白天已经零下二十多度了。",
+        "pinyin": "xiàn zài nà ér bái tiān yǐ jīng líng xià èr shí duō dù le。",
+        "en": "It’s already more than twenty degrees below zero there in the daytime."
+      }
+    },
+    {
+      "zh": "冰灯",
+      "pinyin": "bīngdēng",
+      "pos": "n.",
+      "en": "ice lantern",
+      "note": "Book headword pinyin printed as bīngdēng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 冰灯 like the word you’ll use when you need “ice lantern”.",
+      "usage": "Most Chinese speakers use 冰灯 for “ice lantern”.",
+      "example": {
+        "zh": "听说哈尔滨的冰灯冰雕很好看",
+        "pinyin": "tīng shuō hā ěr bīn de bīng dēng bīng diāo hěn hǎo kàn",
+        "en": "I heard Harbin’s ice lanterns and ice sculptures are beautiful"
+      }
+    },
+    {
+      "zh": "冰雕",
+      "pinyin": "bīngdiāo",
+      "pos": "n.",
+      "en": "ice sculpture; ice carving",
+      "note": "Book headword pinyin printed as bīngdiāo. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 冰雕 like the word you’ll use when you need “ice sculpture”.",
+      "usage": "Most Chinese speakers use 冰雕 for “ice sculpture”.",
+      "example": {
+        "zh": "冰灯冰雕很好看",
+        "pinyin": "bīng dēng bīng diāo hěn hǎo kàn",
+        "en": "ice lanterns and ice sculptures are beautiful"
+      }
+    },
+    {
+      "zh": "开玩笑",
+      "pinyin": "kāi wánxiào",
+      "pos": "",
+      "en": "to crack a joke; to be kidding",
+      "note": "Book headword pinyin printed as kāi wánxiào. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 开玩笑 like the word you’ll use when you need “to crack a joke”.",
+      "usage": "Most Chinese speakers use 开玩笑 for “to crack a joke”.",
+      "example": {
+        "zh": "你又开玩笑。",
+        "pinyin": "nǐ yòu kāi wán xiào。",
+        "en": "You’re joking again."
+      }
+    },
+    {
+      "zh": "玩笑",
+      "pinyin": "wánxiào",
+      "pos": "n.",
+      "en": "joke",
+      "note": "Sub-entry under parent headword. Book headword pinyin printed as wánxiào. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 玩笑 like the word you’ll use when you need “joke”.",
+      "usage": "Most Chinese speakers use 玩笑 for “joke”.",
+      "example": {
+        "zh": "你又开玩笑。",
+        "pinyin": "nǐ yòu kāi wán xiào。",
+        "en": "You’re joking again."
+      }
+    },
+    {
+      "zh": "计划",
+      "pinyin": "jìhuà",
+      "pos": "n./v.",
+      "en": "plan; to plan",
+      "note": "Book headword pinyin printed as jìhuà. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 计划 like the word you’ll use when you need “plan”.",
+      "usage": "Most Chinese speakers use 计划 for “plan”.",
+      "example": {
+        "zh": "你的计划呢？",
+        "pinyin": "nǐ de jì huà ne？",
+        "en": "What about your plan?"
+      }
+    },
+    {
+      "zh": "碑林",
+      "pinyin": "bēilín",
+      "pos": "n.",
+      "en": "stele forest",
+      "note": "Book headword pinyin printed as bēilín. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 碑林 like the word you’ll use when you need “stele forest”.",
+      "usage": "Most Chinese speakers use 碑林 for “stele forest”.",
+      "example": {
+        "zh": "先去西安看看碑林和兵马俑",
+        "pinyin": "xiān qù xī ān kàn kàn bēi lín hé bīng mǎ yǒng",
+        "en": "first go to Xi’an to see the Stele Forest and terracotta warriors"
+      }
+    },
+    {
+      "zh": "兵马俑",
+      "pinyin": "bīngmǎyǒng",
+      "pos": "n.",
+      "en": "terracotta warriors and horses",
+      "note": "Book headword pinyin printed as bīngmǎyǒng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 兵马俑 like the word you’ll use when you need “terracotta warriors and horses”.",
+      "usage": "Most Chinese speakers use 兵马俑 for “terracotta warriors and horses”.",
+      "example": {
+        "zh": "看看碑林和兵马俑",
+        "pinyin": "kàn kàn bēi lín hé bīng mǎ yǒng",
+        "en": "see the Stele Forest and terracotta warriors"
+      }
+    },
+    {
+      "zh": "船",
+      "pinyin": "chuán",
+      "pos": "n.",
+      "en": "boat; ship",
+      "note": "Book headword pinyin printed as chuán. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 船 like the word you’ll use when you need “boat”.",
+      "usage": "Most Chinese speakers use 船 for “boat”.",
+      "example": {
+        "zh": "从重庆坐船游览长江三峡",
+        "pinyin": "cóng zhòng qìng zuò chuán yóu lǎn cháng jiāng sān xiá",
+        "en": "from Chongqing take a boat to tour the Three Gorges"
+      }
+    },
+    {
+      "zh": "游览",
+      "pinyin": "yóulǎn",
+      "pos": "v.",
+      "en": "to go sightseeing",
+      "note": "Book headword pinyin printed as yóulǎn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 游览 like the word you’ll use when you need “to go sightseeing”.",
+      "usage": "Most Chinese speakers use 游览 for “to go sightseeing”.",
+      "example": {
+        "zh": "坐船游览长江三峡",
+        "pinyin": "zuò chuán yóu lǎn cháng jiāng sān xiá",
+        "en": "take a boat to tour the Three Gorges"
+      }
+    },
+    {
+      "zh": "天堂",
+      "pinyin": "tiāntáng",
+      "pos": "n.",
+      "en": "paradise; heaven",
+      "note": "Book headword pinyin printed as tiāntáng. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 天堂 like the word you’ll use when you need “paradise”.",
+      "usage": "Most Chinese speakers use 天堂 for “paradise”.",
+      "example": {
+        "zh": "上有天堂，下有苏杭",
+        "pinyin": "shàng yǒu tiān táng，xià yǒu sū háng",
+        "en": "Up above there is Paradise; down here there are Suzhou and Hangzhou"
+      }
+    },
+    {
+      "zh": "山水",
+      "pinyin": "shānshuǐ",
+      "pos": "n.",
+      "en": "mountains and rivers; scenery",
+      "note": "Book headword pinyin printed as shānshuǐ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 山水 like the word you’ll use when you need “mountains and rivers”.",
+      "usage": "Most Chinese speakers use 山水 for “mountains and rivers”.",
+      "example": {
+        "zh": "桂林山水甲天下",
+        "pinyin": "guì lín shān shuǐ jiǎ tiān xià",
+        "en": "Guilin’s scenery is the best under heaven"
+      }
+    },
+    {
+      "zh": "甲",
+      "pinyin": "jiǎ",
+      "pos": "",
+      "en": "first; number one",
+      "note": "Book headword pinyin printed as jiǎ. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 甲 like the word you’ll use when you need “first”.",
+      "usage": "Most Chinese speakers use 甲 for “first”.",
+      "example": {
+        "zh": "桂林山水甲天下",
+        "pinyin": "guì lín shān shuǐ jiǎ tiān xià",
+        "en": "Guilin’s scenery ranks first under heaven"
+      }
+    },
+    {
+      "zh": "天下",
+      "pinyin": "tiānxià",
+      "pos": "n.",
+      "en": "world; country",
+      "note": "Book headword pinyin printed as tiānxià. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 天下 like the word you’ll use when you need “world”.",
+      "usage": "Most Chinese speakers use 天下 for “world”.",
+      "example": {
+        "zh": "桂林山水甲天下",
+        "pinyin": "guì lín shān shuǐ jiǎ tiān xià",
+        "en": "the best under heaven"
+      }
+    },
+    {
+      "zh": "少数",
+      "pinyin": "shǎoshù",
+      "pos": "n.",
+      "en": "minority",
+      "note": "Book headword pinyin printed as shǎoshù. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 少数 like the word you’ll use when you need “minority”.",
+      "usage": "Most Chinese speakers use 少数 for “minority”.",
+      "example": {
+        "zh": "云南少数民族的风俗",
+        "pinyin": "yún nán shǎo shù mín zú de fēng sú",
+        "en": "customs of Yunnan’s ethnic minorities"
+      }
+    },
+    {
+      "zh": "民族",
+      "pinyin": "mínzú",
+      "pos": "n.",
+      "en": "nationality; ethnic group",
+      "note": "Book headword pinyin printed as mínzú. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 民族 like the word you’ll use when you need “nationality”.",
+      "usage": "Most Chinese speakers use 民族 for “nationality”.",
+      "example": {
+        "zh": "少数民族",
+        "pinyin": "shǎo shù mín zú",
+        "en": "ethnic minority"
+      }
+    },
+    {
+      "zh": "风俗",
+      "pinyin": "fēngsú",
+      "pos": "n.",
+      "en": "custom",
+      "note": "Book headword pinyin printed as fēngsú. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 风俗 like the word you’ll use when you need “custom”.",
+      "usage": "Most Chinese speakers use 风俗 for “custom”.",
+      "example": {
+        "zh": "对云南少数民族的风俗很感兴趣",
+        "pinyin": "duì yún nán shǎo shù mín zú de fēng sú hěn gǎn xìng qù",
+        "en": "very interested in the customs of Yunnan’s ethnic minorities"
+      }
+    },
+    {
+      "zh": "路线",
+      "pinyin": "lùxiàn",
+      "pos": "n.",
+      "en": "route",
+      "note": "Book headword pinyin printed as lùxiàn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 路线 like the word you’ll use when you need “route”.",
+      "usage": "Most Chinese speakers use 路线 for “route”.",
+      "example": {
+        "zh": "你的旅行路线很好",
+        "pinyin": "nǐ de lǚ xíng lù xiàn hěn hǎo",
+        "en": "Your travel route is great"
+      }
+    },
+    {
+      "zh": "开心",
+      "pinyin": "kāixīn",
+      "pos": "adj.",
+      "en": "happy; glad",
+      "note": "Book headword pinyin printed as kāixīn. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 开心 like the word you’ll use when you need “happy”.",
+      "usage": "Most Chinese speakers use 开心 for “happy”.",
+      "example": {
+        "zh": "只要玩儿得开心",
+        "pinyin": "zhǐ yào wán ér dé kāi xīn",
+        "en": "as long as we have fun"
+      }
+    },
+    {
+      "zh": "值得",
+      "pinyin": "zhídé",
+      "pos": "v.",
+      "en": "to be worth",
+      "note": "Book headword pinyin printed as zhídé. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 值得 like the word you’ll use when you need “to be worth”.",
+      "usage": "Most Chinese speakers use 值得 for “to be worth”.",
+      "example": {
+        "zh": "多花点儿钱也值得。",
+        "pinyin": "duō huā diǎn ér qián yě zhí de。",
+        "en": "Spending a bit more is worth it."
+      }
+    },
+    {
+      "zh": "一边……一边……",
+      "pinyin": "yìbiān…yìbiān…",
+      "pos": "",
+      "en": "two actions at the same time",
+      "note": "Book headword pinyin printed as yìbiān…yìbiān…. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 一边……一边…… like the word you’ll use when you need “two actions at the same time”.",
+      "usage": "Most Chinese speakers use 一边……一边…… for “two actions at the same time”.",
+      "example": {
+        "zh": "一边旅行一边练习说汉语",
+        "pinyin": "yī biān lǚ xíng yī biān liàn xí shuō hàn yǔ",
+        "en": "travel while practicing speaking Chinese"
+      }
+    },
+    {
+      "zh": "意义",
+      "pinyin": "yìyì",
+      "pos": "n.",
+      "en": "meaning; significance",
+      "note": "Book headword pinyin printed as yìyì. Dialogue/example pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 意义 like the word you’ll use when you need “meaning”.",
+      "usage": "Most Chinese speakers use 意义 for “meaning”.",
+      "example": {
+        "zh": "多有意义啊！",
+        "pinyin": "duō yǒu yì yì a！",
+        "en": "How meaningful!"
+      }
+    },
+    {
+      "zh": "重庆",
+      "pinyin": "Chóngqìng",
+      "pos": "专名",
+      "en": "Chongqing",
+      "note": "Book headword pinyin printed as Chóngqìng. Dialogue/example pinyin not printed in the book; standard pinyin added. 专名.",
+      "when": "Remember 重庆 like the word you’ll use when you need “Chongqing”.",
+      "usage": "Most Chinese speakers use 重庆 for “Chongqing”.",
+      "example": {
+        "zh": "再到重庆",
+        "pinyin": "zài dào chóng qìng",
+        "en": "then to Chongqing"
+      }
+    },
+    {
+      "zh": "长江",
+      "pinyin": "Cháng Jiāng",
+      "pos": "专名",
+      "en": "Yangtze River",
+      "note": "Book headword pinyin printed as Cháng Jiāng. Dialogue/example pinyin not printed in the book; standard pinyin added. 专名.",
+      "when": "Remember 长江 like the word you’ll use when you need “Yangtze River”.",
+      "usage": "Most Chinese speakers use 长江 for “Yangtze River”.",
+      "example": {
+        "zh": "游览长江三峡",
+        "pinyin": "yóu lǎn cháng jiāng sān xiá",
+        "en": "tour the Yangtze Three Gorges"
+      }
+    },
+    {
+      "zh": "三峡",
+      "pinyin": "Sānxiá",
+      "pos": "专名",
+      "en": "Three Gorges",
+      "note": "Book headword pinyin printed as Sānxiá. Dialogue/example pinyin not printed in the book; standard pinyin added. 专名.",
+      "when": "Remember 三峡 like the word you’ll use when you need “Three Gorges”.",
+      "usage": "Most Chinese speakers use 三峡 for “Three Gorges”.",
+      "example": {
+        "zh": "长江三峡",
+        "pinyin": "cháng jiāng sān xiá",
+        "en": "Yangtze Three Gorges"
+      }
+    },
+    {
+      "zh": "云南",
+      "pinyin": "Yúnnán",
+      "pos": "专名",
+      "en": "Yunnan Province",
+      "note": "Book headword pinyin printed as Yúnnán. Dialogue/example pinyin not printed in the book; standard pinyin added. 专名.",
+      "when": "Remember 云南 like the word you’ll use when you need “Yunnan Province”.",
+      "usage": "Most Chinese speakers use 云南 for “Yunnan Province”.",
+      "example": {
+        "zh": "然后去云南、桂林",
+        "pinyin": "rán hòu qù yún nán、guì lín",
+        "en": "then to Yunnan and Guilin"
+      }
+    },
+    {
+      "zh": "桂林",
+      "pinyin": "Guìlín",
+      "pos": "专名",
+      "en": "Guilin",
+      "note": "Book headword pinyin printed as Guìlín. Dialogue/example pinyin not printed in the book; standard pinyin added. 专名.",
+      "when": "Remember 桂林 like the word you’ll use when you need “Guilin”.",
+      "usage": "Most Chinese speakers use 桂林 for “Guilin”.",
+      "example": {
+        "zh": "桂林山水甲天下",
+        "pinyin": "guì lín shān shuǐ jiǎ tiān xià",
+        "en": "Guilin’s scenery is the best under heaven"
+      }
+    },
+    {
+      "zh": "苏州",
+      "pinyin": "Sūzhōu",
+      "pos": "专名",
+      "en": "Suzhou",
+      "note": "Book headword pinyin printed as Sūzhōu. Dialogue/example pinyin not printed in the book; standard pinyin added. 专名.",
+      "when": "Remember 苏州 like the word you’ll use when you need “Suzhou”.",
+      "usage": "Most Chinese speakers use 苏州 for “Suzhou”.",
+      "example": {
+        "zh": "最后去苏州和杭州",
+        "pinyin": "zuì hòu qù sū zhōu hé háng zhōu",
+        "en": "finally to Suzhou and Hangzhou"
+      }
+    },
+    {
+      "zh": "杭州",
+      "pinyin": "Hángzhōu",
+      "pos": "专名",
+      "en": "Hangzhou",
+      "note": "Book headword pinyin printed as Hángzhōu. Dialogue/example pinyin not printed in the book; standard pinyin added. 专名.",
+      "when": "Remember 杭州 like the word you’ll use when you need “Hangzhou”.",
+      "usage": "Most Chinese speakers use 杭州 for “Hangzhou”.",
+      "example": {
+        "zh": "苏州和杭州",
+        "pinyin": "sū zhōu hé háng zhōu",
+        "en": "Suzhou and Hangzhou"
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "(一)",
+      "headingZh": "吃什么都可以",
+      "headingEn": "Anything to eat is fine",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "麦克",
+          "zh": "我有点儿饿了，想吃点儿什么。你呢？",
+          "pinyin": "wǒ yǒu diǎn ér è le，xiǎng chī diǎn ér shén me。nǐ ne？",
+          "en": "I’m a bit hungry and want something to eat. You?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "我也又饿又渴。咱们去饭馆儿吧。",
+          "pinyin": "wǒ yě yòu è yòu kě。zán men qù fàn guǎn ér ba。",
+          "en": "I’m hungry and thirsty too. Let’s go to a restaurant."
+        },
+        {
+          "speaker": "",
+          "zh": "在饭馆儿",
+          "pinyin": "zài fàn guǎn ér",
+          "en": "In the restaurant"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "你想吃点儿什么？",
+          "pinyin": "nǐ xiǎng chī diǎn ér shén me？",
+          "en": "What do you want to eat?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "你点吧，什么都可以。",
+          "pinyin": "nǐ diǎn ba，shén me dōu kě yǐ。",
+          "en": "You order — anything is fine."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "那就什么好吃吃什么。",
+          "pinyin": "nà jiù shén me hǎo chī chī shén me。",
+          "en": "Then we’ll eat whatever is tasty."
+        },
+        {
+          "speaker": "服务员",
+          "zh": "你们两位要点儿什么？",
+          "pinyin": "nǐ men liǎng wèi yào diǎn ér shén me？",
+          "en": "What would you two like?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "服务员，你们这儿有什么好吃的菜？",
+          "pinyin": "fú wù yuán，nǐ men zhè ér yǒu shén me hǎo chī de cài？",
+          "en": "Waiter, what tasty dishes do you have here?"
+        },
+        {
+          "speaker": "服务员",
+          "zh": "我们这儿什么菜都好吃啊。",
+          "pinyin": "wǒ men zhè ér shén me cài dōu hǎo chī a。",
+          "en": "Every dish here is tasty."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "是吗？那把你们这儿最好吃的菜给我们来两个。",
+          "pinyin": "shì ma？nà bǎ nǐ men zhè ér zuì hǎo chī de cài gěi wǒ men lái liǎng gè。",
+          "en": "Really? Then bring us two of your tastiest dishes."
+        },
+        {
+          "speaker": "服务员",
+          "zh": "这儿的辣子鸡丁和糖醋鱼都不错。",
+          "pinyin": "zhè ér de là zi jī dīng hé táng cù yú dōu bù cuò。",
+          "en": "The chili diced chicken and sweet-and-sour fish here are both pretty good."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "那就一样来一个吧。我们喝点儿什么呢？",
+          "pinyin": "nà jiù yī yàng lái yí gè ba。wǒ men hē diǎn ér shén me ne？",
+          "en": "Then one of each. What shall we drink?"
+        },
+        {
+          "speaker": "玛丽",
+          "zh": "随便。你说喝什么就喝什么吧。",
+          "pinyin": "suí biàn。nǐ shuō hē shén me jiù hē shén me ba。",
+          "en": "Whatever. Whatever you say we drink."
+        }
+      ]
+    },
+    {
+      "label": "(二)",
+      "headingZh": "你是哪儿冷去哪儿啊",
+      "headingEn": "You go wherever it’s cold",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "田中",
+          "zh": "时间过得真快，下周考完试就要放寒假了。",
+          "pinyin": "shí jiān guò dé zhēn kuài，xià zhōu kǎo wán shì jiù yào fàng hán jià le。",
+          "en": "Time flies — after exams next week, winter vacation starts."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "是啊。寒假你有什么打算吗？",
+          "pinyin": "shì a。hán jià nǐ yǒu shén me dǎ suàn ma？",
+          "en": "Yeah. Any plans for winter vacation?"
+        },
+        {
+          "speaker": "田中",
+          "zh": "学校要组织留学生去外地旅行，谁都可以报名，你报名吗？",
+          "pinyin": "xué xiào yào zǔ zhī liú xué shēng qù wài dì lǚ xíng，shéi dōu kě yǐ bào míng，nǐ bào míng ma？",
+          "en": "The school is organizing a trip for international students; anyone can sign up — are you?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "我听谁说过这件事儿。不过我想自己去旅行。",
+          "pinyin": "wǒ tīng shuí shuō guò zhè jiàn shì ér。bù guò wǒ xiǎng zì jǐ qù lǚ xíng。",
+          "en": "I heard someone mention it. But I want to travel on my own."
+        },
+        {
+          "speaker": "田中",
+          "zh": "去哪儿？",
+          "pinyin": "qù nǎ ér？",
+          "en": "Where to?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "哪儿好玩儿就去哪儿。我想去哈尔滨。",
+          "pinyin": "nǎ ér hǎo wán ér jiù qù nǎ ér。wǒ xiǎng qù hā ěr bīn。",
+          "en": "Wherever is fun. I want to go to Harbin."
+        },
+        {
+          "speaker": "田中",
+          "zh": "哈尔滨？你是哪儿冷去哪儿啊。现在那儿白天已经零下二十多度了。",
+          "pinyin": "hā ěr bīn？nǐ shì nǎ ér lěng qù nǎ ér a。xiàn zài nà ér bái tiān yǐ jīng líng xià èr shí duō dù le。",
+          "en": "Harbin? You go wherever it’s cold. It’s already over twenty below there in the daytime."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "听说哈尔滨的冰灯冰雕很好看，我想去看看。",
+          "pinyin": "tīng shuō hā ěr bīn de bīng dēng bīng diāo hěn hǎo kàn，wǒ xiǎng qù kàn kàn。",
+          "en": "I heard the ice lanterns and sculptures are beautiful; I want to see them."
+        },
+        {
+          "speaker": "田中",
+          "zh": "你想怎么去？",
+          "pinyin": "nǐ xiǎng zěn me qù？",
+          "en": "How do you want to go?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "除了骑自行车以外，怎么去都行。",
+          "pinyin": "chú le qí zì xíng chē yǐ wài，zěn me qù dōu xíng。",
+          "en": "Any way except by bike."
+        },
+        {
+          "speaker": "田中",
+          "zh": "你又开玩笑。",
+          "pinyin": "nǐ yòu kāi wán xiào。",
+          "en": "You’re joking again."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "要是买不到火车票就坐飞机去。你的计划呢？",
+          "pinyin": "yào shì mǎi bú dào huǒ chē piào jiù zuò fēi jī qù。nǐ de jì huà ne？",
+          "en": "If I can’t get a train ticket I’ll fly. What’s your plan?"
+        },
+        {
+          "speaker": "田中",
+          "zh": "我打算先去西安看看碑林和兵马俑，再到重庆，从重庆坐船游览长江三峡，然后去云南、桂林，最后去苏州和杭州。",
+          "pinyin": "wǒ dǎ suàn xiān qù xī ān kàn kàn bēi lín hé bīng mǎ yǒng，zài dào chóng qìng，cóng zhòng qìng zuò chuán yóu lǎn cháng jiāng sān xiá，rán hòu qù yún nán、guì lín，zuì hòu qù sū zhōu hé háng zhōu。",
+          "en": "I plan to go to Xi’an first for the Stele Forest and terracotta warriors, then Chongqing, boat the Three Gorges, then Yunnan and Guilin, and finally Suzhou and Hangzhou."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "田芳说，苏州、杭州很美。",
+          "pinyin": "tián fāng shuō，sū zhōu、háng zhōu hěn měi。",
+          "en": "Tian Fang says Suzhou and Hangzhou are beautiful."
+        },
+        {
+          "speaker": "田中",
+          "zh": "“上有天堂，下有苏杭”嘛。另外，桂林也不错，“桂林山水甲天下”，风景像画儿一样，美极了。你去过桂林吗？",
+          "pinyin": "“shàng yǒu tiān táng，xià yǒu sū háng”ma。lìng wài，guì lín yě bù cuò，“guì lín shān shuǐ jiǎ tiān xià”，fēng jǐng xiàng huà ér yī yàng，měi jí le。nǐ qù guò guì lín ma？",
+          "en": "‘Up above Paradise, down here Suzhou and Hangzhou.’ Guilin’s great too — ‘best scenery under heaven,’ beautiful as a painting. Have you been?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "没有。我对云南少数民族的风俗很感兴趣。要是有机会一定去看看。你的旅行路线很好，不过要花多少钱啊？",
+          "pinyin": "méi yǒu。wǒ duì yún nán shǎo shù mín zú de fēng sú hěn gǎn xìng qù。yào shì yǒu jī huì yí dìng qù kàn kàn。nǐ de lǚ xíng lù xiàn hěn hǎo，bù guò yào huā duō shǎo qián a？",
+          "en": "No. I’m very interested in Yunnan minority customs — I’ll go if I get the chance. Your route is great, but how much will it cost?"
+        },
+        {
+          "speaker": "田中",
+          "zh": "我喜欢旅行，只要玩儿得开心，多花点儿钱也值得。另外最重要的是还可以一边旅行一边练习说汉语，多有意义啊！",
+          "pinyin": "wǒ xǐ huān lǚ xíng，zhǐ yào wán ér dé kāi xīn，duō huā diǎn ér qián yě zhí de。lìng wài zuì zhòng yào de shì hái kě yǐ yī biān lǚ xíng yī biān liàn xí shuō hàn yǔ，duō yǒu yì yì a！",
+          "en": "I love traveling — as long as it’s fun, spending a bit more is worth it. Most importantly you can practice Chinese while traveling — how meaningful!"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "你说得对。",
+          "pinyin": "nǐ shuō dé duì。",
+          "en": "You’re right."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "上有天堂，下有苏杭。",
+      "body": "It means “Up above there is Paradise; down here there are Suzhou and Hangzhou.”",
+      "example": {
+        "zh": "上有天堂，下有苏杭",
+        "pinyin": "shàng yǒu tiān táng，xià yǒu sū háng",
+        "en": "Up above Paradise, down here Suzhou and Hangzhou"
+      }
+    },
+    {
+      "title": "桂林山水甲天下。",
+      "body": "It means “The scenery of Guilin is the best under heaven.”",
+      "example": {
+        "zh": "桂林山水甲天下",
+        "pinyin": "guì lín shān shuǐ jiǎ tiān xià",
+        "en": "Guilin’s scenery is the best under heaven"
+      }
+    },
+    {
+      "title": "疑问代词的活用",
+      "body": "Flexible use of question words: 什么都可以 / 哪儿好玩儿就去哪儿 / 怎么去都行, etc.",
+      "example": {
+        "zh": "你点吧，什么都可以。",
+        "pinyin": "nǐ diǎn ba，shén me dōu kě yǐ。",
+        "en": "You order — anything is fine."
+      }
+    },
+    {
+      "title": "一边……一边……",
+      "body": "Two actions at the same time.",
+      "example": {
+        "zh": "一边旅行一边练习说汉语",
+        "pinyin": "yī biān lǚ xíng yī biān liàn xí shuō hàn yǔ",
+        "en": "travel while practicing speaking Chinese"
+      }
+    },
+    {
+      "title": "先……再……然后……最后……",
+      "body": "Sequence of consecutive actions.",
+      "example": {
+        "zh": "我打算先去西安看看碑林和兵马俑，再到重庆，从重庆坐船游览长江三峡，然后去云南、桂林，最后去苏州和杭州。",
+        "pinyin": "wǒ dǎ suàn xiān qù xī ān kàn kàn bēi lín hé bīng mǎ yǒng，zài dào chóng qìng，cóng zhòng qìng zuò chuán yóu lǎn cháng jiāng sān xiá，rán hòu qù yún nán、guì lín，zuì hòu qù sū zhōu hé háng zhōu。",
+        "en": "I plan to go to Xi’an first… finally Suzhou and Hangzhou."
+      }
+    }
+  ]
+}

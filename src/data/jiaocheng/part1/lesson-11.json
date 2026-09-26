@@ -1,0 +1,805 @@
+{
+  "id": "jiaocheng-2-1-11",
+  "book": "2-1",
+  "index": 11,
+  "bookLesson": 11,
+  "titleZh": "我是跟旅游团一起来的",
+  "titleEn": "I came with a tour group",
+  "sourcePages": "179-195",
+  "words": [
+    {
+      "zh": "前天",
+      "pinyin": "qiántiān",
+      "pos": "n.",
+      "en": "the day before yesterday",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 前天 like arriving the day before yesterday.",
+      "usage": "Most Chinese speakers 前天. Related 后天.",
+      "example": {
+        "zh": "前天刚到的。",
+        "pinyin": "Qiántiān gāng dào de.",
+        "en": "Just arrived the day before yesterday."
+      }
+    },
+    {
+      "zh": "后天",
+      "pinyin": "hòutiān",
+      "pos": "n.",
+      "en": "the day after tomorrow",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 后天 like leaving the day after tomorrow.",
+      "usage": "Most Chinese speakers 后天.",
+      "example": {
+        "zh": "旅游团后天就回去了。",
+        "pinyin": "Lǚyóutuán hòutiān jiù huíqu le.",
+        "en": "The tour group leaves the day after tomorrow."
+      }
+    },
+    {
+      "zh": "导游",
+      "pinyin": "dǎoyóu",
+      "pos": "n.",
+      "en": "tourist guide",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 导游 like being a tour guide.",
+      "usage": "Most Chinese speakers 导游.",
+      "example": {
+        "zh": "我当翻译，也是导游。",
+        "pinyin": "Wǒ dāng fānyì, yě shì dǎoyóu.",
+        "en": "I’m the interpreter and also the guide."
+      }
+    },
+    {
+      "zh": "研究生",
+      "pinyin": "yánjiūshēng",
+      "pos": "n.",
+      "en": "graduate student",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 研究生 like still in grad school.",
+      "usage": "Most Chinese speakers 研究生.",
+      "example": {
+        "zh": "我还在读研究生。",
+        "pinyin": "Wǒ hái zài dú yánjiūshēng.",
+        "en": "I’m still a graduate student."
+      }
+    },
+    {
+      "zh": "打工",
+      "pinyin": "dǎ gōng",
+      "pos": "v.",
+      "en": "to do a part-time job",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 打工 like holiday part-time work.",
+      "usage": "Most Chinese speakers 打工.",
+      "example": {
+        "zh": "利用假期到一家旅行社打工。",
+        "pinyin": "Lìyòng jiàqī dào yì jiā lǚxíngshè dǎgōng.",
+        "en": "Work part-time at a travel agency over the holiday."
+      }
+    },
+    {
+      "zh": "利用",
+      "pinyin": "lìyòng",
+      "pos": "v.",
+      "en": "to make use of; to use",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 利用 like using the holiday.",
+      "usage": "Most Chinese speakers 利用.",
+      "example": {
+        "zh": "利用假期打工。",
+        "pinyin": "Lìyòng jiàqī dǎgōng.",
+        "en": "Use the holiday to work part-time."
+      }
+    },
+    {
+      "zh": "假期",
+      "pinyin": "jiàqī",
+      "pos": "n.",
+      "en": "holiday",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 假期 like vacation period.",
+      "usage": "Most Chinese speakers 假期.",
+      "example": {
+        "zh": "利用假期。",
+        "pinyin": "Lìyòng jiàqī.",
+        "en": "Use the holiday."
+      }
+    },
+    {
+      "zh": "旅行社",
+      "pinyin": "lǚxíngshè",
+      "pos": "n.",
+      "en": "travel agency",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 旅行社 like the agency she works for.",
+      "usage": "Most Chinese speakers 旅行社.",
+      "example": {
+        "zh": "到一家旅行社打工。",
+        "pinyin": "Dào yì jiā lǚxíngshè dǎgōng.",
+        "en": "Work at a travel agency."
+      }
+    },
+    {
+      "zh": "组织",
+      "pinyin": "zǔzhī",
+      "pos": "v./n.",
+      "en": "to organize; organization",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 组织 like organizing a tour group.",
+      "usage": "Most Chinese speakers 组织.",
+      "example": {
+        "zh": "他们组织了一个旅游团。",
+        "pinyin": "Tāmen zǔzhī le yí ge lǚyóutuán.",
+        "en": "They organized a tour group."
+      }
+    },
+    {
+      "zh": "老板",
+      "pinyin": "lǎobǎn",
+      "pos": "n.",
+      "en": "boss",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 老板 like the agency boss.",
+      "usage": "Most Chinese speakers 老板.",
+      "example": {
+        "zh": "老板就让我陪他们来了。",
+        "pinyin": "Lǎobǎn jiù ràng wǒ péi tāmen lái le.",
+        "en": "The boss had me accompany them."
+      }
+    },
+    {
+      "zh": "需要",
+      "pinyin": "xūyào",
+      "pos": "v./n.",
+      "en": "to need; need",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 需要 like needing to come to China often.",
+      "usage": "Most Chinese speakers 需要.",
+      "example": {
+        "zh": "我需要经常来中国收集资料。",
+        "pinyin": "Wǒ xūyào jīngcháng lái Zhōngguó shōují zīliào.",
+        "en": "I need to come to China often to collect materials."
+      }
+    },
+    {
+      "zh": "经常",
+      "pinyin": "jīngcháng",
+      "pos": "adv.",
+      "en": "usually; often",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 经常 like often.",
+      "usage": "Most Chinese speakers 经常.",
+      "example": {
+        "zh": "经常来中国。",
+        "pinyin": "Jīngcháng lái Zhōngguó.",
+        "en": "Come to China often."
+      }
+    },
+    {
+      "zh": "收集",
+      "pinyin": "shōují",
+      "pos": "v.",
+      "en": "to gather; to collect",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 收集 like collecting research materials.",
+      "usage": "Most Chinese speakers 收集.",
+      "example": {
+        "zh": "收集资料。",
+        "pinyin": "Shōují zīliào.",
+        "en": "Collect materials."
+      }
+    },
+    {
+      "zh": "一……就……",
+      "pinyin": "yī…jiù…",
+      "pos": "conj.",
+      "en": "as soon as",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 一……就…… like as soon as there’s a China tour.",
+      "usage": "Most Chinese speakers 一…就….",
+      "example": {
+        "zh": "一有来中国的旅游团，他就安排我陪团来。",
+        "pinyin": "Yì yǒu lái Zhōngguó de lǚyóutuán, tā jiù ānpái wǒ péi tuán lái.",
+        "en": "As soon as there’s a China tour, he arranges for me to escort it."
+      }
+    },
+    {
+      "zh": "安排",
+      "pinyin": "ānpái",
+      "pos": "v.",
+      "en": "to arrange",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 安排 like arranging the escort.",
+      "usage": "Most Chinese speakers 安排.",
+      "example": {
+        "zh": "他就安排我陪团来。",
+        "pinyin": "Tā jiù ānpái wǒ péi tuán lái.",
+        "en": "He arranges for me to escort the group."
+      }
+    },
+    {
+      "zh": "帮助",
+      "pinyin": "bāngzhù",
+      "pos": "v.",
+      "en": "to help",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 帮助 like lots of help from the boss.",
+      "usage": "Most Chinese speakers 帮助. Related 帮.",
+      "example": {
+        "zh": "他给了我很多帮助。",
+        "pinyin": "Tā gěi le wǒ hěn duō bāngzhù.",
+        "en": "He’s given me a lot of help."
+      }
+    },
+    {
+      "zh": "帮",
+      "pinyin": "bāng",
+      "pos": "v.",
+      "en": "to help",
+      "note": "Listed under the numbered shengci entry in the book (related form). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 帮 like helping practice language.",
+      "usage": "Most Chinese speakers 帮.",
+      "example": {
+        "zh": "我帮你练汉语。",
+        "pinyin": "Wǒ bāng nǐ liàn Hànyǔ.",
+        "en": "I’ll help you practice Chinese."
+      }
+    },
+    {
+      "zh": "高铁",
+      "pinyin": "gāotiě",
+      "pos": "n.",
+      "en": "high-speed rail",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 高铁 like taking the high-speed train.",
+      "usage": "Most Chinese speakers 高铁.",
+      "example": {
+        "zh": "坐高铁来的。",
+        "pinyin": "Zuò gāotiě lái de.",
+        "en": "Came by high-speed rail."
+      }
+    },
+    {
+      "zh": "铁路",
+      "pinyin": "tiělù",
+      "pos": "n.",
+      "en": "railway",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 铁路 like railway scenery.",
+      "usage": "Most Chinese speakers 铁路.",
+      "example": {
+        "zh": "看看铁路两边的风光。",
+        "pinyin": "Kànkan tiělù liǎng biān de fēngguāng.",
+        "en": "See the scenery along the railway."
+      }
+    },
+    {
+      "zh": "风光",
+      "pinyin": "fēngguāng",
+      "pos": "n.",
+      "en": "scenery",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 风光 like scenery along the tracks.",
+      "usage": "Most Chinese speakers 风光.",
+      "example": {
+        "zh": "铁路两边的风光。",
+        "pinyin": "Tiělù liǎng biān de fēngguāng.",
+        "en": "Scenery on both sides of the railway."
+      }
+    },
+    {
+      "zh": "商量",
+      "pinyin": "shāngliang",
+      "pos": "v.",
+      "en": "to consult; to discuss",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 商量 like discussing with the boss.",
+      "usage": "Most Chinese speakers 商量.",
+      "example": {
+        "zh": "我跟老板商量好了。",
+        "pinyin": "Wǒ gēn lǎobǎn shāngliang hǎo le.",
+        "en": "I’ve talked it over with the boss."
+      }
+    },
+    {
+      "zh": "故乡",
+      "pinyin": "gùxiāng",
+      "pos": "n.",
+      "en": "birthplace; hometown",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 故乡 like Confucius’s hometown.",
+      "usage": "Most Chinese speakers 故乡.",
+      "example": {
+        "zh": "到孔子的故乡去一趟。",
+        "pinyin": "Dào Kǒngzǐ de gùxiāng qù yí tàng.",
+        "en": "Make a trip to Confucius’s hometown."
+      }
+    },
+    {
+      "zh": "自由",
+      "pinyin": "zìyóu",
+      "pos": "adj.",
+      "en": "free",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 自由 like free-activity time.",
+      "usage": "Most Chinese speakers 自由活动.",
+      "example": {
+        "zh": "今天下午是自由活动时间。",
+        "pinyin": "Jīntiān xiàwǔ shì zìyóu huódòng shíjiān.",
+        "en": "This afternoon is free-activity time."
+      }
+    },
+    {
+      "zh": "活动",
+      "pinyin": "huódòng",
+      "pos": "n./v.",
+      "en": "activity; to exercise",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 活动 like free activities.",
+      "usage": "Most Chinese speakers 活动.",
+      "example": {
+        "zh": "自由活动时间。",
+        "pinyin": "Zìyóu huódòng shíjiān.",
+        "en": "Free-activity time."
+      }
+    },
+    {
+      "zh": "马马虎虎",
+      "pinyin": "mǎmǎhūhū",
+      "pos": "adj.",
+      "en": "so-so",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 马马虎虎 like so-so Chinese / careless.",
+      "usage": "Most Chinese speakers 马马虎虎 (two senses — 注释).",
+      "example": {
+        "zh": "你觉得我的汉语说得怎么样？马马虎虎。",
+        "pinyin": "Nǐ juéde wǒ de Hànyǔ shuō de zěnmeyàng? Mǎmǎhūhū.",
+        "en": "How’s my Chinese? So-so."
+      }
+    },
+    {
+      "zh": "老外",
+      "pinyin": "lǎowài",
+      "pos": "n.",
+      "en": "foreigner",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 老外 like colloquial for foreigners.",
+      "usage": "Most Chinese speakers 老外.",
+      "example": {
+        "zh": "中国人一听就知道你是老外。",
+        "pinyin": "Zhōngguó rén yì tīng jiù zhīdào nǐ shì lǎowài.",
+        "en": "Chinese people know you’re a foreigner as soon as they hear you."
+      }
+    },
+    {
+      "zh": "呀",
+      "pinyin": "ya",
+      "pos": "part.",
+      "en": "(variant of 啊 after certain finals)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 呀 like soft particle after 外.",
+      "usage": "Most Chinese speakers …呀.",
+      "example": {
+        "zh": "一看也知道我是老外呀。",
+        "pinyin": "Yí kàn yě zhīdào wǒ shì lǎowài ya.",
+        "en": "One look and you know I’m a foreigner."
+      }
+    },
+    {
+      "zh": "鼻子",
+      "pinyin": "bízi",
+      "pos": "n.",
+      "en": "nose",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 鼻子 like a high nose.",
+      "usage": "Most Chinese speakers 鼻子.",
+      "example": {
+        "zh": "高高的鼻子。",
+        "pinyin": "Gāogāo de bízi.",
+        "en": "A high nose."
+      }
+    },
+    {
+      "zh": "头发",
+      "pinyin": "tóufa",
+      "pos": "n.",
+      "en": "hair",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 头发 like blond hair.",
+      "usage": "Most Chinese speakers 头发.",
+      "example": {
+        "zh": "黄黄的头发。",
+        "pinyin": "Huánghuáng de tóufa.",
+        "en": "Blond hair."
+      }
+    },
+    {
+      "zh": "眼睛",
+      "pinyin": "yǎnjing",
+      "pos": "n.",
+      "en": "eye",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 眼睛 like blue eyes.",
+      "usage": "Most Chinese speakers 眼睛.",
+      "example": {
+        "zh": "蓝蓝的眼睛。",
+        "pinyin": "Lánlán de yǎnjing.",
+        "en": "Blue eyes."
+      }
+    },
+    {
+      "zh": "声调",
+      "pinyin": "shēngdiào",
+      "pos": "n.",
+      "en": "tone (of a Chinese character)",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 声调 like tones needing practice.",
+      "usage": "Most Chinese speakers 声调.",
+      "example": {
+        "zh": "发音和声调都不太好。",
+        "pinyin": "Fāyīn hé shēngdiào dōu bú tài hǎo.",
+        "en": "Pronunciation and tones aren’t great."
+      }
+    },
+    {
+      "zh": "互相",
+      "pinyin": "hùxiāng",
+      "pos": "adv.",
+      "en": "mutually; each other",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 互相 like helping each other.",
+      "usage": "Most Chinese speakers 互相帮助.",
+      "example": {
+        "zh": "我们互相帮助好不好？",
+        "pinyin": "Wǒmen hùxiāng bāngzhù hǎo bu hǎo?",
+        "en": "Shall we help each other?"
+      }
+    },
+    {
+      "zh": "希望",
+      "pinyin": "xīwàng",
+      "pos": "v./n.",
+      "en": "to hope; hope",
+      "note": "Headword pinyin printed in the book. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Remember 希望 like hoping for English help.",
+      "usage": "Most Chinese speakers 希望.",
+      "example": {
+        "zh": "希望你帮我练练英语。",
+        "pinyin": "Xīwàng nǐ bāng wǒ liànlian Yīngyǔ.",
+        "en": "Hope you’ll help me practice English."
+      }
+    },
+    {
+      "zh": "丹尼丝",
+      "pinyin": "Dānnísī",
+      "pos": "n.",
+      "en": "Denise",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun.",
+      "usage": "专名.",
+      "example": {
+        "zh": "丹尼丝，你是什么时候来的？",
+        "pinyin": "Dānnísī, nǐ shì shénme shíhou lái de?",
+        "en": "Denise, when did you arrive?"
+      }
+    },
+    {
+      "zh": "深圳",
+      "pinyin": "Shēnzhèn",
+      "pos": "n.",
+      "en": "Shenzhen",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun.",
+      "usage": "专名.",
+      "example": {
+        "zh": "又去了深圳。",
+        "pinyin": "Yòu qù le Shēnzhèn.",
+        "en": "Then went to Shenzhen."
+      }
+    },
+    {
+      "zh": "孔子",
+      "pinyin": "Kǒngzǐ",
+      "pos": "n.",
+      "en": "Confucius",
+      "note": "Proper noun (专名). Headword pinyin printed. Example-sentence pinyin not printed; standard pinyin added.",
+      "when": "Proper noun — 551BC~479BC.",
+      "usage": "专名.",
+      "example": {
+        "zh": "到孔子的故乡去一趟。",
+        "pinyin": "Dào Kǒngzǐ de gùxiāng qù yí tàng.",
+        "en": "Make a trip to Confucius’s hometown."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "label": "课文（一）",
+      "headingZh": "我是跟旅游团一起来的",
+      "headingEn": "I came with a tour group",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "丹尼丝",
+          "zh": "王老师，您好！好久不见了。",
+          "pinyin": "Wáng lǎoshī, nín hǎo! Hǎo jiǔ bú jiàn le.",
+          "en": "Teacher Wang, hello! Long time no see."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "你好！丹尼丝，你是什么时候来的？",
+          "pinyin": "Nǐ hǎo! Dānnísī, nǐ shì shénme shíhou lái de?",
+          "en": "Hi Denise — when did you arrive?"
+        },
+        {
+          "speaker": "丹尼丝",
+          "zh": "前天刚到的。",
+          "pinyin": "Qiántiān gāng dào de.",
+          "en": "Just the day before yesterday."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "是来学习的吗？",
+          "pinyin": "Shì lái xuéxí de ma?",
+          "en": "Here to study?"
+        },
+        {
+          "speaker": "丹尼丝",
+          "zh": "不是，是来旅行的。",
+          "pinyin": "Bú shì, shì lái lǚxíng de.",
+          "en": "No — to travel."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "一个人来的吗？",
+          "pinyin": "Yí ge rén lái de ma?",
+          "en": "Alone?"
+        },
+        {
+          "speaker": "丹尼丝",
+          "zh": "不是，我是跟旅游团一起来的。我当翻译，也是导游。",
+          "pinyin": "Bú shì, wǒ shì gēn lǚyóutuán yìqǐ lái de. Wǒ dāng fānyì, yě shì dǎoyóu.",
+          "en": "No — with a tour group. I’m the interpreter and guide."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "你已经工作了？",
+          "pinyin": "Nǐ yǐjīng gōngzuò le?",
+          "en": "You’re working already?"
+        },
+        {
+          "speaker": "丹尼丝",
+          "zh": "没有，我还在读研究生。",
+          "pinyin": "Méiyǒu, wǒ hái zài dú yánjiūshēng.",
+          "en": "No — still a grad student."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "是在打工吗？",
+          "pinyin": "Shì zài dǎgōng ma?",
+          "en": "Part-time job?"
+        },
+        {
+          "speaker": "丹尼丝",
+          "zh": "是的，利用假期到一家旅行社打工。他们组织了一个旅游团，老板就让我陪他们来了。他知道我需要经常来中国收集资料，所以，一有来中国的旅游团，他就安排我陪团来。",
+          "pinyin": "Shì de, lìyòng jiàqī dào yì jiā lǚxíngshè dǎgōng. Tāmen zǔzhī le yí ge lǚyóutuán, lǎobǎn jiù ràng wǒ péi tāmen lái le. Tā zhīdào wǒ xūyào jīngcháng lái Zhōngguó shōují zīliào, suǒyǐ, yì yǒu lái Zhōngguó de lǚyóutuán, tā jiù ānpái wǒ péi tuán lái.",
+          "en": "Yes — holiday work at a travel agency. They organized a group and the boss sent me along. He knows I need China trips for materials, so whenever there’s a China tour he assigns me."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "这个老板还真不错。",
+          "pinyin": "Zhège lǎobǎn hái zhēn búcuò.",
+          "en": "That’s a really nice boss."
+        },
+        {
+          "speaker": "丹尼丝",
+          "zh": "是。他给了我很多帮助。",
+          "pinyin": "Shì. Tā gěi le wǒ hěn duō bāngzhù.",
+          "en": "Yes. He’s helped me a lot."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "去别的地方了吗？",
+          "pinyin": "Qù bié de dìfang le ma?",
+          "en": "Been elsewhere?"
+        },
+        {
+          "speaker": "丹尼丝",
+          "zh": "去了。我们先在香港玩儿了三天，又去了深圳，是从深圳过来的。",
+          "pinyin": "Qù le. Wǒmen xiān zài Xiānggǎng wánr le sān tiān, yòu qù le Shēnzhèn, shì cóng Shēnzhèn guòlai de.",
+          "en": "Yes — three days in Hong Kong, then Shenzhen; we came from Shenzhen."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "坐飞机来的吗？",
+          "pinyin": "Zuò fēijī lái de ma?",
+          "en": "By plane?"
+        },
+        {
+          "speaker": "丹尼丝",
+          "zh": "不是，坐高铁来的。旅游团的人都想坐坐中国的高铁，看看铁路两边的风光。",
+          "pinyin": "Bú shì, zuò gāotiě lái de. Lǚyóutuán de rén dōu xiǎng zuòzuo Zhōngguó de gāotiě, kànkan tiělù liǎng biān de fēngguāng.",
+          "en": "No — high-speed rail. Everyone wanted to ride China’s HSR and see the scenery."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "什么时候回去？",
+          "pinyin": "Shénme shíhou huíqu?",
+          "en": "When do you go back?"
+        },
+        {
+          "speaker": "丹尼丝",
+          "zh": "旅游团后天就回去了。我跟老板商量好了，晚回去几天，我要到孔子的故乡去一趟。今天下午是自由活动时间，所以来看看老师。",
+          "pinyin": "Lǚyóutuán hòutiān jiù huíqu le. Wǒ gēn lǎobǎn shāngliang hǎo le, wǎn huíqu jǐ tiān, wǒ yào dào Kǒngzǐ de gùxiāng qù yí tàng. Jīntiān xiàwǔ shì zìyóu huódòng shíjiān, suǒyǐ lái kànkan lǎoshī.",
+          "en": "The group leaves day after tomorrow. I arranged to stay a few days — trip to Confucius’s hometown. Free afternoon, so I came to see you."
+        },
+        {
+          "speaker": "王老师",
+          "zh": "在这儿吃了晚饭再走吧。",
+          "pinyin": "Zài zhèr chī le wǎnfàn zài zǒu ba.",
+          "en": "Have dinner here before you go."
+        }
+      ]
+    },
+    {
+      "label": "课文（二）",
+      "headingZh": "你的汉语是在哪儿学的",
+      "headingEn": "Where did you learn your Chinese?",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "田芳",
+          "zh": "麦克，你的汉语是在哪儿学的？",
+          "pinyin": "Màikè, nǐ de Hànyǔ shì zài nǎr xué de?",
+          "en": "Mike, where did you learn Chinese?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "在美国学的。",
+          "pinyin": "Zài Měiguó xué de.",
+          "en": "In the US."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "学了多长时间了？",
+          "pinyin": "Xué le duō cháng shíjiān le?",
+          "en": "How long?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "我是从去年暑假才开始学习汉语的，学了一年多了。",
+          "pinyin": "Wǒ shì cóng qùnián shǔjià cái kāishǐ xuéxí Hànyǔ de, xué le yì nián duō le.",
+          "en": "Only since last summer vacation — over a year."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "是在大学学的吗？",
+          "pinyin": "Shì zài dàxué xué de ma?",
+          "en": "At university?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "不是。是在一个语言学校学的。",
+          "pinyin": "Bú shì. Shì zài yí ge yǔyán xuéxiào xué de.",
+          "en": "No — a language school."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "是中国老师教的吗？",
+          "pinyin": "Shì Zhōngguó lǎoshī jiāo de ma?",
+          "en": "Chinese teachers?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "有中国老师，也有美国老师。你觉得我的汉语说得怎么样？",
+          "pinyin": "Yǒu Zhōngguó lǎoshī, yě yǒu Měiguó lǎoshī. Nǐ juéde wǒ de Hànyǔ shuō de zěnmeyàng?",
+          "en": "Both Chinese and American teachers. How’s my Chinese?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "马马虎虎。中国人一听就知道你是老外。",
+          "pinyin": "Mǎmǎhūhū. Zhōngguó rén yì tīng jiù zhīdào nǐ shì lǎowài.",
+          "en": "So-so. Chinese people know you’re a foreigner right away."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "一看也知道我是老外呀，高高的鼻子，黄黄的头发，蓝蓝的眼睛。我知道，我的发音和声调都不太好。",
+          "pinyin": "Yí kàn yě zhīdào wǒ shì lǎowài ya, gāogāo de bízi, huánghuáng de tóufa, lánlán de yǎnjing. Wǒ zhīdào, wǒ de fāyīn hé shēngdiào dōu bú tài hǎo.",
+          "en": "One look too — high nose, blond hair, blue eyes. I know my pronunciation and tones aren’t great."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "我们互相帮助好不好？我帮你练汉语，希望你帮我练练英语。",
+          "pinyin": "Wǒmen hùxiāng bāngzhù hǎo bu hǎo? Wǒ bāng nǐ liàn Hànyǔ, xīwàng nǐ bāng wǒ liànlian Yīngyǔ.",
+          "en": "Shall we help each other? I’ll help your Chinese; hope you’ll help my English."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "好啊。不过，我的英语也马马虎虎。",
+          "pinyin": "Hǎo a. Búguò, wǒ de Yīngyǔ yě mǎmǎhūhū.",
+          "en": "Sure — but my English is so-so too."
+        },
+        {
+          "speaker": "田芳",
+          "zh": "什么？你不是美国人吗？",
+          "pinyin": "Shénme? Nǐ bú shì Měiguó rén ma?",
+          "en": "What? Aren’t you American?"
+        },
+        {
+          "speaker": "麦克",
+          "zh": "我爸爸是美国人，妈妈是意大利人，我十岁才到的美国。可以当你的老师吗？",
+          "pinyin": "Wǒ bàba shì Měiguó rén, māma shì Yìdàlì rén, wǒ shí suì cái dào de Měiguó. Kěyǐ dāng nǐ de lǎoshī ma?",
+          "en": "Dad’s American, mom Italian — I only came to the US at ten. Can I still be your teacher?"
+        },
+        {
+          "speaker": "田芳",
+          "zh": "马马虎虎吧。",
+          "pinyin": "Mǎmǎhūhū ba.",
+          "en": "So-so, I guess."
+        },
+        {
+          "speaker": "麦克",
+          "zh": "不，不能马马虎虎，我们都要认真学习。",
+          "pinyin": "Bù, bù néng mǎmǎhūhū, wǒmen dōu yào rènzhēn xuéxí.",
+          "en": "No — we can’t be careless; we both need to study seriously."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "孔子（551BC~479BC）",
+      "body": "中国古代思想家和教育家，儒家的创始人。山东曲阜人。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "到孔子的故乡去一趟。",
+        "pinyin": "Dào Kǒngzǐ de gùxiāng qù yí tàng.",
+        "en": "Make a trip to Confucius’s hometown."
+      }
+    },
+    {
+      "title": "马马虎虎",
+      "body": "两个义项：①凑合、勉强、不好也不坏；②随便、不认真。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "马马虎虎。中国人一听就知道你是老外。",
+        "pinyin": "Mǎmǎhūhū. Zhōngguó rén yì tīng jiù zhīdào nǐ shì lǎowài.",
+        "en": "So-so. Chinese people know you’re a foreigner right away."
+      }
+    },
+    {
+      "title": "老外",
+      "body": "中国人把外国人统称为“老外”。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "一看也知道我是老外呀。",
+        "pinyin": "Yí kàn yě zhīdào wǒ shì lǎowài ya.",
+        "en": "One look and you know I’m a foreigner."
+      }
+    },
+    {
+      "title": "是……的",
+      "body": "“是……的”强调已发生动作的时间、地点、方式等。肯定句“是”可省；否定句不能省。名词宾语常在“的”后。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "我是跟旅游团一起来的。",
+        "pinyin": "Wǒ shì gēn lǚyóutuán yìqǐ lái de.",
+        "en": "I came with a tour group."
+      }
+    },
+    {
+      "title": "一……就……",
+      "body": "“一……就……”表示两事紧接发生。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "一有来中国的旅游团，他就安排我陪团来。",
+        "pinyin": "Yì yǒu lái Zhōngguó de lǚyóutuán, tā jiù ānpái wǒ péi tuán lái.",
+        "en": "As soon as there’s a China tour, he assigns me."
+      }
+    },
+    {
+      "title": "形容词重叠",
+      "body": "单音节重叠AA（高高的）；双音节常AABB。作定语时常加“的”。 Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "example": {
+        "zh": "高高的鼻子，黄黄的头发，蓝蓝的眼睛。",
+        "pinyin": "Gāogāo de bízi, huánghuáng de tóufa, lánlán de yǎnjing.",
+        "en": "A high nose, blond hair, blue eyes."
+      }
+    }
+  ]
+}
