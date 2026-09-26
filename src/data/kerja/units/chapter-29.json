@@ -372,31 +372,31 @@
           "speaker": "经理",
           "zh": "原因确定了吗？",
           "pinyin": "Yuányīn quèdìng le ma?",
-          "en": "Apakah penyebabnya sudah dipastikan?"
+          "en": "Has the cause been confirmed?"
         },
         {
           "speaker": "HR",
           "zh": "还没有。我先核对培训记录，再问带教同事。",
           "pinyin": "Hái méiyǒu. Wǒ xiān héduì péixùn jìlù, zài wèn dàijiào tóngshì.",
-          "en": "Belum. Saya akan cek catatan pelatihan dulu, lalu tanya rekan pembimbing."
+          "en": "Not yet. I’ll check the training records first, then ask the buddy mentor."
         },
         {
           "speaker": "经理",
           "zh": "如果确实需要补课，你建议怎么做？",
           "pinyin": "Rúguǒ quèshí xūyào bǔkè, nǐ jiànyì zěnme zuò?",
-          "en": "Kalau memang perlu sesi tambahan, apa saranmu?"
+          "en": "If we really need a catch-up session, what do you suggest?"
         },
         {
           "speaker": "HR",
           "zh": "建议先做一次实操练习，下周再评估效果。",
           "pinyin": "Jiànyì xiān zuò yí cì shícāo liànxí, xià zhōu zài pínggū xiàoguǒ.",
-          "en": "Saya sarankan satu latihan praktik dulu, lalu evaluasi hasilnya minggu depan."
+          "en": "I suggest one hands-on practice first, then evaluate the result next week."
         },
         {
           "speaker": "经理",
           "zh": "可以。请把计划、负责人和时间写清楚。",
           "pinyin": "Kěyǐ. Qǐng bǎ jìhuà, fùzérén hé shíjiān xiě qīngchu.",
-          "en": "Baik. Tolong tulis rencana, penanggung jawab, dan waktunya dengan jelas."
+          "en": "Okay. Please write the plan, owner, and timing clearly."
         }
       ]
     }
