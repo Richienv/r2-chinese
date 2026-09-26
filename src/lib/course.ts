@@ -9,10 +9,12 @@ import {
   type ReactNode,
 } from 'react'
 
-/** Separate from HSK progress (`yulu.hsk4a.v1`) so old saves stay untouched. */
+/** Separate from HSK / Kerja / Jiaocheng progress keys so old saves stay untouched. */
 const COURSE_KEY = 'yulu.course.v1'
 
-export type CourseId = 'hsk4a' | 'kerja'
+export type CourseId = 'hsk4a' | 'kerja' | 'jiaocheng'
+
+export const COURSE_ORDER: CourseId[] = ['hsk4a', 'kerja', 'jiaocheng']
 
 export const COURSE_META: Record<
   CourseId,
@@ -30,12 +32,18 @@ export const COURSE_META: Record<
     titleZh: '把话说清楚，把事情做好。',
     blurb: 'HR & Manajemen · Edisi 2026',
   },
+  jiaocheng: {
+    id: 'jiaocheng',
+    title: '汉语教程 Level 2',
+    titleZh: '汉语教程 · 第二册',
+    blurb: '第3版 · 上+下 as one path',
+  },
 }
 
 function readCourse(): CourseId {
   try {
     const raw = localStorage.getItem(COURSE_KEY)
-    if (raw === 'kerja' || raw === 'hsk4a') return raw
+    if (raw === 'kerja' || raw === 'hsk4a' || raw === 'jiaocheng') return raw
   } catch {
     /* ignore */
   }

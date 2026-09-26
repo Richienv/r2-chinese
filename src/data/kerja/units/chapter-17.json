@@ -15,7 +15,7 @@
       "usage": "Kalau 'besok' menerangkan kapan diskusinya terjadi, taruh 明天 sebelum frasa 跟经理讨论. Posisi yang keliru membuat 明天 terdengar menempel pada objek yang salah.",
       "example": {
         "zh": "我星期五上午见那位候选人。",
-        "pinyin": "Wǒ xīngqīwǔ shàngwǔ jiàn nàwèi hòuxuǎnrén。",
+        "pinyin": "Wǒ xīngqīwǔ shàngwǔ jiàn nàwèi hòuxuǎnrén.",
         "en": "Saya akan bertemu kandidat itu Jumat pagi."
       }
     },
@@ -29,7 +29,7 @@
       "usage": "跟 menghubungkan dua orang yang berbicara bersama. 给 menandai penerima sesuatu, misalnya 给经理发邮 件. Untuk 'menjelaskan kepada', pakai 向 atau 跟 sesuai konteks.",
       "example": {
         "zh": "我会跟团队讨论时间安排。",
-        "pinyin": "Wǒhuì gēn tuánduì tǎolùn shíjiān ānpái。",
+        "pinyin": "Wǒhuì gēn tuánduì tǎolùn shíjiān ānpái.",
         "en": "Saya akan membicarakan jadwal dengan tim."
       }
     },
@@ -43,7 +43,7 @@
       "usage": "得 ditempatkan setelah verba untuk menerangkan hasil atau derajat tindakannya. 的 menghubungkan atribut dengan nomina; 地 menghubungkan cara dengan verba. Saat bicara, bunyinya sama, tetapi tulisan profesional membedakannya.",
       "example": {
         "zh": "他把这个问题解释得很清楚。",
-        "pinyin": "Tā bǎ zhège wèntí jiěshì dé hěn qīngchǔ。",
+        "pinyin": "Tā bǎ zhège wèntí jiěshì dé hěn qīngchǔ.",
         "en": "Ia menjelaskan masalah itu dengan sangat jelas."
       }
     },
@@ -57,7 +57,7 @@
       "usage": "Kalimat awal gramatikal dan berarti 'saya tidak akan hadir'. Jika maksudmu 'saya tidak bisa hadir karena bentrok jadwal', 不能 menyatakan hambatan itu lebih jelas. 会 bisa menyatakan keterampilan atau prediksi; 可 以 berkaitan dengan izin atau kelayakan.",
       "example": {
         "zh": "我会说中文，但是今天下午不能参加面试。",
-        "pinyin": "Wǒhuì shuō zhōngwén， dànshì jīntiānxiàwǔ bùnéng cānjiā miànshì。",
+        "pinyin": "Wǒhuì shuō zhōngwén, dànshì jīntiānxiàwǔ bùnéng cānjiā miànshì.",
         "en": "Saya bisa berbahasa Mandarin, tetapi sore ini tidak bisa ikut wawancara."
       }
     },
@@ -71,7 +71,7 @@
       "usage": "Pola 把 menyorot objek yang diproses dan biasanya menyebut hasil, arah, penerima, atau perubahan. Dalam kalimat kerja, sebut ke mana dokumen bergerak atau apa yang selesai.",
       "example": {
         "zh": "我已经把时间安排发给候选人了。",
-        "pinyin": "Wǒ yǐjīng bǎ shíjiān ānpái fāgěi hòuxuǎnrén le。",
+        "pinyin": "Wǒ yǐjīng bǎ shíjiān ānpái fāgěi hòuxuǎnrén le.",
         "en": "Saya sudah mengirim jadwal kepada kandidat."
       }
     },
@@ -85,7 +85,7 @@
       "usage": "Kalau tujuanmu hanya mengidentifikasi penulis laporan, 是……的 lebih alami. 被 menyorot sesuatu yang dialami objek, terutama ketika dampaknya penting: 文件被删掉了. Jangan menerjemahkan semua kalimat pasif Indonesia menjadi 被.",
       "example": {
         "zh": "那个文件不小心被删掉了。",
-        "pinyin": "Nàge wénjiàn bù xiǎoxīn bèi shāndiào le。",
+        "pinyin": "Nàge wénjiàn bù xiǎoxīn bèi shāndiào le.",
         "en": "File itu tidak sengaja terhapus."
       }
     },
@@ -99,7 +99,7 @@
       "usage": "Saat menyatakan suatu tindakan tidak terjadi, 没(有) langsung mendahului verba; 了 penyelesaian tindakan biasanya tidak dipakai pada bentuk negatif ini. Untuk menyatakan sudah terjadi, gunakan 我昨天去参加面试了.",
       "example": {
         "zh": "我还没有发邀请。",
-        "pinyin": "Wǒ hái méiyǒu fā yāoqǐng。",
+        "pinyin": "Wǒ hái méiyǒu fā yāoqǐng.",
         "en": "Saya belum mengirim undangannya."
       }
     },
@@ -113,7 +113,7 @@
       "usage": "又 biasanya menandai pengulangan yang sudah terjadi; 再 menandai langkah berikutnya atau pengulangan yang masih akan dilakukan. Perbedaan ini penting saat memberi update kronologi.",
       "example": {
         "zh": "如果他还没回复，我明天再发一次。",
-        "pinyin": "Rúguǒ tā hái méi huífù， wǒ míngtiān zàifā yīcì。",
+        "pinyin": "Rúguǒ tā hái méi huífù, wǒ míngtiān zàifā yīcì.",
         "en": "Kalau ia belum membalas, besok saya kirim lagi."
       }
     },
@@ -127,7 +127,7 @@
       "usage": "Kalimat pertama bisa benar secara tata bahasa, tetapi salah urutan kerja bila hasil belum pasti. Dalam manajemen, penghubung harus menjaga logika proses, bukan sekadar menggabungkan dua verba.",
       "example": {
         "zh": "我们先检查数据，再做决定。",
-        "pinyin": "Wǒmen xiān jiǎncháshùjù， zài zuò juédìng。",
+        "pinyin": "Wǒmen xiān jiǎncháshùjù, zài zuò juédìng.",
         "en": "Kita periksa datanya dahulu, baru buat keputusan."
       }
     },
@@ -141,7 +141,7 @@
       "usage": "Jika maksudmu persetujuan manajer adalah syarat yang harus dipenuhi, pakai 只有……才……. 只要……就 …… menyatakan satu kondisi sudah cukup untuk hasil. Kalimat awal mencampur keduanya.",
       "example": {
         "zh": "只要时间合适，我们就可以继续面试。",
-        "pinyin": "Zhǐyào shíjiān héshì， wǒmen jiù kěyǐ jìxù miànshì。",
+        "pinyin": "Zhǐyào shíjiān héshì, wǒmen jiù kěyǐ jìxù miànshì.",
         "en": "Asalkan jadwal cocok, kita bisa lanjut wawancara."
       }
     },
@@ -155,7 +155,7 @@
       "usage": "虽然 membuka kontras atau konsesi, bukan hubungan sebab-akibat. Pasangannya biasanya 但是, 可是, atau 还是. Kalau mau alasan dan akibat, mulai dengan 因为.",
       "example": {
         "zh": "虽然时间很紧，但是我们还是需要给反馈。",
-        "pinyin": "Suīrán shíjiān hěn jǐn， dànshì wǒmen háishì xūyào gěi fǎnkuì。",
+        "pinyin": "Suīrán shíjiān hěn jǐn, dànshì wǒmen háishì xūyào gěi fǎnkuì.",
         "en": "Walaupun waktunya sempit, kita tetap perlu memberi feedback."
       }
     },
@@ -169,7 +169,7 @@
       "usage": "比 menghubungkan dua objek yang dibandingkan. 比较 adalah adverbia 'relatif/agak' di depan sifat, atau verba ' membandingkan' dengan susunan lain. Jangan menempelkan 比较 langsung sebelum pembanding seperti pola 比.",
       "example": {
         "zh": "这个方案比之前的方案更合适。",
-        "pinyin": "Zhège fāngàn bǐ zhīqián de fāngàn gèng héshì。",
+        "pinyin": "Zhège fāngàn bǐ zhīqián de fāngàn gèng héshì.",
         "en": "Rencana ini lebih sesuai daripada rencana sebelumnya."
       }
     },
@@ -183,7 +183,7 @@
       "usage": "Untuk menanyakan waktu seseorang tersedia, letakkan 什么时候 di posisi keterangan waktu sebelum 方便. Kata tanya Mandarin umumnya menempati posisi informasi yang dicari.",
       "example": {
         "zh": "你想跟谁讨论这个话题？",
-        "pinyin": "Nǐ xiǎng gēn shuí tǎolùn zhège huàtí？",
+        "pinyin": "Nǐ xiǎng gēn shuí tǎolùn zhège huàtí?",
         "en": "Kamu ingin membahas topik itu dengan siapa?"
       }
     },
@@ -197,7 +197,7 @@
       "usage": "报告我做 bisa berarti 'biar laporan saya yang kerjakan'; kalimat itu belum menyatakan status selesai. Untuk update pekerjaan, sebut apakah kamu sedang mengerjakan, sudah selesai, atau sudah siap dipakai. 做完 menandai selesai; 做好 sering berarti hasilnya siap.",
       "example": {
         "zh": "我已经准备好开会材料了。",
-        "pinyin": "Wǒ yǐjīng zhǔnbèi hǎo kāihuì cáiliào le。",
+        "pinyin": "Wǒ yǐjīng zhǔnbèi hǎo kāihuì cáiliào le.",
         "en": "Saya sudah menyiapkan materi rapat."
       }
     }

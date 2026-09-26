@@ -3,20 +3,20 @@ import { DialogueAudio, Line, useGloss } from '../components/ChineseText'
 import { ChineseHear, hasHanzi, HearButton, useAutoSpeak, useAutoSpeakLines, useSpeechActive } from '../components/Hear'
 import { CheckIcon, CloseIcon, HeartIcon, LockIcon, PlayIcon } from '../components/Icons'
 import {
-  buildKerjaSteps,
-  getKerjaChapter,
+  buildJiaochengSteps,
+  getJiaochengLesson,
   hearableZh,
-  KERJA_BOOK,
-  KERJA_NODE_LABEL,
-  kerjaChapters,
-  kerjaPlayableCount,
-  kerjaSittingWordCount,
-  nodeCaptionKerja,
-  nodesForChapter,
-  useKerjaProgress,
-  type KerjaChapter,
-  type KerjaSessionStep,
-} from '../lib/kerja'
+  JIAOCHENG_BOOK,
+  JIAOCHENG_NODE_LABEL,
+  jiaochengLessons,
+  jiaochengPlayableCount,
+  jiaochengSittingWordCount,
+  nodeCaptionJiaocheng,
+  nodesForLesson,
+  useJiaochengProgress,
+  type JiaochengLesson,
+  type JiaochengSessionStep,
+} from '../lib/jiaocheng'
 import { unlockSpeech, speakLines, stopSpeech } from '../lib/speech'
 import { ITEM_XP, NODE_BONUS_XP, SESSION_HEARTS } from '../lib/wordsSession'
 import type { LessonText } from '../lib/types'
@@ -72,42 +72,46 @@ function railPath(xs: number[], ys: number[]) {
   return d
 }
 
-export function KerjaEmptyState() {
+function bookPartLabel(book: JiaochengLesson['book']): string {
+  return book === '2-2' ? '下' : '上'
+}
+
+export function JiaochengEmptyState() {
   return (
     <section className="kerja-empty metal">
-      <div className="kicker">Mandarin Kerja Nyata</div>
+      <div className="kicker">{JIAOCHENG_BOOK.edition}</div>
       <h2 className="zh" lang="zh-CN">
-        {KERJA_BOOK.titleZh}
+        {JIAOCHENG_BOOK.titleZh}
       </h2>
-      <p className="kerja-empty-en">{KERJA_BOOK.title}</p>
+      <p className="kerja-empty-en">{JIAOCHENG_BOOK.title}</p>
       <p className="sub" style={{ textWrap: 'pretty', marginTop: 10 }}>
-        {KERJA_BOOK.blurb}. Chapters appear here automatically when unit JSON is added under{' '}
-        <code>src/data/kerja/units/</code>.
+        {JIAOCHENG_BOOK.blurb}. Lessons appear when JSON lands under{' '}
+        <code>src/data/jiaocheng/part1/</code> and <code>part2/</code>.
       </p>
       <p className="sub" style={{ marginTop: 8 }}>
-        No chapters loaded yet — nothing fake to start.
+        No lessons loaded yet — nothing fake to start.
       </p>
     </section>
   )
 }
 
-export function KerjaPath({
-  chapter,
+export function JiaochengPath({
+  lesson,
   current,
   nodeDone,
   onPlay,
   fill,
 }: {
-  chapter: KerjaChapter
-  current: { chapter: number; node: PathNode }
-  nodeDone: (chapter: number, node: PathNode) => boolean
-  onPlay?: (chapter: number, node: PathNode) => void
+  lesson: JiaochengLesson
+  current: { lesson: number; node: PathNode }
+  nodeDone: (lesson: number, node: PathNode) => boolean
+  onPlay?: (lesson: number, node: PathNode) => void
   fill?: boolean
 }) {
-  const progress = useKerjaProgress()
+  const progress = useJiaochengProgress()
   const slotRef = useRef<HTMLDivElement>(null)
   const [fillHeight, setFillHeight] = useState(0)
-  const nodes = nodesForChapter(chapter)
+  const nodes = nodesForLesson(lesson)
 
   useLayoutEffect(() => {
     if (!fill) return
@@ -118,29 +122,31 @@ export function KerjaPath({
     const ro = new ResizeObserver(sync)
     ro.observe(el)
     return () => ro.disconnect()
-  }, [fill, chapter.id])
+  }, [fill, lesson.id])
 
-  const currentIndex = nodes.findIndex((n) => current.chapter === chapter.index && current.node === n)
+  const currentIndex = nodes.findIndex((n) => current.lesson === lesson.index && current.node === n)
   const { xs, ys, sizes, height } = unitLayout(nodes.length, currentIndex, fill ? fillHeight || undefined : undefined)
-  const litTo = nodes.reduce((acc, n, i) => (nodeDone(chapter.index, n) ? i + 1 : acc), 0)
-  const litEnd = current.chapter === chapter.index ? Math.max(litTo, currentIndex) : litTo
-  const showLit = current.chapter === chapter.index || litTo > 0
+  const litTo = nodes.reduce((acc, n, i) => (nodeDone(lesson.index, n) ? i + 1 : acc), 0)
+  const litEnd = current.lesson === lesson.index ? Math.max(litTo, currentIndex) : litTo
+  const showLit = current.lesson === lesson.index || litTo > 0
   const litXs = showLit ? xs.slice(0, Math.max(1, litEnd + 1)) : []
   const litYs = ys.slice(0, litXs.length)
-  const open = progress.isChapterReached(chapter.index)
+  const open = progress.isLessonReached(lesson.index)
 
   return (
     <section className={fill ? 'path-lesson path-lesson-fill' : 'path-lesson'}>
       <div className={`path-banner metal${open ? '' : ' path-banner-lock'}`}>
         <div className="path-banner-copy">
-          <div className="kicker">Bab {chapter.index}</div>
+          <div className="kicker">
+            第 {lesson.bookLesson} 课 · 第二册{bookPartLabel(lesson.book)}
+          </div>
           <h2 className="zh path-banner-zh" lang="zh-CN">
-            {chapter.titleZh || chapter.titleEn}
+            {lesson.titleZh || lesson.titleEn}
           </h2>
-          <div className="path-banner-en">{chapter.titleEn || chapter.titleZh}</div>
-          {chapter.sourcePages ? <div className="path-later-kicker">pp. {chapter.sourcePages}</div> : null}
+          <div className="path-banner-en">{lesson.titleEn || lesson.titleZh}</div>
+          {lesson.sourcePages ? <div className="path-later-kicker">pp. {lesson.sourcePages}</div> : null}
         </div>
-        <span className="path-banner-read">单元</span>
+        <span className="path-banner-read">课文</span>
       </div>
 
       <div className="path-unit-slot" ref={slotRef}>
@@ -151,12 +157,12 @@ export function KerjaPath({
           </svg>
 
           {nodes.map((node, i) => {
-            const done = nodeDone(chapter.index, node)
-            const on = current.chapter === chapter.index && current.node === node
-            const playable = progress.isNodePlayable(chapter.index, node)
+            const done = nodeDone(lesson.index, node)
+            const on = current.lesson === lesson.index && current.node === node
+            const playable = progress.isNodePlayable(lesson.index, node)
             const state = done ? 'done' : on ? 'on' : 'lock'
             const r = sizes[i] / 2
-            const caption = nodeCaptionKerja(chapter, node)
+            const caption = nodeCaptionJiaocheng(lesson, node)
             const side = xs[i] < W / 2 ? 'left' : 'right'
             return (
               <button
@@ -180,7 +186,7 @@ export function KerjaPath({
                 }}
                 onClick={() => {
                   if (!playable) return
-                  onPlay?.(chapter.index, node)
+                  onPlay?.(lesson.index, node)
                 }}
                 aria-label={`${caption.zh}${caption.hint ? ` ${caption.hint}` : ''}${done ? ', done' : on ? ', start' : ', locked'}`}
               >
@@ -205,18 +211,18 @@ export function KerjaPath({
   )
 }
 
-export function KerjaHomePath({
+export function JiaochengHomePath({
   onPlay,
 }: {
-  onPlay: (chapter: number, node: PathNode) => void
+  onPlay: (lesson: number, node: PathNode) => void
 }) {
-  const { nextPlayable, isNodeDone } = useKerjaProgress()
-  if (kerjaChapters.length === 0) return <KerjaEmptyState />
-  const chapter = getKerjaChapter(nextPlayable.chapter) ?? kerjaChapters[0]
+  const { nextPlayable, isNodeDone } = useJiaochengProgress()
+  if (jiaochengLessons.length === 0) return <JiaochengEmptyState />
+  const lesson = getJiaochengLesson(nextPlayable.lesson) ?? jiaochengLessons[0]
   return (
-    <KerjaPath
+    <JiaochengPath
       fill
-      chapter={chapter}
+      lesson={lesson}
       current={nextPlayable}
       nodeDone={isNodeDone}
       onPlay={onPlay}
@@ -224,21 +230,21 @@ export function KerjaHomePath({
   )
 }
 
-export function KerjaLearn({
+export function JiaochengLearn({
   onPlay,
 }: {
-  onPlay: (chapter: number, node: PathNode) => void
+  onPlay: (lesson: number, node: PathNode) => void
 }) {
-  const { nextPlayable, isNodeDone } = useKerjaProgress()
-  if (kerjaChapters.length === 0) {
-    return <KerjaEmptyState />
+  const { nextPlayable, isNodeDone } = useJiaochengProgress()
+  if (jiaochengLessons.length === 0) {
+    return <JiaochengEmptyState />
   }
   return (
     <>
-      {kerjaChapters.map((ch) => (
-        <KerjaPath
-          key={ch.id}
-          chapter={ch}
+      {jiaochengLessons.map((unit) => (
+        <JiaochengPath
+          key={unit.id}
+          lesson={unit}
           current={nextPlayable}
           nodeDone={isNodeDone}
           onPlay={onPlay}
@@ -248,37 +254,37 @@ export function KerjaLearn({
   )
 }
 
-export function KerjaSession({
-  chapter,
+export function JiaochengSession({
+  lesson,
   node,
   onClose,
 }: {
-  chapter: number
+  lesson: number
   node: PathNode
   onClose: () => void
 }) {
-  const progress = useKerjaProgress()
-  const ch = getKerjaChapter(chapter)
-  if (!ch || !progress.isNodePlayable(chapter, node)) {
+  const progress = useJiaochengProgress()
+  const unit = getJiaochengLesson(lesson)
+  if (!unit || !progress.isNodePlayable(lesson, node)) {
     return <LockedView onClose={onClose} />
   }
-  return <KerjaRunner chapter={chapter} node={node} onClose={onClose} />
+  return <JiaochengRunner lesson={lesson} node={node} onClose={onClose} />
 }
 
-function KerjaRunner({
-  chapter,
+function JiaochengRunner({
+  lesson,
   node,
   onClose,
 }: {
-  chapter: number
+  lesson: number
   node: PathNode
   onClose: () => void
 }) {
   const store = useStore()
-  const progress = useKerjaProgress()
-  const ch = getKerjaChapter(chapter)!
-  const steps = useMemo(() => buildKerjaSteps(chapter, node), [chapter, node])
-  const alreadyDone = useRef(progress.isNodeDone(chapter, node))
+  const progress = useJiaochengProgress()
+  const unit = getJiaochengLesson(lesson)!
+  const steps = useMemo(() => buildJiaochengSteps(lesson, node), [lesson, node])
+  const alreadyDone = useRef(progress.isNodeDone(lesson, node))
   const credited = useRef(new Set<string>())
   const finished = useRef(false)
   const left = useRef(new Set<number>())
@@ -295,7 +301,7 @@ function KerjaRunner({
   const step = steps[Math.min(i, steps.length - 1)]
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
   const isComplete = !failed && step.kind === 'complete'
-  const total = kerjaPlayableCount(steps)
+  const total = jiaochengPlayableCount(steps)
   const footerLocked = !failed && step.kind === 'quiz' && !quizState?.solved
   const beatKey = failed ? 'failed' : step.kind === 'complete' ? 'complete' : step.id
 
@@ -306,14 +312,14 @@ function KerjaRunner({
   useEffect(() => {
     if (!isComplete || finished.current) return
     finished.current = true
-    progress.markNodeDone(chapter, node)
+    progress.markNodeDone(lesson, node)
     if (!alreadyDone.current) {
       store.awardXp(NODE_BONUS_XP)
       xpRef.current += NODE_BONUS_XP
       setXp(xpRef.current)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isComplete, chapter, node])
+  }, [isComplete, lesson, node])
 
   useEffect(() => {
     if (failed || step.kind !== 'quiz' || !quizState?.solved) return
@@ -336,7 +342,7 @@ function KerjaRunner({
   }
 
   function meetWord(word: { zh: string }, id: string) {
-    store.addCards(chapter + 1000, [word])
+    store.addCards(lesson + 3000, [word])
     credit(id)
   }
 
@@ -414,7 +420,7 @@ function KerjaRunner({
               word={step.word}
               example={step.example}
               hook={step.hook}
-              lesson={chapter + 1000}
+              lesson={lesson + 3000}
               n={step.n}
               of={step.of}
             />
@@ -427,9 +433,9 @@ function KerjaRunner({
           ) : (
             <DoneView
               node={node}
-              titleZh={ch.titleZh}
-              titleEn={ch.titleEn}
-              wordCount={kerjaSittingWordCount(chapter, node)}
+              titleZh={unit.titleZh}
+              titleEn={unit.titleEn}
+              wordCount={jiaochengSittingWordCount(lesson, node)}
               xp={xp}
               replay={alreadyDone.current}
             />
@@ -448,7 +454,7 @@ function KerjaRunner({
   )
 }
 
-function countMet(steps: KerjaSessionStep[], credited: Set<string>): number {
+function countMet(steps: JiaochengSessionStep[], credited: Set<string>): number {
   return steps.filter((s) => s.kind === 'teach' && s.phase === 'meet' && credited.has(s.id)).length
 }
 
@@ -673,7 +679,7 @@ function DoneView({
   xp: number
   replay: boolean
 }) {
-  const label = KERJA_NODE_LABEL[node]
+  const label = JIAOCHENG_NODE_LABEL[node]
   return (
     <div style={{ textAlign: 'center', paddingTop: 36 }}>
       <div className="medal pop">
@@ -749,7 +755,7 @@ function LockedView({ onClose }: { onClose: () => void }) {
             Locked
           </h2>
           <p className="sub" style={{ marginTop: 8 }}>
-            Finish the earlier Kerja nodes first.
+            Finish the earlier Jiaocheng nodes first.
           </p>
         </div>
       </div>

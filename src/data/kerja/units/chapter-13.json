@@ -9,14 +9,14 @@
       "zh": "而且",
       "pinyin": "érqiě",
       "pos": "conj.",
-      "en": "Cara ini sederhana dan juga menghemat waktu.",
+      "en": "and also; what’s more",
       "note": "Book headword pinyin printed as érqiě. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 而且 bukan penghubung netral untuk dua benda; gunakan 和 bila hanya menggabungkan nomina.",
-      "when": "Remember 而且 like the word you’ll use when menambah informasi yang memperkuat poin sebelumnya. Dua bagiannya biasanya searah..",
+      "when": "Remember 而且 like the word you’ll use when menambah informasi yang memperkuat poin sebelumnya. Dua bagiannya biasanya searah.",
       "usage": "Most Chinese speakers use 而且 in this office/HR speaking sense. 而且 bukan penghubung netral untuk dua benda; gunakan 和 bila hanya menggabungkan nomina.",
       "example": {
         "zh": "这个办法简单，而且能省时间。",
-        "pinyin": "Zhège bànfǎ jiǎndān， érqiě néngshěng shíjiān。",
-        "en": "dan lagi, bahkan"
+        "pinyin": "Zhège bànfǎ jiǎndān, érqiě néngshěng shíjiān.",
+        "en": "Cara ini sederhana dan juga menghemat waktu."
       }
     },
     {
@@ -24,12 +24,12 @@
       "pinyin": "lìngwài",
       "pos": "conj.",
       "en": "besides; also",
-      "note": "Book headword pinyin printed as lìngwài. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 另外 menambah topik, sedangkan 而且 biasanya memperkuat klaim yang sama. lagi Example English below follows the book’s Indonesian gloss (faithful meaning line).",
-      "when": "Remember 另外 like the word you’ll use when membuka poin tambahan yang agak terpisah dari poin sebelumnya. Berguna saat rapat atau pesan panjang..",
+      "note": "Book headword pinyin printed as lìngwài. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 另外 menambah topik, sedangkan 而且 biasanya memperkuat klaim yang sama. lagi",
+      "when": "Remember 另外 like the word you’ll use when membuka poin tambahan yang agak terpisah dari poin sebelumnya. Berguna saat rapat atau pesan panjang.",
       "usage": "Most Chinese speakers use 另外 in this office/HR speaking sense. 另外 menambah topik, sedangkan 而且 biasanya memperkuat klaim yang sama. lagi",
       "example": {
         "zh": "时间已经定了。另外，地点也要改。",
-        "pinyin": "Shíjiān yǐjīng dìng le。 lìngwài， dìdiǎn yě yào gǎi。",
+        "pinyin": "Shíjiān yǐjīng dìng le. lìngwài, dìdiǎn yě yào gǎi.",
         "en": "Waktunya sudah ditetapkan. Selain itu, lokasinya juga perlu diubah."
       }
     },
@@ -37,14 +37,14 @@
       "zh": "还有",
       "pinyin": "hái yǒu",
       "pos": "conj.",
-      "en": "Satu lagi, jangan lupa bawa bahan.",
+      "en": "also",
       "note": "Book headword pinyin printed as hái yǒu. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 还有 bisa juga berarti “masih punya”; konteks menentukan fungsinya.",
-      "when": "Remember 还有 like the word you’ll use when tambahan lisan yang sangat umum saat kamu baru ingat satu hal lain. Lebih santai daripada 另外..",
+      "when": "Remember 还有 like the word you’ll use when tambahan lisan yang sangat umum saat kamu baru ingat satu hal lain. Lebih santai daripada 另外.",
       "usage": "Most Chinese speakers use 还有 in this office/HR speaking sense. 还有 bisa juga berarti “masih punya”; konteks menentukan fungsinya.",
       "example": {
         "zh": "还有，别忘了带材料。",
-        "pinyin": "Háiyǒu， biéwàngle dài cáiliào。",
-        "en": "masih ada, selain itu"
+        "pinyin": "Háiyǒu, biéwàngle dài cáiliào.",
+        "en": "Satu lagi, jangan lupa bawa bahan."
       }
     },
     {
@@ -52,12 +52,12 @@
       "pinyin": "zàishuō",
       "pos": "conj.",
       "en": "besides; what’s more",
-      "note": "Book headword pinyin printed as zàishuō. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 再说 juga bisa berarti “bicarakan nanti” dalam 以后再说; di sini fungsinya menambah alasan. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
-      "when": "Remember 再说 like the word you’ll use when menambah alasan pendukung untuk keputusan atau pendapat sebelumnya. Dalam konteks lain bisa berarti “bicarakan nanti”..",
+      "note": "Book headword pinyin printed as zàishuō. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 再说 juga bisa berarti “bicarakan nanti” dalam 以后再说; di sini fungsinya menambah alasan.",
+      "when": "Remember 再说 like the word you’ll use when menambah alasan pendukung untuk keputusan atau pendapat sebelumnya. Dalam konteks lain bisa berarti “bicarakan nanti”.",
       "usage": "Most Chinese speakers use 再说 in this office/HR speaking sense. 再说 juga bisa berarti “bicarakan nanti” dalam 以后再说; di sini fungsinya menambah alasan.",
       "example": {
         "zh": "这个办法成本低，再说，大家已经会用了。",
-        "pinyin": "Zhège bànfǎ chéngběndī， zàishuō， dàjiā yǐjīng huìyòng le。",
+        "pinyin": "Zhège bànfǎ chéngběndī, zàishuō, dàjiā yǐjīng huìyòng le.",
         "en": "Cara ini biayanya rendah; lagi pula, semua sudah tahu cara memakainya."
       }
     },
@@ -66,12 +66,12 @@
       "pinyin": "shǒuxiān",
       "pos": "adv.",
       "en": "workplace sense of 首先",
-      "note": "Book headword pinyin printed as shǒuxiān. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jika bilang 首先, jangan biarkan daftar berhenti tanpa kelanjutan yang jelas. pertama-tama Example English below follows the book’s Indonesian gloss (faithful meaning line).",
-      "when": "Remember 首先 like the word you’ll use when menandai poin pertama saat kamu menjelaskan beberapa langkah atau alasan..",
+      "note": "Book headword pinyin printed as shǒuxiān. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jika bilang 首先, jangan biarkan daftar berhenti tanpa kelanjutan yang jelas. pertama-tama",
+      "when": "Remember 首先 like the word you’ll use when menandai poin pertama saat kamu menjelaskan beberapa langkah atau alasan.",
       "usage": "Most Chinese speakers use 首先 in this office/HR speaking sense. Jika bilang 首先, jangan biarkan daftar berhenti tanpa kelanjutan yang jelas. pertama-tama",
       "example": {
         "zh": "首先，我们要把岗位要求写清楚。",
-        "pinyin": "Shǒuxiān， wǒmen yào bǎ gǎngwèi yāoqiú xiě qīngchǔ。",
+        "pinyin": "Shǒuxiān, wǒmen yào bǎ gǎngwèi yāoqiú xiě qīngchǔ.",
         "en": "Pertama, kita perlu menuliskan persyaratan posisi dengan jelas."
       }
     },
@@ -79,14 +79,14 @@
       "zh": "其次",
       "pinyin": "qícì",
       "pos": "adv.",
-      "en": "Kedua, kita perlu mengatur waktu wawancara.",
+      "en": "second",
       "note": "Book headword pinyin printed as qícì. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 其次 menata argumen; untuk urutan tindakan harian, 然后 sering lebih natural.",
-      "when": "Remember 其次 like the word you’ll use when memperkenalkan poin kedua dengan gaya lebih rapi daripada 然后. Cocok untuk presentasi dan rapat..",
+      "when": "Remember 其次 like the word you’ll use when memperkenalkan poin kedua dengan gaya lebih rapi daripada 然后. Cocok untuk presentasi dan rapat.",
       "usage": "Most Chinese speakers use 其次 in this office/HR speaking sense. 其次 menata argumen; untuk urutan tindakan harian, 然后 sering lebih natural.",
       "example": {
         "zh": "其次，我们要安排面试时间。",
-        "pinyin": "Qícì， wǒmen yào ānpái miànshì shíjiān。",
-        "en": "kedua, berikutnya"
+        "pinyin": "Qícì, wǒmen yào ānpái miànshì shíjiān.",
+        "en": "Kedua, kita perlu mengatur waktu wawancara."
       }
     },
     {
@@ -94,12 +94,12 @@
       "pinyin": "bǐrú",
       "pos": "prep./conj.",
       "en": "for example",
-      "note": "Book headword pinyin printed as bǐrú. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 比如 memperkenalkan contoh, bukan daftar lengkap. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
-      "when": "Remember 比如 like the word you’ll use when mengubah ide umum menjadi contoh konkret. Berguna saat istilahmu belum dipahami lawan bicara..",
+      "note": "Book headword pinyin printed as bǐrú. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 比如 memperkenalkan contoh, bukan daftar lengkap.",
+      "when": "Remember 比如 like the word you’ll use when mengubah ide umum menjadi contoh konkret. Berguna saat istilahmu belum dipahami lawan bicara.",
       "usage": "Most Chinese speakers use 比如 in this office/HR speaking sense. 比如 memperkenalkan contoh, bukan daftar lengkap.",
       "example": {
         "zh": "我们可以先试一个部门，比如销售部。",
-        "pinyin": "Wǒmen kěyǐ xiānshì yígè bùmén， bǐrú xiāoshòubù。",
+        "pinyin": "Wǒmen kěyǐ xiānshì yígè bùmén, bǐrú xiāoshòubù.",
         "en": "Kita bisa coba di satu departemen dulu, misalnya tim penjualan."
       }
     },
@@ -109,11 +109,11 @@
       "pos": "adv.",
       "en": "workplace sense of 尤其",
       "note": "Book headword pinyin printed as yóuqí. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 尤其 perlu sesuatu yang ditonjolkan; jangan pakai seperti sinonim umum dari 很. terutama jelaskan apakah maknanya berubah. Kalau hasilnya tidak masuk akal, hubungan logisnya perlu diperbaiki.",
-      "when": "Remember 尤其 like the word you’ll use when menonjolkan satu anggota yang paling relevan dari kelompok yang sudah disebut..",
+      "when": "Remember 尤其 like the word you’ll use when menonjolkan satu anggota yang paling relevan dari kelompok yang sudah disebut.",
       "usage": "Most Chinese speakers use 尤其 in this office/HR speaking sense. 尤其 perlu sesuatu yang ditonjolkan; jangan pakai seperti sinonim umum dari 很. terutama jelaskan apakah maknanya berubah. Kalau hasilnya tidak masuk akal, hubungan logisnya perlu diperbaiki.",
       "example": {
         "zh": "这次培训对新同事尤其有用。",
-        "pinyin": "Zhècì péixùn duì xīn tóngshì yóuqí yǒuyòng。",
+        "pinyin": "Zhècì péixùn duì xīn tóngshì yóuqí yǒuyòng.",
         "en": "Pelatihan ini sangat berguna, terutama bagi rekan baru."
       }
     }

@@ -11,6 +11,7 @@ import { ReviewFlow } from './screens/Review'
 import { SavedWords } from './screens/SavedWords'
 import { VocabBrowser } from './screens/VocabBrowser'
 import { KerjaSession } from './screens/Kerja'
+import { JiaochengSession } from './screens/Jiaocheng'
 import { WordsSession } from './screens/WordsSession'
 import { CourseProvider } from './lib/course'
 import { load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
@@ -26,6 +27,7 @@ type Overlay =
   | { kind: 'words'; lesson: number; node?: PathNode }
   | { kind: 'path'; lesson: number; node: PathNode }
   | { kind: 'kerja'; chapter: number; node: PathNode }
+  | { kind: 'jiaocheng'; lesson: number; node: PathNode }
   | { kind: 'review'; words?: string[]; title?: string }
   | { kind: 'character'; char: string }
   | { kind: 'drill'; words: string[]; title: string }
@@ -92,6 +94,7 @@ function Shell() {
             onLesson={(lesson) => setOverlay({ kind: 'lesson', lesson })}
             onReview={() => setOverlay({ kind: 'review' })}
             onKerjaSession={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
+            onJiaochengSession={(lesson, node) => setOverlay({ kind: 'jiaocheng', lesson, node })}
           />
         )}
         {tab === 'learn' && (
@@ -100,6 +103,7 @@ function Shell() {
             onVocab={() => setOverlay({ kind: 'vocab' })}
             onPlay={(lesson, node) => setOverlay({ kind: 'path', lesson, node })}
             onKerjaPlay={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
+            onJiaochengPlay={(lesson, node) => setOverlay({ kind: 'jiaocheng', lesson, node })}
             isNodeDone={(lesson, node) => store.isNodeDone(lesson, node)}
           />
         )}
@@ -139,6 +143,9 @@ function Shell() {
       )}
       {overlay?.kind === 'kerja' && (
         <KerjaSession chapter={overlay.chapter} node={overlay.node} onClose={() => setOverlay(null)} />
+      )}
+      {overlay?.kind === 'jiaocheng' && (
+        <JiaochengSession lesson={overlay.lesson} node={overlay.node} onClose={() => setOverlay(null)} />
       )}
       {overlay?.kind === 'review' && (
         <ReviewFlow words={overlay.words} title={overlay.title} onClose={() => setOverlay(null)} />

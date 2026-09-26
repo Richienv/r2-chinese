@@ -1,10 +1,12 @@
 import { type CSSProperties, useLayoutEffect, useRef, useState } from 'react'
+import { CourseChooser } from '../components/CourseChooser'
 import { CheckIcon, LockIcon, PlayIcon } from '../components/Icons'
 import { useCourse } from '../lib/course'
 import { lessons } from '../lib/content'
 import { unlockSpeech } from '../lib/speech'
 import { NODE_LABEL, PATH_NODES, isLessonReached, isNodePlayable, nextPlayable, nodeCaption } from '../lib/wordsSession'
 import { useStore, type PathNode } from '../store/store'
+import { JiaochengLearn } from './Jiaocheng'
 import { KerjaLearn } from './Kerja'
 
 const W = 396
@@ -179,12 +181,14 @@ export function Learn({
   onLesson,
   onPlay,
   onKerjaPlay,
+  onJiaochengPlay,
   isNodeDone,
 }: {
   onLesson: (lesson: number) => void
   onVocab?: () => void
   onPlay?: (lesson: number, node: PathNode) => void
   onKerjaPlay?: (chapter: number, node: PathNode) => void
+  onJiaochengPlay?: (lesson: number, node: PathNode) => void
   isNodeDone?: (lesson: number, node: PathNode) => boolean
 }) {
   const store = useStore()
@@ -192,22 +196,25 @@ export function Learn({
   const nodeDone = isNodeDone ?? store.isNodeDone
   const current = nextPlayable(nodeDone)
 
-  if (course === 'kerja') {
-    return <KerjaLearn onPlay={(chapter, node) => onKerjaPlay?.(chapter, node)} />
-  }
-
   return (
     <div className="path-page">
-      {lessons.map((lesson) => (
-        <LessonPath
-          key={lesson.lesson}
-          lesson={lesson}
-          current={current}
-          nodeDone={nodeDone}
-          onLesson={onLesson}
-          onPlay={onPlay}
-        />
-      ))}
+      <CourseChooser />
+      {course === 'kerja' ? (
+        <KerjaLearn onPlay={(chapter, node) => onKerjaPlay?.(chapter, node)} />
+      ) : course === 'jiaocheng' ? (
+        <JiaochengLearn onPlay={(lesson, node) => onJiaochengPlay?.(lesson, node)} />
+      ) : (
+        lessons.map((lesson) => (
+          <LessonPath
+            key={lesson.lesson}
+            lesson={lesson}
+            current={current}
+            nodeDone={nodeDone}
+            onLesson={onLesson}
+            onPlay={onPlay}
+          />
+        ))
+      )}
     </div>
   )
 }
