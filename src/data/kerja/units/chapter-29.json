@@ -1,0 +1,418 @@
+{
+  "id": "chapter-29",
+  "index": 29,
+  "titleZh": "八个工作对话",
+  "titleEn": "Eight workplace dialogues",
+  "sourcePages": "85-92",
+  "words": [],
+  "dialogues": [
+    {
+      "label": "SIMULASI 01",
+      "headingZh": "招聘需求确认",
+      "headingEn": "Confirming hiring needs before posting",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "主管",
+          "zh": "我们下个月要招聘一名运营专员。",
+          "pinyin": "Wǒmen xià gè yuè yào zhāopìn yì míng yùnyíng zhuānyuán.",
+          "en": "Bulan depan kami perlu merekrut satu staf operasional."
+        },
+        {
+          "speaker": "HR",
+          "zh": "这个岗位最重要的三项工作是什么？",
+          "pinyin": "Zhège gǎngwèi zuì zhòngyào de sān xiàng gōngzuò shì shénme?",
+          "en": "Apa tiga pekerjaan terpenting untuk posisi ini?"
+        },
+        {
+          "speaker": "主管",
+          "zh": "主要是排班、整理数据和跨部门沟通。",
+          "pinyin": "Zhǔyào shì páibān, zhěnglǐ shùjù hé kuà bùmén gōutōng.",
+          "en": "Utamanya menyusun jadwal, merapikan data, dan komunikasi lintas tim."
+        },
+        {
+          "speaker": "HR",
+          "zh": "经验和语言要求也需要写清楚吗？",
+          "pinyin": "Jīngyàn hé yǔyán yāoqiú yě xūyào xiě qīngchu ma?",
+          "en": "Perlu kita jelaskan juga syarat pengalaman dan bahasa?"
+        },
+        {
+          "speaker": "主管",
+          "zh": "对，工作中需要经常用中文沟通。",
+          "pinyin": "Duì, gōngzuò zhōng xūyào jīngcháng yòng Zhōngwén gōutōng.",
+          "en": "Ya, pekerjaan ini sering memerlukan komunikasi dalam bahasa Mandarin."
+        },
+        {
+          "speaker": "HR",
+          "zh": "我先整理岗位要求，再发给你确认。",
+          "pinyin": "Wǒ xiān zhěnglǐ gǎngwèi yāoqiú, zài fā gěi nǐ quèrèn.",
+          "en": "Saya susun dulu persyaratan posisi, lalu kirim untuk kamu konfirmasi."
+        },
+        {
+          "speaker": "主管",
+          "zh": "好，确认后再发布。",
+          "pinyin": "Hǎo, quèrèn hòu zài fābù.",
+          "en": "Baik, terbitkan setelah dikonfirmasi."
+        }
+      ]
+    },
+    {
+      "label": "SIMULASI 02",
+      "headingZh": "基于实例的面试",
+      "headingEn": "Interview based on concrete examples",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "面试官",
+          "zh": "你好，请先简单介绍一下自己。",
+          "pinyin": "Nǐ hǎo, qǐng xiān jiǎndān jièshào yíxià zìjǐ.",
+          "en": "Halo, silakan perkenalkan diri secara singkat."
+        },
+        {
+          "speaker": "候选人",
+          "zh": "你好。我做过运营和数据整理方面的项目。",
+          "pinyin": "Nǐ hǎo. Wǒ zuòguo yùnyíng hé shùjù zhěnglǐ fāngmiàn de xiàngmù.",
+          "en": "Halo. Saya pernah mengerjakan proyek operasional dan perapian data."
+        },
+        {
+          "speaker": "面试官",
+          "zh": "你在其中具体负责什么？",
+          "pinyin": "Nǐ zài qízhōng jùtǐ fùzé shénme?",
+          "en": "Di proyek itu, tepatnya kamu bertanggung jawab atas apa?"
+        },
+        {
+          "speaker": "候选人",
+          "zh": "我负责整理每周数据，并向团队汇报结果。",
+          "pinyin": "Wǒ fùzé zhěnglǐ měi zhōu shùjù, bìng xiàng tuánduì huìbào jiéguǒ.",
+          "en": "Saya bertugas merapikan data mingguan dan melaporkan hasilnya ke tim."
+        },
+        {
+          "speaker": "面试官",
+          "zh": "遇到数据不一致时，你怎么处理？",
+          "pinyin": "Yùdào shùjù bù yízhì shí, nǐ zěnme chǔlǐ?",
+          "en": "Saat datanya tidak konsisten, bagaimana kamu menanganinya?"
+        },
+        {
+          "speaker": "候选人",
+          "zh": "我会先核对来源，再和相关同事确认。",
+          "pinyin": "Wǒ huì xiān héduì láiyuán, zài hé xiāngguān tóngshì quèrèn.",
+          "en": "Saya akan mengecek sumbernya dulu, lalu konfirmasi dengan rekan terkait."
+        },
+        {
+          "speaker": "面试官",
+          "zh": "明白。最后，你有什么问题想问我们？",
+          "pinyin": "Míngbai. Zuìhòu, nǐ yǒu shénme wèntí xiǎng wèn wǒmen?",
+          "en": "Baik. Terakhir, apa yang ingin kamu tanyakan kepada kami?"
+        }
+      ]
+    },
+    {
+      "label": "SIMULASI 03",
+      "headingZh": "入职首日与系统权限",
+      "headingEn": "Day-one check-in and system access",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "HR",
+          "zh": "周一上午九点请到前台报到。",
+          "pinyin": "Zhōuyī shàngwǔ jiǔ diǎn qǐng dào qiántái bàodào.",
+          "en": "Senin pukul sembilan pagi, silakan lapor ke resepsionis."
+        },
+        {
+          "speaker": "新同事",
+          "zh": "好的。需要带哪些材料？",
+          "pinyin": "Hǎo de. Xūyào dài nǎxiē cáiliào?",
+          "en": "Baik. Dokumen apa yang perlu saya bawa?"
+        },
+        {
+          "speaker": "HR",
+          "zh": "我会发一份清单，请按清单准备。",
+          "pinyin": "Wǒ huì fā yí fèn qīngdān, qǐng àn qīngdān zhǔnbèi.",
+          "en": "Saya akan kirim daftar; siapkan sesuai daftar itu."
+        },
+        {
+          "speaker": "新同事",
+          "zh": "入职当天就能登录系统吗？",
+          "pinyin": "Rùzhí dāngtiān jiù néng dēnglù xìtǒng ma?",
+          "en": "Apakah saya bisa masuk ke sistem pada hari pertama?"
+        },
+        {
+          "speaker": "HR",
+          "zh": "权限开通后可以登录，我会通知你。",
+          "pinyin": "Quánxiàn kāitōng hòu kěyǐ dēnglù, wǒ huì tōngzhī nǐ.",
+          "en": "Kamu bisa masuk setelah akses dibuka; saya akan memberi tahu."
+        },
+        {
+          "speaker": "新同事",
+          "zh": "如果有问题，我该联系谁？",
+          "pinyin": "Rúguǒ yǒu wèntí, wǒ gāi liánxì shéi?",
+          "en": "Kalau ada masalah, saya harus menghubungi siapa?"
+        },
+        {
+          "speaker": "HR",
+          "zh": "先联系我，工作流程的问题可以问带教同事。",
+          "pinyin": "Xiān liánxì wǒ, gōngzuò liúchéng de wèntí kěyǐ wèn dàijiào tóngshì.",
+          "en": "Hubungi saya dulu; untuk alur kerja, kamu bisa tanya rekan pembimbing."
+        }
+      ]
+    },
+    {
+      "label": "SIMULASI 04",
+      "headingZh": "具体的绩效反馈",
+      "headingEn": "Specific performance feedback",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "经理",
+          "zh": "我们先看这个月的目标和实际进展。",
+          "pinyin": "Wǒmen xiān kàn zhège yuè de mùbiāo hé shíjì jìnzhǎn.",
+          "en": "Kita lihat dulu target bulan ini dan progres aktual."
+        },
+        {
+          "speaker": "员工",
+          "zh": "大部分任务完成了，但交接有点慢。",
+          "pinyin": "Dà bùfen rènwu wánchéng le, dàn jiāojiē yǒudiǎn màn.",
+          "en": "Sebagian besar tugas selesai, tetapi serah terimanya agak lambat."
+        },
+        {
+          "speaker": "经理",
+          "zh": "我也注意到了。你觉得主要卡在哪里？",
+          "pinyin": "Wǒ yě zhùyì dào le. Nǐ juéde zhǔyào kǎ zài nǎlǐ?",
+          "en": "Saya juga memperhatikannya. Menurutmu hambatan utamanya di mana?"
+        },
+        {
+          "speaker": "员工",
+          "zh": "有些信息没有及时同步。",
+          "pinyin": "Yǒuxiē xìnxī méiyǒu jíshí tóngbù.",
+          "en": "Ada informasi yang tidak segera dibagikan."
+        },
+        {
+          "speaker": "经理",
+          "zh": "那我们试一下每天更新一次交接表。",
+          "pinyin": "Nà wǒmen shì yíxià měi tiān gēngxīn yí cì jiāojiē biǎo.",
+          "en": "Kalau begitu, kita coba memperbarui tabel serah terima sekali sehari."
+        },
+        {
+          "speaker": "员工",
+          "zh": "可以。我周五汇报一下效果。",
+          "pinyin": "Kěyǐ. Wǒ Zhōuwǔ huìbào yíxià xiàoguǒ.",
+          "en": "Bisa. Jumat saya akan melaporkan hasilnya."
+        },
+        {
+          "speaker": "经理",
+          "zh": "好，我会根据结果再给你反馈。",
+          "pinyin": "Hǎo, wǒ huì gēnjù jiéguǒ zài gěi nǐ fǎnkuì.",
+          "en": "Baik, saya akan memberi feedback lagi berdasarkan hasilnya."
+        }
+      ]
+    },
+    {
+      "label": "SIMULASI 05",
+      "headingZh": "请假与工作交接",
+      "headingEn": "Requesting leave and handing over work",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "员工",
+          "zh": "我想下周三请一天假，可以吗？",
+          "pinyin": "Wǒ xiǎng xià Zhōusān qǐng yì tiān jià, kěyǐ ma?",
+          "en": "Saya ingin izin satu hari Rabu depan, boleh?"
+        },
+        {
+          "speaker": "主管",
+          "zh": "可以先在系统提交申请。那天的工作怎么安排？",
+          "pinyin": "Kěyǐ xiān zài xìtǒng tíjiāo shēnqǐng. Nà tiān de gōngzuò zěnme ānpái?",
+          "en": "Ajukan dulu lewat sistem. Bagaimana pengaturan pekerjaan hari itu?"
+        },
+        {
+          "speaker": "员工",
+          "zh": "我会提前完成报告，客户事项交接给小李。",
+          "pinyin": "Wǒ huì tíqián wánchéng bàogào, kèhù shìxiàng jiāojiē gěi Xiǎo Lǐ.",
+          "en": "Saya akan menyelesaikan laporan lebih awal dan menyerahkan urusan klien ke Xiao Li."
+        },
+        {
+          "speaker": "主管",
+          "zh": "请先和小李确认，他那天是否有空。",
+          "pinyin": "Qǐng xiān hé Xiǎo Lǐ quèrèn, tā nà tiān shìfǒu yǒu kòng.",
+          "en": "Tolong pastikan dulu dengan Xiao Li apakah dia tersedia hari itu."
+        },
+        {
+          "speaker": "员工",
+          "zh": "好的，确认后我会在群里同步。",
+          "pinyin": "Hǎo de, quèrèn hòu wǒ huì zài qún lǐ tóngbù.",
+          "en": "Baik, setelah dikonfirmasi saya akan memberi update di grup."
+        },
+        {
+          "speaker": "主管",
+          "zh": "审批结果出来后再告诉我一声。",
+          "pinyin": "Shěnpī jiéguǒ chūlai hòu zài gàosu wǒ yì shēng.",
+          "en": "Saat hasil persetujuan keluar, beri tahu saya lagi."
+        }
+      ]
+    },
+    {
+      "label": "SIMULASI 06",
+      "headingZh": "理清分工冲突",
+      "headingEn": "Clearing up task-split conflict",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "HR",
+          "zh": "我们先把事实和各自的理解分开说。",
+          "pinyin": "Wǒmen xiān bǎ shìshí hé gèzì de lǐjiě fēnkāi shuō.",
+          "en": "Kita pisahkan dulu fakta dan pemahaman masing-masing."
+        },
+        {
+          "speaker": "HR",
+          "zh": "明白。我们看看上次会议的分工记录。",
+          "pinyin": "Míngbai. Wǒmen kànkan shàng cì huìyì de fēngōng jìlù.",
+          "en": "Baik. Mari lihat catatan pembagian tugas dari rapat sebelumnya."
+        },
+        {
+          "speaker": "HR",
+          "zh": "好，先解决这周的报告，再调整交接方式。",
+          "pinyin": "Hǎo, xiān jiějué zhè zhōu de bàogào, zài tiáozhěng jiāojiē fāngshì.",
+          "en": "Baik, selesaikan dulu laporan minggu ini, lalu perbaiki cara serah terimanya."
+        }
+      ]
+    },
+    {
+      "label": "SIMULASI 07",
+      "headingZh": "澄清薪酬方案",
+      "headingEn": "Clarifying the compensation package",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "候选人",
+          "zh": "请问这份录用通知写的是税前月薪吗？",
+          "pinyin": "Qǐngwèn zhè fèn lùyòng tōngzhī xiě de shì shuìqián yuèxīn ma?",
+          "en": "Apakah surat tawaran ini menuliskan gaji bulanan sebelum pajak?"
+        },
+        {
+          "speaker": "HR",
+          "zh": "是的，固定薪资和奖金是分开列出的。",
+          "pinyin": "Shì de, gùdìng xīnzī hé jiǎngjīn shì fēnkāi lièchū de.",
+          "en": "Ya, gaji tetap dan bonus dicantumkan terpisah."
+        },
+        {
+          "speaker": "候选人",
+          "zh": "奖金的发放条件在哪里可以看到？",
+          "pinyin": "Jiǎngjīn de fāfàng tiáojiàn zài nǎlǐ kěyǐ kàndào?",
+          "en": "Di mana saya bisa melihat syarat pembayaran bonus?"
+        },
+        {
+          "speaker": "HR",
+          "zh": "附件里有说明，你也可以把不清楚的地方列给我。",
+          "pinyin": "Fùjiàn lǐ yǒu shuōmíng, nǐ yě kěyǐ bǎ bù qīngchu de dìfang liè gěi wǒ.",
+          "en": "Ada penjelasan di lampiran; kamu juga bisa mengirim daftar hal yang belum jelas."
+        },
+        {
+          "speaker": "候选人",
+          "zh": "社保和公积金的安排也在附件里吗？",
+          "pinyin": "Shèbǎo hé gōngjījīn de ānpái yě zài fùjiàn lǐ ma?",
+          "en": "Apakah pengaturan asuransi sosial dan dana perumahan juga ada di lampiran?"
+        },
+        {
+          "speaker": "HR",
+          "zh": "相关信息会以正式文件为准，我把对应页面发给你。",
+          "pinyin": "Xiāngguān xìnxī huì yǐ zhèngshì wénjiàn wéi zhǔn, wǒ bǎ duìyìng yèmiàn fā gěi nǐ.",
+          "en": "Informasinya mengikuti dokumen resmi; saya akan kirim halaman yang relevan."
+        },
+        {
+          "speaker": "候选人",
+          "zh": "好的，我看完再统一回复。",
+          "pinyin": "Hǎo de, wǒ kàn wán zài tǒngyī huífù.",
+          "en": "Baik, saya akan membalas setelah membacanya."
+        }
+      ]
+    },
+    {
+      "label": "SIMULASI 08",
+      "headingZh": "汇报问题并提出培训",
+      "headingEn": "Reporting a problem and proposing training",
+      "type": "dialogue",
+      "lines": [
+        {
+          "speaker": "经理",
+          "zh": "本月新同事的培训进展怎么样？",
+          "pinyin": "Běn yuè xīn tóngshì de péixùn jìnzhǎn zěnmeyàng?",
+          "en": "Bagaimana progres pelatihan rekan baru bulan ini?"
+        },
+        {
+          "speaker": "HR",
+          "zh": "入职流程已经完成，但系统实操还不够熟练。",
+          "pinyin": "Rùzhí liúchéng yǐjīng wánchéng, dàn xìtǒng shícāo hái bú gòu shúliàn.",
+          "en": "Proses awal masuk kerja sudah selesai, tetapi praktik sistem belum cukup lancar."
+        },
+        {
+          "speaker": "经理",
+          "zh": "原因确定了吗？",
+          "pinyin": "Yuányīn quèdìng le ma?",
+          "en": "Apakah penyebabnya sudah dipastikan?"
+        },
+        {
+          "speaker": "HR",
+          "zh": "还没有。我先核对培训记录，再问带教同事。",
+          "pinyin": "Hái méiyǒu. Wǒ xiān héduì péixùn jìlù, zài wèn dàijiào tóngshì.",
+          "en": "Belum. Saya akan cek catatan pelatihan dulu, lalu tanya rekan pembimbing."
+        },
+        {
+          "speaker": "经理",
+          "zh": "如果确实需要补课，你建议怎么做？",
+          "pinyin": "Rúguǒ quèshí xūyào bǔkè, nǐ jiànyì zěnme zuò?",
+          "en": "Kalau memang perlu sesi tambahan, apa saranmu?"
+        },
+        {
+          "speaker": "HR",
+          "zh": "建议先做一次实操练习，下周再评估效果。",
+          "pinyin": "Jiànyì xiān zuò yí cì shícāo liànxí, xià zhōu zài pínggū xiàoguǒ.",
+          "en": "Saya sarankan satu latihan praktik dulu, lalu evaluasi hasilnya minggu depan."
+        },
+        {
+          "speaker": "经理",
+          "zh": "可以。请把计划、负责人和时间写清楚。",
+          "pinyin": "Kěyǐ. Qǐng bǎ jìhuà, fùzérén hé shíjiān xiě qīngchu.",
+          "en": "Baik. Tolong tulis rencana, penanggung jawab, dan waktunya dengan jelas."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "Eight workplace simulations",
+      "body": "DIALOG KERJA / SIMULASI 01–08 (pages 85–92). Full HR/management roleplays. Speaker lines are from the book only."
+    },
+    {
+      "title": "Yang perlu kamu tiru — SIMULASI 01",
+      "body": "Pola aman: jelaskan kebutuhan → konfirmasi syarat → baru publikasikan. 先…再… membantu urutan kerja."
+    },
+    {
+      "title": "Yang perlu kamu tiru — SIMULASI 02",
+      "body": "具体负责什么 memisahkan kontribusi pribadi dari proyek tim. Jawaban yang kuat menyebut tindakan, bukan hanya sifat."
+    },
+    {
+      "title": "Yang perlu kamu tiru — SIMULASI 03",
+      "body": "权限开通后才… menjaga ekspektasi. Menyebut satu kontak utama mencegah rekan baru terombang-ambing."
+    },
+    {
+      "title": "Yang perlu kamu tiru — SIMULASI 04",
+      "body": "Urutan: fakta → penyebab → percobaan perbaikan → tanggal tinjau. Hindari label pribadi seperti 'kamu tidak teliti'."
+    },
+    {
+      "title": "Yang perlu kamu tiru — SIMULASI 05",
+      "body": "请假 adalah permohonan. 提交申请, 确认交接, dan 审批结果 adalah tiga status berbeda. Latihan: baca sekali. Tutup PDF, lalu ulangi dialog dengan data baru. Ganti satu detail kecil saja: hari, jumlah kandidat, prioritas, atau alasan. Ulangi sampai kamu tidak perlu menerjemahkan tiap kata dari Indonesia."
+    },
+    {
+      "title": "Yang perlu kamu tiru — SIMULASI 06",
+      "body": "我以为… menyatakan asumsi, bukan fakta. Cocokkan dengan catatan sebelum menyimpulkan siapa yang salah."
+    },
+    {
+      "title": "Yang perlu kamu tiru — SIMULASI 07",
+      "body": "Tanyakan 税前/税后, komponen tetap, bonus, dan syaratnya secara terpisah. Jangan simpulkan paket dari angka total saja."
+    },
+    {
+      "title": "Yang perlu kamu tiru — SIMULASI 08",
+      "body": "Pisahkan observasi dari penyebab yang belum terverifikasi. Baru ajukan percobaan yang punya ukuran dan waktu evaluasi. RUTE LATIHAN 30 hari menuju percakapan kerja Jadwal ini adalah rancangan latihan, bukan estimasi resmi kapan seseorang menjadi fasih. Pindah ke minggu berikutnya ketika kamu bisa mengucapkan keluaran minggu ini tanpa membaca. Hari 1–7: respons dan alur Kamus harian modul 1–5; penghubung kelompok 1–2; klinik kalimat 1–4. Tiap hari rekam respons 60 detik terhadap pesan kerja: terima, klarifikasi, tentukan waktu, lalu sebut langkah berikutnya. Target: tiga respons spontan beruntun tanpa pindah bahasa. Hari 8–14: cerita yang koheren Kamus harian modul 6–10; penghubung kelompok 3–6; klinik kalimat 5–9. Jelaskan satu masalah nyata dengan format situasi → alasan → opsi → keputusan. Fokus pada 但是, 不过, 所以, 结果, dan 如果. Target: update kerja 90 detik yang bisa diringkas kembali oleh pendengar. Hari 15–21: dasar HR Kamus HR modul 1–5; dialog 1–5; klinik kalimat 10–14. Latih membuka interview, meminta contoh konkret, menjelaskan onboarding, dan memberi feedback yang spesifik. Target: roleplay interview lima menit dengan dua pertanyaan lanjutan. Hari 22–30: manajemen percakapan Kamus HR modul 6–10; dialog 6–8; enam template bicara. Latih konflik pembagian tugas, klarifikasi kompensasi, usulan perbaikan, dan penutupan rapat. Target: simulasi sepuluh menit dengan keputusan dan tindak lanjut tertulis. Tandai setiap hari: satu kata yang benar-benar keluar spontan, satu penghubung yang kamu pakai dengan benar, dan satu kalimat yang kamu perbaiki. Kalau hanya membaca entri, progres bicara akan sulit terlihat."
+    }
+  ]
+}

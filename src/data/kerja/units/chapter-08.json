@@ -1,0 +1,206 @@
+{
+  "id": "chapter-08",
+  "index": 8,
+  "titleZh": "连接词把话说清楚",
+  "titleEn": "Conjunctions for clear speech",
+  "sourcePages": "27-29",
+  "words": [
+    {
+      "zh": "然后",
+      "pinyin": "ránhòu",
+      "pos": "conj.",
+      "en": "then; afterwards",
+      "note": "Book headword pinyin printed as ránhòu. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 然后再说. Hindari: do not use 然后 for every idea link — reasons need 因为 or 所以.",
+      "when": "Remember 然后 like the word you’ll use when you chain two workplace steps in order — look at the data first, then reply.",
+      "usage": "Most Chinese speakers use 然后 to join sequential steps in a story or instruction (我先……，然后……). It marks order in time, not cause. For reasons and results, switch to 因为 / 所以.",
+      "example": {
+        "zh": "我先看数据，然后给你答复。",
+        "pinyin": "Wǒ xiān kàn shùjù, ránhòu gěi nǐ dáfù.",
+        "en": "I’ll look at the data first, then give you a reply."
+      }
+    },
+    {
+      "zh": "但是",
+      "pinyin": "dànshì",
+      "pos": "conj.",
+      "en": "but; however",
+      "note": "Book headword pinyin printed as dànshì. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 但是现在……. Hindari: before 但是 you need an idea to contrast; do not drop it with no prior context.",
+      "when": "Remember 但是 like the word you’ll use when you mark a clear workplace contrast — you want to join, but you have no time today.",
+      "usage": "Most Chinese speakers use 但是 for a fairly clear opposition between two clauses. Soften with 不过 when you only add a small limit. Always give the first idea before 但是.",
+      "example": {
+        "zh": "我想参加，但是今天没时间。",
+        "pinyin": "Wǒ xiǎng cānjiā, dànshì jīntiān méi shíjiān.",
+        "en": "I want to join, but I don’t have time today."
+      }
+    },
+    {
+      "zh": "不过",
+      "pinyin": "búguò",
+      "pos": "conj.",
+      "en": "but; only; it’s just that",
+      "note": "Book headword pinyin printed as búguò (tone sandhi on 不). Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 不过有一点. Hindari: 不过 cannot always swap with 但是 when you want to keep a softer tone.",
+      "when": "Remember 不过 like the softer contrast you’ll use at work when a plan is fine but you need to add a small limit — time is a bit tight.",
+      "usage": "Most Chinese speakers use 不过 for a gentler turn than 但是, often when accepting an idea and then flagging one constraint. Keep 但是 when the clash is sharper.",
+      "example": {
+        "zh": "这个办法可以，不过时间有点紧。",
+        "pinyin": "Zhège bànfǎ kěyǐ, búguò shíjiān yǒudiǎn jǐn.",
+        "en": "This approach works, only time is a bit tight."
+      }
+    },
+    {
+      "zh": "其实",
+      "pinyin": "qíshí",
+      "pos": "adv.",
+      "en": "actually; in fact",
+      "note": "Book headword pinyin printed as qíshí. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 其实我觉得. Hindari: do not use 其实 for every opinion — it implies you are correcting or revealing something.",
+      "when": "Remember 其实 like the word you’ll use when you correct a workplace impression or add a fact that was not visible yet — you already asked him.",
+      "usage": "Most Chinese speakers open with 其实 to straighten a misunderstanding or surface a hidden fact. Overusing it makes every line sound like a correction.",
+      "example": {
+        "zh": "其实我已经问过他了。",
+        "pinyin": "Qíshí wǒ yǐjīng wèn guò tā le.",
+        "en": "Actually, I’ve already asked him."
+      }
+    },
+    {
+      "zh": "另外",
+      "pinyin": "lìngwài",
+      "pos": "conj./adv.",
+      "en": "in addition; besides",
+      "note": "Book headword pinyin printed as lìngwài. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 另外还有. Hindari: 另外 adds a new related point; do not use it to state a consequence.",
+      "when": "Remember 另外 like the word you’ll use in a work update when time is set and you still need to add another related change — the venue moved too.",
+      "usage": "Most Chinese speakers use 另外 (often 另外还有) to introduce an extra related task or piece of information after the main point. Consequences belong to 所以, not 另外.",
+      "example": {
+        "zh": "时间已经定了。另外，地点也改了。",
+        "pinyin": "Shíjiān yǐjīng dìng le. Lìngwài, dìdiǎn yě gǎi le.",
+        "en": "The time is already set. In addition, the location changed too."
+      }
+    },
+    {
+      "zh": "而且",
+      "pinyin": "érqiě",
+      "pos": "conj.",
+      "en": "and also; moreover",
+      "note": "Book headword pinyin printed as érqiě. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 而且很方便. Hindari: 而且 is not a neutral stand-in for 和 when joining two nouns.",
+      "when": "Remember 而且 like the word you’ll use when you strengthen a workplace reason with another point in the same direction — simple, and also fairly fast.",
+      "usage": "Most Chinese speakers use 而且 to stack same-direction reasons or qualities (简单，而且比较快). For joining two things as nouns, use 和 instead.",
+      "example": {
+        "zh": "这个方法简单，而且比较快。",
+        "pinyin": "Zhège fāngfǎ jiǎndān, érqiě bǐjiào kuài.",
+        "en": "This method is simple, and also fairly fast."
+      }
+    },
+    {
+      "zh": "所以",
+      "pinyin": "suǒyǐ",
+      "pos": "conj.",
+      "en": "so; therefore",
+      "note": "Book headword pinyin printed as suǒyǐ. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 所以我们……. Hindari: do not put 所以 before the cause if you want cause-then-result order.",
+      "when": "Remember 所以 like the word you’ll use when a workplace reason is already out and you state the decision — people are incomplete, so the meeting moves to tomorrow.",
+      "usage": "Most Chinese speakers place 所以 after the reason to introduce the result or decision (所以我们……). Keep cause first, 所以 second.",
+      "example": {
+        "zh": "今天人不齐，所以会议改到明天。",
+        "pinyin": "Jīntiān rén bù qí, suǒyǐ huìyì gǎi dào míngtiān.",
+        "en": "People aren’t all here today, so the meeting is moved to tomorrow."
+      }
+    },
+    {
+      "zh": "因为",
+      "pinyin": "yīnwèi",
+      "pos": "conj.",
+      "en": "because",
+      "note": "Book headword pinyin printed as yīnwèi. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 因为时间不够. Hindari: 因为 introduces the cause; do not use it to introduce the result.",
+      "when": "Remember 因为 like the word you’ll use when you open the workplace reason before the outcome — time is short, so you discuss the key points first.",
+      "usage": "Most Chinese speakers use 因为 to front the cause, usually before a result or decision. Pair with 所以 for a full reason–result frame. Never use 因为 to name the result itself.",
+      "example": {
+        "zh": "因为时间不够，我们先讨论重点。",
+        "pinyin": "Yīnwèi shíjiān bú gòu, wǒmen xiān tǎolùn zhòngdiǎn.",
+        "en": "Because there isn’t enough time, we’ll discuss the main points first."
+      }
+    },
+    {
+      "zh": "虽然",
+      "pinyin": "suīrán",
+      "pos": "conj.",
+      "en": "although; even though",
+      "note": "Book headword pinyin printed as suīrán. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 虽然……但是……. Hindari: do not stop after 虽然 — continue with the contrasting main clause.",
+      "when": "Remember 虽然 like the word you’ll use when you concede a busy workday but still offer a slice of time — although busy, you can spare ten minutes.",
+      "usage": "Most Chinese speakers open with 虽然…… and finish with 但是…… (or a clear contrast clause). Leaving only 虽然 sounds unfinished.",
+      "example": {
+        "zh": "虽然今天很忙，但是我可以抽十分钟。",
+        "pinyin": "Suīrán jīntiān hěn máng, dànshì wǒ kěyǐ chōu shí fēnzhōng.",
+        "en": "Although I’m busy today, I can spare ten minutes."
+      }
+    },
+    {
+      "zh": "如果",
+      "pinyin": "rúguǒ",
+      "pos": "conj.",
+      "en": "if",
+      "note": "Book headword pinyin printed as rúguǒ. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 如果……就……. Hindari: if the condition has not happened yet, do not report the consequence as if it is already certain.",
+      "when": "Remember 如果 like the word you’ll use when you set a schedule condition before a workplace consequence — if you send it today, I can look tomorrow.",
+      "usage": "Most Chinese speakers negotiate timing with 如果……就……: condition first, then the result. Keep the outcome conditional until the if-clause is true.",
+      "example": {
+        "zh": "如果你今天发给我，我明天就能看。",
+        "pinyin": "Rúguǒ nǐ jīntiān fā gěi wǒ, wǒ míngtiān jiù néng kàn.",
+        "en": "If you send it to me today, I can look at it tomorrow."
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "然后 is sequence, not reason",
+      "body": "Modul 08 opens with 然后 for two ordered workplace steps (pairing: 然后再说). The book’s Hindari: do not use 然后 for every idea link — causes need 因为, results need 所以.",
+      "example": {
+        "zh": "我先看数据，然后给你答复。",
+        "pinyin": "Wǒ xiān kàn shùjù, ránhòu gěi nǐ dáfù.",
+        "en": "I’ll look at the data first, then give you a reply."
+      }
+    },
+    {
+      "title": "但是 vs 不过",
+      "body": "但是 marks a fairly clear contrast and needs a prior idea (pairing: 但是现在……). 不过 is often softer and fits when you accept a plan then add a small limit (不过有一点). The book warns that 不过 cannot always replace 但是 if you need to keep that softer tone.",
+      "example": {
+        "zh": "这个办法可以，不过时间有点紧。",
+        "pinyin": "Zhège bànfǎ kěyǐ, búguò shíjiān yǒudiǎn jǐn.",
+        "en": "This approach works, only time is a bit tight."
+      }
+    },
+    {
+      "title": "其实 corrects; 另外 adds; 而且 stacks",
+      "body": "其实 (其实我觉得) corrects an impression or surfaces a hidden fact — not every opinion. 另外 (另外还有) adds a related new point, not a consequence. 而且 (而且很方便) strengthens with another same-direction reason and is not a neutral 和 for joining two nouns.",
+      "example": {
+        "zh": "时间已经定了。另外，地点也改了。",
+        "pinyin": "Shíjiān yǐjīng dìng le. Lìngwài, dìdiǎn yě gǎi le.",
+        "en": "The time is already set. In addition, the location changed too."
+      }
+    },
+    {
+      "title": "因为 … 所以 … order",
+      "body": "因为 (因为时间不够) introduces the cause; 所以 (所以我们……) introduces the result or decision after the reason is stated. Do not put 所以 before the cause, and do not use 因为 to name the result.",
+      "example": {
+        "zh": "今天人不齐，所以会议改到明天。",
+        "pinyin": "Jīntiān rén bù qí, suǒyǐ huìyì gǎi dào míngtiān.",
+        "en": "People aren’t all here today, so the meeting is moved to tomorrow."
+      }
+    },
+    {
+      "title": "虽然……但是…… and 如果……就……",
+      "body": "虽然 opens a conceded situation and usually finishes with 但是…… — do not stop after 虽然. 如果……就…… sets a condition before a decision or consequence and is especially useful for schedule negotiation; if the condition has not happened, do not treat the outcome as already certain.",
+      "example": {
+        "zh": "虽然今天很忙，但是我可以抽十分钟。",
+        "pinyin": "Suīrán jīntiān hěn máng, dànshì wǒ kěyǐ chōu shí fēnzhōng.",
+        "en": "Although I’m busy today, I can spare ten minutes."
+      }
+    },
+    {
+      "title": "Latihan 90 detik (book exercise)",
+      "body": "Book drill on p.29: pick three entries from this module — 然后, 另外, and 虽然 — and build one work or daily story that uses all three. Record without reading the PDF, then check whether your timing and decisions came out clearly. No model Chinese dialogue is printed for this drill; do not invent one as book text.",
+      "example": {
+        "zh": "然后 / 另外 / 虽然",
+        "pinyin": "ránhòu / lìngwài / suīrán",
+        "en": "Target trio for the 90-second practice (instruction only; no sample story in the book)."
+      }
+    }
+  ]
+}

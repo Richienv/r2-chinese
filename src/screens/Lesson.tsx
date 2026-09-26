@@ -1,12 +1,23 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Glossed, Line, useGloss } from '../components/ChineseText'
+import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
 import { FlipCard } from '../components/FlipCard'
+import {
+  ChineseHear,
+  hasHanzi,
+  HearButton,
+  rateForChinese,
+  useAutoSpeak,
+  useAutoSpeakLines,
+  useSpeechActive,
+} from '../components/Hear'
 import { CheckIcon, ChevronLeft, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { Writer } from '../components/Writer'
 import { focusChar, getLesson, sameCharWords } from '../lib/content'
+import { speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
 import { clozeQuestion, vocabQuestions, type Question } from '../lib/quiz'
 import type { GrammarPoint, LessonText, Vocab } from '../lib/types'
+import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 import { useStore } from '../store/store'
 
 const XP_PER_LESSON = 40
@@ -208,7 +219,7 @@ export function LessonFlow({
       </div>
 
       <div className="overlay-foot">
-        <button className="btn" onClick={advance} disabled={footerLocked}>
+        <button className="btn" onPointerDown={() => unlockSpeech()} onClick={advance} disabled={footerLocked}>
           {footerLabel}
         </button>
       </div>
@@ -263,6 +274,8 @@ function TextView({ text, onWord }: { text: LessonText; onWord: (v: Vocab) => vo
           English {english ? 'on' : 'off'}
         </button>
       </div>
+
+      <DialogueAudio text={text} />
 
       {text.lines.map((line, i) => (
         <Line
@@ -322,6 +335,9 @@ function GrammarView({
   onWord: (v: Vocab) => void
 }) {
   const p = points[cursor]
+  const headZh = hasHanzi(p.point) ? p.point : (p.examples[0]?.zh ?? '')
+  useAutoSpeak(headZh, VOICE.xiaoxiao, LINE_RATE)
+
   return (
     <>
       <StepHead kicker={`Grammar · ${cursor + 1} of ${points.length}`} title="语言点" />
@@ -331,6 +347,11 @@ function GrammarView({
           {p.point}
         </div>
         <div style={{ color: 'var(--gold)', fontWeight: 700, fontSize: 13, marginTop: 4 }}>{p.pinyin}</div>
+        {hasHanzi(p.point) && (
+          <div style={{ marginTop: 12 }}>
+            <HearButton text={p.point} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the pattern" tone="on-red" />
+          </div>
+        )}
       </section>
 
       <p style={{ fontSize: 14, lineHeight: 1.6, color: '#3a3a40', marginTop: 16 }}>{p.explanation}</p>
@@ -345,6 +366,9 @@ function GrammarView({
           </div>
           <div style={{ fontSize: 12, color: 'var(--muted-2)', marginTop: 5 }}>{ex.pinyin}</div>
           <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 6 }}>{ex.en}</div>
+          <div style={{ marginTop: 10 }}>
+            <HearButton text={ex.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+          </div>
         </div>
       ))}
     </>
@@ -368,6 +392,16 @@ function QuizView({
 }) {
   const wrong = state?.wrong ?? []
   const solved = state?.solved ?? false
+  const contextZh = question.context?.zh?.trim() ?? ''
+  const chineseChoices = question.options
+    .map((o) => o.label)
+    .filter((label) => hasHanzi(label) && !/[A-Za-z]{3,}/.test(label))
+  const choiceKey = chineseChoices.join('\u0001')
+  const choicesPlaying = useSpeechActive(`lines|${choiceKey}`)
+
+  useAutoSpeak(contextZh, VOICE.xiaoxiao, LINE_RATE)
+  useAutoSpeakLines(contextZh ? [] : chineseChoices, VOICE.xiaoxiao, WORD_RATE)
+
   return (
     <>
       <StepHead kicker={total > 1 ? `Check · ${index + 1} of ${total}` : 'Check'} title={question.prompt} />
@@ -378,6 +412,34 @@ function QuizView({
             <Glossed text={question.context.zh} onWord={onWord} />
           </div>
           <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 8 }}>{question.context.en}</div>
+          <div style={{ marginTop: 12 }}>
+            <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+          </div>
+        </div>
+      )}
+
+      {!question.context && chineseChoices.length > 0 && (
+        <div style={{ marginBottom: 12 }}>
+          <button
+            type="button"
+            className="hear hear-ink"
+            data-on={choicesPlaying}
+            aria-label={choicesPlaying ? 'Stop choices' : 'Hear choices'}
+            aria-pressed={choicesPlaying}
+            onPointerDown={() => unlockSpeech()}
+            onClick={() => {
+              if (choicesPlaying) {
+                stopSpeech()
+                return
+              }
+              void speakLines(
+                chineseChoices.map((text) => ({ text, voice: VOICE.xiaoxiao, rate: WORD_RATE })),
+                { group: `lines|${choiceKey}`, key: `lines|${choiceKey}` },
+              )
+            }}
+          >
+            <span>{choicesPlaying ? 'Playing' : 'Hear choices'}</span>
+          </button>
         </div>
       )}
 
@@ -392,6 +454,7 @@ function QuizView({
               className="option zh"
               data-state={st}
               disabled={locked}
+              onPointerDown={() => unlockSpeech()}
               onClick={() => onPick(o.zh, question.answer)}
               lang="zh-CN"
             >
@@ -421,6 +484,9 @@ function WriteView({ char, lesson }: { char: string; lesson: number }) {
   return (
     <>
       <StepHead kicker={`Handwriting · Lesson ${lesson}`} title={`Write ${char}`} />
+      <div style={{ marginBottom: 14 }}>
+        <ChineseHear text={char} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the character" />
+      </div>
       <Writer char={char} onComplete={() => setDone(true)} />
       {done && (
         <div className="explain pop" style={{ marginTop: 18, background: 'var(--ok-bg)', borderColor: 'var(--ok-line)', color: 'var(--ok)' }}>
@@ -441,6 +507,9 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
   const culture = l.extras.culture[0]
   const words = sameCharWords(l)
   const examples = sameChar?.examples ?? []
+  const leadZh =
+    compare ? `${compare.a} ${compare.b}` : sameChar?.char || culture?.title_zh || ''
+  useAutoSpeak(leadZh, VOICE.xiaoxiao, leadZh ? rateForChinese(leadZh) : WORD_RATE)
 
   return (
     <>
@@ -466,6 +535,14 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
             {compare.a} — {compare.b}
           </div>
           <p style={{ fontSize: 13, lineHeight: 1.6, color: '#3a3a40', margin: 0, whiteSpace: 'pre-wrap' }}>{compare.note}</p>
+          <div style={{ marginTop: 12 }}>
+            <HearButton
+              text={`${compare.a} ${compare.b}`}
+              voice={VOICE.xiaoxiao}
+              rate={WORD_RATE}
+              label="Hear the pair"
+            />
+          </div>
         </section>
       )}
 
@@ -478,6 +555,9 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
             lang="zh-CN"
           >
             {sameChar.char}
+          </div>
+          <div style={{ marginBottom: 12 }}>
+            <HearButton text={sameChar.char} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the character" tone="on-red" />
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {words.map((w) => (
@@ -497,6 +577,9 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
                     <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.72)', marginTop: 5 }}>{ex.pinyin}</div>
                   )}
                   {ex.en && <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.86)', marginTop: 6 }}>{ex.en}</div>}
+                  <div style={{ marginTop: 10 }}>
+                    <HearButton text={ex.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" tone="on-red" />
+                  </div>
                 </div>
               ))}
             </div>
@@ -514,6 +597,11 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
             {culture.title_en}
           </div>
           <p style={{ fontSize: 13, lineHeight: 1.65, color: '#3a3a40', margin: 0, whiteSpace: 'pre-wrap' }}>{culture.summary}</p>
+          {hasHanzi(culture.title_zh) && (
+            <div style={{ marginTop: 12 }}>
+              <HearButton text={culture.title_zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the title" />
+            </div>
+          )}
         </section>
       )}
 

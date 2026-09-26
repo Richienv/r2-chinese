@@ -1,0 +1,192 @@
+{
+  "id": "chapter-10",
+  "index": 10,
+  "titleZh": "关系和日常生活",
+  "titleEn": "Relationships and daily life",
+  "sourcePages": "33-35",
+  "words": [
+    {
+      "zh": "一起",
+      "pinyin": "yìqǐ",
+      "pos": "adv.",
+      "en": "together",
+      "note": "Book headword pinyin printed as yìqǐ. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 一起吃饭. Hindari: 一起 needs a shared activity — not only being in the same place.",
+      "when": "Remember 一起 like the simplest word you’ll use when you invite a colleague to do something together — lunch, a walk, a task.",
+      "usage": "Most Chinese speakers put 一起 before a shared verb (一起吃饭). Being nearby without doing the same thing is not enough; name the activity.",
+      "example": {
+        "zh": "中午要不要一起吃饭？",
+        "pinyin": "Zhōngwǔ yào bu yào yìqǐ chīfàn?",
+        "en": "Want to have lunch together at noon?"
+      }
+    },
+    {
+      "zh": "顺便",
+      "pinyin": "shùnbiàn",
+      "pos": "adv.",
+      "en": "while you’re at it; by the way (on the same trip)",
+      "note": "Book headword pinyin printed as shùnbiàn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 顺便问一下. Hindari: 顺便 assumes the main action is already happening — don’t load a big favor as if it were small.",
+      "when": "Remember 顺便 like the word you’ll use when a small extra ask rides along with something someone is already doing — e.g. asking at reception on the way.",
+      "usage": "Most Chinese speakers use 顺便 for a light add-on to a trip or task already underway (顺便问一下). It fails socially if the “extra” is actually heavy work.",
+      "example": {
+        "zh": "你去前台的时候，顺便帮我问一下吧。",
+        "pinyin": "Nǐ qù qiántái de shíhòu, shùnbiàn bāng wǒ wèn yíxià ba.",
+        "en": "When you go to reception, could you ask for me while you’re there?"
+      }
+    },
+    {
+      "zh": "有空",
+      "pinyin": "yǒu kòng",
+      "pos": "v.o.",
+      "en": "to have free time",
+      "note": "Book headword pinyin printed as yǒu kòng. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 你什么时候有空. Hindari: do not read kòng as kōng here — this sense is free time.",
+      "when": "Remember 有空 like the soft availability check you’ll use when inviting someone to talk or meet without forcing a yes.",
+      "usage": "Most Chinese speakers ask 你这周什么时候有空？ for scheduling. Reading is yǒu kòng (free time), not kōng. It invites a slot; it does not demand one.",
+      "example": {
+        "zh": "你这周什么时候有空？",
+        "pinyin": "Nǐ zhè zhōu shénme shíhòu yǒu kòng?",
+        "en": "When are you free this week?"
+      }
+    },
+    {
+      "zh": "见面",
+      "pinyin": "jiànmiàn",
+      "pos": "v.o.",
+      "en": "to meet in person",
+      "note": "Book headword pinyin printed as jiànmiàn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 见个面. Hindari: 见面 usually does not take a person as a direct object — say 跟他见面.",
+      "when": "Remember 见面 like the word you’ll use when the meeting must be face-to-face — not only chat messages.",
+      "usage": "Most Chinese speakers use 见面 / 见个面 for in-person meetups about a plan. Structure is 跟/和 + person + 见面, not 见面他.",
+      "example": {
+        "zh": "我们下周见个面，聊聊这个计划。",
+        "pinyin": "Wǒmen xià zhōu jiàn ge miàn, liáoliao zhège jìhuà.",
+        "en": "Let’s meet next week and talk through this plan."
+      }
+    },
+    {
+      "zh": "联系",
+      "pinyin": "liánxì",
+      "pos": "v./n.",
+      "en": "to contact; to get in touch",
+      "note": "Book headword pinyin printed as liánxì. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 保持联系. Hindari: 联系 someone does not mean you already got their reply.",
+      "when": "Remember 联系 like the neutral word you’ll use for calling, messaging, or keeping the communication line open at work.",
+      "usage": "Most Chinese speakers use 联系 for reaching out (有消息我会联系你) and 保持联系 for staying in touch. Contacting is not the same as receiving an answer.",
+      "example": {
+        "zh": "有消息我会联系你。",
+        "pinyin": "Yǒu xiāoxi wǒ huì liánxì nǐ.",
+        "en": "When there’s news, I’ll contact you."
+      }
+    },
+    {
+      "zh": "习惯",
+      "pinyin": "xíguàn",
+      "pos": "v./n.",
+      "en": "to be used to; habit",
+      "note": "Book headword pinyin printed as xíguàn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 习惯早起. Hindari: 习惯 can be verb or noun; in this lesson’s sentence it means “used to.”",
+      "when": "Remember 习惯 like the word you’ll use when a work rhythm still feels new — e.g. you are not yet used to such early meetings.",
+      "usage": "Most Chinese speakers use 习惯 + verb for “be used to” (不太习惯这么早开会) and as a noun for a habit. Context tells verb vs noun.",
+      "example": {
+        "zh": "我还不太习惯这么早开会。",
+        "pinyin": "Wǒ hái bú tài xíguàn zhème zǎo kāihuì.",
+        "en": "I’m still not really used to meetings this early."
+      }
+    },
+    {
+      "zh": "适合",
+      "pinyin": "shìhé",
+      "pos": "v.",
+      "en": "to suit; to be suitable for",
+      "note": "Book headword pinyin printed as shìhé. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 适合这个工作. Hindari: 适合 is not the same as 喜欢 — something can fit even if it is not your favorite.",
+      "when": "Remember 适合 like the word you’ll use when judging whether a time, person, method, or place fits the team — then give a reason.",
+      "usage": "Most Chinese speakers use 适合 for fit (这个时间比较适合大家), not preference. 喜欢 is liking; 适合 is suitability. Add why so the judgment helps.",
+      "example": {
+        "zh": "这个时间比较适合大家。",
+        "pinyin": "Zhège shíjiān bǐjiào shìhé dàjiā.",
+        "en": "This time suits everyone fairly well."
+      }
+    },
+    {
+      "zh": "愿意",
+      "pinyin": "yuànyì",
+      "pos": "v.",
+      "en": "to be willing",
+      "note": "Book headword pinyin printed as yuànyì. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 愿意试试. Hindari: 愿意 is about willingness, not a guarantee of ability or available time.",
+      "when": "Remember 愿意 like the clear personal yes you’ll use when offering help or accepting a role — if needed, you are willing.",
+      "usage": "Most Chinese speakers use 愿意 for willingness (我愿意帮忙). It does not promise skill or free calendar — say those constraints separately.",
+      "example": {
+        "zh": "如果需要，我愿意帮忙。",
+        "pinyin": "Rúguǒ xūyào, wǒ yuànyì bāngmáng.",
+        "en": "If needed, I’m willing to help."
+      }
+    },
+    {
+      "zh": "了解",
+      "pinyin": "liǎojiě",
+      "pos": "v.",
+      "en": "to understand; to get a clear picture of",
+      "note": "Book headword pinyin printed as liǎojiě. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 了解情况. Hindari: 了解 does not always mean you agree — it is the stage of understanding information.",
+      "when": "Remember 了解 like the word you’ll use when you need a deeper read of people, process, or situation before you act — deeper than just hearing about it.",
+      "usage": "Most Chinese speakers use 了解情况 / 了解一下 for gathering a clear picture of a team or case. Understanding is not automatic agreement.",
+      "example": {
+        "zh": "我想先了解一下团队的情况。",
+        "pinyin": "Wǒ xiǎng xiān liǎojiě yíxià tuánduì de qíngkuàng.",
+        "en": "I’d like to understand the team’s situation first."
+      }
+    },
+    {
+      "zh": "直接",
+      "pinyin": "zhíjiē",
+      "pos": "adv./adj.",
+      "en": "directly; straightforward",
+      "note": "Book headword pinyin printed as zhíjiē. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 直接告诉我. Hindari: 直接 can sound harsh if the tone is rough — pair with 可以 to keep it friendly.",
+      "when": "Remember 直接 like the word you’ll use when you open a short communication path with no middleman — people can tell you the problem straight.",
+      "usage": "Most Chinese speakers invite direct updates with 可以直接告诉我. Soften with 可以 / friendly tone so 直接 does not feel blunt.",
+      "example": {
+        "zh": "有问题可以直接告诉我。",
+        "pinyin": "Yǒu wèntí kěyǐ zhíjiē gàosu wǒ.",
+        "en": "If there’s a problem, you can tell me directly."
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "Module aim — keep social work smooth outside meetings",
+      "body": "Modul 10 / Harian (book pages 33–35): keep social interaction smooth outside meetings — inviting, following up, and understanding habits. Indonesian title in the book: Hubungan dan hidup sehari-hari."
+    },
+    {
+      "title": "一起 / 顺便 / 见面",
+      "body": "一起 needs a shared activity (一起吃饭), not mere co-location. 顺便 is a light add-on to a trip already happening (顺便问一下) — do not disguise a heavy ask as small. 见面 is face-to-face; say 跟他见面, not 见面他.",
+      "example": {
+        "zh": "中午要不要一起吃饭？",
+        "pinyin": "Zhōngwǔ yào bu yào yìqǐ chīfàn?",
+        "en": "Want to have lunch together at noon?"
+      }
+    },
+    {
+      "title": "有空 reading; 适合 vs 喜欢; 愿意 vs ability",
+      "body": "有空 is yǒu kòng (free time), not kōng. 适合 judges fit, not preference (喜欢). 愿意 marks willingness only — not guaranteed skill or calendar space.",
+      "example": {
+        "zh": "你这周什么时候有空？",
+        "pinyin": "Nǐ zhè zhōu shénme shíhòu yǒu kòng?",
+        "en": "When are you free this week?"
+      }
+    },
+    {
+      "title": "了解 and 直接 in workplace rapport",
+      "body": "了解 (了解情况) is getting a clear picture — not automatic agreement. 直接告诉我 opens a short path without a middleman; keep tone friendly (可以…) so it does not sound harsh.",
+      "example": {
+        "zh": "有问题可以直接告诉我。",
+        "pinyin": "Yǒu wèntí kěyǐ zhíjiē gàosu wǒ.",
+        "en": "If there’s a problem, you can tell me directly."
+      }
+    },
+    {
+      "title": "Latihan 90 detik (book exercise)",
+      "body": "Book drill on p.35: pick three entries from this module — 一起, 联系, and 了解 — and build one work or daily story that uses all three. Record without reading the PDF, then check whether your timing and decisions came out clearly. No model Chinese dialogue is printed for this drill.",
+      "example": {
+        "zh": "一起 / 联系 / 了解",
+        "pinyin": "yìqǐ / liánxì / liǎojiě",
+        "en": "Target trio for the 90-second practice (instruction only; no sample story in the book)."
+      }
+    }
+  ]
+}

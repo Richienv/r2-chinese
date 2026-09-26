@@ -1,0 +1,132 @@
+{
+  "id": "chapter-11",
+  "index": 11,
+  "titleZh": "顺序和时间",
+  "titleEn": "Sequence and time",
+  "sourcePages": "36-37",
+  "words": [
+    {
+      "zh": "先",
+      "pinyin": "xiān",
+      "pos": "adv.",
+      "en": "first; beforehand",
+      "note": "Book headword pinyin printed as xiān. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jangan pakai 先 sendirian jika urutan sesudahnya penting tetapi tidak kamu sebut.",
+      "when": "Remember 先 like the word you’ll use when letakkan sebelum langkah pertama. Umumnya langkah berikutnya muncul setelah 再 atau 然后..",
+      "usage": "Most Chinese speakers use 先 in this office/HR speaking sense. Jangan pakai 先 sendirian jika urutan sesudahnya penting tetapi tidak kamu sebut.",
+      "example": {
+        "zh": "我们先确认人数，再订会议室。",
+        "pinyin": "Wǒmen xiān quèrèn rénshù， zàidìng huìyìshì。",
+        "en": "We’ll confirm the headcount first, then book the meeting room."
+      }
+    },
+    {
+      "zh": "然后",
+      "pinyin": "ránhòu",
+      "pos": "conj.",
+      "en": "Saya cek daftarnya dulu, lalu membalasmu.",
+      "note": "Book headword pinyin printed as ránhòu. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 然后 hanya menandai urutan; untuk sebab-akibat gunakan 所以.",
+      "when": "Remember 然后 like the word you’ll use when menghubungkan dua kegiatan berurutan, baik dalam rencana maupun cerita. Ini penghubung netral yang sangat sering dipakai lisan..",
+      "usage": "Most Chinese speakers use 然后 in this office/HR speaking sense. 然后 hanya menandai urutan; untuk sebab-akibat gunakan 所以.",
+      "example": {
+        "zh": "我先看一下名单，然后给你回复。",
+        "pinyin": "Wǒ xiān kàn yīxià míngdān， ránhòu gěi nǐ huífù。",
+        "en": "I’ll check the list first, then reply to you."
+      }
+    },
+    {
+      "zh": "接着",
+      "pinyin": "jiēzhe",
+      "pos": "conj.",
+      "en": "next; right after that",
+      "note": "Book headword pinyin printed as jiēzhe. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 接着 tidak berarti “akhirnya”; masih ada alur yang berlanjut. langsung lanjut",
+      "when": "Remember 接着 like the word you’ll use when menekankan langkah kedua mengikuti langkah sebelumnya cukup dekat. Cocok saat menjelaskan prosedur..",
+      "usage": "Most Chinese speakers use 接着 in this office/HR speaking sense. 接着 tidak berarti “akhirnya”; masih ada alur yang berlanjut. langsung lanjut",
+      "example": {
+        "zh": "面试结束后，我们接着讨论下一位。",
+        "pinyin": "Miànshì jiéshù hòu， wǒmen jiēzhe tǎolùn xià yīwèi。",
+        "en": "After the interview ends, we’ll move on to discuss the next candidate."
+      }
+    },
+    {
+      "zh": "再",
+      "pinyin": "zài",
+      "pos": "adv.",
+      "en": "Setelah manajer mengonfirmasi, baru kita kirim pemberitahuan.",
+      "note": "Book headword pinyin printed as zài. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Untuk aksi berulang yang sudah terjadi, gunakan 又; 再 biasanya mengarah ke depan.",
+      "when": "Remember 再 like the word you’ll use when dipakai untuk tindakan berikutnya yang belum terjadi setelah syarat atau langkah pertama. Pas untuk instruksi singkat..",
+      "usage": "Most Chinese speakers use 再 in this office/HR speaking sense. Untuk aksi berulang yang sudah terjadi, gunakan 又; 再 biasanya mengarah ke depan.",
+      "example": {
+        "zh": "等经理确认以后，我们再发通知。",
+        "pinyin": "Děng jīnglǐ quèrèn yǐhòu， wǒmen zàifā tōngzhī。",
+        "en": "After the manager confirms, then we’ll send the notice."
+      }
+    },
+    {
+      "zh": "之后",
+      "pinyin": "zhīhòu",
+      "pos": "n./adv.",
+      "en": "afterward",
+      "note": "Book headword pinyin printed as zhīhòu. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Sebut peristiwa acuannya agar 之后 tidak menggantung.",
+      "when": "Remember 之后 like the word you’ll use when mengacu pada waktu setelah suatu peristiwa; bisa dipakai untuk rencana atau cerita..",
+      "usage": "Most Chinese speakers use 之后 in this office/HR speaking sense. Sebut peristiwa acuannya agar 之后 tidak menggantung.",
+      "example": {
+        "zh": "培训之后，我会问大家的意见。",
+        "pinyin": "Péixùn zhīhòu， wǒhuì wèn dàjiā de yìjiàn。",
+        "en": "After the training, I’ll ask everyone for feedback."
+      }
+    },
+    {
+      "zh": "后来",
+      "pinyin": "hòulái",
+      "pos": "adv.",
+      "en": "later (in a past narrative)",
+      "note": "Book headword pinyin printed as hòulái. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jangan pakai 后来 untuk urutan rencana besok; gunakan 然后 atau 之后. kemudian dalam cerita",
+      "when": "Remember 后来 like the word you’ll use when menyambung kejadian yang sudah berlalu. Kamu sedang menceritakan perubahan dari kondisi sebelumnya..",
+      "usage": "Most Chinese speakers use 后来 in this office/HR speaking sense. Jangan pakai 后来 untuk urutan rencana besok; gunakan 然后 atau 之后. kemudian dalam cerita",
+      "example": {
+        "zh": "我一开始没看懂，后来同事解释了。",
+        "pinyin": "Wǒ yī kāishǐ méikàn dǒng， hòulái tóngshì jiěshì le。",
+        "en": "At first I didn’t get it; later a colleague explained."
+      }
+    },
+    {
+      "zh": "同时",
+      "pinyin": "tóngshí",
+      "pos": "adv.",
+      "en": "Kami menyiapkan pelatihan sambil memperbarui daftar.",
+      "note": "Book headword pinyin printed as tóngshí. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 同时 bukan “setelah itu”; kegiatannya tumpang tindih. pada saat yang sama",
+      "when": "Remember 同时 like the word you’ll use when menandai dua kegiatan atau dua perhatian yang berjalan bersamaan..",
+      "usage": "Most Chinese speakers use 同时 in this office/HR speaking sense. 同时 bukan “setelah itu”; kegiatannya tumpang tindih. pada saat yang sama",
+      "example": {
+        "zh": "我们在准备培训，同时也在更新名单。",
+        "pinyin": "Wǒmen zài zhǔnbèi péixùn， tóngshí yě zài gēngxīn míngdān。",
+        "en": "We’re preparing the training and updating the list at the same time."
+      }
+    },
+    {
+      "zh": "最后",
+      "pinyin": "zuìhòu",
+      "pos": "adv.",
+      "en": "Terakhir, kita pastikan lagi siapa penanggung jawabnya.",
+      "note": "Book headword pinyin printed as zuìhòu. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 最后 menandai posisi akhir; 终于 menambahkan rasa lega setelah proses panjang. jelaskan apakah maknanya berubah. Kalau hasilnya tidak masuk akal, hubungan logisnya perlu diperbaiki.",
+      "when": "Remember 最后 like the word you’ll use when menutup daftar langkah atau rangkaian kejadian. Cocok sebelum keputusan akhir atau rangkuman..",
+      "usage": "Most Chinese speakers use 最后 in this office/HR speaking sense. 最后 menandai posisi akhir; 终于 menambahkan rasa lega setelah proses panjang. jelaskan apakah maknanya berubah. Kalau hasilnya tidak masuk akal, hubungan logisnya perlu diperbaiki.",
+      "example": {
+        "zh": "最后，我们再确认负责人。",
+        "pinyin": "Zuìhòu， wǒmen zài quèrèn fùzérén。",
+        "en": "Finally, we’ll confirm the owner again."
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "Module aim — Urutan dan waktu",
+      "body": "Penghubung 01 / 06 (book pages 36-37). Indonesian title: Urutan dan waktu."
+    },
+    {
+      "title": "Tes koneksi (book exercise)",
+      "body": "Say two related facts, swap in another connector from this module, and check whether the meaning still holds. If it does not, fix the logical link."
+    }
+  ]
+}

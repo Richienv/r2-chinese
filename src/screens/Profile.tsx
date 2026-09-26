@@ -41,6 +41,12 @@ export function Profile() {
           value={s.prefs.showEnglish}
           onChange={(v) => s.setPref('showEnglish', v)}
         />
+        <ToggleRow
+          label="Sound"
+          sub="Neural Mandarin for words and dialogue"
+          value={s.prefs.soundOn}
+          onChange={(v) => s.setPref('soundOn', v)}
+        />
       </section>
 
       <section className="card" style={{ padding: 4, marginTop: 12 }}>

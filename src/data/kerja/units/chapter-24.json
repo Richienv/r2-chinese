@@ -1,0 +1,160 @@
+{
+  "id": "chapter-24",
+  "index": 24,
+  "titleZh": "团队协作",
+  "titleEn": "Team coordination",
+  "sourcePages": "70-72",
+  "words": [
+    {
+      "zh": "对齐",
+      "pinyin": "duìqí",
+      "pos": "v.",
+      "en": "menyamakan",
+      "note": "Book headword pinyin printed as duìqí. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 对齐目标. Hindari: Jargon kerja; untuk obrolan santai bisa pakai 确认. pemahaman",
+      "when": "Remember 对齐 like the word you’ll use when dalam bahasa kerja, dipakai untuk memastikan tujuan atau standar yang sama..",
+      "usage": "Most Chinese speakers use 对齐 in this office/HR speaking sense. Book pairing: 对齐目标. Jargon kerja; untuk obrolan santai bisa pakai 确认. pemahaman",
+      "example": {
+        "zh": "开工前先对齐目标和交付时间。",
+        "pinyin": "Kāigōng qiánxiān duìqí mùbiāo hé jiāofù shíjiān。",
+        "en": "Sebelum mulai, samakan dulu target dan waktu penyerahan."
+      }
+    },
+    {
+      "zh": "分工",
+      "pinyin": "fēngōng",
+      "pos": "v.",
+      "en": "Kita jelaskan dulu pembagian tugas minggu ini.",
+      "note": "Book headword pinyin printed as fēngōng. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 明确分工. Hindari: 分工 bukan berarti membebankan semua hal ke satu orang.",
+      "when": "Remember 分工 like the word you’ll use when sebut tanggung jawab tiap orang agar tidak tumpang tindih..",
+      "usage": "Most Chinese speakers use 分工 in this office/HR speaking sense. Book pairing: 明确分工. 分工 bukan berarti membebankan semua hal ke satu orang.",
+      "example": {
+        "zh": "我们先把这周的分工说清楚。",
+        "pinyin": "Wǒmen xiān bǎ zhèzhōu de fēngōng shuō qīngchǔ。",
+        "en": "pembagian tugas"
+      }
+    },
+    {
+      "zh": "优先级",
+      "pinyin": "yōuxiānjí",
+      "pos": "v.",
+      "en": "urutan prioritas",
+      "note": "Book headword pinyin printed as yōuxiānjí. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 调整优先级. Hindari: Tinggi prioritas perlu alasan dan tenggat. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 优先级 like the word you’ll use when gunakan saat beberapa tugas berebut waktu atau sumber daya..",
+      "usage": "Most Chinese speakers use 优先级 in this office/HR speaking sense. Book pairing: 调整优先级. Tinggi prioritas perlu alasan dan tenggat.",
+      "example": {
+        "zh": "如果时间不够，我们要调整优先级。",
+        "pinyin": "Rúguǒ shíjiān bùgòu， wǒmen yào tiáozhěng yōuxiānjí。",
+        "en": "Kalau waktu tidak cukup, kita perlu mengubah prioritas."
+      }
+    },
+    {
+      "zh": "截止时间",
+      "pinyin": "jiézhǐ shíjiān",
+      "pos": "v.",
+      "en": "Tenggat tugas ini Jumat pukul berapa?",
+      "note": "Book headword pinyin printed as jiézhǐ shíjiān. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 确认截止时间. Hindari: 周五 saja bisa ambigu tanpa jam. apa, kapan / lanjutan",
+      "when": "Remember 截止时间 like the word you’ll use when tanyakan waktu yang tepat, termasuk tanggal dan jam bila perlu..",
+      "usage": "Most Chinese speakers use 截止时间 in this office/HR speaking sense. Book pairing: 确认截止时间. 周五 saja bisa ambigu tanpa jam. apa, kapan / lanjutan",
+      "example": {
+        "zh": "这个任务的截止时间是周五几点？",
+        "pinyin": "Zhège rènwù de jiézhǐ shíjiān shì zhōuwǔ jǐdiǎn？",
+        "en": "tenggat"
+      }
+    },
+    {
+      "zh": "同步",
+      "pinyin": "tóngbù",
+      "pos": "v.",
+      "en": "memberi pembaruan",
+      "note": "Book headword pinyin printed as tóngbù. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 同步进展. Hindari: 同步 bukan berarti semua orang harus hadir rapat. agar informasi sama Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 同步 like the word you’ll use when biasa dipakai untuk menyampaikan update lintas orang atau tim..",
+      "usage": "Most Chinese speakers use 同步 in this office/HR speaking sense. Book pairing: 同步进展. 同步 bukan berarti semua orang harus hadir rapat. agar informasi sama",
+      "example": {
+        "zh": "有新进展我会马上同步给你。",
+        "pinyin": "Yǒu xīnjìnzhǎn wǒhuì mǎshàng tóngbù gěi nǐ。",
+        "en": "Kalau ada perkembangan baru, saya akan segera memberi tahu kamu."
+      }
+    },
+    {
+      "zh": "确认",
+      "pinyin": "quèrèn",
+      "pos": "v.",
+      "en": "memastikan atau",
+      "note": "Book headword pinyin printed as quèrèn. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 确认需求. Hindari: 确认 bukan sekadar membaca pesan. mengonfirmasi Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 确认 like the word you’ll use when gunakan sebelum mengambil tindakan yang bergantung pada orang lain..",
+      "usage": "Most Chinese speakers use 确认 in this office/HR speaking sense. Book pairing: 确认需求. 确认 bukan sekadar membaca pesan. mengonfirmasi",
+      "example": {
+        "zh": "我先和业务团队确认需求。",
+        "pinyin": "Wǒ xiān hé yèwù tuánduì quèrèn xūqiú。",
+        "en": "Saya akan memastikan kebutuhan dengan tim bisnis lebih dulu."
+      }
+    },
+    {
+      "zh": "协调",
+      "pinyin": "xiétiáo",
+      "pos": "v.",
+      "en": "Saya akan menyelaraskan jadwal pewawancara.",
+      "note": "Book headword pinyin printed as xiétiáo. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 协调时间. Hindari: 协调 bukan menjanjikan semua pihak pasti setuju. bersama antarpihak",
+      "when": "Remember 协调 like the word you’ll use when cocok untuk benturan jadwal, sumber daya, atau kebutuhan tim..",
+      "usage": "Most Chinese speakers use 协调 in this office/HR speaking sense. Book pairing: 协调时间. 协调 bukan menjanjikan semua pihak pasti setuju. bersama antarpihak",
+      "example": {
+        "zh": "我来协调面试官的时间。",
+        "pinyin": "Wǒlái xiétiáo miànshìguān de shíjiān。",
+        "en": "mengatur kerja"
+      }
+    },
+    {
+      "zh": "资源",
+      "pinyin": "zīyuán",
+      "pos": "v.",
+      "en": "Proyek ini masih kekurangan sumber daya apa?",
+      "note": "Book headword pinyin printed as zīyuán. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 分配资源. Hindari: Sebut jenis sumber daya agar tidak abstrak. apa, kapan / lanjutan",
+      "when": "Remember 资源 like the word you’ll use when dalam kerja bisa berupa orang, waktu, anggaran, atau akses..",
+      "usage": "Most Chinese speakers use 资源 in this office/HR speaking sense. Book pairing: 分配资源. Sebut jenis sumber daya agar tidak abstrak. apa, kapan / lanjutan",
+      "example": {
+        "zh": "这个项目目前缺少哪些资源？",
+        "pinyin": "Zhège xiàngmù mùqián quēshǎo nǎxiē zīyuán？",
+        "en": "sumber daya"
+      }
+    },
+    {
+      "zh": "支持",
+      "pinyin": "zhīchí",
+      "pos": "v.",
+      "en": "dukungan atau",
+      "note": "Book headword pinyin printed as zhīchí. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 需要支持. Hindari: 支持 perlu ruang lingkup; jangan mengartikan sebagai komitmen tanpa batas. membantu Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 支持 like the word you’ll use when bisa berarti bantuan konkret, bukan hanya persetujuan umum..",
+      "usage": "Most Chinese speakers use 支持 in this office/HR speaking sense. Book pairing: 需要支持. 支持 perlu ruang lingkup; jangan mengartikan sebagai komitmen tanpa batas. membantu",
+      "example": {
+        "zh": "如果需要我支持，请告诉我具体任务。",
+        "pinyin": "Rúguǒ xūyào wǒ zhīchí， qǐng gàosù wǒ jùtǐrènwù。",
+        "en": "Kalau butuh bantuan saya, beri tahu tugas konkretnya."
+      }
+    },
+    {
+      "zh": "交接",
+      "pinyin": "jiāojiē",
+      "pos": "v.",
+      "en": "serah terima",
+      "note": "Book headword pinyin printed as jiāojiē. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 做好交接. Hindari: 交接 yang baik mencakup status, pemilik, dan tenggat. pekerjaan Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
+      "when": "Remember 交接 like the word you’ll use when gunakan saat tugas pindah tangan, terutama sebelum cuti atau pindah tim..",
+      "usage": "Most Chinese speakers use 交接 in this office/HR speaking sense. Book pairing: 做好交接. 交接 yang baik mencakup status, pemilik, dan tenggat. pekerjaan Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
+      "example": {
+        "zh": "你休假前请把客户事项交接给同事。",
+        "pinyin": "Nǐ xiūjià qián qǐng bǎ kèhù shìxiàng jiāojiē gěi tóngshì。",
+        "en": "Sebelum cuti, tolong serahkan urusan klien ke rekan."
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "Module aim — Koordinasi tim: siapa mengerjakan apa, kapan",
+      "body": "MODUL 06 / HR (book pages 70-72). Indonesian title: Koordinasi tim: siapa mengerjakan apa, kapan."
+    },
+    {
+      "title": "Latihan 90 detik",
+      "body": "If this HR module prints a 90-second drill, pick three headwords from the module, build one work story, record without reading, and check timing and decisions."
+    }
+  ]
+}

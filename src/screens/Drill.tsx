@@ -1,8 +1,11 @@
 import { useMemo, useRef, useState } from 'react'
+import { ChineseHear, HearButton } from '../components/Hear'
 import { CheckIcon, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { exampleFor, lookup } from '../lib/content'
 import { buildDrillQueue, requeue } from '../lib/drill'
+import { unlockSpeech } from '../lib/speech'
+import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 import { useStore } from '../store/store'
 
 const REP_OPTIONS = [5, 8, 10]
@@ -199,6 +202,7 @@ export function DrillFlow({
         <button
           className="card zh"
           onClick={reveal}
+          onPointerDown={() => unlockSpeech()}
           aria-label={shown ? undefined : `Reveal ${zh}`}
           style={{
             background: 'var(--paper)',
@@ -240,6 +244,9 @@ export function DrillFlow({
                   <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 5 }}>
                     {example.en}
                   </div>
+                  <div style={{ marginTop: 10 }}>
+                    <HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+                  </div>
                 </div>
               )}
             </div>
@@ -249,6 +256,7 @@ export function DrillFlow({
         </button>
 
         <div className="row" style={{ justifyContent: 'center', gap: 16, marginTop: 16 }}>
+          <ChineseHear text={zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
           <SaveStar zh={zh} lesson={word ? undefined : 0} size={22} />
         </div>
       </div>

@@ -1,0 +1,228 @@
+{
+  "id": "chapter-06",
+  "index": 6,
+  "titleZh": "变化与结果",
+  "titleEn": "Changes and results",
+  "sourcePages": "21-23",
+  "words": [
+    {
+      "zh": "已经",
+      "pinyin": "yǐjīng",
+      "pos": "adv.",
+      "en": "already",
+      "note": "Book headword pinyin printed as yǐjīng. Pasangan: 已经完成. Hindari: in statements about a finished action, 了 often makes the sentence more natural. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 已经 like the word you’ll use when reporting workplace status — something has already happened or been finished, e.g. the file is already sent.",
+      "usage": "Most Chinese speakers put 已经 before the verb to mark that the action is done by now (已经完成, 已经发给你了). Pairing with 了 is common in status updates; without any completion marker the line can sound unfinished.",
+      "example": {
+        "zh": "文件我已经发给你了。",
+        "pinyin": "Wénjiàn wǒ yǐjīng fā gěi nǐ le.",
+        "en": "I’ve already sent you the file."
+      }
+    },
+    {
+      "zh": "还没",
+      "pinyin": "hái méi",
+      "pos": "adv.",
+      "en": "not yet; still haven’t",
+      "note": "Book headword pinyin printed as hái méi. Pasangan: 还没收到. Hindari: do not add 不 with 还没 for “not yet” — 还没 already carries the negation. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 还没 like the word you’ll use when a work action still has not happened up to now — and you should add a follow-up plan if the context is work.",
+      "usage": "Most Chinese speakers use 还没 + verb for “still haven’t / not yet” (还没收到). It already includes negation, so stacking 不 is wrong for this sense. In office talk, follow with what you will do next when someone is waiting.",
+      "example": {
+        "zh": "我还没收到他们的回复。",
+        "pinyin": "Wǒ hái méi shōudào tāmen de huífù.",
+        "en": "I still haven’t received their reply."
+      }
+    },
+    {
+      "zh": "终于",
+      "pinyin": "zhōngyú",
+      "pos": "adv.",
+      "en": "finally; at last",
+      "note": "Book headword pinyin printed as zhōngyú. Pasangan: 终于解决了. Hindari: 终于 is not just time order like 最后; it carries a sense of a long process. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 终于 like the word you’ll use when a workplace result lands after a long wait or effort — relief or achievement, e.g. the problem is finally solved.",
+      "usage": "Most Chinese speakers put 终于 before the outcome verb when the wait mattered (终于解决了). Prefer 最后 when you only mean “last in sequence” without that long-struggle feel.",
+      "example": {
+        "zh": "这个问题终于解决了。",
+        "pinyin": "Zhège wèntí zhōngyú jiějué le.",
+        "en": "This problem is finally solved."
+      }
+    },
+    {
+      "zh": "改成",
+      "pinyin": "gǎichéng",
+      "pos": "v.",
+      "en": "to change into; to change to",
+      "note": "Book headword pinyin printed as gǎichéng. Pasangan: 改成下午三点. Hindari: name the final form after 改成 so the change is clear. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 改成 like the word you’ll use when a schedule, format, or choice at work is switched to a specific new form — e.g. the meeting is changed to 3 p.m.",
+      "usage": "Most Chinese speakers use 改成 + the new target (改成下午三点). Always state what it becomes; 改成 alone does not tell listeners the new plan.",
+      "example": {
+        "zh": "会议改成下午三点了。",
+        "pinyin": "Huìyì gǎichéng xiàwǔ sān diǎn le.",
+        "en": "The meeting has been changed to 3 p.m."
+      }
+    },
+    {
+      "zh": "越来越",
+      "pinyin": "yuè lái yuè",
+      "pos": "adv.",
+      "en": "more and more; increasingly",
+      "note": "Book headword pinyin printed as yuè lái yuè. Pasangan: 越来越清楚. Hindari: after 越来越 you usually need an adjective or state, not a bare number. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 越来越 like the word you’ll use when a workplace trend builds gradually — good or bad — e.g. the process is getting clearer and clearer.",
+      "usage": "Most Chinese speakers follow 越来越 with an adjective or state (越来越清楚), not a raw number. It marks a gradual shift over time in either direction.",
+      "example": {
+        "zh": "这个流程越来越清楚了。",
+        "pinyin": "Zhège liúchéng yuè lái yuè qīngchu le.",
+        "en": "This process is getting clearer and clearer."
+      }
+    },
+    {
+      "zh": "继续",
+      "pinyin": "jìxù",
+      "pos": "v.",
+      "en": "to continue; to keep going",
+      "note": "Book headword pinyin printed as jìxù. Pasangan: 继续讨论. Hindari: 继续 is not “start over from scratch”; it continues the same thing. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 继续 like the word you’ll use when an activity already underway at work will be carried on — e.g. continue the discussion after a meal break.",
+      "usage": "Most Chinese speakers use 继续 + verb for picking up the same thread (继续讨论). Restarting from zero is a different idea; 继续 means resume the same activity.",
+      "example": {
+        "zh": "我们吃完饭再继续讨论。",
+        "pinyin": "Wǒmen chī wán fàn zài jìxù tǎolùn.",
+        "en": "We’ll continue the discussion after we finish eating."
+      }
+    },
+    {
+      "zh": "停止",
+      "pinyin": "tíngzhǐ",
+      "pos": "v.",
+      "en": "to stop; to cease",
+      "note": "Book headword pinyin printed as tíngzhǐ. Pasangan: 停止使用. Hindari: 停止 is firmer than 暂停, which means a temporary pause. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 停止 like the word you’ll use when a workplace action or process must fully stop — firm action, e.g. stop using a broken system first.",
+      "usage": "Most Chinese speakers use 停止 for a real halt (停止使用). Prefer 暂停 when the stop is only temporary. In ops and HR ops talk, 停止 signals “cease now,” not “hold briefly.”",
+      "example": {
+        "zh": "如果系统有问题，请先停止使用。",
+        "pinyin": "Rúguǒ xìtǒng yǒu wèntí, qǐng xiān tíngzhǐ shǐyòng.",
+        "en": "If the system has a problem, please stop using it first."
+      }
+    },
+    {
+      "zh": "结果",
+      "pinyin": "jiéguǒ",
+      "pos": "n./conj.",
+      "en": "result; as a result; it turned out that",
+      "note": "Book headword pinyin printed as jiéguǒ. Pasangan: 结果发现. Hindari: 结果 is not “cause”; place it after the prior process or event. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 结果 like the spoken bridge you’ll use when telling a work story and landing on an outcome that may differ from what you hoped.",
+      "usage": "Most Chinese speakers use 结果 (often 结果发现) after narrating what happened, to introduce the outcome. It is not the cause — put it after the earlier steps or wait.",
+      "example": {
+        "zh": "我们等了半小时，结果他没来。",
+        "pinyin": "Wǒmen děng le bàn xiǎoshí, jiéguǒ tā méi lái.",
+        "en": "We waited half an hour; as it turned out, he didn’t come."
+      }
+    },
+    {
+      "zh": "原来",
+      "pinyin": "yuánlái",
+      "pos": "adv.",
+      "en": "so it turns out; as it happens; originally",
+      "note": "Book headword pinyin printed as yuánlái. Pasangan: 原来是这样. Hindari: 原来 can also mean “originally / formerly”; tone and context decide the sense. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 原来 like the word you’ll use when you just learned a fact that explains the workplace situation — the “oh, so that’s why” moment (e.g. the meeting was moved to three).",
+      "usage": "Most Chinese speakers use 原来 for a newly understood explanation (原来是这样). The same word can mean “originally”; context and tone pick the reading. In status talk it often marks late awareness of a schedule change.",
+      "example": {
+        "zh": "原来会议改到三点了，我刚知道。",
+        "pinyin": "Yuánlái huìyì gǎi dào sān diǎn le, wǒ gāng zhīdào.",
+        "en": "So the meeting was moved to three — I just found out."
+      }
+    },
+    {
+      "zh": "后来",
+      "pinyin": "hòulái",
+      "pos": "adv.",
+      "en": "later; afterwards",
+      "note": "Book headword pinyin printed as hòulái. Pasangan: 后来才知道. Hindari: 后来 refers to the continuation of past events; for forward next steps use 然后 or 之后. Example-sentence pinyin not printed in the book; standard pinyin added.",
+      "when": "Remember 后来 like the word you’ll use when ordering what happened next in a past workplace story — after asking a colleague, you later asked the manager.",
+      "usage": "Most Chinese speakers use 后来 to sequence past events (后来才知道). For upcoming next steps in a plan, prefer 然后 or 之后 instead of 后来.",
+      "example": {
+        "zh": "我先问了同事，后来又问了经理。",
+        "pinyin": "Wǒ xiān wèn le tóngshì, hòulái yòu wèn le jīnglǐ.",
+        "en": "I asked a colleague first, and later asked the manager as well."
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "Module aim — status and change from the plan",
+      "body": "Modul 06 / Harian (book pages 21–23): tell work status and what changed from the original plan. Indonesian title in the book: Perubahan dan hasil. Frame: Ceritakan status pekerjaan dan apa yang berubah dari rencana awal."
+    },
+    {
+      "title": "已经 + 了 for finished status",
+      "body": "From the book’s Hindari on 已经: in statements about a finished action, 了 often makes the sentence more natural. Pairing in the book: 已经完成.",
+      "example": {
+        "zh": "文件我已经发给你了。",
+        "pinyin": "Wénjiàn wǒ yǐjīng fā gěi nǐ le.",
+        "en": "I’ve already sent you the file."
+      }
+    },
+    {
+      "title": "还没 already negates — don’t add 不",
+      "body": "The book warns: do not use 不 with 还没 for the meaning “not yet”; 还没 already contains the negation. In work contexts, add a follow-up plan when something still has not happened.",
+      "example": {
+        "zh": "我还没收到他们的回复。",
+        "pinyin": "Wǒ hái méi shōudào tāmen de huífù.",
+        "en": "I still haven’t received their reply."
+      }
+    },
+    {
+      "title": "终于 vs 最后",
+      "body": "终于 is not only time order like 最后; it carries a sense of a long process, with relief or achievement (终于解决了).",
+      "example": {
+        "zh": "这个问题终于解决了。",
+        "pinyin": "Zhège wèntí zhōngyú jiějué le.",
+        "en": "This problem is finally solved."
+      }
+    },
+    {
+      "title": "改成 needs the new form",
+      "body": "After 改成, name the final schedule, format, or choice so the change is clear (改成下午三点).",
+      "example": {
+        "zh": "会议改成下午三点了。",
+        "pinyin": "Huìyì gǎichéng xiàwǔ sān diǎn le.",
+        "en": "The meeting has been changed to 3 p.m."
+      }
+    },
+    {
+      "title": "停止 vs 暂停",
+      "body": "停止 is firmer than 暂停: 停止 means a real stop; 暂停 means a temporary pause. Book pairing: 停止使用.",
+      "example": {
+        "zh": "如果系统有问题，请先停止使用。",
+        "pinyin": "Rúguǒ xìtǒng yǒu wèntí, qǐng xiān tíngzhǐ shǐyòng.",
+        "en": "If the system has a problem, please stop using it first."
+      }
+    },
+    {
+      "title": "结果 is outcome, not cause",
+      "body": "In spoken narrative, 结果 (结果发现) introduces a result that may differ from expectation. It is not “cause”; place it after the prior process or event.",
+      "example": {
+        "zh": "我们等了半小时，结果他没来。",
+        "pinyin": "Wǒmen děng le bàn xiǎoshí, jiéguǒ tā méi lái.",
+        "en": "We waited half an hour; as it turned out, he didn’t come."
+      }
+    },
+    {
+      "title": "原来 and 后来 — past story tools",
+      "body": "原来 marks newly realizing a fact that explains the situation (原来是这样), and can also mean “originally” — context decides. 后来 sequences past events (后来才知道); for forward next steps use 然后 or 之后.",
+      "example": {
+        "zh": "原来会议改到三点了，我刚知道。",
+        "pinyin": "Yuánlái huìyì gǎi dào sān diǎn le, wǒ gāng zhīdào.",
+        "en": "So the meeting was moved to three — I just found out."
+      }
+    },
+    {
+      "title": "Latihan 90 detik (book exercise)",
+      "body": "Book drill on p.23: pick three entries from this module — 已经, 越来越, and 原来 — and build one work or daily story that uses all three. Record without reading the PDF, then check whether your timing and decisions came out clearly. No model Chinese dialogue is printed for this drill; do not invent one as book text.",
+      "example": {
+        "zh": "已经 / 越来越 / 原来",
+        "pinyin": "yǐjīng / yuè lái yuè / yuánlái",
+        "en": "Target trio for the 90-second practice (instruction only; no sample story in the book)."
+      }
+    }
+  ]
+}

@@ -1,6 +1,8 @@
+import { HearButton } from '../components/Hear'
 import { ChevronLeft, BoltIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { lookup } from '../lib/content'
+import { VOICE, WORD_RATE } from '../lib/voices'
 import { useStore } from '../store/store'
 
 /**
@@ -55,22 +57,13 @@ export function SavedWords({
               {words.map((zh) => {
                 const w = lookup(zh)
                 return (
-                  <div
-                    key={zh}
-                    className="card between"
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`Drill ${zh}`}
-                    style={{ padding: 14, width: '100%', textAlign: 'left', cursor: 'pointer' }}
-                    onClick={() => onDrill([zh], `Drill ${zh}`)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault()
-                        onDrill([zh], `Drill ${zh}`)
-                      }
-                    }}
-                  >
-                    <div style={{ minWidth: 0 }}>
+                  <div key={zh} className="card between" style={{ padding: 14, width: '100%', gap: 8 }}>
+                    <button
+                      type="button"
+                      aria-label={`Drill ${zh}`}
+                      style={{ flex: 1, minWidth: 0, textAlign: 'left', padding: 0 }}
+                      onClick={() => onDrill([zh], `Drill ${zh}`)}
+                    >
                       <div className="zh" style={{ fontSize: 20, fontWeight: 700 }} lang="zh-CN">
                         {zh}
                       </div>
@@ -84,7 +77,8 @@ export function SavedWords({
                           </div>
                         </>
                       )}
-                    </div>
+                    </button>
+                    <HearButton text={zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear" />
                     <SaveStar zh={zh} size={20} />
                   </div>
                 )

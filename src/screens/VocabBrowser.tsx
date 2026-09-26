@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react'
 import { useGloss } from '../components/ChineseText'
+import { HearButton } from '../components/Hear'
 import { ChevronLeft } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { vocabIndex } from '../lib/content'
 import type { Vocab } from '../lib/types'
+import { VOICE, WORD_RATE } from '../lib/voices'
 
 const TAGS: { key: string; label: string }[] = [
   { key: '', label: 'All' },
@@ -110,7 +112,7 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
             {results.map((v) => {
               const vocab: Vocab = { zh: v.zh, pinyin: v.pinyin, pos: v.pos, en: v.en, note: '' }
               return (
-                <div key={`${v.zh}-${v.lesson}`} className="card between" style={{ padding: 12 }}>
+                <div key={`${v.zh}-${v.lesson}`} className="card between" style={{ padding: 12, gap: 8 }}>
                   <button
                     style={{ textAlign: 'left', flex: 1, minWidth: 0 }}
                     onClick={() => onWord(vocab)}
@@ -134,6 +136,7 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
                     </div>
                     <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 2 }}>{v.en}</div>
                   </button>
+                  <HearButton text={v.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear" />
                   <SaveStar zh={v.zh} lesson={v.lesson} size={20} />
                 </div>
               )

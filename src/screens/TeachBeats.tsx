@@ -1,7 +1,9 @@
+import { HearButton, useAutoSpeak } from '../components/Hear'
 import { SaveStar } from '../components/SaveStar'
 import type { Example } from '../lib/content'
 import { splitHanzi, splitOnWord, TEACH_KICKER, TEACH_TITLE, type TeachPhase, type WordHook } from '../lib/teach'
 import type { Vocab } from '../lib/types'
+import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 
 function StepHead({ kicker, title }: { kicker: string; title: string }) {
   return (
@@ -43,6 +45,7 @@ export function TeachView({
 
 function MeetBeat({ word, lesson }: { word: Vocab; lesson: number }) {
   const glyphs = splitHanzi(word.zh)
+  useAutoSpeak(word.zh, VOICE.xiaoxiao, WORD_RATE)
   return (
     <div className="teach-meet metal">
       <div className="teach-glyphs" lang="zh-CN" aria-label={word.zh}>
@@ -63,6 +66,9 @@ function MeetBeat({ word, lesson }: { word: Vocab; lesson: number }) {
       <p className="teach-meet-en" style={{ animationDelay: `${80 + glyphs.length * 110 + 260}ms` }}>
         {word.en}
       </p>
+      <div className="teach-meet-hear" style={{ animationDelay: `${80 + glyphs.length * 110 + 320}ms` }}>
+        <HearButton text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" tone="on-red" />
+      </div>
       <div className="teach-meet-save" style={{ animationDelay: `${80 + glyphs.length * 110 + 340}ms` }}>
         <span>Save to drill</span>
         <SaveStar zh={word.zh} lesson={lesson} size={22} onRed />
@@ -98,6 +104,7 @@ function HookBeat({ word, hook }: { word: Vocab; hook: WordHook }) {
 }
 
 function ExampleBeat({ word, example }: { word: Vocab; example: Example | null }) {
+  useAutoSpeak(example?.zh ?? '', VOICE.xiaoxiao, LINE_RATE)
   if (!example) {
     return (
       <div className="teach-example-stage">
@@ -132,12 +139,14 @@ function ExampleBeat({ word, example }: { word: Vocab; example: Example | null }
           {example.en}
         </p>
       )}
+      <HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
     </div>
   )
 }
 
 function SealBeat({ word }: { word: Vocab }) {
   const glyphs = splitHanzi(word.zh)
+  useAutoSpeak(word.zh, VOICE.xiaoxiao, WORD_RATE)
   return (
     <div className="teach-seal">
       <div className="teach-glyphs" lang="zh-CN" aria-label={word.zh}>
@@ -153,6 +162,9 @@ function SealBeat({ word }: { word: Vocab }) {
       <p className="teach-seal-en" style={{ animationDelay: '640ms' }}>
         {word.en}
       </p>
+      <div style={{ marginTop: 18 }}>
+        <HearButton text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
+      </div>
     </div>
   )
 }

@@ -222,9 +222,7 @@ export function StoreProvider({
     }
   }, [state, userId])
 
-  useEffect(() => {
-    setSpeechEnabled(state.prefs.soundOn)
-  }, [state.prefs.soundOn])
+  setSpeechEnabled(state.prefs.soundOn)
 
   const addCards = useCallback((lesson: number, words: { zh: string }[]) => {
     setState((s) => {

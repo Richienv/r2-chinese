@@ -1,0 +1,160 @@
+{
+  "id": "chapter-26",
+  "index": 26,
+  "titleZh": "薪资与福利",
+  "titleEn": "Pay and benefits",
+  "sourcePages": "76-78",
+  "words": [
+    {
+      "zh": "薪资",
+      "pinyin": "xīnzī",
+      "pos": "v.",
+      "en": "Bisakah dijelaskan kisaran gaji posisi ini?",
+      "note": "Book headword pinyin printed as xīnzī. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 薪资范围. Hindari: Tanyakan juga apakah angka bruto atau neto. i",
+      "when": "Remember 薪资 like the word you’ll use when istilah yang lebih formal daripada 工资; sering muncul di offer atau wawancara..",
+      "usage": "Most Chinese speakers use 薪资 in this office/HR speaking sense. Book pairing: 薪资范围. Tanyakan juga apakah angka bruto atau neto. i",
+      "example": {
+        "zh": "这个岗位的薪资范围可以说明一下吗？",
+        "pinyin": "Zhège gǎngwèi de xīnzī fànwéi kěyǐ shuōmíng yīxià ma？",
+        "en": "gaji atau kompensas"
+      }
+    },
+    {
+      "zh": "税前",
+      "pinyin": "shuìqián",
+      "pos": "v.",
+      "en": "sebelum pajak",
+      "note": "Book headword pinyin printed as shuìqián. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 税前月薪. Hindari: 税前 bukan jumlah yang masuk rekening.",
+      "when": "Remember 税前 like the word you’ll use when pakai saat angka pendapatan belum dipotong pajak yang relevan..",
+      "usage": "Most Chinese speakers use 税前 in this office/HR speaking sense. Book pairing: 税前月薪. 税前 bukan jumlah yang masuk rekening.",
+      "example": {
+        "zh": "这里写的是税前月薪，对吗？",
+        "pinyin": "Zhèlǐ xiě de shì shuìqián yuèxīn， duì ma？",
+        "en": "Angka di sini adalah gaji bulanan sebelum pajak, benar?"
+      }
+    },
+    {
+      "zh": "税后",
+      "pinyin": "shuìhòu",
+      "pos": "v.",
+      "en": "setelah pajak",
+      "note": "Book headword pinyin printed as shuìhòu. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 税后收入. Hindari: 税后 belum tentu sama dengan seluruh take-home setelah potongan lain. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 税后 like the word you’ll use when gunakan untuk membedakan dari nominal sebelum pajak dalam penawaran..",
+      "usage": "Most Chinese speakers use 税后 in this office/HR speaking sense. Book pairing: 税后收入. 税后 belum tentu sama dengan seluruh take-home setelah potongan lain.",
+      "example": {
+        "zh": "我想确认这笔金额是税前还是税后。",
+        "pinyin": "Wǒ xiǎng quèrèn zhèbǐ jīné shì shuìqián háishì shuìhòu。",
+        "en": "Saya ingin memastikan jumlah ini sebelum atau sesudah pajak."
+      }
+    },
+    {
+      "zh": "津贴",
+      "pinyin": "jīntiē",
+      "pos": "v.",
+      "en": "Apakah tunjangan transportasi dibayarkan tetap?",
+      "note": "Book headword pinyin printed as jīntiē. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 交通津贴. Hindari: 津贴 jangan diasumsikan bagian dari gaji pokok. tertulis / lanjutan",
+      "when": "Remember 津贴 like the word you’ll use when minta nama komponen, syarat, dan cara pembayarannya..",
+      "usage": "Most Chinese speakers use 津贴 in this office/HR speaking sense. Book pairing: 交通津贴. 津贴 jangan diasumsikan bagian dari gaji pokok. tertulis / lanjutan",
+      "example": {
+        "zh": "交通津贴是固定发放的吗？",
+        "pinyin": "Jiāotōng jīntiē shì gùdìng fāfàng de ma？",
+        "en": "tunjangan tertentu"
+      }
+    },
+    {
+      "zh": "奖金",
+      "pinyin": "jiǎngjīn",
+      "pos": "v.",
+      "en": "bonus",
+      "note": "Book headword pinyin printed as jiǎngjīn. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 绩效奖金. Hindari: Bonus target tidak otomatis bonus terjamin. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 奖金 like the word you’ll use when bisa bergantung pada kebijakan, hasil, atau target; tanyakan syaratnya..",
+      "usage": "Most Chinese speakers use 奖金 in this office/HR speaking sense. Book pairing: 绩效奖金. Bonus target tidak otomatis bonus terjamin.",
+      "example": {
+        "zh": "绩效奖金的计算方式在哪里能看到？",
+        "pinyin": "Jìxiàojiǎngjīn de jìsuàn fāngshì zài nǎlǐ néng kàndào？",
+        "en": "Di mana saya bisa melihat cara menghitung bonus kinerja?"
+      }
+    },
+    {
+      "zh": "福利",
+      "pinyin": "fúlì",
+      "pos": "v.",
+      "en": "Bisa kirim penjelasan benefit karyawan?",
+      "note": "Book headword pinyin printed as fúlì. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 员工福利. Hindari: 福利 terlalu luas untuk dianggap satu komponen pasti.",
+      "when": "Remember 福利 like the word you’ll use when pakai untuk fasilitas atau manfaat di luar gaji; tanyakan rincian paket..",
+      "usage": "Most Chinese speakers use 福利 in this office/HR speaking sense. Book pairing: 员工福利. 福利 terlalu luas untuk dianggap satu komponen pasti.",
+      "example": {
+        "zh": "可以发一份员工福利说明吗？",
+        "pinyin": "Kěyǐ fā yīfèn yuángōngfúlì shuōmíng ma？",
+        "en": "benefit"
+      }
+    },
+    {
+      "zh": "社保",
+      "pinyin": "shèbǎo",
+      "pos": "v.",
+      "en": "asuransi sosial",
+      "note": "Book headword pinyin printed as shèbǎo. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 社保缴纳. Hindari: Jangan menebak tarif atau cakupan dari kata 社保 saja. China",
+      "when": "Remember 社保 like the word you’ll use when istilah yang muncul di dokumen kerja; cakupan dan administrasi perlu dilihat pada offer atau kebijakan..",
+      "usage": "Most Chinese speakers use 社保 in this office/HR speaking sense. Book pairing: 社保缴纳. Jangan menebak tarif atau cakupan dari kata 社保 saja. China",
+      "example": {
+        "zh": "请问社保缴纳的信息会写在合同里吗？",
+        "pinyin": "Qǐngwèn shèbǎo jiǎonà de xìnxī huì xiě zài hétóng lǐ ma？",
+        "en": "Apakah informasi pembayaran asuransi sosial tercantum dalam kontrak? dalam sistem kerja"
+      }
+    },
+    {
+      "zh": "公积金",
+      "pinyin": "gōngjījīn",
+      "pos": "v.",
+      "en": "dana perumahan",
+      "note": "Book headword pinyin printed as gōngjījīn. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 住房公积金. Hindari: Detailnya dapat berbeda menurut lokasi dan kondisi kerja. dalam sistem kerja China tertulis / lanjutan Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 公积金 like the word you’ll use when tanyakan apakah dan bagaimana komponen ini tercantum pada penawaran..",
+      "usage": "Most Chinese speakers use 公积金 in this office/HR speaking sense. Book pairing: 住房公积金. Detailnya dapat berbeda menurut lokasi dan kondisi kerja. dalam sistem kerja China tertulis / lanjutan",
+      "example": {
+        "zh": "这个岗位的住房公积金安排能否说明？",
+        "pinyin": "Zhège gǎngwèi de zhùfáng gōngjījīn ānpái néngfǒu shuōmíng？",
+        "en": "Bisakah dijelaskan pengaturan dana perumahan untuk posisi ini?"
+      }
+    },
+    {
+      "zh": "薪酬结构",
+      "pinyin": "xīnchóu jiégòu",
+      "pos": "v.",
+      "en": "struktur kompensasi",
+      "note": "Book headword pinyin printed as xīnchóu jiégòu. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 说明薪酬结构. Hindari: Total angka besar tidak menjelaskan komponen pasti. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 薪酬结构 like the word you’ll use when membantu memisahkan gaji pokok, tunjangan, bonus, dan komponen lain..",
+      "usage": "Most Chinese speakers use 薪酬结构 in this office/HR speaking sense. Book pairing: 说明薪酬结构. Total angka besar tidak menjelaskan komponen pasti.",
+      "example": {
+        "zh": "请把薪酬结构和发放条件写清楚。",
+        "pinyin": "Qǐng bǎ xīnchóu jiégòu hé fāfàng tiáojiàn xiě qīngchǔ。",
+        "en": "Mohon tuliskan struktur kompensasi dan syarat pembayarannya dengan jelas."
+      }
+    },
+    {
+      "zh": "发薪日",
+      "pinyin": "fāxīn rì",
+      "pos": "v.",
+      "en": "Tanggal berapa hari pembayaran gaji bulanan perusahaan?",
+      "note": "Book headword pinyin printed as fāxīn rì. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 每月发薪日. Hindari: Tanggal yang disampaikan lisan sebaiknya dicocokkan dengan dokumen. gaji Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
+      "when": "Remember 发薪日 like the word you’ll use when pakai untuk menanyakan tanggal pembayaran yang biasa digunakan perusahaan..",
+      "usage": "Most Chinese speakers use 发薪日 in this office/HR speaking sense. Book pairing: 每月发薪日. Tanggal yang disampaikan lisan sebaiknya dicocokkan dengan dokumen. gaji Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
+      "example": {
+        "zh": "公司的每月发薪日是哪一天？",
+        "pinyin": "Gōngsī de měiyuè fāxīnrì shì nǎyītiān？",
+        "en": "hari pembayaran"
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "Module aim — Gaji dan benefit: minta rincian yang tertulis",
+      "body": "MODUL 08 / HR (book pages 76-78). Indonesian title: Gaji dan benefit: minta rincian yang tertulis."
+    },
+    {
+      "title": "Latihan 90 detik",
+      "body": "If this HR module prints a 90-second drill, pick three headwords from the module, build one work story, record without reading, and check timing and decisions."
+    }
+  ]
+}

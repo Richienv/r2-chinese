@@ -1,0 +1,178 @@
+{
+  "id": "chapter-04",
+  "index": 4,
+  "titleZh": "打算和决定",
+  "titleEn": "Intentions and decisions",
+  "sourcePages": "15-17",
+  "words": [
+    {
+      "zh": "打算",
+      "pinyin": "dǎsuàn",
+      "pos": "v.",
+      "en": "to plan, to intend",
+      "note": "Pasangan: 打算怎么做. Hindari: 打算 is not a final decision; use 决定 once it is set. Example pinyin not printed; standard pinyin added.",
+      "when": "Remember 打算 like the word you’ll use when someone asks your next workplace step and the plan can still change — e.g. talking with them tomorrow.",
+      "usage": "Most Chinese speakers use 打算 for a plan that is not locked yet. Switch to 决定 when the choice is already made.",
+      "example": {
+        "zh": "我打算明天和他们谈。",
+        "pinyin": "Wǒ dǎsuàn míngtiān hé tāmen tán.",
+        "en": "I plan to talk with them tomorrow."
+      }
+    },
+    {
+      "zh": "决定",
+      "pinyin": "juédìng",
+      "pos": "v./n.",
+      "en": "to decide; decision",
+      "note": "Pasangan: 做决定. Hindari: do not use 决定 for an idea that is still only under consideration. Example pinyin not printed; standard pinyin added.",
+      "when": "Remember 决定 like the word you’ll use when a workplace option is already chosen — or when you say you still have not chosen which plan.",
+      "usage": "Most Chinese speakers use 决定 for a settled choice (or the act of settling it). If you are only weighing options, prefer 考虑.",
+      "example": {
+        "zh": "我们还没决定用哪个方案。",
+        "pinyin": "Wǒmen hái méi juédìng yòng nǎge fāng'àn.",
+        "en": "We still haven’t decided which plan to use."
+      }
+    },
+    {
+      "zh": "考虑",
+      "pinyin": "kǎolǜ",
+      "pos": "v.",
+      "en": "to consider",
+      "note": "Pasangan: 考虑一下. Hindari: 我考虑一下 is not agreement; if there is a reply deadline, say when you will answer. Example pinyin not printed; standard pinyin added.",
+      "when": "Remember 考虑 like the professional pause you’ll use when a workplace suggestion needs assessment before you answer.",
+      "usage": "Most Chinese speakers use 考虑一下 to buy time to evaluate. It does not mean yes; name a time if the other person needs a deadline.",
+      "example": {
+        "zh": "这个建议不错，我再考虑一下。",
+        "pinyin": "Zhège jiànyì búcuò, wǒ zài kǎolǜ yíxià.",
+        "en": "This suggestion is good; I’ll consider it a bit more."
+      }
+    },
+    {
+      "zh": "想",
+      "pinyin": "xiǎng",
+      "pos": "v.",
+      "en": "to want; to think",
+      "note": "Pasangan: 想试一下. Hindari: 想 can mean “want” or “think”; what follows decides the sense. Example pinyin not printed; standard pinyin added.",
+      "when": "Remember 想 like the natural word you’ll use for a simple workplace intention — wanting to hear someone’s idea first — more natural than 想要 in talk.",
+      "usage": "Most Chinese speakers use 想 + verb for everyday intentions at work. Context after 想 tells you whether it is “want to” or “think.”",
+      "example": {
+        "zh": "我想先听听你的想法。",
+        "pinyin": "Wǒ xiǎng xiān tīngting nǐ de xiǎngfǎ.",
+        "en": "I’d like to hear your thoughts first."
+      }
+    },
+    {
+      "zh": "需要",
+      "pinyin": "xūyào",
+      "pos": "v.",
+      "en": "to need; to require",
+      "note": "Pasangan: 需要帮助. Hindari: 需要 is stronger than 想; don’t use it for a light preference. Example pinyin not printed; standard pinyin added.",
+      "when": "Remember 需要 like the word you’ll use when coworkers must supply something real — today’s data so you can report tomorrow.",
+      "usage": "Most Chinese speakers use 需要 for a real requirement, not a soft wish. Prefer 想 for a light preference.",
+      "example": {
+        "zh": "我需要今天的数据，明天才能汇报。",
+        "pinyin": "Wǒ xūyào jīntiān de shùjù, míngtiān cái néng huìbào.",
+        "en": "I need today’s data so I can report tomorrow."
+      }
+    },
+    {
+      "zh": "要不",
+      "pinyin": "yàobù",
+      "pos": "conj.",
+      "en": "how about…; otherwise",
+      "note": "Book prints pinyin as yào bù; standard conversational spelling is yàobù. Pasangan: 要不我们……. Hindari: 要不 usually offers an alternative — don’t stop right after the phrase. Example pinyin not printed; standard pinyin added.",
+      "when": "Remember 要不 like the casual opener you’ll use when a workplace plan is stuck and you float another option — discuss again tomorrow.",
+      "usage": "Most Chinese speakers open an alternative with 要不我们…… and then finish the suggestion. Leaving only 要不 sounds incomplete.",
+      "example": {
+        "zh": "要不我们明天再讨论？",
+        "pinyin": "Yàobù wǒmen míngtiān zài tǎolùn?",
+        "en": "How about we discuss it again tomorrow?"
+      }
+    },
+    {
+      "zh": "不如",
+      "pinyin": "bùrú",
+      "pos": "conj.",
+      "en": "it would be better to; why not",
+      "note": "Pasangan: 不如先……. Hindari: in a proposal, 不如 is not merely “not like”; it means the next option is better. Example pinyin not printed; standard pinyin added.",
+      "when": "Remember 不如 like the word you’ll use when time is short at work and you recommend doing the most important part first.",
+      "usage": "Most Chinese speakers use 不如 to steer the group toward a better option than the one under discussion.",
+      "example": {
+        "zh": "时间不多，不如我们先做最重要的部分。",
+        "pinyin": "Shíjiān bù duō, bùrú wǒmen xiān zuò zuì zhòngyào de bùfen.",
+        "en": "There’s not much time; we’d better do the most important part first."
+      }
+    },
+    {
+      "zh": "看情况",
+      "pinyin": "kàn qíngkuàng",
+      "pos": "v. phr.",
+      "en": "it depends; see how things go",
+      "note": "Pasangan: 到时候看情况. Hindari: don’t use 看情况 as an empty answer when you could already decide. Example pinyin not printed; standard pinyin added.",
+      "when": "Remember 看情况 like the honest workplace answer when going tomorrow (or any plan) still depends on conditions that aren’t fixed.",
+      "usage": "Most Chinese speakers use 看情况 when the outcome is genuinely conditional. Name the condition if the other person needs to plan.",
+      "example": {
+        "zh": "明天能不能去，要看情况。",
+        "pinyin": "Míngtiān néng bu néng qù, yào kàn qíngkuàng.",
+        "en": "Whether I can go tomorrow depends on the situation."
+      }
+    },
+    {
+      "zh": "我建议",
+      "pinyin": "wǒ jiànyì",
+      "pos": "v. phr.",
+      "en": "I suggest",
+      "note": "Pasangan: 我建议先……. Hindari: 建议 needs the content of the proposal — follow with a concrete action. Example pinyin not printed; standard pinyin added.",
+      "when": "Remember 我建议 like the clear phrase you’ll use to offer a workplace next step without claiming the final call is yours — e.g. confirm time with the client first.",
+      "usage": "Most Chinese speakers follow 我建议 with a specific action. Stopping at 建议 alone is incomplete.",
+      "example": {
+        "zh": "我建议先和客户确认时间。",
+        "pinyin": "Wǒ jiànyì xiān hé kèhù quèrèn shíjiān.",
+        "en": "I suggest we confirm the time with the client first."
+      }
+    },
+    {
+      "zh": "暂时",
+      "pinyin": "zànshí",
+      "pos": "adv.",
+      "en": "temporarily; for the time being",
+      "note": "Pasangan: 暂时不变. Hindari: 暂时 does not mean forever; say when it will be reviewed if relevant. Example pinyin not printed; standard pinyin added.",
+      "when": "Remember 暂时 like the word you’ll use when a workplace arrangement stays as-is for now but can still change later.",
+      "usage": "Most Chinese speakers use 暂时 to limit a decision or state to the current period. Pair it with a review time when plans may shift.",
+      "example": {
+        "zh": "这个安排暂时不变。",
+        "pinyin": "Zhège ānpái zànshí bú biàn.",
+        "en": "This arrangement will not change for the time being."
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "Module aim — state plans without overclaiming",
+      "body": "Modul 04 / Harian (book pages 15–17): state plans, options, and recommendations without sounding too certain before it is time. Indonesian title in the book: Niat dan keputusan."
+    },
+    {
+      "title": "打算 vs 决定",
+      "body": "From the book’s Hindari notes: 打算 marks a plan that can still change; use 决定 only when the choice is already set. Do not call something 决定 if it is still just under consideration.",
+      "example": {
+        "zh": "我打算明天和他们谈。",
+        "pinyin": "Wǒ dǎsuàn míngtiān hé tāmen tán.",
+        "en": "I plan to talk with them tomorrow."
+      }
+    },
+    {
+      "title": "我考虑一下 is not yes",
+      "body": "The book warns that 我考虑一下 is not agreement. If there is a response deadline at work, say when you will answer.",
+      "example": {
+        "zh": "这个建议不错，我再考虑一下。",
+        "pinyin": "Zhège jiànyì búcuò, wǒ zài kǎolǜ yíxià.",
+        "en": "This suggestion is good; I’ll consider it a bit more."
+      }
+    },
+    {
+      "title": "Latihan 90 detik",
+      "body": "Book drill (p.17): pick three entries from this module — 打算, 需要, and 我建议. Make one work or daily story with all three. Record without reading, then check whether your timing and decisions are clear."
+    }
+  ]
+}

@@ -1,9 +1,12 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Glossed, useGloss } from '../components/ChineseText'
+import { ChineseHear, HearButton } from '../components/Hear'
 import { CheckIcon, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { exampleFor, lookup } from '../lib/content'
+import { unlockSpeech } from '../lib/speech'
 import { dueCards, type Card, type Rating } from '../lib/srs'
+import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 import { useStore } from '../store/store'
 
 const SESSION = 8
@@ -217,6 +220,7 @@ export function ReviewFlow({
         <button
           className="card"
           onClick={reveal}
+          onPointerDown={() => unlockSpeech()}
           aria-label={shown ? undefined : `Reveal ${zh}`}
           disabled={shown}
           style={{
@@ -247,6 +251,10 @@ export function ReviewFlow({
           )}
         </button>
 
+        <div style={{ marginTop: 14, display: 'flex', justifyContent: 'center' }}>
+          <ChineseHear text={zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
+        </div>
+
         {shown && (
           <div className="pop card" style={{ marginTop: 12, padding: 20 }}>
             <div className="between" style={{ alignItems: 'flex-start' }}>
@@ -276,6 +284,9 @@ export function ReviewFlow({
                   {example.pinyin}
                 </div>
                 <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 6 }}>{example.en}</div>
+                <div style={{ marginTop: 10 }}>
+                  <HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+                </div>
               </div>
             )}
           </div>

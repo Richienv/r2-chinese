@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react'
 import { exampleFor } from '../lib/content'
 import type { Vocab } from '../lib/types'
+import { VOICE, WORD_RATE } from '../lib/voices'
 import { BookExample } from './ChineseText'
+import { ChineseHear } from './Hear'
 
 function TeachFace({ word, compact = false }: { word: Vocab; compact?: boolean }) {
   if (compact) {
@@ -58,7 +60,10 @@ export function FlipCard({
       <div className="flip teach-card" data-teach="true">
         <div className="face metal teach-face">
           <TeachFace word={word} />
-          {example && <BookExample example={example} tone="quiet" />}
+          <div style={{ marginTop: 14 }}>
+            <ChineseHear text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" tone="on-red" />
+          </div>
+          {example && <BookExample example={example} tone="quiet" autoplay={false} />}
         </div>
 
         {footer && <div className="teach-foot">{footer}</div>}
@@ -74,9 +79,22 @@ export function FlipCard({
             {word.zh}
           </div>
           <div style={{ fontSize: 13, color: 'var(--muted-2)', marginTop: 8 }}>Tap to reveal</div>
+          <div style={{ marginTop: 14 }}>
+            <ChineseHear text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
+          </div>
         </div>
         <div className="face face-back metal" aria-hidden={!flipped}>
           <TeachFace word={word} compact />
+          <div style={{ marginTop: 14 }}>
+            <ChineseHear
+              text={word.zh}
+              autoplay={false}
+              voice={VOICE.xiaoxiao}
+              rate={WORD_RATE}
+              label="Hear the word"
+              tone="on-red"
+            />
+          </div>
         </div>
       </div>
 

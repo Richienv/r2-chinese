@@ -10,7 +10,9 @@ import { Progress } from './screens/Progress'
 import { ReviewFlow } from './screens/Review'
 import { SavedWords } from './screens/SavedWords'
 import { VocabBrowser } from './screens/VocabBrowser'
+import { KerjaSession } from './screens/Kerja'
 import { WordsSession } from './screens/WordsSession'
+import { CourseProvider } from './lib/course'
 import { load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
 import { AuthProvider, useAuth } from './auth/AuthProvider'
 import { AuthScreen } from './auth/AuthScreen'
@@ -23,6 +25,7 @@ type Overlay =
   | { kind: 'lesson'; lesson: number; startStep?: number }
   | { kind: 'words'; lesson: number; node?: PathNode }
   | { kind: 'path'; lesson: number; node: PathNode }
+  | { kind: 'kerja'; chapter: number; node: PathNode }
   | { kind: 'review'; words?: string[]; title?: string }
   | { kind: 'character'; char: string }
   | { kind: 'drill'; words: string[]; title: string }
@@ -88,6 +91,7 @@ function Shell() {
             onSession={(lesson, node) => setOverlay({ kind: 'path', lesson, node })}
             onLesson={(lesson) => setOverlay({ kind: 'lesson', lesson })}
             onReview={() => setOverlay({ kind: 'review' })}
+            onKerjaSession={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
           />
         )}
         {tab === 'learn' && (
@@ -95,6 +99,7 @@ function Shell() {
             onLesson={(lesson) => setOverlay({ kind: 'lesson', lesson })}
             onVocab={() => setOverlay({ kind: 'vocab' })}
             onPlay={(lesson, node) => setOverlay({ kind: 'path', lesson, node })}
+            onKerjaPlay={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
             isNodeDone={(lesson, node) => store.isNodeDone(lesson, node)}
           />
         )}
@@ -131,6 +136,9 @@ function Shell() {
           node={overlay.kind === 'path' ? overlay.node : overlay.node ?? 't1'}
           onClose={() => setOverlay(null)}
         />
+      )}
+      {overlay?.kind === 'kerja' && (
+        <KerjaSession chapter={overlay.chapter} node={overlay.node} onClose={() => setOverlay(null)} />
       )}
       {overlay?.kind === 'review' && (
         <ReviewFlow words={overlay.words} title={overlay.title} onClose={() => setOverlay(null)} />
@@ -211,7 +219,9 @@ function Root() {
 export default function App() {
   return (
     <AuthProvider>
-      <Root />
+      <CourseProvider>
+        <Root />
+      </CourseProvider>
     </AuthProvider>
   )
 }

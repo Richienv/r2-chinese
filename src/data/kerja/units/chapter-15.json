@@ -1,0 +1,132 @@
+{
+  "id": "chapter-15",
+  "index": 15,
+  "titleZh": "条件和选择",
+  "titleEn": "Conditions and choices",
+  "sourcePages": "44-45",
+  "words": [
+    {
+      "zh": "如果",
+      "pinyin": "rúguǒ",
+      "pos": "conj.",
+      "en": "if",
+      "note": "Book headword pinyin printed as rúguǒ. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jika syaratnya belum terpenuhi, jangan laporkan akibatnya sebagai fakta yang sudah terjadi. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 如果 like the word you’ll use when syarat umum yang netral. Akibatnya sering diawali 就, tetapi konteks lisan kadang cukup tanpa 就..",
+      "usage": "Most Chinese speakers use 如果 in this office/HR speaking sense. Jika syaratnya belum terpenuhi, jangan laporkan akibatnya sebagai fakta yang sudah terjadi.",
+      "example": {
+        "zh": "如果他今天回复，我们就安排面试。",
+        "pinyin": "Rúguǒ tā jīntiān huífù， wǒmen jiù ānpái miànshì。",
+        "en": "Jika dia membalas hari ini, kita atur wawancara."
+      }
+    },
+    {
+      "zh": "要是",
+      "pinyin": "yàoshi",
+      "pos": "conj.",
+      "en": "if (spoken)",
+      "note": "Book headword pinyin printed as yàoshi. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 要是 tidak cocok untuk semua pengumuman formal; gunakan 如果 di sana. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 要是 like the word you’ll use when versi lisan yang lebih santai daripada 如果. Nyaman untuk usulan dan percakapan sehari-hari..",
+      "usage": "Most Chinese speakers use 要是 in this office/HR speaking sense. 要是 tidak cocok untuk semua pengumuman formal; gunakan 如果 di sana.",
+      "example": {
+        "zh": "要是你下午有空，我们聊十分钟。",
+        "pinyin": "Yàoshì nǐ xiàwǔ yǒukòng， wǒmen liáo shífēnzhōng。",
+        "en": "Kalau kamu ada waktu sore ini, kita bicara sepuluh menit."
+      }
+    },
+    {
+      "zh": "只要",
+      "pinyin": "zhǐyào",
+      "pos": "conj.",
+      "en": "as long as",
+      "note": "Book headword pinyin printed as zhǐyào. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 只要 menyatakan syarat cukup, bukan satu-satunya syarat wajib. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 只要 like the word you’ll use when menyatakan syarat yang cukup untuk hasil yang disebut; biasanya berpasangan dengan 就..",
+      "usage": "Most Chinese speakers use 只要 in this office/HR speaking sense. 只要 menyatakan syarat cukup, bukan satu-satunya syarat wajib.",
+      "example": {
+        "zh": "只要大家确认时间，我们就能发通知。",
+        "pinyin": "Zhǐyào dàjiā quèrèn shíjiān， wǒmen jiù néngfā tōngzhī。",
+        "en": "Asalkan semua memastikan waktunya, kita bisa mengirim pemberitahuan."
+      }
+    },
+    {
+      "zh": "只有",
+      "pinyin": "zhǐyǒu",
+      "pos": "adv.",
+      "en": "workplace sense of 只有",
+      "note": "Book headword pinyin printed as zhǐyǒu. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jangan tertukar dengan 只要: 只有……才…… menekankan syarat wajib. hanya jika Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 只有 like the word you’ll use when menyatakan syarat yang perlu dipenuhi; biasanya berpasangan dengan 才..",
+      "usage": "Most Chinese speakers use 只有 in this office/HR speaking sense. Jangan tertukar dengan 只要: 只有……才…… menekankan syarat wajib. hanya jika",
+      "example": {
+        "zh": "只有经理同意，我们才能改时间。",
+        "pinyin": "Zhǐyǒu jīnglǐ tóngyì， wǒmen cáinéng gǎi shíjiān。",
+        "en": "Hanya jika manajer setuju, kita bisa mengubah waktu."
+      }
+    },
+    {
+      "zh": "不管",
+      "pinyin": "bùguǎn",
+      "pos": "conj.",
+      "en": "apa pun, terlepas",
+      "note": "Book headword pinyin printed as bùguǎn. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Jangan pakai 不管 untuk satu syarat biasa; biasanya ada rentang kemungkinan. dari Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 不管 like the word you’ll use when menyatakan keputusan tetap berlaku meskipun kondisi berbeda-beda. Sering dipasangkan dengan 都..",
+      "usage": "Most Chinese speakers use 不管 in this office/HR speaking sense. Jangan pakai 不管 untuk satu syarat biasa; biasanya ada rentang kemungkinan. dari",
+      "example": {
+        "zh": "不管结果怎么样，我们都会告诉你。",
+        "pinyin": "Bùguǎn jiéguǒ zěnmeyàng， wǒmen dōu huì gàosù nǐ。",
+        "en": "Apa pun hasilnya, kami akan memberi tahu kamu."
+      }
+    },
+    {
+      "zh": "否则",
+      "pinyin": "fǒuzé",
+      "pos": "conj.",
+      "en": "if (spoken)",
+      "note": "Book headword pinyin printed as fǒuzé. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 否则 terdengar tegas; jelaskan akibatnya secara konkret agar tidak terasa mengancam. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 否则 like the word you’ll use when memberi konsekuensi jika langkah yang diminta tidak dilakukan. Cocok saat menyebut tenggat nyata..",
+      "usage": "Most Chinese speakers use 否则 in this office/HR speaking sense. 否则 terdengar tegas; jelaskan akibatnya secara konkret agar tidak terasa mengancam.",
+      "example": {
+        "zh": "请今天确认，否则我们来不及订房间。",
+        "pinyin": "Qǐng jīntiān quèrèn， fǒuzé wǒmen láibùjí dìngfángjiān。",
+        "en": "Mohon konfirmasi hari ini; kalau tidak, kami tidak sempat memesan ruangan."
+      }
+    },
+    {
+      "zh": "或者",
+      "pinyin": "huòzhě",
+      "pos": "conj.",
+      "en": "Kita bisa rapat pada Selasa atau Rabu.",
+      "note": "Book headword pinyin printed as huòzhě. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: Untuk meminta lawan bicara memilih A atau B secara langsung, gunakan 还是. an",
+      "when": "Remember 或者 like the word you’ll use when menyebut dua opsi di kalimat berita atau usulan. Bisa juga dalam pertanyaan ya/tidak tertentu, tetapi bukan pola utama pertanyaan memilih..",
+      "usage": "Most Chinese speakers use 或者 in this office/HR speaking sense. Untuk meminta lawan bicara memilih A atau B secara langsung, gunakan 还是. an",
+      "example": {
+        "zh": "我们可以周二或者周三开会。",
+        "pinyin": "Wǒmen kěyǐ zhōuèr huòzhě zhōusān kāihuì。",
+        "en": "atau dalam pernyata"
+      }
+    },
+    {
+      "zh": "还是",
+      "pinyin": "háishi",
+      "pos": "conj.",
+      "en": "workplace sense of 还是",
+      "note": "Book headword pinyin printed as háishi. Example-sentence pinyin not printed in the book; standard pinyin added. Jebakan: 还是 juga bisa berarti “masih”; di sini fungsi pilihan ditentukan oleh bentuk atau dalam pertanya pertanyaan. an pilihan jelaskan apakah maknanya berubah. Kalau hasilnya tidak masuk akal, hubungan logisnya perlu diperbaiki.",
+      "when": "Remember 还是 like the word you’ll use when menghubungkan opsi ketika kamu meminta seseorang memilih..",
+      "usage": "Most Chinese speakers use 还是 in this office/HR speaking sense. 还是 juga bisa berarti “masih”; di sini fungsi pilihan ditentukan oleh bentuk atau dalam pertanya pertanyaan. an pilihan jelaskan apakah maknanya berubah. Kalau hasilnya tidak masuk akal, hubungan logisnya perlu diperbaiki.",
+      "example": {
+        "zh": "你想线上聊，还是来办公室？",
+        "pinyin": "Nǐ xiǎngxiàn shàng liáo， háishì lái bàngōngshì？",
+        "en": "Kamu ingin bicara daring atau datang ke kantor?"
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "Module aim — Kondisi dan pilihan",
+      "body": "Penghubung 05 / 06 (book pages 44-45). Indonesian title: Kondisi dan pilihan."
+    },
+    {
+      "title": "Tes koneksi (book exercise)",
+      "body": "Say two related facts, swap in another connector from this module, and check whether the meaning still holds. If it does not, fix the logical link."
+    }
+  ]
+}

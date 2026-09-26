@@ -1,7 +1,10 @@
-import { useMemo, useState, type CSSProperties } from 'react'
+import { useEffect, useMemo, useState, type CSSProperties } from 'react'
 import { exampleFor, segment, type Example } from '../lib/content'
-import type { TextLine, Vocab } from '../lib/types'
+import { speak, speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
+import type { LessonText, TextLine, Vocab } from '../lib/types'
+import { LINE_RATE, VOICE, WORD_RATE, voiceForSpeaker } from '../lib/voices'
 import { DrillFlow } from '../screens/Drill'
+import { ChineseHear, HearButton, useSpeechActive } from './Hear'
 import { BoltIcon, PencilIcon } from './Icons'
 import { SaveStar } from './SaveStar'
 import { Sheet } from './Sheet'
@@ -11,11 +14,14 @@ export function BookExample({
   example,
   style,
   tone = 'card',
+  autoplay = false,
 }: {
   example: Example
   style?: CSSProperties
   /** `quiet` sits on the metal teach card as a caption. `card` is paper, still caption-weight. */
   tone?: 'card' | 'quiet'
+  /** When true, speak the line on mount. Keep false under GlossSheet / FlipCard word autoplay. */
+  autoplay?: boolean
 }) {
   if (tone === 'quiet') {
     return (
@@ -25,6 +31,9 @@ export function BookExample({
         </div>
         <div className="teach-example-py">{example.pinyin}</div>
         <div className="teach-example-en">{example.en}</div>
+        <div style={{ marginTop: 10 }}>
+          <ChineseHear text={example.zh} autoplay={autoplay} label="Hear the line" rate={LINE_RATE} tone="on-red" />
+        </div>
       </div>
     )
   }
@@ -37,6 +46,9 @@ export function BookExample({
       </div>
       <div className="book-example-py">{example.pinyin}</div>
       <div className="book-example-en">{example.en}</div>
+      <div style={{ marginTop: 12 }}>
+        <ChineseHear text={example.zh} autoplay={autoplay} label="Hear the line" rate={LINE_RATE} />
+      </div>
     </div>
   )
 }
@@ -87,6 +99,11 @@ export function GlossSheet({
   onStrokes?: (char: string) => void
 }) {
   const example = exampleFor(word.zh)
+  useEffect(() => {
+    const key = `${VOICE.xiaoxiao}|${WORD_RATE}|${word.zh}`
+    void speak(word.zh, { voice: VOICE.xiaoxiao, rate: WORD_RATE, key })
+    return () => stopSpeech()
+  }, [word.zh])
   return (
     <Sheet onClose={onClose}>
       <div className="between" style={{ alignItems: 'flex-start' }}>
@@ -98,6 +115,9 @@ export function GlossSheet({
           {word.pos ? <div className="teach-gloss-pos">{word.pos}</div> : null}
         </div>
         <SaveStar zh={word.zh} size={22} />
+      </div>
+      <div style={{ marginTop: 12 }}>
+        <HearButton text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
       </div>
       <p className="teach-gloss-en">{word.en}</p>
       {word.note && (
@@ -148,9 +168,25 @@ export function Line({
   showEnglish?: boolean
   onWord: (v: Vocab) => void
 }) {
+  const voice = voiceForSpeaker(line.speaker)
+  const hearKey = `${voice}|${LINE_RATE}|${line.zh}`
+  const playing = useSpeechActive(hearKey)
   return (
     <div className="line" data-self={self}>
-      {line.speaker && <div className="speaker">{line.speaker.slice(0, 1)}</div>}
+      <button
+        type="button"
+        className="speaker"
+        data-on={playing}
+        aria-label={line.speaker ? `Hear ${line.speaker}` : 'Hear this line'}
+        onPointerDown={() => unlockSpeech()}
+        onClick={(e) => {
+          e.stopPropagation()
+          if (playing) stopSpeech()
+          else void speak(line.zh, { voice, rate: LINE_RATE, key: hearKey })
+        }}
+      >
+        {line.speaker ? line.speaker.slice(0, 1) : '听'}
+      </button>
       <div className="bubble">
         <div className="hz">
           <Glossed text={line.zh} onWord={onWord} />
@@ -158,6 +194,56 @@ export function Line({
         {showPinyin && <div className="py">{line.pinyin}</div>}
         {showEnglish && <div className="en">{line.en}</div>}
       </div>
+    </div>
+  )
+}
+
+/** Plays a 课文 in order. Each speaker keeps their own neural voice. */
+export function DialogueAudio({ text }: { text: LessonText }) {
+  const group = `dialogue|${text.label}|${text.heading_zh}`
+  const playing = useSpeechActive(group)
+  const lines = text.lines.filter((line) => line.zh.trim())
+
+  useEffect(() => {
+    if (lines.length === 0) return
+    void speakLines(
+      lines.map((line) => ({
+        text: line.zh,
+        voice: voiceForSpeaker(line.speaker),
+        rate: LINE_RATE,
+      })),
+      { group, key: group },
+    )
+    return () => stopSpeech()
+    // Replay only when this 课文 changes, not when the line array identity changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [group])
+
+  return (
+    <div className="dialogue-audio">
+      <button
+        type="button"
+        className="hear hear-ink"
+        data-on={playing}
+        onPointerDown={() => unlockSpeech()}
+        onClick={() => {
+          if (playing) {
+            stopSpeech()
+            return
+          }
+          void speakLines(
+            lines.map((line) => ({
+              text: line.zh,
+              voice: voiceForSpeaker(line.speaker),
+              rate: LINE_RATE,
+            })),
+            { group, key: group },
+          )
+        }}
+      >
+        <span>{playing ? 'Stop' : text.type === 'dialogue' ? 'Play dialogue' : 'Play passage'}</span>
+      </button>
+      <p className="dialogue-audio-hint">Tap a name to hear that line.</p>
     </div>
   )
 }

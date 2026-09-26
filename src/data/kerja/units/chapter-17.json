@@ -1,0 +1,338 @@
+{
+  "id": "chapter-17",
+  "index": 17,
+  "titleZh": "句子诊所（14个模式）",
+  "titleEn": "Sentence clinic (14 patterns)",
+  "sourcePages": "48-52",
+  "words": [
+    {
+      "zh": "模式01",
+      "pinyin": "móshì01",
+      "pos": "pattern",
+      "en": "Clinic pattern 01: WAKTU MENDAHULUI TINDAKAN UTAMA",
+      "note": "Klinik kalimat 01. Awal (avoid): 我跟经理讨论明天这个问题。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 01 (WAKTU MENDAHULUI TINDAKAN UTAMA).",
+      "usage": "Kalau 'besok' menerangkan kapan diskusinya terjadi, taruh 明天 sebelum frasa 跟经理讨论. Posisi yang keliru membuat 明天 terdengar menempel pada objek yang salah.",
+      "example": {
+        "zh": "我星期五上午见那位候选人。",
+        "pinyin": "Wǒ xīngqīwǔ shàngwǔ jiàn nàwèi hòuxuǎnrén。",
+        "en": "Saya akan bertemu kandidat itu Jumat pagi."
+      }
+    },
+    {
+      "zh": "跟",
+      "pinyin": "gēn",
+      "pos": "pattern",
+      "en": "Clinic pattern 02: 跟 UNTUK BERDISKUSI DENGAN SESEORANG",
+      "note": "Klinik kalimat 02. Awal (avoid): 我给经理讨论这个问题。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 02 (跟 UNTUK BERDISKUSI DENGAN SESEORANG).",
+      "usage": "跟 menghubungkan dua orang yang berbicara bersama. 给 menandai penerima sesuatu, misalnya 给经理发邮 件. Untuk 'menjelaskan kepada', pakai 向 atau 跟 sesuai konteks.",
+      "example": {
+        "zh": "我会跟团队讨论时间安排。",
+        "pinyin": "Wǒhuì gēn tuánduì tǎolùn shíjiān ānpái。",
+        "en": "Saya akan membicarakan jadwal dengan tim."
+      }
+    },
+    {
+      "zh": "的",
+      "pinyin": "de",
+      "pos": "pattern",
+      "en": "Clinic pattern 03: 的, 地, 得: HUBUNGAN KATANYA BERBEDA",
+      "note": "Klinik kalimat 03. Awal (avoid): 他说的很清楚。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 03 (的, 地, 得: HUBUNGAN KATANYA BERBEDA).",
+      "usage": "得 ditempatkan setelah verba untuk menerangkan hasil atau derajat tindakannya. 的 menghubungkan atribut dengan nomina; 地 menghubungkan cara dengan verba. Saat bicara, bunyinya sama, tetapi tulisan profesional membedakannya.",
+      "example": {
+        "zh": "他把这个问题解释得很清楚。",
+        "pinyin": "Tā bǎ zhège wèntí jiěshì dé hěn qīngchǔ。",
+        "en": "Ia menjelaskan masalah itu dengan sangat jelas."
+      }
+    },
+    {
+      "zh": "能",
+      "pinyin": "néng",
+      "pos": "pattern",
+      "en": "Clinic pattern 04: 能, 会, 可以: HAMBATAN, KETERAMPILAN, IZIN",
+      "note": "Klinik kalimat 04. Awal (avoid): 我明天不会参加会议，因为有别的安排。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 04 (能, 会, 可以: HAMBATAN, KETERAMPILAN, IZIN).",
+      "usage": "Kalimat awal gramatikal dan berarti 'saya tidak akan hadir'. Jika maksudmu 'saya tidak bisa hadir karena bentrok jadwal', 不能 menyatakan hambatan itu lebih jelas. 会 bisa menyatakan keterampilan atau prediksi; 可 以 berkaitan dengan izin atau kelayakan.",
+      "example": {
+        "zh": "我会说中文，但是今天下午不能参加面试。",
+        "pinyin": "Wǒhuì shuō zhōngwén， dànshì jīntiānxiàwǔ bùnéng cānjiā miànshì。",
+        "en": "Saya bisa berbahasa Mandarin, tetapi sore ini tidak bisa ikut wawancara."
+      }
+    },
+    {
+      "zh": "把",
+      "pinyin": "bǎ",
+      "pos": "pattern",
+      "en": "Clinic pattern 05: 把 MENUNTUT HASIL ATAU TUJUAN YANG JELAS",
+      "note": "Klinik kalimat 05. Awal (avoid): 我把邮件发。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 05 (把 MENUNTUT HASIL ATAU TUJUAN YANG JELAS).",
+      "usage": "Pola 把 menyorot objek yang diproses dan biasanya menyebut hasil, arah, penerima, atau perubahan. Dalam kalimat kerja, sebut ke mana dokumen bergerak atau apa yang selesai.",
+      "example": {
+        "zh": "我已经把时间安排发给候选人了。",
+        "pinyin": "Wǒ yǐjīng bǎ shíjiān ānpái fāgěi hòuxuǎnrén le。",
+        "en": "Saya sudah mengirim jadwal kepada kandidat."
+      }
+    },
+    {
+      "zh": "被",
+      "pinyin": "bèi",
+      "pos": "pattern",
+      "en": "Clinic pattern 06: 被 UNTUK KEJADIAN YANG DIALAMI OBJEK",
+      "note": "Klinik kalimat 06. Awal (avoid): 这份报告被我写。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 06 (被 UNTUK KEJADIAN YANG DIALAMI OBJEK).",
+      "usage": "Kalau tujuanmu hanya mengidentifikasi penulis laporan, 是……的 lebih alami. 被 menyorot sesuatu yang dialami objek, terutama ketika dampaknya penting: 文件被删掉了. Jangan menerjemahkan semua kalimat pasif Indonesia menjadi 被.",
+      "example": {
+        "zh": "那个文件不小心被删掉了。",
+        "pinyin": "Nàge wénjiàn bù xiǎoxīn bèi shāndiào le。",
+        "en": "File itu tidak sengaja terhapus."
+      }
+    },
+    {
+      "zh": "没",
+      "pinyin": "méi",
+      "pos": "pattern",
+      "en": "Clinic pattern 07: 没(有) UNTUK KEJADIAN YANG TIDAK TERJADI",
+      "note": "Klinik kalimat 07. Awal (avoid): 我昨天没有去了面试。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 07 (没(有) UNTUK KEJADIAN YANG TIDAK TERJADI).",
+      "usage": "Saat menyatakan suatu tindakan tidak terjadi, 没(有) langsung mendahului verba; 了 penyelesaian tindakan biasanya tidak dipakai pada bentuk negatif ini. Untuk menyatakan sudah terjadi, gunakan 我昨天去参加面试了.",
+      "example": {
+        "zh": "我还没有发邀请。",
+        "pinyin": "Wǒ hái méiyǒu fā yāoqǐng。",
+        "en": "Saya belum mengirim undangannya."
+      }
+    },
+    {
+      "zh": "再",
+      "pinyin": "zài",
+      "pos": "pattern",
+      "en": "Clinic pattern 08: 再 UNTUK NANTI, 又 UNTUK PENGULANGAN YANG SUDAH TERJADI",
+      "note": "Klinik kalimat 08. Awal (avoid): 我昨天再给他发了一封邮件。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 08 (再 UNTUK NANTI, 又 UNTUK PENGULANGAN YANG SUDAH TERJADI).",
+      "usage": "又 biasanya menandai pengulangan yang sudah terjadi; 再 menandai langkah berikutnya atau pengulangan yang masih akan dilakukan. Perbedaan ini penting saat memberi update kronologi.",
+      "example": {
+        "zh": "如果他还没回复，我明天再发一次。",
+        "pinyin": "Rúguǒ tā hái méi huífù， wǒ míngtiān zàifā yīcì。",
+        "en": "Kalau ia belum membalas, besok saya kirim lagi."
+      }
+    },
+    {
+      "zh": "先",
+      "pinyin": "xiān",
+      "pos": "pattern",
+      "en": "Clinic pattern 09: 先……再…… UNTUK URUTAN YANG BISA DITINDAKLANJUTI",
+      "note": "Klinik kalimat 09. Awal (avoid): 我们先通知，再确认结果。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 09 (先……再…… UNTUK URUTAN YANG BISA DITINDAKLANJUTI).",
+      "usage": "Kalimat pertama bisa benar secara tata bahasa, tetapi salah urutan kerja bila hasil belum pasti. Dalam manajemen, penghubung harus menjaga logika proses, bukan sekadar menggabungkan dua verba.",
+      "example": {
+        "zh": "我们先检查数据，再做决定。",
+        "pinyin": "Wǒmen xiān jiǎncháshùjù， zài zuò juédìng。",
+        "en": "Kita periksa datanya dahulu, baru buat keputusan."
+      }
+    },
+    {
+      "zh": "只要",
+      "pinyin": "zhǐyào",
+      "pos": "pattern",
+      "en": "Clinic pattern 10: 只要 DAN 只有 MENGUBAH LOGIKA SYARAT",
+      "note": "Klinik kalimat 10. Awal (avoid): 只要经理批准，我才能发通知。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 10 (只要 DAN 只有 MENGUBAH LOGIKA SYARAT).",
+      "usage": "Jika maksudmu persetujuan manajer adalah syarat yang harus dipenuhi, pakai 只有……才……. 只要……就 …… menyatakan satu kondisi sudah cukup untuk hasil. Kalimat awal mencampur keduanya.",
+      "example": {
+        "zh": "只要时间合适，我们就可以继续面试。",
+        "pinyin": "Zhǐyào shíjiān héshì， wǒmen jiù kěyǐ jìxù miànshì。",
+        "en": "Asalkan jadwal cocok, kita bisa lanjut wawancara."
+      }
+    },
+    {
+      "zh": "虽然",
+      "pinyin": "suīrán",
+      "pos": "pattern",
+      "en": "Clinic pattern 11: 虽然……但是…… UNTUK HAMBATAN DAN HASIL",
+      "note": "Klinik kalimat 11. Awal (avoid): 虽然他有经验，所以我们还要看沟通能力。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 11 (虽然……但是…… UNTUK HAMBATAN DAN HASIL).",
+      "usage": "虽然 membuka kontras atau konsesi, bukan hubungan sebab-akibat. Pasangannya biasanya 但是, 可是, atau 还是. Kalau mau alasan dan akibat, mulai dengan 因为.",
+      "example": {
+        "zh": "虽然时间很紧，但是我们还是需要给反馈。",
+        "pinyin": "Suīrán shíjiān hěn jǐn， dànshì wǒmen háishì xūyào gěi fǎnkuì。",
+        "en": "Walaupun waktunya sempit, kita tetap perlu memberi feedback."
+      }
+    },
+    {
+      "zh": "比较",
+      "pinyin": "bǐjiào",
+      "pos": "pattern",
+      "en": "Clinic pattern 12: 比较 DAN 比 BUKAN SUSUNAN YANG SAMA",
+      "note": "Klinik kalimat 12. Awal (avoid): 这个方案比较那个好。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 12 (比较 DAN 比 BUKAN SUSUNAN YANG SAMA).",
+      "usage": "比 menghubungkan dua objek yang dibandingkan. 比较 adalah adverbia 'relatif/agak' di depan sifat, atau verba ' membandingkan' dengan susunan lain. Jangan menempelkan 比较 langsung sebelum pembanding seperti pola 比.",
+      "example": {
+        "zh": "这个方案比之前的方案更合适。",
+        "pinyin": "Zhège fāngàn bǐ zhīqián de fāngàn gèng héshì。",
+        "en": "Rencana ini lebih sesuai daripada rencana sebelumnya."
+      }
+    },
+    {
+      "zh": "模式13",
+      "pinyin": "móshì13",
+      "pos": "pattern",
+      "en": "Clinic pattern 13: KATA TANYA TETAP DI TEMPAT JAWABANNYA",
+      "note": "Klinik kalimat 13. Awal (avoid): 你方便什么时候？. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 13 (KATA TANYA TETAP DI TEMPAT JAWABANNYA).",
+      "usage": "Untuk menanyakan waktu seseorang tersedia, letakkan 什么时候 di posisi keterangan waktu sebelum 方便. Kata tanya Mandarin umumnya menempati posisi informasi yang dicari.",
+      "example": {
+        "zh": "你想跟谁讨论这个话题？",
+        "pinyin": "Nǐ xiǎng gēn shuí tǎolùn zhège huàtí？",
+        "en": "Kamu ingin membahas topik itu dengan siapa?"
+      }
+    },
+    {
+      "zh": "做",
+      "pinyin": "zuò",
+      "pos": "pattern",
+      "en": "Clinic pattern 14: HASIL TINDAKAN: 做, 做完, 做好",
+      "note": "Klinik kalimat 14. Awal (avoid): 报告我做。. Headword taken from pattern title; example uses Jawaban when printed, else Revisi. Example pinyin not printed as vocab; standard pinyin added.",
+      "when": "Remember this fix when your office Mandarin matches the book’s Awal line for pattern 14 (HASIL TINDAKAN: 做, 做完, 做好).",
+      "usage": "报告我做 bisa berarti 'biar laporan saya yang kerjakan'; kalimat itu belum menyatakan status selesai. Untuk update pekerjaan, sebut apakah kamu sedang mengerjakan, sudah selesai, atau sudah siap dipakai. 做完 menandai selesai; 做好 sering berarti hasilnya siap.",
+      "example": {
+        "zh": "我已经准备好开会材料了。",
+        "pinyin": "Wǒ yǐjīng zhǔnbèi hǎo kāihuì cáiliào le。",
+        "en": "Saya sudah menyiapkan materi rapat."
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "How to use Klinik kalimat",
+      "body": "Book pages 48–52 (KESALAHAN BERDAMPAK / Klinik kalimat): 14 patterns. Say the Revisi aloud before reading the explanation. Each item shows Awal → Revisi, often with Coba / Jawaban."
+    },
+    {
+      "title": "01 WAKTU MENDAHULUI TINDAKAN UTAMA",
+      "body": "Kalau 'besok' menerangkan kapan diskusinya terjadi, taruh 明天 sebelum frasa 跟经理讨论. Posisi yang keliru membuat 明天 terdengar menempel pada objek yang salah. Awal: 我跟经理讨论明天这个问题。",
+      "example": {
+        "zh": "我明天跟经理讨论这个问题。",
+        "pinyin": "Wǒ míngtiān gēn jīnglǐ tǎolùn zhège wèntí。",
+        "en": "Saya akan bertemu kandidat itu Jumat pagi."
+      }
+    },
+    {
+      "title": "02 跟 UNTUK BERDISKUSI DENGAN SESEORANG",
+      "body": "跟 menghubungkan dua orang yang berbicara bersama. 给 menandai penerima sesuatu, misalnya 给经理发邮 件. Untuk 'menjelaskan kepada', pakai 向 atau 跟 sesuai konteks. Awal: 我给经理讨论这个问题。",
+      "example": {
+        "zh": "我跟经理讨论这个问题。",
+        "pinyin": "Wǒ gēn jīnglǐ tǎolùn zhège wèntí。",
+        "en": "Saya akan membicarakan jadwal dengan tim."
+      }
+    },
+    {
+      "title": "03 的, 地, 得: HUBUNGAN KATANYA BERBEDA",
+      "body": "得 ditempatkan setelah verba untuk menerangkan hasil atau derajat tindakannya. 的 menghubungkan atribut dengan nomina; 地 menghubungkan cara dengan verba. Saat bicara, bunyinya sama, tetapi tulisan profesional membedakannya. Awal: 他说的很清楚。",
+      "example": {
+        "zh": "他说得很清楚。",
+        "pinyin": "Tā shuō dé hěn qīngchǔ。",
+        "en": "Ia menjelaskan masalah itu dengan sangat jelas."
+      }
+    },
+    {
+      "title": "04 能, 会, 可以: HAMBATAN, KETERAMPILAN, IZIN",
+      "body": "Kalimat awal gramatikal dan berarti 'saya tidak akan hadir'. Jika maksudmu 'saya tidak bisa hadir karena bentrok jadwal', 不能 menyatakan hambatan itu lebih jelas. 会 bisa menyatakan keterampilan atau prediksi; 可 以 berkaitan dengan izin atau kelayakan. Awal: 我明天不会参加会议，因为有别的安排。",
+      "example": {
+        "zh": "我明天不能参加会议，因为有别的安排。",
+        "pinyin": "Wǒ míngtiān bùnéng cānjiā huìyì， yīnwèi yǒu biéde ānpái。",
+        "en": "Saya bisa berbahasa Mandarin, tetapi sore ini tidak bisa ikut wawancara."
+      }
+    },
+    {
+      "title": "05 把 MENUNTUT HASIL ATAU TUJUAN YANG JELAS",
+      "body": "Pola 把 menyorot objek yang diproses dan biasanya menyebut hasil, arah, penerima, atau perubahan. Dalam kalimat kerja, sebut ke mana dokumen bergerak atau apa yang selesai. Awal: 我把邮件发。",
+      "example": {
+        "zh": "我把邮件发给经理了。",
+        "pinyin": "Wǒ bǎ yóujiàn fāgěi jīnglǐ le。",
+        "en": "Saya sudah mengirim jadwal kepada kandidat."
+      }
+    },
+    {
+      "title": "06 被 UNTUK KEJADIAN YANG DIALAMI OBJEK",
+      "body": "Kalau tujuanmu hanya mengidentifikasi penulis laporan, 是……的 lebih alami. 被 menyorot sesuatu yang dialami objek, terutama ketika dampaknya penting: 文件被删掉了. Jangan menerjemahkan semua kalimat pasif Indonesia menjadi 被. Awal: 这份报告被我写。",
+      "example": {
+        "zh": "这份报告是我写的。",
+        "pinyin": "Zhèfèn bàogào shì wǒ xiě de。",
+        "en": "File itu tidak sengaja terhapus."
+      }
+    },
+    {
+      "title": "07 没(有) UNTUK KEJADIAN YANG TIDAK TERJADI",
+      "body": "Saat menyatakan suatu tindakan tidak terjadi, 没(有) langsung mendahului verba; 了 penyelesaian tindakan biasanya tidak dipakai pada bentuk negatif ini. Untuk menyatakan sudah terjadi, gunakan 我昨天去参加面试了. Awal: 我昨天没有去了面试。",
+      "example": {
+        "zh": "我昨天没有去参加面试。",
+        "pinyin": "Wǒ zuótiān méiyǒu qù cānjiā miànshì。",
+        "en": "Saya belum mengirim undangannya."
+      }
+    },
+    {
+      "title": "08 再 UNTUK NANTI, 又 UNTUK PENGULANGAN YANG SUDAH TERJADI",
+      "body": "又 biasanya menandai pengulangan yang sudah terjadi; 再 menandai langkah berikutnya atau pengulangan yang masih akan dilakukan. Perbedaan ini penting saat memberi update kronologi. Awal: 我昨天再给他发了一封邮件。",
+      "example": {
+        "zh": "我昨天又给他发了一封邮件。",
+        "pinyin": "Wǒ zuótiān yòu gěi tā fā le yīfēng yóujiàn。",
+        "en": "Kalau ia belum membalas, besok saya kirim lagi."
+      }
+    },
+    {
+      "title": "09 先……再…… UNTUK URUTAN YANG BISA DITINDAKLANJUTI",
+      "body": "Kalimat pertama bisa benar secara tata bahasa, tetapi salah urutan kerja bila hasil belum pasti. Dalam manajemen, penghubung harus menjaga logika proses, bukan sekadar menggabungkan dua verba. Awal: 我们先通知，再确认结果。",
+      "example": {
+        "zh": "我们先确认结果，再通知大家。",
+        "pinyin": "Wǒmen xiān quèrèn jiéguǒ， zài tōngzhī dàjiā。",
+        "en": "Kita periksa datanya dahulu, baru buat keputusan."
+      }
+    },
+    {
+      "title": "10 只要 DAN 只有 MENGUBAH LOGIKA SYARAT",
+      "body": "Jika maksudmu persetujuan manajer adalah syarat yang harus dipenuhi, pakai 只有……才……. 只要……就 …… menyatakan satu kondisi sudah cukup untuk hasil. Kalimat awal mencampur keduanya. Awal: 只要经理批准，我才能发通知。",
+      "example": {
+        "zh": "只有经理批准，我才能发通知。",
+        "pinyin": "Zhǐyǒu jīnglǐ pīzhǔn， wǒ cáinéng fā tōngzhī。",
+        "en": "Asalkan jadwal cocok, kita bisa lanjut wawancara."
+      }
+    },
+    {
+      "title": "11 虽然……但是…… UNTUK HAMBATAN DAN HASIL",
+      "body": "虽然 membuka kontras atau konsesi, bukan hubungan sebab-akibat. Pasangannya biasanya 但是, 可是, atau 还是. Kalau mau alasan dan akibat, mulai dengan 因为. Awal: 虽然他有经验，所以我们还要看沟通能力。",
+      "example": {
+        "zh": "虽然他有经验，但是我们还要看沟通能力。",
+        "pinyin": "Suīrán tā yǒu jīngyàn， dànshì wǒmen háiyào kàn gōutōng nénglì。",
+        "en": "Walaupun waktunya sempit, kita tetap perlu memberi feedback."
+      }
+    },
+    {
+      "title": "12 比较 DAN 比 BUKAN SUSUNAN YANG SAMA",
+      "body": "比 menghubungkan dua objek yang dibandingkan. 比较 adalah adverbia 'relatif/agak' di depan sifat, atau verba ' membandingkan' dengan susunan lain. Jangan menempelkan 比较 langsung sebelum pembanding seperti pola 比. Awal: 这个方案比较那个好。",
+      "example": {
+        "zh": "这个方案比那个好。",
+        "pinyin": "Zhège fāngàn bǐ nàge hǎo。",
+        "en": "Rencana ini lebih sesuai daripada rencana sebelumnya."
+      }
+    },
+    {
+      "title": "13 KATA TANYA TETAP DI TEMPAT JAWABANNYA",
+      "body": "Untuk menanyakan waktu seseorang tersedia, letakkan 什么时候 di posisi keterangan waktu sebelum 方便. Kata tanya Mandarin umumnya menempati posisi informasi yang dicari. Awal: 你方便什么时候？",
+      "example": {
+        "zh": "你什么时候方便？",
+        "pinyin": "Nǐ shénme shíhòu fāngbiàn？",
+        "en": "Kamu ingin membahas topik itu dengan siapa?"
+      }
+    },
+    {
+      "title": "14 HASIL TINDAKAN: 做, 做完, 做好",
+      "body": "报告我做 bisa berarti 'biar laporan saya yang kerjakan'; kalimat itu belum menyatakan status selesai. Untuk update pekerjaan, sebut apakah kamu sedang mengerjakan, sudah selesai, atau sudah siap dipakai. 做完 menandai selesai; 做好 sering berarti hasilnya siap. Awal: 报告我做。",
+      "example": {
+        "zh": "报告我已经做完了。",
+        "pinyin": "Bàogào wǒ yǐjīng zuò wán le。",
+        "en": "Saya sudah menyiapkan materi rapat."
+      }
+    }
+  ]
+}

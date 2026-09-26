@@ -1,8 +1,11 @@
 import { type CSSProperties, useLayoutEffect, useRef, useState } from 'react'
 import { CheckIcon, LockIcon, PlayIcon } from '../components/Icons'
+import { useCourse } from '../lib/course'
 import { lessons } from '../lib/content'
+import { unlockSpeech } from '../lib/speech'
 import { NODE_LABEL, PATH_NODES, isLessonReached, isNodePlayable, nextPlayable, nodeCaption } from '../lib/wordsSession'
 import { useStore, type PathNode } from '../store/store'
+import { KerjaLearn } from './Kerja'
 
 const W = 396
 const CX = [118, 278, 108, 288, 116, 270]
@@ -142,6 +145,9 @@ export function LessonPath({
                   marginLeft: -r,
                 } as CSSProperties
               }
+              onPointerDown={() => {
+                if (playable) unlockSpeech()
+              }}
               onClick={() => {
                 if (!playable) return
                 onPlay?.(lesson.lesson, node)
@@ -172,16 +178,23 @@ export function LessonPath({
 export function Learn({
   onLesson,
   onPlay,
+  onKerjaPlay,
   isNodeDone,
 }: {
   onLesson: (lesson: number) => void
   onVocab?: () => void
   onPlay?: (lesson: number, node: PathNode) => void
+  onKerjaPlay?: (chapter: number, node: PathNode) => void
   isNodeDone?: (lesson: number, node: PathNode) => boolean
 }) {
   const store = useStore()
+  const { course } = useCourse()
   const nodeDone = isNodeDone ?? store.isNodeDone
   const current = nextPlayable(nodeDone)
+
+  if (course === 'kerja') {
+    return <KerjaLearn onPlay={(chapter, node) => onKerjaPlay?.(chapter, node)} />
+  }
 
   return (
     <div className="path-page">

@@ -1,0 +1,154 @@
+{
+  "id": "chapter-18",
+  "index": 18,
+  "titleZh": "六个说话模板",
+  "titleEn": "Six speaking templates",
+  "sourcePages": "53-54",
+  "words": [
+    {
+      "zh": "目前……已经……，还差……，预计……。",
+      "pinyin": "Mùqián … … yǐjīng … …， hái chà … …， yùjì … …。",
+      "pos": "frame",
+      "en": "Saat ini ... sudah ..., masih perlu ..., perkiraan selesai ....",
+      "note": "Template 01 — UPDATE PEKERJAAN. Frame pinyin not printed as a vocab headword; standard pinyin added.",
+      "when": "Remember this frame when you need a ready workplace reply for: UPDATE PEKERJAAN.",
+      "usage": "Fill the slots with real workplace facts, then personalize. Book section: UPDATE PEKERJAAN.",
+      "example": {
+        "zh": "目前面试已经安排好了，还差两位候选人的确认，预计明天下午有结果。",
+        "pinyin": "Mùqián miànshì yǐjīng ānpái hǎo le， hái chà liǎngwèi hòuxuǎnrén de quèrèn， yùjì míngtiān xiàwǔ yǒu jiéguǒ。",
+        "en": "Saat ini ... sudah ..., masih perlu ..., perkiraan selesai ...."
+      }
+    },
+    {
+      "zh": "我确认一下，您的意思是……，对吗？",
+      "pinyin": "Wǒ quèrèn yīxià， nín de yìsi shì … …， duì ma？",
+      "pos": "frame",
+      "en": "Saya pastikan dulu: maksud Anda ..., benar?",
+      "note": "Template 02 — MINTA KONFIRMASI. Frame pinyin not printed as a vocab headword; standard pinyin added.",
+      "when": "Remember this frame when you need a ready workplace reply for: MINTA KONFIRMASI.",
+      "usage": "Fill the slots with real workplace facts, then personalize. Book section: MINTA KONFIRMASI.",
+      "example": {
+        "zh": "我确认一下，您的意思是先联系候选人，对吗？",
+        "pinyin": "Wǒ quèrèn yīxià， nín de yìsi shì xiān liánxì hòuxuǎnrén， duì ma？",
+        "en": "Saya pastikan dulu: maksud Anda ..., benar?"
+      }
+    },
+    {
+      "zh": "我建议……，主要因为……。您看怎么样？",
+      "pinyin": "Wǒ jiànyì … …， zhǔyào yīnwèi … …。 nín kàn zěnmeyàng？",
+      "pos": "frame",
+      "en": "Saya sarankan ..., terutama karena .... Bagaimana menurut Anda?",
+      "note": "Template 03 — MENYAMPAIKAN SARAN. Frame pinyin not printed as a vocab headword; standard pinyin added.",
+      "when": "Remember this frame when you need a ready workplace reply for: MENYAMPAIKAN SARAN.",
+      "usage": "Fill the slots with real workplace facts, then personalize. Book section: MENYAMPAIKAN SARAN.",
+      "example": {
+        "zh": "我建议把面试改到下午，主要因为经理上午有会。您看怎么样？",
+        "pinyin": "Wǒ jiànyì bǎ miànshì gǎi dào xiàwǔ， zhǔyào yīnwèi jīnglǐ shàngwǔ yǒuhuì。 nín kàn zěnmeyàng？",
+        "en": "Saya sarankan ..., terutama karena .... Bagaimana menurut Anda?"
+      }
+    },
+    {
+      "zh": "我理解……，不过……。要不要先……？",
+      "pinyin": "Wǒ lǐjiě … …， bùguò … …。 yào búyào xiān … …？",
+      "pos": "frame",
+      "en": "Saya paham ..., tetapi .... Bagaimana kalau kita ... dulu?",
+      "note": "Template 04 — TIDAK SETUJU DENGAN SOPAN. Frame pinyin not printed as a vocab headword; standard pinyin added.",
+      "when": "Remember this frame when you need a ready workplace reply for: TIDAK SETUJU DENGAN SOPAN.",
+      "usage": "Fill the slots with real workplace facts, then personalize. Book section: TIDAK SETUJU DENGAN SOPAN.",
+      "example": {
+        "zh": "我理解时间很紧，不过资料还没确认。要不要先核对一下？",
+        "pinyin": "Wǒ lǐjiě shíjiān hěn jǐn， bùguò zīliào hái méi quèrèn。 yào búyào xiān héduì yīxià？",
+        "en": "Template bicara / lanjutan"
+      }
+    },
+    {
+      "zh": "今天我们确定了……。接下来，……负责……，……之前完成。",
+      "pinyin": "Jīntiān wǒmen quèdìng le … …。 jiēxiàlái， … … fùzé … …， … … zhīqián wánchéng。",
+      "pos": "frame",
+      "en": "Hari ini kita sudah putuskan .... Selanjutnya ... bertanggung jawab atas ... dan selesai sebelum ....",
+      "note": "Template 05 — MENUTUP RAPAT. Frame pinyin not printed as a vocab headword; standard pinyin added.",
+      "when": "Remember this frame when you need a ready workplace reply for: MENUTUP RAPAT.",
+      "usage": "Fill the slots with real workplace facts, then personalize. Book section: MENUTUP RAPAT.",
+      "example": {
+        "zh": "今天我们确定了面试流程。接下来，我负责发通知，周五之前完成。",
+        "pinyin": "Jīntiān wǒmen quèdìng le miànshì liúchéng。 jiēxiàlái， wǒ fùzé fā tōngzhī， zhōuwǔ zhīqián wánchéng。",
+        "en": "Hari ini kita sudah putuskan .... Selanjutnya ... bertanggung jawab atas ... dan selesai sebelum ...."
+      }
+    },
+    {
+      "zh": "这次……做得很好。下次可以再注意……。",
+      "pinyin": "Zhècì … … zuò dé hěn hǎo。 xiàcì kěyǐ zài zhùyì … …。",
+      "pos": "frame",
+      "en": "Bagian ... kali ini sudah baik. Berikutnya, perhatikan lagi ....",
+      "note": "Template 06 — FEEDBACK YANG SPESIFIK. Frame pinyin not printed as a vocab headword; standard pinyin added.",
+      "when": "Remember this frame when you need a ready workplace reply for: FEEDBACK YANG SPESIFIK.",
+      "usage": "Fill the slots with real workplace facts, then personalize. Book section: FEEDBACK YANG SPESIFIK.",
+      "example": {
+        "zh": "这次沟通做得很好。下次可以再注意时间安排。",
+        "pinyin": "Zhècì gōutōng zuò dé hěn hǎo。 xiàcì kěyǐ zài zhùyì shíjiān ānpái。",
+        "en": "Bagian ... kali ini sudah baik. Berikutnya, perhatikan lagi ...."
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "Six ready sentence frames",
+      "body": "Enam kerangka kalimat / Template bicara (pages 53–54): fill blanks with real data, then make the sentence your own."
+    },
+    {
+      "title": "01 UPDATE PEKERJAAN",
+      "body": "Saat ini ... sudah ..., masih perlu ..., perkiraan selesai ....",
+      "example": {
+        "zh": "目前面试已经安排好了，还差两位候选人的确认，预计明天下午有结果。",
+        "pinyin": "Mùqián miànshì yǐjīng ānpái hǎo le， hái chà liǎngwèi hòuxuǎnrén de quèrèn， yùjì míngtiān xiàwǔ yǒu jiéguǒ。",
+        "en": "Saat ini ... sudah ..., masih perlu ..., perkiraan selesai ...."
+      }
+    },
+    {
+      "title": "02 MINTA KONFIRMASI",
+      "body": "Saya pastikan dulu: maksud Anda ..., benar?",
+      "example": {
+        "zh": "我确认一下，您的意思是先联系候选人，对吗？",
+        "pinyin": "Wǒ quèrèn yīxià， nín de yìsi shì xiān liánxì hòuxuǎnrén， duì ma？",
+        "en": "Saya pastikan dulu: maksud Anda ..., benar?"
+      }
+    },
+    {
+      "title": "03 MENYAMPAIKAN SARAN",
+      "body": "Saya sarankan ..., terutama karena .... Bagaimana menurut Anda?",
+      "example": {
+        "zh": "我建议把面试改到下午，主要因为经理上午有会。您看怎么样？",
+        "pinyin": "Wǒ jiànyì bǎ miànshì gǎi dào xiàwǔ， zhǔyào yīnwèi jīnglǐ shàngwǔ yǒuhuì。 nín kàn zěnmeyàng？",
+        "en": "Saya sarankan ..., terutama karena .... Bagaimana menurut Anda?"
+      }
+    },
+    {
+      "title": "04 TIDAK SETUJU DENGAN SOPAN",
+      "body": "Saya paham ..., tetapi .... Bagaimana kalau kita ... dulu?",
+      "example": {
+        "zh": "我理解时间很紧，不过资料还没确认。要不要先核对一下？",
+        "pinyin": "Wǒ lǐjiě shíjiān hěn jǐn， bùguò zīliào hái méi quèrèn。 yào búyào xiān héduì yīxià？",
+        "en": "Saya paham ..., tetapi .... Bagaimana kalau kita ... dulu?"
+      }
+    },
+    {
+      "title": "05 MENUTUP RAPAT",
+      "body": "Hari ini kita sudah putuskan .... Selanjutnya ... bertanggung jawab atas ... dan selesai sebelum ....",
+      "example": {
+        "zh": "今天我们确定了面试流程。接下来，我负责发通知，周五之前完成。",
+        "pinyin": "Jīntiān wǒmen quèdìng le miànshì liúchéng。 jiēxiàlái， wǒ fùzé fā tōngzhī， zhōuwǔ zhīqián wánchéng。",
+        "en": "Hari ini kita sudah putuskan .... Selanjutnya ... bertanggung jawab atas ... dan selesai sebelum ...."
+      }
+    },
+    {
+      "title": "06 FEEDBACK YANG SPESIFIK",
+      "body": "Bagian ... kali ini sudah baik. Berikutnya, perhatikan lagi ....",
+      "example": {
+        "zh": "这次沟通做得很好。下次可以再注意时间安排。",
+        "pinyin": "Zhècì gōutōng zuò dé hěn hǎo。 xiàcì kěyǐ zài zhùyì shíjiān ānpái。",
+        "en": "Bagian ... kali ini sudah baik. Berikutnya, perhatikan lagi ...."
+      }
+    }
+  ]
+}

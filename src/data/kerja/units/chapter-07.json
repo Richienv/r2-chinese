@@ -1,0 +1,189 @@
+{
+  "id": "chapter-07",
+  "index": 7,
+  "titleZh": "一起安排任务",
+  "titleEn": "Managing tasks together",
+  "sourcePages": "24-26",
+  "words": [
+    {
+      "zh": "负责",
+      "pinyin": "fùzé",
+      "pos": "v.",
+      "en": "to be responsible for; in charge of",
+      "note": "Book headword pinyin printed as fùzé. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 负责这个项目. Hindari: 负责 does not automatically mean that person does every step alone.",
+      "when": "Remember 负责 like the word you’ll use when you name who owns a task or workstream — so work doesn’t fall between people on the team.",
+      "usage": "Most Chinese speakers ask or assign ownership with 负责 (这部分谁负责？ / 负责这个项目). It marks who is accountable for a part or project, not that one person must execute every single step alone.",
+      "example": {
+        "zh": "这部分谁负责？",
+        "pinyin": "Zhè bùfen shéi fùzé?",
+        "en": "Who is responsible for this part?"
+      }
+    },
+    {
+      "zh": "安排",
+      "pinyin": "ānpái",
+      "pos": "v.",
+      "en": "to arrange; to schedule; to organize",
+      "note": "Book headword pinyin printed as ānpái. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 安排会议. Hindari: 安排 can mean a plan — do not assume the invite has already been sent.",
+      "when": "Remember 安排 like the word you’ll use when you organize a meeting, work order, people, or time at the office.",
+      "usage": "Most Chinese speakers use 安排 for scheduling and lining up logistics (安排会议, 我来安排下周的会议). Saying you will 安排 something is still a plan until invitations or confirmations go out.",
+      "example": {
+        "zh": "我来安排下周的会议。",
+        "pinyin": "Wǒ lái ānpái xià zhōu de huìyì.",
+        "en": "I’ll arrange next week’s meeting."
+      }
+    },
+    {
+      "zh": "处理",
+      "pinyin": "chǔlǐ",
+      "pos": "v.",
+      "en": "to handle; to deal with",
+      "note": "Book headword pinyin printed as chǔlǐ. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 处理问题. Hindari: 处理 does not always mean finished; for a done status use 处理好了.",
+      "when": "Remember 处理 like the versatile word you’ll use when a case, request, data issue, or problem still needs to be worked.",
+      "usage": "Most Chinese speakers use 处理 for taking something on (处理问题, 这件事我今天会处理). It signals you are dealing with it, not that it is already closed — say 处理好了 when it is actually done.",
+      "example": {
+        "zh": "这件事我今天会处理。",
+        "pinyin": "Zhè jiàn shì wǒ jīntiān huì chǔlǐ.",
+        "en": "I’ll handle this matter today."
+      }
+    },
+    {
+      "zh": "跟进",
+      "pinyin": "gēnjìn",
+      "pos": "v.",
+      "en": "to follow up",
+      "note": "Book headword pinyin printed as gēnjìn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 跟进进度. Hindari: 跟进 is not just sending one message once; make sure there is real follow-through.",
+      "when": "Remember 跟进 like the word you’ll use when you watch progress after the first step — very common in modern offices.",
+      "usage": "Most Chinese speakers pair 跟进 with progress or an open item (跟进进度, 我明天会跟进这件事). It implies continued chase and updates, not a single ping that ends the thread.",
+      "example": {
+        "zh": "我明天会跟进这件事。",
+        "pinyin": "Wǒ míngtiān huì gēnjìn zhè jiàn shì.",
+        "en": "I’ll follow up on this tomorrow."
+      }
+    },
+    {
+      "zh": "完成",
+      "pinyin": "wánchéng",
+      "pos": "v.",
+      "en": "to complete; to finish",
+      "note": "Book headword pinyin printed as wánchéng. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 完成任务. Hindari: do not say 完成 if it is only an early draft — explain the stage.",
+      "when": "Remember 完成 like the word you’ll use when a task is finished to the goal that was set — not when you only have a first draft.",
+      "usage": "Most Chinese speakers use 完成 for finishing against a target (完成任务, 这份报告今天能完成吗？). Calling something 完成 when it is still a rough draft misleads stakeholders; name the stage instead.",
+      "example": {
+        "zh": "这份报告今天能完成吗？",
+        "pinyin": "Zhè fèn bàogào jīntiān néng wánchéng ma?",
+        "en": "Can this report be finished today?"
+      }
+    },
+    {
+      "zh": "检查",
+      "pinyin": "jiǎnchá",
+      "pos": "v.",
+      "en": "to check; to inspect",
+      "note": "Book headword pinyin printed as jiǎnchá. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 检查一遍. Hindari: 检查 means to check; 审核 is more formal and can mean giving approval.",
+      "when": "Remember 检查 like the word you’ll use when you review results or data for mistakes before anything goes out.",
+      "usage": "Most Chinese speakers ask for a pass with 检查一遍 before send (发出去之前，请再检查一遍). It is checking/verifying; for formal review-and-approve, the book points to 审核 instead.",
+      "example": {
+        "zh": "发出去之前，请再检查一遍。",
+        "pinyin": "Fā chūqù zhīqián, qǐng zài jiǎnchá yí biàn.",
+        "en": "Before sending it out, please check it once more."
+      }
+    },
+    {
+      "zh": "发给",
+      "pinyin": "fā gěi",
+      "pos": "v. phr.",
+      "en": "to send to",
+      "note": "Book headword pinyin printed as fā gěi. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 发给你. Hindari: put the recipient after 给; do not write 发你 when you mean “send to you” in a formal context.",
+      "when": "Remember 发给 like the simple pattern you’ll use when you send a document, photo, link, or message to someone.",
+      "usage": "Most Chinese speakers build 把 + thing + 发给 + person (我把最新版本发给你). Keep the recipient after 给; in formal workplace writing, avoid clipping it to 发你.",
+      "example": {
+        "zh": "我把最新版本发给你。",
+        "pinyin": "Wǒ bǎ zuìxīn bǎnběn fā gěi nǐ.",
+        "en": "I’ll send you the latest version."
+      }
+    },
+    {
+      "zh": "回复",
+      "pinyin": "huífù",
+      "pos": "v.",
+      "en": "to reply; to respond",
+      "note": "Book headword pinyin printed as huífù. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 回复消息. Hindari: 回复 can mean an actual reply, not merely that you have already read the message.",
+      "when": "Remember 回复 like the word you’ll use for answering chat, email, or a question — often with the time you promise to reply.",
+      "usage": "Most Chinese speakers schedule a reply with 回复 (回复消息, 我下午回复你的邮件). It commits to a response, not just open-receipt of the message.",
+      "example": {
+        "zh": "我下午回复你的邮件。",
+        "pinyin": "Wǒ xiàwǔ huífù nǐ de yóujiàn.",
+        "en": "I’ll reply to your email this afternoon."
+      }
+    },
+    {
+      "zh": "交给",
+      "pinyin": "jiāo gěi",
+      "pos": "v. phr.",
+      "en": "to hand over to; to entrust to",
+      "note": "Book headword pinyin printed as jiāo gěi. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 交给你. Hindari: handing a task over does not mean the recipient has already agreed — confirm their capacity.",
+      "when": "Remember 交给 like the word you’ll use when you move a task or materials to someone else — especially when the split of work changes.",
+      "usage": "Most Chinese speakers transfer ownership with 交给 (交给你, 这个任务先交给我吧). Handing something over is not the same as confirmed acceptance; check the other person’s bandwidth.",
+      "example": {
+        "zh": "这个任务先交给我吧。",
+        "pinyin": "Zhège rènwu xiān jiāo gěi wǒ ba.",
+        "en": "Hand this task over to me for now."
+      }
+    },
+    {
+      "zh": "更新",
+      "pinyin": "gēngxīn",
+      "pos": "v.",
+      "en": "to update",
+      "note": "Book headword pinyin printed as gēngxīn. Example-sentence pinyin not printed in the book; standard pinyin added. Pairing in book: 更新进度. Hindari: 更新 needs a clear object or context — what changed and which version applies.",
+      "when": "Remember 更新 like the word you’ll use when data, a schedule, a document, or the latest status needs refreshing.",
+      "usage": "Most Chinese speakers update status with 更新 (更新进度, 有新消息我会及时更新). Name what is being updated and which version is current so others are not left guessing.",
+      "example": {
+        "zh": "有新消息我会及时更新。",
+        "pinyin": "Yǒu xīn xiāoxi wǒ huì jíshí gēngxīn.",
+        "en": "If there’s news, I’ll update promptly."
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "Module aim — own, status, close",
+      "body": "Modul 07 / Harian (book pages 24–26): use everyday office verbs to divide responsibility, give status, and close work. Indonesian title in the book: Mengatur tugas bersama.",
+      "example": null
+    },
+    {
+      "title": "负责 names the owner",
+      "body": "From the book’s usage and Hindari: 负责 (pairing 负责这个项目) sets who owns a part or field so tasks do not fall between teams. It does not automatically mean that person executes every step alone.",
+      "example": {
+        "zh": "这部分谁负责？",
+        "pinyin": "Zhè bùfen shéi fùzé?",
+        "en": "Who is responsible for this part?"
+      }
+    },
+    {
+      "title": "处理 vs 处理好了; 检查 vs 审核",
+      "body": "The book warns that 处理 means you are dealing with something, not that it is finished — use 处理好了 for a done status. 检查 is checking/verifying (检查一遍 before send); 审核 is more formal and can mean giving approval.",
+      "example": {
+        "zh": "这件事我今天会处理。",
+        "pinyin": "Zhè jiàn shì wǒ jīntiān huì chǔlǐ.",
+        "en": "I’ll handle this matter today."
+      }
+    },
+    {
+      "title": "发给 / 交给 need a clear recipient",
+      "body": "发给 and 交给 put the person after 给 (发给你, 交给你). Do not clip to 发你 in formal “send to you” writing. Handing a task over with 交给 is not confirmed acceptance — check capacity. 安排 can still be only a plan until invites go out; 跟进 needs real follow-through, not one message; 完成 is for goal-finished work, not an early draft; 更新 needs a clear object/version.",
+      "example": {
+        "zh": "我把最新版本发给你。",
+        "pinyin": "Wǒ bǎ zuìxīn bǎnběn fā gěi nǐ.",
+        "en": "I’ll send you the latest version."
+      }
+    },
+    {
+      "title": "Latihan 90 detik",
+      "body": "Book drill (p.26): pick three entries from this module — 负责, 完成, and 交给. Make one work or daily story with all three. Record without reading, then check whether your timing and decisions are clear. No model Chinese story is printed for this drill; do not invent one as book text.",
+      "example": null
+    }
+  ]
+}

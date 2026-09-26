@@ -1,0 +1,160 @@
+{
+  "id": "chapter-27",
+  "index": 27,
+  "titleZh": "培训：从目标到能力",
+  "titleEn": "Training: from learning goals to skills",
+  "sourcePages": "79-81",
+  "words": [
+    {
+      "zh": "培训计划",
+      "pinyin": "péixùn jìhuà",
+      "pos": "v.",
+      "en": "rencana pelatihan",
+      "note": "Book headword pinyin printed as péixùn jìhuà. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 制定培训计划. Hindari: Rencana tidak cukup bila tanpa praktik. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 培训计划 like the word you’ll use when sebut sasaran, waktu, materi, dan cara mengecek hasil..",
+      "usage": "Most Chinese speakers use 培训计划 in this office/HR speaking sense. Book pairing: 制定培训计划. Rencana tidak cukup bila tanpa praktik.",
+      "example": {
+        "zh": "我们先为新同事制定一个月的培训计划。",
+        "pinyin": "Wǒmen xiānwèi xīn tóngshì zhìdìng yígèyuè de péixùn jìhuà。",
+        "en": "Kita susun dulu rencana pelatihan satu bulan untuk rekan baru."
+      }
+    },
+    {
+      "zh": "学习目标",
+      "pinyin": "xuéxí mùbiāo",
+      "pos": "v.",
+      "en": "tujuan belajar",
+      "note": "Book headword pinyin printed as xuéxí mùbiāo. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 明确学习目标. Hindari: Jangan menulis tujuan yang tak bisa diamati.",
+      "when": "Remember 学习目标 like the word you’ll use when nyatakan kemampuan yang harus bisa ditunjukkan setelah latihan..",
+      "usage": "Most Chinese speakers use 学习目标 in this office/HR speaking sense. Book pairing: 明确学习目标. Jangan menulis tujuan yang tak bisa diamati.",
+      "example": {
+        "zh": "这次培训的学习目标是独立完成排班。",
+        "pinyin": "Zhècì péixùn de xuéxí mùbiāo shì dúlì wánchéng páibān。",
+        "en": "Tujuan pelatihan ini adalah mampu menyusun jadwal kerja secara mandiri."
+      }
+    },
+    {
+      "zh": "带教",
+      "pinyin": "dàijiào",
+      "pos": "v.",
+      "en": "membimbing",
+      "note": "Book headword pinyin printed as dàijiào. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 安排带教. Hindari: 带教 berbeda dari ceramah kelas.",
+      "when": "Remember 带教 like the word you’ll use when istilah kantor untuk pendampingan kerja langsung oleh rekan yang lebih berpengalaman..",
+      "usage": "Most Chinese speakers use 带教 in this office/HR speaking sense. Book pairing: 安排带教. 带教 berbeda dari ceramah kelas.",
+      "example": {
+        "zh": "前两周由组长负责带教。",
+        "pinyin": "Qián liǎngzhōu yóu zǔzhǎng fùzé dàijiào。",
+        "en": "Selama dua minggu pertama, ketua tim bertugas membimbing langsung. sambil bekerja"
+      }
+    },
+    {
+      "zh": "实操",
+      "pinyin": "shícāo",
+      "pos": "v.",
+      "en": "Setelah menjelaskan alur, kita adakan latihan praktik.",
+      "note": "Book headword pinyin printed as shícāo. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 实操练习. Hindari: 实操 perlu tugas yang jelas dan umpan balik. kemampuan kerja / lanjutan",
+      "when": "Remember 实操 like the word you’ll use when gunakan untuk latihan mengerjakan proses atau alat kerja nyata..",
+      "usage": "Most Chinese speakers use 实操 in this office/HR speaking sense. Book pairing: 实操练习. 实操 perlu tugas yang jelas dan umpan balik. kemampuan kerja / lanjutan",
+      "example": {
+        "zh": "讲完流程后，我们安排一次实操练习。",
+        "pinyin": "Jiǎngwán liúchéng hòu， wǒmen ānpái yīcì shícāo liànxí。",
+        "en": "praktik langsung"
+      }
+    },
+    {
+      "zh": "案例",
+      "pinyin": "ànlì",
+      "pos": "v.",
+      "en": "contoh kasus",
+      "note": "Book headword pinyin printed as ànlì. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 分析案例. Hindari: Hindari membocorkan identitas orang nyata. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 案例 like the word you’ll use when cocok untuk membahas keputusan dalam situasi kerja yang realistis..",
+      "usage": "Most Chinese speakers use 案例 in this office/HR speaking sense. Book pairing: 分析案例. Hindari membocorkan identitas orang nyata.",
+      "example": {
+        "zh": "我们用一个匿名案例讨论沟通方式。",
+        "pinyin": "Wǒmen yòng yígè nìmíng ànlì tǎolùn gōutōng fāngshì。",
+        "en": "Kita pakai satu kasus anonim untuk membahas cara komunikasi."
+      }
+    },
+    {
+      "zh": "练习",
+      "pinyin": "liànxí",
+      "pos": "v.",
+      "en": "latihan",
+      "note": "Book headword pinyin printed as liànxí. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 做练习. Hindari: 练习 tidak sama dengan hasil kerja langsung.",
+      "when": "Remember 练习 like the word you’ll use when pakai untuk mengulang keterampilan sebelum dipakai mandiri..",
+      "usage": "Most Chinese speakers use 练习 in this office/HR speaking sense. Book pairing: 做练习. 练习 tidak sama dengan hasil kerja langsung.",
+      "example": {
+        "zh": "今天先做两轮电话沟通练习。",
+        "pinyin": "Jīntiān xiān zuò liǎnglún diànhuà gōutōng liànxí。",
+        "en": "Hari ini lakukan dua putaran latihan komunikasi telepon."
+      }
+    },
+    {
+      "zh": "掌握",
+      "pinyin": "zhǎngwò",
+      "pos": "v.",
+      "en": "menguasai",
+      "note": "Book headword pinyin printed as zhǎngwò. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 掌握流程. Hindari: 听过 atau 看过 belum berarti 掌握. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 掌握 like the word you’ll use when lebih kuat daripada 了解; gunakan setelah kemampuan bisa ditunjukkan..",
+      "usage": "Most Chinese speakers use 掌握 in this office/HR speaking sense. Book pairing: 掌握流程. 听过 atau 看过 belum berarti 掌握.",
+      "example": {
+        "zh": "完成实操后再判断是否掌握了流程。",
+        "pinyin": "Wánchéng shícāo hòu zài pànduàn shìfǒu zhǎngwò le liúchéng。",
+        "en": "Setelah praktik, baru nilai apakah alurnya sudah dikuasai."
+      }
+    },
+    {
+      "zh": "评估",
+      "pinyin": "pínggū",
+      "pos": "v.",
+      "en": "Setelah pelatihan akan ada evaluasi singkat.",
+      "note": "Book headword pinyin printed as pínggū. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 培训评估. Hindari: 评估 bukan hanya kesan pribadi. terstruktur kemampuan kerja / lanjutan",
+      "when": "Remember 评估 like the word you’ll use when tetapkan kriteria sebelum menyebut seseorang siap atau belum..",
+      "usage": "Most Chinese speakers use 评估 in this office/HR speaking sense. Book pairing: 培训评估. 评估 bukan hanya kesan pribadi. terstruktur kemampuan kerja / lanjutan",
+      "example": {
+        "zh": "培训结束后会有一次简短评估。",
+        "pinyin": "Péixùn jiéshù hòuhuì yǒu yīcì jiǎnduǎn pínggū。",
+        "en": "menilai secara"
+      }
+    },
+    {
+      "zh": "提升",
+      "pinyin": "tíshēng",
+      "pos": "v.",
+      "en": "meningkatkan",
+      "note": "Book headword pinyin printed as tíshēng. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 提升效率. Hindari: 提升 perlu titik awal dan sasaran. kemampuan atau hasil",
+      "when": "Remember 提升 like the word you’ll use when pakai ketika ada perubahan yang ingin dituju dan diukur..",
+      "usage": "Most Chinese speakers use 提升 in this office/HR speaking sense. Book pairing: 提升效率. 提升 perlu titik awal dan sasaran. kemampuan atau hasil",
+      "example": {
+        "zh": "这次培训主要帮助团队提升沟通效率。",
+        "pinyin": "Zhècì péixùn zhǔyào bāngzhù tuánduì tíshēng gōutōng xiàolǜ。",
+        "en": "Pelatihan ini terutama membantu tim meningkatkan efisiensi komunikasi."
+      }
+    },
+    {
+      "zh": "适应",
+      "pinyin": "shìyìng",
+      "pos": "v.",
+      "en": "menyesuaikan diri",
+      "note": "Book headword pinyin printed as shìyìng. Example-sentence pinyin not printed in the book; standard pinyin added. Pasangan: 适应节奏. Hindari: Lambat beradaptasi bukan bukti tidak mampu. Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas. Example English below follows the book’s Indonesian gloss (faithful meaning line).",
+      "when": "Remember 适应 like the word you’ll use when berguna ketika pegawai baru belajar ritme, sistem, atau budaya kerja..",
+      "usage": "Most Chinese speakers use 适应 in this office/HR speaking sense. Book pairing: 适应节奏. Lambat beradaptasi bukan bukti tidak mampu. Rekam tanpa membaca, lalu cek apakah waktu dan keputusanmu jelas.",
+      "example": {
+        "zh": "新同事需要一点时间适应团队节奏。",
+        "pinyin": "Xīn tóngshì xūyào yìdiǎn shíjiān shìyìng tuánduì jiézòu。",
+        "en": "Rekan baru butuh waktu untuk menyesuaikan diri dengan ritme tim."
+      }
+    }
+  ],
+  "dialogues": [],
+  "notes": [
+    {
+      "title": "Module aim — Pelatihan: dari tujuan belajar ke kemampuan kerja",
+      "body": "MODUL 09 / HR (book pages 79-81). Indonesian title: Pelatihan: dari tujuan belajar ke kemampuan kerja."
+    },
+    {
+      "title": "Latihan 90 detik",
+      "body": "If this HR module prints a 90-second drill, pick three headwords from the module, build one work story, record without reading, and check timing and decisions."
+    }
+  ]
+}

@@ -1,61 +1,288 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { DialogueAudio, Line, useGloss } from '../components/ChineseText'
 import { ChineseHear, hasHanzi, HearButton, useAutoSpeak, useAutoSpeakLines, useSpeechActive } from '../components/Hear'
-import { CheckIcon, CloseIcon, HeartIcon, LockIcon } from '../components/Icons'
-import { getLesson, type Example } from '../lib/content'
-import { unlockSpeech, speakLines, stopSpeech } from '../lib/speech'
-import { TeachView } from './TeachBeats'
-import type { Question } from '../lib/quiz'
-import type { LessonText, Vocab } from '../lib/types'
-import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
+import { CheckIcon, CloseIcon, HeartIcon, LockIcon, PlayIcon } from '../components/Icons'
 import {
-  ITEM_XP,
-  NODE_BONUS_XP,
-  NODE_LABEL,
-  SESSION_HEARTS,
-  buildSteps,
-  isNodePlayable,
-  isSessionOpen,
-  playableCount,
-  sittingWordCount,
-  teachVocab,
-  type SessionStep,
-} from '../lib/wordsSession'
+  buildKerjaSteps,
+  getKerjaChapter,
+  hearableZh,
+  KERJA_BOOK,
+  KERJA_NODE_LABEL,
+  kerjaChapters,
+  kerjaPlayableCount,
+  kerjaSittingWordCount,
+  nodeCaptionKerja,
+  nodesForChapter,
+  useKerjaProgress,
+  type KerjaChapter,
+  type KerjaSessionStep,
+} from '../lib/kerja'
+import { unlockSpeech, speakLines, stopSpeech } from '../lib/speech'
+import { ITEM_XP, NODE_BONUS_XP, SESSION_HEARTS } from '../lib/wordsSession'
+import type { LessonText } from '../lib/types'
+import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 import { useStore, type PathNode } from '../store/store'
+import { TeachView } from './TeachBeats'
 
 const CORRECT_HOLD_MS = 700
+const W = 396
+const CX = [118, 278, 108, 288, 116, 270]
+const CURRENT = 70
+const REST = 58
+const GAP = 8
 
 type QuizState = { wrong: string[]; solved: boolean; missed: boolean }
 type HeartLoss = { index: number; tick: number }
 
-export function WordsSession({
-  lesson,
-  node = 't1',
-  onClose,
-}: {
-  lesson: number
-  node?: PathNode
-  onClose: () => void
-}) {
-  const store = useStore()
-  if (!isSessionOpen(lesson, node) || !isNodePlayable(lesson, node, store.isNodeDone)) {
-    return <LockedView onClose={onClose} />
-  }
-  return <WordsRunner lesson={lesson} node={node} onClose={onClose} />
+function nodeClassName(state: 'done' | 'on' | 'lock') {
+  if (state === 'done') return 'path-node path-node-done'
+  if (state === 'on') return 'path-node path-node-on'
+  return 'path-node path-node-lock'
 }
 
-function WordsRunner({
-  lesson,
+function unitLayout(nodeCount: number, currentIndex: number, fillHeight?: number) {
+  const sizes = Array.from({ length: nodeCount }, (_, i) => (i === currentIndex ? CURRENT : REST))
+  const topPad = currentIndex === 0 ? 44 : 10
+  const bottom = 10
+  const compact = topPad + sizes.reduce((sum, size, i) => sum + (i === 0 ? size : GAP + size), 0) + bottom
+  const gaps = nodeCount - 1
+  let gap = GAP
+  if (fillHeight && fillHeight > compact && gaps > 0) {
+    gap = Math.min(52, GAP + (fillHeight - compact) / gaps)
+  }
+  const xs: number[] = []
+  const ys: number[] = []
+  let y = topPad + (sizes[0] ?? REST) / 2
+  for (let i = 0; i < nodeCount; i++) {
+    xs.push(CX[i % CX.length])
+    ys.push(y)
+    if (i < nodeCount - 1) y += sizes[i] / 2 + gap + sizes[i + 1] / 2
+  }
+  const last = Math.max(0, nodeCount - 1)
+  return { xs, ys, sizes, height: (ys[last] ?? 0) + (sizes[last] ?? REST) / 2 + bottom }
+}
+
+function railPath(xs: number[], ys: number[]) {
+  if (!xs.length) return ''
+  let d = `M${xs[0]} ${ys[0]}`
+  for (let i = 1; i < xs.length; i++) {
+    const mid = (ys[i - 1] + ys[i]) / 2
+    d += ` C${xs[i - 1]} ${mid} ${xs[i]} ${mid} ${xs[i]} ${ys[i]}`
+  }
+  return d
+}
+
+export function KerjaEmptyState() {
+  return (
+    <section className="kerja-empty metal">
+      <div className="kicker">Mandarin Kerja Nyata</div>
+      <h2 className="zh" lang="zh-CN">
+        {KERJA_BOOK.titleZh}
+      </h2>
+      <p className="kerja-empty-en">{KERJA_BOOK.title}</p>
+      <p className="sub" style={{ textWrap: 'pretty', marginTop: 10 }}>
+        {KERJA_BOOK.blurb}. Chapters appear here automatically when unit JSON is added under{' '}
+        <code>src/data/kerja/units/</code>.
+      </p>
+      <p className="sub" style={{ marginTop: 8 }}>
+        No chapters loaded yet — nothing fake to start.
+      </p>
+    </section>
+  )
+}
+
+export function KerjaPath({
+  chapter,
+  current,
+  nodeDone,
+  onPlay,
+  fill,
+}: {
+  chapter: KerjaChapter
+  current: { chapter: number; node: PathNode }
+  nodeDone: (chapter: number, node: PathNode) => boolean
+  onPlay?: (chapter: number, node: PathNode) => void
+  fill?: boolean
+}) {
+  const progress = useKerjaProgress()
+  const slotRef = useRef<HTMLDivElement>(null)
+  const [fillHeight, setFillHeight] = useState(0)
+  const nodes = nodesForChapter(chapter)
+
+  useLayoutEffect(() => {
+    if (!fill) return
+    const el = slotRef.current
+    if (!el) return
+    const sync = () => setFillHeight(el.clientHeight)
+    sync()
+    const ro = new ResizeObserver(sync)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [fill, chapter.id])
+
+  const currentIndex = nodes.findIndex((n) => current.chapter === chapter.index && current.node === n)
+  const { xs, ys, sizes, height } = unitLayout(nodes.length, currentIndex, fill ? fillHeight || undefined : undefined)
+  const litTo = nodes.reduce((acc, n, i) => (nodeDone(chapter.index, n) ? i + 1 : acc), 0)
+  const litEnd = current.chapter === chapter.index ? Math.max(litTo, currentIndex) : litTo
+  const showLit = current.chapter === chapter.index || litTo > 0
+  const litXs = showLit ? xs.slice(0, Math.max(1, litEnd + 1)) : []
+  const litYs = ys.slice(0, litXs.length)
+  const open = progress.isChapterReached(chapter.index)
+
+  return (
+    <section className={fill ? 'path-lesson path-lesson-fill' : 'path-lesson'}>
+      <div className={`path-banner metal${open ? '' : ' path-banner-lock'}`}>
+        <div className="path-banner-copy">
+          <div className="kicker">Bab {chapter.index}</div>
+          <h2 className="zh path-banner-zh" lang="zh-CN">
+            {chapter.titleZh || chapter.titleEn}
+          </h2>
+          <div className="path-banner-en">{chapter.titleEn || chapter.titleZh}</div>
+          {chapter.sourcePages ? <div className="path-later-kicker">pp. {chapter.sourcePages}</div> : null}
+        </div>
+        <span className="path-banner-read">单元</span>
+      </div>
+
+      <div className="path-unit-slot" ref={slotRef}>
+        <div className="path-unit" style={{ height }}>
+          <svg className="path-rail" viewBox={`0 0 ${W} ${height}`} preserveAspectRatio="none" aria-hidden>
+            <path className="path-rail-track" d={railPath(xs, ys)} />
+            {litXs.length > 0 && <path className="path-rail-lit" d={railPath(litXs, litYs)} />}
+          </svg>
+
+          {nodes.map((node, i) => {
+            const done = nodeDone(chapter.index, node)
+            const on = current.chapter === chapter.index && current.node === node
+            const playable = progress.isNodePlayable(chapter.index, node)
+            const state = done ? 'done' : on ? 'on' : 'lock'
+            const r = sizes[i] / 2
+            const caption = nodeCaptionKerja(chapter, node)
+            const side = xs[i] < W / 2 ? 'left' : 'right'
+            return (
+              <button
+                key={node}
+                type="button"
+                className={`${nodeClassName(state)} tap44`}
+                data-state={state}
+                data-node={node}
+                data-side={side}
+                disabled={!playable}
+                style={
+                  {
+                    '--path-d': `${sizes[i]}px`,
+                    left: `${(xs[i] / W) * 100}%`,
+                    top: ys[i] - r,
+                    marginLeft: -r,
+                  } as CSSProperties
+                }
+                onPointerDown={() => {
+                  if (playable) unlockSpeech()
+                }}
+                onClick={() => {
+                  if (!playable) return
+                  onPlay?.(chapter.index, node)
+                }}
+                aria-label={`${caption.zh}${caption.hint ? ` ${caption.hint}` : ''}${done ? ', done' : on ? ', start' : ', locked'}`}
+              >
+                {on && <span className="path-start">START</span>}
+                <span className="path-glyph" aria-hidden>
+                  {done ? <CheckIcon size={22} /> : on ? <PlayIcon size={22} /> : <LockIcon size={16} />}
+                </span>
+                <span className="path-meta">
+                  <span className="path-en zh" lang="zh-CN">
+                    {caption.zh}
+                  </span>
+                  <span className="path-zh zh" lang="zh-CN">
+                    {caption.hint}
+                  </span>
+                </span>
+              </button>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export function KerjaHomePath({
+  onPlay,
+}: {
+  onPlay: (chapter: number, node: PathNode) => void
+}) {
+  const { nextPlayable, isNodeDone } = useKerjaProgress()
+  if (kerjaChapters.length === 0) return <KerjaEmptyState />
+  const chapter = getKerjaChapter(nextPlayable.chapter) ?? kerjaChapters[0]
+  return (
+    <KerjaPath
+      fill
+      chapter={chapter}
+      current={nextPlayable}
+      nodeDone={isNodeDone}
+      onPlay={onPlay}
+    />
+  )
+}
+
+export function KerjaLearn({
+  onPlay,
+}: {
+  onPlay: (chapter: number, node: PathNode) => void
+}) {
+  const { nextPlayable, isNodeDone } = useKerjaProgress()
+  if (kerjaChapters.length === 0) {
+    return (
+      <div className="path-page">
+        <KerjaEmptyState />
+      </div>
+    )
+  }
+  return (
+    <div className="path-page">
+      {kerjaChapters.map((ch) => (
+        <KerjaPath
+          key={ch.id}
+          chapter={ch}
+          current={nextPlayable}
+          nodeDone={isNodeDone}
+          onPlay={onPlay}
+        />
+      ))}
+    </div>
+  )
+}
+
+export function KerjaSession({
+  chapter,
   node,
   onClose,
 }: {
-  lesson: number
+  chapter: number
+  node: PathNode
+  onClose: () => void
+}) {
+  const progress = useKerjaProgress()
+  const ch = getKerjaChapter(chapter)
+  if (!ch || !progress.isNodePlayable(chapter, node)) {
+    return <LockedView onClose={onClose} />
+  }
+  return <KerjaRunner chapter={chapter} node={node} onClose={onClose} />
+}
+
+function KerjaRunner({
+  chapter,
+  node,
+  onClose,
+}: {
+  chapter: number
   node: PathNode
   onClose: () => void
 }) {
   const store = useStore()
-  const steps = useMemo(() => buildSteps(lesson, node), [lesson, node])
-  const alreadyDone = useRef(store.isNodeDone(lesson, node))
+  const progress = useKerjaProgress()
+  const ch = getKerjaChapter(chapter)!
+  const steps = useMemo(() => buildKerjaSteps(chapter, node), [chapter, node])
+  const alreadyDone = useRef(progress.isNodeDone(chapter, node))
   const credited = useRef(new Set<string>())
   const finished = useRef(false)
   const left = useRef(new Set<number>())
@@ -72,7 +299,7 @@ function WordsRunner({
   const step = steps[Math.min(i, steps.length - 1)]
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
   const isComplete = !failed && step.kind === 'complete'
-  const total = playableCount(steps)
+  const total = kerjaPlayableCount(steps)
   const footerLocked = !failed && step.kind === 'quiz' && !quizState?.solved
   const beatKey = failed ? 'failed' : step.kind === 'complete' ? 'complete' : step.id
 
@@ -83,17 +310,14 @@ function WordsRunner({
   useEffect(() => {
     if (!isComplete || finished.current) return
     finished.current = true
-    store.markNodeDone(lesson, node)
+    progress.markNodeDone(chapter, node)
     if (!alreadyDone.current) {
       store.awardXp(NODE_BONUS_XP)
       xpRef.current += NODE_BONUS_XP
       setXp(xpRef.current)
     }
-    if (node === 'wrap' && !alreadyDone.current) {
-      store.finishLesson(lesson, teachVocab(lesson), 40)
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isComplete, lesson, node])
+  }, [isComplete, chapter, node])
 
   useEffect(() => {
     if (failed || step.kind !== 'quiz' || !quizState?.solved) return
@@ -115,8 +339,8 @@ function WordsRunner({
     store.practiceLog()
   }
 
-  function meetWord(word: Vocab, id: string) {
-    store.addCards(lesson, [word])
+  function meetWord(word: { zh: string }, id: string) {
+    store.addCards(chapter + 1000, [word])
     credit(id)
   }
 
@@ -162,7 +386,7 @@ function WordsRunner({
     if (nextHearts <= 0) setFailed(true)
   }
 
-  const progress = failed ? (i / total) * 100 : isComplete ? 100 : ((i + 1) / total) * 100
+  const progressPct = failed ? (i / total) * 100 : isComplete ? 100 : ((i + 1) / total) * 100
   const showFooter =
     failed || isComplete || step.kind === 'teach' || step.kind === 'note' || step.kind === 'read'
   const footerLabel = failed || isComplete ? 'Continue' : 'Next'
@@ -174,7 +398,7 @@ function WordsRunner({
           <CloseIcon />
         </button>
         <div className="step-bar">
-          <i className="yl-progress" style={{ width: `${Math.min(100, progress)}%` }} />
+          <i className="yl-progress" style={{ width: `${Math.min(100, progressPct)}%` }} />
         </div>
         <Hearts count={hearts} loss={heartLoss} />
         {xp > 0 && (
@@ -194,38 +418,24 @@ function WordsRunner({
               word={step.word}
               example={step.example}
               hook={step.hook}
-              lesson={lesson}
+              lesson={chapter + 1000}
               n={step.n}
               of={step.of}
             />
           ) : step.kind === 'read' ? (
             <ReadView text={step.text} />
           ) : step.kind === 'note' ? (
-            <NoteView
-              title={step.title}
-              body={step.body}
-              example={step.example}
-              kicker={step.kicker}
-              n={step.n}
-              of={step.of}
-            />
+            <NoteView title={step.title} body={step.body} example={step.example} n={step.n} of={step.of} />
           ) : step.kind === 'quiz' ? (
-            <MatchView
-              question={step.question}
-              n={step.n}
-              of={step.of}
-              state={quizState}
-              onPick={answerQuiz}
-            />
+            <MatchView question={step.question} n={step.n} of={step.of} state={quizState} onPick={answerQuiz} />
           ) : (
             <DoneView
               node={node}
-              titleZh={getLesson(lesson).title.zh}
-              titleEn={getLesson(lesson).title.en}
-              wordCount={sittingWordCount(lesson, node)}
+              titleZh={ch.titleZh}
+              titleEn={ch.titleEn}
+              wordCount={kerjaSittingWordCount(chapter, node)}
               xp={xp}
               replay={alreadyDone.current}
-              hearts={hearts}
             />
           )}
         </div>
@@ -242,7 +452,7 @@ function WordsRunner({
   )
 }
 
-function countMet(steps: SessionStep[], credited: Set<string>): number {
+function countMet(steps: KerjaSessionStep[], credited: Set<string>): number {
   return steps.filter((s) => s.kind === 'teach' && s.phase === 'meet' && credited.has(s.id)).length
 }
 
@@ -302,6 +512,60 @@ function ReadView({ text }: { text: LessonText }) {
   )
 }
 
+function NoteView({
+  title,
+  body,
+  example,
+  n,
+  of,
+}: {
+  title: string
+  body: string
+  example: { zh: string; pinyin: string; en: string } | null
+  n: number
+  of: number
+}) {
+  const head = of > 1 ? `Note · ${n} of ${of}` : 'Note'
+  const exampleZh = hearableZh(example?.zh)
+  const titleZh = hearableZh(title)
+  const bodyZh = hearableZh(body)
+
+  return (
+    <>
+      <StepHead kicker={head} title={title} />
+      <p className="sub" style={{ textWrap: 'pretty', lineHeight: 1.55 }}>
+        {body}
+      </p>
+      {example && exampleZh && (
+        <div className="card session-prompt">
+          <p className="zh" lang="zh-CN" style={{ fontSize: 20, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
+            {example.zh}
+          </p>
+          {example.pinyin && (
+            <p className="sub" style={{ margin: '6px 0 0', color: 'var(--red-mid)' }}>
+              {example.pinyin}
+            </p>
+          )}
+          {example.en && <p className="sub" style={{ margin: '8px 0 0' }}>{example.en}</p>}
+          <div style={{ marginTop: 12 }}>
+            <ChineseHear text={exampleZh} label="Hear the line" rate={LINE_RATE} />
+          </div>
+        </div>
+      )}
+      {!exampleZh && titleZh && (
+        <div style={{ marginTop: 14 }}>
+          <ChineseHear text={titleZh} label="Hear it" />
+        </div>
+      )}
+      {!exampleZh && !titleZh && bodyZh && (
+        <div style={{ marginTop: 14 }}>
+          <ChineseHear text={bodyZh} label="Hear it" />
+        </div>
+      )}
+    </>
+  )
+}
+
 function MatchView({
   question,
   n,
@@ -309,7 +573,7 @@ function MatchView({
   state,
   onPick,
 }: {
-  question: Question
+  question: { prompt: string; context?: { zh: string; pinyin: string; en: string }; options: { zh: string; label: string }[]; answer: string }
   n: number
   of: number
   state: QuizState | undefined
@@ -336,16 +600,6 @@ function MatchView({
           <p className="zh" lang="zh-CN" style={{ fontSize: 22, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
             {question.context.zh}
           </p>
-          {question.context.pinyin && (
-            <p className="sub" style={{ margin: '6px 0 0', color: 'var(--red-mid)' }}>
-              {question.context.pinyin}
-            </p>
-          )}
-          {solved && question.context.en && (
-            <p className="sub" style={{ margin: '8px 0 0' }}>
-              {question.context.en}
-            </p>
-          )}
           <div style={{ marginTop: 12 }}>
             <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
           </div>
@@ -399,78 +653,9 @@ function MatchView({
       </div>
       {solved && (
         <div className="yl-enter-up" style={{ textAlign: 'center', marginTop: 2 }} aria-live="polite">
-          <strong
-            style={{
-              fontSize: 16,
-              fontWeight: 800,
-              letterSpacing: '-0.2px',
-              color: 'var(--red-deep)',
-              textWrap: 'balance',
-            }}
-          >
+          <strong style={{ fontSize: 16, fontWeight: 800, color: 'var(--red-deep)' }}>
             {missed ? 'That’s it' : 'Nice!'}
           </strong>
-        </div>
-      )}
-    </>
-  )
-}
-
-function NoteView({
-  title,
-  body,
-  example,
-  kicker,
-  n,
-  of,
-}: {
-  title: string
-  body: string
-  example: Example | null
-  kicker?: string
-  n: number
-  of: number
-}) {
-  const head =
-    kicker && kicker !== 'Grammar'
-      ? kicker
-      : of > 1
-        ? `Grammar · ${n} of ${of}`
-        : (kicker ?? 'Grammar')
-  const fallBackZh = example?.zh?.trim()
-    ? ''
-    : hasHanzi(title)
-      ? title
-      : hasHanzi(body)
-        ? body
-        : ''
-  const spoken = (example?.zh ?? fallBackZh).trim()
-
-  return (
-    <>
-      <StepHead kicker={head} title={title} />
-      <p className="sub" style={{ textWrap: 'pretty', lineHeight: 1.55 }}>
-        {body}
-      </p>
-      {example && (
-        <div className="card session-prompt">
-          <p className="zh" lang="zh-CN" style={{ fontSize: 20, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
-            {example.zh}
-          </p>
-          {example.pinyin && (
-            <p className="sub" style={{ margin: '6px 0 0', color: 'var(--red-mid)' }}>
-              {example.pinyin}
-            </p>
-          )}
-          {example.en && <p className="sub" style={{ margin: '8px 0 0' }}>{example.en}</p>}
-          <div style={{ marginTop: 12 }}>
-            <ChineseHear text={example.zh} label="Hear the line" rate={LINE_RATE} />
-          </div>
-        </div>
-      )}
-      {!example && spoken && (
-        <div style={{ marginTop: 14 }}>
-          <ChineseHear text={spoken} label="Hear it" />
         </div>
       )}
     </>
@@ -484,7 +669,6 @@ function DoneView({
   wordCount,
   xp,
   replay,
-  hearts,
 }: {
   node: PathNode
   titleZh: string
@@ -492,9 +676,8 @@ function DoneView({
   wordCount: number
   xp: number
   replay: boolean
-  hearts: number
 }) {
-  const label = NODE_LABEL[node]
+  const label = KERJA_NODE_LABEL[node]
   return (
     <div style={{ textAlign: 'center', paddingTop: 36 }}>
       <div className="medal pop">
@@ -518,28 +701,8 @@ function DoneView({
       >
         <span className="pill-ink">+{ITEM_XP} XP / item</span>
         {!replay && <span className="pill-ink">+{NODE_BONUS_XP} node</span>}
-        {node !== 'wrap' && wordCount > 0 && <span className="pill-ink">{wordCount} words</span>}
-        <span className="pill-ink">
-          <HeartIcon size={12} /> {hearts}
-        </span>
+        {wordCount > 0 && <span className="pill-ink">{wordCount} words</span>}
       </div>
-      <p
-        className="yl-enter-up"
-        style={{
-          fontSize: 13,
-          color: 'var(--muted)',
-          marginTop: 22,
-          lineHeight: 1.55,
-          animationDelay: '240ms',
-          textWrap: 'pretty',
-        }}
-      >
-        {replay
-          ? 'Replay credited practice, not a second crown.'
-          : node === 'wrap'
-            ? 'Lesson banked. Every 生词 from this lesson is in your review deck.'
-            : 'Next 课文-unit is open. Keep going — HSK 4 is the whole book.'}
-      </p>
     </div>
   )
 }
@@ -562,7 +725,7 @@ function FailedView({
         Out of hearts
       </h2>
       <p className="sub" style={{ marginTop: 8, textWrap: 'pretty' }}>
-        Fail-forward stopped here — try this node again when you’re ready.
+        Try this node again when you’re ready.
       </p>
       <div className="session-xp" style={{ marginTop: 18, fontWeight: 800, fontVariantNumeric: 'tabular-nums' }}>
         +{xp} XP
@@ -585,21 +748,14 @@ function LockedView({ onClose }: { onClose: () => void }) {
       </div>
       <div className="overlay-body" style={{ display: 'grid', placeItems: 'center' }}>
         <div className="yl-enter" style={{ textAlign: 'center' }}>
-          <div className="medal" style={{ opacity: 0.55 }}>
-            <LockIcon size={36} />
-          </div>
-          <h2 className="h2" style={{ marginTop: 18, textWrap: 'balance' }}>
-            This sitting isn’t open yet
+          <LockIcon size={36} />
+          <h2 className="h1" style={{ marginTop: 16 }}>
+            Locked
           </h2>
-          <p className="sub" style={{ marginTop: 8, textWrap: 'pretty' }}>
-            Finish the sitting before this one first.
+          <p className="sub" style={{ marginTop: 8 }}>
+            Finish the earlier Kerja nodes first.
           </p>
         </div>
-      </div>
-      <div className="overlay-foot">
-        <button type="button" className="btn" onClick={onClose}>
-          Continue
-        </button>
       </div>
     </div>
   )
