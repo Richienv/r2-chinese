@@ -2,11 +2,13 @@ import { useCallback, useMemo, useSyncExternalStore } from 'react'
 import { registerVocab, type Example } from './content'
 import type { TeachPhase, WordHook } from './teach'
 import type { LessonText, TextLine, Vocab } from './types'
-import type { PathNode } from '../store/store'
 import type { Question } from './quiz'
 
 /** Kerja path progress — never written into `yulu.hsk4a.v1`. */
 const PROGRESS_KEY = 'yulu.kerja.v1'
+
+/** Words taught per path sitting (生词 chunk). */
+export const WORDS_PER_SITTING = 4
 
 export const KERJA_BOOK = {
   title: '1000 words',
@@ -57,16 +59,54 @@ export interface KerjaChapter {
   notes: KerjaNote[]
 }
 
-/** Path beats for one chapter. t4/t5 stay unused so HSK PathNode typing still fits. */
-export const KERJA_NODES: PathNode[] = ['t1', 't2', 't3', 'wrap']
+/** Local Kerja path ids — word chunks are `w0`, `w1`, … (not HSK PathNode). */
+export type KerjaWordNode = `w${number}`
+export type KerjaNode = KerjaWordNode | 't2' | 't3' | 'wrap'
 
-export const KERJA_NODE_LABEL: Record<PathNode, { en: string; zh: string }> = {
-  t1: { en: 'Words', zh: '生词' },
+const BEAT_LABEL: Record<'t2' | 't3' | 'wrap' | 't4' | 't5', { en: string; zh: string }> = {
   t2: { en: 'Dialogue', zh: '对话' },
   t3: { en: 'Notes', zh: '笔记' },
   t4: { en: 'Extra', zh: '补充' },
   t5: { en: 'Extra', zh: '补充' },
   wrap: { en: 'Wrap-up', zh: '整理' },
+}
+
+/** Labels for fixed beats (word chunks use dynamic 生词 N). */
+export const KERJA_NODE_LABEL: Record<string, { en: string; zh: string }> = {
+  t1: { en: 'Words', zh: '生词' },
+  ...BEAT_LABEL,
+}
+
+export function isKerjaWordNode(node: string): node is KerjaWordNode {
+  return /^w\d+$/.test(node)
+}
+
+export function wordChunkIndex(node: KerjaWordNode): number {
+  return Number(node.slice(1))
+}
+
+export function wordChunksForChapter(ch: KerjaChapter): KerjaWordNode[] {
+  const n = ch.words.length
+  if (n <= 0) return []
+  const count = Math.ceil(n / WORDS_PER_SITTING)
+  return Array.from({ length: count }, (_, i) => `w${i}` as KerjaWordNode)
+}
+
+export function wordsForNode(ch: KerjaChapter, node: KerjaNode): KerjaWord[] {
+  if (!isKerjaWordNode(node)) return []
+  const start = wordChunkIndex(node) * WORDS_PER_SITTING
+  return ch.words.slice(start, start + WORDS_PER_SITTING)
+}
+
+export function isKerjaNode(node: string): node is KerjaNode {
+  return isKerjaWordNode(node) || node === 't2' || node === 't3' || node === 'wrap'
+}
+
+/** Coerce overlay/legacy ids onto a playable Kerja node. */
+export function asKerjaNode(node: string): KerjaNode | null {
+  if (isKerjaNode(node)) return node
+  if (node === 't1') return 'w0'
+  return null
 }
 
 type GlobModule = { default: KerjaChapter } | KerjaChapter
@@ -101,21 +141,21 @@ export function getKerjaChapter(index: number): KerjaChapter | undefined {
   return kerjaChapters.find((c) => c.index === index)
 }
 
-export function chapterHasContent(ch: KerjaChapter, node: PathNode): boolean {
-  if (node === 't1') return ch.words.length > 0
+export function chapterHasContent(ch: KerjaChapter, node: KerjaNode): boolean {
+  if (isKerjaWordNode(node)) return wordsForNode(ch, node).length > 0
   if (node === 't2') return ch.dialogues.length > 0
   if (node === 't3') return ch.notes.length > 0
   if (node === 'wrap') return true
   return false
 }
 
-/** Nodes that appear on the path for this chapter (skips empty beats). */
-export function nodesForChapter(ch: KerjaChapter): PathNode[] {
-  const out: PathNode[] = []
-  for (const node of KERJA_NODES) {
-    if (node === 'wrap' || chapterHasContent(ch, node)) out.push(node)
-  }
-  return out.length ? out : ['wrap']
+/** Nodes that appear on the path for this chapter (word chunks → dialogue → notes → wrap). */
+export function nodesForChapter(ch: KerjaChapter): KerjaNode[] {
+  const out: KerjaNode[] = [...wordChunksForChapter(ch)]
+  if (ch.dialogues.length > 0) out.push('t2')
+  if (ch.notes.length > 0) out.push('t3')
+  out.push('wrap')
+  return out
 }
 
 export function toVocab(w: KerjaWord): Vocab {
@@ -226,31 +266,39 @@ function simpleVocabQuiz(words: KerjaWord[], count: number): Question[] {
   return out
 }
 
-export function buildKerjaSteps(chapterIndex: number, node: PathNode): KerjaSessionStep[] {
+function pushTeachWords(
+  draft: Array<Exclude<KerjaSessionStep, { kind: 'complete' }>>,
+  words: KerjaWord[],
+  nodeId: string,
+) {
+  for (const w of words) {
+    const word = toVocab(w)
+    const example = wordExample(w)
+    const hook = kerjaHook(w)
+    const phases: TeachPhase[] = example ? ['meet', 'hook', 'example', 'seal'] : ['meet', 'hook', 'seal']
+    for (const phase of phases) {
+      draft.push({
+        kind: 'teach',
+        phase,
+        id: `${phase}:${nodeId}:${w.zh}`,
+        word,
+        example,
+        hook,
+        n: 0,
+        of: 0,
+      })
+    }
+  }
+}
+
+export function buildKerjaSteps(chapterIndex: number, node: KerjaNode): KerjaSessionStep[] {
   const ch = getKerjaChapter(chapterIndex)
   if (!ch) return [{ kind: 'complete' }]
 
   const draft: Array<Exclude<KerjaSessionStep, { kind: 'complete' }>> = []
 
-  if (node === 't1') {
-    for (const w of ch.words) {
-      const word = toVocab(w)
-      const example = wordExample(w)
-      const hook = kerjaHook(w)
-      const phases: TeachPhase[] = example ? ['meet', 'hook', 'example', 'seal'] : ['meet', 'hook', 'seal']
-      for (const phase of phases) {
-        draft.push({
-          kind: 'teach',
-          phase,
-          id: `${phase}:t1:${w.zh}`,
-          word,
-          example,
-          hook,
-          n: 0,
-          of: 0,
-        })
-      }
-    }
+  if (isKerjaWordNode(node)) {
+    pushTeachWords(draft, wordsForNode(ch, node), node)
   } else if (node === 't2') {
     for (const [i, d] of ch.dialogues.entries()) {
       draft.push({
@@ -304,34 +352,77 @@ export function kerjaPlayableCount(steps: KerjaSessionStep[]): number {
   return Math.max(1, steps.filter((s) => s.kind !== 'complete').length)
 }
 
-export function kerjaSittingWordCount(chapterIndex: number, node: PathNode): number {
+export function kerjaSittingWordCount(chapterIndex: number, node: KerjaNode): number {
   const ch = getKerjaChapter(chapterIndex)
   if (!ch) return 0
-  if (node === 't1' || node === 'wrap') return ch.words.length
+  if (isKerjaWordNode(node)) return wordsForNode(ch, node).length
+  if (node === 'wrap') return ch.words.length
   return 0
 }
 
-export function nodeCaptionKerja(ch: KerjaChapter, node: PathNode): { en: string; zh: string; hint: string } {
-  const label = KERJA_NODE_LABEL[node]
-  if (node === 't1') return { ...label, hint: ch.words[0]?.zh || `${ch.words.length} words` }
+export function nodeCaptionKerja(ch: KerjaChapter, node: KerjaNode): { en: string; zh: string; hint: string } {
+  if (isKerjaWordNode(node)) {
+    const slice = wordChunkIndex(node) + 1
+    const words = wordsForNode(ch, node)
+    return {
+      en: `Words ${slice}`,
+      zh: `生词 ${slice}`,
+      hint: words[0]?.zh || `${words.length} words`,
+    }
+  }
+  const label = BEAT_LABEL[node]
   if (node === 't2') return { ...label, hint: ch.dialogues[0]?.headingZh || ch.dialogues[0]?.label || '对话' }
   if (node === 't3') return { ...label, hint: ch.notes[0]?.title || '笔记' }
   return { ...label, hint: 'Check' }
 }
 
+export function nodeLabelKerja(node: KerjaNode): { en: string; zh: string } {
+  if (isKerjaWordNode(node)) {
+    const slice = wordChunkIndex(node) + 1
+    return { en: `Words ${slice}`, zh: `生词 ${slice}` }
+  }
+  return BEAT_LABEL[node]
+}
+
 interface KerjaPersisted {
-  pathDone: Record<string, PathNode[]>
+  pathDone: Record<string, KerjaNode[]>
 }
 
 const emptyProgress: KerjaPersisted = { pathDone: {} }
+
+/**
+ * Expand legacy `t1` (one big words level) into every word-chunk for that chapter
+ * so finished chapters stay finished after the split.
+ */
+function migrateChapterNodes(chapterKey: string, rawNodes: unknown): KerjaNode[] {
+  if (!Array.isArray(rawNodes)) return []
+  const strings = rawNodes.filter((n): n is string => typeof n === 'string')
+  const hadT1 = strings.includes('t1')
+  const set = new Set<KerjaNode>()
+  for (const n of strings) {
+    if (n === 't1') continue
+    if (isKerjaNode(n)) set.add(n)
+  }
+  if (hadT1) {
+    const ch = getKerjaChapter(Number(chapterKey))
+    if (ch) {
+      for (const w of wordChunksForChapter(ch)) set.add(w)
+    }
+  }
+  return [...set]
+}
 
 function loadProgress(): KerjaPersisted {
   try {
     const raw = localStorage.getItem(PROGRESS_KEY)
     if (!raw) return emptyProgress
-    const parsed = JSON.parse(raw) as Partial<KerjaPersisted>
+    const parsed = JSON.parse(raw) as Partial<{ pathDone: Record<string, unknown> }>
     if (!parsed?.pathDone || typeof parsed.pathDone !== 'object') return emptyProgress
-    return { pathDone: parsed.pathDone }
+    const pathDone: Record<string, KerjaNode[]> = {}
+    for (const [key, nodes] of Object.entries(parsed.pathDone)) {
+      pathDone[key] = migrateChapterNodes(key, nodes)
+    }
+    return { pathDone }
   } catch {
     return emptyProgress
   }
@@ -367,11 +458,11 @@ export function useKerjaProgress() {
   const state = useSyncExternalStore(subscribeProgress, getProgressSnapshot, getProgressSnapshot)
 
   const isNodeDone = useCallback(
-    (chapter: number, node: PathNode) => (state.pathDone[String(chapter)] ?? []).includes(node),
+    (chapter: number, node: KerjaNode) => (state.pathDone[String(chapter)] ?? []).includes(node),
     [state.pathDone],
   )
 
-  const markNodeDone = useCallback((chapter: number, node: PathNode) => {
+  const markNodeDone = useCallback((chapter: number, node: KerjaNode) => {
     const key = String(chapter)
     const prev = progressCache.pathDone[key] ?? []
     if (prev.includes(node)) return
@@ -387,11 +478,13 @@ export function useKerjaProgress() {
       }
     }
     const last = kerjaChapters[kerjaChapters.length - 1]
-    return last ? { chapter: last.index, node: 'wrap' as PathNode } : { chapter: 1, node: 't1' as PathNode }
+    return last
+      ? { chapter: last.index, node: 'wrap' as KerjaNode }
+      : { chapter: 1, node: 'w0' as KerjaNode }
   }, [isNodeDone, state.pathDone])
 
   const isNodePlayable = useCallback(
-    (chapter: number, node: PathNode) => {
+    (chapter: number, node: KerjaNode) => {
       const ch = getKerjaChapter(chapter)
       if (!ch || !nodesForChapter(ch).includes(node)) return false
       if (isNodeDone(chapter, node)) return true
@@ -403,7 +496,11 @@ export function useKerjaProgress() {
   const isChapterReached = useCallback(
     (chapter: number) => {
       if (kerjaChapters.length === 0) return false
-      return chapter <= nextPlayable.chapter || KERJA_NODES.some((n) => isNodeDone(chapter, n))
+      const ch = getKerjaChapter(chapter)
+      if (!ch) return false
+      return (
+        chapter <= nextPlayable.chapter || nodesForChapter(ch).some((n) => isNodeDone(chapter, n))
+      )
     },
     [isNodeDone, nextPlayable.chapter],
   )

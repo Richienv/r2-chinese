@@ -1,3 +1,4 @@
+import { type CSSProperties } from 'react'
 import { Glossed, useGloss } from '../components/ChineseText'
 import { HearButton, useAutoSpeak } from '../components/Hear'
 import { SaveStar } from '../components/SaveStar'
@@ -5,6 +6,7 @@ import type { Example } from '../lib/content'
 import { splitHanzi, splitOnWord, TEACH_KICKER, TEACH_TITLE, type TeachPhase, type WordHook } from '../lib/teach'
 import type { Vocab } from '../lib/types'
 import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
+import '../styles/teach-motion.css'
 
 function StepHead({ kicker, title }: { kicker: string; title: string }) {
   return (
@@ -53,20 +55,24 @@ function MeetBeat({ word, lesson }: { word: Vocab; lesson: number }) {
     <div className="teach-meet metal">
       <div className="teach-glyphs" lang="zh-CN" aria-label={word.zh}>
         {glyphs.map((g, i) => (
-          <span key={`${g}-${i}`} className="teach-glyph" style={{ animationDelay: `${80 + i * 110}ms` }}>
+          <span
+            key={`${g}-${i}`}
+            className="teach-glyph teach-glyph-settle"
+            style={{ animationDelay: `${80 + i * 110}ms` }}
+          >
             {g}
           </span>
         ))}
       </div>
-      <p className="teach-meet-py" style={{ animationDelay: `${80 + glyphs.length * 110 + 80}ms` }}>
+      <p className="teach-meet-py teach-stagger-in" style={{ animationDelay: `${80 + glyphs.length * 110 + 80}ms` }}>
         {word.pinyin}
       </p>
       {word.pos ? (
-        <span className="teach-meet-pos" style={{ animationDelay: `${80 + glyphs.length * 110 + 180}ms` }}>
+        <span className="teach-meet-pos teach-stagger-in" style={{ animationDelay: `${80 + glyphs.length * 110 + 180}ms` }}>
           {word.pos}
         </span>
       ) : null}
-      <p className="teach-meet-en" style={{ animationDelay: `${80 + glyphs.length * 110 + 260}ms` }}>
+      <p className="teach-meet-en teach-stagger-in" style={{ animationDelay: `${80 + glyphs.length * 110 + 260}ms` }}>
         {word.en}
       </p>
       <div className="teach-meet-hear" style={{ animationDelay: `${80 + glyphs.length * 110 + 320}ms` }}>
@@ -133,8 +139,12 @@ function ExampleBeat({
         {bits.map((b, i) => (
           <span
             key={`${b.text}-${i}`}
-            className={b.hit ? 'teach-tok teach-hit' : 'teach-tok'}
-            style={{ animationDelay: `${90 + i * 95}ms` }}
+            className={b.hit ? 'teach-tok teach-hit teach-brush' : 'teach-tok'}
+            style={
+              b.hit
+                ? ({ '--teach-delay': `${90 + i * 95}ms` } as CSSProperties)
+                : { animationDelay: `${90 + i * 95}ms` }
+            }
           >
             {b.hit ? (
               <button
@@ -154,12 +164,12 @@ function ExampleBeat({
         ))}
       </p>
       {example.pinyin && (
-        <p className="teach-example-pyin" style={{ animationDelay: `${90 + bits.length * 95 + 80}ms` }}>
+        <p className="teach-example-pyin teach-stagger-in" style={{ animationDelay: `${90 + bits.length * 95 + 80}ms` }}>
           {example.pinyin}
         </p>
       )}
       {example.en && (
-        <p className="teach-example-yes" style={{ animationDelay: `${90 + bits.length * 95 + 200}ms` }}>
+        <p className="teach-example-yes teach-stagger-in" style={{ animationDelay: `${90 + bits.length * 95 + 200}ms` }}>
           {example.en}
         </p>
       )}
@@ -175,15 +185,19 @@ function SealBeat({ word }: { word: Vocab }) {
     <div className="teach-seal">
       <div className="teach-glyphs" lang="zh-CN" aria-label={word.zh}>
         {glyphs.map((g, i) => (
-          <span key={`${g}-${i}`} className="teach-glyph" style={{ animationDelay: `${40 + i * 90}ms` }}>
+          <span
+            key={`${g}-${i}`}
+            className="teach-glyph teach-glyph-settle"
+            style={{ animationDelay: `${40 + i * 90}ms` }}
+          >
             {g}
           </span>
         ))}
       </div>
-      <p className="teach-seal-py" style={{ animationDelay: '420ms' }}>
+      <p className="teach-seal-py teach-stagger-in" style={{ animationDelay: '420ms' }}>
         {word.pinyin}
       </p>
-      <p className="teach-seal-en" style={{ animationDelay: '640ms' }}>
+      <p className="teach-seal-en teach-stagger-in" style={{ animationDelay: '640ms' }}>
         {word.en}
       </p>
       <div style={{ marginTop: 18 }}>

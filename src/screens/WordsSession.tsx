@@ -1,8 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
+import { Fireworks } from '../components/Fireworks'
 import { ChineseHear, hasHanzi, HearButton, useAutoSpeak, useAutoSpeakLines, useSpeechActive } from '../components/Hear'
 import { CheckIcon, CloseIcon, HeartIcon, LockIcon } from '../components/Icons'
 import { getLesson, type Example } from '../lib/content'
+import { clearStep, readStep, writeStep } from '../lib/resume'
+import { playCorrect, playWrong } from '../lib/sfx'
 import { unlockSpeech, speakLines, stopSpeech } from '../lib/speech'
 import { TeachView } from './TeachBeats'
 import type { Question } from '../lib/quiz'
@@ -54,6 +57,7 @@ function WordsRunner({
   onClose: () => void
 }) {
   const store = useStore()
+  const resumeId = `hsk:${lesson}:${node}`
   const steps = useMemo(() => buildSteps(lesson, node), [lesson, node])
   const alreadyDone = useRef(store.isNodeDone(lesson, node))
   const credited = useRef(new Set<string>())
@@ -62,12 +66,17 @@ function WordsRunner({
   const xpRef = useRef(0)
   const bodyRef = useRef<HTMLDivElement>(null)
 
-  const [i, setI] = useState(0)
+  const [i, setI] = useState(() => {
+    const built = buildSteps(lesson, node)
+    const saved = readStep(`hsk:${lesson}:${node}`)
+    return saved > 0 && saved < built.length ? saved : 0
+  })
   const [quiz, setQuiz] = useState<Record<string, QuizState>>({})
   const [hearts, setHearts] = useState(SESSION_HEARTS)
   const [heartLoss, setHeartLoss] = useState<HeartLoss | null>(null)
   const [failed, setFailed] = useState(false)
   const [xp, setXp] = useState(0)
+  const [fwToken, setFwToken] = useState(0)
 
   const step = steps[Math.min(i, steps.length - 1)]
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
@@ -81,8 +90,14 @@ function WordsRunner({
   }, [i, failed])
 
   useEffect(() => {
+    if (isComplete) return
+    writeStep(resumeId, i)
+  }, [i, isComplete, resumeId])
+
+  useEffect(() => {
     if (!isComplete || finished.current) return
     finished.current = true
+    clearStep(resumeId)
     store.markNodeDone(lesson, node)
     if (!alreadyDone.current) {
       store.awardXp(NODE_BONUS_XP)
@@ -93,7 +108,7 @@ function WordsRunner({
       store.finishLesson(lesson, teachVocab(lesson), 40)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isComplete, lesson, node])
+  }, [isComplete, lesson, node, resumeId])
 
   useEffect(() => {
     if (failed || step.kind !== 'quiz' || !quizState?.solved) return
@@ -144,6 +159,8 @@ function WordsRunner({
     if (prev.solved || prev.wrong.includes(picked)) return
 
     if (picked === answer) {
+      playCorrect()
+      setFwToken((n) => n + 1)
       credit(key)
       setQuiz((q) => ({
         ...q,
@@ -152,6 +169,7 @@ function WordsRunner({
       return
     }
 
+    playWrong()
     const nextHearts = hearts - 1
     setHearts(Math.max(0, nextHearts))
     setHeartLoss({ index: Math.max(0, nextHearts), tick: Date.now() })
@@ -169,6 +187,7 @@ function WordsRunner({
 
   return (
     <div className="overlay session">
+      <Fireworks token={fwToken} />
       <div className="overlay-head">
         <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close session">
           <CloseIcon />
@@ -337,11 +356,6 @@ function MatchView({
           <p className="zh" lang="zh-CN" style={{ fontSize: 22, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
             <Glossed text={question.context.zh} onWord={onWord} />
           </p>
-          {question.context.pinyin && (
-            <p className="sub" style={{ margin: '6px 0 0', color: 'var(--red-mid)' }}>
-              {question.context.pinyin}
-            </p>
-          )}
           {solved && question.context.en && (
             <p className="sub" style={{ margin: '8px 0 0' }}>
               {question.context.en}

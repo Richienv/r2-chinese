@@ -1,0 +1,65 @@
+/* CourseGate / CourseBack entrance — kept out of styles.css */
+
+@keyframes course-gate-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes course-gate-card-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes course-back-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.course-gate-title-in {
+  animation: course-gate-rise 0.42s cubic-bezier(0.34, 1.28, 0.46, 1) both;
+}
+
+.course-gate-card-in {
+  animation: course-gate-card-up 0.48s cubic-bezier(0.34, 1.28, 0.46, 1) both;
+}
+
+.course-gate-list .course-gate-card-in:nth-child(1) {
+  animation-delay: 0.14s;
+}
+
+.course-gate-list .course-gate-card-in:nth-child(2) {
+  animation-delay: 0.21s;
+}
+
+.course-gate-list .course-gate-card-in:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+.course-back-in {
+  animation: course-back-fade 0.4s ease both;
+  animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-gate-title-in,
+  .course-gate-card-in,
+  .course-back-in {
+    animation: none !important;
+  }
+}

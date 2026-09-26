@@ -1,0 +1,145 @@
+/* Teach-beat motion — layered on TeachBeats; keeps spring feel + reduced-motion. */
+
+.teach-glyph-settle {
+  display: inline-block;
+  animation: teach-glyph-settle 0.58s cubic-bezier(0.34, 1.28, 0.46, 1) both;
+}
+
+@keyframes teach-glyph-settle {
+  0% {
+    opacity: 0;
+    transform: scale(0.22) translateY(14px);
+    filter: blur(5px);
+  }
+  58% {
+    opacity: 1;
+    transform: scale(1.1) translateY(-3px);
+    filter: blur(0);
+  }
+  78% {
+    transform: scale(0.97) translateY(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+.teach-stagger-in {
+  animation: teach-stagger-in 0.42s cubic-bezier(0.34, 1.28, 0.46, 1) both;
+}
+
+@keyframes teach-stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Example hit: settle, then brush draws L→R, then soft gold flash.
+   Stagger via --teach-delay so multi-step timings are not clobbered. */
+.teach-brush {
+  --teach-delay: 0ms;
+  position: relative;
+  display: inline-block;
+  background: none;
+  animation:
+    teach-brush-pop 0.48s cubic-bezier(0.34, 1.28, 0.46, 1) var(--teach-delay) both,
+    teach-brush-flash 0.65s cubic-bezier(0.34, 1.28, 0.46, 1)
+      calc(var(--teach-delay) + 0.72s) both;
+}
+
+.teach-brush::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.05em;
+  height: 0.2em;
+  border-radius: 999px 2px 999px 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(196, 48, 32, 0.92) 0%,
+    rgba(226, 44, 28, 0.75) 55%,
+    rgba(255, 180, 120, 0.55) 100%
+  );
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+  animation: teach-brush-draw 0.4s cubic-bezier(0.22, 1.05, 0.36, 1)
+    calc(var(--teach-delay) + 0.38s) both;
+}
+
+@keyframes teach-brush-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.55);
+    filter: blur(3px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.06);
+    filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes teach-brush-draw {
+  from {
+    transform: scaleX(0);
+    opacity: 0.85;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes teach-brush-flash {
+  0% {
+    text-shadow: none;
+    filter: brightness(1);
+  }
+  35% {
+    text-shadow:
+      0 0 10px rgba(255, 227, 176, 0.9),
+      0 0 2px rgba(255, 227, 176, 0.7);
+    filter: brightness(1.08);
+  }
+  100% {
+    text-shadow: none;
+    filter: brightness(1);
+  }
+}
+
+.teach-brush .teach-hit-tap {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .teach-glyph-settle,
+  .teach-stagger-in,
+  .teach-brush {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    filter: none;
+    text-shadow: none;
+  }
+
+  .teach-brush::after {
+    animation: none !important;
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}

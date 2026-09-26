@@ -1,22 +1,27 @@
 import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
+import { Fireworks } from '../components/Fireworks'
 import { ChineseHear, hasHanzi, HearButton, useAutoSpeak, useAutoSpeakLines, useSpeechActive } from '../components/Hear'
 import { CheckIcon, CloseIcon, HeartIcon, LockIcon, PlayIcon } from '../components/Icons'
 import {
+  asKerjaNode,
   buildKerjaSteps,
   getKerjaChapter,
   hearableZh,
   KERJA_BOOK,
-  KERJA_NODE_LABEL,
   kerjaChapters,
   kerjaPlayableCount,
   kerjaSittingWordCount,
   nodeCaptionKerja,
+  nodeLabelKerja,
   nodesForChapter,
   useKerjaProgress,
   type KerjaChapter,
+  type KerjaNode,
   type KerjaSessionStep,
 } from '../lib/kerja'
+import { clearStep, readStep, writeStep } from '../lib/resume'
+import { playCorrect, playWrong } from '../lib/sfx'
 import { unlockSpeech, speakLines, stopSpeech } from '../lib/speech'
 import { ITEM_XP, NODE_BONUS_XP, SESSION_HEARTS } from '../lib/wordsSession'
 import type { LessonText } from '../lib/types'
@@ -99,8 +104,9 @@ export function KerjaPath({
   fill,
 }: {
   chapter: KerjaChapter
-  current: { chapter: number; node: PathNode }
-  nodeDone: (chapter: number, node: PathNode) => boolean
+  current: { chapter: number; node: KerjaNode }
+  nodeDone: (chapter: number, node: KerjaNode) => boolean
+  /** Parents still type PathNode; Kerja local ids (`w0`, …) pass through at runtime. */
   onPlay?: (chapter: number, node: PathNode) => void
   fill?: boolean
 }) {
@@ -180,7 +186,7 @@ export function KerjaPath({
                 }}
                 onClick={() => {
                   if (!playable) return
-                  onPlay?.(chapter.index, node)
+                  onPlay?.(chapter.index, node as PathNode)
                 }}
                 aria-label={`${caption.zh}${caption.hint ? ` ${caption.hint}` : ''}${done ? ', done' : on ? ', start' : ', locked'}`}
               >
@@ -254,15 +260,17 @@ export function KerjaSession({
   onClose,
 }: {
   chapter: number
+  /** PathNode from App overlay; Kerja word chunks arrive as `w0`, `w1`, … at runtime. */
   node: PathNode
   onClose: () => void
 }) {
   const progress = useKerjaProgress()
+  const kerjaNode = asKerjaNode(String(node))
   const ch = getKerjaChapter(chapter)
-  if (!ch || !progress.isNodePlayable(chapter, node)) {
+  if (!ch || !kerjaNode || !progress.isNodePlayable(chapter, kerjaNode)) {
     return <LockedView onClose={onClose} />
   }
-  return <KerjaRunner chapter={chapter} node={node} onClose={onClose} />
+  return <KerjaRunner chapter={chapter} node={kerjaNode} onClose={onClose} />
 }
 
 function KerjaRunner({
@@ -271,12 +279,13 @@ function KerjaRunner({
   onClose,
 }: {
   chapter: number
-  node: PathNode
+  node: KerjaNode
   onClose: () => void
 }) {
   const store = useStore()
   const progress = useKerjaProgress()
   const ch = getKerjaChapter(chapter)!
+  const resumeId = `kerja:${chapter}:${node}`
   const steps = useMemo(() => buildKerjaSteps(chapter, node), [chapter, node])
   const alreadyDone = useRef(progress.isNodeDone(chapter, node))
   const credited = useRef(new Set<string>())
@@ -285,12 +294,16 @@ function KerjaRunner({
   const xpRef = useRef(0)
   const bodyRef = useRef<HTMLDivElement>(null)
 
-  const [i, setI] = useState(0)
+  const [i, setI] = useState(() => {
+    const saved = readStep(resumeId)
+    return saved > 0 && saved < steps.length ? saved : 0
+  })
   const [quiz, setQuiz] = useState<Record<string, QuizState>>({})
   const [hearts, setHearts] = useState(SESSION_HEARTS)
   const [heartLoss, setHeartLoss] = useState<HeartLoss | null>(null)
   const [failed, setFailed] = useState(false)
   const [xp, setXp] = useState(0)
+  const [fwToken, setFwToken] = useState(0)
 
   const step = steps[Math.min(i, steps.length - 1)]
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
@@ -304,8 +317,14 @@ function KerjaRunner({
   }, [i, failed])
 
   useEffect(() => {
+    if (isComplete) return
+    writeStep(resumeId, i)
+  }, [i, isComplete, resumeId])
+
+  useEffect(() => {
     if (!isComplete || finished.current) return
     finished.current = true
+    clearStep(resumeId)
     progress.markNodeDone(chapter, node)
     if (!alreadyDone.current) {
       store.awardXp(NODE_BONUS_XP)
@@ -313,7 +332,7 @@ function KerjaRunner({
       setXp(xpRef.current)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isComplete, chapter, node])
+  }, [isComplete, chapter, node, resumeId])
 
   useEffect(() => {
     if (failed || step.kind !== 'quiz' || !quizState?.solved) return
@@ -364,6 +383,8 @@ function KerjaRunner({
     if (prev.solved || prev.wrong.includes(picked)) return
 
     if (picked === answer) {
+      playCorrect()
+      setFwToken((t) => t + 1)
       credit(key)
       setQuiz((q) => ({
         ...q,
@@ -372,6 +393,7 @@ function KerjaRunner({
       return
     }
 
+    playWrong()
     const nextHearts = hearts - 1
     setHearts(Math.max(0, nextHearts))
     setHeartLoss({ index: Math.max(0, nextHearts), tick: Date.now() })
@@ -389,6 +411,7 @@ function KerjaRunner({
 
   return (
     <div className="overlay session">
+      <Fireworks token={fwToken} />
       <div className="overlay-head">
         <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close session">
           <CloseIcon />
@@ -679,14 +702,14 @@ function DoneView({
   xp,
   replay,
 }: {
-  node: PathNode
+  node: KerjaNode
   titleZh: string
   titleEn: string
   wordCount: number
   xp: number
   replay: boolean
 }) {
-  const label = KERJA_NODE_LABEL[node]
+  const label = nodeLabelKerja(node)
   return (
     <div style={{ textAlign: 'center', paddingTop: 36 }}>
       <div className="medal pop">

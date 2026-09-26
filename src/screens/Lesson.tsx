@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
+import { Fireworks } from '../components/Fireworks'
 import { FlipCard } from '../components/FlipCard'
 import {
   ChineseHear,
@@ -14,8 +15,9 @@ import { CheckIcon, ChevronLeft, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { Writer } from '../components/Writer'
 import { focusChar, getLesson, sameCharWords } from '../lib/content'
-import { speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
 import { clozeQuestion, vocabQuestions, type Question } from '../lib/quiz'
+import { playCorrect, playWrong } from '../lib/sfx'
+import { speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
 import type { GrammarPoint, LessonText, Vocab } from '../lib/types'
 import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 import { useStore } from '../store/store'
@@ -86,6 +88,7 @@ export function LessonFlow({
   const [cursor, setCursor] = useState(0)
   const cursorMemory = useRef<Record<number, number>>({})
   const [quiz, setQuiz] = useState<Record<string, QuizState>>({})
+  const [fireworksToken, setFireworksToken] = useState(0)
   const committed = useRef(false)
   const bodyRef = useRef<HTMLDivElement>(null)
 
@@ -149,14 +152,19 @@ export function LessonFlow({
   const footerLocked = gated && !quizState?.solved
 
   function answerQuiz(picked: string, answer: string) {
-    setQuiz((q) => {
-      const prev = q[quizKey] ?? { wrong: [], solved: false }
-      if (prev.solved) return q
-      if (picked === answer) {
-        return { ...q, [quizKey]: { ...prev, solved: true } }
-      }
-      return { ...q, [quizKey]: { ...prev, wrong: [...new Set([...prev.wrong, picked])] } }
-    })
+    const prev = quiz[quizKey] ?? { wrong: [], solved: false }
+    if (prev.solved || prev.wrong.includes(picked)) return
+    if (picked === answer) {
+      playCorrect()
+      setFireworksToken((n) => n + 1)
+      setQuiz((q) => ({ ...q, [quizKey]: { ...prev, solved: true } }))
+      return
+    }
+    playWrong()
+    setQuiz((q) => ({
+      ...q,
+      [quizKey]: { ...prev, wrong: [...new Set([...prev.wrong, picked])] },
+    }))
   }
 
   const footerLabel = isComplete
@@ -171,6 +179,7 @@ export function LessonFlow({
 
   return (
     <div className="overlay">
+      <Fireworks token={fireworksToken} />
       <div className="overlay-head">
         <button
           className="icon-round tap44"

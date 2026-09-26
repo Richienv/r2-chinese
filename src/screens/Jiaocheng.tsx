@@ -1,5 +1,6 @@
 import { type CSSProperties, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
+import { Fireworks } from '../components/Fireworks'
 import { ChineseHear, hasHanzi, HearButton, useAutoSpeak, useAutoSpeakLines, useSpeechActive } from '../components/Hear'
 import { CheckIcon, CloseIcon, HeartIcon, LockIcon, PlayIcon } from '../components/Icons'
 import {
@@ -17,9 +18,12 @@ import {
   type JiaochengLesson,
   type JiaochengSessionStep,
 } from '../lib/jiaocheng'
+import { clearStep, readStep, writeStep } from '../lib/resume'
+import { playCorrect, playWrong } from '../lib/sfx'
 import { unlockSpeech, speakLines, stopSpeech } from '../lib/speech'
 import { ITEM_XP, NODE_BONUS_XP, SESSION_HEARTS } from '../lib/wordsSession'
 import type { LessonText } from '../lib/types'
+import type { Question } from '../lib/quiz'
 import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 import { useStore, type PathNode } from '../store/store'
 import { TeachView } from './TeachBeats'
@@ -284,6 +288,7 @@ function JiaochengRunner({
   const progress = useJiaochengProgress()
   const unit = getJiaochengLesson(lesson)!
   const steps = useMemo(() => buildJiaochengSteps(lesson, node), [lesson, node])
+  const resumeId = `jiaocheng:${lesson}:${node}`
   const alreadyDone = useRef(progress.isNodeDone(lesson, node))
   const credited = useRef(new Set<string>())
   const finished = useRef(false)
@@ -291,12 +296,17 @@ function JiaochengRunner({
   const xpRef = useRef(0)
   const bodyRef = useRef<HTMLDivElement>(null)
 
-  const [i, setI] = useState(0)
+  const [i, setI] = useState(() => {
+    const saved = readStep(resumeId)
+    const max = Math.max(0, steps.length - 1)
+    return Math.min(Math.max(0, saved), max)
+  })
   const [quiz, setQuiz] = useState<Record<string, QuizState>>({})
   const [hearts, setHearts] = useState(SESSION_HEARTS)
   const [heartLoss, setHeartLoss] = useState<HeartLoss | null>(null)
   const [failed, setFailed] = useState(false)
   const [xp, setXp] = useState(0)
+  const [fireworks, setFireworks] = useState(0)
 
   const step = steps[Math.min(i, steps.length - 1)]
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
@@ -308,6 +318,14 @@ function JiaochengRunner({
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 })
   }, [i, failed])
+
+  useEffect(() => {
+    if (isComplete) {
+      clearStep(resumeId)
+      return
+    }
+    writeStep(resumeId, i)
+  }, [i, isComplete, resumeId])
 
   useEffect(() => {
     if (!isComplete || finished.current) return
@@ -370,6 +388,8 @@ function JiaochengRunner({
     if (prev.solved || prev.wrong.includes(picked)) return
 
     if (picked === answer) {
+      playCorrect()
+      setFireworks((n) => n + 1)
       credit(key)
       setQuiz((q) => ({
         ...q,
@@ -378,6 +398,7 @@ function JiaochengRunner({
       return
     }
 
+    playWrong()
     const nextHearts = hearts - 1
     setHearts(Math.max(0, nextHearts))
     setHeartLoss({ index: Math.max(0, nextHearts), tick: Date.now() })
@@ -395,6 +416,7 @@ function JiaochengRunner({
 
   return (
     <div className="overlay session">
+      <Fireworks token={fireworks} />
       <div className="overlay-head">
         <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close session">
           <CloseIcon />
@@ -586,7 +608,7 @@ function MatchView({
   state,
   onPick,
 }: {
-  question: { prompt: string; context?: { zh: string; pinyin: string; en: string }; options: { zh: string; label: string }[]; answer: string }
+  question: Question
   n: number
   of: number
   state: QuizState | undefined

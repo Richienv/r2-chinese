@@ -1,18 +1,21 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { Fireworks } from '../components/Fireworks'
 import { ChineseHear, HearButton } from '../components/Hear'
 import { CheckIcon, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { exampleFor, lookup } from '../lib/content'
 import { buildDrillQuestion, buildDrillQueue, requeue } from '../lib/drill'
+import { playCorrect, playWrong } from '../lib/sfx'
 import { unlockSpeech } from '../lib/speech'
 import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 import { useStore } from '../store/store'
+import '../styles/drill-stage.css'
 
 const REP_OPTIONS = [5, 8, 10]
 const DEFAULT_REPS = 5
 const XP_PER_REP = 1
 /** Let correct/wrong spring play before revealing the gloss. */
-const REVEAL_MS = 420
+const REVEAL_MS = 1100
 
 /**
  * Rapid drill — multiple-choice recall (answer first, then reveal). Credits the
@@ -36,6 +39,7 @@ export function DrillFlow({
   const [correctPick, setCorrectPick] = useState(false)
   const [gotFirstTry, setGotFirstTry] = useState(0)
   const [triedAgain, setTriedAgain] = useState<Set<number>>(new Set())
+  const [fireworksToken, setFireworksToken] = useState(0)
   const committed = useRef(false)
   const revealTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -144,7 +148,13 @@ export function DrillFlow({
     setPicked(optionId)
     setCorrectPick(ok)
     setPhase('feedback')
-    if (ok && !triedAgain.has(n)) setGotFirstTry((g) => g + 1)
+    if (ok) {
+      playCorrect()
+      setFireworksToken((t) => t + 1)
+      if (!triedAgain.has(n)) setGotFirstTry((g) => g + 1)
+    } else {
+      playWrong()
+    }
     revealTimer.current = setTimeout(() => setPhase('reveal'), REVEAL_MS)
   }
 
@@ -220,6 +230,7 @@ export function DrillFlow({
 
   return (
     <div className="overlay" style={{ zIndex: 90 }}>
+      <Fireworks token={fireworksToken} />
       <Head title={title ?? 'Drill'} onClose={finish} />
       <div className="overlay-head" style={{ paddingTop: 0 }}>
         <div className="step-bar">
@@ -230,22 +241,9 @@ export function DrillFlow({
         </span>
       </div>
 
-      <div
-        className="overlay-body yl-enter"
-        key={n}
-        style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-      >
-        <div
-          className="card"
-          style={{
-            background: 'var(--paper)',
-            borderRadius: 26,
-            padding: 26,
-            textAlign: 'center',
-            width: '100%',
-          }}
-        >
-          <div className="kicker-ink" style={{ marginBottom: 10 }}>
+      <div className="overlay-body drill-stage" key={n}>
+        <div className="drill-prompt">
+          <div className="kicker-ink">
             {noGloss
               ? 'No book meaning yet'
               : question.mode === 'zh-to-en'
@@ -253,48 +251,31 @@ export function DrillFlow({
                 : 'Which word means this?'}
           </div>
           <div
-            className={question.promptLang === 'zh' ? 'zh' : undefined}
-            style={{
-              fontSize: question.promptLang === 'zh' ? 72 : 28,
-              fontWeight: 700,
-              lineHeight: 1.15,
-              letterSpacing: question.promptLang === 'zh' ? '-1px' : '-0.3px',
-            }}
+            className={question.promptLang === 'zh' ? 'zh drill-prompt-hz' : 'drill-prompt-en'}
             lang={question.promptLang === 'zh' ? 'zh-CN' : undefined}
           >
             {question.prompt}
           </div>
+          <div className="drill-tools">
+            <ChineseHear text={zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
+            <SaveStar zh={zh} lesson={word ? undefined : 0} size={22} />
+          </div>
 
           {revealed && (
-            <div className="yl-enter-up" style={{ marginTop: 14 }}>
-              {word?.pinyin ? (
-                <div style={{ color: 'var(--warm-hot)', fontWeight: 800, fontSize: 22 }}>{word.pinyin}</div>
-              ) : null}
+            <div className="drill-reveal">
+              {word?.pinyin ? <div className="drill-reveal-py">{word.pinyin}</div> : null}
               {word?.en ? (
-                <div style={{ fontSize: 17, fontWeight: 600, marginTop: 8, lineHeight: 1.4 }}>{word.en}</div>
+                <div className="drill-reveal-en">{word.en}</div>
               ) : (
-                <div style={{ fontSize: 14, color: 'var(--muted)', marginTop: 8, lineHeight: 1.45 }}>
-                  Meaning not in the book yet — still saved for drill when you star it.
-                </div>
+                <div className="drill-reveal-missing">Meaning not in the book yet.</div>
               )}
               {example && (
-                <div
-                  style={{
-                    marginTop: 16,
-                    paddingTop: 14,
-                    borderTop: '1px solid var(--line-3)',
-                    textAlign: 'left',
-                  }}
-                >
-                  <div className="zh" style={{ fontSize: 15, lineHeight: 1.7 }} lang="zh-CN">
+                <div className="drill-reveal-ex">
+                  <div className="zh" lang="zh-CN">
                     {example.zh}
                   </div>
-                  <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 5 }}>
-                    {example.en}
-                  </div>
-                  <div style={{ marginTop: 10 }}>
-                    <HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
-                  </div>
+                  <div className="drill-reveal-ex-en">{example.en}</div>
+                  <HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
                 </div>
               )}
             </div>
@@ -302,8 +283,8 @@ export function DrillFlow({
         </div>
 
         {!noGloss && !revealed && (
-          <div className="session-options" style={{ marginTop: 16 }}>
-            {question.options.map((o) => {
+          <div className="drill-choices">
+            {question.options.map((o, index) => {
               const isAnswer = o.id === question.answerId
               const isWrong = picked === o.id && !isAnswer
               const showCorrect = phase === 'feedback' && isAnswer
@@ -313,9 +294,10 @@ export function DrillFlow({
                 <button
                   key={isWrong ? `${o.id}-miss` : o.id}
                   type="button"
-                  className={`option${question.mode === 'en-to-zh' ? ' zh' : ''}${motion}`}
+                  className={`option drill-choice${question.mode === 'en-to-zh' ? ' zh' : ''}${motion}`}
                   data-state={st}
                   disabled={phase !== 'ask'}
+                  style={{ animationDelay: `${index * 70}ms` }}
                   onPointerDown={() => unlockSpeech()}
                   onClick={() => answer(o.id)}
                   lang={question.mode === 'en-to-zh' ? 'zh-CN' : undefined}
@@ -328,23 +310,14 @@ export function DrillFlow({
         )}
 
         {noGloss && phase === 'ask' && (
-          <p className="sub" style={{ marginTop: 16, textAlign: 'center', textWrap: 'pretty' }}>
-            No book gloss for this card yet — mark how the recall felt, then continue.
-          </p>
+          <p className="sub drill-note">No book gloss for this card yet. Mark how the recall felt, then continue.</p>
         )}
 
         {phase === 'feedback' && !noGloss && (
-          <div className="yl-enter-up" style={{ textAlign: 'center', marginTop: 12 }} aria-live="polite">
-            <strong style={{ fontSize: 16, fontWeight: 800, color: 'var(--red-deep)' }}>
-              {correctPick ? 'Nice!' : 'Not quite'}
-            </strong>
+          <div className="drill-verdict" aria-live="polite">
+            {correctPick ? 'Nice' : 'Not quite'}
           </div>
         )}
-
-        <div className="row" style={{ justifyContent: 'center', gap: 16, marginTop: 16 }}>
-          <ChineseHear text={zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
-          <SaveStar zh={zh} lesson={word ? undefined : 0} size={22} />
-        </div>
       </div>
 
       <div className="overlay-foot">

@@ -1031,11 +1031,11 @@ button {
 }
 
 .yl-correct {
-  animation: yl-correct 0.42s var(--spring) both;
+  animation: yl-correct 0.78s var(--spring) both;
 }
 
 .yl-wrong {
-  animation: yl-wrong 0.38s var(--ease) both;
+  animation: yl-wrong 0.64s var(--ease) both;
 }
 
 .yl-heart-loss {
@@ -2050,7 +2050,7 @@ button.word.teach-hit-tap {
   background: var(--ok-bg);
   border-color: var(--ok-line);
   color: var(--ok);
-  animation: yl-correct 0.42s var(--spring) both;
+  animation: yl-correct 0.78s var(--spring) both;
 }
 
 .session .option[data-state='correct'],
@@ -2065,7 +2065,7 @@ button.word.teach-hit-tap {
   background: var(--err-bg);
   border-color: var(--err-line);
   color: var(--err);
-  animation: yl-wrong 0.38s var(--ease) both;
+  animation: yl-wrong 0.64s var(--ease) both;
 }
 
 .explain {
