@@ -5,6 +5,7 @@ import { CheckIcon, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { exampleFor, lookup } from '../lib/content'
 import { buildDrillQuestion, buildDrillQueue, requeue } from '../lib/drill'
+import { recordHistory } from '../lib/history'
 import { playCorrect, playWrong } from '../lib/sfx'
 import { unlockSpeech } from '../lib/speech'
 import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
@@ -70,7 +71,17 @@ export function DrillFlow({
       committed.current = true
       const total = uniqueCount * reps
       const doneReps = Math.min(n, total)
-      if (doneReps > 0) store.logDrill(doneReps, doneReps * XP_PER_REP)
+      if (doneReps > 0) {
+        const xp = doneReps * XP_PER_REP
+        store.logDrill(doneReps, xp)
+        recordHistory({
+          course: 'hsk4a',
+          kind: 'drill',
+          lesson: 0,
+          title: title ?? 'Drill',
+          xp,
+        })
+      }
     }
     onClose()
   }

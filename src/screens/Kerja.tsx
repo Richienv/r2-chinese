@@ -20,6 +20,7 @@ import {
   type KerjaNode,
   type KerjaSessionStep,
 } from '../lib/kerja'
+import { recordHistory } from '../lib/history'
 import { clearStep, readStep, writeStep } from '../lib/resume'
 import { playCorrect, playWrong } from '../lib/sfx'
 import { unlockSpeech, speakLines, stopSpeech } from '../lib/speech'
@@ -326,6 +327,13 @@ function KerjaRunner({
     finished.current = true
     clearStep(resumeId)
     progress.markNodeDone(chapter, node)
+    recordHistory({
+      course: 'kerja',
+      kind: 'node',
+      lesson: chapter,
+      node,
+      title: ch.titleEn || ch.titleZh || undefined,
+    })
     if (!alreadyDone.current) {
       store.awardXp(NODE_BONUS_XP)
       xpRef.current += NODE_BONUS_XP
@@ -386,6 +394,7 @@ function KerjaRunner({
       playCorrect()
       setFwToken((t) => t + 1)
       credit(key)
+      recordHistory({ course: 'kerja', kind: 'quiz', lesson: chapter, node, correct: true })
       setQuiz((q) => ({
         ...q,
         [key]: { wrong: prev.wrong, solved: true, missed: prev.missed || prev.wrong.length > 0 },
@@ -394,6 +403,7 @@ function KerjaRunner({
     }
 
     playWrong()
+    recordHistory({ course: 'kerja', kind: 'quiz', lesson: chapter, node, correct: false })
     const nextHearts = hearts - 1
     setHearts(Math.max(0, nextHearts))
     setHeartLoss({ index: Math.max(0, nextHearts), tick: Date.now() })

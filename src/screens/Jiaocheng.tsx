@@ -18,6 +18,7 @@ import {
   type JiaochengLesson,
   type JiaochengSessionStep,
 } from '../lib/jiaocheng'
+import { recordHistory } from '../lib/history'
 import { clearStep, readStep, writeStep } from '../lib/resume'
 import { playCorrect, playWrong } from '../lib/sfx'
 import { unlockSpeech, speakLines, stopSpeech } from '../lib/speech'
@@ -331,6 +332,13 @@ function JiaochengRunner({
     if (!isComplete || finished.current) return
     finished.current = true
     progress.markNodeDone(lesson, node)
+    recordHistory({
+      course: 'jiaocheng',
+      kind: 'node',
+      lesson,
+      node,
+      title: unit.titleEn || unit.titleZh || undefined,
+    })
     if (!alreadyDone.current) {
       store.awardXp(NODE_BONUS_XP)
       xpRef.current += NODE_BONUS_XP
@@ -391,6 +399,7 @@ function JiaochengRunner({
       playCorrect()
       setFireworks((n) => n + 1)
       credit(key)
+      recordHistory({ course: 'jiaocheng', kind: 'quiz', lesson, node, correct: true })
       setQuiz((q) => ({
         ...q,
         [key]: { wrong: prev.wrong, solved: true, missed: prev.missed || prev.wrong.length > 0 },
@@ -399,6 +408,7 @@ function JiaochengRunner({
     }
 
     playWrong()
+    recordHistory({ course: 'jiaocheng', kind: 'quiz', lesson, node, correct: false })
     const nextHearts = hearts - 1
     setHearts(Math.max(0, nextHearts))
     setHeartLoss({ index: Math.max(0, nextHearts), tick: Date.now() })

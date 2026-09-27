@@ -1,0 +1,237 @@
+/* Progress screen — kept out of styles.css */
+
+.progress-page {
+  padding-bottom: 28px;
+}
+
+.progress-header {
+  padding: 18px 0 16px;
+}
+
+.progress-header .sub {
+  margin-top: 4px;
+}
+
+.progress-glance {
+  padding: 20px 8px 18px;
+}
+
+.progress-glance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.progress-glance-cell {
+  text-align: center;
+}
+
+.progress-glance-value {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.progress-glance-label {
+  font-size: 12px;
+  color: var(--on-red-3);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.progress-section {
+  margin-top: 14px;
+  padding: 16px 18px 18px;
+}
+
+.progress-courses {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.progress-course {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.progress-course:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.progress-course-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 12px;
+  flex-wrap: wrap;
+}
+
+.progress-course-name {
+  font-size: 15px;
+  font-weight: 750;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.progress-course-count {
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.progress-lesson-list {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.progress-lesson {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.progress-lesson[data-done='true'] {
+  color: var(--ink);
+}
+
+.progress-lesson-mark {
+  flex: 0 0 auto;
+  width: 14px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--muted-2);
+}
+
+.progress-lesson[data-done='true'] .progress-lesson-mark {
+  color: var(--ok);
+}
+
+.progress-lesson-title {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.progress-lesson-count {
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted-2);
+}
+
+.progress-lesson[data-done='true'] .progress-lesson-count {
+  color: var(--ok);
+}
+
+.progress-week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.progress-week-day {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.progress-week-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  box-sizing: border-box;
+  border: 2px solid var(--line-2);
+  background: transparent;
+}
+
+.progress-week-dot[data-on='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.progress-week-dot[data-today='true'] {
+  border-color: var(--ink);
+}
+
+.progress-week-cards {
+  font-size: 11px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted-2);
+  line-height: 1;
+  min-height: 12px;
+}
+
+.progress-week-day[data-today='true'] .progress-week-cards,
+.progress-week-day[data-on='true'] .progress-week-cards {
+  color: var(--ink);
+}
+
+.progress-week-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted-2);
+}
+
+.progress-week-day[data-today='true'] .progress-week-label {
+  color: var(--ink);
+}
+
+.progress-history {
+  display: grid;
+  gap: 0;
+  margin-top: 12px;
+}
+
+.progress-history-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.progress-history-item:first-child {
+  border-top: none;
+  padding-top: 4px;
+}
+
+.progress-history-main {
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.progress-history-meta {
+  font-size: 12px;
+  color: var(--muted);
+  grid-column: 1 / 2;
+}
+
+.progress-history-time {
+  font-size: 11px;
+  font-weight: 650;
+  color: var(--muted-2);
+  text-align: right;
+  align-self: start;
+  white-space: nowrap;
+}
+
+.progress-empty {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted);
+}

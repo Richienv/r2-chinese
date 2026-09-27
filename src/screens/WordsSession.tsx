@@ -4,6 +4,7 @@ import { Fireworks } from '../components/Fireworks'
 import { ChineseHear, hasHanzi, HearButton, useAutoSpeak, useAutoSpeakLines, useSpeechActive } from '../components/Hear'
 import { CheckIcon, CloseIcon, HeartIcon, LockIcon } from '../components/Icons'
 import { getLesson, type Example } from '../lib/content'
+import { recordHistory } from '../lib/history'
 import { clearStep, readStep, writeStep } from '../lib/resume'
 import { playCorrect, playWrong } from '../lib/sfx'
 import { unlockSpeech, speakLines, stopSpeech } from '../lib/speech'
@@ -99,6 +100,13 @@ function WordsRunner({
     finished.current = true
     clearStep(resumeId)
     store.markNodeDone(lesson, node)
+    recordHistory({
+      course: 'hsk4a',
+      kind: 'node',
+      lesson,
+      node,
+      title: NODE_LABEL[node].en,
+    })
     if (!alreadyDone.current) {
       store.awardXp(NODE_BONUS_XP)
       xpRef.current += NODE_BONUS_XP
@@ -162,6 +170,7 @@ function WordsRunner({
       playCorrect()
       setFwToken((n) => n + 1)
       credit(key)
+      recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: true })
       setQuiz((q) => ({
         ...q,
         [key]: { wrong: prev.wrong, solved: true, missed: prev.missed || prev.wrong.length > 0 },
@@ -170,6 +179,7 @@ function WordsRunner({
     }
 
     playWrong()
+    recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: false })
     const nextHearts = hearts - 1
     setHearts(Math.max(0, nextHearts))
     setHeartLoss({ index: Math.max(0, nextHearts), tick: Date.now() })
