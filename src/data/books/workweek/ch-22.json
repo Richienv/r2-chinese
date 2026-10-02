@@ -1,0 +1,142 @@
+{
+  "id": "22",
+  "index": 22,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "A Year of Rules",
+  "titleSource": "Things I've Loved and Learned in 2008",
+  "sourcePages": "",
+  "when": "Blog",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Standing rules from surprises",
+      "bodyEn": "A crowded year of deals is useful when it exposes rules you were following without noticing. Turn those surprises into standing rules you can reuse. Refuse an expensive favor whose price you do not control. Cover a loss from a different income stream when managing the loss itself would eat the week. Spend your effort on people you want to resemble. Loss will still pull harder than an equal gain, so change the setup that feeds that pull.",
+      "terms": [
+        {
+          "en": "unnamed favor",
+          "hook": "A large favor from a stranger that they can later price for you."
+        },
+        {
+          "en": "different-stream recovery",
+          "hook": "Covering a loss with income from somewhere else, then leaving the loss alone."
+        },
+        {
+          "en": "loss bias",
+          "hook": "The pull to spend far more effort preventing a loss than making an equal gain."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Repay a stranger's favor",
+      "bodyEn": "Refuse a large or costly favor from someone you do not know. If the favor is already in your hands, repay it at once with a gift you choose, before the giver names the terms. The aim is to get back to even. A mentor who is already very successful, and who is only making an introduction rather than doing your labor, can be the exception. Everyone else waits until the exchange is explicit. An unnamed debt is a decision you skipped. Set the price yourself or leave the favor unaccepted."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Cover the loss elsewhere",
+      "bodyEn": "Recover the money in a different activity from the one that lost it. A house can stay empty, mortgage included, when tenants would cost attention you have decided to keep. Cover the monthly cost with consulting, publishing, or another stream, and use the house only when you want to. Chasing the loss at the same table turns a small leak into the whole week. Choose the repair that preserves attention. Comments about wasted money do not choose the repair for you. Once another stream covers the cost, leave the asset alone."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Impress people you respect",
+      "bodyEn": "Impressing people you dislike is a common source of self-doubt. Put that effort toward people you actually want to resemble. When you hold an informed opinion, say it and try to be useful. A small share of any audience will take interesting work personally. Count the people who understand it, and let that count be the score. Harsh mentions overshoot how bad the work is, and praise overshoots how good it is. Keep both kinds of mention out of the daily feed so you stay optimistic and still hungry."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Keep one long meal",
+      "bodyEn": "Meals with friends show up as a direct predictor of reported well-being in the research this piece cites. Schedule one dinner or brunch of two to three hours each week with people who leave you feeling good. The afterglow tends to last longer in a group of about five or more. Thursday evening and Sunday midday are practical slots because they sit away from the start of the work week. Put the meal on the calendar the way you would put a meeting there. A rushed table misses the duration this rule depends on. The tactic is the length and the company, kept every week."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Change the setup",
+      "bodyEn": "A time log often shows that preventing a small loss takes many times the effort of earning the same amount. Noticing the bias rarely switches it off, so change the environment that triggers it. Leave public investments you cannot influence, hold simple reserves, and set aside about a tenth of pretax income for deals where your help can change the outcome. When you feel overwhelmed, ask whether you are in a breakdown or a breakthrough. For a week or two, cut even moderate spending and give away about a fifth of the clothes you barely use, so a larger bet feels survivable. Keep an old resolution in place before you add a new one. Treat easy gains as legitimate, because contempt for them feeds a scarcity mindset."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Loss check",
+      "bodyEn": "Expensive favors from strangers are refused or repaid at once on your terms. A loss you do not want to manage is covered by a different income stream. Effort goes to people you want to resemble, including one long meal on the calendar. Loss bias is handled by changing the setup. A poorer practice week makes larger bets feel survivable. Recall how a loss should be covered when you refuse to manage it directly.",
+      "prompt": "How should you cover a loss you do not want to manage directly?",
+      "choices": [
+        "Earn it back in the same place, so the story stays tidy",
+        "Cover the cost from a different income stream, then leave the loss alone",
+        "Take a large favor from a stranger and leave the price unnamed",
+        "Spend the week impressing people you do not like"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Standing rules from surprises",
+      "bodyEn": "A crowded year of deals is useful when it exposes rules you were following without noticing. Turn those surprises into standing rules you can reuse. Refuse an expensive favor whose price you do not control. Cover a loss from a different income stream when managing the loss itself would eat the week. Spend your effort on people you want to resemble. Loss will still pull harder than an equal gain, so change the setup that feeds that pull.",
+      "terms": [
+        {
+          "en": "unnamed favor",
+          "hook": "A large favor from a stranger that they can later price for you."
+        },
+        {
+          "en": "different-stream recovery",
+          "hook": "Covering a loss with income from somewhere else, then leaving the loss alone."
+        },
+        {
+          "en": "loss bias",
+          "hook": "The pull to spend far more effort preventing a loss than making an equal gain."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Repay a stranger's favor",
+      "bodyEn": "Refuse a large or costly favor from someone you do not know. If the favor is already in your hands, repay it at once with a gift you choose, before the giver names the terms. The aim is to get back to even. A mentor who is already very successful, and who is only making an introduction rather than doing your labor, can be the exception. Everyone else waits until the exchange is explicit. An unnamed debt is a decision you skipped. Set the price yourself or leave the favor unaccepted."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Cover the loss elsewhere",
+      "bodyEn": "Recover the money in a different activity from the one that lost it. A house can stay empty, mortgage included, when tenants would cost attention you have decided to keep. Cover the monthly cost with consulting, publishing, or another stream, and use the house only when you want to. Chasing the loss at the same table turns a small leak into the whole week. Choose the repair that preserves attention. Comments about wasted money do not choose the repair for you. Once another stream covers the cost, leave the asset alone."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Impress people you respect",
+      "bodyEn": "Impressing people you dislike is a common source of self-doubt. Put that effort toward people you actually want to resemble. When you hold an informed opinion, say it and try to be useful. A small share of any audience will take interesting work personally. Count the people who understand it, and let that count be the score. Harsh mentions overshoot how bad the work is, and praise overshoots how good it is. Keep both kinds of mention out of the daily feed so you stay optimistic and still hungry."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Keep one long meal",
+      "bodyEn": "Meals with friends show up as a direct predictor of reported well-being in the research this piece cites. Schedule one dinner or brunch of two to three hours each week with people who leave you feeling good. The afterglow tends to last longer in a group of about five or more. Thursday evening and Sunday midday are practical slots because they sit away from the start of the work week. Put the meal on the calendar the way you would put a meeting there. A rushed table misses the duration this rule depends on. The tactic is the length and the company, kept every week."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Change the setup",
+      "bodyEn": "A time log often shows that preventing a small loss takes many times the effort of earning the same amount. Noticing the bias rarely switches it off, so change the environment that triggers it. Leave public investments you cannot influence, hold simple reserves, and set aside about a tenth of pretax income for deals where your help can change the outcome. When you feel overwhelmed, ask whether you are in a breakdown or a breakthrough. For a week or two, cut even moderate spending and give away about a fifth of the clothes you barely use, so a larger bet feels survivable. Keep an old resolution in place before you add a new one. Treat easy gains as legitimate, because contempt for them feeds a scarcity mindset."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Loss check",
+      "bodyEn": "Expensive favors from strangers are refused or repaid at once on your terms. A loss you do not want to manage is covered by a different income stream. Effort goes to people you want to resemble, including one long meal on the calendar. Loss bias is handled by changing the setup. A poorer practice week makes larger bets feel survivable. Recall how a loss should be covered when you refuse to manage it directly.",
+      "prompt": "How should you cover a loss you do not want to manage directly?",
+      "choices": [
+        "Earn it back in the same place, so the story stays tidy",
+        "Cover the cost from a different income stream, then leave the loss alone",
+        "Take a large favor from a stranger and leave the price unnamed",
+        "Spend the week impressing people you do not like"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "id": "02",
+  "index": 2,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Rules for a New Game",
+  "titleSource": "Rules That Change the Rules: Everything Popular Is Wrong",
+  "sourcePages": "Chapter 2",
+  "when": "Definition",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Different when it works",
+      "bodyEn": "Popular rules are often the failing ones, and this chapter asks you to test them instead of inheriting them. Change a habit only when the new version works better or is more enjoyable. Leave a method alone when it is already working, because novelty by itself is not an improvement. When everyone solves a problem the same way and the results stay poor, ask what the opposite would do. A sales example is the early and late call window: one hour outside the usual day, split around the morning open and the evening close, booked more than twice the meetings of people who called through the normal day, in about an eighth of the time. The ten rules that follow are the differences to keep in view for the rest of the book. Sports change when a basic assumption is tested, and the chapter says lifestyles change the same way.",
+      "terms": [
+        {
+          "en": "opposite question",
+          "hook": "When the common method is failing, ask what doing the reverse would change."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Retirement is insurance",
+      "bodyEn": "Treat retirement planning as insurance against the worst case, which is becoming unable to work and needing a reserve to live. Retirement as the prize fails for three reasons in this chapter. It assumes you dislike your work through the years when your body can do the most, and nothing in the chapter justifies that trade. The math often fails too, because a long retirement and a few percent of inflation each year can turn a large nest egg into a thin life. If the math does work, you are the sort of person who is bored within a week and starts another job, which defeats the wait. Still prepare for the worst case, including tax-favored accounts if they fit you. Do not confuse that hedge with the goal of your life.",
+      "terms": [
+        {
+          "en": "retirement as insurance",
+          "hook": "A reserve against being unable to work, not the prize you wait decades to claim."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Interest comes in waves",
+      "bodyEn": "Interest, capacity, and mental endurance rise and fall, so a life that demands the same effort every day until collapse is a fantasy. Even a huge prize would not make nonstop work for fifteen years possible, and a normal career is the smaller version of that same shape. Alternating work and rest is how you stay effective, not a reward you earn at the end. The New Rich spread mini-retirements through life instead of saving all recovery for one finish. Working when you are most effective makes the work more productive and the life more enjoyable. The personal rhythm in the chapter is about one month of living abroad or of intense learning for every two months of projects. Plan the year as a cycle, and put the rest on the calendar before the work expands to fill it.",
+      "terms": [
+        {
+          "en": "mini-retirement",
+          "hook": "A planned stretch of recovery or learning placed between work, not after it."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Less can be the point",
+      "bodyEn": "Doing less meaningless work, so the important work gets the hours, is not laziness in this chapter. The surrounding culture often rewards sacrifice and hours, because few people measure the result of what they did. More time then gets treated as more worth. The New Rich can spend fewer hours in the office and still produce more that matters than a crowd of busy people. The chapter redefines laziness as enduring a life you do not want, letting other people decide it, or stacking money while you watch life from a window. The size of the account does not change that, and neither does a long day of mail that did not need you. Measure whether you were productive, and let busyness lose the argument.",
+      "terms": [
+        {
+          "en": "laziness, redefined",
+          "hook": "Enduring a life you do not want, or letting hours stand in for results."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Act, then correct course",
+      "bodyEn": "For anything that matters, the timing is poor, and waiting for a perfect window is how the plan dies. A family decision in the chapter lands on the same line: they wanted a child, and waiting for the right moment had no point, because a clean moment never arrived. A plan filed under later is how it dies, and a long list of pros and cons is the same delay in a neat costume. If it matters and you mean to do it eventually, do it and correct course as you go. When the damage would be moderate or reversible, act and explain afterward. People often deny a request on emotion and then live with a result they can see, and they are quicker to block a start than to stop something already moving. Save the apology for when you actually hurt someone, and practice being the person who tries the reversible thing.",
+      "terms": [
+        {
+          "en": "someday",
+          "hook": "The delay that keeps an important plan unfinished until it is too late."
+        },
+        {
+          "en": "act, then explain",
+          "hook": "Try the reversible move, then explain it, instead of waiting for a yes that emotion will refuse."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Strengths, then enough",
+      "bodyEn": "Most people are strong at a few things and weak at most of the rest, so point the strong ones at the goal. Repairing every weakness aims at becoming mediocre at those skills. A better use of a real strength multiplies the result. The picture in the chapter is an athlete who was hopeless in the pool and on the court, then effective in a sport that matched how he was built. Stop spending the year on the broken skill when a strong one is idle. Past a point, more of a good thing takes on the traits of its opposite, in possessions and in time. Free time here means doing what you want, and a pile of empty hours is the thing this rule tells you to avoid.",
+      "terms": [
+        {
+          "en": "strengths first",
+          "hook": "Multiply results with what you already do well, instead of sanding every weakness toward average."
+        },
+        {
+          "en": "free time",
+          "hook": "Hours spent doing what you want, rather than a pile of empty time."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Money is a stall",
+      "bodyEn": "Adding more money is the answer less often than it feels, and this chapter treats that sentence as a way to postpone harder decisions. A wish for a bigger balance is an easy delay of the hard look that would build a life you enjoy now. Work then becomes the routine that keeps you too busy for that examination. The inbox, the calls, and the prospects who already said no can fill an evening that might have held a real choice. Everyone else running the same routine makes the routine look like the cure. Under it, the problem is larger than the account balance. Use money as a tool after you have named the life, and stop using the lack of it as the reason the life waits."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Count dollars per hour",
+      "bodyEn": "Absolute income counts only dollars, so a person who makes one hundred thousand dollars a year looks twice as rich as a person who makes fifty thousand. Relative income counts dollars and time. In the chapter's arithmetic, the higher salary is one hundred thousand dollars across fifty weeks and eighty hours a week, which is twenty-five dollars an hour. The lower salary is fifty thousand dollars across fifty weeks and ten hours a week, which is one hundred dollars an hour. On that measure the second person is four times richer. Two people who both make fifty thousand dollars are not equally rich if one works eighty hours a week and the other works ten. Relative income still has to reach the absolute amount your actual goals require, and the chapter's benchmark for its top examples is at least five thousand dollars an hour.",
+      "terms": [
+        {
+          "en": "relative income",
+          "hook": "Dollars divided by the hours it took to earn them."
+        },
+        {
+          "en": "absolute income",
+          "hook": "The raw dollar total, with the hours hidden inside a year."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Keep the useful stress",
+      "bodyEn": "This chapter splits stress into two kinds and tells you to chase one of them. Distress is pressure that shrinks your nerve and your ability, such as cruel criticism or a boss who attacks you. Eustress is the healthy kind that makes you grow, such as a teacher who pushes you, training that changes your body, or a risk that widens what you can do calmly. People who dodge every criticism stall, because the useful kind is still criticism. Dreams stall when that healthy pressure is missing, and more of it brings them closer. The skill is knowing which pressure to keep. The New Rich remove distress and go looking for eustress with the same energy.",
+      "terms": [
+        {
+          "en": "distress",
+          "hook": "Pressure that shrinks your nerve and your ability."
+        },
+        {
+          "en": "eustress",
+          "hook": "Healthy stress that expands what you can do."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "try",
+      "titleEn": "Ask these three questions",
+      "bodyEn": "The chapter ends with three questions, and it wants written answers. First, name how a demand to be realistic or responsible blocked the life you actually want. Second, name how doing what you should has produced a worse experience, or regret for the thing you did not do. Third, look at the current path and ask what changes if you reverse the habit of the people next to you. Then ask what you give up if you stay on this track for five years, for ten, and for twenty. The answers are the place the ten rules become personal. If a rule only sounds clever and never changes a calendar, you have not used the chapter yet."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Which rule applies",
+      "bodyEn": "Retirement in this chapter is a hedge against being unable to work, and the goal sits elsewhere. Interest moves in cycles, so rest is scheduled through life as mini-retirements. Fewer meaningless hours can be the productive choice, and relative income counts the hours as well as the dollars. When damage is reversible, the move comes first and the explanation follows. Distress is removed, and eustress is sought, because growth needs the healthy kind of pressure. A bigger balance, by itself, is the stall this chapter is trying to take away.",
+      "prompt": "Which move matches these rules?",
+      "choices": [
+        "Wait for a calm year, then ask permission for every reversible experiment",
+        "Treat retirement as the prize, and judge wealth by the yearly salary alone",
+        "Schedule rest through life, act on reversible bets, and judge pay by dollars per hour",
+        "Remove every form of stress, including the kind that makes you better"
+      ],
+      "answer": 2
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Different when it works",
+      "bodyEn": "Popular rules are often the failing ones, and this chapter asks you to test them instead of inheriting them. Change a habit only when the new version works better or is more enjoyable. Leave a method alone when it is already working, because novelty by itself is not an improvement. When everyone solves a problem the same way and the results stay poor, ask what the opposite would do. A sales example is the early and late call window: one hour outside the usual day, split around the morning open and the evening close, booked more than twice the meetings of people who called through the normal day, in about an eighth of the time. The ten rules that follow are the differences to keep in view for the rest of the book. Sports change when a basic assumption is tested, and the chapter says lifestyles change the same way.",
+      "terms": [
+        {
+          "en": "opposite question",
+          "hook": "When the common method is failing, ask what doing the reverse would change."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Retirement is insurance",
+      "bodyEn": "Treat retirement planning as insurance against the worst case, which is becoming unable to work and needing a reserve to live. Retirement as the prize fails for three reasons in this chapter. It assumes you dislike your work through the years when your body can do the most, and nothing in the chapter justifies that trade. The math often fails too, because a long retirement and a few percent of inflation each year can turn a large nest egg into a thin life. If the math does work, you are the sort of person who is bored within a week and starts another job, which defeats the wait. Still prepare for the worst case, including tax-favored accounts if they fit you. Do not confuse that hedge with the goal of your life.",
+      "terms": [
+        {
+          "en": "retirement as insurance",
+          "hook": "A reserve against being unable to work, not the prize you wait decades to claim."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Interest comes in waves",
+      "bodyEn": "Interest, capacity, and mental endurance rise and fall, so a life that demands the same effort every day until collapse is a fantasy. Even a huge prize would not make nonstop work for fifteen years possible, and a normal career is the smaller version of that same shape. Alternating work and rest is how you stay effective, not a reward you earn at the end. The New Rich spread mini-retirements through life instead of saving all recovery for one finish. Working when you are most effective makes the work more productive and the life more enjoyable. The personal rhythm in the chapter is about one month of living abroad or of intense learning for every two months of projects. Plan the year as a cycle, and put the rest on the calendar before the work expands to fill it.",
+      "terms": [
+        {
+          "en": "mini-retirement",
+          "hook": "A planned stretch of recovery or learning placed between work, not after it."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Less can be the point",
+      "bodyEn": "Doing less meaningless work, so the important work gets the hours, is not laziness in this chapter. The surrounding culture often rewards sacrifice and hours, because few people measure the result of what they did. More time then gets treated as more worth. The New Rich can spend fewer hours in the office and still produce more that matters than a crowd of busy people. The chapter redefines laziness as enduring a life you do not want, letting other people decide it, or stacking money while you watch life from a window. The size of the account does not change that, and neither does a long day of mail that did not need you. Measure whether you were productive, and let busyness lose the argument.",
+      "terms": [
+        {
+          "en": "laziness, redefined",
+          "hook": "Enduring a life you do not want, or letting hours stand in for results."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Act, then correct course",
+      "bodyEn": "For anything that matters, the timing is poor, and waiting for a perfect window is how the plan dies. A family decision in the chapter lands on the same line: they wanted a child, and waiting for the right moment had no point, because a clean moment never arrived. A plan filed under later is how it dies, and a long list of pros and cons is the same delay in a neat costume. If it matters and you mean to do it eventually, do it and correct course as you go. When the damage would be moderate or reversible, act and explain afterward. People often deny a request on emotion and then live with a result they can see, and they are quicker to block a start than to stop something already moving. Save the apology for when you actually hurt someone, and practice being the person who tries the reversible thing.",
+      "terms": [
+        {
+          "en": "someday",
+          "hook": "The delay that keeps an important plan unfinished until it is too late."
+        },
+        {
+          "en": "act, then explain",
+          "hook": "Try the reversible move, then explain it, instead of waiting for a yes that emotion will refuse."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Strengths, then enough",
+      "bodyEn": "Most people are strong at a few things and weak at most of the rest, so point the strong ones at the goal. Repairing every weakness aims at becoming mediocre at those skills. A better use of a real strength multiplies the result. The picture in the chapter is an athlete who was hopeless in the pool and on the court, then effective in a sport that matched how he was built. Stop spending the year on the broken skill when a strong one is idle. Past a point, more of a good thing takes on the traits of its opposite, in possessions and in time. Free time here means doing what you want, and a pile of empty hours is the thing this rule tells you to avoid.",
+      "terms": [
+        {
+          "en": "strengths first",
+          "hook": "Multiply results with what you already do well, instead of sanding every weakness toward average."
+        },
+        {
+          "en": "free time",
+          "hook": "Hours spent doing what you want, rather than a pile of empty time."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Money is a stall",
+      "bodyEn": "Adding more money is the answer less often than it feels, and this chapter treats that sentence as a way to postpone harder decisions. A wish for a bigger balance is an easy delay of the hard look that would build a life you enjoy now. Work then becomes the routine that keeps you too busy for that examination. The inbox, the calls, and the prospects who already said no can fill an evening that might have held a real choice. Everyone else running the same routine makes the routine look like the cure. Under it, the problem is larger than the account balance. Use money as a tool after you have named the life, and stop using the lack of it as the reason the life waits."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Count dollars per hour",
+      "bodyEn": "Absolute income counts only dollars, so a person who makes one hundred thousand dollars a year looks twice as rich as a person who makes fifty thousand. Relative income counts dollars and time. In the chapter's arithmetic, the higher salary is one hundred thousand dollars across fifty weeks and eighty hours a week, which is twenty-five dollars an hour. The lower salary is fifty thousand dollars across fifty weeks and ten hours a week, which is one hundred dollars an hour. On that measure the second person is four times richer. Two people who both make fifty thousand dollars are not equally rich if one works eighty hours a week and the other works ten. Relative income still has to reach the absolute amount your actual goals require, and the chapter's benchmark for its top examples is at least five thousand dollars an hour.",
+      "terms": [
+        {
+          "en": "relative income",
+          "hook": "Dollars divided by the hours it took to earn them."
+        },
+        {
+          "en": "absolute income",
+          "hook": "The raw dollar total, with the hours hidden inside a year."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Keep the useful stress",
+      "bodyEn": "This chapter splits stress into two kinds and tells you to chase one of them. Distress is pressure that shrinks your nerve and your ability, such as cruel criticism or a boss who attacks you. Eustress is the healthy kind that makes you grow, such as a teacher who pushes you, training that changes your body, or a risk that widens what you can do calmly. People who dodge every criticism stall, because the useful kind is still criticism. Dreams stall when that healthy pressure is missing, and more of it brings them closer. The skill is knowing which pressure to keep. The New Rich remove distress and go looking for eustress with the same energy.",
+      "terms": [
+        {
+          "en": "distress",
+          "hook": "Pressure that shrinks your nerve and your ability."
+        },
+        {
+          "en": "eustress",
+          "hook": "Healthy stress that expands what you can do."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "try",
+      "titleEn": "Ask these three questions",
+      "bodyEn": "The chapter ends with three questions, and it wants written answers. First, name how a demand to be realistic or responsible blocked the life you actually want. Second, name how doing what you should has produced a worse experience, or regret for the thing you did not do. Third, look at the current path and ask what changes if you reverse the habit of the people next to you. Then ask what you give up if you stay on this track for five years, for ten, and for twenty. The answers are the place the ten rules become personal. If a rule only sounds clever and never changes a calendar, you have not used the chapter yet."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Which rule applies",
+      "bodyEn": "Retirement in this chapter is a hedge against being unable to work, and the goal sits elsewhere. Interest moves in cycles, so rest is scheduled through life as mini-retirements. Fewer meaningless hours can be the productive choice, and relative income counts the hours as well as the dollars. When damage is reversible, the move comes first and the explanation follows. Distress is removed, and eustress is sought, because growth needs the healthy kind of pressure. A bigger balance, by itself, is the stall this chapter is trying to take away.",
+      "prompt": "Which move matches these rules?",
+      "choices": [
+        "Wait for a calm year, then ask permission for every reversible experiment",
+        "Treat retirement as the prize, and judge wealth by the yearly salary alone",
+        "Schedule rest through life, act on reversible bets, and judge pay by dollars per hour",
+        "Remove every form of stress, including the kind that makes you better"
+      ],
+      "answer": 2
+    }
+  ]
+}

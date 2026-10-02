@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { LearningPath } from '../components/LearningPath'
 import { Fireworks } from '../components/Fireworks'
+import { RecallFeedback } from '../components/LearningMotion'
 import { HearButton } from '../components/Hear'
-import { CheckIcon, CloseIcon, HeartIcon, LockIcon, PlayIcon } from '../components/Icons'
+import { CheckIcon, CloseIcon, LockIcon } from '../components/Icons'
 import {
   buildMagangSteps,
   getMagangChapter,
@@ -20,25 +22,17 @@ import {
 } from '../lib/magang'
 import { recordHistory } from '../lib/history'
 import { clearStep, readStep, writeStep } from '../lib/resume'
-import { playCorrect, playWrong } from '../lib/sfx'
+import { playAdvance, playComplete, playCorrect, playWrong } from '../lib/sfx'
 import { unlockSpeech } from '../lib/speech'
 import { splitHanzi } from '../lib/teach'
 import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
-import { ITEM_XP, NODE_BONUS_XP, SESSION_HEARTS } from '../lib/wordsSession'
+import { ITEM_XP, NODE_BONUS_XP } from '../lib/wordsSession'
 import { useStore } from '../store/store'
 import '../styles/teach-motion.css'
 import '../styles/magang.css'
 
-const CORRECT_HOLD_MS = 700
 
 type QuizState = { wrong: number[]; solved: boolean; missed: boolean }
-type HeartLoss = { index: number; tick: number }
-
-function pathRowClass(state: 'done' | 'on' | 'lock') {
-  if (state === 'done') return 'magang-path-row magang-path-row-done'
-  if (state === 'on') return 'magang-path-row magang-path-row-on'
-  return 'magang-path-row magang-path-row-lock'
-}
 
 function splitSentences(body: string): string[] {
   const trimmed = body.trim()
@@ -86,57 +80,27 @@ export function MagangPartPath({
   fill?: boolean
 }) {
   const progress = useMagangProgress()
-  const anyOpen = chapters.some((ch) => progress.isChapterReached(ch.index))
-
   return (
-    <section className={`magang-path${fill ? ' magang-path-fill' : ''}`}>
-      <div className={`path-banner metal${anyOpen ? '' : ' path-banner-lock'}`}>
-        <div className="path-banner-copy">
-          <div className="kicker">Part {part}</div>
-          <h2 className="path-banner-zh">{partTitle}</h2>
-          <div className="path-banner-en">
-            {chapters.length} chapter{chapters.length === 1 ? '' : 's'}
-          </div>
-        </div>
-        <span className="path-banner-read">坐</span>
-      </div>
-
-      <ol className="magang-path-list">
-        {chapters.map((chapter) => {
-          const node = LESSON_NODE
-          const done = nodeDone(chapter.index, node)
-          const on = current.chapter === chapter.index && current.node === node
-          const playable = progress.isNodePlayable(chapter.index, node)
-          const state = done ? 'done' : on ? 'on' : 'lock'
-          const title = chapter.titleEn || chapter.titleSource || `Chapter ${chapter.index}`
-          return (
-            <li key={chapter.id} className="magang-path-item">
-              <button
-                type="button"
-                className={`${pathRowClass(state)} tap44`}
-                data-state={state}
-                data-node={node}
-                disabled={!playable}
-                onPointerDown={() => {
-                  if (playable) unlockSpeech()
-                }}
-                onClick={() => {
-                  if (!playable) return
-                  onPlay?.(chapter.index, node)
-                }}
-                aria-label={`${title}${done ? ', done' : on ? ', start' : ', locked'}`}
-              >
-                <span className="magang-path-node" aria-hidden>
-                  {done ? <CheckIcon size={20} /> : on ? <PlayIcon size={20} /> : <LockIcon size={15} />}
-                </span>
-                <span className="magang-path-title">{title}</span>
-                {on && <span className="magang-path-start">START</span>}
-              </button>
-            </li>
-          )
-        })}
-      </ol>
-    </section>
+    <LearningPath
+      fill={fill}
+      kicker={`Part ${part} · Magang AI`}
+      title={partTitle}
+      subtitle={`${chapters.length} chapter${chapters.length === 1 ? '' : 's'}`}
+      open={chapters.some(ch => progress.isChapterReached(ch.index))}
+      items={chapters.map(chapter => {
+        const node = LESSON_NODE
+        const done = nodeDone(chapter.index, node)
+        const on = current.chapter === chapter.index && current.node === node
+        return {
+          id: chapter.id,
+          label: `Chapter ${chapter.index}`,
+          title: chapter.titleEn || chapter.titleSource || `Chapter ${chapter.index}`,
+          state: done ? 'done' as const : on ? 'current' as const : 'locked' as const,
+          playable: progress.isNodePlayable(chapter.index, node),
+          onSelect: () => onPlay?.(chapter.index, node),
+        }
+      })}
+    />
   )
 }
 
@@ -228,22 +192,19 @@ function MagangRunner({ chapter, onClose }: { chapter: number; onClose: () => vo
     return saved > 0 && saved < built.length ? saved : 0
   })
   const [quiz, setQuiz] = useState<Record<string, QuizState>>({})
-  const [hearts, setHearts] = useState(SESSION_HEARTS)
-  const [heartLoss, setHeartLoss] = useState<HeartLoss | null>(null)
-  const [failed, setFailed] = useState(false)
   const [xp, setXp] = useState(0)
   const [fwToken, setFwToken] = useState(0)
 
   const step = steps[Math.min(i, steps.length - 1)]
-  const isComplete = !failed && step.kind === 'complete'
+  const isComplete = step.kind === 'complete'
   const total = magangPlayableCount(steps)
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
-  const footerLocked = !failed && step.kind === 'quiz' && !quizState?.solved
-  const beatKey = failed ? 'failed' : step.kind === 'complete' ? 'complete' : step.id
+  const footerLocked = step.kind === 'quiz' && !quizState?.solved
+  const beatKey = step.kind === 'complete' ? 'complete' : step.id
 
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 })
-  }, [i, failed])
+  }, [i])
 
   useEffect(() => {
     if (isComplete) return
@@ -253,6 +214,7 @@ function MagangRunner({ chapter, onClose }: { chapter: number; onClose: () => vo
   useEffect(() => {
     if (!isComplete || finished.current) return
     finished.current = true
+    playComplete()
     clearStep(resumeId)
     progress.markNodeDone(chapter, node)
     recordHistory({
@@ -270,17 +232,6 @@ function MagangRunner({ chapter, onClose }: { chapter: number; onClose: () => vo
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isComplete, chapter, node, resumeId])
 
-  useEffect(() => {
-    if (failed || step.kind !== 'quiz' || !quizState?.solved) return
-    const from = i
-    const t = window.setTimeout(() => {
-      if (left.current.has(from)) return
-      left.current.add(from)
-      setI((cur) => (cur === from ? Math.min(cur + 1, steps.length - 1) : cur))
-    }, CORRECT_HOLD_MS)
-    return () => window.clearTimeout(t)
-  }, [failed, i, quizState?.solved, step.kind, steps.length])
-
   function credit(id: string) {
     if (credited.current.has(id)) return
     credited.current.add(id)
@@ -293,12 +244,13 @@ function MagangRunner({ chapter, onClose }: { chapter: number; onClose: () => vo
   function goForward() {
     if (left.current.has(i)) return
     left.current.add(i)
+    playAdvance()
     setI((cur) => Math.min(cur + 1, steps.length - 1))
   }
 
   function advance() {
     if (footerLocked) return
-    if (failed || isComplete) {
+    if (isComplete) {
       onClose()
       return
     }
@@ -328,27 +280,19 @@ function MagangRunner({ chapter, onClose }: { chapter: number; onClose: () => vo
 
     playWrong()
     recordHistory({ course: 'magang', kind: 'quiz', lesson: chapter, node, correct: false })
-    const nextHearts = hearts - 1
-    setHearts(Math.max(0, nextHearts))
-    setHeartLoss({ index: Math.max(0, nextHearts), tick: Date.now() })
     setQuiz((q) => ({
       ...q,
       [key]: { wrong: [...prev.wrong, picked], solved: false, missed: true },
     }))
-    if (nextHearts <= 0) setFailed(true)
   }
 
-  const progressPct = failed
-    ? (i / total) * 100
-    : isComplete
-      ? 100
-      : ((i + 1) / total) * 100
-  const showFooter =
-    failed || isComplete || step.kind === 'idea' || step.kind === 'term' || step.kind === 'say'
-  const footerLabel = failed || isComplete ? 'Continue' : 'Next'
+  const progressPct = isComplete ? 100 : total > 0 ? ((i + 1) / total) * 100 : 0
+  const showFooter = isComplete || step.kind !== 'quiz' || quizState?.solved
+  const footerLabel = isComplete ? 'Continue' : 'Next'
+  const phase = isComplete ? 'Revisit' : step.kind === 'quiz' ? 'Check' : step.kind === 'idea' ? 'Encounter' : 'Understand'
 
   return (
-    <div className="overlay session">
+    <div className="overlay session learning-session">
       <Fireworks token={fwToken} />
       <div className="overlay-head">
         <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close session">
@@ -357,7 +301,6 @@ function MagangRunner({ chapter, onClose }: { chapter: number; onClose: () => vo
         <div className="step-bar">
           <i className="yl-progress" style={{ width: `${Math.min(100, progressPct)}%` }} />
         </div>
-        <Hearts count={hearts} loss={heartLoss} />
         {xp > 0 && (
           <span key={xp} className="session-xp yl-pop" aria-label={`${xp} XP earned this session`}>
             +{xp}
@@ -366,10 +309,13 @@ function MagangRunner({ chapter, onClose }: { chapter: number; onClose: () => vo
       </div>
 
       <div className="overlay-body" ref={bodyRef}>
+        <nav className="learning-route" aria-label="Learning stages">
+          {(['Encounter', 'Understand', 'Check', 'Revisit'] as const).map((stage) => (
+            <span key={stage} data-active={phase === stage} aria-current={phase === stage ? 'step' : undefined}>{stage}</span>
+          ))}
+        </nav>
         <div key={beatKey} className="session-beat yl-enter">
-          {failed ? (
-            <FailedView xp={xp} loss={heartLoss} />
-          ) : step.kind === 'idea' ? (
+          {step.kind === 'idea' ? (
             <IdeaScreen beat={step.beat} beatNum={step.beatNum} beatOf={step.beatOf} />
           ) : step.kind === 'term' ? (
             <TermScreen
@@ -385,6 +331,7 @@ function MagangRunner({ chapter, onClose }: { chapter: number; onClose: () => vo
               prompt={step.prompt}
               choices={step.choices}
               answer={step.answer}
+              sourceNotes={step.beat.bodyEn}
               beatNum={step.beatNum}
               beatOf={step.beatOf}
               state={quizState}
@@ -403,25 +350,6 @@ function MagangRunner({ chapter, onClose }: { chapter: number; onClose: () => vo
           </button>
         </div>
       )}
-    </div>
-  )
-}
-
-function Hearts({ count, loss }: { count: number; loss?: HeartLoss | null }) {
-  return (
-    <div className="session-hearts hearts" aria-label={`${count} of ${SESSION_HEARTS} hearts`}>
-      {Array.from({ length: SESSION_HEARTS }, (_, n) => {
-        const justLost = loss?.index === n
-        return (
-          <span
-            key={justLost ? `lost-${loss.tick}` : `h-${n}`}
-            className={justLost ? 'heart yl-heart-loss' : 'heart'}
-            data-off={n >= count}
-          >
-            <HeartIcon size={15} filled={n < count} />
-          </span>
-        )
-      })}
     </div>
   )
 }
@@ -615,6 +543,7 @@ function CheckScreen({
   prompt,
   choices,
   answer,
+  sourceNotes,
   beatNum,
   beatOf,
   state,
@@ -623,6 +552,7 @@ function CheckScreen({
   prompt: string
   choices: string[]
   answer: number
+  sourceNotes: string
   beatNum: number
   beatOf: number
   state: QuizState | undefined
@@ -656,19 +586,20 @@ function CheckScreen({
           )
         })}
       </div>
-      {solved && (
-        <div className="yl-enter-up" style={{ textAlign: 'center', marginTop: 2 }} aria-live="polite">
-          <strong
-            style={{
-              fontSize: 16,
-              fontWeight: 800,
-              letterSpacing: '-0.2px',
-              color: 'var(--red-deep)',
-              textWrap: 'balance',
-            }}
-          >
-            {missed ? 'That’s it' : 'Nice!'}
-          </strong>
+      {(solved || wrong.length > 0) && (
+        <div className="production-feedback" data-state={solved ? 'correct' : 'retry'}>
+          <RecallFeedback
+            key={`${solved}:${wrong.length}`}
+            state={solved ? 'correct' : 'retry'}
+            label={solved ? missed ? 'Resolved after a retry' : 'Source check passed' : 'Compare the idea, then try again'}
+          />
+          {solved && <p>Explain why this answer fits before moving on.</p>}
+          {sourceNotes.trim() && (
+            <details className="production-source">
+              <summary>Revisit the source notes</summary>
+              <p>{sourceNotes}</p>
+            </details>
+          )}
         </div>
       )}
     </>
@@ -709,27 +640,8 @@ function DoneView({
         <span className="pill-ink">+{ITEM_XP} XP / item</span>
         {!replay && <span className="pill-ink">+{NODE_BONUS_XP} node</span>}
       </div>
-    </div>
-  )
-}
-
-function FailedView({ xp, loss }: { xp: number; loss?: HeartLoss | null }) {
-  return (
-    <div style={{ textAlign: 'center', paddingTop: 36 }}>
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 8 }}>
-        <Hearts count={0} loss={loss ?? { index: 0, tick: 1 }} />
-      </div>
-      <h2 className="h1" style={{ marginTop: 12, textWrap: 'balance' }}>
-        Out of hearts
-      </h2>
-      <p className="sub" style={{ marginTop: 8, textWrap: 'pretty' }}>
-        Try this chapter again when you’re ready.
-      </p>
-      <div className="session-xp" style={{ marginTop: 18, fontWeight: 800, fontVariantNumeric: 'tabular-nums' }}>
-        +{xp} XP
-      </div>
-      <div className="row" style={{ justifyContent: 'center', marginTop: 16, flexWrap: 'wrap' }}>
-        <span className="pill-ink">Chapter not marked done</span>
+      <div className="learning-summary">
+        <p>Source covered and ideas checked. Revisit this chapter later and explain one idea without opening the notes.</p>
       </div>
     </div>
   )

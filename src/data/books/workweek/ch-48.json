@@ -1,0 +1,138 @@
+{
+  "id": "48",
+  "index": 48,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Crunch the Owner Week",
+  "titleSource": "Killing Your BlackBerry",
+  "sourcePages": "",
+  "when": "Case study",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Name the owner grind",
+      "bodyEn": "He owned thirteen sandwich shops and still worked them like an always-on employee. Seven years in, he had never allowed himself a different standard from the jobs he used to hold. Dinner went to the phone, and holidays became a distant desk for the mail. The company had slid into work for its own sake. He restated the purpose as a product that paid him far beyond the hours he personally invested, so he could enjoy his life and own the calendar. The first act was to stop punishing himself for leaving the inbox. An owner with no closing bell will invent one out of guilt unless he writes a real edge."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Shrink to twenty hours",
+      "bodyEn": "He crushed the open week into four days and twenty hours. Mondays came off at once, which created a three-day weekend, and Friday was the next day marked for a cut. Tuesday through Friday ran from late morning until late afternoon. The shortage forced an eighty-twenty pass that an endless week had let him skip. About half of the low-value pile was junk. The other half could move to people already on the payroll. A short week earns its keep because the cut cannot wait.",
+      "terms": [
+        {
+          "en": "crunched week",
+          "hook": "A deliberately short owner schedule, here four days and twenty hours, that forces low-value work to be cut or reassigned."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Sales or costs only",
+      "bodyEn": "Any task he kept had to raise sales or lower costs. Everything else belonged to someone else. Fully on and fully off replaced the half-present day, and off meant people could not reach him. He kept a phone and turned off automatic delivery, so mail waited for the same weekday window. An automatic reply removed about half the incoming messages within two weeks, because senders of noise tired of the notice. A short list and a calendar of deadlines he had already chosen outranked the inbox. The hours went to work he had picked before the messages arrived.",
+      "terms": [
+        {
+          "en": "sales-or-costs rule",
+          "hook": "A task stays on the owner's desk only if it raises sales or lowers costs. The rest is someone else's job."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Close the holiday office",
+      "bodyEn": "A holiday used to be a change of scenery for the same mail. The off switch now covered those days too. Time at the table was what the shorter week had purchased. Automatic delivery had made him reachable in every room and attentive in none of them. Staff who own a task can still run the shops. The owner stays outside the window. An edge that lives only as a mood will reopen on the first quiet holiday, so the mail system has to enforce it."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Move the real half",
+      "bodyEn": "The eighty-twenty pass produced two piles. Junk was deleted. Real work that did not need the owner moved to employees he already paid. Doing that work himself had been a way to feel necessary, and the twenty-hour cap made the feeling expensive. A company that stalls when the owner leaves the inbox is still a job. Moving the real half is how the short week survives the first busy month."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Edges replace permission",
+      "bodyEn": "Employees at least leave a building that closes. An owner can carry the company into every room, and the missing boss makes the habit look like virtue. The repair here was a purpose stated as income versus personal time, a week small enough to hurt, a sales-or-costs test, and mail that waited. Enjoyment and a self-owned calendar were the ends he named. Permission was the feeling he had been refusing himself, and the schedule made it stick. Write the edges even if the company is a single desk."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Crunched week check",
+      "bodyEn": "An owner stopped working for its own sake by shrinking the week until low-value tasks had to die or move. Mondays left the schedule, and the other four days sat inside a short window. A task remained his only when it raised sales or lowered costs. Mail arrived inside that window, and an automatic reply trained noise to stop. The list he wrote beforehand beat the inbox. Recall what the twenty-hour cap is designed to force.",
+      "prompt": "Why crunch an owner's week to about twenty hours?",
+      "choices": [
+        "The shortage forces an eighty-twenty cut, so junk dies and the rest moves to people already paid to do it",
+        "A shorter week is a costume, and the owner should keep every task",
+        "Holidays should stay connected, as long as the shops are open",
+        "Automatic mail delivery should stay on so nothing waits overnight"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Name the owner grind",
+      "bodyEn": "He owned thirteen sandwich shops and still worked them like an always-on employee. Seven years in, he had never allowed himself a different standard from the jobs he used to hold. Dinner went to the phone, and holidays became a distant desk for the mail. The company had slid into work for its own sake. He restated the purpose as a product that paid him far beyond the hours he personally invested, so he could enjoy his life and own the calendar. The first act was to stop punishing himself for leaving the inbox. An owner with no closing bell will invent one out of guilt unless he writes a real edge."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Shrink to twenty hours",
+      "bodyEn": "He crushed the open week into four days and twenty hours. Mondays came off at once, which created a three-day weekend, and Friday was the next day marked for a cut. Tuesday through Friday ran from late morning until late afternoon. The shortage forced an eighty-twenty pass that an endless week had let him skip. About half of the low-value pile was junk. The other half could move to people already on the payroll. A short week earns its keep because the cut cannot wait.",
+      "terms": [
+        {
+          "en": "crunched week",
+          "hook": "A deliberately short owner schedule, here four days and twenty hours, that forces low-value work to be cut or reassigned."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Sales or costs only",
+      "bodyEn": "Any task he kept had to raise sales or lower costs. Everything else belonged to someone else. Fully on and fully off replaced the half-present day, and off meant people could not reach him. He kept a phone and turned off automatic delivery, so mail waited for the same weekday window. An automatic reply removed about half the incoming messages within two weeks, because senders of noise tired of the notice. A short list and a calendar of deadlines he had already chosen outranked the inbox. The hours went to work he had picked before the messages arrived.",
+      "terms": [
+        {
+          "en": "sales-or-costs rule",
+          "hook": "A task stays on the owner's desk only if it raises sales or lowers costs. The rest is someone else's job."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Close the holiday office",
+      "bodyEn": "A holiday used to be a change of scenery for the same mail. The off switch now covered those days too. Time at the table was what the shorter week had purchased. Automatic delivery had made him reachable in every room and attentive in none of them. Staff who own a task can still run the shops. The owner stays outside the window. An edge that lives only as a mood will reopen on the first quiet holiday, so the mail system has to enforce it."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Move the real half",
+      "bodyEn": "The eighty-twenty pass produced two piles. Junk was deleted. Real work that did not need the owner moved to employees he already paid. Doing that work himself had been a way to feel necessary, and the twenty-hour cap made the feeling expensive. A company that stalls when the owner leaves the inbox is still a job. Moving the real half is how the short week survives the first busy month."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Edges replace permission",
+      "bodyEn": "Employees at least leave a building that closes. An owner can carry the company into every room, and the missing boss makes the habit look like virtue. The repair here was a purpose stated as income versus personal time, a week small enough to hurt, a sales-or-costs test, and mail that waited. Enjoyment and a self-owned calendar were the ends he named. Permission was the feeling he had been refusing himself, and the schedule made it stick. Write the edges even if the company is a single desk."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Crunched week check",
+      "bodyEn": "An owner stopped working for its own sake by shrinking the week until low-value tasks had to die or move. Mondays left the schedule, and the other four days sat inside a short window. A task remained his only when it raised sales or lowered costs. Mail arrived inside that window, and an automatic reply trained noise to stop. The list he wrote beforehand beat the inbox. Recall what the twenty-hour cap is designed to force.",
+      "prompt": "Why crunch an owner's week to about twenty hours?",
+      "choices": [
+        "The shortage forces an eighty-twenty cut, so junk dies and the rest moves to people already paid to do it",
+        "A shorter week is a costume, and the owner should keep every task",
+        "Holidays should stay connected, as long as the shops are open",
+        "Automatic mail delivery should stay on so nothing waits overnight"
+      ],
+      "answer": 0
+    }
+  ]
+}

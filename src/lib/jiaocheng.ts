@@ -209,6 +209,9 @@ export type JiaochengSessionStep =
       of: number
     }
   | { kind: 'read'; id: string; text: LessonText; n: number; of: number }
+  | { kind: 'recall'; id: string; word: Vocab; n: number; of: number }
+  | { kind: 'dialogue'; id: string; text: LessonText; n: number; of: number }
+  | { kind: 'produce'; id: string; example: Example; words: string[]; grammar?: string; n: number; of: number }
   | { kind: 'note'; id: string; title: string; body: string; example: Example | null; n: number; of: number }
   | { kind: 'quiz'; id: string; question: Question; n: number; of: number }
   | { kind: 'complete' }
@@ -218,17 +221,18 @@ function numberSteps(draft: Array<Exclude<JiaochengSessionStep, { kind: 'complet
   for (const s of draft) {
     if (s.kind === 'teach' && !wordOrder.includes(s.word.zh)) wordOrder.push(s.word.zh)
   }
-  const counts = { read: 0, note: 0, quiz: 0 }
+  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, produce: 0 }
   const ofs = {
     read: draft.filter((s) => s.kind === 'read').length,
     note: draft.filter((s) => s.kind === 'note').length,
     quiz: draft.filter((s) => s.kind === 'quiz').length,
+    recall: draft.filter((s) => s.kind === 'recall').length,
+    dialogue: draft.filter((s) => s.kind === 'dialogue').length,
+    produce: draft.filter((s) => s.kind === 'produce').length,
   }
   const steps: JiaochengSessionStep[] = draft.map((s) => {
     if (s.kind === 'teach') return { ...s, n: wordOrder.indexOf(s.word.zh) + 1, of: wordOrder.length }
-    if (s.kind === 'read') return { ...s, n: ++counts.read, of: ofs.read }
-    if (s.kind === 'note') return { ...s, n: ++counts.note, of: ofs.note }
-    return { ...s, n: ++counts.quiz, of: ofs.quiz }
+    return { ...s, n: ++counts[s.kind], of: ofs[s.kind] }
   })
   steps.push({ kind: 'complete' })
   return steps
@@ -285,6 +289,13 @@ export function buildJiaochengSteps(lessonIndex: number, node: PathNode): Jiaoch
         })
       }
     }
+    const sourceDialogue = lesson.dialogues.find((d) => lesson.words.some((w) => d.lines.some((line) => line.zh.includes(w.zh))))
+    if (sourceDialogue) draft.push({ kind: 'read', id: `read:t1:${sourceDialogue.label}`, text: toLessonText(sourceDialogue), n: 0, of: 0 })
+    for (const w of lesson.words.filter((w) => w.zh.trim() && w.en.trim())) {
+      draft.push({ kind: 'recall', id: `recall:t1:${w.zh}`, word: toVocab(w), n: 0, of: 0 })
+    }
+    const example = lesson.words.map(wordExample).find((e) => e?.zh.trim() && e.en.trim())
+    if (example) draft.push({ kind: 'produce', id: 'produce:t1', example, words: lesson.words.filter((w) => example.zh.includes(w.zh)).map((w) => w.zh), n: 0, of: 0 })
   } else if (node === 't2') {
     for (const [i, d] of lesson.dialogues.entries()) {
       draft.push({
@@ -294,6 +305,18 @@ export function buildJiaochengSteps(lessonIndex: number, node: PathNode): Jiaoch
         n: 0,
         of: 0,
       })
+    }
+    const texts = lesson.dialogues.map(toLessonText)
+    for (const w of lesson.words.filter((w) => w.en.trim() && texts.some((text) => text.lines.some((line) => line.zh.includes(w.zh))))) {
+      draft.push({ kind: 'recall', id: `recall:t2:${w.zh}`, word: toVocab(w), n: 0, of: 0 })
+    }
+    for (const [index, text] of texts.entries()) {
+      if (text.type === 'dialogue' && text.lines.length > 1 && text.lines.every((line) => !line.zh.trim() || line.en.trim())) {
+        draft.push({ kind: 'dialogue', id: `dialogue:t2:${index}`, text, n: 0, of: 0 })
+      } else {
+        const line = text.lines.find((line) => line.zh.length >= 4 && line.zh.length <= 75 && line.en.trim())
+        if (line) draft.push({ kind: 'produce', id: `produce:t2:${index}`, example: line, words: lesson.words.filter((w) => line.zh.includes(w.zh)).map((w) => w.zh), n: 0, of: 0 })
+      }
     }
   } else if (node === 't3') {
     for (const [i, note] of lesson.notes.entries()) {
@@ -307,7 +330,16 @@ export function buildJiaochengSteps(lessonIndex: number, node: PathNode): Jiaoch
         of: 0,
       })
     }
+    for (const [index, note] of lesson.notes.entries()) {
+      const example = noteExample(note)
+      if (!example?.en.trim()) continue
+      draft.push({ kind: 'produce', id: `produce:t3:${index}`, example, words: lesson.words.filter((w) => example.zh.includes(w.zh)).map((w) => w.zh), grammar: `${note.title}: ${note.body}`, n: 0, of: 0 })
+      if (draft.filter((step) => step.kind === 'produce').length >= 2) break
+    }
   } else if (node === 'wrap') {
+    for (const w of lesson.words.filter((w) => w.zh.trim() && w.en.trim())) {
+      draft.push({ kind: 'recall', id: `wrap:recall:${w.zh}`, word: toVocab(w), n: 0, of: 0 })
+    }
     for (const [i, q] of simpleVocabQuiz(lesson.words, 4).entries()) {
       draft.push({
         kind: 'quiz',

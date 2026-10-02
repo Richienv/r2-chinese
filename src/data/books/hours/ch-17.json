@@ -1,0 +1,138 @@
+{
+  "id": "17",
+  "index": 17,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Judge harmful work",
+  "titleSource": "Appendix 5",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Some harm is unavoidable",
+      "bodyEn": "Every career causes some harm, so a rule of pure avoidance would rule out medicine, where mistakes happen, and even a careful diet, where harvests kill field animals. Cutting every trace of harm by withdrawing from other people would also cut the chance to help, which earlier chapters treat as a large loss. Whole industries are a poor unit of judgement, because a sector such as finance employs millions of people doing very different tasks. Some of those tasks do harm, some do good, and many are roughly neutral. Overpayment is ethically different from fraud, even when both have a social cost. Ask how much harm a specific job does, and in what way, then separate permissible harm from harm you should refuse."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Five reasons to refuse",
+      "bodyEn": "The default in this appendix is to refuse a career whose direct effects are seriously harmful, even if you believe donations or later influence would outweigh that harm. The same default covers actions inside a job that look very wrong by ordinary standards. One reason is that the work may violate rights or basic duties, which most ethical views treat as overridable only in extreme cases. A second is hidden later harm: your reputation and the reputation of any movement you belong to, damage to your character from the daily norms, loss of motivation, skills tied to an industry that may shrink, and a signal that makes the path look acceptable to people who will not use it to help. A third is that large claimed benefits are often too optimistic, especially when you personally gain money, status, or influence. The record of people who excused serious wrongs for a greater good is a further reason to pause.",
+      "terms": [
+        {
+          "en": "hidden harms",
+          "hook": "If they say this, they mean later costs such as reputation, character, motivation, and the example you set."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Uncertainty and alternatives",
+      "bodyEn": "A fourth reason is moral uncertainty. Professional philosophers are divided, and a survey cited here finds that a majority are not consequentialists, so a strong belief that only outcomes matter should still leave room for the chance that using harm as a tool is seriously wrong. People who find the work unethical will also be less willing to work with you later, which is a cooperation cost. A fifth reason is that a nearby option is often almost as good and much less harmful, such as venture capital or retail banking in place of a finance role built on deceptive marketing. In ordinary life, a simple refusal of what looks seriously wrong is a better guide than a personal tally you are motivated to inflate. Take the cleaner nearby option when it exists."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "A permission test",
+      "bodyEn": "Start by asking whether total benefits exceed total harms, including the hidden ones, and stop if they do not. If you are highly confident the benefits are on the order of one hundred times the harms, or somewhere from about ten times to a thousand times depending on how much weight you give to rights, objections based on rights may be outweighed. When the ratio sits between those poles, ask whether you would harm people as your means, whether the people made worse off consent, whether someone is exploited, and whether the arrangement is unjust. A yes to any of those is a strong reason to refuse. Side effects that people accept, such as a fair loss in a game they chose, can be permissible at a much smaller ratio than harm you use as a tool. An emergency that protects many lives can justify acts that would otherwise be forbidden, and the appendix treats that pattern as rare."
+    },
+    {
+      "id": "s5",
+      "kind": "example",
+      "titleEn": "Donations and finance",
+      "bodyEn": "The worked example is a finance job paying about two hundred thousand dollars a year, with fifty thousand donated to charities recommended by GiveWell. The appendix values a dollar to GiveDirectly at about twenty times a dollar given to a random person in a rich country, using a conservative figure, and it treats the Against Malaria Foundation as about four times GiveDirectly. On that arithmetic, fifty thousand dollars is worth on the order of four million dollars given at random, and about seven lives a year. The authors argue that an average finance job doing harm on the scale of tens of millions of deaths across the whole sector is implausible, while some roles and some actions inside finance are still harmful. Fraud, hiding important bad news to strengthen a pitch, and covering up unethical behaviour stay off limits even inside a plan to donate. Judge the actual seat, and prefer a part of the industry whose direct work looks neutral or positive.",
+      "terms": [
+        {
+          "en": "earning to give",
+          "hook": "If they say this, they mean a high-earning job used to donate a large share to effective work."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Reform from inside",
+      "bodyEn": "Entering a harmful industry in order to improve it, such as a short period on a factory farm to document conditions or to raise standards, needs advice from people outside the decision and an unusual degree of caution. One situation the appendix treats as a possible justification is when the expected benefits are vastly larger than the harms, on the order of a hundredfold. The permission test still asks whether the harm is your means, whether people consent, and whether anyone is exploited. Every career includes some negative effects, so the live question is the size and the kind. A path with substantial direct harm is usually a mistake, including when your first estimate says the path is net positive. Better alternatives, hidden harms, and ordinary moral limits are the reasons to refuse."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Harm test check",
+      "bodyEn": "Refuse work whose direct effects are seriously harmful unless an exceptional test is clearly met. Count hidden harms and the chance that you are too optimistic, especially if you personally benefit. Prefer a nearby option that does similar good with less harm. Use a large benefit-to-harm ratio, and treat harm used as a means, lack of consent, exploitation, and injustice as reasons to stop when the ratio is large and still short of an emergency. Roles inside one industry differ, and fraud remains out of bounds. Ordinary moral limits apply even if you mostly care about consequences.",
+      "prompt": "What is this appendix's default on a career that directly does serious harm, when you think the good might outweigh it?",
+      "choices": [
+        "Refuse it in the vast majority of cases, and take a less harmful nearby option when one exists",
+        "Take it whenever your personal estimate of the donations is larger than the harm",
+        "Take it whenever the industry as a whole employs a lot of people",
+        "Take it if you have already invested years of training in that industry"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Some harm is unavoidable",
+      "bodyEn": "Every career causes some harm, so a rule of pure avoidance would rule out medicine, where mistakes happen, and even a careful diet, where harvests kill field animals. Cutting every trace of harm by withdrawing from other people would also cut the chance to help, which earlier chapters treat as a large loss. Whole industries are a poor unit of judgement, because a sector such as finance employs millions of people doing very different tasks. Some of those tasks do harm, some do good, and many are roughly neutral. Overpayment is ethically different from fraud, even when both have a social cost. Ask how much harm a specific job does, and in what way, then separate permissible harm from harm you should refuse."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Five reasons to refuse",
+      "bodyEn": "The default in this appendix is to refuse a career whose direct effects are seriously harmful, even if you believe donations or later influence would outweigh that harm. The same default covers actions inside a job that look very wrong by ordinary standards. One reason is that the work may violate rights or basic duties, which most ethical views treat as overridable only in extreme cases. A second is hidden later harm: your reputation and the reputation of any movement you belong to, damage to your character from the daily norms, loss of motivation, skills tied to an industry that may shrink, and a signal that makes the path look acceptable to people who will not use it to help. A third is that large claimed benefits are often too optimistic, especially when you personally gain money, status, or influence. The record of people who excused serious wrongs for a greater good is a further reason to pause.",
+      "terms": [
+        {
+          "en": "hidden harms",
+          "hook": "If they say this, they mean later costs such as reputation, character, motivation, and the example you set."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Uncertainty and alternatives",
+      "bodyEn": "A fourth reason is moral uncertainty. Professional philosophers are divided, and a survey cited here finds that a majority are not consequentialists, so a strong belief that only outcomes matter should still leave room for the chance that using harm as a tool is seriously wrong. People who find the work unethical will also be less willing to work with you later, which is a cooperation cost. A fifth reason is that a nearby option is often almost as good and much less harmful, such as venture capital or retail banking in place of a finance role built on deceptive marketing. In ordinary life, a simple refusal of what looks seriously wrong is a better guide than a personal tally you are motivated to inflate. Take the cleaner nearby option when it exists."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "A permission test",
+      "bodyEn": "Start by asking whether total benefits exceed total harms, including the hidden ones, and stop if they do not. If you are highly confident the benefits are on the order of one hundred times the harms, or somewhere from about ten times to a thousand times depending on how much weight you give to rights, objections based on rights may be outweighed. When the ratio sits between those poles, ask whether you would harm people as your means, whether the people made worse off consent, whether someone is exploited, and whether the arrangement is unjust. A yes to any of those is a strong reason to refuse. Side effects that people accept, such as a fair loss in a game they chose, can be permissible at a much smaller ratio than harm you use as a tool. An emergency that protects many lives can justify acts that would otherwise be forbidden, and the appendix treats that pattern as rare."
+    },
+    {
+      "id": "s5",
+      "kind": "example",
+      "titleEn": "Donations and finance",
+      "bodyEn": "The worked example is a finance job paying about two hundred thousand dollars a year, with fifty thousand donated to charities recommended by GiveWell. The appendix values a dollar to GiveDirectly at about twenty times a dollar given to a random person in a rich country, using a conservative figure, and it treats the Against Malaria Foundation as about four times GiveDirectly. On that arithmetic, fifty thousand dollars is worth on the order of four million dollars given at random, and about seven lives a year. The authors argue that an average finance job doing harm on the scale of tens of millions of deaths across the whole sector is implausible, while some roles and some actions inside finance are still harmful. Fraud, hiding important bad news to strengthen a pitch, and covering up unethical behaviour stay off limits even inside a plan to donate. Judge the actual seat, and prefer a part of the industry whose direct work looks neutral or positive.",
+      "terms": [
+        {
+          "en": "earning to give",
+          "hook": "If they say this, they mean a high-earning job used to donate a large share to effective work."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Reform from inside",
+      "bodyEn": "Entering a harmful industry in order to improve it, such as a short period on a factory farm to document conditions or to raise standards, needs advice from people outside the decision and an unusual degree of caution. One situation the appendix treats as a possible justification is when the expected benefits are vastly larger than the harms, on the order of a hundredfold. The permission test still asks whether the harm is your means, whether people consent, and whether anyone is exploited. Every career includes some negative effects, so the live question is the size and the kind. A path with substantial direct harm is usually a mistake, including when your first estimate says the path is net positive. Better alternatives, hidden harms, and ordinary moral limits are the reasons to refuse."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Harm test check",
+      "bodyEn": "Refuse work whose direct effects are seriously harmful unless an exceptional test is clearly met. Count hidden harms and the chance that you are too optimistic, especially if you personally benefit. Prefer a nearby option that does similar good with less harm. Use a large benefit-to-harm ratio, and treat harm used as a means, lack of consent, exploitation, and injustice as reasons to stop when the ratio is large and still short of an emergency. Roles inside one industry differ, and fraud remains out of bounds. Ordinary moral limits apply even if you mostly care about consequences.",
+      "prompt": "What is this appendix's default on a career that directly does serious harm, when you think the good might outweigh it?",
+      "choices": [
+        "Refuse it in the vast majority of cases, and take a less harmful nearby option when one exists",
+        "Take it whenever your personal estimate of the donations is larger than the harm",
+        "Take it whenever the industry as a whole employs a lot of people",
+        "Take it if you have already invested years of training in that industry"
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "16",
+  "index": 16,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Name the wrapper",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Refresh the wrapper",
+      "bodyEn": "A finished offer earns nothing if the right person never notices it. The name has one job: when the ideal buyer hears it, they are interested enough to act. The same session can be ignored under a plain category label and answered under a name that states a result and a time, while the work stays identical. Offers grow tired, and local markets tire faster, because a full pass through a town's audience can be cheap. Hearing an offer once rarely exhausts it, since most people miss the first mention, and new images, stories, and copy can keep one offer alive for a long time. Across years you refresh by renaming, and the deliverable, the pricing model, and the labor stay in place while the wrapper changes.",
+      "terms": [
+        {
+          "en": "Wrapper",
+          "hook": "The name and the look of the offer. The work inside can stay the same."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Use three to five parts",
+      "bodyEn": "A useful name draws on five parts, and you typically include three to five of them. Using all five often makes the line too long. Shorter and sharper wins, as long as a stranger can still tell what it is and whom it is for. The parts are a reason the offer exists, the avatar it calls out, the goal they want, a time interval, and a container word that signals a bundle. Order is flexible, so arrange them until the line sounds tight. Write several names and test them, because taste at a desk is a weak predictor of who responds.",
+      "terms": [
+        {
+          "en": "Name parts",
+          "hook": "Reason, avatar, goal, time interval, and a container word. Use three to five."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Reason, person, and goal",
+      "bodyEn": "Open with a reason this offer is happening. A season, a grand opening, new management, an anniversary, a giveaway, or a stated discount is enough, if you believe it and it answers why they should respond. Next, name the avatar with enough precision that the wrong person feels unaddressed. In a local market, a neighborhood or a niche beats the name of the whole city. Then state their goal as a word or a short phrase: a feeling, an event, or a concrete outcome they already want. Specific and tangible goals outperform abstract ones. Three well-chosen parts already separate the offer from a commodity label."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Time and a container",
+      "bodyEn": "The time interval tells them how long to expect, either for the program or for the framed result. A measured claim paired with a duration is often rejected by ad platforms, because it reads as a guaranteed outcome. Use a duration freely where that rule is absent, or pair the clock with a goal that is a milestone rather than a quantified promise. A first sale inside ten days is a different claim from a specific dollar figure inside ten days. Close with a container word so the offer sounds like a system: challenge, blueprint, intensive, sprint, workshop, reset, or another word for a bundle. Rhyme when a natural rhyme appears, and use alliteration when that is easier, leaving both optional so clarity stays in charge.",
+      "terms": [
+        {
+          "en": "Container word",
+          "hook": "A word such as challenge, sprint, or system that marks a bundle, not a single hour."
+        },
+        {
+          "en": "Time interval",
+          "hook": "How long the program runs, or how the result is framed in time."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Test names in public",
+      "bodyEn": "Apply the same parts to every item in the stack and to every bonus, because the name alone changes what the piece feels worth. Compose full offer names the same way: a free challenge with a time box and a seasonal goal, a local avatar with a discount and a treatment result, or a coaching blueprint aimed at a first batch of clients inside a short window. Any three of the parts can be enough, and the sequence can change when another order sounds tighter. Put two or three of your best names into one campaign, keep the winner as the control, and test new names against it. Some names take off for reasons you will be unable to explain. Retire the losers and write more, without defending the one you personally prefer."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Change light things first",
+      "bodyEn": "When response fades, vary the light pieces before you touch the business. Change the images and the video first, then the body copy. Change the headline third, which means a new wrapper on the same service, such as a stress-themed challenge becoming a holiday-themed challenge. Change the duration fourth, and change the free or discounted enhancer fifth. Change the money model last: the sequence of offers and the prices attached to them. Repeat the top of that list many times. Most fatigue is solved before you reach the bottom, and the bottom is where operations get heavy.",
+      "terms": [
+        {
+          "en": "Offer fatigue",
+          "hook": "Response falls after the audience has seen the wrapper enough. Refresh the outside first."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Leave a winner alone",
+      "bodyEn": "Once an offer makes money, leave the machine alone. The urge to rebuild feels productive and usually adds drag. Spend that energy on look and feel: copy, creative, and headlines. Then change the season, then the duration, then whatever you give away or discount. Rebuild the delivery and the pricing sequence only for a serious reason, after the lighter variations are used up. For the first test, ship the structure and the headline you believe in, and stay with them long enough to learn. If several names work, keep the highest return, and rotate only when rotation will leave fulfillment intact."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Local names tire faster",
+      "bodyEn": "Local marketing often starts more easily than national marketing, because familiarity and in-person trust raise the share of leads who buy. It is harder to sustain, because the audience is a radius and a smaller radius burns through faster. National reach tires more slowly and is harder to make profitable at the start. The skill that fixes the local problem is fast variation of creative, headlines, and wrappers. The value stack stays in place. The ads change how that same stack looks this month. Learning that rotation on a local offer is what later makes a wider market easier to advertise into."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Attract the right buyer",
+      "bodyEn": "Judge a name by who steps forward and who stays away. A careless name can sink conversion on an offer that is otherwise strong, because people decide from the outside. The name carries a promise a stranger can understand. The stack, the guarantee, the deadline, and the quantity limit do the rest of the work once that person looks. This section made the offer valuable, split it into parts, rebundled it, reversed risk, and pressed time and quantity. The name is the last enhancer, and it sends the right prospects toward that structure. A new wrapper will leave a broken delivery system broken, so execution after the name is its own job."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Fatigue order check",
+      "bodyEn": "Naming uses a reason, an avatar, a goal, a time box, and a container word, usually three to five of those. The wrapper can change while the work stays. When leads slow down, the safe order is creative, then body copy, then the headline, then duration, then the free or discount piece, then the money model. Local markets exhaust a wrapper sooner because the radius is small. The stack remains the thing you sell. The first change, when an ad goes quiet, is the cheapest one that can restore attention.",
+      "prompt": "An ad that used to work has gone quiet. What do you change first?",
+      "choices": [
+        "The entire delivery stack, so the market meets a new company",
+        "The images or the video, before the headline, the duration, or the price model",
+        "The guarantee, by removing it until response returns",
+        "The roster cap, by accepting unlimited clients at a lower price"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Refresh the wrapper",
+      "bodyEn": "A finished offer earns nothing if the right person never notices it. The name has one job: when the ideal buyer hears it, they are interested enough to act. The same session can be ignored under a plain category label and answered under a name that states a result and a time, while the work stays identical. Offers grow tired, and local markets tire faster, because a full pass through a town's audience can be cheap. Hearing an offer once rarely exhausts it, since most people miss the first mention, and new images, stories, and copy can keep one offer alive for a long time. Across years you refresh by renaming, and the deliverable, the pricing model, and the labor stay in place while the wrapper changes.",
+      "terms": [
+        {
+          "en": "Wrapper",
+          "hook": "The name and the look of the offer. The work inside can stay the same."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Use three to five parts",
+      "bodyEn": "A useful name draws on five parts, and you typically include three to five of them. Using all five often makes the line too long. Shorter and sharper wins, as long as a stranger can still tell what it is and whom it is for. The parts are a reason the offer exists, the avatar it calls out, the goal they want, a time interval, and a container word that signals a bundle. Order is flexible, so arrange them until the line sounds tight. Write several names and test them, because taste at a desk is a weak predictor of who responds.",
+      "terms": [
+        {
+          "en": "Name parts",
+          "hook": "Reason, avatar, goal, time interval, and a container word. Use three to five."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Reason, person, and goal",
+      "bodyEn": "Open with a reason this offer is happening. A season, a grand opening, new management, an anniversary, a giveaway, or a stated discount is enough, if you believe it and it answers why they should respond. Next, name the avatar with enough precision that the wrong person feels unaddressed. In a local market, a neighborhood or a niche beats the name of the whole city. Then state their goal as a word or a short phrase: a feeling, an event, or a concrete outcome they already want. Specific and tangible goals outperform abstract ones. Three well-chosen parts already separate the offer from a commodity label."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Time and a container",
+      "bodyEn": "The time interval tells them how long to expect, either for the program or for the framed result. A measured claim paired with a duration is often rejected by ad platforms, because it reads as a guaranteed outcome. Use a duration freely where that rule is absent, or pair the clock with a goal that is a milestone rather than a quantified promise. A first sale inside ten days is a different claim from a specific dollar figure inside ten days. Close with a container word so the offer sounds like a system: challenge, blueprint, intensive, sprint, workshop, reset, or another word for a bundle. Rhyme when a natural rhyme appears, and use alliteration when that is easier, leaving both optional so clarity stays in charge.",
+      "terms": [
+        {
+          "en": "Container word",
+          "hook": "A word such as challenge, sprint, or system that marks a bundle, not a single hour."
+        },
+        {
+          "en": "Time interval",
+          "hook": "How long the program runs, or how the result is framed in time."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Test names in public",
+      "bodyEn": "Apply the same parts to every item in the stack and to every bonus, because the name alone changes what the piece feels worth. Compose full offer names the same way: a free challenge with a time box and a seasonal goal, a local avatar with a discount and a treatment result, or a coaching blueprint aimed at a first batch of clients inside a short window. Any three of the parts can be enough, and the sequence can change when another order sounds tighter. Put two or three of your best names into one campaign, keep the winner as the control, and test new names against it. Some names take off for reasons you will be unable to explain. Retire the losers and write more, without defending the one you personally prefer."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Change light things first",
+      "bodyEn": "When response fades, vary the light pieces before you touch the business. Change the images and the video first, then the body copy. Change the headline third, which means a new wrapper on the same service, such as a stress-themed challenge becoming a holiday-themed challenge. Change the duration fourth, and change the free or discounted enhancer fifth. Change the money model last: the sequence of offers and the prices attached to them. Repeat the top of that list many times. Most fatigue is solved before you reach the bottom, and the bottom is where operations get heavy.",
+      "terms": [
+        {
+          "en": "Offer fatigue",
+          "hook": "Response falls after the audience has seen the wrapper enough. Refresh the outside first."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Leave a winner alone",
+      "bodyEn": "Once an offer makes money, leave the machine alone. The urge to rebuild feels productive and usually adds drag. Spend that energy on look and feel: copy, creative, and headlines. Then change the season, then the duration, then whatever you give away or discount. Rebuild the delivery and the pricing sequence only for a serious reason, after the lighter variations are used up. For the first test, ship the structure and the headline you believe in, and stay with them long enough to learn. If several names work, keep the highest return, and rotate only when rotation will leave fulfillment intact."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Local names tire faster",
+      "bodyEn": "Local marketing often starts more easily than national marketing, because familiarity and in-person trust raise the share of leads who buy. It is harder to sustain, because the audience is a radius and a smaller radius burns through faster. National reach tires more slowly and is harder to make profitable at the start. The skill that fixes the local problem is fast variation of creative, headlines, and wrappers. The value stack stays in place. The ads change how that same stack looks this month. Learning that rotation on a local offer is what later makes a wider market easier to advertise into."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Attract the right buyer",
+      "bodyEn": "Judge a name by who steps forward and who stays away. A careless name can sink conversion on an offer that is otherwise strong, because people decide from the outside. The name carries a promise a stranger can understand. The stack, the guarantee, the deadline, and the quantity limit do the rest of the work once that person looks. This section made the offer valuable, split it into parts, rebundled it, reversed risk, and pressed time and quantity. The name is the last enhancer, and it sends the right prospects toward that structure. A new wrapper will leave a broken delivery system broken, so execution after the name is its own job."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Fatigue order check",
+      "bodyEn": "Naming uses a reason, an avatar, a goal, a time box, and a container word, usually three to five of those. The wrapper can change while the work stays. When leads slow down, the safe order is creative, then body copy, then the headline, then duration, then the free or discount piece, then the money model. Local markets exhaust a wrapper sooner because the radius is small. The stack remains the thing you sell. The first change, when an ad goes quiet, is the cheapest one that can restore attention.",
+      "prompt": "An ad that used to work has gone quiet. What do you change first?",
+      "choices": [
+        "The entire delivery stack, so the market meets a new company",
+        "The images or the video, before the headline, the duration, or the price model",
+        "The guarantee, by removing it until response returns",
+        "The roster cap, by accepting unlimited clients at a lower price"
+      ],
+      "answer": 1
+    }
+  ]
+}

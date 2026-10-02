@@ -1,0 +1,186 @@
+{
+  "id": "12",
+  "index": 12,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Disappearing Act",
+  "titleSource": "Disappearing Act: How to Escape the Office",
+  "sourcePages": "",
+  "when": "Liberation",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Ask after you have proof",
+      "bodyEn": "Remote work becomes negotiable after you have made yourself expensive to lose and after most of your communication already happens in writing. The chapter's opening case is an employee who spent a month abroad with calls forwarded, then told the boss, and kept the role because the work had continued. Mobility is the freedom this part of the book is building, and employees can reach it as well as owners. Some large employers already send people home and report lower cost with higher output. The sequence is to show a business benefit, then make a refusal expensive. Proof before the ask is the stronger order.",
+      "terms": [
+        {
+          "en": "remote trial",
+          "hook": "A short, cancellable period of working away from the office, judged on measured output."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Build leverage before asking",
+      "bodyEn": "Raise your output first, using the earlier cuts to waste and interruption, and let supervisors see the jump. Keep a little of that gain in reserve so the remote trial can show a second jump. Move about eighty percent of contact with your boss onto email and the rest onto the phone, and cut repetitive mail so your absence is quieter. Start in a slow season. In the engineering case, the escape ran about two months and ended with a short trip as the full test. More value is what makes a yes rational for them."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Step one, raise their stake",
+      "bodyEn": "Ask what training the company will fund, and tie it to a result the boss already wants, such as less back-and-forth and more billable work. Let them pay, so your departure would waste that investment. This is the first of five steps, and it happens before any request to stay home. The ask is about their business, in their language. A personal perk is a weaker frame. Do this while you are still easy to praise."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Step two, work offsite first",
+      "bodyEn": "Take two midweek days at home before you propose a policy. A Tuesday and a Wednesday read less like a long weekend, and they show whether you can work without a weekend coming to rescue you. Double the output, leave a written trail, and keep a count you can show later. If the software lives only on the office machine, use a remote-access trial to drive that machine from home. A repair appointment or two vacation days can carry the same drill if you would rather skip a sick day. The point is a measured sample, collected before the meeting."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Step three, count the benefit",
+      "bodyEn": "Turn those two days into a short list of finished work against your normal rate. In the case, the count was three extra designs each day and three extra billable hours, explained by the missing commute and the quieter room. Present the list as a business decision. A request framed as comfort is easy to refuse, and a request framed as output is harder. Use numbers you already track, such as clients served, pages finished, or cash collected. This list is the exhibit you will hold in the meeting."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Step four, a reversible trial",
+      "bodyEn": "Ask in person, late on a calm day, and keep the tone of a two-minute idea rather than a formal presentation. Request two remote days so you can fall back to one if needed. State that they can cancel at any time, and that you will come in when a meeting requires it. Mention the tool that reaches the office machine and the phone that stays on. Do not ask for the whole week yet, because a large first request triggers a refusal and you still need practice. After you answer a concern, return to the ask. A slide deck makes a small test look permanent, so skip it.",
+      "terms": [
+        {
+          "en": "bracketing",
+          "hook": "Asking for a larger trial than you need so a smaller yes is the fallback."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Step five, widen the window",
+      "bodyEn": "Make the home days your best days, and let the office days run a little lower so the contrast is easy to see. Then ask to extend, for another two-week trial, toward four days, and be ready to accept three. If the boss fears you are leaving, or that everyone will want the same deal, grant the concern and answer it: the new routine makes you more likely to stay, and others should earn a trial only by beating their own numbers. Later, ask for a full remote trial while you are already away and a live project needs you, because timing carries more weight than wording. If the answer stays no, the next chapter is the exit. Income from the earlier muse is what makes that exit affordable."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Use the hourglass",
+      "bodyEn": "Some people start with one or two weeks away, tied to a real project, a move, or a family need. Offer to work those days instead of spending vacation, and accept a pay cut only for that window and only if the work slips. Let the boss help design the setup so they own it. Make those weeks the most productive you have recorded, show the numbers, and then ask for two or three home days as a short trial. Make those days excellent, then ask to be in the office only one or two days, and make the office days the thin ones. The last ask is full mobility, after the proof is already in their hands.",
+      "terms": [
+        {
+          "en": "hourglass approach",
+          "hook": "A long proof-of-concept up front, a short remote agreement, then a climb back to full-time away."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Rehearse before the meeting",
+      "bodyEn": "Write the four-week version of your job if you had to work away: what each task is for, and how you would finish it from another city. Spend two or three hours in a cafe on two Saturdays so the work is not glued to one room. Document your current output before you ask. Practice refusal lines on low-stakes asks: what you would need to do, under what circumstances they would say yes, and whether they have made an exception and why. Propose a Monday or a Friday at home first, in a period when replacing you would hurt. Extend each working trial until you reach the mobility you named. If this employer will not get there, leave, and a firing that comes with severance can fund the exit more cleanly than a resignation you rush."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Remote trial check",
+      "bodyEn": "Remote work is proposed as a reversible test after you have already produced more from outside the office. The ask is a business result, the boss keeps a veto, and the first request is smaller than the full week you want later. Home days stay strong so the comparison is obvious, and the window widens only after each review. The hourglass version uses a longer forced absence first, then negotiates back up. If the numbers never move the decision, this employer will not be the source of the freedom. Recall the order of the ask.",
+      "prompt": "What is the order for asking to work remotely?",
+      "choices": [
+        "Prove a measured jump from outside the office, then request a short cancellable trial, then widen it after further proof",
+        "Ask for full-time remote work on the first morning, with a formal presentation",
+        "Reduce your output so the office feels easier",
+        "Wait until you have used every vacation day"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Ask after you have proof",
+      "bodyEn": "Remote work becomes negotiable after you have made yourself expensive to lose and after most of your communication already happens in writing. The chapter's opening case is an employee who spent a month abroad with calls forwarded, then told the boss, and kept the role because the work had continued. Mobility is the freedom this part of the book is building, and employees can reach it as well as owners. Some large employers already send people home and report lower cost with higher output. The sequence is to show a business benefit, then make a refusal expensive. Proof before the ask is the stronger order.",
+      "terms": [
+        {
+          "en": "remote trial",
+          "hook": "A short, cancellable period of working away from the office, judged on measured output."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Build leverage before asking",
+      "bodyEn": "Raise your output first, using the earlier cuts to waste and interruption, and let supervisors see the jump. Keep a little of that gain in reserve so the remote trial can show a second jump. Move about eighty percent of contact with your boss onto email and the rest onto the phone, and cut repetitive mail so your absence is quieter. Start in a slow season. In the engineering case, the escape ran about two months and ended with a short trip as the full test. More value is what makes a yes rational for them."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Step one, raise their stake",
+      "bodyEn": "Ask what training the company will fund, and tie it to a result the boss already wants, such as less back-and-forth and more billable work. Let them pay, so your departure would waste that investment. This is the first of five steps, and it happens before any request to stay home. The ask is about their business, in their language. A personal perk is a weaker frame. Do this while you are still easy to praise."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Step two, work offsite first",
+      "bodyEn": "Take two midweek days at home before you propose a policy. A Tuesday and a Wednesday read less like a long weekend, and they show whether you can work without a weekend coming to rescue you. Double the output, leave a written trail, and keep a count you can show later. If the software lives only on the office machine, use a remote-access trial to drive that machine from home. A repair appointment or two vacation days can carry the same drill if you would rather skip a sick day. The point is a measured sample, collected before the meeting."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Step three, count the benefit",
+      "bodyEn": "Turn those two days into a short list of finished work against your normal rate. In the case, the count was three extra designs each day and three extra billable hours, explained by the missing commute and the quieter room. Present the list as a business decision. A request framed as comfort is easy to refuse, and a request framed as output is harder. Use numbers you already track, such as clients served, pages finished, or cash collected. This list is the exhibit you will hold in the meeting."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Step four, a reversible trial",
+      "bodyEn": "Ask in person, late on a calm day, and keep the tone of a two-minute idea rather than a formal presentation. Request two remote days so you can fall back to one if needed. State that they can cancel at any time, and that you will come in when a meeting requires it. Mention the tool that reaches the office machine and the phone that stays on. Do not ask for the whole week yet, because a large first request triggers a refusal and you still need practice. After you answer a concern, return to the ask. A slide deck makes a small test look permanent, so skip it.",
+      "terms": [
+        {
+          "en": "bracketing",
+          "hook": "Asking for a larger trial than you need so a smaller yes is the fallback."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Step five, widen the window",
+      "bodyEn": "Make the home days your best days, and let the office days run a little lower so the contrast is easy to see. Then ask to extend, for another two-week trial, toward four days, and be ready to accept three. If the boss fears you are leaving, or that everyone will want the same deal, grant the concern and answer it: the new routine makes you more likely to stay, and others should earn a trial only by beating their own numbers. Later, ask for a full remote trial while you are already away and a live project needs you, because timing carries more weight than wording. If the answer stays no, the next chapter is the exit. Income from the earlier muse is what makes that exit affordable."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Use the hourglass",
+      "bodyEn": "Some people start with one or two weeks away, tied to a real project, a move, or a family need. Offer to work those days instead of spending vacation, and accept a pay cut only for that window and only if the work slips. Let the boss help design the setup so they own it. Make those weeks the most productive you have recorded, show the numbers, and then ask for two or three home days as a short trial. Make those days excellent, then ask to be in the office only one or two days, and make the office days the thin ones. The last ask is full mobility, after the proof is already in their hands.",
+      "terms": [
+        {
+          "en": "hourglass approach",
+          "hook": "A long proof-of-concept up front, a short remote agreement, then a climb back to full-time away."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Rehearse before the meeting",
+      "bodyEn": "Write the four-week version of your job if you had to work away: what each task is for, and how you would finish it from another city. Spend two or three hours in a cafe on two Saturdays so the work is not glued to one room. Document your current output before you ask. Practice refusal lines on low-stakes asks: what you would need to do, under what circumstances they would say yes, and whether they have made an exception and why. Propose a Monday or a Friday at home first, in a period when replacing you would hurt. Extend each working trial until you reach the mobility you named. If this employer will not get there, leave, and a firing that comes with severance can fund the exit more cleanly than a resignation you rush."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Remote trial check",
+      "bodyEn": "Remote work is proposed as a reversible test after you have already produced more from outside the office. The ask is a business result, the boss keeps a veto, and the first request is smaller than the full week you want later. Home days stay strong so the comparison is obvious, and the window widens only after each review. The hourglass version uses a longer forced absence first, then negotiates back up. If the numbers never move the decision, this employer will not be the source of the freedom. Recall the order of the ask.",
+      "prompt": "What is the order for asking to work remotely?",
+      "choices": [
+        "Prove a measured jump from outside the office, then request a short cancellable trial, then widen it after further proof",
+        "Ask for full-time remote work on the first morning, with a formal presentation",
+        "Reduce your output so the office feels easier",
+        "Wait until you have used every vacation day"
+      ],
+      "answer": 0
+    }
+  ]
+}

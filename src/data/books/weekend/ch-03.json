@@ -1,0 +1,238 @@
+{
+  "id": "03",
+  "index": 3,
+  "part": 4,
+  "partTitleEn": "Million Dollar Weekend",
+  "titleEn": "Find Paid Problems",
+  "titleSource": "Finding Million-Dollar Ideas",
+  "sourcePages": "39-64",
+  "when": "Friday",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Confirm a payer first",
+      "bodyEn": "Verify that someone will pay before you build, because a finished product with no buyers is an expensive dead end. Customers pay for a problem you solve. Hold the build until you know they will hand over money. A spoken yes from a big partner can still disappear after months of work and a large spend. When someone asks whether an idea is good, ask what a customer has already said. One payments business started by calling friends who owned games and asking whether they would switch for a lower fee and a team that listened. The weekend prototype came after that yes, which is the order to copy."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Work backwards",
+      "bodyEn": "Start with the customer's experience and reason back to the offer. Write three facts before you name the product: who you sell to, what problem you solve, and where those people are. Choose three markets you can actually reach. Use what you know of those markets to generate a pile of ideas, then keep the three most likely to succeed. Sell the idea to a small group of early adopters before the product exists and before you spend. Repeat the test fast and cheap until one of them hits. The experiment is the work, and the build waits for a yes that includes money.",
+      "terms": [
+        {
+          "en": "Customer First",
+          "hook": "Begin with a person who has the problem, then shape the offer."
+        },
+        {
+          "en": "Three Ws",
+          "hook": "Who you sell to, what problem you solve, and where they are."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Start from a shared pain",
+      "bodyEn": "Prefer a must-have pain over a nice extra, and getting more customers is a pain almost every business already feels. Look for a pattern that already works in one category and carry it into another. A giveaway that fills a fashion list can be tried on a software list, and a bundle that works for one kind of tool can be tried on another. When you are unsure, solve a problem you have yourself. If you would pay for the fix, people like you may pay too, and you already count as one user. Your own tools, bills, and workarounds are a map of demand. Wanting a discount you cannot find is a clue, and the next move is to test whether others will pay you to arrange it.",
+      "terms": [
+        {
+          "en": "Painkiller",
+          "hook": "A must-have fix people already struggle without."
+        },
+        {
+          "en": "Vitamin",
+          "hook": "A nice extra they can skip without real pain."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Let buyers cast the vote",
+      "bodyEn": "A mentor's doubt is a comment, and the customer's payment is the verdict. Listen for the problem they want solved, propose a fix, and check that they will pay. Ask the supplier for a deal that makes them money at no cost and little work, and put a time on the calendar. Ask the place where the audience already gathers for the attention you need, such as free placement, and talk about their users. A pay button on a simple page can be enough: one early version took about forty-eight hours and about fifty dollars. Chase the first dollar before you chase scale, because that sale creates momentum and these businesses began with one customer. If they refuse to pay, the small spend is what lets you leave for the next experiment."
+    },
+    {
+      "id": "s5",
+      "kind": "example",
+      "titleEn": "Talk, then take a deposit",
+      "bodyEn": "A minimum product still fails if nobody has agreed to pay, and so do a logo, a legal entity, a course, and a domain. Put the conversation first and change the offer before you make anything or spend. If the idea is dog walks, message three owners today and request payment for the walk. When they reveal a different pain, such as finding a sitter while they travel, ask for the next date and take a deposit before any code. The same shape fits software and homemade goods: ask people who share the pain, or offer a batch to people who already like what you make, and include a pay link. Fill the paid orders, and buy ingredients or build the tool with money that has already arrived. The website, the class, and the bigger kitchen can wait until the revenue says you need them.",
+      "terms": [
+        {
+          "en": "Founder First",
+          "hook": "Building your favorite setup before anyone has paid."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Name three groups",
+      "bodyEn": "Find customers inside who you are, what you know, and who you know. Write three groups you can reach easily and would be excited to help, such as neighbors, colleagues, or a hobby circle. Prefer people with names, in groups that already gather online or in person. Large companies have begun by writing friends or serving one named customer, so a personal network is a valid start. Confirm that access before you fall in love with an idea. The better you know the group, the more specifically you can name the problem, and a specific problem is easier to test. Take a first version straight to them and ask how it should change, because extra private research is often a way to avoid that conversation.",
+      "terms": [
+        {
+          "en": "Zone of Influence",
+          "hook": "People you can contact today because you already belong near them."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Log today's frustrations",
+      "bodyEn": "Strong starters stay dissatisfied, and they keep asking how ordinary things could work better. Annoyances in your own day, and the same annoyances in people near you, are where offers hide. Study what bothered you at home, what wasted time on the way to work, and what failed while you were online. Write the list while the day is fresh, and keep going until it feels endless. Begin by noticing where your day feels worse than it should, then turn one of those moments into an offer. Invite a few friends to a dated test, name the problem you share, state the price, and ask them to pay in advance. Ask about limits such as diet or timing, because the payment and the notes are the business being born."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Filter pain, skill, and niche",
+      "bodyEn": "Leave trend-copying, a perfect vision, and inspiration rituals off this pass. Look for the most painful problem you can solve, because that pain is also the value. You want passion for it, or a skill that is unusually yours. Aim at the largest niche you already belong to and understand. Stay inside your zone: the followers, the local group, the chat, or the forum where you already know the talk. Go to that community as a problem seeker and listen for what they already resent. Those three filters are the selection rule, and they take light work."
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Mine your own annoyances",
+      "bodyEn": "Answer four prompts: what irritated you this morning, what has sat on your list for over a week, what you regularly do badly, and what you wanted to buy only to find that nobody made it. Keep a notebook nearby and write the bother down when it happens. A long search you would have paid someone to finish can become a done-for-you service in one category. A result you want from a luxury provider, at a budget you can afford, can become a simpler version of that service. A repeated plan your friends cannot join can become a way to match you with one other person. Write at least three ideas from your own problems, and leave the clumsy ones on the page. Cutting too early hides the idea the later pass will need."
+    },
+    {
+      "id": "s10",
+      "kind": "try",
+      "titleEn": "Borrow demand that pays",
+      "bodyEn": "Start from products that already sell in large numbers, then add an accessory or a service for the people who bought them. A crowd that has already spent money is easier to sell to than a crowd you still have to convince. Write two ideas in that shape, such as a customization, a tutorial for a popular game, or lessons for a computer people already own. Then visit places where strangers are trying to spend: Craigslist gigs, Etsy, Facebook Marketplace, and completed listings on eBay. Read repeated requests people will pay to have done, and read finished sales so you can see price and how often buyers show up. Write at least one product or service from that browsing. Leave the weak and strange lines on the list, because this pass is for volume and the cut comes next."
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "Harvest questions, keep three",
+      "bodyEn": "Sell what people already want, and use the questions they type as a line into that want. Work from a searched question toward a fix they might pay for, and use a question tool to list the common asks around a keyword. Mark the fix as a must-have or a nice-to-have, and keep the must-have. On large forums, read boards where people ask someone to build a thing, and grab the first requests that interest you. Aim for about ten ideas across the four drills, and you may add the suggestion a friend sent you in the opening chapter. Cross off any idea that does not excite you, and stop if three are clearly the ones you want. If you still cannot choose, keep the ones that are easiest to try and that you, plus a customer like you, would gladly pay for, knowing the idea may change later."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Check the idea list",
+      "bodyEn": "Confirm a payer before you build, and work backward from who hurts, what hurts, and where they are. Prefer a must-have you share, and let a buyer's payment overrule a mentor's doubt. Message people you can already reach, and take a deposit when they name the pain. List three groups, then log the frustrations of an ordinary day. Generate volume from your own annoyances, from products that already sell, from marketplace requests, and from questions people already search. Keep about ten ideas, then three that excite you, or the easiest ones you would pay for. The next chapter tests whether one of those three is a large opportunity, so the job here is a real list.",
+      "prompt": "How do you arrive at three ideas worth testing?",
+      "choices": [
+        "Build the product, the logo, and the company, then look for someone to sell to",
+        "Copy the latest trend from a stranger and wait for a perfect product to appear",
+        "Ask a mentor whether the idea is good and treat that opinion as the customer",
+        "Start with groups you can reach, generate problems from your life, existing demand, marketplaces, and live questions, then keep three you would pay to solve"
+      ],
+      "answer": 3
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Confirm a payer first",
+      "bodyEn": "Verify that someone will pay before you build, because a finished product with no buyers is an expensive dead end. Customers pay for a problem you solve. Hold the build until you know they will hand over money. A spoken yes from a big partner can still disappear after months of work and a large spend. When someone asks whether an idea is good, ask what a customer has already said. One payments business started by calling friends who owned games and asking whether they would switch for a lower fee and a team that listened. The weekend prototype came after that yes, which is the order to copy."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Work backwards",
+      "bodyEn": "Start with the customer's experience and reason back to the offer. Write three facts before you name the product: who you sell to, what problem you solve, and where those people are. Choose three markets you can actually reach. Use what you know of those markets to generate a pile of ideas, then keep the three most likely to succeed. Sell the idea to a small group of early adopters before the product exists and before you spend. Repeat the test fast and cheap until one of them hits. The experiment is the work, and the build waits for a yes that includes money.",
+      "terms": [
+        {
+          "en": "Customer First",
+          "hook": "Begin with a person who has the problem, then shape the offer."
+        },
+        {
+          "en": "Three Ws",
+          "hook": "Who you sell to, what problem you solve, and where they are."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Start from a shared pain",
+      "bodyEn": "Prefer a must-have pain over a nice extra, and getting more customers is a pain almost every business already feels. Look for a pattern that already works in one category and carry it into another. A giveaway that fills a fashion list can be tried on a software list, and a bundle that works for one kind of tool can be tried on another. When you are unsure, solve a problem you have yourself. If you would pay for the fix, people like you may pay too, and you already count as one user. Your own tools, bills, and workarounds are a map of demand. Wanting a discount you cannot find is a clue, and the next move is to test whether others will pay you to arrange it.",
+      "terms": [
+        {
+          "en": "Painkiller",
+          "hook": "A must-have fix people already struggle without."
+        },
+        {
+          "en": "Vitamin",
+          "hook": "A nice extra they can skip without real pain."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Let buyers cast the vote",
+      "bodyEn": "A mentor's doubt is a comment, and the customer's payment is the verdict. Listen for the problem they want solved, propose a fix, and check that they will pay. Ask the supplier for a deal that makes them money at no cost and little work, and put a time on the calendar. Ask the place where the audience already gathers for the attention you need, such as free placement, and talk about their users. A pay button on a simple page can be enough: one early version took about forty-eight hours and about fifty dollars. Chase the first dollar before you chase scale, because that sale creates momentum and these businesses began with one customer. If they refuse to pay, the small spend is what lets you leave for the next experiment."
+    },
+    {
+      "id": "s5",
+      "kind": "example",
+      "titleEn": "Talk, then take a deposit",
+      "bodyEn": "A minimum product still fails if nobody has agreed to pay, and so do a logo, a legal entity, a course, and a domain. Put the conversation first and change the offer before you make anything or spend. If the idea is dog walks, message three owners today and request payment for the walk. When they reveal a different pain, such as finding a sitter while they travel, ask for the next date and take a deposit before any code. The same shape fits software and homemade goods: ask people who share the pain, or offer a batch to people who already like what you make, and include a pay link. Fill the paid orders, and buy ingredients or build the tool with money that has already arrived. The website, the class, and the bigger kitchen can wait until the revenue says you need them.",
+      "terms": [
+        {
+          "en": "Founder First",
+          "hook": "Building your favorite setup before anyone has paid."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Name three groups",
+      "bodyEn": "Find customers inside who you are, what you know, and who you know. Write three groups you can reach easily and would be excited to help, such as neighbors, colleagues, or a hobby circle. Prefer people with names, in groups that already gather online or in person. Large companies have begun by writing friends or serving one named customer, so a personal network is a valid start. Confirm that access before you fall in love with an idea. The better you know the group, the more specifically you can name the problem, and a specific problem is easier to test. Take a first version straight to them and ask how it should change, because extra private research is often a way to avoid that conversation.",
+      "terms": [
+        {
+          "en": "Zone of Influence",
+          "hook": "People you can contact today because you already belong near them."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Log today's frustrations",
+      "bodyEn": "Strong starters stay dissatisfied, and they keep asking how ordinary things could work better. Annoyances in your own day, and the same annoyances in people near you, are where offers hide. Study what bothered you at home, what wasted time on the way to work, and what failed while you were online. Write the list while the day is fresh, and keep going until it feels endless. Begin by noticing where your day feels worse than it should, then turn one of those moments into an offer. Invite a few friends to a dated test, name the problem you share, state the price, and ask them to pay in advance. Ask about limits such as diet or timing, because the payment and the notes are the business being born."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Filter pain, skill, and niche",
+      "bodyEn": "Leave trend-copying, a perfect vision, and inspiration rituals off this pass. Look for the most painful problem you can solve, because that pain is also the value. You want passion for it, or a skill that is unusually yours. Aim at the largest niche you already belong to and understand. Stay inside your zone: the followers, the local group, the chat, or the forum where you already know the talk. Go to that community as a problem seeker and listen for what they already resent. Those three filters are the selection rule, and they take light work."
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Mine your own annoyances",
+      "bodyEn": "Answer four prompts: what irritated you this morning, what has sat on your list for over a week, what you regularly do badly, and what you wanted to buy only to find that nobody made it. Keep a notebook nearby and write the bother down when it happens. A long search you would have paid someone to finish can become a done-for-you service in one category. A result you want from a luxury provider, at a budget you can afford, can become a simpler version of that service. A repeated plan your friends cannot join can become a way to match you with one other person. Write at least three ideas from your own problems, and leave the clumsy ones on the page. Cutting too early hides the idea the later pass will need."
+    },
+    {
+      "id": "s10",
+      "kind": "try",
+      "titleEn": "Borrow demand that pays",
+      "bodyEn": "Start from products that already sell in large numbers, then add an accessory or a service for the people who bought them. A crowd that has already spent money is easier to sell to than a crowd you still have to convince. Write two ideas in that shape, such as a customization, a tutorial for a popular game, or lessons for a computer people already own. Then visit places where strangers are trying to spend: Craigslist gigs, Etsy, Facebook Marketplace, and completed listings on eBay. Read repeated requests people will pay to have done, and read finished sales so you can see price and how often buyers show up. Write at least one product or service from that browsing. Leave the weak and strange lines on the list, because this pass is for volume and the cut comes next."
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "Harvest questions, keep three",
+      "bodyEn": "Sell what people already want, and use the questions they type as a line into that want. Work from a searched question toward a fix they might pay for, and use a question tool to list the common asks around a keyword. Mark the fix as a must-have or a nice-to-have, and keep the must-have. On large forums, read boards where people ask someone to build a thing, and grab the first requests that interest you. Aim for about ten ideas across the four drills, and you may add the suggestion a friend sent you in the opening chapter. Cross off any idea that does not excite you, and stop if three are clearly the ones you want. If you still cannot choose, keep the ones that are easiest to try and that you, plus a customer like you, would gladly pay for, knowing the idea may change later."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Check the idea list",
+      "bodyEn": "Confirm a payer before you build, and work backward from who hurts, what hurts, and where they are. Prefer a must-have you share, and let a buyer's payment overrule a mentor's doubt. Message people you can already reach, and take a deposit when they name the pain. List three groups, then log the frustrations of an ordinary day. Generate volume from your own annoyances, from products that already sell, from marketplace requests, and from questions people already search. Keep about ten ideas, then three that excite you, or the easiest ones you would pay for. The next chapter tests whether one of those three is a large opportunity, so the job here is a real list.",
+      "prompt": "How do you arrive at three ideas worth testing?",
+      "choices": [
+        "Build the product, the logo, and the company, then look for someone to sell to",
+        "Copy the latest trend from a stranger and wait for a perfect product to appear",
+        "Ask a mentor whether the idea is good and treat that opinion as the customer",
+        "Start with groups you can reach, generate problems from your life, existing demand, marketplaces, and live questions, then keep three you would pay to solve"
+      ],
+      "answer": 3
+    }
+  ]
+}

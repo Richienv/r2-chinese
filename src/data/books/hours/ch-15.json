@@ -1,0 +1,138 @@
+{
+  "id": "15",
+  "index": 15,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Avoid four biases",
+  "titleSource": "Appendix 3",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Doubt the first pick",
+      "bodyEn": "Career decisions are a place where research on irrationality matters, and this appendix surveys that research for job choices. People tend to know less than they think, to be overconfident, to see too few options, and to stay on paths that have stopped being best. The practical response is more scepticism about your own decision, a wider set of options, and a more systematic use of evidence. The appendix then takes four biases and pairs each with a move you can actually make. Run the list before you commit years. A confident feeling is a weak sign that the check is finished."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Widen the frame",
+      "bodyEn": "Narrow framing shows up in two places: too few options, and too few objectives when you compare the options you do see. Availability of whatever comes to mind first, anchoring on an early fact, a pull toward the status quo, and extra weight on time already spent all feed that narrowness. A thin menu and a thin scorecard can stack, so the career you pick can be worse on fit and on impact than one you never wrote down. Spend time generating options with a structured process, such as the steps in the appendix on tough decisions. Talk with a diverse set of people, and for each leading option write reasons it might be a poor choice. A wider menu plus a wider scorecard is the correction.",
+      "terms": [
+        {
+          "en": "narrow framing",
+          "hook": "If they say this, they mean seeing too few options or too few goals when you compare them."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Leave sunk costs",
+      "bodyEn": "The sunk cost pattern keeps people in work that has stopped helping, because past years feel like a reason to continue. Those years are already gone, so they drop out of the choice you are making today. Knowing the name of the bias, thinking hard about it, or talking it over often changes little. Stronger moves are to treat your current skills as if they had just appeared, list the future pros and cons of each alternative from now, and explain the choice to someone else. Justification to another person makes a biased reason harder to defend. Staying can still be right when the future case is strong, and that future case is the test.",
+      "terms": [
+        {
+          "en": "sunk cost",
+          "hook": "If they say this, they mean time or money already spent, which the next decision cannot recover."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Use the base rate",
+      "bodyEn": "People often judge their odds by asking how much they resemble a successful person in the field. If success is rare for everyone, that resemblance overstates the chance, which is what happens when the base rate is ignored. General overconfidence adds to it, because most people think they are above average and underestimate how long tasks take. The career cost is aiming at outcomes almost nobody achieves, while the useful aim is high and still calibrated. List the traits and skills that actually predict success, measure yourself on them as objectively as you can, narrow the comparison to people like you, and take the success rate from that group. That rate is the base rate to use.",
+      "terms": [
+        {
+          "en": "base rate",
+          "hook": "If they say this, they mean how often people like you succeed in that field."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Check the gut",
+      "bodyEn": "A gut feeling is a poor sole guide for many career choices, even where popular advice treats it as decisive. After a systematic pass, list the factors that matter and score the options, even if the total will not automatically name the winner. The score is there to reveal factors a first impression skipped and to show where you need more information. Use any later unease as a signal to investigate, especially on questions where you have had fast feedback before. Novel comparisons between careers are where untrained intuition is weakest. Pair the scorecard with fresh evidence before you commit."
+    },
+    {
+      "id": "s6",
+      "kind": "check",
+      "titleEn": "Bias check",
+      "bodyEn": "Narrow framing, sunk costs, neglected base rates, and an untested gut are the four biases in this appendix. Widen the options and the objectives, and write why a favourite option might fail. Judge the future from where you stand today, and explain the choice to someone else. Estimate success from people who resemble you on the traits that matter, after you have measured those traits. Score the factors so a gut feeling can point at missing information. Scepticism plus a wider, evidence-based comparison is the remedy.",
+      "prompt": "Which response fits judging your odds by how much you resemble a star in the field?",
+      "choices": [
+        "Measure the traits that predict success, compare yourself with similar people, and use that group's success rate",
+        "Trust the resemblance, because looking the part replaces the base rate",
+        "Stay on the path because you have already invested years in it",
+        "Decide from the first option that comes to mind and skip other objectives"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Doubt the first pick",
+      "bodyEn": "Career decisions are a place where research on irrationality matters, and this appendix surveys that research for job choices. People tend to know less than they think, to be overconfident, to see too few options, and to stay on paths that have stopped being best. The practical response is more scepticism about your own decision, a wider set of options, and a more systematic use of evidence. The appendix then takes four biases and pairs each with a move you can actually make. Run the list before you commit years. A confident feeling is a weak sign that the check is finished."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Widen the frame",
+      "bodyEn": "Narrow framing shows up in two places: too few options, and too few objectives when you compare the options you do see. Availability of whatever comes to mind first, anchoring on an early fact, a pull toward the status quo, and extra weight on time already spent all feed that narrowness. A thin menu and a thin scorecard can stack, so the career you pick can be worse on fit and on impact than one you never wrote down. Spend time generating options with a structured process, such as the steps in the appendix on tough decisions. Talk with a diverse set of people, and for each leading option write reasons it might be a poor choice. A wider menu plus a wider scorecard is the correction.",
+      "terms": [
+        {
+          "en": "narrow framing",
+          "hook": "If they say this, they mean seeing too few options or too few goals when you compare them."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Leave sunk costs",
+      "bodyEn": "The sunk cost pattern keeps people in work that has stopped helping, because past years feel like a reason to continue. Those years are already gone, so they drop out of the choice you are making today. Knowing the name of the bias, thinking hard about it, or talking it over often changes little. Stronger moves are to treat your current skills as if they had just appeared, list the future pros and cons of each alternative from now, and explain the choice to someone else. Justification to another person makes a biased reason harder to defend. Staying can still be right when the future case is strong, and that future case is the test.",
+      "terms": [
+        {
+          "en": "sunk cost",
+          "hook": "If they say this, they mean time or money already spent, which the next decision cannot recover."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Use the base rate",
+      "bodyEn": "People often judge their odds by asking how much they resemble a successful person in the field. If success is rare for everyone, that resemblance overstates the chance, which is what happens when the base rate is ignored. General overconfidence adds to it, because most people think they are above average and underestimate how long tasks take. The career cost is aiming at outcomes almost nobody achieves, while the useful aim is high and still calibrated. List the traits and skills that actually predict success, measure yourself on them as objectively as you can, narrow the comparison to people like you, and take the success rate from that group. That rate is the base rate to use.",
+      "terms": [
+        {
+          "en": "base rate",
+          "hook": "If they say this, they mean how often people like you succeed in that field."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Check the gut",
+      "bodyEn": "A gut feeling is a poor sole guide for many career choices, even where popular advice treats it as decisive. After a systematic pass, list the factors that matter and score the options, even if the total will not automatically name the winner. The score is there to reveal factors a first impression skipped and to show where you need more information. Use any later unease as a signal to investigate, especially on questions where you have had fast feedback before. Novel comparisons between careers are where untrained intuition is weakest. Pair the scorecard with fresh evidence before you commit."
+    },
+    {
+      "id": "s6",
+      "kind": "check",
+      "titleEn": "Bias check",
+      "bodyEn": "Narrow framing, sunk costs, neglected base rates, and an untested gut are the four biases in this appendix. Widen the options and the objectives, and write why a favourite option might fail. Judge the future from where you stand today, and explain the choice to someone else. Estimate success from people who resemble you on the traits that matter, after you have measured those traits. Score the factors so a gut feeling can point at missing information. Scepticism plus a wider, evidence-based comparison is the remedy.",
+      "prompt": "Which response fits judging your odds by how much you resemble a star in the field?",
+      "choices": [
+        "Measure the traits that predict success, compare yourself with similar people, and use that group's success rate",
+        "Trust the resemblance, because looking the part replaces the base rate",
+        "Stay on the path because you have already invested years in it",
+        "Decide from the first option that comes to mind and skip other objectives"
+      ],
+      "answer": 0
+    }
+  ]
+}

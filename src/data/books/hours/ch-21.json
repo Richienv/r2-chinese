@@ -1,0 +1,146 @@
+{
+  "id": "21",
+  "index": 21,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Use problem profiles",
+  "titleSource": "Appendix 9",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "One more person",
+      "bodyEn": "These profiles score problems with scale, neglectedness, and solvability, the comparison introduced earlier in the guide, and they are summaries of longer pages that keep changing. The ranking is a guess at the expected impact of one additional person, assuming that person could contribute about equally to each problem. Work inside a single problem also varies widely, so a strong project on a lower-ranked issue can beat a weak project on a higher-ranked one. The order printed here is a May 2023 snapshot, and the website has the current version. Use a profile to decide whether the problem deserves your next serious look. The label on the profile is the decision, and the three scores are the reasons.",
+      "terms": [
+        {
+          "en": "scale",
+          "hook": "If they say this, they mean how much is at stake if the problem goes well or badly."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Two kinds of priority",
+      "bodyEn": "The top five in that May 2023 snapshot are preventing an AI-related catastrophe, catastrophic pandemics, nuclear war, great power conflict, and climate change. A second group is recommended because it can raise other people's impact whichever problems turn out to matter most. That group is building effective altruism, research on global priorities, and better decision-making, especially inside important institutions. A profile may be marked as a highest priority, as recommended, as sometimes recommended, or as capacity-building. Sometimes recommended means the problem can be a good focus for some people and is a weaker default than the top of the list. Read the label first, so you know which decision the scores are supporting."
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "The AI profile",
+      "bodyEn": "The AI profile's overall view is that the problem is among the most pressing and a highest priority. The scale concern is an extremely bad outcome, including extinction or a lasting loss of human control, and the appendix records wide disagreement, from some expert guesses around half of one percent to guesses above fifty percent, with this team's survey spanning about one percent to fifty-five percent and a median of fifteen percent. Neglectedness, in the figures given, is about fifty million dollars spent in 2020 on reducing catastrophic risk from AI, set against billions spent advancing capabilities, and about four hundred people working directly on the existential side, most of them on technical safety, inside a wide confidence range. Solvability is described as moderate and highly uncertain, in a young field with many open paths. Routes named in the summary include technical safety research, strategy, and policy, plus people to carry policies out, and complementary roles such as operations, journalism, and earning to give. The decision is that people well placed to contribute should treat this as a leading option, and people poorly placed should look at a complementary role or another problem.",
+      "terms": [
+        {
+          "en": "neglectedness",
+          "hook": "If they say this, they mean how little money and talent are already aimed at the problem."
+        },
+        {
+          "en": "solvability",
+          "hook": "If they say this, they mean whether extra effort can actually make progress."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Read the three scores",
+      "bodyEn": "Scale asks how bad the problem is if it goes badly, or how large the gain would be if it were solved, across many lives and many years. Neglectedness asks how few people and how little money are already on it, because an extra person matters more when the field is thin. Solvability asks whether that extra effort can move the problem, and a young field can still be tractable when the problem is hard. A huge problem that is crowded and stuck can lose to a smaller problem where you can make progress. The printed recommendation has already combined the three scores, and your job is to see whether you are using one score as a slogan. If one of the three is missing from your notes, you have not used the profile yet."
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Match a label",
+      "bodyEn": "Write the top five and the three capacity-building areas on one page. Cross out any area where you have a clear reason you cannot contribute, such as a missing skill you are unwilling to build or a constraint that blocks the main roles. For two areas that remain, rewrite the scale, neglectedness, and solvability points in your own words, and write the recommendation label beside them. Choose the area where your skills meet a highest-priority or capacity-building label, and name one role from that profile you could test. If AI risk is the leading label and your skills are operational, the complementary roles are part of the same decision. Open the full profile online before you treat the summary as final, because these pages are updated."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Update the snapshot",
+      "bodyEn": "Because the ranking is an organisational judgement that changes, check the website before a bet that will last many years. A sometimes-recommended problem can still be your best option when your abilities are concentrated there and the top problems have no role you can do. Capacity-building work is a way to help when you are unsure which problem will matter most, and it is still a choice of problem with its own fit test. The earlier chapter on urgent problems gives the longer case for several of these issues, and this appendix is the comparison sheet. Use the sheet to pick what to investigate next. Keep the assumption visible: the order is about one more person of similar ability."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Profile check",
+      "bodyEn": "Problem profiles rank the value of one more person, assuming similar ability, using scale, neglectedness, and solvability. The May 2023 top five run from AI risk through pandemics, nuclear war, great-power conflict, and climate change, beside a separate set of capacity-building priorities. Labels such as highest priority and sometimes recommended are the decision, and the scores are the support. The AI summary combines a severe downside, a thin field, and uncertain tractability, and it includes complementary roles for people who will do work other than the technical research. Strong personal fit can justify work outside the top of the list. Read the current full profile before you commit.",
+      "prompt": "What does the ranking in this appendix try to estimate?",
+      "choices": [
+        "The expected impact of one additional person, assuming they could contribute similarly to each problem",
+        "Which problem has been in the news most often this year",
+        "Which problem is easiest to explain to friends nearby",
+        "Which career has the highest salary"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "One more person",
+      "bodyEn": "These profiles score problems with scale, neglectedness, and solvability, the comparison introduced earlier in the guide, and they are summaries of longer pages that keep changing. The ranking is a guess at the expected impact of one additional person, assuming that person could contribute about equally to each problem. Work inside a single problem also varies widely, so a strong project on a lower-ranked issue can beat a weak project on a higher-ranked one. The order printed here is a May 2023 snapshot, and the website has the current version. Use a profile to decide whether the problem deserves your next serious look. The label on the profile is the decision, and the three scores are the reasons.",
+      "terms": [
+        {
+          "en": "scale",
+          "hook": "If they say this, they mean how much is at stake if the problem goes well or badly."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Two kinds of priority",
+      "bodyEn": "The top five in that May 2023 snapshot are preventing an AI-related catastrophe, catastrophic pandemics, nuclear war, great power conflict, and climate change. A second group is recommended because it can raise other people's impact whichever problems turn out to matter most. That group is building effective altruism, research on global priorities, and better decision-making, especially inside important institutions. A profile may be marked as a highest priority, as recommended, as sometimes recommended, or as capacity-building. Sometimes recommended means the problem can be a good focus for some people and is a weaker default than the top of the list. Read the label first, so you know which decision the scores are supporting."
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "The AI profile",
+      "bodyEn": "The AI profile's overall view is that the problem is among the most pressing and a highest priority. The scale concern is an extremely bad outcome, including extinction or a lasting loss of human control, and the appendix records wide disagreement, from some expert guesses around half of one percent to guesses above fifty percent, with this team's survey spanning about one percent to fifty-five percent and a median of fifteen percent. Neglectedness, in the figures given, is about fifty million dollars spent in 2020 on reducing catastrophic risk from AI, set against billions spent advancing capabilities, and about four hundred people working directly on the existential side, most of them on technical safety, inside a wide confidence range. Solvability is described as moderate and highly uncertain, in a young field with many open paths. Routes named in the summary include technical safety research, strategy, and policy, plus people to carry policies out, and complementary roles such as operations, journalism, and earning to give. The decision is that people well placed to contribute should treat this as a leading option, and people poorly placed should look at a complementary role or another problem.",
+      "terms": [
+        {
+          "en": "neglectedness",
+          "hook": "If they say this, they mean how little money and talent are already aimed at the problem."
+        },
+        {
+          "en": "solvability",
+          "hook": "If they say this, they mean whether extra effort can actually make progress."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Read the three scores",
+      "bodyEn": "Scale asks how bad the problem is if it goes badly, or how large the gain would be if it were solved, across many lives and many years. Neglectedness asks how few people and how little money are already on it, because an extra person matters more when the field is thin. Solvability asks whether that extra effort can move the problem, and a young field can still be tractable when the problem is hard. A huge problem that is crowded and stuck can lose to a smaller problem where you can make progress. The printed recommendation has already combined the three scores, and your job is to see whether you are using one score as a slogan. If one of the three is missing from your notes, you have not used the profile yet."
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Match a label",
+      "bodyEn": "Write the top five and the three capacity-building areas on one page. Cross out any area where you have a clear reason you cannot contribute, such as a missing skill you are unwilling to build or a constraint that blocks the main roles. For two areas that remain, rewrite the scale, neglectedness, and solvability points in your own words, and write the recommendation label beside them. Choose the area where your skills meet a highest-priority or capacity-building label, and name one role from that profile you could test. If AI risk is the leading label and your skills are operational, the complementary roles are part of the same decision. Open the full profile online before you treat the summary as final, because these pages are updated."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Update the snapshot",
+      "bodyEn": "Because the ranking is an organisational judgement that changes, check the website before a bet that will last many years. A sometimes-recommended problem can still be your best option when your abilities are concentrated there and the top problems have no role you can do. Capacity-building work is a way to help when you are unsure which problem will matter most, and it is still a choice of problem with its own fit test. The earlier chapter on urgent problems gives the longer case for several of these issues, and this appendix is the comparison sheet. Use the sheet to pick what to investigate next. Keep the assumption visible: the order is about one more person of similar ability."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Profile check",
+      "bodyEn": "Problem profiles rank the value of one more person, assuming similar ability, using scale, neglectedness, and solvability. The May 2023 top five run from AI risk through pandemics, nuclear war, great-power conflict, and climate change, beside a separate set of capacity-building priorities. Labels such as highest priority and sometimes recommended are the decision, and the scores are the support. The AI summary combines a severe downside, a thin field, and uncertain tractability, and it includes complementary roles for people who will do work other than the technical research. Strong personal fit can justify work outside the top of the list. Read the current full profile before you commit.",
+      "prompt": "What does the ranking in this appendix try to estimate?",
+      "choices": [
+        "The expected impact of one additional person, assuming they could contribute similarly to each problem",
+        "Which problem has been in the news most often this year",
+        "Which problem is easiest to explain to friends nearby",
+        "Which career has the highest salary"
+      ],
+      "answer": 0
+    }
+  ]
+}

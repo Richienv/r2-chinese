@@ -1,0 +1,266 @@
+{
+  "id": "11",
+  "index": 11,
+  "part": 3,
+  "partTitleEn": "Hyperfocus",
+  "titleEn": "Collecting Dots",
+  "titleSource": "Collecting Dots",
+  "sourcePages": "157-169",
+  "when": "Chapter 9",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "You become your dots",
+      "bodyEn": "Attentional space holds about four chunks, and memory is the larger store those chunks can join. Related dots cluster, which is how separate letters became words and sentences you now read without decoding each mark. An expert uses the same four slots more efficiently, because a whole cluster can count as one chunk. Intuition is stored experience you act on without pulling the memory up on purpose, such as sensing that a teammate is holding something back. You become what you repeatedly attend to, so later connections are only as good as the dots you encoded. Work that looks like magic is usually a dense cluster plus long practice, built by curiosity and hours.",
+      "terms": [
+        {
+          "en": "Cluster",
+          "hook": "Related dots grouped so they occupy less attentional space and support skill."
+        },
+        {
+          "en": "Intuition",
+          "hook": "Acting on experience you remember without consciously retrieving it."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Score the dot",
+      "bodyEn": "Attention takes information in gradually, while memory can hold an enormous amount, so each dot has to earn the slow trip in. The strongest dots are both useful and engaging. Useful means actionable, tied to a goal, and still relevant later. A useful dot either thickens a cluster you already have or brings in something unrelated that can challenge it. The engaging part is what keeps you with the material long enough to encode it. If you are unsure, ask how your work or life would change if you knew this, and let a blank answer be a reason to pass.",
+      "terms": [
+        {
+          "en": "Useful dot",
+          "hook": "Information that is actionable, durable, and either deepens a cluster or challenges one."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Four kinds of intake",
+      "bodyEn": "Sort what you take in into four kinds: useful, balanced, entertaining, and trash. Useful material is dense and practical, such as a serious book, a course, or a paper in your field, and a book can compress years of someone's lessons into a few hours. Balanced material is both useful and enjoyable, such as a novel, a podcast, a documentary, or a talk. Entertaining material can be a genuine pleasure you chose, and trash is the passive slice that is mostly novel, pleasing, or threatening and leaves you unsatisfied afterward. Spend useful intake when your energy is high, and balanced intake when your energy is lower. Use entertaining intake on purpose, or as a recharge, and shrink the trash.",
+      "terms": [
+        {
+          "en": "Four intakes",
+          "hook": "Useful, balanced, entertaining, and trash, matched to how much energy you have."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Audit two lists",
+      "bodyEn": "For a few days, write down everything you consume at work and at home. Include apps you open automatically, sites, books, shows, and courses, and note the duration when you want a sharper picture. Keep two lists if both work and personal intake are large. Assign each item to useful, balanced, entertaining, or trash. The aim is a clear picture of the pile so you can choose what stays. You will often find a feed that is larger than you thought, and a missing pleasure you used to value, such as fiction or a hobby you dropped. Reported average television time in the United States has been about thirty-four hours a week, which is the kind of number this audit makes personal.",
+      "terms": [
+        {
+          "en": "Intake audit",
+          "hook": "A few days of writing down everything you consume, sorted into the four kinds."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Cut two, add two",
+      "bodyEn": "Start with two or three habit changes, and leave the rest for later. Double down on topics you enjoy that other people avoid, and use the medium you actually learn from, whether audio, print, or pictures. Eliminate two trash items that stimulate you in the moment and leave you unsatisfied after. For each item you remove, add one valuable replacement. Prefer material that challenges you and needs your full attention, such as a harder course or a conversation with someone ahead of you. Also go deeper on a skill you are already good at, because a thicker cluster is what later reads as expertise.",
+      "terms": [
+        {
+          "en": "Swap the slot",
+          "hook": "Remove two unsatisfying trash items and put one valuable intake in each opening."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Catch the automatic reach",
+      "bodyEn": "Notice what you open when energy is low or when you switch tasks. Typical leaks are the app you tap when a friend leaves the table, the phone at the moment you wake, and the sites you visit with no aim. Those objects are convenient, and a convenient object still has to earn a place. If you are going to watch or play, decide the amount, what you will eat, and what you will do afterward, so the rest is an intention. While you are inside a book, a film, or a series, keep asking whether the rest of it deserves the hour. The urge to finish a weak start is an open loop, and a minute on something useless is a minute taken from something you meant to use.",
+      "terms": [
+        {
+          "en": "Intentional rest",
+          "hook": "A pleasure you chose in advance, with an amount and a next step, so it stays a rest."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Make it earn the hour",
+      "bodyEn": "Treat the description of a podcast, show, film, or book as a bid for your time. Decline the ones that download or record themselves, and save the hours for a bid you accept. If choosing is still hard, zoom out and imagine the next hour sped into a very short clip of your life. Ask whether you would want to watch yourself glazed over a screen or absorbed in pages you respect. The clip makes the consequence of the hour visible. Pick the option you would be glad to see yourself doing, including a rest you chose on purpose.",
+      "terms": [
+        {
+          "en": "Attention bid",
+          "hook": "A description that has to earn the hour before you press play or keep reading."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Collect far dots",
+      "bodyEn": "Distant dots often make the most valuable connections, so step outside your field on purpose. Open a random encyclopedia article, or read a public question answered by a specialist. Hear a band you have never heard, or read a book on a subject you know nothing about. Take a class you have been curious about, such as a craft, dance, or speaking. Pick up a biography of someone whose name you know and whose life you have never learned. Keep one of these odd intakes in the week so the surprise is scheduled.",
+      "terms": [
+        {
+          "en": "Far dot",
+          "hook": "A deliberate intake outside your field, kept in the week so unexpected links can form."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Scatter on a cue",
+      "bodyEn": "How often you scatter depends on how much hyperfocus you must recharge, how much creativity the work needs, and how much the plan itself matters. A long planning pass up front saves more time than it costs when the approach is the hard part. The brain needs a few minutes to switch modes, so a scatterfocus break of at least fifteen minutes beats a scrap of seconds, though a short break can still set the next intention, rest you, and catch an open loop. Keep a few easy cues: disconnect from about eight in the evening until eight in the morning, wander when a task ends, wake to an alarm that is not your phone, and carry only a notepad for coffee. Use the rest of the set the same way: a longer shower, five bored minutes, cooking with music, a nature walk, a gallery, a workout with no soundtrack, a phone-free day, and a hobby with the distractions tamed. You will look idle while you do this, and the creative mode is the part that is busy.",
+      "terms": [
+        {
+          "en": "Scatter cue",
+          "hook": "A daily trigger, from a finished task to a phone-free walk, that starts a chosen wander."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Which dot earns space",
+      "bodyEn": "Useful dots are actionable, durable, and either deepen a cluster or challenge it, and they belong in high-energy hours. Balanced dots carry you when energy is lower, and entertaining dots are appropriate when you chose them as rest or pleasure. Trash is the passive slice to shrink, two items at a time, with something valuable put back in each opening. Autopilot apps, and the duty to finish a weak start, are the usual leaks. A description should bid for your hour, and a zoomed-out view of that hour helps you decide. Far-off topics and a scheduled wander are how the better dots get a chance to meet.",
+      "prompt": "When should you consume the densest, most useful material?",
+      "choices": [
+        "Whenever a passive feed is the easiest thing in reach",
+        "When your energy is high enough to handle something dense",
+        "Only after every entertaining series is finished",
+        "During a scatterfocus walk, in place of letting the mind roam"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "You become your dots",
+      "bodyEn": "Attentional space holds about four chunks, and memory is the larger store those chunks can join. Related dots cluster, which is how separate letters became words and sentences you now read without decoding each mark. An expert uses the same four slots more efficiently, because a whole cluster can count as one chunk. Intuition is stored experience you act on without pulling the memory up on purpose, such as sensing that a teammate is holding something back. You become what you repeatedly attend to, so later connections are only as good as the dots you encoded. Work that looks like magic is usually a dense cluster plus long practice, built by curiosity and hours.",
+      "terms": [
+        {
+          "en": "Cluster",
+          "hook": "Related dots grouped so they occupy less attentional space and support skill."
+        },
+        {
+          "en": "Intuition",
+          "hook": "Acting on experience you remember without consciously retrieving it."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Score the dot",
+      "bodyEn": "Attention takes information in gradually, while memory can hold an enormous amount, so each dot has to earn the slow trip in. The strongest dots are both useful and engaging. Useful means actionable, tied to a goal, and still relevant later. A useful dot either thickens a cluster you already have or brings in something unrelated that can challenge it. The engaging part is what keeps you with the material long enough to encode it. If you are unsure, ask how your work or life would change if you knew this, and let a blank answer be a reason to pass.",
+      "terms": [
+        {
+          "en": "Useful dot",
+          "hook": "Information that is actionable, durable, and either deepens a cluster or challenges one."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Four kinds of intake",
+      "bodyEn": "Sort what you take in into four kinds: useful, balanced, entertaining, and trash. Useful material is dense and practical, such as a serious book, a course, or a paper in your field, and a book can compress years of someone's lessons into a few hours. Balanced material is both useful and enjoyable, such as a novel, a podcast, a documentary, or a talk. Entertaining material can be a genuine pleasure you chose, and trash is the passive slice that is mostly novel, pleasing, or threatening and leaves you unsatisfied afterward. Spend useful intake when your energy is high, and balanced intake when your energy is lower. Use entertaining intake on purpose, or as a recharge, and shrink the trash.",
+      "terms": [
+        {
+          "en": "Four intakes",
+          "hook": "Useful, balanced, entertaining, and trash, matched to how much energy you have."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Audit two lists",
+      "bodyEn": "For a few days, write down everything you consume at work and at home. Include apps you open automatically, sites, books, shows, and courses, and note the duration when you want a sharper picture. Keep two lists if both work and personal intake are large. Assign each item to useful, balanced, entertaining, or trash. The aim is a clear picture of the pile so you can choose what stays. You will often find a feed that is larger than you thought, and a missing pleasure you used to value, such as fiction or a hobby you dropped. Reported average television time in the United States has been about thirty-four hours a week, which is the kind of number this audit makes personal.",
+      "terms": [
+        {
+          "en": "Intake audit",
+          "hook": "A few days of writing down everything you consume, sorted into the four kinds."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Cut two, add two",
+      "bodyEn": "Start with two or three habit changes, and leave the rest for later. Double down on topics you enjoy that other people avoid, and use the medium you actually learn from, whether audio, print, or pictures. Eliminate two trash items that stimulate you in the moment and leave you unsatisfied after. For each item you remove, add one valuable replacement. Prefer material that challenges you and needs your full attention, such as a harder course or a conversation with someone ahead of you. Also go deeper on a skill you are already good at, because a thicker cluster is what later reads as expertise.",
+      "terms": [
+        {
+          "en": "Swap the slot",
+          "hook": "Remove two unsatisfying trash items and put one valuable intake in each opening."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Catch the automatic reach",
+      "bodyEn": "Notice what you open when energy is low or when you switch tasks. Typical leaks are the app you tap when a friend leaves the table, the phone at the moment you wake, and the sites you visit with no aim. Those objects are convenient, and a convenient object still has to earn a place. If you are going to watch or play, decide the amount, what you will eat, and what you will do afterward, so the rest is an intention. While you are inside a book, a film, or a series, keep asking whether the rest of it deserves the hour. The urge to finish a weak start is an open loop, and a minute on something useless is a minute taken from something you meant to use.",
+      "terms": [
+        {
+          "en": "Intentional rest",
+          "hook": "A pleasure you chose in advance, with an amount and a next step, so it stays a rest."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Make it earn the hour",
+      "bodyEn": "Treat the description of a podcast, show, film, or book as a bid for your time. Decline the ones that download or record themselves, and save the hours for a bid you accept. If choosing is still hard, zoom out and imagine the next hour sped into a very short clip of your life. Ask whether you would want to watch yourself glazed over a screen or absorbed in pages you respect. The clip makes the consequence of the hour visible. Pick the option you would be glad to see yourself doing, including a rest you chose on purpose.",
+      "terms": [
+        {
+          "en": "Attention bid",
+          "hook": "A description that has to earn the hour before you press play or keep reading."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Collect far dots",
+      "bodyEn": "Distant dots often make the most valuable connections, so step outside your field on purpose. Open a random encyclopedia article, or read a public question answered by a specialist. Hear a band you have never heard, or read a book on a subject you know nothing about. Take a class you have been curious about, such as a craft, dance, or speaking. Pick up a biography of someone whose name you know and whose life you have never learned. Keep one of these odd intakes in the week so the surprise is scheduled.",
+      "terms": [
+        {
+          "en": "Far dot",
+          "hook": "A deliberate intake outside your field, kept in the week so unexpected links can form."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Scatter on a cue",
+      "bodyEn": "How often you scatter depends on how much hyperfocus you must recharge, how much creativity the work needs, and how much the plan itself matters. A long planning pass up front saves more time than it costs when the approach is the hard part. The brain needs a few minutes to switch modes, so a scatterfocus break of at least fifteen minutes beats a scrap of seconds, though a short break can still set the next intention, rest you, and catch an open loop. Keep a few easy cues: disconnect from about eight in the evening until eight in the morning, wander when a task ends, wake to an alarm that is not your phone, and carry only a notepad for coffee. Use the rest of the set the same way: a longer shower, five bored minutes, cooking with music, a nature walk, a gallery, a workout with no soundtrack, a phone-free day, and a hobby with the distractions tamed. You will look idle while you do this, and the creative mode is the part that is busy.",
+      "terms": [
+        {
+          "en": "Scatter cue",
+          "hook": "A daily trigger, from a finished task to a phone-free walk, that starts a chosen wander."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Which dot earns space",
+      "bodyEn": "Useful dots are actionable, durable, and either deepen a cluster or challenge it, and they belong in high-energy hours. Balanced dots carry you when energy is lower, and entertaining dots are appropriate when you chose them as rest or pleasure. Trash is the passive slice to shrink, two items at a time, with something valuable put back in each opening. Autopilot apps, and the duty to finish a weak start, are the usual leaks. A description should bid for your hour, and a zoomed-out view of that hour helps you decide. Far-off topics and a scheduled wander are how the better dots get a chance to meet.",
+      "prompt": "When should you consume the densest, most useful material?",
+      "choices": [
+        "Whenever a passive feed is the easiest thing in reach",
+        "When your energy is high enough to handle something dense",
+        "Only after every entertaining series is finished",
+        "During a scatterfocus walk, in place of letting the mind roam"
+      ],
+      "answer": 1
+    }
+  ]
+}

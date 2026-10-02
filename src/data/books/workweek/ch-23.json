@@ -1,0 +1,142 @@
+{
+  "id": "23",
+  "index": 23,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Buy It There",
+  "titleSource": "How to Travel the World with 10 Pounds or Less",
+  "sourcePages": "",
+  "when": "Blog",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Enjoyment falls with weight",
+      "bodyEn": "Enjoyment of a trip falls as the bag gets heavier, because extra items become distractions you must haul. Pack a light kit for the days you are sure about, and buy the rest only when the need is certain. That practice is buy-it-there. Set aside a settling fund of about fifty to two hundred per trip to pay for those later purchases. Hypothetical gear stays at home. The bag holds a normal day, and the fund holds the surprises.",
+      "terms": [
+        {
+          "en": "buy it there",
+          "hook": "Pack what you are sure to use, and purchase the rest only when the need is real."
+        },
+        {
+          "en": "settling fund",
+          "hook": "A small amount set aside per trip for items you refuse to carry just in case."
+        },
+        {
+          "en": "certainty test",
+          "hook": "An item enters the bag only when you already know you will use it on this trip."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Stop packing contingencies",
+      "bodyEn": "Contingency packing is how a short trip grows into a load you drag up stairs. Extra shoes for a hike you have not booked, a formal outfit for a dinner that may never happen, and liquids that leak are the usual additions. Leave those to the fund. Buy the umbrella on the day it rains. Buy sunscreen and other bulky bottles when you are standing in the place that requires them. An item that is still a maybe on packing day stays out of the bag. Certainty is the test for every object."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Borrow before you buy",
+      "bodyEn": "Ask whether someone on the trip already owns the special tool before you buy one. A group going out to watch birds needs one pair of binoculars in the group, which you can borrow. Borrowing removes the weight and the expense together. Spend the fund when the need is real and the object is absent. A spare you carry in case the owner forgets is contingency packing again. One shared tool covers the job. Use the fund for what the group cannot lend."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Pack by the job",
+      "bodyEn": "Choose clothes by the job they do. Favor pieces that are light, dry quickly, and resist wrinkles. One sun layer, one warm layer, one pair of pants, and shorts that can also swim will cover most days. Two sets of light underwear replace a stack of cotton. Sandals with a heel strap handle walking and water. Judge each piece by function per ounce. If a specific event later demands another outfit, the fund buys it on site."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Alarm without the phone",
+      "bodyEn": "Wake up with a kitchen timer and leave the phone off overnight. A phone alarm usually needs the phone powered, and an incoming call can end the sleep early. The timer also shows how many hours you actually slept, which makes simple sleep tests possible. Carry a small lock that can fasten a bag to a fixed object and fit a locker hole. One roll of athletic tape repairs gear and can cover a minor scrape, so it replaces a heavier kit. Earplugs and a mask protect sleep in a noisy room. Each of these items earns its place because you already know the job it will do."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Cut every maybe",
+      "bodyEn": "Before the bag closes, remove anything that answers a maybe. What remains should look like an ordinary day, plus one repair item and one lock. Bring one or two books if you will read them, and leave the rest. Bring a camera only when you will use it on the days of this trip. When you are unsure, buy a simple version from the fund after you arrive. Practice the cut on a short trip before you depend on it for a long one. The refusal is the skill, and the fund is what makes the refusal safe."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Bag check",
+      "bodyEn": "The bag holds items you are sure this trip will use. A settling fund pays for what becomes necessary later. A special tool is borrowed before a duplicate is bought. Clothes are chosen by the job they do. A timer is the alarm, so the phone can stay off. Recall what earns a place in the bag.",
+      "prompt": "What earns an item a place in the bag?",
+      "choices": [
+        "You can imagine a scenario that might require it",
+        "You are sure this trip will use it",
+        "A travel brand recommends it for people like you",
+        "The suitcase still has room, so the weight can wait"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Enjoyment falls with weight",
+      "bodyEn": "Enjoyment of a trip falls as the bag gets heavier, because extra items become distractions you must haul. Pack a light kit for the days you are sure about, and buy the rest only when the need is certain. That practice is buy-it-there. Set aside a settling fund of about fifty to two hundred per trip to pay for those later purchases. Hypothetical gear stays at home. The bag holds a normal day, and the fund holds the surprises.",
+      "terms": [
+        {
+          "en": "buy it there",
+          "hook": "Pack what you are sure to use, and purchase the rest only when the need is real."
+        },
+        {
+          "en": "settling fund",
+          "hook": "A small amount set aside per trip for items you refuse to carry just in case."
+        },
+        {
+          "en": "certainty test",
+          "hook": "An item enters the bag only when you already know you will use it on this trip."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Stop packing contingencies",
+      "bodyEn": "Contingency packing is how a short trip grows into a load you drag up stairs. Extra shoes for a hike you have not booked, a formal outfit for a dinner that may never happen, and liquids that leak are the usual additions. Leave those to the fund. Buy the umbrella on the day it rains. Buy sunscreen and other bulky bottles when you are standing in the place that requires them. An item that is still a maybe on packing day stays out of the bag. Certainty is the test for every object."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Borrow before you buy",
+      "bodyEn": "Ask whether someone on the trip already owns the special tool before you buy one. A group going out to watch birds needs one pair of binoculars in the group, which you can borrow. Borrowing removes the weight and the expense together. Spend the fund when the need is real and the object is absent. A spare you carry in case the owner forgets is contingency packing again. One shared tool covers the job. Use the fund for what the group cannot lend."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Pack by the job",
+      "bodyEn": "Choose clothes by the job they do. Favor pieces that are light, dry quickly, and resist wrinkles. One sun layer, one warm layer, one pair of pants, and shorts that can also swim will cover most days. Two sets of light underwear replace a stack of cotton. Sandals with a heel strap handle walking and water. Judge each piece by function per ounce. If a specific event later demands another outfit, the fund buys it on site."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Alarm without the phone",
+      "bodyEn": "Wake up with a kitchen timer and leave the phone off overnight. A phone alarm usually needs the phone powered, and an incoming call can end the sleep early. The timer also shows how many hours you actually slept, which makes simple sleep tests possible. Carry a small lock that can fasten a bag to a fixed object and fit a locker hole. One roll of athletic tape repairs gear and can cover a minor scrape, so it replaces a heavier kit. Earplugs and a mask protect sleep in a noisy room. Each of these items earns its place because you already know the job it will do."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Cut every maybe",
+      "bodyEn": "Before the bag closes, remove anything that answers a maybe. What remains should look like an ordinary day, plus one repair item and one lock. Bring one or two books if you will read them, and leave the rest. Bring a camera only when you will use it on the days of this trip. When you are unsure, buy a simple version from the fund after you arrive. Practice the cut on a short trip before you depend on it for a long one. The refusal is the skill, and the fund is what makes the refusal safe."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Bag check",
+      "bodyEn": "The bag holds items you are sure this trip will use. A settling fund pays for what becomes necessary later. A special tool is borrowed before a duplicate is bought. Clothes are chosen by the job they do. A timer is the alarm, so the phone can stay off. Recall what earns a place in the bag.",
+      "prompt": "What earns an item a place in the bag?",
+      "choices": [
+        "You can imagine a scenario that might require it",
+        "You are sure this trip will use it",
+        "A travel brand recommends it for people like you",
+        "The suitcase still has room, so the weight can wait"
+      ],
+      "answer": 1
+    }
+  ]
+}

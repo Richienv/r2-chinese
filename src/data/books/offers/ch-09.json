@@ -1,0 +1,199 @@
+{
+  "id": "09",
+  "index": 9,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Problems into solutions",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Name the dream outcome",
+      "bodyEn": "Step one names the finished result the buyer already wants, and it puts a shorter clock on that result. A gym offer starts from the change itself, such as losing twenty pounds in six weeks, because people want the result and only put up with a membership as transport. Write the scene of arrival, including what they want to experience once they are there. Describe that destination before you describe the vehicle that carries it. The vehicle may later be a membership, a set of calls, or a course. This step is done when a stranger could picture the outcome and the time frame without hearing your format.",
+      "terms": [
+        {
+          "en": "Dream outcome",
+          "hook": "The result they already want, with a deadline and a scene of arrival."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Walk their next steps",
+      "bodyEn": "Step two lists every obstacle in the order the buyer will meet it. Include the moment immediately before they use what you sell and the moment immediately after. At each point, ask what they will need help with next. Write in more detail than feels comfortable, because every problem on the page is a problem you can remove. A short list leaves a live reason to decline. Cover the path before the result, during the work, and after the first win.",
+      "terms": [
+        {
+          "en": "Problem sequence",
+          "hook": "Obstacles in the order the buyer hits them, including just before and just after."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Four inverted drivers",
+      "bodyEn": "Sort each obstacle with the four value drivers turned upside down. One fear says the result will fail to be worth the money. A second says it will fail for this person, because they will quit or life will get in the way, and this is the bucket that changes most from offer to offer. A third says the work will feel too hard, too confusing, unpleasant, or like something they will be bad at. A fourth says it will take too much time, they are too busy, the result will arrive too slowly, or the schedule will be inconvenient. Use the four to start the list, then keep any extra fear that sits outside the buckets.",
+      "terms": [
+        {
+          "en": "Likelihood of achievement",
+          "hook": "The fear that it will fail for this buyer, or that life will knock them off."
+        },
+        {
+          "en": "Effort and sacrifice",
+          "hook": "The fear that the work will feel too hard, confusing, or unpleasant."
+        },
+        {
+          "en": "Time delay",
+          "hook": "The fear that the path is too slow, too busy, or too inconvenient."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "One action, many fears",
+      "bodyEn": "Take one action the buyer must perform and write a separate problem for money, fit, effort, and time. Buying food can fail as confusing, slow, expensive, impossible to keep up, crowded out by a family, or unclear while traveling. Run the same pass on the next actions, such as cooking, eating, and exercising. A few actions, four drivers, and two to four sub-problems under each core problem become dozens of problems, often somewhere between thirty and sixty. That volume is useful, because each fear is a place the sale can die and a place you can add value. Name the core action, then list every reason they would avoid starting it or would fail to continue it."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Reverse each problem",
+      "bodyEn": "Step three builds the solutions list, and the first move is to reverse each problem into a promise. Ask what you would need to show someone for that one fear to disappear. Turn the obstacle around, starting with how to and the opposite of the complaint. Hard becomes easy enough that a busy person can do it, expensive becomes cheaper than the bill they already pay, and slow becomes quick. A family conflict becomes a way to shop for everyone in one trip, and travel becomes a way to eat well away from home. Each line is a promise you intend to keep, and the delivery format is still undecided.",
+      "terms": [
+        {
+          "en": "How-to reversal",
+          "hook": "One fear becomes one promise, aimed at the opposite of that complaint."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "One gap blocks buying",
+      "bodyEn": "The same four drivers show up on every action, so many lines will sound alike, and that repetition is normal. Each line answers one reason to refuse and gives the buyer permission to purchase. One missing answer is enough for them to walk away, even when the rest of the list is strong. Get every problem down before you polish any sentence. The order of the work stays the same in fitness, in relationships, and in a narrow physical problem. The niche changes which obstacles appear, while the sequence of the work stays fixed."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Name each solution line",
+      "bodyEn": "The second move of step three is to name each promise so the lines stay separate in the buyer's mind. Put the benefit in the name, in ordinary language. A confusing grocery trip becomes a named promise that shopping can feel easy. A long trip becomes a named promise of speed, and a high bill becomes a named promise of spending less than they spend now. Keep one named line for each fear. A single vague promise that merges four fears hides the objection you still have to solve."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Stop before delivery",
+      "bodyEn": "Stop when the dream outcome is named, the problems are listed in lived order, and every problem has a how-to line with a name. You now hold a checklist of what you will solve. You have still left one-to-one help, a small group, a recording, and a tool unchosen. The next chapter decides how each promise will be delivered at a cost you can sustain. Solve every problem on the list, including the ones that inconvenience your preferred method. Bonuses, deadlines, quantity limits, and guarantees come after this list exists, and they sit on top of it."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Build order check",
+      "bodyEn": "This chapter uses a fixed build order, and it starts with the result the buyer wants. Obstacles come next, in the order the buyer will meet them, each checked for money, fit, effort, and time. Every obstacle becomes its own how-to promise, and every promise gets a benefit name. Vehicles, bonuses, and deadlines wait until that list is complete. A single unanswered fear on one step can lose the sale. The volume of problems is the raw material, so a longer list is an advantage.",
+      "prompt": "Which sequence matches this chapter?",
+      "choices": [
+        "A discount, then a headline, then the features you already deliver",
+        "Dream outcome, obstacles in lived order, then a named how-to for each fear",
+        "Pick the delivery format, then delete any problem you cannot solve this week",
+        "Scarcity, a guarantee, and a new name, with the problem list left empty"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Name the dream outcome",
+      "bodyEn": "Step one names the finished result the buyer already wants, and it puts a shorter clock on that result. A gym offer starts from the change itself, such as losing twenty pounds in six weeks, because people want the result and only put up with a membership as transport. Write the scene of arrival, including what they want to experience once they are there. Describe that destination before you describe the vehicle that carries it. The vehicle may later be a membership, a set of calls, or a course. This step is done when a stranger could picture the outcome and the time frame without hearing your format.",
+      "terms": [
+        {
+          "en": "Dream outcome",
+          "hook": "The result they already want, with a deadline and a scene of arrival."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Walk their next steps",
+      "bodyEn": "Step two lists every obstacle in the order the buyer will meet it. Include the moment immediately before they use what you sell and the moment immediately after. At each point, ask what they will need help with next. Write in more detail than feels comfortable, because every problem on the page is a problem you can remove. A short list leaves a live reason to decline. Cover the path before the result, during the work, and after the first win.",
+      "terms": [
+        {
+          "en": "Problem sequence",
+          "hook": "Obstacles in the order the buyer hits them, including just before and just after."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Four inverted drivers",
+      "bodyEn": "Sort each obstacle with the four value drivers turned upside down. One fear says the result will fail to be worth the money. A second says it will fail for this person, because they will quit or life will get in the way, and this is the bucket that changes most from offer to offer. A third says the work will feel too hard, too confusing, unpleasant, or like something they will be bad at. A fourth says it will take too much time, they are too busy, the result will arrive too slowly, or the schedule will be inconvenient. Use the four to start the list, then keep any extra fear that sits outside the buckets.",
+      "terms": [
+        {
+          "en": "Likelihood of achievement",
+          "hook": "The fear that it will fail for this buyer, or that life will knock them off."
+        },
+        {
+          "en": "Effort and sacrifice",
+          "hook": "The fear that the work will feel too hard, confusing, or unpleasant."
+        },
+        {
+          "en": "Time delay",
+          "hook": "The fear that the path is too slow, too busy, or too inconvenient."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "One action, many fears",
+      "bodyEn": "Take one action the buyer must perform and write a separate problem for money, fit, effort, and time. Buying food can fail as confusing, slow, expensive, impossible to keep up, crowded out by a family, or unclear while traveling. Run the same pass on the next actions, such as cooking, eating, and exercising. A few actions, four drivers, and two to four sub-problems under each core problem become dozens of problems, often somewhere between thirty and sixty. That volume is useful, because each fear is a place the sale can die and a place you can add value. Name the core action, then list every reason they would avoid starting it or would fail to continue it."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Reverse each problem",
+      "bodyEn": "Step three builds the solutions list, and the first move is to reverse each problem into a promise. Ask what you would need to show someone for that one fear to disappear. Turn the obstacle around, starting with how to and the opposite of the complaint. Hard becomes easy enough that a busy person can do it, expensive becomes cheaper than the bill they already pay, and slow becomes quick. A family conflict becomes a way to shop for everyone in one trip, and travel becomes a way to eat well away from home. Each line is a promise you intend to keep, and the delivery format is still undecided.",
+      "terms": [
+        {
+          "en": "How-to reversal",
+          "hook": "One fear becomes one promise, aimed at the opposite of that complaint."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "One gap blocks buying",
+      "bodyEn": "The same four drivers show up on every action, so many lines will sound alike, and that repetition is normal. Each line answers one reason to refuse and gives the buyer permission to purchase. One missing answer is enough for them to walk away, even when the rest of the list is strong. Get every problem down before you polish any sentence. The order of the work stays the same in fitness, in relationships, and in a narrow physical problem. The niche changes which obstacles appear, while the sequence of the work stays fixed."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Name each solution line",
+      "bodyEn": "The second move of step three is to name each promise so the lines stay separate in the buyer's mind. Put the benefit in the name, in ordinary language. A confusing grocery trip becomes a named promise that shopping can feel easy. A long trip becomes a named promise of speed, and a high bill becomes a named promise of spending less than they spend now. Keep one named line for each fear. A single vague promise that merges four fears hides the objection you still have to solve."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Stop before delivery",
+      "bodyEn": "Stop when the dream outcome is named, the problems are listed in lived order, and every problem has a how-to line with a name. You now hold a checklist of what you will solve. You have still left one-to-one help, a small group, a recording, and a tool unchosen. The next chapter decides how each promise will be delivered at a cost you can sustain. Solve every problem on the list, including the ones that inconvenience your preferred method. Bonuses, deadlines, quantity limits, and guarantees come after this list exists, and they sit on top of it."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Build order check",
+      "bodyEn": "This chapter uses a fixed build order, and it starts with the result the buyer wants. Obstacles come next, in the order the buyer will meet them, each checked for money, fit, effort, and time. Every obstacle becomes its own how-to promise, and every promise gets a benefit name. Vehicles, bonuses, and deadlines wait until that list is complete. A single unanswered fear on one step can lose the sale. The volume of problems is the raw material, so a longer list is an advantage.",
+      "prompt": "Which sequence matches this chapter?",
+      "choices": [
+        "A discount, then a headline, then the features you already deliver",
+        "Dream outcome, obstacles in lived order, then a named how-to for each fear",
+        "Pick the delivery format, then delete any problem you cannot solve this week",
+        "Scarcity, a guarantee, and a new name, with the problem list left empty"
+      ],
+      "answer": 1
+    }
+  ]
+}

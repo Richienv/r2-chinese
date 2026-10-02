@@ -1,0 +1,242 @@
+{
+  "id": "08",
+  "index": 8,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Eliminate then Delegate",
+  "titleSource": "Outsourcing Life: Off-loading the Rest and a Taste of Geoarbitrage",
+  "sourcePages": "Chapter 8",
+  "when": "Automation",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Practice giving orders",
+      "bodyEn": "Hiring a remote assistant is a two-to-four-week drill in giving orders, priced around one hundred to four hundred dollars, and meant to pay for itself inside ten to fourteen days. Whether you need the help is beside the point, because the drill is how you practice directing other people. It is also the first exercise in building a system that can run without you. A morning in the chapter shows the taste of that end: about an hour of email, work that finished overnight, and breakfast for about four dollars. Help in that scene cost about four to ten dollars an hour overseas, while domestic help was paid when the work shipped, which keeps the cash from running backward. Earning in a strong currency, living where prices are lower, and paying help where wages are lower is the taste of geoarbitrage here. Even an employee who never starts a company gets cleaner rules, because a useless task feels absurd once someone else would be paid to do it.",
+      "terms": [
+        {
+          "en": "virtual assistant",
+          "hook": "A remote person you direct, used here first as a short, cheap management drill."
+        },
+        {
+          "en": "geoarbitrage",
+          "hook": "Using gaps in prices and currencies so income, living costs, and help are not all priced in one place."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Eliminate before you delegate",
+      "bodyEn": "The first rule is to eliminate before you delegate. If a task can disappear, do not build a system for it, and if a simpler rule can do it, do not hire a person for it. Otherwise you pay someone to repeat a waste, so refine the process before you add people, because people multiply whatever process they are given. The email picture is filters, automatic replies, and forwarding, down to about ten or twenty answers a week, and a rare call was one short note because meetings were already gone. When a new activity appears, put it on your calendar if you will enjoy it. If you will not enjoy it, hand it off only when it produces income or meets an obligation and someone else can do it, and keep it yourself when it pays or is required and cannot be handed off. If you will not enjoy it, it does not pay, and nobody requires it, eliminate it.",
+      "terms": [
+        {
+          "en": "eliminate before you delegate",
+          "hook": "Remove or streamline a task before you pay a person to carry it."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Buy the hour back",
+      "bodyEn": "You can almost always do a task more cheaply than a helper, and that is a weak reason to keep it, because the point is time for larger work. A fifty-thousand-dollar year of forty-hour weeks across fifty weeks is about twenty-five dollars an hour. Spending those hours on work someone will do for ten dollars is a poor trade. A helper who costs more per hour than you earn can still be worth it. At thirty dollars an hour, eight hours costs two hundred forty dollars, the pay you would have earned in those hours is about two hundred, and the net price of the freed day is about forty dollars. The chapter asks whether you would pay about forty dollars a week to be done on Thursday, and it treats that figure as a worst case. If a boss might object, start with personal chores, or with business tasks that hide the money details and the company name."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Only clear, slow work",
+      "bodyEn": "A task earns a helper only when it eats real hours and the finished result is obvious, or you have only moved the mess. Giving a helper your headless running around does not improve the week. Fun is allowed, including a remote note that sets a lunch or a strange phone call, so control is not only grim. Work that needs a body in the room is out, and the surprising claim is how small that set is. Common tasks include research, scheduling, follow-ups, purchases, simple documents, proofreading, and updates to a database. Personal asks in the chapter run from reminders and errands to finding a lost person or arranging meals for a few dollars each. Ask whether a thing is possible before you decide it is not, and skip any handoff that takes longer to explain than to do yourself.",
+      "terms": [
+        {
+          "en": "well-defined task",
+          "hook": "A job with one meaning, a deadline, and a result you can check."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Price the finished task",
+      "bodyEn": "Overseas help often runs about four to fifteen dollars an hour, a time difference can return work by morning, and a specialist plan can cost a few thousand there against the mid five figures at home. Help in the United States or Canada often runs about twenty-five to one hundred dollars an hour. Judge the cost of the finished task, not the cost of the hour. Add the hours you spend restating and supervising, priced at your own rate. A weak first hire spent twenty-three hours on three small jobs and still set the wrong time, while a clearer later hire finished the same jobs in two hours at a higher rate and a lower total. Language friction can multiply the back-and-forth, so test more than one person and ask for excellent English plus the phone even if you might not call. Use domestic help when the words are the job, and use an overseas trial to force your own instructions into plain language.",
+      "terms": [
+        {
+          "en": "cost per task",
+          "hook": "The helper's bill plus the value of your time spent managing them, for one finished job."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Hire with a backup",
+      "bodyEn": "Do not depend on one person, because one illness the day you travel is a single point of failure. Hire a firm, or a lead who has backups, so the work continues when someone is out. One account manager can pass tasks to the right people and the right shift. Paying about ten percent more for that single contact is the frugal choice if it saves you from coordinating a crowd. Three people behind the lead can be enough, and two is thin. The strongest case in the chapter was one lead with five backups. The goal is redundancy, and a bigger logo is not the same thing.",
+      "terms": [
+        {
+          "en": "single point of failure",
+          "hook": "One person whose absence stops the system."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Keep a leak reversible",
+      "bodyEn": "Misuse of private information was rare in the interviews for this chapter, and the case that turned up was a rushed helper who subcontracted at the last minute. Forbid a small operator from handing your work to an untested freelancer unless you agree in writing. Prefer a firm that checks staff, uses a confidentiality promise, and limits who can see card numbers. Still assume a leak is possible, and design for a fast repair. Never use a debit card online or with a remote helper, because a credit charge is much easier to undo than cash already pulled from a bank. If they must log in for you, create a fresh login and password used only there, and have them open new accounts with those details. With those two rules, the usual nightmare stays reversible."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Write orders that cannot swell",
+      "bodyEn": "If you are new at giving orders, assume the first failures are yours. Do not keep the first person a firm offers: ask for excellent English and for someone who can use the phone, and replace them if the meaning keeps slipping. Write sentences with one interpretation, plain enough for a young reader, because fancy words hide a fuzzy ask. Have them restate the plan before they start, instead of waiting for them to admit they are lost. Ask for a status check after a few hours so an impossible task dies early, and cap the hours. Put the deadline inside seventy-two hours, with the best results at twenty-four or forty-eight, and break a large job into milestones that fit those windows. Send one task when you can, two at most, in a clear order, and eliminate anything that should not be done before it is handed over."
+    },
+    {
+      "id": "s9",
+      "kind": "example",
+      "titleEn": "One task, one note",
+      "bodyEn": "A clean task note names one job and asks whether they can do it. It tells them to reply with the plan they will follow before they begin. It sets an hour cap and a moment to stop and report what they found. It gives a deadline inside that cap, often the end of a named day, and it does not offer a week of silence. Clear orders come from clear thinking, so a note you cannot keep this short means you are not ready to delegate that job. Change the facts and keep the shape. The same clarity is what later automation chapters will require when you are not in the room at all."
+    },
+    {
+      "id": "s10",
+      "kind": "try",
+      "titleEn": "Start one of each",
+      "bodyEn": "Get an assistant even if the list looks manageable, and begin with one small daily task or a single test project. Use domestic help for language-heavy work and an overseas helper early so your writing is forced into plain steps, and start one of each. Pick from a directory or a marketplace with reviews, and interview before anything sensitive or important. Choose the item that has sat on your list the longest, ask whether a helper could take each interruption, and name the boring pain, which online often means articles, forums, affiliates, newsletters, or research. Also write five time-consuming personal tasks and five personal tasks you would assign for fun. Skip a handoff that takes longer to explain than to do, and take a task back if they cannot do it. If they will touch your calendar, both of you need the same updated schedule, with your private items hidden."
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "Use a criticism sandwich",
+      "bodyEn": "Once a day for two days, then each Thursday for three weeks, deliver a criticism sandwich to someone whose work needs a change. Monday through Wednesday is called too tense for this, and Friday too loose, which is why Thursday is the repeating day. Open with specific thanks for something they did well. Then name the change as your feeling about the workload, and avoid accusing them of always causing it. Ask them to point out the priority, or to fix the behavior, in one clear request. Close with a different compliment that leaves the sore topic, using a bridge such as a thing you almost forgot. The aim is the fix, said so the person can stay in the conversation."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "The order of handoff",
+      "bodyEn": "Elimination comes before automation, and both come before a person is paid to do the work. A fair handoff eats real hours, has an obvious result, is capped, and is due soon after they repeat the plan back. The cheap hour loses to the expensive finished task when your own time disappears into corrections. A team with backups beats a single helper, and debit cards plus reused passwords turn a small leak into a long repair. Personal chores are a fair start when a boss should not see the company books in a stranger's hands. The drill is management practice, and the life it buys is the hours you no longer spend on work that failed the cut.",
+      "prompt": "What is the required order before work goes to an assistant?",
+      "choices": [
+        "Hire the lowest hourly rate, send a dozen tasks, and allow a week",
+        "Eliminate what you can, streamline what remains, then delegate one clear task with a short deadline",
+        "Keep every task you do better than a helper, and delegate only when you are already overwhelmed",
+        "Share your debit card and usual passwords so the helper can move faster"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Practice giving orders",
+      "bodyEn": "Hiring a remote assistant is a two-to-four-week drill in giving orders, priced around one hundred to four hundred dollars, and meant to pay for itself inside ten to fourteen days. Whether you need the help is beside the point, because the drill is how you practice directing other people. It is also the first exercise in building a system that can run without you. A morning in the chapter shows the taste of that end: about an hour of email, work that finished overnight, and breakfast for about four dollars. Help in that scene cost about four to ten dollars an hour overseas, while domestic help was paid when the work shipped, which keeps the cash from running backward. Earning in a strong currency, living where prices are lower, and paying help where wages are lower is the taste of geoarbitrage here. Even an employee who never starts a company gets cleaner rules, because a useless task feels absurd once someone else would be paid to do it.",
+      "terms": [
+        {
+          "en": "virtual assistant",
+          "hook": "A remote person you direct, used here first as a short, cheap management drill."
+        },
+        {
+          "en": "geoarbitrage",
+          "hook": "Using gaps in prices and currencies so income, living costs, and help are not all priced in one place."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Eliminate before you delegate",
+      "bodyEn": "The first rule is to eliminate before you delegate. If a task can disappear, do not build a system for it, and if a simpler rule can do it, do not hire a person for it. Otherwise you pay someone to repeat a waste, so refine the process before you add people, because people multiply whatever process they are given. The email picture is filters, automatic replies, and forwarding, down to about ten or twenty answers a week, and a rare call was one short note because meetings were already gone. When a new activity appears, put it on your calendar if you will enjoy it. If you will not enjoy it, hand it off only when it produces income or meets an obligation and someone else can do it, and keep it yourself when it pays or is required and cannot be handed off. If you will not enjoy it, it does not pay, and nobody requires it, eliminate it.",
+      "terms": [
+        {
+          "en": "eliminate before you delegate",
+          "hook": "Remove or streamline a task before you pay a person to carry it."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Buy the hour back",
+      "bodyEn": "You can almost always do a task more cheaply than a helper, and that is a weak reason to keep it, because the point is time for larger work. A fifty-thousand-dollar year of forty-hour weeks across fifty weeks is about twenty-five dollars an hour. Spending those hours on work someone will do for ten dollars is a poor trade. A helper who costs more per hour than you earn can still be worth it. At thirty dollars an hour, eight hours costs two hundred forty dollars, the pay you would have earned in those hours is about two hundred, and the net price of the freed day is about forty dollars. The chapter asks whether you would pay about forty dollars a week to be done on Thursday, and it treats that figure as a worst case. If a boss might object, start with personal chores, or with business tasks that hide the money details and the company name."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Only clear, slow work",
+      "bodyEn": "A task earns a helper only when it eats real hours and the finished result is obvious, or you have only moved the mess. Giving a helper your headless running around does not improve the week. Fun is allowed, including a remote note that sets a lunch or a strange phone call, so control is not only grim. Work that needs a body in the room is out, and the surprising claim is how small that set is. Common tasks include research, scheduling, follow-ups, purchases, simple documents, proofreading, and updates to a database. Personal asks in the chapter run from reminders and errands to finding a lost person or arranging meals for a few dollars each. Ask whether a thing is possible before you decide it is not, and skip any handoff that takes longer to explain than to do yourself.",
+      "terms": [
+        {
+          "en": "well-defined task",
+          "hook": "A job with one meaning, a deadline, and a result you can check."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Price the finished task",
+      "bodyEn": "Overseas help often runs about four to fifteen dollars an hour, a time difference can return work by morning, and a specialist plan can cost a few thousand there against the mid five figures at home. Help in the United States or Canada often runs about twenty-five to one hundred dollars an hour. Judge the cost of the finished task, not the cost of the hour. Add the hours you spend restating and supervising, priced at your own rate. A weak first hire spent twenty-three hours on three small jobs and still set the wrong time, while a clearer later hire finished the same jobs in two hours at a higher rate and a lower total. Language friction can multiply the back-and-forth, so test more than one person and ask for excellent English plus the phone even if you might not call. Use domestic help when the words are the job, and use an overseas trial to force your own instructions into plain language.",
+      "terms": [
+        {
+          "en": "cost per task",
+          "hook": "The helper's bill plus the value of your time spent managing them, for one finished job."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Hire with a backup",
+      "bodyEn": "Do not depend on one person, because one illness the day you travel is a single point of failure. Hire a firm, or a lead who has backups, so the work continues when someone is out. One account manager can pass tasks to the right people and the right shift. Paying about ten percent more for that single contact is the frugal choice if it saves you from coordinating a crowd. Three people behind the lead can be enough, and two is thin. The strongest case in the chapter was one lead with five backups. The goal is redundancy, and a bigger logo is not the same thing.",
+      "terms": [
+        {
+          "en": "single point of failure",
+          "hook": "One person whose absence stops the system."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Keep a leak reversible",
+      "bodyEn": "Misuse of private information was rare in the interviews for this chapter, and the case that turned up was a rushed helper who subcontracted at the last minute. Forbid a small operator from handing your work to an untested freelancer unless you agree in writing. Prefer a firm that checks staff, uses a confidentiality promise, and limits who can see card numbers. Still assume a leak is possible, and design for a fast repair. Never use a debit card online or with a remote helper, because a credit charge is much easier to undo than cash already pulled from a bank. If they must log in for you, create a fresh login and password used only there, and have them open new accounts with those details. With those two rules, the usual nightmare stays reversible."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Write orders that cannot swell",
+      "bodyEn": "If you are new at giving orders, assume the first failures are yours. Do not keep the first person a firm offers: ask for excellent English and for someone who can use the phone, and replace them if the meaning keeps slipping. Write sentences with one interpretation, plain enough for a young reader, because fancy words hide a fuzzy ask. Have them restate the plan before they start, instead of waiting for them to admit they are lost. Ask for a status check after a few hours so an impossible task dies early, and cap the hours. Put the deadline inside seventy-two hours, with the best results at twenty-four or forty-eight, and break a large job into milestones that fit those windows. Send one task when you can, two at most, in a clear order, and eliminate anything that should not be done before it is handed over."
+    },
+    {
+      "id": "s9",
+      "kind": "example",
+      "titleEn": "One task, one note",
+      "bodyEn": "A clean task note names one job and asks whether they can do it. It tells them to reply with the plan they will follow before they begin. It sets an hour cap and a moment to stop and report what they found. It gives a deadline inside that cap, often the end of a named day, and it does not offer a week of silence. Clear orders come from clear thinking, so a note you cannot keep this short means you are not ready to delegate that job. Change the facts and keep the shape. The same clarity is what later automation chapters will require when you are not in the room at all."
+    },
+    {
+      "id": "s10",
+      "kind": "try",
+      "titleEn": "Start one of each",
+      "bodyEn": "Get an assistant even if the list looks manageable, and begin with one small daily task or a single test project. Use domestic help for language-heavy work and an overseas helper early so your writing is forced into plain steps, and start one of each. Pick from a directory or a marketplace with reviews, and interview before anything sensitive or important. Choose the item that has sat on your list the longest, ask whether a helper could take each interruption, and name the boring pain, which online often means articles, forums, affiliates, newsletters, or research. Also write five time-consuming personal tasks and five personal tasks you would assign for fun. Skip a handoff that takes longer to explain than to do, and take a task back if they cannot do it. If they will touch your calendar, both of you need the same updated schedule, with your private items hidden."
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "Use a criticism sandwich",
+      "bodyEn": "Once a day for two days, then each Thursday for three weeks, deliver a criticism sandwich to someone whose work needs a change. Monday through Wednesday is called too tense for this, and Friday too loose, which is why Thursday is the repeating day. Open with specific thanks for something they did well. Then name the change as your feeling about the workload, and avoid accusing them of always causing it. Ask them to point out the priority, or to fix the behavior, in one clear request. Close with a different compliment that leaves the sore topic, using a bridge such as a thing you almost forgot. The aim is the fix, said so the person can stay in the conversation."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "The order of handoff",
+      "bodyEn": "Elimination comes before automation, and both come before a person is paid to do the work. A fair handoff eats real hours, has an obvious result, is capped, and is due soon after they repeat the plan back. The cheap hour loses to the expensive finished task when your own time disappears into corrections. A team with backups beats a single helper, and debit cards plus reused passwords turn a small leak into a long repair. Personal chores are a fair start when a boss should not see the company books in a stranger's hands. The drill is management practice, and the life it buys is the hours you no longer spend on work that failed the cut.",
+      "prompt": "What is the required order before work goes to an assistant?",
+      "choices": [
+        "Hire the lowest hourly rate, send a dozen tasks, and allow a week",
+        "Eliminate what you can, streamline what remains, then delegate one clear task with a short deadline",
+        "Keep every task you do better than a helper, and delegate only when you are already overwhelmed",
+        "Share your debit card and usual passwords so the helper can move faster"
+      ],
+      "answer": 1
+    }
+  ]
+}

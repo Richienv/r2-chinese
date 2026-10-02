@@ -1,0 +1,250 @@
+{
+  "id": "05",
+  "index": 5,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Which problems are urgent",
+  "titleSource": "Chapter 5",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Problem choice multiplies",
+      "bodyEn": "The authors spent more than ten years asking which problems are both large and neglected enough that effort would actually move them. Their summary is that the right problem can raise your impact by more than a hundred times, which would make the choice the main driver of a career. Pressing means big, neglected, and solvable, so an extra unit of effort goes further. That combination is usually different from the problem that comes to mind first. On their telling, cutting deaths from diarrhoea saved lives on a scale comparable to what ending war would have saved in the same era, and some future-focused problems may matter more again. The chapter explains why a local list often loses, and which kinds of problems replace it."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Why home ranks lower",
+      "bodyEn": "In rich countries, graduates who want to help often teach or treat patients at home, and only about five percent of US charitable donations go to international causes. Knowing the issues, and feeling a special duty to your own country, can be a genuine reason to focus locally. Facts the authors met around two thousand nine first pushed them from local issues toward poverty in the poorest countries, especially health, and they now rank some catastrophic global risks as more pressing still. Someone on the US poverty line is richer than about eighty-five percent of the world and about twenty times richer than the poorest hundreds of millions, with local prices already taken into account. About forty million people live in relative poverty in the US, against about six hundred fifty million in extreme poverty worldwide. Rich-country foreign aid is on the order of two hundred billion dollars a year, while welfare spending in the US alone is several times larger. Domestic programmes are also stickier, many do little under a fair test, and even the better ones are expensive for modest gains, though someone living in a low-income country may be right to stay nearby, and hardship at home can still be severe."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Global health still works",
+      "bodyEn": "Annual deaths from diarrhoea fell by about three million over five decades, with tools such as oral rehydration, while wars and political famines killed about two million people a year across the second half of the twentieth century. Similar victories arrived against other infections, a large share of them driven by aid, including the campaign that eradicated smallpox. Economists who think most international aid has failed often still treat global health as the exception, and William Easterly has argued for vaccines, antibiotics, food, better seeds, fertiliser, and roads as goods that raise what poor people can do for themselves. A disease-control review ranked treatments by quality-adjusted life years per dollar and found a sharp spike: the best, including some vaccines, are both effective and extremely cheap. The top of that list was more than ten times the average and about fifteen thousand times the worst, though mistakes in the analysis and a statistical pull toward the middle mean the very top should be discounted. The solid point remains that the best health interventions are many times the average, while people in poor countries still die of diseases that would have been treated as routine somewhere richer.",
+      "terms": [
+        {
+          "en": "quality-adjusted life year",
+          "hook": "If they say this, they mean a year of life adjusted for how healthy that year is."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "A hundredfold gap",
+      "bodyEn": "Because the world's poorest people are over twenty times poorer than poor people in rich countries, resources go roughly twenty times further in helping them. Choosing health, then the very best interventions inside it, can multiply the effect by something like five again. Together that is the chapter's rough hundredfold difference. A national health service and many US agencies will spend over thirty thousand dollars to provide one extra year of healthy life, which is a strong use of money by ordinary standards. GiveWell has found that about one hundred dollars to a top charity such as the Against Malaria Foundation can provide an infant with a year of healthy life, a few tenths of one percent of the rich-country price. That suggests one career at such a charity might match hundreds of ordinary rich-country efforts, and the authors expect a stricter, fuller comparison to find a smaller gap while leaving a huge one. If the hundredfold figure held, a ten percent donation to these charities would resemble giving ten times your income to rich-country poverty work, which is why many of the authors started giving at least that share."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Present problems beyond health",
+      "bodyEn": "A tenfold or hundredfold gain from a little research made them ask whether still better areas were waiting. They looked hard at ways to help the global poor through trade reform, easier migration, higher crop yields, and biomedical research. They also took factory farming seriously, because economic and political systems barely protect animal interests and on the order of one hundred billion animals die in factory farms each year. They helped found Animal Charity Evaluators to study the most effective ways to improve animal welfare. They still rank factory farming as urgent, and the profiles in a later appendix keep it on the list. Their main focus moved on, because the same framework made future generations look even larger and more neglected than global health."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Why the future counts",
+      "bodyEn": "Offered a choice between preventing one person's suffering next year and preventing the same suffering for one hundred people a hundred years from now, most people choose the larger, later group. Heavy investment in science, art, and wilderness is hard to explain if future people count for nothing. The authors side with that second option, following arguments they first met through Oxford's Future of Humanity Institute. Future generations cannot vote, buy, or organise, so institutions neglect them, which shows up in the long failure to reach a climate agreement that actually works. Their situation is abstract, so it is harder to picture than poverty or factory farms, and even goodwill is difficult to sustain. Earth should stay livable for hundreds of millions of years at a minimum, and if people last any serious share of that span, later generations could vastly outnumber the living, on the illustration of one generation per century across that whole stretch, which is about a million generations. Almost whatever you value, more of it could exist later, so a problem that touches the long future can dwarf a problem that touches only the present, provided we can actually affect it.",
+      "terms": [
+        {
+          "en": "future generations",
+          "hook": "If they say this, they mean people who will live later and cannot vote, buy, or lobby today."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Biorisk beside climate",
+      "bodyEn": "The most powerful help for future generations, on their view, is to prevent a catastrophe that ends advanced civilisation or prevents any future generations, because later work on poverty and disease never starts if that line is crossed. Climate change is the threat many people name, national leaders have called it the global threat of the age, and the authors agree it matters, including some risk of civilisational collapse. It is also widely acknowledged and already draws tens or hundreds of billions of dollars, so they expect more neglected and more existential issues to rank higher for an extra person. A newspaper once ordered fragments of smallpox DNA by mail, and a study estimated that a completed virus given to ten people could infect up to about two million within half a year and kill about six hundred sixty thousand if the response were slow. COVID-19 has killed over ten million and still looks milder than a natural or engineered disease of the kind they had already flagged, and they judge a pandemic killing over one hundred million in the next century to be at least as plausible as nuclear war or runaway climate change. Spending aimed at the worst pandemics is only about one to ten billion dollars a year, against over six hundred billion on climate, and bioweapons are among the few threats that might, given time, actually end everyone. Relatively plain steps exist, including tighter lab rules, larger stocks of protective equipment, and cheap diagnostics that catch new diseases quickly, which is why they rank biosecurity among the most pressing problems and still leave room for something more neglected.",
+      "terms": [
+        {
+          "en": "existential risk",
+          "hook": "If they say this, they mean a threat that could end advanced civilisation or prevent any future generations."
+        },
+        {
+          "en": "biosecurity",
+          "hook": "If they say this, they mean work that lowers the risk of catastrophic natural or engineered pandemics."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Alignment and AI risk",
+      "bodyEn": "A shift on the scale of the Industrial Revolution would shape every later generation, so finding the next one is a candidate for the most important work. They treat artificial intelligence as a faster and more neglected candidate than bioengineering aimed at redesigning human beings. Billions of dollars go into making systems more capable, and very little goes into making sure those capabilities are safe and actually benefit humanity. The harms they emphasise are misuse, such as more powerful weapons, and accidents, especially the alignment problem, which is the unsolved task of getting a very capable system to share human goals. Tasks once offered as proof that machines could not cope, from championship chess to truck driving to contest mathematics, fell faster than critics expected, and a survey of leading researchers in two thousand twenty-two found about half giving human-level systems at least an even chance by two thousand fifty, with enough uncertainty that an earlier arrival is also on the table. The gorilla comparison is their picture of an intelligence gap: the stronger side sets the terms for the weaker, so the transition could bring enormous prosperity or a loss of control, and only about three hundred people work full time on alignment directly, which is over ten times thinner than biosecurity. The field has serious backers, including Stephen Hawking, Stuart Russell, and Geoffrey Hinton, non-researchers can manage, assist, or fund it, and governments are still focused on nearer issues such as car rules and job loss, which is why the authors now spend more time on machine learning than on malaria nets.",
+      "terms": [
+        {
+          "en": "alignment problem",
+          "hook": "If they say this, they mean the unsolved task of making very capable AI systems pursue goals people actually want."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Going meta under uncertainty",
+      "bodyEn": "Their views shifted a great deal over twelve years and could shift again, so locking a whole career to one concrete problem can be the wrong response to uncertainty. Global priorities research is the first reply: only a tiny fraction of do-good spending studies how to spend the rest, in economics departments, policy shops, and groups such as Rethink Priorities, Oxford's Global Priorities Institute, and Open Philanthropy. A second reply is a broad intervention that helps society solve many later problems, such as more competent government or much better forecasts of geopolitical events, the kind of edge Philip Tetlock has documented, though US governance in particular is already crowded and they are unusually unsure about this whole category. A third reply is capacity: save money or build skill so you can act when you know more, and, better, grow a community that can redirect as the evidence changes. Giving What We Can is their multiplier, with each dollar put into growth associated with more than nine dollars already given to top charities and over three billion dollars pledged, and the gifts can move when the best target moves. 80,000 Hours is the parallel bet that many talented young people want to help and lack good advice, so better guidance might move thousands of careers and can change its recommendations when better options appear. They call these indirect strategies going meta, harder to audit than a direct project, and usually more neglected, which makes them a way to keep impact high while the top problem is still uncertain.",
+      "terms": [
+        {
+          "en": "global priorities research",
+          "hook": "If they say this, they mean research into which problems and methods help the most."
+        },
+        {
+          "en": "going meta",
+          "hook": "If they say this, they mean working one level up, on priorities, institutions, or a community, so many problems get solved better."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Build your own list",
+      "bodyEn": "Their published ranking is a starting point, collected in an appendix, and it depends on value judgements and empirical bets a reader might reject. There are concrete ways the authors could be wrong, so the list that matters for your career is your own. Personal fit can reorder it, because a great fit may give you over ten times the impact of a top-ranked problem that leaves you cold, and several different jobs can help each problem. New passions are easier to grow than most people expect, which widens the set of problems you can actually work on. Intuition expects a gentle slope, with most problems pretty good. Their picture is steep, because problems can differ by ten or a hundred times on scale, neglect, solvability, and fit. Getting the choice roughly right can therefore multiply an entire career, which is why they call it worth a real block of study."
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "From list to paths",
+      "bodyEn": "You can leave your top problem for later and still take this chapter seriously. Early years are for finding what you are good at and building valuable skills, and many people spend years before the work is direct. A rough future list still changes which skills are worth building, because reducing risks from artificial intelligence and improving global health ask for different experience, while a skill such as management travels to both. Even at the start, they suggest a couple of days to write the three global problems that are most pressing for you, given your values, your factual assumptions, and your fit. Next to that list, write what you are most unsure about and how you would learn it, by reading or by talking to someone. Their problem profiles are a starting set, and the up-to-date versions live with the organisation. The following chapter turns a problem into concrete ways to contribute, and a later chapter is where personal fit gets a full method."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Pressing problem check",
+      "bodyEn": "Problem choice can dominate a career because scale, neglect, and solvability sometimes differ by factors of ten or a hundred. For many graduates in rich countries, local poverty and local social programmes are smaller, better funded, and harder to move than health in the poorest countries. Global health has unusually cheap, well-tested tools, and future generations may matter more again because they are vast in number and missing from markets and elections. Biosecurity and the alignment of advanced artificial intelligence are the chapter's leading examples of large, thinly staffed, civilisation-scale risks. When the ranking is uncertain, priorities research, broad improvements in decision-making, and communities that can redirect money and talent are ways of going meta. Your own list still has to include personal fit, and a couple of days on the comparison is worth it even before your first specialised job.",
+      "prompt": "Why does this chapter treat many rich-country problems as less urgent for a graduate already living there?",
+      "choices": [
+        "Because people in rich countries never suffer",
+        "Because far more people are much poorer, less money already reaches them, and many local programmes are expensive and weak, while some neglected global and future problems are larger still",
+        "Because charity is only allowed to operate abroad",
+        "Because climate change is the only problem worth a career"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Problem choice multiplies",
+      "bodyEn": "The authors spent more than ten years asking which problems are both large and neglected enough that effort would actually move them. Their summary is that the right problem can raise your impact by more than a hundred times, which would make the choice the main driver of a career. Pressing means big, neglected, and solvable, so an extra unit of effort goes further. That combination is usually different from the problem that comes to mind first. On their telling, cutting deaths from diarrhoea saved lives on a scale comparable to what ending war would have saved in the same era, and some future-focused problems may matter more again. The chapter explains why a local list often loses, and which kinds of problems replace it."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Why home ranks lower",
+      "bodyEn": "In rich countries, graduates who want to help often teach or treat patients at home, and only about five percent of US charitable donations go to international causes. Knowing the issues, and feeling a special duty to your own country, can be a genuine reason to focus locally. Facts the authors met around two thousand nine first pushed them from local issues toward poverty in the poorest countries, especially health, and they now rank some catastrophic global risks as more pressing still. Someone on the US poverty line is richer than about eighty-five percent of the world and about twenty times richer than the poorest hundreds of millions, with local prices already taken into account. About forty million people live in relative poverty in the US, against about six hundred fifty million in extreme poverty worldwide. Rich-country foreign aid is on the order of two hundred billion dollars a year, while welfare spending in the US alone is several times larger. Domestic programmes are also stickier, many do little under a fair test, and even the better ones are expensive for modest gains, though someone living in a low-income country may be right to stay nearby, and hardship at home can still be severe."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Global health still works",
+      "bodyEn": "Annual deaths from diarrhoea fell by about three million over five decades, with tools such as oral rehydration, while wars and political famines killed about two million people a year across the second half of the twentieth century. Similar victories arrived against other infections, a large share of them driven by aid, including the campaign that eradicated smallpox. Economists who think most international aid has failed often still treat global health as the exception, and William Easterly has argued for vaccines, antibiotics, food, better seeds, fertiliser, and roads as goods that raise what poor people can do for themselves. A disease-control review ranked treatments by quality-adjusted life years per dollar and found a sharp spike: the best, including some vaccines, are both effective and extremely cheap. The top of that list was more than ten times the average and about fifteen thousand times the worst, though mistakes in the analysis and a statistical pull toward the middle mean the very top should be discounted. The solid point remains that the best health interventions are many times the average, while people in poor countries still die of diseases that would have been treated as routine somewhere richer.",
+      "terms": [
+        {
+          "en": "quality-adjusted life year",
+          "hook": "If they say this, they mean a year of life adjusted for how healthy that year is."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "A hundredfold gap",
+      "bodyEn": "Because the world's poorest people are over twenty times poorer than poor people in rich countries, resources go roughly twenty times further in helping them. Choosing health, then the very best interventions inside it, can multiply the effect by something like five again. Together that is the chapter's rough hundredfold difference. A national health service and many US agencies will spend over thirty thousand dollars to provide one extra year of healthy life, which is a strong use of money by ordinary standards. GiveWell has found that about one hundred dollars to a top charity such as the Against Malaria Foundation can provide an infant with a year of healthy life, a few tenths of one percent of the rich-country price. That suggests one career at such a charity might match hundreds of ordinary rich-country efforts, and the authors expect a stricter, fuller comparison to find a smaller gap while leaving a huge one. If the hundredfold figure held, a ten percent donation to these charities would resemble giving ten times your income to rich-country poverty work, which is why many of the authors started giving at least that share."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Present problems beyond health",
+      "bodyEn": "A tenfold or hundredfold gain from a little research made them ask whether still better areas were waiting. They looked hard at ways to help the global poor through trade reform, easier migration, higher crop yields, and biomedical research. They also took factory farming seriously, because economic and political systems barely protect animal interests and on the order of one hundred billion animals die in factory farms each year. They helped found Animal Charity Evaluators to study the most effective ways to improve animal welfare. They still rank factory farming as urgent, and the profiles in a later appendix keep it on the list. Their main focus moved on, because the same framework made future generations look even larger and more neglected than global health."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Why the future counts",
+      "bodyEn": "Offered a choice between preventing one person's suffering next year and preventing the same suffering for one hundred people a hundred years from now, most people choose the larger, later group. Heavy investment in science, art, and wilderness is hard to explain if future people count for nothing. The authors side with that second option, following arguments they first met through Oxford's Future of Humanity Institute. Future generations cannot vote, buy, or organise, so institutions neglect them, which shows up in the long failure to reach a climate agreement that actually works. Their situation is abstract, so it is harder to picture than poverty or factory farms, and even goodwill is difficult to sustain. Earth should stay livable for hundreds of millions of years at a minimum, and if people last any serious share of that span, later generations could vastly outnumber the living, on the illustration of one generation per century across that whole stretch, which is about a million generations. Almost whatever you value, more of it could exist later, so a problem that touches the long future can dwarf a problem that touches only the present, provided we can actually affect it.",
+      "terms": [
+        {
+          "en": "future generations",
+          "hook": "If they say this, they mean people who will live later and cannot vote, buy, or lobby today."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Biorisk beside climate",
+      "bodyEn": "The most powerful help for future generations, on their view, is to prevent a catastrophe that ends advanced civilisation or prevents any future generations, because later work on poverty and disease never starts if that line is crossed. Climate change is the threat many people name, national leaders have called it the global threat of the age, and the authors agree it matters, including some risk of civilisational collapse. It is also widely acknowledged and already draws tens or hundreds of billions of dollars, so they expect more neglected and more existential issues to rank higher for an extra person. A newspaper once ordered fragments of smallpox DNA by mail, and a study estimated that a completed virus given to ten people could infect up to about two million within half a year and kill about six hundred sixty thousand if the response were slow. COVID-19 has killed over ten million and still looks milder than a natural or engineered disease of the kind they had already flagged, and they judge a pandemic killing over one hundred million in the next century to be at least as plausible as nuclear war or runaway climate change. Spending aimed at the worst pandemics is only about one to ten billion dollars a year, against over six hundred billion on climate, and bioweapons are among the few threats that might, given time, actually end everyone. Relatively plain steps exist, including tighter lab rules, larger stocks of protective equipment, and cheap diagnostics that catch new diseases quickly, which is why they rank biosecurity among the most pressing problems and still leave room for something more neglected.",
+      "terms": [
+        {
+          "en": "existential risk",
+          "hook": "If they say this, they mean a threat that could end advanced civilisation or prevent any future generations."
+        },
+        {
+          "en": "biosecurity",
+          "hook": "If they say this, they mean work that lowers the risk of catastrophic natural or engineered pandemics."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Alignment and AI risk",
+      "bodyEn": "A shift on the scale of the Industrial Revolution would shape every later generation, so finding the next one is a candidate for the most important work. They treat artificial intelligence as a faster and more neglected candidate than bioengineering aimed at redesigning human beings. Billions of dollars go into making systems more capable, and very little goes into making sure those capabilities are safe and actually benefit humanity. The harms they emphasise are misuse, such as more powerful weapons, and accidents, especially the alignment problem, which is the unsolved task of getting a very capable system to share human goals. Tasks once offered as proof that machines could not cope, from championship chess to truck driving to contest mathematics, fell faster than critics expected, and a survey of leading researchers in two thousand twenty-two found about half giving human-level systems at least an even chance by two thousand fifty, with enough uncertainty that an earlier arrival is also on the table. The gorilla comparison is their picture of an intelligence gap: the stronger side sets the terms for the weaker, so the transition could bring enormous prosperity or a loss of control, and only about three hundred people work full time on alignment directly, which is over ten times thinner than biosecurity. The field has serious backers, including Stephen Hawking, Stuart Russell, and Geoffrey Hinton, non-researchers can manage, assist, or fund it, and governments are still focused on nearer issues such as car rules and job loss, which is why the authors now spend more time on machine learning than on malaria nets.",
+      "terms": [
+        {
+          "en": "alignment problem",
+          "hook": "If they say this, they mean the unsolved task of making very capable AI systems pursue goals people actually want."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Going meta under uncertainty",
+      "bodyEn": "Their views shifted a great deal over twelve years and could shift again, so locking a whole career to one concrete problem can be the wrong response to uncertainty. Global priorities research is the first reply: only a tiny fraction of do-good spending studies how to spend the rest, in economics departments, policy shops, and groups such as Rethink Priorities, Oxford's Global Priorities Institute, and Open Philanthropy. A second reply is a broad intervention that helps society solve many later problems, such as more competent government or much better forecasts of geopolitical events, the kind of edge Philip Tetlock has documented, though US governance in particular is already crowded and they are unusually unsure about this whole category. A third reply is capacity: save money or build skill so you can act when you know more, and, better, grow a community that can redirect as the evidence changes. Giving What We Can is their multiplier, with each dollar put into growth associated with more than nine dollars already given to top charities and over three billion dollars pledged, and the gifts can move when the best target moves. 80,000 Hours is the parallel bet that many talented young people want to help and lack good advice, so better guidance might move thousands of careers and can change its recommendations when better options appear. They call these indirect strategies going meta, harder to audit than a direct project, and usually more neglected, which makes them a way to keep impact high while the top problem is still uncertain.",
+      "terms": [
+        {
+          "en": "global priorities research",
+          "hook": "If they say this, they mean research into which problems and methods help the most."
+        },
+        {
+          "en": "going meta",
+          "hook": "If they say this, they mean working one level up, on priorities, institutions, or a community, so many problems get solved better."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Build your own list",
+      "bodyEn": "Their published ranking is a starting point, collected in an appendix, and it depends on value judgements and empirical bets a reader might reject. There are concrete ways the authors could be wrong, so the list that matters for your career is your own. Personal fit can reorder it, because a great fit may give you over ten times the impact of a top-ranked problem that leaves you cold, and several different jobs can help each problem. New passions are easier to grow than most people expect, which widens the set of problems you can actually work on. Intuition expects a gentle slope, with most problems pretty good. Their picture is steep, because problems can differ by ten or a hundred times on scale, neglect, solvability, and fit. Getting the choice roughly right can therefore multiply an entire career, which is why they call it worth a real block of study."
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "From list to paths",
+      "bodyEn": "You can leave your top problem for later and still take this chapter seriously. Early years are for finding what you are good at and building valuable skills, and many people spend years before the work is direct. A rough future list still changes which skills are worth building, because reducing risks from artificial intelligence and improving global health ask for different experience, while a skill such as management travels to both. Even at the start, they suggest a couple of days to write the three global problems that are most pressing for you, given your values, your factual assumptions, and your fit. Next to that list, write what you are most unsure about and how you would learn it, by reading or by talking to someone. Their problem profiles are a starting set, and the up-to-date versions live with the organisation. The following chapter turns a problem into concrete ways to contribute, and a later chapter is where personal fit gets a full method."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Pressing problem check",
+      "bodyEn": "Problem choice can dominate a career because scale, neglect, and solvability sometimes differ by factors of ten or a hundred. For many graduates in rich countries, local poverty and local social programmes are smaller, better funded, and harder to move than health in the poorest countries. Global health has unusually cheap, well-tested tools, and future generations may matter more again because they are vast in number and missing from markets and elections. Biosecurity and the alignment of advanced artificial intelligence are the chapter's leading examples of large, thinly staffed, civilisation-scale risks. When the ranking is uncertain, priorities research, broad improvements in decision-making, and communities that can redirect money and talent are ways of going meta. Your own list still has to include personal fit, and a couple of days on the comparison is worth it even before your first specialised job.",
+      "prompt": "Why does this chapter treat many rich-country problems as less urgent for a graduate already living there?",
+      "choices": [
+        "Because people in rich countries never suffer",
+        "Because far more people are much poorer, less money already reaches them, and many local programmes are expensive and weak, while some neglected global and future problems are larger still",
+        "Because charity is only allowed to operate abroad",
+        "Because climate change is the only problem worth a career"
+      ],
+      "answer": 1
+    }
+  ]
+}

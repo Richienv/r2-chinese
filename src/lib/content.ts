@@ -1,5 +1,7 @@
 import raw from '../data/hsk4a.json'
 import { overlayKeys, overlayWord } from './overlays'
+import { cachedDictionaryEntry } from './dictionary'
+import { formatDictionaryDefinition, naturalChineseSegments } from './dictionary-format'
 import type { BookData, GrammarPoint, IndexedVocab, Lesson, LessonText, Vocab } from './types'
 
 const data = raw as unknown as BookData
@@ -31,8 +33,15 @@ export interface Example {
 const extraExamples = new Map<string, Example>()
 
 export function lookup(word: string): Vocab | undefined {
-  return byZh.get(word)
+  const source = byZh.get(word)
+  if (source?.en && source.pinyin) return source
+  const dictionary = cachedDictionaryEntry(word)
+  if (!dictionary) return source
+  return { zh: word, pinyin: source?.pinyin || dictionary.pinyin, en: source?.en || formatDictionaryDefinition(dictionary.en), pos: source?.pos || '', note: source?.note || '' }
 }
+
+/** Exact source-course entry, independent of dictionary cache/provenance. */
+export function courseVocab(word: string): Vocab | undefined { return byZh.get(word) }
 
 export function lessonOf(word: string): number | undefined {
   return vocabIndex.find((v) => v.zh === word)?.lesson
@@ -83,36 +92,29 @@ export function segment(line: string): Token[] {
   return out
 }
 
-const HANZI_RUN = /[\u3400-\u9fff\uf900-\ufaff]+/g
-
 /**
- * Expand plain segment runs so unknown 汉字 are still tappable. Consecutive
- * unknown Hanzi stay one token (capped) so a learner can add a compound that
- * isn't in the book; punctuation stays untappable.
+ * Use natural Chinese word boundaries, then merge exact course compounds.
+ * Unknown words remain words: 是新闻 becomes 是 / 新闻, never an arbitrary chunk.
  */
 export function segmentForGloss(line: string): Token[] {
+  const parts = naturalChineseSegments(line)
   const out: Token[] = []
-  for (const tok of segment(line)) {
-    if (tok.vocab) {
-      out.push(tok)
-      continue
-    }
-    let last = 0
-    const text = tok.text
-    HANZI_RUN.lastIndex = 0
-    let m: RegExpExecArray | null
-    while ((m = HANZI_RUN.exec(text))) {
-      if (m.index > last) out.push({ text: text.slice(last, m.index) })
-      const run = m[0]
-      // Cap long unknown runs into ≤4-char chunks so taps stay word-sized.
-      for (let i = 0; i < run.length; ) {
-        const n = Math.min(4, run.length - i)
-        out.push({ text: run.slice(i, i + n) })
-        i += n
+  for (let i = 0; i < parts.length;) {
+    let text = parts[i]
+    let end = i + 1
+    // A course phrase can span ICU boundaries; a known single character must
+    // never steal half of a natural dictionary word like 新闻.
+    if (/^\p{Script=Han}+$/u.test(text)) {
+      let candidate = text
+      for (let j = i + 1; j < parts.length && candidate.length < maxWordLen; j++) {
+        if (!/^\p{Script=Han}+$/u.test(parts[j])) break
+        candidate += parts[j]
+        if (candidate.length > maxWordLen) break
+        if (byZh.has(candidate)) { text = candidate; end = j + 1 }
       }
-      last = m.index + run.length
     }
-    if (last < text.length) out.push({ text: text.slice(last) })
+    out.push({ text, vocab: lookup(text) })
+    i = end
   }
   return out
 }

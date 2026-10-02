@@ -1,0 +1,146 @@
+{
+  "id": "37",
+  "index": 37,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Outsource the Longest Chores",
+  "titleSource": "Zen and the Art of Rock Star Living",
+  "sourcePages": "",
+  "when": "Case",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The longest chores",
+      "bodyEn": "A Munich musician was running his own label, raising a small child, and watching the same chores sit on his list. The decision was to hand off whatever had lingered the longest, beginning with industry research, artist-page updates, press-photo retouching, and the mailing list. A remote helper checked the many sites once a week and sent one filtered report. A photo job posted one day came back finished the next, and that single return made the method feel real. Revenue stayed roughly where it had been. What changed was spare time and a clearer head. He treated those hours, not a bigger balance, as the sign that he had gotten richer.",
+      "terms": [
+        {
+          "en": "outsourcing",
+          "hook": "Sending the chore that sits longest on your list to someone who returns a finished result."
+        },
+        {
+          "en": "weekly report",
+          "hook": "One filtered summary of messages and comments, instead of a daily tour of every site."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Loved work only",
+      "bodyEn": "He refused writing and producing jobs unless he loved the project, which cut about ten draining hours from the week. He also stopped giving attention to people who only complained. The week that remained was about twenty-four to thirty hours, with office time near ten and still falling. Half of each day went to his daughter, then about twenty months old, and his wife took the other half. The aim after that was a paperless setup whose only office was a laptop. Income held steady while the hated work left. Love of the project became the filter for anything new."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "A side offer test",
+      "bodyEn": "He started testing a small product that taught languages through music, and he planned a click-to-license desk for film companies so negotiations would not last months. Neither test was a finished company. The decision was to try them while the label continued, not to wait for a perfect second business. The photo handoff had already saved hours and a few hundred dollars, which was enough proof to continue. A muse, in this case, is a side offer you can test without abandoning the work that already pays. Those tests were still open when he wrote. The calendar was lighter anyway.",
+      "terms": [
+        {
+          "en": "muse",
+          "hook": "A small offer tested beside the work that already pays, before it is allowed to become a second job."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Hours went to people",
+      "bodyEn": "He helped his wife leave a teaching job and open a cafe in Munich, and the cafe was running well after it opened. He scheduled six weeks in New York, Italian study and cycling in Sicily, and a later winter trip farther south or to Australia. He finally learned to shave with a straight razor, a skill he had postponed for years, and he planned a serious coffee course. He also recorded an album and wrote all the lyrics himself for the first time, for release on his own label. These are results of the cut, not extras piled onto the old week. The freed hours went to people and skills. The label stayed, and the life around it widened."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Calm before more cash",
+      "bodyEn": "The quieter result was permission to play with his daughter without treating the hour as wasted. He estimated productivity up by about seventy percent and doubt down by about eighty percent. He opened a blog so other musicians could follow the same sequence. Keeping only the work that excited him meant ignoring people who found the life unserious. He still had no boss, and he worked when he chose. Similar revenue with a controlled week was the outcome he reported. Beginners, in his account, should remove one boring chore before they chase a larger dream."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "One chore, then more",
+      "bodyEn": "Name what excites you and what wears you out, then stop accepting the wearing-out work. Hand off the chore that has lived on the list the longest, and judge the helper by a finished result. Replace daily checking with one weekly report. Spend the first saved hours on a person or a skill you kept delaying. Let a bigger product wait behind that first handoff. Ignore spectators who prefer the old grind. In this case, time and calm moved first, and income did not have to move for the life to change."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "What moved first",
+      "bodyEn": "This musician did not buy a new life with a sudden jump in revenue. He handed off the chores that lingered, dropped work he hated, and gave the hours back to his daughter, his music, and a few trips. The paycheck stayed roughly flat. Doubt fell, and the week settled in the mid-twenties of hours. A cafe, an album, and a language plan followed that cut. Recall which gain showed up before any higher income.",
+      "prompt": "What improved before his income did?",
+      "choices": [
+        "Spare time and a clearer head, at about the same revenue",
+        "A large raise that paid for the trips",
+        "Closing the label so the cafe could grow",
+        "Hiring a boss to manage the music"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The longest chores",
+      "bodyEn": "A Munich musician was running his own label, raising a small child, and watching the same chores sit on his list. The decision was to hand off whatever had lingered the longest, beginning with industry research, artist-page updates, press-photo retouching, and the mailing list. A remote helper checked the many sites once a week and sent one filtered report. A photo job posted one day came back finished the next, and that single return made the method feel real. Revenue stayed roughly where it had been. What changed was spare time and a clearer head. He treated those hours, not a bigger balance, as the sign that he had gotten richer.",
+      "terms": [
+        {
+          "en": "outsourcing",
+          "hook": "Sending the chore that sits longest on your list to someone who returns a finished result."
+        },
+        {
+          "en": "weekly report",
+          "hook": "One filtered summary of messages and comments, instead of a daily tour of every site."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Loved work only",
+      "bodyEn": "He refused writing and producing jobs unless he loved the project, which cut about ten draining hours from the week. He also stopped giving attention to people who only complained. The week that remained was about twenty-four to thirty hours, with office time near ten and still falling. Half of each day went to his daughter, then about twenty months old, and his wife took the other half. The aim after that was a paperless setup whose only office was a laptop. Income held steady while the hated work left. Love of the project became the filter for anything new."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "A side offer test",
+      "bodyEn": "He started testing a small product that taught languages through music, and he planned a click-to-license desk for film companies so negotiations would not last months. Neither test was a finished company. The decision was to try them while the label continued, not to wait for a perfect second business. The photo handoff had already saved hours and a few hundred dollars, which was enough proof to continue. A muse, in this case, is a side offer you can test without abandoning the work that already pays. Those tests were still open when he wrote. The calendar was lighter anyway.",
+      "terms": [
+        {
+          "en": "muse",
+          "hook": "A small offer tested beside the work that already pays, before it is allowed to become a second job."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Hours went to people",
+      "bodyEn": "He helped his wife leave a teaching job and open a cafe in Munich, and the cafe was running well after it opened. He scheduled six weeks in New York, Italian study and cycling in Sicily, and a later winter trip farther south or to Australia. He finally learned to shave with a straight razor, a skill he had postponed for years, and he planned a serious coffee course. He also recorded an album and wrote all the lyrics himself for the first time, for release on his own label. These are results of the cut, not extras piled onto the old week. The freed hours went to people and skills. The label stayed, and the life around it widened."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Calm before more cash",
+      "bodyEn": "The quieter result was permission to play with his daughter without treating the hour as wasted. He estimated productivity up by about seventy percent and doubt down by about eighty percent. He opened a blog so other musicians could follow the same sequence. Keeping only the work that excited him meant ignoring people who found the life unserious. He still had no boss, and he worked when he chose. Similar revenue with a controlled week was the outcome he reported. Beginners, in his account, should remove one boring chore before they chase a larger dream."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "One chore, then more",
+      "bodyEn": "Name what excites you and what wears you out, then stop accepting the wearing-out work. Hand off the chore that has lived on the list the longest, and judge the helper by a finished result. Replace daily checking with one weekly report. Spend the first saved hours on a person or a skill you kept delaying. Let a bigger product wait behind that first handoff. Ignore spectators who prefer the old grind. In this case, time and calm moved first, and income did not have to move for the life to change."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "What moved first",
+      "bodyEn": "This musician did not buy a new life with a sudden jump in revenue. He handed off the chores that lingered, dropped work he hated, and gave the hours back to his daughter, his music, and a few trips. The paycheck stayed roughly flat. Doubt fell, and the week settled in the mid-twenties of hours. A cafe, an album, and a language plan followed that cut. Recall which gain showed up before any higher income.",
+      "prompt": "What improved before his income did?",
+      "choices": [
+        "Spare time and a clearer head, at about the same revenue",
+        "A large raise that paid for the trips",
+        "Closing the label so the cafe could grow",
+        "Hiring a boss to manage the music"
+      ],
+      "answer": 0
+    }
+  ]
+}

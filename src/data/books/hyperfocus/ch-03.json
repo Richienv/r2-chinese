@@ -1,0 +1,178 @@
+{
+  "id": "03",
+  "index": 3,
+  "part": 3,
+  "partTitleEn": "Hyperfocus",
+  "titleEn": "Leave Autopilot Mode",
+  "titleSource": "Switching Off Autopilot Mode",
+  "sourcePages": "28-34",
+  "when": "Chapter 1",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Autopilot earns its keep",
+      "bodyEn": "A large share of the day runs on habit, about forty percent of actions, and that is what lets ordinary life keep moving. Treating every short reply like a major project would freeze the day, and the same is true of small chores. Intention in every minute would take a whole day of meditation, which almost nobody has. Attention is one of the decisions that deserves a deliberate choice anyway. On autopilot, a boss's message yanks the current task, a photo of you demands an immediate look, and a conversation becomes a race to answer. One of the simplest upgrades is to let the other person finish the sentence. The more of your limited attention you aim on purpose, the more focused, productive, and creative the day becomes.",
+      "terms": [
+        {
+          "en": "Autopilot",
+          "hook": "Habit running the moment so you can keep up, until it spends attention for you."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "The thirty-second count",
+      "bodyEn": "Take thirty seconds for one honest question. Through a normal day, how often do you choose what to focus on? Estimate how much of your time is decided in advance, with the task and the moment picked before you start. Most people find that share is small, and they notice only when they catch a daydream, a delay, the same few apps, or a moment of zoning out with someone they love. When that happens, name what you meant to be doing and move attention there. Write today's rough fraction down so you have a baseline. Later tactics are for raising that fraction."
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "Slips you already know",
+      "bodyEn": "A familiar slip is lying in bed while the mind replays the whole day and refuses sleep. Another is a cringe memory arriving at the worst moment, or a sharp idea appearing in the shower and staying away when you needed it at the desk. Another is walking into the kitchen and losing the reason you went. Another is a report with no deadline that will not hold still, while easy unimportant tasks gladly take the hour. Another is the loop of the same handful of apps, or a rotation of news, messages, and social feeds. Another is a worry that stays loud until it is resolved or it fades on its own. These are one problem showing several faces, and the coming chapters explain the mechanism and the counter-move."
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "Choose the object",
+      "bodyEn": "Every moment is a fork with far more paths than two: the page, the phone, the wall, the music, the person across from you, and a crowd of memories. Some paths are meaningful, some are pleasant, and some teach you something. The urgent and stimulating options in the room are rarely the significant ones. Choosing the most important object, and then staying with it, is the consequential decision of the day. You become what you repeatedly attend to. The grid that follows is how the chapter sorts that crowd so the choice is visible. The same grid applies at home as well as at work."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Unattractive work",
+      "bodyEn": "Sort every task with two questions: does this accomplish something, and is it attractive or unpleasant. Necessary work is unpleasant and productive, such as a team meeting or a call about the quarterly budget, and you usually have to push yourself into it. Unnecessary work is unpleasant and unproductive, such as rearranging papers or files for the sake of motion. People usually touch that box while dodging necessary or purposeful work. The motion feels like effort and still finishes nothing, which makes it a busy form of stalling. Necessary work belongs on the schedule even on the days you would rather avoid it. Unnecessary work can be dropped or shrunk the moment you notice it is a stall.",
+      "terms": [
+        {
+          "en": "Necessary work",
+          "hook": "Unpleasant and productive, so you usually have to push yourself."
+        },
+        {
+          "en": "Unnecessary work",
+          "hook": "Unpleasant and unproductive motion that finishes nothing."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Attractive work",
+      "bodyEn": "Distracting work is pleasant and unproductive: social feeds, most chat threads, news sites, low-value chatter, and the other fun that returns little. Small doses are the limit, and stronger attention management shrinks the time this box receives. Purposeful work is the sweet spot: engaging, high impact, and usually only three or four tasks for a given person. It tends to need more brainpower, and it is often work you do better than the people around you. For one person that might be rehearsal and performance, for another client meetings and study, for another designing a study, teaching, and funding, and for the author it is writing, reading research, and talks. At home the same box might be time with your kids, a side project, or local volunteering. A deliberately productive day lives in necessary work and purposeful work, and autopilot prefers the other two until a deadline forces the issue.",
+      "terms": [
+        {
+          "en": "Distracting work",
+          "hook": "Pleasant and unproductive, so it belongs in small doses."
+        },
+        {
+          "en": "Purposeful work",
+          "hook": "The few engaging, high-impact tasks that use your best attention."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Sort this month",
+      "bodyEn": "List the tasks that actually fill your month. Put each one in a box: necessary, unnecessary, distracting, or purposeful. Keep the labels honest, including the fun tasks that accomplish little and the dull tasks that accomplish a lot. Count the purposeful ones, and expect only a few. Mark which hours this week are currently aimed at the two unproductive boxes. Move one block of those hours onto a necessary task you have been pushing off, or onto a purposeful task. Keep the grid, because later chapters will use it again."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Name the productive pair",
+      "bodyEn": "Autopilot is useful for habits, and attention is still one choice worth making on purpose. The thirty-second question gives you a baseline for how often you choose your focus. Necessary work is dull and productive, and it belongs on the schedule. Unnecessary work is dull motion that finishes nothing, and distracting work is pleasant motion that finishes nothing. Purposeful work is the small set of high-impact tasks, often only three or four. A deliberately productive day lives in the necessary box and the purposeful box. The practice is to sort the month and move one block of hours onto that productive pair.",
+      "prompt": "Which tasks should fill most of a deliberately productive day?",
+      "choices": [
+        "Distracting work and unnecessary work, because they are easy to start",
+        "Necessary work and purposeful work, the productive pair on the grid",
+        "Only purposeful work, because necessary tasks can wait for a deadline",
+        "Whatever is newest, because urgency and importance are the same"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Autopilot earns its keep",
+      "bodyEn": "A large share of the day runs on habit, about forty percent of actions, and that is what lets ordinary life keep moving. Treating every short reply like a major project would freeze the day, and the same is true of small chores. Intention in every minute would take a whole day of meditation, which almost nobody has. Attention is one of the decisions that deserves a deliberate choice anyway. On autopilot, a boss's message yanks the current task, a photo of you demands an immediate look, and a conversation becomes a race to answer. One of the simplest upgrades is to let the other person finish the sentence. The more of your limited attention you aim on purpose, the more focused, productive, and creative the day becomes.",
+      "terms": [
+        {
+          "en": "Autopilot",
+          "hook": "Habit running the moment so you can keep up, until it spends attention for you."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "The thirty-second count",
+      "bodyEn": "Take thirty seconds for one honest question. Through a normal day, how often do you choose what to focus on? Estimate how much of your time is decided in advance, with the task and the moment picked before you start. Most people find that share is small, and they notice only when they catch a daydream, a delay, the same few apps, or a moment of zoning out with someone they love. When that happens, name what you meant to be doing and move attention there. Write today's rough fraction down so you have a baseline. Later tactics are for raising that fraction."
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "Slips you already know",
+      "bodyEn": "A familiar slip is lying in bed while the mind replays the whole day and refuses sleep. Another is a cringe memory arriving at the worst moment, or a sharp idea appearing in the shower and staying away when you needed it at the desk. Another is walking into the kitchen and losing the reason you went. Another is a report with no deadline that will not hold still, while easy unimportant tasks gladly take the hour. Another is the loop of the same handful of apps, or a rotation of news, messages, and social feeds. Another is a worry that stays loud until it is resolved or it fades on its own. These are one problem showing several faces, and the coming chapters explain the mechanism and the counter-move."
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "Choose the object",
+      "bodyEn": "Every moment is a fork with far more paths than two: the page, the phone, the wall, the music, the person across from you, and a crowd of memories. Some paths are meaningful, some are pleasant, and some teach you something. The urgent and stimulating options in the room are rarely the significant ones. Choosing the most important object, and then staying with it, is the consequential decision of the day. You become what you repeatedly attend to. The grid that follows is how the chapter sorts that crowd so the choice is visible. The same grid applies at home as well as at work."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Unattractive work",
+      "bodyEn": "Sort every task with two questions: does this accomplish something, and is it attractive or unpleasant. Necessary work is unpleasant and productive, such as a team meeting or a call about the quarterly budget, and you usually have to push yourself into it. Unnecessary work is unpleasant and unproductive, such as rearranging papers or files for the sake of motion. People usually touch that box while dodging necessary or purposeful work. The motion feels like effort and still finishes nothing, which makes it a busy form of stalling. Necessary work belongs on the schedule even on the days you would rather avoid it. Unnecessary work can be dropped or shrunk the moment you notice it is a stall.",
+      "terms": [
+        {
+          "en": "Necessary work",
+          "hook": "Unpleasant and productive, so you usually have to push yourself."
+        },
+        {
+          "en": "Unnecessary work",
+          "hook": "Unpleasant and unproductive motion that finishes nothing."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Attractive work",
+      "bodyEn": "Distracting work is pleasant and unproductive: social feeds, most chat threads, news sites, low-value chatter, and the other fun that returns little. Small doses are the limit, and stronger attention management shrinks the time this box receives. Purposeful work is the sweet spot: engaging, high impact, and usually only three or four tasks for a given person. It tends to need more brainpower, and it is often work you do better than the people around you. For one person that might be rehearsal and performance, for another client meetings and study, for another designing a study, teaching, and funding, and for the author it is writing, reading research, and talks. At home the same box might be time with your kids, a side project, or local volunteering. A deliberately productive day lives in necessary work and purposeful work, and autopilot prefers the other two until a deadline forces the issue.",
+      "terms": [
+        {
+          "en": "Distracting work",
+          "hook": "Pleasant and unproductive, so it belongs in small doses."
+        },
+        {
+          "en": "Purposeful work",
+          "hook": "The few engaging, high-impact tasks that use your best attention."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Sort this month",
+      "bodyEn": "List the tasks that actually fill your month. Put each one in a box: necessary, unnecessary, distracting, or purposeful. Keep the labels honest, including the fun tasks that accomplish little and the dull tasks that accomplish a lot. Count the purposeful ones, and expect only a few. Mark which hours this week are currently aimed at the two unproductive boxes. Move one block of those hours onto a necessary task you have been pushing off, or onto a purposeful task. Keep the grid, because later chapters will use it again."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Name the productive pair",
+      "bodyEn": "Autopilot is useful for habits, and attention is still one choice worth making on purpose. The thirty-second question gives you a baseline for how often you choose your focus. Necessary work is dull and productive, and it belongs on the schedule. Unnecessary work is dull motion that finishes nothing, and distracting work is pleasant motion that finishes nothing. Purposeful work is the small set of high-impact tasks, often only three or four. A deliberately productive day lives in the necessary box and the purposeful box. The practice is to sort the month and move one block of hours onto that productive pair.",
+      "prompt": "Which tasks should fill most of a deliberately productive day?",
+      "choices": [
+        "Distracting work and unnecessary work, because they are easy to start",
+        "Necessary work and purposeful work, the productive pair on the grid",
+        "Only purposeful work, because necessary tasks can wait for a deadline",
+        "Whatever is newest, because urgency and importance are the same"
+      ],
+      "answer": 1
+    }
+  ]
+}

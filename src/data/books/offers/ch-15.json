@@ -1,0 +1,227 @@
+{
+  "id": "15",
+  "index": 15,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Reverse buyer risk",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Name the consequence",
+      "bodyEn": "The objection underneath most refusals is the risk that the thing will fail to do what this buyer needs. Reversing that risk makes an offer more attractive, so design the guarantee with the same care as the deliverables. A stronger guarantee, by itself, can multiply how many people buy. There are four families: unconditional, conditional, anti-guarantee, and implied. State the promise boldly and give the reason, including when the promise is that the sale is final. A line with no consequence for a miss is a slogan, and the force lives in what you will do next.",
+      "terms": [
+        {
+          "en": "Guarantee",
+          "hook": "If they miss the result, you do a named thing. The consequence is what sells."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Run the refund math",
+      "bodyEn": "Decide with the arithmetic, because some buyers will claim a bold guarantee and skip the work. Start from a baseline such as one hundred sales and five refunds, which leaves ninety-five. A stronger guarantee might produce one hundred thirty sales and thirteen refunds, which leaves one hundred seventeen. One hundred seventeen against ninety-five is about a twenty-three percent gain, even though the refund rate doubled from five percent to ten. The promise loses only when extra refunds erase the whole sales gain, and a doubling of a small refund rate rarely does that. Buyers who come only for the escape hatch can still be weak clients, so attach the remedy to the actions that create the result."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Put teeth in the sentence",
+      "bodyEn": "A guarantee with force has three slots: the result, the time, and what you will do if they miss it. Decide the third slot on purpose. A vague promise of twenty clients says nothing about failure. A stronger line promises twenty clients in the first thirty days, or their fee back plus the advertising dollars they spent with you. When fulfillment is expensive, prefer a promise with conditions, or a clearly final sale, since handing the cash back would stack on top of work you already paid to perform. Match the consequence to the fear. Generic satisfaction language wastes the third slot."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Unconditional trials",
+      "bodyEn": "An unconditional guarantee is the strongest family, and it behaves like a paid trial: they pay first, then decide whether to keep it. You will sell to more people, and some of them will ask for the money back. The remedy can be a full refund, a partial refund, a refund of ad spend and side costs, payment for a competitor's program, or their money back plus an extra amount. Fewer conditions mean more force and more risk for you. Make any reason sufficient, frame it as a chance to look inside before the real decision, and name it with a concrete picture rather than the word satisfaction. It fits lower-ticket consumer offers, where strong delivery can mean only a handful of claims across thousands of sales. It gets dangerous on high-ticket work that costs a lot to deliver, because you would return cash after having done the work.",
+      "terms": [
+        {
+          "en": "Unconditional guarantee",
+          "hook": "Any reason qualifies for the remedy. Strongest, and closest to a paid trial."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Conditions that produce the win",
+      "bodyEn": "A conditional guarantee adds terms, and the strong versions pay better than money back so your commitment feels as large as theirs. Write the actions that actually create success into the terms: attendance, reporting data, spending the ad budget, using the product. The ideal is that everyone qualifies and almost nobody claims, because they got the outcome and prefer it to a refund. Offered the outcome or the cash, most people take the outcome. You can stack a short unconditional window with a longer conditional that returns more than they paid. You can also stack two conditionals on results that happen in sequence, with a date on each, which makes the path feel scheduled and moves the risk onto you.",
+      "terms": [
+        {
+          "en": "Conditional guarantee",
+          "hook": "The remedy follows named actions and a named result inside a named time."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Work until it happens",
+      "bodyEn": "A service guarantee keeps you working at no extra fee until the result arrives, so you refund nothing and you stay on the hook for the outcome. Attach the key actions, and if they do the work and still miss the date you either continue or they are close enough that the claim cools. A modified version caps the extra work at another period, at least twice the original length, which is an easier place to start. A credit guarantee returns what they paid as credit toward anything else you sell, which helps an upsell because the worst case still buys something they already like. A personal-service version is you, one to one, until the result, with tight conditions so only someone who already did the hard parts can claim it. A delayed second payment waits to bill again until the first outcome, which forces your team to activate the client. A first-outcome version covers their side costs, such as ads, until that first result lands."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Bigger remedies, side costs",
+      "bodyEn": "An outsized conditional refund returns double or triple the fee, or a sum far above the price, and it requires them to do the work. Use it when margins are high and the required actions make failure unlikely, so a large remedy can add far more sales than the few claims it pays. It often beats a plain thirty-day refund once you subtract refunds, and it pushes clients to follow through. Ancillary versions repay the fee plus something concrete beside it, such as hotel and travel after a live event, or their hourly wage if a working session was useless. A wage claim can require proof of earnings, and almost nobody finishes that paperwork, though you should still pay a real claim. A release guarantee waives a cancellation fee or lets them out of a contract, and if you never enforce those clauses the promise costs little while it still removes fear. Match the remedy to the fear they actually hold, whether that is wasted travel, wasted wages, a trapped contract, or paying twice for one result."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Say the sale is final",
+      "bodyEn": "An anti-guarantee states that every sale is final, and it needs a reason a buyer accepts immediately. It fits anything used up on delivery, or anything that loses its value once seen, such as a piece of code, a set of opening lines, or the inside of your current ads and numbers. The reason is exposure: you are showing what cannot be unseen, so you cannot take it back. Say that directly, because the unusual stance does part of the persuading, and a mumbled missing-refund policy does not. It also fits expensive custom work, where you tell people who need an escape before they start that they are the wrong clients. Choose this family, or a conditional promise, when a cash refund would make you pay for delivery and then pay again in cash.",
+      "terms": [
+        {
+          "en": "Anti-guarantee",
+          "hook": "All sales are final, with a reason the buyer can accept, usually exposure or heavy custom work."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Get paid when it works",
+      "bodyEn": "Implied guarantees are performance structures: a fee per result, a share of revenue, a share of profit, a rate that steps up past thresholds, or a bonus when a trigger hits. If you miss, they pay nothing for the miss. If you hit, the pay was agreed before the work started. You need an outcome both sides can see, and a way to collect. The alignment keeps you tied to their result, encourages weak fits to walk away, and supports a longer relationship. A floor takes the greater of a minimum or a percentage, and a short setup fee can flip into pure performance after the first months. The cleanest form pays nothing until the result exists, and the hard part is tracking and collection.",
+      "terms": [
+        {
+          "en": "Performance deal",
+          "hook": "You are paid from the measured result. A miss means the fee does not come due."
+        },
+        {
+          "en": "Revenue share",
+          "hook": "A percent of the top-line money their business actually receives."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Stack guarantees, then loosen",
+      "bodyEn": "Guarantees stack the way bonuses do: a short window with no questions, plus a longer conditional that pays more than the fee, or two dated outcomes with actions attached to each. Build from their fears, including time, emotion, and outside costs, and make the promise specific. A guarantee magnifies a real offer, and it punishes a weak product or a weak sales process with refunds. Start with service guarantees or performance deals so you are committed to the result and the sale is effectively final. Keep that version while you scale, or loosen toward broader promises when you want more volume and can fulfill. Name the guarantee, put it beside the stack, and then name the whole offer so the right people can find it."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Which guarantee fits",
+      "bodyEn": "The four families reverse risk in different ways. Unconditional means any reason can trigger the remedy. Conditional means the remedy follows named actions and a named result. An anti-guarantee makes the sale final and explains the exposure. An implied guarantee pays you when the measured result shows up. Expensive delivery pushes you away from an open cash refund, because you would eat the work and the refund together. Choose the family that removes their fear and still lets you survive a claim.",
+      "prompt": "Delivery cost is high, and the result is easy to measure. Which family fits first?",
+      "choices": [
+        "An unconditional refund of the full fee plus their other expenses, with no actions required",
+        "Silence about risk, so the fear never enters the conversation",
+        "A conditional service promise or a performance deal, so pay follows the outcome",
+        "A seasonal rename, which reverses risk by changing the headline"
+      ],
+      "answer": 2
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Name the consequence",
+      "bodyEn": "The objection underneath most refusals is the risk that the thing will fail to do what this buyer needs. Reversing that risk makes an offer more attractive, so design the guarantee with the same care as the deliverables. A stronger guarantee, by itself, can multiply how many people buy. There are four families: unconditional, conditional, anti-guarantee, and implied. State the promise boldly and give the reason, including when the promise is that the sale is final. A line with no consequence for a miss is a slogan, and the force lives in what you will do next.",
+      "terms": [
+        {
+          "en": "Guarantee",
+          "hook": "If they miss the result, you do a named thing. The consequence is what sells."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Run the refund math",
+      "bodyEn": "Decide with the arithmetic, because some buyers will claim a bold guarantee and skip the work. Start from a baseline such as one hundred sales and five refunds, which leaves ninety-five. A stronger guarantee might produce one hundred thirty sales and thirteen refunds, which leaves one hundred seventeen. One hundred seventeen against ninety-five is about a twenty-three percent gain, even though the refund rate doubled from five percent to ten. The promise loses only when extra refunds erase the whole sales gain, and a doubling of a small refund rate rarely does that. Buyers who come only for the escape hatch can still be weak clients, so attach the remedy to the actions that create the result."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Put teeth in the sentence",
+      "bodyEn": "A guarantee with force has three slots: the result, the time, and what you will do if they miss it. Decide the third slot on purpose. A vague promise of twenty clients says nothing about failure. A stronger line promises twenty clients in the first thirty days, or their fee back plus the advertising dollars they spent with you. When fulfillment is expensive, prefer a promise with conditions, or a clearly final sale, since handing the cash back would stack on top of work you already paid to perform. Match the consequence to the fear. Generic satisfaction language wastes the third slot."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Unconditional trials",
+      "bodyEn": "An unconditional guarantee is the strongest family, and it behaves like a paid trial: they pay first, then decide whether to keep it. You will sell to more people, and some of them will ask for the money back. The remedy can be a full refund, a partial refund, a refund of ad spend and side costs, payment for a competitor's program, or their money back plus an extra amount. Fewer conditions mean more force and more risk for you. Make any reason sufficient, frame it as a chance to look inside before the real decision, and name it with a concrete picture rather than the word satisfaction. It fits lower-ticket consumer offers, where strong delivery can mean only a handful of claims across thousands of sales. It gets dangerous on high-ticket work that costs a lot to deliver, because you would return cash after having done the work.",
+      "terms": [
+        {
+          "en": "Unconditional guarantee",
+          "hook": "Any reason qualifies for the remedy. Strongest, and closest to a paid trial."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Conditions that produce the win",
+      "bodyEn": "A conditional guarantee adds terms, and the strong versions pay better than money back so your commitment feels as large as theirs. Write the actions that actually create success into the terms: attendance, reporting data, spending the ad budget, using the product. The ideal is that everyone qualifies and almost nobody claims, because they got the outcome and prefer it to a refund. Offered the outcome or the cash, most people take the outcome. You can stack a short unconditional window with a longer conditional that returns more than they paid. You can also stack two conditionals on results that happen in sequence, with a date on each, which makes the path feel scheduled and moves the risk onto you.",
+      "terms": [
+        {
+          "en": "Conditional guarantee",
+          "hook": "The remedy follows named actions and a named result inside a named time."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Work until it happens",
+      "bodyEn": "A service guarantee keeps you working at no extra fee until the result arrives, so you refund nothing and you stay on the hook for the outcome. Attach the key actions, and if they do the work and still miss the date you either continue or they are close enough that the claim cools. A modified version caps the extra work at another period, at least twice the original length, which is an easier place to start. A credit guarantee returns what they paid as credit toward anything else you sell, which helps an upsell because the worst case still buys something they already like. A personal-service version is you, one to one, until the result, with tight conditions so only someone who already did the hard parts can claim it. A delayed second payment waits to bill again until the first outcome, which forces your team to activate the client. A first-outcome version covers their side costs, such as ads, until that first result lands."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Bigger remedies, side costs",
+      "bodyEn": "An outsized conditional refund returns double or triple the fee, or a sum far above the price, and it requires them to do the work. Use it when margins are high and the required actions make failure unlikely, so a large remedy can add far more sales than the few claims it pays. It often beats a plain thirty-day refund once you subtract refunds, and it pushes clients to follow through. Ancillary versions repay the fee plus something concrete beside it, such as hotel and travel after a live event, or their hourly wage if a working session was useless. A wage claim can require proof of earnings, and almost nobody finishes that paperwork, though you should still pay a real claim. A release guarantee waives a cancellation fee or lets them out of a contract, and if you never enforce those clauses the promise costs little while it still removes fear. Match the remedy to the fear they actually hold, whether that is wasted travel, wasted wages, a trapped contract, or paying twice for one result."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Say the sale is final",
+      "bodyEn": "An anti-guarantee states that every sale is final, and it needs a reason a buyer accepts immediately. It fits anything used up on delivery, or anything that loses its value once seen, such as a piece of code, a set of opening lines, or the inside of your current ads and numbers. The reason is exposure: you are showing what cannot be unseen, so you cannot take it back. Say that directly, because the unusual stance does part of the persuading, and a mumbled missing-refund policy does not. It also fits expensive custom work, where you tell people who need an escape before they start that they are the wrong clients. Choose this family, or a conditional promise, when a cash refund would make you pay for delivery and then pay again in cash.",
+      "terms": [
+        {
+          "en": "Anti-guarantee",
+          "hook": "All sales are final, with a reason the buyer can accept, usually exposure or heavy custom work."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Get paid when it works",
+      "bodyEn": "Implied guarantees are performance structures: a fee per result, a share of revenue, a share of profit, a rate that steps up past thresholds, or a bonus when a trigger hits. If you miss, they pay nothing for the miss. If you hit, the pay was agreed before the work started. You need an outcome both sides can see, and a way to collect. The alignment keeps you tied to their result, encourages weak fits to walk away, and supports a longer relationship. A floor takes the greater of a minimum or a percentage, and a short setup fee can flip into pure performance after the first months. The cleanest form pays nothing until the result exists, and the hard part is tracking and collection.",
+      "terms": [
+        {
+          "en": "Performance deal",
+          "hook": "You are paid from the measured result. A miss means the fee does not come due."
+        },
+        {
+          "en": "Revenue share",
+          "hook": "A percent of the top-line money their business actually receives."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Stack guarantees, then loosen",
+      "bodyEn": "Guarantees stack the way bonuses do: a short window with no questions, plus a longer conditional that pays more than the fee, or two dated outcomes with actions attached to each. Build from their fears, including time, emotion, and outside costs, and make the promise specific. A guarantee magnifies a real offer, and it punishes a weak product or a weak sales process with refunds. Start with service guarantees or performance deals so you are committed to the result and the sale is effectively final. Keep that version while you scale, or loosen toward broader promises when you want more volume and can fulfill. Name the guarantee, put it beside the stack, and then name the whole offer so the right people can find it."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Which guarantee fits",
+      "bodyEn": "The four families reverse risk in different ways. Unconditional means any reason can trigger the remedy. Conditional means the remedy follows named actions and a named result. An anti-guarantee makes the sale final and explains the exposure. An implied guarantee pays you when the measured result shows up. Expensive delivery pushes you away from an open cash refund, because you would eat the work and the refund together. Choose the family that removes their fear and still lets you survive a claim.",
+      "prompt": "Delivery cost is high, and the result is easy to measure. Which family fits first?",
+      "choices": [
+        "An unconditional refund of the full fee plus their other expenses, with no actions required",
+        "Silence about risk, so the fear never enters the conversation",
+        "A conditional service promise or a performance deal, so pay follows the outcome",
+        "A seasonal rename, which reverses risk by changing the headline"
+      ],
+      "answer": 2
+    }
+  ]
+}

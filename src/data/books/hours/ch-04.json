@@ -1,0 +1,214 @@
+{
+  "id": "04",
+  "index": 4,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "How to choose a problem",
+  "titleSource": "Chapter 4",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The first problem misleads",
+      "bodyEn": "A career aimed at doing good has to choose a problem, such as education, climate, poverty, or something less obvious. Standard advice says to follow whatever interests you most, and most people end up on the social problem that first grabbed them. One of the authors landed on climate change at nineteen because a chance article made it feel scientific and he was already drawn to that style of problem. The choice came from curiosity, ahead of any comparison of how large, crowded, or movable the issue was. That habit lands people in problems that are smaller, harder, or already full of effort, so an extra year achieves less. You are also more likely to notice problems your friends already discuss, which are the ones attention has found. The fix is a comparison of where one more year of work will do the most good."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Three urgency questions",
+      "bodyEn": "The three questions come from work associated with Open Philanthropy, a foundation committing billions of dollars, and with Oxford's Global Priorities Institute. Use them to compare whole areas, such as pandemic prevention, risks from artificial intelligence, or global health. If you are already committed to one area, use them to compare projects inside it, such as research on malaria versus HIV. A problem counts as more urgent when an extra year of work has greater impact. Ask how large it is, how neglected it is, and how solvable it is. A perfect score on every question is rare, so the decision is which problem does best on the combination.",
+      "terms": [
+        {
+          "en": "scale",
+          "hook": "If they say this, they mean how many people are affected, how badly, and how long a solution would keep helping."
+        },
+        {
+          "en": "neglected",
+          "hook": "If they say this, they mean few resources are already aimed at the problem, so an extra person can still matter."
+        },
+        {
+          "en": "solvable",
+          "hook": "If they say this, they mean there is a realistic way to make progress, with evidence, a test, or a real shot at a huge result."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Scale and scope neglect",
+      "bodyEn": "Gut feelings flatten huge differences in scale, so two problems can feel similar while one is vastly larger. In one study, people would pay about the same amount to save two thousand birds as to save two hundred thousand. David MacKay checked a British campaign against mobile-phone chargers left plugged in, and even total success would have saved at most about a hundredth of one percent of household electricity, before counting industry. The same effort aimed at home insulation could have had about a thousand times the effect on emissions. Rough numbers are the way through that error, often called scope neglect. On the earlier definition of impact, scale grows with the number of people affected, the size of the effect on each person, and the long-run benefits of a solution. Activities often move a problem in proportion to its size, so a tenth of a tiny problem stays tiny, and a tenth of a large one is a different career.",
+      "terms": [
+        {
+          "en": "scope neglect",
+          "hook": "If they say this, they mean feeling the same about a small harm and a harm a hundred times larger."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Neglect and thin attention",
+      "bodyEn": "A problem that already absorbs a lot of effort leaves less room for one newcomer to change the outcome. Easy gains get taken first, and later work has to reach for what remains, which is diminishing returns. Medicine in the United States and the United Kingdom is the crowded case, with over eight hundred fifty thousand doctors in the US and high health spending. Health in poor countries receives much less attention, which is one reason a life can sometimes be saved for about five thousand dollars. The problems your friends want to join are usually the crowded ones, so they are weak candidates for the greatest urgency. Cancer is famous and hard, while parasitic worms and other neglected tropical diseases have infected about a billion people and are far easier to treat, yet they rarely touch rich lives and rarely get the anthem. The urgent problems are often ones you have never pictured working on.",
+      "terms": [
+        {
+          "en": "diminishing returns",
+          "hook": "If they say this, they mean each extra hour does less once the easy gains are already taken."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Where neglect hides",
+      "bodyEn": "Systematic blind spots are a better guide than whichever cause is fashionable. Ask whether the problem falls on groups that are easy to ignore, including people far away, nonhuman animals, and future generations. Ask whether it is a low-probability event that feels unreal until it arrives. Ask whether few people even know the problem exists. Following the neglected option is socially harder, because it means standing apart and sometimes looking strange. Strangeness is a cost to notice, and popularity is weak evidence that an extra person is still early. The test is whether resources are thin relative to the scale."
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "Programmes that backfire",
+      "bodyEn": "A popular programme can be harmful. Scared Straight took young people who had committed minor offences to meet convicted criminals in prison, and it became an acclaimed documentary and a ratings hit on television. Participants later committed fewer crimes than they had before, which looked like success, yet the drop was smaller than for similar young people who never attended. The likely result was more crime, perhaps because jail looked less frightening than expected, or because the visitors came to admire the people they met. One state institute estimated that each dollar spent caused more than two hundred dollars of social harm, a figure the authors find possibly too harsh and still a sign of a serious mistake. David Anderson, associated with evidence-based policy work, has said that most rigorously evaluated social programmes, perhaps three quarters or more, produce small, zero, or negative effects, including programmes backed by experts and weaker studies. Join a charity with no look at the evidence, and the likely result is no impact at all."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Tests for solvability",
+      "bodyEn": "Guessing what works, ahead of evidence, is very hard. The authors' ten-question quiz, which asks people to sort social interventions into effective and ineffective, finds that hundreds of test-takers do little better than chance. Before you commit, ask whether some approach already has rigorous evidence, such as the many studies showing that bed nets prevent malaria. Ask whether you could test a promising and still unproven programme and actually learn if it works. Ask whether there is a small but realistic chance of a massive impact, such as policy that stops a catastrophic pandemic. When every answer is no, look for a different problem. A problem can still be worth tackling when it is extremely large and neglected, even if progress looks difficult, because the three questions are a balance."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Personal fit still counts",
+      "bodyEn": "A strong problem does nothing for you if no role fits, because you will be dissatisfied and ineffective. Personal fit matters enough that a less pressing area can be the better choice when the fit is much stronger, a point developed in a later chapter. Early in a career, a vague sense of future problems is enough. The main work then is testing your strengths and learning abilities that later pressing problems are likely to need, which the next chapters take up. An existing expert should apply that expertise to a pressing problem rather than restarting in a fashionable field. A strong economist who is already thriving would look for an economic route into the issues that matter, and can use the same three questions to choose among subfields such as development and employment policy. Once the skills exist, aim them at whatever is most urgent at that time.",
+      "terms": [
+        {
+          "en": "personal fit",
+          "hook": "If they say this, they mean a role that matches your skills and motivation well enough for you to excel."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Balance, then shortlist",
+      "bodyEn": "Expect no problem to be enormous, ignored, and easy at the same time. Prefer the best balance of scale, neglect, and solvability. Scale includes effects on lives today and, more crucially, effects over the very long run. Neglect includes how many people and resources are already involved, how well those resources are allocated, and whether markets or governments are stuck for a real reason. Solvability includes whether effective interventions already exist and how strong the evidence is. Personal fit is the extra filter: whether you could become motivated, and, later in a career, whether you already have relevant expertise. Write the comparison down, then read the next chapter as one worked application of the same tests."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Framework check",
+      "bodyEn": "Urgent problems are the ones where an extra year goes furthest. Compare them on scale, neglect, and solvability, and take the best balance rather than a perfect mark on each. Use rough numbers so a tiny, vivid cause does not tie a huge one in your head. Ask for evidence, a fair test, or a real shot at a massive result before you treat a problem as solvable. Then filter by personal fit, with exploration first and existing expertise protected later. The cause your friends already agree on is a clue that attention may already be ahead of you.",
+      "prompt": "Which set of tests does this chapter use to compare problems?",
+      "choices": [
+        "Scale, neglect, and solvability, together with personal fit",
+        "Salary, stress, and whether the work matches a childhood passion",
+        "How recently the problem appeared in the news",
+        "Whether a documentary has already been made about the programme"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The first problem misleads",
+      "bodyEn": "A career aimed at doing good has to choose a problem, such as education, climate, poverty, or something less obvious. Standard advice says to follow whatever interests you most, and most people end up on the social problem that first grabbed them. One of the authors landed on climate change at nineteen because a chance article made it feel scientific and he was already drawn to that style of problem. The choice came from curiosity, ahead of any comparison of how large, crowded, or movable the issue was. That habit lands people in problems that are smaller, harder, or already full of effort, so an extra year achieves less. You are also more likely to notice problems your friends already discuss, which are the ones attention has found. The fix is a comparison of where one more year of work will do the most good."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Three urgency questions",
+      "bodyEn": "The three questions come from work associated with Open Philanthropy, a foundation committing billions of dollars, and with Oxford's Global Priorities Institute. Use them to compare whole areas, such as pandemic prevention, risks from artificial intelligence, or global health. If you are already committed to one area, use them to compare projects inside it, such as research on malaria versus HIV. A problem counts as more urgent when an extra year of work has greater impact. Ask how large it is, how neglected it is, and how solvable it is. A perfect score on every question is rare, so the decision is which problem does best on the combination.",
+      "terms": [
+        {
+          "en": "scale",
+          "hook": "If they say this, they mean how many people are affected, how badly, and how long a solution would keep helping."
+        },
+        {
+          "en": "neglected",
+          "hook": "If they say this, they mean few resources are already aimed at the problem, so an extra person can still matter."
+        },
+        {
+          "en": "solvable",
+          "hook": "If they say this, they mean there is a realistic way to make progress, with evidence, a test, or a real shot at a huge result."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Scale and scope neglect",
+      "bodyEn": "Gut feelings flatten huge differences in scale, so two problems can feel similar while one is vastly larger. In one study, people would pay about the same amount to save two thousand birds as to save two hundred thousand. David MacKay checked a British campaign against mobile-phone chargers left plugged in, and even total success would have saved at most about a hundredth of one percent of household electricity, before counting industry. The same effort aimed at home insulation could have had about a thousand times the effect on emissions. Rough numbers are the way through that error, often called scope neglect. On the earlier definition of impact, scale grows with the number of people affected, the size of the effect on each person, and the long-run benefits of a solution. Activities often move a problem in proportion to its size, so a tenth of a tiny problem stays tiny, and a tenth of a large one is a different career.",
+      "terms": [
+        {
+          "en": "scope neglect",
+          "hook": "If they say this, they mean feeling the same about a small harm and a harm a hundred times larger."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Neglect and thin attention",
+      "bodyEn": "A problem that already absorbs a lot of effort leaves less room for one newcomer to change the outcome. Easy gains get taken first, and later work has to reach for what remains, which is diminishing returns. Medicine in the United States and the United Kingdom is the crowded case, with over eight hundred fifty thousand doctors in the US and high health spending. Health in poor countries receives much less attention, which is one reason a life can sometimes be saved for about five thousand dollars. The problems your friends want to join are usually the crowded ones, so they are weak candidates for the greatest urgency. Cancer is famous and hard, while parasitic worms and other neglected tropical diseases have infected about a billion people and are far easier to treat, yet they rarely touch rich lives and rarely get the anthem. The urgent problems are often ones you have never pictured working on.",
+      "terms": [
+        {
+          "en": "diminishing returns",
+          "hook": "If they say this, they mean each extra hour does less once the easy gains are already taken."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Where neglect hides",
+      "bodyEn": "Systematic blind spots are a better guide than whichever cause is fashionable. Ask whether the problem falls on groups that are easy to ignore, including people far away, nonhuman animals, and future generations. Ask whether it is a low-probability event that feels unreal until it arrives. Ask whether few people even know the problem exists. Following the neglected option is socially harder, because it means standing apart and sometimes looking strange. Strangeness is a cost to notice, and popularity is weak evidence that an extra person is still early. The test is whether resources are thin relative to the scale."
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "Programmes that backfire",
+      "bodyEn": "A popular programme can be harmful. Scared Straight took young people who had committed minor offences to meet convicted criminals in prison, and it became an acclaimed documentary and a ratings hit on television. Participants later committed fewer crimes than they had before, which looked like success, yet the drop was smaller than for similar young people who never attended. The likely result was more crime, perhaps because jail looked less frightening than expected, or because the visitors came to admire the people they met. One state institute estimated that each dollar spent caused more than two hundred dollars of social harm, a figure the authors find possibly too harsh and still a sign of a serious mistake. David Anderson, associated with evidence-based policy work, has said that most rigorously evaluated social programmes, perhaps three quarters or more, produce small, zero, or negative effects, including programmes backed by experts and weaker studies. Join a charity with no look at the evidence, and the likely result is no impact at all."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Tests for solvability",
+      "bodyEn": "Guessing what works, ahead of evidence, is very hard. The authors' ten-question quiz, which asks people to sort social interventions into effective and ineffective, finds that hundreds of test-takers do little better than chance. Before you commit, ask whether some approach already has rigorous evidence, such as the many studies showing that bed nets prevent malaria. Ask whether you could test a promising and still unproven programme and actually learn if it works. Ask whether there is a small but realistic chance of a massive impact, such as policy that stops a catastrophic pandemic. When every answer is no, look for a different problem. A problem can still be worth tackling when it is extremely large and neglected, even if progress looks difficult, because the three questions are a balance."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Personal fit still counts",
+      "bodyEn": "A strong problem does nothing for you if no role fits, because you will be dissatisfied and ineffective. Personal fit matters enough that a less pressing area can be the better choice when the fit is much stronger, a point developed in a later chapter. Early in a career, a vague sense of future problems is enough. The main work then is testing your strengths and learning abilities that later pressing problems are likely to need, which the next chapters take up. An existing expert should apply that expertise to a pressing problem rather than restarting in a fashionable field. A strong economist who is already thriving would look for an economic route into the issues that matter, and can use the same three questions to choose among subfields such as development and employment policy. Once the skills exist, aim them at whatever is most urgent at that time.",
+      "terms": [
+        {
+          "en": "personal fit",
+          "hook": "If they say this, they mean a role that matches your skills and motivation well enough for you to excel."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Balance, then shortlist",
+      "bodyEn": "Expect no problem to be enormous, ignored, and easy at the same time. Prefer the best balance of scale, neglect, and solvability. Scale includes effects on lives today and, more crucially, effects over the very long run. Neglect includes how many people and resources are already involved, how well those resources are allocated, and whether markets or governments are stuck for a real reason. Solvability includes whether effective interventions already exist and how strong the evidence is. Personal fit is the extra filter: whether you could become motivated, and, later in a career, whether you already have relevant expertise. Write the comparison down, then read the next chapter as one worked application of the same tests."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Framework check",
+      "bodyEn": "Urgent problems are the ones where an extra year goes furthest. Compare them on scale, neglect, and solvability, and take the best balance rather than a perfect mark on each. Use rough numbers so a tiny, vivid cause does not tie a huge one in your head. Ask for evidence, a fair test, or a real shot at a massive result before you treat a problem as solvable. Then filter by personal fit, with exploration first and existing expertise protected later. The cause your friends already agree on is a clue that attention may already be ahead of you.",
+      "prompt": "Which set of tests does this chapter use to compare problems?",
+      "choices": [
+        "Scale, neglect, and solvability, together with personal fit",
+        "Salary, stress, and whether the work matches a childhood passion",
+        "How recently the problem appeared in the news",
+        "Whether a documentary has already been made about the programme"
+      ],
+      "answer": 0
+    }
+  ]
+}

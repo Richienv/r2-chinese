@@ -1,0 +1,45 @@
+.handwriting-pad { display: grid; gap: 12px; margin: 16px 0; }
+.handwriting-intro { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; font-size: 14px; }
+.handwriting-intro span { color: var(--muted, #746c65); font-size: 12px; }
+.handwriting-board { position: relative; width: min(100%, 360px); aspect-ratio: 1; margin: 0 auto; overflow: hidden; border: 1px solid rgba(88, 68, 53, .2); border-radius: 24px; background: #fffaf0; box-shadow: inset 0 2px 12px rgba(62, 36, 19, .035); }
+.handwriting-board[data-disabled='true'] { opacity: .5; }
+.handwriting-canvas { display: block; position: relative; z-index: 1; width: 100%; height: 100%; touch-action: none; cursor: crosshair; user-select: none; -webkit-user-select: none; }
+.handwriting-guide { position: absolute; pointer-events: none; opacity: .4; }
+.handwriting-guide-h { top: 50%; left: 12px; right: 12px; border-top: 1px dashed #bcac98; }
+.handwriting-guide-v { left: 50%; top: 12px; bottom: 12px; border-left: 1px dashed #bcac98; }
+.handwriting-empty { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 8px 14px; border-radius: 14px; background: #fffaf0; color: #978574; font-size: 14px; pointer-events: none; }
+.handwriting-tools { display: flex; gap: 8px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+.handwriting-tools > span { margin-right: auto; font-size: 12px; }
+.handwriting-tools .btn { min-height: 40px; padding: 8px 12px; font-size: 12px; }
+.handwriting-status { min-height: 32px; color: var(--muted, #746c65); font-size: 12px; line-height: 1.5; }
+.handwriting-candidates { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+.handwriting-candidate { display: flex; flex-direction: column; align-items: center; gap: 2px; min-height: 64px; border: 1px solid rgba(88, 68, 53, .16); border-radius: 14px; background: #fffaf0; color: var(--ink, #322621); padding: 6px; cursor: pointer; transition: border-color .15s, background .15s, transform .15s; }
+.handwriting-candidate > span { font-size: 27px; line-height: 1.35; }
+.handwriting-candidate > small { font-family: system-ui, sans-serif; font-size: 9px; color: #978574; }
+.handwriting-candidate:hover { border-color: #fa5a3c; background: #fff2e9; }
+.handwriting-candidate:active { transform: scale(.96); }
+.handwriting-candidate:focus-visible { outline: 2px solid #fa5a3c; outline-offset: 3px; }
+.handwriting-note { margin: 0; font-size: 10px; line-height: 1.6; color: #8a7868; }
+.handwriting-note a { color: inherit; text-underline-offset: 2px; }
+.word-recall-input-mode { display: flex; gap: 8px; margin: 12px 0 4px; }
+.word-recall-input-mode .btn { flex: 1; min-height: 42px; }
+.word-recall-input-mode button[aria-pressed='true'] { background: #fff0e3; border-color: #fa5a3c; color: #983522; }
+@media (prefers-reduced-motion: reduce) { .handwriting-candidate { transition: none; } .handwriting-candidate:active { transform: none; } }
+
+.handwriting-recall { margin: 16px 0; }
+.handwriting-positions { display: flex; gap: 8px; flex-wrap: wrap; }
+.handwriting-position { display: grid; place-items: center; gap: 3px; min-width: 58px; min-height: 56px; padding: 7px 12px; border: 1px solid rgba(88, 68, 53, .16); border-radius: 15px; background: #fffcf6; color: var(--muted, #746c65); font-family: inherit; cursor: pointer; }
+.handwriting-position > span { font-size: 17px; font-weight: 700; }
+.handwriting-position > small { font-size: 10px; }
+.handwriting-position[data-drawn='true'] { color: #446344; background: #edf4e8; border-color: #9db78b; }
+.handwriting-position[aria-current='step'] { color: #923d23; border: 2px solid #d98054; background: #fff0e3; padding: 6px 11px; }
+.handwriting-position:disabled { cursor: default; opacity: .45; }
+.handwriting-position:focus-visible { outline: 2px solid #c45d37; outline-offset: 3px; }
+.handwriting-navigation { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; margin: 4px 0 12px; }
+.handwriting-navigation .btn { min-height: 44px; }
+.handwriting-restart { min-height: 40px; font-size: 12px; }
+.word-recall > .study-display { margin-top: 22px; padding-top: 16px; border-top: 1px solid rgba(88, 68, 53, .12); }
+@media (max-width: 420px) {
+  .handwriting-navigation .btn { flex: 1; padding-inline: 10px; font-size: 13px; }
+  .word-recall-input-mode .btn { padding-inline: 10px; font-size: 12px; }
+}

@@ -1,0 +1,306 @@
+{
+  "id": "08",
+  "index": 8,
+  "part": 4,
+  "partTitleEn": "Million Dollar Weekend",
+  "titleEn": "Test Then Double Down",
+  "titleSource": "Chapter 8: The Growth Machine",
+  "sourcePages": "",
+  "when": "After the list exists",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Process over luck",
+      "bodyEn": "This chapter replaces a lucky tactic with a plan you can rerun. The opening case is a numbered promise with a date and a stake: hit the user goal in six months or do not get paid, then beat it with two moves that fit that market. Copying a channel that worked somewhere else is treated as gambling, because writing paid in one business and failed in another, and ads did the reverse. Your job is the process that reveals which experiment is yours. Five questions make the plan. They cover the goal, the customer and where to find them, the tactic to expand, the care of the first hundred buyers, and a way to double with no new money.",
+      "terms": [
+        {
+          "en": "five questions",
+          "hook": "If they say this, they mean goal, customer, the tactic to expand, care of current buyers, and a no-spend double."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "One number and date",
+      "bodyEn": "Every activity has to serve one number. A wish for more revenue, more traffic, or more downloads is not a goal, because it has no size and no date. Write the number and the deadline, such as a freedom number, a thousand subscribers, a revenue target, or a client count. One early company used a hundred thousand email addresses as the number that made the other results follow. A deadline creates urgency, so a fortune with no year attached still fails the test. Starting from the destination is what lets you refuse work that does not move it.",
+      "terms": [
+        {
+          "en": "exact goal",
+          "hook": "If they say this, they mean one number plus a date, specific enough that a week can miss it."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Break it by month",
+      "bodyEn": "Break the year into monthly targets so the big number becomes a series of smaller wins. Expect the early months to be slower while you test, then faster once a tactic proves itself. Put the targets where you can see them, and check the week against that month's number. A subscriber goal in the chapter was split this way so a fun idea could be refused when it did not add subscribers. Knowing the number is how you stay on one objective. If you cannot tell whether this week mattered, the goal is still too foggy.",
+      "terms": [
+        {
+          "en": "monthly targets",
+          "hook": "If they say this, they mean the yearly number sliced into months so you can tick off smaller wins."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "Count the units",
+      "bodyEn": "Turn the money goal into a count of sales before you pick a channel. In the climbing-glasses example, the target was four thousand dollars of profit a month, the profit on one pair was twenty-four dollars, and the math was about one hundred sixty-six pairs a month, or five or six a day. That daily count tells you whether a tactic is even large enough. The founder had already sold a few pairs by hand, then stalled on a prettier website, legal worries, and watching competitors. Those tasks did not sell the next pair. Work backward from the goal, then choose marketing that can hit the count.",
+      "terms": [
+        {
+          "en": "backward math",
+          "hook": "If they say this, they mean divide the monthly profit you need by the profit on one sale."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Name the buyer",
+      "bodyEn": "Describe the buyer from the pattern in people who already paid. Age, interest, place, and habit all count, and a specific picture is more useful than a broad one. The chapter's own pictures include finance writers and technical professionals, a solo marketer, and an underdog looking for a next step. Then ask where more of them stand. Ask a current buyer the one place they would expect to hear about you, and add that place to the list. For the glasses, that meant climbers who go outside weekly, gyms, outdoor shops, and the groups and videos they already follow.",
+      "terms": [
+        {
+          "en": "ideal customer",
+          "hook": "If they say this, they mean the shared pattern in people who already bought, stated specifically."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Rank the experiments",
+      "bodyEn": "Make an experiment list before you paddle hard in one direction. For each place, write a best-guess sales number for the next thirty days, rough on purpose, so you can rank the work. Start with the few channels that have the highest expected sales and that fit the hours you actually have. Prefer free reach first, especially people you already know, and spend money only after those are used. A useful menu includes your network, search ads, social ads, content, cold outreach, niche sites, influencers, press, search articles, giveaways, and collaborations. Optional columns for time and cost keep a slow tactic from looking equal to a fast one.",
+      "terms": [
+        {
+          "en": "experiment list",
+          "hook": "If they say this, they mean a sheet of channels with a thirty-day sales guess beside each one."
+        },
+        {
+          "en": "expected sales",
+          "hook": "If they say this, they mean your best guess, used to rank the work, not a promise."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "example",
+      "titleEn": "Read the scoreboard",
+      "bodyEn": "Run the tests, then replace the guesses with actual sales. The glasses founder tried friends, a local climbing group, wholesale, marketplaces, giveaways, and ads inside about thirty days. Friends and the local group sold some. Marketplaces, giveaways, and ads sold none. Wholesale, which he had guessed would be large, came in several times larger and produced most of the sales, including one big online order. He then stopped treating every channel as equal and put the next month into wholesale. You cannot know the winner in advance, so the sheet is the method.",
+      "terms": [
+        {
+          "en": "actual sales",
+          "hook": "If they say this, they mean the column you fill after the trial so the winner is visible."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Expand or stop",
+      "bodyEn": "Expand what already sells, and stop what does not, even when the dead channel is fashionable. A social account with a huge following and lots of likes was promoted for months, at a cost of about twenty thousand dollars, and it produced no revenue, so it was stopped. Give a test about thirty days, long enough to see a signal and short enough to leave. If the work is hard and still empty after a real try, move on. Check the sheet weekly, sometimes daily, and compare expected sales with actual sales. When a channel works, do more of it until it stops working, and spend the saved hours there.",
+      "terms": [
+        {
+          "en": "double down",
+          "hook": "If they say this, they mean put more time into the tactic that already produced sales."
+        },
+        {
+          "en": "kill the test",
+          "hook": "If they say this, they mean stop a channel once the trial shows it missed."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Delight current buyers",
+      "bodyEn": "Ask how you would double the business if new customers were not allowed. Retention and referrals are the lever, and at the start one referral can double you. Happy buyers also buy the next thing, so a longer stay means more chances to earn. Do the unscalable version on purpose: reply to comments yourself, stay reachable, and write early buyers to ask what they liked and what they want next. Then ask one customer what you could do today that would make them twice as happy. A supplement founder built the base by messaging customers personally, including while the hours were ugly. Their answers tell you the next improvement.",
+      "terms": [
+        {
+          "en": "twice as happy",
+          "hook": "If they say this, they mean the question you ask one current buyer to find the next improvement."
+        },
+        {
+          "en": "retention",
+          "hook": "If they say this, they mean keeping buyers long enough that they refer friends and buy again."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Double with no spend",
+      "bodyEn": "The last planning question is meant to be uncomfortable. If you had to double the business in thirty days with no new money, what would you actually do? Look at referrals, a stronger offer to people who already paid, and more of the free channel that already worked. Write the answer as an action, not a hope. The five questions together are the plan: one goal, the buyer and where they are, the tactic to expand, the care of the first hundred, and this no-spend double. Put them where you will reread them when a trendy idea shows up.",
+      "terms": [
+        {
+          "en": "no-money double",
+          "hook": "If they say this, they mean a thirty-day way to grow twice as much without a new ad budget."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Growth check",
+      "bodyEn": "Growth here is a sequence you can repeat. Set one number and a date, break it into months, and turn the money into a count of sales. Name the buyer, list where they are, and rank experiments by a rough sales guess, using free reach first. After about thirty days, compare the guess with the result, do more of what sold, and stop what did not. Then make current buyers happier, because referrals and repeat purchases can double a small business. If you had no new budget, the move is still one of those, written down as an action.",
+      "prompt": "What should you do after about a month of marketing tests?",
+      "choices": [
+        "Expand the channel that produced sales and stop the ones that missed",
+        "Keep funding the popular channel even when it recorded zero sales",
+        "Rebuild the website and protect the logo before you look at the sheet",
+        "Wait for a viral post before you talk to any current buyer"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Process over luck",
+      "bodyEn": "This chapter replaces a lucky tactic with a plan you can rerun. The opening case is a numbered promise with a date and a stake: hit the user goal in six months or do not get paid, then beat it with two moves that fit that market. Copying a channel that worked somewhere else is treated as gambling, because writing paid in one business and failed in another, and ads did the reverse. Your job is the process that reveals which experiment is yours. Five questions make the plan. They cover the goal, the customer and where to find them, the tactic to expand, the care of the first hundred buyers, and a way to double with no new money.",
+      "terms": [
+        {
+          "en": "five questions",
+          "hook": "If they say this, they mean goal, customer, the tactic to expand, care of current buyers, and a no-spend double."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "One number and date",
+      "bodyEn": "Every activity has to serve one number. A wish for more revenue, more traffic, or more downloads is not a goal, because it has no size and no date. Write the number and the deadline, such as a freedom number, a thousand subscribers, a revenue target, or a client count. One early company used a hundred thousand email addresses as the number that made the other results follow. A deadline creates urgency, so a fortune with no year attached still fails the test. Starting from the destination is what lets you refuse work that does not move it.",
+      "terms": [
+        {
+          "en": "exact goal",
+          "hook": "If they say this, they mean one number plus a date, specific enough that a week can miss it."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Break it by month",
+      "bodyEn": "Break the year into monthly targets so the big number becomes a series of smaller wins. Expect the early months to be slower while you test, then faster once a tactic proves itself. Put the targets where you can see them, and check the week against that month's number. A subscriber goal in the chapter was split this way so a fun idea could be refused when it did not add subscribers. Knowing the number is how you stay on one objective. If you cannot tell whether this week mattered, the goal is still too foggy.",
+      "terms": [
+        {
+          "en": "monthly targets",
+          "hook": "If they say this, they mean the yearly number sliced into months so you can tick off smaller wins."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "Count the units",
+      "bodyEn": "Turn the money goal into a count of sales before you pick a channel. In the climbing-glasses example, the target was four thousand dollars of profit a month, the profit on one pair was twenty-four dollars, and the math was about one hundred sixty-six pairs a month, or five or six a day. That daily count tells you whether a tactic is even large enough. The founder had already sold a few pairs by hand, then stalled on a prettier website, legal worries, and watching competitors. Those tasks did not sell the next pair. Work backward from the goal, then choose marketing that can hit the count.",
+      "terms": [
+        {
+          "en": "backward math",
+          "hook": "If they say this, they mean divide the monthly profit you need by the profit on one sale."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Name the buyer",
+      "bodyEn": "Describe the buyer from the pattern in people who already paid. Age, interest, place, and habit all count, and a specific picture is more useful than a broad one. The chapter's own pictures include finance writers and technical professionals, a solo marketer, and an underdog looking for a next step. Then ask where more of them stand. Ask a current buyer the one place they would expect to hear about you, and add that place to the list. For the glasses, that meant climbers who go outside weekly, gyms, outdoor shops, and the groups and videos they already follow.",
+      "terms": [
+        {
+          "en": "ideal customer",
+          "hook": "If they say this, they mean the shared pattern in people who already bought, stated specifically."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Rank the experiments",
+      "bodyEn": "Make an experiment list before you paddle hard in one direction. For each place, write a best-guess sales number for the next thirty days, rough on purpose, so you can rank the work. Start with the few channels that have the highest expected sales and that fit the hours you actually have. Prefer free reach first, especially people you already know, and spend money only after those are used. A useful menu includes your network, search ads, social ads, content, cold outreach, niche sites, influencers, press, search articles, giveaways, and collaborations. Optional columns for time and cost keep a slow tactic from looking equal to a fast one.",
+      "terms": [
+        {
+          "en": "experiment list",
+          "hook": "If they say this, they mean a sheet of channels with a thirty-day sales guess beside each one."
+        },
+        {
+          "en": "expected sales",
+          "hook": "If they say this, they mean your best guess, used to rank the work, not a promise."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "example",
+      "titleEn": "Read the scoreboard",
+      "bodyEn": "Run the tests, then replace the guesses with actual sales. The glasses founder tried friends, a local climbing group, wholesale, marketplaces, giveaways, and ads inside about thirty days. Friends and the local group sold some. Marketplaces, giveaways, and ads sold none. Wholesale, which he had guessed would be large, came in several times larger and produced most of the sales, including one big online order. He then stopped treating every channel as equal and put the next month into wholesale. You cannot know the winner in advance, so the sheet is the method.",
+      "terms": [
+        {
+          "en": "actual sales",
+          "hook": "If they say this, they mean the column you fill after the trial so the winner is visible."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Expand or stop",
+      "bodyEn": "Expand what already sells, and stop what does not, even when the dead channel is fashionable. A social account with a huge following and lots of likes was promoted for months, at a cost of about twenty thousand dollars, and it produced no revenue, so it was stopped. Give a test about thirty days, long enough to see a signal and short enough to leave. If the work is hard and still empty after a real try, move on. Check the sheet weekly, sometimes daily, and compare expected sales with actual sales. When a channel works, do more of it until it stops working, and spend the saved hours there.",
+      "terms": [
+        {
+          "en": "double down",
+          "hook": "If they say this, they mean put more time into the tactic that already produced sales."
+        },
+        {
+          "en": "kill the test",
+          "hook": "If they say this, they mean stop a channel once the trial shows it missed."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Delight current buyers",
+      "bodyEn": "Ask how you would double the business if new customers were not allowed. Retention and referrals are the lever, and at the start one referral can double you. Happy buyers also buy the next thing, so a longer stay means more chances to earn. Do the unscalable version on purpose: reply to comments yourself, stay reachable, and write early buyers to ask what they liked and what they want next. Then ask one customer what you could do today that would make them twice as happy. A supplement founder built the base by messaging customers personally, including while the hours were ugly. Their answers tell you the next improvement.",
+      "terms": [
+        {
+          "en": "twice as happy",
+          "hook": "If they say this, they mean the question you ask one current buyer to find the next improvement."
+        },
+        {
+          "en": "retention",
+          "hook": "If they say this, they mean keeping buyers long enough that they refer friends and buy again."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Double with no spend",
+      "bodyEn": "The last planning question is meant to be uncomfortable. If you had to double the business in thirty days with no new money, what would you actually do? Look at referrals, a stronger offer to people who already paid, and more of the free channel that already worked. Write the answer as an action, not a hope. The five questions together are the plan: one goal, the buyer and where they are, the tactic to expand, the care of the first hundred, and this no-spend double. Put them where you will reread them when a trendy idea shows up.",
+      "terms": [
+        {
+          "en": "no-money double",
+          "hook": "If they say this, they mean a thirty-day way to grow twice as much without a new ad budget."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Growth check",
+      "bodyEn": "Growth here is a sequence you can repeat. Set one number and a date, break it into months, and turn the money into a count of sales. Name the buyer, list where they are, and rank experiments by a rough sales guess, using free reach first. After about thirty days, compare the guess with the result, do more of what sold, and stop what did not. Then make current buyers happier, because referrals and repeat purchases can double a small business. If you had no new budget, the move is still one of those, written down as an action.",
+      "prompt": "What should you do after about a month of marketing tests?",
+      "choices": [
+        "Expand the channel that produced sales and stop the ones that missed",
+        "Keep funding the popular channel even when it recorded zero sales",
+        "Rebuild the website and protect the logo before you look at the sheet",
+        "Wait for a viral post before you talk to any current buyer"
+      ],
+      "answer": 0
+    }
+  ]
+}

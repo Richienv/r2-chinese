@@ -1,0 +1,150 @@
+{
+  "id": "31",
+  "index": 31,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Leave the Inbox",
+  "titleSource": "The Holy Grail: How to Outsource the Inbox and Never Check E-mail Again",
+  "sourcePages": "Best of the Blog",
+  "when": "January 21, 2008",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Mail is a process",
+      "bodyEn": "Checking mail is a sequence of decisions, not a talent that only you have. People who already delegate everything else often keep the inbox because it feels personal. That habit can fill most of a day with sorting and repeated answers. A trained assistant can clear the categories, and you can skip the box for days. The nightly remainder fits in a few minutes. The point is to hand off the process, not to hire a mimic.",
+      "terms": [
+        {
+          "en": "inbox process",
+          "hook": "The repeatable choices to delete, archive, forward, or answer, which someone else can run."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Split the addresses",
+      "bodyEn": "Use separate addresses for readers, press, friends, and new acquaintances. The address you give to new people can go straight to an assistant. Keep one private account for friends and for notes to that assistant, and leave it empty on purpose. If you can see a pile of new mail, you will open it. A web inbox that shows the pile is a slippery place. The private account is for sending, not for browsing crises."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Two clears and one call",
+      "bodyEn": "Most messages already belong to a category with a set answer, so they never need you. An assistant can clear the box at two appointed times. The small share that needs a decision waits for one short call, or for a numbered voicemail if you are traveling. You answer with a brief list of next actions, in a chat or a short note, while you listen. That pass replaces hours of filtering. The assistant's prep gets sharper when the update has to fit in a voice message.",
+      "terms": [
+        {
+          "en": "daily pass",
+          "hook": "One short call or voicemail in which only the messages that need your decision are numbered and answered."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Batch the calendar too",
+      "bodyEn": "Have the assistant place meetings on the calendar, and keep those meetings on one or two days. Leave a short gap between them so the day is not a scatter of interruptions. If you do answer something yourself, copy the assistant so the thread is not a mystery. Expect small mistakes. Preventing every small problem also prevents the larger work. Choose an allowable level of small trouble, and spend attention on the big items."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Grow the rules in writing",
+      "bodyEn": "Keep a document of the questions you already ask when you sort mail. When you correct the assistant, send a note whose subject says to add a rule, and let them file it. After a week or two, the document is an outside copy of how you decide. Reading it often shows that the old method was inconsistent. That document is what makes the two daily clears possible. Without it, the assistant has to guess, and you get pulled back in."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Hire for a deadline",
+      "bodyEn": "Start by naming which accounts they may touch and how each kind of message should be answered, sorted, or deleted. Then find candidates and test reliability before skill. Give the top few a task due inside a day, before they ever see the inbox. Use two to four weeks as a trial, and expect the smooth version to take longer than the first week. There will be problems. The last step is to decide what you will do with the hours the inbox used to eat. An empty queue is not a life.",
+      "terms": [
+        {
+          "en": "reliability test",
+          "hook": "A tight, short deadline given to candidates before they are allowed into the inbox."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Inbox handoff check",
+      "bodyEn": "The handoff uses separate addresses, two clears a day, and one short pass for the few items that need you. A private account stays empty so the pile cannot tempt you. Meetings sit on batched days, and a jump-in reply is copied to the assistant. Candidates prove they can hit a short deadline before they see the mail. A written rule sheet grows from the corrections you send. Recall what you test before someone is allowed into the inbox.",
+      "prompt": "What should you test before an assistant enters the inbox?",
+      "choices": [
+        "Whether they finish a specific task on a tight deadline",
+        "Whether their writing voice matches yours on every sentence",
+        "Whether they will check the box all day",
+        "Whether they already know every sender"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Mail is a process",
+      "bodyEn": "Checking mail is a sequence of decisions, not a talent that only you have. People who already delegate everything else often keep the inbox because it feels personal. That habit can fill most of a day with sorting and repeated answers. A trained assistant can clear the categories, and you can skip the box for days. The nightly remainder fits in a few minutes. The point is to hand off the process, not to hire a mimic.",
+      "terms": [
+        {
+          "en": "inbox process",
+          "hook": "The repeatable choices to delete, archive, forward, or answer, which someone else can run."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Split the addresses",
+      "bodyEn": "Use separate addresses for readers, press, friends, and new acquaintances. The address you give to new people can go straight to an assistant. Keep one private account for friends and for notes to that assistant, and leave it empty on purpose. If you can see a pile of new mail, you will open it. A web inbox that shows the pile is a slippery place. The private account is for sending, not for browsing crises."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Two clears and one call",
+      "bodyEn": "Most messages already belong to a category with a set answer, so they never need you. An assistant can clear the box at two appointed times. The small share that needs a decision waits for one short call, or for a numbered voicemail if you are traveling. You answer with a brief list of next actions, in a chat or a short note, while you listen. That pass replaces hours of filtering. The assistant's prep gets sharper when the update has to fit in a voice message.",
+      "terms": [
+        {
+          "en": "daily pass",
+          "hook": "One short call or voicemail in which only the messages that need your decision are numbered and answered."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Batch the calendar too",
+      "bodyEn": "Have the assistant place meetings on the calendar, and keep those meetings on one or two days. Leave a short gap between them so the day is not a scatter of interruptions. If you do answer something yourself, copy the assistant so the thread is not a mystery. Expect small mistakes. Preventing every small problem also prevents the larger work. Choose an allowable level of small trouble, and spend attention on the big items."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Grow the rules in writing",
+      "bodyEn": "Keep a document of the questions you already ask when you sort mail. When you correct the assistant, send a note whose subject says to add a rule, and let them file it. After a week or two, the document is an outside copy of how you decide. Reading it often shows that the old method was inconsistent. That document is what makes the two daily clears possible. Without it, the assistant has to guess, and you get pulled back in."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Hire for a deadline",
+      "bodyEn": "Start by naming which accounts they may touch and how each kind of message should be answered, sorted, or deleted. Then find candidates and test reliability before skill. Give the top few a task due inside a day, before they ever see the inbox. Use two to four weeks as a trial, and expect the smooth version to take longer than the first week. There will be problems. The last step is to decide what you will do with the hours the inbox used to eat. An empty queue is not a life.",
+      "terms": [
+        {
+          "en": "reliability test",
+          "hook": "A tight, short deadline given to candidates before they are allowed into the inbox."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Inbox handoff check",
+      "bodyEn": "The handoff uses separate addresses, two clears a day, and one short pass for the few items that need you. A private account stays empty so the pile cannot tempt you. Meetings sit on batched days, and a jump-in reply is copied to the assistant. Candidates prove they can hit a short deadline before they see the mail. A written rule sheet grows from the corrections you send. Recall what you test before someone is allowed into the inbox.",
+      "prompt": "What should you test before an assistant enters the inbox?",
+      "choices": [
+        "Whether they finish a specific task on a tight deadline",
+        "Whether their writing voice matches yours on every sentence",
+        "Whether they will check the box all day",
+        "Whether they already know every sender"
+      ],
+      "answer": 0
+    }
+  ]
+}

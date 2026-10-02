@@ -1,0 +1,174 @@
+{
+  "id": "02",
+  "index": 2,
+  "part": 3,
+  "partTitleEn": "Hyperfocus",
+  "titleEn": "Focus on the Book",
+  "titleSource": "How to Better Focus on This Book",
+  "sourcePages": "19-23",
+  "when": "Chapter 0.5",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Try, then keep",
+      "bodyEn": "Reading this book is the first focus test, and the pages return more when you give them more attention. Productivity tactics are personal, because routines and wiring differ, and some advice you will simply decline. The instruction is to try the tactics and keep the ones that mesh with your life. This short chapter offers seven ways to read with more of your attention. Use them as experiments, one at a time. A tactic that survives contact with your actual evening is the one worth keeping."
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Park the phone",
+      "bodyEn": "When a page is even slightly hard, the mind hunts for something newer. A phone supplies an endless stream of small bites, so it wins that hunt. Distractions are much easier to handle before they become a temptation. Before you read, leave the device in another room or deep in a bag. Expect a few restless minutes while you adjust to its absence. See the phone as a pocket-sized hole in the work. Stay through that first resistance, then give the page the attention the phone was using.",
+      "terms": [
+        {
+          "en": "Novel pull",
+          "hook": "The newer thing the mind grabs when a task feels even slightly hard."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Count the reaches",
+      "bodyEn": "For a day or two, notice every time your hand goes to the phone on its own. Write the feeling and the situation: a long wait, a dull budget, a hard paragraph, or something else. The tally separates boredom, avoidance, and simple habit. You are mapping the tasks you resist and the moods that send you away from them. That map shows where the rest of the book will earn its keep. Let the count stay descriptive."
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Change the room",
+      "bodyEn": "Look up and name the interruptions that are likely in the spot you chose. The rooms that support focus are the ones that interrupt you least. If you can, move to a quieter room, a library, or a cafe. On a train you control less, so lean on the tactics that travel with you, especially the phone and the list. Changing the room is one of the strongest ways to cultivate a reading stretch. Make the move before you ask willpower to fight the original spot."
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Capture every stray",
+      "bodyEn": "External noise is one source of the pull, and the mind is another. It will surface groceries, an errand, or a new idea while you are trying to read. Keep a pen and a small pad beside the book whenever you need to focus. Write each arrival in a line: follow-ups, tasks you must remember, and ideas. The list holds the item so your attention can return to the sentence. Writing it down is what makes the return possible.",
+      "terms": [
+        {
+          "en": "Distractions list",
+          "hook": "A running capture of stray tasks and ideas so attention can return to the page."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Hear the pitch",
+      "bodyEn": "A lot of books, shows, and podcasts get consumed from habit. Treat every description as a pitch for your time and attention. After you finish, the test is whether you are glad you spent that attention. You become what you repeatedly attend to, and attention is limited, so the item has to be worthy of the spend. Bailey says this kind of audit can return hours in a day, and a later chapter goes deeper on what you let in. Apply the same test to this book, and spend the hour elsewhere when elsewhere is the better use."
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Mark what you will use",
+      "bodyEn": "If sleep is still many hours away, read with coffee or tea. Caffeine boosts mental and physical performance and takes about eight to fourteen hours to leave the system, so a late cup borrows energy the night will want back. Spend the boost on this book or on one important task. Read with a pen or highlighter in hand, because passive consumption and active consumption land differently. Mark the lines you will actually use, and let the density of marks show you what was worth it. When you finish, reread only the marked lines so the best parts get a second pass. If someone is nearby, say one marked idea aloud, which processes it again.",
+      "terms": [
+        {
+          "en": "Active reading",
+          "hook": "Mark the lines you will use, then reread only those marks."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Reset when it fades",
+      "bodyEn": "Attention runs out, and the fade often looks like the mind leaving the page for thoughts. That wander will be useful later, when you choose it. For this chapter, when you notice the fade, step away for a few minutes. Do something relatively mindless, such as dishes, people-watching, or light cleaning, which recharges the attention you will bring back. Keep a place to catch ideas that arrive during the break, the same job the distractions list does while you read. Return when the mind feels fresh. A blurred page is a cue to reset, and a fresh return beats grinding the same sentence."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "When the page blurs",
+      "bodyEn": "Seven reading tactics come before any later system: the phone away, a quieter room, a distractions list, a pitch test for what you consume, caffeine timed against sleep, a pen for a second pass, and a short mindless reset. The phone experiment also includes counting instinctive reaches so you can see which tasks you flee. The list is what lets an internal reminder wait its turn. Caffeine lingers about eight to fourteen hours, so the cup has a curfew. Active marks, plus a reread of only those marks, are how the best lines stay with you. When focus fades, dishes, people-watching, or light cleaning recharge you, and ideas from the break get captured too. The fitting response to a blurred page is that reset and a fresh return.",
+      "prompt": "The page blurs and your mind has left the book. What should you do?",
+      "choices": [
+        "Push through the blurred page until the chapter is finished",
+        "Pick up the phone so the break feels productive",
+        "Step away for a few mindless minutes, capture any ideas, then return",
+        "Add a second complex task so spare attention has work"
+      ],
+      "answer": 2
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Try, then keep",
+      "bodyEn": "Reading this book is the first focus test, and the pages return more when you give them more attention. Productivity tactics are personal, because routines and wiring differ, and some advice you will simply decline. The instruction is to try the tactics and keep the ones that mesh with your life. This short chapter offers seven ways to read with more of your attention. Use them as experiments, one at a time. A tactic that survives contact with your actual evening is the one worth keeping."
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Park the phone",
+      "bodyEn": "When a page is even slightly hard, the mind hunts for something newer. A phone supplies an endless stream of small bites, so it wins that hunt. Distractions are much easier to handle before they become a temptation. Before you read, leave the device in another room or deep in a bag. Expect a few restless minutes while you adjust to its absence. See the phone as a pocket-sized hole in the work. Stay through that first resistance, then give the page the attention the phone was using.",
+      "terms": [
+        {
+          "en": "Novel pull",
+          "hook": "The newer thing the mind grabs when a task feels even slightly hard."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Count the reaches",
+      "bodyEn": "For a day or two, notice every time your hand goes to the phone on its own. Write the feeling and the situation: a long wait, a dull budget, a hard paragraph, or something else. The tally separates boredom, avoidance, and simple habit. You are mapping the tasks you resist and the moods that send you away from them. That map shows where the rest of the book will earn its keep. Let the count stay descriptive."
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Change the room",
+      "bodyEn": "Look up and name the interruptions that are likely in the spot you chose. The rooms that support focus are the ones that interrupt you least. If you can, move to a quieter room, a library, or a cafe. On a train you control less, so lean on the tactics that travel with you, especially the phone and the list. Changing the room is one of the strongest ways to cultivate a reading stretch. Make the move before you ask willpower to fight the original spot."
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Capture every stray",
+      "bodyEn": "External noise is one source of the pull, and the mind is another. It will surface groceries, an errand, or a new idea while you are trying to read. Keep a pen and a small pad beside the book whenever you need to focus. Write each arrival in a line: follow-ups, tasks you must remember, and ideas. The list holds the item so your attention can return to the sentence. Writing it down is what makes the return possible.",
+      "terms": [
+        {
+          "en": "Distractions list",
+          "hook": "A running capture of stray tasks and ideas so attention can return to the page."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Hear the pitch",
+      "bodyEn": "A lot of books, shows, and podcasts get consumed from habit. Treat every description as a pitch for your time and attention. After you finish, the test is whether you are glad you spent that attention. You become what you repeatedly attend to, and attention is limited, so the item has to be worthy of the spend. Bailey says this kind of audit can return hours in a day, and a later chapter goes deeper on what you let in. Apply the same test to this book, and spend the hour elsewhere when elsewhere is the better use."
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Mark what you will use",
+      "bodyEn": "If sleep is still many hours away, read with coffee or tea. Caffeine boosts mental and physical performance and takes about eight to fourteen hours to leave the system, so a late cup borrows energy the night will want back. Spend the boost on this book or on one important task. Read with a pen or highlighter in hand, because passive consumption and active consumption land differently. Mark the lines you will actually use, and let the density of marks show you what was worth it. When you finish, reread only the marked lines so the best parts get a second pass. If someone is nearby, say one marked idea aloud, which processes it again.",
+      "terms": [
+        {
+          "en": "Active reading",
+          "hook": "Mark the lines you will use, then reread only those marks."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Reset when it fades",
+      "bodyEn": "Attention runs out, and the fade often looks like the mind leaving the page for thoughts. That wander will be useful later, when you choose it. For this chapter, when you notice the fade, step away for a few minutes. Do something relatively mindless, such as dishes, people-watching, or light cleaning, which recharges the attention you will bring back. Keep a place to catch ideas that arrive during the break, the same job the distractions list does while you read. Return when the mind feels fresh. A blurred page is a cue to reset, and a fresh return beats grinding the same sentence."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "When the page blurs",
+      "bodyEn": "Seven reading tactics come before any later system: the phone away, a quieter room, a distractions list, a pitch test for what you consume, caffeine timed against sleep, a pen for a second pass, and a short mindless reset. The phone experiment also includes counting instinctive reaches so you can see which tasks you flee. The list is what lets an internal reminder wait its turn. Caffeine lingers about eight to fourteen hours, so the cup has a curfew. Active marks, plus a reread of only those marks, are how the best lines stay with you. When focus fades, dishes, people-watching, or light cleaning recharge you, and ideas from the break get captured too. The fitting response to a blurred page is that reset and a fresh return.",
+      "prompt": "The page blurs and your mind has left the book. What should you do?",
+      "choices": [
+        "Push through the blurred page until the chapter is finished",
+        "Pick up the phone so the break feels productive",
+        "Step away for a few mindless minutes, capture any ideas, then return",
+        "Add a second complex task so spare attention has work"
+      ],
+      "answer": 2
+    }
+  ]
+}

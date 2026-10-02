@@ -1,0 +1,207 @@
+{
+  "id": "07",
+  "index": 7,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Pass the value on",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Help with no return",
+      "bodyEn": "People who help others with nothing expected back report more fulfillment, live longer, and make more money. He pauses the offer lessons to give the reader a chance to practice that kind of help. The favor costs no money. It also comes with no public credit. The person who benefits is someone the reader will never meet. He makes the ask on that stranger's behalf, in the middle of the book, before the build steps continue.",
+      "terms": [
+        {
+          "en": "No-ledger help",
+          "hook": "Help given with no payment and no credit expected in return."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Help a future owner",
+      "bodyEn": "The question is whether you would help a stranger if it cost no money and earned you no credit. That stranger looks like you, or like you a few years earlier. They have less experience, a real desire to help, and no clear map of where to learn. His firm's mission of helping owners only works if those people can be reached. Most people judge a book by the cover and by the reviews beside it. A review is one of the ways the next owner decides the book is worth opening.",
+      "terms": [
+        {
+          "en": "Social proof of the book",
+          "hook": "Reviews are how a stranger decides whether to trust the cover."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Who a review reaches",
+      "bodyEn": "If the book has been useful so far, the ask is an honest review. It costs zero dollars and takes less than a minute. He names four outcomes that review can support. One more owner can support a family, one more employee can find work that matters, one more client can receive a change they would have missed, and one more life can turn. The review comes with no prize, no byline, and no favor back to you. The result he wants you to count is the stranger's outcome.",
+      "terms": [
+        {
+          "en": "Four beneficiaries",
+          "hook": "An owner, an employee, a client, and a life that changes because someone found the book."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Where to leave it",
+      "bodyEn": "On an audiobook app, the path he gives is the three dots at the top, then rate and review, then a few sentences and a star rating. On a reading device, scroll to the end of the book and swipe up so the review prompt opens. If those controls have moved, open the book's page at the store and leave the review there. Any of the three paths counts as doing the ask. The point is that the next reader can see the note in the place where they already decide. He thanks the reader and says the book then returns to the regular lessons.",
+      "terms": [
+        {
+          "en": "Three review paths",
+          "hook": "The listening app, the end of the ebook, or the store page."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "A true short note",
+      "bodyEn": "He asks for an honest review of the book and of what is inside it. A few true sentences are the whole assignment. The time box he gives is under 60 seconds. A note that says what you actually learned helps the next owner more than a vague cheer. If you like helping someone you will never meet, he says you are the reader he is most eager to keep teaching. The tactics in the coming chapters are the reason he wants that reader to stay.",
+      "terms": [
+        {
+          "en": "Honest review",
+          "hook": "A few true sentences and a rating, written in under a minute."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Value sticks to you",
+      "bodyEn": "The postscript is a separate move from the public review. When you introduce something valuable to a person, they associate that value with you. Sending this book to another owner is how he says you can receive goodwill directly. The review helps a stranger who finds the book on their own. The introduction helps someone you choose, and the warmth attaches to the person who handed it over. Both moves pass value onward, which is the whole job of this short chapter.",
+      "terms": [
+        {
+          "en": "Association hack",
+          "hook": "Hand someone a valuable thing, and they connect that value to you."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "A pause before the build",
+      "bodyEn": "This chapter sits between the value equation and the thinking exercise on purpose. He stops the framework to ask for the review before the next build steps. Reaching the next owner is part of the mission, and the later tactics still depend on people finding the book. If you have already received value, the review is how that value travels with no budget. If you would rather pass the book by hand, the association move does the same job for one person you know. Then the lesson resumes, and the next chapter trains the kind of thinking the offer requires.",
+      "terms": [
+        {
+          "en": "Pass it on",
+          "hook": "A review for strangers, or the book itself for one owner you choose."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "What this chapter asks",
+      "bodyEn": "The frameworks pause so the reader can pass value on. He sets the price of the favor at zero dollars and the time at under one minute. Credit and payment are both absent from the deal. Choose the action this chapter requests.",
+      "prompt": "What does this chapter ask the reader to do?",
+      "choices": [
+        "Leave an honest review that costs no money and takes under a minute",
+        "Pay for an endorsement with your name on the cover",
+        "Promise to buy the next book before finishing this one",
+        "Send the author a private note listing your revenue"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Help with no return",
+      "bodyEn": "People who help others with nothing expected back report more fulfillment, live longer, and make more money. He pauses the offer lessons to give the reader a chance to practice that kind of help. The favor costs no money. It also comes with no public credit. The person who benefits is someone the reader will never meet. He makes the ask on that stranger's behalf, in the middle of the book, before the build steps continue.",
+      "terms": [
+        {
+          "en": "No-ledger help",
+          "hook": "Help given with no payment and no credit expected in return."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Help a future owner",
+      "bodyEn": "The question is whether you would help a stranger if it cost no money and earned you no credit. That stranger looks like you, or like you a few years earlier. They have less experience, a real desire to help, and no clear map of where to learn. His firm's mission of helping owners only works if those people can be reached. Most people judge a book by the cover and by the reviews beside it. A review is one of the ways the next owner decides the book is worth opening.",
+      "terms": [
+        {
+          "en": "Social proof of the book",
+          "hook": "Reviews are how a stranger decides whether to trust the cover."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Who a review reaches",
+      "bodyEn": "If the book has been useful so far, the ask is an honest review. It costs zero dollars and takes less than a minute. He names four outcomes that review can support. One more owner can support a family, one more employee can find work that matters, one more client can receive a change they would have missed, and one more life can turn. The review comes with no prize, no byline, and no favor back to you. The result he wants you to count is the stranger's outcome.",
+      "terms": [
+        {
+          "en": "Four beneficiaries",
+          "hook": "An owner, an employee, a client, and a life that changes because someone found the book."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Where to leave it",
+      "bodyEn": "On an audiobook app, the path he gives is the three dots at the top, then rate and review, then a few sentences and a star rating. On a reading device, scroll to the end of the book and swipe up so the review prompt opens. If those controls have moved, open the book's page at the store and leave the review there. Any of the three paths counts as doing the ask. The point is that the next reader can see the note in the place where they already decide. He thanks the reader and says the book then returns to the regular lessons.",
+      "terms": [
+        {
+          "en": "Three review paths",
+          "hook": "The listening app, the end of the ebook, or the store page."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "A true short note",
+      "bodyEn": "He asks for an honest review of the book and of what is inside it. A few true sentences are the whole assignment. The time box he gives is under 60 seconds. A note that says what you actually learned helps the next owner more than a vague cheer. If you like helping someone you will never meet, he says you are the reader he is most eager to keep teaching. The tactics in the coming chapters are the reason he wants that reader to stay.",
+      "terms": [
+        {
+          "en": "Honest review",
+          "hook": "A few true sentences and a rating, written in under a minute."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Value sticks to you",
+      "bodyEn": "The postscript is a separate move from the public review. When you introduce something valuable to a person, they associate that value with you. Sending this book to another owner is how he says you can receive goodwill directly. The review helps a stranger who finds the book on their own. The introduction helps someone you choose, and the warmth attaches to the person who handed it over. Both moves pass value onward, which is the whole job of this short chapter.",
+      "terms": [
+        {
+          "en": "Association hack",
+          "hook": "Hand someone a valuable thing, and they connect that value to you."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "A pause before the build",
+      "bodyEn": "This chapter sits between the value equation and the thinking exercise on purpose. He stops the framework to ask for the review before the next build steps. Reaching the next owner is part of the mission, and the later tactics still depend on people finding the book. If you have already received value, the review is how that value travels with no budget. If you would rather pass the book by hand, the association move does the same job for one person you know. Then the lesson resumes, and the next chapter trains the kind of thinking the offer requires.",
+      "terms": [
+        {
+          "en": "Pass it on",
+          "hook": "A review for strangers, or the book itself for one owner you choose."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "What this chapter asks",
+      "bodyEn": "The frameworks pause so the reader can pass value on. He sets the price of the favor at zero dollars and the time at under one minute. Credit and payment are both absent from the deal. Choose the action this chapter requests.",
+      "prompt": "What does this chapter ask the reader to do?",
+      "choices": [
+        "Leave an honest review that costs no money and takes under a minute",
+        "Pay for an endorsement with your name on the cover",
+        "Promise to buy the next book before finishing this one",
+        "Send the author a private note listing your revenue"
+      ],
+      "answer": 0
+    }
+  ]
+}

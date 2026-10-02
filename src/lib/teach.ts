@@ -19,7 +19,7 @@ export const TEACH_KICKER: Record<TeachPhase, string> = {
 export const TEACH_TITLE: Record<TeachPhase, string> = {
   meet: 'This is the word',
   hook: 'How to remember it',
-  example: 'Is this the example?',
+  example: 'Hear it in context',
   seal: 'Hanzi, then pinyin',
 }
 
@@ -40,7 +40,7 @@ function posKey(pos: string): 'n' | 'v' | 'adj' | 'adv' | 'conj' | 'name' | 'num
   return 'other'
 }
 
-function defaultHook(word: Vocab): WordHook {
+function defaultHook(word: Vocab, example: Example | null): WordHook {
   const sense = firstSense(word.en)
   const kind = posKey(word.pos)
   const note = word.note.trim()
@@ -57,32 +57,33 @@ function defaultHook(word: Vocab): WordHook {
             : kind === 'name'
               ? `Remember ${word.zh} as the name ${word.en}. Say it when that person or place comes up.`
               : kind === 'num'
-                ? `Remember ${word.zh} like the word you’ll use when you mean ${sense} — usually people, not objects.`
+                ? `Connect ${word.zh} to the amount or counting expression “${sense}”.`
                 : `Remember ${word.zh} like the word you’ll use when you need to talk about ${sense}.`
 
   const usage =
     note ||
-    (kind === 'v'
-      ? `Most Chinese speakers use it as the everyday verb for this. Say it when the action is happening.`
+    (example?.zh.includes(word.zh)
+      ? `Notice what comes before and after ${word.zh} in the lesson line: ${example.zh}`
+      : kind === 'v'
+      ? `Connect this action to its subject and object. Use your curriculum’s example to keep the sentence pattern accurate.`
       : kind === 'adj'
-        ? `Most Chinese speakers use it to describe a person or thing that is ${sense}.`
+        ? `Attach this description to a concrete person or thing, then retrieve the description without looking.`
         : kind === 'adv'
-          ? `Most Chinese speakers drop it in to shade a sentence — “${sense}”, not a new noun.`
+          ? `Notice where this word sits in the source sentence and what it changes about the meaning.`
           : kind === 'conj'
-            ? `Most Chinese speakers use it to join clauses. It’s grammar you hear, not a thing you can point at.`
+            ? `Keep the two ideas it connects together when you practise the source sentence.`
             : kind === 'name'
               ? `Treat it as a proper name. Don’t translate it — just recognise it.`
               : kind === 'num'
-                ? `Most Chinese speakers use it to count people or name that amount — ${sense} — not as a thing you can point at.`
-                : `Most Chinese speakers use it as the everyday noun for ${sense} — the thing itself, not a side detail.`)
+                ? `Keep its counting pattern from the curriculum together with the word.`
+                : `Link this noun to a concrete example and an action that you can use with it.`)
 
   return { when, usage }
 }
 
 /** Coach lines: overlay when/usage when the lesson file has them. */
 export function wordHook(word: Vocab, example: Example | null, lesson?: number): WordHook {
-  void example
-  const fallback = defaultHook(word)
+  const fallback = defaultHook(word, example)
   const overlay = overlayWord(word.zh, lesson)
   return {
     when: overlay?.when?.trim() || fallback.when,

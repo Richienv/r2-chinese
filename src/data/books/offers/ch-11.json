@@ -1,0 +1,187 @@
+{
+  "id": "11",
+  "index": 11,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Five offer enhancers",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Same product, higher price",
+      "bodyEn": "A charity dinner sold fewer tickets at a higher price and raised more money from more qualified donors before the night began. People reach for what they cannot have, what other people want, and what only a few can access. The objects on offer were unchanged. Limited quantity, a one-time chance, and extra bonuses changed what those objects sold for. Scarcity, urgency, and bonuses can move price while the product stays fixed. Guarantees and names complete a set of five enhancers that sit on the offer, and each later chapter pulls one of them."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Shift supply and demand",
+      "bodyEn": "Marketing moves the supply and demand curve. More demand lets you sell more units. Less supply lets you charge more for the units you do sell. The strong profit mix is heavy demand and thin supply, including supply the market only believes is thin. Enhancing the core offer raises demand and lowers perceived supply, so the same product can sell for more and, over a longer stretch, in greater volume. Treat this as the plan for an ordinary business that wants profit from the offer, with the product inside left intact.",
+      "terms": [
+        {
+          "en": "Perceived supply",
+          "hook": "How little availability the buyer believes is left, whether or not you are truly out."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Leave desire unmet",
+      "bodyEn": "People want what they do not yet have, and desire falls once they get it. Raising desire means selling fewer units than you could, or delaying the moment you satisfy people. One version sells the whole room at a low price. Another sells a few expensive spots and leaves most of the room out. Seeing other people get in and enjoy it raises desire further, so the next time those buyers act faster and pay more. Satisfy everyone on the first ask and the following promotion has nothing stored up.",
+      "terms": [
+        {
+          "en": "Unmet demand",
+          "hook": "Buyers you could have served and chose to leave waiting, so desire stays alive."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "The long runway",
+      "bodyEn": "A longer delay before the ask supports a larger ask. Keep the supply you release, and the desire you satisfy, under the demand you can generate. Serve nobody and you make no money, and people eventually feel shut out, though that takes longer than it feels like it will. Serve everybody and each later round sells less, until the offer is tired. The useful band sits between those extremes, with buyers still hungry after each release. How you present the offer can move them more than another tweak to the core deliverable."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Sell the top slice",
+      "bodyEn": "Demand for this kind of service is lumpy, rather than a smooth slope. About one fifth of prospects may pay five times the common price, or more. In one picture, ten people might accept five hundred dollars for a group workshop, while two of them would pay five thousand for a private day. Selling the two private days can earn more than selling all ten cheap seats, cost less to deliver, and leave eight people still wanting in. Those eight, plus newcomers who heard about it, are the pool for the next round, where you can open a few more expensive spots and still leave some people out. Sell the cheap room to everyone again and the second round usually shrinks, because the first round already used up the desire."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Five jobs for five levers",
+      "bodyEn": "Scarcity reduces supply so price can rise, and the feeling of exclusivity pulls demand up with it. Urgency increases demand by lowering the threshold to decide now. Bonuses increase demand, and they can make the offer feel exclusive as well. Guarantees increase demand by reversing the risk that the result will fail. Names restart demand and help the right audience notice the offer. Used together, they shift the demand curve and leave people wanting more after they buy. The tactical start is scarcity, which is fear of missing out tied to quantity.",
+      "terms": [
+        {
+          "en": "Scarcity",
+          "hook": "A limit on quantity that supports a higher price and a feeling of exclusive access."
+        },
+        {
+          "en": "Urgency",
+          "hook": "A limit on time that pushes the decision forward."
+        },
+        {
+          "en": "Guarantee",
+          "hook": "A reversal of the buyer's risk that the result will fail for them."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Outside the core",
+      "bodyEn": "These five levers sit outside the deliverable and position it in the buyer's mind. The core you already built is what makes a straight price comparison difficult. Presentation is the next variable, and it is often the stronger one. Scarcity and urgency are frequently paired, and they constrain different things: how many can buy, and by when they must act. Bonuses are the order in which you reveal the stack you already assembled. A guarantee answers the fear of failure, and a name is the wrapper that gets the right person to look, while the work inside can stay the same."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Keep hunger alive",
+      "bodyEn": "Satisfying every buyer on the first ask spends the demand you just created. The businesses that stay fed release less than the market wants and let the leftover desire compound. New prospects appear because they see others get in. The next opening can cost more and still sell, because waiting made the thing more wanted. Ask earlier than the demand can support and each later campaign starts colder. Hold the core offer steady while these outside levers do that work, and expect the detailed tactics in the chapters that follow."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Which lever does this",
+      "bodyEn": "Each enhancer has a primary job on an offer that is already built. A quantity limit changes supply and the feeling of exclusivity. A time limit changes how soon someone acts. Extra named pieces change perceived value. Risk reversal changes whether they will try. A fresh name changes who notices, and it can restart an offer the market has grown used to. Match the job to the lever before you write the tactic, and leave some demand unmet so the next round still has hunger in it.",
+      "prompt": "Which pair of moves matches this chapter?",
+      "choices": [
+        "Cut the price until the whole room buys, then hope they return",
+        "Satisfy every lead on the first campaign so nobody feels left out",
+        "Raise demand and lower perceived supply with the five outside levers",
+        "Replace the stack with a new product each time response dips"
+      ],
+      "answer": 2
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Same product, higher price",
+      "bodyEn": "A charity dinner sold fewer tickets at a higher price and raised more money from more qualified donors before the night began. People reach for what they cannot have, what other people want, and what only a few can access. The objects on offer were unchanged. Limited quantity, a one-time chance, and extra bonuses changed what those objects sold for. Scarcity, urgency, and bonuses can move price while the product stays fixed. Guarantees and names complete a set of five enhancers that sit on the offer, and each later chapter pulls one of them."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Shift supply and demand",
+      "bodyEn": "Marketing moves the supply and demand curve. More demand lets you sell more units. Less supply lets you charge more for the units you do sell. The strong profit mix is heavy demand and thin supply, including supply the market only believes is thin. Enhancing the core offer raises demand and lowers perceived supply, so the same product can sell for more and, over a longer stretch, in greater volume. Treat this as the plan for an ordinary business that wants profit from the offer, with the product inside left intact.",
+      "terms": [
+        {
+          "en": "Perceived supply",
+          "hook": "How little availability the buyer believes is left, whether or not you are truly out."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Leave desire unmet",
+      "bodyEn": "People want what they do not yet have, and desire falls once they get it. Raising desire means selling fewer units than you could, or delaying the moment you satisfy people. One version sells the whole room at a low price. Another sells a few expensive spots and leaves most of the room out. Seeing other people get in and enjoy it raises desire further, so the next time those buyers act faster and pay more. Satisfy everyone on the first ask and the following promotion has nothing stored up.",
+      "terms": [
+        {
+          "en": "Unmet demand",
+          "hook": "Buyers you could have served and chose to leave waiting, so desire stays alive."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "The long runway",
+      "bodyEn": "A longer delay before the ask supports a larger ask. Keep the supply you release, and the desire you satisfy, under the demand you can generate. Serve nobody and you make no money, and people eventually feel shut out, though that takes longer than it feels like it will. Serve everybody and each later round sells less, until the offer is tired. The useful band sits between those extremes, with buyers still hungry after each release. How you present the offer can move them more than another tweak to the core deliverable."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Sell the top slice",
+      "bodyEn": "Demand for this kind of service is lumpy, rather than a smooth slope. About one fifth of prospects may pay five times the common price, or more. In one picture, ten people might accept five hundred dollars for a group workshop, while two of them would pay five thousand for a private day. Selling the two private days can earn more than selling all ten cheap seats, cost less to deliver, and leave eight people still wanting in. Those eight, plus newcomers who heard about it, are the pool for the next round, where you can open a few more expensive spots and still leave some people out. Sell the cheap room to everyone again and the second round usually shrinks, because the first round already used up the desire."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Five jobs for five levers",
+      "bodyEn": "Scarcity reduces supply so price can rise, and the feeling of exclusivity pulls demand up with it. Urgency increases demand by lowering the threshold to decide now. Bonuses increase demand, and they can make the offer feel exclusive as well. Guarantees increase demand by reversing the risk that the result will fail. Names restart demand and help the right audience notice the offer. Used together, they shift the demand curve and leave people wanting more after they buy. The tactical start is scarcity, which is fear of missing out tied to quantity.",
+      "terms": [
+        {
+          "en": "Scarcity",
+          "hook": "A limit on quantity that supports a higher price and a feeling of exclusive access."
+        },
+        {
+          "en": "Urgency",
+          "hook": "A limit on time that pushes the decision forward."
+        },
+        {
+          "en": "Guarantee",
+          "hook": "A reversal of the buyer's risk that the result will fail for them."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Outside the core",
+      "bodyEn": "These five levers sit outside the deliverable and position it in the buyer's mind. The core you already built is what makes a straight price comparison difficult. Presentation is the next variable, and it is often the stronger one. Scarcity and urgency are frequently paired, and they constrain different things: how many can buy, and by when they must act. Bonuses are the order in which you reveal the stack you already assembled. A guarantee answers the fear of failure, and a name is the wrapper that gets the right person to look, while the work inside can stay the same."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Keep hunger alive",
+      "bodyEn": "Satisfying every buyer on the first ask spends the demand you just created. The businesses that stay fed release less than the market wants and let the leftover desire compound. New prospects appear because they see others get in. The next opening can cost more and still sell, because waiting made the thing more wanted. Ask earlier than the demand can support and each later campaign starts colder. Hold the core offer steady while these outside levers do that work, and expect the detailed tactics in the chapters that follow."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Which lever does this",
+      "bodyEn": "Each enhancer has a primary job on an offer that is already built. A quantity limit changes supply and the feeling of exclusivity. A time limit changes how soon someone acts. Extra named pieces change perceived value. Risk reversal changes whether they will try. A fresh name changes who notices, and it can restart an offer the market has grown used to. Match the job to the lever before you write the tactic, and leave some demand unmet so the next round still has hunger in it.",
+      "prompt": "Which pair of moves matches this chapter?",
+      "choices": [
+        "Cut the price until the whole room buys, then hope they return",
+        "Satisfy every lead on the first campaign so nobody feels left out",
+        "Raise demand and lower perceived supply with the five outside levers",
+        "Replace the stack with a new product each time response dips"
+      ],
+      "answer": 2
+    }
+  ]
+}

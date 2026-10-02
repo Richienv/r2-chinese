@@ -1,0 +1,222 @@
+{
+  "id": "06",
+  "index": 6,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Which jobs help most",
+  "titleSource": "Chapter 6",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Five ways past the clinic",
+      "bodyEn": "The chapter's picture of wasted talent is a superhero who stops one crime after another, when rushing vaccines across the world might have wiped out most infectious disease and saved hundreds of millions of lives. Graduates who want to help often make a similar move into medicine or teaching, paths that can fit their skills poorly and add little once the urgent work is already crowded. Karl Landsteiner could never have performed as many operations as the discovery of blood groups made possible for other surgeons. After a problem is chosen, the chapter sorts contribution into five approaches, taken up in turn: earning money in order to give, spreading ideas, doing research, entering government and policy work, and building organisations. There is no universal winner among the five. The right approach is one the problem actually needs and one you can become unusually good at. Concrete career reviews in an appendix add further options beyond the five labels."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Earning to give",
+      "bodyEn": "Earning to give means work whose direct effect is neutral or helpful, paying more than your alternative, while you donate a large share, often a fifth to a half of the whole salary, to organisations you think are highly effective. It includes anyone who earns more in order to give more, and it is especially powerful if you fit a higher-earning path, because many effective groups can find willing staff and cannot find funds. Elton John's work against HIV is the chapter's reminder that a performer can save thousands of lives through money, quite apart from the music. Jeff and Julia, a couple with three children, moved him from work as a research technician into software engineering, more than doubled their earnings, and gave about half their income, which on their reckoning could fund about two nonprofit chief salaries while they lived on more than a nonprofit wage in a job he enjoyed. Donations can be retargeted when the most pressing gap changes, which is harder than retargeting a job, and that flexibility matters when you are unsure what will be most urgent later. Hardly anyone gives more than a few percent, so a person willing to give a large share stands out across a wide range of ordinary jobs. At a typical graduate salary their concrete floor was dozens of lives from a ten percent gift to a top malaria charity, and a larger share or a stronger target is how they argue the total can reach the hundreds.",
+      "terms": [
+        {
+          "en": "earning to give",
+          "hook": "If they say this, they mean a higher-paying job with little direct harm, plus a large donation from the salary."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "When earning to give fits",
+      "bodyEn": "Earning to give became their most famous idea, and it is a baseline rather than the top recommendation. Many people could use it to do a great deal of good, on the scale of a hundred lives or more, while they think only about ten percent of the people they advise one to one should make it their main path. Jeff later left the high-paying engineering job for research at the Nucleic Acid Observatory, building wastewater monitoring meant to catch pandemics early, and the couple still planned to give over thirty percent while expecting the direct work to matter more than the gifts. The path fits especially well when you match higher earnings and match the direct roles poorly, when you already want a job such as medicine or need the pay for your family, when the job also builds skill you will use more directly later, when uncertainty makes redirectable gifts valuable, or when the area is short of money rather than short of talent. Leave aside any job you believe does significant harm, even if the salary would fund excellent donations, which is the lesson they draw from having featured Sam Bankman-Fried before his exchange collapsed amid fraud charges and missing customer funds. Ordinary earners have stuck with public pledges more often than the authors first feared, helped by a community, while chasing the maximum fortune carries a real risk that power corrupts, so large sums need a board, formal governance, and advisors who can refuse you. Leave the path when the higher-paying work would leave you unmotivated, and remember that interest can still grow in more jobs than a first reaction suggests."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Communication and community",
+      "bodyEn": "Persuading two friends to earn to give can do about twice as much as earning to give yourself, which is the basic case for communication. Ideas spread cheaply, so a small group can move a government, a public, or a circle of friends far beyond what those people could do with their own hands. Careful advocacy is neglected because important ideas often have no commercial buyer, the most valuable ones are widely unaccepted, and opposing the status quo is uncomfortable for years. Results are heavily skewed, so an exceptional communicator will usually do more by speaking than by only paying someone else to speak. Rosa Parks, a seamstress deeply involved in the civil rights movement, helped turn her arrest into a bus boycott in a city of about forty thousand African Americans and a court ruling against segregated buses. Viktor Zhdanov lobbied the World Health Organization to start smallpox eradication, a campaign a later chief had at first declined to lead, and smallpox killed on the order of four hundred million people in that century, more than the century's wars and political famines. Community building is the face-to-face cousin: Susan B Anthony organised while a cofounder did much of the writing, and a student named Kuhan founded the Stanford Existential Risk Initiative because the campus had no group on that problem.",
+      "terms": [
+        {
+          "en": "community building",
+          "hook": "If they say this, they mean organising people around an important idea, rather than only publishing the idea."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Research and its support",
+      "bodyEn": "Academia wastes a lot of talent, and the authors still rank research among the highest-impact routes, inside universities and outside them. Alan Turing's code-breaking is estimated to have let a major wartime landing happen about a year sooner, and with war deaths around ten million a year that is an enormous saving, beside inventing the computer from mathematics that started out abstract. Discoveries spread cheaply and stack over time, only about one person in a thousand is an academic, and profit captures little of the social value, especially for fundamental work that is hard to own, while applied breakthroughs can also speed every later discovery. Several problems they care most about, including future pandemics and risks from artificial intelligence, are constrained by missing research, from faster paths to a vaccine to technical safeguards against dangerous behaviour. Output is skewed enough that most papers have a single citation, the top tenth of one percent have over a thousand, and biomedical colleagues describe one strong researcher as covering the ground of several. A plausible top fifth in a relevant field, or exceptional talent even before the use is clear, belongs on the list, including company labs such as BioNTech and research posts in think tanks. Support roles are part of the same bet, because administrators and grantmakers who understand the science are scarce, which is why Sean O hEigeartaigh's management kept early existential-risk institutes functioning and why an engineer named Neel took an interpretability post at a leading lab that might flag dangerous systems before they cause harm."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Government and policy",
+      "bodyEn": "A quiet government job rarely matches the picture of doing good, and senior officials often oversee budgets of tens or hundreds of millions, so spending a couple of percent more effectively can be worth millions of extra dollars. Suzy Deuster had wanted to be a public defender and might have improved justice for hundreds of clients, while policy might improve it for thousands or millions, and she used a legal background to work on criminal justice reform inside the US executive office, with room to move into other policy later. Many issues the guide most recommends, from animal welfare to technology, depend on institutions that can create and enforce rules, such as a ban on battery cages for egg-laying hens. Governments can also solve coordination problems that no individual finds worthwhile alone, as when contact tracing slowed a pandemic because the state provided it. Policy roles use a wide range of skills, so some high-impact option exists for nearly everyone. A modest improvement inside a huge institution can beat a more obviously virtuous post outside it. The application notes later add that a politics degree is unnecessary for many of these entries."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Build the organisation",
+      "bodyEn": "Charity work is the default picture of a good career, and plenty of charity jobs have little impact. Some back programmes that cause harm, such as the crime-prevention scheme that increased offending, and some help in low-leverage ways, one patient or one meal at a time, when a discovery or a rule change would have reached further. Many popular organisations are short of money rather than short of enthusiastic people, so declining the job simply hires someone nearly as good, and a lawyer's hour at a soup kitchen can be worth less than donating the wage or doing pro bono legal work. Nonprofits still do what markets and academic prestige will not, including research without glory, advocacy for animals or future generations, and services that could never turn a profit. Building or improving an organisation lets many people coordinate, can keep working after you leave, and includes businesses, think tanks, and research groups as well as charities. Clare joined the Lead Exposure Elimination Project as an early staff member, helped grow programmes and hiring, and saw the group push paint testing with the government of Malawi, while Sendwave cut migrant remittance fees from about ten percent to about three percent in a market larger than foreign aid. Learn operations, management, fundraising, systems, or finance at any competent organisation, then take them to a group working on your most pressing problem that actually needs those skills, and if you want to found something, get near the edge of that problem first so the gap you spot is real."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Power can magnify harm",
+      "bodyEn": "The five labels leave out real options, and information security is one they name, because groups working on artificial intelligence and biological catastrophes need experts and few trained people are aiming that skill at those problems. A longer menu sits in the career-review appendix. Every one of the five paths increases how much you can contribute, and the same increase raises how much harm you can do by a mistake, by backing the wrong issue, or by acting badly. As influence grows, keeping it can start to require compromises, other people become less willing to disagree with you, and power can corrupt even people who sought it in order to help. Unusually important and neglected problems raise the stakes further, because a slip sets back an issue few others are covering. Across every approach, they recommend refusing jobs and actions you believe are harmful, in place of accepting the harm for a hoped-for greater good. Character sits with skills, connections, and credentials in the preparation the next chapter calls career capital, so influence does not outrun judgement."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Fit beats a hated job",
+      "bodyEn": "Personal fit is the crucial filter among the five approaches, because any of them can be high impact when you are good at it. A landmark look at expert performers found that the top tenth of workers in a domain often produce about half the output, the bottom half produce only about fifteen percent, and the most prolific person can outproduce the least by about a hundred times. An outstanding charity worker will usually do more good than a mediocre engineer who earns to give, and a brilliant earner will usually beat a weak hire at a nonprofit. A job you would hate, taken only for impact, tends to end in burnout and can discourage other people from using their careers to help. Narrowing too early is a matching mistake, because people underestimate how quickly a new interest can form, and a working life on the order of eighty thousand hours leaves room to learn skills your current background leaves out. Explore widely enough to become interested in new approaches, then focus on what is going well. Feeling unsure is normal, and a vague aim is a fine starting point if you make it more specific over the years.",
+      "terms": [
+        {
+          "en": "personal fit",
+          "hook": "If they say this, they mean being unusually good at the work, and motivated enough to stay excellent."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Match the problem's need",
+      "bodyEn": "Every problem has its own shortage, so choose the routes that shortage actually calls for. Breast cancer, in their example, already has broad public awareness, and extra awareness campaigns will go less far than skilled research on better treatments. The approaches also stack inside one life. A teacher can help students directly, develop new techniques, tell students about pressing problems, and, as in a case they know, tutor privately in order to donate more. Often the impact sits in how you use a position, as well as in the job title. An outstanding fit on a needed approach beats a famous title in a saturated one. That is how a singer, a seamstress, and a mathematician each reached further than the everyday label of their work suggests."
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "Shortlist, then capital",
+      "bodyEn": "Before the next chapter, make a long-run shortlist rather than a final choice, and err toward extra options. Generate two or three concrete paths inside each approach that might fit you, ask what your top problems most need, note anything you might uniquely excel at, and imagine the working day you want, including what you would do if money were irrelevant or you had ten years left. Include paths unrelated to your past studies, because a transition of a couple of years can be worth it across a whole career, and an undergraduate subject is a weak constraint, especially in government and policy. The guide so far says a fulfilling job helps others, uses your skill, and has supportive conditions, while a high-impact job focuses on pressing problems, uses a high-leverage approach, and gives you room to excel. Helping and personal satisfaction overlap more than a sacrifice story suggests, because a job you hate will not stay effective, and a satisfying job already includes contribution, though the personally perfect role and the socially best role can still differ. Some people can step into that role immediately, and many need skills, connections, credentials, and character before it opens. The chapter names that bundle career capital, and the next chapter is about how to build it.",
+      "terms": [
+        {
+          "en": "career capital",
+          "hook": "If they say this, they mean skills, connections, credentials, and character that make a high-impact job reachable later."
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Best contribution check",
+      "bodyEn": "After a problem is chosen, compare earning to give, communication and community building, research, government and policy, and organisation building. Earning to give is a strong baseline that can save many lives from an ordinary salary, and for most people they advise it is the backup rather than the main plan. The winning approach is one the problem needs and one where you might be unusually good, because the best people in a field do a disproportionate share of the work. Roles you believe are harmful stay off the list, whatever later donations they might fund. A shortlist should stay wide at the start, including paths far from your current studies, and then narrow toward fit, need, and the supportive conditions from the first chapter. Where the option is closed for now, the next task is career capital rather than a forced permanent choice.",
+      "prompt": "Which pair of tests does this chapter use to choose among ways of helping?",
+      "choices": [
+        "The job with the highest public status, then the one closest to your degree",
+        "Only earning to give, as the path they recommend to almost everyone they meet",
+        "Only jobs inside charities, because other sectors cannot help",
+        "What the problem most needs, and where your personal fit is strong enough that you might be unusually good"
+      ],
+      "answer": 3
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Five ways past the clinic",
+      "bodyEn": "The chapter's picture of wasted talent is a superhero who stops one crime after another, when rushing vaccines across the world might have wiped out most infectious disease and saved hundreds of millions of lives. Graduates who want to help often make a similar move into medicine or teaching, paths that can fit their skills poorly and add little once the urgent work is already crowded. Karl Landsteiner could never have performed as many operations as the discovery of blood groups made possible for other surgeons. After a problem is chosen, the chapter sorts contribution into five approaches, taken up in turn: earning money in order to give, spreading ideas, doing research, entering government and policy work, and building organisations. There is no universal winner among the five. The right approach is one the problem actually needs and one you can become unusually good at. Concrete career reviews in an appendix add further options beyond the five labels."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Earning to give",
+      "bodyEn": "Earning to give means work whose direct effect is neutral or helpful, paying more than your alternative, while you donate a large share, often a fifth to a half of the whole salary, to organisations you think are highly effective. It includes anyone who earns more in order to give more, and it is especially powerful if you fit a higher-earning path, because many effective groups can find willing staff and cannot find funds. Elton John's work against HIV is the chapter's reminder that a performer can save thousands of lives through money, quite apart from the music. Jeff and Julia, a couple with three children, moved him from work as a research technician into software engineering, more than doubled their earnings, and gave about half their income, which on their reckoning could fund about two nonprofit chief salaries while they lived on more than a nonprofit wage in a job he enjoyed. Donations can be retargeted when the most pressing gap changes, which is harder than retargeting a job, and that flexibility matters when you are unsure what will be most urgent later. Hardly anyone gives more than a few percent, so a person willing to give a large share stands out across a wide range of ordinary jobs. At a typical graduate salary their concrete floor was dozens of lives from a ten percent gift to a top malaria charity, and a larger share or a stronger target is how they argue the total can reach the hundreds.",
+      "terms": [
+        {
+          "en": "earning to give",
+          "hook": "If they say this, they mean a higher-paying job with little direct harm, plus a large donation from the salary."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "When earning to give fits",
+      "bodyEn": "Earning to give became their most famous idea, and it is a baseline rather than the top recommendation. Many people could use it to do a great deal of good, on the scale of a hundred lives or more, while they think only about ten percent of the people they advise one to one should make it their main path. Jeff later left the high-paying engineering job for research at the Nucleic Acid Observatory, building wastewater monitoring meant to catch pandemics early, and the couple still planned to give over thirty percent while expecting the direct work to matter more than the gifts. The path fits especially well when you match higher earnings and match the direct roles poorly, when you already want a job such as medicine or need the pay for your family, when the job also builds skill you will use more directly later, when uncertainty makes redirectable gifts valuable, or when the area is short of money rather than short of talent. Leave aside any job you believe does significant harm, even if the salary would fund excellent donations, which is the lesson they draw from having featured Sam Bankman-Fried before his exchange collapsed amid fraud charges and missing customer funds. Ordinary earners have stuck with public pledges more often than the authors first feared, helped by a community, while chasing the maximum fortune carries a real risk that power corrupts, so large sums need a board, formal governance, and advisors who can refuse you. Leave the path when the higher-paying work would leave you unmotivated, and remember that interest can still grow in more jobs than a first reaction suggests."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Communication and community",
+      "bodyEn": "Persuading two friends to earn to give can do about twice as much as earning to give yourself, which is the basic case for communication. Ideas spread cheaply, so a small group can move a government, a public, or a circle of friends far beyond what those people could do with their own hands. Careful advocacy is neglected because important ideas often have no commercial buyer, the most valuable ones are widely unaccepted, and opposing the status quo is uncomfortable for years. Results are heavily skewed, so an exceptional communicator will usually do more by speaking than by only paying someone else to speak. Rosa Parks, a seamstress deeply involved in the civil rights movement, helped turn her arrest into a bus boycott in a city of about forty thousand African Americans and a court ruling against segregated buses. Viktor Zhdanov lobbied the World Health Organization to start smallpox eradication, a campaign a later chief had at first declined to lead, and smallpox killed on the order of four hundred million people in that century, more than the century's wars and political famines. Community building is the face-to-face cousin: Susan B Anthony organised while a cofounder did much of the writing, and a student named Kuhan founded the Stanford Existential Risk Initiative because the campus had no group on that problem.",
+      "terms": [
+        {
+          "en": "community building",
+          "hook": "If they say this, they mean organising people around an important idea, rather than only publishing the idea."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Research and its support",
+      "bodyEn": "Academia wastes a lot of talent, and the authors still rank research among the highest-impact routes, inside universities and outside them. Alan Turing's code-breaking is estimated to have let a major wartime landing happen about a year sooner, and with war deaths around ten million a year that is an enormous saving, beside inventing the computer from mathematics that started out abstract. Discoveries spread cheaply and stack over time, only about one person in a thousand is an academic, and profit captures little of the social value, especially for fundamental work that is hard to own, while applied breakthroughs can also speed every later discovery. Several problems they care most about, including future pandemics and risks from artificial intelligence, are constrained by missing research, from faster paths to a vaccine to technical safeguards against dangerous behaviour. Output is skewed enough that most papers have a single citation, the top tenth of one percent have over a thousand, and biomedical colleagues describe one strong researcher as covering the ground of several. A plausible top fifth in a relevant field, or exceptional talent even before the use is clear, belongs on the list, including company labs such as BioNTech and research posts in think tanks. Support roles are part of the same bet, because administrators and grantmakers who understand the science are scarce, which is why Sean O hEigeartaigh's management kept early existential-risk institutes functioning and why an engineer named Neel took an interpretability post at a leading lab that might flag dangerous systems before they cause harm."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Government and policy",
+      "bodyEn": "A quiet government job rarely matches the picture of doing good, and senior officials often oversee budgets of tens or hundreds of millions, so spending a couple of percent more effectively can be worth millions of extra dollars. Suzy Deuster had wanted to be a public defender and might have improved justice for hundreds of clients, while policy might improve it for thousands or millions, and she used a legal background to work on criminal justice reform inside the US executive office, with room to move into other policy later. Many issues the guide most recommends, from animal welfare to technology, depend on institutions that can create and enforce rules, such as a ban on battery cages for egg-laying hens. Governments can also solve coordination problems that no individual finds worthwhile alone, as when contact tracing slowed a pandemic because the state provided it. Policy roles use a wide range of skills, so some high-impact option exists for nearly everyone. A modest improvement inside a huge institution can beat a more obviously virtuous post outside it. The application notes later add that a politics degree is unnecessary for many of these entries."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Build the organisation",
+      "bodyEn": "Charity work is the default picture of a good career, and plenty of charity jobs have little impact. Some back programmes that cause harm, such as the crime-prevention scheme that increased offending, and some help in low-leverage ways, one patient or one meal at a time, when a discovery or a rule change would have reached further. Many popular organisations are short of money rather than short of enthusiastic people, so declining the job simply hires someone nearly as good, and a lawyer's hour at a soup kitchen can be worth less than donating the wage or doing pro bono legal work. Nonprofits still do what markets and academic prestige will not, including research without glory, advocacy for animals or future generations, and services that could never turn a profit. Building or improving an organisation lets many people coordinate, can keep working after you leave, and includes businesses, think tanks, and research groups as well as charities. Clare joined the Lead Exposure Elimination Project as an early staff member, helped grow programmes and hiring, and saw the group push paint testing with the government of Malawi, while Sendwave cut migrant remittance fees from about ten percent to about three percent in a market larger than foreign aid. Learn operations, management, fundraising, systems, or finance at any competent organisation, then take them to a group working on your most pressing problem that actually needs those skills, and if you want to found something, get near the edge of that problem first so the gap you spot is real."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Power can magnify harm",
+      "bodyEn": "The five labels leave out real options, and information security is one they name, because groups working on artificial intelligence and biological catastrophes need experts and few trained people are aiming that skill at those problems. A longer menu sits in the career-review appendix. Every one of the five paths increases how much you can contribute, and the same increase raises how much harm you can do by a mistake, by backing the wrong issue, or by acting badly. As influence grows, keeping it can start to require compromises, other people become less willing to disagree with you, and power can corrupt even people who sought it in order to help. Unusually important and neglected problems raise the stakes further, because a slip sets back an issue few others are covering. Across every approach, they recommend refusing jobs and actions you believe are harmful, in place of accepting the harm for a hoped-for greater good. Character sits with skills, connections, and credentials in the preparation the next chapter calls career capital, so influence does not outrun judgement."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Fit beats a hated job",
+      "bodyEn": "Personal fit is the crucial filter among the five approaches, because any of them can be high impact when you are good at it. A landmark look at expert performers found that the top tenth of workers in a domain often produce about half the output, the bottom half produce only about fifteen percent, and the most prolific person can outproduce the least by about a hundred times. An outstanding charity worker will usually do more good than a mediocre engineer who earns to give, and a brilliant earner will usually beat a weak hire at a nonprofit. A job you would hate, taken only for impact, tends to end in burnout and can discourage other people from using their careers to help. Narrowing too early is a matching mistake, because people underestimate how quickly a new interest can form, and a working life on the order of eighty thousand hours leaves room to learn skills your current background leaves out. Explore widely enough to become interested in new approaches, then focus on what is going well. Feeling unsure is normal, and a vague aim is a fine starting point if you make it more specific over the years.",
+      "terms": [
+        {
+          "en": "personal fit",
+          "hook": "If they say this, they mean being unusually good at the work, and motivated enough to stay excellent."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Match the problem's need",
+      "bodyEn": "Every problem has its own shortage, so choose the routes that shortage actually calls for. Breast cancer, in their example, already has broad public awareness, and extra awareness campaigns will go less far than skilled research on better treatments. The approaches also stack inside one life. A teacher can help students directly, develop new techniques, tell students about pressing problems, and, as in a case they know, tutor privately in order to donate more. Often the impact sits in how you use a position, as well as in the job title. An outstanding fit on a needed approach beats a famous title in a saturated one. That is how a singer, a seamstress, and a mathematician each reached further than the everyday label of their work suggests."
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "Shortlist, then capital",
+      "bodyEn": "Before the next chapter, make a long-run shortlist rather than a final choice, and err toward extra options. Generate two or three concrete paths inside each approach that might fit you, ask what your top problems most need, note anything you might uniquely excel at, and imagine the working day you want, including what you would do if money were irrelevant or you had ten years left. Include paths unrelated to your past studies, because a transition of a couple of years can be worth it across a whole career, and an undergraduate subject is a weak constraint, especially in government and policy. The guide so far says a fulfilling job helps others, uses your skill, and has supportive conditions, while a high-impact job focuses on pressing problems, uses a high-leverage approach, and gives you room to excel. Helping and personal satisfaction overlap more than a sacrifice story suggests, because a job you hate will not stay effective, and a satisfying job already includes contribution, though the personally perfect role and the socially best role can still differ. Some people can step into that role immediately, and many need skills, connections, credentials, and character before it opens. The chapter names that bundle career capital, and the next chapter is about how to build it.",
+      "terms": [
+        {
+          "en": "career capital",
+          "hook": "If they say this, they mean skills, connections, credentials, and character that make a high-impact job reachable later."
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Best contribution check",
+      "bodyEn": "After a problem is chosen, compare earning to give, communication and community building, research, government and policy, and organisation building. Earning to give is a strong baseline that can save many lives from an ordinary salary, and for most people they advise it is the backup rather than the main plan. The winning approach is one the problem needs and one where you might be unusually good, because the best people in a field do a disproportionate share of the work. Roles you believe are harmful stay off the list, whatever later donations they might fund. A shortlist should stay wide at the start, including paths far from your current studies, and then narrow toward fit, need, and the supportive conditions from the first chapter. Where the option is closed for now, the next task is career capital rather than a forced permanent choice.",
+      "prompt": "Which pair of tests does this chapter use to choose among ways of helping?",
+      "choices": [
+        "The job with the highest public status, then the one closest to your degree",
+        "Only earning to give, as the path they recommend to almost everyone they meet",
+        "Only jobs inside charities, because other sectors cannot help",
+        "What the problem most needs, and where your personal fit is strong enough that you might be unusually good"
+      ],
+      "answer": 3
+    }
+  ]
+}

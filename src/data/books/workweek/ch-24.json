@@ -1,0 +1,142 @@
+{
+  "id": "24",
+  "index": 24,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Cut Extra Choices",
+  "titleSource": "The Choice-Minimal Lifestyle: 6 Formulas for More Output and Less Overwhelm",
+  "sourcePages": "",
+  "when": "Blog",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Options spend attention",
+      "bodyEn": "More options tend to raise regret and to lower satisfaction with the option you eventually pick. Spend less attention on deliberating, so that attention can go to action or to enjoying the choice you made. Reviewing a long list has a cost even when the final pick is good. Too many open choices reduce output, reduce appreciation, and create overwhelm. A weekend stops being free when a short look at the inbox plants a problem you cannot touch until Monday. Capable people still make many decisions. The account to protect is the time spent wavering.",
+      "terms": [
+        {
+          "en": "deliberation",
+          "hook": "The time you spend wavering before a decision. The decision count is a separate number."
+        },
+        {
+          "en": "choice-minimal",
+          "hook": "Rules that close ordinary decisions so attention stays for action and enjoyment."
+        },
+        {
+          "en": "reversible cap",
+          "hook": "A preset limit on time, options, or money for a choice you can still undo."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Automate with rules",
+      "bodyEn": "Write a rule for any decision that recurs, so you stop reopening it. Categories, standard replies, and a dollar limit that someone else may use are the pattern later applied to an inbox. A rule you follow is a decision already made. A rule you renegotiate each morning is still deliberation. Start with the weekly repeats: what you eat before dinner, when you open messages, and what you decline. Put the rule where it is visible at the moment of choice. Fewer fresh judgments leave more attention for the work that needs a real decision."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Close the open loops",
+      "bodyEn": "Leave a channel closed when it can reveal work you cannot act on yet. Friday night and the weekend inbox are the plain case, because seeing the problem spends the attention even while the repair waits. Apply the same closure to invitations. When you already know you will decline, give a kind and final answer now. Add that you will speak up only if a conflict clears. Ending the loop in one message keeps the decision from occupying the week. A postponed no is an open decision you are still paying for."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Cap reversible choices",
+      "bodyEn": "Make a reversible decision quickly, inside a cap you set beforehand. One cap is time, about twenty minutes of looking and then a choice. Another cap is count, about three options and then a choice. A third cap is money: below a threshold you name, someone else may decide, because the damage is limited. Taking the taxi instead of pricing every cheaper ride is the pattern. You spend a little more and keep the remaining attention for work that needs it. A choice you can undo is a poor place to spend a long deliberation."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Repeat results work",
+      "bodyEn": "Keep variety out of work whose job is a result. People who stay lean often eat the same foods on repeat. One working pattern is the same breakfast and the same lunch for a long stretch, with new meals reserved for dinner and one day of the weekend. Training can stay on one short protocol, with an experiment only now and then. Recreation, where enjoyment is the aim, is where a new plan each weekend belongs. Use routine on the result, and use variation on the pleasure. That split keeps the result-work fast and the fun flexible."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Shorten the replay",
+      "bodyEn": "Regret is a decision replayed after the fact, and complaining keeps the replay going. Notice each complaint, move a simple marker when you slip, and aim for twenty-one clean days before the streak counts. Reset to zero on a slip. The marker trains awareness, and fewer complaints mean less attention spent on a past choice. Strong operators still make a high volume of decisions. Their edge is a shorter cycle from question to answer. Treat a small extra cost, paid so you can stop wavering, as a planned expense of the lifestyle."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Deliberation check",
+      "bodyEn": "Rules close the decisions that would otherwise reopen every week. Channels stay shut until you can act, and a no is delivered when you already know it. Reversible choices sit inside a cap on time, options, or money. Work that exists for a result stays routine, and enjoyment keeps the variety. Regret is handled by cutting complaints and shortening deliberation. Recall what these rules are trying to reduce.",
+      "prompt": "What do these rules reduce?",
+      "choices": [
+        "The time spent deliberating, so attention stays for action and enjoyment",
+        "The number of decisions a capable person may make",
+        "All variety, including meals and weekends meant for enjoyment",
+        "Every expense, so the cheapest option always wins"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Options spend attention",
+      "bodyEn": "More options tend to raise regret and to lower satisfaction with the option you eventually pick. Spend less attention on deliberating, so that attention can go to action or to enjoying the choice you made. Reviewing a long list has a cost even when the final pick is good. Too many open choices reduce output, reduce appreciation, and create overwhelm. A weekend stops being free when a short look at the inbox plants a problem you cannot touch until Monday. Capable people still make many decisions. The account to protect is the time spent wavering.",
+      "terms": [
+        {
+          "en": "deliberation",
+          "hook": "The time you spend wavering before a decision. The decision count is a separate number."
+        },
+        {
+          "en": "choice-minimal",
+          "hook": "Rules that close ordinary decisions so attention stays for action and enjoyment."
+        },
+        {
+          "en": "reversible cap",
+          "hook": "A preset limit on time, options, or money for a choice you can still undo."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Automate with rules",
+      "bodyEn": "Write a rule for any decision that recurs, so you stop reopening it. Categories, standard replies, and a dollar limit that someone else may use are the pattern later applied to an inbox. A rule you follow is a decision already made. A rule you renegotiate each morning is still deliberation. Start with the weekly repeats: what you eat before dinner, when you open messages, and what you decline. Put the rule where it is visible at the moment of choice. Fewer fresh judgments leave more attention for the work that needs a real decision."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Close the open loops",
+      "bodyEn": "Leave a channel closed when it can reveal work you cannot act on yet. Friday night and the weekend inbox are the plain case, because seeing the problem spends the attention even while the repair waits. Apply the same closure to invitations. When you already know you will decline, give a kind and final answer now. Add that you will speak up only if a conflict clears. Ending the loop in one message keeps the decision from occupying the week. A postponed no is an open decision you are still paying for."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Cap reversible choices",
+      "bodyEn": "Make a reversible decision quickly, inside a cap you set beforehand. One cap is time, about twenty minutes of looking and then a choice. Another cap is count, about three options and then a choice. A third cap is money: below a threshold you name, someone else may decide, because the damage is limited. Taking the taxi instead of pricing every cheaper ride is the pattern. You spend a little more and keep the remaining attention for work that needs it. A choice you can undo is a poor place to spend a long deliberation."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Repeat results work",
+      "bodyEn": "Keep variety out of work whose job is a result. People who stay lean often eat the same foods on repeat. One working pattern is the same breakfast and the same lunch for a long stretch, with new meals reserved for dinner and one day of the weekend. Training can stay on one short protocol, with an experiment only now and then. Recreation, where enjoyment is the aim, is where a new plan each weekend belongs. Use routine on the result, and use variation on the pleasure. That split keeps the result-work fast and the fun flexible."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Shorten the replay",
+      "bodyEn": "Regret is a decision replayed after the fact, and complaining keeps the replay going. Notice each complaint, move a simple marker when you slip, and aim for twenty-one clean days before the streak counts. Reset to zero on a slip. The marker trains awareness, and fewer complaints mean less attention spent on a past choice. Strong operators still make a high volume of decisions. Their edge is a shorter cycle from question to answer. Treat a small extra cost, paid so you can stop wavering, as a planned expense of the lifestyle."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Deliberation check",
+      "bodyEn": "Rules close the decisions that would otherwise reopen every week. Channels stay shut until you can act, and a no is delivered when you already know it. Reversible choices sit inside a cap on time, options, or money. Work that exists for a result stays routine, and enjoyment keeps the variety. Regret is handled by cutting complaints and shortening deliberation. Recall what these rules are trying to reduce.",
+      "prompt": "What do these rules reduce?",
+      "choices": [
+        "The time spent deliberating, so attention stays for action and enjoyment",
+        "The number of decisions a capable person may make",
+        "All variety, including meals and weekends meant for enjoyment",
+        "Every expense, so the cheapest option always wins"
+      ],
+      "answer": 0
+    }
+  ]
+}

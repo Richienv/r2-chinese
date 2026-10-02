@@ -1,0 +1,134 @@
+{
+  "id": "43",
+  "index": 43,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Dollars from Anywhere",
+  "titleSource": "Doctor's Orders",
+  "sourcePages": "",
+  "when": "Case",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The trip set the rule",
+      "bodyEn": "A psychology trainee planned a South America trip as the reward for his licensing exam, after hospital and clinic days that often ran into the evening. On the trip he met expatriates living well on foreign pensions, and he also saw their local businesses fail. His guess was that there were not enough local pesos to support a shop aimed at foreigners. The decision was immediate. Income had to come from United States clients while he lived where costs were lower. The work had to be mobile. He reduced the whole requirement to a reliable internet phone and a fast connection.",
+      "terms": [
+        {
+          "en": "mobile test",
+          "hook": "A working trip that proves you can serve clients before you resign."
+        },
+        {
+          "en": "remote income",
+          "hook": "Fees from clients in a strong currency, collected from wherever the connection holds."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "The practice he had",
+      "bodyEn": "He already coached doctoral students by phone and email on dissertations, theses, and statistics, through a small site that received traffic. Other people had been handling his web marketing. He learned search optimization and took that promotion over himself, and the practice expanded. The decision was to own the channel that brought clients, because a mobile life cannot depend on a marketer in another city. Calls and email were enough to deliver the work. Nothing in the service required a hospital badge or a storefront. Taking the marketing back produced a larger practice that could travel."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Tests before quitting",
+      "bodyEn": "Across three years he ran working trips to Costa Rica, the Dominican Republic, Venezuela, and Colombia, and he adjusted the setup each time. The decision was to prove the system on the road before he bet his whole income on it. He left the hospital job the day before Thanksgiving and refused to return to that structure. A fingerprint clock, used to prove each eight-hour shift, confirmed that it was time to go. The trips showed that clients could be served from several countries. Quitting came last. Four years separated the original dream from the resignation, and the tests filled the gap."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Two homes, one currency",
+      "bodyEn": "He now splits his time between New York and Colombia and travels more widely through the year. He speaks with customers and manages contractors in both the United States and Colombia. The arrangement earns dollars while many living costs stay at the lower local level. He is also building other sites and forums that should need less daily watching than the consulting does. Stress dropped after he left, and he calls the quality of life much higher. Family and friends in New York still find the plan absurd, and he agrees that it looks that way from their side. The result is practiced mobility, not one dramatic exit."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "What failed for others",
+      "bodyEn": "The expatriates who opened local shops for local customers were the warning, not the model. A business that collects a weak currency cannot fund a life priced in dollars. His decision keeps the buyers in the richer market and lets the seller move. Internet calling was new, and connections in the places he cared about had improved enough to make the split practical. A research practice already matched the tools, because the deliverable was advice rather than a room. Copying a resort shop would have spent the dream. He kept the client and changed the map."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "The order to copy",
+      "bodyEn": "Start with a service you can deliver by phone and email. Take control of how clients find you. Run that service from several countries while the old job still pays, and repair what breaks. Leave when the tests feel ordinary and the workplace is tightening its grip. Keep earning in the stronger currency. Let later projects need less daily conversation than the first practice. The life looked unreasonable to people who stayed, and it was also the life with less stress."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Where the money comes from",
+      "bodyEn": "He did not fund the travel by opening a shop for local customers. He had watched that approach fail. He kept United States clients, proved the phone-and-internet setup on several trips, and only then left the hospital. Dollars continued while many costs fell. Stress fell with the costs. Recall the income rule he set after the first South America trip.",
+      "prompt": "Where did he decide the income had to come from?",
+      "choices": [
+        "A local shop paid in pesos",
+        "United States clients, while he lived elsewhere",
+        "A hospital salary in South America",
+        "A pension he had not yet earned"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The trip set the rule",
+      "bodyEn": "A psychology trainee planned a South America trip as the reward for his licensing exam, after hospital and clinic days that often ran into the evening. On the trip he met expatriates living well on foreign pensions, and he also saw their local businesses fail. His guess was that there were not enough local pesos to support a shop aimed at foreigners. The decision was immediate. Income had to come from United States clients while he lived where costs were lower. The work had to be mobile. He reduced the whole requirement to a reliable internet phone and a fast connection.",
+      "terms": [
+        {
+          "en": "mobile test",
+          "hook": "A working trip that proves you can serve clients before you resign."
+        },
+        {
+          "en": "remote income",
+          "hook": "Fees from clients in a strong currency, collected from wherever the connection holds."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "The practice he had",
+      "bodyEn": "He already coached doctoral students by phone and email on dissertations, theses, and statistics, through a small site that received traffic. Other people had been handling his web marketing. He learned search optimization and took that promotion over himself, and the practice expanded. The decision was to own the channel that brought clients, because a mobile life cannot depend on a marketer in another city. Calls and email were enough to deliver the work. Nothing in the service required a hospital badge or a storefront. Taking the marketing back produced a larger practice that could travel."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Tests before quitting",
+      "bodyEn": "Across three years he ran working trips to Costa Rica, the Dominican Republic, Venezuela, and Colombia, and he adjusted the setup each time. The decision was to prove the system on the road before he bet his whole income on it. He left the hospital job the day before Thanksgiving and refused to return to that structure. A fingerprint clock, used to prove each eight-hour shift, confirmed that it was time to go. The trips showed that clients could be served from several countries. Quitting came last. Four years separated the original dream from the resignation, and the tests filled the gap."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Two homes, one currency",
+      "bodyEn": "He now splits his time between New York and Colombia and travels more widely through the year. He speaks with customers and manages contractors in both the United States and Colombia. The arrangement earns dollars while many living costs stay at the lower local level. He is also building other sites and forums that should need less daily watching than the consulting does. Stress dropped after he left, and he calls the quality of life much higher. Family and friends in New York still find the plan absurd, and he agrees that it looks that way from their side. The result is practiced mobility, not one dramatic exit."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "What failed for others",
+      "bodyEn": "The expatriates who opened local shops for local customers were the warning, not the model. A business that collects a weak currency cannot fund a life priced in dollars. His decision keeps the buyers in the richer market and lets the seller move. Internet calling was new, and connections in the places he cared about had improved enough to make the split practical. A research practice already matched the tools, because the deliverable was advice rather than a room. Copying a resort shop would have spent the dream. He kept the client and changed the map."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "The order to copy",
+      "bodyEn": "Start with a service you can deliver by phone and email. Take control of how clients find you. Run that service from several countries while the old job still pays, and repair what breaks. Leave when the tests feel ordinary and the workplace is tightening its grip. Keep earning in the stronger currency. Let later projects need less daily conversation than the first practice. The life looked unreasonable to people who stayed, and it was also the life with less stress."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Where the money comes from",
+      "bodyEn": "He did not fund the travel by opening a shop for local customers. He had watched that approach fail. He kept United States clients, proved the phone-and-internet setup on several trips, and only then left the hospital. Dollars continued while many costs fell. Stress fell with the costs. Recall the income rule he set after the first South America trip.",
+      "prompt": "Where did he decide the income had to come from?",
+      "choices": [
+        "A local shop paid in pesos",
+        "United States clients, while he lived elsewhere",
+        "A hospital salary in South America",
+        "A pension he had not yet earned"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "42",
+  "index": 42,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Leave After You Vanish",
+  "titleSource": "Off-the-Job Training",
+  "sourcePages": "",
+  "when": "Case",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Four months of absence",
+      "bodyEn": "A software developer at a well-known design company wanted to work from the road. For four months before any flight, he stayed off his chair and easy to reach. When someone found the cube empty, a chat found him down the hall, at a cafe, or at a colleague's desk. He answered that channel every time. After about two months, people stopped walking over and started with the message. Training that habit was the decision. The office no longer needed his chair in order to find him.",
+      "terms": [
+        {
+          "en": "remote rehearsal",
+          "hook": "Weeks of being hard to find in person while staying instantly reachable online, before you actually leave."
+        },
+        {
+          "en": "chat habit",
+          "hook": "The trained default of messaging you, instead of walking to a desk."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Six thousand miles",
+      "bodyEn": "From August 2008 through January 2009 he worked from Portugal, Spain, Sweden, Norway, and other parts of Europe, surfing and snowboarding between the check-ins. Because the office already used chat, the distance did not announce itself. He was about six thousand miles away, and people still reached him the way they had learned to. A phone plus an internet-calling app kept one device and a local number while he was abroad. The decision was to move only after the contact habit had changed. To colleagues, the long trip looked like another afternoon away from the cube. Presence had been redefined as a reply, not a chair."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "The useful time zone",
+      "bodyEn": "In Norway, nine hours ahead, his day was nearly over when his boss woke up. He could use the daylight on fjords, mountains, and cold surf, then eat, then talk for twenty or thirty minutes. Urgent work could be assigned when the boss went to sleep and be finished by morning. The decision was to treat the hour gap as a tool. The result was long uninterrupted days plus a short overlap that still covered the job. A gap that large turned the office night into his work block. He kept the exploration, and the boss still had an answer at breakfast.",
+      "terms": [
+        {
+          "en": "hour gap",
+          "hook": "The time-zone difference that lets your free day finish before the office morning starts."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Three times the cash",
+      "bodyEn": "The sharpest number in the case is the bank balance. He came home with about three times the savings he would have had by staying on an ordinary office routine. The trip did not empty the account relative to staying put. Remote months replaced commuting and local spending with a life that cost less than it looked. Leaving was also a savings decision, because the job kept paying. The result answers the fear that a long trip must be funded by quitting. He kept the role and increased the cushion."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Availability was the trick",
+      "bodyEn": "The risky move was not the plane ticket. It was the two months spent retraining the office. Disappearing overseas while people still expected a body in the chair would have made the trip a scandal. By departure, the normal way to reach him was already a message. He answered quickly, so the new habit felt safe. The decision was to be more available online than he was physically. Distance became invisible because the new channel never went quiet."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Copy the rehearsal",
+      "bodyEn": "Do not start with the flight. Spend weeks away from the desk and instant on the channel you want people to use. Answer quickly, from somewhere boring and nearby, until they stop hunting the chair. Then add a phone setup that keeps a local number. If the job allows a short overlap, pick a time zone where your free hours fall in their night. Keep the paycheck, and compare savings with the stay-home baseline. The result to aim for is a trip the office never experiences as a disappearance."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "What he trained",
+      "bodyEn": "He did not vanish and hope the team would cope. He spent months off the cube while staying on chat, until the message replaced the visit. Only then did the European months begin. A nine-hour gap gave him the daylight, and a short evening check-in covered his boss. He came home with a much larger cushion than the old routine would have saved. Recall what he changed before he changed countries.",
+      "prompt": "What had to change before the remote months?",
+      "choices": [
+        "His job title",
+        "The habit of reaching him by chat instead of at the desk",
+        "A new employer that already expected travel",
+        "A stricter nine-to-five spent in the office"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Four months of absence",
+      "bodyEn": "A software developer at a well-known design company wanted to work from the road. For four months before any flight, he stayed off his chair and easy to reach. When someone found the cube empty, a chat found him down the hall, at a cafe, or at a colleague's desk. He answered that channel every time. After about two months, people stopped walking over and started with the message. Training that habit was the decision. The office no longer needed his chair in order to find him.",
+      "terms": [
+        {
+          "en": "remote rehearsal",
+          "hook": "Weeks of being hard to find in person while staying instantly reachable online, before you actually leave."
+        },
+        {
+          "en": "chat habit",
+          "hook": "The trained default of messaging you, instead of walking to a desk."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Six thousand miles",
+      "bodyEn": "From August 2008 through January 2009 he worked from Portugal, Spain, Sweden, Norway, and other parts of Europe, surfing and snowboarding between the check-ins. Because the office already used chat, the distance did not announce itself. He was about six thousand miles away, and people still reached him the way they had learned to. A phone plus an internet-calling app kept one device and a local number while he was abroad. The decision was to move only after the contact habit had changed. To colleagues, the long trip looked like another afternoon away from the cube. Presence had been redefined as a reply, not a chair."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "The useful time zone",
+      "bodyEn": "In Norway, nine hours ahead, his day was nearly over when his boss woke up. He could use the daylight on fjords, mountains, and cold surf, then eat, then talk for twenty or thirty minutes. Urgent work could be assigned when the boss went to sleep and be finished by morning. The decision was to treat the hour gap as a tool. The result was long uninterrupted days plus a short overlap that still covered the job. A gap that large turned the office night into his work block. He kept the exploration, and the boss still had an answer at breakfast.",
+      "terms": [
+        {
+          "en": "hour gap",
+          "hook": "The time-zone difference that lets your free day finish before the office morning starts."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Three times the cash",
+      "bodyEn": "The sharpest number in the case is the bank balance. He came home with about three times the savings he would have had by staying on an ordinary office routine. The trip did not empty the account relative to staying put. Remote months replaced commuting and local spending with a life that cost less than it looked. Leaving was also a savings decision, because the job kept paying. The result answers the fear that a long trip must be funded by quitting. He kept the role and increased the cushion."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Availability was the trick",
+      "bodyEn": "The risky move was not the plane ticket. It was the two months spent retraining the office. Disappearing overseas while people still expected a body in the chair would have made the trip a scandal. By departure, the normal way to reach him was already a message. He answered quickly, so the new habit felt safe. The decision was to be more available online than he was physically. Distance became invisible because the new channel never went quiet."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Copy the rehearsal",
+      "bodyEn": "Do not start with the flight. Spend weeks away from the desk and instant on the channel you want people to use. Answer quickly, from somewhere boring and nearby, until they stop hunting the chair. Then add a phone setup that keeps a local number. If the job allows a short overlap, pick a time zone where your free hours fall in their night. Keep the paycheck, and compare savings with the stay-home baseline. The result to aim for is a trip the office never experiences as a disappearance."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "What he trained",
+      "bodyEn": "He did not vanish and hope the team would cope. He spent months off the cube while staying on chat, until the message replaced the visit. Only then did the European months begin. A nine-hour gap gave him the daylight, and a short evening check-in covered his boss. He came home with a much larger cushion than the old routine would have saved. Recall what he changed before he changed countries.",
+      "prompt": "What had to change before the remote months?",
+      "choices": [
+        "His job title",
+        "The habit of reaching him by chat instead of at the desk",
+        "A new employer that already expected travel",
+        "A stricter nine-to-five spent in the office"
+      ],
+      "answer": 1
+    }
+  ]
+}

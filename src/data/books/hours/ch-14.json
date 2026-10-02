@@ -1,0 +1,162 @@
+{
+  "id": "14",
+  "index": 14,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Build success habits",
+  "titleSource": "Appendix 2",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "One habit at a time",
+      "bodyEn": "This appendix collects steps that can raise skill, fit, and impact inside almost any job. It orders them by the strength of the evidence, whether they seem reasonable, the size of the upside, how widely they apply, and how costly they are to try. Easier and more widely useful steps come first. Much of the list is habit building, so getting better at habits speeds up everything later. A new habit takes about thirty days, which is reason enough to start one habit or one exercise, in the area that would change your life most for the least effort. Stay with an area for about three to twelve months, one habit a month, and take on harder areas after you have momentum.",
+      "terms": [
+        {
+          "en": "habit",
+          "hook": "If they say this, they mean a repeated behaviour that starts to run with little fresh decision."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Health comes first",
+      "bodyEn": "Ambitious people often skip basic care and then produce less, including people whose main goal is helping others. Research cited here suggests that altruists who also look after their own interests are more productive over the long run and therefore help more. The basics are enough sleep, exercise, food, and time with close friends, and these move daily energy more than a higher income does for many people. On food, the common ground is to avoid processed food and eat plenty of plants, then experiment with what gives you energy. If a mental health problem is present, or might be, make coping a top priority, see a doctor first, and remember that many conditions sit on a spectrum so a missing formal label is a weak reason to wait. Back pain and repetitive strain are common ways desk work removes months of output, so set up the desk, change position often, train strength, and treat symptoms early."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Goals then a cut",
+      "bodyEn": "Setting goals is associated with achieving more, and debates about outcomes versus process matter less than the habit of setting them. Picture a life about ten years out, including an ordinary Wednesday from waking to sleep, because the shape of a normal day often matters more to fulfilment than a list of trophies. Keep in view relationships, a goal beyond yourself, a craft you can do with absorption, some fun, and relief from major negatives such as money stress, illness, or constant conflict. Write five to ten guiding values, then set one or two professional goals and one or two personal goals for the year or the quarter. Most results usually come from the top few priorities, so order the list and put the rest on a do-not-do list. Revisit that cut as new options arrive."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Make the work happen",
+      "bodyEn": "An implementation intention names a trigger and an action, such as running as soon as you get home, and a large meta-analysis found this makes people much more likely to follow through, in many cases about twice as likely. Strengthen it by imagining the failure, naming why it failed, and changing the plan until you expect it to work. A simple task list, a five-minute review at the end of the day, and an hour each week on your main goals will carry most of the other advice in this appendix. Batch meetings, protect long blocks for focused work, and consider a hard stop to the workday so the hours you do work are sharper. Use a short timer, around twenty-five minutes on one task, when getting started is the blocker. Try a technique for about a week, then keep it if finished work goes up.",
+      "terms": [
+        {
+          "en": "implementation intention",
+          "hook": "If they say this, they mean a plan that names the cue and the action."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "People and location",
+      "bodyEn": "A large share of jobs come through connections, and many are never advertised. Friends also set what looks normal, pass information that is never published, and are the first place to look when you start a project or need to hire. One line of research summarised here found that if a friend becomes happier you are about fifteen percent more likely to be happy, and a friend of a friend still shifts the odds. The practical version of networking is to meet people you like, help them in small ways, and build real friendships, with the help given freely. Industry work still clusters, so an early ambitious stretch often gains more from that industry's hub than from a cheap pleasant city, which fits better when you are stretching savings for a project or a period of study. Where you live also shapes daily satisfaction, the people around you, the commute, and long-run financial security."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Save and learn faster",
+      "bodyEn": "Aim for savings that would cover at least six comfortable months with no income, and ideally twelve, depending on how long the next job would take, and also save on the order of fifteen percent of income toward retirement. Move money automatically, and cut one or two large costs, often housing, while watching trades that save cash by spending hours, such as a much longer commute. Learning speed is a skill of its own, and spaced repetition, with a tool such as flashcard software that times the reviews, is one researched way to memorise faster. The appendix's main course recommendation for learning how to learn is Barbara Oakley's course, with the book it is based on as a companion. In the job itself, doing about ten percent more than peers often stands out, and it helps more to find the few results that actually drive advancement by watching what successful people did. Practise a new work skill on a real task with feedback from someone ahead of you."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Skill and judgement",
+      "bodyEn": "The transferable skills this appendix highlights are analysis, learning, social skill, and management. In some fields, such as academic publishing, become exceptional at the one thing that is scored, because one strong achievement opens more doors than several ordinary ones. In other fields an unusual combination wins, as when someone is merely good at jokes, drawing, and business knowledge and still rare as that trio. Clear thinking is trainable and partly separate from raw intelligence, and the appendix points to forecasting practice, in the tradition of research on people who predict hard events, as a way to build it. Mastery of a field is usually a decades-long project, and the appendix's stance is that practice and talent both matter. Use the skills on a real task, and revisit each year whether the work still matches the values you wrote down."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Gains compound",
+      "bodyEn": "Picturing a perfect future can feel pleasant and can also reduce effort, because the mind treats the goal as already reached. Planning for the obstacle, happiness practices that have survived actual trials, and time with supportive people each make the next habit easier. The appendix's closing picture is compound interest in skill: a small ongoing edge in learning and output widens over years into a large gap in what you can do. Apply the learning and productivity steps first when you want the rest of the list to move faster. Apply sleep, health, and mood first when those are what keep stopping the list. You can do a great deal of this inside the job you already hold."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Habit order check",
+      "bodyEn": "Start with one habit in the area that would help most for the least effort, and give it about a month. Health, sleep, and close relationships come before clever productivity systems. Goals need an order, and most of the results sit in the top priorities. Connections, savings of many months, and faster learning raise what every later skill can do. A yearly look at your values decides whether the extra skill is aimed somewhere you endorse. Small gains compound when the habits stay in place for years.",
+      "prompt": "Which way of using this appendix matches its advice?",
+      "choices": [
+        "Pick one high-leverage area, build one habit for about a month, and start with basics such as health before rarer skills",
+        "Adopt the full list of habits in the first week so the gains arrive together",
+        "Picture the ideal career each morning and skip written goals",
+        "Ignore savings, friendships, and health until a perfect job title appears"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "One habit at a time",
+      "bodyEn": "This appendix collects steps that can raise skill, fit, and impact inside almost any job. It orders them by the strength of the evidence, whether they seem reasonable, the size of the upside, how widely they apply, and how costly they are to try. Easier and more widely useful steps come first. Much of the list is habit building, so getting better at habits speeds up everything later. A new habit takes about thirty days, which is reason enough to start one habit or one exercise, in the area that would change your life most for the least effort. Stay with an area for about three to twelve months, one habit a month, and take on harder areas after you have momentum.",
+      "terms": [
+        {
+          "en": "habit",
+          "hook": "If they say this, they mean a repeated behaviour that starts to run with little fresh decision."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Health comes first",
+      "bodyEn": "Ambitious people often skip basic care and then produce less, including people whose main goal is helping others. Research cited here suggests that altruists who also look after their own interests are more productive over the long run and therefore help more. The basics are enough sleep, exercise, food, and time with close friends, and these move daily energy more than a higher income does for many people. On food, the common ground is to avoid processed food and eat plenty of plants, then experiment with what gives you energy. If a mental health problem is present, or might be, make coping a top priority, see a doctor first, and remember that many conditions sit on a spectrum so a missing formal label is a weak reason to wait. Back pain and repetitive strain are common ways desk work removes months of output, so set up the desk, change position often, train strength, and treat symptoms early."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Goals then a cut",
+      "bodyEn": "Setting goals is associated with achieving more, and debates about outcomes versus process matter less than the habit of setting them. Picture a life about ten years out, including an ordinary Wednesday from waking to sleep, because the shape of a normal day often matters more to fulfilment than a list of trophies. Keep in view relationships, a goal beyond yourself, a craft you can do with absorption, some fun, and relief from major negatives such as money stress, illness, or constant conflict. Write five to ten guiding values, then set one or two professional goals and one or two personal goals for the year or the quarter. Most results usually come from the top few priorities, so order the list and put the rest on a do-not-do list. Revisit that cut as new options arrive."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Make the work happen",
+      "bodyEn": "An implementation intention names a trigger and an action, such as running as soon as you get home, and a large meta-analysis found this makes people much more likely to follow through, in many cases about twice as likely. Strengthen it by imagining the failure, naming why it failed, and changing the plan until you expect it to work. A simple task list, a five-minute review at the end of the day, and an hour each week on your main goals will carry most of the other advice in this appendix. Batch meetings, protect long blocks for focused work, and consider a hard stop to the workday so the hours you do work are sharper. Use a short timer, around twenty-five minutes on one task, when getting started is the blocker. Try a technique for about a week, then keep it if finished work goes up.",
+      "terms": [
+        {
+          "en": "implementation intention",
+          "hook": "If they say this, they mean a plan that names the cue and the action."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "People and location",
+      "bodyEn": "A large share of jobs come through connections, and many are never advertised. Friends also set what looks normal, pass information that is never published, and are the first place to look when you start a project or need to hire. One line of research summarised here found that if a friend becomes happier you are about fifteen percent more likely to be happy, and a friend of a friend still shifts the odds. The practical version of networking is to meet people you like, help them in small ways, and build real friendships, with the help given freely. Industry work still clusters, so an early ambitious stretch often gains more from that industry's hub than from a cheap pleasant city, which fits better when you are stretching savings for a project or a period of study. Where you live also shapes daily satisfaction, the people around you, the commute, and long-run financial security."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Save and learn faster",
+      "bodyEn": "Aim for savings that would cover at least six comfortable months with no income, and ideally twelve, depending on how long the next job would take, and also save on the order of fifteen percent of income toward retirement. Move money automatically, and cut one or two large costs, often housing, while watching trades that save cash by spending hours, such as a much longer commute. Learning speed is a skill of its own, and spaced repetition, with a tool such as flashcard software that times the reviews, is one researched way to memorise faster. The appendix's main course recommendation for learning how to learn is Barbara Oakley's course, with the book it is based on as a companion. In the job itself, doing about ten percent more than peers often stands out, and it helps more to find the few results that actually drive advancement by watching what successful people did. Practise a new work skill on a real task with feedback from someone ahead of you."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Skill and judgement",
+      "bodyEn": "The transferable skills this appendix highlights are analysis, learning, social skill, and management. In some fields, such as academic publishing, become exceptional at the one thing that is scored, because one strong achievement opens more doors than several ordinary ones. In other fields an unusual combination wins, as when someone is merely good at jokes, drawing, and business knowledge and still rare as that trio. Clear thinking is trainable and partly separate from raw intelligence, and the appendix points to forecasting practice, in the tradition of research on people who predict hard events, as a way to build it. Mastery of a field is usually a decades-long project, and the appendix's stance is that practice and talent both matter. Use the skills on a real task, and revisit each year whether the work still matches the values you wrote down."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Gains compound",
+      "bodyEn": "Picturing a perfect future can feel pleasant and can also reduce effort, because the mind treats the goal as already reached. Planning for the obstacle, happiness practices that have survived actual trials, and time with supportive people each make the next habit easier. The appendix's closing picture is compound interest in skill: a small ongoing edge in learning and output widens over years into a large gap in what you can do. Apply the learning and productivity steps first when you want the rest of the list to move faster. Apply sleep, health, and mood first when those are what keep stopping the list. You can do a great deal of this inside the job you already hold."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Habit order check",
+      "bodyEn": "Start with one habit in the area that would help most for the least effort, and give it about a month. Health, sleep, and close relationships come before clever productivity systems. Goals need an order, and most of the results sit in the top priorities. Connections, savings of many months, and faster learning raise what every later skill can do. A yearly look at your values decides whether the extra skill is aimed somewhere you endorse. Small gains compound when the habits stay in place for years.",
+      "prompt": "Which way of using this appendix matches its advice?",
+      "choices": [
+        "Pick one high-leverage area, build one habit for about a month, and start with basics such as health before rarer skills",
+        "Adopt the full list of habits in the first week so the gains arrive together",
+        "Picture the ideal career each morning and skip written goals",
+        "Ignore savings, friendships, and health until a perfect job title appears"
+      ],
+      "answer": 0
+    }
+  ]
+}

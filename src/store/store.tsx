@@ -10,7 +10,9 @@ import {
 } from 'react'
 import { newCard, schedule, type Card, type Rating } from '../lib/srs'
 import { setSpeechEnabled } from '../lib/speech'
+import { setSfxEnabled } from '../lib/sfx'
 import { saveProgress } from '../lib/sync'
+import { encounter, normalizeMastery, recordRetrieval, type MasteryRecord, type RecallInput } from '../lib/mastery'
 
 const KEY = 'yulu.hsk4a.v1'
 
@@ -71,6 +73,7 @@ export function normalize(parsed: Partial<Persisted> | null | undefined): Persis
     ...parsed,
     prefs: { ...empty.prefs, ...parsed.prefs },
     pathDone: normalizePathDone(parsed),
+    mastery: normalizeMastery(parsed.mastery, parsed.cards, parsed.starred),
   }
 }
 
@@ -93,6 +96,8 @@ export interface Persisted {
   cards: Record<string, Card>
   /** words saved for rapid drilling, most recently starred first */
   starred: string[]
+  /** Automatically kept retrieval evidence; independent of deliberate favourites. */
+  mastery: Record<string, MasteryRecord>
   /** where an interrupted lesson left off, so it can be resumed */
   inProgress: { lesson: number; step: number } | null
   /** last bottom-tab, restored on reload */
@@ -114,6 +119,7 @@ const empty: Persisted = {
   log: {},
   cards: {},
   starred: [],
+  mastery: {},
   inProgress: null,
   lastTab: 'home',
   pathDone: {},
@@ -165,6 +171,10 @@ function streakOf(days: string[]): number {
 }
 
 interface Store extends Persisted {
+  /** Every encountered word, most recently seen first. */
+  learningTrail: string[]
+  encounterWord: (zh: string, lesson: number) => void
+  recordRecall: (zh: string, input: RecallInput) => void
   streak: number
   wordsLearned: number
   cardList: Card[]
@@ -204,7 +214,7 @@ export function StoreProvider({
   /** server-provided starting state (overrides the local cache on login) */
   initial?: Persisted
 }) {
-  const [state, setState] = useState<Persisted>(() => initial ?? load(userId))
+  const [state, setState] = useState<Persisted>(() => initial ? normalize(initial) : load(userId))
   const syncTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   // Fast local cache (offline + instant reload), namespaced per account.
@@ -223,19 +233,43 @@ export function StoreProvider({
   }, [state, userId])
 
   setSpeechEnabled(state.prefs.soundOn)
+  setSfxEnabled(state.prefs.soundOn)
 
   const addCards = useCallback((lesson: number, words: { zh: string }[]) => {
     setState((s) => {
       const cards = { ...s.cards }
+      const mastery = { ...s.mastery }
       let added = 0
       for (const w of words) {
+        if (!w.zh.trim()) continue
+        mastery[w.zh] = encounter(mastery[w.zh], w.zh, lesson)
         if (!cards[w.zh]) {
           cards[w.zh] = newCard(w.zh, lesson)
           added++
         }
       }
-      if (!added) return s
-      return { ...s, cards, log: bump(s.log, { cards: added }) }
+      return { ...s, cards, mastery, log: added ? bump(s.log, { cards: added }) : s.log }
+    })
+  }, [])
+
+  const encounterWord = useCallback((zh: string, lesson: number) => {
+    if (!zh.trim()) return
+    setState((s) => {
+      const isNew = !s.cards[zh]
+      return {
+        ...s,
+        mastery: { ...s.mastery, [zh]: encounter(s.mastery[zh], zh, lesson) },
+        cards: isNew ? { ...s.cards, [zh]: newCard(zh, lesson) } : s.cards,
+        log: isNew ? bump(s.log, { cards: 1 }) : s.log,
+      }
+    })
+  }, [])
+
+  const recordRecall = useCallback((zh: string, input: RecallInput) => {
+    if (!zh.trim()) return
+    setState((s) => {
+      const prior = s.mastery[zh] ?? encounter(undefined, zh, s.cards[zh]?.lesson ?? 0)
+      return { ...s, mastery: { ...s.mastery, [zh]: recordRetrieval(prior, input) } }
     })
   }, [])
 
@@ -243,8 +277,11 @@ export function StoreProvider({
     (lesson: number, words: { zh: string }[], xp: number) => {
       setState((s) => {
         const cards = { ...s.cards }
+        const mastery = { ...s.mastery }
         let added = 0
         for (const w of words) {
+          if (!w.zh.trim()) continue
+          mastery[w.zh] = encounter(mastery[w.zh], w.zh, lesson)
           if (!cards[w.zh]) {
             cards[w.zh] = newCard(w.zh, lesson)
             added++
@@ -253,6 +290,7 @@ export function StoreProvider({
         return {
           ...s,
           cards,
+          mastery,
           xp: s.xp + xp,
           log: bump(s.log, { lessons: 1, cards: added }),
           inProgress: s.inProgress?.lesson === lesson ? null : s.inProgress,
@@ -340,6 +378,7 @@ export function StoreProvider({
         ...s,
         starred: on ? s.starred.filter((w) => w !== zh) : [zh, ...s.starred],
         cards: on || s.cards[zh] ? s.cards : { ...s.cards, [zh]: newCard(zh, lesson) },
+        mastery: s.mastery[zh] ? s.mastery : { ...s.mastery, [zh]: encounter(undefined, zh, lesson) },
       }
     })
   }, [])
@@ -355,6 +394,9 @@ export function StoreProvider({
     const practiceDays = Object.keys(state.log)
     return {
       ...state,
+      learningTrail: Object.values(state.mastery).sort((a, b) => b.lastSeen - a.lastSeen || a.zh.localeCompare(b.zh)).map((word) => word.zh),
+      encounterWord,
+      recordRecall,
       cardList,
       practiceDays,
       today: state.log[dayKey()] ?? { lessons: 0, cards: 0 },
@@ -383,6 +425,8 @@ export function StoreProvider({
     finishLesson,
     rate,
     addCards,
+    encounterWord,
+    recordRecall,
     awardXp,
     isNodeDone,
     markNodeDone,

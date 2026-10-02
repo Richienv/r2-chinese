@@ -1,0 +1,146 @@
+{
+  "id": "39",
+  "index": 39,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Files Instead of Prints",
+  "titleSource": "Photo Finish",
+  "sourcePages": "",
+  "when": "Case",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The idea on a run",
+      "bodyEn": "A wedding photographer was working until three in the morning and waking at seven. A part-time helper was creating more work than she removed, and both time and money felt too tight for travel. On a run, a story about selling music files online made him stop. The decision was to sell family photographs as digital files, through photographers he did not have to be, and to skip prints entirely. He reserved a domain from his phone before the run ended. Two months later the site was live, a national pool of shooters was available, and the first sale had come in. He did not have to hold the camera for that business.",
+      "terms": [
+        {
+          "en": "file-only delivery",
+          "hook": "Selling the digital photograph itself, so printing and shipping never enter the job."
+        },
+        {
+          "en": "shooter network",
+          "hook": "A pool of other photographers who make the pictures, so the founder is not the camera."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Offense and margin",
+      "bodyEn": "Other photographers were offended that he stopped selling prints. The result was higher revenue, costs nearly gone, and time returned. He carried the same file-only delivery into his wedding work. The lesson is not a secret price. It is a product decision that deletes a heavy step. Prints were the tradition. Files were the version that could sell without him in the room."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Email goes quiet",
+      "bodyEn": "He turned off email alerts on the computer and the phone, so nothing rang when a message arrived. He looked later, and only to see which calls he had missed. Two more employees came on. Systems kept moving while he was elsewhere. At home, the result was dinner together and a laptop that stayed at the office. His fiance read the change as presence. A quiet inbox was a decision about attention, and the household got him back.",
+      "terms": [
+        {
+          "en": "alert silence",
+          "hook": "Notifications off, so the inbox waits for a look you chose."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "A cheap first trip",
+      "bodyEn": "The first mini-retirement had a ceiling: ski in Switzerland for five days and spend under one thousand dollars in total. The flight was about five hundred dollars, and a day on the snow at Engelberg was eighty. The bed was free through a host network. Meals were ordinary local food. He reported that the week actually happened. A dated trip with a number is easier to take than a vague plan to travel someday. The new business had spared both the cash and the days."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Work inside a month",
+      "bodyEn": "A later month in Italy wrapped two paid weddings in Siena inside a plan to vacation more than he worked. That shape is the opposite of a year spent editing until three in the morning. The family-photo company could keep selling because other people made the pictures. His own wedding jobs could travel with him only when he chose them. Making the camera optional, not mandatory, is what made a month away thinkable. The year was tracking better financially than the year before. Being gone was no longer treated as a threat to the business."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Copy the sequence",
+      "bodyEn": "Translate a model from another field into a domain you can reserve the same day. Remove the step that eats time and cash, even if peers call the cut improper. Hire so the files move without your hands on every one. Silence the inbox until a scheduled look. Book one short trip with a number you can really spend, and use a free bed if that is what makes the number true. Let the first sale and the first trip be the evidence. A better year followed those decisions, and it did not arrive as a mood beforehand."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "What he stopped selling",
+      "bodyEn": "The business grew when the product changed, not when the nights got later. Families received files rather than prints, and other shooters made the pictures. Email stopped interrupting the day. A Swiss ski week fit under one thousand dollars, and a month in Italy fit around two weddings. Recall the product decision that cut the cost.",
+      "prompt": "What product change removed most of the cost?",
+      "choices": [
+        "Opening a print lab next to the studio",
+        "Selling digital files and dropping prints",
+        "Shooting every wedding himself at a higher price",
+        "Turning email alerts up so clients felt served"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The idea on a run",
+      "bodyEn": "A wedding photographer was working until three in the morning and waking at seven. A part-time helper was creating more work than she removed, and both time and money felt too tight for travel. On a run, a story about selling music files online made him stop. The decision was to sell family photographs as digital files, through photographers he did not have to be, and to skip prints entirely. He reserved a domain from his phone before the run ended. Two months later the site was live, a national pool of shooters was available, and the first sale had come in. He did not have to hold the camera for that business.",
+      "terms": [
+        {
+          "en": "file-only delivery",
+          "hook": "Selling the digital photograph itself, so printing and shipping never enter the job."
+        },
+        {
+          "en": "shooter network",
+          "hook": "A pool of other photographers who make the pictures, so the founder is not the camera."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Offense and margin",
+      "bodyEn": "Other photographers were offended that he stopped selling prints. The result was higher revenue, costs nearly gone, and time returned. He carried the same file-only delivery into his wedding work. The lesson is not a secret price. It is a product decision that deletes a heavy step. Prints were the tradition. Files were the version that could sell without him in the room."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Email goes quiet",
+      "bodyEn": "He turned off email alerts on the computer and the phone, so nothing rang when a message arrived. He looked later, and only to see which calls he had missed. Two more employees came on. Systems kept moving while he was elsewhere. At home, the result was dinner together and a laptop that stayed at the office. His fiance read the change as presence. A quiet inbox was a decision about attention, and the household got him back.",
+      "terms": [
+        {
+          "en": "alert silence",
+          "hook": "Notifications off, so the inbox waits for a look you chose."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "A cheap first trip",
+      "bodyEn": "The first mini-retirement had a ceiling: ski in Switzerland for five days and spend under one thousand dollars in total. The flight was about five hundred dollars, and a day on the snow at Engelberg was eighty. The bed was free through a host network. Meals were ordinary local food. He reported that the week actually happened. A dated trip with a number is easier to take than a vague plan to travel someday. The new business had spared both the cash and the days."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Work inside a month",
+      "bodyEn": "A later month in Italy wrapped two paid weddings in Siena inside a plan to vacation more than he worked. That shape is the opposite of a year spent editing until three in the morning. The family-photo company could keep selling because other people made the pictures. His own wedding jobs could travel with him only when he chose them. Making the camera optional, not mandatory, is what made a month away thinkable. The year was tracking better financially than the year before. Being gone was no longer treated as a threat to the business."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Copy the sequence",
+      "bodyEn": "Translate a model from another field into a domain you can reserve the same day. Remove the step that eats time and cash, even if peers call the cut improper. Hire so the files move without your hands on every one. Silence the inbox until a scheduled look. Book one short trip with a number you can really spend, and use a free bed if that is what makes the number true. Let the first sale and the first trip be the evidence. A better year followed those decisions, and it did not arrive as a mood beforehand."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "What he stopped selling",
+      "bodyEn": "The business grew when the product changed, not when the nights got later. Families received files rather than prints, and other shooters made the pictures. Email stopped interrupting the day. A Swiss ski week fit under one thousand dollars, and a month in Italy fit around two weddings. Recall the product decision that cut the cost.",
+      "prompt": "What product change removed most of the cost?",
+      "choices": [
+        "Opening a print lab next to the studio",
+        "Selling digital files and dropping prints",
+        "Shooting every wedding himself at a higher price",
+        "Turning email alerts up so clients felt served"
+      ],
+      "answer": 1
+    }
+  ]
+}

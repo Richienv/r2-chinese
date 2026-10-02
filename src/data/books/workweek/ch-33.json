@@ -1,0 +1,150 @@
+{
+  "id": "33",
+  "index": 33,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Propose Remote Work",
+  "titleSource": "Proposal to Work Remotely on a Contract Basis",
+  "sourcePages": "Best of the Blog",
+  "when": "July 2008",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Ask with a trial",
+      "bodyEn": "A remote arrangement can keep the employer and shrink the hours, if you propose it as a contract with a short test. Open with the time you have already served and the concrete results they can recognize. Then name the tasks you will keep doing, from somewhere else, for a stated stretch of months. Say you are willing to discuss other shapes of the deal. A reversible trial is easier to approve than a permanent goodbye. Loyalty and a test belong in the same opening.",
+      "terms": [
+        {
+          "en": "reversible trial",
+          "hook": "A few months of remote contract work that either side can end if the arrangement fails."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Name the life aim",
+      "bodyEn": "State why you are going and how long, in plain language. The sample that worked named fluency in another language and practice adapting to a new place, across roughly half a year to a year. The employer should see a serious project, not a vague escape. Offer to adjust the plan if they need a different split of duties. The proposal is a conversation starter with a default design, not an ultimatum. Your reasons can be personal as long as the work outcomes stay specific."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Break the job into roles",
+      "bodyEn": "Divide the current job into a few named roles, such as print coordination, special projects, and online ads. Under each role, list the responsibilities and the expectations a manager can check. Those expectations cover timing, accuracy, budget, and reporting when asked. Duties without a visible result are hard to manage from far away. Keep each role short enough that a director can say yes to it alone. The document should read like a contract scope, not like a diary of hopes.",
+      "terms": [
+        {
+          "en": "role scope",
+          "hook": "A named slice of the job with duties and the results a manager can check from afar."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Show the remote method",
+      "bodyEn": "Under each role, explain the tool that replaces sitting at the desk. Design review can happen on a shared board the team has already used. Calls can happen on a service you have already tested on the connection you will have. Image research and ad reporting can continue in the same web accounts. Mention a proof that the tool works from the destination, such as a trial by someone already there. A method they have seen is easier to trust than a promise of new software."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "End on their benefit",
+      "bodyEn": "Close by tying the contract to something they gain, such as clearer tracking of production cost, not only to your trip. Restate that you want to keep serving them. Thank them, and leave room for a meeting. Put software notes in a short appendix so the proposal itself stays about roles and results. Name the cost of a headset or a call only if it shows the setup is cheap. A director should be able to approve the trial without learning a new product first.",
+      "terms": [
+        {
+          "en": "contract close",
+          "hook": "A final paragraph that names a benefit for the employer and asks them to consider the trial."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Keep hours small",
+      "bodyEn": "The version of this letter that worked also cut the week to a small band of hours. Do not quietly promise the old full week from a new city. The expectations in each role are what make the smaller week believable. If a task truly needs a desk, leave it off the list or name a local owner. The proposal fails when it asks for absence and also keeps every old interruption. Remote is a redesign of the job, not a laptop in a cafe."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Remote proposal check",
+      "bodyEn": "The letter opens with proven results, a time window, and a reversible trial. The job is split into roles with checkable expectations. Each role names the remote method and, where possible, a test you already ran. The close gives the employer a reason to prefer the contract. Hours shrink because the scope shrank. A task that needs the office stays out of the promise. Recall what belongs under each role besides the duties.",
+      "prompt": "What should sit under each role besides the duties?",
+      "choices": [
+        "Expectations a manager can check, plus the remote method",
+        "A diary of why you want to travel",
+        "A request for a higher salary and a new title",
+        "A promise to stay online all day"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Ask with a trial",
+      "bodyEn": "A remote arrangement can keep the employer and shrink the hours, if you propose it as a contract with a short test. Open with the time you have already served and the concrete results they can recognize. Then name the tasks you will keep doing, from somewhere else, for a stated stretch of months. Say you are willing to discuss other shapes of the deal. A reversible trial is easier to approve than a permanent goodbye. Loyalty and a test belong in the same opening.",
+      "terms": [
+        {
+          "en": "reversible trial",
+          "hook": "A few months of remote contract work that either side can end if the arrangement fails."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Name the life aim",
+      "bodyEn": "State why you are going and how long, in plain language. The sample that worked named fluency in another language and practice adapting to a new place, across roughly half a year to a year. The employer should see a serious project, not a vague escape. Offer to adjust the plan if they need a different split of duties. The proposal is a conversation starter with a default design, not an ultimatum. Your reasons can be personal as long as the work outcomes stay specific."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Break the job into roles",
+      "bodyEn": "Divide the current job into a few named roles, such as print coordination, special projects, and online ads. Under each role, list the responsibilities and the expectations a manager can check. Those expectations cover timing, accuracy, budget, and reporting when asked. Duties without a visible result are hard to manage from far away. Keep each role short enough that a director can say yes to it alone. The document should read like a contract scope, not like a diary of hopes.",
+      "terms": [
+        {
+          "en": "role scope",
+          "hook": "A named slice of the job with duties and the results a manager can check from afar."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Show the remote method",
+      "bodyEn": "Under each role, explain the tool that replaces sitting at the desk. Design review can happen on a shared board the team has already used. Calls can happen on a service you have already tested on the connection you will have. Image research and ad reporting can continue in the same web accounts. Mention a proof that the tool works from the destination, such as a trial by someone already there. A method they have seen is easier to trust than a promise of new software."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "End on their benefit",
+      "bodyEn": "Close by tying the contract to something they gain, such as clearer tracking of production cost, not only to your trip. Restate that you want to keep serving them. Thank them, and leave room for a meeting. Put software notes in a short appendix so the proposal itself stays about roles and results. Name the cost of a headset or a call only if it shows the setup is cheap. A director should be able to approve the trial without learning a new product first.",
+      "terms": [
+        {
+          "en": "contract close",
+          "hook": "A final paragraph that names a benefit for the employer and asks them to consider the trial."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Keep hours small",
+      "bodyEn": "The version of this letter that worked also cut the week to a small band of hours. Do not quietly promise the old full week from a new city. The expectations in each role are what make the smaller week believable. If a task truly needs a desk, leave it off the list or name a local owner. The proposal fails when it asks for absence and also keeps every old interruption. Remote is a redesign of the job, not a laptop in a cafe."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Remote proposal check",
+      "bodyEn": "The letter opens with proven results, a time window, and a reversible trial. The job is split into roles with checkable expectations. Each role names the remote method and, where possible, a test you already ran. The close gives the employer a reason to prefer the contract. Hours shrink because the scope shrank. A task that needs the office stays out of the promise. Recall what belongs under each role besides the duties.",
+      "prompt": "What should sit under each role besides the duties?",
+      "choices": [
+        "Expectations a manager can check, plus the remote method",
+        "A diary of why you want to travel",
+        "A request for a higher salary and a new title",
+        "A promise to stay online all day"
+      ],
+      "answer": 0
+    }
+  ]
+}

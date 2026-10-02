@@ -1,0 +1,138 @@
+{
+  "id": "47",
+  "index": 47,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Propose the Remote Job",
+  "titleSource": "Working Remotely",
+  "sourcePages": "",
+  "when": "Case study",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Date the someday story",
+      "bodyEn": "She had spent months talking about a move to Argentina to learn Spanish. A notebook of monthly goals and tasks replaced the talking. Friends kept hearing a someday story, because she loved her job and they could not picture her leaving it. She wanted a different trade: the same work, in the new city. Excitement was the signal she trusted. Daily goals were the evidence that the plan had a date.",
+      "terms": [
+        {
+          "en": "someday story",
+          "hook": "A dream retold so often that the people around you stop expecting a start date."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Keep the job you like",
+      "bodyEn": "Teaching English abroad would have paid for the city and discarded the job she wanted to keep. She chose the harder ask: stay with her company and do the work from Argentina. A written proposal was the vehicle. Everyone close to her said to keep it away from her boss. Savings could cover at least six months in the country if the answer was no. That fallback made the meeting a priced risk. The proposal went in anyway.",
+      "terms": [
+        {
+          "en": "funded fallback",
+          "hook": "Savings that cover a set number of months in the new place if the remote ask is refused."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Hand in the proposal",
+      "bodyEn": "She entered the meeting prepared for a refusal, and her friends had comfort ready for the rejection they expected. The boss accepted, asked to discuss the details, and praised the proposal. The surprise included her. After it faded, the remaining work was logistics: a move date, a city, and the shape of a week. Loved ones can misread an employer's flexibility when they are trying to protect you. A written ask, plus money that survives a no, is what makes their caution optional."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Arrive on the date",
+      "bodyEn": "She named September and arrived at the beginning of that month. The city was a small provincial capital in the northwest. Work settled near five to ten hours a week, with sharper focus once she was alone. A private tutor took two hours a day, five days a week. Gym sessions, yoga, and slower meals used hours the old office had consumed. The remote job was the tool that made daily language study ordinary."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Ask against the caution",
+      "bodyEn": "She usually leaned on friends and family. In this case their caution would have preserved the talking. Disbelief measured how unlikely the plan sounded from the outside. The boss was a separate question, and only the proposal could answer it. Savings plus a written request turned the risk into a number she could carry. When you want a freer version of a job you already do well, ask, and be ready to live on the fallback if you hear no."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Refuse the worse job",
+      "bodyEn": "A move is often funded by a local job that merely gets you into the country. She kept the company that already knew her output, and the proposal spent that history. Uncertainty stayed in the plan, and she described the feeling as excitement. The life and the job were one request. Ask for them together. Bring a date and a way to eat if the employer declines."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Remote proposal check",
+      "bodyEn": "This case turns a someday move into a date by writing the goals down, proposing remote work to the current boss, and parking six months of savings under the ask. The preferred result is the same employer in the new country. Friends prepared for a refusal. The boss agreed, and the hours fell far enough for daily language study. The fallback is what made their caution safe to override. Recall the first ask when you like the job and want the country.",
+      "prompt": "When you want a new country and you like your current job, what should you ask for first?",
+      "choices": [
+        "A written remote arrangement with that employer, backed by savings that cover a no",
+        "A local teaching job, so you can skip the conversation with your boss",
+        "More months of talking until every friend agrees",
+        "A resignation with no date and no proposal"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Date the someday story",
+      "bodyEn": "She had spent months talking about a move to Argentina to learn Spanish. A notebook of monthly goals and tasks replaced the talking. Friends kept hearing a someday story, because she loved her job and they could not picture her leaving it. She wanted a different trade: the same work, in the new city. Excitement was the signal she trusted. Daily goals were the evidence that the plan had a date.",
+      "terms": [
+        {
+          "en": "someday story",
+          "hook": "A dream retold so often that the people around you stop expecting a start date."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Keep the job you like",
+      "bodyEn": "Teaching English abroad would have paid for the city and discarded the job she wanted to keep. She chose the harder ask: stay with her company and do the work from Argentina. A written proposal was the vehicle. Everyone close to her said to keep it away from her boss. Savings could cover at least six months in the country if the answer was no. That fallback made the meeting a priced risk. The proposal went in anyway.",
+      "terms": [
+        {
+          "en": "funded fallback",
+          "hook": "Savings that cover a set number of months in the new place if the remote ask is refused."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Hand in the proposal",
+      "bodyEn": "She entered the meeting prepared for a refusal, and her friends had comfort ready for the rejection they expected. The boss accepted, asked to discuss the details, and praised the proposal. The surprise included her. After it faded, the remaining work was logistics: a move date, a city, and the shape of a week. Loved ones can misread an employer's flexibility when they are trying to protect you. A written ask, plus money that survives a no, is what makes their caution optional."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Arrive on the date",
+      "bodyEn": "She named September and arrived at the beginning of that month. The city was a small provincial capital in the northwest. Work settled near five to ten hours a week, with sharper focus once she was alone. A private tutor took two hours a day, five days a week. Gym sessions, yoga, and slower meals used hours the old office had consumed. The remote job was the tool that made daily language study ordinary."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Ask against the caution",
+      "bodyEn": "She usually leaned on friends and family. In this case their caution would have preserved the talking. Disbelief measured how unlikely the plan sounded from the outside. The boss was a separate question, and only the proposal could answer it. Savings plus a written request turned the risk into a number she could carry. When you want a freer version of a job you already do well, ask, and be ready to live on the fallback if you hear no."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Refuse the worse job",
+      "bodyEn": "A move is often funded by a local job that merely gets you into the country. She kept the company that already knew her output, and the proposal spent that history. Uncertainty stayed in the plan, and she described the feeling as excitement. The life and the job were one request. Ask for them together. Bring a date and a way to eat if the employer declines."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Remote proposal check",
+      "bodyEn": "This case turns a someday move into a date by writing the goals down, proposing remote work to the current boss, and parking six months of savings under the ask. The preferred result is the same employer in the new country. Friends prepared for a refusal. The boss agreed, and the hours fell far enough for daily language study. The fallback is what made their caution safe to override. Recall the first ask when you like the job and want the country.",
+      "prompt": "When you want a new country and you like your current job, what should you ask for first?",
+      "choices": [
+        "A written remote arrangement with that employer, backed by savings that cover a no",
+        "A local teaching job, so you can skip the conversation with your boss",
+        "More months of talking until every friend agrees",
+        "A resignation with no date and no proposal"
+      ],
+      "answer": 0
+    }
+  ]
+}

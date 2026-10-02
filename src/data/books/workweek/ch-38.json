@@ -1,0 +1,134 @@
+{
+  "id": "38",
+  "index": 38,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Remote, Then the Arts",
+  "titleSource": "Art Lovers Wanted",
+  "sourcePages": "",
+  "when": "Case",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The inherited grind",
+      "bodyEn": "An immigrant son had watched his father spend twenty years as a garbage collector, and at thirty-three he saw the same grind in his own hotel weeks. The job kept him on the road, far from the people he loved, while music and theater stayed postponed. A friend's message pointed him to this book, and he started the same night. Everyone he told called the plan crazy. He put his effort on three moves: name the life, cut the waste, and negotiate remote work. The decision was to reshape the job before chasing the arts full time. Liberation was the first project, and the dream was what the freed hours were for.",
+      "terms": [
+        {
+          "en": "dreamlining",
+          "hook": "Writing the postponed life in enough detail that a negotiation has a concrete target."
+        },
+        {
+          "en": "liberation",
+          "hook": "A remote deal that returns hours while the paycheck continues."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Failed talks, then yes",
+      "bodyEn": "The first requests to work remotely were refused. He treated each no as practice and asked again. The yes cut days of nine hours or more, plus weekly travel, down to about four hours a week and one travel week a month. Output in the role roughly doubled against the prior year. Pay rose by ten thousand dollars. The result was not a smaller job with a smaller check. More finished work, in a tighter container, is what made the arrangement stick."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Home and the arts",
+      "bodyEn": "He moved in with his girlfriend in Seattle, his hometown, and the long-distance hotel relationship ended. The new hours went to a choir, his own folk-rock songs, and a first fully improvised hour-long play. He trained for a second marathon in the same stretch. Friends struggled to believe a full-time income could sit under a four-hour week. The result he ranks highest is time with his father, who had waited for retirement to receive a freedom this reader reached in under two years. The arts used the hours. They were not a second hustle squeezed beside the old travel."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Freedom is the point",
+      "bodyEn": "He described the mental result as finally understanding freedom. The terms of a job, in his account, can be renegotiated rather than endured. His message to other immigrants was that a harder version of his father's path gives away years. He chose the few moves that return time. The success he wanted was room to spend life, not a longer resume. The raise was real, and it was not the headline. The headline was who he could sit with, and what he could rehearse, inside an ordinary month."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Employee, not founder",
+      "bodyEn": "This case does not begin with a product. It begins with an employee who still has a boss and a dream he is not living. The order is the lesson: remote work first, then music and theater on the returned time. Chasing the arts during the hotel weeks would have repeated his father's delay. Doubled output gave the employer a reason to allow the change. The raise shows he did not ask to do less for the same money. An employee can run this sequence without inventing a muse."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "What to copy",
+      "bodyEn": "Name the life you are postponing, in hours and in people. Cut the travel and tasks that do not produce what the employer actually pays for. Ask for a remote week, expect at least one refusal, and ask again with proof of output. Count the win as hours returned, people recovered, and work finished. Spend the new time on the dream you named, or the deal only shortens the commute to the same emptiness. Keep the paycheck while you test the freer week. In this case, under two years replaced a wait his father had already stretched to twenty."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Which change came first",
+      "bodyEn": "Music, theater, and time with his father were the point. He did not start by quitting. After several refusals he won a remote week of about four hours, with output and pay both up. Seattle, the choir, the play, and the marathon sat on top of that deal. Recall the change that had to land before the arts had any room.",
+      "prompt": "What did he secure before music and theater had room?",
+      "choices": [
+        "A recording contract that replaced the job",
+        "A remote week of about four hours, with output and pay up",
+        "Retirement from the employer",
+        "A move abroad with no paycheck"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The inherited grind",
+      "bodyEn": "An immigrant son had watched his father spend twenty years as a garbage collector, and at thirty-three he saw the same grind in his own hotel weeks. The job kept him on the road, far from the people he loved, while music and theater stayed postponed. A friend's message pointed him to this book, and he started the same night. Everyone he told called the plan crazy. He put his effort on three moves: name the life, cut the waste, and negotiate remote work. The decision was to reshape the job before chasing the arts full time. Liberation was the first project, and the dream was what the freed hours were for.",
+      "terms": [
+        {
+          "en": "dreamlining",
+          "hook": "Writing the postponed life in enough detail that a negotiation has a concrete target."
+        },
+        {
+          "en": "liberation",
+          "hook": "A remote deal that returns hours while the paycheck continues."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Failed talks, then yes",
+      "bodyEn": "The first requests to work remotely were refused. He treated each no as practice and asked again. The yes cut days of nine hours or more, plus weekly travel, down to about four hours a week and one travel week a month. Output in the role roughly doubled against the prior year. Pay rose by ten thousand dollars. The result was not a smaller job with a smaller check. More finished work, in a tighter container, is what made the arrangement stick."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Home and the arts",
+      "bodyEn": "He moved in with his girlfriend in Seattle, his hometown, and the long-distance hotel relationship ended. The new hours went to a choir, his own folk-rock songs, and a first fully improvised hour-long play. He trained for a second marathon in the same stretch. Friends struggled to believe a full-time income could sit under a four-hour week. The result he ranks highest is time with his father, who had waited for retirement to receive a freedom this reader reached in under two years. The arts used the hours. They were not a second hustle squeezed beside the old travel."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Freedom is the point",
+      "bodyEn": "He described the mental result as finally understanding freedom. The terms of a job, in his account, can be renegotiated rather than endured. His message to other immigrants was that a harder version of his father's path gives away years. He chose the few moves that return time. The success he wanted was room to spend life, not a longer resume. The raise was real, and it was not the headline. The headline was who he could sit with, and what he could rehearse, inside an ordinary month."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Employee, not founder",
+      "bodyEn": "This case does not begin with a product. It begins with an employee who still has a boss and a dream he is not living. The order is the lesson: remote work first, then music and theater on the returned time. Chasing the arts during the hotel weeks would have repeated his father's delay. Doubled output gave the employer a reason to allow the change. The raise shows he did not ask to do less for the same money. An employee can run this sequence without inventing a muse."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "What to copy",
+      "bodyEn": "Name the life you are postponing, in hours and in people. Cut the travel and tasks that do not produce what the employer actually pays for. Ask for a remote week, expect at least one refusal, and ask again with proof of output. Count the win as hours returned, people recovered, and work finished. Spend the new time on the dream you named, or the deal only shortens the commute to the same emptiness. Keep the paycheck while you test the freer week. In this case, under two years replaced a wait his father had already stretched to twenty."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Which change came first",
+      "bodyEn": "Music, theater, and time with his father were the point. He did not start by quitting. After several refusals he won a remote week of about four hours, with output and pay both up. Seattle, the choir, the play, and the marathon sat on top of that deal. Recall the change that had to land before the arts had any room.",
+      "prompt": "What did he secure before music and theater had room?",
+      "choices": [
+        "A recording contract that replaced the job",
+        "A remote week of about four hours, with output and pay up",
+        "Retirement from the employer",
+        "A move abroad with no paycheck"
+      ],
+      "answer": 1
+    }
+  ]
+}

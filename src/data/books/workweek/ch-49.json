@@ -1,0 +1,138 @@
+{
+  "id": "49",
+  "index": 49,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Clear the Week First",
+  "titleSource": "Star Wars, Anyone?",
+  "sourcePages": "",
+  "when": "Case study",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Presence is the aim",
+      "bodyEn": "An on-call administrator at a financial firm was expected to be reachable every day of the year. The arrangement protected the job and pushed four children to the edge of the week. He recognized the shift when a teacher asked what he did and a child said he spent the day watching movies. He heard that as a report that he could finally choose his hours. The aim under the joke was presence: a parent inside ordinary school days. Remote work was the means. The movie day was the signal that the means had started to work."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Batch mail, drop meetings",
+      "bodyEn": "He cleared the inbox first, batching replies and cutting each message down to the people who had to act. The actions worth doing became visible once the noise was gone. Meetings were the next cut. He declined most invitations, asked for the notes, and told colleagues to message him when one question actually needed him. Calls covered the meetings he still attended, which fit a company already spread across rooms and cities. Less performance time produced clearer results. That cleanup is what later made a remote ask believable.",
+      "terms": [
+        {
+          "en": "batch and decline",
+          "hook": "Handle mail in set sessions, and refuse meetings that can be notes or a single question."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Ask after the results",
+      "bodyEn": "Managers responded to the output. Making them look competent ended the daily hovering. He kept proving the work held without interference, and only then asked to go virtual. The tasks were already doable from elsewhere, so the request described a current fact. Home had an office apart from the family rooms, plus rules everyone understood. One or two home days became four days out of five. A later fuel shortage turned the pattern into official policy, by which point he was already the example."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Show up at school",
+      "bodyEn": "The surplus went to the school day: lunch with his children, reading aloud in their classrooms, the drive in, and the hour they came home. He treated that presence as the payoff. The on-call version of the job had turned the same events into scheduling conflicts. Other parents read the free weekdays and the calm clothes as wealth or a medical career, because they still tie daytime freedom to status. He took the misreading as a reminder that showing up changes how people treat you. Spend the recovered hours in the room you rearranged the job to reach.",
+      "terms": [
+        {
+          "en": "weekday presence",
+          "hook": "Using recovered workday hours to be physically in your children's ordinary school life."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Assign the surplus",
+      "bodyEn": "A day of movies was available, and it was too small for the time he had bought. He assigned the surplus to his family, the school, a church, and a club board that needed someone who could attend. Invitations arrived because he was in the room, and the job still held. A handbook for people who work virtually grew later from tools he was already using. The old always-on week had no space for that project. Name the people and the project before leftover tasks reclaim the hours."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Clear before you move",
+      "bodyEn": "The sequence is the decision. Mail and meetings were cleaned until the results were obvious and supervision relaxed. The virtual request came after the job was already remote-ready, with a separate office and household rules. Weekday presence with the children followed. Community roles drew on the same surplus. Asking to disappear before the output is visible is how this kind of request fails. Clear the week, then move it."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Virtual timing check",
+      "bodyEn": "This case earns a mostly remote week by cleaning mail and meetings until managers can see the results without hovering. The ask waits until the work is remote-ready, and home has a real office plus rules. Recovered time goes to school days and a few chosen roles. A later project fits because the income-and-output floor is already stable. Leisure becomes possible once that floor exists. Recall the moment to request the virtual schedule.",
+      "prompt": "When should you ask to work from home most of the week?",
+      "choices": [
+        "After batched mail and fewer meetings have already raised results, so the ask describes proof",
+        "On the first morning, before mail or meetings change",
+        "After you quit and offer movies as your new job description",
+        "As soon as other parents assume you must be wealthy"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Presence is the aim",
+      "bodyEn": "An on-call administrator at a financial firm was expected to be reachable every day of the year. The arrangement protected the job and pushed four children to the edge of the week. He recognized the shift when a teacher asked what he did and a child said he spent the day watching movies. He heard that as a report that he could finally choose his hours. The aim under the joke was presence: a parent inside ordinary school days. Remote work was the means. The movie day was the signal that the means had started to work."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Batch mail, drop meetings",
+      "bodyEn": "He cleared the inbox first, batching replies and cutting each message down to the people who had to act. The actions worth doing became visible once the noise was gone. Meetings were the next cut. He declined most invitations, asked for the notes, and told colleagues to message him when one question actually needed him. Calls covered the meetings he still attended, which fit a company already spread across rooms and cities. Less performance time produced clearer results. That cleanup is what later made a remote ask believable.",
+      "terms": [
+        {
+          "en": "batch and decline",
+          "hook": "Handle mail in set sessions, and refuse meetings that can be notes or a single question."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Ask after the results",
+      "bodyEn": "Managers responded to the output. Making them look competent ended the daily hovering. He kept proving the work held without interference, and only then asked to go virtual. The tasks were already doable from elsewhere, so the request described a current fact. Home had an office apart from the family rooms, plus rules everyone understood. One or two home days became four days out of five. A later fuel shortage turned the pattern into official policy, by which point he was already the example."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Show up at school",
+      "bodyEn": "The surplus went to the school day: lunch with his children, reading aloud in their classrooms, the drive in, and the hour they came home. He treated that presence as the payoff. The on-call version of the job had turned the same events into scheduling conflicts. Other parents read the free weekdays and the calm clothes as wealth or a medical career, because they still tie daytime freedom to status. He took the misreading as a reminder that showing up changes how people treat you. Spend the recovered hours in the room you rearranged the job to reach.",
+      "terms": [
+        {
+          "en": "weekday presence",
+          "hook": "Using recovered workday hours to be physically in your children's ordinary school life."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Assign the surplus",
+      "bodyEn": "A day of movies was available, and it was too small for the time he had bought. He assigned the surplus to his family, the school, a church, and a club board that needed someone who could attend. Invitations arrived because he was in the room, and the job still held. A handbook for people who work virtually grew later from tools he was already using. The old always-on week had no space for that project. Name the people and the project before leftover tasks reclaim the hours."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Clear before you move",
+      "bodyEn": "The sequence is the decision. Mail and meetings were cleaned until the results were obvious and supervision relaxed. The virtual request came after the job was already remote-ready, with a separate office and household rules. Weekday presence with the children followed. Community roles drew on the same surplus. Asking to disappear before the output is visible is how this kind of request fails. Clear the week, then move it."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Virtual timing check",
+      "bodyEn": "This case earns a mostly remote week by cleaning mail and meetings until managers can see the results without hovering. The ask waits until the work is remote-ready, and home has a real office plus rules. Recovered time goes to school days and a few chosen roles. A later project fits because the income-and-output floor is already stable. Leisure becomes possible once that floor exists. Recall the moment to request the virtual schedule.",
+      "prompt": "When should you ask to work from home most of the week?",
+      "choices": [
+        "After batched mail and fewer meetings have already raised results, so the ask describes proof",
+        "On the first morning, before mail or meetings change",
+        "After you quit and offer movies as your new job description",
+        "As soon as other parents assume you must be wealthy"
+      ],
+      "answer": 0
+    }
+  ]
+}

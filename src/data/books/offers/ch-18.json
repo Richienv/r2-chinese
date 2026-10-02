@@ -1,0 +1,171 @@
+{
+  "id": "18",
+  "index": 18,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Cash you can spend",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Count spendable cash",
+      "bodyEn": "The milestone in this closing is money that has landed in a personal account. A large sales total can sit beside a household that still cannot fund a quiet year. Profit left inside the company can still be consumed by the next emergency. Cash reserved for a debt is already spoken for. The balance they looked at, a little over $100,000, was money they could both see and spend. Set your milestone as that kind of balance.",
+      "terms": [
+        {
+          "en": "Spendable balance",
+          "hook": "Personal cash you can use, clear of the company and of reserved debts."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Give it a runway",
+      "bodyEn": "They tested the balance against about three years of ordinary living. At their costs then, a year of life was about $33,000. The cash on hand covered that stretch even if new income stopped. The figure matters because it buys time. Write your own yearly cost of living and multiply by the years you want covered. The first target is that many years of life, sitting where you can actually use it.",
+      "terms": [
+        {
+          "en": "Runway test",
+          "hook": "Years of living costs held as personal cash you can spend."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Relief marks the line",
+      "bodyEn": "What arrived with the balance was relief. Years of pushing forward had delayed the fear of a month when the work produced nothing. Security took the place of the daily question about how they would get by. Happiness was a weaker signal than that release. A body that unclenched, once the number was real, marked the line. Treat that calm as evidence the scramble has closed."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "The first jump is largest",
+      "bodyEn": "Later sums, including tens of millions, felt smaller than this first crossing. Moving from no runway to a few years of runway changes daily life more than the jumps that follow. Some people arrive quickly and some arrive slowly. The closing's condition is that you keep getting up. Quitting is what leaves the balance at zero. Measure the gain in years of life covered, then continue."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "The offer is the vehicle",
+      "bodyEn": "This closing points back at one finished trade, something people badly want that truly solves their problem. That grand slam is the first block of the business. For many owners it produces more sales, higher prices, and more profit on its own. The practical claim is that the first real grand slam should be able to reach this first pile of spendable cash. Wanting still more after that remains available. Use the offer you built as the vehicle for the runway."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Leads come second",
+      "bodyEn": "Finding more customers is named here as the next skill, and the tactics wait for the following book. The standard for that skill is acquisition that pays for itself. Structure the promotion so a new customer covers the cost of finding the next one. That standard assumes the offer is already strong enough to sell. Attention poured onto a weak trade fills a calendar and leaves the personal balance thin. Finish the offer, then learn to fill it at a profit.",
+      "terms": [
+        {
+          "en": "Self-funding leads",
+          "hook": "A promotion where each new customer pays for finding the next one."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Name the missing piece",
+      "bodyEn": "Advancement in this closing means finding the skill, the belief, or the trait that is still absent. Most of the time the remedy is improvement, drawn from experience or from a strong source. Experience teaches more than any book and offers less comfort while it does. Someone who is merely ahead of you can still give poor advice. Strong work lives in detail and nuance, which is why a single volume leaves further skills for later. Name the piece you lack, and learn that piece before you gather another pile of tactics.",
+      "terms": [
+        {
+          "en": "Missing piece",
+          "hook": "The skill, belief, or trait whose absence is capping the next step."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Which balance counts",
+      "bodyEn": "This closing walks through a night when a personal account crossed $100,000. Several nearby numbers would have told a flattering and useless story. Sales can be high while the household stays exposed. Profit inside the firm can vanish into the next crisis. Cash pledged to a debt is already spent in advance. Choose the balance this section treats as the real threshold.",
+      "prompt": "Which balance is the first hundred thousand in this closing?",
+      "choices": [
+        "Personal cash that covers years of living if income stops",
+        "A revenue total that has not reached a personal account",
+        "Profit still inside the company for the next emergency",
+        "Money already reserved to repay a debt"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Count spendable cash",
+      "bodyEn": "The milestone in this closing is money that has landed in a personal account. A large sales total can sit beside a household that still cannot fund a quiet year. Profit left inside the company can still be consumed by the next emergency. Cash reserved for a debt is already spoken for. The balance they looked at, a little over $100,000, was money they could both see and spend. Set your milestone as that kind of balance.",
+      "terms": [
+        {
+          "en": "Spendable balance",
+          "hook": "Personal cash you can use, clear of the company and of reserved debts."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Give it a runway",
+      "bodyEn": "They tested the balance against about three years of ordinary living. At their costs then, a year of life was about $33,000. The cash on hand covered that stretch even if new income stopped. The figure matters because it buys time. Write your own yearly cost of living and multiply by the years you want covered. The first target is that many years of life, sitting where you can actually use it.",
+      "terms": [
+        {
+          "en": "Runway test",
+          "hook": "Years of living costs held as personal cash you can spend."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Relief marks the line",
+      "bodyEn": "What arrived with the balance was relief. Years of pushing forward had delayed the fear of a month when the work produced nothing. Security took the place of the daily question about how they would get by. Happiness was a weaker signal than that release. A body that unclenched, once the number was real, marked the line. Treat that calm as evidence the scramble has closed."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "The first jump is largest",
+      "bodyEn": "Later sums, including tens of millions, felt smaller than this first crossing. Moving from no runway to a few years of runway changes daily life more than the jumps that follow. Some people arrive quickly and some arrive slowly. The closing's condition is that you keep getting up. Quitting is what leaves the balance at zero. Measure the gain in years of life covered, then continue."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "The offer is the vehicle",
+      "bodyEn": "This closing points back at one finished trade, something people badly want that truly solves their problem. That grand slam is the first block of the business. For many owners it produces more sales, higher prices, and more profit on its own. The practical claim is that the first real grand slam should be able to reach this first pile of spendable cash. Wanting still more after that remains available. Use the offer you built as the vehicle for the runway."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Leads come second",
+      "bodyEn": "Finding more customers is named here as the next skill, and the tactics wait for the following book. The standard for that skill is acquisition that pays for itself. Structure the promotion so a new customer covers the cost of finding the next one. That standard assumes the offer is already strong enough to sell. Attention poured onto a weak trade fills a calendar and leaves the personal balance thin. Finish the offer, then learn to fill it at a profit.",
+      "terms": [
+        {
+          "en": "Self-funding leads",
+          "hook": "A promotion where each new customer pays for finding the next one."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Name the missing piece",
+      "bodyEn": "Advancement in this closing means finding the skill, the belief, or the trait that is still absent. Most of the time the remedy is improvement, drawn from experience or from a strong source. Experience teaches more than any book and offers less comfort while it does. Someone who is merely ahead of you can still give poor advice. Strong work lives in detail and nuance, which is why a single volume leaves further skills for later. Name the piece you lack, and learn that piece before you gather another pile of tactics.",
+      "terms": [
+        {
+          "en": "Missing piece",
+          "hook": "The skill, belief, or trait whose absence is capping the next step."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Which balance counts",
+      "bodyEn": "This closing walks through a night when a personal account crossed $100,000. Several nearby numbers would have told a flattering and useless story. Sales can be high while the household stays exposed. Profit inside the firm can vanish into the next crisis. Cash pledged to a debt is already spent in advance. Choose the balance this section treats as the real threshold.",
+      "prompt": "Which balance is the first hundred thousand in this closing?",
+      "choices": [
+        "Personal cash that covers years of living if income stops",
+        "A revenue total that has not reached a personal account",
+        "Profit still inside the company for the next emergency",
+        "Money already reserved to repay a debt"
+      ],
+      "answer": 0
+    }
+  ]
+}

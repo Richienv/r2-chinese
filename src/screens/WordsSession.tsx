@@ -1,12 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
 import { Fireworks } from '../components/Fireworks'
+import { MasteryTracker } from '../components/MasteryTracker'
+import { DialoguePractice, SentencePractice } from '../components/ProductionPractice'
+import { WordRecall } from '../components/WordRecall'
+import { StudyDisplayControls } from '../components/StudyDisplayControls'
 import { ChineseHear, hasHanzi, HearButton, useAutoSpeak, useAutoSpeakLines, useSpeechActive } from '../components/Hear'
-import { CheckIcon, CloseIcon, HeartIcon, LockIcon } from '../components/Icons'
+import { CheckIcon, CloseIcon, LockIcon } from '../components/Icons'
 import { getLesson, type Example } from '../lib/content'
 import { recordHistory } from '../lib/history'
-import { clearStep, readStep, writeStep } from '../lib/resume'
-import { playCorrect, playWrong } from '../lib/sfx'
+import { clearLearningCheckpoint, readLearningCheckpoint, writeLearningCheckpoint } from '../lib/resume'
+import { playAdvance, playComplete, playCorrect, playWrong } from '../lib/sfx'
+import type { ProductionResult } from '../lib/production'
 import { unlockSpeech, speakLines, stopSpeech } from '../lib/speech'
 import { TeachView } from './TeachBeats'
 import type { Question } from '../lib/quiz'
@@ -16,7 +22,6 @@ import {
   ITEM_XP,
   NODE_BONUS_XP,
   NODE_LABEL,
-  SESSION_HEARTS,
   buildSteps,
   isNodePlayable,
   isSessionOpen,
@@ -27,10 +32,7 @@ import {
 } from '../lib/wordsSession'
 import { useStore, type PathNode } from '../store/store'
 
-const CORRECT_HOLD_MS = 700
-
 type QuizState = { wrong: string[]; solved: boolean; missed: boolean }
-type HeartLoss = { index: number; tick: number }
 
 export function WordsSession({
   lesson,
@@ -58,47 +60,66 @@ function WordsRunner({
   onClose: () => void
 }) {
   const store = useStore()
-  const resumeId = `hsk:${lesson}:${node}`
-  const steps = useMemo(() => buildSteps(lesson, node), [lesson, node])
+  const { user } = useAuth()
+  // Production activities change the sequence; don't reinterpret old numeric checkpoints.
+  const resumeId = `hsk:production-v2:${user?.id ?? 'local'}:${lesson}:${node}`
+  const checkpoint = useRef(readLearningCheckpoint(resumeId))
+  const [steps, setSteps] = useState(() => {
+    const base = buildSteps(lesson, node)
+    const retries = (checkpoint.current?.retryWords ?? []).flatMap((zh) => {
+      const recall = base.find((activity) => activity.kind === 'recall' && activity.word.zh === zh)
+      return recall ? [{ ...recall, id: `retry:${zh}`, n: 1, of: 1 } as SessionStep] : []
+    })
+    return [...base.slice(0, -1), ...retries, base[base.length - 1]]
+  })
+  const sessionWords = useMemo(() => [...new Set(steps.filter((s) => s.kind === 'recall').map((s) => s.word.zh))], [steps])
   const alreadyDone = useRef(store.isNodeDone(lesson, node))
   const credited = useRef(new Set<string>())
   const finished = useRef(false)
   const left = useRef(new Set<number>())
   const xpRef = useRef(0)
   const bodyRef = useRef<HTMLDivElement>(null)
+  const retryWords = useRef(new Set(checkpoint.current?.retryWords ?? []))
+  const needsSupport = useRef(new Set<string>())
 
   const [i, setI] = useState(() => {
-    const built = buildSteps(lesson, node)
-    const saved = readStep(`hsk:${lesson}:${node}`)
-    return saved > 0 && saved < built.length ? saved : 0
+    const saved = steps.findIndex((activity) => activity.kind !== 'complete' && activity.id === checkpoint.current?.stepId)
+    return saved >= 0 ? saved : 0
   })
   const [quiz, setQuiz] = useState<Record<string, QuizState>>({})
-  const [hearts, setHearts] = useState(SESSION_HEARTS)
-  const [heartLoss, setHeartLoss] = useState<HeartLoss | null>(null)
-  const [failed, setFailed] = useState(false)
   const [xp, setXp] = useState(0)
   const [fwToken, setFwToken] = useState(0)
+  const [progressPeeks, setProgressPeeks] = useState<Record<string, boolean>>(() => Object.fromEntries((checkpoint.current?.assistedSteps ?? []).map((id) => [id, true])))
 
   const step = steps[Math.min(i, steps.length - 1)]
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
-  const isComplete = !failed && step.kind === 'complete'
+  const isComplete = step.kind === 'complete'
   const total = playableCount(steps)
-  const footerLocked = !failed && step.kind === 'quiz' && !quizState?.solved
-  const beatKey = failed ? 'failed' : step.kind === 'complete' ? 'complete' : step.id
+  const footerLocked = step.kind === 'quiz' && !quizState?.solved
+  const beatKey = step.kind === 'complete' ? 'complete' : step.id
 
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 })
-  }, [i, failed])
+  }, [i])
+
+  // Encounter is enough to enter the trail, even if the learner closes before Next.
+  useEffect(() => {
+    if (step.kind === 'teach' && step.phase === 'meet') store.addCards(lesson, [step.word])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [beatKey, lesson])
 
   useEffect(() => {
     if (isComplete) return
-    writeStep(resumeId, i)
-  }, [i, isComplete, resumeId])
+    writeLearningCheckpoint(resumeId, {
+      stepId: step.id, retryWords: [...retryWords.current], assistedSteps: Object.keys(progressPeeks).filter((id) => progressPeeks[id]),
+    })
+  }, [i, isComplete, resumeId, step, progressPeeks])
 
   useEffect(() => {
     if (!isComplete || finished.current) return
     finished.current = true
-    clearStep(resumeId)
+    playComplete()
+    clearLearningCheckpoint(resumeId)
     store.markNodeDone(lesson, node)
     recordHistory({
       course: 'hsk4a',
@@ -117,17 +138,6 @@ function WordsRunner({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isComplete, lesson, node, resumeId])
-
-  useEffect(() => {
-    if (failed || step.kind !== 'quiz' || !quizState?.solved) return
-    const from = i
-    const t = window.setTimeout(() => {
-      if (left.current.has(from)) return
-      left.current.add(from)
-      setI((cur) => (cur === from ? cur + 1 : cur))
-    }, CORRECT_HOLD_MS)
-    return () => window.clearTimeout(t)
-  }, [failed, i, quizState?.solved, step.kind])
 
   function credit(id: string) {
     if (credited.current.has(id)) return
@@ -153,10 +163,35 @@ function WordsRunner({
     if (footerLocked) return
     if (step.kind === 'teach' && step.phase === 'meet') meetWord(step.word, step.id)
     if (step.kind === 'note' || step.kind === 'read') credit(step.id)
-    if (failed || isComplete) {
+    if (isComplete) {
       onClose()
       return
     }
+    playAdvance()
+    goForward()
+  }
+
+  function finishRecall() {
+    if (step.kind !== 'recall') return
+    credit(step.id)
+    // Give difficult words another unaided attempt after the other activities.
+    if (needsSupport.current.has(step.word.zh) && !retryWords.current.has(step.word.zh)) {
+      retryWords.current.add(step.word.zh)
+      const retry: SessionStep = { ...step, id: `retry:${step.word.zh}`, n: 1, of: 1 }
+      setSteps((current) => [...current.slice(0, -1), retry, current[current.length - 1]])
+    }
+    goForward()
+  }
+
+  function finishProduction(result: ProductionResult) {
+    if (step.kind !== 'dialogue' && step.kind !== 'produce') return
+    const outcomes = result.outcomes ?? result.words.map((word) => ({ word, ...result }))
+    for (const outcome of outcomes) {
+      if (outcome.evidence === 'practice') continue
+      store.recordRecall(outcome.word, { correct: outcome.correct, assisted: outcome.assisted, mode: outcome.mode })
+    }
+    credit(step.id)
+    recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: result.evidence === 'practice' ? undefined : result.correct, title: result.evidence === 'practice' ? 'Sentence practice · ungraded' : undefined })
     goForward()
   }
 
@@ -165,6 +200,8 @@ function WordsRunner({
     const key = step.id
     const prev = quiz[key] ?? { wrong: [], solved: false, missed: false }
     if (prev.solved || prev.wrong.includes(picked)) return
+    const trackedWord = sessionWords.includes(answer) ? answer : undefined
+    if (trackedWord) store.recordRecall(trackedWord, { correct: picked === answer, assisted: prev.missed, mode: 'recognition' })
 
     if (picked === answer) {
       playCorrect()
@@ -180,23 +217,20 @@ function WordsRunner({
 
     playWrong()
     recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: false })
-    const nextHearts = hearts - 1
-    setHearts(Math.max(0, nextHearts))
-    setHeartLoss({ index: Math.max(0, nextHearts), tick: Date.now() })
     setQuiz((q) => ({
       ...q,
       [key]: { wrong: [...prev.wrong, picked], solved: false, missed: true },
     }))
-    if (nextHearts <= 0) setFailed(true)
   }
 
-  const progress = failed ? (i / total) * 100 : isComplete ? 100 : ((i + 1) / total) * 100
+  const progress = isComplete ? 100 : (i / total) * 100
   const showFooter =
-    failed || isComplete || step.kind === 'teach' || step.kind === 'note' || step.kind === 'read'
-  const footerLabel = failed || isComplete ? 'Continue' : 'Next'
+    isComplete || step.kind === 'teach' || step.kind === 'note' || step.kind === 'read' || (step.kind === 'quiz' && quizState?.solved)
+  const footerLabel = isComplete ? 'Continue' : 'Next'
+  const activeStage = step.kind === 'complete' || (step.kind === 'recall' && step.id.startsWith('retry:')) ? 'Revisit' : step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' ? 'Retrieve' : 'Produce'
 
   return (
-    <div className="overlay session">
+    <div className="overlay session learning-session">
       <Fireworks token={fwToken} />
       <div className="overlay-head">
         <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close session">
@@ -205,19 +239,20 @@ function WordsRunner({
         <div className="step-bar">
           <i className="yl-progress" style={{ width: `${Math.min(100, progress)}%` }} />
         </div>
-        <Hearts count={hearts} loss={heartLoss} />
-        {xp > 0 && (
-          <span key={xp} className="session-xp yl-pop" aria-label={`${xp} XP earned this session`}>
-            +{xp}
-          </span>
-        )}
+        <MasteryTracker words={sessionWords} compact onOpen={() => {
+          if (step.kind === 'recall' || step.kind === 'dialogue' || step.kind === 'produce') {
+            setProgressPeeks((previous) => ({ ...previous, ...Object.fromEntries(steps.filter((activity) => activity.kind === 'recall' || activity.kind === 'dialogue' || activity.kind === 'produce').map((activity) => [activity.id, true])) }))
+          }
+        }} />
+      </div>
+
+      <div className="learning-route" aria-label={`Learning stage: ${activeStage}`}>
+        {['Encounter', 'Understand', 'Retrieve', 'Produce', 'Revisit'].map((stage) => <span key={stage} data-active={stage === activeStage} aria-current={stage === activeStage ? 'step' : undefined}>{stage}</span>)}
       </div>
 
       <div className="overlay-body" ref={bodyRef}>
         <div key={beatKey} className="session-beat yl-enter">
-          {failed ? (
-            <FailedView xp={xp} wordsMet={countMet(steps, credited.current)} loss={heartLoss} />
-          ) : step.kind === 'teach' ? (
+          {step.kind === 'teach' ? (
             <TeachView
               phase={step.phase}
               word={step.word}
@@ -229,6 +264,24 @@ function WordsRunner({
             />
           ) : step.kind === 'read' ? (
             <ReadView text={step.text} />
+          ) : step.kind === 'recall' ? (
+            <WordRecall word={step.word} n={step.n} of={step.of} externallyAssisted={progressPeeks[step.id]}
+              onAssistance={() => {
+                needsSupport.current.add(step.word.zh)
+                setProgressPeeks((previous) => ({ ...previous, [step.id]: true }))
+              }}
+              onAttempt={(correct, assisted) => {
+                store.recordRecall(step.word.zh, { correct, assisted, mode: 'recall' })
+                // Once scored, the source answer is visible; reopening is assisted.
+                setProgressPeeks((previous) => ({ ...previous, [step.id]: true }))
+                if (!correct || assisted) {
+                  needsSupport.current.add(step.word.zh)
+                }
+              }} onComplete={finishRecall} />
+          ) : step.kind === 'dialogue' ? (
+            <DialoguePractice text={step.text} lesson={lesson} externallyAssisted={progressPeeks[step.id]} assistedTurns={Object.keys(progressPeeks).filter((id) => id.startsWith(`${step.id}::`)).map((id) => id.slice(step.id.length + 2))} onAssistance={(turnId) => setProgressPeeks((previous) => ({ ...previous, [turnId ? `${step.id}::${turnId}` : step.id]: true }))} targetWords={getLesson(lesson).vocab.map((word) => word.zh)} onComplete={finishProduction} />
+          ) : step.kind === 'produce' ? (
+            <SentencePractice example={step.example} targetWords={step.words} grammar={step.grammar} lesson={lesson} externallyAssisted={progressPeeks[step.id]} onAssistance={() => setProgressPeeks((previous) => ({ ...previous, [step.id]: true }))} onComplete={finishProduction} />
           ) : step.kind === 'note' ? (
             <NoteView
               title={step.title}
@@ -254,7 +307,7 @@ function WordsRunner({
               wordCount={sittingWordCount(lesson, node)}
               xp={xp}
               replay={alreadyDone.current}
-              hearts={hearts}
+              words={sessionWords}
             />
           )}
         </div>
@@ -262,34 +315,12 @@ function WordsRunner({
 
       {showFooter && (
         <div className="overlay-foot">
+          {(step.kind === 'teach' || step.kind === 'read' || step.kind === 'note') && <StudyDisplayControls />}
           <button type="button" className="btn" onPointerDown={() => unlockSpeech()} onClick={advance}>
             {footerLabel}
           </button>
         </div>
       )}
-    </div>
-  )
-}
-
-function countMet(steps: SessionStep[], credited: Set<string>): number {
-  return steps.filter((s) => s.kind === 'teach' && s.phase === 'meet' && credited.has(s.id)).length
-}
-
-function Hearts({ count, loss }: { count: number; loss?: HeartLoss | null }) {
-  return (
-    <div className="session-hearts hearts" aria-label={`${count} of ${SESSION_HEARTS} hearts`}>
-      {Array.from({ length: SESSION_HEARTS }, (_, n) => {
-        const justLost = loss?.index === n
-        return (
-          <span
-            key={justLost ? `lost-${loss.tick}` : `h-${n}`}
-            className={justLost ? 'heart yl-heart-loss' : 'heart'}
-            data-off={n >= count}
-          >
-            <HeartIcon size={15} filled={n < count} />
-          </span>
-        )
-      })}
     </div>
   )
 }
@@ -305,6 +336,7 @@ function StepHead({ kicker, title }: { kicker: string; title: string }) {
 
 function ReadView({ text }: { text: LessonText }) {
   const { onWord, sheet } = useGloss()
+  const { prefs } = useStore()
   const heading = text.heading_zh || text.heading_en || text.label
   return (
     <>
@@ -312,7 +344,7 @@ function ReadView({ text }: { text: LessonText }) {
         kicker={`${text.label} · ${text.type === 'dialogue' ? 'Dialogue' : 'Passage'}`}
         title={heading}
       />
-      {text.heading_en && text.heading_zh && <p className="session-read-en">{text.heading_en}</p>}
+      {prefs.showEnglish && text.heading_en && text.heading_zh && <p className="session-read-en">{text.heading_en}</p>}
       <DialogueAudio text={text} />
       <div className="session-read">
         {text.lines.map((line, i) => (
@@ -320,8 +352,8 @@ function ReadView({ text }: { text: LessonText }) {
             key={`${text.label}-${i}`}
             line={line}
             self={text.type === 'dialogue' && i % 2 === 1}
-            showPinyin
-            showEnglish
+            showPinyin={prefs.showPinyin}
+            showEnglish={prefs.showEnglish}
             onWord={onWord}
           />
         ))}
@@ -458,6 +490,7 @@ function NoteView({
   of: number
 }) {
   const { onWord, sheet } = useGloss()
+  const { prefs } = useStore()
   const head =
     kicker && kicker !== 'Grammar'
       ? kicker
@@ -484,12 +517,12 @@ function NoteView({
           <p className="zh" lang="zh-CN" style={{ fontSize: 20, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
             <Glossed text={example.zh} onWord={onWord} />
           </p>
-          {example.pinyin && (
+          {prefs.showPinyin && example.pinyin && (
             <p className="sub" style={{ margin: '6px 0 0', color: 'var(--red-mid)' }}>
               {example.pinyin}
             </p>
           )}
-          {example.en && <p className="sub" style={{ margin: '8px 0 0' }}>{example.en}</p>}
+          {prefs.showEnglish && example.en && <p className="sub" style={{ margin: '8px 0 0' }}>{example.en}</p>}
           <div style={{ marginTop: 12 }}>
             <ChineseHear text={example.zh} label="Hear the line" rate={LINE_RATE} />
           </div>
@@ -512,7 +545,7 @@ function DoneView({
   wordCount,
   xp,
   replay,
-  hearts,
+  words,
 }: {
   node: PathNode
   titleZh: string
@@ -520,7 +553,7 @@ function DoneView({
   wordCount: number
   xp: number
   replay: boolean
-  hearts: number
+  words: string[]
 }) {
   const label = NODE_LABEL[node]
   return (
@@ -534,6 +567,7 @@ function DoneView({
       <p className="sub yl-enter-up" style={{ marginTop: 8, animationDelay: '80ms', textWrap: 'pretty' }}>
         {titleZh} · {titleEn}
       </p>
+      <div className="learning-summary"><MasteryTracker words={words} /></div>
       <div
         className="session-xp yl-pop"
         style={{ marginTop: 20, fontWeight: 800, fontVariantNumeric: 'tabular-nums', animationDelay: '120ms' }}
@@ -548,7 +582,7 @@ function DoneView({
         {!replay && <span className="pill-ink">+{NODE_BONUS_XP} node</span>}
         {node !== 'wrap' && wordCount > 0 && <span className="pill-ink">{wordCount} words</span>}
         <span className="pill-ink">
-          <HeartIcon size={12} /> {hearts}
+          Automatically tracked
         </span>
       </div>
       <p
@@ -563,42 +597,11 @@ function DoneView({
         }}
       >
         {replay
-          ? 'Replay credited practice, not a second crown.'
+          ? 'Another retrieval session strengthens the trail.'
           : node === 'wrap'
-            ? 'Lesson banked. Every 生词 from this lesson is in your review deck.'
-            : 'Next 课文-unit is open. Keep going — HSK 4 is the whole book.'}
+            ? 'Every lesson word is tracked. Revisit difficult words before they fade.'
+            : 'Your learning trail keeps every word. Mastery comes from retrieving it again on another day.'}
       </p>
-    </div>
-  )
-}
-
-function FailedView({
-  xp,
-  wordsMet,
-  loss,
-}: {
-  xp: number
-  wordsMet: number
-  loss?: HeartLoss | null
-}) {
-  return (
-    <div style={{ textAlign: 'center', paddingTop: 36 }}>
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 8 }}>
-        <Hearts count={0} loss={loss ?? { index: 0, tick: 1 }} />
-      </div>
-      <h2 className="h1" style={{ marginTop: 12, textWrap: 'balance' }}>
-        Out of hearts
-      </h2>
-      <p className="sub" style={{ marginTop: 8, textWrap: 'pretty' }}>
-        Fail-forward stopped here — try this node again when you’re ready.
-      </p>
-      <div className="session-xp" style={{ marginTop: 18, fontWeight: 800, fontVariantNumeric: 'tabular-nums' }}>
-        +{xp} XP
-      </div>
-      <div className="row" style={{ justifyContent: 'center', marginTop: 16, flexWrap: 'wrap' }}>
-        <span className="pill-ink">{wordsMet} words met</span>
-        <span className="pill-ink">Node not marked done</span>
-      </div>
     </div>
   )
 }

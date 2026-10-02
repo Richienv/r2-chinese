@@ -1,0 +1,182 @@
+{
+  "id": "13",
+  "index": 13,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Beyond Repair",
+  "titleSource": "Beyond Repair: Killing Your Job",
+  "sourcePages": "",
+  "when": "Liberation",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Name the quitting time",
+      "bodyEn": "Some jobs and some companies cannot be repaired by small improvements. In this chapter, job covers both a role you hold and a company you run. Years already spent are a weak reason to spend more years, and pride about an old decision is a weak reason to repeat it. Define the rules, the stakes, and the time when you will stop before you are deep in the game. Most of these situations are simple, and the hard part is emotional. The fear that the next step is worse is the brake, and the chapter's claim is that staying at this point is the worse path.",
+      "terms": [
+        {
+          "en": "quitting time",
+          "hook": "The moment, defined in advance, when more effort on a bad path becomes waste."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Quitting can be undone",
+      "bodyEn": "The first fear is that leaving closes the door forever. The chapter's observation is that career tracks and companies can be restarted, and that a change of direction has a way back. Use the questions in this chapter, and the earlier fear-setting questions, to write that return path before you need it. Permanence is the story that makes a reversible choice feel fatal. Write the re-entry in concrete steps, such as who you would call and what proof of work you would show. A door you can describe is a door you can use."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Bills have a cut list",
+      "bodyEn": "The second fear is that the bills cannot be paid. The preferred order is a next source of cash before you resign. If you are pushed out, list assets, cash, debts, and monthly costs, and compute how many weeks the current pile covers. Then cut as if a sudden necessary expense had appeared: pause a car and its insurance, share rides, cook, sell unused purchases, and use credit as a short bridge. The emotional cost is real, and the practical cost is often a few weeks before a better fit is allowed to exist. Do the inventory on paper before you give notice."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Coverage can move with you",
+      "bodyEn": "The third fear is that medical coverage and retirement savings vanish on the day you leave. Individual plans can keep you on a similar network, and one look-up in the chapter landed in a few hundred dollars a month. Moving a workplace retirement account to a new custodian can be a single phone call with no fee. Both tasks can take less time than a routine dispute over a household bill. Price the plan and start the transfer while you still have the old job, so the fear has a number. A number is easier to plan around than a blank threat."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Make the gap a story",
+      "bodyEn": "The fourth fear is a damaged resume. A blank gap is a problem, and a gap filled with a specific project other people envy is an interview magnet. Bored interviewers often spend the meeting asking how you did the unusual thing. If they ask why you left, the durable answer is that a rare chance appeared and, with decades of work still ahead, there was no reason to refuse it. Test the assumption that your field punishes movement, because results often matter more than an unbroken seat. If your field requires years of misery as the price of promotion, ask whether the prize is worth the game."
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "Two kinds of mistake",
+      "bodyEn": "Mistakes of ambition come from acting before every fact is in, and the chapter treats them as the kind to encourage. Mistakes of sloth come from refusing to leave a bad setup after the facts are already known. The ruined-dessert story is a picture of the second habit: a bad result, then a decision to sit and finish the punishment, then years of avoiding something you used to like. The question that matters is what the suffering bought. Self-punishment does not repair a bad job or a bad company. The consequences of staying do not improve because they have lasted a long time.",
+      "terms": [
+        {
+          "en": "mistake of ambition",
+          "hook": "A miss that comes from acting with incomplete information, which this chapter wants more of."
+        },
+        {
+          "en": "mistake of sloth",
+          "hook": "A refusal to leave a bad setup after the facts are already known."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Look while you still sit",
+      "bodyEn": "On a day you take off, post a resume on the large job boards, using another name if you want the test to stay quiet. Email friends and contacts outside work that you are exploring a move and that odd ideas are welcome. The drill exists to show options while you are still paid. In a negotiation, the person with more options has more power, so collect them before you need them. If you own the company, write the forced-close version: a lawsuit, an empty account, and a legal duty to shut the doors, then the plain steps by which you would live. Doing this inside a normal weekday also rehearses the feeling of being away from the office.",
+      "terms": [
+        {
+          "en": "option power",
+          "hook": "The edge that comes from having another path before you need to use it."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Which seat can hold life",
+      "bodyEn": "The chapter's reality check is one comparison: is the life you described likelier in this seat or in a different one. If the role ended this afternoon, write the first week of financial control in steps you could actually take. Then ask whether the misery is the price of a game you still want to win. Leaving is common, and it is rarely fatal. Tens of thousands of people do it on an ordinary day, many with less preparation than this sequence. Use that as permission to put a date on the decision, with the return path and the cash plan already on paper."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Leave or stay check",
+      "bodyEn": "Some roles and some companies cannot be repaired by small improvements. The fears in this chapter have moves: the exit can be reversed, bills can be cut against a written inventory, coverage can be bought on your own, and a blank gap is what actually hurts a resume. Staying in a known bad setup after the facts are in is the mistake of sloth. Acting with incomplete information is the mistake the chapter wants more of. Options collected before you need them make the later conversation easier. Recall which fear a specific, enviable project is meant to answer.",
+      "prompt": "Which fear does a specific, enviable project answer?",
+      "choices": [
+        "That a gap will ruin your resume",
+        "That medical coverage can never be replaced",
+        "That quitting makes the career impossible to re-enter",
+        "That every bill must stay at its current size"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Name the quitting time",
+      "bodyEn": "Some jobs and some companies cannot be repaired by small improvements. In this chapter, job covers both a role you hold and a company you run. Years already spent are a weak reason to spend more years, and pride about an old decision is a weak reason to repeat it. Define the rules, the stakes, and the time when you will stop before you are deep in the game. Most of these situations are simple, and the hard part is emotional. The fear that the next step is worse is the brake, and the chapter's claim is that staying at this point is the worse path.",
+      "terms": [
+        {
+          "en": "quitting time",
+          "hook": "The moment, defined in advance, when more effort on a bad path becomes waste."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Quitting can be undone",
+      "bodyEn": "The first fear is that leaving closes the door forever. The chapter's observation is that career tracks and companies can be restarted, and that a change of direction has a way back. Use the questions in this chapter, and the earlier fear-setting questions, to write that return path before you need it. Permanence is the story that makes a reversible choice feel fatal. Write the re-entry in concrete steps, such as who you would call and what proof of work you would show. A door you can describe is a door you can use."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Bills have a cut list",
+      "bodyEn": "The second fear is that the bills cannot be paid. The preferred order is a next source of cash before you resign. If you are pushed out, list assets, cash, debts, and monthly costs, and compute how many weeks the current pile covers. Then cut as if a sudden necessary expense had appeared: pause a car and its insurance, share rides, cook, sell unused purchases, and use credit as a short bridge. The emotional cost is real, and the practical cost is often a few weeks before a better fit is allowed to exist. Do the inventory on paper before you give notice."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Coverage can move with you",
+      "bodyEn": "The third fear is that medical coverage and retirement savings vanish on the day you leave. Individual plans can keep you on a similar network, and one look-up in the chapter landed in a few hundred dollars a month. Moving a workplace retirement account to a new custodian can be a single phone call with no fee. Both tasks can take less time than a routine dispute over a household bill. Price the plan and start the transfer while you still have the old job, so the fear has a number. A number is easier to plan around than a blank threat."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Make the gap a story",
+      "bodyEn": "The fourth fear is a damaged resume. A blank gap is a problem, and a gap filled with a specific project other people envy is an interview magnet. Bored interviewers often spend the meeting asking how you did the unusual thing. If they ask why you left, the durable answer is that a rare chance appeared and, with decades of work still ahead, there was no reason to refuse it. Test the assumption that your field punishes movement, because results often matter more than an unbroken seat. If your field requires years of misery as the price of promotion, ask whether the prize is worth the game."
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "Two kinds of mistake",
+      "bodyEn": "Mistakes of ambition come from acting before every fact is in, and the chapter treats them as the kind to encourage. Mistakes of sloth come from refusing to leave a bad setup after the facts are already known. The ruined-dessert story is a picture of the second habit: a bad result, then a decision to sit and finish the punishment, then years of avoiding something you used to like. The question that matters is what the suffering bought. Self-punishment does not repair a bad job or a bad company. The consequences of staying do not improve because they have lasted a long time.",
+      "terms": [
+        {
+          "en": "mistake of ambition",
+          "hook": "A miss that comes from acting with incomplete information, which this chapter wants more of."
+        },
+        {
+          "en": "mistake of sloth",
+          "hook": "A refusal to leave a bad setup after the facts are already known."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Look while you still sit",
+      "bodyEn": "On a day you take off, post a resume on the large job boards, using another name if you want the test to stay quiet. Email friends and contacts outside work that you are exploring a move and that odd ideas are welcome. The drill exists to show options while you are still paid. In a negotiation, the person with more options has more power, so collect them before you need them. If you own the company, write the forced-close version: a lawsuit, an empty account, and a legal duty to shut the doors, then the plain steps by which you would live. Doing this inside a normal weekday also rehearses the feeling of being away from the office.",
+      "terms": [
+        {
+          "en": "option power",
+          "hook": "The edge that comes from having another path before you need to use it."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Which seat can hold life",
+      "bodyEn": "The chapter's reality check is one comparison: is the life you described likelier in this seat or in a different one. If the role ended this afternoon, write the first week of financial control in steps you could actually take. Then ask whether the misery is the price of a game you still want to win. Leaving is common, and it is rarely fatal. Tens of thousands of people do it on an ordinary day, many with less preparation than this sequence. Use that as permission to put a date on the decision, with the return path and the cash plan already on paper."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Leave or stay check",
+      "bodyEn": "Some roles and some companies cannot be repaired by small improvements. The fears in this chapter have moves: the exit can be reversed, bills can be cut against a written inventory, coverage can be bought on your own, and a blank gap is what actually hurts a resume. Staying in a known bad setup after the facts are in is the mistake of sloth. Acting with incomplete information is the mistake the chapter wants more of. Options collected before you need them make the later conversation easier. Recall which fear a specific, enviable project is meant to answer.",
+      "prompt": "Which fear does a specific, enviable project answer?",
+      "choices": [
+        "That a gap will ruin your resume",
+        "That medical coverage can never be replaced",
+        "That quitting makes the career impossible to re-enter",
+        "That every bill must stay at its current size"
+      ],
+      "answer": 0
+    }
+  ]
+}

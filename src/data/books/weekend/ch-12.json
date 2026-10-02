@@ -1,0 +1,150 @@
+{
+  "id": "12",
+  "index": 12,
+  "part": 4,
+  "partTitleEn": "Million Dollar Weekend",
+  "titleEn": "Start Again",
+  "titleSource": "Start Again",
+  "sourcePages": "",
+  "when": "After a fall",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Doubt comes back",
+      "bodyEn": "The closing is about the stretch after you already have a real result. The tests of your will continue after the business works. The doubts continue too, including the fear that the result will fall apart. Praise you hoped for can fail to arrive, and the old insecurity can rush back on the same day as the win. Expect that return. When it shows up, take the next step the experiment still needs. The feeling is weather around the work, and the work still has a next move."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Keep moving anyway",
+      "bodyEn": "In the closing, a life gets shaped by whether you face the fear in front of you. The instruction is to keep going no matter what. You can act while the fear is still in the room. On the day the doubt returns, do the smallest move the current experiment still requires. Leave the speech about the feeling for after that move. A clean mood can arrive later, or it can arrive because you moved. The loop stops when the mood becomes the requirement and the move gets skipped."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Define success yourself",
+      "bodyEn": "Write down what success means for your life. That definition belongs to you. Family reactions and crowd opinions do not get to author it, even on a day when you hoped they would be proud. The point of the whole book is the life you want to live. Use one sentence, in your own words, and leave the comparison out. When silence or judgment spikes the doubt, read the sentence. Then return to the work that sentence names."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Spend fifty-two chances",
+      "bodyEn": "You get fifty-two chances this year to live the success you just defined. Each week is one chance. A bad week spends one of them and leaves the rest of the year intact. At the start of the week, choose the experiment that serves the sentence you wrote. If the week goes badly, put the next chance on the calendar instead of canceling the year. Fifty-two restarts are the design. Mark this week's chance as a date so it is an appointment.",
+      "terms": [
+        {
+          "en": "Fifty-two chances",
+          "hook": "If they say this, they mean one restart each week this year, including the week after a bad one."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Count each recovery",
+      "bodyEn": "The closing reduces the dream to one question: how many times you will get back up after you fall. That count is the skill to track. A fall sits inside the loop, so the useful record is the recovery. After a no, a failed presale, or a week you abandoned, write the date you started again. Keep that list where you can see it. The length of the list is the score the closing cares about. Add the next line by starting, and keep the story of the fall short."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Ideas need a try",
+      "bodyEn": "The closing defines entrepreneurship as two abilities you use together. You come up with ideas, and you gather the courage to try them. An idea with no try date stays a dream. Effort with no idea is only motion. This week, put one idea and one try date on the same line. If the date passes with no attempt, the line does not count. Courage here is the attempt you make while you are still unsure."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Fail into the next test",
+      "bodyEn": "The closing method is to experiment, and to fail, until something succeeds. A failure belongs in the middle of the loop. When a test fails, write what you learned, change the next try, and run it. Keep each change small enough that you can launch quickly. Stop a line of tests when a version works. You can also leave that line when you choose a different idea and start that experiment instead. A failure that produces no next test is only a stop."
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Start again on a date",
+      "bodyEn": "The last instruction is to start, and then to start again. The first start is the experiment. The next start is what you do after the fall, the doubt, or the bad week. Finishing the forty-eight-hour challenge is the completion the book marks, and the practice continues after that mark. Write the date of the next experiment before you close the book. Spend that chance on the success you defined for your own life. The date on the page is the step."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Restart check",
+      "bodyEn": "This check is about what the closing tells you to do after a real result and a returning doubt. You define success for yourself. Each week is one of fifty-two chances. The score is how many times you get back up and run the next experiment. The forty-eight-hour challenge can be finished, and the next start still has a date. Choose the move the closing gives.",
+      "prompt": "You finished a real experiment and the doubt came back. What should you do?",
+      "choices": [
+        "Wait until you feel certain and someone important approves",
+        "Treat the doubt as a reason to stop for the rest of the year",
+        "Define success for yourself, get back up, and start the next experiment",
+        "Freeze the win and refuse any further test"
+      ],
+      "answer": 2
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Doubt comes back",
+      "bodyEn": "The closing is about the stretch after you already have a real result. The tests of your will continue after the business works. The doubts continue too, including the fear that the result will fall apart. Praise you hoped for can fail to arrive, and the old insecurity can rush back on the same day as the win. Expect that return. When it shows up, take the next step the experiment still needs. The feeling is weather around the work, and the work still has a next move."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Keep moving anyway",
+      "bodyEn": "In the closing, a life gets shaped by whether you face the fear in front of you. The instruction is to keep going no matter what. You can act while the fear is still in the room. On the day the doubt returns, do the smallest move the current experiment still requires. Leave the speech about the feeling for after that move. A clean mood can arrive later, or it can arrive because you moved. The loop stops when the mood becomes the requirement and the move gets skipped."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Define success yourself",
+      "bodyEn": "Write down what success means for your life. That definition belongs to you. Family reactions and crowd opinions do not get to author it, even on a day when you hoped they would be proud. The point of the whole book is the life you want to live. Use one sentence, in your own words, and leave the comparison out. When silence or judgment spikes the doubt, read the sentence. Then return to the work that sentence names."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Spend fifty-two chances",
+      "bodyEn": "You get fifty-two chances this year to live the success you just defined. Each week is one chance. A bad week spends one of them and leaves the rest of the year intact. At the start of the week, choose the experiment that serves the sentence you wrote. If the week goes badly, put the next chance on the calendar instead of canceling the year. Fifty-two restarts are the design. Mark this week's chance as a date so it is an appointment.",
+      "terms": [
+        {
+          "en": "Fifty-two chances",
+          "hook": "If they say this, they mean one restart each week this year, including the week after a bad one."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Count each recovery",
+      "bodyEn": "The closing reduces the dream to one question: how many times you will get back up after you fall. That count is the skill to track. A fall sits inside the loop, so the useful record is the recovery. After a no, a failed presale, or a week you abandoned, write the date you started again. Keep that list where you can see it. The length of the list is the score the closing cares about. Add the next line by starting, and keep the story of the fall short."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Ideas need a try",
+      "bodyEn": "The closing defines entrepreneurship as two abilities you use together. You come up with ideas, and you gather the courage to try them. An idea with no try date stays a dream. Effort with no idea is only motion. This week, put one idea and one try date on the same line. If the date passes with no attempt, the line does not count. Courage here is the attempt you make while you are still unsure."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Fail into the next test",
+      "bodyEn": "The closing method is to experiment, and to fail, until something succeeds. A failure belongs in the middle of the loop. When a test fails, write what you learned, change the next try, and run it. Keep each change small enough that you can launch quickly. Stop a line of tests when a version works. You can also leave that line when you choose a different idea and start that experiment instead. A failure that produces no next test is only a stop."
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Start again on a date",
+      "bodyEn": "The last instruction is to start, and then to start again. The first start is the experiment. The next start is what you do after the fall, the doubt, or the bad week. Finishing the forty-eight-hour challenge is the completion the book marks, and the practice continues after that mark. Write the date of the next experiment before you close the book. Spend that chance on the success you defined for your own life. The date on the page is the step."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Restart check",
+      "bodyEn": "This check is about what the closing tells you to do after a real result and a returning doubt. You define success for yourself. Each week is one of fifty-two chances. The score is how many times you get back up and run the next experiment. The forty-eight-hour challenge can be finished, and the next start still has a date. Choose the move the closing gives.",
+      "prompt": "You finished a real experiment and the doubt came back. What should you do?",
+      "choices": [
+        "Wait until you feel certain and someone important approves",
+        "Treat the doubt as a reason to stop for the rest of the year",
+        "Define success for yourself, get back up, and start the next experiment",
+        "Freeze the win and refuse any further test"
+      ],
+      "answer": 2
+    }
+  ]
+}

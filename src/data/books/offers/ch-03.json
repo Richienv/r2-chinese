@@ -1,0 +1,311 @@
+{
+  "id": "03",
+  "index": 3,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Get out of the price war",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Maintenance is a myth",
+      "bodyEn": "A standing rule in his companies is grow or die, for a person, a firm, or any living thing. A flat year is still falling behind if the wider market compounds near 9 percent. In a market that is itself growing, holding your place can take 20 to 30 percent growth a year. He learned this late, and the businesses suffered while he treated a flat year as a real plan. Growth has a short list of causes. Growth shows up when one of those causes actually moves.",
+      "terms": [
+        {
+          "en": "Grow or die",
+          "hook": "A flat year still loses ground when the market around you keeps compounding."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Only three ways up",
+      "bodyEn": "You grow by getting more customers, by raising the value of each purchase, or by getting people to buy more times. The last two are separate doors into one room: each customer becomes worth more. He keeps them separate because later money models use both, and all three themes repeat through the book. Ten new clients a month, each worth $1,000 over their life, caps the firm at $10,000 a month. Past that cap you sell more clients at healthy margins, or you make each client worth more. There is no fourth path hiding in the complexity.",
+      "terms": [
+        {
+          "en": "Three ways to grow",
+          "hook": "More customers, a richer purchase, or more purchases over time."
+        },
+        {
+          "en": "Customer value",
+          "hook": "Profit per purchase times how often they buy, the simpler way to see the last two paths."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Gross profit, then life",
+      "bodyEn": "Gross profit is revenue minus the direct cost of serving one more customer. Lotion sold for $10 that costs $2 leaves $8, an 80 percent gross margin. Agency work sold for $1,000 a month that costs $100 in labor leaves $900, a 90 percent gross margin. Net profit is what remains after every bill, including rent, software, and admin, so it is a different number. Lifetime value here is that gross profit times the number of purchases, and five months of the agency example is $4,500. Overhead stays out of the figure, and he also calls it lifetime gross profit so people keep it separate from raw revenue.",
+      "terms": [
+        {
+          "en": "Gross profit",
+          "hook": "The sale minus only the direct cost of serving one more customer."
+        },
+        {
+          "en": "Lifetime gross profit",
+          "hook": "Gross profit times how many times they buy, with overhead left out."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Price or a category",
+      "bodyEn": "A grand slam offer helps all three growth paths because the buyer stops shopping you as a commodity. A commodity, in his definition, is available from many places, so the cheapest copy looks like the best deal. Competition then drives the price down until the margin only keeps the lights on. The owner waits for a turnaround and is often too deep in that model to pivot. A differentiated offer is bought for value, in a category of one, with no fair twin beside it. He draws that contrast as an apple beside an orange: once they differ, a clean price comparison gets clumsy.",
+      "terms": [
+        {
+          "en": "Commodity",
+          "hook": "A thing buyers can get in many places, so they choose the cheapest."
+        },
+        {
+          "en": "Category of one",
+          "hook": "An offer with no comparable twin, judged on its own value."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Five parts, one offer",
+      "bodyEn": "A grand slam offer cannot be lined up against another product or service. It combines an attractive promotion, a value proposition others cannot match, a premium price, and a guarantee that is hard to beat. It also includes a money model, the payment terms that let you get paid to acquire the next customer. That last piece is what takes cash off the list of brakes on growth. The buyer then chooses between your offer and buying nothing, which he also calls selling in a vacuum. You charge what they come to believe it is worth, and you gain more customers at higher prices with less strain on acquisition.",
+      "terms": [
+        {
+          "en": "Money model",
+          "hook": "Payment terms that let new customers fund the next round of customers."
+        },
+        {
+          "en": "Sell in a vacuum",
+          "hook": "The choice is your offer or nothing, because nothing else compares."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Same ads, three lifts",
+      "bodyEn": "The same attention can produce three changes at once: more responses, more of those responses buying, and a higher price. Pay the same amount for eyeballs, move all three, and the business grows. The fulfillment work can stay the same in both versions. The grand slam version makes the product feel different, so the purchase is driven by value. The commodity version is driven by price, and you end up explaining the difference in a long conversation. He wants the offer itself to do that explaining, because a buyer who needs a lecture may never grant the difference.",
+      "terms": [
+        {
+          "en": "Three lifts",
+          "hook": "Higher response, higher close rate, and a higher price from the same attention."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "The old agency numbers",
+      "bodyEn": "One of his companies is software that helps agencies work leads, and the comparison is a local lead-generation agency. The old offer is $1,000 down and $1,000 a month to do the work and hope for results. Spend $10,000 to reach 300,000 people, book about 40 appointments, show about 30, and close 5 at $1,000, collecting $5,000. That is about half a dollar back per dollar of ads, so you lose money getting the customers. Thirty days later those five pay another $1,000 each, you touch $10,000 and break even, and the following month is the first profit if they all stay. Any similar agency can make the same promise, so the buyer compares fees and the lower one wins.",
+      "terms": [
+        {
+          "en": "Price-driven purchase",
+          "hook": "The buyer treats the options as the same and picks the cheaper fee."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Pay me when they show",
+      "bodyEn": "The new offer is one payment, with no retainer, and the client covers the ad spend. You generate the leads and work them, and you are paid only if people show up. You guarantee 20 people in the first month, or the next month is free. You also hand over the playbook from similar businesses: daily sales coaching, tested scripts, tested prices and offers, and sales recordings. The plain version he gives the buyer is that you feed the business and show them how to sell at the highest prices they can hold. The two offers can share the same ads and still be incomparable, because one sells hours and the other sells showed-up people plus the system.",
+      "terms": [
+        {
+          "en": "Pay for performance",
+          "hook": "A fee tied to people showing up, plus the sales system, with a makeup month if the guarantee misses."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Twenty-two times the cash",
+      "bodyEn": "Keep the $10,000 spend and the 300,000 impressions the same, and keep the show rate the same too. Responses rise about two and a half times, from 40 bookings to 100. The close rate moves from 16 percent to 37 percent, and closed sales move from 5 to 28. The upfront price moves from $1,000 to just under $4,000, about four times, because it is a single fee. Cash collected up front moves from $5,000 to $112,000, about 22 times the money, and the return moves from half a dollar per dollar to about $11 per dollar. You get paid to acquire customers, so cash flow stops being the bottleneck and doing the work becomes the limit.",
+      "terms": [
+        {
+          "en": "Upfront multiple",
+          "hook": "Same ad spend, far more cash collected before the retainer months even start."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "A different game",
+      "bodyEn": "He used this shape in the software business that serves agencies. Playing the same offer game as everyone else produces ordinary results, enough to keep the lights on. In his first 18 months, one business went from about $500,000 a year to $28,000,000 on less than $1,000,000 of ad spend. He treats returns of 20, 50, and 100 to 1 as what the aligned pieces can look like. A grand slam offer aimed at the wrong crowd still fails, which is why the next chapter stops on the market. A free starter lesson on differentiating offers sits beside this chapter for the consulting walkthrough.",
+      "terms": [
+        {
+          "en": "Wrong crowd",
+          "hook": "A strong offer still fails when the audience cannot hear it or does not want it."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "What the math multiplies",
+      "bodyEn": "Both agency columns spend the same $10,000 and reach the same 300,000 people. The show rate stays put. The grand slam column still collects far more cash up front. Choose the three changes that create that gap.",
+      "prompt": "In the agency comparison, what multiplies the upfront cash?",
+      "choices": [
+        "More responses, a higher close rate, and a higher price, on the same ad spend and the same show rate",
+        "More impressions, a lower show rate, and a cheaper monthly retainer",
+        "A new logo, a longer contract, and a smaller guarantee",
+        "Cutting the work so five clients somehow become fifty"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Maintenance is a myth",
+      "bodyEn": "A standing rule in his companies is grow or die, for a person, a firm, or any living thing. A flat year is still falling behind if the wider market compounds near 9 percent. In a market that is itself growing, holding your place can take 20 to 30 percent growth a year. He learned this late, and the businesses suffered while he treated a flat year as a real plan. Growth has a short list of causes. Growth shows up when one of those causes actually moves.",
+      "terms": [
+        {
+          "en": "Grow or die",
+          "hook": "A flat year still loses ground when the market around you keeps compounding."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Only three ways up",
+      "bodyEn": "You grow by getting more customers, by raising the value of each purchase, or by getting people to buy more times. The last two are separate doors into one room: each customer becomes worth more. He keeps them separate because later money models use both, and all three themes repeat through the book. Ten new clients a month, each worth $1,000 over their life, caps the firm at $10,000 a month. Past that cap you sell more clients at healthy margins, or you make each client worth more. There is no fourth path hiding in the complexity.",
+      "terms": [
+        {
+          "en": "Three ways to grow",
+          "hook": "More customers, a richer purchase, or more purchases over time."
+        },
+        {
+          "en": "Customer value",
+          "hook": "Profit per purchase times how often they buy, the simpler way to see the last two paths."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Gross profit, then life",
+      "bodyEn": "Gross profit is revenue minus the direct cost of serving one more customer. Lotion sold for $10 that costs $2 leaves $8, an 80 percent gross margin. Agency work sold for $1,000 a month that costs $100 in labor leaves $900, a 90 percent gross margin. Net profit is what remains after every bill, including rent, software, and admin, so it is a different number. Lifetime value here is that gross profit times the number of purchases, and five months of the agency example is $4,500. Overhead stays out of the figure, and he also calls it lifetime gross profit so people keep it separate from raw revenue.",
+      "terms": [
+        {
+          "en": "Gross profit",
+          "hook": "The sale minus only the direct cost of serving one more customer."
+        },
+        {
+          "en": "Lifetime gross profit",
+          "hook": "Gross profit times how many times they buy, with overhead left out."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Price or a category",
+      "bodyEn": "A grand slam offer helps all three growth paths because the buyer stops shopping you as a commodity. A commodity, in his definition, is available from many places, so the cheapest copy looks like the best deal. Competition then drives the price down until the margin only keeps the lights on. The owner waits for a turnaround and is often too deep in that model to pivot. A differentiated offer is bought for value, in a category of one, with no fair twin beside it. He draws that contrast as an apple beside an orange: once they differ, a clean price comparison gets clumsy.",
+      "terms": [
+        {
+          "en": "Commodity",
+          "hook": "A thing buyers can get in many places, so they choose the cheapest."
+        },
+        {
+          "en": "Category of one",
+          "hook": "An offer with no comparable twin, judged on its own value."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Five parts, one offer",
+      "bodyEn": "A grand slam offer cannot be lined up against another product or service. It combines an attractive promotion, a value proposition others cannot match, a premium price, and a guarantee that is hard to beat. It also includes a money model, the payment terms that let you get paid to acquire the next customer. That last piece is what takes cash off the list of brakes on growth. The buyer then chooses between your offer and buying nothing, which he also calls selling in a vacuum. You charge what they come to believe it is worth, and you gain more customers at higher prices with less strain on acquisition.",
+      "terms": [
+        {
+          "en": "Money model",
+          "hook": "Payment terms that let new customers fund the next round of customers."
+        },
+        {
+          "en": "Sell in a vacuum",
+          "hook": "The choice is your offer or nothing, because nothing else compares."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Same ads, three lifts",
+      "bodyEn": "The same attention can produce three changes at once: more responses, more of those responses buying, and a higher price. Pay the same amount for eyeballs, move all three, and the business grows. The fulfillment work can stay the same in both versions. The grand slam version makes the product feel different, so the purchase is driven by value. The commodity version is driven by price, and you end up explaining the difference in a long conversation. He wants the offer itself to do that explaining, because a buyer who needs a lecture may never grant the difference.",
+      "terms": [
+        {
+          "en": "Three lifts",
+          "hook": "Higher response, higher close rate, and a higher price from the same attention."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "The old agency numbers",
+      "bodyEn": "One of his companies is software that helps agencies work leads, and the comparison is a local lead-generation agency. The old offer is $1,000 down and $1,000 a month to do the work and hope for results. Spend $10,000 to reach 300,000 people, book about 40 appointments, show about 30, and close 5 at $1,000, collecting $5,000. That is about half a dollar back per dollar of ads, so you lose money getting the customers. Thirty days later those five pay another $1,000 each, you touch $10,000 and break even, and the following month is the first profit if they all stay. Any similar agency can make the same promise, so the buyer compares fees and the lower one wins.",
+      "terms": [
+        {
+          "en": "Price-driven purchase",
+          "hook": "The buyer treats the options as the same and picks the cheaper fee."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Pay me when they show",
+      "bodyEn": "The new offer is one payment, with no retainer, and the client covers the ad spend. You generate the leads and work them, and you are paid only if people show up. You guarantee 20 people in the first month, or the next month is free. You also hand over the playbook from similar businesses: daily sales coaching, tested scripts, tested prices and offers, and sales recordings. The plain version he gives the buyer is that you feed the business and show them how to sell at the highest prices they can hold. The two offers can share the same ads and still be incomparable, because one sells hours and the other sells showed-up people plus the system.",
+      "terms": [
+        {
+          "en": "Pay for performance",
+          "hook": "A fee tied to people showing up, plus the sales system, with a makeup month if the guarantee misses."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Twenty-two times the cash",
+      "bodyEn": "Keep the $10,000 spend and the 300,000 impressions the same, and keep the show rate the same too. Responses rise about two and a half times, from 40 bookings to 100. The close rate moves from 16 percent to 37 percent, and closed sales move from 5 to 28. The upfront price moves from $1,000 to just under $4,000, about four times, because it is a single fee. Cash collected up front moves from $5,000 to $112,000, about 22 times the money, and the return moves from half a dollar per dollar to about $11 per dollar. You get paid to acquire customers, so cash flow stops being the bottleneck and doing the work becomes the limit.",
+      "terms": [
+        {
+          "en": "Upfront multiple",
+          "hook": "Same ad spend, far more cash collected before the retainer months even start."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "A different game",
+      "bodyEn": "He used this shape in the software business that serves agencies. Playing the same offer game as everyone else produces ordinary results, enough to keep the lights on. In his first 18 months, one business went from about $500,000 a year to $28,000,000 on less than $1,000,000 of ad spend. He treats returns of 20, 50, and 100 to 1 as what the aligned pieces can look like. A grand slam offer aimed at the wrong crowd still fails, which is why the next chapter stops on the market. A free starter lesson on differentiating offers sits beside this chapter for the consulting walkthrough.",
+      "terms": [
+        {
+          "en": "Wrong crowd",
+          "hook": "A strong offer still fails when the audience cannot hear it or does not want it."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "What the math multiplies",
+      "bodyEn": "Both agency columns spend the same $10,000 and reach the same 300,000 people. The show rate stays put. The grand slam column still collects far more cash up front. Choose the three changes that create that gap.",
+      "prompt": "In the agency comparison, what multiplies the upfront cash?",
+      "choices": [
+        "More responses, a higher close rate, and a higher price, on the same ad spend and the same show rate",
+        "More impressions, a lower show rate, and a cheaper monthly retainer",
+        "A new logo, a longer contract, and a smaller guarantee",
+        "Cutting the work so five clients somehow become fifty"
+      ],
+      "answer": 0
+    }
+  ]
+}

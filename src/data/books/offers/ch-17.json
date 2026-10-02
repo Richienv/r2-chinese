@@ -1,0 +1,171 @@
+{
+  "id": "17",
+  "index": 17,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Bet like the house",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Skill can move odds",
+      "bodyEn": "Entrepreneurs stake labor, inventory, rent, and marketing every day, hoping the payout beats the stake. Practice at a casino can slow a loss and still leave the edge with the house. Practice in a business can move those odds until the operator is the one holding the edge. The skill this opening trains is the offer, because a sale begins with what the buyer receives for their money. Every later acquisition skill sits on that trade. Get better at the trade, and the bets start paying the person who made them.",
+      "terms": [
+        {
+          "en": "Become the house",
+          "hook": "Skill that moves the odds until the operator holds the edge."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Take the long bet",
+      "bodyEn": "When a try has a small chance and a hundredfold payoff, this opening says to take it whenever it appears. Nine tries in ten will miss, and those misses are the cost of staying in the game. The winners are what pay for the experiments that failed. A baseball swing, however clean, can score at most four runs. A business swing can return something on the scale of a thousand. That uncapped shape is why a bold offer is a rational bet.",
+      "terms": [
+        {
+          "en": "Long-tail payoff",
+          "hook": "A rare result large enough to pay for a long run of misses."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Same effort, better aim",
+      "bodyEn": "Assembling a grand slam can take the same hours as assembling an offer that misses. The split is how tightly the trade matches a desire people already feel. Smaller offers keep the bills paid and the lights on, the way singles and doubles keep a game alive. A grand slam is rare, and its return can dwarf a game's maximum score. Getting a new client has as many moving parts as a swing, including timing, aim, and the audience. Practice is how those parts start to line up on purpose."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Four parts, one offer",
+      "bodyEn": "This opening names four pieces that belong in one trade: pricing, value, guarantees, and naming. Together they are a grand slam offer. Their job is to turn advertising dollars into profit as a repeatable result. A single piece can lift a sale, and the reliable version uses the whole set. The chapters after this opening take the pieces one at a time. Hold the bundle in mind so each later step has a place to land.",
+      "terms": [
+        {
+          "en": "Grand Slam Offer",
+          "hook": "Pricing, value, guarantees, and naming joined so ads can return profit."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "One hit retires you",
+      "bodyEn": "A single grand slam can be enough to fund a life where working is a choice. The author reports reaching that outcome four or five times. Across eight years, one advertising dollar returned about thirty-six dollars, and the ratio was still climbing. That figure is a lifetime average across many misses, closer to a batting average than a promise that every ad works. The misses are the practice that builds the average. Track what comes back so the next offer starts from a number."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Offers come before leads",
+      "bodyEn": "This volume stays on the offer and leaves the rest of acquisition for later books. Those books cover finding more customers, turning prospects into clients, and making each client worth more. Each of those skills assumes a trade people already want to take. Attention spent before an offer exists buys traffic for a conversation that has not started. Build the grand slam first. Fill it after the trade can hold the demand."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Read it and hear it",
+      "bodyEn": "The study method in this opening is to listen while you read. The same words then sit in more than one part of memory, which speeds the pass and raises what you keep. Use the pair on material you intend to apply, including the offer steps ahead. The tip sits at the front so the rest of the book can be read that way. Focus is easier when the ear and the eye share the load. Keep the audio beside the page for any chapter you need to remember.",
+      "terms": [
+        {
+          "en": "Dual input",
+          "hook": "Read and listen together so the same lesson is stored in more than one way."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Which bet to take",
+      "bodyEn": "This opening separates a casino, where skill leaves the edge with the house, from a business, where skill can take that edge. It also separates a game whose best swing is capped from a business whose best swing can pay for years of tries. Nine misses are an expected part of hunting one very large return. The offer is the bet those returns are built from. The chapters after this one teach the pieces of that bet. Choose the bet the opening tells you to keep placing.",
+      "prompt": "What bet does this opening tell you to keep placing?",
+      "choices": [
+        "A small chance of a very large business payoff, taken again after the misses",
+        "A casino game where more practice eventually beats the house",
+        "Only the small offers that almost never miss",
+        "Customer-getting tactics before any offer exists"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Skill can move odds",
+      "bodyEn": "Entrepreneurs stake labor, inventory, rent, and marketing every day, hoping the payout beats the stake. Practice at a casino can slow a loss and still leave the edge with the house. Practice in a business can move those odds until the operator is the one holding the edge. The skill this opening trains is the offer, because a sale begins with what the buyer receives for their money. Every later acquisition skill sits on that trade. Get better at the trade, and the bets start paying the person who made them.",
+      "terms": [
+        {
+          "en": "Become the house",
+          "hook": "Skill that moves the odds until the operator holds the edge."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Take the long bet",
+      "bodyEn": "When a try has a small chance and a hundredfold payoff, this opening says to take it whenever it appears. Nine tries in ten will miss, and those misses are the cost of staying in the game. The winners are what pay for the experiments that failed. A baseball swing, however clean, can score at most four runs. A business swing can return something on the scale of a thousand. That uncapped shape is why a bold offer is a rational bet.",
+      "terms": [
+        {
+          "en": "Long-tail payoff",
+          "hook": "A rare result large enough to pay for a long run of misses."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Same effort, better aim",
+      "bodyEn": "Assembling a grand slam can take the same hours as assembling an offer that misses. The split is how tightly the trade matches a desire people already feel. Smaller offers keep the bills paid and the lights on, the way singles and doubles keep a game alive. A grand slam is rare, and its return can dwarf a game's maximum score. Getting a new client has as many moving parts as a swing, including timing, aim, and the audience. Practice is how those parts start to line up on purpose."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Four parts, one offer",
+      "bodyEn": "This opening names four pieces that belong in one trade: pricing, value, guarantees, and naming. Together they are a grand slam offer. Their job is to turn advertising dollars into profit as a repeatable result. A single piece can lift a sale, and the reliable version uses the whole set. The chapters after this opening take the pieces one at a time. Hold the bundle in mind so each later step has a place to land.",
+      "terms": [
+        {
+          "en": "Grand Slam Offer",
+          "hook": "Pricing, value, guarantees, and naming joined so ads can return profit."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "One hit retires you",
+      "bodyEn": "A single grand slam can be enough to fund a life where working is a choice. The author reports reaching that outcome four or five times. Across eight years, one advertising dollar returned about thirty-six dollars, and the ratio was still climbing. That figure is a lifetime average across many misses, closer to a batting average than a promise that every ad works. The misses are the practice that builds the average. Track what comes back so the next offer starts from a number."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Offers come before leads",
+      "bodyEn": "This volume stays on the offer and leaves the rest of acquisition for later books. Those books cover finding more customers, turning prospects into clients, and making each client worth more. Each of those skills assumes a trade people already want to take. Attention spent before an offer exists buys traffic for a conversation that has not started. Build the grand slam first. Fill it after the trade can hold the demand."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Read it and hear it",
+      "bodyEn": "The study method in this opening is to listen while you read. The same words then sit in more than one part of memory, which speeds the pass and raises what you keep. Use the pair on material you intend to apply, including the offer steps ahead. The tip sits at the front so the rest of the book can be read that way. Focus is easier when the ear and the eye share the load. Keep the audio beside the page for any chapter you need to remember.",
+      "terms": [
+        {
+          "en": "Dual input",
+          "hook": "Read and listen together so the same lesson is stored in more than one way."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Which bet to take",
+      "bodyEn": "This opening separates a casino, where skill leaves the edge with the house, from a business, where skill can take that edge. It also separates a game whose best swing is capped from a business whose best swing can pay for years of tries. Nine misses are an expected part of hunting one very large return. The offer is the bet those returns are built from. The chapters after this one teach the pieces of that bet. Choose the bet the opening tells you to keep placing.",
+      "prompt": "What bet does this opening tell you to keep placing?",
+      "choices": [
+        "A small chance of a very large business payoff, taken again after the misses",
+        "A casino game where more practice eventually beats the house",
+        "Only the small offers that almost never miss",
+        "Customer-getting tactics before any offer exists"
+      ],
+      "answer": 0
+    }
+  ]
+}

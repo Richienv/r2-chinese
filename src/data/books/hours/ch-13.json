@@ -1,0 +1,134 @@
+{
+  "id": "13",
+  "index": 13,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Define social impact",
+  "titleSource": "Appendix 1",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "A practical definition",
+      "bodyEn": "This appendix gives a working definition of social impact for career choices, and it calls the definition tentative. Social impact here means promoting total expected wellbeing, counted impartially, over the long term. The wording is meant to capture a widely shared aim, which is lives that are happier, more fulfilled, and able to reach their potential. It is also meant to reveal gaps between careers, because some paths can do good on the scale of saving hundreds of lives and others do very little. A catalogue of every moral value would be hard to use as a comparison tool. Treat the sentence as a decision aid that the authors say might later be revised.",
+      "terms": [
+        {
+          "en": "social impact",
+          "hook": "If they say this, they mean promoting impartial expected wellbeing over the long term."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Why these words",
+      "bodyEn": "Promoting means making the world better and preventing bad outcomes, which is the usual sense of making a difference. Wellbeing is inclusive, and the appendix at least counts happiness, health, and the ability to live the life one wants, because people agree these matter and actions differ sharply in how much they improve them. Expected is included because effects are uncertain, so benefits are weighed by their probability. In principle you want the option whose probability-weighted benefit is largest, and a rule of thumb or a trained judgement often finds that option more reliably than a detailed numerical model. Impartial means equal effects on welfare count equally, including for people far away and people not yet born. The appendix also gives significant weight to many nonhuman animals and possibly sentient digital beings, and it leaves the exact weight unsettled.",
+      "terms": [
+        {
+          "en": "expected value",
+          "hook": "If they say this, they mean a benefit weighed by how likely it is."
+        },
+        {
+          "en": "impartial",
+          "hook": "If they say this, they mean equal effects on welfare count the same, whoever receives them."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Future and other values",
+      "bodyEn": "Over the long term means future welfare counts, and future generations could far outnumber people alive today, so indirect far-future effects can dominate a choice. That scope is why later profiles cover factory farming, wild-animal welfare, and artificial sentience. Protecting the environment fits this definition when degradation would threaten civilisation and therefore lives. Some readers also value nature, justice, or beauty even when nobody's wellbeing changes, and the appendix asks them to count those values separately and on purpose. The authors try to flag the value judgements behind the guide so those extras can be added. A lot of practical advice still holds across readers who disagree about the extras."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Compare rough effects",
+      "bodyEn": "Uncertainty still allows comparison. A ninety percent chance of helping one hundred people is roughly like certainty of helping ninety. When a precise figure is out of reach, rules of thumb can rank actions, and one rule used in the guide is that neglected areas are higher impact when other things are equal. You can be strategic while the measurement stays rough. Write down any extra values you are adding, so a later review can see them. Use the definition to ask which option promotes more impartial expected wellbeing over the long run."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Keep ordinary limits",
+      "bodyEn": "The appendix says social impact is one part of ethics, and that other duties remain. Even if impact is your aim, it is usually better to act with good character, respect other people's rights and values, and pay attention to your other personal values. The authors reject doing something that looks very wrong by ordinary standards merely because it might increase impact, and they send that case to the later appendix on harmful jobs. Focus the career comparison on improving lives, then account for anything else in the open. A tentative definition is still useful when the gaps between options are large. Further reading is the longer article on the same definition, linked from the appendix."
+    },
+    {
+      "id": "s6",
+      "kind": "check",
+      "titleEn": "Definition check",
+      "bodyEn": "The working definition is promoting total expected wellbeing, counted impartially, over the long term. Compare uncertain options by probability or by a rule of thumb such as neglectedness. Count distant people, future people, many animals, and possible digital beings, and keep the last two weights uncertain. Add values such as justice or beauty on purpose if you hold them. Ordinary moral limits, including character and rights, still constrain the choice. The definition is a practical tool, and the appendix says it might be wrong.",
+      "prompt": "Which phrase matches this appendix's working definition of social impact?",
+      "choices": [
+        "Promoting total expected wellbeing, counted impartially, over the long term",
+        "Maximising income for people near you during this year",
+        "Avoiding every career that has any negative side effect",
+        "Counting only values that never change anyone's wellbeing"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "A practical definition",
+      "bodyEn": "This appendix gives a working definition of social impact for career choices, and it calls the definition tentative. Social impact here means promoting total expected wellbeing, counted impartially, over the long term. The wording is meant to capture a widely shared aim, which is lives that are happier, more fulfilled, and able to reach their potential. It is also meant to reveal gaps between careers, because some paths can do good on the scale of saving hundreds of lives and others do very little. A catalogue of every moral value would be hard to use as a comparison tool. Treat the sentence as a decision aid that the authors say might later be revised.",
+      "terms": [
+        {
+          "en": "social impact",
+          "hook": "If they say this, they mean promoting impartial expected wellbeing over the long term."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Why these words",
+      "bodyEn": "Promoting means making the world better and preventing bad outcomes, which is the usual sense of making a difference. Wellbeing is inclusive, and the appendix at least counts happiness, health, and the ability to live the life one wants, because people agree these matter and actions differ sharply in how much they improve them. Expected is included because effects are uncertain, so benefits are weighed by their probability. In principle you want the option whose probability-weighted benefit is largest, and a rule of thumb or a trained judgement often finds that option more reliably than a detailed numerical model. Impartial means equal effects on welfare count equally, including for people far away and people not yet born. The appendix also gives significant weight to many nonhuman animals and possibly sentient digital beings, and it leaves the exact weight unsettled.",
+      "terms": [
+        {
+          "en": "expected value",
+          "hook": "If they say this, they mean a benefit weighed by how likely it is."
+        },
+        {
+          "en": "impartial",
+          "hook": "If they say this, they mean equal effects on welfare count the same, whoever receives them."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Future and other values",
+      "bodyEn": "Over the long term means future welfare counts, and future generations could far outnumber people alive today, so indirect far-future effects can dominate a choice. That scope is why later profiles cover factory farming, wild-animal welfare, and artificial sentience. Protecting the environment fits this definition when degradation would threaten civilisation and therefore lives. Some readers also value nature, justice, or beauty even when nobody's wellbeing changes, and the appendix asks them to count those values separately and on purpose. The authors try to flag the value judgements behind the guide so those extras can be added. A lot of practical advice still holds across readers who disagree about the extras."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Compare rough effects",
+      "bodyEn": "Uncertainty still allows comparison. A ninety percent chance of helping one hundred people is roughly like certainty of helping ninety. When a precise figure is out of reach, rules of thumb can rank actions, and one rule used in the guide is that neglected areas are higher impact when other things are equal. You can be strategic while the measurement stays rough. Write down any extra values you are adding, so a later review can see them. Use the definition to ask which option promotes more impartial expected wellbeing over the long run."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Keep ordinary limits",
+      "bodyEn": "The appendix says social impact is one part of ethics, and that other duties remain. Even if impact is your aim, it is usually better to act with good character, respect other people's rights and values, and pay attention to your other personal values. The authors reject doing something that looks very wrong by ordinary standards merely because it might increase impact, and they send that case to the later appendix on harmful jobs. Focus the career comparison on improving lives, then account for anything else in the open. A tentative definition is still useful when the gaps between options are large. Further reading is the longer article on the same definition, linked from the appendix."
+    },
+    {
+      "id": "s6",
+      "kind": "check",
+      "titleEn": "Definition check",
+      "bodyEn": "The working definition is promoting total expected wellbeing, counted impartially, over the long term. Compare uncertain options by probability or by a rule of thumb such as neglectedness. Count distant people, future people, many animals, and possible digital beings, and keep the last two weights uncertain. Add values such as justice or beauty on purpose if you hold them. Ordinary moral limits, including character and rights, still constrain the choice. The definition is a practical tool, and the appendix says it might be wrong.",
+      "prompt": "Which phrase matches this appendix's working definition of social impact?",
+      "choices": [
+        "Promoting total expected wellbeing, counted impartially, over the long term",
+        "Maximising income for people near you during this year",
+        "Avoiding every career that has any negative side effect",
+        "Counting only values that never change anyone's wellbeing"
+      ],
+      "answer": 0
+    }
+  ]
+}

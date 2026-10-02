@@ -1,0 +1,154 @@
+{
+  "id": "44",
+  "index": 44,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "School on the Road",
+  "titleSource": "The 4-Hour Family and Global Education",
+  "sourcePages": "",
+  "when": "Case",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "They left, then read",
+      "bodyEn": "This family began a fully online nomadic life in 2006, and they found the book only after they had already left. The decision itself dated to 2004 and 2005, when friends called it foolish. Excellent schools at home still did not fit their child, and they wanted more time together. They also expected a downturn in housing and the wider economy. They describe the result as a simpler life with a lighter footprint, better health, less clutter, and more time as a family. Some early critics later called the choice shrewd. The unit that moved was a family with a child, which is why the school question dominates the case.",
+      "terms": [
+        {
+          "en": "family nomadism",
+          "hook": "A household that travels for months and keeps both work and school untied to one address."
+        },
+        {
+          "en": "home-culture thread",
+          "hook": "The language, teachers, and friends a child keeps from the country the family came from."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "School was the trigger",
+      "bodyEn": "Education was the specific push. Decorated schools nearby still failed, in their view, at actually educating, and they wanted the arguments that explain that failure. Families who leave for months fear the child will fall behind. This family's claim runs the other way: the options on the road can be richer than staying, and most parents have not heard that yet. The decision was to treat travel as an advantage for learning. The result they report is a child who is engaged, not a child parked until a real school resumes. They say other parents need information, because the old fear is the obstacle."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Online and local together",
+      "bodyEn": "Their daughter, just turning eight, was enjoying an online course from a Johns Hopkins program for talented youth, and the course also gave her friends. They set aside older warnings about children raised between cultures, warnings they trace to research from the nineteen-fifties. The decision was to go deep in one place and still keep the home culture alive. A local school in Spain carried the second language, the literature, and the daily life. They wish more guidance existed on how a family joins a local school for months at a time. The result was immersion that did not cut the home culture off. Both layers ran in the same season.",
+      "terms": [
+        {
+          "en": "local immersion",
+          "hook": "Learning a language and a literature by attending school in the place, not only by using an app."
+        },
+        {
+          "en": "dual track",
+          "hook": "A local school plus an online or home-culture teacher, so the child is not forced to pick one world."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Teachers in two places",
+      "bodyEn": "A flamenco teacher in the city worked with the child in person. A piano teacher in Chicago taught the same child in Spain over a video call. The decision was to mix someone on the ground with a specialist back home, instead of choosing a single model. Electronic libraries mattered because the child read constantly. They point parents to guides on language books and on raising a bilingual child, including homes where the adults speak only one language. The result is a set of teachers and books that do not share a zip code. School became a bundle the family assembled, not a building they had to live beside."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Critics changed later",
+      "bodyEn": "People who had called the plan reckless later treated it as foresight. That revision is a result, and it arrived only after the family had already been living the choice. The parents describe themselves as more connected, not as isolated by the travel. Health, simplicity, and a lighter footprint sit beside the school story in their report. The decision to go did not depend on this book, so the case is a confirmation rather than a conversion. Families who wait for applause will hear the early criticism first. The kinder verdict shows up after the months have been lived."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "How a family copies it",
+      "bodyEn": "Settle the school question on purpose, because that was the moment this family turned. Plan for months rather than a weekend, so a local school and a local teacher are worth setting up. Keep an online course and a home-culture teacher in the loop, so the child is not forced to abandon one world. Use a library that travels electronically if the child reads a lot. Expect friends to be alarmed at the start, and do not treat that alarm as evidence. Revisit university later, because the familiar path is not the only serious one. Measure a child who is learning more inside a family that is actually together."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "How the child learned",
+      "bodyEn": "The family did not pause education when they left. They combined a local school in Spain, an online course, a local dance teacher, and a piano teacher on a video call. The home culture stayed in the mix on purpose. Friends who had called them foolish later revised that judgment. The decision began with a school that did not fit and a wish for more time together. Recall how the child kept learning on the road.",
+      "prompt": "How did the child keep learning while the family traveled?",
+      "choices": [
+        "By waiting to enroll again after they returned home",
+        "Through a local school plus online and remote teachers",
+        "By dropping languages until college",
+        "Through one parent as the only teacher"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "They left, then read",
+      "bodyEn": "This family began a fully online nomadic life in 2006, and they found the book only after they had already left. The decision itself dated to 2004 and 2005, when friends called it foolish. Excellent schools at home still did not fit their child, and they wanted more time together. They also expected a downturn in housing and the wider economy. They describe the result as a simpler life with a lighter footprint, better health, less clutter, and more time as a family. Some early critics later called the choice shrewd. The unit that moved was a family with a child, which is why the school question dominates the case.",
+      "terms": [
+        {
+          "en": "family nomadism",
+          "hook": "A household that travels for months and keeps both work and school untied to one address."
+        },
+        {
+          "en": "home-culture thread",
+          "hook": "The language, teachers, and friends a child keeps from the country the family came from."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "School was the trigger",
+      "bodyEn": "Education was the specific push. Decorated schools nearby still failed, in their view, at actually educating, and they wanted the arguments that explain that failure. Families who leave for months fear the child will fall behind. This family's claim runs the other way: the options on the road can be richer than staying, and most parents have not heard that yet. The decision was to treat travel as an advantage for learning. The result they report is a child who is engaged, not a child parked until a real school resumes. They say other parents need information, because the old fear is the obstacle."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Online and local together",
+      "bodyEn": "Their daughter, just turning eight, was enjoying an online course from a Johns Hopkins program for talented youth, and the course also gave her friends. They set aside older warnings about children raised between cultures, warnings they trace to research from the nineteen-fifties. The decision was to go deep in one place and still keep the home culture alive. A local school in Spain carried the second language, the literature, and the daily life. They wish more guidance existed on how a family joins a local school for months at a time. The result was immersion that did not cut the home culture off. Both layers ran in the same season.",
+      "terms": [
+        {
+          "en": "local immersion",
+          "hook": "Learning a language and a literature by attending school in the place, not only by using an app."
+        },
+        {
+          "en": "dual track",
+          "hook": "A local school plus an online or home-culture teacher, so the child is not forced to pick one world."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Teachers in two places",
+      "bodyEn": "A flamenco teacher in the city worked with the child in person. A piano teacher in Chicago taught the same child in Spain over a video call. The decision was to mix someone on the ground with a specialist back home, instead of choosing a single model. Electronic libraries mattered because the child read constantly. They point parents to guides on language books and on raising a bilingual child, including homes where the adults speak only one language. The result is a set of teachers and books that do not share a zip code. School became a bundle the family assembled, not a building they had to live beside."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Critics changed later",
+      "bodyEn": "People who had called the plan reckless later treated it as foresight. That revision is a result, and it arrived only after the family had already been living the choice. The parents describe themselves as more connected, not as isolated by the travel. Health, simplicity, and a lighter footprint sit beside the school story in their report. The decision to go did not depend on this book, so the case is a confirmation rather than a conversion. Families who wait for applause will hear the early criticism first. The kinder verdict shows up after the months have been lived."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "How a family copies it",
+      "bodyEn": "Settle the school question on purpose, because that was the moment this family turned. Plan for months rather than a weekend, so a local school and a local teacher are worth setting up. Keep an online course and a home-culture teacher in the loop, so the child is not forced to abandon one world. Use a library that travels electronically if the child reads a lot. Expect friends to be alarmed at the start, and do not treat that alarm as evidence. Revisit university later, because the familiar path is not the only serious one. Measure a child who is learning more inside a family that is actually together."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "How the child learned",
+      "bodyEn": "The family did not pause education when they left. They combined a local school in Spain, an online course, a local dance teacher, and a piano teacher on a video call. The home culture stayed in the mix on purpose. Friends who had called them foolish later revised that judgment. The decision began with a school that did not fit and a wish for more time together. Recall how the child kept learning on the road.",
+      "prompt": "How did the child keep learning while the family traveled?",
+      "choices": [
+        "By waiting to enroll again after they returned home",
+        "Through a local school plus online and remote teachers",
+        "By dropping languages until college",
+        "Through one parent as the only teacher"
+      ],
+      "answer": 1
+    }
+  ]
+}

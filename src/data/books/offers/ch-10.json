@@ -1,0 +1,235 @@
+{
+  "id": "10",
+  "index": 10,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Trim and stack",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Flow, then friction",
+      "bodyEn": "Ease of sale and ease of fulfillment sit on one continuum. Ask less of your own time and the offer gets harder to sell. Do everything for the buyer and the offer gets easy to sell and heavy to deliver. The aim is a point that sells strongly and is still possible to fulfill. Create demand first, get people to say yes, and only then add friction by doing a little less for the same price. The first version should over-deliver, so a high price still feels small beside what they receive.",
+      "terms": [
+        {
+          "en": "Sales-fulfillment continuum",
+          "hook": "More help sells easier and costs you more. Less help does the reverse."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Same promise, lighter how",
+      "bodyEn": "An early way to fill a gym was to fly in, pay for travel and ads, work the leads, sell, and onboard the first clients, while the owner put down a small refundable reservation. The owner kept the new clients, and the operator kept the upfront cash. Buyers said yes because their money risk, their time risk, and their effort sat near zero. The promise later stayed a full gym inside a set window, while the how changed to teaching many owners from home at a lower fee. Cash from the heavy version paid for systems that created the same value with less of your time. You can keep the promise and still change the machine underneath it."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Invent every vehicle",
+      "bodyEn": "Step four lists every way you could deliver each solution, because this list is what they are buying. Include options you would refuse, so you leave the format your industry already sells. Group the ideas by how many people receive them at once: one person, a small group, or one to many. One shopping problem can become a store walk, a personal list, done-for-you shopping, live text help, a virtual tour, a recording, a calculator, a weekly list, a shopping partner, or a prebuilt delivery cart. Run that expansion for every problem before, during, and after the experience until the list is enormous. You do this thinking once for a product that can last years, and selling gets easier once the value is visible.",
+      "terms": [
+        {
+          "en": "Delivery vehicle",
+          "hook": "The concrete way you fulfill one promise: who receives it, and in what form."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Six ways to vary delivery",
+      "bodyEn": "When the list stalls, vary six features of the vehicle. Choose the attention: one-to-one, small group, or one to many. Choose their effort: alone with a guide, coached while they work, or finished by you and handed over. For a live vehicle, pick the room, such as in person, phone, email, text, video call, or chat. For a recording, pick audio, video, or writing, and set a separate reply window from a few minutes to a full day, only during hours you will keep. Then stretch the price: at ten times the fee, what you would add, and at a tenth of the fee, how you would still get them the result. A vehicle invented for one problem will suggest vehicles for the next, and every fear still needs a path, because one untouched fear is often the whole reason they decline.",
+      "terms": [
+        {
+          "en": "Do it yourself",
+          "hook": "They follow a tool or a guide, with you mostly out of the delivery."
+        },
+        {
+          "en": "Done with you",
+          "hook": "You teach while they perform the work."
+        },
+        {
+          "en": "Done for you",
+          "hook": "You perform the task and hand them the finished result."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Solve the awkward fear",
+      "bodyEn": "A rule that banned restaurants lost weight-loss sales, because the method ignored a problem the buyer actually had. When the next sale had to happen, the fix was an eating-out guide so restaurant meals could still hit the plan. That one piece closed the sale, and then it answered the same objection every time it returned. Keep adding a template or a short training until no single leftover fear remains. Stay flexible about your favorite method and solve the obstacle the buyer believes is in the way. The aim is the most buyers, at the highest price, with the highest margin, which requires a resolution for every obstacle they expect to hit."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Trim cost against value",
+      "bodyEn": "Step five starts by scoring each vehicle on what it costs you to deliver. First discard vehicles that cost you a lot and barely change what the buyer feels. Then discard vehicles that are cheap for you and still add little for them. Value means the buyer would pay for it, believe they will succeed, feel the effort drop, or see the result sooner. What you keep is either cheap to you and highly felt, or expensive to you and worth that expense. Moving in with a client would make the result feel certain, so you step that experience back until the time or cost is one you will live with, or you raise the price until it is worth it. Favor high-value one-to-many vehicles, because they usually hold the widest gap between their cost to you and their worth to the buyer.",
+      "terms": [
+        {
+          "en": "Trim",
+          "hook": "Delete low-value vehicles first, the expensive ones before the cheap ones."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Build once, use forever",
+      "bodyEn": "A meal calculator that turned goals into recipes, grocery amounts, and bulk-prep steps took a long build and then minutes per client. That shape is high value and low ongoing cost, which is why a template or a piece of software becomes an asset. One-to-one and small-group work still belong when the value is large, so save expensive access for those moments. If a cheaper vehicle creates the same felt value, choose the cheaper one. Guides for eating out, travel, plateaus, fast cooking, and a first orientation can all be built once and then serve for years. The week you spend making them is the cost, and every later use is mostly margin."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Stack named bundles",
+      "bodyEn": "The rest of step five bundles the surviving vehicles under each problem. Show the problem, then the solution wording, then a benefit name for the bundle, then the vehicles underneath. Give each bundle a value tag you can justify from money saved or hours returned, even though you are selling the pieces together. A shopping bundle can hold an orientation, a recorded store tour, a calculator, a weekly list, bargain practice, a shopping partner, a prebuilt delivery cart, and a weekly text check. Cooking, eating, training, travel, staying consistent, and eating out each get their own named bundle the same way. Let one orientation appear in several bundles when it teaches people how to use the tools. One worked version put roughly four thousand dollars of tagged value on a price near six hundred, and the same facilities later sold longer runs of that bundle for about twenty-four hundred to fifty-two hundred dollars.",
+      "terms": [
+        {
+          "en": "Stack",
+          "hook": "Kept vehicles grouped under a named promise, with a value tag above the real price."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "What the bundle does",
+      "bodyEn": "The finished bundle has three jobs. It solves the perceived problems as a set, rather than a sample of them. It gives you one specific thing to sell, so you can stand behind it without sounding like every other provider. It makes a side-by-side price comparison with the business down the street hard to perform, because the packages are no longer the same object. You will reveal these pieces one at a time in the bonus chapter, rather than reading the inventory as a flat list. As you get better at creating value, price and profit can rise, and each new piece stacks on the older ones. The five steps exist so people judge the offer by value, because the market has nothing identical to set beside it."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Five steps, then stop",
+      "bodyEn": "The build order is the dream outcome, then the obstacles on the way. Those obstacles are rewritten as solution lines. Every delivery vehicle for each line comes next. You trim to the high-value vehicles you will actually provide, preferring low cost when the value still holds. You stack the survivors into one deliverable. Scarcity, urgency, bonuses, guarantees, and naming wrap this core. Start those enhancers only after a buyer could point at the bundle and see their problems handled."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Trim rule check",
+      "bodyEn": "Trimming is a cost-and-value sort, and it happens after the vehicle list exists. High value is anything that raises worth, belief, ease, or speed for the buyer. High cost with low value leaves first. Low cost with low value leaves next. Low cost with high value stays, and high cost stays when the value is real and the price can carry it. One-to-many assets are the usual keepers, because creation is heavy once and delivery is light afterward. The stack is the survivors, named and tagged, sitting above the price you charge.",
+      "prompt": "Which vehicles do you remove first?",
+      "choices": [
+        "High cost and low value, then low cost and low value",
+        "Every one-to-many asset, so the offer feels more personal",
+        "The buyer's most common fear, so the sales call stays short",
+        "Low cost and high value, so the offer looks exclusive"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Flow, then friction",
+      "bodyEn": "Ease of sale and ease of fulfillment sit on one continuum. Ask less of your own time and the offer gets harder to sell. Do everything for the buyer and the offer gets easy to sell and heavy to deliver. The aim is a point that sells strongly and is still possible to fulfill. Create demand first, get people to say yes, and only then add friction by doing a little less for the same price. The first version should over-deliver, so a high price still feels small beside what they receive.",
+      "terms": [
+        {
+          "en": "Sales-fulfillment continuum",
+          "hook": "More help sells easier and costs you more. Less help does the reverse."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Same promise, lighter how",
+      "bodyEn": "An early way to fill a gym was to fly in, pay for travel and ads, work the leads, sell, and onboard the first clients, while the owner put down a small refundable reservation. The owner kept the new clients, and the operator kept the upfront cash. Buyers said yes because their money risk, their time risk, and their effort sat near zero. The promise later stayed a full gym inside a set window, while the how changed to teaching many owners from home at a lower fee. Cash from the heavy version paid for systems that created the same value with less of your time. You can keep the promise and still change the machine underneath it."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Invent every vehicle",
+      "bodyEn": "Step four lists every way you could deliver each solution, because this list is what they are buying. Include options you would refuse, so you leave the format your industry already sells. Group the ideas by how many people receive them at once: one person, a small group, or one to many. One shopping problem can become a store walk, a personal list, done-for-you shopping, live text help, a virtual tour, a recording, a calculator, a weekly list, a shopping partner, or a prebuilt delivery cart. Run that expansion for every problem before, during, and after the experience until the list is enormous. You do this thinking once for a product that can last years, and selling gets easier once the value is visible.",
+      "terms": [
+        {
+          "en": "Delivery vehicle",
+          "hook": "The concrete way you fulfill one promise: who receives it, and in what form."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Six ways to vary delivery",
+      "bodyEn": "When the list stalls, vary six features of the vehicle. Choose the attention: one-to-one, small group, or one to many. Choose their effort: alone with a guide, coached while they work, or finished by you and handed over. For a live vehicle, pick the room, such as in person, phone, email, text, video call, or chat. For a recording, pick audio, video, or writing, and set a separate reply window from a few minutes to a full day, only during hours you will keep. Then stretch the price: at ten times the fee, what you would add, and at a tenth of the fee, how you would still get them the result. A vehicle invented for one problem will suggest vehicles for the next, and every fear still needs a path, because one untouched fear is often the whole reason they decline.",
+      "terms": [
+        {
+          "en": "Do it yourself",
+          "hook": "They follow a tool or a guide, with you mostly out of the delivery."
+        },
+        {
+          "en": "Done with you",
+          "hook": "You teach while they perform the work."
+        },
+        {
+          "en": "Done for you",
+          "hook": "You perform the task and hand them the finished result."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Solve the awkward fear",
+      "bodyEn": "A rule that banned restaurants lost weight-loss sales, because the method ignored a problem the buyer actually had. When the next sale had to happen, the fix was an eating-out guide so restaurant meals could still hit the plan. That one piece closed the sale, and then it answered the same objection every time it returned. Keep adding a template or a short training until no single leftover fear remains. Stay flexible about your favorite method and solve the obstacle the buyer believes is in the way. The aim is the most buyers, at the highest price, with the highest margin, which requires a resolution for every obstacle they expect to hit."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Trim cost against value",
+      "bodyEn": "Step five starts by scoring each vehicle on what it costs you to deliver. First discard vehicles that cost you a lot and barely change what the buyer feels. Then discard vehicles that are cheap for you and still add little for them. Value means the buyer would pay for it, believe they will succeed, feel the effort drop, or see the result sooner. What you keep is either cheap to you and highly felt, or expensive to you and worth that expense. Moving in with a client would make the result feel certain, so you step that experience back until the time or cost is one you will live with, or you raise the price until it is worth it. Favor high-value one-to-many vehicles, because they usually hold the widest gap between their cost to you and their worth to the buyer.",
+      "terms": [
+        {
+          "en": "Trim",
+          "hook": "Delete low-value vehicles first, the expensive ones before the cheap ones."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Build once, use forever",
+      "bodyEn": "A meal calculator that turned goals into recipes, grocery amounts, and bulk-prep steps took a long build and then minutes per client. That shape is high value and low ongoing cost, which is why a template or a piece of software becomes an asset. One-to-one and small-group work still belong when the value is large, so save expensive access for those moments. If a cheaper vehicle creates the same felt value, choose the cheaper one. Guides for eating out, travel, plateaus, fast cooking, and a first orientation can all be built once and then serve for years. The week you spend making them is the cost, and every later use is mostly margin."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Stack named bundles",
+      "bodyEn": "The rest of step five bundles the surviving vehicles under each problem. Show the problem, then the solution wording, then a benefit name for the bundle, then the vehicles underneath. Give each bundle a value tag you can justify from money saved or hours returned, even though you are selling the pieces together. A shopping bundle can hold an orientation, a recorded store tour, a calculator, a weekly list, bargain practice, a shopping partner, a prebuilt delivery cart, and a weekly text check. Cooking, eating, training, travel, staying consistent, and eating out each get their own named bundle the same way. Let one orientation appear in several bundles when it teaches people how to use the tools. One worked version put roughly four thousand dollars of tagged value on a price near six hundred, and the same facilities later sold longer runs of that bundle for about twenty-four hundred to fifty-two hundred dollars.",
+      "terms": [
+        {
+          "en": "Stack",
+          "hook": "Kept vehicles grouped under a named promise, with a value tag above the real price."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "What the bundle does",
+      "bodyEn": "The finished bundle has three jobs. It solves the perceived problems as a set, rather than a sample of them. It gives you one specific thing to sell, so you can stand behind it without sounding like every other provider. It makes a side-by-side price comparison with the business down the street hard to perform, because the packages are no longer the same object. You will reveal these pieces one at a time in the bonus chapter, rather than reading the inventory as a flat list. As you get better at creating value, price and profit can rise, and each new piece stacks on the older ones. The five steps exist so people judge the offer by value, because the market has nothing identical to set beside it."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Five steps, then stop",
+      "bodyEn": "The build order is the dream outcome, then the obstacles on the way. Those obstacles are rewritten as solution lines. Every delivery vehicle for each line comes next. You trim to the high-value vehicles you will actually provide, preferring low cost when the value still holds. You stack the survivors into one deliverable. Scarcity, urgency, bonuses, guarantees, and naming wrap this core. Start those enhancers only after a buyer could point at the bundle and see their problems handled."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Trim rule check",
+      "bodyEn": "Trimming is a cost-and-value sort, and it happens after the vehicle list exists. High value is anything that raises worth, belief, ease, or speed for the buyer. High cost with low value leaves first. Low cost with low value leaves next. Low cost with high value stays, and high cost stays when the value is real and the price can carry it. One-to-many assets are the usual keepers, because creation is heavy once and delivery is light afterward. The stack is the survivors, named and tagged, sitting above the price you charge.",
+      "prompt": "Which vehicles do you remove first?",
+      "choices": [
+        "High cost and low value, then low cost and low value",
+        "Every one-to-many asset, so the offer feels more personal",
+        "The buyer's most common fear, so the sales call stays short",
+        "Low cost and high value, so the offer looks exclusive"
+      ],
+      "answer": 0
+    }
+  ]
+}

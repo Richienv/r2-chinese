@@ -1,0 +1,170 @@
+{
+  "id": "01",
+  "index": 1,
+  "part": 3,
+  "partTitleEn": "Hyperfocus",
+  "titleEn": "Why Focus Matters",
+  "titleSource": "Why Focus Matters",
+  "sourcePages": "14-18",
+  "when": "Chapter 0",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Attention runs the day",
+      "bodyEn": "The day you get is the slice of the world your attention actually stays with. Two people at one table can skim a visit because a phone keeps winning, or they can give the whole conversation to each other. Someone nearby can split a song, an order, and a memory, and still believe they were paying attention. Someone else can drift, then rush to catch an idea before it vanishes. This opening treats that backdrop as the skill the later chapters will train. Once you start seeing where attention goes, a scattered hour stops passing as a focused one.",
+      "terms": [
+        {
+          "en": "Attention",
+          "hook": "The limited resource that decides what you actually experience."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Two trained modes",
+      "bodyEn": "The book trains two different ways of aiming that resource. Hyperfocus means you choose one outward task and let it occupy your attention until the work moves. Scatterfocus means you let attention turn inward on purpose so ideas can meet and new ones can appear. A walk with empty hands is one place that inward mode shows up. Stepping away from constant connectivity is one of the conditions he credits for those new connections. The modes are partners: one finishes a chosen task, and the other connects material when you loosen your grip.",
+      "terms": [
+        {
+          "en": "Hyperfocus",
+          "hook": "One chosen outward task, held until it fills your attention."
+        },
+        {
+          "en": "Scatterfocus",
+          "hook": "Attention turned inward on purpose so ideas can connect."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "Conditions for a page",
+      "bodyEn": "Bailey describes a writing morning that was arranged before the first sentence. A short meditation came first, and by his own count he wrote about forty percent more words on the days he kept that ritual. The phone stayed home, so the walk could wander. He chose a room with no wireless connection, because an always-on network is one of the surest ways to break a writing stretch. The room was still busy, and he used that busyness as material for the page. Copy the conditions you can: a quiet start, the phone elsewhere, and a place that cannot refresh a feed."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "The forty-second mark",
+      "bodyEn": "Studies Bailey gathered found that work at a computer lasts only about forty seconds before a distraction or an interruption arrives. Almost every important task needs a much longer unbroken stretch than that. Moving among several tasks feels lively and still keeps any one significant task from getting finished. Bailey stopped treating that pattern as a clever way to get more done. The practice at this stage is to notice the switch while it is happening. A day of forty-second fragments is a day that never reached the work that needed you.",
+      "terms": [
+        {
+          "en": "Forty seconds",
+          "hook": "The typical stretch of computer work before a distraction or interruption."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "Road-test the research",
+      "bodyEn": "The book exists because an open inbox and a phone on the desk were more appealing than one or two simple tasks. Contradictory tips did not move the work, so he went to the studies, talked with researchers, and tried the findings on his own days. What survived is that attention is the ingredient in productive work, clearer thinking, and time that feels lived. Knowledge work happens in distracting rooms, which makes the skill practical. Bailey frames the book as research you road-test in ordinary work and ordinary evenings. A result that looks like magic is a method you can learn. The finish line is using the finding."
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Try one condition",
+      "bodyEn": "Pick one condition from this opening and run it before the day ends. Leave the phone in another room for a block of writing, reading, or a conversation that matters. If the work can survive it, sit somewhere that cannot pull a new page into your hand. If you already keep a short quiet ritual in the morning, notice whether the next block of words or decisions comes more easily, which is the comparison he made. If you do not, take one walk between two places with empty hands and let the mind wander on purpose. Keep the condition when the hour feels more chosen than a normal one. That keep-or-drop test is how every later tactic should be judged."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Attention is the ingredient",
+      "bodyEn": "Aimed on purpose, attention makes the hour productive, the ideas more connected, and the time with people less skimmed. Left on its default, it follows whatever is newest in the room. You can value the resource before you have learned the later tactics that spend it. Hyperfocus and scatterfocus are modes you will practice. For this chapter, the standard is honesty about where the last hour actually went. If it went to fragments, the next hour is the one to redesign."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "What to try first",
+      "bodyEn": "Attention is the limited ingredient this opening asks you to train. Hyperfocus spends it on one outward task, and scatterfocus turns it inward so ideas can connect. Computer work often breaks after about forty seconds, which is too short for significant work. The conditions worth copying are a quiet start, a phone left in another room, and a place that cannot refresh a feed. A tactic counts when you run it the same day. Keep it when your focus changes, and drop it when it fails to mesh with your life. That keep-or-drop test is the standard for every later chapter.",
+      "prompt": "What should you do with a tactic from this opening?",
+      "choices": [
+        "Try it the same day, and keep it only if your focus actually changes",
+        "Memorize the forty-second figure and leave your habits untouched",
+        "Keep the phone in sight so you can measure your willpower",
+        "Switch tasks every forty seconds on purpose to stay stimulated"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Attention runs the day",
+      "bodyEn": "The day you get is the slice of the world your attention actually stays with. Two people at one table can skim a visit because a phone keeps winning, or they can give the whole conversation to each other. Someone nearby can split a song, an order, and a memory, and still believe they were paying attention. Someone else can drift, then rush to catch an idea before it vanishes. This opening treats that backdrop as the skill the later chapters will train. Once you start seeing where attention goes, a scattered hour stops passing as a focused one.",
+      "terms": [
+        {
+          "en": "Attention",
+          "hook": "The limited resource that decides what you actually experience."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Two trained modes",
+      "bodyEn": "The book trains two different ways of aiming that resource. Hyperfocus means you choose one outward task and let it occupy your attention until the work moves. Scatterfocus means you let attention turn inward on purpose so ideas can meet and new ones can appear. A walk with empty hands is one place that inward mode shows up. Stepping away from constant connectivity is one of the conditions he credits for those new connections. The modes are partners: one finishes a chosen task, and the other connects material when you loosen your grip.",
+      "terms": [
+        {
+          "en": "Hyperfocus",
+          "hook": "One chosen outward task, held until it fills your attention."
+        },
+        {
+          "en": "Scatterfocus",
+          "hook": "Attention turned inward on purpose so ideas can connect."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "Conditions for a page",
+      "bodyEn": "Bailey describes a writing morning that was arranged before the first sentence. A short meditation came first, and by his own count he wrote about forty percent more words on the days he kept that ritual. The phone stayed home, so the walk could wander. He chose a room with no wireless connection, because an always-on network is one of the surest ways to break a writing stretch. The room was still busy, and he used that busyness as material for the page. Copy the conditions you can: a quiet start, the phone elsewhere, and a place that cannot refresh a feed."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "The forty-second mark",
+      "bodyEn": "Studies Bailey gathered found that work at a computer lasts only about forty seconds before a distraction or an interruption arrives. Almost every important task needs a much longer unbroken stretch than that. Moving among several tasks feels lively and still keeps any one significant task from getting finished. Bailey stopped treating that pattern as a clever way to get more done. The practice at this stage is to notice the switch while it is happening. A day of forty-second fragments is a day that never reached the work that needed you.",
+      "terms": [
+        {
+          "en": "Forty seconds",
+          "hook": "The typical stretch of computer work before a distraction or interruption."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "Road-test the research",
+      "bodyEn": "The book exists because an open inbox and a phone on the desk were more appealing than one or two simple tasks. Contradictory tips did not move the work, so he went to the studies, talked with researchers, and tried the findings on his own days. What survived is that attention is the ingredient in productive work, clearer thinking, and time that feels lived. Knowledge work happens in distracting rooms, which makes the skill practical. Bailey frames the book as research you road-test in ordinary work and ordinary evenings. A result that looks like magic is a method you can learn. The finish line is using the finding."
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Try one condition",
+      "bodyEn": "Pick one condition from this opening and run it before the day ends. Leave the phone in another room for a block of writing, reading, or a conversation that matters. If the work can survive it, sit somewhere that cannot pull a new page into your hand. If you already keep a short quiet ritual in the morning, notice whether the next block of words or decisions comes more easily, which is the comparison he made. If you do not, take one walk between two places with empty hands and let the mind wander on purpose. Keep the condition when the hour feels more chosen than a normal one. That keep-or-drop test is how every later tactic should be judged."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Attention is the ingredient",
+      "bodyEn": "Aimed on purpose, attention makes the hour productive, the ideas more connected, and the time with people less skimmed. Left on its default, it follows whatever is newest in the room. You can value the resource before you have learned the later tactics that spend it. Hyperfocus and scatterfocus are modes you will practice. For this chapter, the standard is honesty about where the last hour actually went. If it went to fragments, the next hour is the one to redesign."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "What to try first",
+      "bodyEn": "Attention is the limited ingredient this opening asks you to train. Hyperfocus spends it on one outward task, and scatterfocus turns it inward so ideas can connect. Computer work often breaks after about forty seconds, which is too short for significant work. The conditions worth copying are a quiet start, a phone left in another room, and a place that cannot refresh a feed. A tactic counts when you run it the same day. Keep it when your focus changes, and drop it when it fails to mesh with your life. That keep-or-drop test is the standard for every later chapter.",
+      "prompt": "What should you do with a tactic from this opening?",
+      "choices": [
+        "Try it the same day, and keep it only if your focus actually changes",
+        "Memorize the forty-second figure and leave your habits untouched",
+        "Keep the phone in sight so you can measure your willpower",
+        "Switch tasks every forty seconds on purpose to stay stimulated"
+      ],
+      "answer": 0
+    }
+  ]
+}

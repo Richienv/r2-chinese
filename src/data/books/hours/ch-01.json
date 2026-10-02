@@ -1,0 +1,266 @@
+{
+  "id": "01",
+  "index": 1,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "What a dream job needs",
+  "titleSource": "Chapter 1",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Intuition misleads choices",
+      "bodyEn": "People usually hunt for a dream job by picturing options and trusting the feeling, or by listing perks from memory the way a famous career book asks them to. That method is weak because people often misjudge what will make them happy, and they also misremember how good an experience was. A well-known slip is judging a whole episode by its ending, so a ruined last day can spoil the memory of an otherwise good holiday. Decades of research on happiness, motivation, and job satisfaction offer a steadier guide than a private hunch. Use that research when you compare real options, and treat your own history as a hint that sits beside the evidence."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Pay helps only a little",
+      "bodyEn": "People often picture a dream job as highly paid and easy, and one US ranking built from pay, future pay, stress, and workplace unpleasantness put the actuary first. Actuaries are more satisfied than average, yet only about a third call the work meaningful, so that ranking misses fulfillment. Money does raise life satisfaction, and a large US survey found that going from about forty thousand to eighty thousand dollars of household income moved a ten-point score only from roughly six and a half to seven. Day-to-day happiness rose more slowly, and in that survey the share who felt happy yesterday levelled off near fifty thousand dollars, while low sadness and low stress levelled off by about seventy-five thousand. The authors suspect a total levelling-off is overstated, because a later study found daily mood still rising a little, more slowly than life satisfaction, and because health and similar factors can create the correlation. Seventy-five thousand dollars of household income was only about forty thousand for someone with no children, and their adjustments for inflation toward the mid-fifties of thousands, dependents, city prices, taste for money, and retirement saving still leave a typical college graduate where further raises buy little happiness. A highly selective graduate sits further into that region, so climbing the pay table is a weak plan for a satisfying career.",
+      "terms": [
+        {
+          "en": "life satisfaction",
+          "hook": "If they say this, they mean the overall rating of a life, separate from yesterday's mood."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Match the challenge",
+      "bodyEn": "Many people ask for a job that keeps stress low, matching an older medical view that treated stress as harm in every case. Newer research makes the picture conditional. Senior government and military leaders have shown lower stress hormones and less anxiety despite less sleep, more staff, and heavier demands, and a leading explanation is that control over schedule and method buffers the load. Almost no demand makes the day dull. Demand that outruns your skill is the harmful region. The useful band is a real challenge you can meet, with support and meaning around it."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Work that absorbs you",
+      "bodyEn": "Hour-by-hour tasks carry more of a good job than salary, status, or the type of employer. Engaging work holds your attention and produces the absorption often called flow, which is why an hour in a game can disappear while routine admin drags. Researchers point to four conditions: freedom to decide how to do the work, tasks with a clear start and end, variety, and feedback on how you are doing. A major meta-analysis tied each condition to job satisfaction at a correlation of about four tenths, and specialists treat them as among the best-tested predictors. Games are assembled from those conditions on purpose. Meeting them still leaves a life unfinished, which is why further ingredients sit beside engagement.",
+      "terms": [
+        {
+          "en": "engaging work",
+          "hook": "If they say this, they mean the hour holds your attention."
+        },
+        {
+          "en": "feedback",
+          "hook": "If they say this, they mean you can tell whether the work is going well."
+        },
+        {
+          "en": "flow",
+          "hook": "If they say this, they mean absorption so deep that the hour disappears."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Help makes work meaningful",
+      "bodyEn": "Roles can meet all four engaging conditions and still feel empty to the people in them. Most people in jobs such as revenue analysis, fashion design, and directing a television newscast did not find the work meaningful, while almost everyone working as a fire officer, nurse or midwife, or neurosurgeon did. The difference people are picking up is that the second set clearly helps someone else. Volunteering is linked with less depression and better health, a review of twenty-three randomised trials found that kind acts make the giver happier, and a global survey found donors about as satisfied as people earning twice as much. Helping is one powerful route to a meaningful career, and researchers treat it as among the strongest, while allowing that other routes exist. Later chapters separate direct help from indirect help, and both can count.",
+      "terms": [
+        {
+          "en": "meaningful work",
+          "hook": "If they say this, they mean the job helps other people in a way the worker can recognise."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Skill buys the rest",
+      "bodyEn": "Being good at the work supplies achievement, which positive psychology treats as part of a satisfying life. Skill also gives you room to negotiate for meaningful projects, engaging tasks, and fair pay. Interest loses when you cannot become good enough to escape dull tasks nobody values. A love of art, pursued without that potential, collapses into graphic work for clients you do not care about. You can start before you are already excellent. What you need is a real chance of becoming good, which a later chapter examines in detail."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Colleagues who help",
+      "bodyEn": "Hostile colleagues or a boss who makes the day miserable will sink an otherwise attractive role. Relationships matter so much in a good life that it helps if two or three colleagues can become friends, which often means some of them resemble you. Friendship with everyone is unnecessary. A major meta-analysis ranked social support, meaning you can get help when something goes wrong, among the strongest predictors of job satisfaction, with a correlation a little above one half. Blunt colleagues who differ from you can be the most useful critics when they still want you to succeed, because they will say what is true from another angle. Adam Grant calls those people disagreeable givers. Judge an offer by whether you could make a friend there and, more importantly, whether the culture makes help, honest feedback, and joint work normal.",
+      "terms": [
+        {
+          "en": "social support",
+          "hook": "If they say this, they mean colleagues will help when the work goes wrong."
+        },
+        {
+          "en": "disagreeable giver",
+          "hook": "If they say this, they mean a blunt colleague who still wants you to succeed."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Negatives and life fit",
+      "bodyEn": "A few large negatives are tied to dissatisfaction even when the positive ingredients are present. Watch for a bus ride that runs past an hour, for weeks that disappear into overtime, for wages that feel unjust, and for a standing fear of being fired. People skip these because they sound obvious, yet a bad commute can outweigh many nicer features. Friendship, meaning, and even your best work can live outside the role, through a side project, giving, or relationships beyond the office. Einstein's most productive year came in nineteen hundred and five, while he worked as a clerk in a patent office. The job has to fit the rest of your life, and the rest of life can carry pieces the job never will."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Passion is a poor map",
+      "bodyEn": "Follow-your-passion advice says the key is to name your greatest interest and build a career on it, and it sticks because successful people often look passionate. The research does favour work you find intrinsically motivating over a larger paycheck, so caring about the work is welcome. The slogan fails first because passion leaves out the other ingredients, and a fan who lands in a beloved field can still hate the colleagues, the pay, or the pointlessness, while crowded passionate fields make good jobs harder to win. It fails second because many people have no career-ready passion, and the advice makes them feel they have already missed their chance. It fails third by cutting options, as if a love of literature required life as a writer, or as if a field had to feel perfect on the first day. Passion can grow in a new area once the work helps someone, you practise until you are good, the tasks absorb you, and you like the people, because those are conditions rather than one subject. Steve Jobs began in Zen practice and entered technology partly to make money, only later urging people to do what they love, and Maya Angelou danced before she became a poet and civil rights figure."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Do what contributes",
+      "bodyEn": "The chapter's working line says to become skilled at work that helps other people, which they shorten to do what contributes. Becoming good at a contribution other people value creates options, and options are how you reach engaging tasks, supportive colleagues, freedom from the big negatives, and a life that still fits. Those conditions can all be present while the work still feels pointless, so the help has to be genuine. Putting a valuable contribution first tends to make people more content, ambitious, and motivated, which is what the authors report from advising, including Jess, who left an interesting and low-impact philosophy path for psychology and public policy. A mission to help also makes other people want you to succeed, and Adam Grant's work on a giving mindset finds givers often among the most successful, through extra help and a stronger sense of purpose. Givers who ignore their own limits burn out, so the other ingredients and some boundaries stay necessary. The personal bonus is secondary to a moral core shared by major traditions, that a worthy life keeps doing good for others, and a graduate in a rich country has an unusual chance to do that through work.",
+      "terms": [
+        {
+          "en": "do what contributes",
+          "hook": "If they say this, they mean become skilled at work that helps other people."
+        },
+        {
+          "en": "giving mindset",
+          "hook": "If they say this, they mean helping others in a way that also draws help and purpose back to you."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "Apply the six tests",
+      "bodyEn": "Use the six ingredients, especially helping others and becoming good, as the long-term target when you hunt for a dream job. Practise on two real options by scoring each ingredient from one to five. Add clues from your own life, knowing that memories of fulfillment are shaky, so the answers stay hints. Ask which periods felt most fulfilling and what they shared, what you would spend time on if you had ten years left, and how you would sharpen any of the six, such as the people you want around you. Merge the research list with those notes into about four to eight factors that matter most for you. When you compare later, choose the option that wins on balance. The chapter's own short list leads with work you are good at and work that helps others, then engaging flow, supportive colleagues, freedom from negatives such as unfair pay, and fit with personal life."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Dream job check",
+      "bodyEn": "Fulfilling work in this chapter absorbs you, helps other people, and rests on a skill you can build. Supportive colleagues, relief from a crushing commute or unfair pay or constant insecurity, and room for the rest of life complete the picture. Pay raises life satisfaction only a little once a graduate in a rich country is past the middle incomes, and a blank demand for calm misses the difference between a dull load and a matched challenge. Passion-first advice skips the ingredients, crowds the fields people already love, and closes work they could learn to care about. The aim is to build real skill in work that helps other people, then let interest deepen from the results. Compare real options on the ingredients and keep the one that wins on balance.",
+      "prompt": "Which bundle matches this chapter's picture of fulfilling work?",
+      "choices": [
+        "Absorbing tasks, real help to others, skill you can grow, colleagues who help, no crushing downside, and room for the rest of life",
+        "The highest pay available, then the calmest possible week",
+        "One true passion, even when the tasks help nobody and the team withholds support",
+        "A famous employer, whatever the hour-by-hour work turns out to be"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Intuition misleads choices",
+      "bodyEn": "People usually hunt for a dream job by picturing options and trusting the feeling, or by listing perks from memory the way a famous career book asks them to. That method is weak because people often misjudge what will make them happy, and they also misremember how good an experience was. A well-known slip is judging a whole episode by its ending, so a ruined last day can spoil the memory of an otherwise good holiday. Decades of research on happiness, motivation, and job satisfaction offer a steadier guide than a private hunch. Use that research when you compare real options, and treat your own history as a hint that sits beside the evidence."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Pay helps only a little",
+      "bodyEn": "People often picture a dream job as highly paid and easy, and one US ranking built from pay, future pay, stress, and workplace unpleasantness put the actuary first. Actuaries are more satisfied than average, yet only about a third call the work meaningful, so that ranking misses fulfillment. Money does raise life satisfaction, and a large US survey found that going from about forty thousand to eighty thousand dollars of household income moved a ten-point score only from roughly six and a half to seven. Day-to-day happiness rose more slowly, and in that survey the share who felt happy yesterday levelled off near fifty thousand dollars, while low sadness and low stress levelled off by about seventy-five thousand. The authors suspect a total levelling-off is overstated, because a later study found daily mood still rising a little, more slowly than life satisfaction, and because health and similar factors can create the correlation. Seventy-five thousand dollars of household income was only about forty thousand for someone with no children, and their adjustments for inflation toward the mid-fifties of thousands, dependents, city prices, taste for money, and retirement saving still leave a typical college graduate where further raises buy little happiness. A highly selective graduate sits further into that region, so climbing the pay table is a weak plan for a satisfying career.",
+      "terms": [
+        {
+          "en": "life satisfaction",
+          "hook": "If they say this, they mean the overall rating of a life, separate from yesterday's mood."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Match the challenge",
+      "bodyEn": "Many people ask for a job that keeps stress low, matching an older medical view that treated stress as harm in every case. Newer research makes the picture conditional. Senior government and military leaders have shown lower stress hormones and less anxiety despite less sleep, more staff, and heavier demands, and a leading explanation is that control over schedule and method buffers the load. Almost no demand makes the day dull. Demand that outruns your skill is the harmful region. The useful band is a real challenge you can meet, with support and meaning around it."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Work that absorbs you",
+      "bodyEn": "Hour-by-hour tasks carry more of a good job than salary, status, or the type of employer. Engaging work holds your attention and produces the absorption often called flow, which is why an hour in a game can disappear while routine admin drags. Researchers point to four conditions: freedom to decide how to do the work, tasks with a clear start and end, variety, and feedback on how you are doing. A major meta-analysis tied each condition to job satisfaction at a correlation of about four tenths, and specialists treat them as among the best-tested predictors. Games are assembled from those conditions on purpose. Meeting them still leaves a life unfinished, which is why further ingredients sit beside engagement.",
+      "terms": [
+        {
+          "en": "engaging work",
+          "hook": "If they say this, they mean the hour holds your attention."
+        },
+        {
+          "en": "feedback",
+          "hook": "If they say this, they mean you can tell whether the work is going well."
+        },
+        {
+          "en": "flow",
+          "hook": "If they say this, they mean absorption so deep that the hour disappears."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Help makes work meaningful",
+      "bodyEn": "Roles can meet all four engaging conditions and still feel empty to the people in them. Most people in jobs such as revenue analysis, fashion design, and directing a television newscast did not find the work meaningful, while almost everyone working as a fire officer, nurse or midwife, or neurosurgeon did. The difference people are picking up is that the second set clearly helps someone else. Volunteering is linked with less depression and better health, a review of twenty-three randomised trials found that kind acts make the giver happier, and a global survey found donors about as satisfied as people earning twice as much. Helping is one powerful route to a meaningful career, and researchers treat it as among the strongest, while allowing that other routes exist. Later chapters separate direct help from indirect help, and both can count.",
+      "terms": [
+        {
+          "en": "meaningful work",
+          "hook": "If they say this, they mean the job helps other people in a way the worker can recognise."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Skill buys the rest",
+      "bodyEn": "Being good at the work supplies achievement, which positive psychology treats as part of a satisfying life. Skill also gives you room to negotiate for meaningful projects, engaging tasks, and fair pay. Interest loses when you cannot become good enough to escape dull tasks nobody values. A love of art, pursued without that potential, collapses into graphic work for clients you do not care about. You can start before you are already excellent. What you need is a real chance of becoming good, which a later chapter examines in detail."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Colleagues who help",
+      "bodyEn": "Hostile colleagues or a boss who makes the day miserable will sink an otherwise attractive role. Relationships matter so much in a good life that it helps if two or three colleagues can become friends, which often means some of them resemble you. Friendship with everyone is unnecessary. A major meta-analysis ranked social support, meaning you can get help when something goes wrong, among the strongest predictors of job satisfaction, with a correlation a little above one half. Blunt colleagues who differ from you can be the most useful critics when they still want you to succeed, because they will say what is true from another angle. Adam Grant calls those people disagreeable givers. Judge an offer by whether you could make a friend there and, more importantly, whether the culture makes help, honest feedback, and joint work normal.",
+      "terms": [
+        {
+          "en": "social support",
+          "hook": "If they say this, they mean colleagues will help when the work goes wrong."
+        },
+        {
+          "en": "disagreeable giver",
+          "hook": "If they say this, they mean a blunt colleague who still wants you to succeed."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Negatives and life fit",
+      "bodyEn": "A few large negatives are tied to dissatisfaction even when the positive ingredients are present. Watch for a bus ride that runs past an hour, for weeks that disappear into overtime, for wages that feel unjust, and for a standing fear of being fired. People skip these because they sound obvious, yet a bad commute can outweigh many nicer features. Friendship, meaning, and even your best work can live outside the role, through a side project, giving, or relationships beyond the office. Einstein's most productive year came in nineteen hundred and five, while he worked as a clerk in a patent office. The job has to fit the rest of your life, and the rest of life can carry pieces the job never will."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Passion is a poor map",
+      "bodyEn": "Follow-your-passion advice says the key is to name your greatest interest and build a career on it, and it sticks because successful people often look passionate. The research does favour work you find intrinsically motivating over a larger paycheck, so caring about the work is welcome. The slogan fails first because passion leaves out the other ingredients, and a fan who lands in a beloved field can still hate the colleagues, the pay, or the pointlessness, while crowded passionate fields make good jobs harder to win. It fails second because many people have no career-ready passion, and the advice makes them feel they have already missed their chance. It fails third by cutting options, as if a love of literature required life as a writer, or as if a field had to feel perfect on the first day. Passion can grow in a new area once the work helps someone, you practise until you are good, the tasks absorb you, and you like the people, because those are conditions rather than one subject. Steve Jobs began in Zen practice and entered technology partly to make money, only later urging people to do what they love, and Maya Angelou danced before she became a poet and civil rights figure."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Do what contributes",
+      "bodyEn": "The chapter's working line says to become skilled at work that helps other people, which they shorten to do what contributes. Becoming good at a contribution other people value creates options, and options are how you reach engaging tasks, supportive colleagues, freedom from the big negatives, and a life that still fits. Those conditions can all be present while the work still feels pointless, so the help has to be genuine. Putting a valuable contribution first tends to make people more content, ambitious, and motivated, which is what the authors report from advising, including Jess, who left an interesting and low-impact philosophy path for psychology and public policy. A mission to help also makes other people want you to succeed, and Adam Grant's work on a giving mindset finds givers often among the most successful, through extra help and a stronger sense of purpose. Givers who ignore their own limits burn out, so the other ingredients and some boundaries stay necessary. The personal bonus is secondary to a moral core shared by major traditions, that a worthy life keeps doing good for others, and a graduate in a rich country has an unusual chance to do that through work.",
+      "terms": [
+        {
+          "en": "do what contributes",
+          "hook": "If they say this, they mean become skilled at work that helps other people."
+        },
+        {
+          "en": "giving mindset",
+          "hook": "If they say this, they mean helping others in a way that also draws help and purpose back to you."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "Apply the six tests",
+      "bodyEn": "Use the six ingredients, especially helping others and becoming good, as the long-term target when you hunt for a dream job. Practise on two real options by scoring each ingredient from one to five. Add clues from your own life, knowing that memories of fulfillment are shaky, so the answers stay hints. Ask which periods felt most fulfilling and what they shared, what you would spend time on if you had ten years left, and how you would sharpen any of the six, such as the people you want around you. Merge the research list with those notes into about four to eight factors that matter most for you. When you compare later, choose the option that wins on balance. The chapter's own short list leads with work you are good at and work that helps others, then engaging flow, supportive colleagues, freedom from negatives such as unfair pay, and fit with personal life."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Dream job check",
+      "bodyEn": "Fulfilling work in this chapter absorbs you, helps other people, and rests on a skill you can build. Supportive colleagues, relief from a crushing commute or unfair pay or constant insecurity, and room for the rest of life complete the picture. Pay raises life satisfaction only a little once a graduate in a rich country is past the middle incomes, and a blank demand for calm misses the difference between a dull load and a matched challenge. Passion-first advice skips the ingredients, crowds the fields people already love, and closes work they could learn to care about. The aim is to build real skill in work that helps other people, then let interest deepen from the results. Compare real options on the ingredients and keep the one that wins on balance.",
+      "prompt": "Which bundle matches this chapter's picture of fulfilling work?",
+      "choices": [
+        "Absorbing tasks, real help to others, skill you can grow, colleagues who help, no crushing downside, and room for the rest of life",
+        "The highest pay available, then the calmest possible week",
+        "One true passion, even when the tasks help nobody and the team withholds support",
+        "A famous employer, whatever the hour-by-hour work turns out to be"
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "id": "10",
+  "index": 10,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Get the job",
+  "titleSource": "Chapter 10",
+  "sourcePages": "175-196",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Hiring is sales",
+      "bodyEn": "Most popular advice on getting hired is noise: be confident, clean your nails, or wait to be invited before you sit down. This chapter is written from both sides, coaching applicants and hiring, and it treats the process as a sale. You are asking someone to give you pay, responsibility, and their reputation in exchange for results, and you are not entitled to that trade. The sale has three stages: find openings, convince the employer, and negotiate. The common thread is to think from their side and do the thing they will find most convincing, which is usually a recommendation or proof you can do the work, rather than a pile of identical applications. Do not use that skill to land a job you would be bad at, because you will be unhappy and, if you underperform the next candidate, you will have done harm. The chapter exists for the opposite failure: strong people who want to help and never learn how to show it."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Collect many leads",
+      "bodyEn": "A lead is any chance of paid work, whether that is a posting, a person who might know of an opening, or a project you could turn into a job. Early searches often need twenty to a hundred leads before one good offer, and a long run of rejections is normal, illustrated by a future public-radio journalist who made about seventy applications and received one serious offer. An average spell of unemployment in the United States is about six months, so plan for a slow hunt, and desirable jobs, including most jobs on the neglected problems in this guide, are scarcer still. Ten leads inside one tiny field, such as preventing catastrophic pandemics, is usually not a real search, and you may need other areas until you have something like thirty. Luck is large, because employers want a fit to one team and one brief and they decide with very little information, so talent alone can miss. Underconfidence and overconfidence are both common, and a very competitive do-good organisation is not a backup, so pursue roles you are likely to get and roles that would be excellent if they hit. The applications are also one of the fastest ways to learn your fit, and one employer with no opening can still point you to someone who has one.",
+      "terms": [
+        {
+          "en": "Lead",
+          "hook": "If they say this, they mean any opening that might become a job."
+        },
+        {
+          "en": "Backup role",
+          "hook": "If they say this, they mean a less attractive job you are likely to get."
+        },
+        {
+          "en": "Stretch role",
+          "hook": "If they say this, they mean a job you are unlikely to get, with large upside if you do."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Use connections first",
+      "bodyEn": "Some large employers, such as a civil service or a teaching scheme, run a fixed process in the name of fairness, and in those cases you simply apply. Everywhere else, sending a resume to strangers and answering public listings has a poor hit rate: one widely used estimate is about one job per thousand cold resumes, and this chapter guesses that a listing succeeds only about one time in a hundred. Boards also miss many of the best jobs, which sit at small, fast-growing organisations and are shaped around a person. Employers would rather hire someone they know, or someone a trusted person refers, because the candidate is already vouched for, screening is easier, and the strongest people often never answer a listing. About half of jobs are found through people the applicant already knows, and a large share of those roles are never posted, so a search that skips referrals skips a large share of the market. Talking to people in the work is also how you learn how to present yourself and whether the job fits, which focuses the rest of the search. Recruiters who actually know the industry, and listings including this guide's own board, are useful after that, for ideas and for the occasional success, not instead of introductions.",
+      "terms": [
+        {
+          "en": "Referral",
+          "hook": "If they say this, they mean an introduction from someone the employer already trusts."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Ask for introductions",
+      "bodyEn": "Update the profile people will check before they meet you, keep one or two concrete achievements, cut the weak lines, and add relevant work, then clean what a search of your name shows. If you already know someone who can hire, ask for a conversation about opportunities, which can skip screening and can create a role that was not advertised, and prepare as you would for an interview. When the relationship is lighter, ask to learn how hiring works in that field, request introductions to people with hiring power only after the conversation has been useful, and do not turn a learning meeting into a surprise application. Describe the role you want in one narrow sentence, such as entry-level marketing at an education-technology startup, because a request for a job in software, or for a job that fits your skills, is too vague to answer. A friend who has seen you do excellent work can vouch for you directly, and if they cannot, ask for a handoff to someone inside the field who does have hiring power. Search the employer on a professional network to see your contacts and then the contacts of your contacts, and remember that a few hundred connections can reach many thousands of people once those second links are included. If that still fails, build the network first, starting with alumni and friends of friends, then groups and conferences, and only then cold email, and this guide's own professional group is one place to ask for advice and introductions.",
+      "terms": [
+        {
+          "en": "Informational interview",
+          "hook": "If they say this, they mean a learning conversation, not a surprise job ask."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "When rules are fixed",
+      "bodyEn": "Once you are talking to someone who can hire you, the question is what would convince them, and the main thing they need to believe is that you can solve their problems. Social fit, staying, and not causing trouble matter, and they matter less once that proof is in place. A web-engineering search at this project made the contrast concrete: most people filled in the form, and one person sent a rebuilt version of an old quiz, which put them in the top fifth despite little formal experience. Where the process is standardised, learn the exact hoops and practise those hoops, including the competencies they score and any public rubric. The most useful preparation is someone who recently passed, who can explain the steps and, if they will, rehearse them with you, and some processes even have books about the application itself. If you have already done the same work, you mainly need to tell that story clearly, which is the interview advice on the next page. If you have not, the convincing move is to do some of the work, which also tells you whether you are any good at it before you waste years."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Show the work",
+      "bodyEn": "A portfolio is the public version: a blog or a feed if you want to write, or projects in a code host if you want to engineer, mentioned on your profile and in the application. A pre-interview project starts by learning what the role actually does and which problems the organisation needs solved, usually from reading and from people in the field. Spend a weekend on a response, send a single-page note to two people there with an invitation to talk, and follow up once if a week passes in silence, or walk through the same notes in the interview. In several years of competitive hiring at this project, a sensible version of that project would have put an applicant in the top fifth, because it shows you understand the role and most applicants do not. If they are undecided, you can offer two to four weeks as a trial, at lower pay or as an intern, and leave cleanly if they are not happy, but offer that only when they are on the fence or it looks like you are underselling yourself. A nearby seat, freelance or one step down, lets you prove motivation and cultural fit so a later opening is filled from inside, and only take it if it truly leads toward the job you want. An operations role at a research group rarely becomes a research job, because the skills are treated as different tracks, and the mismatch frustrates both sides.",
+      "terms": [
+        {
+          "en": "Pre-interview project",
+          "hook": "If they say this, they mean a short piece of their real work that proves you can do it."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Prepare the meeting",
+      "bodyEn": "Proof that you can handle their actual problems already carries most of the meeting, and you can still make it sharper. Ask what they are stuck on and talk about how you would help, which is what effective selling looks like: questions are linked with successful conversations, and training people to ask more of them makes them more effective. Prepare three points you want remembered, each backed by a story or a concrete fact, because three is about what a listener keeps, and one or two impressive achievements land harder than a list that dilutes them. A short vivid line that other people can repeat, naming the achievement and the role you want, makes it easy for them to promote you when you are not in the room. Write answers to the questions that almost always appear: who you are and why you are here, why you want this role, and what you want to ask them, plus the behavioural prompts that start with a time you led, cooperated, struggled, failed, or succeeded. Walk through the whole conversation out loud before you go, with a friend if you have one, and decide in advance what you will do if the likely failure happens. After each conversation, write what to repeat and what to change."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Adapt the process",
+      "bodyEn": "Getting hired is a skill, and it takes repetition, so the notes after each serious conversation are part of the method rather than an optional diary. If five to ten interviews never advance you, ask someone who has hired in that field to review your materials and to run a practice interview, or to hear what happened. If twenty or more applications produce no interviews, ask someone in the field to review the materials, and if they cannot find a mistake, you are probably aiming at jobs that do not fit. Getting through to late rounds more than once, across about ten interviews, without an offer yet is a reason to continue, because several people often survive to the end and you may need something like five final rounds before one offer. If offers arrive easily, shift toward more stretch roles. The pattern of results is the evidence, and changing the materials, the target, or the ambition is how you use it. Doing nothing after a repeated miss is how a fixable presentation problem gets mistaken for a lack of ability."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Negotiate the offer",
+      "bodyEn": "Negotiation starts after they have said they want to hire you, and a short conversation can change years of pay, hours, or learning, which is why the main advice is to actually consider it. You can ask them to match what you give to charity, or to change team, hours, location, or the skills you will learn, and those asks are often easier than asking for pay. Skip it when the contract is rigid, as with many government scales, when you are only narrowly ahead and have no other option, and never start it during the interview. Once an offer exists, the employer has already spent months and a great deal of management time, the top candidate is often clearly better than the next, and they are unlikely to drop you over a small cost increase if you stay polite. The worst likely case is that they keep the original offer, and your hand is strongest if a second employer also wants you. Explain the value you bring, point at what similar people receive, and trade something they care about for something you care about, such as learning beside the person who can make you much more useful before the year is out. When you have less leverage, ask what you would need to do to reach a named role and ask them to commit if you hit it, then perform well and raise the question again at the normal review, when losing you would hurt.",
+      "terms": [
+        {
+          "en": "Donation match",
+          "hook": "If they say this, they mean asking, after an offer, for the employer to match what you give."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Stay in the hunt",
+      "bodyEn": "A first search can mean dozens of rejections, months of work, and a lot of it alone, so motivation is part of the method rather than a mood you hope for. The tip readers have found most useful is to pair with someone else who is also searching, and to trade progress, leads, and advice, or to meet someone who recently succeeded at a similar hunt. Set a public target you can count, such as five conversations every week while you are still searching, and name a penalty you will actually pay if you skip. Make rejection easier to face, for example by marking each one and giving yourself a small reward when the card is full. Treat the search like a job with a start and an end to the day, because a role you may hold for years can justify a month or two of full-time effort, on the order of a small fraction of that future time. Later searches get easier as capital grows, and the most important piece is connections that produce better referrals. Once you are in a job, become genuinely good at it, because the best marketing is other people seeking you out, and a strong referral then helps them as well as you."
+    },
+    {
+      "id": "s11",
+      "kind": "remember",
+      "titleEn": "Three next actions",
+      "bodyEn": "The exercise asks for the three most important steps into your top options, written specifically enough that you could do them. Examples in the chapter include following up with a former internship boss, writing ten applications, meeting three people in the industry, and finding a partner for the search. Those steps usually involve speaking to people rather than polishing a document in isolation. Write when you will do each one, because naming the moment makes the task more likely to happen. The close of the chapter is that the process is unpleasant and that following it is how you give a satisfying, useful career a real chance. Leads, proof, a negotiation after the offer, and a way to stay in motion are the whole sale. Skipping the conversations and sending the same resume everywhere is the habit the chapter is trying to retire."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "After the offer",
+      "bodyEn": "Getting hired is a sale, so the useful question is what the employer would find convincing, not how confident you look. Collect many leads, mostly through people who can introduce you, and describe a narrow kind of role so they can actually help. Where the process is fixed, practise the exact test, and everywhere else show your ability by completing a piece of their real work. Change the materials or the target when the pattern of results is bad, and keep going when you are reaching late stages without an offer yet. Negotiate only once an offer exists, unless the contract is fixed or your position is weak, and remember that hours, team, learning, and a donation match are real asks. Pair the search with another person and treat it like a job, because a long string of rejections is the normal shape of a serious hunt.",
+      "prompt": "When does this chapter say you should negotiate?",
+      "choices": [
+        "In the first interview, before they know they want you",
+        "After you have an offer, unless the contract is fixed or your position is weak",
+        "Only to demand a higher salary, never hours, team, learning, or a donation match",
+        "Never, because any ask makes them withdraw the original offer"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Hiring is sales",
+      "bodyEn": "Most popular advice on getting hired is noise: be confident, clean your nails, or wait to be invited before you sit down. This chapter is written from both sides, coaching applicants and hiring, and it treats the process as a sale. You are asking someone to give you pay, responsibility, and their reputation in exchange for results, and you are not entitled to that trade. The sale has three stages: find openings, convince the employer, and negotiate. The common thread is to think from their side and do the thing they will find most convincing, which is usually a recommendation or proof you can do the work, rather than a pile of identical applications. Do not use that skill to land a job you would be bad at, because you will be unhappy and, if you underperform the next candidate, you will have done harm. The chapter exists for the opposite failure: strong people who want to help and never learn how to show it."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Collect many leads",
+      "bodyEn": "A lead is any chance of paid work, whether that is a posting, a person who might know of an opening, or a project you could turn into a job. Early searches often need twenty to a hundred leads before one good offer, and a long run of rejections is normal, illustrated by a future public-radio journalist who made about seventy applications and received one serious offer. An average spell of unemployment in the United States is about six months, so plan for a slow hunt, and desirable jobs, including most jobs on the neglected problems in this guide, are scarcer still. Ten leads inside one tiny field, such as preventing catastrophic pandemics, is usually not a real search, and you may need other areas until you have something like thirty. Luck is large, because employers want a fit to one team and one brief and they decide with very little information, so talent alone can miss. Underconfidence and overconfidence are both common, and a very competitive do-good organisation is not a backup, so pursue roles you are likely to get and roles that would be excellent if they hit. The applications are also one of the fastest ways to learn your fit, and one employer with no opening can still point you to someone who has one.",
+      "terms": [
+        {
+          "en": "Lead",
+          "hook": "If they say this, they mean any opening that might become a job."
+        },
+        {
+          "en": "Backup role",
+          "hook": "If they say this, they mean a less attractive job you are likely to get."
+        },
+        {
+          "en": "Stretch role",
+          "hook": "If they say this, they mean a job you are unlikely to get, with large upside if you do."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Use connections first",
+      "bodyEn": "Some large employers, such as a civil service or a teaching scheme, run a fixed process in the name of fairness, and in those cases you simply apply. Everywhere else, sending a resume to strangers and answering public listings has a poor hit rate: one widely used estimate is about one job per thousand cold resumes, and this chapter guesses that a listing succeeds only about one time in a hundred. Boards also miss many of the best jobs, which sit at small, fast-growing organisations and are shaped around a person. Employers would rather hire someone they know, or someone a trusted person refers, because the candidate is already vouched for, screening is easier, and the strongest people often never answer a listing. About half of jobs are found through people the applicant already knows, and a large share of those roles are never posted, so a search that skips referrals skips a large share of the market. Talking to people in the work is also how you learn how to present yourself and whether the job fits, which focuses the rest of the search. Recruiters who actually know the industry, and listings including this guide's own board, are useful after that, for ideas and for the occasional success, not instead of introductions.",
+      "terms": [
+        {
+          "en": "Referral",
+          "hook": "If they say this, they mean an introduction from someone the employer already trusts."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Ask for introductions",
+      "bodyEn": "Update the profile people will check before they meet you, keep one or two concrete achievements, cut the weak lines, and add relevant work, then clean what a search of your name shows. If you already know someone who can hire, ask for a conversation about opportunities, which can skip screening and can create a role that was not advertised, and prepare as you would for an interview. When the relationship is lighter, ask to learn how hiring works in that field, request introductions to people with hiring power only after the conversation has been useful, and do not turn a learning meeting into a surprise application. Describe the role you want in one narrow sentence, such as entry-level marketing at an education-technology startup, because a request for a job in software, or for a job that fits your skills, is too vague to answer. A friend who has seen you do excellent work can vouch for you directly, and if they cannot, ask for a handoff to someone inside the field who does have hiring power. Search the employer on a professional network to see your contacts and then the contacts of your contacts, and remember that a few hundred connections can reach many thousands of people once those second links are included. If that still fails, build the network first, starting with alumni and friends of friends, then groups and conferences, and only then cold email, and this guide's own professional group is one place to ask for advice and introductions.",
+      "terms": [
+        {
+          "en": "Informational interview",
+          "hook": "If they say this, they mean a learning conversation, not a surprise job ask."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "When rules are fixed",
+      "bodyEn": "Once you are talking to someone who can hire you, the question is what would convince them, and the main thing they need to believe is that you can solve their problems. Social fit, staying, and not causing trouble matter, and they matter less once that proof is in place. A web-engineering search at this project made the contrast concrete: most people filled in the form, and one person sent a rebuilt version of an old quiz, which put them in the top fifth despite little formal experience. Where the process is standardised, learn the exact hoops and practise those hoops, including the competencies they score and any public rubric. The most useful preparation is someone who recently passed, who can explain the steps and, if they will, rehearse them with you, and some processes even have books about the application itself. If you have already done the same work, you mainly need to tell that story clearly, which is the interview advice on the next page. If you have not, the convincing move is to do some of the work, which also tells you whether you are any good at it before you waste years."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Show the work",
+      "bodyEn": "A portfolio is the public version: a blog or a feed if you want to write, or projects in a code host if you want to engineer, mentioned on your profile and in the application. A pre-interview project starts by learning what the role actually does and which problems the organisation needs solved, usually from reading and from people in the field. Spend a weekend on a response, send a single-page note to two people there with an invitation to talk, and follow up once if a week passes in silence, or walk through the same notes in the interview. In several years of competitive hiring at this project, a sensible version of that project would have put an applicant in the top fifth, because it shows you understand the role and most applicants do not. If they are undecided, you can offer two to four weeks as a trial, at lower pay or as an intern, and leave cleanly if they are not happy, but offer that only when they are on the fence or it looks like you are underselling yourself. A nearby seat, freelance or one step down, lets you prove motivation and cultural fit so a later opening is filled from inside, and only take it if it truly leads toward the job you want. An operations role at a research group rarely becomes a research job, because the skills are treated as different tracks, and the mismatch frustrates both sides.",
+      "terms": [
+        {
+          "en": "Pre-interview project",
+          "hook": "If they say this, they mean a short piece of their real work that proves you can do it."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Prepare the meeting",
+      "bodyEn": "Proof that you can handle their actual problems already carries most of the meeting, and you can still make it sharper. Ask what they are stuck on and talk about how you would help, which is what effective selling looks like: questions are linked with successful conversations, and training people to ask more of them makes them more effective. Prepare three points you want remembered, each backed by a story or a concrete fact, because three is about what a listener keeps, and one or two impressive achievements land harder than a list that dilutes them. A short vivid line that other people can repeat, naming the achievement and the role you want, makes it easy for them to promote you when you are not in the room. Write answers to the questions that almost always appear: who you are and why you are here, why you want this role, and what you want to ask them, plus the behavioural prompts that start with a time you led, cooperated, struggled, failed, or succeeded. Walk through the whole conversation out loud before you go, with a friend if you have one, and decide in advance what you will do if the likely failure happens. After each conversation, write what to repeat and what to change."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Adapt the process",
+      "bodyEn": "Getting hired is a skill, and it takes repetition, so the notes after each serious conversation are part of the method rather than an optional diary. If five to ten interviews never advance you, ask someone who has hired in that field to review your materials and to run a practice interview, or to hear what happened. If twenty or more applications produce no interviews, ask someone in the field to review the materials, and if they cannot find a mistake, you are probably aiming at jobs that do not fit. Getting through to late rounds more than once, across about ten interviews, without an offer yet is a reason to continue, because several people often survive to the end and you may need something like five final rounds before one offer. If offers arrive easily, shift toward more stretch roles. The pattern of results is the evidence, and changing the materials, the target, or the ambition is how you use it. Doing nothing after a repeated miss is how a fixable presentation problem gets mistaken for a lack of ability."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Negotiate the offer",
+      "bodyEn": "Negotiation starts after they have said they want to hire you, and a short conversation can change years of pay, hours, or learning, which is why the main advice is to actually consider it. You can ask them to match what you give to charity, or to change team, hours, location, or the skills you will learn, and those asks are often easier than asking for pay. Skip it when the contract is rigid, as with many government scales, when you are only narrowly ahead and have no other option, and never start it during the interview. Once an offer exists, the employer has already spent months and a great deal of management time, the top candidate is often clearly better than the next, and they are unlikely to drop you over a small cost increase if you stay polite. The worst likely case is that they keep the original offer, and your hand is strongest if a second employer also wants you. Explain the value you bring, point at what similar people receive, and trade something they care about for something you care about, such as learning beside the person who can make you much more useful before the year is out. When you have less leverage, ask what you would need to do to reach a named role and ask them to commit if you hit it, then perform well and raise the question again at the normal review, when losing you would hurt.",
+      "terms": [
+        {
+          "en": "Donation match",
+          "hook": "If they say this, they mean asking, after an offer, for the employer to match what you give."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Stay in the hunt",
+      "bodyEn": "A first search can mean dozens of rejections, months of work, and a lot of it alone, so motivation is part of the method rather than a mood you hope for. The tip readers have found most useful is to pair with someone else who is also searching, and to trade progress, leads, and advice, or to meet someone who recently succeeded at a similar hunt. Set a public target you can count, such as five conversations every week while you are still searching, and name a penalty you will actually pay if you skip. Make rejection easier to face, for example by marking each one and giving yourself a small reward when the card is full. Treat the search like a job with a start and an end to the day, because a role you may hold for years can justify a month or two of full-time effort, on the order of a small fraction of that future time. Later searches get easier as capital grows, and the most important piece is connections that produce better referrals. Once you are in a job, become genuinely good at it, because the best marketing is other people seeking you out, and a strong referral then helps them as well as you."
+    },
+    {
+      "id": "s11",
+      "kind": "remember",
+      "titleEn": "Three next actions",
+      "bodyEn": "The exercise asks for the three most important steps into your top options, written specifically enough that you could do them. Examples in the chapter include following up with a former internship boss, writing ten applications, meeting three people in the industry, and finding a partner for the search. Those steps usually involve speaking to people rather than polishing a document in isolation. Write when you will do each one, because naming the moment makes the task more likely to happen. The close of the chapter is that the process is unpleasant and that following it is how you give a satisfying, useful career a real chance. Leads, proof, a negotiation after the offer, and a way to stay in motion are the whole sale. Skipping the conversations and sending the same resume everywhere is the habit the chapter is trying to retire."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "After the offer",
+      "bodyEn": "Getting hired is a sale, so the useful question is what the employer would find convincing, not how confident you look. Collect many leads, mostly through people who can introduce you, and describe a narrow kind of role so they can actually help. Where the process is fixed, practise the exact test, and everywhere else show your ability by completing a piece of their real work. Change the materials or the target when the pattern of results is bad, and keep going when you are reaching late stages without an offer yet. Negotiate only once an offer exists, unless the contract is fixed or your position is weak, and remember that hours, team, learning, and a donation match are real asks. Pair the search with another person and treat it like a job, because a long string of rejections is the normal shape of a serious hunt.",
+      "prompt": "When does this chapter say you should negotiate?",
+      "choices": [
+        "In the first interview, before they know they want you",
+        "After you have an offer, unless the contract is fixed or your position is weak",
+        "Only to demand a higher salary, never hours, team, learning, or a donation match",
+        "Never, because any ask makes them withdraw the original offer"
+      ],
+      "answer": 1
+    }
+  ]
+}

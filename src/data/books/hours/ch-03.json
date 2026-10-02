@@ -1,0 +1,186 @@
+{
+  "id": "03",
+  "index": 3,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Impact from any job",
+  "titleSource": "Chapter 3",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Gestures can cause harm",
+      "bodyEn": "Attempts to do good can fail, and some of them leave the world worse. At two parachute centres over five years, about fifteen hundred charity skydivers raised more than one hundred twenty thousand pounds, and expedition costs left about forty-five thousand for the charities. Those mostly first-time jumpers suffered one hundred sixty-three injuries, and the health service spent about six hundred ten thousand pounds treating them, roughly thirteen pounds of care for each pound that reached a charity. Many of those charities worked on health, so the stunt drained the system it was meant to support. Untrained volunteers can do a quieter version of the same thing by using up a skilled manager's time and adding less value than they cost. When the organisation FORGE cut a volunteering scheme in order to focus, donations fell, because volunteering had been a path into giving, which helps explain why weak schemes survive."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Three ways from any job",
+      "bodyEn": "Someone who finished university in a wealthy country can do a large amount of good while keeping the same career and skipping a dramatic sacrifice. The chapter's three routes are a ten percent gift to charities that work, public advocacy on causes that matter, and making other people more effective at helping. Each route sits on top of a job you can choose for personal fit. They fail when the help misses the people you meant to reach, as the skydive and the unmanaged volunteer show. They work when the money, the vote, or the introduction lands on a neglected problem where an extra unit still matters. The rest of the chapter measures how large each route can be."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Cash as a lower bound",
+      "bodyEn": "The simplest version is to give ten percent of income to people living in extreme poverty. Since two thousand eight, GiveDirectly has sent cash by mobile phone to very poor households in East Africa. The authors treat cash as a floor rather than their top charity, because it is easy to count, and they expect some other gifts to do more. Recipients they describe in Kenya live on about eight hundred dollars a year in US buying power, while a typical US graduate earns about seventy-seven thousand before tax and about fifty-four thousand five hundred after tax. Extra money matters less as you get richer, so on that relationship a dollar given there does about sixty-eight times as much as spending it on yourself. Ten percent of the graduate income could double the yearly consumption of about seven people in extreme poverty, and a career of gifts on that scale would touch hundreds of lives. A portrait in the chapter is a widow supporting children who would repair a house, pay for technical school, and secure water, and a randomised trial found less hunger and stress for years after the transfers, in line with a wider literature on cash.",
+      "terms": [
+        {
+          "en": "cash transfer",
+          "hook": "If they say this, they mean money given directly to very poor people, with few strings attached."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Giving costs little",
+      "bodyEn": "Teaching and charity jobs often pay under half of private-sector alternatives and may fit your skills poorly. Giving ten percent can be a smaller personal cost than that kind of career switch. Once income passes the earlier comfort range, around the mid-fifties of thousands in recent dollars, further pay does little for happiness, while acts that help others tend to add some. In one study, people in one hundred twenty-two of one hundred thirty-six countries who had donated in the last month reported a life-satisfaction gain also associated with a doubling of income. Part of that pattern is happier people giving more, and the authors expect some of the effect to run from giving toward satisfaction. The gift spends money, and it spends less life satisfaction than the salary gap of a career switch would suggest."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "More than a doctor's career",
+      "bodyEn": "Donations can beat a typical clinical career because the money can reach the best organisations on large, neglected problems. GiveWell, an independent charity evaluator, estimates that leading programmes, including the Against Malaria Foundation and also Helen Keller International, prevent a death for about every five thousand dollars, plus wider gains in health and income from treating malaria. Ten percent of a typical US graduate salary, given there, could save more than one life a year, or about forty lives over a forty-year career. The previous chapter's typical doctor saved about three lives, so the donation is on the order of ten times that clinical total. These proven health programmes are strong enough that even prominent sceptics of aid have had little to say against them. The authors think some charities do more still, including work on catastrophic pandemics, which they rank above ordinary global health later in the guide. If the richest tenth gave ten percent, about five trillion dollars a year could, on a paper sketch, double research funding, lift everyone above a poverty line a little over two dollars a day, fund universal basic education, and still leave room for the arts, ambitious projects, and about a trillion dollars on climate, though none of that spending would be simple."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "You are the global rich",
+      "bodyEn": "The surprising part is how much good a modest gift can do at a small cost to the giver. World income is extremely unequal: the share of people at each income is a long low stretch and then a sharp spike at the rich end. Someone earning about sixty thousand dollars a year after tax, with no children, is around the global one percent, already adjusting for what money buys locally. A reader in a country like the US or the UK is likely inside that spike, or even past the right edge of the chart, while most of the world sits on the flat stretch. The accident of birth is a reason to use the fortune. In a more equal world, helping the people next door and tending your own life would exhaust the opportunity, and the income graph describes a different world."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "A public ten percent pledge",
+      "bodyEn": "Many people at 80,000 Hours took a public pledge, through the partner organisation Giving What We Can, to give at least ten percent of lifetime income to the charities they believe are most effective. The pledge takes a few minutes, it is not a legal contract, and the donor still chooses the recipients. Students commit one percent until after graduation, and the wider group had grown past nine thousand people with over three billion dollars pledged. The authors call it one of the highest-value actions available immediately, because it reserves a large stream of giving before lifestyle expands to match income. It fits poorly when your main impact will come from lower-paid direct work, when debt or finances are already strained, or when you doubt you can keep the promise. A trial version can be as small as one percent for any period you choose, so you can test the habit before a lifetime commitment.",
+      "terms": [
+        {
+          "en": "ten percent pledge",
+          "hook": "If they say this, they mean a public promise to give a tenth of income to the charities you think work best."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Advocacy and the vote",
+      "bodyEn": "Birthplace also hands people in rich countries unusual political influence over trade, migration, climate, and technology, inside systems that are at least partly democratic. The authors began sceptical that one citizen could matter, and the arithmetic of voting changed their view. In a safe US state the chance that one vote decides a presidential election is effectively zero, while in a contested state estimates run from about one in ten million to about one in a million, higher than the chance of a typical lottery win. The federal government is so large that a candidate who spent an extra two tenths of one percent of GDP on foreign aid would move on the order of one hundred eighty-seven billion dollars over four years, and one millionth of that is about one hundred eighty-seven thousand dollars. An hour of voting in a contested state can therefore be the highest expected-value hour of the year, and similar figures show up in other rich countries, where less is at stake and each vote weighs more. The same shape, a small chance of shifting a huge institution, applies to careful advocacy such as contacting a representative, turnout work, or a town meeting, especially on the urgent issues in the next chapter."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Help others do more",
+      "bodyEn": "Someone with little money and little formal power can still multiply people who have both. One route, developed in an appendix, is to invest in your own skills until that description changes. Another is to help the people who already have resources: enabling two others to give ten percent outweighs giving it only yourself. Telling a better-suited person about a high-impact job can do more than taking the job, fundraising can outpace your own gift, and an employer match can be switched on for a whole team. The scoreboard is how much good occurs, including good that other people carry out. A likely fictional story makes the same point with a janitor who, asked by a visiting president what he was doing at the space agency, said he was helping put a person on the moon."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "A whole career goes further",
+      "bodyEn": "A dangerous stunt is an unreliable way to help, and safer routes in this chapter do more. Give ten percent to effective charities, use political influence such as a vote, and help other people have an impact. Those three sit inside whatever job you end up in, and they ask for much less sacrifice than the scale of the effect suggests. Because a tenth of a typical salary can already rival or beat a clinical career, a whole job aimed well over decades could be far larger. The next three chapters ask which problems deserve that job, and which ways of working on them help the most. If your finances allow it, the pledge or a serious look at where a small share of income and influence would go furthest is the move this chapter wants now."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Any job check",
+      "bodyEn": "Popular gestures can reduce the good they advertise, once injuries, management time, and real costs are counted. A graduate in a rich country can still do a great deal from an ordinary job by giving a tenth of income to highly effective charities. On GiveWell's health estimates, that gift can prevent deaths at a pace well above a typical rich-country doctor, because the donor is globally rich and the best programmes are cheap. Voting and similar advocacy matter through expected value: a tiny chance of moving a huge budget is a large effect. Helping other people give, take jobs, or fundraise can multiply your own effort again. The same logic says a full career, aimed at the right problem, could dwarf the tenth you give away.",
+      "prompt": "Which claim matches this chapter?",
+      "choices": [
+        "Only a charity job can do meaningful good",
+        "A graduate can outdo a typical doctor by giving a tenth of income to highly effective charities, and can also help through advocacy or by multiplying other people",
+        "Sponsored skydives reliably fund health causes once the publicity is counted",
+        "Extra personal income raises happiness as much as giving the same money to people in extreme poverty"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Gestures can cause harm",
+      "bodyEn": "Attempts to do good can fail, and some of them leave the world worse. At two parachute centres over five years, about fifteen hundred charity skydivers raised more than one hundred twenty thousand pounds, and expedition costs left about forty-five thousand for the charities. Those mostly first-time jumpers suffered one hundred sixty-three injuries, and the health service spent about six hundred ten thousand pounds treating them, roughly thirteen pounds of care for each pound that reached a charity. Many of those charities worked on health, so the stunt drained the system it was meant to support. Untrained volunteers can do a quieter version of the same thing by using up a skilled manager's time and adding less value than they cost. When the organisation FORGE cut a volunteering scheme in order to focus, donations fell, because volunteering had been a path into giving, which helps explain why weak schemes survive."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Three ways from any job",
+      "bodyEn": "Someone who finished university in a wealthy country can do a large amount of good while keeping the same career and skipping a dramatic sacrifice. The chapter's three routes are a ten percent gift to charities that work, public advocacy on causes that matter, and making other people more effective at helping. Each route sits on top of a job you can choose for personal fit. They fail when the help misses the people you meant to reach, as the skydive and the unmanaged volunteer show. They work when the money, the vote, or the introduction lands on a neglected problem where an extra unit still matters. The rest of the chapter measures how large each route can be."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Cash as a lower bound",
+      "bodyEn": "The simplest version is to give ten percent of income to people living in extreme poverty. Since two thousand eight, GiveDirectly has sent cash by mobile phone to very poor households in East Africa. The authors treat cash as a floor rather than their top charity, because it is easy to count, and they expect some other gifts to do more. Recipients they describe in Kenya live on about eight hundred dollars a year in US buying power, while a typical US graduate earns about seventy-seven thousand before tax and about fifty-four thousand five hundred after tax. Extra money matters less as you get richer, so on that relationship a dollar given there does about sixty-eight times as much as spending it on yourself. Ten percent of the graduate income could double the yearly consumption of about seven people in extreme poverty, and a career of gifts on that scale would touch hundreds of lives. A portrait in the chapter is a widow supporting children who would repair a house, pay for technical school, and secure water, and a randomised trial found less hunger and stress for years after the transfers, in line with a wider literature on cash.",
+      "terms": [
+        {
+          "en": "cash transfer",
+          "hook": "If they say this, they mean money given directly to very poor people, with few strings attached."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Giving costs little",
+      "bodyEn": "Teaching and charity jobs often pay under half of private-sector alternatives and may fit your skills poorly. Giving ten percent can be a smaller personal cost than that kind of career switch. Once income passes the earlier comfort range, around the mid-fifties of thousands in recent dollars, further pay does little for happiness, while acts that help others tend to add some. In one study, people in one hundred twenty-two of one hundred thirty-six countries who had donated in the last month reported a life-satisfaction gain also associated with a doubling of income. Part of that pattern is happier people giving more, and the authors expect some of the effect to run from giving toward satisfaction. The gift spends money, and it spends less life satisfaction than the salary gap of a career switch would suggest."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "More than a doctor's career",
+      "bodyEn": "Donations can beat a typical clinical career because the money can reach the best organisations on large, neglected problems. GiveWell, an independent charity evaluator, estimates that leading programmes, including the Against Malaria Foundation and also Helen Keller International, prevent a death for about every five thousand dollars, plus wider gains in health and income from treating malaria. Ten percent of a typical US graduate salary, given there, could save more than one life a year, or about forty lives over a forty-year career. The previous chapter's typical doctor saved about three lives, so the donation is on the order of ten times that clinical total. These proven health programmes are strong enough that even prominent sceptics of aid have had little to say against them. The authors think some charities do more still, including work on catastrophic pandemics, which they rank above ordinary global health later in the guide. If the richest tenth gave ten percent, about five trillion dollars a year could, on a paper sketch, double research funding, lift everyone above a poverty line a little over two dollars a day, fund universal basic education, and still leave room for the arts, ambitious projects, and about a trillion dollars on climate, though none of that spending would be simple."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "You are the global rich",
+      "bodyEn": "The surprising part is how much good a modest gift can do at a small cost to the giver. World income is extremely unequal: the share of people at each income is a long low stretch and then a sharp spike at the rich end. Someone earning about sixty thousand dollars a year after tax, with no children, is around the global one percent, already adjusting for what money buys locally. A reader in a country like the US or the UK is likely inside that spike, or even past the right edge of the chart, while most of the world sits on the flat stretch. The accident of birth is a reason to use the fortune. In a more equal world, helping the people next door and tending your own life would exhaust the opportunity, and the income graph describes a different world."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "A public ten percent pledge",
+      "bodyEn": "Many people at 80,000 Hours took a public pledge, through the partner organisation Giving What We Can, to give at least ten percent of lifetime income to the charities they believe are most effective. The pledge takes a few minutes, it is not a legal contract, and the donor still chooses the recipients. Students commit one percent until after graduation, and the wider group had grown past nine thousand people with over three billion dollars pledged. The authors call it one of the highest-value actions available immediately, because it reserves a large stream of giving before lifestyle expands to match income. It fits poorly when your main impact will come from lower-paid direct work, when debt or finances are already strained, or when you doubt you can keep the promise. A trial version can be as small as one percent for any period you choose, so you can test the habit before a lifetime commitment.",
+      "terms": [
+        {
+          "en": "ten percent pledge",
+          "hook": "If they say this, they mean a public promise to give a tenth of income to the charities you think work best."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Advocacy and the vote",
+      "bodyEn": "Birthplace also hands people in rich countries unusual political influence over trade, migration, climate, and technology, inside systems that are at least partly democratic. The authors began sceptical that one citizen could matter, and the arithmetic of voting changed their view. In a safe US state the chance that one vote decides a presidential election is effectively zero, while in a contested state estimates run from about one in ten million to about one in a million, higher than the chance of a typical lottery win. The federal government is so large that a candidate who spent an extra two tenths of one percent of GDP on foreign aid would move on the order of one hundred eighty-seven billion dollars over four years, and one millionth of that is about one hundred eighty-seven thousand dollars. An hour of voting in a contested state can therefore be the highest expected-value hour of the year, and similar figures show up in other rich countries, where less is at stake and each vote weighs more. The same shape, a small chance of shifting a huge institution, applies to careful advocacy such as contacting a representative, turnout work, or a town meeting, especially on the urgent issues in the next chapter."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Help others do more",
+      "bodyEn": "Someone with little money and little formal power can still multiply people who have both. One route, developed in an appendix, is to invest in your own skills until that description changes. Another is to help the people who already have resources: enabling two others to give ten percent outweighs giving it only yourself. Telling a better-suited person about a high-impact job can do more than taking the job, fundraising can outpace your own gift, and an employer match can be switched on for a whole team. The scoreboard is how much good occurs, including good that other people carry out. A likely fictional story makes the same point with a janitor who, asked by a visiting president what he was doing at the space agency, said he was helping put a person on the moon."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "A whole career goes further",
+      "bodyEn": "A dangerous stunt is an unreliable way to help, and safer routes in this chapter do more. Give ten percent to effective charities, use political influence such as a vote, and help other people have an impact. Those three sit inside whatever job you end up in, and they ask for much less sacrifice than the scale of the effect suggests. Because a tenth of a typical salary can already rival or beat a clinical career, a whole job aimed well over decades could be far larger. The next three chapters ask which problems deserve that job, and which ways of working on them help the most. If your finances allow it, the pledge or a serious look at where a small share of income and influence would go furthest is the move this chapter wants now."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Any job check",
+      "bodyEn": "Popular gestures can reduce the good they advertise, once injuries, management time, and real costs are counted. A graduate in a rich country can still do a great deal from an ordinary job by giving a tenth of income to highly effective charities. On GiveWell's health estimates, that gift can prevent deaths at a pace well above a typical rich-country doctor, because the donor is globally rich and the best programmes are cheap. Voting and similar advocacy matter through expected value: a tiny chance of moving a huge budget is a large effect. Helping other people give, take jobs, or fundraise can multiply your own effort again. The same logic says a full career, aimed at the right problem, could dwarf the tenth you give away.",
+      "prompt": "Which claim matches this chapter?",
+      "choices": [
+        "Only a charity job can do meaningful good",
+        "A graduate can outdo a typical doctor by giving a tenth of income to highly effective charities, and can also help through advocacy or by multiplying other people",
+        "Sponsored skydives reliably fund health causes once the publicity is counted",
+        "Extra personal income raises happiness as much as giving the same money to people in extreme poverty"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+.study-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+.study-display-label { color: var(--muted, #81776a); font-weight: 700; margin-right: 4px; }
+.study-display button {
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #ded4c6;
+  border-radius: 999px;
+  background: var(--surface, #fff);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, transform 120ms ease;
+}
+.study-display button[aria-pressed="true"] { border-color: #bf5a3b; background: #fff4e9; }
+.study-display button span { color: #9c3b24; margin-left: 3px; font-size: 10px; text-transform: uppercase; }
+.study-display button:active { transform: scale(.96); }
+.study-display button:focus-visible { outline: 2px solid #ad2e21; outline-offset: 3px; }
+.teach-hook.teach-memory { flex: initial; overflow: visible; padding-top: 2px; gap: 12px; }
+.teach-memory .teach-hook-when { font-size: 19px; font-weight: 650; margin-top: 0; }
+.teach-memory-word { font-size: 34px; line-height: 1.2; font-family: var(--serif-sc); color: #a92d24; margin: 0 0 4px; }
+.teach-memory-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.teach-memory .teach-hook-card { padding: 15px 16px; animation-delay: var(--tip-delay, 0ms); }
+.teach-memory .teach-hook-card p { font-size: 14px; font-weight: 450; }
+.teach-memory .teach-hook-card h3 { margin: 0; font-size: 15px; line-height: 1.4; font-weight: 750; }
+.teach-memory .teach-tip-cue { font-size: 19px; font-family: var(--serif-sc); line-height: 1.55; color: #922a22; padding-top: 7px; }
+.teach-memory .teach-tip-sound { font-family: inherit; }
+.teach-memory .memory-cloze { grid-column: 1 / -1; background: #fff8e8; border: 1px solid #e8cf9f; }
+.memory-cloze button { min-height: 40px; padding: 8px 12px; margin-top: 10px; border: 1px solid #d9b97b; border-radius: 12px; background: #fff; color: #842d23; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; transition: transform 120ms ease; }
+.memory-cloze button:active { transform: scale(.96); }
+.memory-cloze button:focus-visible { outline: 2px solid #a73e24; outline-offset: 3px; }
+.teach-memory-source { font-size: 11px; color: #837260; margin: 0; }
+.teach-stage[data-phase="hook"] { min-height: initial; }
+@media(max-width: 540px) {
+  .teach-memory-grid { grid-template-columns: minmax(0, 1fr); }
+  .teach-memory .teach-hook-when { font-size: 17px; }
+}
+@media(prefers-reduced-motion: reduce) {
+  .study-display button, .memory-cloze button { transition: none; }
+}

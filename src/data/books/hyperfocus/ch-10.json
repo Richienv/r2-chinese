@@ -1,0 +1,250 @@
+{
+  "id": "10",
+  "index": 10,
+  "part": 3,
+  "partTitleEn": "Hyperfocus",
+  "titleEn": "Connecting Dots",
+  "titleSource": "Connecting Dots",
+  "sourcePages": "148-156",
+  "when": "Chapter 8",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Zoom out and connect",
+      "bodyEn": "Hyperfocus stays on one thing so you can do the work, encode it, and meet what is in front of you. Scatterfocus zooms out and ties stored dots together, and a dot is any idea or piece of information you hold. When you are not locked on a task, the brain returns to a widely spread default network, which is why odd links appear while you rest. Most of the linking stays outside awareness, and a connection enters attentional space only when it is active enough to notice. Creativity here is that noticing. You need a clean encoded dot from hyperfocus and a later inward pass from scatterfocus.",
+      "terms": [
+        {
+          "en": "Dot",
+          "hook": "Any idea or piece of information you have encoded and can later connect."
+        },
+        {
+          "en": "Default network",
+          "hook": "The widely spread brain network that becomes active when you leave a single task."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Unfinished problems lead",
+      "bodyEn": "Unfinished tasks stay nearer the front of the mind than finished ones, a pattern called the Zeigarnik effect. During a focus block those open loops are noise, and during scatterfocus they are a source of insight. An insight usually needs two conditions: a problem you are stuck on and still care about, and a wander inside a task that leaves space free. One trigger is a thought you drifted into, and the other is a cue in the room or on the route. The mind keeps trying to tie new moments to the open problem, often without a prompt from you. Richer experiences give that tie more chances to form.",
+      "terms": [
+        {
+          "en": "Zeigarnik effect",
+          "hook": "Unfinished problems stay near the front of the mind until they close."
+        },
+        {
+          "en": "Insight trigger",
+          "hook": "A wandering thought or an outside cue that links to a problem you have not solved."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Change the scenery",
+      "bodyEn": "Scatter attention in a place with new people, sights, and ideas, because a bookstore or a diner hands you more cues than a blank hallway. Mix those outings with quieter anchors that only give the mind room to connect. Harvest cues you already live among: walk the house, the office, or the folders on your computer with a notepad, and write the tasks the objects suggest. Scroll through contacts, or a professional network, when the aim is to revive a relationship you have let go quiet. The list may feel large at first. Once it is on paper you can order it, which is more reliable than waiting for the right cue to interrupt you.",
+      "terms": [
+        {
+          "en": "Rich environment",
+          "hook": "A place or a pass through your own spaces that supplies new cues for an open problem."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Write the stuck point",
+      "bodyEn": "Write the problems you are trying to crack, in enough detail that the page is a clear problem statement, and review that page often. Recording a task you only need to remember lets you set it down. Recording a problem you are still solving clarifies it and keeps it available for background processing. For a large project, an outline of the work, the renovation, or the team plan gives that process something solid to add to. At the end of the workday, beside your three intentions for tomorrow, note the largest problems still open. Check them in the morning, because a night of background processing often moves several of them forward.",
+      "terms": [
+        {
+          "en": "Problem page",
+          "hook": "A written statement of the unsolved problem, reviewed often so the mind can keep working on it."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Review before sleep",
+      "bodyEn": "Sleep keeps connecting dots, and dreaming is especially good at joining pieces that looked unrelated while you were awake. In one study, people who carried a problem into the dreaming stage of sleep integrated unassociated information more strongly and found a better route to a solution. Before bed, review the problems in play and anything you are trying to store. A few famous makers napped while holding an object that would fall and wake them as sleep deepened, so they could write the idea that was active. The basic practice needs no special object: load the problem, sleep, and capture what is waiting when you wake. The night also sorts the day's noise, keeping dots that link to what you already know and letting weak ones fade.",
+      "terms": [
+        {
+          "en": "Sleep on it",
+          "hook": "Review the open problem before bed, then write whatever is waiting in the morning."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Unfocus on purpose",
+      "bodyEn": "A larger attentional space makes you more likely to keep hammering a complex task you are stuck on. Scatterfocus is the stronger tool for a nonlinear problem, so a strong focus habit needs a scheduled unfocus. When no deadline is forcing the call, delay a creative decision on purpose and keep collecting links. The extra time helps a careful reply, a hiring choice, a visual design, or the outline of a course. Leave the analytic push for a later block. Give the problem a stretch of habitual wandering before you lock the answer.",
+      "terms": [
+        {
+          "en": "Scheduled unfocus",
+          "hook": "A deliberate scatterfocus pass when more focus would only keep you stuck."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Stop mid-sentence",
+      "bodyEn": "The more abruptly you leave a creative task, the more it stays active after you switch. Stop in the middle of a sentence on a hard report, or at another obvious unfinished point. That residue stays in attentional space and keeps the problem near the front. While it sits there, new cues from the room and from your own wandering have something to attach to. This is the open-loop effect used on purpose. Come back later and finish the line once those extra links have had time to show up.",
+      "terms": [
+        {
+          "en": "Deliberate residue",
+          "hook": "An unfinished line you leave on purpose so the problem stays available for new cues."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Better dots, better links",
+      "bodyEn": "The sixth way to connect more is to take in better material, because you connect what you consume. New dots bring new triggers for the problems already open. Autopilot intake gives you a pile of weak cues and fewer useful joins. Choose what you encode with the same care you use when you choose a task. The next chapter is the full method for collecting those dots. This chapter's job is to enter habitual scatterfocus often enough that the dots you already hold can meet.",
+      "terms": [
+        {
+          "en": "Intake quality",
+          "hook": "The usefulness of the dots you encode, which sets the quality of later connections."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "What sparks the link",
+      "bodyEn": "An insight needs an unclosed problem and a wander inside a task that leaves space free. New places and a written problem statement keep both the cues and the stuck point available. Reviewing the problem before sleep lets the night continue the joining. Stopping midway through a creative task leaves residue so the mind keeps working. A stronger ability to focus is a reason to unfocus on purpose when the problem is creative and you are stuck. Better material gives those wanders better dots to connect.",
+      "prompt": "What should you do with a creative task you are stuck on when no deadline is forcing the answer?",
+      "choices": [
+        "Keep hammering it in hyperfocus until the last sentence is perfect",
+        "Leave it unfinished, scatter attention, and delay the decision while cues accumulate",
+        "Delete the notes so the open loop can close",
+        "Fill the next break with a feed so the mind stays busy"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Zoom out and connect",
+      "bodyEn": "Hyperfocus stays on one thing so you can do the work, encode it, and meet what is in front of you. Scatterfocus zooms out and ties stored dots together, and a dot is any idea or piece of information you hold. When you are not locked on a task, the brain returns to a widely spread default network, which is why odd links appear while you rest. Most of the linking stays outside awareness, and a connection enters attentional space only when it is active enough to notice. Creativity here is that noticing. You need a clean encoded dot from hyperfocus and a later inward pass from scatterfocus.",
+      "terms": [
+        {
+          "en": "Dot",
+          "hook": "Any idea or piece of information you have encoded and can later connect."
+        },
+        {
+          "en": "Default network",
+          "hook": "The widely spread brain network that becomes active when you leave a single task."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Unfinished problems lead",
+      "bodyEn": "Unfinished tasks stay nearer the front of the mind than finished ones, a pattern called the Zeigarnik effect. During a focus block those open loops are noise, and during scatterfocus they are a source of insight. An insight usually needs two conditions: a problem you are stuck on and still care about, and a wander inside a task that leaves space free. One trigger is a thought you drifted into, and the other is a cue in the room or on the route. The mind keeps trying to tie new moments to the open problem, often without a prompt from you. Richer experiences give that tie more chances to form.",
+      "terms": [
+        {
+          "en": "Zeigarnik effect",
+          "hook": "Unfinished problems stay near the front of the mind until they close."
+        },
+        {
+          "en": "Insight trigger",
+          "hook": "A wandering thought or an outside cue that links to a problem you have not solved."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Change the scenery",
+      "bodyEn": "Scatter attention in a place with new people, sights, and ideas, because a bookstore or a diner hands you more cues than a blank hallway. Mix those outings with quieter anchors that only give the mind room to connect. Harvest cues you already live among: walk the house, the office, or the folders on your computer with a notepad, and write the tasks the objects suggest. Scroll through contacts, or a professional network, when the aim is to revive a relationship you have let go quiet. The list may feel large at first. Once it is on paper you can order it, which is more reliable than waiting for the right cue to interrupt you.",
+      "terms": [
+        {
+          "en": "Rich environment",
+          "hook": "A place or a pass through your own spaces that supplies new cues for an open problem."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Write the stuck point",
+      "bodyEn": "Write the problems you are trying to crack, in enough detail that the page is a clear problem statement, and review that page often. Recording a task you only need to remember lets you set it down. Recording a problem you are still solving clarifies it and keeps it available for background processing. For a large project, an outline of the work, the renovation, or the team plan gives that process something solid to add to. At the end of the workday, beside your three intentions for tomorrow, note the largest problems still open. Check them in the morning, because a night of background processing often moves several of them forward.",
+      "terms": [
+        {
+          "en": "Problem page",
+          "hook": "A written statement of the unsolved problem, reviewed often so the mind can keep working on it."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Review before sleep",
+      "bodyEn": "Sleep keeps connecting dots, and dreaming is especially good at joining pieces that looked unrelated while you were awake. In one study, people who carried a problem into the dreaming stage of sleep integrated unassociated information more strongly and found a better route to a solution. Before bed, review the problems in play and anything you are trying to store. A few famous makers napped while holding an object that would fall and wake them as sleep deepened, so they could write the idea that was active. The basic practice needs no special object: load the problem, sleep, and capture what is waiting when you wake. The night also sorts the day's noise, keeping dots that link to what you already know and letting weak ones fade.",
+      "terms": [
+        {
+          "en": "Sleep on it",
+          "hook": "Review the open problem before bed, then write whatever is waiting in the morning."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Unfocus on purpose",
+      "bodyEn": "A larger attentional space makes you more likely to keep hammering a complex task you are stuck on. Scatterfocus is the stronger tool for a nonlinear problem, so a strong focus habit needs a scheduled unfocus. When no deadline is forcing the call, delay a creative decision on purpose and keep collecting links. The extra time helps a careful reply, a hiring choice, a visual design, or the outline of a course. Leave the analytic push for a later block. Give the problem a stretch of habitual wandering before you lock the answer.",
+      "terms": [
+        {
+          "en": "Scheduled unfocus",
+          "hook": "A deliberate scatterfocus pass when more focus would only keep you stuck."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Stop mid-sentence",
+      "bodyEn": "The more abruptly you leave a creative task, the more it stays active after you switch. Stop in the middle of a sentence on a hard report, or at another obvious unfinished point. That residue stays in attentional space and keeps the problem near the front. While it sits there, new cues from the room and from your own wandering have something to attach to. This is the open-loop effect used on purpose. Come back later and finish the line once those extra links have had time to show up.",
+      "terms": [
+        {
+          "en": "Deliberate residue",
+          "hook": "An unfinished line you leave on purpose so the problem stays available for new cues."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Better dots, better links",
+      "bodyEn": "The sixth way to connect more is to take in better material, because you connect what you consume. New dots bring new triggers for the problems already open. Autopilot intake gives you a pile of weak cues and fewer useful joins. Choose what you encode with the same care you use when you choose a task. The next chapter is the full method for collecting those dots. This chapter's job is to enter habitual scatterfocus often enough that the dots you already hold can meet.",
+      "terms": [
+        {
+          "en": "Intake quality",
+          "hook": "The usefulness of the dots you encode, which sets the quality of later connections."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "What sparks the link",
+      "bodyEn": "An insight needs an unclosed problem and a wander inside a task that leaves space free. New places and a written problem statement keep both the cues and the stuck point available. Reviewing the problem before sleep lets the night continue the joining. Stopping midway through a creative task leaves residue so the mind keeps working. A stronger ability to focus is a reason to unfocus on purpose when the problem is creative and you are stuck. Better material gives those wanders better dots to connect.",
+      "prompt": "What should you do with a creative task you are stuck on when no deadline is forcing the answer?",
+      "choices": [
+        "Keep hammering it in hyperfocus until the last sentence is perfect",
+        "Leave it unfinished, scatter attention, and delay the decision while cues accumulate",
+        "Delete the notes so the open loop can close",
+        "Fill the next break with a feed so the mind stays busy"
+      ],
+      "answer": 1
+    }
+  ]
+}

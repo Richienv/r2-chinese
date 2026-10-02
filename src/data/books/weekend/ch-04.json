@@ -1,0 +1,210 @@
+{
+  "id": "04",
+  "index": 4,
+  "part": 4,
+  "partTitleEn": "Million Dollar Weekend",
+  "titleEn": "Model the Opportunity",
+  "titleSource": "The One-Minute Business Model",
+  "sourcePages": "65-84",
+  "when": "Saturday",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Ride an existing wave",
+      "bodyEn": "Treat the market as the wave and your offer as the board, because skill still fails when the wave is missing. A dull service can be a large wave when people are already paying for that fix. Your job is to satisfy demand that exists, and a hungry crowd is the sign you want. Persuading strangers that they ought to want a clever idea is the slow path. Look for size and momentum, including unfashionable work such as waiting in line, vending, or rentals. A simple public offer into a demand spike, paid on the first job, is enough to show the wave is real. Use the rest of this chapter to narrow three ideas to one with a model and room to grow."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Test the million-dollar crowd",
+      "bodyEn": "A large business needs a large opportunity, so prove the crowd before you spend your scarce time. Skip the giant spreadsheet, because rough public signals are enough for this pass. Ask whether the market is dying, flat, or growing, and keep a market that is flat or, better, growing. Ask whether the number of potential customers times a realistic price can reach at least a million dollars. Market size comes first, because a tiny crowd cannot carry the goal even at a fair price. You are choosing the place where hard work has the most upside. When the wave is weak, pick another idea and spend the weekend there.",
+      "terms": [
+        {
+          "en": "Million-dollar opportunity",
+          "hook": "A crowd and a price that can multiply to at least a million."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Read trends and audiences",
+      "bodyEn": "Search interest over time for your term and for neighboring terms, and compare recent months with recent years. Keep a line that rises or at least holds, and set aside a line that is falling away. Open an ads tool and type the category to see the approximate audience size. Open the library of live ads for that keyword and place, so you can see competitors and borrow useful phrasing. Narrow the same audience by city, by a tight irritation, or by a demographic that fits the offer. Write the direction and the count before you argue about the name or the logo. The tools can change, and the questions stay the same: is it growing, and how many people are in it."
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Multiply price by crowd",
+      "bodyEn": "Pick a price you believe the customer will accept. Apply that price to the audience count you wrote down from the ads tool. The idea passes this screen when audience times price reaches at least a million dollars, and it fails when that total lands far below. A large grooming audience at a premium price can pass even when interest is only flat with a little growth. A home-setup service with a smaller audience can still pass when the price per job is high. A tiny food subscription with little search interest and a small audience can fail even when you love making it. Stop at a rough yes or no, and leave the perfect cent for a later hour."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Sketch one-minute profit",
+      "bodyEn": "The plan is to make money, so sketch revenue minus cost, which leaves profit. Revenue is what customers pay, cost is what you spend to deliver, and profit is what remains. The sales you need equal your profit goal split across the profit on a single sale. Use a rough cost for making, packing, and shipping, and leave ads and a perfect price for later. Count the sales required for your own profit goal, which is separate from hoping to own a large slice of the entire market. A premium jar with about twelve dollars of profit can imply on the order of eighty thousand sales, which looks more possible once you add products, repeat buyers, and a subscription inside a wide audience. If the count is still fantasy, change the offer before you commit the weekend to it.",
+      "terms": [
+        {
+          "en": "One-Minute Business Model",
+          "hook": "Price minus cost, then target profit divided by profit per sale."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "Enlarge the order",
+      "bodyEn": "A thin profit on a single sale can demand more transactions than a short deadline allows. In one snack test, a twenty-dollar bag with about fifteen dollars of product and shipping left about five dollars of profit, which meant two hundred sales to reach one thousand dollars. That count was too high for a single day, so the offer had to change. An earlier event business had the same lesson: single tickets were heavy work, and a package sold to a company was a bigger deal per conversation. A longer subscription cuts the number of yeses you need, and offices that buy snacks are buyers with a larger budget. Friends inside those offices can purchase for a team or introduce you to the person who orders the food. Ask whether the purchase is a one-time treat or a reorder, because a reorder is the stronger default.",
+      "terms": [
+        {
+          "en": "Reorder business",
+          "hook": "A sale that returns on a schedule, so each customer is worth more than one order."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Turn six revenue dials",
+      "bodyEn": "When the math fails, change one dial and run the count again. Raise the average order so each yes is worth more. Increase how often the same customer buys. Move the price and watch the number of sales the target would require. Switch toward a customer who has more money to spend. Add another product that makes the offer easier to start, or add a service around it, such as hosting the occasion or doing the work in their space. In the revised snack math, a six-month block at a higher price left enough profit that about thirty-three sales could hit a one-thousand-dollar target.",
+      "terms": [
+        {
+          "en": "Revenue Dials",
+          "hook": "Order size, frequency, price, customer type, product line, and an add-on service."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "example",
+      "titleEn": "Let the offer move",
+      "bodyEn": "Working businesses change course, because the first market or the first feature is often the wrong one. Watch for a neighboring opportunity when one piece of the offer is the piece people actually want. A bundle shop can become a set of single deals aimed at a clearer buyer. A game can turn out to be the payment tool those games needed. A live event can shrink into the newsletter that was only filling seats, and that letter can be the business. Follow what customers pull toward, and change the model while the test is still cheap. A new shape is a successful outcome of the dials, so treat the pivot as part of the process."
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Test the first idea first",
+      "bodyEn": "Take the first idea on your list and run it through this screen. Getting customers is the hard part, so practice the market check before you hold a contest among ideas. If it passes, carry that idea into the payment challenge. If it fails, run the next idea through the same questions. Refuse a long debate about which idea is the most beautiful. When you are frozen, start with the problem you are most excited to solve for yourself. Write the idea you will actually do in one line so the next hour has a subject."
+    },
+    {
+      "id": "s10",
+      "kind": "try",
+      "titleEn": "Fill both worksheets",
+      "bodyEn": "On the market sheet, record search direction, audience size, price, the multiplied opportunity, and a yes or no. On the profit sheet, record price, cost, profit per sale, your target profit, and the sales that target requires. Compare your line with a known pass, such as a high-priced service in a rising market, so the arithmetic stays concrete. A sales count in the thousands can fit a huge audience and can be absurd when you are just starting, which is the cue to pivot or switch ideas. Run two or three ideas through the same sheets when you want a comparison. Your dream might be your freedom number, and the same math shows whether that smaller target is likely. Stop when you know the idea is worth taking to customers, because the next move is a real payment."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Check the opportunity math",
+      "bodyEn": "Pick a wave where people already want the result, then check that the market is flat or growing. Multiply a rough price by the audience you found in search trends and ad tools. Sketch profit as price minus the cost to deliver, and divide your target by that profit. If the sales count is absurd, turn a dial: bigger orders, more frequent buys, a different price, a richer buyer, another product, or an add-on service. Expect the offer to shift toward the part customers actually pull. Run the first idea, then the next, and fill both sheets before you build. A pass means you are ready to ask for money, which is what the model is for.",
+      "prompt": "When is an idea worth taking to customers?",
+      "choices": [
+        "When the market is flat or growing, price times audience can clear a million, and profit per sale makes the needed sales realistic, or you pivot until it does",
+        "When it sounds new, even if the crowd is shrinking and the profit per sale is unknown",
+        "When a full business plan is finished and every cost is known to the cent",
+        "When the product is already built and only the logo is left"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Ride an existing wave",
+      "bodyEn": "Treat the market as the wave and your offer as the board, because skill still fails when the wave is missing. A dull service can be a large wave when people are already paying for that fix. Your job is to satisfy demand that exists, and a hungry crowd is the sign you want. Persuading strangers that they ought to want a clever idea is the slow path. Look for size and momentum, including unfashionable work such as waiting in line, vending, or rentals. A simple public offer into a demand spike, paid on the first job, is enough to show the wave is real. Use the rest of this chapter to narrow three ideas to one with a model and room to grow."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Test the million-dollar crowd",
+      "bodyEn": "A large business needs a large opportunity, so prove the crowd before you spend your scarce time. Skip the giant spreadsheet, because rough public signals are enough for this pass. Ask whether the market is dying, flat, or growing, and keep a market that is flat or, better, growing. Ask whether the number of potential customers times a realistic price can reach at least a million dollars. Market size comes first, because a tiny crowd cannot carry the goal even at a fair price. You are choosing the place where hard work has the most upside. When the wave is weak, pick another idea and spend the weekend there.",
+      "terms": [
+        {
+          "en": "Million-dollar opportunity",
+          "hook": "A crowd and a price that can multiply to at least a million."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Read trends and audiences",
+      "bodyEn": "Search interest over time for your term and for neighboring terms, and compare recent months with recent years. Keep a line that rises or at least holds, and set aside a line that is falling away. Open an ads tool and type the category to see the approximate audience size. Open the library of live ads for that keyword and place, so you can see competitors and borrow useful phrasing. Narrow the same audience by city, by a tight irritation, or by a demographic that fits the offer. Write the direction and the count before you argue about the name or the logo. The tools can change, and the questions stay the same: is it growing, and how many people are in it."
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Multiply price by crowd",
+      "bodyEn": "Pick a price you believe the customer will accept. Apply that price to the audience count you wrote down from the ads tool. The idea passes this screen when audience times price reaches at least a million dollars, and it fails when that total lands far below. A large grooming audience at a premium price can pass even when interest is only flat with a little growth. A home-setup service with a smaller audience can still pass when the price per job is high. A tiny food subscription with little search interest and a small audience can fail even when you love making it. Stop at a rough yes or no, and leave the perfect cent for a later hour."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Sketch one-minute profit",
+      "bodyEn": "The plan is to make money, so sketch revenue minus cost, which leaves profit. Revenue is what customers pay, cost is what you spend to deliver, and profit is what remains. The sales you need equal your profit goal split across the profit on a single sale. Use a rough cost for making, packing, and shipping, and leave ads and a perfect price for later. Count the sales required for your own profit goal, which is separate from hoping to own a large slice of the entire market. A premium jar with about twelve dollars of profit can imply on the order of eighty thousand sales, which looks more possible once you add products, repeat buyers, and a subscription inside a wide audience. If the count is still fantasy, change the offer before you commit the weekend to it.",
+      "terms": [
+        {
+          "en": "One-Minute Business Model",
+          "hook": "Price minus cost, then target profit divided by profit per sale."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "Enlarge the order",
+      "bodyEn": "A thin profit on a single sale can demand more transactions than a short deadline allows. In one snack test, a twenty-dollar bag with about fifteen dollars of product and shipping left about five dollars of profit, which meant two hundred sales to reach one thousand dollars. That count was too high for a single day, so the offer had to change. An earlier event business had the same lesson: single tickets were heavy work, and a package sold to a company was a bigger deal per conversation. A longer subscription cuts the number of yeses you need, and offices that buy snacks are buyers with a larger budget. Friends inside those offices can purchase for a team or introduce you to the person who orders the food. Ask whether the purchase is a one-time treat or a reorder, because a reorder is the stronger default.",
+      "terms": [
+        {
+          "en": "Reorder business",
+          "hook": "A sale that returns on a schedule, so each customer is worth more than one order."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Turn six revenue dials",
+      "bodyEn": "When the math fails, change one dial and run the count again. Raise the average order so each yes is worth more. Increase how often the same customer buys. Move the price and watch the number of sales the target would require. Switch toward a customer who has more money to spend. Add another product that makes the offer easier to start, or add a service around it, such as hosting the occasion or doing the work in their space. In the revised snack math, a six-month block at a higher price left enough profit that about thirty-three sales could hit a one-thousand-dollar target.",
+      "terms": [
+        {
+          "en": "Revenue Dials",
+          "hook": "Order size, frequency, price, customer type, product line, and an add-on service."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "example",
+      "titleEn": "Let the offer move",
+      "bodyEn": "Working businesses change course, because the first market or the first feature is often the wrong one. Watch for a neighboring opportunity when one piece of the offer is the piece people actually want. A bundle shop can become a set of single deals aimed at a clearer buyer. A game can turn out to be the payment tool those games needed. A live event can shrink into the newsletter that was only filling seats, and that letter can be the business. Follow what customers pull toward, and change the model while the test is still cheap. A new shape is a successful outcome of the dials, so treat the pivot as part of the process."
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Test the first idea first",
+      "bodyEn": "Take the first idea on your list and run it through this screen. Getting customers is the hard part, so practice the market check before you hold a contest among ideas. If it passes, carry that idea into the payment challenge. If it fails, run the next idea through the same questions. Refuse a long debate about which idea is the most beautiful. When you are frozen, start with the problem you are most excited to solve for yourself. Write the idea you will actually do in one line so the next hour has a subject."
+    },
+    {
+      "id": "s10",
+      "kind": "try",
+      "titleEn": "Fill both worksheets",
+      "bodyEn": "On the market sheet, record search direction, audience size, price, the multiplied opportunity, and a yes or no. On the profit sheet, record price, cost, profit per sale, your target profit, and the sales that target requires. Compare your line with a known pass, such as a high-priced service in a rising market, so the arithmetic stays concrete. A sales count in the thousands can fit a huge audience and can be absurd when you are just starting, which is the cue to pivot or switch ideas. Run two or three ideas through the same sheets when you want a comparison. Your dream might be your freedom number, and the same math shows whether that smaller target is likely. Stop when you know the idea is worth taking to customers, because the next move is a real payment."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Check the opportunity math",
+      "bodyEn": "Pick a wave where people already want the result, then check that the market is flat or growing. Multiply a rough price by the audience you found in search trends and ad tools. Sketch profit as price minus the cost to deliver, and divide your target by that profit. If the sales count is absurd, turn a dial: bigger orders, more frequent buys, a different price, a richer buyer, another product, or an add-on service. Expect the offer to shift toward the part customers actually pull. Run the first idea, then the next, and fill both sheets before you build. A pass means you are ready to ask for money, which is what the model is for.",
+      "prompt": "When is an idea worth taking to customers?",
+      "choices": [
+        "When the market is flat or growing, price times audience can clear a million, and profit per sale makes the needed sales realistic, or you pivot until it does",
+        "When it sounds new, even if the crowd is shrinking and the profit per sale is unknown",
+        "When a full business plan is finished and every cost is known to the cent",
+        "When the product is already built and only the logo is left"
+      ],
+      "answer": 0
+    }
+  ]
+}

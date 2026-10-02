@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { MasteryTracker } from '../components/MasteryTracker'
 import { getLesson, lessons } from '../lib/content'
 import { readHistory, type HistoryCourse, type HistoryEvent } from '../lib/history'
 import { getJiaochengLesson, jiaochengLessons, nodesForLesson } from '../lib/jiaocheng'
@@ -9,6 +10,13 @@ import {
   nodesForChapter as interviewNodesForChapter,
 } from '../lib/interview'
 import { getMagangChapter, magangChapters, nodesForChapter as magangNodesForChapter } from '../lib/magang'
+import {
+  BOOKS_PROGRESS_KEY,
+  booksChapters,
+  booksProgressKey,
+  getBooksChapterByLesson,
+  nodesForChapter as booksNodesForChapter,
+} from '../lib/books'
 import { PATH_NODES } from '../lib/wordsSession'
 import { dayKey, useStore } from '../store/store'
 import '../styles/progress.css'
@@ -17,6 +25,7 @@ const KERJA_KEY = 'yulu.kerja.v1'
 const JIAOCHENG_KEY = 'yulu.jiaocheng.v1'
 const MAGANG_KEY = 'yulu.magang.v1'
 const INTERVIEW_KEY = 'yulu.interview.v1'
+const BOOKS_KEY = BOOKS_PROGRESS_KEY
 
 type PathDoneMap = Record<string, string[]>
 
@@ -171,6 +180,28 @@ function interviewCourse(pathDone: PathDoneMap): CourseRow {
   return { name: '总办', done, total, units }
 }
 
+function booksCourse(pathDone: PathDoneMap): CourseRow {
+  let done = 0
+  let total = 0
+  const units = booksChapters.map((ch) => {
+    const nodes = booksNodesForChapter(ch)
+    const finished = pathDone[booksProgressKey(ch.part, ch.index)] ?? []
+    total += nodes.length
+    done += countDone(nodes, finished)
+    const title = ch.titleEn || ch.partTitleEn || `Chapter ${ch.index}`
+    const sittingsDone = countDone(nodes, finished)
+    const isDone = nodes.length > 0 && sittingsDone >= nodes.length
+    return {
+      key: `books-${ch.part}-${ch.index}`,
+      title,
+      done: isDone,
+      sittingsDone,
+      sittingsTotal: nodes.length,
+    }
+  })
+  return { name: 'Books', done, total, units }
+}
+
 /** Rolling last-7-days card counts, oldest → newest, labelled by weekday. */
 function weekActivity(log: Record<string, { cards: number }>) {
   const out: { label: string; cards: number; today: boolean }[] = []
@@ -195,11 +226,12 @@ const COURSE_LABEL: Record<HistoryCourse, string> = {
   jiaocheng: 'Jiaocheng 2',
   magang: 'Magang AI',
   interview: '总办',
+  books: 'Books',
 }
 
 function historyHeadline(ev: HistoryEvent): string {
   if (ev.kind === 'drill') return ev.title?.trim() || 'Drill'
-  if (ev.kind === 'quiz') return ev.correct ? 'Quiz right' : 'Quiz wrong'
+  if (ev.kind === 'quiz') return ev.title?.trim() || (ev.correct === true ? 'Recall correct' : ev.correct === false ? 'Recall needs practice' : 'Practice · ungraded')
   // node
   if (ev.title?.trim()) return ev.title.trim()
   if (ev.node) return `${ev.node} finished`
@@ -233,7 +265,12 @@ function historyDetail(ev: HistoryEvent): string {
                 const ch = getInterviewChapter(ev.lesson)
                 return ch?.titleEn || ch?.titleSource || `Chapter ${ev.lesson}`
               })()
-            : (() => {
+            : ev.course === 'books'
+              ? (() => {
+                  const ch = getBooksChapterByLesson(ev.lesson)
+                  return ch?.titleEn || `Chapter ${ev.lesson}`
+                })()
+              : (() => {
                 try {
                   const l = getLesson(ev.lesson)
                   return l.title.en || l.title.zh || `Lesson ${ev.lesson}`
@@ -266,12 +303,14 @@ export function Progress() {
     const jiaochengDone = readPathDone(JIAOCHENG_KEY)
     const magangDone = readPathDone(MAGANG_KEY)
     const interviewDone = readPathDone(INTERVIEW_KEY)
+    const booksDone = readPathDone(BOOKS_KEY)
     return [
       hskCourse(s.pathDone as PathDoneMap, s.lessonsDone),
       kerjaCourse(kerjaDone),
       jiaochengCourse(jiaochengDone),
       magangCourse(magangDone),
       interviewCourse(interviewDone),
+      booksCourse(booksDone),
     ]
   }, [s.pathDone, s.lessonsDone])
 
@@ -281,7 +320,7 @@ export function Progress() {
     <div className="stack-page progress-page">
       <header className="progress-header">
         <h1 className="h2">Progress</h1>
-        <div className="sub">All five courses</div>
+        <div className="sub">All six courses</div>
       </header>
 
       <section className="metal progress-glance">
@@ -290,6 +329,12 @@ export function Progress() {
           <Glance value={s.xp} label="XP" />
           <Glance value={s.wordsLearned} label="Words" />
         </div>
+      </section>
+
+      <section className="card progress-section">
+        <h2 className="h2" style={{ fontSize: 18 }}>What stays with you</h2>
+        <p className="sub">Mastery requires unaided recall on separate days. Completing a lesson alone doesn’t count.</p>
+        <MasteryTracker words={s.learningTrail} />
       </section>
 
       <section className="card progress-section">

@@ -1,0 +1,246 @@
+{
+  "id": "11",
+  "index": 11,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Management by Absence",
+  "titleSource": "Income Autopilot III: MBA\u2014Management by Absence",
+  "sourcePages": "",
+  "when": "Automation",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Design for your absence",
+      "bodyEn": "Once a product sells, the next design problem is a business that corrects itself. Advice about employees splits between warmth and harshness, and this chapter takes a third path: remove routine dependence on any one person, including you. Draw the end state first, as a map of who does each job when you are gone. The aim is a company that bothers you very little, which is a different aim from a company that is as large as possible. Put yourself outside the daily information flow. Rules and reports take the place of your presence.",
+      "terms": [
+        {
+          "en": "management by absence",
+          "hook": "A company designed so routine decisions happen under rules while you are away."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "example",
+      "titleEn": "One day at headquarters",
+      "bodyEn": "One meat company was run by a founder who spent a single day a week at headquarters for more than seventeen years, starting about six months after the company began. Limiting contact forced written rules, because managers could not use him as the help desk. The business stayed process-driven rather than founder-driven. In the case, revenue grew about thirty percent a year, with more than one hundred twenty products and more than thirty-five million dollars a year in sales. The absence was chosen while the company was young. Leaving only after a crisis is a different story.",
+      "terms": [
+        {
+          "en": "process-driven",
+          "hook": "A company that runs on written rules, so it does not stall when the founder is away."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Read reports from the side",
+      "bodyEn": "Your seat is the side of the road: you can step in, and ordinary orders do not pass through you. In the supplement example, a Monday fulfillment report, a fuller report on the first of the month, and a look at the bank on the first and the fifteenth were enough to spot trouble. One email fixes a strange deduction. Advertising cost per order is the ad spend divided by the sales that ad produced, and the chapter tells you to budget with costs higher than you hope, so surprises do not erase the margin. The founder can be a single employee while a few hundred specialists run the pieces. Silence is the sign the redesign worked.",
+      "terms": [
+        {
+          "en": "cost per order",
+          "hook": "Ad spend divided by the sales that spend produced, the figure that belongs in the margin."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Hire replaceable specialists",
+      "bodyEn": "Prefer a firm that does one function over a lone freelancer, so a resignation does not stop the orders. Ask those firms to talk to each other and to solve problems among themselves. Give written permission for small spending decisions without you, starting under one hundred dollars and rising toward four hundred after two months of good judgment. Doing the first orders yourself is useful, because you learn the work before you hand it off. The stall comes when homemade tools stay in place after the volume outgrows them. Scalable, here, means ten thousand orders a week are as calm as ten.",
+      "terms": [
+        {
+          "en": "scalable architecture",
+          "hook": "A setup that handles a huge jump in orders without a matching jump in your hours."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Phase one, first fifty",
+      "bodyEn": "From zero to fifty units shipped, do the work yourself. Put a phone number on the site for questions and for orders, and use those calls to draft the help page you will publish later. If the ads or the page attract the wrong people, change them so the benefit, and what the product does not do, is obvious. Answer the email, save the replies in one folder, and put the question type in the subject so you can reuse them. Pack and ship a batch yourself so you learn the cheaper options. Ask a small local bank about a merchant account you will need when card processing moves out of your hands."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Phase two, ten a week",
+      "bodyEn": "Past about ten units a week, publish the help page and keep adding answers. Hire a local fulfillment firm that will skip setup fees and monthly minimums, or cut both by at least half and apply any setup fee against later shipping. They must answer customers about order status, using the replies you saved. Ask for payment thirty days after the work, once you have paid on time for a month. Before you choose, call three of their clients and ask where the firm is weak, including one real disagreement. Have the manufacturer ship straight to that warehouse, and put the warehouse contact on the thank-you page."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Phase three, twenty a week",
+      "bodyEn": "Past about twenty units a week, you can afford a full-service house that covers status, returns, and refunds. Open the card-processing account first, because the warehouse can refund only the charges it processed. Ask that house which call centers and processors it already works with, so you are not paying to connect strangers. A call center is optional, because many people who would have phoned will order on the site if the phone is absent, and the extra revenue often fails to pay for the hassle. If you still test one, call at least three times across the day, ask a hard product question, and walk away if the phone is not answered in three or four rings. A hold past about fifteen seconds wastes the ads that paid for the call."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Fewer choices, more orders",
+      "bodyEn": "A one-watch advertisement outsold a nine-watch advertisement about six to one in a split test, which is this chapter's case for offering less. Customer service here means a good product, an acceptable price, and fast help with real problems such as a lost package, a replacement, or a refund. Offer one or two purchase levels, one shipping method at a premium, and no overnight option. Send buyers to the website and skip phone orders. Skip international shipping when customs forms, duties, and complaints will eat the sale. Each extra choice adds indecision for the buyer and work for you.",
+      "terms": [
+        {
+          "en": "undecision",
+          "hook": "Cutting the choices a buyer must make, so more people finish the order and you field fewer questions."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Keep the easy customers",
+      "bodyEn": "After cash flow exists, treat the customer as an equal trade and stop recruiting people who cost more than they pay. People who spend the least and ask the most before buying tend to do the same after the sale. Refuse wire transfers, checks, and money orders. Raise wholesale minimums into a range of about twelve to one hundred units, require a tax number, and send resellers a form they must print and fax, with no price haggling. Charge a small amount for the lead-in item instead of giving it away, and refuse orders from places already known for mail fraud. A long call can erase the profit on a small order. The cut is a money decision as well as a time decision."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Risk your own money",
+      "bodyEn": "A plain thirty-day refund is weak, because the buyer still loses the afternoon and the postage. A lose-win promise makes failure profitable for the buyer: you refund and add something more, or you beat a named standard. In the supplement case, a full refund plus ten percent, judged an hour after the first dose, lined up with returns under three percent against an industry band around twelve to fifteen, and sales more than tripled in four weeks. The shirt version promised double money back plus a lifetime replacement. A higher return count can still leave far more revenue if the promise multiplies orders. The offer holds when the product performs, because most buyers do not abuse it.",
+      "terms": [
+        {
+          "en": "lose-win guarantee",
+          "hook": "A promise that leaves the seller financially exposed if the product fails, used to increase completed sales."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "remember",
+      "titleEn": "Sound larger in an hour",
+      "bodyEn": "Four presentation moves are enough for a first meeting with a bigger partner. Use a mid-level title such as director, because founder signals a one-person shop and also makes you look like the final decision-maker. List several department addresses on the contact page, all forwarding to you at first and to specialists later. Add a phone menu that routes by name or by department, with hold music, which the chapter prices under thirty dollars. Never publish a home address. If you need a mailing point before a warehouse exists, use the street address of a post office and the box number as a suite. Perceived size changes who will take the meeting."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Absence design check",
+      "bodyEn": "The architecture puts routine orders outside your hands and leaves you with reports. Specialists can replace one another, and they may spend inside a written limit without calling you. You do the early orders yourself, then add local fulfillment, then a full-service house as the weekly volume rises. Buyers get few options, and high-maintenance ways of paying are refused. A strong guarantee puts some of your own money at risk because that can raise completed sales. Recall where you sit once the system runs.",
+      "prompt": "Where do you sit once the system runs?",
+      "choices": [
+        "Outside the daily flow, reading reports and stepping in for exceptions",
+        "On every customer call so quality stays high",
+        "As the founder title on the contact page",
+        "Approving each small refund before it is sent"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Design for your absence",
+      "bodyEn": "Once a product sells, the next design problem is a business that corrects itself. Advice about employees splits between warmth and harshness, and this chapter takes a third path: remove routine dependence on any one person, including you. Draw the end state first, as a map of who does each job when you are gone. The aim is a company that bothers you very little, which is a different aim from a company that is as large as possible. Put yourself outside the daily information flow. Rules and reports take the place of your presence.",
+      "terms": [
+        {
+          "en": "management by absence",
+          "hook": "A company designed so routine decisions happen under rules while you are away."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "example",
+      "titleEn": "One day at headquarters",
+      "bodyEn": "One meat company was run by a founder who spent a single day a week at headquarters for more than seventeen years, starting about six months after the company began. Limiting contact forced written rules, because managers could not use him as the help desk. The business stayed process-driven rather than founder-driven. In the case, revenue grew about thirty percent a year, with more than one hundred twenty products and more than thirty-five million dollars a year in sales. The absence was chosen while the company was young. Leaving only after a crisis is a different story.",
+      "terms": [
+        {
+          "en": "process-driven",
+          "hook": "A company that runs on written rules, so it does not stall when the founder is away."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Read reports from the side",
+      "bodyEn": "Your seat is the side of the road: you can step in, and ordinary orders do not pass through you. In the supplement example, a Monday fulfillment report, a fuller report on the first of the month, and a look at the bank on the first and the fifteenth were enough to spot trouble. One email fixes a strange deduction. Advertising cost per order is the ad spend divided by the sales that ad produced, and the chapter tells you to budget with costs higher than you hope, so surprises do not erase the margin. The founder can be a single employee while a few hundred specialists run the pieces. Silence is the sign the redesign worked.",
+      "terms": [
+        {
+          "en": "cost per order",
+          "hook": "Ad spend divided by the sales that spend produced, the figure that belongs in the margin."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Hire replaceable specialists",
+      "bodyEn": "Prefer a firm that does one function over a lone freelancer, so a resignation does not stop the orders. Ask those firms to talk to each other and to solve problems among themselves. Give written permission for small spending decisions without you, starting under one hundred dollars and rising toward four hundred after two months of good judgment. Doing the first orders yourself is useful, because you learn the work before you hand it off. The stall comes when homemade tools stay in place after the volume outgrows them. Scalable, here, means ten thousand orders a week are as calm as ten.",
+      "terms": [
+        {
+          "en": "scalable architecture",
+          "hook": "A setup that handles a huge jump in orders without a matching jump in your hours."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Phase one, first fifty",
+      "bodyEn": "From zero to fifty units shipped, do the work yourself. Put a phone number on the site for questions and for orders, and use those calls to draft the help page you will publish later. If the ads or the page attract the wrong people, change them so the benefit, and what the product does not do, is obvious. Answer the email, save the replies in one folder, and put the question type in the subject so you can reuse them. Pack and ship a batch yourself so you learn the cheaper options. Ask a small local bank about a merchant account you will need when card processing moves out of your hands."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Phase two, ten a week",
+      "bodyEn": "Past about ten units a week, publish the help page and keep adding answers. Hire a local fulfillment firm that will skip setup fees and monthly minimums, or cut both by at least half and apply any setup fee against later shipping. They must answer customers about order status, using the replies you saved. Ask for payment thirty days after the work, once you have paid on time for a month. Before you choose, call three of their clients and ask where the firm is weak, including one real disagreement. Have the manufacturer ship straight to that warehouse, and put the warehouse contact on the thank-you page."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Phase three, twenty a week",
+      "bodyEn": "Past about twenty units a week, you can afford a full-service house that covers status, returns, and refunds. Open the card-processing account first, because the warehouse can refund only the charges it processed. Ask that house which call centers and processors it already works with, so you are not paying to connect strangers. A call center is optional, because many people who would have phoned will order on the site if the phone is absent, and the extra revenue often fails to pay for the hassle. If you still test one, call at least three times across the day, ask a hard product question, and walk away if the phone is not answered in three or four rings. A hold past about fifteen seconds wastes the ads that paid for the call."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Fewer choices, more orders",
+      "bodyEn": "A one-watch advertisement outsold a nine-watch advertisement about six to one in a split test, which is this chapter's case for offering less. Customer service here means a good product, an acceptable price, and fast help with real problems such as a lost package, a replacement, or a refund. Offer one or two purchase levels, one shipping method at a premium, and no overnight option. Send buyers to the website and skip phone orders. Skip international shipping when customs forms, duties, and complaints will eat the sale. Each extra choice adds indecision for the buyer and work for you.",
+      "terms": [
+        {
+          "en": "undecision",
+          "hook": "Cutting the choices a buyer must make, so more people finish the order and you field fewer questions."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Keep the easy customers",
+      "bodyEn": "After cash flow exists, treat the customer as an equal trade and stop recruiting people who cost more than they pay. People who spend the least and ask the most before buying tend to do the same after the sale. Refuse wire transfers, checks, and money orders. Raise wholesale minimums into a range of about twelve to one hundred units, require a tax number, and send resellers a form they must print and fax, with no price haggling. Charge a small amount for the lead-in item instead of giving it away, and refuse orders from places already known for mail fraud. A long call can erase the profit on a small order. The cut is a money decision as well as a time decision."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Risk your own money",
+      "bodyEn": "A plain thirty-day refund is weak, because the buyer still loses the afternoon and the postage. A lose-win promise makes failure profitable for the buyer: you refund and add something more, or you beat a named standard. In the supplement case, a full refund plus ten percent, judged an hour after the first dose, lined up with returns under three percent against an industry band around twelve to fifteen, and sales more than tripled in four weeks. The shirt version promised double money back plus a lifetime replacement. A higher return count can still leave far more revenue if the promise multiplies orders. The offer holds when the product performs, because most buyers do not abuse it.",
+      "terms": [
+        {
+          "en": "lose-win guarantee",
+          "hook": "A promise that leaves the seller financially exposed if the product fails, used to increase completed sales."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "remember",
+      "titleEn": "Sound larger in an hour",
+      "bodyEn": "Four presentation moves are enough for a first meeting with a bigger partner. Use a mid-level title such as director, because founder signals a one-person shop and also makes you look like the final decision-maker. List several department addresses on the contact page, all forwarding to you at first and to specialists later. Add a phone menu that routes by name or by department, with hold music, which the chapter prices under thirty dollars. Never publish a home address. If you need a mailing point before a warehouse exists, use the street address of a post office and the box number as a suite. Perceived size changes who will take the meeting."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Absence design check",
+      "bodyEn": "The architecture puts routine orders outside your hands and leaves you with reports. Specialists can replace one another, and they may spend inside a written limit without calling you. You do the early orders yourself, then add local fulfillment, then a full-service house as the weekly volume rises. Buyers get few options, and high-maintenance ways of paying are refused. A strong guarantee puts some of your own money at risk because that can raise completed sales. Recall where you sit once the system runs.",
+      "prompt": "Where do you sit once the system runs?",
+      "choices": [
+        "Outside the daily flow, reading reports and stepping in for exceptions",
+        "On every customer call so quality stays high",
+        "As the founder title on the contact page",
+        "Approving each small refund before it is sent"
+      ],
+      "answer": 0
+    }
+  ]
+}

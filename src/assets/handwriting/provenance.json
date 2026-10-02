@@ -1,0 +1,14 @@
+{
+  "name": "Yulu compact universal Hanzi stroke templates",
+  "copyright": "Copyright (C) 1999 Arphic Technology Co., Ltd.",
+  "license": "Arphic Public License; see ARPHICPL.TXT",
+  "source": "hanzi-writer-data 2.0.1, derived from skishore/makemeahanzi graphics.txt",
+  "source_url": "https://registry.npmjs.org/hanzi-writer-data/-/hanzi-writer-data-2.0.1.tgz",
+  "modified": "2026-10-03: median-only extraction, Y-axis inversion, whole-character normalization, 16 arc-length samples per stroke, 8-bit coordinates; independent classifier code.",
+  "redistribution": "This modified data is freely redistributable under the Arphic Public License. No warranty.",
+  "characters": 9574,
+  "bytes": 3652263,
+  "samples_per_stroke": 16,
+  "source_integrity": "sha512-nbQwM+MaryGoq7pBMIZLCd3lFq03nXuJuwku1+6UbjL58uU+9OULVcMkoNvNuJSoIV7f1bbPRfD4D/LQa5S7qg==",
+  "corpus_sha256": "74e1b3211e8122a1dcacb501719e26f797be143b226d63b9cc4146e9fb3b642a"
+}

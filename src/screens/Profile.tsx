@@ -43,7 +43,7 @@ export function Profile() {
         />
         <ToggleRow
           label="Sound"
-          sub="Neural Mandarin for words and dialogue"
+          sub="Mandarin audio and learning feedback sounds"
           value={s.prefs.soundOn}
           onChange={(v) => s.setPref('soundOn', v)}
         />

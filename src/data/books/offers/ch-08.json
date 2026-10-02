@@ -1,0 +1,239 @@
+{
+  "id": "08",
+  "index": 8,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Many answers, one problem",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Two ways to think",
+      "bodyEn": "Before the offer is built, he wants the difference between convergent and divergent thinking to be obvious. Convergent thinking takes known variables and fixed conditions and lands on a single answer, the way a math problem does. Divergent thinking produces many solutions to one problem. A convergent answer is either right or wrong. A divergent set can hold several workable answers, and one of them can be far stronger than the others. The offer in the next chapters is the second kind of problem.",
+      "terms": [
+        {
+          "en": "Convergent thinking",
+          "hook": "Many known facts, fixed conditions, one right answer."
+        },
+        {
+          "en": "Divergent thinking",
+          "hook": "Many possible answers to one problem, including one that fits better than the rest."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "One answer hiring math",
+      "bodyEn": "Three salespeople can each take 100 calls a month. It takes 4 calls to create one sale, counting the people who never show. The goal is 110 sales. Each person can close 25 sales, because 100 calls divided by 4 is 25. Reaching 110 sales takes 4 and 4 tenths people, so the hire rounds up to 5. Three are already on the team, so the convergent answer is to hire two more.",
+      "terms": [
+        {
+          "en": "Single answer",
+          "hook": "A hiring count you can deduce when every condition stays fixed."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "School marks one answer",
+      "bodyEn": "School spends years training convergent thinking because one answer is easy to grade. The marketplace pays for the ability to produce many options and then choose a stronger one. The hiring puzzle has a correct headcount, and that skill is useful when the conditions really are fixed. Offer design keeps moving, so the first package is rarely the strongest package. Hunting only the single right answer ends the search while better combinations are still available. He wants that graded habit loosened before the next chapter asks for invention.",
+      "terms": [
+        {
+          "en": "Graded habit",
+          "hook": "The school reflex of stopping at the first answer a test could mark correct."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Offers have many answers",
+      "bodyEn": "A divergent problem carries many variables. Some of those variables are known, and some are still unknown. The conditions change while you are working on them. More than one answer can be acceptable. A grand slam offer is built in that setting, by combining pieces until the trade is hard to refuse. He switches that mode on with a timed exercise.",
+      "terms": [
+        {
+          "en": "Dynamic conditions",
+          "hook": "Facts that keep changing, so one frozen answer goes stale."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Two minutes, one brick",
+      "bodyEn": "Set a timer for 120 seconds. Think of a brick. Write as many different uses as you can that would create value for someone. Quantity is the work, and the blank lines are there so you write the list yourself. Stop when the timer ends. Look at his prompts only after your own list is finished.",
+      "terms": [
+        {
+          "en": "Brick exercise",
+          "hook": "Two minutes of listing every valuable use of a brick, before you judge them."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Size, stuff, and shape",
+      "bodyEn": "Before his own list, he asks questions that make the brick less fixed. How big is it, from a sliver the size of a stick of gum, to an ordinary construction brick, to a block large enough to sit on. What is it made of, such as plastic, gold, clay, wood, or metal. What shape is it, including holes or edges that lock into the next piece. Those three questions reveal uses the first pass usually misses. A brick was never one object, and the pieces of an offer get the same flexibility once you stop treating them as fixed.",
+      "terms": [
+        {
+          "en": "Loosen the object",
+          "hook": "Change size, material, and shape before you decide what the thing can do."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "A long list of uses",
+      "bodyEn": "His own pass is long on purpose, and several uses can be right at the same time. Ordinary jobs include weighing down papers and propping a door. Stranger jobs include a tiny shelter in a fishbowl, a planter that uses the holes, a painted trophy, or a seat if the block is huge. Change the material and the use changes with it: a plastic brick can float, and a gold brick can pay for goods or hold value. Change the shape and you get a cup for pens, a base for a flag, or a toy a child can stack. The lesson is the length of the list, plus the judgment to pick the use that fits one buyer better than the rest.",
+      "terms": [
+        {
+          "en": "Volume first",
+          "hook": "Generate many acceptable uses, then notice which one fits this buyer."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Desire, then the brick",
+      "bodyEn": "Every offer is made of building blocks, the pieces that combine into a trade people feel foolish refusing. Divergent thinking is how you find many easy ways to assemble those pieces. If the product were a brick, the first question would be what the buyer actually wants. The second question would be how many ways that brick could create value for that specific want. The timed list was the warm-up for that order. The next chapter runs the same move on a real offer: desire first, then a wide set of ways to deliver it.",
+      "terms": [
+        {
+          "en": "Desire first",
+          "hook": "Learn what they want, then invent many ways your pieces can create that value."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Which thinking to use",
+      "bodyEn": "The hiring example has one correct headcount. The brick example is scored by how many uses you can see. Offer design follows one of those two patterns. Choose the pattern this chapter trains for the offer.",
+      "prompt": "What kind of thinking does this chapter train for building an offer?",
+      "choices": [
+        "Many possible answers to one problem, then a search for the strongest fit",
+        "One correct headcount, the way the sales-hiring math resolves",
+        "A single use for a brick, chosen before the timer starts",
+        "The first solution a graded test would mark as the only right answer"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Two ways to think",
+      "bodyEn": "Before the offer is built, he wants the difference between convergent and divergent thinking to be obvious. Convergent thinking takes known variables and fixed conditions and lands on a single answer, the way a math problem does. Divergent thinking produces many solutions to one problem. A convergent answer is either right or wrong. A divergent set can hold several workable answers, and one of them can be far stronger than the others. The offer in the next chapters is the second kind of problem.",
+      "terms": [
+        {
+          "en": "Convergent thinking",
+          "hook": "Many known facts, fixed conditions, one right answer."
+        },
+        {
+          "en": "Divergent thinking",
+          "hook": "Many possible answers to one problem, including one that fits better than the rest."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "One answer hiring math",
+      "bodyEn": "Three salespeople can each take 100 calls a month. It takes 4 calls to create one sale, counting the people who never show. The goal is 110 sales. Each person can close 25 sales, because 100 calls divided by 4 is 25. Reaching 110 sales takes 4 and 4 tenths people, so the hire rounds up to 5. Three are already on the team, so the convergent answer is to hire two more.",
+      "terms": [
+        {
+          "en": "Single answer",
+          "hook": "A hiring count you can deduce when every condition stays fixed."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "School marks one answer",
+      "bodyEn": "School spends years training convergent thinking because one answer is easy to grade. The marketplace pays for the ability to produce many options and then choose a stronger one. The hiring puzzle has a correct headcount, and that skill is useful when the conditions really are fixed. Offer design keeps moving, so the first package is rarely the strongest package. Hunting only the single right answer ends the search while better combinations are still available. He wants that graded habit loosened before the next chapter asks for invention.",
+      "terms": [
+        {
+          "en": "Graded habit",
+          "hook": "The school reflex of stopping at the first answer a test could mark correct."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Offers have many answers",
+      "bodyEn": "A divergent problem carries many variables. Some of those variables are known, and some are still unknown. The conditions change while you are working on them. More than one answer can be acceptable. A grand slam offer is built in that setting, by combining pieces until the trade is hard to refuse. He switches that mode on with a timed exercise.",
+      "terms": [
+        {
+          "en": "Dynamic conditions",
+          "hook": "Facts that keep changing, so one frozen answer goes stale."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Two minutes, one brick",
+      "bodyEn": "Set a timer for 120 seconds. Think of a brick. Write as many different uses as you can that would create value for someone. Quantity is the work, and the blank lines are there so you write the list yourself. Stop when the timer ends. Look at his prompts only after your own list is finished.",
+      "terms": [
+        {
+          "en": "Brick exercise",
+          "hook": "Two minutes of listing every valuable use of a brick, before you judge them."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Size, stuff, and shape",
+      "bodyEn": "Before his own list, he asks questions that make the brick less fixed. How big is it, from a sliver the size of a stick of gum, to an ordinary construction brick, to a block large enough to sit on. What is it made of, such as plastic, gold, clay, wood, or metal. What shape is it, including holes or edges that lock into the next piece. Those three questions reveal uses the first pass usually misses. A brick was never one object, and the pieces of an offer get the same flexibility once you stop treating them as fixed.",
+      "terms": [
+        {
+          "en": "Loosen the object",
+          "hook": "Change size, material, and shape before you decide what the thing can do."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "A long list of uses",
+      "bodyEn": "His own pass is long on purpose, and several uses can be right at the same time. Ordinary jobs include weighing down papers and propping a door. Stranger jobs include a tiny shelter in a fishbowl, a planter that uses the holes, a painted trophy, or a seat if the block is huge. Change the material and the use changes with it: a plastic brick can float, and a gold brick can pay for goods or hold value. Change the shape and you get a cup for pens, a base for a flag, or a toy a child can stack. The lesson is the length of the list, plus the judgment to pick the use that fits one buyer better than the rest.",
+      "terms": [
+        {
+          "en": "Volume first",
+          "hook": "Generate many acceptable uses, then notice which one fits this buyer."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Desire, then the brick",
+      "bodyEn": "Every offer is made of building blocks, the pieces that combine into a trade people feel foolish refusing. Divergent thinking is how you find many easy ways to assemble those pieces. If the product were a brick, the first question would be what the buyer actually wants. The second question would be how many ways that brick could create value for that specific want. The timed list was the warm-up for that order. The next chapter runs the same move on a real offer: desire first, then a wide set of ways to deliver it.",
+      "terms": [
+        {
+          "en": "Desire first",
+          "hook": "Learn what they want, then invent many ways your pieces can create that value."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Which thinking to use",
+      "bodyEn": "The hiring example has one correct headcount. The brick example is scored by how many uses you can see. Offer design follows one of those two patterns. Choose the pattern this chapter trains for the offer.",
+      "prompt": "What kind of thinking does this chapter train for building an offer?",
+      "choices": [
+        "Many possible answers to one problem, then a search for the strongest fit",
+        "One correct headcount, the way the sales-hiring math resolves",
+        "A single use for a brick, chosen before the timer starts",
+        "The first solution a graded test would mark as the only right answer"
+      ],
+      "answer": 0
+    }
+  ]
+}

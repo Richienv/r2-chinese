@@ -1,0 +1,64 @@
+/* A single deliberate idea, with finite cue assembly and direct navigation. */
+.teach-hook.teach-memory.teach-paced { gap: 13px; width: 100%; }
+.teach-paced .teach-memory-word { margin-bottom: 0; }
+.teach-paced .teach-hook-when { margin-bottom: 0; line-height: 1.45; }
+.paced-position { display: flex; justify-content: space-between; gap: 10px; color: #897a68; font-size: 11px; }
+.paced-position > span:first-child { font-weight: 750; color: #94452e; }
+.paced-progress { height: 4px; background: #e8dfd1; overflow: hidden; border-radius: 999px; }
+.paced-progress > span { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #a54231, #e4a055); transform-origin: left center; }
+.paced-insights { display: flex; flex-wrap: wrap; gap: 7px; }
+.paced-insights button { min-height: 44px; display: flex; align-items: center; gap: 6px; border: 1px solid #e0d7c9; border-radius: 12px; padding: 8px 11px; background: #fffcf6; color: #726454; font: inherit; font-size: 11px; font-weight: 650; cursor: pointer; transition: background 150ms ease, border-color 150ms ease; }
+.paced-insights button > span { display: grid; place-items: center; height: 18px; width: 18px; border-radius: 50%; background: #eee7dc; font-size: 10px; font-weight: 750; }
+.paced-insights button[aria-current='step'] { border-color: #bf724e; background: #fff0df; color: #903f29; }
+.paced-insights button[aria-current='step'] > span { background: #ac4a31; color: #fff9ef; }
+.paced-insights button:focus-visible, .paced-reveal:focus-visible { outline: 2px solid #a9432e; outline-offset: 3px; }
+.paced-card-depth { position: relative; margin-top: 2px; perspective: 850px; transform-style: preserve-3d; transform: perspective(850px) rotateX(var(--paced-tilt-x, 0deg)) rotateY(var(--paced-tilt-y, 0deg)); }
+.paced-card-depth::before, .paced-card-depth::after { content: ''; position: absolute; inset: 7px 7px -7px; border: 1px solid #ded0bd; border-radius: 23px; background: #eee3d2; z-index: -1; transform: translateZ(-12px); pointer-events: none; }
+.paced-card-depth::after { inset: 13px 13px -13px; background: #e7d7bd; transform: translateZ(-22px); }
+.paced-card { position: relative; padding: 22px 24px; border: 1px solid #decab0; border-radius: 23px; background: radial-gradient(ellipse at 100% 0, rgba(236, 206, 163, .23), transparent 65%), #fffaf0; box-shadow: 0 14px 32px rgba(76, 48, 23, .08), inset 0 1px 0 rgba(255, 255, 255, .9); transform-origin: center center; }
+.paced-card[data-cloze='true'] { background-color: #fff7e4; border-color: #d9bc86; }
+.paced-card-step { display: inline-block; font-size: 10px; font-weight: 750; color: #aa7759; letter-spacing: .12em; margin-bottom: 12px; }
+.paced-card h3 { margin: 0 0 12px; font-size: 21px; line-height: 1.3; font-weight: 750; color: #4c3328; text-wrap: balance; }
+.paced-card-body { margin: 0; font-size: 15px; line-height: 1.8; color: #6f5845; text-wrap: pretty; }
+.paced-reveal { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; width: 100%; margin-top: 20px; padding: 11px 13px; border: 1px solid #d9c2a3; border-radius: 13px; color: #853d27; background: #fffdf8; font: inherit; font-size: 12px; font-weight: 750; text-align: left; cursor: pointer; transition: background 150ms ease; }
+.paced-reveal:hover { background: #fff0de; }
+.paced-reveal > span { font-size: 20px; line-height: 1; font-weight: 400; }
+.paced-reveal-content { padding-top: 17px; }
+.paced-cue-label { display: block; color: #a07856; font-size: 10px; letter-spacing: .04em; text-transform: uppercase; font-weight: 650; margin-bottom: 7px; }
+.paced-cue { margin: 12px 0 0; font: 25px/1.8 var(--serif-sc); color: #893d2b; white-space: pre-wrap; overflow-wrap: anywhere; }
+.paced-cue > span { display: inline-block; vertical-align: baseline; }
+.paced-cue .paced-cue-word { padding: 0 3px; margin: 0 1px; border-radius: 7px; color: #9f3f25; background: #fff1df; border-bottom: 2px solid #cb8e5c; }
+.paced-cue-shape { font-size: 28px; line-height: 2; }
+.paced-cue-shape .paced-cue-glyph { padding: 0 7px; margin: 2px; min-width: 1em; background: #f2e7d7; border: 1px solid #dbc8aa; border-radius: 9px; text-align: center; }
+.paced-cue-sound { font-family: inherit; font-size: 24px; line-height: 1.7; letter-spacing: .035em; }
+.paced-example-py { color: #996e51; font-size: 13px; margin: 9px 0 0; line-height: 1.65; }
+.paced-example-en { color: #756451; font-size: 14px; margin: 9px 0 0; line-height: 1.65; }
+.paced-reveal-content > .hear { margin-top: 13px; }
+.paced-navigation { display: flex; justify-content: space-between; gap: 10px; margin-top: 12px; }
+.paced-navigation .btn { min-height: 44px; font-size: 12px; padding: 10px 14px; }
+.teach-paced .teach-memory-source { margin-top: 1px; line-height: 1.5; }
+.paced-covered { font-family: inherit; font-size: 15px; font-weight: 650; color: #8c755f; display: inline-block; padding: 7px 12px; border: 1px dashed #cdb99b; border-radius: 12px; }
+@media (max-width: 540px) {
+  .paced-card { padding: 20px 18px; }
+  .paced-card h3 { font-size: 20px; }
+  .paced-card-body { font-size: 14px; line-height: 1.8; }
+  .paced-position { font-size: 10px; }
+  .paced-insights button { flex: 1 0 28%; justify-content: center; padding-inline: 7px; }
+  .paced-cue { font-size: 23px; }
+  .paced-cue-shape { font-size: 26px; }
+  .paced-navigation .btn { flex: 1; padding-inline: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .paced-card-depth { transform: none; }
+  .paced-card-depth::before, .paced-card-depth::after { transform: none; }
+  .paced-insights button, .paced-reveal { transition: none; }
+}
+.paced-cue[data-speaking='true'] .paced-cue-word { background: #ffdda0; color: #7d321c; box-shadow: 0 0 0 3px rgba(231, 167, 73, .17), 0 0 18px rgba(232, 151, 41, .42); }
+.teach-paced .teach-memory-word[data-speaking='true'] { text-shadow: 0 0 18px rgba(232, 151, 41, .35); }
+.paced-example-navigation { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 16px; padding-top: 12px; border-top: 1px solid #e4d3ba; }
+.paced-example-navigation > span { font-size: 11px; color: #967557; }
+.paced-example-navigation .btn { min-height: 44px; padding: 9px 12px; font-size: 12px; }
+.paced-moment-trigger { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 44px; padding: 7px 0; border: 0; border-bottom: 1px solid #e5d9c8; background: transparent; color: #977253; font: inherit; font-size: 12px; font-weight: 650; cursor: pointer; }
+.paced-moment-trigger > span { font-size: 18px; font-weight: 400; }
+.paced-moment-trigger:focus-visible { outline: 2px solid #a9432e; outline-offset: 3px; border-radius: 5px; }
+.teach-paced .paced-moment .teach-hook-when { padding-top: 9px; font-size: 15px; font-weight: 500; }

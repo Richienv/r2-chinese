@@ -1,0 +1,198 @@
+{
+  "id": "10",
+  "index": 10,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Testing the Muse",
+  "titleSource": "Income Autopilot II: Testing the Muse",
+  "sourcePages": "",
+  "when": "Automation",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Ask them to buy",
+      "bodyEn": "Intuition, long experience, and focus groups are weak predictors of what will sell. People say yes to be kind, then decline when a real purchase is in front of them. The chapter's test is a request for money, because that response is the one that counts. Micro-testing spends cheap ads to measure it before anything is manufactured. The pass is built to cost about five hundred dollars or less and about five days. It has three moves: make a stronger offer than what already ranks, run a short search-ad campaign, then drop the losers and build only the winner.",
+      "terms": [
+        {
+          "en": "micro-test",
+          "hook": "A small, cheap ad test that asks people to buy before you manufacture."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Beat what already ranks",
+      "bodyEn": "Search the phrases a real buyer would type, plus related phrases from a keyword tool. Open the three sites that keep appearing in ordinary results and in paid results. Decide how you will be easier to trust, safer to try, richer in choice, or faster to receive. Write one page of about three hundred to six hundred words that leads with that difference and with proof from real users. Save ads that have already made you act, and borrow their shape rather than inventing a new one. A free teaching session is a practical way to learn which promises people repeat and to collect those proofs.",
+      "terms": [
+        {
+          "en": "differentiator",
+          "hook": "The one advantage, such as proof, a guarantee, selection, or speed, that the current top results lack."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Count interest before charging",
+      "bodyEn": "One test puts the offer on a short page, then a price and contact page, then a note that the item is on back order and you will write when it is ready. Reaching that last page counts as an order. Do not take card numbers, because charging for goods you cannot yet ship can be illegal. A seventy-two-hour auction can preview the price and then be cancelled if you have nothing to send. If a dry test feels wrong, offer a short tip list and treat about sixty percent of the sign-ups as hypothetical buyers. Show shipping before the final step so the count is not full of people who only wanted the total. A cheap domain and a simple page builder are enough for this week.",
+      "terms": [
+        {
+          "en": "dry test",
+          "hook": "A page that records a buying attempt and does not charge, used before the product exists."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Run a five-day ad test",
+      "bodyEn": "Buy search ads on specific phrases, which tend to convert better and cost less than broad ones. Aim for positions two through four and a cost per click around twenty cents or less, with a daily cap near fifty dollars. Write several ads that differ by one element, such as the headline, the promise, or the name, and turn off the setting that shows only the current winner. Each ad is a short headline plus two description lines. The offer in the ad has to match the page, so the visitors are people who might buy. About two hundred fifty dollars across five days is the chapter's baseline, and a larger spend makes the count more trustworthy.",
+      "terms": [
+        {
+          "en": "cost per click",
+          "hook": "What you pay each time someone opens the ad, kept low here by using specific phrases."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "example",
+      "titleEn": "Read the five-day score",
+      "bodyEn": "Compare ad spend with hypothetical profit, and remember that a high-priced, high-margin item can survive a lower conversion rate. In the yoga case, about two hundred dollars and fourteen tip-list sign-ups, counted at sixty percent, cleared a hypothetical profit above the spend, so the next move was a small store and a first disc funded by those early buyers. In the shirt case, visitors reached the price and left, so the retest added a double-refund promise rather than a lower price, and the second count justified a tiny real order. A passing test is permission to build a little and then to try one print ad, asking for a first-time discount. It is not a promise about the following year. Drop the idea when the recount still fails."
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "Follow a tested rollout",
+      "bodyEn": "The sound-library business from the previous chapter moved through four beats. The market was one the founder already belonged to. The product was a popular library resold under a drop-ship agreement, so stock was ordered only after a customer paid. Demand and the top price were checked in auctions, then on a real storefront with search ads. Trade-magazine ads began only after cash flow existed, and the hours fell from about two a day to about two a week. Copy that order when your own test clears. Automation is the step after the winner is real, not a substitute for the test.",
+      "terms": [
+        {
+          "en": "drop-ship",
+          "hook": "The maker sends the item to your buyer, so you do not hold the stock yourself."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Practice refusing first prices",
+      "bodyEn": "The chapter's three-day drill trains you to walk away from a first price. On two weekend days, take one hundred dollars to a market and try to buy at least one hundred fifty dollars of small goods for that budget. Answer the opening price by asking what discount they can offer, so they move before you do. Set your number, make one firm cash offer near closing time, and leave if it is refused. On the third day, call two magazines, push the rate down, and stop before you accept. This is rehearsal for later ad buying. The hundred dollars is the tuition."
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Write your five-day test",
+      "bodyEn": "Name one product that already passed the paper screen. Write the single difference you will claim, the price, and whether you will count a back-order page or a tip-list sign-up. Cap the test at five days and at a daily ad spend you can lose. Decide in advance what profit would justify a small first batch, and what result means you stop. Schedule the day you will either stop or place that batch. Leave manufacturing, staff, and a long lease on the far side of that day."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Test before you build",
+      "bodyEn": "A polite yes is a weak signal, and a request for payment is the real one. You beat the offers that already rank on one clear difference, put that claim on a short page, and send specific search ads for about five days. Card numbers stay uncollected until you can ship. Spend is compared with hypothetical profit under a rule you wrote beforehand. A winner earns a small real batch, and a loser is dropped. Recall what has to happen before you manufacture.",
+      "prompt": "What has to happen before you manufacture?",
+      "choices": [
+        "A short ad test in which people try to buy, at a cost you capped in advance, with only the winner moving into a small real batch",
+        "A focus group in which ten people say they would buy",
+        "A factory deposit on the idea you like most",
+        "A full shop with every option a buyer might want"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Ask them to buy",
+      "bodyEn": "Intuition, long experience, and focus groups are weak predictors of what will sell. People say yes to be kind, then decline when a real purchase is in front of them. The chapter's test is a request for money, because that response is the one that counts. Micro-testing spends cheap ads to measure it before anything is manufactured. The pass is built to cost about five hundred dollars or less and about five days. It has three moves: make a stronger offer than what already ranks, run a short search-ad campaign, then drop the losers and build only the winner.",
+      "terms": [
+        {
+          "en": "micro-test",
+          "hook": "A small, cheap ad test that asks people to buy before you manufacture."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Beat what already ranks",
+      "bodyEn": "Search the phrases a real buyer would type, plus related phrases from a keyword tool. Open the three sites that keep appearing in ordinary results and in paid results. Decide how you will be easier to trust, safer to try, richer in choice, or faster to receive. Write one page of about three hundred to six hundred words that leads with that difference and with proof from real users. Save ads that have already made you act, and borrow their shape rather than inventing a new one. A free teaching session is a practical way to learn which promises people repeat and to collect those proofs.",
+      "terms": [
+        {
+          "en": "differentiator",
+          "hook": "The one advantage, such as proof, a guarantee, selection, or speed, that the current top results lack."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Count interest before charging",
+      "bodyEn": "One test puts the offer on a short page, then a price and contact page, then a note that the item is on back order and you will write when it is ready. Reaching that last page counts as an order. Do not take card numbers, because charging for goods you cannot yet ship can be illegal. A seventy-two-hour auction can preview the price and then be cancelled if you have nothing to send. If a dry test feels wrong, offer a short tip list and treat about sixty percent of the sign-ups as hypothetical buyers. Show shipping before the final step so the count is not full of people who only wanted the total. A cheap domain and a simple page builder are enough for this week.",
+      "terms": [
+        {
+          "en": "dry test",
+          "hook": "A page that records a buying attempt and does not charge, used before the product exists."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Run a five-day ad test",
+      "bodyEn": "Buy search ads on specific phrases, which tend to convert better and cost less than broad ones. Aim for positions two through four and a cost per click around twenty cents or less, with a daily cap near fifty dollars. Write several ads that differ by one element, such as the headline, the promise, or the name, and turn off the setting that shows only the current winner. Each ad is a short headline plus two description lines. The offer in the ad has to match the page, so the visitors are people who might buy. About two hundred fifty dollars across five days is the chapter's baseline, and a larger spend makes the count more trustworthy.",
+      "terms": [
+        {
+          "en": "cost per click",
+          "hook": "What you pay each time someone opens the ad, kept low here by using specific phrases."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "example",
+      "titleEn": "Read the five-day score",
+      "bodyEn": "Compare ad spend with hypothetical profit, and remember that a high-priced, high-margin item can survive a lower conversion rate. In the yoga case, about two hundred dollars and fourteen tip-list sign-ups, counted at sixty percent, cleared a hypothetical profit above the spend, so the next move was a small store and a first disc funded by those early buyers. In the shirt case, visitors reached the price and left, so the retest added a double-refund promise rather than a lower price, and the second count justified a tiny real order. A passing test is permission to build a little and then to try one print ad, asking for a first-time discount. It is not a promise about the following year. Drop the idea when the recount still fails."
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "Follow a tested rollout",
+      "bodyEn": "The sound-library business from the previous chapter moved through four beats. The market was one the founder already belonged to. The product was a popular library resold under a drop-ship agreement, so stock was ordered only after a customer paid. Demand and the top price were checked in auctions, then on a real storefront with search ads. Trade-magazine ads began only after cash flow existed, and the hours fell from about two a day to about two a week. Copy that order when your own test clears. Automation is the step after the winner is real, not a substitute for the test.",
+      "terms": [
+        {
+          "en": "drop-ship",
+          "hook": "The maker sends the item to your buyer, so you do not hold the stock yourself."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Practice refusing first prices",
+      "bodyEn": "The chapter's three-day drill trains you to walk away from a first price. On two weekend days, take one hundred dollars to a market and try to buy at least one hundred fifty dollars of small goods for that budget. Answer the opening price by asking what discount they can offer, so they move before you do. Set your number, make one firm cash offer near closing time, and leave if it is refused. On the third day, call two magazines, push the rate down, and stop before you accept. This is rehearsal for later ad buying. The hundred dollars is the tuition."
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Write your five-day test",
+      "bodyEn": "Name one product that already passed the paper screen. Write the single difference you will claim, the price, and whether you will count a back-order page or a tip-list sign-up. Cap the test at five days and at a daily ad spend you can lose. Decide in advance what profit would justify a small first batch, and what result means you stop. Schedule the day you will either stop or place that batch. Leave manufacturing, staff, and a long lease on the far side of that day."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Test before you build",
+      "bodyEn": "A polite yes is a weak signal, and a request for payment is the real one. You beat the offers that already rank on one clear difference, put that claim on a short page, and send specific search ads for about five days. Card numbers stay uncollected until you can ship. Spend is compared with hypothetical profit under a rule you wrote beforehand. A winner earns a small real batch, and a loser is dropped. Recall what has to happen before you manufacture.",
+      "prompt": "What has to happen before you manufacture?",
+      "choices": [
+        "A short ad test in which people try to buy, at a cost you capped in advance, with only the winner moving into a small real batch",
+        "A focus group in which ten people say they would buy",
+        "A factory deposit on the idea you like most",
+        "A full shop with every option a buyer might want"
+      ],
+      "answer": 0
+    }
+  ]
+}

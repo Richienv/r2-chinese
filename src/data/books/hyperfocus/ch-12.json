@@ -1,0 +1,266 @@
+{
+  "id": "12",
+  "index": 12,
+  "part": 3,
+  "partTitleEn": "Hyperfocus",
+  "titleEn": "Working Together",
+  "titleSource": "Working Together",
+  "sourcePages": "170-177",
+  "when": "Chapter 10",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "One mode at a time",
+      "bodyEn": "In a given moment you are either acting with attention outward or thinking with attention inward. Hyperfocus is the outward mode, locked on one task, and scatterfocus is the inward mode, where ideas connect. Both modes are unavailable in the same minute, so the blend happens across the day. Focusing collects and encodes dots, scattering connects those dots, and scattering also returns energy for the next focus block. An insight from a wander can make the later work smarter, and a recharged pool can make the later focus longer. Give each mode its own minutes, then use the conditions in the rest of this chapter to make those minutes count.",
+      "terms": [
+        {
+          "en": "Mode blend",
+          "hook": "Hyperfocus and scatterfocus used in different minutes so each one feeds the other."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Build real happiness",
+      "bodyEn": "Picturing a better future can feel like success now, and research on weight loss, healing, tests, and relationships has found that this kind of fantasy often slows the real change. A concrete plan is what moves the result, and the picture alone can stand in for that plan and stall it. What raises happiness is time spent on activities that improve how you feel. A large moment-to-moment sample ranked music, play, conversation and relationships, exercise, and sex as the five happiest activities, and the mind wanders least during sex. A second set of daily habits is three gratitudes at day's end, which sits beside the three daily intentions, plus a few lines about one good experience, meditation, and one small kindness. Unchosen wandering lowers contentment, even on neutral topics, while a chosen wander toward something interesting, useful, or novel keeps the benefits of letting the mind move. Try the habits that fit your day, keep the ones that change your mood, and treat the better mood as fuel for both focus and creativity.",
+      "terms": [
+        {
+          "en": "Positive affect",
+          "hook": "Feeling genuinely better from an activity or a small daily habit, which widens attentional space."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Mood widens the space",
+      "bodyEn": "A positive mood comes with more dopamine in the reasoning parts of the brain, more energy, better on-the-spot recall, and a wider attentional space. You combine ideas more freely, see new uses for familiar objects, and look for variety that stays inside sensible bounds. A negative mood shrinks attentional space, increases wandering you did not choose, and sends more of that wandering into the distant past. Planning then happens less often, refocusing after an interruption takes longer, and failures stay in mind. When you feel low, capture the open problems and clear distractions first, because those problems will sit at the front and you have less energy to resist a pull. In one research summary, happier people were about thirty-one percent more productive than people in a negative or neutral state, and a good mood also makes insightful solutions more likely.",
+      "terms": [
+        {
+          "en": "Mood and space",
+          "hook": "A better mood widens attentional space, and a low mood shrinks it and pulls thought toward the past."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Match the hour",
+      "bodyEn": "Chart your energy for a week or two, and mark the hours when hard work feels available. That stretch is your Biological Prime Time, and it is when hyperfocus on the most meaningful complex tasks pays off. The low stretches are your Creative Prime Time, because the mind is less inhibited and insight arrives more easily. One study found about twenty-seven percent more solutions to insight problems at a person's lower-energy time of day. For many people the peaks sit in the late morning and the midafternoon, with a trough after lunch, and engagement across the week is often lowest on Monday and highest on Friday. An early bird or a night owl should trust their own chart over that average. Block the calendar so focused work sits on the peak and creative work sits on the trough.",
+      "terms": [
+        {
+          "en": "Biological Prime Time",
+          "hook": "Your own high-energy hours, reserved for the most complex meaningful work."
+        },
+        {
+          "en": "Creative Prime Time",
+          "hook": "Your lower-energy hours, when insight problems are easier to crack."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Caffeine for the block",
+      "bodyEn": "Caffeine deepens and narrows focus, which helps a hyperfocus block and makes a loose creative wander harder. It also helps you stay with long dull tasks, and it supports verbal memory, quick reactions, and spatial work such as a puzzle. Those gains tend to flatten after about two hundred milligrams, and past about four hundred milligrams anxiety rises and performance falls. A usual cup of coffee holds around one hundred twenty-five milligrams, and people differ, so keep the dose that helps you. The costs are a later crash and a damaged night of sleep if the dose lands too late. Take it before a hyperfocus block or a hard workout, delay it when the first session is a brainstorm so ideas can stay loose, and take it before a pitch when you need attention held tight.",
+      "terms": [
+        {
+          "en": "Focus dose",
+          "hook": "Caffeine used before a hyperfocus block, and delayed when you still want ideas to roam."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Alcohol only to loosen",
+      "bodyEn": "A mild alcoholic drink can loosen creative puzzles, and it damages logical work and any block that needs control. In one study, mildly intoxicated people solved about thirty-eight percent more creative word puzzles, and solved them faster, than a sober group, while logical problems showed no such gain. Alcohol increases mind wandering, slows the moment you notice the wander, and shrinks attentional space, which is why the evening is hard to remember. Treat a drink as borrowing energy and mood from the next day. Pay that price only when the roam is the point, the day is already over, and nothing important follows. Keep alcohol away from meditation and away from any hour that still needs hyperfocus.",
+      "terms": [
+        {
+          "en": "Loose hour",
+          "hook": "A mild drink only after the day's focus is done, when a creative roam is the goal."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Rooms and quiet zones",
+      "bodyEn": "An open room is harder to control, and people distract themselves about sixty-four percent more often there, with more interruptions from others as well. Colleagues can also see a natural breakpoint, so an interruption often lands between tasks and costs less time to resume. When the work is highly collaborative, or it depends on connecting ideas with other people, the open room can be worth that cost. When the work needs long undisturbed focus, the same room is a real tax, and a quiet zone should exist for hyperfocus. Teaching a team what interruptions cost cut them by about thirty percent in one study. If the same questions keep arriving, move them into a tool or a document, and keep a quiet place even when the desks stay open.",
+      "terms": [
+        {
+          "en": "Quiet zone",
+          "hook": "A place reserved for uninterrupted hyperfocus when the rest of the room stays open."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Plan the week's modes",
+      "bodyEn": "Once a week, on Sunday evening or Monday morning, set three intentions for the week and decide which mode the days need more of. Ask how much pure output a deadline demands, and how much room you have to plan and connect ideas. Name the commitments that will crush both modes, such as travel or a stack of meetings, and decide in advance how you will handle them. Put real blocks on the calendar for hyperfocus and for scatterfocus, at home as well as at work. Each day, enter hyperfocus at least once for a consequential task, and enter scatterfocus more than once, especially the habitual kind. Use the same pair at home: full attention for a meaningful conversation or activity, and a chosen wander when you need a plan, a rest, or an idea.",
+      "terms": [
+        {
+          "en": "Focus ritual",
+          "hook": "A weekly pass that sets three intentions and blocks time for both modes."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Notice on a cue",
+      "bodyEn": "Awareness is what lets you switch modes when the problem changes. If you are stuck, notice whether the problem is analytic and needs hyperfocus, or creative and needs scatterfocus. The hourly chime from earlier in the book is the training repetition. When it sounds, look at what fills attentional space, how much energy you have, and how full that space already is. Add a few ordinary cues at work and at home that mean the same check, such as sitting down, standing up, or starting a meal. Meaning, at the close of the book, comes from noticing the experiences your attention actually stayed with. You can redirect only the attention you have seen, which is why the cue matters as much as any new tactic.",
+      "terms": [
+        {
+          "en": "Awareness cue",
+          "hook": "An hourly chime or a daily action that makes you look at what attention is holding."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Where each mode goes",
+      "bodyEn": "Hyperfocus belongs on complex meaningful work during your high-energy hours. Scatterfocus belongs on the lower-energy hours, on real breaks, and on creative problems you are still incubating. Caffeine can support the focus block, and a mild drink belongs only after the day's focus is finished, when a creative roam is the point. Practices that raise your mood widen the space both modes use, and a fantasy of success can stall the plan. An open room still needs a quiet zone when the work requires long undisturbed focus. A weekly mode plan and an hourly notice are how you choose the mode before the day slides into one.",
+      "prompt": "When should you schedule creative, insight-heavy work?",
+      "choices": [
+        "During your Biological Prime Time, beside the hardest analytic tasks",
+        "During your lower-energy hours, when the mind is less inhibited",
+        "At the first meeting, after a large caffeine dose meant to tighten focus",
+        "In an open room that has no quiet place"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "One mode at a time",
+      "bodyEn": "In a given moment you are either acting with attention outward or thinking with attention inward. Hyperfocus is the outward mode, locked on one task, and scatterfocus is the inward mode, where ideas connect. Both modes are unavailable in the same minute, so the blend happens across the day. Focusing collects and encodes dots, scattering connects those dots, and scattering also returns energy for the next focus block. An insight from a wander can make the later work smarter, and a recharged pool can make the later focus longer. Give each mode its own minutes, then use the conditions in the rest of this chapter to make those minutes count.",
+      "terms": [
+        {
+          "en": "Mode blend",
+          "hook": "Hyperfocus and scatterfocus used in different minutes so each one feeds the other."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Build real happiness",
+      "bodyEn": "Picturing a better future can feel like success now, and research on weight loss, healing, tests, and relationships has found that this kind of fantasy often slows the real change. A concrete plan is what moves the result, and the picture alone can stand in for that plan and stall it. What raises happiness is time spent on activities that improve how you feel. A large moment-to-moment sample ranked music, play, conversation and relationships, exercise, and sex as the five happiest activities, and the mind wanders least during sex. A second set of daily habits is three gratitudes at day's end, which sits beside the three daily intentions, plus a few lines about one good experience, meditation, and one small kindness. Unchosen wandering lowers contentment, even on neutral topics, while a chosen wander toward something interesting, useful, or novel keeps the benefits of letting the mind move. Try the habits that fit your day, keep the ones that change your mood, and treat the better mood as fuel for both focus and creativity.",
+      "terms": [
+        {
+          "en": "Positive affect",
+          "hook": "Feeling genuinely better from an activity or a small daily habit, which widens attentional space."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Mood widens the space",
+      "bodyEn": "A positive mood comes with more dopamine in the reasoning parts of the brain, more energy, better on-the-spot recall, and a wider attentional space. You combine ideas more freely, see new uses for familiar objects, and look for variety that stays inside sensible bounds. A negative mood shrinks attentional space, increases wandering you did not choose, and sends more of that wandering into the distant past. Planning then happens less often, refocusing after an interruption takes longer, and failures stay in mind. When you feel low, capture the open problems and clear distractions first, because those problems will sit at the front and you have less energy to resist a pull. In one research summary, happier people were about thirty-one percent more productive than people in a negative or neutral state, and a good mood also makes insightful solutions more likely.",
+      "terms": [
+        {
+          "en": "Mood and space",
+          "hook": "A better mood widens attentional space, and a low mood shrinks it and pulls thought toward the past."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Match the hour",
+      "bodyEn": "Chart your energy for a week or two, and mark the hours when hard work feels available. That stretch is your Biological Prime Time, and it is when hyperfocus on the most meaningful complex tasks pays off. The low stretches are your Creative Prime Time, because the mind is less inhibited and insight arrives more easily. One study found about twenty-seven percent more solutions to insight problems at a person's lower-energy time of day. For many people the peaks sit in the late morning and the midafternoon, with a trough after lunch, and engagement across the week is often lowest on Monday and highest on Friday. An early bird or a night owl should trust their own chart over that average. Block the calendar so focused work sits on the peak and creative work sits on the trough.",
+      "terms": [
+        {
+          "en": "Biological Prime Time",
+          "hook": "Your own high-energy hours, reserved for the most complex meaningful work."
+        },
+        {
+          "en": "Creative Prime Time",
+          "hook": "Your lower-energy hours, when insight problems are easier to crack."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Caffeine for the block",
+      "bodyEn": "Caffeine deepens and narrows focus, which helps a hyperfocus block and makes a loose creative wander harder. It also helps you stay with long dull tasks, and it supports verbal memory, quick reactions, and spatial work such as a puzzle. Those gains tend to flatten after about two hundred milligrams, and past about four hundred milligrams anxiety rises and performance falls. A usual cup of coffee holds around one hundred twenty-five milligrams, and people differ, so keep the dose that helps you. The costs are a later crash and a damaged night of sleep if the dose lands too late. Take it before a hyperfocus block or a hard workout, delay it when the first session is a brainstorm so ideas can stay loose, and take it before a pitch when you need attention held tight.",
+      "terms": [
+        {
+          "en": "Focus dose",
+          "hook": "Caffeine used before a hyperfocus block, and delayed when you still want ideas to roam."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Alcohol only to loosen",
+      "bodyEn": "A mild alcoholic drink can loosen creative puzzles, and it damages logical work and any block that needs control. In one study, mildly intoxicated people solved about thirty-eight percent more creative word puzzles, and solved them faster, than a sober group, while logical problems showed no such gain. Alcohol increases mind wandering, slows the moment you notice the wander, and shrinks attentional space, which is why the evening is hard to remember. Treat a drink as borrowing energy and mood from the next day. Pay that price only when the roam is the point, the day is already over, and nothing important follows. Keep alcohol away from meditation and away from any hour that still needs hyperfocus.",
+      "terms": [
+        {
+          "en": "Loose hour",
+          "hook": "A mild drink only after the day's focus is done, when a creative roam is the goal."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Rooms and quiet zones",
+      "bodyEn": "An open room is harder to control, and people distract themselves about sixty-four percent more often there, with more interruptions from others as well. Colleagues can also see a natural breakpoint, so an interruption often lands between tasks and costs less time to resume. When the work is highly collaborative, or it depends on connecting ideas with other people, the open room can be worth that cost. When the work needs long undisturbed focus, the same room is a real tax, and a quiet zone should exist for hyperfocus. Teaching a team what interruptions cost cut them by about thirty percent in one study. If the same questions keep arriving, move them into a tool or a document, and keep a quiet place even when the desks stay open.",
+      "terms": [
+        {
+          "en": "Quiet zone",
+          "hook": "A place reserved for uninterrupted hyperfocus when the rest of the room stays open."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Plan the week's modes",
+      "bodyEn": "Once a week, on Sunday evening or Monday morning, set three intentions for the week and decide which mode the days need more of. Ask how much pure output a deadline demands, and how much room you have to plan and connect ideas. Name the commitments that will crush both modes, such as travel or a stack of meetings, and decide in advance how you will handle them. Put real blocks on the calendar for hyperfocus and for scatterfocus, at home as well as at work. Each day, enter hyperfocus at least once for a consequential task, and enter scatterfocus more than once, especially the habitual kind. Use the same pair at home: full attention for a meaningful conversation or activity, and a chosen wander when you need a plan, a rest, or an idea.",
+      "terms": [
+        {
+          "en": "Focus ritual",
+          "hook": "A weekly pass that sets three intentions and blocks time for both modes."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Notice on a cue",
+      "bodyEn": "Awareness is what lets you switch modes when the problem changes. If you are stuck, notice whether the problem is analytic and needs hyperfocus, or creative and needs scatterfocus. The hourly chime from earlier in the book is the training repetition. When it sounds, look at what fills attentional space, how much energy you have, and how full that space already is. Add a few ordinary cues at work and at home that mean the same check, such as sitting down, standing up, or starting a meal. Meaning, at the close of the book, comes from noticing the experiences your attention actually stayed with. You can redirect only the attention you have seen, which is why the cue matters as much as any new tactic.",
+      "terms": [
+        {
+          "en": "Awareness cue",
+          "hook": "An hourly chime or a daily action that makes you look at what attention is holding."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Where each mode goes",
+      "bodyEn": "Hyperfocus belongs on complex meaningful work during your high-energy hours. Scatterfocus belongs on the lower-energy hours, on real breaks, and on creative problems you are still incubating. Caffeine can support the focus block, and a mild drink belongs only after the day's focus is finished, when a creative roam is the point. Practices that raise your mood widen the space both modes use, and a fantasy of success can stall the plan. An open room still needs a quiet zone when the work requires long undisturbed focus. A weekly mode plan and an hourly notice are how you choose the mode before the day slides into one.",
+      "prompt": "When should you schedule creative, insight-heavy work?",
+      "choices": [
+        "During your Biological Prime Time, beside the hardest analytic tasks",
+        "During your lower-energy hours, when the mind is less inhibited",
+        "At the first meeting, after a large caffeine dose meant to tighten focus",
+        "In an open room that has no quiet place"
+      ],
+      "answer": 1
+    }
+  ]
+}

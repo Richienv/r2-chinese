@@ -1,0 +1,142 @@
+{
+  "id": "21",
+  "index": 21,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Let Bad Things Happen",
+  "titleSource": "The Art of Letting Bad Things Happen",
+  "sourcePages": "",
+  "when": "Blog",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Attention over time",
+      "bodyEn": "A free hour fails when your mind is still on a problem you peeked at. Protect attention on purpose, because the hours only count when focus is available to use them. Allow small failures so a larger aim can finish. A few minutes in the inbox can occupy the rest of the day, since a crisis you discover stays with you after the screen is closed. That in-between state spoils both rest and work. Pick one focus for the block and stay with it until the block is done.",
+      "terms": [
+        {
+          "en": "attention",
+          "hook": "Focus you can actually spend. A free hour without it does not count as free."
+        },
+        {
+          "en": "small bad thing",
+          "hook": "A repairable problem you allow so a larger aim can move."
+        },
+        {
+          "en": "changing result",
+          "hook": "The one outcome that would alter the rest of the work if it got finished."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Name one changing goal",
+      "bodyEn": "Name the single result that would change the rest of the work if you finished it. Write that result down before you open any incoming queue. Keep the urgent items that feel mandatory on a separate list. Ask whether each urgent item can miss a day, or even a week, with only repairable damage. When the damage is a complaint or a small penalty, the urgent item waits. The changing result gets the first hours of the day. Use this filter on an ordinary Tuesday, and use it again when you are away."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Let the urgent wait",
+      "bodyEn": "Other people's timing fills the urgent pile. Let a call go late, accept a small fee, or miss a minor opportunity when the cost is annoyance rather than a collapse. People get over a delay faster than you get a broken afternoon back. Allow those hiccups so the goal you named can keep moving. A problem you can fix later is a weak reason to open the queue. Practice the trade until it feels ordinary. The habit is what creates room for the larger work."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Oldest task first",
+      "bodyEn": "Find the task that has lived on your list the longest. Start it at the beginning of the day, before messages and before a meal. Hold interruptions until that task is finished. Long-resident tasks are often the ones that would change things, which is why smaller alarms keep beating them. Finishing one of them makes the alarms look like minutiae. The same morning rule applies at a desk and on a trip. One finished goal outperforms a stack of cleared notifications."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Stay out of the queue",
+      "bodyEn": "Leave the queue closed until you can act on whatever you might find there. A problem seen on Friday night occupies the weekend even when the fix must wait until Monday. On a long trip, keep the inbox shut for the whole stretch, including the minute you are tempted to scan. The minutes may be free. The attention is already allocated, and fishing for crises spends it. The same closed-queue rule works in a week you spend at home. Open the channel when you can both see the problem and do something about it."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Make the trade a habit",
+      "bodyEn": "Expect a few complaints and a few small breakdowns when you stop servicing every alert. Treat them as the price of the larger thing you finished, and repair them after the block. If you refuse every small cost, the life-changing work never gets a clean stretch. If you schedule the stretch and keep puncturing it, you will lack the attention to use it. At the end of the day, name the small bad thing you allowed and the good thing that moved because of it. Repeat that review until the choice is routine. The trade itself is the tactic."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Trade check",
+      "bodyEn": "Small bad things are allowed so a larger aim can finish. Attention is what makes a free hour usable. An urgent item can wait when the damage is repairable. The oldest important task starts the day. The queue stays closed until you can act. Recall what this tactic tells you to allow.",
+      "prompt": "What does this tactic tell you to allow?",
+      "choices": [
+        "Small bad things, so a larger aim can finish",
+        "Every incoming request, so nobody is ever annoyed",
+        "The main goal to slip, so the urgent list stays perfect",
+        "Rest and work in the same hour, so both feel attended"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Attention over time",
+      "bodyEn": "A free hour fails when your mind is still on a problem you peeked at. Protect attention on purpose, because the hours only count when focus is available to use them. Allow small failures so a larger aim can finish. A few minutes in the inbox can occupy the rest of the day, since a crisis you discover stays with you after the screen is closed. That in-between state spoils both rest and work. Pick one focus for the block and stay with it until the block is done.",
+      "terms": [
+        {
+          "en": "attention",
+          "hook": "Focus you can actually spend. A free hour without it does not count as free."
+        },
+        {
+          "en": "small bad thing",
+          "hook": "A repairable problem you allow so a larger aim can move."
+        },
+        {
+          "en": "changing result",
+          "hook": "The one outcome that would alter the rest of the work if it got finished."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Name one changing goal",
+      "bodyEn": "Name the single result that would change the rest of the work if you finished it. Write that result down before you open any incoming queue. Keep the urgent items that feel mandatory on a separate list. Ask whether each urgent item can miss a day, or even a week, with only repairable damage. When the damage is a complaint or a small penalty, the urgent item waits. The changing result gets the first hours of the day. Use this filter on an ordinary Tuesday, and use it again when you are away."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Let the urgent wait",
+      "bodyEn": "Other people's timing fills the urgent pile. Let a call go late, accept a small fee, or miss a minor opportunity when the cost is annoyance rather than a collapse. People get over a delay faster than you get a broken afternoon back. Allow those hiccups so the goal you named can keep moving. A problem you can fix later is a weak reason to open the queue. Practice the trade until it feels ordinary. The habit is what creates room for the larger work."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Oldest task first",
+      "bodyEn": "Find the task that has lived on your list the longest. Start it at the beginning of the day, before messages and before a meal. Hold interruptions until that task is finished. Long-resident tasks are often the ones that would change things, which is why smaller alarms keep beating them. Finishing one of them makes the alarms look like minutiae. The same morning rule applies at a desk and on a trip. One finished goal outperforms a stack of cleared notifications."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Stay out of the queue",
+      "bodyEn": "Leave the queue closed until you can act on whatever you might find there. A problem seen on Friday night occupies the weekend even when the fix must wait until Monday. On a long trip, keep the inbox shut for the whole stretch, including the minute you are tempted to scan. The minutes may be free. The attention is already allocated, and fishing for crises spends it. The same closed-queue rule works in a week you spend at home. Open the channel when you can both see the problem and do something about it."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Make the trade a habit",
+      "bodyEn": "Expect a few complaints and a few small breakdowns when you stop servicing every alert. Treat them as the price of the larger thing you finished, and repair them after the block. If you refuse every small cost, the life-changing work never gets a clean stretch. If you schedule the stretch and keep puncturing it, you will lack the attention to use it. At the end of the day, name the small bad thing you allowed and the good thing that moved because of it. Repeat that review until the choice is routine. The trade itself is the tactic."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Trade check",
+      "bodyEn": "Small bad things are allowed so a larger aim can finish. Attention is what makes a free hour usable. An urgent item can wait when the damage is repairable. The oldest important task starts the day. The queue stays closed until you can act. Recall what this tactic tells you to allow.",
+      "prompt": "What does this tactic tell you to allow?",
+      "choices": [
+        "Small bad things, so a larger aim can finish",
+        "Every incoming request, so nobody is ever annoyed",
+        "The main goal to slip, so the urgent list stays perfect",
+        "Rest and work in the same hour, so both feel attended"
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "id": "16",
+  "index": 16,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Make a tough decision",
+  "titleSource": "Appendix 4",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Replace the pro-con list",
+      "bodyEn": "Quitting, choosing among offers, and choosing what to explore will shape years of your time, and intuition is a weak guide for those choices. A pro-and-con list makes it easy to overweight a minor factor, and it skips stronger methods from decision research. This appendix is a step-by-step process for the next concrete choice, drawn from that research and from advising many people one to one. Uncertainty and anxiety are normal here. The process will not make the choice feel easy. Working through it makes the usual errors less likely, and it leaves you with a next step you can defend from the evidence you gathered."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Name factors first",
+      "bodyEn": "Write the exact decision, including the deadline, and remember that this process compares a list of specific options. Then write four to seven priorities. The usual set is impact potential, personal fit against a typical person on that path, personal satisfaction, career capital, the value of your backups, and the value of information if the path might be an outstanding long-term bet you can test. For a long-term direction, lean on impact, fit, and satisfaction. For a job over the next year, add information, capital, and backups. If you work inside a community, also ask where you are comparatively strong relative to others, and whether the option builds that community's ability to coordinate. Make each factor specific, including motives you are reluctant to admit, or the plan will be hard to sustain.",
+      "terms": [
+        {
+          "en": "value of information",
+          "hook": "If they say this, they mean what you learn by testing a path you might want for the long run."
+        },
+        {
+          "en": "personal fit",
+          "hook": "If they say this, they mean how productive you expect to be compared with a typical person on that path."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Add options, then rank",
+      "bodyEn": "Considering too few options is one of the largest mistakes, and some research finds that forcing one extra option improves satisfaction with the result. Generate options by working backward from a long-term picture and forward from what is open now, including a job board, work you might be unusually good at, work you would learn the most from, and doors that will close soon. Also ask what you would do if money were irrelevant, whether two options can be combined, and what you would do if the current top options vanished. Put the list in a rough order against your factors, and leave precision for later. The rough order exists so you know what to test. Friends, people on interesting problems, and people you admire are sources of options you will not invent alone."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Test what would rerank",
+      "bodyEn": "List the information most likely to change that rough order. Big-picture questions you cannot settle, and a long rumination over every related issue, often fail this test. Prefer questions such as how you could most easily rule the top option out, what you would do today if you had to choose for life by tomorrow, and which uncertainties look easy to resolve. Typical useful questions are whether you would enjoy the work, whether you could get it, which skills it requires, how pressing the problem is, and how much influence the role really gives you. Make each question specific. Career choices deserve investigation, and a cheap test often teaches more than another week of analysis, such as visiting a top sabbatical option for a week or applying widely so the offers themselves decide."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Score the range",
+      "bodyEn": "When the time for investigation is up, or your best guess has stopped moving, score the shortlist from one to ten on each factor and add the scores. Use the total to probe your thinking, and keep the right to override it. For the top options, sketch a plausible upside, a plausible downside, and the median, because in work aimed at doing good the upside often dominates the expected value. Drop options that could burn you out, bankrupt you, ruin your reputation, set your field back, or look seriously harmful by ordinary standards. For a choice about the next couple of years, a path with a better upside can be the rational pick when the downsides are similar, because you can stay if it works and switch if it fails. The aim is the best ranking low-cost tests can give you.",
+      "terms": [
+        {
+          "en": "upside",
+          "hook": "If they say this, they mean a plausible very good case, such as the best few percent of outcomes."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Intuition after the score",
+      "bodyEn": "Take a break, rank the options again, and notice where your gut is uneasy. Intuition is useful for judgements you have practised with fast feedback, such as whether particular people are trustworthy. It is weak on novel comparisons between careers. If the unease has a reason that survives that distinction, let it change the ranking, and if it does not, name the reason and set it aside. Sleeping on the choice also reduces the pull of one mood. Ask why you are most likely wrong, imagine both a regretted failure and a surprise success two years out, and ask what you would tell a friend. Reversibility can rerank the list: after a PhD, leaving academia often makes return very hard, so doubt at that point is a reason to continue, while doubt before you start is a reason to try the other path first."
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Write the next action",
+      "bodyEn": "Make the best choice the evidence supports, then prepare a nearby backup, a tolerable worst case, and a review on the calendar. Add a sign that would mean you are on the wrong path, such as reaching the end of a PhD with no paper in a top journal. Write the next actions with times attached, because naming the cue and the action makes follow-through more likely. Use a career review for how people succeed on that path, and the habits appendix for being effective in the job you land. A decision with no dated action is still a wish. The commitment is usually one to four years, and the review point is what lets you focus until then."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Decision process check",
+      "bodyEn": "Clarify the decision and write four to seven factors before you rank anything. Add at least one extra option, then investigate the questions that would change the order, using the cheapest test that could answer them. Score the factors, look at upside and downside, and remove options that could knock you out of future work. Let a practised gut feeling flag a hole after the systematic pass, and prefer the more reversible path when you are unsure and the paths are otherwise close. Write what you will do and when, plus a review point. This sequence is the appendix's replacement for an unstructured list of pros and cons.",
+      "prompt": "When should the value of information push you toward the path with the better upside?",
+      "choices": [
+        "When you are choosing a couple of years of focus and the downsides are similar, because you can stay if it works and switch if it fails",
+        "Whenever the path has the calmest typical case, even if the upside is tiny",
+        "When you have already spent many years on it and leaving would waste that time",
+        "When a pro-and-con list has more cons than pros"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Replace the pro-con list",
+      "bodyEn": "Quitting, choosing among offers, and choosing what to explore will shape years of your time, and intuition is a weak guide for those choices. A pro-and-con list makes it easy to overweight a minor factor, and it skips stronger methods from decision research. This appendix is a step-by-step process for the next concrete choice, drawn from that research and from advising many people one to one. Uncertainty and anxiety are normal here. The process will not make the choice feel easy. Working through it makes the usual errors less likely, and it leaves you with a next step you can defend from the evidence you gathered."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Name factors first",
+      "bodyEn": "Write the exact decision, including the deadline, and remember that this process compares a list of specific options. Then write four to seven priorities. The usual set is impact potential, personal fit against a typical person on that path, personal satisfaction, career capital, the value of your backups, and the value of information if the path might be an outstanding long-term bet you can test. For a long-term direction, lean on impact, fit, and satisfaction. For a job over the next year, add information, capital, and backups. If you work inside a community, also ask where you are comparatively strong relative to others, and whether the option builds that community's ability to coordinate. Make each factor specific, including motives you are reluctant to admit, or the plan will be hard to sustain.",
+      "terms": [
+        {
+          "en": "value of information",
+          "hook": "If they say this, they mean what you learn by testing a path you might want for the long run."
+        },
+        {
+          "en": "personal fit",
+          "hook": "If they say this, they mean how productive you expect to be compared with a typical person on that path."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Add options, then rank",
+      "bodyEn": "Considering too few options is one of the largest mistakes, and some research finds that forcing one extra option improves satisfaction with the result. Generate options by working backward from a long-term picture and forward from what is open now, including a job board, work you might be unusually good at, work you would learn the most from, and doors that will close soon. Also ask what you would do if money were irrelevant, whether two options can be combined, and what you would do if the current top options vanished. Put the list in a rough order against your factors, and leave precision for later. The rough order exists so you know what to test. Friends, people on interesting problems, and people you admire are sources of options you will not invent alone."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Test what would rerank",
+      "bodyEn": "List the information most likely to change that rough order. Big-picture questions you cannot settle, and a long rumination over every related issue, often fail this test. Prefer questions such as how you could most easily rule the top option out, what you would do today if you had to choose for life by tomorrow, and which uncertainties look easy to resolve. Typical useful questions are whether you would enjoy the work, whether you could get it, which skills it requires, how pressing the problem is, and how much influence the role really gives you. Make each question specific. Career choices deserve investigation, and a cheap test often teaches more than another week of analysis, such as visiting a top sabbatical option for a week or applying widely so the offers themselves decide."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Score the range",
+      "bodyEn": "When the time for investigation is up, or your best guess has stopped moving, score the shortlist from one to ten on each factor and add the scores. Use the total to probe your thinking, and keep the right to override it. For the top options, sketch a plausible upside, a plausible downside, and the median, because in work aimed at doing good the upside often dominates the expected value. Drop options that could burn you out, bankrupt you, ruin your reputation, set your field back, or look seriously harmful by ordinary standards. For a choice about the next couple of years, a path with a better upside can be the rational pick when the downsides are similar, because you can stay if it works and switch if it fails. The aim is the best ranking low-cost tests can give you.",
+      "terms": [
+        {
+          "en": "upside",
+          "hook": "If they say this, they mean a plausible very good case, such as the best few percent of outcomes."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Intuition after the score",
+      "bodyEn": "Take a break, rank the options again, and notice where your gut is uneasy. Intuition is useful for judgements you have practised with fast feedback, such as whether particular people are trustworthy. It is weak on novel comparisons between careers. If the unease has a reason that survives that distinction, let it change the ranking, and if it does not, name the reason and set it aside. Sleeping on the choice also reduces the pull of one mood. Ask why you are most likely wrong, imagine both a regretted failure and a surprise success two years out, and ask what you would tell a friend. Reversibility can rerank the list: after a PhD, leaving academia often makes return very hard, so doubt at that point is a reason to continue, while doubt before you start is a reason to try the other path first."
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Write the next action",
+      "bodyEn": "Make the best choice the evidence supports, then prepare a nearby backup, a tolerable worst case, and a review on the calendar. Add a sign that would mean you are on the wrong path, such as reaching the end of a PhD with no paper in a top journal. Write the next actions with times attached, because naming the cue and the action makes follow-through more likely. Use a career review for how people succeed on that path, and the habits appendix for being effective in the job you land. A decision with no dated action is still a wish. The commitment is usually one to four years, and the review point is what lets you focus until then."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Decision process check",
+      "bodyEn": "Clarify the decision and write four to seven factors before you rank anything. Add at least one extra option, then investigate the questions that would change the order, using the cheapest test that could answer them. Score the factors, look at upside and downside, and remove options that could knock you out of future work. Let a practised gut feeling flag a hole after the systematic pass, and prefer the more reversible path when you are unsure and the paths are otherwise close. Write what you will do and when, plus a review point. This sequence is the appendix's replacement for an unstructured list of pros and cons.",
+      "prompt": "When should the value of information push you toward the path with the better upside?",
+      "choices": [
+        "When you are choosing a couple of years of focus and the downsides are similar, because you can stay if it works and switch if it fails",
+        "Whenever the path has the calmest typical case, even if the upside is tiny",
+        "When you have already spent many years on it and leaving would waste that time",
+        "When a pro-and-con list has more cons than pros"
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "20",
+  "index": 20,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Read a career review",
+  "titleSource": "Appendix 8",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Rankings assume equal fit",
+      "bodyEn": "These pages are short career reviews as of May 2023, and the full versions, which keep changing, are on the website. Some reviews are ways to gain career capital, and others are paths you might follow for about three to ten years. The ranking is a rough order of impact if personal fit is the same on each path. Differences inside one path are large, so the best openings on a lower-ranked path will often beat ordinary openings on a higher-ranked one. The printed order is a snapshot the organisation says it revises. Use a summary to decide whether the full review is worth your time, and read that full review before you commit years.",
+      "terms": [
+        {
+          "en": "personal fit",
+          "hook": "If they say this, they mean your chance of doing the work well compared with a typical person on that path."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "The top cluster",
+      "bodyEn": "Under that equal-fit assumption, the May 2023 top ten starts with technical research and engineering on AI safety, then work that shapes how AI will be governed. Next are biorisk research, strategy, and policy, then information security in high-impact areas, then helping build the effective altruism community. The second half is China-related AI safety and governance, grantmaking on pressing problems, operations in high-impact organisations, research into global priorities, and forecasting. A path below this cluster can still be the right one when your fit there is much stronger. Treat the cluster as a place to look, and treat a role you are unusually able to do well as a serious candidate even if the printed rank is lower."
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "Academia's decision",
+      "bodyEn": "Academic research is presented as a natural home for important questions that are hard to fund commercially, with a chance that one excellent researcher moves a field, and with side routes into policy, the field's priorities, and wider culture. The warning is that training often runs five to fifteen years, most talented people who try never land a permanent job, and many continue by default when another path would fit them better. Signs of fit are high intelligence, conscientiousness, a hunger for intellectual work, comfort working alone, and a deep interest you can hold for a long time. Pay is often lower than in neighbouring options, job satisfaction is often high, and teaching is a regular part of the role. The next steps are to explore fields, earn very strong undergraduate grades, find a supervisor on valuable questions at a strong university, and publish in good journals during the doctorate or the years just after. Settle, before you start, the tension between questions you think matter and questions that advance an academic career."
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "A narrower earning path",
+      "bodyEn": "Actuarial work is described as one earning-to-give option for someone with strong quantitative skills who wants security and a life that still has room outside the job. The same summary tells that person to compare quantitative finance, where expected earnings are higher, a few years of management consulting, where flexibility and prestige are stronger, and data science, where flexibility and the chance of direct impact are greater. Fit includes quantitative and computer skill, care with detail, and willingness to have most of your impact through donations. Entry usually requires strong results in quantitative undergraduate courses, and professional bodies publish the certification route for each country. Direct impact and public advocacy are limited, and the exams are demanding. The decision to copy is the comparison with those neighbours, which is the move a short review is for.",
+      "terms": [
+        {
+          "en": "earning to give",
+          "hook": "If they say this, they mean doing good mainly by donating from a well-paid job."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "How a card decides",
+      "bodyEn": "A useful summary here names who the path is for, lists pros and cons, states facts about fit, and gives next steps. Read the fit facts against evidence you already have, such as grades, work samples, and what you do when nobody assigns it. If the summary names a neighbouring path with higher earnings, more flexibility, or more direct impact, put that neighbour on your list before you prepare applications. Then do the cheapest next step the summary names, or open the full review when the summary is only a pointer. Personal fit can overturn the printed rank, which is why the ranking held fit constant at the start. A topic with no fit facts and no next step is waiting on the full page."
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Run one review",
+      "bodyEn": "Choose one path from the top cluster that your current skills could plausibly reach, and one adjacent path a review would tell someone like you to compare. Write three fit facts from the summary and mark which ones you can already show with evidence. Write the next step that takes under a week, such as a supervisor's research topics, a professional body's guide, or the full review online. If the fit facts fail, set the path aside for now and repeat the exercise on the neighbour. If they hold, schedule the next step and a date to read the full review before any commitment of several years. The result you want is a yes, a no, or a test."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Review decision check",
+      "bodyEn": "Career-review rankings assume similar personal fit and are a snapshot, so unusually strong fit can justify a lower-ranked path. Read the pros, the cons, the fit facts, and the next steps, and include the neighbouring option the review itself names. Academic research is a high-upside path with a long training period and a high chance of never getting a permanent job, so enter it with a sceptical look at your fit. Actuarial work is one earning-to-give option that the summary tells quantitative people to set beside finance, consulting, and data science. Do a cheap next step, then read the full review before you commit years. The summary helps you decide, and the website holds the current version.",
+      "prompt": "How does this appendix want you to treat a lower-ranked career when your fit for it is unusually strong?",
+      "choices": [
+        "Take the fit seriously, because the best roles on a lower path can beat typical roles higher up when the ranking assumed equal fit",
+        "Ignore it, because the printed top ten binds every reader",
+        "Choose it only if it has the highest salary on the list",
+        "Treat every summary as an instruction to start a doctorate"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Rankings assume equal fit",
+      "bodyEn": "These pages are short career reviews as of May 2023, and the full versions, which keep changing, are on the website. Some reviews are ways to gain career capital, and others are paths you might follow for about three to ten years. The ranking is a rough order of impact if personal fit is the same on each path. Differences inside one path are large, so the best openings on a lower-ranked path will often beat ordinary openings on a higher-ranked one. The printed order is a snapshot the organisation says it revises. Use a summary to decide whether the full review is worth your time, and read that full review before you commit years.",
+      "terms": [
+        {
+          "en": "personal fit",
+          "hook": "If they say this, they mean your chance of doing the work well compared with a typical person on that path."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "The top cluster",
+      "bodyEn": "Under that equal-fit assumption, the May 2023 top ten starts with technical research and engineering on AI safety, then work that shapes how AI will be governed. Next are biorisk research, strategy, and policy, then information security in high-impact areas, then helping build the effective altruism community. The second half is China-related AI safety and governance, grantmaking on pressing problems, operations in high-impact organisations, research into global priorities, and forecasting. A path below this cluster can still be the right one when your fit there is much stronger. Treat the cluster as a place to look, and treat a role you are unusually able to do well as a serious candidate even if the printed rank is lower."
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "Academia's decision",
+      "bodyEn": "Academic research is presented as a natural home for important questions that are hard to fund commercially, with a chance that one excellent researcher moves a field, and with side routes into policy, the field's priorities, and wider culture. The warning is that training often runs five to fifteen years, most talented people who try never land a permanent job, and many continue by default when another path would fit them better. Signs of fit are high intelligence, conscientiousness, a hunger for intellectual work, comfort working alone, and a deep interest you can hold for a long time. Pay is often lower than in neighbouring options, job satisfaction is often high, and teaching is a regular part of the role. The next steps are to explore fields, earn very strong undergraduate grades, find a supervisor on valuable questions at a strong university, and publish in good journals during the doctorate or the years just after. Settle, before you start, the tension between questions you think matter and questions that advance an academic career."
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "A narrower earning path",
+      "bodyEn": "Actuarial work is described as one earning-to-give option for someone with strong quantitative skills who wants security and a life that still has room outside the job. The same summary tells that person to compare quantitative finance, where expected earnings are higher, a few years of management consulting, where flexibility and prestige are stronger, and data science, where flexibility and the chance of direct impact are greater. Fit includes quantitative and computer skill, care with detail, and willingness to have most of your impact through donations. Entry usually requires strong results in quantitative undergraduate courses, and professional bodies publish the certification route for each country. Direct impact and public advocacy are limited, and the exams are demanding. The decision to copy is the comparison with those neighbours, which is the move a short review is for.",
+      "terms": [
+        {
+          "en": "earning to give",
+          "hook": "If they say this, they mean doing good mainly by donating from a well-paid job."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "How a card decides",
+      "bodyEn": "A useful summary here names who the path is for, lists pros and cons, states facts about fit, and gives next steps. Read the fit facts against evidence you already have, such as grades, work samples, and what you do when nobody assigns it. If the summary names a neighbouring path with higher earnings, more flexibility, or more direct impact, put that neighbour on your list before you prepare applications. Then do the cheapest next step the summary names, or open the full review when the summary is only a pointer. Personal fit can overturn the printed rank, which is why the ranking held fit constant at the start. A topic with no fit facts and no next step is waiting on the full page."
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Run one review",
+      "bodyEn": "Choose one path from the top cluster that your current skills could plausibly reach, and one adjacent path a review would tell someone like you to compare. Write three fit facts from the summary and mark which ones you can already show with evidence. Write the next step that takes under a week, such as a supervisor's research topics, a professional body's guide, or the full review online. If the fit facts fail, set the path aside for now and repeat the exercise on the neighbour. If they hold, schedule the next step and a date to read the full review before any commitment of several years. The result you want is a yes, a no, or a test."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Review decision check",
+      "bodyEn": "Career-review rankings assume similar personal fit and are a snapshot, so unusually strong fit can justify a lower-ranked path. Read the pros, the cons, the fit facts, and the next steps, and include the neighbouring option the review itself names. Academic research is a high-upside path with a long training period and a high chance of never getting a permanent job, so enter it with a sceptical look at your fit. Actuarial work is one earning-to-give option that the summary tells quantitative people to set beside finance, consulting, and data science. Do a cheap next step, then read the full review before you commit years. The summary helps you decide, and the website holds the current version.",
+      "prompt": "How does this appendix want you to treat a lower-ranked career when your fit for it is unusually strong?",
+      "choices": [
+        "Take the fit seriously, because the best roles on a lower path can beat typical roles higher up when the ranking assumed equal fit",
+        "Ignore it, because the printed top ten binds every reader",
+        "Choose it only if it has the highest salary on the list",
+        "Treat every summary as an instruction to start a doctorate"
+      ],
+      "answer": 0
+    }
+  ]
+}

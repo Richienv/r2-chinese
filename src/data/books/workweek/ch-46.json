@@ -1,0 +1,138 @@
+{
+  "id": "46",
+  "index": 46,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Build During the Trip",
+  "titleSource": "Who Says Kids Hold You Back?",
+  "sourcePages": "",
+  "when": "Case study",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Score the worst case",
+      "bodyEn": "He started with a fear score: the worst result of leaving a secure government job, rated from one to ten. The number gave the quit a size he could accept or refuse. He sold the house and drove slowly along a long coast with two children under three and a pregnant partner. Those camping months were the mini-retirement itself. A product he had tinkered with for a year moved from notes into a build, in a field with no office left to hide inside. Clarity arrived after the job was gone. Waiting to feel clear would have kept both the house and the salary.",
+      "terms": [
+        {
+          "en": "fear score",
+          "hook": "A one-to-ten rating of the worst plausible outcome, used before you quit or sell the house."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Use the night block",
+      "bodyEn": "The build happened from nine at night until midnight, after the children were asleep. An information diet kept that block from turning into more research. The offer was an information product for electrical engineers, with software beside it. He sent out the programming he found slow and the illustrations he did not need to draw. He kept the decisions and the pieces he could finish in about three hours. Four weeks later the site needed little of him, took under four hours a week, and replaced about half his old income.",
+      "terms": [
+        {
+          "en": "night window",
+          "hook": "A short block after the family is asleep, repeated until the offer can run without the day job."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Cancel the waiting job",
+      "bodyEn": "The plan at the start of the drive was to reach the next city and take a job. Half a salary from a mostly automated site made that job optional. He kept growing the offer toward a full replacement. The family then aimed to travel slowly until the children started primary school. The children rode along and set the hours. The halfway income set the permission to skip the job waiting at the destination."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Hand off the slow parts",
+      "bodyEn": "The outsourced tasks were the ones that would have blown a three-hour night. A campsite is a bad classroom for a skill you need this month and do not already have. He stayed on the offer, the audience, and the assembly. Other people finished the slow production. That split is what let a family trip produce a working site in a month. Hand off the task that does not fit the only free block you have."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Half pay is enough",
+      "bodyEn": "Replacing about half the old income was the signal to cancel the job hunt. Full replacement stayed a growth target for the months after the trip had already begun. Treating one hundred percent as the start line would have dropped him into a new job at the destination and frozen the experiment. The automated site meant a sale did not create another hour of his work. Maintenance under four hours a week was small enough to survive travel with small children. Grow from the halfway floor while the trip continues."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Take the family along",
+      "bodyEn": "A secure job plus small children is the usual reason to postpone a mobile experiment. This case ran the trial with the children present, in a tent, on a slow drive, during a pregnancy. The constraint changed the schedule into a night block. The fear score had already priced the loss of the house and the government role. Because that loss was survivable, the children did not reopen the question. Put the family inside the plan, and build in the hours they leave you."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Kids and income check",
+      "bodyEn": "The decision is to price the worst case of quitting, then build during the trip you take with your actual family. A night block, an information diet, and outsourcing of the slow tasks produced an automated offer in about a month. Half the old income canceled the job that was waiting at the destination. The children changed the hours. They left the permission standing. Recall what a halfway replacement is allowed to cancel.",
+      "prompt": "Once a small automated offer replaces about half your salary, what happens to the job you planned to take at the destination?",
+      "choices": [
+        "Cancel that job and grow the offer, if the worst case of continuing without it is acceptable",
+        "Take the job anyway so the experiment stays theoretical",
+        "Pause the product until the children start school",
+        "Move back into the old role before another night of work"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Score the worst case",
+      "bodyEn": "He started with a fear score: the worst result of leaving a secure government job, rated from one to ten. The number gave the quit a size he could accept or refuse. He sold the house and drove slowly along a long coast with two children under three and a pregnant partner. Those camping months were the mini-retirement itself. A product he had tinkered with for a year moved from notes into a build, in a field with no office left to hide inside. Clarity arrived after the job was gone. Waiting to feel clear would have kept both the house and the salary.",
+      "terms": [
+        {
+          "en": "fear score",
+          "hook": "A one-to-ten rating of the worst plausible outcome, used before you quit or sell the house."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Use the night block",
+      "bodyEn": "The build happened from nine at night until midnight, after the children were asleep. An information diet kept that block from turning into more research. The offer was an information product for electrical engineers, with software beside it. He sent out the programming he found slow and the illustrations he did not need to draw. He kept the decisions and the pieces he could finish in about three hours. Four weeks later the site needed little of him, took under four hours a week, and replaced about half his old income.",
+      "terms": [
+        {
+          "en": "night window",
+          "hook": "A short block after the family is asleep, repeated until the offer can run without the day job."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Cancel the waiting job",
+      "bodyEn": "The plan at the start of the drive was to reach the next city and take a job. Half a salary from a mostly automated site made that job optional. He kept growing the offer toward a full replacement. The family then aimed to travel slowly until the children started primary school. The children rode along and set the hours. The halfway income set the permission to skip the job waiting at the destination."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Hand off the slow parts",
+      "bodyEn": "The outsourced tasks were the ones that would have blown a three-hour night. A campsite is a bad classroom for a skill you need this month and do not already have. He stayed on the offer, the audience, and the assembly. Other people finished the slow production. That split is what let a family trip produce a working site in a month. Hand off the task that does not fit the only free block you have."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Half pay is enough",
+      "bodyEn": "Replacing about half the old income was the signal to cancel the job hunt. Full replacement stayed a growth target for the months after the trip had already begun. Treating one hundred percent as the start line would have dropped him into a new job at the destination and frozen the experiment. The automated site meant a sale did not create another hour of his work. Maintenance under four hours a week was small enough to survive travel with small children. Grow from the halfway floor while the trip continues."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Take the family along",
+      "bodyEn": "A secure job plus small children is the usual reason to postpone a mobile experiment. This case ran the trial with the children present, in a tent, on a slow drive, during a pregnancy. The constraint changed the schedule into a night block. The fear score had already priced the loss of the house and the government role. Because that loss was survivable, the children did not reopen the question. Put the family inside the plan, and build in the hours they leave you."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Kids and income check",
+      "bodyEn": "The decision is to price the worst case of quitting, then build during the trip you take with your actual family. A night block, an information diet, and outsourcing of the slow tasks produced an automated offer in about a month. Half the old income canceled the job that was waiting at the destination. The children changed the hours. They left the permission standing. Recall what a halfway replacement is allowed to cancel.",
+      "prompt": "Once a small automated offer replaces about half your salary, what happens to the job you planned to take at the destination?",
+      "choices": [
+        "Cancel that job and grow the offer, if the worst case of continuing without it is acceptable",
+        "Take the job anyway so the experiment stays theoretical",
+        "Pause the product until the children start school",
+        "Move back into the old role before another night of work"
+      ],
+      "answer": 0
+    }
+  ]
+}

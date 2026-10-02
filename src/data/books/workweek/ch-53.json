@@ -1,0 +1,234 @@
+{
+  "id": "53",
+  "index": 53,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Choosing What to Read",
+  "titleSource": "Restricted Reading: The Few That Matter",
+  "sourcePages": "",
+  "when": "Toolkit",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Keep the shelf short",
+      "bodyEn": "This list exists because the book already warned against reading too much. A title gets in only when the author or someone he interviewed names it as the single book that changed a life the most. The main chapters stand without any title on this list. Open one when a particular point has you stuck, and leave the rest closed. Page counts are printed so a book can be priced in time before you start. Further shelves, such as philosophy, licensing, and languages, stay on the companion site so this printed list can remain short.",
+      "terms": [
+        {
+          "en": "restricted reading",
+          "hook": "A short shelf of life-changing books, opened only while you are stuck."
+        },
+        {
+          "en": "stuck-point rule",
+          "hook": "Start a book from this list only when one specific block is the reason."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Price the pages first",
+      "bodyEn": "The list prints page counts so reading stays a small block of work. The time math assumes the speed drill from the elimination chapter. At about two and a half pages a minute, one hundred pages is about forty minutes. A book near two hundred pages is then a few of those blocks. Name the block the book is supposed to move before you spend the first forty minutes. Use the count to choose a title you can finish, and stop when that block has moved.",
+      "terms": [
+        {
+          "en": "page-count timing",
+          "hook": "Turn a book's length into minutes so the reading cannot sprawl."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Four books in order",
+      "bodyEn": "The Fundamental Four are the four books he recommended to people designing a lifestyle before this book was written. He still gives them as a sequence, so you finish the job of one before you open the next. The first is a confidence book whose claim is that you are overrating other people and underrating yourself, and he returns to its opening chapters when doubt shows up. The second is a menu of ways to turn an idea into income, useful for seeing several ways an idea can earn. The third teaches an owner stance, a business that runs on rules so the owner stays off every task. The fourth covers where to go, how a long trip actually feels, and how to come back. Read them in that order when you want the short curriculum, and skip ahead only when you are already stuck on a later point.",
+      "terms": [
+        {
+          "en": "Fundamental Four",
+          "hook": "A fixed four-book order for confidence, income options, ownership, then long travel."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Match the stuck point",
+      "bodyEn": "After the four, the list stops being a sequence and becomes shelves you choose by the point where you are stuck. An open book from this list always has a named block attached. Doubt sends you back to the opening of the confidence book. An idea that will not become income sends you to the menu book. A business you cannot leave alone sends you to the rules-and-owner book. Excuses about a long trip send you to the travel book. The page count then tells you whether that choice is one evening or a week of short blocks.",
+      "terms": [
+        {
+          "en": "shelf match",
+          "hook": "Pick the group of books that names your current block, then ignore the other groups."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Shelf for less clutter",
+      "bodyEn": "One shelf is for emotional and material clutter, and its job is to help you do more with less. The classic on that shelf is a two-year experiment in self-reliance beside a small lake, worth reading because the experiment both works and fails. Beside it is a collection of short pieces on simple living, used to cut artificial needs while keeping an ordinary life. A mentor's book belongs here because it is where the habit of saving life until later gets its name. The eighty-twenty book belongs here because a small share of inputs produces most results, in life as well as work. You open this shelf when possessions, obligations, or a postponed life are the stuck point. You close it once a need has been removed.",
+      "terms": [
+        {
+          "en": "clutter shelf",
+          "hook": "Reading whose job is to cut invented needs, then stop."
+        },
+        {
+          "en": "artificial needs",
+          "hook": "Wants that feel required until a simplicity book shows they are optional."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Shelf for the muse",
+      "bodyEn": "The muse shelf is for a stuck income engine, and it favors cases and usable skills. Business-school cases can be bought one at a time for less than ten dollars, which lets you study a real company's marketing and operations on your own. One product story is included for the numbers behind a huge direct-response hit, from celebrity deals through production and stores. Negotiation is capped on purpose at one main book with tools you can use immediately, plus two backups, and then that set is complete. Trade reports on this shelf show offers, prices, guarantees, and which commercials keep running, a clue that the campaign is still paying. A last book on the shelf argues for companies that aim to be great at a chosen size. Open this shelf to solve a muse problem you already have, and stop when that problem has a next action.",
+      "terms": [
+        {
+          "en": "muse shelf",
+          "hook": "Cases, a capped negotiation set, and campaign data for a product you are already building."
+        },
+        {
+          "en": "negotiation cap",
+          "hook": "One main negotiating book plus two backups, and then stop collecting more."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Shelf for leaving",
+      "bodyEn": "The leaving shelf is for the stuck point of getting out the door for a long break. Its main book walks through taking time off to travel or chase a goal while keeping a career and staying solvent, and it is here because it made a long break look possible. A magazine of non-tourist travel is the brainstorming tool for how the days will be spent, including work, study, volunteering, or an adventure. The question to answer before you buy anything else is what you will do with the time once you arrive. Use that answer to pick one resource, then use the page count or a single issue to bound the research. Extra travel reading after the plan is clear is the pile this list was built to prevent. When the exit steps are written, close the shelf and act on the earlier chapters.",
+      "terms": [
+        {
+          "en": "leaving shelf",
+          "hook": "One planning book and one non-tourist magazine, closed once the break has steps."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Reading filter check",
+      "bodyEn": "This list is a filter for stuck points. You choose a shelf that matches the block, then use length to keep the reading short. Doubt, an idea that will not earn, a business you cannot leave, clutter, a muse problem, and the exit each have a place to look. With no stuck point, the list stays closed. The companion site holds extra categories so this page can stay a short shelf. Recall what is allowed to open a book from this list.",
+      "prompt": "When should you open a book from this list?",
+      "choices": [
+        "When a specific point has you stuck and that shelf matches the point",
+        "When you finish the sixteen chapters and want a full reading plan",
+        "When a title is famous and has many high ratings",
+        "When you have free time and no particular block"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Keep the shelf short",
+      "bodyEn": "This list exists because the book already warned against reading too much. A title gets in only when the author or someone he interviewed names it as the single book that changed a life the most. The main chapters stand without any title on this list. Open one when a particular point has you stuck, and leave the rest closed. Page counts are printed so a book can be priced in time before you start. Further shelves, such as philosophy, licensing, and languages, stay on the companion site so this printed list can remain short.",
+      "terms": [
+        {
+          "en": "restricted reading",
+          "hook": "A short shelf of life-changing books, opened only while you are stuck."
+        },
+        {
+          "en": "stuck-point rule",
+          "hook": "Start a book from this list only when one specific block is the reason."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Price the pages first",
+      "bodyEn": "The list prints page counts so reading stays a small block of work. The time math assumes the speed drill from the elimination chapter. At about two and a half pages a minute, one hundred pages is about forty minutes. A book near two hundred pages is then a few of those blocks. Name the block the book is supposed to move before you spend the first forty minutes. Use the count to choose a title you can finish, and stop when that block has moved.",
+      "terms": [
+        {
+          "en": "page-count timing",
+          "hook": "Turn a book's length into minutes so the reading cannot sprawl."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Four books in order",
+      "bodyEn": "The Fundamental Four are the four books he recommended to people designing a lifestyle before this book was written. He still gives them as a sequence, so you finish the job of one before you open the next. The first is a confidence book whose claim is that you are overrating other people and underrating yourself, and he returns to its opening chapters when doubt shows up. The second is a menu of ways to turn an idea into income, useful for seeing several ways an idea can earn. The third teaches an owner stance, a business that runs on rules so the owner stays off every task. The fourth covers where to go, how a long trip actually feels, and how to come back. Read them in that order when you want the short curriculum, and skip ahead only when you are already stuck on a later point.",
+      "terms": [
+        {
+          "en": "Fundamental Four",
+          "hook": "A fixed four-book order for confidence, income options, ownership, then long travel."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Match the stuck point",
+      "bodyEn": "After the four, the list stops being a sequence and becomes shelves you choose by the point where you are stuck. An open book from this list always has a named block attached. Doubt sends you back to the opening of the confidence book. An idea that will not become income sends you to the menu book. A business you cannot leave alone sends you to the rules-and-owner book. Excuses about a long trip send you to the travel book. The page count then tells you whether that choice is one evening or a week of short blocks.",
+      "terms": [
+        {
+          "en": "shelf match",
+          "hook": "Pick the group of books that names your current block, then ignore the other groups."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Shelf for less clutter",
+      "bodyEn": "One shelf is for emotional and material clutter, and its job is to help you do more with less. The classic on that shelf is a two-year experiment in self-reliance beside a small lake, worth reading because the experiment both works and fails. Beside it is a collection of short pieces on simple living, used to cut artificial needs while keeping an ordinary life. A mentor's book belongs here because it is where the habit of saving life until later gets its name. The eighty-twenty book belongs here because a small share of inputs produces most results, in life as well as work. You open this shelf when possessions, obligations, or a postponed life are the stuck point. You close it once a need has been removed.",
+      "terms": [
+        {
+          "en": "clutter shelf",
+          "hook": "Reading whose job is to cut invented needs, then stop."
+        },
+        {
+          "en": "artificial needs",
+          "hook": "Wants that feel required until a simplicity book shows they are optional."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Shelf for the muse",
+      "bodyEn": "The muse shelf is for a stuck income engine, and it favors cases and usable skills. Business-school cases can be bought one at a time for less than ten dollars, which lets you study a real company's marketing and operations on your own. One product story is included for the numbers behind a huge direct-response hit, from celebrity deals through production and stores. Negotiation is capped on purpose at one main book with tools you can use immediately, plus two backups, and then that set is complete. Trade reports on this shelf show offers, prices, guarantees, and which commercials keep running, a clue that the campaign is still paying. A last book on the shelf argues for companies that aim to be great at a chosen size. Open this shelf to solve a muse problem you already have, and stop when that problem has a next action.",
+      "terms": [
+        {
+          "en": "muse shelf",
+          "hook": "Cases, a capped negotiation set, and campaign data for a product you are already building."
+        },
+        {
+          "en": "negotiation cap",
+          "hook": "One main negotiating book plus two backups, and then stop collecting more."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Shelf for leaving",
+      "bodyEn": "The leaving shelf is for the stuck point of getting out the door for a long break. Its main book walks through taking time off to travel or chase a goal while keeping a career and staying solvent, and it is here because it made a long break look possible. A magazine of non-tourist travel is the brainstorming tool for how the days will be spent, including work, study, volunteering, or an adventure. The question to answer before you buy anything else is what you will do with the time once you arrive. Use that answer to pick one resource, then use the page count or a single issue to bound the research. Extra travel reading after the plan is clear is the pile this list was built to prevent. When the exit steps are written, close the shelf and act on the earlier chapters.",
+      "terms": [
+        {
+          "en": "leaving shelf",
+          "hook": "One planning book and one non-tourist magazine, closed once the break has steps."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Reading filter check",
+      "bodyEn": "This list is a filter for stuck points. You choose a shelf that matches the block, then use length to keep the reading short. Doubt, an idea that will not earn, a business you cannot leave, clutter, a muse problem, and the exit each have a place to look. With no stuck point, the list stays closed. The companion site holds extra categories so this page can stay a short shelf. Recall what is allowed to open a book from this list.",
+      "prompt": "When should you open a book from this list?",
+      "choices": [
+        "When a specific point has you stuck and that shelf matches the point",
+        "When you finish the sixteen chapters and want a full reading plan",
+        "When a title is famous and has many high ratings",
+        "When you have free time and no particular block"
+      ],
+      "answer": 0
+    }
+  ]
+}

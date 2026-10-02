@@ -1,0 +1,266 @@
+{
+  "id": "04",
+  "index": 4,
+  "part": 3,
+  "partTitleEn": "Hyperfocus",
+  "titleEn": "Limits of Your Attention",
+  "titleSource": "The Limits of Your Attention",
+  "sourcePages": "35-58",
+  "when": "Chapter 2",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Two hard limits",
+      "bodyEn": "Attention is limited in two ways, and both limits are smaller than they feel. The senses deliver about eleven million bits each second, and conscious focus handles about forty of them. Understanding one conversation can take more than half of those bits, which is why a second conversation collapses. Once something has your focus, short-term memory holds only a few chunks, about four for most people, sometimes three, and sometimes five, six, or seven. Everyday groups stay inside that range for the same reason, and a phone number survives as a group of three or four digits plus another four. Chunking ties separate items into one unit, such as picturing three groceries as the corners of a single triangle so one shape replaces a loose list. When a list must survive a distraction, connect the items before you move.",
+      "terms": [
+        {
+          "en": "Chunk",
+          "hook": "Several items tied into one unit so they take a single slot in memory."
+        },
+        {
+          "en": "Forty bits",
+          "hook": "About how much sensory information conscious focus can handle at once."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "idea",
+      "titleEn": "The mental scratch pad",
+      "bodyEn": "Attentional space is the capacity available for whatever you are aware of right now, the scratch pad that holds and connects information while you use it. Researchers call that pad working memory, and its size working-memory capacity. A useful picture is the memory a computer keeps immediately available. A live conversation can fill it, a show plus cooking crams two loads into it, and a recalled fact is loaded into it for the moment you need that fact. Careful reading fills it almost completely, as marks become words, words become clauses, and clauses become a meaning that gets summarized when the sentence ends. You even blink at the natural breaks in that load, around fifteen to twenty times a minute, clustered at pauses. The contents are what you can work with on purpose, so a crowded pad is a crowded hour.",
+      "terms": [
+        {
+          "en": "Attentional space",
+          "hook": "The small scratch pad that holds whatever you are aware of right now."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Notice what is loaded",
+      "bodyEn": "Pause and name what is in the pad: the page, a nearby phone, the next hour, or a worry that arrived uninvited. That look is meta-awareness, and noticing the contents is one of the strongest attention practices in the chapter. The mind wanders about forty-seven percent of waking time, so a large share of many hours is spent away from what is in front of you. Readers who knew their mind had wandered solved a detective story more often than readers who wandered blindly, and the same gap shows up on other tasks. Mindfulness, in this chapter, means noticing thoughts, feelings, and perceptions, and letting a thought stay a thought, including the harsh ones. Watch for a minute and the pad keeps changing, and an item fades in about ten seconds unless you hold it on purpose. The faster you notice a wander, the faster you can return.",
+      "terms": [
+        {
+          "en": "Meta-awareness",
+          "hook": "Noticing what is already occupying your attention."
+        },
+        {
+          "en": "Mindfulness",
+          "hook": "Noticing thoughts, feelings, and perceptions, and letting a thought stay a thought."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Three loads that fit",
+      "bodyEn": "Three combinations fit, and the first is several small habits at once, such as breathing, a heart rate, and music, though starting a habit and correcting it still cost a little attention. One task that needs most of your focus can sit beside one habit, such as an audiobook while you do chores, and tasks that use different senses, such as sorting laundry while on a call, compete less. The third load that fits is a single complex task, which is where necessary and purposeful work lives, because that work cannot run as a habit. Two complex tasks collide the way texting collides with driving or with reading, and a pile of habits overflows once they stop being automatic. On a complex task, leave a little room so you can judge the approach, notice a wander, and absorb a sudden increase in difficulty. Experience changes the cost, so driving is cheap for an expert and expensive for a new driver, and a larger personal pad changes the fit again.",
+      "terms": [
+        {
+          "en": "Habit load",
+          "hook": "Automatic tasks that share the pad because each one needs little attention."
+        },
+        {
+          "en": "Complex task",
+          "hook": "Work that needs the pad and gets worse when you split it."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Overflow and intention",
+      "bodyEn": "Forgetting why you walked into a room is overflow: the show, a stray thought, and a webpage used the space the errand needed. The drive home does the same when the radio, the workday, and the driving habits leave no room for a simple stop. Other familiar overflows include a child plus a store, walking while texting, rewinding because you were gone, the wrong ingredient, eating past full, and forgetting the divider at checkout. At any moment, aim to hold two key things: the intention, and the action you are in. A flooded, unsettled feeling is the cue to check the load. Simplify on the spot by writing the extra items down for later, turning off the radio, or pausing the screen before you walk to the next room. Bailey defines a productive stretch as one that accomplished what you intended, and a day you intended to rest counts when you actually rest.",
+      "terms": [
+        {
+          "en": "Attention overload",
+          "hook": "More objects in the pad than it can hold, so the original intention falls out."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Novelty and residue",
+      "bodyEn": "Switching tasks pays the brain a small pleasure chemical, so a full pad can feel productive while less gets finished, a bias that once helped people scan for danger. Devices are now more stimulating than most of the meaningful work nearby, so the bias spends the pad on them. Shifting attention across the day is necessary, or a single task would crowd out everything else you are responsible for. Multitasking means trying to focus on more than one thing at the same time, and it can work for habits while it wrecks complex work. Residue is the piece of the previous task that stays in the pad after you switch, which is why a meeting still contains the project you just left. The brain keeps evaluating that leftover piece, so the present task gets only part of you. Residue loosens more once a task is truly finished, and a deadline can make the switch easier by narrowing you onto completion, at the cost of fewer alternate approaches.",
+      "terms": [
+        {
+          "en": "Novelty bias",
+          "hook": "A pull toward whatever is new, paid with a small hit of pleasure."
+        },
+        {
+          "en": "Attention residue",
+          "hook": "The leftover piece of the last task that stays loaded after you switch."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "What switching costs",
+      "bodyEn": "Work that keeps switching takes about fifty percent longer than the same work done from start to finish. A brim-full pad also makes the next switch slower, makes irrelevant details harder to filter, and makes the urge to switch harder to resist. Learning while you juggle leans on the basal ganglia, the system that runs skills and habits. Learning while you focus leans on the hippocampus, the system that stores and recalls what happened. A side screen during a film is a simple version of the same loss: you can retell the highlights and lose the hour itself. If a project has no deadline pressure, take a break after you finish a large piece so more residue can fade before the next thing. The best moment for that break is the end of a big task."
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Clear the pad now",
+      "bodyEn": "Right now, list what the pad is holding. If it is too full, write the extras down for later or return to the single object in front of you. Intention is the filter on the door: it admits the object you chose and refuses the rest, and holding that filter for part of the day still changes the work. A concrete cut from this chapter is to open notification settings on the phone, the computer, and the tablet, and shut off every alert you can live without. Most of those alerts are what keep computer work under the forty-second mark, which is why Bailey removed mail from his phone. Track three measures as the tactics accumulate: how much of your time is intentional, how long you can hold one sitting of focus, and how long the mind wanders before you catch it. Those three numbers tell you whether the pad is actually getting clearer.",
+      "terms": [
+        {
+          "en": "Intention",
+          "hook": "The choice, made ahead of the moment, that decides what may enter the pad."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Signs the pad is clear",
+      "bodyEn": "A clearer pad shows up first as finishing what you intended, more often. It also shows up as deeper focus, because you can defend the space, and as a stronger memory of conversations, meals, and the work itself. Guilt and doubt drop when the hour was chosen, and less time disappears into unimportant tasks. Fewer external and internal distractions get through. The flooded feeling eases, and purpose rises because the object of attention was selected, which is his account of why work stops feeling dull. Relationships change when people receive your attention along with your time. Judge the change with the three measures, because a busy hour can still be an empty one."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Which load fits",
+      "bodyEn": "Conscious focus handles only about forty bits of a huge sensory stream, and the pad holds only a few chunks at once. The loads that fit are a few small habits, or one demanding task plus one habit, or one complex task with a little room left over. Two complex tasks overflow it, and residue from the last task stays behind after a switch. Switching can make the same work take about fifty percent longer, so a break fits best after a large task is actually finished. Intention plus the current action is the pair to hold, and extras get written down. Shut off alerts you can live without, and track intentional time, focus length, and how long a wander lasts before you catch it. A fitting load is the one that leaves the important task enough of the pad to finish.",
+      "prompt": "Which combination belongs in attentional space?",
+      "choices": [
+        "Two complex tasks plus a news feed, because busyness proves progress",
+        "Every open worry, held only in your head so nothing gets forgotten",
+        "A fresh switch every minute, because the brain pays you to change tasks",
+        "One complex task with room to spare, or that task plus one habit, or a few small habits"
+      ],
+      "answer": 3
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Two hard limits",
+      "bodyEn": "Attention is limited in two ways, and both limits are smaller than they feel. The senses deliver about eleven million bits each second, and conscious focus handles about forty of them. Understanding one conversation can take more than half of those bits, which is why a second conversation collapses. Once something has your focus, short-term memory holds only a few chunks, about four for most people, sometimes three, and sometimes five, six, or seven. Everyday groups stay inside that range for the same reason, and a phone number survives as a group of three or four digits plus another four. Chunking ties separate items into one unit, such as picturing three groceries as the corners of a single triangle so one shape replaces a loose list. When a list must survive a distraction, connect the items before you move.",
+      "terms": [
+        {
+          "en": "Chunk",
+          "hook": "Several items tied into one unit so they take a single slot in memory."
+        },
+        {
+          "en": "Forty bits",
+          "hook": "About how much sensory information conscious focus can handle at once."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "idea",
+      "titleEn": "The mental scratch pad",
+      "bodyEn": "Attentional space is the capacity available for whatever you are aware of right now, the scratch pad that holds and connects information while you use it. Researchers call that pad working memory, and its size working-memory capacity. A useful picture is the memory a computer keeps immediately available. A live conversation can fill it, a show plus cooking crams two loads into it, and a recalled fact is loaded into it for the moment you need that fact. Careful reading fills it almost completely, as marks become words, words become clauses, and clauses become a meaning that gets summarized when the sentence ends. You even blink at the natural breaks in that load, around fifteen to twenty times a minute, clustered at pauses. The contents are what you can work with on purpose, so a crowded pad is a crowded hour.",
+      "terms": [
+        {
+          "en": "Attentional space",
+          "hook": "The small scratch pad that holds whatever you are aware of right now."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Notice what is loaded",
+      "bodyEn": "Pause and name what is in the pad: the page, a nearby phone, the next hour, or a worry that arrived uninvited. That look is meta-awareness, and noticing the contents is one of the strongest attention practices in the chapter. The mind wanders about forty-seven percent of waking time, so a large share of many hours is spent away from what is in front of you. Readers who knew their mind had wandered solved a detective story more often than readers who wandered blindly, and the same gap shows up on other tasks. Mindfulness, in this chapter, means noticing thoughts, feelings, and perceptions, and letting a thought stay a thought, including the harsh ones. Watch for a minute and the pad keeps changing, and an item fades in about ten seconds unless you hold it on purpose. The faster you notice a wander, the faster you can return.",
+      "terms": [
+        {
+          "en": "Meta-awareness",
+          "hook": "Noticing what is already occupying your attention."
+        },
+        {
+          "en": "Mindfulness",
+          "hook": "Noticing thoughts, feelings, and perceptions, and letting a thought stay a thought."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Three loads that fit",
+      "bodyEn": "Three combinations fit, and the first is several small habits at once, such as breathing, a heart rate, and music, though starting a habit and correcting it still cost a little attention. One task that needs most of your focus can sit beside one habit, such as an audiobook while you do chores, and tasks that use different senses, such as sorting laundry while on a call, compete less. The third load that fits is a single complex task, which is where necessary and purposeful work lives, because that work cannot run as a habit. Two complex tasks collide the way texting collides with driving or with reading, and a pile of habits overflows once they stop being automatic. On a complex task, leave a little room so you can judge the approach, notice a wander, and absorb a sudden increase in difficulty. Experience changes the cost, so driving is cheap for an expert and expensive for a new driver, and a larger personal pad changes the fit again.",
+      "terms": [
+        {
+          "en": "Habit load",
+          "hook": "Automatic tasks that share the pad because each one needs little attention."
+        },
+        {
+          "en": "Complex task",
+          "hook": "Work that needs the pad and gets worse when you split it."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Overflow and intention",
+      "bodyEn": "Forgetting why you walked into a room is overflow: the show, a stray thought, and a webpage used the space the errand needed. The drive home does the same when the radio, the workday, and the driving habits leave no room for a simple stop. Other familiar overflows include a child plus a store, walking while texting, rewinding because you were gone, the wrong ingredient, eating past full, and forgetting the divider at checkout. At any moment, aim to hold two key things: the intention, and the action you are in. A flooded, unsettled feeling is the cue to check the load. Simplify on the spot by writing the extra items down for later, turning off the radio, or pausing the screen before you walk to the next room. Bailey defines a productive stretch as one that accomplished what you intended, and a day you intended to rest counts when you actually rest.",
+      "terms": [
+        {
+          "en": "Attention overload",
+          "hook": "More objects in the pad than it can hold, so the original intention falls out."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Novelty and residue",
+      "bodyEn": "Switching tasks pays the brain a small pleasure chemical, so a full pad can feel productive while less gets finished, a bias that once helped people scan for danger. Devices are now more stimulating than most of the meaningful work nearby, so the bias spends the pad on them. Shifting attention across the day is necessary, or a single task would crowd out everything else you are responsible for. Multitasking means trying to focus on more than one thing at the same time, and it can work for habits while it wrecks complex work. Residue is the piece of the previous task that stays in the pad after you switch, which is why a meeting still contains the project you just left. The brain keeps evaluating that leftover piece, so the present task gets only part of you. Residue loosens more once a task is truly finished, and a deadline can make the switch easier by narrowing you onto completion, at the cost of fewer alternate approaches.",
+      "terms": [
+        {
+          "en": "Novelty bias",
+          "hook": "A pull toward whatever is new, paid with a small hit of pleasure."
+        },
+        {
+          "en": "Attention residue",
+          "hook": "The leftover piece of the last task that stays loaded after you switch."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "What switching costs",
+      "bodyEn": "Work that keeps switching takes about fifty percent longer than the same work done from start to finish. A brim-full pad also makes the next switch slower, makes irrelevant details harder to filter, and makes the urge to switch harder to resist. Learning while you juggle leans on the basal ganglia, the system that runs skills and habits. Learning while you focus leans on the hippocampus, the system that stores and recalls what happened. A side screen during a film is a simple version of the same loss: you can retell the highlights and lose the hour itself. If a project has no deadline pressure, take a break after you finish a large piece so more residue can fade before the next thing. The best moment for that break is the end of a big task."
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Clear the pad now",
+      "bodyEn": "Right now, list what the pad is holding. If it is too full, write the extras down for later or return to the single object in front of you. Intention is the filter on the door: it admits the object you chose and refuses the rest, and holding that filter for part of the day still changes the work. A concrete cut from this chapter is to open notification settings on the phone, the computer, and the tablet, and shut off every alert you can live without. Most of those alerts are what keep computer work under the forty-second mark, which is why Bailey removed mail from his phone. Track three measures as the tactics accumulate: how much of your time is intentional, how long you can hold one sitting of focus, and how long the mind wanders before you catch it. Those three numbers tell you whether the pad is actually getting clearer.",
+      "terms": [
+        {
+          "en": "Intention",
+          "hook": "The choice, made ahead of the moment, that decides what may enter the pad."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Signs the pad is clear",
+      "bodyEn": "A clearer pad shows up first as finishing what you intended, more often. It also shows up as deeper focus, because you can defend the space, and as a stronger memory of conversations, meals, and the work itself. Guilt and doubt drop when the hour was chosen, and less time disappears into unimportant tasks. Fewer external and internal distractions get through. The flooded feeling eases, and purpose rises because the object of attention was selected, which is his account of why work stops feeling dull. Relationships change when people receive your attention along with your time. Judge the change with the three measures, because a busy hour can still be an empty one."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Which load fits",
+      "bodyEn": "Conscious focus handles only about forty bits of a huge sensory stream, and the pad holds only a few chunks at once. The loads that fit are a few small habits, or one demanding task plus one habit, or one complex task with a little room left over. Two complex tasks overflow it, and residue from the last task stays behind after a switch. Switching can make the same work take about fifty percent longer, so a break fits best after a large task is actually finished. Intention plus the current action is the pair to hold, and extras get written down. Shut off alerts you can live without, and track intentional time, focus length, and how long a wander lasts before you catch it. A fitting load is the one that leaves the important task enough of the pad to finish.",
+      "prompt": "Which combination belongs in attentional space?",
+      "choices": [
+        "Two complex tasks plus a news feed, because busyness proves progress",
+        "Every open worry, held only in your head so nothing gets forgotten",
+        "A fresh switch every minute, because the brain pays you to change tasks",
+        "One complex task with room to spare, or that task plus one habit, or a few small habits"
+      ],
+      "answer": 3
+    }
+  ]
+}

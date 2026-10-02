@@ -1,0 +1,138 @@
+{
+  "id": "19",
+  "index": 19,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Follow concrete resources",
+  "titleSource": "Appendix 7",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "One resource, one gap",
+      "bodyEn": "This appendix lists extra resources for a few chapters, with links so you can start, and it points to the bibliography when you need a full citation. Name the skill or step you are stuck on, open one resource, and leave the rest until that one has changed your work. The chapter on career capital gets extras on machine learning, management, and sales, plus two pieces on whether to delay your impact. The chapter on getting a job gets extras on referrals, the stage where you convert interest into an offer, and negotiation. The chapter on community gets a concrete way into effective altruism in person. A list you save and never open only delays the step."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Learn machine learning",
+      "bodyEn": "For machine learning, start with the 3Blue1Brown series on neural networks if the ideas are new. If you already have a quantitative background, the written treatment named next is Neural Networks and Deep Learning. Practical courses on the list include fast.ai, Full Stack Deep Learning, and the courses at deeplearning.ai. For a fuller university treatment, the appendix points to MIT's introduction to machine learning and to NYU's deep learning course. Pick the one that matches whether you need intuition, working code, or a formal course. Finish that one before you collect the others."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Management and sales",
+      "bodyEn": "On management, the appendix says that if you read one book, read The Great CEO Within, which gathers advice on running a startup, including basic management. Manager Tools Basics fits large corporate settings, and Managing to Change the World fits nonprofits. Coaching for Performance introduces coaching, while The 4 Disciplines of Execution and Running Lean are process books, and Edwin Locke's handbook is the more academic source, alongside research from Google on teams. On sales, Spin Selling is the most evidence-based book they found, with the note that the findings are old and widely known. Influence and To Sell Is Human cover research on persuasion, and Getting Past No is the negotiation book they name where rigorous tests are still scarce. Start with the book that matches the organisation you are actually in."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Get hired, then negotiate",
+      "bodyEn": "For referrals, the extras are a guide to cleaning up the way you appear online, a guide to getting a job without applying through a portal, and a guide to finding email addresses. For the stage after a conversation starts, read the guide to researching a company before an interview, and the short piece on projects you do before the interview, which is the source of that phrase. The salary section in the main text is only a start, so the appendix adds Patrick McKenzie's negotiation essay, about half an hour of reading, a short video by Ramit Sethi whose tone will not fit every room, and Getting Past No again for a deeper method. Do the company research before you sit down, and bring a small work sample when the role allows one. Use the negotiation pieces after you have an offer and the terms are still open.",
+      "terms": [
+        {
+          "en": "pre-interview project",
+          "hook": "If they say this, they mean a work sample you prepare before or beside the interview."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Enter the community",
+      "bodyEn": "The easiest immediate step is the Effective Altruism Newsletter, which sends a short introduction, a monthly update on research, and notices of the main conferences. For the ideas, choose one introduction: the podcast series, a short article by Benjamin Todd, an academic article by Will MacAskill, or the book Doing Good Better. Then meet people in person. Newcomers are pointed toward EAGx conferences, which have been held in cities including Nairobi, Hong Kong, Sydney, and Boston, and also online. People who are already involved are pointed toward larger EAG events, often in London and San Francisco, with travel grants available. Local groups and the Effective Altruism Forum are the route when a conference is too far."
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Favours and hubs",
+      "bodyEn": "After a few conversations, ask for introductions. Meet people in a similar situation first, because you can help each other, then talk with people one or two steps ahead, such as someone who started an organisation last year if that is your aim. Look for five-minute favours, such as an introduction or a book recommendation, which help someone and widen the circle. Visiting a hub is another concrete step, and the appendix's rough order by size starts with San Francisco, then London, Oxford, and Cambridge in the UK, then Boston and Cambridge in Massachusetts especially for biological risk, then Washington for US policy, then cities such as New York, Sydney, Melbourne, and Berlin. Two further pieces, one from 80,000 Hours and one by Toby Ord, are the reading if your question is whether to delay impact. Do one small favour this week, and put one event or one local meeting on the calendar.",
+      "terms": [
+        {
+          "en": "five-minute favour",
+          "hook": "If they say this, they mean a small quick help, such as an introduction or a book tip."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Resource check",
+      "bodyEn": "Use this appendix by opening one resource for the gap you have, whether that gap is machine learning, management, sales, referrals, interviews, negotiation, or finding a community. The management starting point, if you read only one book, is The Great CEO Within. Community entry starts with the newsletter and one introduction, then an in-person event or a local group. Five-minute favours and people a step or two ahead come after you have met peers. Hubs are listed so a visit is a real option, with San Francisco and the London, Oxford, and Cambridge cluster first in the size order. The list is a set of next actions, and it works when you do one of them.",
+      "prompt": "What is the first community step this appendix says you can do immediately?",
+      "choices": [
+        "Join the Effective Altruism Newsletter, then pick one introduction and meet people in person",
+        "Move to San Francisco before you have read anything about the ideas",
+        "Read every management book on the list in the same week",
+        "Skip events until you already have a grantmaking job"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "One resource, one gap",
+      "bodyEn": "This appendix lists extra resources for a few chapters, with links so you can start, and it points to the bibliography when you need a full citation. Name the skill or step you are stuck on, open one resource, and leave the rest until that one has changed your work. The chapter on career capital gets extras on machine learning, management, and sales, plus two pieces on whether to delay your impact. The chapter on getting a job gets extras on referrals, the stage where you convert interest into an offer, and negotiation. The chapter on community gets a concrete way into effective altruism in person. A list you save and never open only delays the step."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Learn machine learning",
+      "bodyEn": "For machine learning, start with the 3Blue1Brown series on neural networks if the ideas are new. If you already have a quantitative background, the written treatment named next is Neural Networks and Deep Learning. Practical courses on the list include fast.ai, Full Stack Deep Learning, and the courses at deeplearning.ai. For a fuller university treatment, the appendix points to MIT's introduction to machine learning and to NYU's deep learning course. Pick the one that matches whether you need intuition, working code, or a formal course. Finish that one before you collect the others."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Management and sales",
+      "bodyEn": "On management, the appendix says that if you read one book, read The Great CEO Within, which gathers advice on running a startup, including basic management. Manager Tools Basics fits large corporate settings, and Managing to Change the World fits nonprofits. Coaching for Performance introduces coaching, while The 4 Disciplines of Execution and Running Lean are process books, and Edwin Locke's handbook is the more academic source, alongside research from Google on teams. On sales, Spin Selling is the most evidence-based book they found, with the note that the findings are old and widely known. Influence and To Sell Is Human cover research on persuasion, and Getting Past No is the negotiation book they name where rigorous tests are still scarce. Start with the book that matches the organisation you are actually in."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Get hired, then negotiate",
+      "bodyEn": "For referrals, the extras are a guide to cleaning up the way you appear online, a guide to getting a job without applying through a portal, and a guide to finding email addresses. For the stage after a conversation starts, read the guide to researching a company before an interview, and the short piece on projects you do before the interview, which is the source of that phrase. The salary section in the main text is only a start, so the appendix adds Patrick McKenzie's negotiation essay, about half an hour of reading, a short video by Ramit Sethi whose tone will not fit every room, and Getting Past No again for a deeper method. Do the company research before you sit down, and bring a small work sample when the role allows one. Use the negotiation pieces after you have an offer and the terms are still open.",
+      "terms": [
+        {
+          "en": "pre-interview project",
+          "hook": "If they say this, they mean a work sample you prepare before or beside the interview."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Enter the community",
+      "bodyEn": "The easiest immediate step is the Effective Altruism Newsletter, which sends a short introduction, a monthly update on research, and notices of the main conferences. For the ideas, choose one introduction: the podcast series, a short article by Benjamin Todd, an academic article by Will MacAskill, or the book Doing Good Better. Then meet people in person. Newcomers are pointed toward EAGx conferences, which have been held in cities including Nairobi, Hong Kong, Sydney, and Boston, and also online. People who are already involved are pointed toward larger EAG events, often in London and San Francisco, with travel grants available. Local groups and the Effective Altruism Forum are the route when a conference is too far."
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Favours and hubs",
+      "bodyEn": "After a few conversations, ask for introductions. Meet people in a similar situation first, because you can help each other, then talk with people one or two steps ahead, such as someone who started an organisation last year if that is your aim. Look for five-minute favours, such as an introduction or a book recommendation, which help someone and widen the circle. Visiting a hub is another concrete step, and the appendix's rough order by size starts with San Francisco, then London, Oxford, and Cambridge in the UK, then Boston and Cambridge in Massachusetts especially for biological risk, then Washington for US policy, then cities such as New York, Sydney, Melbourne, and Berlin. Two further pieces, one from 80,000 Hours and one by Toby Ord, are the reading if your question is whether to delay impact. Do one small favour this week, and put one event or one local meeting on the calendar.",
+      "terms": [
+        {
+          "en": "five-minute favour",
+          "hook": "If they say this, they mean a small quick help, such as an introduction or a book tip."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Resource check",
+      "bodyEn": "Use this appendix by opening one resource for the gap you have, whether that gap is machine learning, management, sales, referrals, interviews, negotiation, or finding a community. The management starting point, if you read only one book, is The Great CEO Within. Community entry starts with the newsletter and one introduction, then an in-person event or a local group. Five-minute favours and people a step or two ahead come after you have met peers. Hubs are listed so a visit is a real option, with San Francisco and the London, Oxford, and Cambridge cluster first in the size order. The list is a set of next actions, and it works when you do one of them.",
+      "prompt": "What is the first community step this appendix says you can do immediately?",
+      "choices": [
+        "Join the Effective Altruism Newsletter, then pick one introduction and meet people in person",
+        "Move to San Francisco before you have read anything about the ideas",
+        "Read every management book on the list in the same week",
+        "Skip events until you already have a grantmaking job"
+      ],
+      "answer": 0
+    }
+  ]
+}

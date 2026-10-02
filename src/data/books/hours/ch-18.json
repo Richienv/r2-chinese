@@ -1,0 +1,162 @@
+{
+  "id": "18",
+  "index": 18,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Use college years",
+  "titleSource": "Appendix 6",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Four college jobs",
+      "bodyEn": "This college advice is tentative, and the authors say they have not done a deep research review, so it may change. Start by deciding what you want from the years: study and grades, friendships, preparation for later work, and a broader education in yourself and the world. Early on, exploration and flexible career capital usually matter more than a single locked plan, unless one path is already clearly best. A rough long-term guess still helps, because a research ambition makes grades matter more for graduate school. Use the career-planning chapter to sketch those guesses. Then let the sketch change how you spend the weeks.",
+      "terms": [
+        {
+          "en": "career capital",
+          "hook": "If they say this, they mean skills, credentials, and connections that widen later options."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Pick the subject",
+      "bodyEn": "Judge a subject by whether you will be good at it, because skill brings later options, enjoyment, grades, and speed. Also judge whether the programme leaves doors open inside and outside academia. Applied quantitative subjects tend to pay more even after you account for who chooses them, while narrow applied fields and industry-tied ones buy pay by giving up the ability to switch. More fundamental subjects travel further, and applied mathematics is especially portable across the sciences and the social sciences. Holding other things equal, the appendix's order of quantitative options runs mathematics, economics, computer science, physics, engineering, then political science, chemistry, and biology at about the same level. If you would be mediocre at mathematics and excellent at philosophy or political science, take the subject where you would be excellent.",
+      "terms": [
+        {
+          "en": "personal fit",
+          "hook": "If they say this, they mean whether you will actually be good at the subject."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Writing plus quantity",
+      "bodyEn": "A strong pairing is a quantitative major with a minor that trains writing, such as mathematics with philosophy, because people who can handle numbers and explain them are widely in demand. If you want a non-quantitative focus, philosophy, history, or English can build that writing. Business or accounting fits a more applied aim. Subjects seen as difficult, such as mathematics, medicine, and philosophy, also work as a signal to employers, and some departments are a stronger signal at a particular university. Prefer subjects that are hard to learn later on your own, especially quantitative ones that need feedback and a long chain of earlier ideas. Flexibility usually outranks a narrow match to one dream job, and a required pre-professional sequence matters once you already know the profession. Try an uncertain subject in a short course before you commit the degree to it.",
+      "terms": [
+        {
+          "en": "signal",
+          "hook": "If they say this, they mean the credential employers use when they cannot yet see your skill."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Grades and side bets",
+      "bodyEn": "Top grades, a British first or a US grade-point average above 3.6, keep academia and some professional paths such as law and medicine open. Many other employers are satisfied with a solid upper second or a grade-point average above 3.0, and some paths are self-employment. Most students never use the great majority of course content, so the credential is a large part of why hard study pays, while skills you will actually use are a reason to learn the material itself. Internships, side projects, and running a student society can beat the jump from acceptable grades to perfect ones. In the US, taking fewer courses can leave time for those activities, unless an extra class teaches a real skill, opens graduate school, or tests a path. A thesis can be aimed at a useful question, and the appendix points to a project called Effective Thesis for help choosing one."
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Explore while enrolled",
+      "bodyEn": "Most students do not yet have one standout path, and college is a period when exploration is expected and still available. Make a long list of promising later options, include a few wild cards, and try them with one or two internships, a research project, talks, student societies, side projects, and lectures in a field you might study next. Finance and consulting can be worth a look as credentials, and they are a weak use of the years when you already know you will refuse them and they add no signal you need. A gap year that includes some work is often worth a serious look before you start. Near the end, apply to several kinds of jobs and to graduate school, and compare the offers. Afterward, an unusual stretch of about two years can still be followed by graduate school, which puts you back on a standard track."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Whether and where",
+      "bodyEn": "On average, college raises income even after lost earnings and the fact that students were already more able, and the authors read that boost as career capital, while remaining unsure how much comes from skills, the credential, or the connections. The main exceptions are a high chance you will drop out, a rare better way to build capital such as learning to program and entering technology, or a fellowship aimed at people who skip college, and a time-sensitive project that is already working. If you think you have found something better, the usual move is to enrol, run the project beside the course, and leave if it takes off while keeping a way back. A well-known US study found that students admitted to an elite university who went elsewhere earned about as much, except lower-income students, who earned more. The appendix still leans toward trying for an elite university because of the credential, the other students, and access to some professions, while noting that the advantage looks smaller in science and that your major can matter as much as the name. Value-added rankings are the tool it suggests when you compare specific colleges."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Life around the course",
+      "bodyEn": "Friendships made at college are unusually likely to last, and the years after full-time work starts leave less room to meet people in the same situation. An effective altruism student group, where one exists, is the appendix's specific suggestion for students who want a high-impact career. Travel to a very different culture or a poor country, build an exercise habit, and take mental health seriously while the schedule is still flexible. Run a society, start a very small venture, or collect an achievement you can show. Those activities build skills, enjoyment, and a record at the same time. For many students they belong in the plan beside the classes."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "College choice check",
+      "bodyEn": "Choose a subject you can be excellent at, with a bias toward fundamental quantitative study and a writing skill beside it. Spend the years exploring several future paths, and treat top grades as essential when the paths you want require them. College is usually a strong investment, with exceptions for a likely dropout, a rare better way to build capital, and a project that is already taking off. An elite university is still the appendix's lean, especially outside science, and the major can matter as much as the institution. Friendships, a student group, and real projects are part of the point of being there. The advice is tentative and may be revised.",
+      "prompt": "Which subject choice matches this appendix if you would be a middling mathematics student and an excellent philosophy student?",
+      "choices": [
+        "Study philosophy, because being excellent at the subject outweighs the default tilt toward the most quantitative option",
+        "Study mathematics anyway, because the printed order always beats personal fit",
+        "Skip college until a perfect subject appears",
+        "Choose the narrow applied subject with the highest starting pay in one industry"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Four college jobs",
+      "bodyEn": "This college advice is tentative, and the authors say they have not done a deep research review, so it may change. Start by deciding what you want from the years: study and grades, friendships, preparation for later work, and a broader education in yourself and the world. Early on, exploration and flexible career capital usually matter more than a single locked plan, unless one path is already clearly best. A rough long-term guess still helps, because a research ambition makes grades matter more for graduate school. Use the career-planning chapter to sketch those guesses. Then let the sketch change how you spend the weeks.",
+      "terms": [
+        {
+          "en": "career capital",
+          "hook": "If they say this, they mean skills, credentials, and connections that widen later options."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Pick the subject",
+      "bodyEn": "Judge a subject by whether you will be good at it, because skill brings later options, enjoyment, grades, and speed. Also judge whether the programme leaves doors open inside and outside academia. Applied quantitative subjects tend to pay more even after you account for who chooses them, while narrow applied fields and industry-tied ones buy pay by giving up the ability to switch. More fundamental subjects travel further, and applied mathematics is especially portable across the sciences and the social sciences. Holding other things equal, the appendix's order of quantitative options runs mathematics, economics, computer science, physics, engineering, then political science, chemistry, and biology at about the same level. If you would be mediocre at mathematics and excellent at philosophy or political science, take the subject where you would be excellent.",
+      "terms": [
+        {
+          "en": "personal fit",
+          "hook": "If they say this, they mean whether you will actually be good at the subject."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Writing plus quantity",
+      "bodyEn": "A strong pairing is a quantitative major with a minor that trains writing, such as mathematics with philosophy, because people who can handle numbers and explain them are widely in demand. If you want a non-quantitative focus, philosophy, history, or English can build that writing. Business or accounting fits a more applied aim. Subjects seen as difficult, such as mathematics, medicine, and philosophy, also work as a signal to employers, and some departments are a stronger signal at a particular university. Prefer subjects that are hard to learn later on your own, especially quantitative ones that need feedback and a long chain of earlier ideas. Flexibility usually outranks a narrow match to one dream job, and a required pre-professional sequence matters once you already know the profession. Try an uncertain subject in a short course before you commit the degree to it.",
+      "terms": [
+        {
+          "en": "signal",
+          "hook": "If they say this, they mean the credential employers use when they cannot yet see your skill."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Grades and side bets",
+      "bodyEn": "Top grades, a British first or a US grade-point average above 3.6, keep academia and some professional paths such as law and medicine open. Many other employers are satisfied with a solid upper second or a grade-point average above 3.0, and some paths are self-employment. Most students never use the great majority of course content, so the credential is a large part of why hard study pays, while skills you will actually use are a reason to learn the material itself. Internships, side projects, and running a student society can beat the jump from acceptable grades to perfect ones. In the US, taking fewer courses can leave time for those activities, unless an extra class teaches a real skill, opens graduate school, or tests a path. A thesis can be aimed at a useful question, and the appendix points to a project called Effective Thesis for help choosing one."
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Explore while enrolled",
+      "bodyEn": "Most students do not yet have one standout path, and college is a period when exploration is expected and still available. Make a long list of promising later options, include a few wild cards, and try them with one or two internships, a research project, talks, student societies, side projects, and lectures in a field you might study next. Finance and consulting can be worth a look as credentials, and they are a weak use of the years when you already know you will refuse them and they add no signal you need. A gap year that includes some work is often worth a serious look before you start. Near the end, apply to several kinds of jobs and to graduate school, and compare the offers. Afterward, an unusual stretch of about two years can still be followed by graduate school, which puts you back on a standard track."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Whether and where",
+      "bodyEn": "On average, college raises income even after lost earnings and the fact that students were already more able, and the authors read that boost as career capital, while remaining unsure how much comes from skills, the credential, or the connections. The main exceptions are a high chance you will drop out, a rare better way to build capital such as learning to program and entering technology, or a fellowship aimed at people who skip college, and a time-sensitive project that is already working. If you think you have found something better, the usual move is to enrol, run the project beside the course, and leave if it takes off while keeping a way back. A well-known US study found that students admitted to an elite university who went elsewhere earned about as much, except lower-income students, who earned more. The appendix still leans toward trying for an elite university because of the credential, the other students, and access to some professions, while noting that the advantage looks smaller in science and that your major can matter as much as the name. Value-added rankings are the tool it suggests when you compare specific colleges."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Life around the course",
+      "bodyEn": "Friendships made at college are unusually likely to last, and the years after full-time work starts leave less room to meet people in the same situation. An effective altruism student group, where one exists, is the appendix's specific suggestion for students who want a high-impact career. Travel to a very different culture or a poor country, build an exercise habit, and take mental health seriously while the schedule is still flexible. Run a society, start a very small venture, or collect an achievement you can show. Those activities build skills, enjoyment, and a record at the same time. For many students they belong in the plan beside the classes."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "College choice check",
+      "bodyEn": "Choose a subject you can be excellent at, with a bias toward fundamental quantitative study and a writing skill beside it. Spend the years exploring several future paths, and treat top grades as essential when the paths you want require them. College is usually a strong investment, with exceptions for a likely dropout, a rare better way to build capital, and a project that is already taking off. An elite university is still the appendix's lean, especially outside science, and the major can matter as much as the institution. Friendships, a student group, and real projects are part of the point of being there. The advice is tentative and may be revised.",
+      "prompt": "Which subject choice matches this appendix if you would be a middling mathematics student and an excellent philosophy student?",
+      "choices": [
+        "Study philosophy, because being excellent at the subject outweighs the default tilt toward the most quantitative option",
+        "Study mathematics anyway, because the printed order always beats personal fit",
+        "Skip college until a perfect subject appears",
+        "Choose the narrow applied subject with the highest starting pay in one industry"
+      ],
+      "answer": 0
+    }
+  ]
+}

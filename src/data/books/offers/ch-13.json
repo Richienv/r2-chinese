@@ -1,0 +1,183 @@
+{
+  "id": "13",
+  "index": 13,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Urgency limits time",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Deadlines drive decisions",
+      "bodyEn": "Urgency is a limit on when someone can act. Scarcity is a limit on how many can act, and the two are often combined, so name which lever you are pulling. A real deadline is what creates urgency. Four patterns can run on repeat without a fake timer: rolling cohorts, seasonal campaigns, expiring promotions, and opportunities that decay. Cohorts are the easiest to operate, because new clients start together and onboarding becomes a designed event. The push gets stronger as starts get rarer: a twice-a-year kickoff is heavy, and every other week still nudges.",
+      "terms": [
+        {
+          "en": "Urgency",
+          "hook": "A real cutoff in time. The number of seats can stay unlimited."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Rolling start dates",
+      "bodyEn": "A weekly start date creates urgency even when every seat is still open: join and begin with Monday's group, or wait for the following start. A stronger true line uses a real opening: someone dropped, the next group begins Monday, and waiting means the same price for a later result. The nudge is small, and it moves people who already meant to begin. On a week-long campaign, the last four hours of the last day often produce half to three fifths of the sales, which is a few percent of the clock. The fear that a deadline costs you buyers usually misreads that bunching. People who miss a real cutoff were often never going to buy, and the people who act because of the cutoff more than cover them."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "When they miss the start",
+      "bodyEn": "Someone will want to buy just after a cohort has begun. One option is a fast personal onboarding, offered as a bonus, so they can still join this group. The cleaner option is to let them wait and to make the wait useful. They get more time to review the material, to talk with employees or family, and to use a longer payment plan that exists because the start is far away. Most clients never receive that plan, so the delay is an advantage you can describe honestly. You control the calendar, which means either choice can be true. Prefer the wait when you want the onboarding cadence to stay intact."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Seasonal end dates",
+      "bodyEn": "Put a real signup date where buyers can see it, on the page and in the copy. A date you will ignore trains people to ignore you. The offer inside can stay the same while the wrapper changes by season, with a named end this month and a different named end the next. A season gives the campaign a start and a finish, and the finish is what pushes the decision. Spinning up the next page with new dates is a short edit, and the visible cutoff is what lifts conversion. For a local business this is the main urgency tool: a dated wrapper on the same core service keeps beating one timeless campaign.",
+      "terms": [
+        {
+          "en": "Seasonal deadline",
+          "hook": "The same core offer, with a true end date and a new seasonal name."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Let the deal expire",
+      "bodyEn": "A business that sells all year can put the deadline on the promotion. A roofer will still fix the roof after the date, so the honest line is that the discount, the bonus, or the included installation ends. Tell the buyer to start now if they want the offer they came in for, that these offers rotate every few weeks, and that this round is one of the stronger ones. Swap the piece that expires: a lower price, waived setup, or a workshop you would otherwise charge for, with that charge stated. The core service remains available. The enhancer ends, which keeps the urgency and keeps the claim true.",
+      "terms": [
+        {
+          "en": "Promotional urgency",
+          "hook": "The service stays for sale. The discount, bonus, or extra is what expires."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Announce a real price rise",
+      "bodyEn": "When you truly intend to raise prices, tell the people already in conversation before you do it. The people on the fence get a genuine reason to decide, and you collect a surge you would otherwise leave behind. A silent increase wastes that moment. This deadline sits on the old price. It works when the raise happens. If the price never moves, the sentence stops meaning anything, so use it only on changes you will enforce."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "When waiting destroys value",
+      "bodyEn": "Some opportunities get worse every day the buyer waits. A price gap between two marketplaces closes as other people crowd in. A new advertising channel pays better before competitors arrive. A job offer whose pay shrinks each day of delay has the same shape. In each case the economics decay, so the cost of waiting is part of the offer, and you say that plainly. Use this pattern only when the decay is real. A seasonal rename is a wrapper with an end date, while an exploding opportunity is the underlying chance itself getting smaller.",
+      "terms": [
+        {
+          "en": "Exploding opportunity",
+          "hook": "The chance itself shrinks with time, so delay has a measurable cost."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Pick the right clock",
+      "bodyEn": "Cohort urgency fits when people start together and the next start date is the cutoff. Seasonal urgency fits when the core stays stable and the market has already seen the old wrapper. Promotional urgency fits when you must keep selling the service continuously and only the deal expires. Exploding urgency fits when delay reduces the result they can still get. A quantity cap can sit beside any of these, and the words should match the cutoff you will enforce. Deadlines create action because people bunch their decisions at the end. Bonuses are the next enhancer, and they change value rather than the clock."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Which urgency is honest",
+      "bodyEn": "Urgency limits time. The four workable forms are a cohort start, a seasonal end date, an expiring promotion or price, and an opportunity that decays. Each one needs a cutoff you will keep. Unlimited seats can still be urgent if the start date is real. A service can stay available all year if the bonus or the old price ends. A countdown that resets whenever someone hesitates teaches the market to wait. Choose the line that keeps urgency honest for a business that sells every week.",
+      "prompt": "You sell the service all year. Which urgency stays honest?",
+      "choices": [
+        "Tell buyers the roster is full, then accept every order the same afternoon",
+        "Let the discount or bonus expire on a date, and keep the service available",
+        "Use a countdown that resets whenever someone is about to leave",
+        "Refuse the work after Friday even though you will still do it on Monday"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Deadlines drive decisions",
+      "bodyEn": "Urgency is a limit on when someone can act. Scarcity is a limit on how many can act, and the two are often combined, so name which lever you are pulling. A real deadline is what creates urgency. Four patterns can run on repeat without a fake timer: rolling cohorts, seasonal campaigns, expiring promotions, and opportunities that decay. Cohorts are the easiest to operate, because new clients start together and onboarding becomes a designed event. The push gets stronger as starts get rarer: a twice-a-year kickoff is heavy, and every other week still nudges.",
+      "terms": [
+        {
+          "en": "Urgency",
+          "hook": "A real cutoff in time. The number of seats can stay unlimited."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Rolling start dates",
+      "bodyEn": "A weekly start date creates urgency even when every seat is still open: join and begin with Monday's group, or wait for the following start. A stronger true line uses a real opening: someone dropped, the next group begins Monday, and waiting means the same price for a later result. The nudge is small, and it moves people who already meant to begin. On a week-long campaign, the last four hours of the last day often produce half to three fifths of the sales, which is a few percent of the clock. The fear that a deadline costs you buyers usually misreads that bunching. People who miss a real cutoff were often never going to buy, and the people who act because of the cutoff more than cover them."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "When they miss the start",
+      "bodyEn": "Someone will want to buy just after a cohort has begun. One option is a fast personal onboarding, offered as a bonus, so they can still join this group. The cleaner option is to let them wait and to make the wait useful. They get more time to review the material, to talk with employees or family, and to use a longer payment plan that exists because the start is far away. Most clients never receive that plan, so the delay is an advantage you can describe honestly. You control the calendar, which means either choice can be true. Prefer the wait when you want the onboarding cadence to stay intact."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Seasonal end dates",
+      "bodyEn": "Put a real signup date where buyers can see it, on the page and in the copy. A date you will ignore trains people to ignore you. The offer inside can stay the same while the wrapper changes by season, with a named end this month and a different named end the next. A season gives the campaign a start and a finish, and the finish is what pushes the decision. Spinning up the next page with new dates is a short edit, and the visible cutoff is what lifts conversion. For a local business this is the main urgency tool: a dated wrapper on the same core service keeps beating one timeless campaign.",
+      "terms": [
+        {
+          "en": "Seasonal deadline",
+          "hook": "The same core offer, with a true end date and a new seasonal name."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Let the deal expire",
+      "bodyEn": "A business that sells all year can put the deadline on the promotion. A roofer will still fix the roof after the date, so the honest line is that the discount, the bonus, or the included installation ends. Tell the buyer to start now if they want the offer they came in for, that these offers rotate every few weeks, and that this round is one of the stronger ones. Swap the piece that expires: a lower price, waived setup, or a workshop you would otherwise charge for, with that charge stated. The core service remains available. The enhancer ends, which keeps the urgency and keeps the claim true.",
+      "terms": [
+        {
+          "en": "Promotional urgency",
+          "hook": "The service stays for sale. The discount, bonus, or extra is what expires."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Announce a real price rise",
+      "bodyEn": "When you truly intend to raise prices, tell the people already in conversation before you do it. The people on the fence get a genuine reason to decide, and you collect a surge you would otherwise leave behind. A silent increase wastes that moment. This deadline sits on the old price. It works when the raise happens. If the price never moves, the sentence stops meaning anything, so use it only on changes you will enforce."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "When waiting destroys value",
+      "bodyEn": "Some opportunities get worse every day the buyer waits. A price gap between two marketplaces closes as other people crowd in. A new advertising channel pays better before competitors arrive. A job offer whose pay shrinks each day of delay has the same shape. In each case the economics decay, so the cost of waiting is part of the offer, and you say that plainly. Use this pattern only when the decay is real. A seasonal rename is a wrapper with an end date, while an exploding opportunity is the underlying chance itself getting smaller.",
+      "terms": [
+        {
+          "en": "Exploding opportunity",
+          "hook": "The chance itself shrinks with time, so delay has a measurable cost."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Pick the right clock",
+      "bodyEn": "Cohort urgency fits when people start together and the next start date is the cutoff. Seasonal urgency fits when the core stays stable and the market has already seen the old wrapper. Promotional urgency fits when you must keep selling the service continuously and only the deal expires. Exploding urgency fits when delay reduces the result they can still get. A quantity cap can sit beside any of these, and the words should match the cutoff you will enforce. Deadlines create action because people bunch their decisions at the end. Bonuses are the next enhancer, and they change value rather than the clock."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Which urgency is honest",
+      "bodyEn": "Urgency limits time. The four workable forms are a cohort start, a seasonal end date, an expiring promotion or price, and an opportunity that decays. Each one needs a cutoff you will keep. Unlimited seats can still be urgent if the start date is real. A service can stay available all year if the bonus or the old price ends. A countdown that resets whenever someone hesitates teaches the market to wait. Choose the line that keeps urgency honest for a business that sells every week.",
+      "prompt": "You sell the service all year. Which urgency stays honest?",
+      "choices": [
+        "Tell buyers the roster is full, then accept every order the same afternoon",
+        "Let the discount or bonus expire on a date, and keep the service available",
+        "Use a countdown that resets whenever someone is about to leave",
+        "Refuse the work after Friday even though you will still do it on Monday"
+      ],
+      "answer": 1
+    }
+  ]
+}

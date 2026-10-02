@@ -1,0 +1,183 @@
+{
+  "id": "12",
+  "index": 12,
+  "part": 1,
+  "partTitleEn": "$100M Offers",
+  "titleEn": "Scarcity limits quantity",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Quantity drives the price",
+      "bodyEn": "Scarcity is a limit on how many can buy. People assume a known expert's time is wanted and therefore short, so the price looks extreme before any tactic is applied. Two forces compound: how rare a solver is, and how much the result is worth on a narrow, expensive problem. The person who needs the trade less holds the advantage, which is why genuine indifference to the fee is hard to imitate. You can still use honest quantity limits before you have that reputation. A public cap works because the fear of losing the chance moves people harder than the hope of a gain they could buy any day.",
+      "terms": [
+        {
+          "en": "Scarcity",
+          "hook": "A public limit on how many can buy. A deadline is a different lever."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Three forms, then sell out",
+      "bodyEn": "Scarcity takes three forms: a limited count of seats or units, a limited count of bonuses, or an item that will stay unavailable after this round. On a physical product, limit a flavor, color, design, or size, and sell the run out on purpose, because leftovers teach people the cap was decorative. Announce the sell-out so people who waited see that others wanted it and feel the miss. Repeat a true sell-out on a steady cadence, about monthly, and avoid running it so often that it feels ordinary. Premium goods sometimes place only one or two of a piece in each location, so the item on hand is the last or the next to last and the price can stay high. A service business uses the same psychology with a client cap.",
+      "terms": [
+        {
+          "en": "Sell-out",
+          "hook": "You exhaust the stated quantity, then tell the market it is gone."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Cap the whole roster",
+      "bodyEn": "A service that wants a steady flow of clients uses a different cap than a product drop. The total cap says you accept only a fixed number at this level, on an ongoing basis. A waiting list forms, and when a spot opens, resistance to the price drops because the door is actually open. You can raise capacity by a modest slice, on the order of ten to twenty percent, and then cap it again. This fits the highest tier, where you would rather raise the price and replace weaker accounts than grow the roster without a ceiling. Leave some demand outside the cap on purpose.",
+      "terms": [
+        {
+          "en": "Total cap",
+          "hook": "A fixed number of clients at one service level, with a real waiting list."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Cap the intake",
+      "bodyEn": "A growth-rate cap limits how many new clients you start in a period, such as five in a week, and you say how many of those spots are already taken. You can onboard only so many people well, so the number should be one you already have to respect. A cohort cap limits seats in a class that starts on a monthly or quarterly rhythm: the doors open, then they close. Both give the sales conversation a true limit and give operations a cadence. For workshops, events, and consulting, publish a headcount below your hopeful forecast, so the room actually fills and the next date opens on a remembered sell-out. These caps work hardest on the expensive add-on, where access itself is the product."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Publish real capacity",
+      "bodyEn": "The most ethical scarcity is a capacity you could never exceed tomorrow. Decide whether you can take five, ten, or twenty-five people in the period, then advertise that number. Telling a prospect you are three-quarters of the way to this week's cap, or most of the way to the business cap, gives them a real reason to decide. As you approach the line you drew, remaining spots tend to go faster, because a filling roster is also evidence that other people chose you. You choose where full sits, and you have to honor the line. The same pattern turns a free download into something people watch for: twenty copies this week, a sold-out page, and a note when the next twenty appear."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Tiny access, no reentry",
+      "bodyEn": "An extreme version sells a very small amount of one-to-one access, priced high, with the cap stated in public. Choose a medium you can stand, such as scheduled calls if an open inbox wears you down, and let the top slice of buyers adjust to it. This version is unscalable on purpose, and it monetizes the people who will pay the most. A second rule says that if someone leaves this level, they cannot return. Leaving becomes a serious decision, which has force in a small group and gets thin in a huge one. Pair the access with a delivery style you will still respect months from now.",
+      "terms": [
+        {
+          "en": "One-way access",
+          "hook": "Leave this tier and the spot stays closed to you. Strongest in a small group."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Bonus caps and last chances",
+      "bodyEn": "A bonus cap limits the extra, while the core can stay available: only buyers of this program receive pieces you never sell alone, or only a few event seats ride along as bonuses. That limit is still a count. If the extra disappears on a clock, you have switched to urgency, which is the next chapter. The never-again form is stricter, because missing the item means it will stay unmade. Pick the form the business can tell the truth about. A product drop is a run size, an agency is a client cap, and a class is a cohort cap. A fake last unit fails the moment you quietly reopen it."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Say the number out loud",
+      "bodyEn": "A limit nobody hears leaves behavior unchanged. Publish the cap, honor it, and announce when you are full. Selling fewer than you are able to sell is the mechanism, because the unmet demand makes the next opening move faster and support a higher price. Scarcity wraps the core offer you already stacked, and the stack still has to exist underneath the cap. Use quantity language when the truth is a count. Save date language for a real cutoff in time. One business can run several of these caps at once, as long as each number is real."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Honest cap check",
+      "bodyEn": "Scarcity changes how many people can get the thing. Ethical versions use a number you will keep: a roster cap, a weekly intake, a cohort size, a run of units, a count of bonuses, or a one-time item. You publish the number, you sell through it on purpose, and you tell people when it is gone. Reopening a supposed last seat spends the trust the lever needs. A date limit is urgency, even when seats are unlimited. Choose the description that is actually scarcity.",
+      "prompt": "Which move is scarcity?",
+      "choices": [
+        "You set a seasonal end date and keep selling unlimited seats until that day",
+        "You cut the price for anyone who asks, with no limit on who can buy",
+        "You rename the offer every month and leave the supply unchanged",
+        "You cap quantity, publish the number, sell through it, and announce the sell-out"
+      ],
+      "answer": 3
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Quantity drives the price",
+      "bodyEn": "Scarcity is a limit on how many can buy. People assume a known expert's time is wanted and therefore short, so the price looks extreme before any tactic is applied. Two forces compound: how rare a solver is, and how much the result is worth on a narrow, expensive problem. The person who needs the trade less holds the advantage, which is why genuine indifference to the fee is hard to imitate. You can still use honest quantity limits before you have that reputation. A public cap works because the fear of losing the chance moves people harder than the hope of a gain they could buy any day.",
+      "terms": [
+        {
+          "en": "Scarcity",
+          "hook": "A public limit on how many can buy. A deadline is a different lever."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Three forms, then sell out",
+      "bodyEn": "Scarcity takes three forms: a limited count of seats or units, a limited count of bonuses, or an item that will stay unavailable after this round. On a physical product, limit a flavor, color, design, or size, and sell the run out on purpose, because leftovers teach people the cap was decorative. Announce the sell-out so people who waited see that others wanted it and feel the miss. Repeat a true sell-out on a steady cadence, about monthly, and avoid running it so often that it feels ordinary. Premium goods sometimes place only one or two of a piece in each location, so the item on hand is the last or the next to last and the price can stay high. A service business uses the same psychology with a client cap.",
+      "terms": [
+        {
+          "en": "Sell-out",
+          "hook": "You exhaust the stated quantity, then tell the market it is gone."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Cap the whole roster",
+      "bodyEn": "A service that wants a steady flow of clients uses a different cap than a product drop. The total cap says you accept only a fixed number at this level, on an ongoing basis. A waiting list forms, and when a spot opens, resistance to the price drops because the door is actually open. You can raise capacity by a modest slice, on the order of ten to twenty percent, and then cap it again. This fits the highest tier, where you would rather raise the price and replace weaker accounts than grow the roster without a ceiling. Leave some demand outside the cap on purpose.",
+      "terms": [
+        {
+          "en": "Total cap",
+          "hook": "A fixed number of clients at one service level, with a real waiting list."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Cap the intake",
+      "bodyEn": "A growth-rate cap limits how many new clients you start in a period, such as five in a week, and you say how many of those spots are already taken. You can onboard only so many people well, so the number should be one you already have to respect. A cohort cap limits seats in a class that starts on a monthly or quarterly rhythm: the doors open, then they close. Both give the sales conversation a true limit and give operations a cadence. For workshops, events, and consulting, publish a headcount below your hopeful forecast, so the room actually fills and the next date opens on a remembered sell-out. These caps work hardest on the expensive add-on, where access itself is the product."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Publish real capacity",
+      "bodyEn": "The most ethical scarcity is a capacity you could never exceed tomorrow. Decide whether you can take five, ten, or twenty-five people in the period, then advertise that number. Telling a prospect you are three-quarters of the way to this week's cap, or most of the way to the business cap, gives them a real reason to decide. As you approach the line you drew, remaining spots tend to go faster, because a filling roster is also evidence that other people chose you. You choose where full sits, and you have to honor the line. The same pattern turns a free download into something people watch for: twenty copies this week, a sold-out page, and a note when the next twenty appear."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Tiny access, no reentry",
+      "bodyEn": "An extreme version sells a very small amount of one-to-one access, priced high, with the cap stated in public. Choose a medium you can stand, such as scheduled calls if an open inbox wears you down, and let the top slice of buyers adjust to it. This version is unscalable on purpose, and it monetizes the people who will pay the most. A second rule says that if someone leaves this level, they cannot return. Leaving becomes a serious decision, which has force in a small group and gets thin in a huge one. Pair the access with a delivery style you will still respect months from now.",
+      "terms": [
+        {
+          "en": "One-way access",
+          "hook": "Leave this tier and the spot stays closed to you. Strongest in a small group."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Bonus caps and last chances",
+      "bodyEn": "A bonus cap limits the extra, while the core can stay available: only buyers of this program receive pieces you never sell alone, or only a few event seats ride along as bonuses. That limit is still a count. If the extra disappears on a clock, you have switched to urgency, which is the next chapter. The never-again form is stricter, because missing the item means it will stay unmade. Pick the form the business can tell the truth about. A product drop is a run size, an agency is a client cap, and a class is a cohort cap. A fake last unit fails the moment you quietly reopen it."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Say the number out loud",
+      "bodyEn": "A limit nobody hears leaves behavior unchanged. Publish the cap, honor it, and announce when you are full. Selling fewer than you are able to sell is the mechanism, because the unmet demand makes the next opening move faster and support a higher price. Scarcity wraps the core offer you already stacked, and the stack still has to exist underneath the cap. Use quantity language when the truth is a count. Save date language for a real cutoff in time. One business can run several of these caps at once, as long as each number is real."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Honest cap check",
+      "bodyEn": "Scarcity changes how many people can get the thing. Ethical versions use a number you will keep: a roster cap, a weekly intake, a cohort size, a run of units, a count of bonuses, or a one-time item. You publish the number, you sell through it on purpose, and you tell people when it is gone. Reopening a supposed last seat spends the trust the lever needs. A date limit is urgency, even when seats are unlimited. Choose the description that is actually scarcity.",
+      "prompt": "Which move is scarcity?",
+      "choices": [
+        "You set a seasonal end date and keep selling unlimited seats until that day",
+        "You cut the price for anyone who asks, with no limit on who can buy",
+        "You rename the offer every month and leave the supply unchanged",
+        "You cap quantity, publish the number, sell through it, and announce the sell-out"
+      ],
+      "answer": 3
+    }
+  ]
+}

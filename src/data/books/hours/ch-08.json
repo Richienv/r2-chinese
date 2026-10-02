@@ -1,0 +1,242 @@
+{
+  "id": "08",
+  "index": 8,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Find personal fit",
+  "titleSource": "Chapter 8",
+  "sourcePages": "133-157",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Fit multiplies impact",
+      "bodyEn": "Personal fit is how likely you are to become genuinely excellent in a role once you put the years in, and this chapter treats that chance as a multiplier on everything else. Output in most fields is heavily skewed: a landmark review credits the most prolific tenth of workers with about half the contributions, the least productive half with only about fifteen percent, and the single most productive person with about a hundred times the least. The same spike shows up in research, where the most cited tenth of a percent of papers receive about a thousand times the citations of the median paper, and it is stronger in complex work such as research, software, and starting organisations. Some of that gap is luck, but skill is part of it, so a field you can master raises your impact, and a reputation for getting hard things done becomes capital you can carry into other causes. A public example is a fashion model who, after experts said nuclear energy mattered for climate, used her audience to argue for it, a path this guide would not normally recommend unless the fit was unusually high. A sense of mastery is also part of what makes work satisfying. The comparison picture adds career capital, impact from a pressing problem tackled in the right way, and supportive conditions such as engaging work, colleagues, and basic needs, plus whether the rest of life can absorb the job, then multiplies that sum by personal fit, which is why a high-impact label is still a poor reason to take a job you would be bad at.",
+      "terms": [
+        {
+          "en": "Personal fit",
+          "hook": "If they say this, they mean your chance of excelling if you work at the job."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Gut and tests fail",
+      "bodyEn": "The better question is what you could become good at, not what you are already good at, because skill is built over years and early failure is common even among people who later dominate a field. Turning inward for days, or waiting to discover a finished talent, assumes you can predict performance ahead of time, and the evidence says that prediction is weak. Employers who know the job still miss: the chapter's table tops out with IQ tests at a correlation of 0.65 and with both structured and unstructured interviews at 0.58, and it calls a correlation around 0.6 pretty weak, with longer-range guesses likely worse. Candidates who look poor often turn out strong, and the reverse, so ranking options from an armchair fails even more often than hiring does. Gut instinct is sharp about social alarm and about games you have practised for years, and poor at slow, rare, shifting calls such as how quickly a company will expand, which side will win a contest, what marks a student will get, or which choices will leave you happy. Career choices sit in that second group, because you get few shots, results take years, and the market for jobs does not sit still, so a feeling of distrust or flatness is a clue and not a verdict. Interest tests built on Holland types correlate only about 0.31 with performance in that table, and studies of job satisfaction find only a small link, roughly 0.1 to 0.3, which is why this chapter ignores the usual career quiz.",
+      "terms": [
+        {
+          "en": "Holland types",
+          "hook": "If they say this, they mean interest labels that only weakly predict performance or satisfaction."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "What predicts weakly",
+      "bodyEn": "Interviews sit near the top of that table, so ask people who have hired in the field how you would compare with other candidates. Job knowledge tests, tryouts, and work samples are the next useful cluster, which is an argument for getting as close as you can to the actual work and then seeing how it goes. IQ correlates the most and still does not tell you which kind of job fits you better than another, setting aside what those tests measure. Further down the same table, years of experience and years of schooling predict little, and handwriting and age predict essentially nothing. None of these tools are strong enough to close doors early. Stay open until you have tried something, because looking unfit on paper is weak evidence, and the only decisive test is doing the work."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "List the uncertainties",
+      "bodyEn": "Treat each career idea as a hypothesis, and start with a longer list than feels natural, because discarding a strong option before a cheap look is the expensive mistake. A short list is one of the common decision mistakes, which is how people drift into a doctorate, medicine, or law simply because it was the default around them. The subject you studied rarely decides the job, so do not search only inside that subject. Score the long list, roughly, on whether you could excel, whether the path does real good, and whether the working conditions support a life, and add career capital when you are comparing a next step rather than a long path. Then name the few questions that would change which option is on top, such as whether you would be hired, whether you would enjoy one part of the work, whether the pay covers your loans, and what an ordinary day is like. You cannot investigate every job, so those key uncertainties are the whole investigation.",
+      "terms": [
+        {
+          "en": "Key uncertainty",
+          "hook": "If they say this, they mean the question that would most change which option is on top."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Cheap tests first",
+      "bodyEn": "Resolve the cheapest uncertainties first, and design each test so it might knock out the current leader or show what would promote a different option. A ladder in the chapter runs from an hour or two of reading, to one conversation, to several more conversations plus a book or two, and only then to extra ways of predicting success. Next comes a project of about one to four weeks, such as applications, related volunteering, or a side project, so you can see the work and your own performance. Only after that should you consider a commitment of about two months to two years, such as a placement, an internship, or graduate study, and a short trial that both sides want is ideal. A career can justify weeks or months of this checking, because it shapes decades, which is a different standard from choosing a restaurant. After each rung, decide whether the option is still worth the remaining steps. Stop digging when your leading guess stops changing, spend longer when the choice is hard to undo, and treat the job you accept as an experiment you can leave after a couple of years if it fails.",
+      "terms": [
+        {
+          "en": "Cheap test",
+          "hook": "If they say this, they mean the smallest check that could change which option is on top."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Sharper fit questions",
+      "bodyEn": "Before you rank a path, be able to describe a normal day, which tasks create the value, and what doing them well actually takes, because people often judge a field they have never watched. Ask several people who have hired for that job how you would compare, and do not rest the decision on a single opinion, especially one that may be too kind. Project the track record you already have and weigh how fast you are improving, using base rates where you can, such as guessing that a person in the top quarter of a graduate class might land near the top half of academia if only about half that class enters the field. Then build a simple account of what causes success there and score yourself on those traits, which is what a good interview is already doing. A practical clue to a strength is work that feels ordinary to you and effortful to most other people. Low excitement is a real warning, because you will not do the practice, even though a gut sense of motivation is a weak predictor of success on its own. The job also has to be tolerable and compatible with the rest of how you live, including family and hours, or you will not stay long enough to help, so prefer options that look acceptable from several of these angles at once."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Explore while young",
+      "bodyEn": "Exploration is more valuable early, because a better path pays off for longer and you still know less about your strengths, so each trial teaches more. Many well-known careers wandered first, including a future political leader who promoted rock shows, a writer who worked a string of unrelated jobs, and a famous founder who spent a year far from the industry he later built. Early specialists are easy to remember, but competitors who sample several sports before choosing one tend to come out ahead, and a study of scientists and other creatives found hot streaks after periods of exploring more than one area. Changing jobs is common, including about every three years among people in their late twenties and early thirties, and if fit matters as much as this chapter claims, a search of several years can be rational. Exploring is also costly: a switch takes time, too many switches look flaky, and some paths are hard to re-enter, so the question is how to buy information without paying more than it is worth. Those costs are lower when you are young, because internships and other trial structures are built for students, which is another reason to explore then rather than later."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Order the trials",
+      "bodyEn": "One approach is to sample more than one route while switching is still cheap, and only then stay with the strongest, which suits a student or the first jobs, when uncertainty is highest. Order them so a failure is reversible: the years right after a first degree are an accepted time to try a business, time abroad, or a nonprofit, and a later master's, law degree, or doctorate can put you back on a standard path. Rushing into graduate school wastes that window, and a doctorate is an especially poor moment to start exploring, because the route into a permanent academic job punishes any loss of focus on research. If you are unsure between business and a nonprofit, take the business role first, because that direction is easier to reverse. You can also pick work that contains the experiments: freelance or consulting across industries, a small team where you practise many skills, or a job that leaves energy for trials outside working hours. A side project, or a student summer packed with internships, is cheaper than quitting in order to find out. Include one option far outside your usual sector or culture, because the best path may not be on the list yet, as when time spent learning Chinese before university later mattered for work on coordination around emerging technology."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "A real exploration",
+      "bodyEn": "A graduate in maths and philosophy wanted academic work on the philosophy of mind and doubted that path would help anyone. She spent several months in finance, disliked it as she had expected, and crossed that option off with evidence rather than with a mood. She also spent months in nonprofits and read across research areas, and she talked to many people in the academic fields she was considering. Those conversations led to an offer of a psychology doctorate focused on how policymakers make decisions. During the doctorate she interned at a think tank centred on evidence-based policy and wrote about psychology for a newspaper, which let her test policy work and a public-writing life without leaving the degree. At the end she could stay in academia, move into policy or writing, or return to finance or nonprofits, and she finally had a ranking instead of a hunch."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Upside then quit",
+      "bodyEn": "Telling people to aim high is bad advice when they are wildly overconfident: more than three quarters of the Division I players in the cited survey expected a professional career, about two percent made it, and that is an overestimate of more than thirty-seven times. Once the odds are honest, a long shot can still be the right first try, because failure can return you to a solid option while success keeps you on the better path for the rest of the career. The illustration is AI safety research versus earning to give in software: if research is unlikely and far more valuable when it works, and you can go back to the earning path, try the research first when you can tolerate the risk. An aggressive version ranks options by how good they are in the unusually successful scenarios and moves on if you are not on track, and that version needs real backups and room to try several things. A milder version uses the bigger upside only as a tiebreak when you are already unsure. The opposing mistake is staying too long, because sunk-cost bias makes you cling to the current path, dodge the short-term pain of a switch, and fear an option you do not know, so if you are genuinely on the fence about a so-so job, the lean is to quit. A large study offered a coin flip to people stuck on an important life change, then found that those who made the change were happier at later check-ins, by a little over two points on a ten-point scale, and the chapter treats that as one study that matches the bias rather than as a rule.",
+      "terms": [
+        {
+          "en": "Upside",
+          "hook": "If they say this, they mean how good a path is if it goes unusually well."
+        },
+        {
+          "en": "Sunk-cost bias",
+          "hook": "If they say this, they mean staying because of time or money you have already spent."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "remember",
+      "titleEn": "Test the calling",
+      "bodyEn": "Narrow the longer paths you already listed by a rough balance of good done, likely excellence, and whether you would want the life, then write at least five uncertainties about that ranking. Resolve them with the cheapest tests you can run, mark which option has the largest upside, and decide the order of trials that would be easiest to undo. Then choose whether you still need more research, should enter one path with a backup, should try several paths, or should build transferable capital and pick the vision later. A fuller side-by-side process sits in a later appendix if the short version is not enough. Do not expect a calling to arrive as a flash of insight, and do not treat the absence of one as a personal failure, because fit is hard to predict at the start and sometimes many years in. Test the guess outward: if you think you could write, start writing where people can see it, and if you think you would hate a field, at least talk to someone who does that work. The job you accept is still a hypothesis, and the next chapter is about tying these tests into a plan you expect to rewrite."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Fit method check",
+      "bodyEn": "Personal fit is a chance of excellence if you do the work, and it multiplies impact, satisfaction, and career capital, which is why a prestigious problem is a bad bet if you would perform poorly. Quizzes, introspection, and an untrained gut are weak predictors, and even the best hiring tests in the chapter's table leave a lot of error. The method is to list more options than feels natural, name the questions that would change the ranking, and answer those questions with the cheapest outward test that could do it. Speaking to people who hire, and then doing a small version of the work, beats another weekend of self-analysis. Early on, if you have a backup, try the higher-upside path first and be willing to leave a path that is only so-so. Certainty is not available, so the job itself remains an experiment.",
+      "prompt": "How does this chapter say you should test career fit?",
+      "choices": [
+        "Take a Holland quiz and obey the first career label",
+        "Go with your gut and ignore people who hire in the field",
+        "Make hypotheses, investigate the key uncertainties with cheap tests, then try the work",
+        "Specialise immediately in the first prestigious job and never quit a so-so path"
+      ],
+      "answer": 2
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Fit multiplies impact",
+      "bodyEn": "Personal fit is how likely you are to become genuinely excellent in a role once you put the years in, and this chapter treats that chance as a multiplier on everything else. Output in most fields is heavily skewed: a landmark review credits the most prolific tenth of workers with about half the contributions, the least productive half with only about fifteen percent, and the single most productive person with about a hundred times the least. The same spike shows up in research, where the most cited tenth of a percent of papers receive about a thousand times the citations of the median paper, and it is stronger in complex work such as research, software, and starting organisations. Some of that gap is luck, but skill is part of it, so a field you can master raises your impact, and a reputation for getting hard things done becomes capital you can carry into other causes. A public example is a fashion model who, after experts said nuclear energy mattered for climate, used her audience to argue for it, a path this guide would not normally recommend unless the fit was unusually high. A sense of mastery is also part of what makes work satisfying. The comparison picture adds career capital, impact from a pressing problem tackled in the right way, and supportive conditions such as engaging work, colleagues, and basic needs, plus whether the rest of life can absorb the job, then multiplies that sum by personal fit, which is why a high-impact label is still a poor reason to take a job you would be bad at.",
+      "terms": [
+        {
+          "en": "Personal fit",
+          "hook": "If they say this, they mean your chance of excelling if you work at the job."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Gut and tests fail",
+      "bodyEn": "The better question is what you could become good at, not what you are already good at, because skill is built over years and early failure is common even among people who later dominate a field. Turning inward for days, or waiting to discover a finished talent, assumes you can predict performance ahead of time, and the evidence says that prediction is weak. Employers who know the job still miss: the chapter's table tops out with IQ tests at a correlation of 0.65 and with both structured and unstructured interviews at 0.58, and it calls a correlation around 0.6 pretty weak, with longer-range guesses likely worse. Candidates who look poor often turn out strong, and the reverse, so ranking options from an armchair fails even more often than hiring does. Gut instinct is sharp about social alarm and about games you have practised for years, and poor at slow, rare, shifting calls such as how quickly a company will expand, which side will win a contest, what marks a student will get, or which choices will leave you happy. Career choices sit in that second group, because you get few shots, results take years, and the market for jobs does not sit still, so a feeling of distrust or flatness is a clue and not a verdict. Interest tests built on Holland types correlate only about 0.31 with performance in that table, and studies of job satisfaction find only a small link, roughly 0.1 to 0.3, which is why this chapter ignores the usual career quiz.",
+      "terms": [
+        {
+          "en": "Holland types",
+          "hook": "If they say this, they mean interest labels that only weakly predict performance or satisfaction."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "What predicts weakly",
+      "bodyEn": "Interviews sit near the top of that table, so ask people who have hired in the field how you would compare with other candidates. Job knowledge tests, tryouts, and work samples are the next useful cluster, which is an argument for getting as close as you can to the actual work and then seeing how it goes. IQ correlates the most and still does not tell you which kind of job fits you better than another, setting aside what those tests measure. Further down the same table, years of experience and years of schooling predict little, and handwriting and age predict essentially nothing. None of these tools are strong enough to close doors early. Stay open until you have tried something, because looking unfit on paper is weak evidence, and the only decisive test is doing the work."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "List the uncertainties",
+      "bodyEn": "Treat each career idea as a hypothesis, and start with a longer list than feels natural, because discarding a strong option before a cheap look is the expensive mistake. A short list is one of the common decision mistakes, which is how people drift into a doctorate, medicine, or law simply because it was the default around them. The subject you studied rarely decides the job, so do not search only inside that subject. Score the long list, roughly, on whether you could excel, whether the path does real good, and whether the working conditions support a life, and add career capital when you are comparing a next step rather than a long path. Then name the few questions that would change which option is on top, such as whether you would be hired, whether you would enjoy one part of the work, whether the pay covers your loans, and what an ordinary day is like. You cannot investigate every job, so those key uncertainties are the whole investigation.",
+      "terms": [
+        {
+          "en": "Key uncertainty",
+          "hook": "If they say this, they mean the question that would most change which option is on top."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Cheap tests first",
+      "bodyEn": "Resolve the cheapest uncertainties first, and design each test so it might knock out the current leader or show what would promote a different option. A ladder in the chapter runs from an hour or two of reading, to one conversation, to several more conversations plus a book or two, and only then to extra ways of predicting success. Next comes a project of about one to four weeks, such as applications, related volunteering, or a side project, so you can see the work and your own performance. Only after that should you consider a commitment of about two months to two years, such as a placement, an internship, or graduate study, and a short trial that both sides want is ideal. A career can justify weeks or months of this checking, because it shapes decades, which is a different standard from choosing a restaurant. After each rung, decide whether the option is still worth the remaining steps. Stop digging when your leading guess stops changing, spend longer when the choice is hard to undo, and treat the job you accept as an experiment you can leave after a couple of years if it fails.",
+      "terms": [
+        {
+          "en": "Cheap test",
+          "hook": "If they say this, they mean the smallest check that could change which option is on top."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Sharper fit questions",
+      "bodyEn": "Before you rank a path, be able to describe a normal day, which tasks create the value, and what doing them well actually takes, because people often judge a field they have never watched. Ask several people who have hired for that job how you would compare, and do not rest the decision on a single opinion, especially one that may be too kind. Project the track record you already have and weigh how fast you are improving, using base rates where you can, such as guessing that a person in the top quarter of a graduate class might land near the top half of academia if only about half that class enters the field. Then build a simple account of what causes success there and score yourself on those traits, which is what a good interview is already doing. A practical clue to a strength is work that feels ordinary to you and effortful to most other people. Low excitement is a real warning, because you will not do the practice, even though a gut sense of motivation is a weak predictor of success on its own. The job also has to be tolerable and compatible with the rest of how you live, including family and hours, or you will not stay long enough to help, so prefer options that look acceptable from several of these angles at once."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Explore while young",
+      "bodyEn": "Exploration is more valuable early, because a better path pays off for longer and you still know less about your strengths, so each trial teaches more. Many well-known careers wandered first, including a future political leader who promoted rock shows, a writer who worked a string of unrelated jobs, and a famous founder who spent a year far from the industry he later built. Early specialists are easy to remember, but competitors who sample several sports before choosing one tend to come out ahead, and a study of scientists and other creatives found hot streaks after periods of exploring more than one area. Changing jobs is common, including about every three years among people in their late twenties and early thirties, and if fit matters as much as this chapter claims, a search of several years can be rational. Exploring is also costly: a switch takes time, too many switches look flaky, and some paths are hard to re-enter, so the question is how to buy information without paying more than it is worth. Those costs are lower when you are young, because internships and other trial structures are built for students, which is another reason to explore then rather than later."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Order the trials",
+      "bodyEn": "One approach is to sample more than one route while switching is still cheap, and only then stay with the strongest, which suits a student or the first jobs, when uncertainty is highest. Order them so a failure is reversible: the years right after a first degree are an accepted time to try a business, time abroad, or a nonprofit, and a later master's, law degree, or doctorate can put you back on a standard path. Rushing into graduate school wastes that window, and a doctorate is an especially poor moment to start exploring, because the route into a permanent academic job punishes any loss of focus on research. If you are unsure between business and a nonprofit, take the business role first, because that direction is easier to reverse. You can also pick work that contains the experiments: freelance or consulting across industries, a small team where you practise many skills, or a job that leaves energy for trials outside working hours. A side project, or a student summer packed with internships, is cheaper than quitting in order to find out. Include one option far outside your usual sector or culture, because the best path may not be on the list yet, as when time spent learning Chinese before university later mattered for work on coordination around emerging technology."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "A real exploration",
+      "bodyEn": "A graduate in maths and philosophy wanted academic work on the philosophy of mind and doubted that path would help anyone. She spent several months in finance, disliked it as she had expected, and crossed that option off with evidence rather than with a mood. She also spent months in nonprofits and read across research areas, and she talked to many people in the academic fields she was considering. Those conversations led to an offer of a psychology doctorate focused on how policymakers make decisions. During the doctorate she interned at a think tank centred on evidence-based policy and wrote about psychology for a newspaper, which let her test policy work and a public-writing life without leaving the degree. At the end she could stay in academia, move into policy or writing, or return to finance or nonprofits, and she finally had a ranking instead of a hunch."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Upside then quit",
+      "bodyEn": "Telling people to aim high is bad advice when they are wildly overconfident: more than three quarters of the Division I players in the cited survey expected a professional career, about two percent made it, and that is an overestimate of more than thirty-seven times. Once the odds are honest, a long shot can still be the right first try, because failure can return you to a solid option while success keeps you on the better path for the rest of the career. The illustration is AI safety research versus earning to give in software: if research is unlikely and far more valuable when it works, and you can go back to the earning path, try the research first when you can tolerate the risk. An aggressive version ranks options by how good they are in the unusually successful scenarios and moves on if you are not on track, and that version needs real backups and room to try several things. A milder version uses the bigger upside only as a tiebreak when you are already unsure. The opposing mistake is staying too long, because sunk-cost bias makes you cling to the current path, dodge the short-term pain of a switch, and fear an option you do not know, so if you are genuinely on the fence about a so-so job, the lean is to quit. A large study offered a coin flip to people stuck on an important life change, then found that those who made the change were happier at later check-ins, by a little over two points on a ten-point scale, and the chapter treats that as one study that matches the bias rather than as a rule.",
+      "terms": [
+        {
+          "en": "Upside",
+          "hook": "If they say this, they mean how good a path is if it goes unusually well."
+        },
+        {
+          "en": "Sunk-cost bias",
+          "hook": "If they say this, they mean staying because of time or money you have already spent."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "remember",
+      "titleEn": "Test the calling",
+      "bodyEn": "Narrow the longer paths you already listed by a rough balance of good done, likely excellence, and whether you would want the life, then write at least five uncertainties about that ranking. Resolve them with the cheapest tests you can run, mark which option has the largest upside, and decide the order of trials that would be easiest to undo. Then choose whether you still need more research, should enter one path with a backup, should try several paths, or should build transferable capital and pick the vision later. A fuller side-by-side process sits in a later appendix if the short version is not enough. Do not expect a calling to arrive as a flash of insight, and do not treat the absence of one as a personal failure, because fit is hard to predict at the start and sometimes many years in. Test the guess outward: if you think you could write, start writing where people can see it, and if you think you would hate a field, at least talk to someone who does that work. The job you accept is still a hypothesis, and the next chapter is about tying these tests into a plan you expect to rewrite."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Fit method check",
+      "bodyEn": "Personal fit is a chance of excellence if you do the work, and it multiplies impact, satisfaction, and career capital, which is why a prestigious problem is a bad bet if you would perform poorly. Quizzes, introspection, and an untrained gut are weak predictors, and even the best hiring tests in the chapter's table leave a lot of error. The method is to list more options than feels natural, name the questions that would change the ranking, and answer those questions with the cheapest outward test that could do it. Speaking to people who hire, and then doing a small version of the work, beats another weekend of self-analysis. Early on, if you have a backup, try the higher-upside path first and be willing to leave a path that is only so-so. Certainty is not available, so the job itself remains an experiment.",
+      "prompt": "How does this chapter say you should test career fit?",
+      "choices": [
+        "Take a Holland quiz and obey the first career label",
+        "Go with your gut and ignore people who hire in the field",
+        "Make hypotheses, investigate the key uncertainties with cheap tests, then try the work",
+        "Specialise immediately in the first prestigious job and never quit a so-so path"
+      ],
+      "answer": 2
+    }
+  ]
+}

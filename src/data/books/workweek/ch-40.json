@@ -1,0 +1,134 @@
+{
+  "id": "40",
+  "index": 40,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Law from Another City",
+  "titleSource": "Virtual Law",
+  "sourcePages": "",
+  "when": "Case",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Six weeks to Cali",
+      "bodyEn": "A lawyer at a large Silicon Valley firm wanted a year of travel and a new language. Six weeks later he was living in Cali, Colombia, a city he had never visited, with almost no Spanish. The unfamiliarity was the point, not a flaw in the plan. Nearly two years on, more than ninety-five percent of his time was still there. He bought an apartment he says he could not have afforded in California. Household help for five hours a day, five days a week, cost under forty dollars a week. Leaving before he felt ready produced a cheaper city and a practice that still served American clients.",
+      "terms": [
+        {
+          "en": "geoarbitrage",
+          "hook": "Earning in a strong currency while living where those earnings buy much more day to day."
+        },
+        {
+          "en": "virtual practice",
+          "hook": "Client work done by phone and scanned mail, without the lawyer sitting in the client's city."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "The practice follows",
+      "bodyEn": "He opened his own virtual law practice and later joined forces with his former boss. A United States number rang through to wherever he stood, including trips back to New Zealand, where he is from. Paper mail went to a Market Street address in San Francisco, was scanned, and was read online. Letters that needed to look domestic were printed and posted inside the United States, which avoided slow international shipping. The scan service ran around twenty to thirty dollars a month. A four-page letter cost a little over one dollar, postage included. The tools were ordinary, and the firm no longer needed his body in California."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Address is a service",
+      "bodyEn": "The street address was not a secret office he visited. It was a mail service that could also supply a postal box or a physical address. He names the scan service and the print-and-send service so another lawyer can copy the pipes. The decision was to split where he lived from where the paperwork appeared to live. Clients still had a United States path to reach him. He did not have to fly home to open an envelope. That split is the architecture of the case."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Cost of the city",
+      "bodyEn": "The apartment and the household help are what American fees look like when the bills are local. He considers the frightening reputation overstated, and he feels safer on a late walk in Cali than in many parts of San Francisco. He would rather the place stay unadvertised, which is a personal preference and not a business rule. The teaching point is the cost gap. A week of help under forty dollars is a different life from a vacation funded by the same salary. The practice did not have to become California rent. The days got larger because the bills got smaller."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Leave, then build",
+      "bodyEn": "He did not design a perfect firm for a year and only then buy a ticket. He moved, started the virtual practice, and later reconnected with his old boss. The language and the city were allowed to be weak on day one. Two years later the arrangement was the default, not a stunt. Phone, scan, and domestic print were the three pipes that kept the work legitimate from afar. If any pipe had required his presence, the experiment would have collapsed. Every client-facing step had to be remote, and the practice ended up traveling with a phone."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "What to set up",
+      "bodyEn": "Choose the city for the life you want, not for where the clients sit. Forward one phone number so it still finds you. Put a scan-and-receive service on a real United States address. Use a print-and-mail service when a letter must start inside the country. Price housing and help in local money so the gap is visible. Keep work you already know how to do, and change the map around it. A new language can be the reason for the move rather than a test you must pass first."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Which pipe matters",
+      "bodyEn": "Clients did not need to know which neighborhood he was in. They needed a phone that rang through, a United States address that accepted mail, and letters that still posted inside the country. He lived almost full time in Cali and paid local prices for housing and help. The practice survived because those three pipes were remote. Recall what replaced a desk in the Silicon Valley office.",
+      "prompt": "What let the law practice leave the office?",
+      "choices": [
+        "A local license and only Colombian clients",
+        "A forwarded phone, scanned mail, and domestic printing",
+        "Closing the practice for a travel year",
+        "A larger firm that required him on site every day"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Six weeks to Cali",
+      "bodyEn": "A lawyer at a large Silicon Valley firm wanted a year of travel and a new language. Six weeks later he was living in Cali, Colombia, a city he had never visited, with almost no Spanish. The unfamiliarity was the point, not a flaw in the plan. Nearly two years on, more than ninety-five percent of his time was still there. He bought an apartment he says he could not have afforded in California. Household help for five hours a day, five days a week, cost under forty dollars a week. Leaving before he felt ready produced a cheaper city and a practice that still served American clients.",
+      "terms": [
+        {
+          "en": "geoarbitrage",
+          "hook": "Earning in a strong currency while living where those earnings buy much more day to day."
+        },
+        {
+          "en": "virtual practice",
+          "hook": "Client work done by phone and scanned mail, without the lawyer sitting in the client's city."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "The practice follows",
+      "bodyEn": "He opened his own virtual law practice and later joined forces with his former boss. A United States number rang through to wherever he stood, including trips back to New Zealand, where he is from. Paper mail went to a Market Street address in San Francisco, was scanned, and was read online. Letters that needed to look domestic were printed and posted inside the United States, which avoided slow international shipping. The scan service ran around twenty to thirty dollars a month. A four-page letter cost a little over one dollar, postage included. The tools were ordinary, and the firm no longer needed his body in California."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Address is a service",
+      "bodyEn": "The street address was not a secret office he visited. It was a mail service that could also supply a postal box or a physical address. He names the scan service and the print-and-send service so another lawyer can copy the pipes. The decision was to split where he lived from where the paperwork appeared to live. Clients still had a United States path to reach him. He did not have to fly home to open an envelope. That split is the architecture of the case."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Cost of the city",
+      "bodyEn": "The apartment and the household help are what American fees look like when the bills are local. He considers the frightening reputation overstated, and he feels safer on a late walk in Cali than in many parts of San Francisco. He would rather the place stay unadvertised, which is a personal preference and not a business rule. The teaching point is the cost gap. A week of help under forty dollars is a different life from a vacation funded by the same salary. The practice did not have to become California rent. The days got larger because the bills got smaller."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Leave, then build",
+      "bodyEn": "He did not design a perfect firm for a year and only then buy a ticket. He moved, started the virtual practice, and later reconnected with his old boss. The language and the city were allowed to be weak on day one. Two years later the arrangement was the default, not a stunt. Phone, scan, and domestic print were the three pipes that kept the work legitimate from afar. If any pipe had required his presence, the experiment would have collapsed. Every client-facing step had to be remote, and the practice ended up traveling with a phone."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "What to set up",
+      "bodyEn": "Choose the city for the life you want, not for where the clients sit. Forward one phone number so it still finds you. Put a scan-and-receive service on a real United States address. Use a print-and-mail service when a letter must start inside the country. Price housing and help in local money so the gap is visible. Keep work you already know how to do, and change the map around it. A new language can be the reason for the move rather than a test you must pass first."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Which pipe matters",
+      "bodyEn": "Clients did not need to know which neighborhood he was in. They needed a phone that rang through, a United States address that accepted mail, and letters that still posted inside the country. He lived almost full time in Cali and paid local prices for housing and help. The practice survived because those three pipes were remote. Recall what replaced a desk in the Silicon Valley office.",
+      "prompt": "What let the law practice leave the office?",
+      "choices": [
+        "A local license and only Colombian clients",
+        "A forwarded phone, scanned mail, and domestic printing",
+        "Closing the practice for a travel year",
+        "A larger firm that required him on site every day"
+      ],
+      "answer": 1
+    }
+  ]
+}

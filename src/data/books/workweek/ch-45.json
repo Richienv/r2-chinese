@@ -1,0 +1,138 @@
+{
+  "id": "45",
+  "index": 45,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Sell While Still Hired",
+  "titleSource": "Financial Musing",
+  "sourcePages": "",
+  "when": "Case study",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Date the exit",
+      "bodyEn": "A banking analyst stayed in hours he already knew he could not keep surviving, until a late-night drive ended in a wreck. The decision worth copying is a leave month chosen while the salary is still arriving. He used that window to build replacement income in secret. Friends treated the plan as fantasy. He answered with a floor he could live on: lower expenses and a teaching job abroad if the offer failed. The product he wanted was an interview guide for the niche he already knew from the inside. He started charging before that guide existed."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Skip the expensive ads",
+      "bodyEn": "Finance keywords were too costly for a first test, so he refused paid ads. A blog about breaking into banking gathered students and career-changers with no media budget. Readers arrived while the guide was still unwritten. Their requests for personal help were a demand signal the draft could not provide. He kept his real name off the work so the employer could not shut the experiment down early. The acquisition decision was an audience, a hidden name, and zero ad spend.",
+      "terms": [
+        {
+          "en": "anonymous offer",
+          "hook": "A service or product sold without your real name, so the current job cannot end the test early."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Sell the live request",
+      "bodyEn": "He sold resume edits and practice interviews because those were the requests already in front of him. The rate was high enough that a short week could match his old pay. Hourly work functioned as a bridge with an expiration. Anonymity held, because the service never needed a public identity. When hiring slowed, demand for job-search help rose, so the bridge got stronger in the downturn. Consulting bought the months. The guide stayed responsible for replacing those months.",
+      "terms": [
+        {
+          "en": "bridge service",
+          "hook": "High-rate work buyers already want, used only until a product can earn without your hours."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Keep a cheap floor",
+      "bodyEn": "He named a departure month and worked backward from it. The people closest to him forecast a failure. The fallback he had already priced, a cheaper country and a teaching job, kept their forecast off his calendar. A rebuilt site then turned scattered fees into a full income from part-time consulting. Trips in that season were evidence the floor was real. A date did the work that waiting for confidence would have delayed."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Ship the guide",
+      "bodyEn": "Consulting started to fill the week again, so he finished the interview guide and released it. The product doubled revenue and moved most of the income off his hours. A few hours of writing plus a small consulting cap could beat the old monthly pay with nothing else added. Further projects stayed optional, chosen because he wanted them. A quiet week could shrink to a short range without the business falling over. Releasing the guide made the exit durable, because pay no longer required a full consulting calendar."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Travel after the product",
+      "bodyEn": "The long trip came after the guide was selling. He planned to live in Asia and run the same business from cafes, and he met customers on the road who were already buyers. Mobility was a result of the income floor. The old status had been exchanged for a smaller schedule and a larger month. Hours above the minimum stayed available for study he would have chosen anyway. The test this case passes is a week you can shrink on purpose and still get paid."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Unfinished product check",
+      "bodyEn": "This case leaves a high-status job by selling a niche the employee already knows, under a name the office cannot see. Expensive ads stay off, and a blog gathers the buyers. A high-rate service covers the months while the real product is unfinished. A leave date and a cheap fallback keep other people's doubt off the calendar. Travel waits until the product can fund it. Recall what to sell when readers are asking and the guide is still a draft.",
+      "prompt": "What should you sell while the main product is still unfinished?",
+      "choices": [
+        "The high-rate service readers already want, then replace those hours with the product",
+        "Nothing until the guide is perfect and public under your real name",
+        "Ads on the most expensive keywords in the industry",
+        "A resignation speech with no date and no fallback"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Date the exit",
+      "bodyEn": "A banking analyst stayed in hours he already knew he could not keep surviving, until a late-night drive ended in a wreck. The decision worth copying is a leave month chosen while the salary is still arriving. He used that window to build replacement income in secret. Friends treated the plan as fantasy. He answered with a floor he could live on: lower expenses and a teaching job abroad if the offer failed. The product he wanted was an interview guide for the niche he already knew from the inside. He started charging before that guide existed."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Skip the expensive ads",
+      "bodyEn": "Finance keywords were too costly for a first test, so he refused paid ads. A blog about breaking into banking gathered students and career-changers with no media budget. Readers arrived while the guide was still unwritten. Their requests for personal help were a demand signal the draft could not provide. He kept his real name off the work so the employer could not shut the experiment down early. The acquisition decision was an audience, a hidden name, and zero ad spend.",
+      "terms": [
+        {
+          "en": "anonymous offer",
+          "hook": "A service or product sold without your real name, so the current job cannot end the test early."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Sell the live request",
+      "bodyEn": "He sold resume edits and practice interviews because those were the requests already in front of him. The rate was high enough that a short week could match his old pay. Hourly work functioned as a bridge with an expiration. Anonymity held, because the service never needed a public identity. When hiring slowed, demand for job-search help rose, so the bridge got stronger in the downturn. Consulting bought the months. The guide stayed responsible for replacing those months.",
+      "terms": [
+        {
+          "en": "bridge service",
+          "hook": "High-rate work buyers already want, used only until a product can earn without your hours."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Keep a cheap floor",
+      "bodyEn": "He named a departure month and worked backward from it. The people closest to him forecast a failure. The fallback he had already priced, a cheaper country and a teaching job, kept their forecast off his calendar. A rebuilt site then turned scattered fees into a full income from part-time consulting. Trips in that season were evidence the floor was real. A date did the work that waiting for confidence would have delayed."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Ship the guide",
+      "bodyEn": "Consulting started to fill the week again, so he finished the interview guide and released it. The product doubled revenue and moved most of the income off his hours. A few hours of writing plus a small consulting cap could beat the old monthly pay with nothing else added. Further projects stayed optional, chosen because he wanted them. A quiet week could shrink to a short range without the business falling over. Releasing the guide made the exit durable, because pay no longer required a full consulting calendar."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Travel after the product",
+      "bodyEn": "The long trip came after the guide was selling. He planned to live in Asia and run the same business from cafes, and he met customers on the road who were already buyers. Mobility was a result of the income floor. The old status had been exchanged for a smaller schedule and a larger month. Hours above the minimum stayed available for study he would have chosen anyway. The test this case passes is a week you can shrink on purpose and still get paid."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Unfinished product check",
+      "bodyEn": "This case leaves a high-status job by selling a niche the employee already knows, under a name the office cannot see. Expensive ads stay off, and a blog gathers the buyers. A high-rate service covers the months while the real product is unfinished. A leave date and a cheap fallback keep other people's doubt off the calendar. Travel waits until the product can fund it. Recall what to sell when readers are asking and the guide is still a draft.",
+      "prompt": "What should you sell while the main product is still unfinished?",
+      "choices": [
+        "The high-rate service readers already want, then replace those hours with the product",
+        "Nothing until the guide is perfect and public under your real name",
+        "Ads on the most expensive keywords in the industry",
+        "A resignation speech with no date and no fallback"
+      ],
+      "answer": 0
+    }
+  ]
+}

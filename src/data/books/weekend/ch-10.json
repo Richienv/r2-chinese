@@ -1,0 +1,186 @@
+{
+  "id": "10",
+  "index": 10,
+  "part": 4,
+  "partTitleEn": "Million Dollar Weekend",
+  "titleEn": "Answer the Excuses",
+  "titleSource": "Frequently Made Excuses",
+  "sourcePages": "",
+  "when": "Before you start",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Ready without waiting",
+      "bodyEn": "Feeling unready is the stall this opening list is built to interrupt. Ordinary people start profitable businesses with the skills and the cash they already have. The list names ten common stalls and pairs each one with a move you can make before the weekend. Find the excuse you actually use. Do that repair before you add another week of preparation. The later chapters are where each repair gets practiced in full."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Sort your idea pile",
+      "bodyEn": "A shortage of ideas means the problem list is still empty. You have problems, the people around you have problems, and so does everyone else, and that list is enough raw material for offers. Use the customer-first approach: collect those problems, then turn them into business ideas. If you already have too many ideas, choose the three that would be the most fun to work on. Fun is the filter, because a dull idea is the one you will drop. Run those three through simple market research and the one-minute model, and keep the one with the strongest potential. Leave the others untouched until this one has been tested with a real ask.",
+      "terms": [
+        {
+          "en": "Customer First Approach",
+          "hook": "If they say this, they mean start from problems people already have, then turn those problems into offers."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Keep the day job",
+      "bodyEn": "Keep the job while you test. A long stay in work you hate is the costly default, and the list still tells you to stay until the business can carry you. Use the early morning, the evening, and the weekend to run the process. Leave the job only after monthly revenue covers your minimum monthly costs, the Freedom Number. Write that number down so the quit date is a calculation. The author left a job on this schedule twice, after the revenue was real. The paycheck remains until the number is true.",
+      "terms": [
+        {
+          "en": "Freedom Number",
+          "hook": "If they say this, they mean the monthly revenue that covers your minimum costs, the point at which leaving the job is allowed."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Finish before you drift",
+      "bodyEn": "A business that starts well and then fades can come from the same fear as never starting. Any one of those projects could have been the business you wanted if you had stayed with it. When you feel like quitting, use the Law of 100 and finish a hundred repetitions before you judge the idea. Write the project you will keep, and write the next block of repetitions you will complete. A fresh idea can wait on a side list. Interest is allowed to dip while the count continues. The finished repetitions are the repair.",
+      "terms": [
+        {
+          "en": "Law of 100",
+          "hook": "If they say this, they mean finish a hundred repetitions before you decide the project is dead."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Start smaller than scale",
+      "bodyEn": "A question about scale often shows up early, and it postpones the first customer. Keep the first version simple enough that you can deliver it yourself. Put your attention on starting. Scaling belongs to the growth chapters, after someone has paid. A scale diagram with zero customers does not answer this list. Get the first sale, then open the growth section and ask the scale question with a real buyer in hand. The order is the repair."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Assign the hours",
+      "bodyEn": "A crowded calendar usually needs a system, and this list points to the productivity chapter for one. Find the tasks you can automate. Write down the tasks you can document so another person could do them later. That kind of system is how a large business, a video channel, and a writing practice can share a week with training and travel. If this business is a priority, assign it real hours in the morning, the evening, and the weekend you are keeping the job to protect. A priority with no slot stays a wish. Put the next work block on the calendar today."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Do this process first",
+      "bodyEn": "Full readiness does not show up before the start. Work this process and start the business before you buy another book or watch another video. The move this excuse points to is the first chapter: act, then learn. Extra preparation past the next small step is the same stall with a new cover. Close the extra research. Do the next challenge in the book you already opened."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Get paid before spending",
+      "bodyEn": "If earlier spending produced no profit, stop the spending. Make the first dollar before you put in another dime. The weekend process is built to need no money up front. Validation is a presale, so the tools, the ads, and the inventory can wait. Keep the cash in your account until a customer has paid you. That first dollar is what makes a later expense legitimate. Until the payment lands, the budget for this test is zero."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Solve it before code",
+      "bodyEn": "Promotion gets easier after you have something people want to pay for. Use the ideas chapter to find those problems before you worry about marketing. The audience, email, and experiment chapters then carry the promotion methods that grew real products. Skip the search for a technical cofounder and for the newest technology. Customers want a solution, and you can test that solution without writing code. Make the first money, and decide later whether software is even required."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Excuse repair check",
+      "bodyEn": "This check matches a stall to the repair on the list. The job stays until monthly revenue covers your minimum costs. Spending stays at zero until a customer pays. Research and scale plans wait until you have started and someone has bought. The list wants a specific next move for the excuse you are using. Choose the repair it actually gives.",
+      "prompt": "You want to quit your job and buy tools before anyone has paid. Which repair matches the list?",
+      "choices": [
+        "Quit now and spend on software so the business looks serious",
+        "Keep the job, spend nothing until the first dollar, and use mornings, evenings, and weekends",
+        "Wait until you feel fully prepared and you have a scale plan",
+        "Hire a technical cofounder before you test the offer"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Ready without waiting",
+      "bodyEn": "Feeling unready is the stall this opening list is built to interrupt. Ordinary people start profitable businesses with the skills and the cash they already have. The list names ten common stalls and pairs each one with a move you can make before the weekend. Find the excuse you actually use. Do that repair before you add another week of preparation. The later chapters are where each repair gets practiced in full."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Sort your idea pile",
+      "bodyEn": "A shortage of ideas means the problem list is still empty. You have problems, the people around you have problems, and so does everyone else, and that list is enough raw material for offers. Use the customer-first approach: collect those problems, then turn them into business ideas. If you already have too many ideas, choose the three that would be the most fun to work on. Fun is the filter, because a dull idea is the one you will drop. Run those three through simple market research and the one-minute model, and keep the one with the strongest potential. Leave the others untouched until this one has been tested with a real ask.",
+      "terms": [
+        {
+          "en": "Customer First Approach",
+          "hook": "If they say this, they mean start from problems people already have, then turn those problems into offers."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Keep the day job",
+      "bodyEn": "Keep the job while you test. A long stay in work you hate is the costly default, and the list still tells you to stay until the business can carry you. Use the early morning, the evening, and the weekend to run the process. Leave the job only after monthly revenue covers your minimum monthly costs, the Freedom Number. Write that number down so the quit date is a calculation. The author left a job on this schedule twice, after the revenue was real. The paycheck remains until the number is true.",
+      "terms": [
+        {
+          "en": "Freedom Number",
+          "hook": "If they say this, they mean the monthly revenue that covers your minimum costs, the point at which leaving the job is allowed."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Finish before you drift",
+      "bodyEn": "A business that starts well and then fades can come from the same fear as never starting. Any one of those projects could have been the business you wanted if you had stayed with it. When you feel like quitting, use the Law of 100 and finish a hundred repetitions before you judge the idea. Write the project you will keep, and write the next block of repetitions you will complete. A fresh idea can wait on a side list. Interest is allowed to dip while the count continues. The finished repetitions are the repair.",
+      "terms": [
+        {
+          "en": "Law of 100",
+          "hook": "If they say this, they mean finish a hundred repetitions before you decide the project is dead."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Start smaller than scale",
+      "bodyEn": "A question about scale often shows up early, and it postpones the first customer. Keep the first version simple enough that you can deliver it yourself. Put your attention on starting. Scaling belongs to the growth chapters, after someone has paid. A scale diagram with zero customers does not answer this list. Get the first sale, then open the growth section and ask the scale question with a real buyer in hand. The order is the repair."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Assign the hours",
+      "bodyEn": "A crowded calendar usually needs a system, and this list points to the productivity chapter for one. Find the tasks you can automate. Write down the tasks you can document so another person could do them later. That kind of system is how a large business, a video channel, and a writing practice can share a week with training and travel. If this business is a priority, assign it real hours in the morning, the evening, and the weekend you are keeping the job to protect. A priority with no slot stays a wish. Put the next work block on the calendar today."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Do this process first",
+      "bodyEn": "Full readiness does not show up before the start. Work this process and start the business before you buy another book or watch another video. The move this excuse points to is the first chapter: act, then learn. Extra preparation past the next small step is the same stall with a new cover. Close the extra research. Do the next challenge in the book you already opened."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Get paid before spending",
+      "bodyEn": "If earlier spending produced no profit, stop the spending. Make the first dollar before you put in another dime. The weekend process is built to need no money up front. Validation is a presale, so the tools, the ads, and the inventory can wait. Keep the cash in your account until a customer has paid you. That first dollar is what makes a later expense legitimate. Until the payment lands, the budget for this test is zero."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Solve it before code",
+      "bodyEn": "Promotion gets easier after you have something people want to pay for. Use the ideas chapter to find those problems before you worry about marketing. The audience, email, and experiment chapters then carry the promotion methods that grew real products. Skip the search for a technical cofounder and for the newest technology. Customers want a solution, and you can test that solution without writing code. Make the first money, and decide later whether software is even required."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Excuse repair check",
+      "bodyEn": "This check matches a stall to the repair on the list. The job stays until monthly revenue covers your minimum costs. Spending stays at zero until a customer pays. Research and scale plans wait until you have started and someone has bought. The list wants a specific next move for the excuse you are using. Choose the repair it actually gives.",
+      "prompt": "You want to quit your job and buy tools before anyone has paid. Which repair matches the list?",
+      "choices": [
+        "Quit now and spend on software so the business looks serious",
+        "Keep the job, spend nothing until the first dollar, and use mornings, evenings, and weekends",
+        "Wait until you feel fully prepared and you have a scale plan",
+        "Hire a technical cofounder before you test the offer"
+      ],
+      "answer": 1
+    }
+  ]
+}

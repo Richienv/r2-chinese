@@ -1,0 +1,114 @@
+{
+  "id": "12",
+  "index": 12,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Use this guide",
+  "titleSource": "Introduction",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The hours at stake",
+      "bodyEn": "You will spend about eighty thousand hours at work if a career runs forty hours a week, fifty weeks a year, for forty years. That scale makes the choice of work one of the largest decisions available to you. A careful choice can make those years more rewarding and can also help with pressing problems. Most career guides the authors had read explained how to land a job and said little about which job was worth aiming at. Conversations with friends, and a familiar list of helping professions, were the usual substitutes. Use a written method, because the decision is large and informal advice often skips the aim."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "What to aim at",
+      "bodyEn": "The guide separates the aim from the tactics. The first four chapters are about which long-term options to aim at. The remaining chapters are about how to get there and how to act. Material after the chapters goes further into the main ideas, then summarises career reviews and problem profiles. The book is written especially for English-speaking students and recent graduates in their twenties who have enough security to treat helping the world as an important goal. Many of the core ideas still apply at other ages and in tighter circumstances."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Chapter then exercise",
+      "bodyEn": "Read one chapter, then do the exercises that belong with it, before you open the next chapter. Those exercises turn the ideas into notes about your own options. When the exercises are finished, the same notes fit an online career-plan template, which the introduction links as 80k.link/NCP. An afternoon version of this material has often led more than half the people in the room to change their plans. The template is the output the introduction is trying to produce. Keep one document and add to it on the day you finish each chapter.",
+      "terms": [
+        {
+          "en": "career template",
+          "hook": "If they say this, they mean the written plan you fill from each chapter's exercises."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Fill it as you go",
+      "bodyEn": "Open the career-plan template before chapter 1 is finished, and leave unknown lines blank. After each exercise, write the answer into that document in a few plain sentences. If a chapter changes nothing on the page, answer the exercise again in one short paragraph about your actual options. Work through one chapter at a time so the exercises use your real constraints. When the document names a next step and a date, you have followed the introduction's method. The introduction ends by asking which use of those hours is best, and the document is where you answer."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Who should still adapt",
+      "bodyEn": "If you are past your twenties, or helping the world cannot yet be a main goal, keep the same order and rewrite the exercises around your real constraint. The early chapters still ask what a good job needs, whether one person can matter, how to help from a job you already have, and how to compare problems. The later chapters still ask how to build position, judge fit, write a plan, get hired, and find allies. When a resource assumes a campus you do not have, keep the exercise that matches the decision in front of you. The method is the sequence plus the written plan. Adapt the examples, and keep the order."
+    },
+    {
+      "id": "s6",
+      "kind": "check",
+      "titleEn": "Guide method check",
+      "bodyEn": "The introduction's method is to read each chapter, do its exercises, and put the answers into one career-plan template. The first four chapters set the long-term aim, and the later chapters cover how to move. Lists after the chapters cover further articles, career reviews, and problem profiles. The guide is aimed first at students and recent graduates who can treat helping as a serious goal. The same order still helps when you have to adapt the examples. An afternoon of the material has often changed the plans of more than half the people present.",
+      "prompt": "Which sequence matches how the introduction says to use the guide?",
+      "choices": [
+        "Read each chapter, do its exercises, and record the answers in the career-plan template, with the first four chapters setting the aim",
+        "Skip the exercises and choose a job from the final list of career reviews",
+        "Read the author biography and copy that career path",
+        "Finish the later chapters before you ask what kind of job is worth aiming at"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "The hours at stake",
+      "bodyEn": "You will spend about eighty thousand hours at work if a career runs forty hours a week, fifty weeks a year, for forty years. That scale makes the choice of work one of the largest decisions available to you. A careful choice can make those years more rewarding and can also help with pressing problems. Most career guides the authors had read explained how to land a job and said little about which job was worth aiming at. Conversations with friends, and a familiar list of helping professions, were the usual substitutes. Use a written method, because the decision is large and informal advice often skips the aim."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "What to aim at",
+      "bodyEn": "The guide separates the aim from the tactics. The first four chapters are about which long-term options to aim at. The remaining chapters are about how to get there and how to act. Material after the chapters goes further into the main ideas, then summarises career reviews and problem profiles. The book is written especially for English-speaking students and recent graduates in their twenties who have enough security to treat helping the world as an important goal. Many of the core ideas still apply at other ages and in tighter circumstances."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Chapter then exercise",
+      "bodyEn": "Read one chapter, then do the exercises that belong with it, before you open the next chapter. Those exercises turn the ideas into notes about your own options. When the exercises are finished, the same notes fit an online career-plan template, which the introduction links as 80k.link/NCP. An afternoon version of this material has often led more than half the people in the room to change their plans. The template is the output the introduction is trying to produce. Keep one document and add to it on the day you finish each chapter.",
+      "terms": [
+        {
+          "en": "career template",
+          "hook": "If they say this, they mean the written plan you fill from each chapter's exercises."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Fill it as you go",
+      "bodyEn": "Open the career-plan template before chapter 1 is finished, and leave unknown lines blank. After each exercise, write the answer into that document in a few plain sentences. If a chapter changes nothing on the page, answer the exercise again in one short paragraph about your actual options. Work through one chapter at a time so the exercises use your real constraints. When the document names a next step and a date, you have followed the introduction's method. The introduction ends by asking which use of those hours is best, and the document is where you answer."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Who should still adapt",
+      "bodyEn": "If you are past your twenties, or helping the world cannot yet be a main goal, keep the same order and rewrite the exercises around your real constraint. The early chapters still ask what a good job needs, whether one person can matter, how to help from a job you already have, and how to compare problems. The later chapters still ask how to build position, judge fit, write a plan, get hired, and find allies. When a resource assumes a campus you do not have, keep the exercise that matches the decision in front of you. The method is the sequence plus the written plan. Adapt the examples, and keep the order."
+    },
+    {
+      "id": "s6",
+      "kind": "check",
+      "titleEn": "Guide method check",
+      "bodyEn": "The introduction's method is to read each chapter, do its exercises, and put the answers into one career-plan template. The first four chapters set the long-term aim, and the later chapters cover how to move. Lists after the chapters cover further articles, career reviews, and problem profiles. The guide is aimed first at students and recent graduates who can treat helping as a serious goal. The same order still helps when you have to adapt the examples. An afternoon of the material has often changed the plans of more than half the people present.",
+      "prompt": "Which sequence matches how the introduction says to use the guide?",
+      "choices": [
+        "Read each chapter, do its exercises, and record the answers in the career-plan template, with the first four chapters setting the aim",
+        "Skip the exercises and choose a job from the final list of career reviews",
+        "Read the author biography and copy that career path",
+        "Finish the later chapters before you ask what kind of job is worth aiming at"
+      ],
+      "answer": 0
+    }
+  ]
+}

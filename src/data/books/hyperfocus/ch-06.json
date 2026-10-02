@@ -1,0 +1,234 @@
+{
+  "id": "06",
+  "index": 6,
+  "part": 3,
+  "partTitleEn": "Hyperfocus",
+  "titleEn": "Taming Distractions",
+  "titleSource": "Taming Distractions",
+  "sourcePages": "77-101",
+  "when": "Chapter 4",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "You interrupt yourself",
+      "bodyEn": "Workplace logging found that computer work lasts about forty seconds before a switch, and about thirty-five seconds when chat apps stay open. The same kind of study counted about five hundred sixty-six application switches in a workday, and about twenty-one social-feed checks, rising to about thirty-eight among people who opened that feed at all. Most people are also juggling about ten projects, so an unrelated ping does more damage than a ping that belongs to the task in front of you. After an interruption, resuming takes about twenty-five minutes, and on the way back people touch a little more than two other tasks. The pace then gets frantic, the quality drops, and stress rises, because attention was left unmanaged. Seeing your own interruption rate is what makes the old way hard to return to. The rest of this chapter is how to tame the pulls before they arrive, which is how a focus stretch gets longer.",
+      "terms": [
+        {
+          "en": "Self-interruption",
+          "hook": "A switch you start yourself, which often delays the return more than an outside ping."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Four distraction cells",
+      "bodyEn": "A distraction is anything that pulls you off the intention you set, so an interruption counts when it does the same thing. Divide those pulls by two questions: whether you can control them, and whether they are annoying or actually fun. Fill the grid with every small pull, including news and social sites, and start from whatever you already put in the distracting box of the task sort. For an annoying pull you cannot stop, such as a visitor, a loud neighbor, or a meeting you are stuck in, keep the original intention in mind and return the moment it ends. For a pleasant pull you cannot stop, such as a team lunch or a call from someone you love, enjoy it on purpose and return when you are able. People interrupt themselves about as often as others interrupt them, and a self-interruption costs about twenty-nine minutes while someone else's interruption costs about six minutes less. A quick look at what the pad is holding shortens either delay, and every pull you can control should be handled before it shows up.",
+      "terms": [
+        {
+          "en": "Distraction grid",
+          "hook": "A sort of pulls by whether you control them and whether they are fun or annoying."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Distraction-free mode",
+      "bodyEn": "Keep two modes: distraction-free when you are about to hyperfocus, and reduced-distraction when you must stay available, and estimate how your job splits between focus work and collaborative work. Distraction-free means every controllable pull is removed in advance, so the chosen task is what the pad can hold. Set a site blocker for a chosen duration that takes a restart to override, turn on do-not-disturb on the computer and the phone, put the phone out of sight, drink coffee only if sleep is more than about ten hours away because caffeine lingers about eight to fourteen hours, and use noise-blocking headphones in a loud place. Write that plan down, add any new site that breaks through, and if you cannot install a blocker such as Freedom, Cold Turkey, or RescueTime, cut the network or move to a cafe or a closed room. Judge the social cost with a cool head: half an hour offline is similar to a meeting, and people usually need you less often than the guilt suggests. If blocking makes you anxious, save the hard block for the most avoided tasks or for low-energy hours, and after a session an impulsive person can take a chosen distraction as a reward, because impulsiveness is the trait most tied to delay. A team can share the mode with a lamp that means do not interrupt, capped near three hours, and once your own mode is on, the effort of resisting drops, so the energy often outlasts the timer, especially on the first day back.",
+      "terms": [
+        {
+          "en": "Distraction-free mode",
+          "hook": "A prepared block where controllable pulls are removed before you start."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Reduced mode alerts",
+      "bodyEn": "Outside the deep blocks, run a reduced-distraction mode: the worst pulls are tamed, and you stay reachable for collaborative work. Mail tends to eat attention out of proportion to the minutes it takes, while meetings do the reverse, so both need a plan. Choose in advance when you will deal with notifications, the phone, mail, meetings, and the network, which turns them into scheduled work. Shut off sound and vibration for alerts you can live without, let each app interrupt only one device, keep real calls, and if you are waiting on one person, allow that sender for a short window. Glance at the rest when you check the time, because a one-second look can become a half-hour detour. Use do-not-disturb while you work, and an overnight airplane-mode stretch such as eight at night until eight in the morning, when energy is low and an earlier evening makes the next day less scattered. One allowed sender, turned off again after the message arrives, beats checking the whole inbox every few minutes.",
+      "terms": [
+        {
+          "en": "Reduced-distraction mode",
+          "hook": "The ordinary day with the worst pulls tamed and you still reachable."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Give the phone a job",
+      "bodyEn": "Treat the phone as a distracting computer that needs a reason before you pick it up. In a line, on a walk, or while waiting, leave it alone and use the gap to think or recover. At a meal, swap phones with the person you are with, so you can still look something up on a device that is not tuned to your own feeds. For a deep task or a coffee with someone, use airplane mode, which is stronger than a pocket that still knows alerts are piling up. Keep the tempting apps on a second device that stays in another room, file the worst ones in a folder named Mindless, and delete the apps that duplicate a job another device already does. Before any new gadget, name the job you are hiring it to do that the devices you already own cannot do. Let go of any device whose job you can no longer name.",
+      "terms": [
+        {
+          "en": "Device job",
+          "hook": "The specific work you hired a gadget to do, which decides whether it stays."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Tame the inbox",
+      "bodyEn": "Open mail only when you have the time, the attention, and the energy to deal with whatever arrived. The average Bailey cites is about eleven checks an hour, about eighty-eight in a day, and only about thirty-five minutes of actual mail, so the real cost is attention. Decide the check times in advance, because about seventy percent of messages are opened within six seconds of arrival, and about eighty-four percent of people leave the mail program open in the background. Bailey's own rhythm is once in the midafternoon, with an autoresponse that says so, and any rhythm under eighty-eight checks is already ahead of that average. If your job truly requires speed, hyperfocus on the inbox for twenty minutes, even at the top of each hour, so a sender waits well under an hour and the rest of the hour stays yours. Delete mail from the pocket phone, keep tasks on an outside list with the day's three intentions on top, and use a second address when public mail should stay slow and close colleagues should stay faster. For a big project, an autoresponse can announce a one-day or two-day mail holiday while you remain reachable in person or by phone; keep ordinary replies to about five sentences and call when you need more; wait before any heated or high-stakes send; and a week without mail, in one workplace study, lowered stress, lengthened real tasks, and cut multitasking."
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Meetings and the network",
+      "bodyEn": "After mail, meetings are the other giant pull, and one study put them at about thirty-seven percent of a knowledge worker's day, roughly three hours of an eight-hour day. A small group in a room for an hour can burn a full day of work once you add the cost of switching in and switching out. Skip any meeting that has no agenda, and ask for the objective, because the objective often shrinks to a few messages or a short call. Walk the next month or two and question every repeating meeting, then leave the ones that waste the hour, even if the exit takes a careful conversation. If you can, tell people who are optional that they may skip it when they have more important work. When you stay, leave the phone and the computer behind, listen, contribute, and help the room finish early. For the network underneath all of this, try a full offline Sunday and invite the household to join, and on a plane skip the paid connection in favor of one important offline task, because about half of online time is procrastination and twelve hours offline at home is often refreshing."
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Cue the room",
+      "bodyEn": "Cues in the room pull you the way a notification does: a phone on the table gets checked every few minutes even when it is silent, and its mere presence makes a conversation feel less close. Step one is to list every distraction where you do complex work, and mark the ones more attractive than the work. Step two is distance: phone across the room, tablet elsewhere, television out of the bedroom, and snacks you cannot resist out of the path. Step three is to add useful cues: a plant, a board with the three intentions, books that remind you of ideas, a small object that signals a short mental break, a book beside the bed, fruit in sight, and a cleared desk with closed windows and the day's mail handled or filed. Put future cues in the path you will walk, such as papers by the door or tomorrow's three intentions already written where you will see them. A change of room often helps because the usual office is full of cues for every other obligation. If the room is noisy, familiar simple music at low volume can mask chatter, including one side of a phone call, which takes extra space because the brain tries to supply the missing half; a quiet room is better left quiet; and introverts should test music carefully because it costs them more focus.",
+      "terms": [
+        {
+          "en": "Environmental cue",
+          "hook": "An object in the room that pulls attention toward a habit, helpful or costly."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Close the open loops",
+      "bodyEn": "Internal distractions are open loops, a meeting you just remembered or an errand you forgot, and they occupy the pad while you try to focus. Let the mind generate commitments, and let a list hold them. Keep a calendar, a task list with the three daily intentions on top, the distractions list you use while reading, a worry list you review at a scheduled time, a pad for ideas that arrive while you wander, and a waiting-for list of messages, packages, and calls. Start with the calendar and the task list if more lists feel heavy, and add captures until your head stays quiet, because the right number is personal. Once the items are outside and you have a rough plan, guilt about the past, worry about the future, and doubt about the present have less to pull on. Revisit the captures at a set time so they stay out of the pad. With the loops and the room both quieter, you can work more slowly and still move in the right direction: one study found that texting while reading stretched the same passage by about twenty-two to fifty-nine percent, and the attention you recover lets you notice energy, mood, and the next impulse while you can still choose.",
+      "terms": [
+        {
+          "en": "Open loop",
+          "hook": "An unresolved commitment still taking space in your head."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Where tasks should live",
+      "bodyEn": "Controllable pulls belong outside the block, handled before you start. Annoying surprises you cannot control get a fast return to the original intention, and pleasant ones get enjoyed and then left. Notifications, the phone, mail, meetings, and the network each get a predecided window. The room loses cues that outshine the work and gains cues that point back to the three intentions. Open loops move onto a calendar and lists you revisit, so the head can generate ideas while a list stores them. Music stays simple, familiar, and quiet when the room is noisy, and stays off when the room is already quiet. Tasks live outside the inbox and outside your head.",
+      "prompt": "What should you do with a distraction you can control, before a hyperfocus block?",
+      "choices": [
+        "Leave it in reach and rely on willpower once it appears",
+        "Store the day's tasks inside the inbox so the list stays current",
+        "Disable it ahead of time, and keep tasks on an outside list you revisit later",
+        "Check messages the moment they arrive so nothing waits more than six seconds"
+      ],
+      "answer": 2
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "You interrupt yourself",
+      "bodyEn": "Workplace logging found that computer work lasts about forty seconds before a switch, and about thirty-five seconds when chat apps stay open. The same kind of study counted about five hundred sixty-six application switches in a workday, and about twenty-one social-feed checks, rising to about thirty-eight among people who opened that feed at all. Most people are also juggling about ten projects, so an unrelated ping does more damage than a ping that belongs to the task in front of you. After an interruption, resuming takes about twenty-five minutes, and on the way back people touch a little more than two other tasks. The pace then gets frantic, the quality drops, and stress rises, because attention was left unmanaged. Seeing your own interruption rate is what makes the old way hard to return to. The rest of this chapter is how to tame the pulls before they arrive, which is how a focus stretch gets longer.",
+      "terms": [
+        {
+          "en": "Self-interruption",
+          "hook": "A switch you start yourself, which often delays the return more than an outside ping."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Four distraction cells",
+      "bodyEn": "A distraction is anything that pulls you off the intention you set, so an interruption counts when it does the same thing. Divide those pulls by two questions: whether you can control them, and whether they are annoying or actually fun. Fill the grid with every small pull, including news and social sites, and start from whatever you already put in the distracting box of the task sort. For an annoying pull you cannot stop, such as a visitor, a loud neighbor, or a meeting you are stuck in, keep the original intention in mind and return the moment it ends. For a pleasant pull you cannot stop, such as a team lunch or a call from someone you love, enjoy it on purpose and return when you are able. People interrupt themselves about as often as others interrupt them, and a self-interruption costs about twenty-nine minutes while someone else's interruption costs about six minutes less. A quick look at what the pad is holding shortens either delay, and every pull you can control should be handled before it shows up.",
+      "terms": [
+        {
+          "en": "Distraction grid",
+          "hook": "A sort of pulls by whether you control them and whether they are fun or annoying."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Distraction-free mode",
+      "bodyEn": "Keep two modes: distraction-free when you are about to hyperfocus, and reduced-distraction when you must stay available, and estimate how your job splits between focus work and collaborative work. Distraction-free means every controllable pull is removed in advance, so the chosen task is what the pad can hold. Set a site blocker for a chosen duration that takes a restart to override, turn on do-not-disturb on the computer and the phone, put the phone out of sight, drink coffee only if sleep is more than about ten hours away because caffeine lingers about eight to fourteen hours, and use noise-blocking headphones in a loud place. Write that plan down, add any new site that breaks through, and if you cannot install a blocker such as Freedom, Cold Turkey, or RescueTime, cut the network or move to a cafe or a closed room. Judge the social cost with a cool head: half an hour offline is similar to a meeting, and people usually need you less often than the guilt suggests. If blocking makes you anxious, save the hard block for the most avoided tasks or for low-energy hours, and after a session an impulsive person can take a chosen distraction as a reward, because impulsiveness is the trait most tied to delay. A team can share the mode with a lamp that means do not interrupt, capped near three hours, and once your own mode is on, the effort of resisting drops, so the energy often outlasts the timer, especially on the first day back.",
+      "terms": [
+        {
+          "en": "Distraction-free mode",
+          "hook": "A prepared block where controllable pulls are removed before you start."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Reduced mode alerts",
+      "bodyEn": "Outside the deep blocks, run a reduced-distraction mode: the worst pulls are tamed, and you stay reachable for collaborative work. Mail tends to eat attention out of proportion to the minutes it takes, while meetings do the reverse, so both need a plan. Choose in advance when you will deal with notifications, the phone, mail, meetings, and the network, which turns them into scheduled work. Shut off sound and vibration for alerts you can live without, let each app interrupt only one device, keep real calls, and if you are waiting on one person, allow that sender for a short window. Glance at the rest when you check the time, because a one-second look can become a half-hour detour. Use do-not-disturb while you work, and an overnight airplane-mode stretch such as eight at night until eight in the morning, when energy is low and an earlier evening makes the next day less scattered. One allowed sender, turned off again after the message arrives, beats checking the whole inbox every few minutes.",
+      "terms": [
+        {
+          "en": "Reduced-distraction mode",
+          "hook": "The ordinary day with the worst pulls tamed and you still reachable."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Give the phone a job",
+      "bodyEn": "Treat the phone as a distracting computer that needs a reason before you pick it up. In a line, on a walk, or while waiting, leave it alone and use the gap to think or recover. At a meal, swap phones with the person you are with, so you can still look something up on a device that is not tuned to your own feeds. For a deep task or a coffee with someone, use airplane mode, which is stronger than a pocket that still knows alerts are piling up. Keep the tempting apps on a second device that stays in another room, file the worst ones in a folder named Mindless, and delete the apps that duplicate a job another device already does. Before any new gadget, name the job you are hiring it to do that the devices you already own cannot do. Let go of any device whose job you can no longer name.",
+      "terms": [
+        {
+          "en": "Device job",
+          "hook": "The specific work you hired a gadget to do, which decides whether it stays."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Tame the inbox",
+      "bodyEn": "Open mail only when you have the time, the attention, and the energy to deal with whatever arrived. The average Bailey cites is about eleven checks an hour, about eighty-eight in a day, and only about thirty-five minutes of actual mail, so the real cost is attention. Decide the check times in advance, because about seventy percent of messages are opened within six seconds of arrival, and about eighty-four percent of people leave the mail program open in the background. Bailey's own rhythm is once in the midafternoon, with an autoresponse that says so, and any rhythm under eighty-eight checks is already ahead of that average. If your job truly requires speed, hyperfocus on the inbox for twenty minutes, even at the top of each hour, so a sender waits well under an hour and the rest of the hour stays yours. Delete mail from the pocket phone, keep tasks on an outside list with the day's three intentions on top, and use a second address when public mail should stay slow and close colleagues should stay faster. For a big project, an autoresponse can announce a one-day or two-day mail holiday while you remain reachable in person or by phone; keep ordinary replies to about five sentences and call when you need more; wait before any heated or high-stakes send; and a week without mail, in one workplace study, lowered stress, lengthened real tasks, and cut multitasking."
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Meetings and the network",
+      "bodyEn": "After mail, meetings are the other giant pull, and one study put them at about thirty-seven percent of a knowledge worker's day, roughly three hours of an eight-hour day. A small group in a room for an hour can burn a full day of work once you add the cost of switching in and switching out. Skip any meeting that has no agenda, and ask for the objective, because the objective often shrinks to a few messages or a short call. Walk the next month or two and question every repeating meeting, then leave the ones that waste the hour, even if the exit takes a careful conversation. If you can, tell people who are optional that they may skip it when they have more important work. When you stay, leave the phone and the computer behind, listen, contribute, and help the room finish early. For the network underneath all of this, try a full offline Sunday and invite the household to join, and on a plane skip the paid connection in favor of one important offline task, because about half of online time is procrastination and twelve hours offline at home is often refreshing."
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Cue the room",
+      "bodyEn": "Cues in the room pull you the way a notification does: a phone on the table gets checked every few minutes even when it is silent, and its mere presence makes a conversation feel less close. Step one is to list every distraction where you do complex work, and mark the ones more attractive than the work. Step two is distance: phone across the room, tablet elsewhere, television out of the bedroom, and snacks you cannot resist out of the path. Step three is to add useful cues: a plant, a board with the three intentions, books that remind you of ideas, a small object that signals a short mental break, a book beside the bed, fruit in sight, and a cleared desk with closed windows and the day's mail handled or filed. Put future cues in the path you will walk, such as papers by the door or tomorrow's three intentions already written where you will see them. A change of room often helps because the usual office is full of cues for every other obligation. If the room is noisy, familiar simple music at low volume can mask chatter, including one side of a phone call, which takes extra space because the brain tries to supply the missing half; a quiet room is better left quiet; and introverts should test music carefully because it costs them more focus.",
+      "terms": [
+        {
+          "en": "Environmental cue",
+          "hook": "An object in the room that pulls attention toward a habit, helpful or costly."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Close the open loops",
+      "bodyEn": "Internal distractions are open loops, a meeting you just remembered or an errand you forgot, and they occupy the pad while you try to focus. Let the mind generate commitments, and let a list hold them. Keep a calendar, a task list with the three daily intentions on top, the distractions list you use while reading, a worry list you review at a scheduled time, a pad for ideas that arrive while you wander, and a waiting-for list of messages, packages, and calls. Start with the calendar and the task list if more lists feel heavy, and add captures until your head stays quiet, because the right number is personal. Once the items are outside and you have a rough plan, guilt about the past, worry about the future, and doubt about the present have less to pull on. Revisit the captures at a set time so they stay out of the pad. With the loops and the room both quieter, you can work more slowly and still move in the right direction: one study found that texting while reading stretched the same passage by about twenty-two to fifty-nine percent, and the attention you recover lets you notice energy, mood, and the next impulse while you can still choose.",
+      "terms": [
+        {
+          "en": "Open loop",
+          "hook": "An unresolved commitment still taking space in your head."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Where tasks should live",
+      "bodyEn": "Controllable pulls belong outside the block, handled before you start. Annoying surprises you cannot control get a fast return to the original intention, and pleasant ones get enjoyed and then left. Notifications, the phone, mail, meetings, and the network each get a predecided window. The room loses cues that outshine the work and gains cues that point back to the three intentions. Open loops move onto a calendar and lists you revisit, so the head can generate ideas while a list stores them. Music stays simple, familiar, and quiet when the room is noisy, and stays off when the room is already quiet. Tasks live outside the inbox and outside your head.",
+      "prompt": "What should you do with a distraction you can control, before a hyperfocus block?",
+      "choices": [
+        "Leave it in reach and rely on willpower once it appears",
+        "Store the day's tasks inside the inbox so the list stays current",
+        "Disable it ahead of time, and keep tasks on an outside list you revisit later",
+        "Check messages the moment they arrive so nothing waits more than six seconds"
+      ],
+      "answer": 2
+    }
+  ]
+}

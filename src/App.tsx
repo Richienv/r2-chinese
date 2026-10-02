@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { BarsIcon, BookIcon, HomeIcon, UserIcon } from './components/Icons'
+import { BottomNav } from './components/BottomNav'
 import { CharacterOverlay } from './screens/Character'
 import { DrillFlow } from './screens/Drill'
 import { Home } from './screens/Home'
@@ -14,6 +14,7 @@ import { KerjaSession } from './screens/Kerja'
 import { JiaochengSession } from './screens/Jiaocheng'
 import { InterviewSession } from './screens/Interview'
 import { MagangSession } from './screens/Magang'
+import { BooksSession } from './screens/Books'
 import { WordsSession } from './screens/WordsSession'
 import { CourseProvider } from './lib/course'
 import { load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
@@ -32,19 +33,13 @@ type Overlay =
   | { kind: 'jiaocheng'; lesson: number; node: PathNode }
   | { kind: 'magang'; chapter: number; node: string }
   | { kind: 'interview'; chapter: number; node: string }
+  | { kind: 'books'; part: number; index: number; node: string }
   | { kind: 'review'; words?: string[]; title?: string }
   | { kind: 'character'; char: string }
   | { kind: 'drill'; words: string[]; title: string }
   | { kind: 'saved' }
   | { kind: 'vocab' }
   | null
-
-const TABS: { key: Tab; label: string; icon: React.ReactNode }[] = [
-  { key: 'home', label: 'Home', icon: <HomeIcon /> },
-  { key: 'learn', label: 'Learn', icon: <BookIcon /> },
-  { key: 'stats', label: 'Progress', icon: <BarsIcon /> },
-  { key: 'profile', label: 'Profile', icon: <UserIcon /> },
-]
 
 const TAB_KEYS: Tab[] = ['home', 'learn', 'stats', 'profile']
 
@@ -97,10 +92,12 @@ function Shell() {
             onSession={(lesson, node) => setOverlay({ kind: 'path', lesson, node })}
             onLesson={(lesson) => setOverlay({ kind: 'lesson', lesson })}
             onReview={() => setOverlay({ kind: 'review' })}
+            onTrail={() => setOverlay({ kind: 'saved' })}
             onKerjaSession={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
             onJiaochengSession={(lesson, node) => setOverlay({ kind: 'jiaocheng', lesson, node })}
             onMagangSession={(chapter, node) => setOverlay({ kind: 'magang', chapter, node })}
             onInterviewSession={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
+            onBooksSession={(part, index) => setOverlay({ kind: 'books', part, index, node: 'lesson' })}
           />
         )}
         {tab === 'learn' && (
@@ -112,6 +109,7 @@ function Shell() {
             onJiaochengPlay={(lesson, node) => setOverlay({ kind: 'jiaocheng', lesson, node })}
             onMagangPlay={(chapter, node) => setOverlay({ kind: 'magang', chapter, node })}
             onInterviewPlay={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
+            onBooksPlay={(part, index) => setOverlay({ kind: 'books', part, index, node: 'lesson' })}
             isNodeDone={(lesson, node) => store.isNodeDone(lesson, node)}
           />
         )}
@@ -119,20 +117,7 @@ function Shell() {
         {tab === 'profile' && <Profile />}
       </main>
 
-      <nav className="tabbar" ref={navRef} aria-label="Main">
-        {TABS.map((t) => (
-          <button
-            key={t.key}
-            type="button"
-            data-on={tab === t.key}
-            aria-current={tab === t.key ? 'page' : undefined}
-            onClick={() => setTab(t.key)}
-          >
-            {t.icon}
-            {t.label}
-          </button>
-        ))}
-      </nav>
+      <BottomNav ref={navRef} tab={tab} onTabChange={setTab} />
 
       {overlay?.kind === 'lesson' && (
         <LessonFlow
@@ -160,6 +145,14 @@ function Shell() {
       )}
       {overlay?.kind === 'interview' && (
         <InterviewSession chapter={overlay.chapter} node={overlay.node} onClose={() => setOverlay(null)} />
+      )}
+      {overlay?.kind === 'books' && (
+        <BooksSession
+          part={overlay.part}
+          index={overlay.index}
+          node={overlay.node}
+          onClose={() => setOverlay(null)}
+        />
       )}
       {overlay?.kind === 'review' && (
         <ReviewFlow words={overlay.words} title={overlay.title} onClose={() => setOverlay(null)} />

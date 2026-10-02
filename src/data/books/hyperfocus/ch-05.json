@@ -1,0 +1,222 @@
+{
+  "id": "05",
+  "index": 5,
+  "part": 3,
+  "partTitleEn": "Hyperfocus",
+  "titleEn": "The Power of Hyperfocus",
+  "titleSource": "The Power of Hyperfocus",
+  "sourcePages": "59-76",
+  "when": "Chapter 3",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "One task fills it",
+      "bodyEn": "A strong day usually has one task filling the pad, distractions caught quickly, and a steady pace on that single task. The task sits at a comfortable difficulty: challenging enough to need real attention, and familiar enough that you can begin. That is when an hour can feel like minutes. After the start, resistance drops, and you often finish less drained than on a day of constant motion. Hyperfocus is that state: one chosen object expanded until it occupies the pad. You enter it on purpose by choosing the object, removing the distractions that will arrive, and staying with that single task. The pad stays inside its limits, so you can slow down and still finish more than a day spent cramming it full, which matters most when demands are highest.",
+      "terms": [
+        {
+          "en": "Hyperfocus",
+          "hook": "One important object, chosen on purpose, expanded until it fills the pad."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Save it for complexity",
+      "bodyEn": "The rule is that one productive or meaningful task consumes the pad. Habits usually leave space, and forcing full attention onto them spends energy you need later. Full attention can also make a habit worse: a natural walk turns stiff when you watch it, a game you play automatically falls apart when you analyze the streak, and skilled typing gets slower and sloppier under close watch. Save the mode for work that improves when attention is complete, such as a report, a budget, or a conversation that matters. On that kind of task you often still have a little room, and that room holds the original intention so a distraction is visible before it wins. The same spare room lets you learn, return from a wander, and consider another approach while you work. Keeping attention off unimportant things is one of the fastest ways to finish the important thing."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Four stages in order",
+      "bodyEn": "Hyperfocus passes through four stages, modeled on a simpler loop: you are focused, the mind wanders, you notice, and you return. First, choose one productive or meaningful object, because intention has to come before attention, whether the object is a work task, a conversation, or a meal. Second, clear external distractions and internal ones, including stray memories, resistance to an unpleasant job, and a mind that wants to wander, and do that clearing before they show up. Third, stay with the chosen object for a period you decided in advance, long enough to matter and short enough that you will actually start. Fourth, bring attention back each time it leaves. The mind wanders about forty-seven percent of the day, people notice that wander only about five times an hour, and getting back takes about twenty-two minutes after an outside interruption or about twenty-nine minutes after you interrupt yourself. The whole mode fits in one line: keep one important, complex object in awareness while you work.",
+      "terms": [
+        {
+          "en": "Four stages",
+          "hook": "Choose one object, clear distractions, focus for a set period, and keep returning."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "The Rule of 3",
+      "bodyEn": "Before you set the day's intentions, sort your regular tasks into the four boxes if you have not already, which takes about five to ten minutes away from the inbox. Then use the Rule of 3: at the start of the day, name the three things you want finished by the end. A full task list can hold the small items, and these three slots stay reserved for the important work. The limit forces a choice about what will wait, and on a day packed with meetings the three intentions shrink to fit, while an open day can hold larger ones. When a new demand arrives, weigh it against the three you already set. Three items fit in the pad, so you can remember them, and they should stay visible, on a board or at the top of the list. Add three intentions for the week and three personal ones, such as being offline at dinner, and on a day you do not control, rewrite the intention into the part you do control, such as meeting five new people at a reception.",
+      "terms": [
+        {
+          "en": "Rule of 3",
+          "hook": "Three outcomes for the day, kept visible, separate from the small-task list."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Consequential chain tasks",
+      "bodyEn": "On the task list, judge each item by the size of its consequences, short term and long term together. The important ones change something after you finish them, like a first domino that knocks down a line. Look past the immediate result to the second and third results: dessert is pleasant now, sour an hour later, and costly if it breaks a plan you care about. The most consequential item often feels less urgent than a dozen replies. A guide for new people can beat a stack of messages if it makes every new person faster and more welcome. Other chain-starters include automating a repeated annoyance, disconnecting long enough to design a workflow, or building a way for people to teach each other. After the four-box sort, ask which necessary and purposeful tasks would start that chain, and do one of those next.",
+      "terms": [
+        {
+          "en": "Consequential task",
+          "hook": "The item whose later effects outweigh the urgent things around it."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Hourly awareness chime",
+      "bodyEn": "Daily intentions fail if the hours in between slip back to autopilot, so check the pad on a schedule. Set an hourly chime on a phone or watch, and treat it as the interruption that earns its place. When it rings, ask a few of these: was your mind wandering, did you choose this task, how long have you been immersed, what is the most consequential thing you could do right now, how full is the pad, and what distraction is in the way. Use the two or three prompts that actually make you adjust, and if the block is going well, let the chime pass and continue. Catching a wander is a success worth a small reward, and the point is the correction. The first day will show a lot of autopilot, and the move is to switch to a more productive task and make a plan for any distraction that keeps returning. If a chime feels wrong after the habit exists, use a cue you already meet, such as walking to the washroom, getting water or tea, or letting a phone ring a few times while you notice what the pad was holding.",
+      "terms": [
+        {
+          "en": "Awareness chime",
+          "hook": "An hourly cue to check whether the pad still holds what you intended."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Specific if-then plans",
+      "bodyEn": "Vague intentions still help, raising the odds of follow-through by about twenty to thirty percent, and a specific plan raises them much further. The research name is an implementation intention: when and where you will act, and which action you will take. In one study of hard goals, people who wrote that plan followed through about sixty-two percent of the time, and people who left the goal vague followed through about twenty-two percent of the time. Turn a gym wish into a lunch-break visit, turn quitting work at home into airplane mode plus the laptop in another room, and turn a reasonable bedtime into a ten o'clock alarm that starts the wind-down. Once the cue arrives, the action can start with very little extra decision, the way a habit runs after the first step. The plan has to be about a goal you still care about, and an easy goal needs less detail than a hard one or a day that already holds too many goals. A cue can be a feeling you reliably recognize, such as the moment you get nervous, as long as you know that moment when it arrives.",
+      "terms": [
+        {
+          "en": "Implementation intention",
+          "hook": "A plan that names when, where, and which action will move the goal."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Run the focus ritual",
+      "bodyEn": "Start by negotiating the length: ask whether an hour is honest, then a shorter span, until you hit a block you will actually begin. Push a little past comfort, and stop before the span is a fantasy. A workable beginning is fifteen minutes of focus and then five to ten minutes of an allowed break, and the span can grow later. On a crowded week, schedule the blocks early, tell the people who book you, and protect those hours from last-minute fires. Set a timer, and if the timer is your phone, put the phone on airplane mode or use a watch. When attention leaves, bring it back gently, because wandering is the ordinary wiring. If the timer ends and the work is moving, keep going."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Choose when you enter",
+      "bodyEn": "Schedule as many of those blocks as the work allows, because one meaningful object at a time is when the work is most productive, and you still leave room for small collaborative tasks. Some days, especially travel, conferences, and walls of meetings, will offer no real block, so plan around the energy and the calendar you actually have. Enter when the task is complex enough to deserve the whole pad, such as writing, preparing a talk, or a meeting that matters. The more you want to avoid the task, the more the ritual matters, and avoidance shows up as boring, frustrating, difficult, ambiguous, unstructured, or empty of reward. Your starting length also depends on how often you chase novelty, how often you overload the pad, how often interruptions win, how many open loops you store in your head, and how often you notice what the pad is holding. Mood and diet shift that starting point too, and later chapters take them up. Between blocks, ordinary mail and a short conversation can still happen, so the day is a rhythm of deep blocks and lighter work."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Name the four stages",
+      "bodyEn": "Hyperfocus means one meaningful, complex object fills the pad. Full attention makes habits worse, so the mode is reserved for complex work. The four stages are to choose the object, clear internal and external distractions, focus for a period you set, and return each time attention leaves. The Rule of 3, the most consequential task, and an hourly check are how intentions survive contact with the day. A specific when-where-action plan raises follow-through far above a vague wish. Negotiate a duration you will start, protect the block, time it, and continue if the work is moving when the timer ends. Use the mode whenever the calendar allows, especially on complex or avoided work.",
+      "prompt": "What is the sequence for entering hyperfocus?",
+      "choices": [
+        "Wait until a task feels easy, then open every message channel",
+        "Choose one meaningful object, clear distractions, focus for a set period, and return when attention leaves",
+        "Fill the pad with several complex tasks so no attention sits idle",
+        "Hyperfocus on a habit such as typing so the habit gets slower and cleaner"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "One task fills it",
+      "bodyEn": "A strong day usually has one task filling the pad, distractions caught quickly, and a steady pace on that single task. The task sits at a comfortable difficulty: challenging enough to need real attention, and familiar enough that you can begin. That is when an hour can feel like minutes. After the start, resistance drops, and you often finish less drained than on a day of constant motion. Hyperfocus is that state: one chosen object expanded until it occupies the pad. You enter it on purpose by choosing the object, removing the distractions that will arrive, and staying with that single task. The pad stays inside its limits, so you can slow down and still finish more than a day spent cramming it full, which matters most when demands are highest.",
+      "terms": [
+        {
+          "en": "Hyperfocus",
+          "hook": "One important object, chosen on purpose, expanded until it fills the pad."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Save it for complexity",
+      "bodyEn": "The rule is that one productive or meaningful task consumes the pad. Habits usually leave space, and forcing full attention onto them spends energy you need later. Full attention can also make a habit worse: a natural walk turns stiff when you watch it, a game you play automatically falls apart when you analyze the streak, and skilled typing gets slower and sloppier under close watch. Save the mode for work that improves when attention is complete, such as a report, a budget, or a conversation that matters. On that kind of task you often still have a little room, and that room holds the original intention so a distraction is visible before it wins. The same spare room lets you learn, return from a wander, and consider another approach while you work. Keeping attention off unimportant things is one of the fastest ways to finish the important thing."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Four stages in order",
+      "bodyEn": "Hyperfocus passes through four stages, modeled on a simpler loop: you are focused, the mind wanders, you notice, and you return. First, choose one productive or meaningful object, because intention has to come before attention, whether the object is a work task, a conversation, or a meal. Second, clear external distractions and internal ones, including stray memories, resistance to an unpleasant job, and a mind that wants to wander, and do that clearing before they show up. Third, stay with the chosen object for a period you decided in advance, long enough to matter and short enough that you will actually start. Fourth, bring attention back each time it leaves. The mind wanders about forty-seven percent of the day, people notice that wander only about five times an hour, and getting back takes about twenty-two minutes after an outside interruption or about twenty-nine minutes after you interrupt yourself. The whole mode fits in one line: keep one important, complex object in awareness while you work.",
+      "terms": [
+        {
+          "en": "Four stages",
+          "hook": "Choose one object, clear distractions, focus for a set period, and keep returning."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "The Rule of 3",
+      "bodyEn": "Before you set the day's intentions, sort your regular tasks into the four boxes if you have not already, which takes about five to ten minutes away from the inbox. Then use the Rule of 3: at the start of the day, name the three things you want finished by the end. A full task list can hold the small items, and these three slots stay reserved for the important work. The limit forces a choice about what will wait, and on a day packed with meetings the three intentions shrink to fit, while an open day can hold larger ones. When a new demand arrives, weigh it against the three you already set. Three items fit in the pad, so you can remember them, and they should stay visible, on a board or at the top of the list. Add three intentions for the week and three personal ones, such as being offline at dinner, and on a day you do not control, rewrite the intention into the part you do control, such as meeting five new people at a reception.",
+      "terms": [
+        {
+          "en": "Rule of 3",
+          "hook": "Three outcomes for the day, kept visible, separate from the small-task list."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Consequential chain tasks",
+      "bodyEn": "On the task list, judge each item by the size of its consequences, short term and long term together. The important ones change something after you finish them, like a first domino that knocks down a line. Look past the immediate result to the second and third results: dessert is pleasant now, sour an hour later, and costly if it breaks a plan you care about. The most consequential item often feels less urgent than a dozen replies. A guide for new people can beat a stack of messages if it makes every new person faster and more welcome. Other chain-starters include automating a repeated annoyance, disconnecting long enough to design a workflow, or building a way for people to teach each other. After the four-box sort, ask which necessary and purposeful tasks would start that chain, and do one of those next.",
+      "terms": [
+        {
+          "en": "Consequential task",
+          "hook": "The item whose later effects outweigh the urgent things around it."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Hourly awareness chime",
+      "bodyEn": "Daily intentions fail if the hours in between slip back to autopilot, so check the pad on a schedule. Set an hourly chime on a phone or watch, and treat it as the interruption that earns its place. When it rings, ask a few of these: was your mind wandering, did you choose this task, how long have you been immersed, what is the most consequential thing you could do right now, how full is the pad, and what distraction is in the way. Use the two or three prompts that actually make you adjust, and if the block is going well, let the chime pass and continue. Catching a wander is a success worth a small reward, and the point is the correction. The first day will show a lot of autopilot, and the move is to switch to a more productive task and make a plan for any distraction that keeps returning. If a chime feels wrong after the habit exists, use a cue you already meet, such as walking to the washroom, getting water or tea, or letting a phone ring a few times while you notice what the pad was holding.",
+      "terms": [
+        {
+          "en": "Awareness chime",
+          "hook": "An hourly cue to check whether the pad still holds what you intended."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Specific if-then plans",
+      "bodyEn": "Vague intentions still help, raising the odds of follow-through by about twenty to thirty percent, and a specific plan raises them much further. The research name is an implementation intention: when and where you will act, and which action you will take. In one study of hard goals, people who wrote that plan followed through about sixty-two percent of the time, and people who left the goal vague followed through about twenty-two percent of the time. Turn a gym wish into a lunch-break visit, turn quitting work at home into airplane mode plus the laptop in another room, and turn a reasonable bedtime into a ten o'clock alarm that starts the wind-down. Once the cue arrives, the action can start with very little extra decision, the way a habit runs after the first step. The plan has to be about a goal you still care about, and an easy goal needs less detail than a hard one or a day that already holds too many goals. A cue can be a feeling you reliably recognize, such as the moment you get nervous, as long as you know that moment when it arrives.",
+      "terms": [
+        {
+          "en": "Implementation intention",
+          "hook": "A plan that names when, where, and which action will move the goal."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Run the focus ritual",
+      "bodyEn": "Start by negotiating the length: ask whether an hour is honest, then a shorter span, until you hit a block you will actually begin. Push a little past comfort, and stop before the span is a fantasy. A workable beginning is fifteen minutes of focus and then five to ten minutes of an allowed break, and the span can grow later. On a crowded week, schedule the blocks early, tell the people who book you, and protect those hours from last-minute fires. Set a timer, and if the timer is your phone, put the phone on airplane mode or use a watch. When attention leaves, bring it back gently, because wandering is the ordinary wiring. If the timer ends and the work is moving, keep going."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Choose when you enter",
+      "bodyEn": "Schedule as many of those blocks as the work allows, because one meaningful object at a time is when the work is most productive, and you still leave room for small collaborative tasks. Some days, especially travel, conferences, and walls of meetings, will offer no real block, so plan around the energy and the calendar you actually have. Enter when the task is complex enough to deserve the whole pad, such as writing, preparing a talk, or a meeting that matters. The more you want to avoid the task, the more the ritual matters, and avoidance shows up as boring, frustrating, difficult, ambiguous, unstructured, or empty of reward. Your starting length also depends on how often you chase novelty, how often you overload the pad, how often interruptions win, how many open loops you store in your head, and how often you notice what the pad is holding. Mood and diet shift that starting point too, and later chapters take them up. Between blocks, ordinary mail and a short conversation can still happen, so the day is a rhythm of deep blocks and lighter work."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Name the four stages",
+      "bodyEn": "Hyperfocus means one meaningful, complex object fills the pad. Full attention makes habits worse, so the mode is reserved for complex work. The four stages are to choose the object, clear internal and external distractions, focus for a period you set, and return each time attention leaves. The Rule of 3, the most consequential task, and an hourly check are how intentions survive contact with the day. A specific when-where-action plan raises follow-through far above a vague wish. Negotiate a duration you will start, protect the block, time it, and continue if the work is moving when the timer ends. Use the mode whenever the calendar allows, especially on complex or avoided work.",
+      "prompt": "What is the sequence for entering hyperfocus?",
+      "choices": [
+        "Wait until a task feels easy, then open every message channel",
+        "Choose one meaningful object, clear distractions, focus for a set period, and return when attention leaves",
+        "Fill the pad with several complex tasks so no attention sits idle",
+        "Hyperfocus on a habit such as typing so the habit gets slower and cleaner"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "id": "17",
+  "index": 17,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Slow Down and Notice",
+  "titleSource": "The Last Chapter: An E-mail You Need to Read",
+  "sourcePages": "",
+  "when": "Liberation",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Busy is not living",
+      "bodyEn": "The closing chapter begins with a claim about occupation. A packed schedule can belong to the person least engaged with living. Learning to live is presented as harder than learning to stay busy. The earlier steps matter because they make room for that harder skill. A full calendar is not evidence that a life was entered. Use the hours you freed for living, and treat another layer of busyness as a miss. Attention is the work that remains.",
+      "terms": [
+        {
+          "en": "busyness",
+          "hook": "A full schedule that can still leave you the person least engaged with living."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Ask if today counts",
+      "bodyEn": "This chapter borrows a morning test from a commencement speech. Face the day you are about to live and ask whether you would choose it if no later day were coming. A single refusal is information about that day. A string of refusals is an order to change the plan. Apply the test to the real agenda, not to a general mood. Check often enough that a bad streak cannot hide inside a routine. One uneasy morning does not demand a new identity, and a repeated refusal does.",
+      "terms": [
+        {
+          "en": "last-day question",
+          "hook": "A morning test of whether you would choose today's real plan if no later day were coming."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Remember that it ends",
+      "bodyEn": "The chapter treats the fact that life ends as a decision tool. Once that fact is present, standards imposed by other people stop driving the day. The urge to protect your image stops driving it too. Fear of failing where others can see also loses its claim. What is left are the priorities that were real before an audience was imagined. The story this tool breaks is that a change would cost you something you cannot drop. Reach for it when appearance is the last reason to keep the old plan."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Life is not a puzzle",
+      "bodyEn": "Not knowing what a life is for is treated as a normal condition, shared widely. The chapter will not turn that confusion into a problem with a correct answer. It will not turn a life into a contest that crowns a winner. Pieces are worth forcing together only when a puzzle is actually there. The puzzle in this warning is one you assembled so the pieces would have somewhere to lock. The weight of chasing success comes from that forcing. Put the pieces down when they fit only a picture you made up.",
+      "terms": [
+        {
+          "en": "invented puzzle",
+          "hook": "A demand that life lock into one correct picture, when no such picture was given."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Limits you set yourself",
+      "bodyEn": "The weight of the chase can ease into a lighter way of moving. The turn comes when you see that the rules in force are rules you wrote. The limits you keep meeting belong on that same page. A boundary with your name on it is a boundary you are allowed to edit. The lighter pace is openness to what arrives, rather than a finished solution you must defend. That openness uses space a homemade rule had been filling. Retire one invented limit before you add another target.",
+      "terms": [
+        {
+          "en": "self-set limits",
+          "hook": "Boundaries that feel fixed until you notice you are the person who wrote them."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "People are not watching",
+      "bodyEn": "The next instruction is to act with nerve. Approval from every observer is not the reason. The reason is that other people spend far less time on you than the worry claims. A choice delayed for an audience that is absent is a choice delayed for nothing. Nerve, in this chapter, means moving while that audience is still imaginary. It does not mean ignoring the few people who are actually beside you. Give your concern to them, and give none to a crowd that is busy with its own day."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Slow down for people",
+      "bodyEn": "Someone close forwarded a poem about pace, then stopped storing life for a later finish. The chapter offers that exit to the reader. The practice is to go slowly enough to register an ordinary day, including play, weather, a small living motion, and the light leaving. When you ask how a person is, stay for what they answer. Leave the next long list of tasks out of bed, and do not tell a child that a shared plan can wait. A friendship can die from a call that never happened, and a sprint toward arrival skips much of the going. Open the day while it is here, because hurrying is not a contest you are required to win."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Freed time check",
+      "bodyEn": "Busyness can be the condition least concerned with living, which is why the closing chapter exists. A morning question asks whether you would choose today if no later day were coming, and a streak of refusals means change the plan. Remembering that life ends removes other people's standards, image protection, and fear of a public failure. Life is not a puzzle you force shut, and it is not a contest you win. The limits in the way are limits you set, and most onlookers are not thinking about you. A slower pace is how you hear people, keep friendships, and stop postponing the day. Recall what this chapter wants from the time the earlier steps opened.",
+      "prompt": "What should you do with the time the earlier steps opened?",
+      "choices": [
+        "Slow down, hear people, and change a plan that keeps failing the morning question",
+        "Fill every open hour so the calendar never looks idle",
+        "Force life into one correct picture until the pieces lock",
+        "Keep storing real living for a later finish line"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Busy is not living",
+      "bodyEn": "The closing chapter begins with a claim about occupation. A packed schedule can belong to the person least engaged with living. Learning to live is presented as harder than learning to stay busy. The earlier steps matter because they make room for that harder skill. A full calendar is not evidence that a life was entered. Use the hours you freed for living, and treat another layer of busyness as a miss. Attention is the work that remains.",
+      "terms": [
+        {
+          "en": "busyness",
+          "hook": "A full schedule that can still leave you the person least engaged with living."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Ask if today counts",
+      "bodyEn": "This chapter borrows a morning test from a commencement speech. Face the day you are about to live and ask whether you would choose it if no later day were coming. A single refusal is information about that day. A string of refusals is an order to change the plan. Apply the test to the real agenda, not to a general mood. Check often enough that a bad streak cannot hide inside a routine. One uneasy morning does not demand a new identity, and a repeated refusal does.",
+      "terms": [
+        {
+          "en": "last-day question",
+          "hook": "A morning test of whether you would choose today's real plan if no later day were coming."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Remember that it ends",
+      "bodyEn": "The chapter treats the fact that life ends as a decision tool. Once that fact is present, standards imposed by other people stop driving the day. The urge to protect your image stops driving it too. Fear of failing where others can see also loses its claim. What is left are the priorities that were real before an audience was imagined. The story this tool breaks is that a change would cost you something you cannot drop. Reach for it when appearance is the last reason to keep the old plan."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Life is not a puzzle",
+      "bodyEn": "Not knowing what a life is for is treated as a normal condition, shared widely. The chapter will not turn that confusion into a problem with a correct answer. It will not turn a life into a contest that crowns a winner. Pieces are worth forcing together only when a puzzle is actually there. The puzzle in this warning is one you assembled so the pieces would have somewhere to lock. The weight of chasing success comes from that forcing. Put the pieces down when they fit only a picture you made up.",
+      "terms": [
+        {
+          "en": "invented puzzle",
+          "hook": "A demand that life lock into one correct picture, when no such picture was given."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Limits you set yourself",
+      "bodyEn": "The weight of the chase can ease into a lighter way of moving. The turn comes when you see that the rules in force are rules you wrote. The limits you keep meeting belong on that same page. A boundary with your name on it is a boundary you are allowed to edit. The lighter pace is openness to what arrives, rather than a finished solution you must defend. That openness uses space a homemade rule had been filling. Retire one invented limit before you add another target.",
+      "terms": [
+        {
+          "en": "self-set limits",
+          "hook": "Boundaries that feel fixed until you notice you are the person who wrote them."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "People are not watching",
+      "bodyEn": "The next instruction is to act with nerve. Approval from every observer is not the reason. The reason is that other people spend far less time on you than the worry claims. A choice delayed for an audience that is absent is a choice delayed for nothing. Nerve, in this chapter, means moving while that audience is still imaginary. It does not mean ignoring the few people who are actually beside you. Give your concern to them, and give none to a crowd that is busy with its own day."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Slow down for people",
+      "bodyEn": "Someone close forwarded a poem about pace, then stopped storing life for a later finish. The chapter offers that exit to the reader. The practice is to go slowly enough to register an ordinary day, including play, weather, a small living motion, and the light leaving. When you ask how a person is, stay for what they answer. Leave the next long list of tasks out of bed, and do not tell a child that a shared plan can wait. A friendship can die from a call that never happened, and a sprint toward arrival skips much of the going. Open the day while it is here, because hurrying is not a contest you are required to win."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Freed time check",
+      "bodyEn": "Busyness can be the condition least concerned with living, which is why the closing chapter exists. A morning question asks whether you would choose today if no later day were coming, and a streak of refusals means change the plan. Remembering that life ends removes other people's standards, image protection, and fear of a public failure. Life is not a puzzle you force shut, and it is not a contest you win. The limits in the way are limits you set, and most onlookers are not thinking about you. A slower pace is how you hear people, keep friendships, and stop postponing the day. Recall what this chapter wants from the time the earlier steps opened.",
+      "prompt": "What should you do with the time the earlier steps opened?",
+      "choices": [
+        "Slow down, hear people, and change a plan that keeps failing the morning question",
+        "Fill every open hour so the calendar never looks idle",
+        "Force life into one correct picture until the pieces lock",
+        "Keep storing real living for a later finish line"
+      ],
+      "answer": 0
+    }
+  ]
+}

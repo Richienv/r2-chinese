@@ -1,0 +1,194 @@
+{
+  "id": "11",
+  "index": 11,
+  "part": 4,
+  "partTitleEn": "Million Dollar Weekend",
+  "titleEn": "The Weekend Process",
+  "titleSource": "Start Here",
+  "sourcePages": "",
+  "when": "Before the weekend",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Three steps in order",
+      "bodyEn": "The launch method in the opening is three steps, used in this order. Find a problem people already have that you can solve. Shape an offer they want, and use simple market research to see whether it could become a large business. Spend nothing, and test the idea by asking for payment before you build. People who followed that sequence went on to launch profitable side businesses. Commit to the order on one idea. Admiring the steps is a different activity from doing them.",
+      "terms": [
+        {
+          "en": "Million Dollar Weekend process",
+          "hook": "If they say this, they mean find a problem, check the offer with simple research, then presell it before you build, spending nothing."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Find a paid problem",
+      "bodyEn": "Step one is a problem a real person has, and it has to be one you can solve. Look near your own work and your own life, where the opening examples begin: property, food, and helping people use the tools they already own. Write the problem in one sentence a customer would recognize. Name who has it. If you cannot name the person, you are still inventing products. Stay on this step until the sentence is specific. The offer comes after that sentence exists."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Check the opportunity",
+      "bodyEn": "Step two turns the problem into an offer and checks the size. Shape a solution people feel pulled to buy. Then do simple market research on whether the upside can grow toward a million dollars and beyond. This filter is meant to be short, a pass you can finish quickly, rather than a semester of study. You want enough demand to justify the weekend, and a clear reason to set the idea aside when the numbers are thin. Write the offer in one sentence and the research result beside it. A charming idea with no demand fails this step and frees the weekend for another test."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Presell before building",
+      "bodyEn": "Step three happens before anything is built, and it costs no money. Ask for payment and see who actually buys. A kind yes in conversation is encouragement. A payment is the validation. If nobody pays, treat that result as a useful failure that spent little time and nothing from your account, then test the next idea the same way. Aim at a first dollar and the first customers. The finished product waits until that payment exists."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Train the two fears",
+      "bodyEn": "Most stalls in the opening come from two fears. Fear of starting hides inside extra planning, extra preparation, and extra talk, and the delay grows the doubt. Replace that delay with a small experiment you can repeat, because the experiment is how you learn the work. Fear of asking shows up the moment you need someone to buy or to help. Ask anyway, because the help and the sale arrive through the ask. Treat a rejection as useful information, so the ask becomes a skill you can train. Name which fear is active today, and do the smallest experiment or ask that fear is blocking.",
+      "terms": [
+        {
+          "en": "Fear of starting",
+          "hook": "If they say this, they mean the urge to prepare longer instead of running a small experiment."
+        },
+        {
+          "en": "Fear of asking",
+          "hook": "If they say this, they mean the urge to avoid requesting the sale or the help."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Run small experiments",
+      "bodyEn": "The pattern behind the later wins is a long trail of small tries that failed. The result showed up after those misses, as a side effect of trying more things. The opening calls that willingness Creator's Courage: coming up with ideas, and trying them by asking. Business is the loop of starting something, asking whether people will pay, and trying again with what you learned. Skip the start or the ask, and the loop cannot run. Label the next attempt an experiment, because an experiment is allowed to fail. Change one thing and run it again.",
+      "terms": [
+        {
+          "en": "Creator's Courage",
+          "hook": "If they say this, they mean the willingness to invent an idea and to try it, including after earlier tries fail."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Use the weekend box",
+      "bodyEn": "Give the launch a weekend, a span you already have, so there is little room to back out. The limit pushes you to invent, and it keeps your attention on the few things that matter. You have forty-eight hours for the launch itself. Use the three or four days before that weekend for the first two chapters: act before you feel ready, set your Freedom Number, practice rejection, and do the coffee challenge. Friday, Saturday, and Sunday are the build: find the idea, run the one-minute model, and get the first paying customers. After the weekend, set up content, an audience, email, marketing experiments, and a calendar that protects the life you want. Put those blocks on a calendar before the weekend begins."
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Sign the contract",
+      "bodyEn": "The people who get results from this material commit to the process and follow it exactly. Write a contract with yourself. Promise to work toward the dream, to keep the work fun, to face the fears, and to complete every challenge in the book. Fun is the stance the opening prefers, because people will do scary things when the activity feels like play, and nobody is assigned to nag you through it. On the page, write the outcome you want after you finish, then sign it and date it. Read the contract when the weekend feels uncomfortable. The signature is the reminder that you already chose the steps."
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Write in the journal",
+      "bodyEn": "Download the free journal and document the weekend in it. The students who do best write their progress, which keeps them focused and helps the ideas stick. One note in that journal can become the start of the business. Also take the free templates, scripts, and video tutorials that match the exercises. They are on the free site named in that section, MillionDollarWeekend.com, and you can use the code printed there if you would rather not type. Write during each challenge, while the result is fresh. A blank journal means the record of the weekend never got made."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Process order check",
+      "bodyEn": "This check is about the order of the three steps and the weekend around them. You find a problem you can solve, check the offer with simple research, and presell it before you build, spending nothing. The days before the weekend train you to start and to ask. The weekend itself is for the first dollar and the first customers. A written contract and a journal hold the commitment while you do the work. Choose the sequence the opening teaches.",
+      "prompt": "What order does the opening give for launching?",
+      "choices": [
+        "Build the product, then search for a problem, then write a long scale plan",
+        "Find a problem you can solve, check the offer with simple research, and presell it before you build, spending no money",
+        "Read until you feel ready, quit your job, and hire a cofounder",
+        "Wait for a full business plan and a year of preparation"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Three steps in order",
+      "bodyEn": "The launch method in the opening is three steps, used in this order. Find a problem people already have that you can solve. Shape an offer they want, and use simple market research to see whether it could become a large business. Spend nothing, and test the idea by asking for payment before you build. People who followed that sequence went on to launch profitable side businesses. Commit to the order on one idea. Admiring the steps is a different activity from doing them.",
+      "terms": [
+        {
+          "en": "Million Dollar Weekend process",
+          "hook": "If they say this, they mean find a problem, check the offer with simple research, then presell it before you build, spending nothing."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Find a paid problem",
+      "bodyEn": "Step one is a problem a real person has, and it has to be one you can solve. Look near your own work and your own life, where the opening examples begin: property, food, and helping people use the tools they already own. Write the problem in one sentence a customer would recognize. Name who has it. If you cannot name the person, you are still inventing products. Stay on this step until the sentence is specific. The offer comes after that sentence exists."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Check the opportunity",
+      "bodyEn": "Step two turns the problem into an offer and checks the size. Shape a solution people feel pulled to buy. Then do simple market research on whether the upside can grow toward a million dollars and beyond. This filter is meant to be short, a pass you can finish quickly, rather than a semester of study. You want enough demand to justify the weekend, and a clear reason to set the idea aside when the numbers are thin. Write the offer in one sentence and the research result beside it. A charming idea with no demand fails this step and frees the weekend for another test."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Presell before building",
+      "bodyEn": "Step three happens before anything is built, and it costs no money. Ask for payment and see who actually buys. A kind yes in conversation is encouragement. A payment is the validation. If nobody pays, treat that result as a useful failure that spent little time and nothing from your account, then test the next idea the same way. Aim at a first dollar and the first customers. The finished product waits until that payment exists."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Train the two fears",
+      "bodyEn": "Most stalls in the opening come from two fears. Fear of starting hides inside extra planning, extra preparation, and extra talk, and the delay grows the doubt. Replace that delay with a small experiment you can repeat, because the experiment is how you learn the work. Fear of asking shows up the moment you need someone to buy or to help. Ask anyway, because the help and the sale arrive through the ask. Treat a rejection as useful information, so the ask becomes a skill you can train. Name which fear is active today, and do the smallest experiment or ask that fear is blocking.",
+      "terms": [
+        {
+          "en": "Fear of starting",
+          "hook": "If they say this, they mean the urge to prepare longer instead of running a small experiment."
+        },
+        {
+          "en": "Fear of asking",
+          "hook": "If they say this, they mean the urge to avoid requesting the sale or the help."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Run small experiments",
+      "bodyEn": "The pattern behind the later wins is a long trail of small tries that failed. The result showed up after those misses, as a side effect of trying more things. The opening calls that willingness Creator's Courage: coming up with ideas, and trying them by asking. Business is the loop of starting something, asking whether people will pay, and trying again with what you learned. Skip the start or the ask, and the loop cannot run. Label the next attempt an experiment, because an experiment is allowed to fail. Change one thing and run it again.",
+      "terms": [
+        {
+          "en": "Creator's Courage",
+          "hook": "If they say this, they mean the willingness to invent an idea and to try it, including after earlier tries fail."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Use the weekend box",
+      "bodyEn": "Give the launch a weekend, a span you already have, so there is little room to back out. The limit pushes you to invent, and it keeps your attention on the few things that matter. You have forty-eight hours for the launch itself. Use the three or four days before that weekend for the first two chapters: act before you feel ready, set your Freedom Number, practice rejection, and do the coffee challenge. Friday, Saturday, and Sunday are the build: find the idea, run the one-minute model, and get the first paying customers. After the weekend, set up content, an audience, email, marketing experiments, and a calendar that protects the life you want. Put those blocks on a calendar before the weekend begins."
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Sign the contract",
+      "bodyEn": "The people who get results from this material commit to the process and follow it exactly. Write a contract with yourself. Promise to work toward the dream, to keep the work fun, to face the fears, and to complete every challenge in the book. Fun is the stance the opening prefers, because people will do scary things when the activity feels like play, and nobody is assigned to nag you through it. On the page, write the outcome you want after you finish, then sign it and date it. Read the contract when the weekend feels uncomfortable. The signature is the reminder that you already chose the steps."
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Write in the journal",
+      "bodyEn": "Download the free journal and document the weekend in it. The students who do best write their progress, which keeps them focused and helps the ideas stick. One note in that journal can become the start of the business. Also take the free templates, scripts, and video tutorials that match the exercises. They are on the free site named in that section, MillionDollarWeekend.com, and you can use the code printed there if you would rather not type. Write during each challenge, while the result is fresh. A blank journal means the record of the weekend never got made."
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Process order check",
+      "bodyEn": "This check is about the order of the three steps and the weekend around them. You find a problem you can solve, check the offer with simple research, and presell it before you build, spending nothing. The days before the weekend train you to start and to ask. The weekend itself is for the first dollar and the first customers. A written contract and a journal hold the commitment while you do the work. Choose the sequence the opening teaches.",
+      "prompt": "What order does the opening give for launching?",
+      "choices": [
+        "Build the product, then search for a problem, then write a long scale plan",
+        "Find a problem you can solve, check the offer with simple research, and presell it before you build, spending no money",
+        "Read until you feel ready, quit your job, and hire a cofounder",
+        "Wait for a full business plan and a year of preparation"
+      ],
+      "answer": 1
+    }
+  ]
+}

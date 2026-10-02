@@ -1,0 +1,306 @@
+{
+  "id": "07",
+  "index": 7,
+  "part": 4,
+  "partTitleEn": "Million Dollar Weekend",
+  "titleEn": "Email Carries the Profit",
+  "titleSource": "Chapter 7: Email Is for Profit",
+  "sourcePages": "",
+  "when": "After the audience starts",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Write like a person",
+      "bodyEn": "This chapter treats email as the place the audience becomes revenue. A blunt buy-now note is easy to ignore, even when the deal is fair. A story note, written as a person who struggled, joked, and taught, made roughly a hundred times more on the same kind of offer. The price did not improve. The writing did. Sales tend to rise when the sender sounds glad to be in the conversation. Use the same voice that built the audience, instead of inventing a separate corporate one.",
+      "terms": [
+        {
+          "en": "story email",
+          "hook": "If they say this, they mean a human note that teaches and entertains, then makes the same offer."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Email you can keep",
+      "bodyEn": "A small list you control beats a large following you rent. The comparison is blunt: a hundred email subscribers can be worth more than a thousand video subscribers or ten thousand photo followers. About half of one company's transactions have come from email for more than ten years, and each send reaches a steady share without asking a feed for permission. Billions of people still check email, most of them every day, so the channel is crowded and alive. A publisher that lived on one platform lost most of its visitors when the feed changed, and the business did not survive. You keep the addresses if the product ends, and writing them costs far less than ads. Start the list before the offer is polished, even if the business is still an idea.",
+      "terms": [
+        {
+          "en": "owned list",
+          "hook": "If they say this, they mean addresses you can write when you choose, and take with you if a product ends."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Quality beats size",
+      "bodyEn": "Size is the wrong score for this list. A bought list of about a million retail addresses produced fewer than a hundred opens, because those people had no reason to care. What matters is the share that opens because they trust you. The healthy target in the chapter is about one open in five. Below that, you have names without a relationship. At that level and above, you have a group that wants you to win. Collect those people on purpose, one relevant reader at a time.",
+      "terms": [
+        {
+          "en": "open rate",
+          "hook": "If they say this, they mean the share that actually reads you, with about one in five as the healthy target."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "A page and a gift",
+      "bodyEn": "Give the audience one page whose only job is the trade. Put up a simple image, a short promise, and a box for the address. Offer a lead magnet, a useful free thing such as a checklist, a template, a deeper guide, or a short book. A sleep project in the chapter trades the address for one tip a week. The page does not need a full website, only a clear value and a way to capture the email. Build the first version in an ordinary email tool and publish it before you decorate it.",
+      "terms": [
+        {
+          "en": "landing page",
+          "hook": "If they say this, they mean a single page that states the promise and collects the address."
+        },
+        {
+          "en": "lead magnet",
+          "hook": "If they say this, they mean the free useful item that makes joining worth it."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Ask people you know",
+      "bodyEn": "The first ten subscribers are people who already know you, the same dream ten from the validation work. Tell each person what you are starting, what you will send, and how often, then ask if they want it. Offer to add them yourself if they reply yes, so they do not have to hunt for a form. Family and close friends belong on the list. Look through the network you already have before you chase strangers. A yes from someone who knows you is the first domino, and you put that address on the list yourself.",
+      "terms": [
+        {
+          "en": "dream ten",
+          "hook": "If they say this, they mean the people closest to you, asked one by one to join the list."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Signatures and posts",
+      "bodyEn": "Grow from the first ten by putting the page where you already talk. Add the address to your email signature and to the bios on the networks you use, and make the line sound like you. A person who sends dozens of emails a day is quietly handing out that link every day. Then post a short announcement in the groups where you are already active. Ask each friend for one specific kind of reader, because a named person is easier to remember than a vague request to share. Those steps are how the chapter walks a new list toward its first hundred.",
+      "terms": [
+        {
+          "en": "lazy marketing",
+          "hook": "If they say this, they mean signatures and bios that mention the list while you do other work."
+        },
+        {
+          "en": "specific referral",
+          "hook": "If they say this, they mean asking a friend for one named kind of reader, not a general share."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Build a lead magnet",
+      "bodyEn": "A lead magnet gives a reason to join that a plain subscribe button does not. One detailed free breakdown of a company the buyer's world already studies, plus a bonus file at the end, took a list from zero to about a thousand in two weeks after a few thousand people saw the piece. You can stay smaller than that project. A checklist that matches a video, a margin template, a deeper guide, or a short free book all qualify. Match the gift to the work: plans for a builder, call scripts for a seller, or regional plant notes for a landscaper. Cap the first version at about two hours, tease it inside the piece, and say exactly where to get it.",
+      "terms": [
+        {
+          "en": "call to action",
+          "hook": "If they say this, they mean the moment in the piece where you name the free gift and where to get it."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Three automatic notes",
+      "bodyEn": "The moment someone subscribes is when they are most willing to hear from you, so the first note should arrive immediately. Set an autoresponder, a sequence that sends itself, with three jobs. The welcome says you are glad they joined, sketches what they can expect, and asks what would actually help them. The connection note invites them onto a network you really use. The content note delivers your best teaching, a strong story, a useful piece, or an invitation. Opens usually start high and then fade, so lead with the best piece while attention is still warm.",
+      "terms": [
+        {
+          "en": "autoresponder",
+          "hook": "If they say this, they mean emails that send themselves the moment someone joins."
+        },
+        {
+          "en": "welcome, connect, teach",
+          "hook": "If they say this, they mean the three-note order: a hello and a question, a real connection, then your best piece."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Reply while small",
+      "bodyEn": "While the list is small, answer people one by one. The welcome question exists to collect content ideas and to show a person, not a blast. Reply to new subscribers, and keep answering comments on the public work too. This will not scale, and that is the point at the beginning, when every reader can still tell a friend. The chapter keeps this habit long after the early days, because the relationship is the asset. Treat the list as people you can still see, rather than a number on a dashboard.",
+      "terms": [
+        {
+          "en": "one-by-one",
+          "hook": "If they say this, they mean a personal reply to each new subscriber while you can still do it."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "One hundred reps",
+      "bodyEn": "The law of one hundred is how you survive the boring middle. A photography class split students into a group that had to shoot one hundred pictures and a group allowed to turn in one perfect picture. The quantity group produced the better pictures, because they experimented, missed, and improved. Apply that to the work in front of you: one hundred emails, one hundred posts, one hundred practice days, or one hundred real pitches. During those reps, score only whether you did the work, and leave likes and sales out of the grade. A show in the chapter was abandoned near fifty tries, and the lesson was to finish the hundred before deciding the project is dead. Track the count on a grid so the chain stays intact.",
+      "terms": [
+        {
+          "en": "law of 100",
+          "hook": "If they say this, they mean one hundred finished reps before you judge whether to quit."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Profit check",
+      "bodyEn": "Profit in this chapter sits in an inbox you own. Write as a person, aim for about one open in five, and treat a huge careless list as a weak asset. A simple page plus a small useful gift starts the list, and the first names come from people you know, then from signatures, bios, posts, and one specific referral at a time. An automatic sequence welcomes them, connects them, and teaches them, with the best teaching first, and you still reply while the list is small. Do the key action one hundred times before you judge it. A rented crowd you cannot contact is not the asset this chapter is building.",
+      "prompt": "What does this chapter count as an audience you can profit from?",
+      "choices": [
+        "An email list of people who open because they trust you, started with a page, a gift, and a hundred reps",
+        "The largest social following you can rent, even if you cannot write to them",
+        "A purchased list of a million addresses from an unrelated store",
+        "One perfect email, sent once, after which a quiet week means the channel failed"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Write like a person",
+      "bodyEn": "This chapter treats email as the place the audience becomes revenue. A blunt buy-now note is easy to ignore, even when the deal is fair. A story note, written as a person who struggled, joked, and taught, made roughly a hundred times more on the same kind of offer. The price did not improve. The writing did. Sales tend to rise when the sender sounds glad to be in the conversation. Use the same voice that built the audience, instead of inventing a separate corporate one.",
+      "terms": [
+        {
+          "en": "story email",
+          "hook": "If they say this, they mean a human note that teaches and entertains, then makes the same offer."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Email you can keep",
+      "bodyEn": "A small list you control beats a large following you rent. The comparison is blunt: a hundred email subscribers can be worth more than a thousand video subscribers or ten thousand photo followers. About half of one company's transactions have come from email for more than ten years, and each send reaches a steady share without asking a feed for permission. Billions of people still check email, most of them every day, so the channel is crowded and alive. A publisher that lived on one platform lost most of its visitors when the feed changed, and the business did not survive. You keep the addresses if the product ends, and writing them costs far less than ads. Start the list before the offer is polished, even if the business is still an idea.",
+      "terms": [
+        {
+          "en": "owned list",
+          "hook": "If they say this, they mean addresses you can write when you choose, and take with you if a product ends."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Quality beats size",
+      "bodyEn": "Size is the wrong score for this list. A bought list of about a million retail addresses produced fewer than a hundred opens, because those people had no reason to care. What matters is the share that opens because they trust you. The healthy target in the chapter is about one open in five. Below that, you have names without a relationship. At that level and above, you have a group that wants you to win. Collect those people on purpose, one relevant reader at a time.",
+      "terms": [
+        {
+          "en": "open rate",
+          "hook": "If they say this, they mean the share that actually reads you, with about one in five as the healthy target."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "A page and a gift",
+      "bodyEn": "Give the audience one page whose only job is the trade. Put up a simple image, a short promise, and a box for the address. Offer a lead magnet, a useful free thing such as a checklist, a template, a deeper guide, or a short book. A sleep project in the chapter trades the address for one tip a week. The page does not need a full website, only a clear value and a way to capture the email. Build the first version in an ordinary email tool and publish it before you decorate it.",
+      "terms": [
+        {
+          "en": "landing page",
+          "hook": "If they say this, they mean a single page that states the promise and collects the address."
+        },
+        {
+          "en": "lead magnet",
+          "hook": "If they say this, they mean the free useful item that makes joining worth it."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Ask people you know",
+      "bodyEn": "The first ten subscribers are people who already know you, the same dream ten from the validation work. Tell each person what you are starting, what you will send, and how often, then ask if they want it. Offer to add them yourself if they reply yes, so they do not have to hunt for a form. Family and close friends belong on the list. Look through the network you already have before you chase strangers. A yes from someone who knows you is the first domino, and you put that address on the list yourself.",
+      "terms": [
+        {
+          "en": "dream ten",
+          "hook": "If they say this, they mean the people closest to you, asked one by one to join the list."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Signatures and posts",
+      "bodyEn": "Grow from the first ten by putting the page where you already talk. Add the address to your email signature and to the bios on the networks you use, and make the line sound like you. A person who sends dozens of emails a day is quietly handing out that link every day. Then post a short announcement in the groups where you are already active. Ask each friend for one specific kind of reader, because a named person is easier to remember than a vague request to share. Those steps are how the chapter walks a new list toward its first hundred.",
+      "terms": [
+        {
+          "en": "lazy marketing",
+          "hook": "If they say this, they mean signatures and bios that mention the list while you do other work."
+        },
+        {
+          "en": "specific referral",
+          "hook": "If they say this, they mean asking a friend for one named kind of reader, not a general share."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Build a lead magnet",
+      "bodyEn": "A lead magnet gives a reason to join that a plain subscribe button does not. One detailed free breakdown of a company the buyer's world already studies, plus a bonus file at the end, took a list from zero to about a thousand in two weeks after a few thousand people saw the piece. You can stay smaller than that project. A checklist that matches a video, a margin template, a deeper guide, or a short free book all qualify. Match the gift to the work: plans for a builder, call scripts for a seller, or regional plant notes for a landscaper. Cap the first version at about two hours, tease it inside the piece, and say exactly where to get it.",
+      "terms": [
+        {
+          "en": "call to action",
+          "hook": "If they say this, they mean the moment in the piece where you name the free gift and where to get it."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Three automatic notes",
+      "bodyEn": "The moment someone subscribes is when they are most willing to hear from you, so the first note should arrive immediately. Set an autoresponder, a sequence that sends itself, with three jobs. The welcome says you are glad they joined, sketches what they can expect, and asks what would actually help them. The connection note invites them onto a network you really use. The content note delivers your best teaching, a strong story, a useful piece, or an invitation. Opens usually start high and then fade, so lead with the best piece while attention is still warm.",
+      "terms": [
+        {
+          "en": "autoresponder",
+          "hook": "If they say this, they mean emails that send themselves the moment someone joins."
+        },
+        {
+          "en": "welcome, connect, teach",
+          "hook": "If they say this, they mean the three-note order: a hello and a question, a real connection, then your best piece."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Reply while small",
+      "bodyEn": "While the list is small, answer people one by one. The welcome question exists to collect content ideas and to show a person, not a blast. Reply to new subscribers, and keep answering comments on the public work too. This will not scale, and that is the point at the beginning, when every reader can still tell a friend. The chapter keeps this habit long after the early days, because the relationship is the asset. Treat the list as people you can still see, rather than a number on a dashboard.",
+      "terms": [
+        {
+          "en": "one-by-one",
+          "hook": "If they say this, they mean a personal reply to each new subscriber while you can still do it."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "One hundred reps",
+      "bodyEn": "The law of one hundred is how you survive the boring middle. A photography class split students into a group that had to shoot one hundred pictures and a group allowed to turn in one perfect picture. The quantity group produced the better pictures, because they experimented, missed, and improved. Apply that to the work in front of you: one hundred emails, one hundred posts, one hundred practice days, or one hundred real pitches. During those reps, score only whether you did the work, and leave likes and sales out of the grade. A show in the chapter was abandoned near fifty tries, and the lesson was to finish the hundred before deciding the project is dead. Track the count on a grid so the chain stays intact.",
+      "terms": [
+        {
+          "en": "law of 100",
+          "hook": "If they say this, they mean one hundred finished reps before you judge whether to quit."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Profit check",
+      "bodyEn": "Profit in this chapter sits in an inbox you own. Write as a person, aim for about one open in five, and treat a huge careless list as a weak asset. A simple page plus a small useful gift starts the list, and the first names come from people you know, then from signatures, bios, posts, and one specific referral at a time. An automatic sequence welcomes them, connects them, and teaches them, with the best teaching first, and you still reply while the list is small. Do the key action one hundred times before you judge it. A rented crowd you cannot contact is not the asset this chapter is building.",
+      "prompt": "What does this chapter count as an audience you can profit from?",
+      "choices": [
+        "An email list of people who open because they trust you, started with a page, a gift, and a hundred reps",
+        "The largest social following you can rent, even if you cannot write to them",
+        "A purchased list of a million addresses from an unrelated store",
+        "One perfect email, sent once, after which a quiet week means the channel failed"
+      ],
+      "answer": 0
+    }
+  ]
+}

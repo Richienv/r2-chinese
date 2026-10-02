@@ -1,0 +1,174 @@
+{
+  "id": "01",
+  "index": 1,
+  "part": 4,
+  "partTitleEn": "Million Dollar Weekend",
+  "titleEn": "Begin Before Ready",
+  "titleSource": "Just Fu**ing Start",
+  "sourcePages": "3-20",
+  "when": "Before the weekend",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Start before ready",
+      "bodyEn": "You learn a business by doing a small piece of it, so the first move uses the skills you already have. Save the next course for after that action has given you something real to study. Practice being a starter who runs experiments, and score the day by what you finished. A scoreboard of genius or wealth always finds someone ahead of you and makes the next try harder to begin. Your present skills, contacts, and time are enough to open the first experiment. One finished start is what makes the next start feel ordinary."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Score the day's work",
+      "bodyEn": "Put your self-respect on the actions you complete today. Status, brilliance, and net worth are shaky scores, because there is always someone further along. A process score keeps you willing to try again tomorrow. Each experiment can hold a result you did not plan, and that surprise shows up only after you start. Keep a short record of what you shipped so the identity you are building is starter, learner, and experimenter. That identity is the tool the rest of the weekend depends on."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Act before the method",
+      "bodyEn": "When you are designing the perfect method, do the version that can happen immediately and learn the method afterward. A plan written before any action is a guess, because understanding arrives only after you have done the thing. Take the action, collect a real reaction, and learn from that reaction. That loop teaches faster than finishing another course before you touch a customer. Use a simple priority when you stall: do it now, and leave the how for later. Say that priority out loud, then do the smallest version that can exist in minutes. After one completed action, the next one feels more natural, which is how the habit forms.",
+      "terms": [
+        {
+          "en": "NOW, Not How",
+          "hook": "If you are designing the method, do a tiny version immediately."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Finish setup now",
+      "bodyEn": "If a task has a version you can finish while you are still in the conversation, finish it there. In one advertising setup, passwords, account access, and the new materials were handled on the spot in about five minutes. Waiting a day for a recap email would have purchased delay and taught nothing. Use the same cut on your next step: open the account, send the note, or book the slot before the conversation ends. The move gets powerful when it becomes automatic and you stop bargaining for exceptions. You are training the identity of a person who does the step."
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Ask for one dollar",
+      "bodyEn": "Pick a person you already know and request a one-dollar stake in you, aimed at a business that is still only an intention. In return, promise regular updates and a close view of the messy process, as if they sat on a tiny board. Send a short note that names them, says you need one dollar to begin, says they were the first person you thought of, and asks them to send it now. The dollar is a symbol, and the lesson is how plain starting, asking, and adjusting can be. You are supposed to feel the jolt of being on the hook, and you send the note while that feeling is present. Doing the specific thing you are avoiding is how the fear gets smaller. After the dollar arrives, share the moment so the ask stays a fact you can see.",
+      "terms": [
+        {
+          "en": "Dollar Challenge",
+          "hook": "Request one dollar from a person already in your life, for a business that is still an intention."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Text for a fit",
+      "bodyEn": "Send a text to one person whose judgment you trust, and ask which kind of business would suit you. Use a text because it is faster than email, and keep the whole drill near two minutes. Tell them you are generating ideas right now and that they know you well enough to name a fit. Send the text before you feel qualified to request an idea. The send is the spark, and one spark is what creates the next spark. A useful reply is a bonus on top of the practice. Act while the impulse is still warm, before a longer draft can stall you."
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Set your freedom number",
+      "bodyEn": "A freedom number is the monthly revenue that would pay for the life you actually want. Write it down before you chase a giant net worth. One early version was about three thousand dollars a month, split roughly among housing, food and travel, and savings. Another person's number is much smaller, even the cost of a good meal, and a mortgage or family support can push the number higher. Keeping your job while aiming at five hundred dollars a month, or a smaller extra, is valid practice. Choose a figure that feels reachable, then write it where you will see it during the weekend. A monthly target can be worked now, which is why it can steer the business.",
+      "terms": [
+        {
+          "en": "Freedom Number",
+          "hook": "One monthly amount that means freedom, small enough to chase now."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Fund this week",
+      "bodyEn": "The number motivates because it is reachable, so freedom stays believable while you are still unsure. It is urgent as well, because a monthly amount can be worked on today. Small side amounts train the same starting muscle you will use if you later leave a job. A specific figure pulls your attention toward customers, and customers are what bring money in. People freeze on the first dollar when their eyes are stuck on the first million. Ask what you can do in this business to get paid this week, today, or right now. With a number on the page, random tasks stop posing as progress and the business stays simple."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Check the starting order",
+      "bodyEn": "Begin with a real action while your current skills are still the toolkit. When you stall on the method, finish a minute-sized version in the room. Send the one-dollar ask so you feel what starting and asking are like. Text someone whose judgment you trust and ask which business would suit you. Set a monthly freedom number small enough to work on this week. That sequence is the start, because understanding follows the action. A longer course, a status contest, or a distant fortune all postpone the first dollar.",
+      "prompt": "What should you do before you feel ready?",
+      "choices": [
+        "Finish another course and a full plan, then consider asking someone",
+        "Do a small action now, send the one-dollar ask and the idea text, and set a monthly freedom number you can earn toward this week",
+        "Wait until you are the most successful person you know",
+        "Set a far-off net-worth target and postpone the first dollar"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Start before ready",
+      "bodyEn": "You learn a business by doing a small piece of it, so the first move uses the skills you already have. Save the next course for after that action has given you something real to study. Practice being a starter who runs experiments, and score the day by what you finished. A scoreboard of genius or wealth always finds someone ahead of you and makes the next try harder to begin. Your present skills, contacts, and time are enough to open the first experiment. One finished start is what makes the next start feel ordinary."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Score the day's work",
+      "bodyEn": "Put your self-respect on the actions you complete today. Status, brilliance, and net worth are shaky scores, because there is always someone further along. A process score keeps you willing to try again tomorrow. Each experiment can hold a result you did not plan, and that surprise shows up only after you start. Keep a short record of what you shipped so the identity you are building is starter, learner, and experimenter. That identity is the tool the rest of the weekend depends on."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Act before the method",
+      "bodyEn": "When you are designing the perfect method, do the version that can happen immediately and learn the method afterward. A plan written before any action is a guess, because understanding arrives only after you have done the thing. Take the action, collect a real reaction, and learn from that reaction. That loop teaches faster than finishing another course before you touch a customer. Use a simple priority when you stall: do it now, and leave the how for later. Say that priority out loud, then do the smallest version that can exist in minutes. After one completed action, the next one feels more natural, which is how the habit forms.",
+      "terms": [
+        {
+          "en": "NOW, Not How",
+          "hook": "If you are designing the method, do a tiny version immediately."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Finish setup now",
+      "bodyEn": "If a task has a version you can finish while you are still in the conversation, finish it there. In one advertising setup, passwords, account access, and the new materials were handled on the spot in about five minutes. Waiting a day for a recap email would have purchased delay and taught nothing. Use the same cut on your next step: open the account, send the note, or book the slot before the conversation ends. The move gets powerful when it becomes automatic and you stop bargaining for exceptions. You are training the identity of a person who does the step."
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Ask for one dollar",
+      "bodyEn": "Pick a person you already know and request a one-dollar stake in you, aimed at a business that is still only an intention. In return, promise regular updates and a close view of the messy process, as if they sat on a tiny board. Send a short note that names them, says you need one dollar to begin, says they were the first person you thought of, and asks them to send it now. The dollar is a symbol, and the lesson is how plain starting, asking, and adjusting can be. You are supposed to feel the jolt of being on the hook, and you send the note while that feeling is present. Doing the specific thing you are avoiding is how the fear gets smaller. After the dollar arrives, share the moment so the ask stays a fact you can see.",
+      "terms": [
+        {
+          "en": "Dollar Challenge",
+          "hook": "Request one dollar from a person already in your life, for a business that is still an intention."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Text for a fit",
+      "bodyEn": "Send a text to one person whose judgment you trust, and ask which kind of business would suit you. Use a text because it is faster than email, and keep the whole drill near two minutes. Tell them you are generating ideas right now and that they know you well enough to name a fit. Send the text before you feel qualified to request an idea. The send is the spark, and one spark is what creates the next spark. A useful reply is a bonus on top of the practice. Act while the impulse is still warm, before a longer draft can stall you."
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "Set your freedom number",
+      "bodyEn": "A freedom number is the monthly revenue that would pay for the life you actually want. Write it down before you chase a giant net worth. One early version was about three thousand dollars a month, split roughly among housing, food and travel, and savings. Another person's number is much smaller, even the cost of a good meal, and a mortgage or family support can push the number higher. Keeping your job while aiming at five hundred dollars a month, or a smaller extra, is valid practice. Choose a figure that feels reachable, then write it where you will see it during the weekend. A monthly target can be worked now, which is why it can steer the business.",
+      "terms": [
+        {
+          "en": "Freedom Number",
+          "hook": "One monthly amount that means freedom, small enough to chase now."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Fund this week",
+      "bodyEn": "The number motivates because it is reachable, so freedom stays believable while you are still unsure. It is urgent as well, because a monthly amount can be worked on today. Small side amounts train the same starting muscle you will use if you later leave a job. A specific figure pulls your attention toward customers, and customers are what bring money in. People freeze on the first dollar when their eyes are stuck on the first million. Ask what you can do in this business to get paid this week, today, or right now. With a number on the page, random tasks stop posing as progress and the business stays simple."
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Check the starting order",
+      "bodyEn": "Begin with a real action while your current skills are still the toolkit. When you stall on the method, finish a minute-sized version in the room. Send the one-dollar ask so you feel what starting and asking are like. Text someone whose judgment you trust and ask which business would suit you. Set a monthly freedom number small enough to work on this week. That sequence is the start, because understanding follows the action. A longer course, a status contest, or a distant fortune all postpone the first dollar.",
+      "prompt": "What should you do before you feel ready?",
+      "choices": [
+        "Finish another course and a full plan, then consider asking someone",
+        "Do a small action now, send the one-dollar ask and the idea text, and set a monthly freedom number you can earn toward this week",
+        "Wait until you are the most successful person you know",
+        "Set a far-off net-worth target and postpone the first dollar"
+      ],
+      "answer": 1
+    }
+  ]
+}

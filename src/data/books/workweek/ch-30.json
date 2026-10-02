@@ -1,0 +1,162 @@
+{
+  "id": "30",
+  "index": 30,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Margin Over Growth",
+  "titleSource": "The Margin Manifesto: 11 Tenets for Reaching (or Doubling) Profitability in 3 Months",
+  "sourcePages": "Best of the Blog",
+  "when": "June 24, 2008",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Profit is the target",
+      "bodyEn": "The financial aim of a young company is kept earnings, reached soon and without piling on labor. More customers, more revenue, more offices, and more staff are different goals, and they can all hide a loss. When operations feel swamped or profit stalls, return to a short set of rules rather than adding hours. Speed and clearer rules often beat a longer week. The review is for consistent profit, or a sharp rise in it, inside about three months. Use the rules as a checklist, not as a slogan."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Show a group worth joining",
+      "bodyEn": "The people in your message are often the group buyers want to belong to, not the only people who will pay. A narrow picture can still sell widely, because many buyers want the identity in the picture. Watering the message down so it fits everyone usually makes it fit no one. People do not dream of being a forgettable middle. Keep the picture specific. Niche marketing and a broad sale can happen together when the portrait is someone people wish to be.",
+      "terms": [
+        {
+          "en": "niche portrait",
+          "hook": "The specific group shown in the message, which can be smaller than the group that actually buys."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Measure what you manage",
+      "bodyEn": "Track a few numbers beyond the usual operating stats, because an unmeasured leak stays invisible. Cost per order should roll in ads, packing and shipping, likely send-backs, disputed card charges, and bills that never get paid. Know the most you can spend to acquire an order and still break even. Estimate what a customer is worth over time, using return rates and how often people buy again. Direct-response habits apply even if you do not think of yourself as a mail-order shop. A number you review every week gets managed. A number you only admire does not.",
+      "terms": [
+        {
+          "en": "cost per order",
+          "hook": "The full cost to win and deliver one order, including ads, fulfillment, returns, and unpaid bills."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Price the path to shelves",
+      "bodyEn": "Set the price only after you know who must get paid along the way to the buyer. A margin that looks fine when you sell direct can be too thin once a distributor needs a deep discount. Interview people who already sell through those channels, and ask about shared ads, bulk rebates, and paid shelf space. If the math fails, raise the price or launch a premium version before the channel arrives. More outlets are not automatically better. Uncontrolled resellers can cut the price until nobody reorders, and that cut is hard to undo. One or two exclusive partners can trade that limit for prepayment, placement, and support.",
+      "terms": [
+        {
+          "en": "controlled distribution",
+          "hook": "A limit on who may resell, used to protect the price and to negotiate better terms."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Demand before loose credit",
+      "bodyEn": "Create end-user demand so resellers need the product more than you need to offer loose credit. Long payment terms are a common way young companies run out of time, because a thirty-day bill slides toward sixty and beyond. Ask for prepayment, cite company policy, and apologize without making exceptions. Chasing late accounts steals the hours that should make the next sale. A good advertisement should be trackable and should work the first time, so cancel what cannot show a return. If a test is close, change one variable and try once more. Do not manufacture a huge first batch to chase margin before the offer is proven, because a small expensive test limits the loss."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Let them name a price",
+      "bodyEn": "When you are buying, do not open with your number. React to their first figure and then stay quiet, so they often fill the silence by dropping it. Ask whether that is really the best they can do, and wait for another drop. Then offer a number below your real target so their counter lands near it, and propose splitting the difference. A packed day is not evidence that the right work got done. Once a week, stop the fires for an afternoon and find the few customers, products, or regions that produce most of the profit. Invest in copying those strengths instead of repairing every weakness."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Deadlines before dazzling work",
+      "bodyEn": "Customers are not equal, and the ones who consume most of your time may not be the ones who produce the profit. Put high-maintenance, low-profit accounts on autopilot, which means you take the order and stop chasing them. For a large account that eats the week, send a short memo of new rules for how you will communicate, price, and take orders. Offer an introduction to another provider if they cannot live with the rules. Without that boundary you cannot grow past them, and people will use as much of your time as you allow. When you hire, test whether someone hits a tight deadline before you trust a beautiful portfolio. A decent product on time beats a perfect product that arrives after the cash is gone."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Margin rules check",
+      "bodyEn": "The manifesto prefers profit over more customers, a specific portrait over a bland message, and numbers you actually review. Price must survive distributors, and fewer outlets can protect that price. Demand lets you ask for prepayment, ads must prove a return, and the first batch should stay small. Buying starts with their number, and the weekly cut keeps effort on the few profitable spots. Time-heavy customers get rules or a referral, and hires are tested on a deadline. Recall what you protect by limiting who may resell.",
+      "prompt": "Why limit who is allowed to resell?",
+      "choices": [
+        "To stop a price war and to trade exclusivity for better terms",
+        "To guarantee that every possible buyer can find a discount",
+        "To avoid measuring cost per order",
+        "To replace profit with a larger headcount"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Profit is the target",
+      "bodyEn": "The financial aim of a young company is kept earnings, reached soon and without piling on labor. More customers, more revenue, more offices, and more staff are different goals, and they can all hide a loss. When operations feel swamped or profit stalls, return to a short set of rules rather than adding hours. Speed and clearer rules often beat a longer week. The review is for consistent profit, or a sharp rise in it, inside about three months. Use the rules as a checklist, not as a slogan."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Show a group worth joining",
+      "bodyEn": "The people in your message are often the group buyers want to belong to, not the only people who will pay. A narrow picture can still sell widely, because many buyers want the identity in the picture. Watering the message down so it fits everyone usually makes it fit no one. People do not dream of being a forgettable middle. Keep the picture specific. Niche marketing and a broad sale can happen together when the portrait is someone people wish to be.",
+      "terms": [
+        {
+          "en": "niche portrait",
+          "hook": "The specific group shown in the message, which can be smaller than the group that actually buys."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Measure what you manage",
+      "bodyEn": "Track a few numbers beyond the usual operating stats, because an unmeasured leak stays invisible. Cost per order should roll in ads, packing and shipping, likely send-backs, disputed card charges, and bills that never get paid. Know the most you can spend to acquire an order and still break even. Estimate what a customer is worth over time, using return rates and how often people buy again. Direct-response habits apply even if you do not think of yourself as a mail-order shop. A number you review every week gets managed. A number you only admire does not.",
+      "terms": [
+        {
+          "en": "cost per order",
+          "hook": "The full cost to win and deliver one order, including ads, fulfillment, returns, and unpaid bills."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Price the path to shelves",
+      "bodyEn": "Set the price only after you know who must get paid along the way to the buyer. A margin that looks fine when you sell direct can be too thin once a distributor needs a deep discount. Interview people who already sell through those channels, and ask about shared ads, bulk rebates, and paid shelf space. If the math fails, raise the price or launch a premium version before the channel arrives. More outlets are not automatically better. Uncontrolled resellers can cut the price until nobody reorders, and that cut is hard to undo. One or two exclusive partners can trade that limit for prepayment, placement, and support.",
+      "terms": [
+        {
+          "en": "controlled distribution",
+          "hook": "A limit on who may resell, used to protect the price and to negotiate better terms."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Demand before loose credit",
+      "bodyEn": "Create end-user demand so resellers need the product more than you need to offer loose credit. Long payment terms are a common way young companies run out of time, because a thirty-day bill slides toward sixty and beyond. Ask for prepayment, cite company policy, and apologize without making exceptions. Chasing late accounts steals the hours that should make the next sale. A good advertisement should be trackable and should work the first time, so cancel what cannot show a return. If a test is close, change one variable and try once more. Do not manufacture a huge first batch to chase margin before the offer is proven, because a small expensive test limits the loss."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Let them name a price",
+      "bodyEn": "When you are buying, do not open with your number. React to their first figure and then stay quiet, so they often fill the silence by dropping it. Ask whether that is really the best they can do, and wait for another drop. Then offer a number below your real target so their counter lands near it, and propose splitting the difference. A packed day is not evidence that the right work got done. Once a week, stop the fires for an afternoon and find the few customers, products, or regions that produce most of the profit. Invest in copying those strengths instead of repairing every weakness."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Deadlines before dazzling work",
+      "bodyEn": "Customers are not equal, and the ones who consume most of your time may not be the ones who produce the profit. Put high-maintenance, low-profit accounts on autopilot, which means you take the order and stop chasing them. For a large account that eats the week, send a short memo of new rules for how you will communicate, price, and take orders. Offer an introduction to another provider if they cannot live with the rules. Without that boundary you cannot grow past them, and people will use as much of your time as you allow. When you hire, test whether someone hits a tight deadline before you trust a beautiful portfolio. A decent product on time beats a perfect product that arrives after the cash is gone."
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Margin rules check",
+      "bodyEn": "The manifesto prefers profit over more customers, a specific portrait over a bland message, and numbers you actually review. Price must survive distributors, and fewer outlets can protect that price. Demand lets you ask for prepayment, ads must prove a return, and the first batch should stay small. Buying starts with their number, and the weekly cut keeps effort on the few profitable spots. Time-heavy customers get rules or a referral, and hires are tested on a deadline. Recall what you protect by limiting who may resell.",
+      "prompt": "Why limit who is allowed to resell?",
+      "choices": [
+        "To stop a price war and to trade exclusivity for better terms",
+        "To guarantee that every possible buyer can find a discount",
+        "To avoid measuring cost per order",
+        "To replace profit with a larger headcount"
+      ],
+      "answer": 0
+    }
+  ]
+}

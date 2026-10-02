@@ -1,0 +1,150 @@
+{
+  "id": "29",
+  "index": 29,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Habits Worth Stopping",
+  "titleSource": "The Not-to-Do List: 9 Habits to Stop Now",
+  "sourcePages": "Best of the Blog",
+  "when": "August 16, 2007",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Skip to make room",
+      "bodyEn": "A longer task list rarely fixes a crowded day. The habits you refuse decide which work can actually finish. Treat a not-to-do list as the performance tool, and pick only one or two bans at a time, the way you would pick a priority. Office workers and founders share the same noisy habits. Removing one source of static is enough for a week. The aim is a day that can hold a real task.",
+      "terms": [
+        {
+          "en": "not-to-do list",
+          "hook": "A short ban list that protects the work a longer to-do list would crowd out."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Unknown calls can wait",
+      "bodyEn": "Do not pick up a number you do not recognize. Surprise is useful when you create it, and costly when it arrives as an interruption or a weak moment in a negotiation. Let the call land in voicemail, and review it when you choose. Morning mail has a similar cost, because it rewrites the plan before you have done one important thing. Late-night mail keeps the day awake after it should have ended. Hold the inbox until later in the morning, after one critical item is already done."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Meetings need an ending",
+      "bodyEn": "Decline a meeting or a call that has no outcome, no agenda, and no end time. If the topics are written in advance, the conversation can stay inside half an hour. Ask for that agenda so both people can prepare. When someone calls, skip the open-ended greeting that invites a wander. Ask what they need, and say you are in the middle of finishing something. Getting to the point is part of getting the work done.",
+      "terms": [
+        {
+          "en": "defined agenda",
+          "hook": "Topics and a desired outcome written down before a meeting or a call begins."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Check mail on a schedule",
+      "bodyEn": "Constant inbox checks train you to treat other people's timing as an emergency. Choose two or three set times, and leave the box alone between them. A short automatic reply can tell people when you will see the message. Use the freed attention on the few tasks that were already chosen. Manufactured urgency shrinks when it has to wait for the next batch. The habit is the schedule, not the software."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Quiet the costly clients",
+      "bodyEn": "Trying to please every customer is a reliable way to stall. Sort the base twice, by who produces most of the profit and by who consumes most of the time. The loud, low-profit group can move to a written policy that states call limits, reply timing, and minimum orders. If they will not accept the policy, point them to another provider. The policy is a company rule, not a personal apology. Your hours stay with the work that pays."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "One task, then leave",
+      "bodyEn": "Overwhelm usually means you have not named the single task that would change the day. Once that task is named, most other items stop looking urgent. Let a small bad thing happen, such as a late return call or a small fee, so the important work finishes. Take at least one day a week away from the phone, and leave it behind at dinner. Do not ask the job to supply the friends and the weekends. Tighten the hours so the critical few get done, and then stop.",
+      "terms": [
+        {
+          "en": "tight hours",
+          "hook": "A short work window that forces the critical tasks to finish before they spill into the weekend."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Not-to-do check",
+      "bodyEn": "The bans cover unknown calls, mail at both ends of the day, meetings without an end, rambling calls, constant inbox checks, and extra care for low-profit customers. They also cover working more when you feel swamped, carrying a phone all week, and expecting the job to replace a life. One or two bans at a time is the pace. A written policy replaces a personal debate with a costly client. Recall what you do with a meeting that has no agenda.",
+      "prompt": "What should you do with a meeting request that has no agenda or end time?",
+      "choices": [
+        "Ask for the outcome and topics in advance, or decline it",
+        "Accept it and let it run until the talk fades",
+        "Answer it immediately so you look available",
+        "Move it to late night so the day stays open"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Skip to make room",
+      "bodyEn": "A longer task list rarely fixes a crowded day. The habits you refuse decide which work can actually finish. Treat a not-to-do list as the performance tool, and pick only one or two bans at a time, the way you would pick a priority. Office workers and founders share the same noisy habits. Removing one source of static is enough for a week. The aim is a day that can hold a real task.",
+      "terms": [
+        {
+          "en": "not-to-do list",
+          "hook": "A short ban list that protects the work a longer to-do list would crowd out."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Unknown calls can wait",
+      "bodyEn": "Do not pick up a number you do not recognize. Surprise is useful when you create it, and costly when it arrives as an interruption or a weak moment in a negotiation. Let the call land in voicemail, and review it when you choose. Morning mail has a similar cost, because it rewrites the plan before you have done one important thing. Late-night mail keeps the day awake after it should have ended. Hold the inbox until later in the morning, after one critical item is already done."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Meetings need an ending",
+      "bodyEn": "Decline a meeting or a call that has no outcome, no agenda, and no end time. If the topics are written in advance, the conversation can stay inside half an hour. Ask for that agenda so both people can prepare. When someone calls, skip the open-ended greeting that invites a wander. Ask what they need, and say you are in the middle of finishing something. Getting to the point is part of getting the work done.",
+      "terms": [
+        {
+          "en": "defined agenda",
+          "hook": "Topics and a desired outcome written down before a meeting or a call begins."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Check mail on a schedule",
+      "bodyEn": "Constant inbox checks train you to treat other people's timing as an emergency. Choose two or three set times, and leave the box alone between them. A short automatic reply can tell people when you will see the message. Use the freed attention on the few tasks that were already chosen. Manufactured urgency shrinks when it has to wait for the next batch. The habit is the schedule, not the software."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Quiet the costly clients",
+      "bodyEn": "Trying to please every customer is a reliable way to stall. Sort the base twice, by who produces most of the profit and by who consumes most of the time. The loud, low-profit group can move to a written policy that states call limits, reply timing, and minimum orders. If they will not accept the policy, point them to another provider. The policy is a company rule, not a personal apology. Your hours stay with the work that pays."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "One task, then leave",
+      "bodyEn": "Overwhelm usually means you have not named the single task that would change the day. Once that task is named, most other items stop looking urgent. Let a small bad thing happen, such as a late return call or a small fee, so the important work finishes. Take at least one day a week away from the phone, and leave it behind at dinner. Do not ask the job to supply the friends and the weekends. Tighten the hours so the critical few get done, and then stop.",
+      "terms": [
+        {
+          "en": "tight hours",
+          "hook": "A short work window that forces the critical tasks to finish before they spill into the weekend."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Not-to-do check",
+      "bodyEn": "The bans cover unknown calls, mail at both ends of the day, meetings without an end, rambling calls, constant inbox checks, and extra care for low-profit customers. They also cover working more when you feel swamped, carrying a phone all week, and expecting the job to replace a life. One or two bans at a time is the pace. A written policy replaces a personal debate with a costly client. Recall what you do with a meeting that has no agenda.",
+      "prompt": "What should you do with a meeting request that has no agenda or end time?",
+      "choices": [
+        "Ask for the outcome and topics in advance, or decline it",
+        "Accept it and let it run until the talk fades",
+        "Answer it immediately so you look available",
+        "Move it to late night so the day stays open"
+      ],
+      "answer": 0
+    }
+  ]
+}

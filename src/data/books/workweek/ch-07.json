@@ -1,0 +1,238 @@
+{
+  "id": "07",
+  "index": 7,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Refuse and Batch Work",
+  "titleSource": "Interrupting Interruption and the Art of Refusal",
+  "sourcePages": "Chapter 7",
+  "when": "Elimination",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Three kinds of break",
+      "bodyEn": "An interruption is anything that prevents a critical task from running start to finish. Time wasters can be ignored with little consequence, including unimportant meetings, talks, calls, browsing, and email. Time consumers have to be done and still shatter deep work, including email replies, phone calls, routine service, reports, and errands. Empowerment failures are small decisions stuck because someone is waiting on your permission or on information only you hold. Each type gets a different response, and treating all three as meetings keeps the day in pieces. A reputation for being hard to bother, built by a few policies, means you fight less often later. The rest of the chapter is the prescription for each type, in order.",
+      "terms": [
+        {
+          "en": "interruption",
+          "hook": "Anything that stops a critical task from running start to finish."
+        },
+        {
+          "en": "time waster",
+          "hook": "An unimportant contact or meeting you can ignore with little cost."
+        },
+        {
+          "en": "time consumer",
+          "hook": "A repeating task that must happen and should be batched so it stops breaking deep work."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Batch the inbox",
+      "bodyEn": "Email is the largest single interruption, so turn off the new-mail sound and turn off automatic delivery. Check twice a day, around noon and around four, which also catches replies to what you already sent. Never check first thing in the morning. Finish the most important task before eleven, so lunch and the inbox cannot become the postponement. Before the twice-daily habit, put on an automatic reply that names those two times, gives a phone number for what truly cannot wait, and thanks people for the clearer rhythm. Do not ask permission to start it, or, if your pulse spikes, propose a trial of one to three days and cite the interruptions. Move toward once a day as fast as the bumps allow, because most supposed emergencies are people filling time.",
+      "terms": [
+        {
+          "en": "batching",
+          "hook": "Letting a repeating task pile up, then finishing the pile in one sitting."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Two lines, one greeting",
+      "bodyEn": "Use two numbers if you can: a quiet office line that is never urgent, and a cell for what is. The office line stays silent and always goes to voicemail. The recording names the same two times as the email reply, asks for an email address because you can often answer faster that way, and points a true emergency to the cell. Answer the cell unless the caller is unknown or unwanted, and if you are unsure, let it finish, listen at once, and let it wait when it can wait. The greeting is the policy. Say you are in the middle of something and ask how you can help, and if they offer to call later, say you have a minute and ask what they need. If they wander, interrupt, name a call in five minutes, and ask what you can do or ask them to send an email."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Email, then the phone",
+      "bodyEn": "Steer people toward email first, a phone call second, and a meeting in person last. If someone proposes a meeting, ask for an email, and offer the phone only if the email will not do, citing work that is already pending. Answer voicemail by email whenever you can, so people learn to be brief. Put an if-then in any message that asks for something, so the other person can move before your next batch. Say what to do if the answer is yes, what to do if it is no, and who else may decide inside a limit you name. That shape prevents a second round of what-if questions and takes you out of problems other people can solve. Get into the habit on every email that contains a question."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "End the meeting",
+      "bodyEn": "Meet only to decide a situation that is already defined, so ask for an agenda of topics and questions before you accept, and thank them in advance so the note is harder to skip. Once the questions exist, you can usually answer by email, which is how the chapter's own business went years without an in-person meeting. If the meeting cannot be stopped, set the end, keep it near half an hour when the decision is clear, and pick an odd minute so the room cannot socialize. Ask to do your part first because you leave in fifteen minutes, or get out and have someone tell you the rest. You can also say the meeting is unnecessary and offer another path, if you are ready for the argument. Treat the desk as closed: headphones are enough of a signal, and a visitor hears that you are in the middle of something and is asked how you can help. If the point is still unclear after about thirty seconds, they send you the email, you do not offer to write it, and a last resort is a two-minute cap."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Try it just once",
+      "bodyEn": "When a permanent ban would be refused, offer a reversible trial, the way a shop lets someone take a puppy home before they commit. Skip or change one meeting, produce more outside it than the meeting produced, and repeat until the exception is the habit. Phrase it as a small test, because a forever rule is easy to reject. The same shape works with bosses, customers, and suppliers. A child's just-this-once works on adults, so use that shape when you want a lasting change. If someone asks you for overtime just this once, expect the once to become the rule. Use the trial, and do not be the person who grants the version you would hate to have turned around.",
+      "terms": [
+        {
+          "en": "puppy-dog close",
+          "hook": "A reversible trial that becomes the habit once the results are visible."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Price the wider gap",
+      "bodyEn": "A repeating task has a setup cost, which is why a tiny print run can take the same week and the same base fee as a large one. Checking mail five times a week can burn half an hour each time, while one weekly sitting can clear the same letters in about an hour. Restarting serious work after an interruption can take up to forty-five minutes, and about twenty-eight percent of a desk day can disappear into those breaks. Price an hour by dropping the last three zeros of yearly pay and halving what remains, so fifty thousand dollars a year is about twenty-five dollars an hour. Multiply the hours a wider batch returns by that rate. In the worked case, checking email once a week freed about ten hours, about two hundred dollars at twenty dollars an hour, and eighty dollars of lost profit still left a gain, so the wider gap stayed. If the damage costs more than the hours you got back, step one frequency tighter, fix the cause, and widen again, as with email held to a Monday morning and training held to every fourth day."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Replace permission with rules",
+      "bodyEn": "An empowerment failure is a small decision stuck because someone is waiting on permission or on a fact only you may touch. Employees want the information and the right to decide, owners should give both away, and being better at a trivial task is not a reason to keep it. The illustration is one note to service leads: if a fix costs less than one hundred dollars, use judgment and do not ask. That note cut permission email from about two hundred a day to fewer than twenty a week, once it was clear that most issues cost less than twenty dollars. Review results every week for four weeks, then monthly, then each quarter. The first month cost about two hundred dollars more than hovering and saved more than one hundred hours, with returns under three percent against a common industry band near ten to fifteen. If you are the one being watched, bring a few written rules, ask for a one-week trial, and close by asking whether that is reasonable.",
+      "terms": [
+        {
+          "en": "empowerment failure",
+          "hook": "A stall created because a small decision still needs your permission."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Install three fences",
+      "bodyEn": "Put the automatic email reply and the voicemail script on today, and open calls by asking what is needed instead of inviting a chat. Make a list of repeating chores, from laundry and bills to reports, and assign each one a slot: a day, a week, a month, or a quarter. Widen any slot whose mistakes cost less than the hours you get back. Write the rules that would let nonfatal decisions happen without you, and either hand them to the people who do the work or ask your boss for a one-week trial of them. Make your hours harder to enter, require a defined request before you give those hours, and group routine work so it cannot crowd the dreamline. The impulse to interrupt yourself is part of the job, so the fences have to be in place before willpower is required. You only keep the attention you are willing to defend."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Tools that hold the line",
+      "bodyEn": "Paper and open browser tabs are interruptions you build yourself, so capture cards, notes, and pages into one searchable place. Give strangers a forwarding number, silence the callers you do not want, set quiet hours, and read voicemail as text so a meeting does not create a callback pile. Let a group vote on times from one link, or let people book open slots on your calendar, instead of a chain of messages. Cut the network for a set stretch when you need start-to-finish work, and make turning it back on annoying enough that you will not cheat. Dictate a reminder so a stray thought is not an excuse to open the inbox. The chapter's own picks were a capture app that reads text in photos, a forwarding number, a scheduling poll, a network timer, and dictation that arrives as mail. None of them replace the rules, because a faster inbox is still an interruption if you live inside it."
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "Say no for two days",
+      "bodyEn": "For the next two days, answer no to requests, the way a two-year-old does, and do not pick favorites. Refuse what will not get you fired immediately. The aim is not a perfect calendar, it is comfort with the word no. A minute, a film, and help with a chore are all fair declines. No is the default. Skip the elaborate story, because a story gets checked, and use one plain line that you cannot because the plate is already full. One comfort challenge at a time, for two days, marked where you will see it."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Match the interruption",
+      "bodyEn": "Time wasters are ignored, time consumers are batched, and permission stalls are replaced with rules plus a later review. Email and calls happen at set times, meetings need a defined decision and an end, and a reversible trial is how a ban becomes normal. A wider batch survives when the problems cost less than the hours returned, and it tightens one step when they cost more. Checking all day, meeting in order to discover the topic, and approving every small case undo the chapter. The desk, the greeting, and the automatic reply are how other people learn the policy. Start-to-finish work is the point of every fence.",
+      "prompt": "Which response matches the three interruptions?",
+      "choices": [
+        "Ignore time wasters, batch time consumers, and replace permission stalls with rules you review later",
+        "Treat all three as meetings so nobody feels left out",
+        "Check mail all day and approve every small case yourself",
+        "Ban every meeting forever in one announcement, with no trial"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Three kinds of break",
+      "bodyEn": "An interruption is anything that prevents a critical task from running start to finish. Time wasters can be ignored with little consequence, including unimportant meetings, talks, calls, browsing, and email. Time consumers have to be done and still shatter deep work, including email replies, phone calls, routine service, reports, and errands. Empowerment failures are small decisions stuck because someone is waiting on your permission or on information only you hold. Each type gets a different response, and treating all three as meetings keeps the day in pieces. A reputation for being hard to bother, built by a few policies, means you fight less often later. The rest of the chapter is the prescription for each type, in order.",
+      "terms": [
+        {
+          "en": "interruption",
+          "hook": "Anything that stops a critical task from running start to finish."
+        },
+        {
+          "en": "time waster",
+          "hook": "An unimportant contact or meeting you can ignore with little cost."
+        },
+        {
+          "en": "time consumer",
+          "hook": "A repeating task that must happen and should be batched so it stops breaking deep work."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Batch the inbox",
+      "bodyEn": "Email is the largest single interruption, so turn off the new-mail sound and turn off automatic delivery. Check twice a day, around noon and around four, which also catches replies to what you already sent. Never check first thing in the morning. Finish the most important task before eleven, so lunch and the inbox cannot become the postponement. Before the twice-daily habit, put on an automatic reply that names those two times, gives a phone number for what truly cannot wait, and thanks people for the clearer rhythm. Do not ask permission to start it, or, if your pulse spikes, propose a trial of one to three days and cite the interruptions. Move toward once a day as fast as the bumps allow, because most supposed emergencies are people filling time.",
+      "terms": [
+        {
+          "en": "batching",
+          "hook": "Letting a repeating task pile up, then finishing the pile in one sitting."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Two lines, one greeting",
+      "bodyEn": "Use two numbers if you can: a quiet office line that is never urgent, and a cell for what is. The office line stays silent and always goes to voicemail. The recording names the same two times as the email reply, asks for an email address because you can often answer faster that way, and points a true emergency to the cell. Answer the cell unless the caller is unknown or unwanted, and if you are unsure, let it finish, listen at once, and let it wait when it can wait. The greeting is the policy. Say you are in the middle of something and ask how you can help, and if they offer to call later, say you have a minute and ask what they need. If they wander, interrupt, name a call in five minutes, and ask what you can do or ask them to send an email."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Email, then the phone",
+      "bodyEn": "Steer people toward email first, a phone call second, and a meeting in person last. If someone proposes a meeting, ask for an email, and offer the phone only if the email will not do, citing work that is already pending. Answer voicemail by email whenever you can, so people learn to be brief. Put an if-then in any message that asks for something, so the other person can move before your next batch. Say what to do if the answer is yes, what to do if it is no, and who else may decide inside a limit you name. That shape prevents a second round of what-if questions and takes you out of problems other people can solve. Get into the habit on every email that contains a question."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "End the meeting",
+      "bodyEn": "Meet only to decide a situation that is already defined, so ask for an agenda of topics and questions before you accept, and thank them in advance so the note is harder to skip. Once the questions exist, you can usually answer by email, which is how the chapter's own business went years without an in-person meeting. If the meeting cannot be stopped, set the end, keep it near half an hour when the decision is clear, and pick an odd minute so the room cannot socialize. Ask to do your part first because you leave in fifteen minutes, or get out and have someone tell you the rest. You can also say the meeting is unnecessary and offer another path, if you are ready for the argument. Treat the desk as closed: headphones are enough of a signal, and a visitor hears that you are in the middle of something and is asked how you can help. If the point is still unclear after about thirty seconds, they send you the email, you do not offer to write it, and a last resort is a two-minute cap."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Try it just once",
+      "bodyEn": "When a permanent ban would be refused, offer a reversible trial, the way a shop lets someone take a puppy home before they commit. Skip or change one meeting, produce more outside it than the meeting produced, and repeat until the exception is the habit. Phrase it as a small test, because a forever rule is easy to reject. The same shape works with bosses, customers, and suppliers. A child's just-this-once works on adults, so use that shape when you want a lasting change. If someone asks you for overtime just this once, expect the once to become the rule. Use the trial, and do not be the person who grants the version you would hate to have turned around.",
+      "terms": [
+        {
+          "en": "puppy-dog close",
+          "hook": "A reversible trial that becomes the habit once the results are visible."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Price the wider gap",
+      "bodyEn": "A repeating task has a setup cost, which is why a tiny print run can take the same week and the same base fee as a large one. Checking mail five times a week can burn half an hour each time, while one weekly sitting can clear the same letters in about an hour. Restarting serious work after an interruption can take up to forty-five minutes, and about twenty-eight percent of a desk day can disappear into those breaks. Price an hour by dropping the last three zeros of yearly pay and halving what remains, so fifty thousand dollars a year is about twenty-five dollars an hour. Multiply the hours a wider batch returns by that rate. In the worked case, checking email once a week freed about ten hours, about two hundred dollars at twenty dollars an hour, and eighty dollars of lost profit still left a gain, so the wider gap stayed. If the damage costs more than the hours you got back, step one frequency tighter, fix the cause, and widen again, as with email held to a Monday morning and training held to every fourth day."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Replace permission with rules",
+      "bodyEn": "An empowerment failure is a small decision stuck because someone is waiting on permission or on a fact only you may touch. Employees want the information and the right to decide, owners should give both away, and being better at a trivial task is not a reason to keep it. The illustration is one note to service leads: if a fix costs less than one hundred dollars, use judgment and do not ask. That note cut permission email from about two hundred a day to fewer than twenty a week, once it was clear that most issues cost less than twenty dollars. Review results every week for four weeks, then monthly, then each quarter. The first month cost about two hundred dollars more than hovering and saved more than one hundred hours, with returns under three percent against a common industry band near ten to fifteen. If you are the one being watched, bring a few written rules, ask for a one-week trial, and close by asking whether that is reasonable.",
+      "terms": [
+        {
+          "en": "empowerment failure",
+          "hook": "A stall created because a small decision still needs your permission."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "try",
+      "titleEn": "Install three fences",
+      "bodyEn": "Put the automatic email reply and the voicemail script on today, and open calls by asking what is needed instead of inviting a chat. Make a list of repeating chores, from laundry and bills to reports, and assign each one a slot: a day, a week, a month, or a quarter. Widen any slot whose mistakes cost less than the hours you get back. Write the rules that would let nonfatal decisions happen without you, and either hand them to the people who do the work or ask your boss for a one-week trial of them. Make your hours harder to enter, require a defined request before you give those hours, and group routine work so it cannot crowd the dreamline. The impulse to interrupt yourself is part of the job, so the fences have to be in place before willpower is required. You only keep the attention you are willing to defend."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Tools that hold the line",
+      "bodyEn": "Paper and open browser tabs are interruptions you build yourself, so capture cards, notes, and pages into one searchable place. Give strangers a forwarding number, silence the callers you do not want, set quiet hours, and read voicemail as text so a meeting does not create a callback pile. Let a group vote on times from one link, or let people book open slots on your calendar, instead of a chain of messages. Cut the network for a set stretch when you need start-to-finish work, and make turning it back on annoying enough that you will not cheat. Dictate a reminder so a stray thought is not an excuse to open the inbox. The chapter's own picks were a capture app that reads text in photos, a forwarding number, a scheduling poll, a network timer, and dictation that arrives as mail. None of them replace the rules, because a faster inbox is still an interruption if you live inside it."
+    },
+    {
+      "id": "s11",
+      "kind": "try",
+      "titleEn": "Say no for two days",
+      "bodyEn": "For the next two days, answer no to requests, the way a two-year-old does, and do not pick favorites. Refuse what will not get you fired immediately. The aim is not a perfect calendar, it is comfort with the word no. A minute, a film, and help with a chore are all fair declines. No is the default. Skip the elaborate story, because a story gets checked, and use one plain line that you cannot because the plate is already full. One comfort challenge at a time, for two days, marked where you will see it."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Match the interruption",
+      "bodyEn": "Time wasters are ignored, time consumers are batched, and permission stalls are replaced with rules plus a later review. Email and calls happen at set times, meetings need a defined decision and an end, and a reversible trial is how a ban becomes normal. A wider batch survives when the problems cost less than the hours returned, and it tightens one step when they cost more. Checking all day, meeting in order to discover the topic, and approving every small case undo the chapter. The desk, the greeting, and the automatic reply are how other people learn the policy. Start-to-finish work is the point of every fence.",
+      "prompt": "Which response matches the three interruptions?",
+      "choices": [
+        "Ignore time wasters, batch time consumers, and replace permission stalls with rules you review later",
+        "Treat all three as meetings so nobody feels left out",
+        "Check mail all day and approve every small case yourself",
+        "Ban every meeting forever in one announcement, with no trial"
+      ],
+      "answer": 0
+    }
+  ]
+}

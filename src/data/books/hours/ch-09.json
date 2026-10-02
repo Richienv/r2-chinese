@@ -1,0 +1,290 @@
+{
+  "id": "09",
+  "index": 9,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "Plan the next step",
+  "titleSource": "Chapter 9",
+  "sourcePages": "158-174",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Plans that change",
+      "bodyEn": "A fixed picture of the next ten or twenty years will almost certainly break, because you will change more than you expect, industries will appear and vanish, and you cannot yet know what you will be good at. Many people this guide has advised would not have predicted the job they ended up doing, and there is no stable single right career waiting to be discovered. Clinging to one script can make the problem worse, because you then miss the moment when the facts have changed. Giving up on goals is the other mistake, since the highest-impact roles often need specialist capital, such as biosecurity contacts or a technical skill, that you will not collect by drifting, and reaching the top of a field often takes decades of focused effort. A direction you can update helps you notice better chances when they appear. The puzzle is that most plans will be rewritten long before they are finished, and you still benefit from having made them."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "The options trap",
+      "bodyEn": "A common answer to that puzzle is to keep every option open. There is a narrow version that makes sense: if you are extremely unsure, building transferable capital and returning to the plan later can be reasonable. In advising, the same phrase often becomes years in a prestigious job, such as consulting, that you already know you do not want and that does not serve the longer goal. It can also stop you committing, so you take a bland middle path instead of an outstanding bet that would have left you with better options. And it becomes an excuse to stop thinking about what is actually best. The replacement is a real bet plus a backup, not permanent hovering.",
+      "terms": [
+        {
+          "en": "Options trap",
+          "hook": "If they say this, they mean using flexibility as a reason to avoid a real bet."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Three career stages",
+      "bodyEn": "The chapter stages a career as explore, then build capital, then deploy, and it asks you to keep rewriting the plan every one to three years as you learn and as the world changes. Explore means cheap tests of promising longer roles until one of them is worth a multi-year commitment, and it is most often the focus from about eighteen to twenty-four. Build means taking that bet by collecting the capital that most speeds the chosen path, while keeping a backup, most often from about twenty-five to thirty-five. Deploy means using that capital on pressing problems and to bargain for work you find satisfying, most often from the mid-thirties. Capital, learning, and impact matter the whole way, and the ages are typical rather than a law: a mid-career switch can send you back to exploration, and diminishing returns on capital can move you to deploy sooner. Urgency can justify deploying before you feel fully prepared, which many people judge to be the case for AI safety when today's openings look better than the ones a decade away. Someone who is learning a great deal and still very unsure might stay in exploration longer, or just collect transferable capital and name the vision later.",
+      "terms": [
+        {
+          "en": "Explore stage",
+          "hook": "If they say this, they mean cheap tests until you can bet on one longer path."
+        },
+        {
+          "en": "Build stage",
+          "hook": "If they say this, they mean a multi-year bet on the capital that most speeds a chosen path, with a backup."
+        },
+        {
+          "en": "Deploy stage",
+          "hook": "If they say this, they mean using built capital on pressing problems and satisfying work."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "A longer vision",
+      "bodyEn": "A useful vision is wide enough to survive new facts and narrow enough to guide a search, not a single destiny. Write about two to five global problems you might work on, from the problem chapter, and one to five roles you might aim at over something like five to twenty-five years, from the paths chapter. One reader studying in Beijing used the guide to aim at existential risks, especially AI and nuclear war, judged academic international relations unlikely to be her highest-impact route, and pictured advising on multilateral agreements about AI from inside government. A vision can be much vaguer than that and still help you spot opportunities and choose what to explore. Update it every couple of years, dropping items, adding items, and making them more specific, such as moving from organisation-building in general to a particular craft inside it. Obsessing over which long option wins in the abstract is a common waste, so once the sketch exists, turn to concrete next steps.",
+      "terms": [
+        {
+          "en": "Career vision",
+          "hook": "If they say this, they mean a short list of problems and roles to steer toward."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Plan the next step",
+      "bodyEn": "The choice in front of you is the immediate move, and a long vision matters only as a way to steer it. A next step is a job, a course, or a project you might do for a few months or a few years, such as accepting a role at a charity, a summer of language study, or a blog beside your current job. Comparing a researcher and a communicator as lifelong identities is abstract and hard, while comparing a real job with a real graduate programme is often obvious, especially once some applications fail. You can even skip the vision and still build a strong career, if each step adds some capital, some information about fit, and some impact. That is a relief if the long list is still fog, and a bonus if you already have a few longer ideas. Most people should spend some time on the vision and more time finding and comparing the next concrete step."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Work backwards",
+      "bodyEn": "Working backwards starts from where you want to end up and looks for the most direct route from your actual background. The best version is to ask people who already do the work how someone like you would get there fastest, including what you would need to do to hold a named role in about five years. Also study people who advanced unusually quickly and copy the moves that made the speed possible. Name which kinds of capital matter most on that route, the way a future president kept a written list of everyone he met as a student because politics runs on knowing people. Published career reviews can sketch this, and they are not a substitute for advice about your particular case. If a longer option is still doubtful, ask what single result would tell you to drop it or to keep it.",
+      "terms": [
+        {
+          "en": "Work backwards",
+          "hook": "If they say this, they mean pick the step that most speeds a longer-term role."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Work forwards",
+      "bodyEn": "Working forwards means taking a strong opening that is already in front of you, even when you cannot see the destination, because career success is unpredictable and one specific job can beat the average of a whole field. A policy area you think is slightly less pressing can still be the better job if it offers unusual responsibility, unusual fit, or an excellent mentor. The reader aiming at AI agreements did the backwards work, including a think-tank job on the list, and also noticed that living in China opened a posting as a social-media analyst for a US department, which she got and later used as a step toward work on AI risk. Build the forwards list from friends, people on the problems you care about, advertised roles, side projects, and anything already going better than you expected, because the best openings usually travel through people. Many options appear only after you start looking, so making a lot of real applications is itself a strategy. People often agonise over long paths when a round of applications would have made the next step obvious. The following chapter is about running that application process.",
+      "terms": [
+        {
+          "en": "Work forwards",
+          "hook": "If they say this, they mean take a strong opening even if the destination is unclear."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Write an ABZ plan",
+      "bodyEn": "Founders keep a broad aim and test the details, and this chapter borrows that habit: write a top route, nearby alternatives, and a temporary fallback so you can adapt when the facts change. Plan A is your best current bet, which might be one vision plus its next step, a short sequence of carefully ordered tests, or a season of transferable capital followed by another look. An example of a tight Plan A is aiming at academic economics on global priorities or AI policy, and taking the extra maths courses that route requires now. Plan B is two or three alternatives you can switch to if A fails in ways you can already name, such as staying another year if the master's programmes reject you, or trying a think-tank internship or a campaign if an executive-branch job does not appear. Plan Z is only a bridge that covers rent and food while you recover, such as a friend's sofa and tutoring, savings, an old job, moving home, undemanding work, or teaching English abroad. Z can be short if you are secure and should be more careful if other people depend on you, and its job is to make an ambitious A feel survivable. If you cannot honestly accept Z, revise A or spend a while building the safety net before you take the risk.",
+      "terms": [
+        {
+          "en": "Plan A",
+          "hook": "If they say this, they mean the route you most want to pursue right now."
+        },
+        {
+          "en": "Plan B",
+          "hook": "If they say this, they mean a nearby alternative you can switch to if A fails."
+        },
+        {
+          "en": "Plan Z",
+          "hook": "If they say this, they mean a temporary way to pay the bills if A and B both fail."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Cut serious risks",
+      "bodyEn": "Some risk is required for a large impact, and naming it ahead of time makes it easier to take. Write the realistic worst case of Plan A, because a vague fear of failing inflates the bad parts and ignores everything that would stay the same, so the disaster in your head is often worse than the one you would actually meet. Pay the most attention to harms that could permanently cut your happiness or your career capital, such as burnout, depression, or a ruined reputation, and to people who depend on you. Then ask whether you can design those serious harms out, the way a famous founder sold technology part-time and negotiated a year away from university so a failed company would have dropped him back into the same degree. Also write what you will do if the bad case happens, on top of the Plan Z job, so the recovery is a plan rather than a hope. Ordinary comforts, food, friends, and a safe place to sleep, will probably remain, which is already better than most of history. If the remaining risk is still unacceptable, change Plan A, for example by spending longer on financial runway."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Set a review point",
+      "bodyEn": "Plans should change as you learn, and the common failure is to stay on the path you are already on, from sunk cost or from a preference for whatever is current. Set a review so the update is scheduled rather than optional: often six to twenty-four months, shorter while you are learning fast and longer once you are settled, with the new year as a convenient date. You can also review when a result you named in advance arrives or fails, such as promising yourself to reconsider academia if a doctorate does not produce the papers that field requires. The question at the review is what you have learned since the last plan, and what that implies for the longer paths and the next step. Talk it through with someone else, because another person spots sunk cost more easily, and having to justify the choice reduces bias. If you have time, start from a blank page and ask which vision and which next step you would pick if you were deciding today.",
+      "terms": [
+        {
+          "en": "Review point",
+          "hook": "If they say this, they mean a date or result that forces you to update the plan."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "remember",
+      "titleEn": "Seven planning steps",
+      "bodyEn": "The chapter's own sequence starts by naming your stage, explore, build, or deploy, and sketching the vision of problems and roles if you have not already. Then name the very next decision, and generate a long list of steps, leaning toward more ideas and including stretches, using the capital chapter as a source. Add the steps that would most accelerate the vision, and the interesting openings in front of you that may not lead there in any obvious way. Guess a shortlist of about five to ten promising steps, using the earlier questions on capital and on fit if the cut is hard. Write Plan A, the nearby Plan B options, and Plan Z, then list the uncertainties that would most change those rankings, across the vision, the strategy, the next step, and the backups. Investigate until your best guesses stop moving, and if you need help comparing, a later appendix has a fuller decision process, including once real offers exist. Often the right move is simply to pursue the next steps and replan when concrete options are on the table, then set the review date once a job has started, and a weekend with the planning sheet is enough to hold the whole exercise."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Backup plan check",
+      "bodyEn": "A career plan in this chapter is a direction you expect to rewrite, not a job title you must defend for twenty years. The usual emphasis moves from cheap exploration, to a capital-building bet with a backup, to using that capital on pressing problems and satisfying work. A vision of a few problems and a few roles is enough to steer, and the hours of planning belong mostly to the next concrete step. Generate that step both by asking how to reach the vision faster and by taking unusually strong openings that are already available. Plan A is the bet, Plan B is the nearby switch, and Plan Z is what keeps you housed if both fail. A dated review, or a result you named in advance, is part of the same idea, because the plan is supposed to change.",
+      "prompt": "Which set matches Plan A, Plan B, and Plan Z?",
+      "choices": [
+        "Three equal dream jobs, with no fallback if they fail",
+        "A is the top route, B is a nearby alternative, and Z is a temporary way to pay the bills",
+        "A is a gut feeling, B is a career quiz, and Z is never quitting",
+        "A is one prestigious job held forever so that every option stays open"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Plans that change",
+      "bodyEn": "A fixed picture of the next ten or twenty years will almost certainly break, because you will change more than you expect, industries will appear and vanish, and you cannot yet know what you will be good at. Many people this guide has advised would not have predicted the job they ended up doing, and there is no stable single right career waiting to be discovered. Clinging to one script can make the problem worse, because you then miss the moment when the facts have changed. Giving up on goals is the other mistake, since the highest-impact roles often need specialist capital, such as biosecurity contacts or a technical skill, that you will not collect by drifting, and reaching the top of a field often takes decades of focused effort. A direction you can update helps you notice better chances when they appear. The puzzle is that most plans will be rewritten long before they are finished, and you still benefit from having made them."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "The options trap",
+      "bodyEn": "A common answer to that puzzle is to keep every option open. There is a narrow version that makes sense: if you are extremely unsure, building transferable capital and returning to the plan later can be reasonable. In advising, the same phrase often becomes years in a prestigious job, such as consulting, that you already know you do not want and that does not serve the longer goal. It can also stop you committing, so you take a bland middle path instead of an outstanding bet that would have left you with better options. And it becomes an excuse to stop thinking about what is actually best. The replacement is a real bet plus a backup, not permanent hovering.",
+      "terms": [
+        {
+          "en": "Options trap",
+          "hook": "If they say this, they mean using flexibility as a reason to avoid a real bet."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Three career stages",
+      "bodyEn": "The chapter stages a career as explore, then build capital, then deploy, and it asks you to keep rewriting the plan every one to three years as you learn and as the world changes. Explore means cheap tests of promising longer roles until one of them is worth a multi-year commitment, and it is most often the focus from about eighteen to twenty-four. Build means taking that bet by collecting the capital that most speeds the chosen path, while keeping a backup, most often from about twenty-five to thirty-five. Deploy means using that capital on pressing problems and to bargain for work you find satisfying, most often from the mid-thirties. Capital, learning, and impact matter the whole way, and the ages are typical rather than a law: a mid-career switch can send you back to exploration, and diminishing returns on capital can move you to deploy sooner. Urgency can justify deploying before you feel fully prepared, which many people judge to be the case for AI safety when today's openings look better than the ones a decade away. Someone who is learning a great deal and still very unsure might stay in exploration longer, or just collect transferable capital and name the vision later.",
+      "terms": [
+        {
+          "en": "Explore stage",
+          "hook": "If they say this, they mean cheap tests until you can bet on one longer path."
+        },
+        {
+          "en": "Build stage",
+          "hook": "If they say this, they mean a multi-year bet on the capital that most speeds a chosen path, with a backup."
+        },
+        {
+          "en": "Deploy stage",
+          "hook": "If they say this, they mean using built capital on pressing problems and satisfying work."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "A longer vision",
+      "bodyEn": "A useful vision is wide enough to survive new facts and narrow enough to guide a search, not a single destiny. Write about two to five global problems you might work on, from the problem chapter, and one to five roles you might aim at over something like five to twenty-five years, from the paths chapter. One reader studying in Beijing used the guide to aim at existential risks, especially AI and nuclear war, judged academic international relations unlikely to be her highest-impact route, and pictured advising on multilateral agreements about AI from inside government. A vision can be much vaguer than that and still help you spot opportunities and choose what to explore. Update it every couple of years, dropping items, adding items, and making them more specific, such as moving from organisation-building in general to a particular craft inside it. Obsessing over which long option wins in the abstract is a common waste, so once the sketch exists, turn to concrete next steps.",
+      "terms": [
+        {
+          "en": "Career vision",
+          "hook": "If they say this, they mean a short list of problems and roles to steer toward."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Plan the next step",
+      "bodyEn": "The choice in front of you is the immediate move, and a long vision matters only as a way to steer it. A next step is a job, a course, or a project you might do for a few months or a few years, such as accepting a role at a charity, a summer of language study, or a blog beside your current job. Comparing a researcher and a communicator as lifelong identities is abstract and hard, while comparing a real job with a real graduate programme is often obvious, especially once some applications fail. You can even skip the vision and still build a strong career, if each step adds some capital, some information about fit, and some impact. That is a relief if the long list is still fog, and a bonus if you already have a few longer ideas. Most people should spend some time on the vision and more time finding and comparing the next concrete step."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Work backwards",
+      "bodyEn": "Working backwards starts from where you want to end up and looks for the most direct route from your actual background. The best version is to ask people who already do the work how someone like you would get there fastest, including what you would need to do to hold a named role in about five years. Also study people who advanced unusually quickly and copy the moves that made the speed possible. Name which kinds of capital matter most on that route, the way a future president kept a written list of everyone he met as a student because politics runs on knowing people. Published career reviews can sketch this, and they are not a substitute for advice about your particular case. If a longer option is still doubtful, ask what single result would tell you to drop it or to keep it.",
+      "terms": [
+        {
+          "en": "Work backwards",
+          "hook": "If they say this, they mean pick the step that most speeds a longer-term role."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Work forwards",
+      "bodyEn": "Working forwards means taking a strong opening that is already in front of you, even when you cannot see the destination, because career success is unpredictable and one specific job can beat the average of a whole field. A policy area you think is slightly less pressing can still be the better job if it offers unusual responsibility, unusual fit, or an excellent mentor. The reader aiming at AI agreements did the backwards work, including a think-tank job on the list, and also noticed that living in China opened a posting as a social-media analyst for a US department, which she got and later used as a step toward work on AI risk. Build the forwards list from friends, people on the problems you care about, advertised roles, side projects, and anything already going better than you expected, because the best openings usually travel through people. Many options appear only after you start looking, so making a lot of real applications is itself a strategy. People often agonise over long paths when a round of applications would have made the next step obvious. The following chapter is about running that application process.",
+      "terms": [
+        {
+          "en": "Work forwards",
+          "hook": "If they say this, they mean take a strong opening even if the destination is unclear."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Write an ABZ plan",
+      "bodyEn": "Founders keep a broad aim and test the details, and this chapter borrows that habit: write a top route, nearby alternatives, and a temporary fallback so you can adapt when the facts change. Plan A is your best current bet, which might be one vision plus its next step, a short sequence of carefully ordered tests, or a season of transferable capital followed by another look. An example of a tight Plan A is aiming at academic economics on global priorities or AI policy, and taking the extra maths courses that route requires now. Plan B is two or three alternatives you can switch to if A fails in ways you can already name, such as staying another year if the master's programmes reject you, or trying a think-tank internship or a campaign if an executive-branch job does not appear. Plan Z is only a bridge that covers rent and food while you recover, such as a friend's sofa and tutoring, savings, an old job, moving home, undemanding work, or teaching English abroad. Z can be short if you are secure and should be more careful if other people depend on you, and its job is to make an ambitious A feel survivable. If you cannot honestly accept Z, revise A or spend a while building the safety net before you take the risk.",
+      "terms": [
+        {
+          "en": "Plan A",
+          "hook": "If they say this, they mean the route you most want to pursue right now."
+        },
+        {
+          "en": "Plan B",
+          "hook": "If they say this, they mean a nearby alternative you can switch to if A fails."
+        },
+        {
+          "en": "Plan Z",
+          "hook": "If they say this, they mean a temporary way to pay the bills if A and B both fail."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Cut serious risks",
+      "bodyEn": "Some risk is required for a large impact, and naming it ahead of time makes it easier to take. Write the realistic worst case of Plan A, because a vague fear of failing inflates the bad parts and ignores everything that would stay the same, so the disaster in your head is often worse than the one you would actually meet. Pay the most attention to harms that could permanently cut your happiness or your career capital, such as burnout, depression, or a ruined reputation, and to people who depend on you. Then ask whether you can design those serious harms out, the way a famous founder sold technology part-time and negotiated a year away from university so a failed company would have dropped him back into the same degree. Also write what you will do if the bad case happens, on top of the Plan Z job, so the recovery is a plan rather than a hope. Ordinary comforts, food, friends, and a safe place to sleep, will probably remain, which is already better than most of history. If the remaining risk is still unacceptable, change Plan A, for example by spending longer on financial runway."
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "Set a review point",
+      "bodyEn": "Plans should change as you learn, and the common failure is to stay on the path you are already on, from sunk cost or from a preference for whatever is current. Set a review so the update is scheduled rather than optional: often six to twenty-four months, shorter while you are learning fast and longer once you are settled, with the new year as a convenient date. You can also review when a result you named in advance arrives or fails, such as promising yourself to reconsider academia if a doctorate does not produce the papers that field requires. The question at the review is what you have learned since the last plan, and what that implies for the longer paths and the next step. Talk it through with someone else, because another person spots sunk cost more easily, and having to justify the choice reduces bias. If you have time, start from a blank page and ask which vision and which next step you would pick if you were deciding today.",
+      "terms": [
+        {
+          "en": "Review point",
+          "hook": "If they say this, they mean a date or result that forces you to update the plan."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "remember",
+      "titleEn": "Seven planning steps",
+      "bodyEn": "The chapter's own sequence starts by naming your stage, explore, build, or deploy, and sketching the vision of problems and roles if you have not already. Then name the very next decision, and generate a long list of steps, leaning toward more ideas and including stretches, using the capital chapter as a source. Add the steps that would most accelerate the vision, and the interesting openings in front of you that may not lead there in any obvious way. Guess a shortlist of about five to ten promising steps, using the earlier questions on capital and on fit if the cut is hard. Write Plan A, the nearby Plan B options, and Plan Z, then list the uncertainties that would most change those rankings, across the vision, the strategy, the next step, and the backups. Investigate until your best guesses stop moving, and if you need help comparing, a later appendix has a fuller decision process, including once real offers exist. Often the right move is simply to pursue the next steps and replan when concrete options are on the table, then set the review date once a job has started, and a weekend with the planning sheet is enough to hold the whole exercise."
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Backup plan check",
+      "bodyEn": "A career plan in this chapter is a direction you expect to rewrite, not a job title you must defend for twenty years. The usual emphasis moves from cheap exploration, to a capital-building bet with a backup, to using that capital on pressing problems and satisfying work. A vision of a few problems and a few roles is enough to steer, and the hours of planning belong mostly to the next concrete step. Generate that step both by asking how to reach the vision faster and by taking unusually strong openings that are already available. Plan A is the bet, Plan B is the nearby switch, and Plan Z is what keeps you housed if both fail. A dated review, or a result you named in advance, is part of the same idea, because the plan is supposed to change.",
+      "prompt": "Which set matches Plan A, Plan B, and Plan Z?",
+      "choices": [
+        "Three equal dream jobs, with no fallback if they fail",
+        "A is the top route, B is a nearby alternative, and Z is a temporary way to pay the bills",
+        "A is a gut feeling, B is a career quiz, and Z is never quitting",
+        "A is one prestigious job held forever so that every option stays open"
+      ],
+      "answer": 1
+    }
+  ]
+}

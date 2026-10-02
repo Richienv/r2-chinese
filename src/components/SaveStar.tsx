@@ -22,7 +22,7 @@ export function SaveStar({
   return (
     <button
       className="tap44"
-      aria-label={on ? `Remove ${zh} from saved` : `Save ${zh} for drilling`}
+      aria-label={on ? `Unstar ${zh}` : `Star ${zh} as a favourite`}
       aria-pressed={on}
       onClick={(e) => {
         e.stopPropagation()

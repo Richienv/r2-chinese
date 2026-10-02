@@ -1,0 +1,12 @@
+{
+  "source": "CC-CEDICT",
+  "publisher": "MDBG and CC-CEDICT contributors",
+  "sourceUrl": "https://www.mdbg.net/chinese/dictionary?page=cc-cedict",
+  "downloadUrl": "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "release": "2026-10-01T23:26:37Z",
+  "entries": 125166,
+  "sha256Gzip": "d434b5e90470877952fcbae02de42e4272a09d88783ce2ffa66f571e6871c2f9",
+  "transformation": "Parsed unchanged pronunciations and definition senses into 128 JSON shards keyed by traditional and simplified headwords."
+}

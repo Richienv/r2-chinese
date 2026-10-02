@@ -1,0 +1,134 @@
+{
+  "id": "41",
+  "index": 41,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "A Niche She Loved",
+  "titleSource": "Taking Flight with Ornithreads",
+  "sourcePages": "",
+  "when": "Case",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Training woke the ideas",
+      "bodyEn": "Training for a first Olympic-distance triathlon brought back a creativity this reader had missed for years. She posted a competitive time and signed up for a half-distance race. In that stretch she produced many product ideas and picked one to launch. The decision was to turn the discipline of training into a small business, rather than wait to feel inspired at a desk. The product was clothing printed with modern scientific drawings of birds, for younger birders. The letter finds her days from opening the site, with the first designs already at the printer. The result on the page is a collection in production, not a measured income.",
+      "terms": [
+        {
+          "en": "niche",
+          "hook": "A narrow group of devoted buyers, chosen before you try to scale."
+        },
+        {
+          "en": "first collection",
+          "hook": "A few designs sent into the world so customers can teach you what to make next."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Why these buyers",
+      "bodyEn": "Her day job had already taught her the audience. She cites a wildlife-service figure of about seventy million Americans who actively bird, and she notes that the interest tends to deepen instead of fade. Those buyers often have middle or upper incomes and formal education. A summer ornithology class at Columbia, where she was studying conservation biology, made her want the textbook drawings around her. The decision was to serve a passionate group she understood, with images she personally wanted. Two reasons were enough to choose. A hobby that lasts for decades is a sturdier market than a trend she would have to replace every season."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Learn from first buyers",
+      "bodyEn": "The ambition was large, and the first step was small: get one collection to customers and learn. Three designs were being printed. The site was about to open. Automated income was a hope she attached to the steps in this book, not a figure she reported. The decision was to launch a narrow line and study the response. The honest result is momentum and a product entering the world. A case can teach a sound aim while the score is still blank."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "One idea, not dozens",
+      "bodyEn": "Dozens of ideas showed up, and she did not try to start all of them. The decision was one line, one buyer, and a near date. Clothing can later be printed and shipped by other people, which is why she linked it to income that would not need her daily. That link is a plan. The letter does not yet show a system that runs without her. The lesson is selection. A niche you can say in one sentence beats a stack of concepts that never reach a printer."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Audience before the logo",
+      "bodyEn": "She did not invent a customer from a blank page. She used habits and numbers she had already seen at work, then checked them against a class she loved. Aiming younger than the usual picture of a birder is the twist that makes apparel plausible. Scientific drawings, not cute mascots, are the design decision. That choice matches the educated, long-term hobbyist she described. Generic pictures would have left the niche as a slogan. The result she was set up to learn is whether those buyers want the shirts, and no order had answered that yet."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "How to copy the aim",
+      "bodyEn": "A hard physical goal can restart ideas when the work has gone flat, which is the credit she gives the training. List many options, then ship one. Pick buyers who already spend years on the interest and who can pay. Put your own taste in the product so the third design still matters to you. Print a first collection and let customers teach you before you automate anything. Automation is a later stage, and this letter has not reached it. Copy the focus, and do not copy a revenue number that was never claimed."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "What is already true",
+      "bodyEn": "The apparel line was not a finished muse with reported profit. Three designs were at the printer, the site was about to open, and the buyer was a younger, devoted birder. The decision was a narrow first collection for a group she already understood. Automated income was the hope she named. Recall what this case can honestly claim.",
+      "prompt": "What result does this case actually show?",
+      "choices": [
+        "A proven automated income from bird apparel",
+        "A first collection in production for a narrow group of birders",
+        "A closed day job and a year of travel",
+        "A chain of birding stores"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Training woke the ideas",
+      "bodyEn": "Training for a first Olympic-distance triathlon brought back a creativity this reader had missed for years. She posted a competitive time and signed up for a half-distance race. In that stretch she produced many product ideas and picked one to launch. The decision was to turn the discipline of training into a small business, rather than wait to feel inspired at a desk. The product was clothing printed with modern scientific drawings of birds, for younger birders. The letter finds her days from opening the site, with the first designs already at the printer. The result on the page is a collection in production, not a measured income.",
+      "terms": [
+        {
+          "en": "niche",
+          "hook": "A narrow group of devoted buyers, chosen before you try to scale."
+        },
+        {
+          "en": "first collection",
+          "hook": "A few designs sent into the world so customers can teach you what to make next."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Why these buyers",
+      "bodyEn": "Her day job had already taught her the audience. She cites a wildlife-service figure of about seventy million Americans who actively bird, and she notes that the interest tends to deepen instead of fade. Those buyers often have middle or upper incomes and formal education. A summer ornithology class at Columbia, where she was studying conservation biology, made her want the textbook drawings around her. The decision was to serve a passionate group she understood, with images she personally wanted. Two reasons were enough to choose. A hobby that lasts for decades is a sturdier market than a trend she would have to replace every season."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Learn from first buyers",
+      "bodyEn": "The ambition was large, and the first step was small: get one collection to customers and learn. Three designs were being printed. The site was about to open. Automated income was a hope she attached to the steps in this book, not a figure she reported. The decision was to launch a narrow line and study the response. The honest result is momentum and a product entering the world. A case can teach a sound aim while the score is still blank."
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "One idea, not dozens",
+      "bodyEn": "Dozens of ideas showed up, and she did not try to start all of them. The decision was one line, one buyer, and a near date. Clothing can later be printed and shipped by other people, which is why she linked it to income that would not need her daily. That link is a plan. The letter does not yet show a system that runs without her. The lesson is selection. A niche you can say in one sentence beats a stack of concepts that never reach a printer."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Audience before the logo",
+      "bodyEn": "She did not invent a customer from a blank page. She used habits and numbers she had already seen at work, then checked them against a class she loved. Aiming younger than the usual picture of a birder is the twist that makes apparel plausible. Scientific drawings, not cute mascots, are the design decision. That choice matches the educated, long-term hobbyist she described. Generic pictures would have left the niche as a slogan. The result she was set up to learn is whether those buyers want the shirts, and no order had answered that yet."
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "How to copy the aim",
+      "bodyEn": "A hard physical goal can restart ideas when the work has gone flat, which is the credit she gives the training. List many options, then ship one. Pick buyers who already spend years on the interest and who can pay. Put your own taste in the product so the third design still matters to you. Print a first collection and let customers teach you before you automate anything. Automation is a later stage, and this letter has not reached it. Copy the focus, and do not copy a revenue number that was never claimed."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "What is already true",
+      "bodyEn": "The apparel line was not a finished muse with reported profit. Three designs were at the printer, the site was about to open, and the buyer was a younger, devoted birder. The decision was a narrow first collection for a group she already understood. Automated income was the hope she named. Recall what this case can honestly claim.",
+      "prompt": "What result does this case actually show?",
+      "choices": [
+        "A proven automated income from bird apparel",
+        "A first collection in production for a narrow group of birders",
+        "A closed day job and a year of travel",
+        "A chain of birding stores"
+      ],
+      "answer": 1
+    }
+  ]
+}

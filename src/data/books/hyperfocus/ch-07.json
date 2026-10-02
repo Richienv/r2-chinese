@@ -1,0 +1,258 @@
+{
+  "id": "07",
+  "index": 7,
+  "part": 3,
+  "partTitleEn": "Hyperfocus",
+  "titleEn": "Making Hyperfocus a Habit",
+  "titleSource": "Making Hyperfocus a Habit",
+  "sourcePages": "102-115",
+  "when": "Chapter 5",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Five drift triggers",
+      "bodyEn": "The mind leaves a task more often under stress, in a chaotic room, when personal concerns stay open, when you doubt the task is the right one, and when attentional space sits unused. Stress eases when the demands no longer overflow that space, so keep the load inside what you can hold. Boredom here is the restless drop from high stimulation to low, and a calmer room with fewer novel pulls makes that drop smaller. Personal concerns belong on a task list, a waiting-for list, or a worry list, so they stop occupying the space you need for the work. Doubt shrinks when you chose the task on purpose, and a complex task fills the spare space that wandering would otherwise take.",
+      "terms": [
+        {
+          "en": "Mind wandering",
+          "hook": "Leaving a chosen task because stress, boredom, chaos, open concerns, doubt, or spare space invited the drift."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Match the challenge",
+      "bodyEn": "A task that is too easy leaves attentional space empty, so the mind goes looking for stimulation. A task far beyond your current skill creates anxiety, which also pulls you off the work. Absorption shows up when the challenge is roughly equal to your ability, the way a book can hold you or a skill you can just perform. If you are still bored after distractions are tamed, treat that as a sign the work needs more complexity. If you are anxious while working with intention, ask whether your skill and the task still match. Add difficulty, a clearer standard, or a tighter purpose until the task actually needs the space. Look at the whole role as well, because work that never uses your real skill keeps producing the same boredom.",
+      "terms": [
+        {
+          "en": "Challenge match",
+          "hook": "Set the difficulty near your current skill so the task fills attention without tipping into anxiety."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Busywork means room",
+      "bodyEn": "Work expands to fill the time you allow, so a crowded day of mail and meetings can hide how little consequential work you have. When distractions are off and the important tasks finish early, guilt often pushes you toward more motion. Measure the day by how much of it is unproductive busywork, and if that share is high, take on more meaningful work. Rote tasks are often more enjoyable than hard ones, and they can rest you, so keep the ones you genuinely like. Cut some of them anyway, because the hours they occupy are the hours a significant task needs. On a real deadline that same busyness disappears, which shows the spare time was what let small tasks swell.",
+      "terms": [
+        {
+          "en": "Busywork signal",
+          "hook": "A day of motion with little consequence means there is room for more meaningful work."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Skip the brain apps",
+      "bodyEn": "Working memory is how many chunks you can hold at once, usually about four, and that capacity is the size of your attentional space. A larger capacity means less wandering during complex work, more useful thoughts when the mind does wander, and a faster return after a drift. Most brain-training apps fail to transfer to real work, and a large trial found no evidence they improve even the skills they claim to train. Any short-term gain tends to demand several hours a week and then fades when you stop. The practice that repeated studies tie to a larger working memory is meditation. A few minutes a day of returning attention to one object is the rep, and an app that only trains the app is a detour.",
+      "terms": [
+        {
+          "en": "Working memory",
+          "hook": "The few chunks, about four, that attentional space can hold and work on at once."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Return to the breath",
+      "bodyEn": "Before you sit, notice your resistance the same way you do before a hyperfocus block, then use a chair with an upright spine. Follow the breath: its depth, its temperature, where you feel it, and the turn from the in-breath to the out-breath. Each time you notice a drift, come back, and that return is the repetition that trains control of attention. A guided app such as Headspace or Insight Timer can start you, and the length can be one or two minutes if that is all the day allows, as long as you sit every day. Treat the session with curiosity about where the mind went, and drop the verdict that you did it wrong. Reported practice studies found about a sixteen percent gain on a graduate admissions test, and a working-memory rise of more than thirty percent after a few weeks.",
+      "terms": [
+        {
+          "en": "Breath return",
+          "hook": "Sit daily, follow the breath, and come back each time you notice a drift."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "One ordinary minute",
+      "bodyEn": "Mindfulness means noticing what fills your mind and what the moment contains, while you stay with an ordinary act. Pick one daily task that leaves attention spare, such as coffee, a short walk, or a shower, and stay with it for a minute or two. Anchor on smell, taste, temperature, sound, and the feeling of moving. When attention leaves, bring it back, and treat the miss as ordinary, because the mind was built to wander. A smaller object makes leaving more frequent, and each quick return is what enlarges attentional space. Hold that one intention until the cup, the walk, or the shower is done. The same awareness lets you keep a useful stray thought, or catch a distraction at the edge before it takes the space.",
+      "terms": [
+        {
+          "en": "Mindful minute",
+          "hook": "One ordinary act, noticed on purpose for a minute or two, with a return after every drift."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "One person, full space",
+      "bodyEn": "Hyperfocus at home uses the same shape as at work: one activity fills attentional space, and novel pulls such as a work phone stay in another room. The state is often calm, because the chosen activity fills the space without a scramble for novelty. Set three personal intentions for the day, even when one of them is a show you chose on purpose. In conversation, let the other person finish, and wait until the sentence has ended before you plan your reply. People can usually tell when the whole space is with them, and that shared attention is what makes the time matter. A phone-free meal, a walk, or cooking one meal is enough practice. Scatterfocus still belongs in the gaps, when you want ideas and the moment is no longer a conversation you mean to inhabit.",
+      "terms": [
+        {
+          "en": "Full presence",
+          "hook": "One person or one home activity gets the whole attentional space for that stretch."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Shrink the start",
+      "bodyEn": "Resistance to a hard block gathers at the start, which is why a minute of discomfort sends you toward a prettier distraction. Shrink the period until that resistance drops, even down to five minutes, and then begin. When you hear yourself say you have no time, swap the task with something you would make time for, such as a game, a match, or clearing the inbox. If the swap shows the time exists, the refusal is resistance, so start the smaller block. Practice at least one hyperfocus interval every day, and the next start gets cheaper as the ritual becomes familiar. If the refusal is really fatigue, recharge, because forcing a block on an empty pool only deepens the resistance.",
+      "terms": [
+        {
+          "en": "Start shrink",
+          "hook": "Shorten the block until the first minute is small enough that you will begin."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "idea",
+      "titleEn": "Aim attention inward",
+      "bodyEn": "Up to this chapter, wandering is a cost when it pulls you off a block you meant to finish. The same mode becomes useful when you choose it and turn attention inward. The book names that intentional inward mode scatterfocus, and it is the creative partner to hyperfocus. Hyperfocus points outward at one task, and scatterfocus points inward so you can plan, decide, or connect. Enter the inward mode on purpose, and leave it out of the minutes that still belong to a focus block. The two modes are a pair, and the following chapters train the inward one.",
+      "terms": [
+        {
+          "en": "Scatterfocus",
+          "hook": "Intentional mind wandering, with attention turned inward to plan, rest, or connect."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "What fills the space",
+      "bodyEn": "A complex task fills the spare attentional space that wandering would take. A few daily minutes of returning to the breath is the practice tied to a larger working memory. An ordinary minute with a cup, a walk, or a shower trains the same return. Resistance peaks at the start, so the block shrinks until you can begin, and then you repeat it daily. A day full of busywork, once distractions are gone, is a signal to take on more meaningful work. Home uses the same one-task rule, including a conversation where the other person gets the whole space.",
+      "prompt": "What should you do when a hard block feels too big to start?",
+      "choices": [
+        "Wait for a free afternoon that arrives with no resistance",
+        "Shrink the period until you can begin, then practice one interval a day",
+        "Add several more complex tasks into the same moment",
+        "Treat the resistance as proof that focus is a fixed talent"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Five drift triggers",
+      "bodyEn": "The mind leaves a task more often under stress, in a chaotic room, when personal concerns stay open, when you doubt the task is the right one, and when attentional space sits unused. Stress eases when the demands no longer overflow that space, so keep the load inside what you can hold. Boredom here is the restless drop from high stimulation to low, and a calmer room with fewer novel pulls makes that drop smaller. Personal concerns belong on a task list, a waiting-for list, or a worry list, so they stop occupying the space you need for the work. Doubt shrinks when you chose the task on purpose, and a complex task fills the spare space that wandering would otherwise take.",
+      "terms": [
+        {
+          "en": "Mind wandering",
+          "hook": "Leaving a chosen task because stress, boredom, chaos, open concerns, doubt, or spare space invited the drift."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Match the challenge",
+      "bodyEn": "A task that is too easy leaves attentional space empty, so the mind goes looking for stimulation. A task far beyond your current skill creates anxiety, which also pulls you off the work. Absorption shows up when the challenge is roughly equal to your ability, the way a book can hold you or a skill you can just perform. If you are still bored after distractions are tamed, treat that as a sign the work needs more complexity. If you are anxious while working with intention, ask whether your skill and the task still match. Add difficulty, a clearer standard, or a tighter purpose until the task actually needs the space. Look at the whole role as well, because work that never uses your real skill keeps producing the same boredom.",
+      "terms": [
+        {
+          "en": "Challenge match",
+          "hook": "Set the difficulty near your current skill so the task fills attention without tipping into anxiety."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Busywork means room",
+      "bodyEn": "Work expands to fill the time you allow, so a crowded day of mail and meetings can hide how little consequential work you have. When distractions are off and the important tasks finish early, guilt often pushes you toward more motion. Measure the day by how much of it is unproductive busywork, and if that share is high, take on more meaningful work. Rote tasks are often more enjoyable than hard ones, and they can rest you, so keep the ones you genuinely like. Cut some of them anyway, because the hours they occupy are the hours a significant task needs. On a real deadline that same busyness disappears, which shows the spare time was what let small tasks swell.",
+      "terms": [
+        {
+          "en": "Busywork signal",
+          "hook": "A day of motion with little consequence means there is room for more meaningful work."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Skip the brain apps",
+      "bodyEn": "Working memory is how many chunks you can hold at once, usually about four, and that capacity is the size of your attentional space. A larger capacity means less wandering during complex work, more useful thoughts when the mind does wander, and a faster return after a drift. Most brain-training apps fail to transfer to real work, and a large trial found no evidence they improve even the skills they claim to train. Any short-term gain tends to demand several hours a week and then fades when you stop. The practice that repeated studies tie to a larger working memory is meditation. A few minutes a day of returning attention to one object is the rep, and an app that only trains the app is a detour.",
+      "terms": [
+        {
+          "en": "Working memory",
+          "hook": "The few chunks, about four, that attentional space can hold and work on at once."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Return to the breath",
+      "bodyEn": "Before you sit, notice your resistance the same way you do before a hyperfocus block, then use a chair with an upright spine. Follow the breath: its depth, its temperature, where you feel it, and the turn from the in-breath to the out-breath. Each time you notice a drift, come back, and that return is the repetition that trains control of attention. A guided app such as Headspace or Insight Timer can start you, and the length can be one or two minutes if that is all the day allows, as long as you sit every day. Treat the session with curiosity about where the mind went, and drop the verdict that you did it wrong. Reported practice studies found about a sixteen percent gain on a graduate admissions test, and a working-memory rise of more than thirty percent after a few weeks.",
+      "terms": [
+        {
+          "en": "Breath return",
+          "hook": "Sit daily, follow the breath, and come back each time you notice a drift."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "One ordinary minute",
+      "bodyEn": "Mindfulness means noticing what fills your mind and what the moment contains, while you stay with an ordinary act. Pick one daily task that leaves attention spare, such as coffee, a short walk, or a shower, and stay with it for a minute or two. Anchor on smell, taste, temperature, sound, and the feeling of moving. When attention leaves, bring it back, and treat the miss as ordinary, because the mind was built to wander. A smaller object makes leaving more frequent, and each quick return is what enlarges attentional space. Hold that one intention until the cup, the walk, or the shower is done. The same awareness lets you keep a useful stray thought, or catch a distraction at the edge before it takes the space.",
+      "terms": [
+        {
+          "en": "Mindful minute",
+          "hook": "One ordinary act, noticed on purpose for a minute or two, with a return after every drift."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "try",
+      "titleEn": "One person, full space",
+      "bodyEn": "Hyperfocus at home uses the same shape as at work: one activity fills attentional space, and novel pulls such as a work phone stay in another room. The state is often calm, because the chosen activity fills the space without a scramble for novelty. Set three personal intentions for the day, even when one of them is a show you chose on purpose. In conversation, let the other person finish, and wait until the sentence has ended before you plan your reply. People can usually tell when the whole space is with them, and that shared attention is what makes the time matter. A phone-free meal, a walk, or cooking one meal is enough practice. Scatterfocus still belongs in the gaps, when you want ideas and the moment is no longer a conversation you mean to inhabit.",
+      "terms": [
+        {
+          "en": "Full presence",
+          "hook": "One person or one home activity gets the whole attentional space for that stretch."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "try",
+      "titleEn": "Shrink the start",
+      "bodyEn": "Resistance to a hard block gathers at the start, which is why a minute of discomfort sends you toward a prettier distraction. Shrink the period until that resistance drops, even down to five minutes, and then begin. When you hear yourself say you have no time, swap the task with something you would make time for, such as a game, a match, or clearing the inbox. If the swap shows the time exists, the refusal is resistance, so start the smaller block. Practice at least one hyperfocus interval every day, and the next start gets cheaper as the ritual becomes familiar. If the refusal is really fatigue, recharge, because forcing a block on an empty pool only deepens the resistance.",
+      "terms": [
+        {
+          "en": "Start shrink",
+          "hook": "Shorten the block until the first minute is small enough that you will begin."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "idea",
+      "titleEn": "Aim attention inward",
+      "bodyEn": "Up to this chapter, wandering is a cost when it pulls you off a block you meant to finish. The same mode becomes useful when you choose it and turn attention inward. The book names that intentional inward mode scatterfocus, and it is the creative partner to hyperfocus. Hyperfocus points outward at one task, and scatterfocus points inward so you can plan, decide, or connect. Enter the inward mode on purpose, and leave it out of the minutes that still belong to a focus block. The two modes are a pair, and the following chapters train the inward one.",
+      "terms": [
+        {
+          "en": "Scatterfocus",
+          "hook": "Intentional mind wandering, with attention turned inward to plan, rest, or connect."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "What fills the space",
+      "bodyEn": "A complex task fills the spare attentional space that wandering would take. A few daily minutes of returning to the breath is the practice tied to a larger working memory. An ordinary minute with a cup, a walk, or a shower trains the same return. Resistance peaks at the start, so the block shrinks until you can begin, and then you repeat it daily. A day full of busywork, once distractions are gone, is a signal to take on more meaningful work. Home uses the same one-task rule, including a conversation where the other person gets the whole space.",
+      "prompt": "What should you do when a hard block feels too big to start?",
+      "choices": [
+        "Wait for a free afternoon that arrives with no resistance",
+        "Shrink the period until you can begin, then practice one interval a day",
+        "Add several more complex tasks into the same moment",
+        "Treat the resistance as proof that focus is a fixed talent"
+      ],
+      "answer": 1
+    }
+  ]
+}

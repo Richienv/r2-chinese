@@ -9,12 +9,12 @@ import {
   type ReactNode,
 } from 'react'
 
-/** Separate from HSK / Kerja / Jiaocheng / Magang / Interview progress keys so old saves stay untouched. */
+/** Separate from HSK / Kerja / Jiaocheng / Magang / Interview / Books progress keys so old saves stay untouched. */
 const COURSE_KEY = 'yulu.course.v1'
 
-export type CourseId = 'hsk4a' | 'kerja' | 'jiaocheng' | 'magang' | 'interview'
+export type CourseId = 'hsk4a' | 'kerja' | 'jiaocheng' | 'magang' | 'interview' | 'books'
 
-export const COURSE_ORDER: CourseId[] = ['hsk4a', 'kerja', 'jiaocheng', 'magang', 'interview']
+export const COURSE_ORDER: CourseId[] = ['hsk4a', 'kerja', 'jiaocheng', 'magang', 'interview', 'books']
 
 export const COURSE_META: Record<
   CourseId,
@@ -50,6 +50,12 @@ export const COURSE_META: Record<
     titleZh: '总办',
     blurb: 'Tonight · 18:00',
   },
+  books: {
+    id: 'books',
+    title: 'Books',
+    titleZh: 'Books',
+    blurb: 'Five books, one idea at a time',
+  },
 }
 
 function readCourse(): CourseId {
@@ -60,7 +66,8 @@ function readCourse(): CourseId {
       raw === 'hsk4a' ||
       raw === 'jiaocheng' ||
       raw === 'magang' ||
-      raw === 'interview'
+      raw === 'interview' ||
+      raw === 'books'
     ) {
       return raw
     }

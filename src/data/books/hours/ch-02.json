@@ -1,0 +1,198 @@
+{
+  "id": "02",
+  "index": 2,
+  "part": 2,
+  "partTitleEn": "80,000 Hours",
+  "titleEn": "One person can matter",
+  "titleSource": "Chapter 2",
+  "sourcePages": "",
+  "when": "",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Impact is wildly uneven",
+      "bodyEn": "It is easy to feel that one person cannot move problems as large as the ones in the news. The chapter's finding is that one person can, while many admired paths do less than the heroic story suggests and a few unusual paths do vastly more. The size of that gap is the point, because two careers can both help and still sit worlds apart in effect. Several of the largest contributions came from work that looks unlike a standard altruistic job. The chapter starts by measuring a doctor, then sets that number beside people whose choices reached millions. The practical hope is a career with a real chance of the high end, inside a life you can still want."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "What a doctor adds",
+      "bodyEn": "Medicine is a common answer for people who want to help, and an early reader, Greg Lewis, chose it because a worthwhile career seemed irresistible. Working with him, the authors estimated that an average doctor in the UK enables about one hundred extra years of healthy life over a career, by extending life or improving health. A standard conversion used by institutions such as the World Bank counts about thirty healthy years as one life saved, so one hundred years is about three lives. The estimate is very uncertain, and they still doubt the true figure is more than about ten times higher. Three lives is genuine good, and an exceptional doctor beats the average, yet the total sits far below the picture of someone rescuing a person every week. That result later helped move Lewis from clinical medicine into biosecurity, for reasons the rest of the guide develops.",
+      "terms": [
+        {
+          "en": "life saved",
+          "hook": "If they say this, they mean about thirty extra years of healthy life, on the conversion this chapter uses."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Why doctors add less",
+      "bodyEn": "Three facts keep a typical rich-country doctor below the popular estimate. Researchers largely agree that medicine itself added only a few years to average life expectancy, while most gains over the last century came from nutrition, sanitation, wealth, and similar shifts. A doctor is also one part of a system that includes nurses, other staff, buildings, and equipment, so the credit is shared. The largest reason is crowding: if you decline the post, someone else still performs the most urgent procedures, and an extra doctor mostly enables care with smaller and less certain benefits. A chart of ill health, measured in disability-adjusted life years per one hundred thousand people, against doctors per one hundred thousand, flattens once a country passes about one hundred fifty doctors. Rich countries are already past that bend, so another doctor in the US or the UK can still beat many jobs while shifting population health only a little.",
+      "terms": [
+        {
+          "en": "disability-adjusted life year",
+          "hook": "If they say this, they mean one year of healthy life lost to illness or early death."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "Simple treatment, vast reach",
+      "bodyEn": "Some medical careers dwarfed the clinical average by changing what everyone else could do. By nineteen sixty-eight, sugar and salt given by tube or drip could stop death from cholera, and millions were still dying because poor rural clinics could not use that setup. David Nalin, in a refugee camp on the Bangladesh-Burma border, showed that drinking a solution at the right strength and the right pace worked nearly as well. The treatment then needed no equipment and used very cheap, widely available ingredients. Child deaths from diarrhoea later fell from about five million a year to about one and a half million, and researchers estimate the therapy has saved over fifty million lives, mostly children. If he only sped the rollout by five months, a rough share of that credit is about five hundred thousand lives, more than one hundred thousand times an ordinary doctor. Karl Landsteiner's discovery of blood groups sits in the same range, with estimates of tens of millions of lives through transfusion."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Ideas that unlocked everything",
+      "bodyEn": "Those medical gains sat on an earlier kind of contribution. Roger Bacon and Galileo helped pioneer the scientific method, without which the later discoveries, and technological shifts such as industrialisation, would have lacked a method. People who change how everyone else finds things out can outdo even outstanding clinicians. The top of the range is a contribution that makes many other contributions possible. The chapter also points ahead to Alan Turing and Viktor Zhdanov as cases of the same gap outside one hospital. Treating one patient at a time and changing the tools available to every patient are different career shapes."
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "The officer who refused",
+      "bodyEn": "In nineteen eighty-three, Soviet lieutenant colonel Stanislav Petrov was on duty when early-warning systems seemed to show incoming missiles from the United States. Protocol pointed toward ordering a return strike. He refused, because so few missiles appeared that a genuine opening attack looked unlikely. A counterstrike might have killed hundreds of millions, and an all-out nuclear war might have killed billions and ended civilisation. A conservative count of a billion lives already dwarfs Nalin and Landsteiner, and it leaves out the science, art, economy, and later wellbeing a war would have erased. The authors think those long-run losses could matter even more than the immediate deaths, which is why stopping such a war can outweigh a huge present-day rescue. On the lower estimate alone, Petrov's impact still sits above the great medical discoverers."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Luck and chosen aim",
+      "bodyEn": "Luck is part of every one of these stories, because the person was standing where a large lever happened to exist. Nobody can guarantee an important medical discovery. The aim was still a choice. Landsteiner and Nalin aimed their training at the worst illnesses around them, and during the Cold War it was predictable that a senior Soviet officer might be placed where he could stop a catastrophe. You can point a career at problems where one success would scale, before any dramatic moment arrives. The lesson is to seek roles where that combination is plausible, inside work you can still want to do."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Ask for the best ways",
+      "bodyEn": "Asking only whether a career makes a difference is too coarse once paths can differ by factors of thousands. Both options can help, and one can still be dramatically better. A small rise in your chance of a very high-impact path is worth a great deal, because the top of the range is so high. Those paths are often unconventional, which is why a Soviet military post can outrank celebrated leaders and talented doctors on this measure. A large impact can require work that looks a little strange beside the usual altruist script. The question to ask is which options give you a real chance of the high end, in work that remains personally rewarding. Raising that chance is the job of the next chapters."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "What impact means",
+      "bodyEn": "Social impact, as this chapter defines it, is how many lives you make better, by how much, across a long stretch of time. You raise it by helping more people. You also raise it by helping the same number of people by a greater amount. You also raise it by choosing work whose benefits last longer. The third lever is easy to miss, because better government decisions may show few immediate numbers and still solve many later problems. Lives saved are one measure of the idea, and the definition is wider than that single score. More detail sits in an appendix, and this definition is the one the rest of the guide uses.",
+      "terms": [
+        {
+          "en": "social impact",
+          "hook": "If they say this, they mean how many people you help, how much, and for how long."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "From definition to action",
+      "bodyEn": "Once impact means reach, depth, and duration, a crowded rich-country clinic is only one small region of the map. The next chapter argues that a college graduate can improve many lives from whatever job they already have. The routes there are donations, political advocacy, and helping other people become more effective. After that, the guide turns to choosing the job where your own potential goes furthest. A once-in-history moment can stay unlikely. The workable aim is a path that scores high on reach, depth, and duration and is actually open to you."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Impact meaning check",
+      "bodyEn": "A typical rich-country doctor does real good, on the order of a few lives across a career, and an outstanding doctor does more than that average. The average sits below popular expectations because lifespan gains came mostly from nutrition, sanitation, and wealth, because medical credit is shared across a whole system, and because someone else would still cover the urgent cases. Discoveries such as oral rehydration and blood groups, and a refused nuclear order, show gaps of many thousands of times inside the same wish to help. Part of those gaps is luck of position, and part is aiming at a problem where one success scales. Social impact counts how many people you help, how much you help them, and how long the benefits last. The career question is which paths give you a chance at the high end of that range, including paths that look unconventional.",
+      "prompt": "What does this chapter mean by social impact?",
+      "choices": [
+        "How famous the career looks to friends",
+        "Only the number of lives saved in the current year",
+        "How many people you help, how much you help them, and how long the benefits last",
+        "Whether the employer is a hospital or a charity"
+      ],
+      "answer": 2
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Impact is wildly uneven",
+      "bodyEn": "It is easy to feel that one person cannot move problems as large as the ones in the news. The chapter's finding is that one person can, while many admired paths do less than the heroic story suggests and a few unusual paths do vastly more. The size of that gap is the point, because two careers can both help and still sit worlds apart in effect. Several of the largest contributions came from work that looks unlike a standard altruistic job. The chapter starts by measuring a doctor, then sets that number beside people whose choices reached millions. The practical hope is a career with a real chance of the high end, inside a life you can still want."
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "What a doctor adds",
+      "bodyEn": "Medicine is a common answer for people who want to help, and an early reader, Greg Lewis, chose it because a worthwhile career seemed irresistible. Working with him, the authors estimated that an average doctor in the UK enables about one hundred extra years of healthy life over a career, by extending life or improving health. A standard conversion used by institutions such as the World Bank counts about thirty healthy years as one life saved, so one hundred years is about three lives. The estimate is very uncertain, and they still doubt the true figure is more than about ten times higher. Three lives is genuine good, and an exceptional doctor beats the average, yet the total sits far below the picture of someone rescuing a person every week. That result later helped move Lewis from clinical medicine into biosecurity, for reasons the rest of the guide develops.",
+      "terms": [
+        {
+          "en": "life saved",
+          "hook": "If they say this, they mean about thirty extra years of healthy life, on the conversion this chapter uses."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Why doctors add less",
+      "bodyEn": "Three facts keep a typical rich-country doctor below the popular estimate. Researchers largely agree that medicine itself added only a few years to average life expectancy, while most gains over the last century came from nutrition, sanitation, wealth, and similar shifts. A doctor is also one part of a system that includes nurses, other staff, buildings, and equipment, so the credit is shared. The largest reason is crowding: if you decline the post, someone else still performs the most urgent procedures, and an extra doctor mostly enables care with smaller and less certain benefits. A chart of ill health, measured in disability-adjusted life years per one hundred thousand people, against doctors per one hundred thousand, flattens once a country passes about one hundred fifty doctors. Rich countries are already past that bend, so another doctor in the US or the UK can still beat many jobs while shifting population health only a little.",
+      "terms": [
+        {
+          "en": "disability-adjusted life year",
+          "hook": "If they say this, they mean one year of healthy life lost to illness or early death."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "Simple treatment, vast reach",
+      "bodyEn": "Some medical careers dwarfed the clinical average by changing what everyone else could do. By nineteen sixty-eight, sugar and salt given by tube or drip could stop death from cholera, and millions were still dying because poor rural clinics could not use that setup. David Nalin, in a refugee camp on the Bangladesh-Burma border, showed that drinking a solution at the right strength and the right pace worked nearly as well. The treatment then needed no equipment and used very cheap, widely available ingredients. Child deaths from diarrhoea later fell from about five million a year to about one and a half million, and researchers estimate the therapy has saved over fifty million lives, mostly children. If he only sped the rollout by five months, a rough share of that credit is about five hundred thousand lives, more than one hundred thousand times an ordinary doctor. Karl Landsteiner's discovery of blood groups sits in the same range, with estimates of tens of millions of lives through transfusion."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Ideas that unlocked everything",
+      "bodyEn": "Those medical gains sat on an earlier kind of contribution. Roger Bacon and Galileo helped pioneer the scientific method, without which the later discoveries, and technological shifts such as industrialisation, would have lacked a method. People who change how everyone else finds things out can outdo even outstanding clinicians. The top of the range is a contribution that makes many other contributions possible. The chapter also points ahead to Alan Turing and Viktor Zhdanov as cases of the same gap outside one hospital. Treating one patient at a time and changing the tools available to every patient are different career shapes."
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "The officer who refused",
+      "bodyEn": "In nineteen eighty-three, Soviet lieutenant colonel Stanislav Petrov was on duty when early-warning systems seemed to show incoming missiles from the United States. Protocol pointed toward ordering a return strike. He refused, because so few missiles appeared that a genuine opening attack looked unlikely. A counterstrike might have killed hundreds of millions, and an all-out nuclear war might have killed billions and ended civilisation. A conservative count of a billion lives already dwarfs Nalin and Landsteiner, and it leaves out the science, art, economy, and later wellbeing a war would have erased. The authors think those long-run losses could matter even more than the immediate deaths, which is why stopping such a war can outweigh a huge present-day rescue. On the lower estimate alone, Petrov's impact still sits above the great medical discoverers."
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Luck and chosen aim",
+      "bodyEn": "Luck is part of every one of these stories, because the person was standing where a large lever happened to exist. Nobody can guarantee an important medical discovery. The aim was still a choice. Landsteiner and Nalin aimed their training at the worst illnesses around them, and during the Cold War it was predictable that a senior Soviet officer might be placed where he could stop a catastrophe. You can point a career at problems where one success would scale, before any dramatic moment arrives. The lesson is to seek roles where that combination is plausible, inside work you can still want to do."
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Ask for the best ways",
+      "bodyEn": "Asking only whether a career makes a difference is too coarse once paths can differ by factors of thousands. Both options can help, and one can still be dramatically better. A small rise in your chance of a very high-impact path is worth a great deal, because the top of the range is so high. Those paths are often unconventional, which is why a Soviet military post can outrank celebrated leaders and talented doctors on this measure. A large impact can require work that looks a little strange beside the usual altruist script. The question to ask is which options give you a real chance of the high end, in work that remains personally rewarding. Raising that chance is the job of the next chapters."
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "What impact means",
+      "bodyEn": "Social impact, as this chapter defines it, is how many lives you make better, by how much, across a long stretch of time. You raise it by helping more people. You also raise it by helping the same number of people by a greater amount. You also raise it by choosing work whose benefits last longer. The third lever is easy to miss, because better government decisions may show few immediate numbers and still solve many later problems. Lives saved are one measure of the idea, and the definition is wider than that single score. More detail sits in an appendix, and this definition is the one the rest of the guide uses.",
+      "terms": [
+        {
+          "en": "social impact",
+          "hook": "If they say this, they mean how many people you help, how much, and for how long."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "From definition to action",
+      "bodyEn": "Once impact means reach, depth, and duration, a crowded rich-country clinic is only one small region of the map. The next chapter argues that a college graduate can improve many lives from whatever job they already have. The routes there are donations, political advocacy, and helping other people become more effective. After that, the guide turns to choosing the job where your own potential goes furthest. A once-in-history moment can stay unlikely. The workable aim is a path that scores high on reach, depth, and duration and is actually open to you."
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "Impact meaning check",
+      "bodyEn": "A typical rich-country doctor does real good, on the order of a few lives across a career, and an outstanding doctor does more than that average. The average sits below popular expectations because lifespan gains came mostly from nutrition, sanitation, and wealth, because medical credit is shared across a whole system, and because someone else would still cover the urgent cases. Discoveries such as oral rehydration and blood groups, and a refused nuclear order, show gaps of many thousands of times inside the same wish to help. Part of those gaps is luck of position, and part is aiming at a problem where one success scales. Social impact counts how many people you help, how much you help them, and how long the benefits last. The career question is which paths give you a chance at the high end of that range, including paths that look unconventional.",
+      "prompt": "What does this chapter mean by social impact?",
+      "choices": [
+        "How famous the career looks to friends",
+        "Only the number of lives saved in the current year",
+        "How many people you help, how much you help them, and how long the benefits last",
+        "Whether the employer is a hospital or a charity"
+      ],
+      "answer": 2
+    }
+  ]
+}

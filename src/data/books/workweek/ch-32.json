@@ -1,0 +1,150 @@
+{
+  "id": "32",
+  "index": 32,
+  "part": 5,
+  "partTitleEn": "4-Hour Workweek",
+  "titleEn": "Rules for Mail",
+  "titleSource": "Tim Ferriss Processing Rules",
+  "sourcePages": "Best of the Blog",
+  "when": "January 21, 2008",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Write decisions down",
+      "bodyEn": "A processing sheet is the set of questions you already ask, written so another person can answer them. Some lines are your standing preferences, and some are added by the assistant who lives in the mail. The format can be a list of questions and answers. Over a short stretch of real work, the sheet becomes long enough to run without you. It also exposes habits you would not defend out loud. The goal is a deputy, not a diary.",
+      "terms": [
+        {
+          "en": "processing sheet",
+          "hook": "A question-and-answer file that lets someone else sort, answer, or escalate your mail."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Standards before style",
+      "bodyEn": "Deadlines and punctual replies come before cleverness. If you ask for a call back, the assistant calls, even late, because you may not be near mail while traveling. They should know the public book and site well enough to answer ordinary questions. A spending cap lets them decide small purchases and report the decision afterward. Larger spends wait for approval. Writing for well-known contacts has to be clean, because the note represents the team."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Filter, then label",
+      "bodyEn": "The assistant answers the same day on anything the rules already cover. What remains is labeled for you, instead of being forwarded as a raw pile. You want a receipt when you hand off a task, with the time it will be done, and milestone updates on longer jobs. Urgent questions come by phone, not by a mail you might not see. Mail is checked at two set times, not continuously. The assistant signs as an assistant, not as you.",
+      "terms": [
+        {
+          "en": "escalate label",
+          "hook": "A mark on the few messages the assistant cannot answer, so you see only those."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Cluster the calls",
+      "bodyEn": "Keep appointments off the early morning, and group calls into one block with a short gap between them. A request to jump on the phone gets a reply asking for the agenda and the decision to be made. Calls stay short and have a stated end. When an item is placed on the calendar, the assistant confirms it back to you. The description includes the topics plus a backup number. Initials in the title show who booked it, and personal errands can sit on the same calendar if you want them handled."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Protect the name",
+      "bodyEn": "Partnerships are welcome only when the other party would not embarrass a serious guest. Hype, fake urgency, and a thin track record are enough to decline. Profit is not the only yes, because reputation, reach, and skilled people also count. A blast that did not bother to write to you personally can be archived. If you already said no and they push, send one polite last note, then stop. Your private address is never placed where strangers can copy it, so use a blind copy when you need to see a thread.",
+      "terms": [
+        {
+          "en": "name test",
+          "hook": "A check on whether a partner's public style would make a serious guest walk away."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Templates and fact sheets",
+      "bodyEn": "Repeat questions, such as language resources or a product that is not for sale, get a saved answer. Speaking requests are not booked on a date until you confirm you are free. Before the request reaches you, the assistant collects the date, the length, whether travel is paid, the fee budget, and who else is confirmed. A shorthand word in your reply can mean the note should be pasted as dictated while you are traveling. That shorthand saves the assistant from rewriting every line into the third person. The sheet should also say which notes are private and which may be mentioned publicly."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Processing sheet check",
+      "bodyEn": "The sheet covers team standards, a spending cap, same-day answers, and a label for what still needs you. Calls are clustered, agendas are required, and calendar items are confirmed with topics attached. Partners face a name test, blasts can be dropped, and a second no is the last reply. Templates handle repeat questions, and speaking requests arrive with facts already gathered. A private address stays off the visible line. Recall how an assistant should sign a reply.",
+      "prompt": "How should a reply to a stranger be signed?",
+      "choices": [
+        "As your assistant, with that role stated under the name",
+        "As you, so the sender believes you typed it",
+        "With no name, so the message feels automatic",
+        "As the whole company, with no person attached"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Write decisions down",
+      "bodyEn": "A processing sheet is the set of questions you already ask, written so another person can answer them. Some lines are your standing preferences, and some are added by the assistant who lives in the mail. The format can be a list of questions and answers. Over a short stretch of real work, the sheet becomes long enough to run without you. It also exposes habits you would not defend out loud. The goal is a deputy, not a diary.",
+      "terms": [
+        {
+          "en": "processing sheet",
+          "hook": "A question-and-answer file that lets someone else sort, answer, or escalate your mail."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Standards before style",
+      "bodyEn": "Deadlines and punctual replies come before cleverness. If you ask for a call back, the assistant calls, even late, because you may not be near mail while traveling. They should know the public book and site well enough to answer ordinary questions. A spending cap lets them decide small purchases and report the decision afterward. Larger spends wait for approval. Writing for well-known contacts has to be clean, because the note represents the team."
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Filter, then label",
+      "bodyEn": "The assistant answers the same day on anything the rules already cover. What remains is labeled for you, instead of being forwarded as a raw pile. You want a receipt when you hand off a task, with the time it will be done, and milestone updates on longer jobs. Urgent questions come by phone, not by a mail you might not see. Mail is checked at two set times, not continuously. The assistant signs as an assistant, not as you.",
+      "terms": [
+        {
+          "en": "escalate label",
+          "hook": "A mark on the few messages the assistant cannot answer, so you see only those."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Cluster the calls",
+      "bodyEn": "Keep appointments off the early morning, and group calls into one block with a short gap between them. A request to jump on the phone gets a reply asking for the agenda and the decision to be made. Calls stay short and have a stated end. When an item is placed on the calendar, the assistant confirms it back to you. The description includes the topics plus a backup number. Initials in the title show who booked it, and personal errands can sit on the same calendar if you want them handled."
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Protect the name",
+      "bodyEn": "Partnerships are welcome only when the other party would not embarrass a serious guest. Hype, fake urgency, and a thin track record are enough to decline. Profit is not the only yes, because reputation, reach, and skilled people also count. A blast that did not bother to write to you personally can be archived. If you already said no and they push, send one polite last note, then stop. Your private address is never placed where strangers can copy it, so use a blind copy when you need to see a thread.",
+      "terms": [
+        {
+          "en": "name test",
+          "hook": "A check on whether a partner's public style would make a serious guest walk away."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Templates and fact sheets",
+      "bodyEn": "Repeat questions, such as language resources or a product that is not for sale, get a saved answer. Speaking requests are not booked on a date until you confirm you are free. Before the request reaches you, the assistant collects the date, the length, whether travel is paid, the fee budget, and who else is confirmed. A shorthand word in your reply can mean the note should be pasted as dictated while you are traveling. That shorthand saves the assistant from rewriting every line into the third person. The sheet should also say which notes are private and which may be mentioned publicly."
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Processing sheet check",
+      "bodyEn": "The sheet covers team standards, a spending cap, same-day answers, and a label for what still needs you. Calls are clustered, agendas are required, and calendar items are confirmed with topics attached. Partners face a name test, blasts can be dropped, and a second no is the last reply. Templates handle repeat questions, and speaking requests arrive with facts already gathered. A private address stays off the visible line. Recall how an assistant should sign a reply.",
+      "prompt": "How should a reply to a stranger be signed?",
+      "choices": [
+        "As your assistant, with that role stated under the name",
+        "As you, so the sender believes you typed it",
+        "With no name, so the message feels automatic",
+        "As the whole company, with no person attached"
+      ],
+      "answer": 0
+    }
+  ]
+}

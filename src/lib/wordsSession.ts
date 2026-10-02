@@ -32,6 +32,9 @@ export type SessionStep =
       of: number
     }
   | { kind: 'read'; id: string; text: LessonText; n: number; of: number }
+  | { kind: 'recall'; id: string; word: Vocab; n: number; of: number }
+  | { kind: 'dialogue'; id: string; text: LessonText; n: number; of: number }
+  | { kind: 'produce'; id: string; example: Example; words: string[]; grammar?: string; n: number; of: number }
   | { kind: 'note'; id: string; title: string; body: string; example: Example | null; kicker?: string; n: number; of: number }
   | { kind: 'quiz'; id: string; question: Question; example: Example | null; n: number; of: number }
   | { kind: 'complete' }
@@ -102,17 +105,18 @@ export function nodeCaption(lesson: number, node: PathNode): { en: string; zh: s
 
 function numberSteps(draft: Array<Exclude<SessionStep, { kind: 'complete' }>>): SessionStep[] {
   const words = [...new Set(draft.filter((s) => s.kind === 'teach').map((s) => s.word.zh))]
-  const counts = { read: 0, note: 0, quiz: 0 }
+  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, produce: 0 }
   const ofs = {
     read: draft.filter((s) => s.kind === 'read').length,
     note: draft.filter((s) => s.kind === 'note').length,
     quiz: draft.filter((s) => s.kind === 'quiz').length,
+    recall: draft.filter((s) => s.kind === 'recall').length,
+    dialogue: draft.filter((s) => s.kind === 'dialogue').length,
+    produce: draft.filter((s) => s.kind === 'produce').length,
   }
   const steps: SessionStep[] = draft.map((s) => {
     if (s.kind === 'teach') return { ...s, n: words.indexOf(s.word.zh) + 1, of: words.length }
-    if (s.kind === 'read') return { ...s, n: ++counts.read, of: ofs.read }
-    if (s.kind === 'note') return { ...s, n: ++counts.note, of: ofs.note }
-    return { ...s, n: ++counts.quiz, of: ofs.quiz }
+    return { ...s, n: ++counts[s.kind], of: ofs[s.kind] }
   })
   steps.push({ kind: 'complete' })
   return steps
@@ -153,6 +157,15 @@ function buildTextSteps(lesson: number, node: Exclude<PathNode, 'wrap'>): Sessio
     of: 0,
   })
 
+  // Retrieve after the reading interval, rather than immediately copying the word.
+  for (const word of sitting.words) {
+    draft.push({ kind: 'recall', id: `recall:${node}:${word.zh}`, word, n: 0, of: 0 })
+  }
+
+  if (sitting.text.type === 'dialogue' && sitting.text.lines.length > 1) {
+    draft.push({ kind: 'dialogue', id: `speak:${node}`, text: sitting.text, n: 0, of: 0 })
+  }
+
   const checks = sentenceQuestions(bookLesson, 3, sitting.text.lines)
   for (const [i, q] of checks.entries()) {
     draft.push({
@@ -188,6 +201,16 @@ function buildTextSteps(lesson: number, node: Exclude<PathNode, 'wrap'>): Sessio
         of: 0,
       })
     }
+  }
+
+  const productionExample = g?.examples.find((e) => e.zh.trim() && e.en.trim())
+    ?? sitting.text.lines.find((line) => line.zh.length >= 4 && line.zh.length <= 75 && line.en.trim())
+  if (productionExample) {
+    draft.push({
+      kind: 'produce', id: `produce:${node}`, example: productionExample,
+      words: sitting.words.filter((w) => productionExample.zh.includes(w.zh)).map((w) => w.zh),
+      grammar: g ? `${g.point}: ${g.explanation}` : undefined, n: 0, of: 0,
+    })
   }
 
   return numberSteps(draft)
@@ -240,6 +263,9 @@ function buildWrapSteps(lesson: number): SessionStep[] {
   }
 
   const words = teachableVocab(bookLesson)
+  for (const word of words) {
+    draft.push({ kind: 'recall', id: `wrap:recall:${word.zh}`, word, n: 0, of: 0 })
+  }
   for (const [i, q] of vocabQuestions(bookLesson, 4, words).entries()) {
     draft.push({
       kind: 'quiz',
