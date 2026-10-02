@@ -1,0 +1,272 @@
+{
+  "id": "14",
+  "index": 14,
+  "part": 3,
+  "partTitleEn": "Build something with a model",
+  "titleEn": "Fine-tuning and LoRA",
+  "titleSource": "Fine-tuning dan LoRA",
+  "sourcePages": "57-60",
+  "when": "Week 4, days 22–23",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "When to fine-tune",
+      "bodyEn": "Fine-tuning continues training a model on your examples. Try cheaper fixes first: clearer prompts, then retrieval when the gap is missing knowledge. Fine-tune when prompting cannot hold behavior — strict format, company style, or a narrow task for a small cheap model. Job posts say 模型微调 and 微调技术. Honest limit: it is a bad way to store facts that change; the model can learn price-list style and still state the wrong price.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, they mean keep training a model on your examples to change behavior."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Full fine-tune cost",
+      "bodyEn": "Full fine-tuning updates every weight. With Adam and mixed precision, training needs about 16 bytes of GPU memory per parameter. For a 7B model that is about 112 GB before activations — several data-center GPUs. That cost is why teams use PEFT and train only a tiny slice of weights. Honest limit: if you cannot explain the memory pain, “we used LoRA” sounds like a buzzword.",
+      "terms": [
+        {
+          "zh": "参数高效微调",
+          "en": "PEFT",
+          "hook": "If they say this, they mean train only a small slice of weights, not all of them."
+        },
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this, they mean about 16 bytes per parameter with Adam."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "LoRA",
+      "bodyEn": "LoRA freezes the original weight matrix W and learns a small correction beside it. The correction is BA scaled by alpha/r, where B is d×r and A is r×k, and only A and B train. Rank r is usually 8 to 64. A starts random and B starts at zero so BA equals zero and behavior matches the base at step zero. Honest limit: LoRA adapts existing skills; it will not magically add fresh factual knowledge the base never had.",
+      "terms": [
+        {
+          "zh": "LoRA",
+          "en": "LoRA",
+          "hook": "If they say this, they mean train thin A and B beside a frozen weight matrix W."
+        },
+        {
+          "zh": "秩",
+          "en": "rank",
+          "hook": "If they say this, they mean the small inner size r of the LoRA update, often 8–64."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "Rank and alpha",
+      "bodyEn": "A 7B attention matrix with d=k=4096 holds about 16.8 million numbers; rank-8 LoRA trains about 65k params — under half a percent of W. Setting alpha to twice the rank is a common default so you can change r without retuning learning rate much. Practice often puts adapters on all linear layers, not only query and value. After training, merge W+(alpha/r)BA for base speed, or keep adapters separate to swap per customer. Honest limit: bigger rank is not free quality — measure on a held-out set.",
+      "terms": [
+        {
+          "zh": "缩放",
+          "en": "scale alpha/r",
+          "hook": "If they say this, they mean how strongly the LoRA update is applied."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "QLoRA",
+      "bodyEn": "QLoRA stores the frozen base in 4-bit NF4 and trains LoRA adapters in 16-bit on top. A 7B base shrinks from about 14 GB to about 4 GB before activations, so one rented 16–24 GB GPU can work. Project 5 uses this practical path on AutoDL-style rentals. Interviews like the contrast: full Adam ~112 GB, LoRA 16-bit ~14 GB, QLoRA ~4 GB. Honest limit: 4-bit bases can lose a little quality; always compare against a strong prompt baseline.",
+      "terms": [
+        {
+          "zh": "QLoRA",
+          "en": "QLoRA",
+          "hook": "If they say this, they mean 4-bit frozen base plus 16-bit LoRA adapters."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Fine-tune data",
+      "bodyEn": "Format chat data as one conversation per line with roles system, user, assistant. A few hundred excellent examples can teach one format; hold out 10% as a clean test set and never train on it. Prefer quality and hard cases over raw count. Train on assistant tokens only when the template supports it. Honest limit: synthetic data you never read will teach the model your labeling mistakes.",
+      "terms": [
+        {
+          "zh": "微调数据",
+          "en": "fine-tune data",
+          "hook": "If they say this, they mean labeled chat examples used to continue training."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "watch",
+      "titleEn": "Prove it worked",
+      "bodyEn": "Compare base + plain instruction, base + best prompt, and the fine-tuned model on the same held-out set. Train loss down but eval loss up means overfitting — stop early, lower LR, or add data. Also spot-check general questions for catastrophic forgetting. Change one hyperparameter at a time. Honest limit: a pretty training curve without a held-out comparison is not proof.",
+      "terms": [
+        {
+          "zh": "过拟合",
+          "en": "overfitting",
+          "hook": "If they say this, they mean train loss falls while eval loss rises."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Good versus bad",
+      "bodyEn": "Pick one good fine-tune use and one bad one. Style and format belong in weights; changing facts belong in RAG.",
+      "prompt": "Which pair matches this chapter: one good fine-tune use-case and one bad one?",
+      "choices": [
+        "Good: teach a strict company output style the prompt cannot hold — Bad: inject changing price facts (use RAG)",
+        "Good: store tomorrow’s prices in weights — Bad: improve a prompt",
+        "Good: replace retrieval entirely — Bad: train any adapter",
+        "Good: full Adam update of all 7B weights on a laptop — Bad: LoRA"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Why B is zero",
+      "bodyEn": "Check LoRA initialization. B at zero keeps the model identical to the base before training moves it.",
+      "prompt": "Why does LoRA initialize B to zero?",
+      "choices": [
+        "So BA = 0 at step 0 and the model behaves exactly like the original before training moves it",
+        "So A never trains and only B updates",
+        "So merging is forbidden and adapters must stay separate forever",
+        "So rank must equal alpha at every step"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "When to fine-tune",
+      "bodyEn": "Fine-tuning continues training a model on your examples. Try cheaper fixes first: clearer prompts, then retrieval when the gap is missing knowledge. Fine-tune when prompting cannot hold behavior — strict format, company style, or a narrow task for a small cheap model. Job posts say 模型微调 and 微调技术. Honest limit: it is a bad way to store facts that change; the model can learn price-list style and still state the wrong price.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, they mean keep training a model on your examples to change behavior."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Full fine-tune cost",
+      "bodyEn": "Full fine-tuning updates every weight. With Adam and mixed precision, training needs about 16 bytes of GPU memory per parameter. For a 7B model that is about 112 GB before activations — several data-center GPUs. That cost is why teams use PEFT and train only a tiny slice of weights. Honest limit: if you cannot explain the memory pain, “we used LoRA” sounds like a buzzword.",
+      "terms": [
+        {
+          "zh": "参数高效微调",
+          "en": "PEFT",
+          "hook": "If they say this, they mean train only a small slice of weights, not all of them."
+        },
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this, they mean about 16 bytes per parameter with Adam."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "LoRA",
+      "bodyEn": "LoRA freezes the original weight matrix W and learns a small correction beside it. The correction is BA scaled by alpha/r, where B is d×r and A is r×k, and only A and B train. Rank r is usually 8 to 64. A starts random and B starts at zero so BA equals zero and behavior matches the base at step zero. Honest limit: LoRA adapts existing skills; it will not magically add fresh factual knowledge the base never had.",
+      "terms": [
+        {
+          "zh": "LoRA",
+          "en": "LoRA",
+          "hook": "If they say this, they mean train thin A and B beside a frozen weight matrix W."
+        },
+        {
+          "zh": "秩",
+          "en": "rank",
+          "hook": "If they say this, they mean the small inner size r of the LoRA update, often 8–64."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "Rank and alpha",
+      "bodyEn": "A 7B attention matrix with d=k=4096 holds about 16.8 million numbers; rank-8 LoRA trains about 65k params — under half a percent of W. Setting alpha to twice the rank is a common default so you can change r without retuning learning rate much. Practice often puts adapters on all linear layers, not only query and value. After training, merge W+(alpha/r)BA for base speed, or keep adapters separate to swap per customer. Honest limit: bigger rank is not free quality — measure on a held-out set.",
+      "terms": [
+        {
+          "zh": "缩放",
+          "en": "scale alpha/r",
+          "hook": "If they say this, they mean how strongly the LoRA update is applied."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "QLoRA",
+      "bodyEn": "QLoRA stores the frozen base in 4-bit NF4 and trains LoRA adapters in 16-bit on top. A 7B base shrinks from about 14 GB to about 4 GB before activations, so one rented 16–24 GB GPU can work. Project 5 uses this practical path on AutoDL-style rentals. Interviews like the contrast: full Adam ~112 GB, LoRA 16-bit ~14 GB, QLoRA ~4 GB. Honest limit: 4-bit bases can lose a little quality; always compare against a strong prompt baseline.",
+      "terms": [
+        {
+          "zh": "QLoRA",
+          "en": "QLoRA",
+          "hook": "If they say this, they mean 4-bit frozen base plus 16-bit LoRA adapters."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Fine-tune data",
+      "bodyEn": "Format chat data as one conversation per line with roles system, user, assistant. A few hundred excellent examples can teach one format; hold out 10% as a clean test set and never train on it. Prefer quality and hard cases over raw count. Train on assistant tokens only when the template supports it. Honest limit: synthetic data you never read will teach the model your labeling mistakes.",
+      "terms": [
+        {
+          "zh": "微调数据",
+          "en": "fine-tune data",
+          "hook": "If they say this, they mean labeled chat examples used to continue training."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "watch",
+      "titleEn": "Prove it worked",
+      "bodyEn": "Compare base + plain instruction, base + best prompt, and the fine-tuned model on the same held-out set. Train loss down but eval loss up means overfitting — stop early, lower LR, or add data. Also spot-check general questions for catastrophic forgetting. Change one hyperparameter at a time. Honest limit: a pretty training curve without a held-out comparison is not proof.",
+      "terms": [
+        {
+          "zh": "过拟合",
+          "en": "overfitting",
+          "hook": "If they say this, they mean train loss falls while eval loss rises."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Good versus bad",
+      "bodyEn": "Pick one good fine-tune use and one bad one. Style and format belong in weights; changing facts belong in RAG.",
+      "prompt": "Which pair matches this chapter: one good fine-tune use-case and one bad one?",
+      "choices": [
+        "Good: teach a strict company output style the prompt cannot hold — Bad: inject changing price facts (use RAG)",
+        "Good: store tomorrow’s prices in weights — Bad: improve a prompt",
+        "Good: replace retrieval entirely — Bad: train any adapter",
+        "Good: full Adam update of all 7B weights on a laptop — Bad: LoRA"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Why B is zero",
+      "bodyEn": "Check LoRA initialization. B at zero keeps the model identical to the base before training moves it.",
+      "prompt": "Why does LoRA initialize B to zero?",
+      "choices": [
+        "So BA = 0 at step 0 and the model behaves exactly like the original before training moves it",
+        "So A never trains and only B updates",
+        "So merging is forbidden and adapters must stay separate forever",
+        "So rank must equal alpha at every step"
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "id": "05",
+  "index": 5,
+  "part": 1,
+  "partTitleEn": "Tonight 18:00",
+  "titleEn": "Questions to ask",
+  "titleSource": "Questions to ask",
+  "sourcePages": "",
+  "when": "Today 18:00",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "interview",
+      "titleEn": "Q1 · Daily work",
+      "bodyEn": "Mandatory if time is short. Listen for calendar, notes, department liaison, or travel. That shapes whether evenings fit.",
+      "mandarin": "这个助理，一天里主要是管老板的日历、写纪要、对接部门，还是跟着出差？"
+    },
+    {
+      "id": "s2",
+      "kind": "interview",
+      "titleEn": "Q2 · Who you report to",
+      "bodyEn": "Mandatory if time is short. Listen whether you report to 丁先生 or the boss. Ask how to address the boss. Ask if 丁先生 is hiring only or your future manager.",
+      "mandarin": "我是向您汇报，还是向老板本人？老板怎么称呼？您这边是招聘，还是我以后的直接上级？"
+    },
+    {
+      "id": "s3",
+      "kind": "interview",
+      "titleEn": "Q3 · Daytime vs evenings",
+      "bodyEn": "Mandatory if time is short. Listen if daytime office is required. Ask if evenings and weekends are occasional or fixed weekly. Ask about overtime.",
+      "mandarin": "是不是要求白天坐班？晚上和周末是偶尔，还是每周固定？加班多不多？"
+    },
+    {
+      "id": "s4",
+      "kind": "interview",
+      "titleEn": "Q4 · Pay range meaning",
+      "bodyEn": "Mandatory if time is short. Listen whether 8–12K is daytime full-time. Ask probation length and how base vs performance split.",
+      "mandarin": "这个范围是白天全职吗？试用期多久？底薪和绩效怎么分？"
+    },
+    {
+      "id": "s5",
+      "kind": "interview",
+      "titleEn": "Q5 · Address today",
+      "bodyEn": "Confirm place and time. From Zijingang. Do not invent commute minutes.",
+      "mandarin": "地址确认：杭州市余杭区洋帆中心1幢21楼，今天 18:00，从紫金港过来。"
+    },
+    {
+      "id": "s6",
+      "kind": "interview",
+      "titleEn": "Q6 · Real title",
+      "bodyEn": "Title is 总办秘书. Listen whether the real work is secretary, admin, or the boss’s project assistant.",
+      "mandarin": "岗位名叫总办秘书。实际是秘书、行政，还是老板的项目助理？"
+    },
+    {
+      "id": "s7",
+      "kind": "interview",
+      "titleEn": "Q7 · Overseas",
+      "bodyEn": "Ask where overseas work is now, or if still preparing. Indonesian and English can help. Do not assume Indonesia business already exists.",
+      "mandarin": "海外现在在哪些国家？还是还在准备？印尼语和英语可以帮忙，但不假设已经有印尼业务。"
+    },
+    {
+      "id": "s8",
+      "kind": "interview",
+      "titleEn": "Q8 · Next step",
+      "bodyEn": "Ask if you meet the boss next, and roughly when there is a result.",
+      "mandarin": "今天之后，是再见老板本人吗？大概什么时候有结果？"
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "If main work does not fit",
+      "bodyEn": "If they say the main work is daytime office, private life, chops, or government reception, say this and do not promise first.",
+      "mandarin": "这部分我和现在的课、也和我做过的事对不上。我不先答应。"
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Must-ask check",
+      "bodyEn": "If time is short, the first four questions are mandatory.",
+      "prompt": "If time is short, which four questions come first?",
+      "choices": [
+        "Daily work; who you report to; daytime vs evenings; whether pay range is daytime full-time",
+        "Patent count; funding; commute minutes; visa type",
+        "Boss private finance; chops; government reception; AI rebuild",
+        "Only overseas offices and alumni competition letters"
+      ],
+      "answer": 0
+    }
+  ]
+}

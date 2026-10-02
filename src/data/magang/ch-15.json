@@ -1,0 +1,272 @@
+{
+  "id": "15",
+  "index": 15,
+  "part": 3,
+  "partTitleEn": "Build something with a model",
+  "titleEn": "Serving, cost, and China's model map",
+  "titleSource": "Serving, biaya, dan peta model China",
+  "sourcePages": "61-63",
+  "when": "Week 4, day 24",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Prefill versus decode",
+      "bodyEn": "Users feel time to first token and tokens per second while the answer writes. Prefill reads the whole prompt in parallel and is limited by compute. Decode writes one token at a time and must read weights and the KV cache, so it is limited by memory bandwidth. Interviews ask about 推理优化 using these two stages. Honest limit: optimizing the wrong stage wastes weeks — measure TTFT and tokens per second separately.",
+      "terms": [
+        {
+          "zh": "推理优化",
+          "en": "inference optimization",
+          "hook": "If they say this, they mean make serving faster or cheaper."
+        },
+        {
+          "zh": "首字延迟",
+          "en": "TTFT",
+          "hook": "If they say this, they mean time until the first output token appears."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "KV cache",
+      "bodyEn": "The KV cache stores prior keys and values so they are not recomputed each decode step. Without it, every new token would redo attention over the whole prompt. Learn the name and one sentence from Chapter 6 and reuse it here. Interviews treat KV cache as table stakes for 推理优化. Honest limit: a cache still consumes GPU memory — long contexts can fill the card.",
+      "terms": [
+        {
+          "zh": "KV缓存",
+          "en": "KV cache",
+          "hook": "If they say this, they mean reuse prior keys and values while decoding."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Continuous batching",
+      "bodyEn": "Continuous batching lets requests enter and leave the batch every step without waiting for the slowest. That is a main reason vLLM serves many users well. PagedAttention stores the KV cache in fixed-size blocks so less memory is wasted and more users fit. Together they raise throughput on one GPU. Honest limit: naming the tricks without measuring users per GPU is theater.",
+      "terms": [
+        {
+          "zh": "连续批处理",
+          "en": "continuous batching",
+          "hook": "If they say this, they mean requests join and leave the batch every step."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "Quantization",
+      "bodyEn": "Quantization stores weights in fewer bits, often from 16 down to 8 or 4. GPTQ and AWQ are common methods; GGUF is a file format used with llama.cpp. Fewer bits cut memory and bandwidth, which helps decode. Always recheck quality on your real test set after quantizing. Honest limit: aggressive 4-bit can pass demos and fail your faithfulness checks.",
+      "terms": [
+        {
+          "zh": "量化",
+          "en": "quantization",
+          "hook": "If they say this, they mean store weights in fewer bits to cut memory and cost."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "API versus self-host",
+      "bodyEn": "The default path is to call an API — Bailian, Volcano Engine, DeepSeek, and others — so you skip running a server and get newest models. Self-host open weights with vLLM or SGLang when data must stay in-house or volume is huge. Local Ollama fits experiments, not many concurrent users. Honest limit: self-hosting shifts cost to GPUs and on-call work; it is not automatically cheaper.",
+      "terms": [
+        {
+          "zh": "百炼",
+          "en": "Bailian",
+          "hook": "If they say this, they mean Alibaba Cloud’s hosted model API."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Serving cost levers",
+      "bodyEn": "Use the smallest model that still passes your test set — savings are often five to twenty times. Cut calls per task, shorten prompts, retrieve fewer chunks, and cap output length. Cache repeated prefixes and batch jobs that can wait. These business cuts sit on top of serving tricks; interviews want both layers under 降本. Honest limit: buying more GPUs first is usually the wrong first move.",
+      "terms": [
+        {
+          "zh": "降本",
+          "en": "cut cost",
+          "hook": "If they say this, they mean lower spend while quality still passes the test set."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "China model families",
+      "bodyEn": "Know the family name and one fact: Alibaba Qwen (open + Bailian), DeepSeek (cheap MoE API, R1 reasoning), ByteDance Doubao via Volcano, Baidu ERNIE, Tencent Hunyuan, Zhipu GLM, Moonshot Kimi for long context. Refresh the current version string before an interview. Project 5 often builds on Qwen. Honest limit: memorizing every sub-version is useless — map company → family → one strength.",
+      "terms": [
+        {
+          "zh": "通义千问",
+          "en": "Qwen",
+          "hook": "If they say this, they mean Alibaba’s main model family."
+        },
+        {
+          "zh": "深度求索",
+          "en": "DeepSeek",
+          "hook": "If they say this, they mean Hangzhou lab known for cheap MoE APIs and R1."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Why decode bandwidth",
+      "bodyEn": "Check why decoding is memory-bound. Prefill is compute-bound; decode is not the same stage.",
+      "prompt": "Why is decoding limited by memory bandwidth, not arithmetic?",
+      "choices": [
+        "For each new token the GPU must read all weights and the KV cache from memory — bandwidth, not raw math, is the bottleneck",
+        "Decode reads the whole prompt in parallel, so only FLOPs matter",
+        "Decode never touches the KV cache, so only disk I/O matters",
+        "Decode is identical to prefill, so both are always compute-bound"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "First three cost cuts",
+      "bodyEn": "Your support bot is too expensive. Check the earliest cost levers this chapter puts first before buying more GPUs.",
+      "prompt": "Your support bot is too expensive. Which three moves does this chapter put first?",
+      "choices": [
+        "Smallest model that still passes the test set; fewer calls per task; shorter prompts (and fewer retrieved chunks)",
+        "Always jump to self-hosted 80 GB GPUs first; ignore the test set; lengthen every prompt",
+        "Only switch to Track C Ascend kernels; skip model size and call count",
+        "Turn off KV cache, disable batching, and raise temperature to cut tokens"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Prefill versus decode",
+      "bodyEn": "Users feel time to first token and tokens per second while the answer writes. Prefill reads the whole prompt in parallel and is limited by compute. Decode writes one token at a time and must read weights and the KV cache, so it is limited by memory bandwidth. Interviews ask about 推理优化 using these two stages. Honest limit: optimizing the wrong stage wastes weeks — measure TTFT and tokens per second separately.",
+      "terms": [
+        {
+          "zh": "推理优化",
+          "en": "inference optimization",
+          "hook": "If they say this, they mean make serving faster or cheaper."
+        },
+        {
+          "zh": "首字延迟",
+          "en": "TTFT",
+          "hook": "If they say this, they mean time until the first output token appears."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "KV cache",
+      "bodyEn": "The KV cache stores prior keys and values so they are not recomputed each decode step. Without it, every new token would redo attention over the whole prompt. Learn the name and one sentence from Chapter 6 and reuse it here. Interviews treat KV cache as table stakes for 推理优化. Honest limit: a cache still consumes GPU memory — long contexts can fill the card.",
+      "terms": [
+        {
+          "zh": "KV缓存",
+          "en": "KV cache",
+          "hook": "If they say this, they mean reuse prior keys and values while decoding."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Continuous batching",
+      "bodyEn": "Continuous batching lets requests enter and leave the batch every step without waiting for the slowest. That is a main reason vLLM serves many users well. PagedAttention stores the KV cache in fixed-size blocks so less memory is wasted and more users fit. Together they raise throughput on one GPU. Honest limit: naming the tricks without measuring users per GPU is theater.",
+      "terms": [
+        {
+          "zh": "连续批处理",
+          "en": "continuous batching",
+          "hook": "If they say this, they mean requests join and leave the batch every step."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "Quantization",
+      "bodyEn": "Quantization stores weights in fewer bits, often from 16 down to 8 or 4. GPTQ and AWQ are common methods; GGUF is a file format used with llama.cpp. Fewer bits cut memory and bandwidth, which helps decode. Always recheck quality on your real test set after quantizing. Honest limit: aggressive 4-bit can pass demos and fail your faithfulness checks.",
+      "terms": [
+        {
+          "zh": "量化",
+          "en": "quantization",
+          "hook": "If they say this, they mean store weights in fewer bits to cut memory and cost."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "API versus self-host",
+      "bodyEn": "The default path is to call an API — Bailian, Volcano Engine, DeepSeek, and others — so you skip running a server and get newest models. Self-host open weights with vLLM or SGLang when data must stay in-house or volume is huge. Local Ollama fits experiments, not many concurrent users. Honest limit: self-hosting shifts cost to GPUs and on-call work; it is not automatically cheaper.",
+      "terms": [
+        {
+          "zh": "百炼",
+          "en": "Bailian",
+          "hook": "If they say this, they mean Alibaba Cloud’s hosted model API."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Serving cost levers",
+      "bodyEn": "Use the smallest model that still passes your test set — savings are often five to twenty times. Cut calls per task, shorten prompts, retrieve fewer chunks, and cap output length. Cache repeated prefixes and batch jobs that can wait. These business cuts sit on top of serving tricks; interviews want both layers under 降本. Honest limit: buying more GPUs first is usually the wrong first move.",
+      "terms": [
+        {
+          "zh": "降本",
+          "en": "cut cost",
+          "hook": "If they say this, they mean lower spend while quality still passes the test set."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "China model families",
+      "bodyEn": "Know the family name and one fact: Alibaba Qwen (open + Bailian), DeepSeek (cheap MoE API, R1 reasoning), ByteDance Doubao via Volcano, Baidu ERNIE, Tencent Hunyuan, Zhipu GLM, Moonshot Kimi for long context. Refresh the current version string before an interview. Project 5 often builds on Qwen. Honest limit: memorizing every sub-version is useless — map company → family → one strength.",
+      "terms": [
+        {
+          "zh": "通义千问",
+          "en": "Qwen",
+          "hook": "If they say this, they mean Alibaba’s main model family."
+        },
+        {
+          "zh": "深度求索",
+          "en": "DeepSeek",
+          "hook": "If they say this, they mean Hangzhou lab known for cheap MoE APIs and R1."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Why decode bandwidth",
+      "bodyEn": "Check why decoding is memory-bound. Prefill is compute-bound; decode is not the same stage.",
+      "prompt": "Why is decoding limited by memory bandwidth, not arithmetic?",
+      "choices": [
+        "For each new token the GPU must read all weights and the KV cache from memory — bandwidth, not raw math, is the bottleneck",
+        "Decode reads the whole prompt in parallel, so only FLOPs matter",
+        "Decode never touches the KV cache, so only disk I/O matters",
+        "Decode is identical to prefill, so both are always compute-bound"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "First three cost cuts",
+      "bodyEn": "Your support bot is too expensive. Check the earliest cost levers this chapter puts first before buying more GPUs.",
+      "prompt": "Your support bot is too expensive. Which three moves does this chapter put first?",
+      "choices": [
+        "Smallest model that still passes the test set; fewer calls per task; shorter prompts (and fewer retrieved chunks)",
+        "Always jump to self-hosted 80 GB GPUs first; ignore the test set; lengthen every prompt",
+        "Only switch to Track C Ascend kernels; skip model size and call count",
+        "Turn off KV cache, disable batching, and raise temperature to cut tokens"
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "id": "07",
+  "index": 7,
+  "part": 1,
+  "partTitleEn": "Tonight 18:00",
+  "titleEn": "Do not invent",
+  "titleSource": "Do not invent",
+  "sourcePages": "",
+  "when": "Today 18:00",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "remember",
+      "titleEn": "No commute fiction",
+      "bodyEn": "Do not invent a subway station. Do not invent commute minutes. Liangzhu is not next to Zijingang. Leave travel time unquoted.",
+      "mandarin": "地铁站和通勤分钟我都不编。良渚不挨着紫金港。通勤时间我不报。"
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Company name only",
+      "bodyEn": "Company name is 枫翎集团. Not 枫鱼. Not 顺坤. Stick to the post.",
+      "mandarin": "公司名是枫翎集团，不是枫鱼，也不是顺坤。"
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "No patent or funding theater",
+      "bodyEn": "Do not invent patent counts, test-report counts, awards, FDA, funding rounds, amounts, or investors. If unverified, do not quote.",
+      "mandarin": "专利数量、检测报告数量、奖项、FDA、融资轮次、金额和投资人，我都不编。没核对的不报。"
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "No boss you have not met",
+      "bodyEn": "Do not invent a boss name you have not met. Do not invent headcount. Do not invent your future manager’s name.",
+      "mandarin": "没见过的老板名字我不报。人数我不报。未来上级的名字我也不猜。"
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "No visa guess",
+      "bodyEn": "Do not invent visa type. Do not invent whether you can work full-time. Do not invent social insurance answers. Check documents later.",
+      "mandarin": "签证种类、能不能全职、社保，我今天都不猜。回去核对证件再说。"
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "No salary outside the post",
+      "bodyEn": "Do not invent any salary number not on the post. Do not say 15K. Do not say 8K just to please them. Stay with confirming what 8–12K means.",
+      "mandarin": "帖子以外的薪资数字我不报。不说15K，也不为了讨好说8K。只先确认8到12K是什么范围。"
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "No fake finished work",
+      "bodyEn": "Do not say seven interviews are done. Do not say Jev is already live. Do not treat Integra 10 as staff. Do not invent WeUseAI revenue or a secretary team.",
+      "mandarin": "不说已经做完七家访谈。不说 Jev 已经上线。Integra 的10是客户不是人数。WeUseAI 营收和秘书团队我都不编。"
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "No language or China 总办 fiction",
+      "bodyEn": "Do not claim Chinese fluent or native. Do not claim you have done 总办, official documents, PR copy, or government reception in China.",
+      "mandarin": "我不说中文流利或母语。我不说在中国做过总办、公文、公关稿或政府接待。"
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Not AES R&D today",
+      "bodyEn": "You are not coming to do AES R&D or rebuild their company AI system. Today’s role is assistant.",
+      "mandarin": "今天不是来做 AES 研发，也不是来改他们公司的 AI 系统。今天应的是助理。"
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Ban check",
+      "bodyEn": "Recall what you must not invent.",
+      "prompt": "Which claim must you refuse today?",
+      "choices": [
+        "Invented commute minutes, patent counts, funding amounts, visa type, or a salary not on the post",
+        "Saying company on the post is 枫翎集团",
+        "Saying you are near Zijingang and can do evenings or weekends",
+        "Asking what the assistant does each day"
+      ],
+      "answer": 0
+    }
+  ]
+}

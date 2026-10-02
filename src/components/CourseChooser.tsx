@@ -1,7 +1,7 @@
 import { COURSE_META, COURSE_ORDER, useCourse, type CourseId } from '../lib/course'
 import '../styles/course-gate.css'
 
-/** Opening page: only the three courses. The path stays behind this until one is chosen. */
+/** Opening page: only the course cards. The path stays behind this until one is chosen. */
 export function CourseGate() {
   const { setCourse } = useCourse()
   return (

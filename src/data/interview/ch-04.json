@@ -1,0 +1,103 @@
+{
+  "id": "04",
+  "index": 4,
+  "part": 1,
+  "partTitleEn": "Tonight 18:00",
+  "titleEn": "Short answers",
+  "titleSource": "Short answers",
+  "sourcePages": "",
+  "when": "Today 18:00",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "interview",
+      "titleEn": "Availability",
+      "bodyEn": "Answer, then stop. Weekday evenings and weekends. Today 18:00 works. Daytime has MBA class. Fixed evenings wait until you check this term’s timetable.",
+      "mandarin": "工作日晚上，还有周末。今天这个 18:00 可以。白天有 MBA 的课。固定哪几天晚上，对完这学期课表再回复。"
+    },
+    {
+      "id": "s2",
+      "kind": "interview",
+      "titleEn": "Where you live",
+      "bodyEn": "Near ZJU Zijingang. Do not name a specific compound first. Interview place is 杭州市余杭区洋帆中心1幢21楼.",
+      "mandarin": "浙大紫金港附近。具体小区不必先报。面试在杭州市余杭区洋帆中心1幢21楼。"
+    },
+    {
+      "id": "s3",
+      "kind": "interview",
+      "titleEn": "Why this, not tech",
+      "bodyEn": "You did not rewrite the resume into a secretary resume. They want someone who helps the boss with company management. You did ops-director assistant work in Indonesia, so you came to listen. Fit means assistant work; no fit means say so today.",
+      "mandarin": "我没有把简历改成秘书简历。你们要的是帮老板做公司管理的人，我在印尼做过运营总监助理，所以来听。合适就做助理的事。不合适今天说清楚。"
+    },
+    {
+      "id": "s4",
+      "kind": "interview",
+      "titleEn": "8–12K on the post",
+      "bodyEn": "The post says 8 to 12K. First confirm whether that is daytime full-time. If evenings and weekends, learn weekly hours first, then talk numbers. Do not invent a new expected salary today.",
+      "mandarin": "帖子上是 8 到 12K。先确认是不是白天全职的范围。如果是晚上和周末，先知道每周大概多少小时，再谈数字。今天不报新的期望薪资。"
+    },
+    {
+      "id": "s5",
+      "kind": "interview",
+      "titleEn": "Start date",
+      "bodyEn": "Do not lock a start date today. If it fits, check the timetable this week, then give a date you can start.",
+      "mandarin": "今天不定日子。合适的话，这周对完课表再给一个可以开始的日期。"
+    },
+    {
+      "id": "s6",
+      "kind": "interview",
+      "titleEn": "Chinese level",
+      "bodyEn": "Work communication is ok. Chat, notes, simple email ok. Formal official documents are not strong. English writing ok. Indonesian is native. If they speak fast, ask them to repeat.",
+      "mandarin": "工作沟通可以。聊天、纪要、简单邮件可以。正式公文不熟练。英文可以写，印尼文是母语。说快时请再说一遍。"
+    },
+    {
+      "id": "s7",
+      "kind": "interview",
+      "titleEn": "What you will do",
+      "bodyEn": "Calendar and reminders, meeting notes, follow-up, one-page pre-meeting brief, Chinese-English materials, Indonesian and English external drafts.",
+      "mandarin": "日历和提醒、会议纪要、待办跟进、会前一页纸、中英材料、印尼语和英语对外沟通草稿。"
+    },
+    {
+      "id": "s8",
+      "kind": "interview",
+      "titleEn": "What you will not promise",
+      "bodyEn": "Boss private life, family matters, private finance. Company chops, contract signing, corporate payments. China government and official-document reception. If that is the main work, ask them to say so directly.",
+      "mandarin": "老板私人生活、家里的事、私人财务；公章、合同签字、对公付款；中国政府和公文接待。如果这是主要工作，请直接告诉我。"
+    },
+    {
+      "id": "s9",
+      "kind": "interview",
+      "titleEn": "Not here to build their AI",
+      "bodyEn": "Not today’s role. Today you applied as assistant. AI is a way to make materials faster, not a pitch to rebuild their product.",
+      "mandarin": "不是今天这个岗位。今天应的是助理。AI 是把材料做快的方法，不是来改你们的产品。"
+    },
+    {
+      "id": "s10",
+      "kind": "interview",
+      "titleEn": "Why resume says internship",
+      "bodyEn": "That resume is for AI application internships. This 总办 conversation came later. Full-time MBA: do not promise daytime full-time first.",
+      "mandarin": "那份简历是给 AI 应用实习用的。总办这个对话是后来的。全日制 MBA，白天全职不能先答应。"
+    },
+    {
+      "id": "s11",
+      "kind": "interview",
+      "titleEn": "Student status and papers",
+      "bodyEn": "Resume only says Indonesian nationality and full-time MBA. Do not guess visa type. Check documents later. Do not lock full-time onboarding today.",
+      "mandarin": "我按学生身份能做的范围，回去核对证件后再确认。今天我不定全职入职。"
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Pay check",
+      "bodyEn": "Recall the honest pay line. No invented new salary number today.",
+      "prompt": "What do you say about 8–12K today?",
+      "choices": [
+        "Confirm if daytime full-time; if evenings/weekends learn hours first; no new expected salary today",
+        "Say 15K to sound senior",
+        "Say 8K to please them and lock it",
+        "Ignore hours and invent a monthly package"
+      ],
+      "answer": 0
+    }
+  ]
+}

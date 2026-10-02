@@ -1,0 +1,308 @@
+{
+  "id": "22",
+  "index": 22,
+  "part": 4,
+  "partTitleEn": "Six projects",
+  "titleEn": "Project 6 · Content sprint or competitor analysis",
+  "titleSource": "Project 6 · Sprint konten atau analisis kompetitor",
+  "sourcePages": "85-86",
+  "when": "Week 3, days 16–21, alongside Project 4. About 8 hours.",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Pick one version",
+      "bodyEn": "Project 6 is the Track B project. You choose one version, not both: a seven-day AI content sprint with real numbers, or a scored comparison of two AI products on twenty real questions. Version A maps to content ops roles. Version B maps to product roles that ask for competitor analysis. Plan about eight hours in week 3, days 16–21, alongside Project 4. One finished version on the CV beats two unfinished drafts.",
+      "terms": [
+        {
+          "zh": "AIGC",
+          "en": "AI-generated content",
+          "hook": "If they say AIGC, they mean content made with AI tools."
+        },
+        {
+          "zh": "竞品分析",
+          "en": "competitor analysis",
+          "hook": "If they say this, they mean same questions, same scoring."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "idea",
+      "titleEn": "Content sprint",
+      "bodyEn": "Version A is for content roles. Own one account, write a half-page brief, make seven posts with the AIGC pipeline, and publish across seven days. Turn on the platform’s AI-content label every time. Start a data sheet from day one: views, completion rate, engagement, follows, and saves. End with one imperfect hook test and a written review using the Chapter 24 template.",
+      "terms": [
+        {
+          "zh": "完播率",
+          "en": "completion rate",
+          "hook": "If they ask completion, it is finishes divided by views."
+        },
+        {
+          "zh": "复盘",
+          "en": "ops review",
+          "hook": "If they say this, they want numbers, what worked, what next."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Seven posts live",
+      "bodyEn": "Pick one account you can post to — WeUseAI Instagram, or a new Xiaohongshu or Douyin account. Write one goal line, one success metric, and a half-page brief: one product, one audience, one message, one metric. Make seven posts with the AIGC pipeline and publish one per day. For the hook test, try two hooks for the same idea on two different days, then compare completion rate. Say in the review that this is not a clean experiment, and why.",
+      "terms": [
+        {
+          "zh": "小红书",
+          "en": "Xiaohongshu",
+          "hook": "If they name this app, cover and title decide the click."
+        },
+        {
+          "zh": "抖音",
+          "en": "Douyin",
+          "hook": "If they name this app, the first three seconds decide completion."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "Competitor score",
+      "bodyEn": "Version B is for product roles. Score two AI products the same way Project 1 scores answers. Examples include finance assistants or health assistants in the same company’s field. Collect twenty real questions retail users usually ask — and write them before you try either product. Never invent scores after peeking at answers. Same questions and same scoring turn opinion into analysis.",
+      "terms": [
+        {
+          "zh": "竞品分析",
+          "en": "competitor analysis",
+          "hook": "If they ask for this, show a scored side-by-side page."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Four product checks",
+      "bodyEn": "Write scoring rules with four checks: facts correct; sources shown; refuses what must be refused such as buy/sell advice or diagnosis; and usable by a non-expert. Ask all twenty questions to both products, screenshot, and score. Write one page with scores side by side, three examples where results differed, and one change you would make to that company’s own product. This is analysis, not vibes.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal project",
+          "hook": "If they scan your CV, this is where Project 6 goes."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "watch",
+      "titleEn": "Thin data honesty",
+      "bodyEn": "Seven days from a small account is thin — report it as early data with real numbers. Never round up, and never mix in numbers from salda.id. Fill the CV personal-project line for the version you finished, real numbers only. Content sprint uses views and completion rate; competitor analysis uses the four-check scores. An honest thin review beats a padded story in an ops interview.",
+      "terms": [
+        {
+          "zh": "复盘",
+          "en": "ops review",
+          "hook": "If they ask for a review, bring real numbers, not vibes."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "How to talk about it",
+      "bodyEn": "In interview, name which version you shipped and why it fits the role. For content, walk brief → seven posts → one metric that moved → one next change. For product, walk twenty questions → four checks → one product change you would ship. Keep the story under ninety seconds. Offer the data sheet or one-page score table if they want proof.",
+      "terms": [
+        {
+          "zh": "运营",
+          "en": "operations",
+          "hook": "If they say this, they mean grow what already shipped."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "idea",
+      "titleEn": "Hours and mapping",
+      "bodyEn": "Budget about eight hours alongside Project 4 in week 3. Version A maps to Alibaba AIGC ops and overseas short-drama ops posts. Version B maps to Ant Group and Tonghuashun product posts that ask for competitor analysis. Do not force both tracks into one CV line. Pick the version that matches the job you want this month.",
+      "terms": [
+        {
+          "zh": "AIGC 运营",
+          "en": "AIGC operations",
+          "hook": "If the title says this, Version A is the matching proof."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "How many versions",
+      "bodyEn": "Project 6 is one finished version on the CV, not both tracks forced together.",
+      "prompt": "How should you approach the two versions of Project 6?",
+      "choices": [
+        "You must finish both A and B before listing it on a CV",
+        "Choose one version: seven-day content sprint or scored competitor analysis",
+        "Version B replaces Project 1 entirely",
+        "Only Version A counts for product roles at Ant Group"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Version B four checks",
+      "bodyEn": "Version B scores every answer with the same four product checks.",
+      "prompt": "Which four checks does Version B use to score each product answer?",
+      "choices": [
+        "json, intent, escalate, indonesian",
+        "Facts correct, sources shown, refuses what must be refused, usable by a non-expert",
+        "hit@5, MRR, precision, recall",
+        "views, completion rate, engagement, saves"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Pick one version",
+      "bodyEn": "Project 6 is the Track B project. You choose one version, not both: a seven-day AI content sprint with real numbers, or a scored comparison of two AI products on twenty real questions. Version A maps to content ops roles. Version B maps to product roles that ask for competitor analysis. Plan about eight hours in week 3, days 16–21, alongside Project 4. One finished version on the CV beats two unfinished drafts.",
+      "terms": [
+        {
+          "zh": "AIGC",
+          "en": "AI-generated content",
+          "hook": "If they say AIGC, they mean content made with AI tools."
+        },
+        {
+          "zh": "竞品分析",
+          "en": "competitor analysis",
+          "hook": "If they say this, they mean same questions, same scoring."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "idea",
+      "titleEn": "Content sprint",
+      "bodyEn": "Version A is for content roles. Own one account, write a half-page brief, make seven posts with the AIGC pipeline, and publish across seven days. Turn on the platform’s AI-content label every time. Start a data sheet from day one: views, completion rate, engagement, follows, and saves. End with one imperfect hook test and a written review using the Chapter 24 template.",
+      "terms": [
+        {
+          "zh": "完播率",
+          "en": "completion rate",
+          "hook": "If they ask completion, it is finishes divided by views."
+        },
+        {
+          "zh": "复盘",
+          "en": "ops review",
+          "hook": "If they say this, they want numbers, what worked, what next."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Seven posts live",
+      "bodyEn": "Pick one account you can post to — WeUseAI Instagram, or a new Xiaohongshu or Douyin account. Write one goal line, one success metric, and a half-page brief: one product, one audience, one message, one metric. Make seven posts with the AIGC pipeline and publish one per day. For the hook test, try two hooks for the same idea on two different days, then compare completion rate. Say in the review that this is not a clean experiment, and why.",
+      "terms": [
+        {
+          "zh": "小红书",
+          "en": "Xiaohongshu",
+          "hook": "If they name this app, cover and title decide the click."
+        },
+        {
+          "zh": "抖音",
+          "en": "Douyin",
+          "hook": "If they name this app, the first three seconds decide completion."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "Competitor score",
+      "bodyEn": "Version B is for product roles. Score two AI products the same way Project 1 scores answers. Examples include finance assistants or health assistants in the same company’s field. Collect twenty real questions retail users usually ask — and write them before you try either product. Never invent scores after peeking at answers. Same questions and same scoring turn opinion into analysis.",
+      "terms": [
+        {
+          "zh": "竞品分析",
+          "en": "competitor analysis",
+          "hook": "If they ask for this, show a scored side-by-side page."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Four product checks",
+      "bodyEn": "Write scoring rules with four checks: facts correct; sources shown; refuses what must be refused such as buy/sell advice or diagnosis; and usable by a non-expert. Ask all twenty questions to both products, screenshot, and score. Write one page with scores side by side, three examples where results differed, and one change you would make to that company’s own product. This is analysis, not vibes.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal project",
+          "hook": "If they scan your CV, this is where Project 6 goes."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "watch",
+      "titleEn": "Thin data honesty",
+      "bodyEn": "Seven days from a small account is thin — report it as early data with real numbers. Never round up, and never mix in numbers from salda.id. Fill the CV personal-project line for the version you finished, real numbers only. Content sprint uses views and completion rate; competitor analysis uses the four-check scores. An honest thin review beats a padded story in an ops interview.",
+      "terms": [
+        {
+          "zh": "复盘",
+          "en": "ops review",
+          "hook": "If they ask for a review, bring real numbers, not vibes."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "How to talk about it",
+      "bodyEn": "In interview, name which version you shipped and why it fits the role. For content, walk brief → seven posts → one metric that moved → one next change. For product, walk twenty questions → four checks → one product change you would ship. Keep the story under ninety seconds. Offer the data sheet or one-page score table if they want proof.",
+      "terms": [
+        {
+          "zh": "运营",
+          "en": "operations",
+          "hook": "If they say this, they mean grow what already shipped."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "idea",
+      "titleEn": "Hours and mapping",
+      "bodyEn": "Budget about eight hours alongside Project 4 in week 3. Version A maps to Alibaba AIGC ops and overseas short-drama ops posts. Version B maps to Ant Group and Tonghuashun product posts that ask for competitor analysis. Do not force both tracks into one CV line. Pick the version that matches the job you want this month.",
+      "terms": [
+        {
+          "zh": "AIGC 运营",
+          "en": "AIGC operations",
+          "hook": "If the title says this, Version A is the matching proof."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "How many versions",
+      "bodyEn": "Project 6 is one finished version on the CV, not both tracks forced together.",
+      "prompt": "How should you approach the two versions of Project 6?",
+      "choices": [
+        "You must finish both A and B before listing it on a CV",
+        "Choose one version: seven-day content sprint or scored competitor analysis",
+        "Version B replaces Project 1 entirely",
+        "Only Version A counts for product roles at Ant Group"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Version B four checks",
+      "bodyEn": "Version B scores every answer with the same four product checks.",
+      "prompt": "Which four checks does Version B use to score each product answer?",
+      "choices": [
+        "json, intent, escalate, indonesian",
+        "Facts correct, sources shown, refuses what must be refused, usable by a non-expert",
+        "hit@5, MRR, precision, recall",
+        "views, completion rate, engagement, saves"
+      ],
+      "answer": 1
+    }
+  ]
+}

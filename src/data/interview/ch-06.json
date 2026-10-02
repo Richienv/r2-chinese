@@ -1,0 +1,103 @@
+{
+  "id": "06",
+  "index": 6,
+  "part": 1,
+  "partTitleEn": "Tonight 18:00",
+  "titleEn": "Facts if asked",
+  "titleSource": "Facts if asked",
+  "sourcePages": "",
+  "when": "Today 18:00",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "remember",
+      "titleEn": "Thread and role",
+      "bodyEn": "Counterpart is 丁先生, 总监. He may not be the boss you would assist. Posting company 枫翎集团. Role 总办秘书, full-time, Hangzhou, posted pay 8–12K. They want an assistant helping the boss with company management. Resume attachment was sent and viewed; the chat does not say which PDF.",
+      "mandarin": "丁先生是总监。他不一定是以后要协助的老板本人。帖子上公司是枫翎集团，岗位总办秘书，全职，杭州，8到12K。他们要的是帮老板做公司管理的助理。简历附件发过也看过，聊天没写是哪一份 PDF。"
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Identity",
+      "bodyEn": "瑞奇 / Richie Kid Novell, Indonesian, Hangzhou. Email kidnovell.richie@gmail.com. Phone +86 172 8071 7706. GitHub github.com/Richienv.",
+      "mandarin": "我是瑞奇，Richie Kid Novell，印度尼西亚人，在杭州。邮箱 kidnovell.richie@gmail.com。电话 +86 172 8071 7706。GitHub 是 github.com/Richienv。"
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "ZJU MBA",
+      "bodyEn": "ZJU School of Management Global MBA, full-time, English, Sep 2025–Jun 2027. Weighted average 89.21/100. Two-page resume also has 《商业分析前沿与智能决策》97/100. Say scores only if they ask.",
+      "mandarin": "浙大管理学院全球 MBA，全日制，英文授课，2025年9月到2027年6月。加权平均 89.21。如果他们问成绩，两页简历上还有《商业分析前沿与智能决策》97分。"
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Taylor’s undergrad",
+      "bodyEn": "Taylor's University, BSc Computer Science (Honours), data science, first-class, Sep 2020–Jun 2024, CGPA 3.6/4.0, six dean's lists.",
+      "mandarin": "本科是马来西亚泰莱大学计算机荣誉学士，数据科学方向，一等荣誉，2020年9月到2024年6月，CGPA 3.6，六次院长名单。"
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Thesis design",
+      "bodyEn": "Title 印尼家族企业数智化转型能力建模与提升策略. Supervisor 王重鸣教授. Proposal done Sep 2026. Framework is his five-force management model. Design is at least seven China-Indonesia family firms, behavioral-event interviews, two-stage coding, BARS. Design, not a finished interview list.",
+      "mandarin": "论文题目是印尼家族企业数智化转型能力建模与提升策略。导师王重鸣教授。开题已在2026年9月完成。框架是他的五力管理模型。设计是至少七家中印尼家族企业、行为事件访谈、两阶段编码和 BARS。这是设计，不是已经做完的访谈清单。"
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Karunia order",
+      "bodyEn": "Karunia 2023–2025 Balikpapan. Title 运营总监助理（公关）. Clients PT Kideco Jaya Agung, PT Ganda Alam Makmur, group suppliers. Helped the operations director talk with SANY Indonesia management about 25 wide-body trucks and 10 excavators; also XCMG and FAW dealers. Before that: IT and BD lead, ERP, attendance, then clients, negotiation, supply chain.",
+      "mandarin": "2023到2025在巴里巴潘 Karunia，运营总监助理（公关）。客户包括 Kideco、Ganda Alam 和集团供应商。协助运营总监与三一印尼谈过25台宽体车和10台挖掘机，也对接过徐工和一汽经销商。在那之前是 IT 和业务发展负责人，做过 ERP、考勤，再做客户、谈判和供应链。"
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Kambyan",
+      "bodyEn": "Kambyan Network Jun 2022–Mar 2023 Malaysia, database team lead intern. MiDAgS oil-palm drone project: tracking, analysis, visualization.",
+      "mandarin": "2022年6月到2023年3月在马来西亚 Kambyan Network 做数据库团队实习负责人。MiDAgS 油棕无人机项目，做跟踪、分析和可视化。"
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Integra",
+      "bodyEn": "Integra ERP and Copilot, 2025–now, independent. Indonesian textile SME. Modules: GL, invoicing, AR/AP, bank rec, inventory, purchasing, sales, production, outsourcing, HR. Commercialization led by a teammate. Software has 10 B2B customers — 10 is customers, not staff. Text-to-SQL: Indonesian, Chinese, English. Loose execution accuracy on a mock dev set 78.0% to 95.1% (39/41); unsafe or out-of-scope refused 9/9. Say the accuracy number only if they ask technical detail.",
+      "mandarin": "Integra ERP 和 Copilot，2025年到现在，独立做。印尼纺织中小企业。模块包括总账、开票、应收应付、银行对账、库存、采购、销售、生产、外协和人事。商业化由队友主导。软件有10个 B2B 客户，10是客户不是人数。技术细节只有他们问才说准确率。"
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Jev",
+      "bodyEn": "Jev, Sep 2026, personal prototype, SAP/Excel. Pilot not deployed. Desktop agent, 8 live runs found 8 defects. Do not say launched.",
+      "mandarin": "Jev 是2026年9月的个人原型，对着 SAP 和 Excel。试点没有上线。桌面代理跑过8次，发现8个缺陷。不要说已经上线。"
+    },
+    {
+      "id": "s10",
+      "kind": "remember",
+      "titleEn": "WeUseAI and Salda",
+      "bodyEn": "WeUseAI, founder, Hangzhou/Jakarta, weuseai.id. Do not quote revenue or customer count. Teacher assistant name Asisten Dosen. Seedance is the video workflow. TRO Creative / TroLive via WeUseAI, Jakarta remote, salda.id. Salda is a host-booking platform, eight steps.",
+      "mandarin": "WeUseAI 是我创办的，杭州和雅加达，weuseai.id。不报营收和客户数。助教产品叫 Asisten Dosen。Seedance 是视频工作流。TRO Creative / TroLive 通过 WeUseAI，雅加达远程，salda.id。Salda 是房东预订平台，八步流程。"
+    },
+    {
+      "id": "s11",
+      "kind": "remember",
+      "titleEn": "Languages and certs",
+      "bodyEn": "Indonesian native, English fluent, Chinese working. Certificates: Google Advanced Data Analytics Oct 2023; UIUC text retrieval Nov 2023. Do not open with the 158-page manual.",
+      "mandarin": "印尼语母语，英文流利，中文工作沟通。证书有 Google Advanced Data Analytics（2023年10月）和 UIUC 文本检索（2023年11月）。不要用一百多页手册开场。"
+    },
+    {
+      "id": "s12",
+      "kind": "check",
+      "titleEn": "Fact check",
+      "bodyEn": "Recall a safe fact frame with no invented numbers.",
+      "prompt": "Which line is safe if they ask who 丁先生 is?",
+      "choices": [
+        "丁先生 is 总监; he may not be the boss you assist; company on the post is 枫翎集团",
+        "He is definitely your future boss and the company has closed named funding rounds",
+        "You already finished seven firm interviews for the thesis",
+        "Integra’s 10 means staff headcount"
+      ],
+      "answer": 0
+    }
+  ]
+}

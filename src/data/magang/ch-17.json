@@ -1,0 +1,214 @@
+{
+  "id": "17",
+  "index": 17,
+  "part": 4,
+  "partTitleEn": "Six projects",
+  "titleEn": "Project 1 · Prompt evaluation sheet",
+  "titleSource": "Project 1 · Lembar evaluasi prompt",
+  "sourcePages": "68-71",
+  "when": "Week 1, days 5–7. About 8 hours.",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What this proves",
+      "bodyEn": "Project 1 proves you measure model output with automatic checks, not guesswork. You score three versions of a WeUseAI support prompt on thirty real messages. Five code checks decide each reply: json, intent, escalate, indonesian, and safe. Roles that care include 提示词设计 and 对话质检. Honest limit: pretty sample replies without a fixed score sheet will not survive an interview.",
+      "terms": [
+        {
+          "zh": "效果评估",
+          "en": "effect evaluation",
+          "hook": "If they say this, they mean score results with fixed checks, not vibes."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Shared project setup",
+      "bodyEn": "Create one repo, init git, and make a Python 3.12 venv — older Mac Pythons break later MCP work. Install the shared packages until every import works. Put LLM_BASE_URL, LLM_API_KEY, LLM_MODEL, and EMBED_MODEL in environment variables only. Route every project through one small chat helper so switching providers is four lines. Honest limit: keys in source files will get you rejected before your scores matter.",
+      "terms": [
+        {
+          "zh": "百炼",
+          "en": "Bailian",
+          "hook": "If they say this, they mean a Hangzhou-friendly hosted Qwen API."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Labeled test set",
+      "bodyEn": "Collect thirty real messages, strip personal data, and include angry, unclear, and mixed-language cases. Label intent and needs_human before you see model output. Save the rows as a CSV you will reuse after every prompt change. Read the five checkers before any run so you cannot bend them later. Honest limit: an easy-only set will make every prompt look finished.",
+      "terms": [
+        {
+          "zh": "对话质检",
+          "en": "chat quality check",
+          "hook": "If they say this, they mean inspect replies against fixed rules."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "One change per version",
+      "bodyEn": "Run version 1 as a weak one-line prompt and read every failure. For version 2, change only one thing — intents and escalate rules — then compare. Version 3 is the full six-part prompt plus examples. Fill a real score table out of 150 and optionally rerun on a smaller model for cost. Honest limit: changing labels, rules, and examples at once destroys the story of what helped.",
+      "terms": [
+        {
+          "zh": "转人工",
+          "en": "escalate",
+          "hook": "If they say this, they mean hand the case to a human agent."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "What done looks like",
+      "bodyEn": "Done means thirty labeled messages, three prompt files, and a scoring script anyone can rerun. The table shows your real totals, not placeholders. A one-page write-up covers task, data, five checks, remaining failures, and cost per 1,000 messages. The same numbers appear under personal projects on your CV. Honest limit: if a classmate cannot reproduce the table, it is not done.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal project",
+          "hook": "If they say this, they mean finished work with numbers on a CV."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "watch",
+      "titleEn": "Honest scoring",
+      "bodyEn": "Never invent table cells or round scores up to look better. Never commit API keys. Pin package versions when something breaks instead of guessing. Spend leftover time on a ninety-second story with real blanks filled in. Honest limit: eight hours is enough only if labeling and failure reading get calendar space.",
+      "terms": []
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "What Project 1 proves",
+      "bodyEn": "Pick the claim that matches measuring output instead of guessing. Ignore answers about training Transformers or replacing MCP.",
+      "prompt": "What does the prompt-evaluation sheet prove?",
+      "choices": [
+        "That you can train a Transformer from scratch in PyTorch",
+        "That you measure model output with automatic checks, not guesswork",
+        "That fine-tuning always beats a good prompt",
+        "That MCP servers replace function calling"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "How many checks",
+      "bodyEn": "Project 1 runs a fixed set of automatic checks on every model output. Count those checks, not the thirty messages. The five names are json, intent, escalate, indonesian, and safe.",
+      "prompt": "How many automatic checks does Project 1 run on each model output?",
+      "choices": [
+        "Three",
+        "Four",
+        "Five",
+        "Thirty"
+      ],
+      "answer": 2
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What this proves",
+      "bodyEn": "Project 1 proves you measure model output with automatic checks, not guesswork. You score three versions of a WeUseAI support prompt on thirty real messages. Five code checks decide each reply: json, intent, escalate, indonesian, and safe. Roles that care include 提示词设计 and 对话质检. Honest limit: pretty sample replies without a fixed score sheet will not survive an interview.",
+      "terms": [
+        {
+          "zh": "效果评估",
+          "en": "effect evaluation",
+          "hook": "If they say this, they mean score results with fixed checks, not vibes."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Shared project setup",
+      "bodyEn": "Create one repo, init git, and make a Python 3.12 venv — older Mac Pythons break later MCP work. Install the shared packages until every import works. Put LLM_BASE_URL, LLM_API_KEY, LLM_MODEL, and EMBED_MODEL in environment variables only. Route every project through one small chat helper so switching providers is four lines. Honest limit: keys in source files will get you rejected before your scores matter.",
+      "terms": [
+        {
+          "zh": "百炼",
+          "en": "Bailian",
+          "hook": "If they say this, they mean a Hangzhou-friendly hosted Qwen API."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Labeled test set",
+      "bodyEn": "Collect thirty real messages, strip personal data, and include angry, unclear, and mixed-language cases. Label intent and needs_human before you see model output. Save the rows as a CSV you will reuse after every prompt change. Read the five checkers before any run so you cannot bend them later. Honest limit: an easy-only set will make every prompt look finished.",
+      "terms": [
+        {
+          "zh": "对话质检",
+          "en": "chat quality check",
+          "hook": "If they say this, they mean inspect replies against fixed rules."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "One change per version",
+      "bodyEn": "Run version 1 as a weak one-line prompt and read every failure. For version 2, change only one thing — intents and escalate rules — then compare. Version 3 is the full six-part prompt plus examples. Fill a real score table out of 150 and optionally rerun on a smaller model for cost. Honest limit: changing labels, rules, and examples at once destroys the story of what helped.",
+      "terms": [
+        {
+          "zh": "转人工",
+          "en": "escalate",
+          "hook": "If they say this, they mean hand the case to a human agent."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "What done looks like",
+      "bodyEn": "Done means thirty labeled messages, three prompt files, and a scoring script anyone can rerun. The table shows your real totals, not placeholders. A one-page write-up covers task, data, five checks, remaining failures, and cost per 1,000 messages. The same numbers appear under personal projects on your CV. Honest limit: if a classmate cannot reproduce the table, it is not done.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal project",
+          "hook": "If they say this, they mean finished work with numbers on a CV."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "watch",
+      "titleEn": "Honest scoring",
+      "bodyEn": "Never invent table cells or round scores up to look better. Never commit API keys. Pin package versions when something breaks instead of guessing. Spend leftover time on a ninety-second story with real blanks filled in. Honest limit: eight hours is enough only if labeling and failure reading get calendar space.",
+      "terms": []
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "What Project 1 proves",
+      "bodyEn": "Pick the claim that matches measuring output instead of guessing. Ignore answers about training Transformers or replacing MCP.",
+      "prompt": "What does the prompt-evaluation sheet prove?",
+      "choices": [
+        "That you can train a Transformer from scratch in PyTorch",
+        "That you measure model output with automatic checks, not guesswork",
+        "That fine-tuning always beats a good prompt",
+        "That MCP servers replace function calling"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "How many checks",
+      "bodyEn": "Project 1 runs a fixed set of automatic checks on every model output. Count those checks, not the thirty messages. The five names are json, intent, escalate, indonesian, and safe.",
+      "prompt": "How many automatic checks does Project 1 run on each model output?",
+      "choices": [
+        "Three",
+        "Four",
+        "Five",
+        "Thirty"
+      ],
+      "answer": 2
+    }
+  ]
+}

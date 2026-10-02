@@ -1,0 +1,386 @@
+/* 总办 interview — path grouping + skill-card lesson screens (session chrome in styles.css). */
+
+.interview-learn {
+  display: grid;
+  gap: 18px;
+  padding-bottom: 24px;
+}
+
+.interview-part {
+  display: contents;
+}
+
+/* Vertical chapter path — no zigzag, no absolute labels. */
+.interview-path {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.interview-path-fill {
+  flex: 1;
+  min-height: 0;
+}
+
+.interview-path-list {
+  list-style: none;
+  margin: 0;
+  padding: 2px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.path-page:has(.interview-path) {
+  padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+}
+
+.interview-path-item {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.interview-path-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  padding: 4px 2px;
+  text-align: left;
+  font-family: var(--ui);
+  color: var(--ink);
+  transition: scale 0.16s var(--spring);
+}
+
+.interview-path-row:active:not(.interview-path-row-lock) {
+  scale: 0.98;
+}
+
+.interview-path-node {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1.5px solid var(--line-2);
+  box-shadow: 0 6px 14px -8px rgba(90, 50, 20, 0.28);
+  color: var(--ink);
+}
+
+.interview-path-row-on .interview-path-node {
+  color: #fff;
+  background-color: #c4171a;
+  background-image: var(--metal-sheen), var(--metal-base);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-color: transparent;
+  box-shadow: var(--metal-emboss-sm), 0 0 0 5px rgba(226, 44, 28, 0.16);
+}
+
+.interview-path-row-on .interview-path-node svg {
+  filter: drop-shadow(0 1px 2px rgba(94, 8, 10, 0.4));
+}
+
+.interview-path-row-done .interview-path-node {
+  color: #fff;
+  background-image: var(--metal-sheen), var(--metal-base);
+  border-color: transparent;
+  box-shadow: var(--metal-emboss-sm), inset 0 0 0 2px rgba(255, 227, 176, 0.28);
+}
+
+.interview-path-row-done .interview-path-node svg {
+  filter: drop-shadow(0 1px 2px rgba(94, 8, 10, 0.4));
+}
+
+.interview-path-row-lock {
+  color: var(--muted);
+  cursor: default;
+}
+
+.interview-path-row-lock:active {
+  scale: 1;
+}
+
+.interview-path-row-lock .interview-path-node {
+  background: #fbf8f3;
+  border-color: #e4dfd6;
+  box-shadow: inset 0 1px 2px rgba(80, 60, 40, 0.06);
+  color: #b4aea4;
+}
+
+.interview-path-row-lock .interview-path-title {
+  color: #8a8680;
+}
+
+.interview-path-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.interview-path-start {
+  flex: none;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--red-deep);
+  border: 2px solid #e22c1c;
+  box-shadow: 0 6px 12px -8px rgba(150, 16, 18, 0.45);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 22px;
+}
+
+.interview-path-row:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+/* Skill / remember / idea + term: learning is the hero. */
+.session-beat:has(.interview-stage) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.interview-stage {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 14px;
+  min-width: 0;
+  width: 100%;
+}
+
+.interview-skill-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 22px 20px 20px;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--ink) 4%, transparent);
+  min-width: 0;
+}
+
+.interview-skill-card-term::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--red-deep), var(--red-mid));
+}
+
+.interview-skill-card-term {
+  padding-top: 26px;
+}
+
+.interview-skill-hero {
+  margin: 0;
+  max-width: 22ch;
+  font-size: clamp(32px, 5.2vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.9px;
+  line-height: 1.12;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.interview-skill-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 36ch;
+}
+
+.interview-line {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.interview-line-wait {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.interview-line-in {
+  animation: interview-line-in 0.36s cubic-bezier(0.34, 1.2, 0.46, 1) both;
+}
+
+@keyframes interview-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quiet interview chips — Chinese is a gloss, not the hero. */
+.interview-term-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 0;
+  padding: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.interview-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1 1 9.5rem;
+  min-width: 0;
+  max-width: 100%;
+  padding: 10px 11px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--card) 88%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--ink) 7%, transparent);
+  animation: interview-chip-in 0.34s cubic-bezier(0.34, 1.2, 0.46, 1) both;
+}
+
+.interview-chip-zh {
+  display: block;
+  font-weight: 700;
+  line-height: 1.25;
+  color: color-mix(in srgb, var(--ink) 72%, var(--red-deep));
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 100%;
+}
+
+.interview-chip-en {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.15px;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.interview-chip-hook {
+  display: block;
+  margin-top: 1px;
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--ink) 52%, transparent);
+  text-wrap: pretty;
+}
+
+@keyframes interview-chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Term screen — English skill leads; Chinese wraps fully under it. */
+.interview-term-zh {
+  margin: 0;
+  max-width: 100%;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--ink) 78%, var(--red-deep));
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+  text-wrap: pretty;
+}
+
+.interview-term-hook {
+  margin: 0;
+  max-width: 36ch;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--ink) 58%, transparent);
+  text-wrap: pretty;
+}
+
+.interview-term-hear {
+  margin-top: 2px;
+}
+
+/* Say line — wraps fully; no giant overflowing seal card. */
+.interview-say-card {
+  gap: 12px;
+}
+
+.interview-say-label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 48%, transparent);
+}
+
+.interview-say-zh {
+  margin: 0;
+  max-width: 100%;
+  font-size: clamp(18px, 4.2vw, 22px);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--ink) 78%, var(--red-deep));
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+  text-wrap: pretty;
+}
+
+.interview-say-hear {
+  margin-top: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interview-line-wait {
+    opacity: 1;
+    transform: none;
+  }
+
+  .interview-line-in,
+  .interview-chip {
+    animation: none;
+  }
+}

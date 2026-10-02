@@ -1,0 +1,362 @@
+{
+  "id": "29",
+  "index": 29,
+  "part": 7,
+  "partTitleEn": "Interview",
+  "titleEn": "LLM interview question bank",
+  "titleSource": "Bank pertanyaan LLM (八股)",
+  "sourcePages": "112-117",
+  "when": "Week 4, days 25–27",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Standard interview answers",
+      "bodyEn": "Standard interview Q&A means prepared questions with prepared answers — about forty for model-related roles, grouped by topic. Read them in Week 4, days 25–27, then ten questions a day until your interview. Say the backbone first in Mandarin, then add one detail from your own project. That second sentence is what proves you lived it. Do not dump a second Wikipedia definition.",
+      "terms": [
+        {
+          "zh": "八股",
+          "en": "standard interview Q&A",
+          "hook": "If they say this, backbone first, then your project."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "interview",
+      "titleEn": "Token and sampling",
+      "bodyEn": "A token is the smallest unit the model reads and writes; the tokenizer splits text into subwords, so Chinese, English, and Indonesian often cost different token counts for the same meaning. Temperature divides logits before softmax — below 1 sharpens, above 1 flattens. Top-k samples only among the k best; top-p samples from the smallest set whose mass reaches p. Use low temperature for facts and JSON; raise it a bit for creative work. In interview, give the backbone, then one cost example from your own prompts.",
+      "terms": [
+        {
+          "zh": "分词器",
+          "en": "tokenizer",
+          "hook": "If they ask about tokens, this splits text into subwords."
+        },
+        {
+          "zh": "温度",
+          "en": "temperature",
+          "hook": "If they say this, divide logits before softmax."
+        }
+      ],
+      "mandarin": "token 是模型读写的最小单位，由分词器把文本切成子词片段。常见词一个 token，罕见词拆成几个。不同语言在训练语料里的频率不同，所以同样意思的中文、英文、印尼语 token 数不一样，成本也不一样。\ntemperature 在 softmax 前除以 logits，小于 1 分布更尖、更确定，大于 1 更平、更多样。top-k 只在概率最高的 k 个里采样；top-p 在累计概率达到 p 的最小集合里采样。事实类和 JSON 用低温度，创意类用高一点。"
+    },
+    {
+      "id": "s3",
+      "kind": "interview",
+      "titleEn": "Attention and positions",
+      "bodyEn": "RNNs run in order so training cannot parallelize across time; Transformers let any two positions interact in one step, but attention cost grows with the square of length. Self-attention projects to Q, K, V, scores with Q–K dots, scales by √d_k, softmaxes, then weights V. MHA gives every head its own K/V; MQA shares one; GQA shares per group — more sharing shrinks the KV cache. RoPE rotates Q and K so the dot depends on relative distance and extrapolates better — LLaMA and Qwen use it. Add one line about why you care about KV size in serving.",
+      "terms": [
+        {
+          "zh": "自注意力",
+          "en": "self-attention",
+          "hook": "If they say this, divide by root d after the dots."
+        },
+        {
+          "zh": "RoPE",
+          "en": "rotary position embedding",
+          "hook": "If they ask positions, LLaMA and Qwen use this."
+        }
+      ],
+      "mandarin": "RNN 按顺序计算，训练不能在时间维度上并行；Transformer 用注意力让任意两个位置一步直接交互，代价是计算和显存随长度平方增长。\nQ、K、V 由输入乘三个矩阵得到；Q 和 K 点积打分，除以根号 d_k，softmax 成权重，加权求和 V。MHA 每个头有自己的 K、V；MQA 共享一组；GQA 分组共享。RoPE 按位置旋转 Q 和 K，点积只和相对距离有关。"
+    },
+    {
+      "id": "s4",
+      "kind": "interview",
+      "titleEn": "Norms cache MoE",
+      "bodyEn": "LayerNorm subtracts the mean then scales; RMSNorm skips the mean and only divides by RMS — most large models use RMSNorm and Pre-norm. Decoder-only wins because next-token prediction scales and causal attention fits timed generation plus KV cache. KV cache stores earlier K and V so each step only computes the new token — the cost is GPU memory. MoE activates few experts per token while all experts still sit in memory. Emergence can look sudden; hard right/wrong metrics often exaggerate the jump.",
+      "terms": [
+        {
+          "zh": "KV cache",
+          "en": "key-value cache",
+          "hook": "If they say this, speed versus GPU memory."
+        },
+        {
+          "zh": "混合专家",
+          "en": "Mixture of Experts",
+          "hook": "If they say this, sparse activate, dense memory."
+        }
+      ],
+      "mandarin": "LayerNorm 减均值再除以标准差；RMSNorm 不减均值，只除以均方根，现在大模型多用。生成时之前 token 的 K、V 不变，缓存下来复用，每步只算新 token；代价是显存。混合专家每层有多个前馈专家，每个 token 只激活少数，但所有专家都要放在显存里。"
+    },
+    {
+      "id": "s5",
+      "kind": "interview",
+      "titleEn": "Train and fine-tune",
+      "bodyEn": "Pretraining learns next-token prediction; SFT teaches instruction format; RLHF uses a reward model plus PPO; DPO skips the reward model and optimizes preferred vs rejected pairs. Cross-entropy is average negative log probability of the correct token; perplexity is e to that loss. LoRA freezes W and trains low-rank A and B — often under 1% of parameters; QLoRA keeps the base in 4-bit so a 7B fine-tune fits on one GPU. Use RAG when knowledge changes or you need citations; use fine-tuning to change behavior or format. Mitigate catastrophic forgetting with small updates, lower LR, mixed general data, and spot-checks.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, SFT / RLHF / DPO family."
+        },
+        {
+          "zh": "LoRA",
+          "en": "low-rank adaptation",
+          "hook": "If they ask how, freeze W, train A and B."
+        }
+      ],
+      "mandarin": "预训练用海量文本学预测下一个 token；SFT 用指令和答案对教模型听指令；RLHF 用奖励模型加 PPO；DPO 直接在好坏答案对上优化。\n冻结原权重 W，旁边学低秩更新 BA，只训练 A 和 B；QLoRA 把基座量化成 4 bit。知识经常变、需要出处用 RAG；要改变行为、格式、语气用微调。"
+    },
+    {
+      "id": "s6",
+      "kind": "interview",
+      "titleEn": "Apps RAG and tools",
+      "bodyEn": "Hallucinations happen because the model predicts likely tokens with no built-in fact check — cut them with RAG plus citations, “I don’t know,” validation, and structured output. Stable JSON needs clear fields, JSON mode or schema, low temperature, validate in code, retry once, then escalate. Function calling: you send tool schema; the model returns a call; your code runs it — the model never executes anything. Offline RAG parses, chunks, embeds, stores; online it retrieves, reranks, and generates with citations. Fix weak recall by evaluating retrieval alone first.",
+      "terms": [
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, likely tokens are not facts."
+        },
+        {
+          "zh": "工具调用",
+          "en": "function calling",
+          "hook": "If they say this, model chooses; your code runs."
+        }
+      ],
+      "mandarin": "模型在预测最可能的下一个 token，没有内置事实校验。减少方法：RAG 给依据并要求标注出处；允许回答“不知道”；用规则或人工校验；结构化输出。\n把工具的名字、描述、参数 schema 传给模型；模型返回要调用的工具和参数；我们的代码校验并执行，把结果作为 tool 消息发回。模型自己不执行任何东西。"
+    },
+    {
+      "id": "s7",
+      "kind": "interview",
+      "titleEn": "Retrieval agents safety",
+      "bodyEn": "Vector DBs use ANN indexes like HNSW (layered graph) and IVF (cluster then search). Hybrid search fuses vectors with BM25 via RRF; a reranker scores question and candidate together after a wide retrieve. Evaluate retrieval and generation separately — hit rate and MRR vs correctness, faithfulness, and refusal. Long context is simple but expensive and can ignore the middle; RAG is cheaper and citable. A workflow is a fixed path; an agent lets the model choose — cap steps, validate tool args, least privilege. MCP standardizes tools across apps; prompt injection needs design defenses, not only a polite system prompt.",
+      "terms": [
+        {
+          "zh": "混合检索",
+          "en": "hybrid retrieval",
+          "hook": "If they say this, vector + BM25 + RRF."
+        },
+        {
+          "zh": "提示词注入",
+          "en": "prompt injection",
+          "hook": "If they say this, external text as attack."
+        }
+      ],
+      "mandarin": "向量库用近似最近邻索引；HNSW 是分层图，IVF 先聚类再搜。向量擅长语义，BM25 擅长关键词，用 RRF 融合；重排序把问题和候选放在一起打分。\nWorkflow 是代码固定的流程；Agent 由模型决定下一步。MCP 是连接 AI 应用和工具、数据的开放协议。外部文本里藏指令叫提示词注入，只靠提示词挡不住，要从设计上限制伤害。"
+    },
+    {
+      "id": "s8",
+      "kind": "interview",
+      "titleEn": "Product and your story",
+      "bodyEn": "Eval apps with labeled real inputs, code checks, one change at a time, and a regression set — calibrate LLM judges against humans. Cut cost with the smallest passing model, fewer calls, shorter prompts, caps, cache, and batch; quantization stores weights in fewer bits. Design an AI feature: problem, metric, guardrail, prompt-only MVP, failure UX, human escalation, small A/B. For your work: fixed code owns validation and retries; the model only chooses problem codes and titles. Hardest problem: the harness counted “Recently Deleted” notes as present — verify the verifier.",
+      "terms": [
+        {
+          "zh": "护栏指标",
+          "en": "guardrail metric",
+          "hook": "If they ask AI design, this must not get worse."
+        },
+        {
+          "zh": "转人工",
+          "en": "escalate to human",
+          "hook": "If they ask failure cases, after two failures."
+        }
+      ],
+      "mandarin": "确认用户问题和现状成本；定主指标和护栏指标；先用提示词做最小版本，用真实数据建评测集；设计出错时用户看到什么；算清成本和延迟；明确转人工规则；小范围上线做 A/B 测试。\n用你测试框架的故事：Agent 报告任务完成，但实际没完成；校验本身也在出错，它把“最近删除”里的笔记也算作存在。从那以后我先验证验证器。"
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Second sentence rule",
+      "bodyEn": "After the standard-answer backbone, add one lived detail.",
+      "prompt": "After the standard interview backbone, what should your second sentence be?",
+      "choices": [
+        "One detail from your own project or story that proves you lived it",
+        "A second memorized Wikipedia definition with no project link",
+        "A salary ask and visa timeline",
+        "A list of every chapter number in the book"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Model never runs tools",
+      "bodyEn": "Function calling: model chooses; your code executes.",
+      "prompt": "In function calling, who executes the tool?",
+      "choices": [
+        "Your code validates and runs the tool; the model only returns the call and then reads the tool message",
+        "The model runs shell commands inside the GPU",
+        "The tokenizer executes tools during pretraining",
+        "KV cache runs tools after each decode step"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Standard interview answers",
+      "bodyEn": "Standard interview Q&A means prepared questions with prepared answers — about forty for model-related roles, grouped by topic. Read them in Week 4, days 25–27, then ten questions a day until your interview. Say the backbone first in Mandarin, then add one detail from your own project. That second sentence is what proves you lived it. Do not dump a second Wikipedia definition.",
+      "terms": [
+        {
+          "zh": "八股",
+          "en": "standard interview Q&A",
+          "hook": "If they say this, backbone first, then your project."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "interview",
+      "titleEn": "Token and sampling",
+      "bodyEn": "A token is the smallest unit the model reads and writes; the tokenizer splits text into subwords, so Chinese, English, and Indonesian often cost different token counts for the same meaning. Temperature divides logits before softmax — below 1 sharpens, above 1 flattens. Top-k samples only among the k best; top-p samples from the smallest set whose mass reaches p. Use low temperature for facts and JSON; raise it a bit for creative work. In interview, give the backbone, then one cost example from your own prompts.",
+      "terms": [
+        {
+          "zh": "分词器",
+          "en": "tokenizer",
+          "hook": "If they ask about tokens, this splits text into subwords."
+        },
+        {
+          "zh": "温度",
+          "en": "temperature",
+          "hook": "If they say this, divide logits before softmax."
+        }
+      ],
+      "mandarin": "token 是模型读写的最小单位，由分词器把文本切成子词片段。常见词一个 token，罕见词拆成几个。不同语言在训练语料里的频率不同，所以同样意思的中文、英文、印尼语 token 数不一样，成本也不一样。\ntemperature 在 softmax 前除以 logits，小于 1 分布更尖、更确定，大于 1 更平、更多样。top-k 只在概率最高的 k 个里采样；top-p 在累计概率达到 p 的最小集合里采样。事实类和 JSON 用低温度，创意类用高一点。"
+    },
+    {
+      "id": "s3",
+      "kind": "interview",
+      "titleEn": "Attention and positions",
+      "bodyEn": "RNNs run in order so training cannot parallelize across time; Transformers let any two positions interact in one step, but attention cost grows with the square of length. Self-attention projects to Q, K, V, scores with Q–K dots, scales by √d_k, softmaxes, then weights V. MHA gives every head its own K/V; MQA shares one; GQA shares per group — more sharing shrinks the KV cache. RoPE rotates Q and K so the dot depends on relative distance and extrapolates better — LLaMA and Qwen use it. Add one line about why you care about KV size in serving.",
+      "terms": [
+        {
+          "zh": "自注意力",
+          "en": "self-attention",
+          "hook": "If they say this, divide by root d after the dots."
+        },
+        {
+          "zh": "RoPE",
+          "en": "rotary position embedding",
+          "hook": "If they ask positions, LLaMA and Qwen use this."
+        }
+      ],
+      "mandarin": "RNN 按顺序计算，训练不能在时间维度上并行；Transformer 用注意力让任意两个位置一步直接交互，代价是计算和显存随长度平方增长。\nQ、K、V 由输入乘三个矩阵得到；Q 和 K 点积打分，除以根号 d_k，softmax 成权重，加权求和 V。MHA 每个头有自己的 K、V；MQA 共享一组；GQA 分组共享。RoPE 按位置旋转 Q 和 K，点积只和相对距离有关。"
+    },
+    {
+      "id": "s4",
+      "kind": "interview",
+      "titleEn": "Norms cache MoE",
+      "bodyEn": "LayerNorm subtracts the mean then scales; RMSNorm skips the mean and only divides by RMS — most large models use RMSNorm and Pre-norm. Decoder-only wins because next-token prediction scales and causal attention fits timed generation plus KV cache. KV cache stores earlier K and V so each step only computes the new token — the cost is GPU memory. MoE activates few experts per token while all experts still sit in memory. Emergence can look sudden; hard right/wrong metrics often exaggerate the jump.",
+      "terms": [
+        {
+          "zh": "KV cache",
+          "en": "key-value cache",
+          "hook": "If they say this, speed versus GPU memory."
+        },
+        {
+          "zh": "混合专家",
+          "en": "Mixture of Experts",
+          "hook": "If they say this, sparse activate, dense memory."
+        }
+      ],
+      "mandarin": "LayerNorm 减均值再除以标准差；RMSNorm 不减均值，只除以均方根，现在大模型多用。生成时之前 token 的 K、V 不变，缓存下来复用，每步只算新 token；代价是显存。混合专家每层有多个前馈专家，每个 token 只激活少数，但所有专家都要放在显存里。"
+    },
+    {
+      "id": "s5",
+      "kind": "interview",
+      "titleEn": "Train and fine-tune",
+      "bodyEn": "Pretraining learns next-token prediction; SFT teaches instruction format; RLHF uses a reward model plus PPO; DPO skips the reward model and optimizes preferred vs rejected pairs. Cross-entropy is average negative log probability of the correct token; perplexity is e to that loss. LoRA freezes W and trains low-rank A and B — often under 1% of parameters; QLoRA keeps the base in 4-bit so a 7B fine-tune fits on one GPU. Use RAG when knowledge changes or you need citations; use fine-tuning to change behavior or format. Mitigate catastrophic forgetting with small updates, lower LR, mixed general data, and spot-checks.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, SFT / RLHF / DPO family."
+        },
+        {
+          "zh": "LoRA",
+          "en": "low-rank adaptation",
+          "hook": "If they ask how, freeze W, train A and B."
+        }
+      ],
+      "mandarin": "预训练用海量文本学预测下一个 token；SFT 用指令和答案对教模型听指令；RLHF 用奖励模型加 PPO；DPO 直接在好坏答案对上优化。\n冻结原权重 W，旁边学低秩更新 BA，只训练 A 和 B；QLoRA 把基座量化成 4 bit。知识经常变、需要出处用 RAG；要改变行为、格式、语气用微调。"
+    },
+    {
+      "id": "s6",
+      "kind": "interview",
+      "titleEn": "Apps RAG and tools",
+      "bodyEn": "Hallucinations happen because the model predicts likely tokens with no built-in fact check — cut them with RAG plus citations, “I don’t know,” validation, and structured output. Stable JSON needs clear fields, JSON mode or schema, low temperature, validate in code, retry once, then escalate. Function calling: you send tool schema; the model returns a call; your code runs it — the model never executes anything. Offline RAG parses, chunks, embeds, stores; online it retrieves, reranks, and generates with citations. Fix weak recall by evaluating retrieval alone first.",
+      "terms": [
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, likely tokens are not facts."
+        },
+        {
+          "zh": "工具调用",
+          "en": "function calling",
+          "hook": "If they say this, model chooses; your code runs."
+        }
+      ],
+      "mandarin": "模型在预测最可能的下一个 token，没有内置事实校验。减少方法：RAG 给依据并要求标注出处；允许回答“不知道”；用规则或人工校验；结构化输出。\n把工具的名字、描述、参数 schema 传给模型；模型返回要调用的工具和参数；我们的代码校验并执行，把结果作为 tool 消息发回。模型自己不执行任何东西。"
+    },
+    {
+      "id": "s7",
+      "kind": "interview",
+      "titleEn": "Retrieval agents safety",
+      "bodyEn": "Vector DBs use ANN indexes like HNSW (layered graph) and IVF (cluster then search). Hybrid search fuses vectors with BM25 via RRF; a reranker scores question and candidate together after a wide retrieve. Evaluate retrieval and generation separately — hit rate and MRR vs correctness, faithfulness, and refusal. Long context is simple but expensive and can ignore the middle; RAG is cheaper and citable. A workflow is a fixed path; an agent lets the model choose — cap steps, validate tool args, least privilege. MCP standardizes tools across apps; prompt injection needs design defenses, not only a polite system prompt.",
+      "terms": [
+        {
+          "zh": "混合检索",
+          "en": "hybrid retrieval",
+          "hook": "If they say this, vector + BM25 + RRF."
+        },
+        {
+          "zh": "提示词注入",
+          "en": "prompt injection",
+          "hook": "If they say this, external text as attack."
+        }
+      ],
+      "mandarin": "向量库用近似最近邻索引；HNSW 是分层图，IVF 先聚类再搜。向量擅长语义，BM25 擅长关键词，用 RRF 融合；重排序把问题和候选放在一起打分。\nWorkflow 是代码固定的流程；Agent 由模型决定下一步。MCP 是连接 AI 应用和工具、数据的开放协议。外部文本里藏指令叫提示词注入，只靠提示词挡不住，要从设计上限制伤害。"
+    },
+    {
+      "id": "s8",
+      "kind": "interview",
+      "titleEn": "Product and your story",
+      "bodyEn": "Eval apps with labeled real inputs, code checks, one change at a time, and a regression set — calibrate LLM judges against humans. Cut cost with the smallest passing model, fewer calls, shorter prompts, caps, cache, and batch; quantization stores weights in fewer bits. Design an AI feature: problem, metric, guardrail, prompt-only MVP, failure UX, human escalation, small A/B. For your work: fixed code owns validation and retries; the model only chooses problem codes and titles. Hardest problem: the harness counted “Recently Deleted” notes as present — verify the verifier.",
+      "terms": [
+        {
+          "zh": "护栏指标",
+          "en": "guardrail metric",
+          "hook": "If they ask AI design, this must not get worse."
+        },
+        {
+          "zh": "转人工",
+          "en": "escalate to human",
+          "hook": "If they ask failure cases, after two failures."
+        }
+      ],
+      "mandarin": "确认用户问题和现状成本；定主指标和护栏指标；先用提示词做最小版本，用真实数据建评测集；设计出错时用户看到什么；算清成本和延迟；明确转人工规则；小范围上线做 A/B 测试。\n用你测试框架的故事：Agent 报告任务完成，但实际没完成；校验本身也在出错，它把“最近删除”里的笔记也算作存在。从那以后我先验证验证器。"
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Second sentence rule",
+      "bodyEn": "After the standard-answer backbone, add one lived detail.",
+      "prompt": "After the standard interview backbone, what should your second sentence be?",
+      "choices": [
+        "One detail from your own project or story that proves you lived it",
+        "A second memorized Wikipedia definition with no project link",
+        "A salary ask and visa timeline",
+        "A list of every chapter number in the book"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Model never runs tools",
+      "bodyEn": "Function calling: model chooses; your code executes.",
+      "prompt": "In function calling, who executes the tool?",
+      "choices": [
+        "Your code validates and runs the tool; the model only returns the call and then reads the tool message",
+        "The model runs shell commands inside the GPU",
+        "The tokenizer executes tools during pretraining",
+        "KV cache runs tools after each decode step"
+      ],
+      "answer": 0
+    }
+  ]
+}

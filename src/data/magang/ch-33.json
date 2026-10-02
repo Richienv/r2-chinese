@@ -1,0 +1,326 @@
+{
+  "id": "33",
+  "index": 33,
+  "part": 8,
+  "partTitleEn": "The long road",
+  "titleEn": "What takes years, and what you can say about it today",
+  "titleSource": "Yang butuh bertahun-tahun, dan yang bisa lo omongin hari ini",
+  "sourcePages": "127-129",
+  "when": "Anytime as reference; days 29–30 with Chapter 34",
+  "sittings": [
+    {
+      "kind": "idea",
+      "titleEn": "Eleven Track C fields",
+      "bodyEn": "Eleven fields sit behind Track C posts: C++ systems, GPU kernels, AI compilers, distributed training, inference engines, pretraining, post-training RL, multimodal models, research, competitive programming, and MLOps. Use this map to talk honestly. Do not fake infra years this month. Rough paths are one to two years for C++ systems and inference engines, one to three for kernels, and two or more for compilers, distributed training, and research. Your job today is clear language, not fake ownership.",
+      "terms": [
+        {
+          "zh": "推理引擎",
+          "en": "inference engine",
+          "hook": "If they say this, they mean a vLLM-class serving stack—years of systems work."
+        },
+        {
+          "zh": "后训练",
+          "en": "post-training",
+          "hook": "If they say this, they mean SFT and RL after pretraining."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Kernels and FlashAttention",
+      "bodyEn": "Fast stacks often call C++ under Python in PyTorch, vLLM, and tokenizers. An operator is one basic compute such as matrix multiply, and a kernel is the chip-specific code that runs it. FlashAttention computes attention in on-chip tiles so it stays exact while cutting GPU-memory traffic. An AI compiler rewrites a computation graph to fuse ops, choose layouts, and emit chip code—names like TVM, MLIR, XLA, and torch.compile. On Ascend the stack is CANN and Ascend C, so do not claim you wrote those kernels this month.",
+      "mandarin": "FlashAttention 的思路是分块计算、减少显存读写，结果是精确的；我理解这个思路，但没有写过 CUDA 或 Ascend C 算子。",
+      "terms": [
+        {
+          "zh": "算子",
+          "en": "operator",
+          "hook": "If they say this, they mean one basic compute unit such as matrix multiply."
+        },
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this, FlashAttention cuts traffic here."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Parallelism types",
+      "bodyEn": "Data parallelism copies the full model on each GPU and shards the data, then averages gradients. Tensor parallelism splits matrices across GPUs, and pipeline parallelism puts different layers on different GPUs. ZeRO and FSDP shard optimizer state, gradients, and parameters on a compute platform. Say the three definitions aloud before any distributed-training chat. Understanding the labels is enough this month—shipping Megatron code is not.",
+      "mandarin": "数据并行复制模型切数据，张量并行切矩阵，流水线并行切层，ZeRO 和 FSDP 把优化器状态、梯度和参数分片。",
+      "terms": [
+        {
+          "zh": "数据并行",
+          "en": "data parallelism",
+          "hook": "If they say this, they mean copy the model and shard the data."
+        },
+        {
+          "zh": "张量并行",
+          "en": "tensor parallelism",
+          "hook": "If they say this, they mean split matrices across GPUs."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Inference engines",
+      "bodyEn": "vLLM, SGLang, and TensorRT-LLM serve models with continuous batching and PagedAttention. Building or patching an inference engine mixes systems and kernels. In interview, name the ideas and say you have not shipped engine source. Application-layer Python that calls these stacks is still valuable—just do not claim ownership of the engine. The honest line is: I understand the call chain; I have not optimized C++ under it.",
+      "terms": [
+        {
+          "zh": "推理引擎",
+          "en": "inference engine",
+          "hook": "If they say this, know the idea; do not claim source patches."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Pretrain, RL, research",
+      "bodyEn": "Large-scale pretraining is hard because of data cleaning, mixture, weeks of stable training, tokenizers, scaling laws, and compute cost—only a few labs run it. RLHF uses PPO and a reward model, while GRPO scores a group of answers against each other and fits math and code. Multimodal models turn images into patch tokens and often use diffusion for image or video generation. Research means reading papers fast, reproducing results, and owning the math. Start with Attention Is All You Need and The Annotated Transformer, and name one paper you actually read.",
+      "mandarin": "GRPO 对同一个问题生成一组回答，用组内相对得分代替单独训练的价值模型，适合数学、代码这类可以自动判断对错的任务。",
+      "terms": [
+        {
+          "zh": "预训练",
+          "en": "pretraining",
+          "hook": "If they say this, they mean years-long foundation training—not your LoRA."
+        },
+        {
+          "zh": "多模态",
+          "en": "multimodal",
+          "hook": "If they say this, they mean image and text in one model."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "ACM versus MLOps",
+      "bodyEn": "Tonghuashun agent posts sometimes ask for ACM medalists, and those problems need years of school training—do not pretend. Practice LeetCode Hot 100 for interview algorithms instead. MLOps covers pipelines, tracking, registry, deploy, monitoring, and GPU scheduling on Kubernetes, and it is closer to your skills than kernels. It is the most realistic next step after application roles, but still do not claim deep platform ownership without real pipeline work. The only strong answer is that you understand the idea, you have never built it, and here is what you have built.",
+      "mandarin": "我不是竞赛选手；面试的算法题我在系统练习力扣 Hot 100。",
+      "terms": [
+        {
+          "zh": "力扣",
+          "en": "LeetCode",
+          "hook": "If they say this, practice Hot 100 instead of faking ACM medals."
+        },
+        {
+          "zh": "同花顺",
+          "en": "Tonghuashun",
+          "hook": "If they say this, some agent posts want ACM medals—be honest."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Honest lines today",
+      "bodyEn": "For C++ and engines, say you work at the Python application layer, can read the call chain, and have not done C++ performance work. For FlashAttention and Ascend, explain the tiled exact idea and stop before claiming CUDA or Ascend C operators. For distributed training and inference, define DP, TP, and PP and name vLLM ideas without claiming engine patches. For pretraining and multimodal, name the hard parts and your reading, not fake foundation-model ownership. Honesty beats pretending in every Track C chat this month.",
+      "mandarin": "推理引擎和算子底层大多是 C++，我目前在应用层用 Python，能读懂调用链，但没有做过 C++ 性能优化。",
+      "terms": [
+        {
+          "zh": "算子",
+          "en": "operator",
+          "hook": "If they say this, do not claim you wrote one this month."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "FlashAttention and DP/TP/PP",
+      "bodyEn": "Check the FlashAttention idea and the three parallelism definitions.",
+      "prompt": "Which pair matches FlashAttention and DP/TP/PP?",
+      "choices": [
+        "FlashAttention tiles attention on-chip to cut GPU memory traffic while staying exact; DP copies the model and shards data, TP shards matrices, PP puts layers on different GPUs",
+        "FlashAttention replaces attention with an MLP; DP shards matrices, TP copies the model, PP only shards optimizer state",
+        "FlashAttention is Ascend C syntax only; DP is ZeRO, TP is continuous batching, PP is PagedAttention",
+        "FlashAttention drops half the heads; DP, TP, and PP are three names for the same full-model replica"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this with FlashAttention, they mean less memory traffic."
+        }
+      ],
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Realistic next step",
+      "bodyEn": "Of the eleven fields, pick the most realistic next step after application roles.",
+      "prompt": "Which field is the most realistic next step after application roles?",
+      "choices": [
+        "MLOps and platform—closer to current skills than kernels",
+        "Competitive programming—you can earn an ACM medal this autumn with Hot 100 alone",
+        "Large-scale pretraining—every Track A internship runs trillion-token jobs",
+        "AI compiler—torch.compile tutorials make you Ascend-hireable this month"
+      ],
+      "answer": 0,
+      "id": "s9"
+    }
+  ],
+  "beats": [
+    {
+      "kind": "idea",
+      "titleEn": "Eleven Track C fields",
+      "bodyEn": "Eleven fields sit behind Track C posts: C++ systems, GPU kernels, AI compilers, distributed training, inference engines, pretraining, post-training RL, multimodal models, research, competitive programming, and MLOps. Use this map to talk honestly. Do not fake infra years this month. Rough paths are one to two years for C++ systems and inference engines, one to three for kernels, and two or more for compilers, distributed training, and research. Your job today is clear language, not fake ownership.",
+      "terms": [
+        {
+          "zh": "推理引擎",
+          "en": "inference engine",
+          "hook": "If they say this, they mean a vLLM-class serving stack—years of systems work."
+        },
+        {
+          "zh": "后训练",
+          "en": "post-training",
+          "hook": "If they say this, they mean SFT and RL after pretraining."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Kernels and FlashAttention",
+      "bodyEn": "Fast stacks often call C++ under Python in PyTorch, vLLM, and tokenizers. An operator is one basic compute such as matrix multiply, and a kernel is the chip-specific code that runs it. FlashAttention computes attention in on-chip tiles so it stays exact while cutting GPU-memory traffic. An AI compiler rewrites a computation graph to fuse ops, choose layouts, and emit chip code—names like TVM, MLIR, XLA, and torch.compile. On Ascend the stack is CANN and Ascend C, so do not claim you wrote those kernels this month.",
+      "mandarin": "FlashAttention 的思路是分块计算、减少显存读写，结果是精确的；我理解这个思路，但没有写过 CUDA 或 Ascend C 算子。",
+      "terms": [
+        {
+          "zh": "算子",
+          "en": "operator",
+          "hook": "If they say this, they mean one basic compute unit such as matrix multiply."
+        },
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this, FlashAttention cuts traffic here."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Parallelism types",
+      "bodyEn": "Data parallelism copies the full model on each GPU and shards the data, then averages gradients. Tensor parallelism splits matrices across GPUs, and pipeline parallelism puts different layers on different GPUs. ZeRO and FSDP shard optimizer state, gradients, and parameters on a compute platform. Say the three definitions aloud before any distributed-training chat. Understanding the labels is enough this month—shipping Megatron code is not.",
+      "mandarin": "数据并行复制模型切数据，张量并行切矩阵，流水线并行切层，ZeRO 和 FSDP 把优化器状态、梯度和参数分片。",
+      "terms": [
+        {
+          "zh": "数据并行",
+          "en": "data parallelism",
+          "hook": "If they say this, they mean copy the model and shard the data."
+        },
+        {
+          "zh": "张量并行",
+          "en": "tensor parallelism",
+          "hook": "If they say this, they mean split matrices across GPUs."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Inference engines",
+      "bodyEn": "vLLM, SGLang, and TensorRT-LLM serve models with continuous batching and PagedAttention. Building or patching an inference engine mixes systems and kernels. In interview, name the ideas and say you have not shipped engine source. Application-layer Python that calls these stacks is still valuable—just do not claim ownership of the engine. The honest line is: I understand the call chain; I have not optimized C++ under it.",
+      "terms": [
+        {
+          "zh": "推理引擎",
+          "en": "inference engine",
+          "hook": "If they say this, know the idea; do not claim source patches."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Pretrain, RL, research",
+      "bodyEn": "Large-scale pretraining is hard because of data cleaning, mixture, weeks of stable training, tokenizers, scaling laws, and compute cost—only a few labs run it. RLHF uses PPO and a reward model, while GRPO scores a group of answers against each other and fits math and code. Multimodal models turn images into patch tokens and often use diffusion for image or video generation. Research means reading papers fast, reproducing results, and owning the math. Start with Attention Is All You Need and The Annotated Transformer, and name one paper you actually read.",
+      "mandarin": "GRPO 对同一个问题生成一组回答，用组内相对得分代替单独训练的价值模型，适合数学、代码这类可以自动判断对错的任务。",
+      "terms": [
+        {
+          "zh": "预训练",
+          "en": "pretraining",
+          "hook": "If they say this, they mean years-long foundation training—not your LoRA."
+        },
+        {
+          "zh": "多模态",
+          "en": "multimodal",
+          "hook": "If they say this, they mean image and text in one model."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "ACM versus MLOps",
+      "bodyEn": "Tonghuashun agent posts sometimes ask for ACM medalists, and those problems need years of school training—do not pretend. Practice LeetCode Hot 100 for interview algorithms instead. MLOps covers pipelines, tracking, registry, deploy, monitoring, and GPU scheduling on Kubernetes, and it is closer to your skills than kernels. It is the most realistic next step after application roles, but still do not claim deep platform ownership without real pipeline work. The only strong answer is that you understand the idea, you have never built it, and here is what you have built.",
+      "mandarin": "我不是竞赛选手；面试的算法题我在系统练习力扣 Hot 100。",
+      "terms": [
+        {
+          "zh": "力扣",
+          "en": "LeetCode",
+          "hook": "If they say this, practice Hot 100 instead of faking ACM medals."
+        },
+        {
+          "zh": "同花顺",
+          "en": "Tonghuashun",
+          "hook": "If they say this, some agent posts want ACM medals—be honest."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Honest lines today",
+      "bodyEn": "For C++ and engines, say you work at the Python application layer, can read the call chain, and have not done C++ performance work. For FlashAttention and Ascend, explain the tiled exact idea and stop before claiming CUDA or Ascend C operators. For distributed training and inference, define DP, TP, and PP and name vLLM ideas without claiming engine patches. For pretraining and multimodal, name the hard parts and your reading, not fake foundation-model ownership. Honesty beats pretending in every Track C chat this month.",
+      "mandarin": "推理引擎和算子底层大多是 C++，我目前在应用层用 Python，能读懂调用链，但没有做过 C++ 性能优化。",
+      "terms": [
+        {
+          "zh": "算子",
+          "en": "operator",
+          "hook": "If they say this, do not claim you wrote one this month."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "FlashAttention and DP/TP/PP",
+      "bodyEn": "Check the FlashAttention idea and the three parallelism definitions.",
+      "prompt": "Which pair matches FlashAttention and DP/TP/PP?",
+      "choices": [
+        "FlashAttention tiles attention on-chip to cut GPU memory traffic while staying exact; DP copies the model and shards data, TP shards matrices, PP puts layers on different GPUs",
+        "FlashAttention replaces attention with an MLP; DP shards matrices, TP copies the model, PP only shards optimizer state",
+        "FlashAttention is Ascend C syntax only; DP is ZeRO, TP is continuous batching, PP is PagedAttention",
+        "FlashAttention drops half the heads; DP, TP, and PP are three names for the same full-model replica"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this with FlashAttention, they mean less memory traffic."
+        }
+      ],
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Realistic next step",
+      "bodyEn": "Of the eleven fields, pick the most realistic next step after application roles.",
+      "prompt": "Which field is the most realistic next step after application roles?",
+      "choices": [
+        "MLOps and platform—closer to current skills than kernels",
+        "Competitive programming—you can earn an ACM medal this autumn with Hot 100 alone",
+        "Large-scale pretraining—every Track A internship runs trillion-token jobs",
+        "AI compiler—torch.compile tutorials make you Ascend-hireable this month"
+      ],
+      "answer": 0,
+      "id": "s9"
+    }
+  ]
+}

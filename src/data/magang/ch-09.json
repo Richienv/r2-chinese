@@ -1,0 +1,312 @@
+{
+  "id": "09",
+  "index": 9,
+  "part": 3,
+  "partTitleEn": "Build something with a model",
+  "titleEn": "Prompting done right",
+  "titleSource": "Prompting yang bener",
+  "sourcePages": "34-37",
+  "when": "Week 1, day 5",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Prompt as spec",
+      "bodyEn": "A production prompt is a written specification, not a casual chat with the model. Job posts name this skill as prompt writing or prompt design. Write every serious prompt in one fixed order: Role, Task, Context, Rules, Examples, Output format. Later parts assume the earlier ones are already set, so do not skip ahead. Treat the prompt like product code you will score and revise.",
+      "terms": [
+        {
+          "zh": "提示词",
+          "en": "prompt",
+          "hook": "If they say this, they mean the everyday job word for prompt."
+        },
+        {
+          "zh": "提示词设计",
+          "en": "prompt design",
+          "hook": "If they say this, they mean designing prompts as product work."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Six prompt parts",
+      "bodyEn": "Role says who the model is playing — for WeUseAI, support staff for UMKM and lecturers. Task is one job as a verb: read the message, decide intent, decide whether to escalate, write a short reply. Context pastes facts the model needs, like the allowed intent list. Rules state required and forbidden moves: max length, tone, banned promises, and when to hand off to a human. Examples show one to three good outputs; Output format locks JSON keys such as intent, needs_human, and reply.",
+      "terms": [
+        {
+          "zh": "角色",
+          "en": "role",
+          "hook": "If they say this, they mean who the model pretends to be."
+        },
+        {
+          "zh": "转人工",
+          "en": "hand off to human",
+          "hook": "If they say this, they mean the escalate flag in support prompts."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Few-shot examples",
+      "bodyEn": "A weak Version 1 says only reply in JSON and leaves every decision to the model. A strong Version 3 spells out six intents, needs_human rules, a 60-word cap, banned words, two few-shot cases, and JSON-only output. Write like this example beats write friendly and professional. Put the hard case in the examples — an angry refund — not only the easy one. Project 1 measures the gap on about 30 real messages.",
+      "terms": [
+        {
+          "zh": "少样本",
+          "en": "few-shot",
+          "hook": "If they say this, they mean show a few finished examples."
+        },
+        {
+          "zh": "零样本",
+          "en": "zero-shot",
+          "hook": "If they say this, they mean no examples in the prompt."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Chain of thought",
+      "bodyEn": "For multi-step problems, ask the model to reason before answering — that is chain-of-thought. For plain extraction and classification it mostly adds cost, so skip it. When you need both reasoning and clean output, put thinking in one field and the answer in another so your code only reads the answer. Interviewers want when to use it, not a slogan. Say: use for multi-step logic; skip for simple classify.",
+      "terms": [
+        {
+          "zh": "思维链",
+          "en": "chain-of-thought",
+          "hook": "If they say this, they mean think step by step first."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Structured output",
+      "bodyEn": "Control rises from prompt plus examples, to JSON mode, to schema-locked keys and types — always validate in code. Valid JSON can still be wrong on content, so send the error back once and after two failures flag the item for a human. That check-and-retry loop matches Youchuan’s four-step agent pattern. Project 4 practices the same idea. Never trust model output that your program did not parse and check.",
+      "terms": [
+        {
+          "zh": "校验",
+          "en": "validate in code",
+          "hook": "If they say this, they mean your program checks the model output."
+        },
+        {
+          "zh": "有船出海",
+          "en": "Youchuan",
+          "hook": "If they say this, map their check-retry loop to Project 4."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Tool calling",
+      "bodyEn": "Tool calling lets the model ask your program to do something; the model never runs the tool itself. You send the user message plus a tool list with clear names and descriptions. The model returns a tool-call request; your code runs it and returns a tool-role message with the result. The model then writes the final answer using that result. Good tool descriptions matter as much as the JSON schema, because vague names cause invented arguments.",
+      "terms": [
+        {
+          "zh": "工具调用",
+          "en": "tool calling",
+          "hook": "If they say this, they mean the model requests a tool; your code runs it."
+        },
+        {
+          "zh": "函数调用",
+          "en": "function calling",
+          "hook": "If they say this, it is another name for the same idea."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Prompt injection",
+      "bodyEn": "Any text your system reads can smuggle instructions — that is prompt injection. No prompt wording fully prevents it, so design so a successful injection cannot wreck much. Mark untrusted user or web text as data, not as system instructions. Give tools least privilege and require human approval for risky actions like refunds or deletes. Check outputs in code for impossible scores, leaked phone numbers, and other policy breaks before you ship the reply.",
+      "terms": [
+        {
+          "zh": "提示词注入",
+          "en": "prompt injection",
+          "hook": "If they say this, they mean hostile text pretending to be instructions."
+        },
+        {
+          "zh": "最小权限",
+          "en": "least privilege",
+          "hook": "If they say this, tools can do only what they must."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Six parts check",
+      "bodyEn": "A production prompt has six parts in a fixed order. Name them from Role through Output format. Do not pick the RAG pipeline or the agent loop. Do not pick chat roles like System and User. Choose the list that matches this chapter’s how-to.",
+      "prompt": "What are the six parts of a production prompt, in order?",
+      "choices": [
+        "Role, Task, Context, Rules, Examples, Output format",
+        "System, User, Assistant, Tool, Memory, Budget",
+        "Embed, Retrieve, Rerank, Prompt, Generate, Cite",
+        "Observe, Hypothesize, Verify, Record, Retry, Escalate"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Tools and injection",
+      "bodyEn": "Tool calling is only a request from the model. Your program is what actually runs the tool. Injection defense is also mostly outside prompt wording. Least privilege and human approval for risky actions matter more than ignore jailbreaks. Pick the answer that matches both ideas.",
+      "prompt": "Who runs tools, and which defenses do not rely only on prompt words?",
+      "choices": [
+        "Your program runs tools; use least-privilege tools and human approval for risky actions",
+        "The model runtime runs tools; lower temperature and say “ignore jailbreaks”",
+        "The embedding index runs tools; longer few-shot and chain-of-thought every time",
+        "JSON schema runs tools; top-p sampling and polite refusal templates"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Prompt as spec",
+      "bodyEn": "A production prompt is a written specification, not a casual chat with the model. Job posts name this skill as prompt writing or prompt design. Write every serious prompt in one fixed order: Role, Task, Context, Rules, Examples, Output format. Later parts assume the earlier ones are already set, so do not skip ahead. Treat the prompt like product code you will score and revise.",
+      "terms": [
+        {
+          "zh": "提示词",
+          "en": "prompt",
+          "hook": "If they say this, they mean the everyday job word for prompt."
+        },
+        {
+          "zh": "提示词设计",
+          "en": "prompt design",
+          "hook": "If they say this, they mean designing prompts as product work."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Six prompt parts",
+      "bodyEn": "Role says who the model is playing — for WeUseAI, support staff for UMKM and lecturers. Task is one job as a verb: read the message, decide intent, decide whether to escalate, write a short reply. Context pastes facts the model needs, like the allowed intent list. Rules state required and forbidden moves: max length, tone, banned promises, and when to hand off to a human. Examples show one to three good outputs; Output format locks JSON keys such as intent, needs_human, and reply.",
+      "terms": [
+        {
+          "zh": "角色",
+          "en": "role",
+          "hook": "If they say this, they mean who the model pretends to be."
+        },
+        {
+          "zh": "转人工",
+          "en": "hand off to human",
+          "hook": "If they say this, they mean the escalate flag in support prompts."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Few-shot examples",
+      "bodyEn": "A weak Version 1 says only reply in JSON and leaves every decision to the model. A strong Version 3 spells out six intents, needs_human rules, a 60-word cap, banned words, two few-shot cases, and JSON-only output. Write like this example beats write friendly and professional. Put the hard case in the examples — an angry refund — not only the easy one. Project 1 measures the gap on about 30 real messages.",
+      "terms": [
+        {
+          "zh": "少样本",
+          "en": "few-shot",
+          "hook": "If they say this, they mean show a few finished examples."
+        },
+        {
+          "zh": "零样本",
+          "en": "zero-shot",
+          "hook": "If they say this, they mean no examples in the prompt."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Chain of thought",
+      "bodyEn": "For multi-step problems, ask the model to reason before answering — that is chain-of-thought. For plain extraction and classification it mostly adds cost, so skip it. When you need both reasoning and clean output, put thinking in one field and the answer in another so your code only reads the answer. Interviewers want when to use it, not a slogan. Say: use for multi-step logic; skip for simple classify.",
+      "terms": [
+        {
+          "zh": "思维链",
+          "en": "chain-of-thought",
+          "hook": "If they say this, they mean think step by step first."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Structured output",
+      "bodyEn": "Control rises from prompt plus examples, to JSON mode, to schema-locked keys and types — always validate in code. Valid JSON can still be wrong on content, so send the error back once and after two failures flag the item for a human. That check-and-retry loop matches Youchuan’s four-step agent pattern. Project 4 practices the same idea. Never trust model output that your program did not parse and check.",
+      "terms": [
+        {
+          "zh": "校验",
+          "en": "validate in code",
+          "hook": "If they say this, they mean your program checks the model output."
+        },
+        {
+          "zh": "有船出海",
+          "en": "Youchuan",
+          "hook": "If they say this, map their check-retry loop to Project 4."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Tool calling",
+      "bodyEn": "Tool calling lets the model ask your program to do something; the model never runs the tool itself. You send the user message plus a tool list with clear names and descriptions. The model returns a tool-call request; your code runs it and returns a tool-role message with the result. The model then writes the final answer using that result. Good tool descriptions matter as much as the JSON schema, because vague names cause invented arguments.",
+      "terms": [
+        {
+          "zh": "工具调用",
+          "en": "tool calling",
+          "hook": "If they say this, they mean the model requests a tool; your code runs it."
+        },
+        {
+          "zh": "函数调用",
+          "en": "function calling",
+          "hook": "If they say this, it is another name for the same idea."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Prompt injection",
+      "bodyEn": "Any text your system reads can smuggle instructions — that is prompt injection. No prompt wording fully prevents it, so design so a successful injection cannot wreck much. Mark untrusted user or web text as data, not as system instructions. Give tools least privilege and require human approval for risky actions like refunds or deletes. Check outputs in code for impossible scores, leaked phone numbers, and other policy breaks before you ship the reply.",
+      "terms": [
+        {
+          "zh": "提示词注入",
+          "en": "prompt injection",
+          "hook": "If they say this, they mean hostile text pretending to be instructions."
+        },
+        {
+          "zh": "最小权限",
+          "en": "least privilege",
+          "hook": "If they say this, tools can do only what they must."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Six parts check",
+      "bodyEn": "A production prompt has six parts in a fixed order. Name them from Role through Output format. Do not pick the RAG pipeline or the agent loop. Do not pick chat roles like System and User. Choose the list that matches this chapter’s how-to.",
+      "prompt": "What are the six parts of a production prompt, in order?",
+      "choices": [
+        "Role, Task, Context, Rules, Examples, Output format",
+        "System, User, Assistant, Tool, Memory, Budget",
+        "Embed, Retrieve, Rerank, Prompt, Generate, Cite",
+        "Observe, Hypothesize, Verify, Record, Retry, Escalate"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Tools and injection",
+      "bodyEn": "Tool calling is only a request from the model. Your program is what actually runs the tool. Injection defense is also mostly outside prompt wording. Least privilege and human approval for risky actions matter more than ignore jailbreaks. Pick the answer that matches both ideas.",
+      "prompt": "Who runs tools, and which defenses do not rely only on prompt words?",
+      "choices": [
+        "Your program runs tools; use least-privilege tools and human approval for risky actions",
+        "The model runtime runs tools; lower temperature and say “ignore jailbreaks”",
+        "The embedding index runs tools; longer few-shot and chain-of-thought every time",
+        "JSON schema runs tools; top-p sampling and polite refusal templates"
+      ],
+      "answer": 0
+    }
+  ]
+}

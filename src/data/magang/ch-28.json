@@ -1,0 +1,330 @@
+{
+  "id": "28",
+  "index": 28,
+  "part": 6,
+  "partTitleEn": "Coding tests",
+  "titleEn": "Hand-written model functions",
+  "titleSource": "手撕: kode yang kandidat LLM disuruh tulis tangan",
+  "sourcePages": "107-110",
+  "when": "Weeks 2–4 · each from memory on paper under ten minutes",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "try",
+      "titleEn": "Drill on paper",
+      "bodyEn": "Model-role interviews often replace LeetCode with hand-written functions: softmax, attention, LayerNorm from scratch. Read one function, close the book, write it on paper under ten minutes, then type and run handwritten.py against PyTorch. Targets include technical rounds with interviewers such as Xiao, Zhao, and Jiang. The file’s checks prove your version is right, not merely plausible. Paper first, then run — that is the drill.",
+      "terms": [
+        {
+          "zh": "手撕",
+          "en": "hand-write from scratch",
+          "hook": "If they say this, paper first, then run checks."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "idea",
+      "titleEn": "Stable softmax",
+      "bodyEn": "Subtract the max along the axis before exp, then divide by the sum of exps with keepdims. Subtracting the max cancels in the division but stops exp overflow. Without it, softmax([1000, 1001]) yields nan. Interviewers often ask why that subtract-max line is there. Always write it first, even under pressure. Say out loud: same probabilities, no overflow.",
+      "terms": [
+        {
+          "zh": "softmax",
+          "en": "softmax",
+          "hook": "If they ask for this, always subtract max first."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "Attention and mask",
+      "bodyEn": "For Q, K, V shaped (T, d): scores = Q @ K.T / √d give a (T, T) matrix. Softmax over the last axis, then weights @ V; return outputs and the weight matrix. Optional causal mask: mark future positions with np.triu(..., k=1) and set those scores to −∞ before softmax so weights become exactly zero. Scaling by √d stops dots from saturating softmax as dimension grows. Time and memory are both quadratic in sequence length — say that after you write it.",
+      "terms": [
+        {
+          "zh": "自注意力",
+          "en": "self-attention",
+          "hook": "If they say this, QKᵀ/√d then V."
+        },
+        {
+          "zh": "因果掩码",
+          "en": "causal mask",
+          "hook": "If they say this, future scores go to −∞."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "Multi-head reshape",
+      "bodyEn": "X is (T, d_model). Project to Q, K, V, then reshape and transpose to (heads, T, head_dim) with head_dim = d_model // n_heads. Run attention per head, reshape back to (T, d_model), and mix with W_O. The reshape is the hard part under pressure — drill it until muscle memory. Wrong head_dim is the most common whiteboard mistake. Narrate shapes as you write them.",
+      "terms": [
+        {
+          "zh": "多头注意力",
+          "en": "multi-head attention",
+          "hook": "If they say this, reshape is the hard part."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "LayerNorm and RMSNorm",
+      "bodyEn": "LayerNorm per last axis: mean μ and variance, then γ * (x − μ) / √(var + eps) + β. Keepdims on mean and var so broadcasting works. RMSNorm skips mean centering and β: γ * x / √(mean(x²) + eps). Newer LLM stacks often use RMSNorm — know both so you do not mix them when asked to hand-write. Ask which one they want before you start.",
+      "terms": [
+        {
+          "zh": "LayerNorm",
+          "en": "layer normalization",
+          "hook": "If they say this, subtract mean, then scale."
+        },
+        {
+          "zh": "RMSNorm",
+          "en": "RMS normalization",
+          "hook": "If they say this, no mean, no beta."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "idea",
+      "titleEn": "Loss and cosine",
+      "bodyEn": "Cross-entropy from logits (N, V) and target class ids (N,): stable log-softmax subtracts the row max, then logits − log(sum(exp(logits))). Loss is the mean of −log_prob at the true class. Cosine similarity is (a · b) / (‖a‖ ‖b‖) — useful for embedding prompts and sanity-checking retrieval demos. Both need numerical care: never exp raw large logits. Say subtract-max again if they ask why loss is stable.",
+      "terms": [
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this, from logits, subtract max first."
+        },
+        {
+          "zh": "余弦相似度",
+          "en": "cosine similarity",
+          "hook": "If they say this, dot over product of norms."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Sampling order",
+      "bodyEn": "Teach the order cold: temperature → top-k mask → softmax → top-p truncate → sample. Divide logits by temperature first. Optional top-k keeps the k best logits and sets others to −∞ before softmax. Optional top-p keeps the smallest set whose mass ≥ top_p, then renormalize and sample. Know why each step sits where it does — interviewers ask for the order, not only the formulas. Low temperature for facts and JSON; raise it a bit for creative work.",
+      "terms": [
+        {
+          "zh": "温度",
+          "en": "temperature",
+          "hook": "If they say this, first step before top-k / top-p."
+        },
+        {
+          "zh": "采样",
+          "en": "sampling",
+          "hook": "If they say this, temp → top-k → top-p."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "interview",
+      "titleEn": "LoRA and self-attention",
+      "bodyEn": "LoRA forward: frozen W plus low-rank update x @ W.T + (α / r) * (x @ A.T @ B.T). With B = 0 the output matches the frozen layer exactly. After handwritten.py, stable softmax survives [1000, 1001]; causal upper triangle is zero weight; LoRA with B=0 changes nothing. For the interview ask, hand-write self-attention and state that time and memory are both quadratic in sequence length. Practice until you can write it without peeking.",
+      "terms": [
+        {
+          "zh": "手撕",
+          "en": "hand-write",
+          "hook": "If they say this, self-attention from memory."
+        },
+        {
+          "zh": "LoRA",
+          "en": "low-rank adaptation",
+          "hook": "If they ask the forward, scale is alpha / r."
+        }
+      ],
+      "mandarin": "手写一个 self-attention（可以用 numpy）。"
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Why subtract max",
+      "bodyEn": "Subtract-max cancels in the divide and stops overflow.",
+      "prompt": "Why does subtracting the maximum not change the softmax result?",
+      "choices": [
+        "It factors out of exp and cancels in the normalization divide—same probabilities, no overflow",
+        "It zeros the largest logit so the model becomes deterministic",
+        "It is required only for cosine similarity",
+        "It converts softmax into LayerNorm"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "RMSNorm from memory",
+      "bodyEn": "RMSNorm has no mean subtraction and no β.",
+      "prompt": "Which formula is RMSNorm?",
+      "choices": [
+        "γ * x / √(mean(x²) + eps) — no mean subtraction, no β",
+        "γ * (x − μ) / √(var + eps) + β only",
+        "softmax(x − max(x))",
+        "(α/r) * (x @ A.T @ B.T) alone"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "try",
+      "titleEn": "Drill on paper",
+      "bodyEn": "Model-role interviews often replace LeetCode with hand-written functions: softmax, attention, LayerNorm from scratch. Read one function, close the book, write it on paper under ten minutes, then type and run handwritten.py against PyTorch. Targets include technical rounds with interviewers such as Xiao, Zhao, and Jiang. The file’s checks prove your version is right, not merely plausible. Paper first, then run — that is the drill.",
+      "terms": [
+        {
+          "zh": "手撕",
+          "en": "hand-write from scratch",
+          "hook": "If they say this, paper first, then run checks."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "idea",
+      "titleEn": "Stable softmax",
+      "bodyEn": "Subtract the max along the axis before exp, then divide by the sum of exps with keepdims. Subtracting the max cancels in the division but stops exp overflow. Without it, softmax([1000, 1001]) yields nan. Interviewers often ask why that subtract-max line is there. Always write it first, even under pressure. Say out loud: same probabilities, no overflow.",
+      "terms": [
+        {
+          "zh": "softmax",
+          "en": "softmax",
+          "hook": "If they ask for this, always subtract max first."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "Attention and mask",
+      "bodyEn": "For Q, K, V shaped (T, d): scores = Q @ K.T / √d give a (T, T) matrix. Softmax over the last axis, then weights @ V; return outputs and the weight matrix. Optional causal mask: mark future positions with np.triu(..., k=1) and set those scores to −∞ before softmax so weights become exactly zero. Scaling by √d stops dots from saturating softmax as dimension grows. Time and memory are both quadratic in sequence length — say that after you write it.",
+      "terms": [
+        {
+          "zh": "自注意力",
+          "en": "self-attention",
+          "hook": "If they say this, QKᵀ/√d then V."
+        },
+        {
+          "zh": "因果掩码",
+          "en": "causal mask",
+          "hook": "If they say this, future scores go to −∞."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "Multi-head reshape",
+      "bodyEn": "X is (T, d_model). Project to Q, K, V, then reshape and transpose to (heads, T, head_dim) with head_dim = d_model // n_heads. Run attention per head, reshape back to (T, d_model), and mix with W_O. The reshape is the hard part under pressure — drill it until muscle memory. Wrong head_dim is the most common whiteboard mistake. Narrate shapes as you write them.",
+      "terms": [
+        {
+          "zh": "多头注意力",
+          "en": "multi-head attention",
+          "hook": "If they say this, reshape is the hard part."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "LayerNorm and RMSNorm",
+      "bodyEn": "LayerNorm per last axis: mean μ and variance, then γ * (x − μ) / √(var + eps) + β. Keepdims on mean and var so broadcasting works. RMSNorm skips mean centering and β: γ * x / √(mean(x²) + eps). Newer LLM stacks often use RMSNorm — know both so you do not mix them when asked to hand-write. Ask which one they want before you start.",
+      "terms": [
+        {
+          "zh": "LayerNorm",
+          "en": "layer normalization",
+          "hook": "If they say this, subtract mean, then scale."
+        },
+        {
+          "zh": "RMSNorm",
+          "en": "RMS normalization",
+          "hook": "If they say this, no mean, no beta."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "idea",
+      "titleEn": "Loss and cosine",
+      "bodyEn": "Cross-entropy from logits (N, V) and target class ids (N,): stable log-softmax subtracts the row max, then logits − log(sum(exp(logits))). Loss is the mean of −log_prob at the true class. Cosine similarity is (a · b) / (‖a‖ ‖b‖) — useful for embedding prompts and sanity-checking retrieval demos. Both need numerical care: never exp raw large logits. Say subtract-max again if they ask why loss is stable.",
+      "terms": [
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this, from logits, subtract max first."
+        },
+        {
+          "zh": "余弦相似度",
+          "en": "cosine similarity",
+          "hook": "If they say this, dot over product of norms."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Sampling order",
+      "bodyEn": "Teach the order cold: temperature → top-k mask → softmax → top-p truncate → sample. Divide logits by temperature first. Optional top-k keeps the k best logits and sets others to −∞ before softmax. Optional top-p keeps the smallest set whose mass ≥ top_p, then renormalize and sample. Know why each step sits where it does — interviewers ask for the order, not only the formulas. Low temperature for facts and JSON; raise it a bit for creative work.",
+      "terms": [
+        {
+          "zh": "温度",
+          "en": "temperature",
+          "hook": "If they say this, first step before top-k / top-p."
+        },
+        {
+          "zh": "采样",
+          "en": "sampling",
+          "hook": "If they say this, temp → top-k → top-p."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "interview",
+      "titleEn": "LoRA and self-attention",
+      "bodyEn": "LoRA forward: frozen W plus low-rank update x @ W.T + (α / r) * (x @ A.T @ B.T). With B = 0 the output matches the frozen layer exactly. After handwritten.py, stable softmax survives [1000, 1001]; causal upper triangle is zero weight; LoRA with B=0 changes nothing. For the interview ask, hand-write self-attention and state that time and memory are both quadratic in sequence length. Practice until you can write it without peeking.",
+      "terms": [
+        {
+          "zh": "手撕",
+          "en": "hand-write",
+          "hook": "If they say this, self-attention from memory."
+        },
+        {
+          "zh": "LoRA",
+          "en": "low-rank adaptation",
+          "hook": "If they ask the forward, scale is alpha / r."
+        }
+      ],
+      "mandarin": "手写一个 self-attention（可以用 numpy）。"
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Why subtract max",
+      "bodyEn": "Subtract-max cancels in the divide and stops overflow.",
+      "prompt": "Why does subtracting the maximum not change the softmax result?",
+      "choices": [
+        "It factors out of exp and cancels in the normalization divide—same probabilities, no overflow",
+        "It zeros the largest logit so the model becomes deterministic",
+        "It is required only for cosine similarity",
+        "It converts softmax into LayerNorm"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "RMSNorm from memory",
+      "bodyEn": "RMSNorm has no mean subtraction and no β.",
+      "prompt": "Which formula is RMSNorm?",
+      "choices": [
+        "γ * x / √(mean(x²) + eps) — no mean subtraction, no β",
+        "γ * (x − μ) / √(var + eps) + β only",
+        "softmax(x − max(x))",
+        "(α/r) * (x @ A.T @ B.T) alone"
+      ],
+      "answer": 0
+    }
+  ]
+}

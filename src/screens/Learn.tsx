@@ -8,6 +8,8 @@ import { NODE_LABEL, PATH_NODES, isLessonReached, isNodePlayable, nextPlayable, 
 import { useStore, type PathNode } from '../store/store'
 import { JiaochengLearn } from './Jiaocheng'
 import { KerjaLearn } from './Kerja'
+import { InterviewLearn } from './Interview'
+import { MagangLearn } from './Magang'
 
 const W = 396
 const CX = [118, 278, 108, 288, 116, 270]
@@ -182,6 +184,8 @@ export function Learn({
   onPlay,
   onKerjaPlay,
   onJiaochengPlay,
+  onMagangPlay,
+  onInterviewPlay,
   isNodeDone,
 }: {
   onLesson: (lesson: number) => void
@@ -189,6 +193,8 @@ export function Learn({
   onPlay?: (lesson: number, node: PathNode) => void
   onKerjaPlay?: (chapter: number, node: PathNode) => void
   onJiaochengPlay?: (lesson: number, node: PathNode) => void
+  onMagangPlay?: (chapter: number, node: string) => void
+  onInterviewPlay?: (chapter: number, node: string) => void
   isNodeDone?: (lesson: number, node: PathNode) => boolean
 }) {
   const store = useStore()
@@ -211,6 +217,10 @@ export function Learn({
         <KerjaLearn onPlay={(chapter, node) => onKerjaPlay?.(chapter, node)} />
       ) : course === 'jiaocheng' ? (
         <JiaochengLearn onPlay={(lesson, node) => onJiaochengPlay?.(lesson, node)} />
+      ) : course === 'magang' ? (
+        <MagangLearn onPlay={(chapter, node) => onMagangPlay?.(chapter, node)} />
+      ) : course === 'interview' ? (
+        <InterviewLearn onPlay={(chapter, node) => onInterviewPlay?.(chapter, node)} />
       ) : (
         lessons.map((lesson) => (
           <LessonPath

@@ -1,0 +1,274 @@
+{
+  "id": "20",
+  "index": 20,
+  "part": 4,
+  "partTitleEn": "Six projects",
+  "titleEn": "Project 4 · Listing checker agent plus MCP server",
+  "titleSource": "Project 4 · Agent pengecek listing plus server MCP",
+  "sourcePages": "78-81",
+  "when": "Week 3, days 15–19. About 14 hours.",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What this proves",
+      "bodyEn": "Project 4 proves you can ship observe → hypothesize → verify → record as real code with validation, retry, lessons, and MCP tools. You build an agent that checks shop listings and exposes data as tools for Claude Code. Interviewers want to hear which parts are fixed and which the model decides. Honest limit: naming “agents” without precision and recall numbers is a slide, not a project.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, they mean model-chosen steps with tools, verify, and stop rules."
+        },
+        {
+          "zh": "四步循环",
+          "en": "four-step loop",
+          "hook": "If they say this, they mean observe, hypothesize, verify, then record lessons."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Labels before the agent",
+      "bodyEn": "Prepare twenty listings you are allowed to use — client data or hand-copied public examples — and do not mass-scrape. Mix good and bad rows. The agent may only report six fixed problem codes so output is measurable. Label all twenty yourself before any agent run. Honest limit: labeling after the run scores a story you already know.",
+      "terms": []
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Verify then retry",
+      "bodyEn": "Read verify first: schema and the six codes in code, plus rules for title length and banned words. Walk observe → hypothesize → verify → record; retry once with errors; hand off after two failures. Run the agent, open the logs and lessons file, then measure first-try valid JSON, handoff, precision, and recall. Honest limit: without verify in code, the model will invent new problem codes.",
+      "terms": [
+        {
+          "zh": "验证",
+          "en": "verify",
+          "hook": "If they say this, they mean code checks the model’s proposal before it counts."
+        },
+        {
+          "zh": "转人工",
+          "en": "escalate",
+          "hook": "If they say this, they mean hand the listing to a human after two failures."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Lessons on the second run",
+      "bodyEn": "Record writes lessons the next run will read — that is more than logging. Run again with lessons present and compare first-attempt valid rate honestly. Report even a small or zero gain. This is the evaluator–optimiser idea in miniature. Honest limit: hiding a flat second run wastes the point of 沉淀.",
+      "terms": [
+        {
+          "zh": "沉淀",
+          "en": "record lessons",
+          "hook": "If they say this, they mean write lessons this run so the next run starts smarter."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "LangGraph twin",
+      "bodyEn": "Build a LangGraph twin of the plain-Python agent and check that results match. Be ready to say each step is a node, retry is an edge, and state is explicit. Matching results prove you understand the loop, not only one library. Interviewers like hearing why you kept schema and escalation in code. Honest limit: a graph that disagrees with the plain agent means you do not understand either yet.",
+      "terms": [
+        {
+          "zh": "编排",
+          "en": "orchestration",
+          "hook": "If they say this, they mean how steps and retries are wired in the graph."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "MCP server",
+      "bodyEn": "Start an MCP server that exposes listing tools over stdio. Connect Claude Code with the full path to your server script. Ask which listings omit size, record the tool calls, and save a short screen video. Write clear docstrings — that is what the model reads when choosing a tool. Honest limit: unfinished MCP wiring is not “almost done” on a CV.",
+      "terms": [
+        {
+          "zh": "MCP",
+          "en": "MCP",
+          "hook": "If they say this, they mean expose your tools so another host app can call them."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "What done looks like",
+      "bodyEn": "Done means twenty labeled listings, matching plain-Python and LangGraph agents, an MCP demo video, and a metrics table with your numbers. The README states what is fixed in code versus what the model chooses. Three remaining failures stay visible. Honest limit: unfinished MCP wiring is not “almost done” on a CV.",
+      "terms": [
+        {
+          "zh": "精确率",
+          "en": "precision",
+          "hook": "If they say this, they mean of codes you flagged, how many were right."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "watch",
+      "titleEn": "Stop after two failures",
+      "bodyEn": "Do not scrape platforms at large scale. After two failed attempts, escalate — do not loop forever. Fixed code owns schema, rules, retry limit, and escalation; the model chooses codes and the rewritten title only. Honest limit: unlimited retries look industrious and burn budget while still being wrong.",
+      "terms": []
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Four-step loop order",
+      "bodyEn": "Project 4 uses a fixed four-step loop. Pick observe → hypothesize → verify → record in Mandarin order.",
+      "prompt": "What is the four-step agent loop used in Project 4?",
+      "choices": [
+        "训练 → 评估 → 部署 → 监控",
+        "观察 → 假设 → 验证 → 沉淀",
+        "检索 → 重排 → 生成 → 引用",
+        "分词 → 嵌入 → 注意力 → 输出"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "When to escalate",
+      "bodyEn": "The agent retries once with verify errors. If the second attempt still fails, the listing goes to a human.",
+      "prompt": "When does the listing-checker agent hand a listing to a human?",
+      "choices": [
+        "After every first failure",
+        "After two failed attempts",
+        "Only when price looks unreasonable",
+        "Never — MCP handles everything"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What this proves",
+      "bodyEn": "Project 4 proves you can ship observe → hypothesize → verify → record as real code with validation, retry, lessons, and MCP tools. You build an agent that checks shop listings and exposes data as tools for Claude Code. Interviewers want to hear which parts are fixed and which the model decides. Honest limit: naming “agents” without precision and recall numbers is a slide, not a project.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, they mean model-chosen steps with tools, verify, and stop rules."
+        },
+        {
+          "zh": "四步循环",
+          "en": "four-step loop",
+          "hook": "If they say this, they mean observe, hypothesize, verify, then record lessons."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Labels before the agent",
+      "bodyEn": "Prepare twenty listings you are allowed to use — client data or hand-copied public examples — and do not mass-scrape. Mix good and bad rows. The agent may only report six fixed problem codes so output is measurable. Label all twenty yourself before any agent run. Honest limit: labeling after the run scores a story you already know.",
+      "terms": []
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Verify then retry",
+      "bodyEn": "Read verify first: schema and the six codes in code, plus rules for title length and banned words. Walk observe → hypothesize → verify → record; retry once with errors; hand off after two failures. Run the agent, open the logs and lessons file, then measure first-try valid JSON, handoff, precision, and recall. Honest limit: without verify in code, the model will invent new problem codes.",
+      "terms": [
+        {
+          "zh": "验证",
+          "en": "verify",
+          "hook": "If they say this, they mean code checks the model’s proposal before it counts."
+        },
+        {
+          "zh": "转人工",
+          "en": "escalate",
+          "hook": "If they say this, they mean hand the listing to a human after two failures."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Lessons on the second run",
+      "bodyEn": "Record writes lessons the next run will read — that is more than logging. Run again with lessons present and compare first-attempt valid rate honestly. Report even a small or zero gain. This is the evaluator–optimiser idea in miniature. Honest limit: hiding a flat second run wastes the point of 沉淀.",
+      "terms": [
+        {
+          "zh": "沉淀",
+          "en": "record lessons",
+          "hook": "If they say this, they mean write lessons this run so the next run starts smarter."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "LangGraph twin",
+      "bodyEn": "Build a LangGraph twin of the plain-Python agent and check that results match. Be ready to say each step is a node, retry is an edge, and state is explicit. Matching results prove you understand the loop, not only one library. Interviewers like hearing why you kept schema and escalation in code. Honest limit: a graph that disagrees with the plain agent means you do not understand either yet.",
+      "terms": [
+        {
+          "zh": "编排",
+          "en": "orchestration",
+          "hook": "If they say this, they mean how steps and retries are wired in the graph."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "MCP server",
+      "bodyEn": "Start an MCP server that exposes listing tools over stdio. Connect Claude Code with the full path to your server script. Ask which listings omit size, record the tool calls, and save a short screen video. Write clear docstrings — that is what the model reads when choosing a tool. Honest limit: unfinished MCP wiring is not “almost done” on a CV.",
+      "terms": [
+        {
+          "zh": "MCP",
+          "en": "MCP",
+          "hook": "If they say this, they mean expose your tools so another host app can call them."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "What done looks like",
+      "bodyEn": "Done means twenty labeled listings, matching plain-Python and LangGraph agents, an MCP demo video, and a metrics table with your numbers. The README states what is fixed in code versus what the model chooses. Three remaining failures stay visible. Honest limit: unfinished MCP wiring is not “almost done” on a CV.",
+      "terms": [
+        {
+          "zh": "精确率",
+          "en": "precision",
+          "hook": "If they say this, they mean of codes you flagged, how many were right."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "watch",
+      "titleEn": "Stop after two failures",
+      "bodyEn": "Do not scrape platforms at large scale. After two failed attempts, escalate — do not loop forever. Fixed code owns schema, rules, retry limit, and escalation; the model chooses codes and the rewritten title only. Honest limit: unlimited retries look industrious and burn budget while still being wrong.",
+      "terms": []
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Four-step loop order",
+      "bodyEn": "Project 4 uses a fixed four-step loop. Pick observe → hypothesize → verify → record in Mandarin order.",
+      "prompt": "What is the four-step agent loop used in Project 4?",
+      "choices": [
+        "训练 → 评估 → 部署 → 监控",
+        "观察 → 假设 → 验证 → 沉淀",
+        "检索 → 重排 → 生成 → 引用",
+        "分词 → 嵌入 → 注意力 → 输出"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "When to escalate",
+      "bodyEn": "The agent retries once with verify errors. If the second attempt still fails, the listing goes to a human.",
+      "prompt": "When does the listing-checker agent hand a listing to a human?",
+      "choices": [
+        "After every first failure",
+        "After two failed attempts",
+        "Only when price looks unreasonable",
+        "Never — MCP handles everything"
+      ],
+      "answer": 1
+    }
+  ]
+}

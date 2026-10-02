@@ -1,0 +1,284 @@
+{
+  "id": "21",
+  "index": 21,
+  "part": 4,
+  "partTitleEn": "Six projects",
+  "titleEn": "Project 5 · LoRA fine-tune for Indonesian customer service",
+  "titleSource": "Project 5 · Fine-tune LoRA buat customer service Indonesia",
+  "sourcePages": "82-84",
+  "when": "Week 4, days 22–25. About 12 hours, plus GPU time.",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What this proves",
+      "bodyEn": "Project 5 proves when a small LoRA fine-tune helps and how you prove it on a fair test. You adapt a small Qwen to answer WeUseAI messages in the same JSON format Project 1 already uses. Then you score three systems on the same thirty messages with the same five checks: base model, LoRA adapter, and your best API prompt. Job posts call this model fine-tuning and model evaluation. An honest table can still favor the large API model — that is a finding, not a failed project.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tune",
+          "hook": "If they say this, they mean train a bit more for your task."
+        },
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, they mean prove quality with numbers."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Training data",
+      "bodyEn": "Write one hundred hand examples with message, intent, needs_human, and a good reply from anonymized WeUseAI patterns. Draft two hundred more with a strong model, then read every row, fix or delete bad ones, and mark synthetic rows in the README. Quality beats volume: every bad row teaches the wrong habit. Run the data script next so train and test files exist before you rent a GPU. Never train on the same text you will score later.",
+      "terms": [
+        {
+          "zh": "微调数据",
+          "en": "fine-tune data",
+          "hook": "If they ask about data, talk quality and no-leak splits."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "watch",
+      "titleEn": "No-leak test split",
+      "bodyEn": "If Project 1’s thirty real messages exist, those rows become the whole test set and matching training rows are dropped. If that file is missing, use a 90/10 cut instead. The rule is the same: never score the adapter on text it saw in training. Interviewers listen for this fairness detail more than for fancy LoRA ranks. Say the split out loud when you present the table.",
+      "terms": [
+        {
+          "zh": "测试集",
+          "en": "test set",
+          "hook": "If they ask how you scored, name the held-out messages."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Train the adapter",
+      "bodyEn": "Smoke-test the pipeline on CPU with a tiny model so you know the path runs end to end. Rent a CUDA GPU — Colab free T4 or AutoDL by the hour — and set a Hugging Face mirror if downloads are slow. Train LoRA with rank 16, alpha 32, dropout 0.05, all-linear targets, learning rate 2e-4, and save only the adapter. Watch train and eval loss; if eval rises while train falls, you are overfitting and should try fewer epochs. Prefer CUDA for the real run; Apple silicon failed in the book’s newest-library test.",
+      "terms": [
+        {
+          "zh": "过拟合",
+          "en": "overfitting",
+          "hook": "If they say this, they mean train loss down, eval loss up."
+        },
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they ask what fills up, this is VRAM."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Score three systems",
+      "bodyEn": "Generate and score the base model and the adapter on the same thirty messages so five-check totals print for each. Add a third row from Project 1: your best prompt on an API model scored the same way. Optionally try one change, such as rank 8 or one epoch, as a fourth row. Fill a comparison table with loss curves and three sample outputs per model. Then write one paragraph that states the winner and the next step.",
+      "terms": [
+        {
+          "zh": "提示词",
+          "en": "prompt",
+          "hook": "If they ask why the API wins, this is the baseline you compared."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "idea",
+      "titleEn": "Done and the pitch",
+      "bodyEn": "Done means at least three hundred training conversations with synthetic rows marked, a few-megabyte adapter on disk, and one fair table of three systems. The ninety-second story covers question, method, data, fair test, scores, and next step. Put the CV numbers only from that table. If the API wins on quality, argue fine-tuning on cost, speed, and privacy for a small on-machine model. Do not hide the API row to make LoRA look better.",
+      "terms": [
+        {
+          "zh": "LoRA",
+          "en": "low-rank adapter",
+          "hook": "If they say LoRA, they mean a tiny file beside a frozen model."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Time budget",
+      "bodyEn": "The book budgets about twelve hours plus GPU time across Week 4, days 22–25. Writing and reviewing three hundred examples is most of the human clock. The CPU smoke test is short; the CUDA train is the paid or cloud slot you schedule separately. Scoring three systems is quick once generate works. Do not burn GPU hours before the smoke test and the no-leak split are solid."
+    },
+    {
+      "id": "s8",
+      "kind": "watch",
+      "titleEn": "Honest API wins",
+      "bodyEn": "Never train on the same thirty real messages you score. Do not hide an API-plus-prompt win; argue fine-tuning on cost, speed, and privacy instead. Prefer CUDA for the real train. Mark every synthetic row in the README. Raising LoRA rank only to “beat” the API is not the goal of this project.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tune",
+          "hook": "If they push quality, you may still win on cost and privacy."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Fair test set",
+      "bodyEn": "Project 5 reuses Project 1’s thirty real messages when that CSV exists. Those rows become the whole test set. Matching training rows are dropped so you never score on text the adapter saw. Pick the choice that states that fair-split rule.",
+      "prompt": "How does Project 5 keep the test fair against Project 1?",
+      "choices": [
+        "It uses a random 50/50 split of synthetic data only",
+        "If p1_inputs.csv exists, those 30 real messages are the whole test set and matching training rows are dropped",
+        "It scores only on training examples the model saw",
+        "It disables the five automatic checks for the LoRA model"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "If the API wins",
+      "bodyEn": "An honest table can show the large API model plus your best prompt still ahead. The book treats that as a real finding, not a failed project. You then argue fine-tuning on cost, speed, and privacy for a small on-machine model. Pick that reading, not hiding numbers or endless rank chasing.",
+      "prompt": "If a large API model plus your best prompt still beats LoRA, what does the book say that means?",
+      "choices": [
+        "You must hide the numbers and only show the LoRA row",
+        "It is a real finding; argue fine-tuning on cost, speed, and privacy instead",
+        "You failed the project and should delete the README",
+        "You should raise LoRA rank until the API loses"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What this proves",
+      "bodyEn": "Project 5 proves when a small LoRA fine-tune helps and how you prove it on a fair test. You adapt a small Qwen to answer WeUseAI messages in the same JSON format Project 1 already uses. Then you score three systems on the same thirty messages with the same five checks: base model, LoRA adapter, and your best API prompt. Job posts call this model fine-tuning and model evaluation. An honest table can still favor the large API model — that is a finding, not a failed project.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tune",
+          "hook": "If they say this, they mean train a bit more for your task."
+        },
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, they mean prove quality with numbers."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Training data",
+      "bodyEn": "Write one hundred hand examples with message, intent, needs_human, and a good reply from anonymized WeUseAI patterns. Draft two hundred more with a strong model, then read every row, fix or delete bad ones, and mark synthetic rows in the README. Quality beats volume: every bad row teaches the wrong habit. Run the data script next so train and test files exist before you rent a GPU. Never train on the same text you will score later.",
+      "terms": [
+        {
+          "zh": "微调数据",
+          "en": "fine-tune data",
+          "hook": "If they ask about data, talk quality and no-leak splits."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "watch",
+      "titleEn": "No-leak test split",
+      "bodyEn": "If Project 1’s thirty real messages exist, those rows become the whole test set and matching training rows are dropped. If that file is missing, use a 90/10 cut instead. The rule is the same: never score the adapter on text it saw in training. Interviewers listen for this fairness detail more than for fancy LoRA ranks. Say the split out loud when you present the table.",
+      "terms": [
+        {
+          "zh": "测试集",
+          "en": "test set",
+          "hook": "If they ask how you scored, name the held-out messages."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Train the adapter",
+      "bodyEn": "Smoke-test the pipeline on CPU with a tiny model so you know the path runs end to end. Rent a CUDA GPU — Colab free T4 or AutoDL by the hour — and set a Hugging Face mirror if downloads are slow. Train LoRA with rank 16, alpha 32, dropout 0.05, all-linear targets, learning rate 2e-4, and save only the adapter. Watch train and eval loss; if eval rises while train falls, you are overfitting and should try fewer epochs. Prefer CUDA for the real run; Apple silicon failed in the book’s newest-library test.",
+      "terms": [
+        {
+          "zh": "过拟合",
+          "en": "overfitting",
+          "hook": "If they say this, they mean train loss down, eval loss up."
+        },
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they ask what fills up, this is VRAM."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "try",
+      "titleEn": "Score three systems",
+      "bodyEn": "Generate and score the base model and the adapter on the same thirty messages so five-check totals print for each. Add a third row from Project 1: your best prompt on an API model scored the same way. Optionally try one change, such as rank 8 or one epoch, as a fourth row. Fill a comparison table with loss curves and three sample outputs per model. Then write one paragraph that states the winner and the next step.",
+      "terms": [
+        {
+          "zh": "提示词",
+          "en": "prompt",
+          "hook": "If they ask why the API wins, this is the baseline you compared."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "idea",
+      "titleEn": "Done and the pitch",
+      "bodyEn": "Done means at least three hundred training conversations with synthetic rows marked, a few-megabyte adapter on disk, and one fair table of three systems. The ninety-second story covers question, method, data, fair test, scores, and next step. Put the CV numbers only from that table. If the API wins on quality, argue fine-tuning on cost, speed, and privacy for a small on-machine model. Do not hide the API row to make LoRA look better.",
+      "terms": [
+        {
+          "zh": "LoRA",
+          "en": "low-rank adapter",
+          "hook": "If they say LoRA, they mean a tiny file beside a frozen model."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Time budget",
+      "bodyEn": "The book budgets about twelve hours plus GPU time across Week 4, days 22–25. Writing and reviewing three hundred examples is most of the human clock. The CPU smoke test is short; the CUDA train is the paid or cloud slot you schedule separately. Scoring three systems is quick once generate works. Do not burn GPU hours before the smoke test and the no-leak split are solid."
+    },
+    {
+      "id": "s8",
+      "kind": "watch",
+      "titleEn": "Honest API wins",
+      "bodyEn": "Never train on the same thirty real messages you score. Do not hide an API-plus-prompt win; argue fine-tuning on cost, speed, and privacy instead. Prefer CUDA for the real train. Mark every synthetic row in the README. Raising LoRA rank only to “beat” the API is not the goal of this project.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tune",
+          "hook": "If they push quality, you may still win on cost and privacy."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Fair test set",
+      "bodyEn": "Project 5 reuses Project 1’s thirty real messages when that CSV exists. Those rows become the whole test set. Matching training rows are dropped so you never score on text the adapter saw. Pick the choice that states that fair-split rule.",
+      "prompt": "How does Project 5 keep the test fair against Project 1?",
+      "choices": [
+        "It uses a random 50/50 split of synthetic data only",
+        "If p1_inputs.csv exists, those 30 real messages are the whole test set and matching training rows are dropped",
+        "It scores only on training examples the model saw",
+        "It disables the five automatic checks for the LoRA model"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "If the API wins",
+      "bodyEn": "An honest table can show the large API model plus your best prompt still ahead. The book treats that as a real finding, not a failed project. You then argue fine-tuning on cost, speed, and privacy for a small on-machine model. Pick that reading, not hiding numbers or endless rank chasing.",
+      "prompt": "If a large API model plus your best prompt still beats LoRA, what does the book say that means?",
+      "choices": [
+        "You must hide the numbers and only show the LoRA row",
+        "It is a real finding; argue fine-tuning on cost, speed, and privacy instead",
+        "You failed the project and should delete the README",
+        "You should raise LoRA rank until the API loses"
+      ],
+      "answer": 1
+    }
+  ]
+}

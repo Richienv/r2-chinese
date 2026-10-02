@@ -1,0 +1,328 @@
+{
+  "id": "02",
+  "index": 2,
+  "part": 1,
+  "partTitleEn": "Map",
+  "titleEn": "The gates, and how tech recruiting works in China",
+  "titleSource": "Gerbang-gerbang, dan cara kerja rekrutmen tech di China",
+  "sourcePages": "6-8",
+  "when": "Day 1",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Five hiring gates",
+      "bodyEn": "Five things can cancel an offer even when your skill is fine. Check all five before you spend a night preparing one company. The five gates are internship annotation, graduation date, city, passport for campus hiring, and the days and months written in the posting. Skill alone never opens a blocked gate. Treat each gate as a yes-or-no filter before you deep-prep.",
+      "terms": [
+        {
+          "zh": "实习加注",
+          "en": "internship annotation",
+          "hook": "If they say this, they mean the stamp that makes paid internship work legal."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Internship annotation",
+      "bodyEn": "You hold a student residence permit. Paid work needs the university to add internship annotation before day one. The company gives an offer letter and signs forms; Zhejiang University and immigration handle the rest — plan about 30 days after the offer. Working without annotation is illegal and can revoke your permit. When HR asks about work authorization, say you are a ZJU foreign student, you need annotation before start, and you need about 30 days after the offer letter.",
+      "terms": [
+        {
+          "zh": "实习加注",
+          "en": "internship annotation",
+          "hook": "If they say this, no stamp means the work can be illegal."
+        },
+        {
+          "zh": "录用通知",
+          "en": "offer letter",
+          "hook": "If they say this, they mean the notice that starts the 30-day clock."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "City gate",
+      "bodyEn": "Your annotation names the company and is issued in Hangzhou. For Shanghai work, call Hangzhou immigration at 0571-88209209 before you accept. City mismatch can kill an otherwise good offer. Ask early, not after you spend two weeks prepping the tech round. Write the answer you hear into your apply log.",
+      "terms": [
+        {
+          "zh": "实习加注",
+          "en": "internship annotation",
+          "hook": "If they say this with a city name, check whether Hangzhou annotation covers that city."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Graduation date",
+      "bodyEn": "Big companies filter with graduation ranges before anyone reads skill. You graduate June 2027 — read that column first. Alibaba once rejected a role for the wrong window; Ant’s portal asked for October–November 2027 graduates. If the form’s range excludes you, skip the company and move on. Do not argue skill against a closed date filter.",
+      "terms": [
+        {
+          "zh": "毕业时间",
+          "en": "graduation date",
+          "hook": "If they say this, they mean the form filter before skill is read."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Passport gate",
+      "bodyEn": "Some campus-hiring tracks are built for Chinese citizens. Huawei’s overseas Chinese student track means Chinese students studying abroad, not any foreign student. Ask HR before you prepare those threads. Every posting also states days per week and minimum months; your availability must match or beat that. Your fixed line is start November 2026, five days a week, at least three months — use it on the CV, on BOSS, and in every first message.",
+      "terms": [
+        {
+          "zh": "留学生",
+          "en": "Chinese student abroad",
+          "hook": "If they say this on a Huawei track, they do not mean any foreign student."
+        },
+        {
+          "zh": "校招",
+          "en": "campus hiring",
+          "hook": "If they say this, passport rules can block foreign grads."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Daily internship",
+      "bodyEn": "Daily internship is open year-round: a team needs help now, you start within weeks, and it usually lasts three to six months. This is your main autumn target — seats close when filled, so apply fast. Summer internship means apply in spring for summer seats; useful next spring if autumn fails. Campus or autumn hiring is full-time for the 2027 class with online tests and autumn offers, but it does not solve this year’s internship.",
+      "terms": [
+        {
+          "zh": "日常实习",
+          "en": "year-round internship",
+          "hook": "If they say this, seats close when filled — apply fast."
+        },
+        {
+          "zh": "暑期实习",
+          "en": "summer internship",
+          "hook": "If they say this, they mean the summer track, not this autumn’s main bet."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Hiring pipeline",
+      "bodyEn": "Internships often finish in two to four weeks from apply to offer. Start by submitting via portal, BOSS, or a referral code — referral only gets a human to read the CV. Resume screen often lasts under a minute: posting words, school name, one striking fact. Engineering and campus hiring may add a written or online coding exam. Round one digs the project and theory; round two tests judgment; HR locks motivation, start date, pay, and your annotation answer.",
+      "terms": [
+        {
+          "zh": "投递",
+          "en": "submit application",
+          "hook": "If they say this, they mean step one of the pipeline."
+        },
+        {
+          "zh": "一面",
+          "en": "first interview",
+          "hook": "If they say this, they mean round one with the team."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Interview language",
+      "bodyEn": "Most interviews are in Mandarin on Feishu, Tencent Meeting, or Nowcoder. Every number on your CV must survive three follow-up questions — that is why the CV only lists finished work. If you miss a question, ask once to repeat; guessing wrong costs more. For a deep technical part, ask if you may explain in English; many AI teams read English papers and will say yes.",
+      "terms": [
+        {
+          "zh": "飞书",
+          "en": "Feishu meeting",
+          "hook": "If they say this, they mean the meeting app for the interview."
+        },
+        {
+          "zh": "HR 面",
+          "en": "HR interview",
+          "hook": "If they say this, visa and start date get locked here."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Five gates check",
+      "bodyEn": "Name the five gates and the illegal one. Skill alone never opens a blocked gate. One gate makes paid work illegal if you skip it. Choose the list that names all five and marks which failure is illegal.",
+      "prompt": "Which list is the five gates, and which can make work illegal?",
+      "choices": [
+        "Annotation, graduation date, city, passport for campus hiring, days/months — no annotation is illegal",
+        "Apply, resume screen, written test, round one, offer — skipping referral is illegal",
+        "Daily internship, summer internship, campus hiring, BOSS, referral — Shanghai without calling is illegal",
+        "AIGC, RAG, fine-tune, MCP, CUDA — coding without Part 6 is illegal"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Main target check",
+      "bodyEn": "Pick this autumn’s main recruitment type. Full-time campus hiring does not finish this year’s internship goal. Summer seats are a backup for next spring. Choose the year-round track that starts in weeks and closes when filled.",
+      "prompt": "Which recruitment type is your main target this autumn?",
+      "choices": [
+        "Daily internship — open year-round, starts in weeks, seats close when filled",
+        "Campus / autumn hiring — starts before graduation and skips annotation",
+        "Summer internship only — autumn has no daily seats",
+        "Huawei Ascend infra campus hiring — Track C finishes the internship this year"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Five hiring gates",
+      "bodyEn": "Five things can cancel an offer even when your skill is fine. Check all five before you spend a night preparing one company. The five gates are internship annotation, graduation date, city, passport for campus hiring, and the days and months written in the posting. Skill alone never opens a blocked gate. Treat each gate as a yes-or-no filter before you deep-prep.",
+      "terms": [
+        {
+          "zh": "实习加注",
+          "en": "internship annotation",
+          "hook": "If they say this, they mean the stamp that makes paid internship work legal."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Internship annotation",
+      "bodyEn": "You hold a student residence permit. Paid work needs the university to add internship annotation before day one. The company gives an offer letter and signs forms; Zhejiang University and immigration handle the rest — plan about 30 days after the offer. Working without annotation is illegal and can revoke your permit. When HR asks about work authorization, say you are a ZJU foreign student, you need annotation before start, and you need about 30 days after the offer letter.",
+      "terms": [
+        {
+          "zh": "实习加注",
+          "en": "internship annotation",
+          "hook": "If they say this, no stamp means the work can be illegal."
+        },
+        {
+          "zh": "录用通知",
+          "en": "offer letter",
+          "hook": "If they say this, they mean the notice that starts the 30-day clock."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "City gate",
+      "bodyEn": "Your annotation names the company and is issued in Hangzhou. For Shanghai work, call Hangzhou immigration at 0571-88209209 before you accept. City mismatch can kill an otherwise good offer. Ask early, not after you spend two weeks prepping the tech round. Write the answer you hear into your apply log.",
+      "terms": [
+        {
+          "zh": "实习加注",
+          "en": "internship annotation",
+          "hook": "If they say this with a city name, check whether Hangzhou annotation covers that city."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Graduation date",
+      "bodyEn": "Big companies filter with graduation ranges before anyone reads skill. You graduate June 2027 — read that column first. Alibaba once rejected a role for the wrong window; Ant’s portal asked for October–November 2027 graduates. If the form’s range excludes you, skip the company and move on. Do not argue skill against a closed date filter.",
+      "terms": [
+        {
+          "zh": "毕业时间",
+          "en": "graduation date",
+          "hook": "If they say this, they mean the form filter before skill is read."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Passport gate",
+      "bodyEn": "Some campus-hiring tracks are built for Chinese citizens. Huawei’s overseas Chinese student track means Chinese students studying abroad, not any foreign student. Ask HR before you prepare those threads. Every posting also states days per week and minimum months; your availability must match or beat that. Your fixed line is start November 2026, five days a week, at least three months — use it on the CV, on BOSS, and in every first message.",
+      "terms": [
+        {
+          "zh": "留学生",
+          "en": "Chinese student abroad",
+          "hook": "If they say this on a Huawei track, they do not mean any foreign student."
+        },
+        {
+          "zh": "校招",
+          "en": "campus hiring",
+          "hook": "If they say this, passport rules can block foreign grads."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Daily internship",
+      "bodyEn": "Daily internship is open year-round: a team needs help now, you start within weeks, and it usually lasts three to six months. This is your main autumn target — seats close when filled, so apply fast. Summer internship means apply in spring for summer seats; useful next spring if autumn fails. Campus or autumn hiring is full-time for the 2027 class with online tests and autumn offers, but it does not solve this year’s internship.",
+      "terms": [
+        {
+          "zh": "日常实习",
+          "en": "year-round internship",
+          "hook": "If they say this, seats close when filled — apply fast."
+        },
+        {
+          "zh": "暑期实习",
+          "en": "summer internship",
+          "hook": "If they say this, they mean the summer track, not this autumn’s main bet."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Hiring pipeline",
+      "bodyEn": "Internships often finish in two to four weeks from apply to offer. Start by submitting via portal, BOSS, or a referral code — referral only gets a human to read the CV. Resume screen often lasts under a minute: posting words, school name, one striking fact. Engineering and campus hiring may add a written or online coding exam. Round one digs the project and theory; round two tests judgment; HR locks motivation, start date, pay, and your annotation answer.",
+      "terms": [
+        {
+          "zh": "投递",
+          "en": "submit application",
+          "hook": "If they say this, they mean step one of the pipeline."
+        },
+        {
+          "zh": "一面",
+          "en": "first interview",
+          "hook": "If they say this, they mean round one with the team."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Interview language",
+      "bodyEn": "Most interviews are in Mandarin on Feishu, Tencent Meeting, or Nowcoder. Every number on your CV must survive three follow-up questions — that is why the CV only lists finished work. If you miss a question, ask once to repeat; guessing wrong costs more. For a deep technical part, ask if you may explain in English; many AI teams read English papers and will say yes.",
+      "terms": [
+        {
+          "zh": "飞书",
+          "en": "Feishu meeting",
+          "hook": "If they say this, they mean the meeting app for the interview."
+        },
+        {
+          "zh": "HR 面",
+          "en": "HR interview",
+          "hook": "If they say this, visa and start date get locked here."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Five gates check",
+      "bodyEn": "Name the five gates and the illegal one. Skill alone never opens a blocked gate. One gate makes paid work illegal if you skip it. Choose the list that names all five and marks which failure is illegal.",
+      "prompt": "Which list is the five gates, and which can make work illegal?",
+      "choices": [
+        "Annotation, graduation date, city, passport for campus hiring, days/months — no annotation is illegal",
+        "Apply, resume screen, written test, round one, offer — skipping referral is illegal",
+        "Daily internship, summer internship, campus hiring, BOSS, referral — Shanghai without calling is illegal",
+        "AIGC, RAG, fine-tune, MCP, CUDA — coding without Part 6 is illegal"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Main target check",
+      "bodyEn": "Pick this autumn’s main recruitment type. Full-time campus hiring does not finish this year’s internship goal. Summer seats are a backup for next spring. Choose the year-round track that starts in weeks and closes when filled.",
+      "prompt": "Which recruitment type is your main target this autumn?",
+      "choices": [
+        "Daily internship — open year-round, starts in weeks, seats close when filled",
+        "Campus / autumn hiring — starts before graduation and skips annotation",
+        "Summer internship only — autumn has no daily seats",
+        "Huawei Ascend infra campus hiring — Track C finishes the internship this year"
+      ],
+      "answer": 0
+    }
+  ]
+}

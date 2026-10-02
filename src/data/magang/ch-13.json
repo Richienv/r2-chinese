@@ -1,0 +1,288 @@
+{
+  "id": "13",
+  "index": 13,
+  "part": 3,
+  "partTitleEn": "Build something with a model",
+  "titleEn": "MCP, A2A, LangChain, and platforms",
+  "titleSource": "MCP, A2A, LangChain, dan platform",
+  "sourcePages": "52-56",
+  "when": "Week 3, days 15–16",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Why MCP exists",
+      "bodyEn": "Before MCP, every AI app wired every tool its own way. Ten apps and twenty tools could mean hundreds of custom integrations. MCP, released by Anthropic in November 2024, lets you write a tool once as a server that any MCP-capable host can reuse. Job posts next to agent titles often list MCP. Honest limit: MCP standardizes the plug — it does not make a bad tool safe or a vague docstring useful.",
+      "terms": [
+        {
+          "zh": "模型上下文协议",
+          "en": "MCP",
+          "hook": "If they say this, they mean a shared way for apps to connect to tools and data."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "MCP roles",
+      "bodyEn": "MCP has three roles: host, client, and server. The host is the AI app the user works in; the client is the connection to one server; the server exposes capabilities. They talk with JSON-RPC 2.0 over stdio locally or Streamable HTTP remotely. Interviews often start with these three names before any code. Honest limit: knowing the names is not enough — say what your server actually exposes.",
+      "terms": [
+        {
+          "zh": "主机",
+          "en": "host",
+          "hook": "If they say this, they mean the AI app the user sits in."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "MCP capabilities",
+      "bodyEn": "A server can offer tools the model may call, resources the app can read into context, and ready-made prompt templates. Write docstrings for the model — that text is what it reads when deciding whether to call. Project 4 publishes listing tools this way over stdio. Honest limit: a tool with a vague name and empty docstring will be ignored or called with junk arguments.",
+      "terms": [
+        {
+          "zh": "工具",
+          "en": "tools",
+          "hook": "If they say this, they mean callable actions the model may invoke."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Function calling versus MCP",
+      "bodyEn": "Function calling is a model-API feature: you send tool descriptions, and the model may reply with a tool call. It does not decide how apps share tools across products. MCP standardizes description, discovery, and connection so one server serves many hosts. Inside the host, function calling still lets the model pick which plug to use. Honest limit: MCP does not replace function calling — they work at different layers.",
+      "terms": [
+        {
+          "zh": "函数调用",
+          "en": "function calling",
+          "hook": "If they say this, they mean the model API picking a tool inside one request."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "A2A",
+      "bodyEn": "MCP connects an agent to tools; the other side is mostly passive. A2A, launched by Google in April 2025 under the Linux Foundation, connects an agent to another agent that reasons on its own. Each agent publishes an Agent Card with name, skills, address, and auth. Tasks move through submitted, working, input-required, completed, or failed. Honest limit: few internship desks will ship full A2A on day one — still know the one-sentence contrast with MCP.",
+      "terms": [
+        {
+          "zh": "A2A",
+          "en": "Agent2Agent",
+          "hook": "If they say this, they mean one agent talks to another agent, not a passive tool."
+        },
+        {
+          "zh": "智能体名片",
+          "en": "Agent Card",
+          "hook": "If they say this, they mean name, skills, address, and auth for an agent."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "idea",
+      "titleEn": "LangChain",
+      "bodyEn": "LangChain gives building blocks for model apps: provider wrappers, prompts, parsers, retrievers, and tools you compose. It speeds wiring when you need many integrations. Projects 1–4 still start in plain Python so you can read, debug, and explain every line. Pin versions because the ecosystem moves fast. Honest limit: a thick framework is not a substitute for knowing retrieval, evaluation, and stop rules yourself.",
+      "terms": [
+        {
+          "zh": "LangChain",
+          "en": "LangChain",
+          "hook": "If they say this, they mean a toolkit of building blocks for LLM apps."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "LangGraph",
+      "bodyEn": "LangGraph builds agents as graphs with nodes, edges, and shared state. The graph can loop, branch, pause, and resume with explicit state. Project 4 rebuilds observe → hypothesize → verify → record this way after plain Python works. Use it when you need save/resume, human approval, or clear retry edges. Honest limit: a graph you cannot redraw on a whiteboard is not ready for an interview.",
+      "terms": [
+        {
+          "zh": "图",
+          "en": "graph",
+          "hook": "If they say this, they mean nodes, edges, and shared state for an agent."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "idea",
+      "titleEn": "No-code platforms",
+      "bodyEn": "Know Coze, Dify, Bailian, and n8n, and master one for demos and ops seats. They ship bots and workflows faster than raw code for many Track B tasks. Chapters 9–12 still apply inside them: prompts, evaluation, retrieval, and stop rules. Job posts often list platform names next to agent work. Honest limit: a drag-and-drop demo does not replace measured Hit@k, precision, or refuse rates.",
+      "terms": [
+        {
+          "zh": "百炼",
+          "en": "Bailian",
+          "hook": "If they say this, they mean Alibaba Cloud’s model and agent platform."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "MCP roles quiz",
+      "bodyEn": "Name the three MCP roles and the three kinds of capability a server can expose. This is the first fact interviewers want before A2A.",
+      "prompt": "What are the three MCP roles and the three kinds of capability a server can expose?",
+      "choices": [
+        "Roles: host, client, server — capabilities: tools, resources, prompts",
+        "Roles: agent, tool, model — capabilities: RAG, LoRA, serving",
+        "Roles: prefill, decode, batch — capabilities: stdio, HTTP, WebSocket",
+        "Roles: Coze, Dify, Bailian — capabilities: bot, workflow, knowledge base"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "MCP versus A2A",
+      "bodyEn": "State MCP and A2A in one sentence each. Remember which side is passive and which side reasons.",
+      "prompt": "Which pair states MCP and A2A correctly in one sentence each?",
+      "choices": [
+        "MCP connects an agent to tools and data; A2A connects an agent to another agent",
+        "MCP connects agent to agent; A2A connects agent to tools only",
+        "MCP is Google’s April 2025 protocol; A2A is Anthropic’s November 2024 tool standard",
+        "MCP replaces function calling entirely; A2A replaces LangChain chains"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Why MCP exists",
+      "bodyEn": "Before MCP, every AI app wired every tool its own way. Ten apps and twenty tools could mean hundreds of custom integrations. MCP, released by Anthropic in November 2024, lets you write a tool once as a server that any MCP-capable host can reuse. Job posts next to agent titles often list MCP. Honest limit: MCP standardizes the plug — it does not make a bad tool safe or a vague docstring useful.",
+      "terms": [
+        {
+          "zh": "模型上下文协议",
+          "en": "MCP",
+          "hook": "If they say this, they mean a shared way for apps to connect to tools and data."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "MCP roles",
+      "bodyEn": "MCP has three roles: host, client, and server. The host is the AI app the user works in; the client is the connection to one server; the server exposes capabilities. They talk with JSON-RPC 2.0 over stdio locally or Streamable HTTP remotely. Interviews often start with these three names before any code. Honest limit: knowing the names is not enough — say what your server actually exposes.",
+      "terms": [
+        {
+          "zh": "主机",
+          "en": "host",
+          "hook": "If they say this, they mean the AI app the user sits in."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "MCP capabilities",
+      "bodyEn": "A server can offer tools the model may call, resources the app can read into context, and ready-made prompt templates. Write docstrings for the model — that text is what it reads when deciding whether to call. Project 4 publishes listing tools this way over stdio. Honest limit: a tool with a vague name and empty docstring will be ignored or called with junk arguments.",
+      "terms": [
+        {
+          "zh": "工具",
+          "en": "tools",
+          "hook": "If they say this, they mean callable actions the model may invoke."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Function calling versus MCP",
+      "bodyEn": "Function calling is a model-API feature: you send tool descriptions, and the model may reply with a tool call. It does not decide how apps share tools across products. MCP standardizes description, discovery, and connection so one server serves many hosts. Inside the host, function calling still lets the model pick which plug to use. Honest limit: MCP does not replace function calling — they work at different layers.",
+      "terms": [
+        {
+          "zh": "函数调用",
+          "en": "function calling",
+          "hook": "If they say this, they mean the model API picking a tool inside one request."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "A2A",
+      "bodyEn": "MCP connects an agent to tools; the other side is mostly passive. A2A, launched by Google in April 2025 under the Linux Foundation, connects an agent to another agent that reasons on its own. Each agent publishes an Agent Card with name, skills, address, and auth. Tasks move through submitted, working, input-required, completed, or failed. Honest limit: few internship desks will ship full A2A on day one — still know the one-sentence contrast with MCP.",
+      "terms": [
+        {
+          "zh": "A2A",
+          "en": "Agent2Agent",
+          "hook": "If they say this, they mean one agent talks to another agent, not a passive tool."
+        },
+        {
+          "zh": "智能体名片",
+          "en": "Agent Card",
+          "hook": "If they say this, they mean name, skills, address, and auth for an agent."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "idea",
+      "titleEn": "LangChain",
+      "bodyEn": "LangChain gives building blocks for model apps: provider wrappers, prompts, parsers, retrievers, and tools you compose. It speeds wiring when you need many integrations. Projects 1–4 still start in plain Python so you can read, debug, and explain every line. Pin versions because the ecosystem moves fast. Honest limit: a thick framework is not a substitute for knowing retrieval, evaluation, and stop rules yourself.",
+      "terms": [
+        {
+          "zh": "LangChain",
+          "en": "LangChain",
+          "hook": "If they say this, they mean a toolkit of building blocks for LLM apps."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "LangGraph",
+      "bodyEn": "LangGraph builds agents as graphs with nodes, edges, and shared state. The graph can loop, branch, pause, and resume with explicit state. Project 4 rebuilds observe → hypothesize → verify → record this way after plain Python works. Use it when you need save/resume, human approval, or clear retry edges. Honest limit: a graph you cannot redraw on a whiteboard is not ready for an interview.",
+      "terms": [
+        {
+          "zh": "图",
+          "en": "graph",
+          "hook": "If they say this, they mean nodes, edges, and shared state for an agent."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "idea",
+      "titleEn": "No-code platforms",
+      "bodyEn": "Know Coze, Dify, Bailian, and n8n, and master one for demos and ops seats. They ship bots and workflows faster than raw code for many Track B tasks. Chapters 9–12 still apply inside them: prompts, evaluation, retrieval, and stop rules. Job posts often list platform names next to agent work. Honest limit: a drag-and-drop demo does not replace measured Hit@k, precision, or refuse rates.",
+      "terms": [
+        {
+          "zh": "百炼",
+          "en": "Bailian",
+          "hook": "If they say this, they mean Alibaba Cloud’s model and agent platform."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "MCP roles quiz",
+      "bodyEn": "Name the three MCP roles and the three kinds of capability a server can expose. This is the first fact interviewers want before A2A.",
+      "prompt": "What are the three MCP roles and the three kinds of capability a server can expose?",
+      "choices": [
+        "Roles: host, client, server — capabilities: tools, resources, prompts",
+        "Roles: agent, tool, model — capabilities: RAG, LoRA, serving",
+        "Roles: prefill, decode, batch — capabilities: stdio, HTTP, WebSocket",
+        "Roles: Coze, Dify, Bailian — capabilities: bot, workflow, knowledge base"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "MCP versus A2A",
+      "bodyEn": "State MCP and A2A in one sentence each. Remember which side is passive and which side reasons.",
+      "prompt": "Which pair states MCP and A2A correctly in one sentence each?",
+      "choices": [
+        "MCP connects an agent to tools and data; A2A connects an agent to another agent",
+        "MCP connects agent to agent; A2A connects agent to tools only",
+        "MCP is Google’s April 2025 protocol; A2A is Anthropic’s November 2024 tool standard",
+        "MCP replaces function calling entirely; A2A replaces LangChain chains"
+      ],
+      "answer": 0
+    }
+  ]
+}

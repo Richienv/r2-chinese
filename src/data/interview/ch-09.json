@@ -1,0 +1,61 @@
+{
+  "id": "09",
+  "index": 9,
+  "part": 1,
+  "partTitleEn": "Tonight 18:00",
+  "titleEn": "Walk in today",
+  "titleSource": "Walk in today",
+  "sourcePages": "",
+  "when": "Today 18:00",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "How you dress",
+      "bodyEn": "Shirt and dark trousers. Not a suit. Not dressed like you are going to code. You are walking into a 总办 conversation today at 18:00.",
+      "mandarin": "衬衫和深色裤子。不是西装。也不穿成像去写代码。今天18:00去见总办。"
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "What to bring",
+      "bodyEn": "Bring the two-page Chinese resume facts, the English two-page as a spare, passport, and the chat thread if the lobby checks the appointment.",
+      "mandarin": "带两页中文简历事实、英文两页备用、护照。前台如果核预约，带和丁先生的聊天记录。"
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Address and how to address him",
+      "bodyEn": "Address 杭州市余杭区洋帆中心1幢21楼. Company 枫翎集团. Call him 丁先生, not 老板, unless he says he is the boss.",
+      "mandarin": "地址杭州市余杭区洋帆中心1幢21楼。公司枫翎集团。称呼丁先生，不要先叫老板，除非他自己说他是老板。"
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Order in the room",
+      "bodyEn": "Intro from chapter 3, then the first four questions. No patents. No funding. Keep the ask short if time is tight.",
+      "mandarin": "先用第三章的自我介绍，再问前四个问题。不谈专利，不谈融资。"
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "If Chinese sticks",
+      "bodyEn": "If a sentence sticks, switch briefly, then repeat in Chinese. Do not panic into inventing facts.",
+      "mandarin": "这句我说英文，然后我再用中文说一遍。"
+    },
+    {
+      "id": "s6",
+      "kind": "check",
+      "titleEn": "Walk-in check",
+      "bodyEn": "Recall the confirmed facts block for today.",
+      "prompt": "Which block matches today’s walk-in?",
+      "choices": [
+        "丁先生 / 总监; 枫翎集团; 总办秘书; Hangzhou; 8–12K on post; resume viewed; near Zijingang; evenings/weekends; today 2026-09-28 18:00; 洋帆中心1幢21楼",
+        "Boss name you invented; 15K; daytime full-time locked; patents verified; commute 20 minutes",
+        "顺坤 company; Jev launched; seven thesis interviews done; fluent native Chinese",
+        "Come to rebuild AES R&D and quote funding amounts"
+      ],
+      "answer": 0
+    }
+  ]
+}

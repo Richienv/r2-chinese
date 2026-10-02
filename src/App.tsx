@@ -12,6 +12,8 @@ import { SavedWords } from './screens/SavedWords'
 import { VocabBrowser } from './screens/VocabBrowser'
 import { KerjaSession } from './screens/Kerja'
 import { JiaochengSession } from './screens/Jiaocheng'
+import { InterviewSession } from './screens/Interview'
+import { MagangSession } from './screens/Magang'
 import { WordsSession } from './screens/WordsSession'
 import { CourseProvider } from './lib/course'
 import { load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
@@ -28,6 +30,8 @@ type Overlay =
   | { kind: 'path'; lesson: number; node: PathNode }
   | { kind: 'kerja'; chapter: number; node: PathNode }
   | { kind: 'jiaocheng'; lesson: number; node: PathNode }
+  | { kind: 'magang'; chapter: number; node: string }
+  | { kind: 'interview'; chapter: number; node: string }
   | { kind: 'review'; words?: string[]; title?: string }
   | { kind: 'character'; char: string }
   | { kind: 'drill'; words: string[]; title: string }
@@ -95,6 +99,8 @@ function Shell() {
             onReview={() => setOverlay({ kind: 'review' })}
             onKerjaSession={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
             onJiaochengSession={(lesson, node) => setOverlay({ kind: 'jiaocheng', lesson, node })}
+            onMagangSession={(chapter, node) => setOverlay({ kind: 'magang', chapter, node })}
+            onInterviewSession={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
           />
         )}
         {tab === 'learn' && (
@@ -104,6 +110,8 @@ function Shell() {
             onPlay={(lesson, node) => setOverlay({ kind: 'path', lesson, node })}
             onKerjaPlay={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
             onJiaochengPlay={(lesson, node) => setOverlay({ kind: 'jiaocheng', lesson, node })}
+            onMagangPlay={(chapter, node) => setOverlay({ kind: 'magang', chapter, node })}
+            onInterviewPlay={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
             isNodeDone={(lesson, node) => store.isNodeDone(lesson, node)}
           />
         )}
@@ -146,6 +154,12 @@ function Shell() {
       )}
       {overlay?.kind === 'jiaocheng' && (
         <JiaochengSession lesson={overlay.lesson} node={overlay.node} onClose={() => setOverlay(null)} />
+      )}
+      {overlay?.kind === 'magang' && (
+        <MagangSession chapter={overlay.chapter} node={overlay.node} onClose={() => setOverlay(null)} />
+      )}
+      {overlay?.kind === 'interview' && (
+        <InterviewSession chapter={overlay.chapter} node={overlay.node} onClose={() => setOverlay(null)} />
       )}
       {overlay?.kind === 'review' && (
         <ReviewFlow words={overlay.words} title={overlay.title} onClose={() => setOverlay(null)} />

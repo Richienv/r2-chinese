@@ -1,0 +1,262 @@
+{
+  "id": "12",
+  "index": 12,
+  "part": 3,
+  "partTitleEn": "Build something with a model",
+  "titleEn": "Agent",
+  "titleSource": "Agent",
+  "sourcePages": "48-51",
+  "when": "Week 2, days 10–11",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What an agent is",
+      "bodyEn": "An agent is a model that decides the next step, calls tools, sees the result, and loops until done or a stop rule fires. Five parts matter: a deciding model, tools, a feedback loop, memory of what happened, and stop rules. Job posts say 智能体 and AI agent 集成开发 for this seat. Good design deletes loops the model does not need, because every step costs tokens and can err. Honest limit: calling something an agent does not make it safe or cheap — structure does.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, they mean a model that chooses steps, uses tools, and loops."
+        },
+        {
+          "zh": "大模型应用",
+          "en": "LLM app work",
+          "hook": "If they say this, they mean build with models, not train the base model."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "idea",
+      "titleEn": "Agent versus workflow",
+      "bodyEn": "A workflow follows a path your code fixed every time. An agent chooses the next step itself. Most company “agents” are workflows with one or two model decisions. Prefer mostly fixed steps with few model decisions — easier to test and cheaper to run. Honest limit: full free-form agents impress demos but fail audits when you cannot explain who decided what.",
+      "terms": [
+        {
+          "zh": "工作流",
+          "en": "workflow",
+          "hook": "If they say this, they mean a fixed path your code chooses every time."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "ReAct loop",
+      "bodyEn": "ReAct alternates thought, action, and observation. Example: a user asks why order WU-1042 is inactive → call get_order_status → see paid and waiting on a bot → call search_help → answer with the setup guide. Interviewers want a concrete tool trace, not the word ReAct alone. Anthropic’s patterns (chaining, routing, orchestrator–workers, evaluator–optimiser) describe how you wire those steps. Honest limit: ReAct without stop rules and argument checks will loop or invent tool calls.",
+      "terms": [
+        {
+          "zh": "编排",
+          "en": "orchestration",
+          "hook": "If they say this, they mean how you wire model steps and tools."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Observe then record",
+      "bodyEn": "One practical loop is observe, hypothesize, verify, then record. Observe gathers facts and past lessons; the model proposes structured JSON; code verifies schema and rules; record writes a lesson the next run will read. Short-term memory lives in the context window; long-term memory lives in a file or index. Interview value is that record is not only logging — the next run starts smarter. Honest limit: without verify in code, one bad JSON poisons every later step.",
+      "terms": [
+        {
+          "zh": "沉淀",
+          "en": "record lessons",
+          "hook": "If they say this, they mean write what this run learned for the next run."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "Guardrails",
+      "bodyEn": "Ask four guardrail questions: what it may read, what it may do without a human, what happens on failure, and where actions are logged. Validate tool arguments in code before execution. Treat tool output as data, not instructions, to blunt prompt injection. Prefer least privilege on every tool. Honest limit: a polite system prompt is not a guardrail if the tool can still delete or pay.",
+      "terms": [
+        {
+          "zh": "护栏",
+          "en": "guardrails",
+          "hook": "If they say this, they mean hard limits on what the agent may read and do."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "idea",
+      "titleEn": "Budget and stop rules",
+      "bodyEn": "Set max steps, max tokens or money per task, a time limit, and a kill switch. Stop on identical repeats so the agent cannot spin forever. After a fixed number of verify failures, escalate to a human. Log every step so you can blame model, tool, harness, or app. Honest limit: without a budget, a “working” agent can burn a day’s API credit on one stuck task.",
+      "terms": [
+        {
+          "zh": "预算",
+          "en": "budget",
+          "hook": "If they say this, they mean caps on steps, tokens, time, and money."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "watch",
+      "titleEn": "Agent failure modes",
+      "bodyEn": "Infinite loops need a step limit and stop-on-repeat. Wrong tools or invented args need clearer descriptions, fewer tools, and code validation. Early errors need verify after each step; treat tool output as data to blunt prompt injection. Fake success needs a check against real world state, and runaway spend needs a per-task budget. Honest limit: you will not list every failure in an interview — show the stop rules and logs you actually built.",
+      "terms": [
+        {
+          "zh": "提示词注入",
+          "en": "prompt injection",
+          "hook": "If they say this, they mean tool or page text smuggling new instructions."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Five agent parts",
+      "bodyEn": "An agent in this chapter has five parts. Name the model, tools, loop, memory, and stop rules. Do not confuse them with RAG stages or prompt parts. Pick the matching list.",
+      "prompt": "What are the five parts of an agent?",
+      "choices": [
+        "Model that decides; tools; loop that feeds results back; memory; stop rules",
+        "Embedder; vector DB; reranker; prompt; citation",
+        "Role; task; context; rules; examples",
+        "Precision; recall; F1; accuracy; MRR"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Workflow versus agent",
+      "bodyEn": "Interviewers often ask how your design differs from a fixed pipeline. Prefer the answer that keeps most steps in code and few decisions in the model. Pick the choice that states that preference and why.",
+      "prompt": "Which design does this chapter recommend for most company agents?",
+      "choices": [
+        "Mostly fixed workflow steps, with only a few model decisions, so testing and cost stay under control",
+        "Fully free-form agents with unlimited tools and no stop rules for maximum creativity",
+        "Replace all code paths with one ReAct loop and no logging",
+        "Never use tools; only chat until the user is happy"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What an agent is",
+      "bodyEn": "An agent is a model that decides the next step, calls tools, sees the result, and loops until done or a stop rule fires. Five parts matter: a deciding model, tools, a feedback loop, memory of what happened, and stop rules. Job posts say 智能体 and AI agent 集成开发 for this seat. Good design deletes loops the model does not need, because every step costs tokens and can err. Honest limit: calling something an agent does not make it safe or cheap — structure does.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, they mean a model that chooses steps, uses tools, and loops."
+        },
+        {
+          "zh": "大模型应用",
+          "en": "LLM app work",
+          "hook": "If they say this, they mean build with models, not train the base model."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "idea",
+      "titleEn": "Agent versus workflow",
+      "bodyEn": "A workflow follows a path your code fixed every time. An agent chooses the next step itself. Most company “agents” are workflows with one or two model decisions. Prefer mostly fixed steps with few model decisions — easier to test and cheaper to run. Honest limit: full free-form agents impress demos but fail audits when you cannot explain who decided what.",
+      "terms": [
+        {
+          "zh": "工作流",
+          "en": "workflow",
+          "hook": "If they say this, they mean a fixed path your code chooses every time."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "ReAct loop",
+      "bodyEn": "ReAct alternates thought, action, and observation. Example: a user asks why order WU-1042 is inactive → call get_order_status → see paid and waiting on a bot → call search_help → answer with the setup guide. Interviewers want a concrete tool trace, not the word ReAct alone. Anthropic’s patterns (chaining, routing, orchestrator–workers, evaluator–optimiser) describe how you wire those steps. Honest limit: ReAct without stop rules and argument checks will loop or invent tool calls.",
+      "terms": [
+        {
+          "zh": "编排",
+          "en": "orchestration",
+          "hook": "If they say this, they mean how you wire model steps and tools."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Observe then record",
+      "bodyEn": "One practical loop is observe, hypothesize, verify, then record. Observe gathers facts and past lessons; the model proposes structured JSON; code verifies schema and rules; record writes a lesson the next run will read. Short-term memory lives in the context window; long-term memory lives in a file or index. Interview value is that record is not only logging — the next run starts smarter. Honest limit: without verify in code, one bad JSON poisons every later step.",
+      "terms": [
+        {
+          "zh": "沉淀",
+          "en": "record lessons",
+          "hook": "If they say this, they mean write what this run learned for the next run."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "Guardrails",
+      "bodyEn": "Ask four guardrail questions: what it may read, what it may do without a human, what happens on failure, and where actions are logged. Validate tool arguments in code before execution. Treat tool output as data, not instructions, to blunt prompt injection. Prefer least privilege on every tool. Honest limit: a polite system prompt is not a guardrail if the tool can still delete or pay.",
+      "terms": [
+        {
+          "zh": "护栏",
+          "en": "guardrails",
+          "hook": "If they say this, they mean hard limits on what the agent may read and do."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "idea",
+      "titleEn": "Budget and stop rules",
+      "bodyEn": "Set max steps, max tokens or money per task, a time limit, and a kill switch. Stop on identical repeats so the agent cannot spin forever. After a fixed number of verify failures, escalate to a human. Log every step so you can blame model, tool, harness, or app. Honest limit: without a budget, a “working” agent can burn a day’s API credit on one stuck task.",
+      "terms": [
+        {
+          "zh": "预算",
+          "en": "budget",
+          "hook": "If they say this, they mean caps on steps, tokens, time, and money."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "watch",
+      "titleEn": "Agent failure modes",
+      "bodyEn": "Infinite loops need a step limit and stop-on-repeat. Wrong tools or invented args need clearer descriptions, fewer tools, and code validation. Early errors need verify after each step; treat tool output as data to blunt prompt injection. Fake success needs a check against real world state, and runaway spend needs a per-task budget. Honest limit: you will not list every failure in an interview — show the stop rules and logs you actually built.",
+      "terms": [
+        {
+          "zh": "提示词注入",
+          "en": "prompt injection",
+          "hook": "If they say this, they mean tool or page text smuggling new instructions."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Five agent parts",
+      "bodyEn": "An agent in this chapter has five parts. Name the model, tools, loop, memory, and stop rules. Do not confuse them with RAG stages or prompt parts. Pick the matching list.",
+      "prompt": "What are the five parts of an agent?",
+      "choices": [
+        "Model that decides; tools; loop that feeds results back; memory; stop rules",
+        "Embedder; vector DB; reranker; prompt; citation",
+        "Role; task; context; rules; examples",
+        "Precision; recall; F1; accuracy; MRR"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Workflow versus agent",
+      "bodyEn": "Interviewers often ask how your design differs from a fixed pipeline. Prefer the answer that keeps most steps in code and few decisions in the model. Pick the choice that states that preference and why.",
+      "prompt": "Which design does this chapter recommend for most company agents?",
+      "choices": [
+        "Mostly fixed workflow steps, with only a few model decisions, so testing and cost stay under control",
+        "Fully free-form agents with unlimited tools and no stop rules for maximum creativity",
+        "Replace all code paths with one ReAct loop and no logging",
+        "Never use tools; only chat until the user is happy"
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "id": "30",
+  "index": 30,
+  "part": 7,
+  "partTitleEn": "Interview",
+  "titleEn": "Your stories",
+  "titleSource": "Cerita-cerita lo",
+  "sourcePages": "118-120",
+  "when": "Week 4, day 26",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Project deep-dive",
+      "bodyEn": "Six real pieces of work interviewers will dig into, told as situation, action, result, reflection — under 90 seconds each. Chinese interviewers often call this STAR. Say “I” for what you did and “we” for team work — they notice. State results only when they are facts you can show; a true plain sentence beats a flashy number you cannot defend. Every fact comes from your verified fact file — no invented numbers.",
+      "terms": [
+        {
+          "zh": "项目深挖",
+          "en": "project deep-dive",
+          "hook": "If they say this, first and second interviews dig here."
+        },
+        {
+          "zh": "情境",
+          "en": "situation",
+          "hook": "If they walk STAR, this is part 1."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "example",
+      "titleEn": "WeUseAI story",
+      "bodyEn": "Shop owners, SMEs, and lecturers in Indonesia want AI help but cannot set it up alone. You ran the whole sales process yourself — contact, demo, objections, pricing, closing, setup, support, renewal. You designed six price tiers and ten agent personas unlocked by tier, plus checkout so first-time buyers can compare and buy alone. Setup guides are plain Indonesian, with rules for what each agent may see and must never send. Learning: a product is finished when a stranger can buy and run it alone.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent persona",
+          "hook": "If they ask WeUseAI, ten roles by price tier."
+        }
+      ],
+      "mandarin": "我经营 WeUseAI，向印尼的小店主、中小企业和高校老师销售 AI 助手订阅，从第一次接触、演示、处理异议、定价、成交、安装、售后到续费都是我自己做。我设计了六档价格和按档位开放的十个智能体角色，加上结账流程，让第一次购买的客户不用问人就能比较和下单。所有安装说明和交接文档我都用通俗的印尼语写，并且规定每个智能体能看什么、绝对不能发出去什么。今年 8 月我还做了 Asisten Dosen，给印尼大学老师的 AI 助教。我学到的是：产品能用不算完成，陌生人能自己买、自己用起来才算完成。"
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "Salda honesty rules",
+      "bodyEn": "Through WeUseAI you became developer for TRO Creative (TroLive) in Jakarta. Brands used to book livestream hosts via WhatsApp and spreadsheets. You built Salda — verified host catalog, scheduling, booking, chat, and Midtrans payments — as eight explicit steps so a brand manager can finish alone. You also built Hermes agents on Telegram and Google Workspace. Never quote hosts, sessions, ratings, or rupiah totals from salda.id — that is website copy, not audited figures. Learning: making every step explicit lets non-technical people finish alone.",
+      "terms": [
+        {
+          "zh": "数据",
+          "en": "metrics",
+          "hook": "If they ask for numbers, only audited facts."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "Integra and Karunia",
+      "bodyEn": "Indonesian textile SMEs ran on spreadsheets; you built Integra alone — finance with Indonesian tax (PPN, PPh, e-Faktur), inventory, procurement, production, HR, and reports. Stack: Next.js, TypeScript, Prisma, Supabase, about 560 commits — still in testing. Never say it launched or quote user numbers; be ready to open the repo. Before the MBA you spent two years at Karunia Group: year one digitization lead, year two client deals and suppliers. Memorize team size and one defendable deal for “have you led a team?”",
+      "terms": [
+        {
+          "zh": "电子发票",
+          "en": "e-Faktur",
+          "hook": "If they ask Indonesian tax, this is the invoice system."
+        },
+        {
+          "zh": "总账",
+          "en": "general ledger",
+          "hook": "If they ask finance, every posting stays balanced."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "example",
+      "titleEn": "Verify the verifier",
+      "bodyEn": "You wanted to know whether a computer-use agent really finished its tasks. With an AI coding assistant you built a harness that checks real machine state instead of trusting the agent — confidence threshold, retries, fail-stop, JSON traces. Across eight live runs you found eight defects and classified each by owner: harness, upstream agent, or app. The checker itself was wrong — it counted notes in “Recently Deleted” as still present. Learning: verify the verifier. This is your strongest “hardest problem” answer — offer the findings PDF.",
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation harness",
+          "hook": "If they ask hardest problem, check the real machine."
+        },
+        {
+          "zh": "验证器",
+          "en": "verifier",
+          "hook": "If they ask the bug, verify the verifier."
+        }
+      ],
+      "mandarin": "我想知道电脑操作类的 Agent 是不是真的完成了任务，就用 AI 编程工具搭了一个测试框架：不相信 Agent 自己的报告，而是去检查电脑上的真实状态，有置信度门槛、重试、失败即停，每次运行输出 JSON 记录。跑了 8 次实机，找到 8 个缺陷，并按责任归属分类：是框架的问题、上游 Agent 的问题，还是应用本身的问题。最关键的发现是校验本身在出错：它把“最近删除”里的笔记也算作存在，所以任务看起来完成了，其实没有。从那以后我的原则是先验证验证器。"
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Kambyan and thesis",
+      "bodyEn": "In 2023 you interned at Kambyan Network in Malaysia on MiDAgS — AI drone automation for oil-palm plantations. You led the database team; your own work was mostly data analysis and visualization — write your own learning sentence. Your thesis with Professor Wang Zhongming models digital-intelligent transformation for Indonesian family firms. From October 2026 you are also a teaching assistant on a core GMBA course he teaches. For product and ops roles this honestly answers “why AI, and why business.”",
+      "terms": [
+        {
+          "zh": "数智化转型",
+          "en": "digital-intelligent transformation",
+          "hook": "If they ask your thesis, this is the keyword."
+        },
+        {
+          "zh": "家族企业",
+          "en": "family firm",
+          "hook": "If they ask the domain, Indonesian family firms."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "watch",
+      "titleEn": "Stakeholder pick",
+      "bodyEn": "For “difficult stakeholder,” pick Story 4 (Karunia client work) or Story 1 (WeUseAI sales objections) — whichever you can defend with facts. Practice Story 1 in Mandarin in 90 seconds with no notes, and record it. Know Story 5’s checker bug cold. Do not quote unaudited salda.id numbers as proof. If asked about Integra users or launch, say it is still in testing and open the repo instead.",
+      "terms": [
+        {
+          "zh": "结果",
+          "en": "result",
+          "hook": "If they ask STAR, only facts you can show."
+        },
+        {
+          "zh": "反思",
+          "en": "reflection",
+          "hook": "If they ask STAR, this is part 4."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "idea",
+      "titleEn": "Ninety-second shape",
+      "bodyEn": "Every story follows the same shape: one-sentence situation, two sentences of what you did, one sentence of a defendable result, one sentence of learning. Cut adjectives. Name tools only when they help the action. End with the learning before they ask. If they dig, offer the repo, the PDF, or the data sheet — do not invent a bigger result. Timing under ninety seconds keeps the deep-dive room for follow-ups.",
+      "terms": [
+        {
+          "zh": "项目深挖",
+          "en": "project deep-dive",
+          "hook": "If they keep digging, offer proof, not new numbers."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Story 1 in 90s",
+      "bodyEn": "Practice Story 1 without notes.",
+      "prompt": "How should you practice Story 1 (WeUseAI) for the self-check?",
+      "choices": [
+        "Deliver it in Mandarin in 90 seconds with no notes, and record it",
+        "Email a bullet list in English only",
+        "Quote unaudited salda.id numbers as proof",
+        "Skip Mandarin and only memorize Indonesian"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Checker bug",
+      "bodyEn": "Know Story 5’s key bug cold.",
+      "prompt": "In the agent test harness, what was the checker’s key bug?",
+      "choices": [
+        "It counted notes in “Recently Deleted” as still present, so tasks looked done when they were not",
+        "It deleted the agent’s JSON traces every run",
+        "It refused to run more than one live trial",
+        "It only checked website copy on salda.id"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Project deep-dive",
+      "bodyEn": "Six real pieces of work interviewers will dig into, told as situation, action, result, reflection — under 90 seconds each. Chinese interviewers often call this STAR. Say “I” for what you did and “we” for team work — they notice. State results only when they are facts you can show; a true plain sentence beats a flashy number you cannot defend. Every fact comes from your verified fact file — no invented numbers.",
+      "terms": [
+        {
+          "zh": "项目深挖",
+          "en": "project deep-dive",
+          "hook": "If they say this, first and second interviews dig here."
+        },
+        {
+          "zh": "情境",
+          "en": "situation",
+          "hook": "If they walk STAR, this is part 1."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "example",
+      "titleEn": "WeUseAI story",
+      "bodyEn": "Shop owners, SMEs, and lecturers in Indonesia want AI help but cannot set it up alone. You ran the whole sales process yourself — contact, demo, objections, pricing, closing, setup, support, renewal. You designed six price tiers and ten agent personas unlocked by tier, plus checkout so first-time buyers can compare and buy alone. Setup guides are plain Indonesian, with rules for what each agent may see and must never send. Learning: a product is finished when a stranger can buy and run it alone.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent persona",
+          "hook": "If they ask WeUseAI, ten roles by price tier."
+        }
+      ],
+      "mandarin": "我经营 WeUseAI，向印尼的小店主、中小企业和高校老师销售 AI 助手订阅，从第一次接触、演示、处理异议、定价、成交、安装、售后到续费都是我自己做。我设计了六档价格和按档位开放的十个智能体角色，加上结账流程，让第一次购买的客户不用问人就能比较和下单。所有安装说明和交接文档我都用通俗的印尼语写，并且规定每个智能体能看什么、绝对不能发出去什么。今年 8 月我还做了 Asisten Dosen，给印尼大学老师的 AI 助教。我学到的是：产品能用不算完成，陌生人能自己买、自己用起来才算完成。"
+    },
+    {
+      "id": "s3",
+      "kind": "example",
+      "titleEn": "Salda honesty rules",
+      "bodyEn": "Through WeUseAI you became developer for TRO Creative (TroLive) in Jakarta. Brands used to book livestream hosts via WhatsApp and spreadsheets. You built Salda — verified host catalog, scheduling, booking, chat, and Midtrans payments — as eight explicit steps so a brand manager can finish alone. You also built Hermes agents on Telegram and Google Workspace. Never quote hosts, sessions, ratings, or rupiah totals from salda.id — that is website copy, not audited figures. Learning: making every step explicit lets non-technical people finish alone.",
+      "terms": [
+        {
+          "zh": "数据",
+          "en": "metrics",
+          "hook": "If they ask for numbers, only audited facts."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "Integra and Karunia",
+      "bodyEn": "Indonesian textile SMEs ran on spreadsheets; you built Integra alone — finance with Indonesian tax (PPN, PPh, e-Faktur), inventory, procurement, production, HR, and reports. Stack: Next.js, TypeScript, Prisma, Supabase, about 560 commits — still in testing. Never say it launched or quote user numbers; be ready to open the repo. Before the MBA you spent two years at Karunia Group: year one digitization lead, year two client deals and suppliers. Memorize team size and one defendable deal for “have you led a team?”",
+      "terms": [
+        {
+          "zh": "电子发票",
+          "en": "e-Faktur",
+          "hook": "If they ask Indonesian tax, this is the invoice system."
+        },
+        {
+          "zh": "总账",
+          "en": "general ledger",
+          "hook": "If they ask finance, every posting stays balanced."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "example",
+      "titleEn": "Verify the verifier",
+      "bodyEn": "You wanted to know whether a computer-use agent really finished its tasks. With an AI coding assistant you built a harness that checks real machine state instead of trusting the agent — confidence threshold, retries, fail-stop, JSON traces. Across eight live runs you found eight defects and classified each by owner: harness, upstream agent, or app. The checker itself was wrong — it counted notes in “Recently Deleted” as still present. Learning: verify the verifier. This is your strongest “hardest problem” answer — offer the findings PDF.",
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation harness",
+          "hook": "If they ask hardest problem, check the real machine."
+        },
+        {
+          "zh": "验证器",
+          "en": "verifier",
+          "hook": "If they ask the bug, verify the verifier."
+        }
+      ],
+      "mandarin": "我想知道电脑操作类的 Agent 是不是真的完成了任务，就用 AI 编程工具搭了一个测试框架：不相信 Agent 自己的报告，而是去检查电脑上的真实状态，有置信度门槛、重试、失败即停，每次运行输出 JSON 记录。跑了 8 次实机，找到 8 个缺陷，并按责任归属分类：是框架的问题、上游 Agent 的问题，还是应用本身的问题。最关键的发现是校验本身在出错：它把“最近删除”里的笔记也算作存在，所以任务看起来完成了，其实没有。从那以后我的原则是先验证验证器。"
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Kambyan and thesis",
+      "bodyEn": "In 2023 you interned at Kambyan Network in Malaysia on MiDAgS — AI drone automation for oil-palm plantations. You led the database team; your own work was mostly data analysis and visualization — write your own learning sentence. Your thesis with Professor Wang Zhongming models digital-intelligent transformation for Indonesian family firms. From October 2026 you are also a teaching assistant on a core GMBA course he teaches. For product and ops roles this honestly answers “why AI, and why business.”",
+      "terms": [
+        {
+          "zh": "数智化转型",
+          "en": "digital-intelligent transformation",
+          "hook": "If they ask your thesis, this is the keyword."
+        },
+        {
+          "zh": "家族企业",
+          "en": "family firm",
+          "hook": "If they ask the domain, Indonesian family firms."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "watch",
+      "titleEn": "Stakeholder pick",
+      "bodyEn": "For “difficult stakeholder,” pick Story 4 (Karunia client work) or Story 1 (WeUseAI sales objections) — whichever you can defend with facts. Practice Story 1 in Mandarin in 90 seconds with no notes, and record it. Know Story 5’s checker bug cold. Do not quote unaudited salda.id numbers as proof. If asked about Integra users or launch, say it is still in testing and open the repo instead.",
+      "terms": [
+        {
+          "zh": "结果",
+          "en": "result",
+          "hook": "If they ask STAR, only facts you can show."
+        },
+        {
+          "zh": "反思",
+          "en": "reflection",
+          "hook": "If they ask STAR, this is part 4."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "idea",
+      "titleEn": "Ninety-second shape",
+      "bodyEn": "Every story follows the same shape: one-sentence situation, two sentences of what you did, one sentence of a defendable result, one sentence of learning. Cut adjectives. Name tools only when they help the action. End with the learning before they ask. If they dig, offer the repo, the PDF, or the data sheet — do not invent a bigger result. Timing under ninety seconds keeps the deep-dive room for follow-ups.",
+      "terms": [
+        {
+          "zh": "项目深挖",
+          "en": "project deep-dive",
+          "hook": "If they keep digging, offer proof, not new numbers."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Story 1 in 90s",
+      "bodyEn": "Practice Story 1 without notes.",
+      "prompt": "How should you practice Story 1 (WeUseAI) for the self-check?",
+      "choices": [
+        "Deliver it in Mandarin in 90 seconds with no notes, and record it",
+        "Email a bullet list in English only",
+        "Quote unaudited salda.id numbers as proof",
+        "Skip Mandarin and only memorize Indonesian"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Checker bug",
+      "bodyEn": "Know Story 5’s key bug cold.",
+      "prompt": "In the agent test harness, what was the checker’s key bug?",
+      "choices": [
+        "It counted notes in “Recently Deleted” as still present, so tasks looked done when they were not",
+        "It deleted the agent’s JSON traces every run",
+        "It refused to run more than one live trial",
+        "It only checked website copy on salda.id"
+      ],
+      "answer": 0
+    }
+  ]
+}

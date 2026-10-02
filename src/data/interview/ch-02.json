@@ -1,0 +1,68 @@
+{
+  "id": "02",
+  "index": 2,
+  "part": 1,
+  "partTitleEn": "Tonight 18:00",
+  "titleEn": "What the job is",
+  "titleSource": "What the job is",
+  "sourcePages": "",
+  "when": "Today 18:00",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Listen to 丁先生",
+      "bodyEn": "总办秘书, as 丁先生 explained, is an assistant helping the boss with company management. Do not invent your own definition. Listen first. Typical day can include calendar, meetings, notes, follow-up, tickets, reception, and a few pages for the boss.",
+      "mandarin": "总办秘书，按丁先生说的，是帮老板做公司管理的助理。一天可能是日历、会议、纪要、跟进、票务、接待，还有给老板的几页材料。"
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Private and mixed work",
+      "bodyEn": "Sometimes private affairs come up. Sometimes admin. Sometimes project assistant. You do not invent the mix. You ask and listen. If the main work is private life, chops, or government reception, that may not fit.",
+      "mandarin": "有时会有私事。有时是行政。有时是项目助理。我不自己定义，我先听。如果主要是私人生活、公章或政府公文接待，我要先说清楚能不能做。"
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Resume gap is visible",
+      "bodyEn": "The AI-engineer internship resume gap is visible. Do not pretend to be a long-time Chinese executive secretary. Do not turn this into an AI job pitch. Honest bridge only.",
+      "mandarin": "我的简历是给 AI 应用实习用的，差距看得见。我不是长期做中国高管秘书的人。今天也不把这个岗位讲成 AI 岗。"
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Work order stays fixed",
+      "bodyEn": "2023–2025 at PT Karunia Wahananusa: assistant to the operations director (PR). Before that: IT and business-development lead. Do not reverse that order. Say it yourself if they hold the one-page resume.",
+      "mandarin": "2023到2025年，我在印尼 Karunia 做运营总监助理，负责公关。在那之前，我带 IT 和业务发展。顺序不要反。"
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Boss-useful proof, no jargon",
+      "bodyEn": "Translate AI and product proof into boss-useful work. Integra means turn a request into owner, deadline, and gap. Prefer a one-page brief, not a 158-page manual. Indonesian native, fluent English, working Chinese. Follow-through on Salda and WeUseAI without quoting WeUseAI customer counts.",
+      "mandarin": "Integra 是把需求变成负责人、截止时间和缺口。我给一页纸，不给一百多页手册。印尼语是母语，英文流利，中文是工作沟通。Salda 和 WeUseAI 我讲跟进，不报客户数。"
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Thesis and why you came",
+      "bodyEn": "Thesis is family-firm digital transformation. Proposal finished Sep 2026; research is in progress. Do not say seven firms are done. If asked why not AI work: the resume is for AI application internships; they described an evening assistant for the boss; you came to hear if you can do it; you will not call yourself a secretary by training.",
+      "mandarin": "论文是家族企业数智化转型。开题已经完成，研究还在进行。如果问为什么不是 AI 岗：那份简历是给 AI 应用实习用的；你们说的是帮老板做晚上助理；我来听能不能做；我不会自称科班秘书。"
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Job frame check",
+      "bodyEn": "Recall how 丁先生 framed the role and what you must not pretend.",
+      "prompt": "How do you frame 总办秘书 today?",
+      "choices": [
+        "Assistant helping the boss with company management — listen; do not pretend long-time Chinese executive secretary",
+        "You redefine it as AI R&D lead and pitch models",
+        "You claim years of China 总办 and government reception",
+        "You reverse Karunia order and hide the internship resume"
+      ],
+      "answer": 0
+    }
+  ]
+}

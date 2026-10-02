@@ -1,0 +1,68 @@
+{
+  "id": "08",
+  "index": 8,
+  "part": 1,
+  "partTitleEn": "Tonight 18:00",
+  "titleEn": "Company, thin",
+  "titleSource": "Company, thin",
+  "sourcePages": "",
+  "when": "Today 18:00",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Chat claims stay chat",
+      "bodyEn": "Chat claims about new materials and AES series (odor, antivirus, antibacterial, anti-spread, mildew, TVOC, formaldehyde), about 23 years of R&D, dozens of patents, presence in China and abroad, several funding rounds, and functional health textiles or pet products are chat claims. You did not verify them as records.",
+      "mandarin": "聊天里说的新材料、AES、研发年数、专利、海外和融资，都是聊天说法。我没有当成已核对的记录。"
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Names you may mention",
+      "bodyEn": "Public pages you may mention without correcting their tone: 枫翎集团; legal names 浙江枫翎控股集团有限公司 and 浙江枫翎新材料科技有限公司. Sites http://www.fenglinggroup.com/index/about/index.html and http://www.hscexpert.com/.",
+      "mandarin": "招聘信息上我看到的是新材料、AES。公司是枫翎集团。"
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "What their pages say",
+      "bodyEn": "Their pages: HQ Hangzhou; AES as All-in-One Environmental System; antibacterial, antiviral, odor, mildew, formaldehyde, TVOC; functional auxiliaries including textile, space health, smart public toilets; pet health on the site. Tech start written as 2003 so “20+ years” is their line. A Zhaopin blurb dates the holding company to Oct 2022. Do not merge those into “the company is 23 years old”.",
+      "mandarin": "他们页面上总部在杭州，AES 是一体环境系统，讲除味、抗菌抗病毒、防霉、甲醛和 TVOC，也有纺织、空间健康、公厕和宠物相关。技术起点写成2003，所以“20多年”是他们的说法。招聘文案里控股公司又写到2022年10月。我不把这些合成“公司成立23年”。"
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Patents you did not check",
+      "bodyEn": "Their hiring blurb says 50+ China invention patents and 1 international, plus Zhejiang and textile association science prizes and 300+ test reports. You did not check them. Do not quote the numbers as verified.",
+      "mandarin": "我看到的是 AES，除味、抗菌抗病毒、防霉、甲醛和 TVOC，用在纺织和宠物这类场景。专利数量我没有逐条核对，我不报数字。"
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Offices and funding: ask",
+      "bodyEn": "Site talks about future globalization and offices in Japan, Singapore, Malaysia as a plan. Chat says sites already exist. Search did not prove offices are open. Ask. Funding: chat says multiple rounds; search did not show round names, amounts, or investors. One alumni-competition note mentions a letter of intent with no amount. Do not say you know they closed rounds.",
+      "mandarin": "海外办公室和融资轮次，我没有核到公开明细。聊天和页面说法不一致的地方，我要问，不假装已经知道。"
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Office print and contact",
+      "bodyEn": "Office printed as 杭州市余杭区良渚街道洋帆商务中心1幢2101室 and also 1幢21层. Interview is 洋帆中心1幢21楼 today 18:00. Do not quote commute time. Do not call the public 400 line; use the thread with 丁先生. Do not repeat 2023 spray/mask “99.99%” claims or judge them.",
+      "mandarin": "面试地址是杭州市余杭区洋帆中心1幢21楼，今天18:00。通勤时间我不报。不打公开400，只用和丁先生的对话。喷剂口罩那类99.99%说法我今天不复述也不评判。"
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Company check",
+      "bodyEn": "Recall the honest company line.",
+      "prompt": "If they ask what you know about the company, what is safe?",
+      "choices": [
+        "I saw AES, odor/antibacterial/antiviral/mildew/formaldehyde/TVOC for textile and pet scenes; I did not verify patent counts, so I do not quote those numbers",
+        "The company is definitely 23 years old with named closed funding rounds and open offices in Japan",
+        "50+ patents and 300+ test reports are facts you personally audited",
+        "Call the public 400 line during the interview to prove research"
+      ],
+      "answer": 0
+    }
+  ]
+}

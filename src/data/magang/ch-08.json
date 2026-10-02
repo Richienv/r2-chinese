@@ -1,0 +1,252 @@
+{
+  "id": "08",
+  "index": 8,
+  "part": 2,
+  "partTitleEn": "How a language model works",
+  "titleEn": "PyTorch in one sitting",
+  "titleSource": "PyTorch dalam sekali duduk",
+  "sourcePages": "29-32",
+  "when": "Week 1, day 3. Type the code yourself; do not copy-paste.",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Five PyTorch ideas",
+      "bodyEn": "Five ideas cover reading and writing model code: tensor, shape, autograd, module, and training loop. Type the chapter snippets yourself — do not copy-paste. Most model bugs are shape bugs. Interviewers ask for the five-line training order and for B, T, C shapes. This chapter is the toolbox for Project 2 and Project 5.",
+      "terms": [
+        {
+          "zh": "张量",
+          "en": "tensor",
+          "hook": "If they say this, they mean the array of numbers with a shape."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "PyTorch tensor",
+      "bodyEn": "A tensor is an array of numbers with a shape. A table [[1,2,3],[4,5,6]] has shape (2, 3); multiply by ones(3,2) and you get (2, 2). Matrix multiply needs matching inner sizes; broadcasting stretches size-1 dims; view keeps the same count of numbers; transpose swaps two dimensions. Print shape on both sides before a multiply when you see mat1 and mat2 shapes cannot be multiplied. Say shape first when debugging.",
+      "terms": [
+        {
+          "zh": "张量",
+          "en": "tensor",
+          "hook": "If they say this, start with shape, then ops."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "B T C shapes",
+      "bodyEn": "In model code, B is batch size, T is sequence length, and C is channels — vector width. Attention often makes (B, T, T) score matrices. Example: (8, 128, 64) times (8, 64, 128) yields (8, 128, 128). That is the chapter 6 T-by-T idea with an explicit batch dimension. Keep shapes labeled B, T, C when you read attention code.",
+      "terms": [
+        {
+          "zh": "张量",
+          "en": "tensor",
+          "hook": "If they ask attention shapes, label B, T, C on the tensors."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Autograd basics",
+      "bodyEn": "Mark a tensor with requires_grad True and PyTorch records every operation. Calling backward fills grad with the gradient. For loss equals (3w − 12) squared at w equals 2, the gradient is −36.0. Autograd is why you do not write derivatives by hand for every layer. Interviewers may ask what requires_grad and backward do — answer in one clear sentence each.",
+      "terms": [
+        {
+          "zh": "学习率",
+          "en": "learning rate",
+          "hook": "If they mix autograd with step size, separate gradient from learning rate."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Training loop",
+      "bodyEn": "Every training step is the same five lines: forward, loss, zero_grad, backward, step. Memorize that order — interviewers ask for it. Forward builds predictions; loss scores them; zero_grad clears old slopes; backward fills new ones; step updates weights. Keep this loop in muscle memory for Project 2 and Project 5. Wrong order is a common oral-exam fail.",
+      "terms": [
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this in PyTorch, CrossEntropyLoss wants class ids and raw logits."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Modules need ReLU",
+      "bodyEn": "nn.Module is the building block: a layer is a module, and a model contains modules. nn.Sequential chains them. Two linear layers with ReLU between them learn inside versus outside a circle. Remove ReLU and the net collapses to one straight line. Nonlinearity is what lets decision boundaries bend.",
+      "terms": [
+        {
+          "zh": "参数",
+          "en": "parameters",
+          "hook": "If they say this, modules hold the learnable parameters."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "PyTorch traps",
+      "bodyEn": "If loss does not drop, you may have forgotten zero_grad, or the learning rate is far too large or too small. CrossEntropyLoss wants class ids as long integers and raw logits — do not softmax first. Wrong device means model and data are not both on the same device. If evaluation numbers jump around, you forgot eval mode and no_grad, so dropout is still on. Use cuda on NVIDIA, mps on Apple silicon, cpu otherwise; for Project 5 fine-tuning prefer a CUDA GPU.",
+      "terms": [
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this, match model and batch to device memory."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Matmul shape check",
+      "bodyEn": "Batched attention-style matmul shape. Inner dims 64 must match. Outer dims 128 and 128 stay. Batch 8 rides along unchanged.",
+      "prompt": "(8, 128, 64) @ (8, 64, 128) produces what shape?",
+      "choices": [
+        "(8, 64, 64)",
+        "(8, 128, 128)",
+        "(128, 128) with batch dropped",
+        "(8, 128, 64)"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Training order check",
+      "bodyEn": "Five training lines from memory. Forward builds predictions. Loss scores them. Zero grad clears old slopes. Backward fills new ones. Step updates weights.",
+      "prompt": "What is the order of one training step?",
+      "choices": [
+        "backward → step → forward → loss → zero_grad",
+        "forward → loss → zero_grad → backward → step",
+        "zero_grad → step → backward → loss → forward",
+        "softmax → argmax → embed → decode → print"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Five PyTorch ideas",
+      "bodyEn": "Five ideas cover reading and writing model code: tensor, shape, autograd, module, and training loop. Type the chapter snippets yourself — do not copy-paste. Most model bugs are shape bugs. Interviewers ask for the five-line training order and for B, T, C shapes. This chapter is the toolbox for Project 2 and Project 5.",
+      "terms": [
+        {
+          "zh": "张量",
+          "en": "tensor",
+          "hook": "If they say this, they mean the array of numbers with a shape."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "PyTorch tensor",
+      "bodyEn": "A tensor is an array of numbers with a shape. A table [[1,2,3],[4,5,6]] has shape (2, 3); multiply by ones(3,2) and you get (2, 2). Matrix multiply needs matching inner sizes; broadcasting stretches size-1 dims; view keeps the same count of numbers; transpose swaps two dimensions. Print shape on both sides before a multiply when you see mat1 and mat2 shapes cannot be multiplied. Say shape first when debugging.",
+      "terms": [
+        {
+          "zh": "张量",
+          "en": "tensor",
+          "hook": "If they say this, start with shape, then ops."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "B T C shapes",
+      "bodyEn": "In model code, B is batch size, T is sequence length, and C is channels — vector width. Attention often makes (B, T, T) score matrices. Example: (8, 128, 64) times (8, 64, 128) yields (8, 128, 128). That is the chapter 6 T-by-T idea with an explicit batch dimension. Keep shapes labeled B, T, C when you read attention code.",
+      "terms": [
+        {
+          "zh": "张量",
+          "en": "tensor",
+          "hook": "If they ask attention shapes, label B, T, C on the tensors."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Autograd basics",
+      "bodyEn": "Mark a tensor with requires_grad True and PyTorch records every operation. Calling backward fills grad with the gradient. For loss equals (3w − 12) squared at w equals 2, the gradient is −36.0. Autograd is why you do not write derivatives by hand for every layer. Interviewers may ask what requires_grad and backward do — answer in one clear sentence each.",
+      "terms": [
+        {
+          "zh": "学习率",
+          "en": "learning rate",
+          "hook": "If they mix autograd with step size, separate gradient from learning rate."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Training loop",
+      "bodyEn": "Every training step is the same five lines: forward, loss, zero_grad, backward, step. Memorize that order — interviewers ask for it. Forward builds predictions; loss scores them; zero_grad clears old slopes; backward fills new ones; step updates weights. Keep this loop in muscle memory for Project 2 and Project 5. Wrong order is a common oral-exam fail.",
+      "terms": [
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this in PyTorch, CrossEntropyLoss wants class ids and raw logits."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Modules need ReLU",
+      "bodyEn": "nn.Module is the building block: a layer is a module, and a model contains modules. nn.Sequential chains them. Two linear layers with ReLU between them learn inside versus outside a circle. Remove ReLU and the net collapses to one straight line. Nonlinearity is what lets decision boundaries bend.",
+      "terms": [
+        {
+          "zh": "参数",
+          "en": "parameters",
+          "hook": "If they say this, modules hold the learnable parameters."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "PyTorch traps",
+      "bodyEn": "If loss does not drop, you may have forgotten zero_grad, or the learning rate is far too large or too small. CrossEntropyLoss wants class ids as long integers and raw logits — do not softmax first. Wrong device means model and data are not both on the same device. If evaluation numbers jump around, you forgot eval mode and no_grad, so dropout is still on. Use cuda on NVIDIA, mps on Apple silicon, cpu otherwise; for Project 5 fine-tuning prefer a CUDA GPU.",
+      "terms": [
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this, match model and batch to device memory."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Matmul shape check",
+      "bodyEn": "Batched attention-style matmul shape. Inner dims 64 must match. Outer dims 128 and 128 stay. Batch 8 rides along unchanged.",
+      "prompt": "(8, 128, 64) @ (8, 64, 128) produces what shape?",
+      "choices": [
+        "(8, 64, 64)",
+        "(8, 128, 128)",
+        "(128, 128) with batch dropped",
+        "(8, 128, 64)"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Training order check",
+      "bodyEn": "Five training lines from memory. Forward builds predictions. Loss scores them. Zero grad clears old slopes. Backward fills new ones. Step updates weights.",
+      "prompt": "What is the order of one training step?",
+      "choices": [
+        "backward → step → forward → loss → zero_grad",
+        "forward → loss → zero_grad → backward → step",
+        "zero_grad → step → backward → loss → forward",
+        "softmax → argmax → embed → decode → print"
+      ],
+      "answer": 1
+    }
+  ]
+}

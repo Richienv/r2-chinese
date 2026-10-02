@@ -1,0 +1,272 @@
+{
+  "id": "04",
+  "index": 4,
+  "part": 2,
+  "partTitleEn": "How a language model works",
+  "titleEn": "The model that guesses the next token",
+  "titleSource": "Model yang nebak token berikutnya",
+  "sourcePages": "12-15",
+  "when": "Week 1, days 1–2. Core theory.",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Next token",
+      "bodyEn": "A large language model is basically a function. Text goes in; scores come out — one score per vocabulary token for what comes next. Writing a full answer is the same step on repeat: guess, pick one token, append it, guess again. That loop is autoregressive generation. Job posts often shorten the name to large model, and everything else in this chapter is detail around that one job.",
+      "terms": [
+        {
+          "zh": "大语言模型",
+          "en": "large language model",
+          "hook": "If they say this, they mean the full formal name for an LLM."
+        },
+        {
+          "zh": "大模型",
+          "en": "large model",
+          "hook": "If they say this, they mean the short job-post name for an LLM."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Autoregressive loop",
+      "bodyEn": "Autoregressive means each new token depends on the past tokens. The model never plans a whole paragraph at once; it only scores the next piece. Interviewers ask this to see if you know generation is repeated next-token prediction. Say: input context, score vocabulary, sample one token, append, repeat. That is the story behind ChatGPT-style writing.",
+      "terms": [
+        {
+          "zh": "自回归生成",
+          "en": "autoregressive generation",
+          "hook": "If they say this, they mean each new token depends on the past."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Logits and softmax",
+      "bodyEn": "Inside, the model first builds a raw score for each token, called a logit. Softmax turns those scores into probabilities that are positive and sum to one. Bigger scores win bigger shares, but every token still gets some chance. For the unfinished line I want to eat today, top guesses might look like hotpot near one third, then noodles and rice. The model picks one token, appends it, and continues.",
+      "terms": [
+        {
+          "zh": "我今天想吃",
+          "en": "I want to eat…",
+          "hook": "If they demo this unfinished line, they mean the classic next-token example."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Sampling temperature",
+      "bodyEn": "Greedy always takes the most likely token; it is stable, but it can loop and repeat. Temperature divides each logit by T before softmax: T below one sharpens, and T above one flattens. Use low temperature for facts and JSON; use higher temperature for brainstorming. Temperature changes how the model chooses, not what it knows — a wrong fact at temperature one is usually still wrong at temperature zero.",
+      "terms": [
+        {
+          "zh": "温度",
+          "en": "temperature",
+          "hook": "If they say this, they mean the sampling knob, not retraining."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Top-k top-p",
+      "bodyEn": "Top-k keeps only the k most likely tokens then samples among them. Top-p keeps the smallest top set whose probabilities sum to at least p, then samples. Interviewers mix these knobs with temperature; keep the story clear that knobs change sampling, not stored facts. Softmax on equal logits gives equal shares, so three equal logits become one third each. Say when you would raise or lower each knob.",
+      "terms": [
+        {
+          "zh": "温度",
+          "en": "temperature",
+          "hook": "If they say this with top-k or top-p, they mean sampling controls together."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Context window",
+      "bodyEn": "A model can only see a limited amount of text at once. That limit is the context window, measured in tokens. Prompt, docs, history, and the answer all share that budget. Longer context costs more and runs slower. Models use the start and end better than the middle, so put key instructions there; five model calls per message also burn the budget fast.",
+      "terms": [
+        {
+          "zh": "上下文窗口",
+          "en": "context window",
+          "hook": "If they say this, they mean the token budget for prompt, docs, history, and answer."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "What hallucination is",
+      "bodyEn": "Hallucination is fluent text that is wrong or invented. The model only predicts likely next tokens; it has no built-in fact check, and knowledge has a cutoff. Four fixes: give retrieved sources and demand citations; allow I don’t know; check output with rules, another model, or a human; narrow the task with structured output. Answer in that order in interviews. Name RAG first when they ask how to reduce hallucination.",
+      "terms": [
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, they mean fluent wrong text — almost every Track A round."
+        },
+        {
+          "zh": "RAG",
+          "en": "retrieve then generate",
+          "hook": "If they say this after 幻觉, they want sources as the first fix."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Low temperature check",
+      "bodyEn": "What temperature 0.2 does. Temperature only changes how the model samples tokens. It does not add facts or fix wrong knowledge. Choose the answer that says it sharpens the distribution and when you use it.",
+      "prompt": "What does temperature 0.2 do, and when do you use it?",
+      "choices": [
+        "It flattens the distribution; use for brainstorming",
+        "It retrains the model so wrong facts become correct",
+        "It sharpens the distribution; use for facts, format, and JSON",
+        "It truncates to the top 0.2 of the vocabulary"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Hallucination check",
+      "bodyEn": "Name two reasons models hallucinate and two solutions. Hallucination is fluent text that is wrong or invented. Interviewers want cause first, then fixes in order. Choose the answer that covers fact-check gaps, cutoff, sources, and verification.",
+      "prompt": "Name two reasons models hallucinate and two solutions.",
+      "choices": [
+        "They store a world model; GPUs overheat — raise temperature; disable context",
+        "No built-in fact check; knowledge cutoff — give sources; allow don’t-know / verify / narrow",
+        "Top-p is always 1; embeddings too short — greedy only; ban Mandarin",
+        "Softmax sums to 1; logits can be negative — replace softmax; train without loss"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Next token",
+      "bodyEn": "A large language model is basically a function. Text goes in; scores come out — one score per vocabulary token for what comes next. Writing a full answer is the same step on repeat: guess, pick one token, append it, guess again. That loop is autoregressive generation. Job posts often shorten the name to large model, and everything else in this chapter is detail around that one job.",
+      "terms": [
+        {
+          "zh": "大语言模型",
+          "en": "large language model",
+          "hook": "If they say this, they mean the full formal name for an LLM."
+        },
+        {
+          "zh": "大模型",
+          "en": "large model",
+          "hook": "If they say this, they mean the short job-post name for an LLM."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Autoregressive loop",
+      "bodyEn": "Autoregressive means each new token depends on the past tokens. The model never plans a whole paragraph at once; it only scores the next piece. Interviewers ask this to see if you know generation is repeated next-token prediction. Say: input context, score vocabulary, sample one token, append, repeat. That is the story behind ChatGPT-style writing.",
+      "terms": [
+        {
+          "zh": "自回归生成",
+          "en": "autoregressive generation",
+          "hook": "If they say this, they mean each new token depends on the past."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Logits and softmax",
+      "bodyEn": "Inside, the model first builds a raw score for each token, called a logit. Softmax turns those scores into probabilities that are positive and sum to one. Bigger scores win bigger shares, but every token still gets some chance. For the unfinished line I want to eat today, top guesses might look like hotpot near one third, then noodles and rice. The model picks one token, appends it, and continues.",
+      "terms": [
+        {
+          "zh": "我今天想吃",
+          "en": "I want to eat…",
+          "hook": "If they demo this unfinished line, they mean the classic next-token example."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Sampling temperature",
+      "bodyEn": "Greedy always takes the most likely token; it is stable, but it can loop and repeat. Temperature divides each logit by T before softmax: T below one sharpens, and T above one flattens. Use low temperature for facts and JSON; use higher temperature for brainstorming. Temperature changes how the model chooses, not what it knows — a wrong fact at temperature one is usually still wrong at temperature zero.",
+      "terms": [
+        {
+          "zh": "温度",
+          "en": "temperature",
+          "hook": "If they say this, they mean the sampling knob, not retraining."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Top-k top-p",
+      "bodyEn": "Top-k keeps only the k most likely tokens then samples among them. Top-p keeps the smallest top set whose probabilities sum to at least p, then samples. Interviewers mix these knobs with temperature; keep the story clear that knobs change sampling, not stored facts. Softmax on equal logits gives equal shares, so three equal logits become one third each. Say when you would raise or lower each knob.",
+      "terms": [
+        {
+          "zh": "温度",
+          "en": "temperature",
+          "hook": "If they say this with top-k or top-p, they mean sampling controls together."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Context window",
+      "bodyEn": "A model can only see a limited amount of text at once. That limit is the context window, measured in tokens. Prompt, docs, history, and the answer all share that budget. Longer context costs more and runs slower. Models use the start and end better than the middle, so put key instructions there; five model calls per message also burn the budget fast.",
+      "terms": [
+        {
+          "zh": "上下文窗口",
+          "en": "context window",
+          "hook": "If they say this, they mean the token budget for prompt, docs, history, and answer."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "What hallucination is",
+      "bodyEn": "Hallucination is fluent text that is wrong or invented. The model only predicts likely next tokens; it has no built-in fact check, and knowledge has a cutoff. Four fixes: give retrieved sources and demand citations; allow I don’t know; check output with rules, another model, or a human; narrow the task with structured output. Answer in that order in interviews. Name RAG first when they ask how to reduce hallucination.",
+      "terms": [
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, they mean fluent wrong text — almost every Track A round."
+        },
+        {
+          "zh": "RAG",
+          "en": "retrieve then generate",
+          "hook": "If they say this after 幻觉, they want sources as the first fix."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Low temperature check",
+      "bodyEn": "What temperature 0.2 does. Temperature only changes how the model samples tokens. It does not add facts or fix wrong knowledge. Choose the answer that says it sharpens the distribution and when you use it.",
+      "prompt": "What does temperature 0.2 do, and when do you use it?",
+      "choices": [
+        "It flattens the distribution; use for brainstorming",
+        "It retrains the model so wrong facts become correct",
+        "It sharpens the distribution; use for facts, format, and JSON",
+        "It truncates to the top 0.2 of the vocabulary"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Hallucination check",
+      "bodyEn": "Name two reasons models hallucinate and two solutions. Hallucination is fluent text that is wrong or invented. Interviewers want cause first, then fixes in order. Choose the answer that covers fact-check gaps, cutoff, sources, and verification.",
+      "prompt": "Name two reasons models hallucinate and two solutions.",
+      "choices": [
+        "They store a world model; GPUs overheat — raise temperature; disable context",
+        "No built-in fact check; knowledge cutoff — give sources; allow don’t-know / verify / narrow",
+        "Top-p is always 1; embeddings too short — greedy only; ban Mandarin",
+        "Softmax sums to 1; logits can be negative — replace softmax; train without loss"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "id": "19",
+  "index": 19,
+  "part": 4,
+  "partTitleEn": "Six projects",
+  "titleEn": "Project 3 · Indonesian tax Q&A with RAG",
+  "titleSource": "Project 3 · Tanya jawab pajak Indonesia pakai RAG",
+  "sourcePages": "75-77",
+  "when": "Week 2, days 8–12. About 14 hours.",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What this proves",
+      "bodyEn": "Project 3 proves you can build retrieval from zero, measure hit rate and MRR, and refuse when the docs have no answer. You build Q&A over Indonesian tax documents for SMEs — PPN, PPh, e-Faktur, and Coretax. Interview value is a measured RAG, not a demo chat that feels helpful. Honest limit: a chatbot without Hit@k and refusal counts is not this project.",
+      "terms": [
+        {
+          "zh": "检索",
+          "en": "retrieval",
+          "hook": "If they say this, they mean find the document chunks that answer the question."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Clean source docs",
+      "bodyEn": "Collect official public tax docs and save clean text, one file per source. Record each URL and download date because tax rules change. Remove repeating headers and turn tables into one line per row. That cleaning hour decides retrieval quality more than later hyperparameters. Honest limit: skipping cleaning to save time usually costs more in bad recall.",
+      "terms": [
+        {
+          "zh": "切块",
+          "en": "chunking",
+          "hook": "If they say this, they mean split cleaned docs into searchable passages."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Index and metrics",
+      "bodyEn": "Build an index that chunks, embeds, and stores vectors. Write thirty test questions before you look at search results, including five unanswerable rows. Measure hit@5 and MRR on hybrid and dense-only, leaving unanswerables out of retrieval scoring. Tune chunk size one value at a time, rebuild, and remeasure. Honest limit: writing questions after peeking at search biases the set toward easy hits.",
+      "terms": [
+        {
+          "zh": "混合检索",
+          "en": "hybrid search",
+          "hook": "If they say this, they mean vector search plus BM25 with rank fusion."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Answers and refuse",
+      "bodyEn": "Run ask on all thirty questions and mark correct, faithful, and correct refusal by hand. Fill answer and refusal tables with real counts. Put a README warning that answers are not tax advice and must be checked with a consultant. Optionally move vectors to Postgres after the NumPy path already works. Honest limit: scoring unanswerables inside Hit@k hides whether refuse works.",
+      "terms": [
+        {
+          "zh": "拒答",
+          "en": "refusal",
+          "hook": "If they say this, they mean say the answer is not in the documents."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "What done looks like",
+      "bodyEn": "Done means ten to twenty clean public docs with dates, an ask command with citations, and thirty questions written before peeking. Tables show real retrieval and answer numbers. The README lists three remaining failures honestly. Your CV line carries hit@5, MRR, and refusal counts. Honest limit: “it usually answers well” is not a done criterion.",
+      "terms": []
+    },
+    {
+      "id": "s6",
+      "kind": "watch",
+      "titleEn": "Why hybrid for tax",
+      "bodyEn": "Tax questions often name article and clause numbers that embeddings alone miss. BM25 catches those tokens; vectors catch paraphrase; RRF fuses the lists. Never present the bot as legal advice. Honest limit: pure vector demos look smooth and fail on pasal-style queries.",
+      "terms": []
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Unanswerable count",
+      "bodyEn": "Of thirty test questions, a fixed minority are deliberately unanswerable. Those rows test refusal, not retrieval hit rate.",
+      "prompt": "Of the 30 Project 3 test questions, how many are deliberately unanswerable?",
+      "choices": [
+        "None",
+        "Five",
+        "Ten",
+        "Twenty-five"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Why hybrid for tax",
+      "bodyEn": "Pick the choice that explains why this project pairs vectors with BM25 for Indonesian tax Q&A.",
+      "prompt": "Why use hybrid (vector + BM25 with RRF) for Indonesian tax Q&A?",
+      "choices": [
+        "Because BM25 is always more accurate than vectors",
+        "Because tax questions often have article/clause numbers that pure vector search misses",
+        "Because Postgres forbids pure dense search",
+        "Because RRF replaces the need for embeddings"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What this proves",
+      "bodyEn": "Project 3 proves you can build retrieval from zero, measure hit rate and MRR, and refuse when the docs have no answer. You build Q&A over Indonesian tax documents for SMEs — PPN, PPh, e-Faktur, and Coretax. Interview value is a measured RAG, not a demo chat that feels helpful. Honest limit: a chatbot without Hit@k and refusal counts is not this project.",
+      "terms": [
+        {
+          "zh": "检索",
+          "en": "retrieval",
+          "hook": "If they say this, they mean find the document chunks that answer the question."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Clean source docs",
+      "bodyEn": "Collect official public tax docs and save clean text, one file per source. Record each URL and download date because tax rules change. Remove repeating headers and turn tables into one line per row. That cleaning hour decides retrieval quality more than later hyperparameters. Honest limit: skipping cleaning to save time usually costs more in bad recall.",
+      "terms": [
+        {
+          "zh": "切块",
+          "en": "chunking",
+          "hook": "If they say this, they mean split cleaned docs into searchable passages."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Index and metrics",
+      "bodyEn": "Build an index that chunks, embeds, and stores vectors. Write thirty test questions before you look at search results, including five unanswerable rows. Measure hit@5 and MRR on hybrid and dense-only, leaving unanswerables out of retrieval scoring. Tune chunk size one value at a time, rebuild, and remeasure. Honest limit: writing questions after peeking at search biases the set toward easy hits.",
+      "terms": [
+        {
+          "zh": "混合检索",
+          "en": "hybrid search",
+          "hook": "If they say this, they mean vector search plus BM25 with rank fusion."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Answers and refuse",
+      "bodyEn": "Run ask on all thirty questions and mark correct, faithful, and correct refusal by hand. Fill answer and refusal tables with real counts. Put a README warning that answers are not tax advice and must be checked with a consultant. Optionally move vectors to Postgres after the NumPy path already works. Honest limit: scoring unanswerables inside Hit@k hides whether refuse works.",
+      "terms": [
+        {
+          "zh": "拒答",
+          "en": "refusal",
+          "hook": "If they say this, they mean say the answer is not in the documents."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "What done looks like",
+      "bodyEn": "Done means ten to twenty clean public docs with dates, an ask command with citations, and thirty questions written before peeking. Tables show real retrieval and answer numbers. The README lists three remaining failures honestly. Your CV line carries hit@5, MRR, and refusal counts. Honest limit: “it usually answers well” is not a done criterion.",
+      "terms": []
+    },
+    {
+      "id": "s6",
+      "kind": "watch",
+      "titleEn": "Why hybrid for tax",
+      "bodyEn": "Tax questions often name article and clause numbers that embeddings alone miss. BM25 catches those tokens; vectors catch paraphrase; RRF fuses the lists. Never present the bot as legal advice. Honest limit: pure vector demos look smooth and fail on pasal-style queries.",
+      "terms": []
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Unanswerable count",
+      "bodyEn": "Of thirty test questions, a fixed minority are deliberately unanswerable. Those rows test refusal, not retrieval hit rate.",
+      "prompt": "Of the 30 Project 3 test questions, how many are deliberately unanswerable?",
+      "choices": [
+        "None",
+        "Five",
+        "Ten",
+        "Twenty-five"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Why hybrid for tax",
+      "bodyEn": "Pick the choice that explains why this project pairs vectors with BM25 for Indonesian tax Q&A.",
+      "prompt": "Why use hybrid (vector + BM25 with RRF) for Indonesian tax Q&A?",
+      "choices": [
+        "Because BM25 is always more accurate than vectors",
+        "Because tax questions often have article/clause numbers that pure vector search misses",
+        "Because Postgres forbids pure dense search",
+        "Because RRF replaces the need for embeddings"
+      ],
+      "answer": 1
+    }
+  ]
+}

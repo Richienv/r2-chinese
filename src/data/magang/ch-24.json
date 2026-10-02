@@ -1,0 +1,338 @@
+{
+  "id": "24",
+  "index": 24,
+  "part": 5,
+  "partTitleEn": "Product and AI operations",
+  "titleEn": "Metrics you can actually compute",
+  "titleSource": "Metrik yang bisa lo hitung",
+  "sourcePages": "90-93",
+  "when": "Week 3, day 17 · Track B core",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "example",
+      "titleEn": "Funnel with counts",
+      "bodyEn": "Walk one product video with real counts: 20,000 impressions, 1,000 clicks (CTR 5.0%), 350 finishes (completion 35%), 80 interactions (engagement 8.0%), 200 page visitors, and 12 purchases (CVR 6.0%). CTR looks healthy here, but only twelve of two hundred page visitors buy. Fix the product page or price before making another video. Metrics tell you where in the funnel to work, not which vanity number looks nicest.",
+      "terms": [
+        {
+          "zh": "曝光",
+          "en": "impressions",
+          "hook": "If they say this, how many times the post was shown."
+        },
+        {
+          "zh": "转化率",
+          "en": "CVR",
+          "hook": "If they say this, buyers divided by visitors."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Content rates",
+      "bodyEn": "CTR equals clicks divided by impressions — whether cover and title work. Completion rate equals finishes divided by views — whether the video holds people. Engagement rate equals likes plus comments plus saves plus shares, all divided by views — whether people care. Conversion rate equals buyers divided by visitors — whether the page sells. Learn the formulas cold so you can compute them in an interview without a spreadsheet.",
+      "terms": [
+        {
+          "zh": "点击率",
+          "en": "CTR",
+          "hook": "If they say this, cover and title test."
+        },
+        {
+          "zh": "完播率",
+          "en": "completion rate",
+          "hook": "If they say this, finishes divided by views."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Money and retention",
+      "bodyEn": "Average order value equals revenue divided by number of orders, and GMV is total order value before refunds. Day-N retention equals users active on day N divided by users who started on day 0. DAU and MAU are unique actives; DAU divided by MAU shows habit strength. CAC equals marketing cost divided by new customers, and LTV must sit well above CAC. ROI or ROAS equals result divided by cost — for ads, revenue divided by ad cost.",
+      "terms": [
+        {
+          "zh": "留存率",
+          "en": "retention rate",
+          "hook": "If they ask how you calculate it, give day N over day 0."
+        },
+        {
+          "zh": "获客成本",
+          "en": "CAC",
+          "hook": "If they say this, cost divided by new customers."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "CAC sketch and A/B",
+      "bodyEn": "Spend ¥2,000 on ads and get ten new subscribers: CAC is ¥200. If each pays ¥150 a month and stays six months, LTV is ¥900, or 4.5 times CAC — use your real numbers in interviews, or say none. An A/B test changes one thing and compares two randomly assigned groups, such as two covers for the same video. Write the hypothesis and one metric before you start, change only one thing, and split users or impressions at random — not by day. Collect enough data before you call a winner.",
+      "terms": [
+        {
+          "zh": "投入产出比",
+          "en": "ROI / ROAS",
+          "hook": "If they say this, result divided by cost."
+        },
+        {
+          "zh": "A/B 测试",
+          "en": "A/B test",
+          "hook": "If they say this, one change, random groups."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Sample size basics",
+      "bodyEn": "A rough rule for about eighty percent power is that each variant needs about 16 · p(1−p) / δ² samples. For p = 0.045 and δ = 0.01 that is about 7,000 impressions per variant, so fifty views prove nothing. To tell 10% from 12%, you need about 4,000 per variant. Say this when someone claims a winner from a tiny sample. Interviewers like candidates who know when not to trust a number.",
+      "terms": [
+        {
+          "zh": "样本量",
+          "en": "sample size",
+          "hook": "If they ask why fifty views fail, this is the answer."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "SQL for DAU funnel",
+      "bodyEn": "From events(user_id, event, day), DAU is COUNT(DISTINCT user_id) grouped by day. Funnel SQL counts distinct users for viewed, add_cart, and pay. Day-1 retention uses a first_day CTE, then users who return the next day. You do not need perfect SQL in every ops interview, but you should know what the queries count. Walk the definition in English first, then sketch the query if asked.",
+      "terms": [
+        {
+          "zh": "日活",
+          "en": "DAU",
+          "hook": "If they say this, distinct active users that day."
+        },
+        {
+          "zh": "次日留存",
+          "en": "day-1 retention",
+          "hook": "If they ask the formula, back tomorrow over new today."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Six-line review",
+      "bodyEn": "Write every ops review in six lines: goal and metric as written before starting; what happened with numbers and dates; what worked with evidence; what failed and where in the funnel; cause (certain versus guess); and one next change with how you will know. Interviewers also ask how retention is calculated. Day-1 retention is among users new on day 0, how many are active on day 1. Whether 30% is “good” depends on category, trend, and channel — not one number alone.",
+      "terms": [
+        {
+          "zh": "复盘",
+          "en": "ops review",
+          "hook": "If they ask for a write-up, use this six-line shape."
+        },
+        {
+          "zh": "留存率",
+          "en": "retention rate",
+          "hook": "If they ask is 30% good, answer with formula plus context."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "idea",
+      "titleEn": "Talk metrics in interview",
+      "bodyEn": "When they ask “how is this post doing?”, walk impressions → CTR → completion → engagement → conversion and name the bottleneck. When they ask “is retention good?”, give the formula first, then compare to your own baseline or channel mix. When they ask about A/B, say one change, random split, enough sample, one primary metric. Bring one real WeUseAI or Project 6 number you can defend. Numbers without a bottleneck story sound hollow.",
+      "terms": [
+        {
+          "zh": "主指标",
+          "en": "primary metric",
+          "hook": "If they ask what success is, name this one number."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "CTR and CVR math",
+      "bodyEn": "Compute rates from the right numerators and denominators.",
+      "prompt": "What are CTR and CVR for 50,000 impressions, 1,500 clicks, 60 purchases from 400 visitors?",
+      "choices": [
+        "CTR = 1,500/50,000 = 3.0%; CVR = 60/400 = 15%",
+        "CTR = 60/50,000 = 0.12%; CVR = 1,500/400 = 375%",
+        "CTR = 400/1,500 ≈ 27%; CVR = 60/50,000 = 0.12%",
+        "CTR = 1,500/400 = 375%; CVR = 60/1,500 = 4%"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Why random A/B",
+      "bodyEn": "Day splits confound the treatment with who showed up.",
+      "prompt": "Why must A/B assignment be random, not by day?",
+      "choices": [
+        "Monday audience differs from Saturday—day split confounds the treatment with who showed up",
+        "Random splits are slower to implement in spreadsheets",
+        "Judges only accept random because LeetCode requires it",
+        "Per-day splits always give larger sample sizes"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "example",
+      "titleEn": "Funnel with counts",
+      "bodyEn": "Walk one product video with real counts: 20,000 impressions, 1,000 clicks (CTR 5.0%), 350 finishes (completion 35%), 80 interactions (engagement 8.0%), 200 page visitors, and 12 purchases (CVR 6.0%). CTR looks healthy here, but only twelve of two hundred page visitors buy. Fix the product page or price before making another video. Metrics tell you where in the funnel to work, not which vanity number looks nicest.",
+      "terms": [
+        {
+          "zh": "曝光",
+          "en": "impressions",
+          "hook": "If they say this, how many times the post was shown."
+        },
+        {
+          "zh": "转化率",
+          "en": "CVR",
+          "hook": "If they say this, buyers divided by visitors."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Content rates",
+      "bodyEn": "CTR equals clicks divided by impressions — whether cover and title work. Completion rate equals finishes divided by views — whether the video holds people. Engagement rate equals likes plus comments plus saves plus shares, all divided by views — whether people care. Conversion rate equals buyers divided by visitors — whether the page sells. Learn the formulas cold so you can compute them in an interview without a spreadsheet.",
+      "terms": [
+        {
+          "zh": "点击率",
+          "en": "CTR",
+          "hook": "If they say this, cover and title test."
+        },
+        {
+          "zh": "完播率",
+          "en": "completion rate",
+          "hook": "If they say this, finishes divided by views."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Money and retention",
+      "bodyEn": "Average order value equals revenue divided by number of orders, and GMV is total order value before refunds. Day-N retention equals users active on day N divided by users who started on day 0. DAU and MAU are unique actives; DAU divided by MAU shows habit strength. CAC equals marketing cost divided by new customers, and LTV must sit well above CAC. ROI or ROAS equals result divided by cost — for ads, revenue divided by ad cost.",
+      "terms": [
+        {
+          "zh": "留存率",
+          "en": "retention rate",
+          "hook": "If they ask how you calculate it, give day N over day 0."
+        },
+        {
+          "zh": "获客成本",
+          "en": "CAC",
+          "hook": "If they say this, cost divided by new customers."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "CAC sketch and A/B",
+      "bodyEn": "Spend ¥2,000 on ads and get ten new subscribers: CAC is ¥200. If each pays ¥150 a month and stays six months, LTV is ¥900, or 4.5 times CAC — use your real numbers in interviews, or say none. An A/B test changes one thing and compares two randomly assigned groups, such as two covers for the same video. Write the hypothesis and one metric before you start, change only one thing, and split users or impressions at random — not by day. Collect enough data before you call a winner.",
+      "terms": [
+        {
+          "zh": "投入产出比",
+          "en": "ROI / ROAS",
+          "hook": "If they say this, result divided by cost."
+        },
+        {
+          "zh": "A/B 测试",
+          "en": "A/B test",
+          "hook": "If they say this, one change, random groups."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Sample size basics",
+      "bodyEn": "A rough rule for about eighty percent power is that each variant needs about 16 · p(1−p) / δ² samples. For p = 0.045 and δ = 0.01 that is about 7,000 impressions per variant, so fifty views prove nothing. To tell 10% from 12%, you need about 4,000 per variant. Say this when someone claims a winner from a tiny sample. Interviewers like candidates who know when not to trust a number.",
+      "terms": [
+        {
+          "zh": "样本量",
+          "en": "sample size",
+          "hook": "If they ask why fifty views fail, this is the answer."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "SQL for DAU funnel",
+      "bodyEn": "From events(user_id, event, day), DAU is COUNT(DISTINCT user_id) grouped by day. Funnel SQL counts distinct users for viewed, add_cart, and pay. Day-1 retention uses a first_day CTE, then users who return the next day. You do not need perfect SQL in every ops interview, but you should know what the queries count. Walk the definition in English first, then sketch the query if asked.",
+      "terms": [
+        {
+          "zh": "日活",
+          "en": "DAU",
+          "hook": "If they say this, distinct active users that day."
+        },
+        {
+          "zh": "次日留存",
+          "en": "day-1 retention",
+          "hook": "If they ask the formula, back tomorrow over new today."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Six-line review",
+      "bodyEn": "Write every ops review in six lines: goal and metric as written before starting; what happened with numbers and dates; what worked with evidence; what failed and where in the funnel; cause (certain versus guess); and one next change with how you will know. Interviewers also ask how retention is calculated. Day-1 retention is among users new on day 0, how many are active on day 1. Whether 30% is “good” depends on category, trend, and channel — not one number alone.",
+      "terms": [
+        {
+          "zh": "复盘",
+          "en": "ops review",
+          "hook": "If they ask for a write-up, use this six-line shape."
+        },
+        {
+          "zh": "留存率",
+          "en": "retention rate",
+          "hook": "If they ask is 30% good, answer with formula plus context."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "idea",
+      "titleEn": "Talk metrics in interview",
+      "bodyEn": "When they ask “how is this post doing?”, walk impressions → CTR → completion → engagement → conversion and name the bottleneck. When they ask “is retention good?”, give the formula first, then compare to your own baseline or channel mix. When they ask about A/B, say one change, random split, enough sample, one primary metric. Bring one real WeUseAI or Project 6 number you can defend. Numbers without a bottleneck story sound hollow.",
+      "terms": [
+        {
+          "zh": "主指标",
+          "en": "primary metric",
+          "hook": "If they ask what success is, name this one number."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "CTR and CVR math",
+      "bodyEn": "Compute rates from the right numerators and denominators.",
+      "prompt": "What are CTR and CVR for 50,000 impressions, 1,500 clicks, 60 purchases from 400 visitors?",
+      "choices": [
+        "CTR = 1,500/50,000 = 3.0%; CVR = 60/400 = 15%",
+        "CTR = 60/50,000 = 0.12%; CVR = 1,500/400 = 375%",
+        "CTR = 400/1,500 ≈ 27%; CVR = 60/50,000 = 0.12%",
+        "CTR = 1,500/400 = 375%; CVR = 60/1,500 = 4%"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Why random A/B",
+      "bodyEn": "Day splits confound the treatment with who showed up.",
+      "prompt": "Why must A/B assignment be random, not by day?",
+      "choices": [
+        "Monday audience differs from Saturday—day split confounds the treatment with who showed up",
+        "Random splits are slower to implement in spreadsheets",
+        "Judges only accept random because LeetCode requires it",
+        "Per-day splits always give larger sample sizes"
+      ],
+      "answer": 0
+    }
+  ]
+}

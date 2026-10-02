@@ -1,0 +1,354 @@
+{
+  "id": "27",
+  "index": 27,
+  "part": 6,
+  "partTitleEn": "Coding tests",
+  "titleEn": "Twenty patterns",
+  "titleSource": "Dua puluh pola",
+  "sourcePages": "100-106",
+  "when": "Every day for a month · 45 minutes before anything else",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Name the pattern first",
+      "bodyEn": "Most coding problems are one of about twenty patterns in disguise. Learn to name the pattern before you type a line of code. Every new problem, ask which family it belongs to. Cue words in the prompt usually point you to the right family. The book’s solutions pass tests in patterns.py. Pattern first, then code — that habit saves you in timed tests.",
+      "terms": [
+        {
+          "zh": "算法题",
+          "en": "algorithm problem",
+          "hook": "If they say this, name the pattern before coding."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Hash map",
+      "bodyEn": "A hash map stores what you have already seen for O(1) lookup. Classic cue: pairs, matches, duplicates, Two Sum. Walk once, and for each value ask whether its complement is already in the map. Store value to index so you can return positions. Use this when nested loops would be O(n²) and you only need presence or a prior index. Keep one clear invariant: everything left of i is already recorded.",
+      "terms": [
+        {
+          "zh": "哈希表",
+          "en": "hash map",
+          "hook": "If they say this, seen values map to an index."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Two pointers",
+      "bodyEn": "Two pointers move indexes toward each other on sorted data or on a pair taken from both ends. Classic cue: Container With Most Water, pair sum on a sorted array. Each step discards one choice because moving the worse end cannot improve the answer under the current invariant. The pass is O(n) when each index moves at most once. Do not use two pointers on unsorted data unless you sort first and that is allowed.",
+      "terms": [
+        {
+          "zh": "双指针",
+          "en": "two pointers",
+          "hook": "If they say this, move ends and discard one choice each step."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Sliding window",
+      "bodyEn": "A sliding window widens the right end and shrinks the left when a condition breaks. Classic cue: longest substring without repeating characters, or at most k distinct letters. Keep a count map or set that reflects only the current window. When the invariant breaks, advance left until it holds again, then update the best answer. The whole pass is O(n) if each index enters and leaves the window once.",
+      "terms": [
+        {
+          "zh": "滑动窗口",
+          "en": "sliding window",
+          "hook": "If they say this, widen right, shrink left when the condition breaks."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Stack and next greater",
+      "bodyEn": "A plain stack matches nesting and undo: push opens, pop on closers, fail if empty or leftovers remain — Valid Parentheses. A monotonic stack answers “next greater” or “next warmer,” as in Daily Temperatures. Keep indexes still waiting until a warmer day arrives; each index is pushed and popped at most once, so the pass is O(n). Cue words for stack are matching pairs and nesting; for monotonic stack, next greater element.",
+      "terms": [
+        {
+          "zh": "栈",
+          "en": "stack",
+          "hook": "If they say this, push open, pop close."
+        },
+        {
+          "zh": "单调栈",
+          "en": "monotonic stack",
+          "hook": "If they say this, next greater in O(n)."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Binary search and prefix sums",
+      "bodyEn": "Binary search needs sorted data or a monotone “smallest x such that…” question. Use half-open [lo, hi) so the loop never spins forever — O(log n). Prefix-sum plus hash map counts ranges with a given sum: because prefix[j] − prefix[i] = k, count earlier prefixes equal to prefix[j] − k. Seed the map with 0 → 1 so empty prefixes count. Cue words: first true position, subarray sum equals k.",
+      "terms": [
+        {
+          "zh": "二分查找",
+          "en": "binary search",
+          "hook": "If they say this, half-open [lo, hi) on a monotone question."
+        },
+        {
+          "zh": "前缀和",
+          "en": "prefix sum",
+          "hook": "If they say this, a subarray is a prefix difference."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Lists and tree walks",
+      "bodyEn": "Linked-list work is pointer surgery: redirect one link at a time with prev, current, next — O(n) time, O(1) memory for Reverse Linked List. BFS on a tree uses a queue, one level at a time — cue words are levels and shortest path in steps. DFS finishes children then combines at the parent; max depth is 1 + max(left, right). Pick BFS for levels, DFS for depth and path sums.",
+      "terms": [
+        {
+          "zh": "广度优先",
+          "en": "BFS",
+          "hook": "If they say this, queue, level by level."
+        },
+        {
+          "zh": "深度优先",
+          "en": "DFS",
+          "hook": "If they say this, finish children, then combine."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Grids graphs groups",
+      "bodyEn": "DFS on a grid flood-fills each new land cell and marks visited — Number of Islands, O(rows × cols). Topological sort uses Kahn’s algorithm: repeatedly take nodes with no remaining prerequisites — Course Schedule, O(V+E); leftovers mean a cycle. Union-find merges sets with find and path halving; the number of groups is the number of distinct roots. Use these when the prompt talks about regions, prerequisites, or “are these two connected?”",
+      "terms": [
+        {
+          "zh": "拓扑排序",
+          "en": "topological sort",
+          "hook": "If they say this, leftovers mean a cycle."
+        },
+        {
+          "zh": "并查集",
+          "en": "union-find",
+          "hook": "If they say this, groups equal distinct roots."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Heaps greedy DP",
+      "bodyEn": "A heap keeps the best k in O(n log k) — top k, k-th largest, merging streams. Intervals sort by start, then merge into the last range when they overlap — O(n log n). Greedy keeps a clear local rule such as farthest index reachable so far in Jump Game. 1-D DP defines what dp means, then the recurrence — House Robber tracks best if you took vs skipped the last house. Backtracking chooses, recurses, and undoes; exponential, so n is small. Always state the state before you code the loop.",
+      "terms": [
+        {
+          "zh": "动态规划",
+          "en": "dynamic programming",
+          "hook": "If they say this, define dp, then the recurrence."
+        },
+        {
+          "zh": "回溯",
+          "en": "backtracking",
+          "hook": "If they say this, choose, recurse, undo."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "At most two letters",
+      "bodyEn": "Sliding window fits a longest substring with a count limit.",
+      "prompt": "Which pattern fits “longest substring with at most two different letters”?",
+      "choices": [
+        "Sliding window—widen right, shrink left when distinct count exceeds two",
+        "Topological sort—course prerequisites",
+        "Union-find—province counting only",
+        "Heap—top-k frequencies only"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "House Robber states",
+      "bodyEn": "take vs skip track whether the last house was robbed.",
+      "prompt": "In the book’s House Robber DP, what do take and skip mean?",
+      "choices": [
+        "take = best total if we robbed the last house; skip = best if we skipped it—recurrence swaps them each step",
+        "take = number of coins; skip = knapsack capacity",
+        "take = BFS queue; skip = DFS stack",
+        "take = union parent; skip = path-halving bit"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Name the pattern first",
+      "bodyEn": "Most coding problems are one of about twenty patterns in disguise. Learn to name the pattern before you type a line of code. Every new problem, ask which family it belongs to. Cue words in the prompt usually point you to the right family. The book’s solutions pass tests in patterns.py. Pattern first, then code — that habit saves you in timed tests.",
+      "terms": [
+        {
+          "zh": "算法题",
+          "en": "algorithm problem",
+          "hook": "If they say this, name the pattern before coding."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Hash map",
+      "bodyEn": "A hash map stores what you have already seen for O(1) lookup. Classic cue: pairs, matches, duplicates, Two Sum. Walk once, and for each value ask whether its complement is already in the map. Store value to index so you can return positions. Use this when nested loops would be O(n²) and you only need presence or a prior index. Keep one clear invariant: everything left of i is already recorded.",
+      "terms": [
+        {
+          "zh": "哈希表",
+          "en": "hash map",
+          "hook": "If they say this, seen values map to an index."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Two pointers",
+      "bodyEn": "Two pointers move indexes toward each other on sorted data or on a pair taken from both ends. Classic cue: Container With Most Water, pair sum on a sorted array. Each step discards one choice because moving the worse end cannot improve the answer under the current invariant. The pass is O(n) when each index moves at most once. Do not use two pointers on unsorted data unless you sort first and that is allowed.",
+      "terms": [
+        {
+          "zh": "双指针",
+          "en": "two pointers",
+          "hook": "If they say this, move ends and discard one choice each step."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Sliding window",
+      "bodyEn": "A sliding window widens the right end and shrinks the left when a condition breaks. Classic cue: longest substring without repeating characters, or at most k distinct letters. Keep a count map or set that reflects only the current window. When the invariant breaks, advance left until it holds again, then update the best answer. The whole pass is O(n) if each index enters and leaves the window once.",
+      "terms": [
+        {
+          "zh": "滑动窗口",
+          "en": "sliding window",
+          "hook": "If they say this, widen right, shrink left when the condition breaks."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Stack and next greater",
+      "bodyEn": "A plain stack matches nesting and undo: push opens, pop on closers, fail if empty or leftovers remain — Valid Parentheses. A monotonic stack answers “next greater” or “next warmer,” as in Daily Temperatures. Keep indexes still waiting until a warmer day arrives; each index is pushed and popped at most once, so the pass is O(n). Cue words for stack are matching pairs and nesting; for monotonic stack, next greater element.",
+      "terms": [
+        {
+          "zh": "栈",
+          "en": "stack",
+          "hook": "If they say this, push open, pop close."
+        },
+        {
+          "zh": "单调栈",
+          "en": "monotonic stack",
+          "hook": "If they say this, next greater in O(n)."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Binary search and prefix sums",
+      "bodyEn": "Binary search needs sorted data or a monotone “smallest x such that…” question. Use half-open [lo, hi) so the loop never spins forever — O(log n). Prefix-sum plus hash map counts ranges with a given sum: because prefix[j] − prefix[i] = k, count earlier prefixes equal to prefix[j] − k. Seed the map with 0 → 1 so empty prefixes count. Cue words: first true position, subarray sum equals k.",
+      "terms": [
+        {
+          "zh": "二分查找",
+          "en": "binary search",
+          "hook": "If they say this, half-open [lo, hi) on a monotone question."
+        },
+        {
+          "zh": "前缀和",
+          "en": "prefix sum",
+          "hook": "If they say this, a subarray is a prefix difference."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Lists and tree walks",
+      "bodyEn": "Linked-list work is pointer surgery: redirect one link at a time with prev, current, next — O(n) time, O(1) memory for Reverse Linked List. BFS on a tree uses a queue, one level at a time — cue words are levels and shortest path in steps. DFS finishes children then combines at the parent; max depth is 1 + max(left, right). Pick BFS for levels, DFS for depth and path sums.",
+      "terms": [
+        {
+          "zh": "广度优先",
+          "en": "BFS",
+          "hook": "If they say this, queue, level by level."
+        },
+        {
+          "zh": "深度优先",
+          "en": "DFS",
+          "hook": "If they say this, finish children, then combine."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Grids graphs groups",
+      "bodyEn": "DFS on a grid flood-fills each new land cell and marks visited — Number of Islands, O(rows × cols). Topological sort uses Kahn’s algorithm: repeatedly take nodes with no remaining prerequisites — Course Schedule, O(V+E); leftovers mean a cycle. Union-find merges sets with find and path halving; the number of groups is the number of distinct roots. Use these when the prompt talks about regions, prerequisites, or “are these two connected?”",
+      "terms": [
+        {
+          "zh": "拓扑排序",
+          "en": "topological sort",
+          "hook": "If they say this, leftovers mean a cycle."
+        },
+        {
+          "zh": "并查集",
+          "en": "union-find",
+          "hook": "If they say this, groups equal distinct roots."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "remember",
+      "titleEn": "Heaps greedy DP",
+      "bodyEn": "A heap keeps the best k in O(n log k) — top k, k-th largest, merging streams. Intervals sort by start, then merge into the last range when they overlap — O(n log n). Greedy keeps a clear local rule such as farthest index reachable so far in Jump Game. 1-D DP defines what dp means, then the recurrence — House Robber tracks best if you took vs skipped the last house. Backtracking chooses, recurses, and undoes; exponential, so n is small. Always state the state before you code the loop.",
+      "terms": [
+        {
+          "zh": "动态规划",
+          "en": "dynamic programming",
+          "hook": "If they say this, define dp, then the recurrence."
+        },
+        {
+          "zh": "回溯",
+          "en": "backtracking",
+          "hook": "If they say this, choose, recurse, undo."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "At most two letters",
+      "bodyEn": "Sliding window fits a longest substring with a count limit.",
+      "prompt": "Which pattern fits “longest substring with at most two different letters”?",
+      "choices": [
+        "Sliding window—widen right, shrink left when distinct count exceeds two",
+        "Topological sort—course prerequisites",
+        "Union-find—province counting only",
+        "Heap—top-k frequencies only"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s11",
+      "kind": "check",
+      "titleEn": "House Robber states",
+      "bodyEn": "take vs skip track whether the last house was robbed.",
+      "prompt": "In the book’s House Robber DP, what do take and skip mean?",
+      "choices": [
+        "take = best total if we robbed the last house; skip = best if we skipped it—recurrence swaps them each step",
+        "take = number of coins; skip = knapsack capacity",
+        "take = BFS queue; skip = DFS stack",
+        "take = union parent; skip = path-halving bit"
+      ],
+      "answer": 0
+    }
+  ]
+}

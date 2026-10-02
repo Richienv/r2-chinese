@@ -1,0 +1,298 @@
+{
+  "id": "26",
+  "index": 26,
+  "part": 6,
+  "partTitleEn": "Coding tests",
+  "titleEn": "How the tests work",
+  "titleSource": "Cara kerja tesnya",
+  "sourcePages": "97-99",
+  "when": "Day 1, then every day · 45 minutes first",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Where tests run",
+      "bodyEn": "Online written tests and machine coding exams usually run on Nowcoder, Saima, LeetCode China, or the company’s own system, often with camera on. A common test gives two or three problems that get harder over sixty to one hundred twenty minutes. Many platforms score each problem by the fraction of hidden test cases your code passes, so a partially correct answer still earns points. Huawei’s software machine exam is three escalating problems with a pass bar — ask HR for the latest format. Python is almost always allowed, but a correct slow solution can time out.",
+      "terms": [
+        {
+          "zh": "笔试",
+          "en": "online written test",
+          "hook": "If they say this, it is the test before interviews."
+        },
+        {
+          "zh": "机考",
+          "en": "machine coding exam",
+          "hook": "If they say this, timed problems on a platform; ask HR for format."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Core-code vs ACM",
+      "bodyEn": "Core-code mode means you fill one function; the platform reads input and checks your return, which is how LeetCode works. ACM mode means you write the whole program — read raw stdin, print the answer exactly. Many Chinese company tests use ACM; people who only practiced LeetCode burn time here. The judge compares character by character, so one extra word fails every case. Prefer one final print of joined lines over many prints when there are multiple cases.",
+      "terms": [
+        {
+          "zh": "核心代码模式",
+          "en": "core-code mode",
+          "hook": "If they say this, fill one function only."
+        },
+        {
+          "zh": "ACM 模式",
+          "en": "ACM I/O mode",
+          "hook": "If they say this, stdin in, exact stdout out."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Parse stdin cleanly",
+      "bodyEn": "Build the stdin habit before company tests. Use sys.stdin.read().split() for a stream of tokens, or read().strip().split(\"\\n\") when the first line is the number of cases. Print only what is asked — no prompts, no “The answer is.” Practice at least one ACM-mode problem every day so I/O never surprises you. A perfect algorithm that prints the wrong format scores zero.",
+      "terms": [
+        {
+          "zh": "力扣",
+          "en": "LeetCode China",
+          "hook": "If they name this, still add ACM drills beside Hot 100."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Constraints name the pattern",
+      "bodyEn": "Judges run roughly 10⁷ to 10⁸ simple ops per second; Python sits on the slow end, so read constraints — they name the pattern. n≤20 points to O(2ⁿ) backtracking; n≤500 fits O(n³); n≤5,000 fits O(n²). For n from 10⁵ to 10⁶ you need O(n log n) or O(n) — sort, heap, binary search, two pointers, hash map. For n≥10⁹ you need O(log n) or O(1) — binary search on the answer, or math. Match loop depth to the limit before you code.",
+      "terms": [
+        {
+          "zh": "时间复杂度",
+          "en": "time complexity",
+          "hook": "If they ask why n matters, constraints name what fits."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "watch",
+      "titleEn": "Habits that score",
+      "bodyEn": "Read the whole problem twice, including constraints and examples, and work the example by hand. Name the pattern before coding — Chapter 27 lists them. If stuck, write brute force first; partial credit is real. Test edges: empty, one element, all equal, negatives, max n. Move when your time budget ends — a half-finished second problem beats polishing the first. In interview, talk idea, complexity, and edges because silence reads as stuck.",
+      "terms": [
+        {
+          "zh": "机考",
+          "en": "machine exam",
+          "hook": "If they say this, partial credit rewards a correct brute force."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Hot 100 month plan",
+      "bodyEn": "Do about two problems a day, six days a week, from LeetCode Hot 100 in Python, plus at least one ACM-mode problem daily. If you fail one, read the solution, wait a day, then rewrite from memory. Week 1 covers Two Sum, Group Anagrams, Longest Consecutive Sequence, Move Zeroes, Container With Most Water, 3Sum, and nearby sliding-window and stack problems. Week 2 moves through binary search, linked lists, trees, and LRU Cache. Weeks 3–4 cover graphs, heaps, backtracking, DP, and your hardest ten replayed from memory.",
+      "terms": [
+        {
+          "zh": "力扣",
+          "en": "LeetCode China",
+          "hook": "If they ask how you practice, Hot 100 is the spine."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "Talk complexity out loud",
+      "bodyEn": "Before you code in an interview, say the constraints and the complexity you need. Then name the pattern and the edge cases. After coding, restate time and memory. Interviewers score the talk as much as the code. On a machine exam with no talking, the same checklist still saves you from an O(n²) timeout.",
+      "terms": [
+        {
+          "zh": "时间复杂度",
+          "en": "time complexity",
+          "hook": "If they ask after you code, restate time and memory."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Partial credit strategy",
+      "bodyEn": "When fifteen minutes remain and you have no idea for problem 3, write a correct brute force that passes small cases. Test edges, then move on. Partial credit from passed cases beats zero from a blank. Do not sit silent polishing names on problem 1. Keep a mental clock per problem from the start of the exam.",
+      "terms": [
+        {
+          "zh": "机考",
+          "en": "machine exam",
+          "hook": "If time is short, brute force still earns points."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Core-code vs ACM",
+      "bodyEn": "Company OJs often use ACM even when you practiced LeetCode.",
+      "prompt": "What is the difference between core-code mode and ACM mode?",
+      "choices": [
+        "Core-code: fill one function, platform handles I/O; ACM: full program reading stdin and printing exact output",
+        "Core-code is C++ only; ACM is Python only",
+        "Core-code hides the camera; ACM requires it",
+        "They are identical names for LeetCode weekly contests"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Large n and last minutes",
+      "bodyEn": "Constraints pick the complexity; leftover minutes pick the strategy.",
+      "prompt": "n up to 200,000 and fifteen minutes left with no idea for problem 3. What fits, and what do you do?",
+      "choices": [
+        "Need O(n log n) or O(n); write a correct brute force for partial credit, test edges, keep talking the idea",
+        "O(n²) triple loops are fine; sit silent polishing problem 1’s names",
+        "O(2ⁿ) subset enumeration only; close the camera and guess prints",
+        "O(n³) interval DP only; switch languages mid-submission without parsing stdin"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Where tests run",
+      "bodyEn": "Online written tests and machine coding exams usually run on Nowcoder, Saima, LeetCode China, or the company’s own system, often with camera on. A common test gives two or three problems that get harder over sixty to one hundred twenty minutes. Many platforms score each problem by the fraction of hidden test cases your code passes, so a partially correct answer still earns points. Huawei’s software machine exam is three escalating problems with a pass bar — ask HR for the latest format. Python is almost always allowed, but a correct slow solution can time out.",
+      "terms": [
+        {
+          "zh": "笔试",
+          "en": "online written test",
+          "hook": "If they say this, it is the test before interviews."
+        },
+        {
+          "zh": "机考",
+          "en": "machine coding exam",
+          "hook": "If they say this, timed problems on a platform; ask HR for format."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Core-code vs ACM",
+      "bodyEn": "Core-code mode means you fill one function; the platform reads input and checks your return, which is how LeetCode works. ACM mode means you write the whole program — read raw stdin, print the answer exactly. Many Chinese company tests use ACM; people who only practiced LeetCode burn time here. The judge compares character by character, so one extra word fails every case. Prefer one final print of joined lines over many prints when there are multiple cases.",
+      "terms": [
+        {
+          "zh": "核心代码模式",
+          "en": "core-code mode",
+          "hook": "If they say this, fill one function only."
+        },
+        {
+          "zh": "ACM 模式",
+          "en": "ACM I/O mode",
+          "hook": "If they say this, stdin in, exact stdout out."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Parse stdin cleanly",
+      "bodyEn": "Build the stdin habit before company tests. Use sys.stdin.read().split() for a stream of tokens, or read().strip().split(\"\\n\") when the first line is the number of cases. Print only what is asked — no prompts, no “The answer is.” Practice at least one ACM-mode problem every day so I/O never surprises you. A perfect algorithm that prints the wrong format scores zero.",
+      "terms": [
+        {
+          "zh": "力扣",
+          "en": "LeetCode China",
+          "hook": "If they name this, still add ACM drills beside Hot 100."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Constraints name the pattern",
+      "bodyEn": "Judges run roughly 10⁷ to 10⁸ simple ops per second; Python sits on the slow end, so read constraints — they name the pattern. n≤20 points to O(2ⁿ) backtracking; n≤500 fits O(n³); n≤5,000 fits O(n²). For n from 10⁵ to 10⁶ you need O(n log n) or O(n) — sort, heap, binary search, two pointers, hash map. For n≥10⁹ you need O(log n) or O(1) — binary search on the answer, or math. Match loop depth to the limit before you code.",
+      "terms": [
+        {
+          "zh": "时间复杂度",
+          "en": "time complexity",
+          "hook": "If they ask why n matters, constraints name what fits."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "watch",
+      "titleEn": "Habits that score",
+      "bodyEn": "Read the whole problem twice, including constraints and examples, and work the example by hand. Name the pattern before coding — Chapter 27 lists them. If stuck, write brute force first; partial credit is real. Test edges: empty, one element, all equal, negatives, max n. Move when your time budget ends — a half-finished second problem beats polishing the first. In interview, talk idea, complexity, and edges because silence reads as stuck.",
+      "terms": [
+        {
+          "zh": "机考",
+          "en": "machine exam",
+          "hook": "If they say this, partial credit rewards a correct brute force."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Hot 100 month plan",
+      "bodyEn": "Do about two problems a day, six days a week, from LeetCode Hot 100 in Python, plus at least one ACM-mode problem daily. If you fail one, read the solution, wait a day, then rewrite from memory. Week 1 covers Two Sum, Group Anagrams, Longest Consecutive Sequence, Move Zeroes, Container With Most Water, 3Sum, and nearby sliding-window and stack problems. Week 2 moves through binary search, linked lists, trees, and LRU Cache. Weeks 3–4 cover graphs, heaps, backtracking, DP, and your hardest ten replayed from memory.",
+      "terms": [
+        {
+          "zh": "力扣",
+          "en": "LeetCode China",
+          "hook": "If they ask how you practice, Hot 100 is the spine."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "Talk complexity out loud",
+      "bodyEn": "Before you code in an interview, say the constraints and the complexity you need. Then name the pattern and the edge cases. After coding, restate time and memory. Interviewers score the talk as much as the code. On a machine exam with no talking, the same checklist still saves you from an O(n²) timeout.",
+      "terms": [
+        {
+          "zh": "时间复杂度",
+          "en": "time complexity",
+          "hook": "If they ask after you code, restate time and memory."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Partial credit strategy",
+      "bodyEn": "When fifteen minutes remain and you have no idea for problem 3, write a correct brute force that passes small cases. Test edges, then move on. Partial credit from passed cases beats zero from a blank. Do not sit silent polishing names on problem 1. Keep a mental clock per problem from the start of the exam.",
+      "terms": [
+        {
+          "zh": "机考",
+          "en": "machine exam",
+          "hook": "If time is short, brute force still earns points."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Core-code vs ACM",
+      "bodyEn": "Company OJs often use ACM even when you practiced LeetCode.",
+      "prompt": "What is the difference between core-code mode and ACM mode?",
+      "choices": [
+        "Core-code: fill one function, platform handles I/O; ACM: full program reading stdin and printing exact output",
+        "Core-code is C++ only; ACM is Python only",
+        "Core-code hides the camera; ACM requires it",
+        "They are identical names for LeetCode weekly contests"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Large n and last minutes",
+      "bodyEn": "Constraints pick the complexity; leftover minutes pick the strategy.",
+      "prompt": "n up to 200,000 and fifteen minutes left with no idea for problem 3. What fits, and what do you do?",
+      "choices": [
+        "Need O(n log n) or O(n); write a correct brute force for partial credit, test edges, keep talking the idea",
+        "O(n²) triple loops are fine; sit silent polishing problem 1’s names",
+        "O(2ⁿ) subset enumeration only; close the camera and guess prints",
+        "O(n³) interval DP only; switch languages mid-submission without parsing stdin"
+      ],
+      "answer": 0
+    }
+  ]
+}

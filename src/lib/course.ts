@@ -9,12 +9,12 @@ import {
   type ReactNode,
 } from 'react'
 
-/** Separate from HSK / Kerja / Jiaocheng progress keys so old saves stay untouched. */
+/** Separate from HSK / Kerja / Jiaocheng / Magang / Interview progress keys so old saves stay untouched. */
 const COURSE_KEY = 'yulu.course.v1'
 
-export type CourseId = 'hsk4a' | 'kerja' | 'jiaocheng'
+export type CourseId = 'hsk4a' | 'kerja' | 'jiaocheng' | 'magang' | 'interview'
 
-export const COURSE_ORDER: CourseId[] = ['hsk4a', 'kerja', 'jiaocheng']
+export const COURSE_ORDER: CourseId[] = ['hsk4a', 'kerja', 'jiaocheng', 'magang', 'interview']
 
 export const COURSE_META: Record<
   CourseId,
@@ -38,12 +38,32 @@ export const COURSE_META: Record<
     titleZh: '汉语教程 · 第二册',
     blurb: 'Book 2, part 1 and part 2',
   },
+  magang: {
+    id: 'magang',
+    title: 'Magang AI',
+    titleZh: 'Magang AI',
+    blurb: 'Internship book · study it slowly',
+  },
+  interview: {
+    id: 'interview',
+    title: '总办',
+    titleZh: '总办',
+    blurb: 'Tonight · 18:00',
+  },
 }
 
 function readCourse(): CourseId {
   try {
     const raw = localStorage.getItem(COURSE_KEY)
-    if (raw === 'kerja' || raw === 'hsk4a' || raw === 'jiaocheng') return raw
+    if (
+      raw === 'kerja' ||
+      raw === 'hsk4a' ||
+      raw === 'jiaocheng' ||
+      raw === 'magang' ||
+      raw === 'interview'
+    ) {
+      return raw
+    }
   } catch {
     /* ignore */
   }

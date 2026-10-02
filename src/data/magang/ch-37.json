@@ -1,0 +1,326 @@
+{
+  "id": "37",
+  "index": 37,
+  "part": 9,
+  "partTitleEn": "Reference",
+  "titleEn": "Learning sources",
+  "titleSource": "Sumber belajar",
+  "sourcePages": "143-144",
+  "when": "Reference",
+  "sittings": [
+    {
+      "kind": "idea",
+      "titleEn": "Core before Useful",
+      "bodyEn": "This chapter is a short map of books, videos, docs, and practice sites, grouped by when you need them. Core rows unlock the book’s projects and interview words. Useful rows deepen the same ideas after Core is done. If time is short, finish every Core source before you open a Useful one. Hub rows are only for downloading models and datasets, not for study order.",
+      "terms": [
+        {
+          "zh": "核心资料",
+          "en": "core sources",
+          "hook": "If they say this, finish these before any deep-dive extras."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "Core videos",
+      "bodyEn": "Use Andrej Karpathy’s “Let’s build GPT: from scratch, in code, spelled out” for Project 2—type along; do not only watch. Use 3Blue1Brown’s transformer and attention chapters for Chapter 6 when you need visual intuition before you explain attention. Use Hung-yi Lee’s Generative AI intro 2024 on YouTube or Bilibili for Chapters 4–7 so the same ideas land in Mandarin interview words. These three videos cover build, intuition, and spoken vocabulary. Watch them in that order if you are starting cold.",
+      "terms": [
+        {
+          "zh": "注意力",
+          "en": "attention",
+          "hook": "If they say this after 3Blue1Brown, explain the picture in your own words."
+        },
+        {
+          "zh": "生成式 AI",
+          "en": "generative AI",
+          "hook": "If they say this, Lee’s course gives the Mandarin interview words."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Core books and agents",
+      "bodyEn": "Read Jay Alammar and Maarten Grootendorst, Hands-On Large Language Models, for visual coverage of tokens, embeddings, Transformer, RAG, and fine-tuning. Read Chip Huyen, AI Engineering, when you need evaluation, RAG, agents, and when to fine-tune in production language. Read Anthropic’s “Building effective agents” for the agent patterns you will build in Chapter 12 and Project 4. Together they give you pictures, engineering judgment, and a short agent playbook. Keep them open while you ship Projects 2–4, not as a separate reading marathon.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this in the books, connect it to when you should actually fine-tune."
+        },
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, Anthropic’s guide names the patterns you will build."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Core coding practice",
+      "bodyEn": "Practice on LeetCode Hot 100 every day for Part 6 so coding interviews stay warm while you build. Add company tests on Nowcoder when you are targeting a specific firm’s written round. These two sites are Core because they train speed and pattern memory, not because they teach LLM theory. Pair them with the thirty-day plan so coding never waits until the week before interviews. If you skip everything else on a busy day, still do the two problems.",
+      "terms": [
+        {
+          "zh": "力扣",
+          "en": "LeetCode",
+          "hook": "If they say this, they mean Hot 100 daily practice."
+        },
+        {
+          "zh": "牛客网",
+          "en": "Nowcoder",
+          "hook": "If they say this, they mean company written-test practice."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Useful deep dives",
+      "bodyEn": "After Core, Karpathy’s “Deep Dive into LLMs like ChatGPT” walks the full training pipeline once so pretraining is not a buzzword. Sebastian Raschka’s Build a Large Language Model (From Scratch) is the deeper twin of Project 2 when you want more than the typed-along notebook. Harvard NLP’s The Annotated Transformer lets you read the original paper beside line-by-line code for attention. Open these only when Project 2 already runs and you can explain attention without notes. They are Useful, not blockers for applications.",
+      "terms": [
+        {
+          "zh": "预训练",
+          "en": "pretraining",
+          "hook": "If they say this, Karpathy’s deep dive makes the pipeline concrete."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Useful shipping docs",
+      "bodyEn": "Use the MCP docs at modelcontextprotocol.io and the A2A specification for Chapter 13 and Project 4 when you wire tools and agent-to-agent calls. Use LangChain and LangGraph documentation when you need a drawn workflow instead of ad-hoc Python. Use Hugging Face TRL and PEFT plus LLaMA-Factory on GitHub for Chapter 14 and Project 5 fine-tuning. Use the pgvector README and vLLM docs when you upgrade Project 3 storage or Chapter 15 serving. These docs answer “how do I ship it,” not “what is a Transformer.”",
+      "terms": [
+        {
+          "zh": "MCP",
+          "en": "Model Context Protocol",
+          "hook": "If they say this, they mean the tool-wiring standard for agents."
+        },
+        {
+          "zh": "工作流",
+          "en": "workflow",
+          "hook": "If they say this, LangGraph is how you draw the loop."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Ops books and hubs",
+      "bodyEn": "Read Huang Youcan’s Operations Light for Part 5 operations vocabulary and methods in Mandarin before Project 6 writing. Use open Datawhale tutorials such as llm-universe on GitHub for practical Mandarin walkthroughs of LLM apps. If you take the HR-plus-AI direction from 22 September, add Mike West’s People Analytics For Dummies and Laszlo Bock’s Work Rules!. For downloads inside China, use Hugging Face, ModelScope, and hf-mirror.com for models and datasets. Hubs are logistics; they do not replace Core study.",
+      "terms": [
+        {
+          "zh": "运营",
+          "en": "operations",
+          "hook": "If they say this, Operations Light gives the Mandarin methods."
+        },
+        {
+          "zh": "魔搭",
+          "en": "ModelScope",
+          "hook": "If they say this, they mean the China model download hub."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Core versus Useful",
+      "bodyEn": "Check what you open first when time is short.",
+      "prompt": "When time is short, which sources come first?",
+      "choices": [
+        "Finish every Core source before opening Useful deep dives or hubs",
+        "Open ModelScope hubs first, then skip LeetCode",
+        "Only read Useful papers; Core videos are optional",
+        "Start with HR People Analytics before Project 2"
+      ],
+      "answer": 0,
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Daily coding sites",
+      "bodyEn": "Check which two sites stay Core for coding interviews.",
+      "prompt": "Which pair is Core daily coding practice?",
+      "choices": [
+        "LeetCode Hot 100 every day, plus Nowcoder for company written rounds",
+        "Only ModelScope downloads and hf-mirror mirrors",
+        "Only Anthropic agent essays with no coding",
+        "Only salda.id copywriting drills"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "力扣",
+          "en": "LeetCode",
+          "hook": "If they say this, Hot 100 is the Core daily set."
+        },
+        {
+          "zh": "牛客网",
+          "en": "Nowcoder",
+          "hook": "If they say this, use it for firm-specific written tests."
+        }
+      ],
+      "id": "s9"
+    }
+  ],
+  "beats": [
+    {
+      "kind": "idea",
+      "titleEn": "Core before Useful",
+      "bodyEn": "This chapter is a short map of books, videos, docs, and practice sites, grouped by when you need them. Core rows unlock the book’s projects and interview words. Useful rows deepen the same ideas after Core is done. If time is short, finish every Core source before you open a Useful one. Hub rows are only for downloading models and datasets, not for study order.",
+      "terms": [
+        {
+          "zh": "核心资料",
+          "en": "core sources",
+          "hook": "If they say this, finish these before any deep-dive extras."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "Core videos",
+      "bodyEn": "Use Andrej Karpathy’s “Let’s build GPT: from scratch, in code, spelled out” for Project 2—type along; do not only watch. Use 3Blue1Brown’s transformer and attention chapters for Chapter 6 when you need visual intuition before you explain attention. Use Hung-yi Lee’s Generative AI intro 2024 on YouTube or Bilibili for Chapters 4–7 so the same ideas land in Mandarin interview words. These three videos cover build, intuition, and spoken vocabulary. Watch them in that order if you are starting cold.",
+      "terms": [
+        {
+          "zh": "注意力",
+          "en": "attention",
+          "hook": "If they say this after 3Blue1Brown, explain the picture in your own words."
+        },
+        {
+          "zh": "生成式 AI",
+          "en": "generative AI",
+          "hook": "If they say this, Lee’s course gives the Mandarin interview words."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Core books and agents",
+      "bodyEn": "Read Jay Alammar and Maarten Grootendorst, Hands-On Large Language Models, for visual coverage of tokens, embeddings, Transformer, RAG, and fine-tuning. Read Chip Huyen, AI Engineering, when you need evaluation, RAG, agents, and when to fine-tune in production language. Read Anthropic’s “Building effective agents” for the agent patterns you will build in Chapter 12 and Project 4. Together they give you pictures, engineering judgment, and a short agent playbook. Keep them open while you ship Projects 2–4, not as a separate reading marathon.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this in the books, connect it to when you should actually fine-tune."
+        },
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, Anthropic’s guide names the patterns you will build."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Core coding practice",
+      "bodyEn": "Practice on LeetCode Hot 100 every day for Part 6 so coding interviews stay warm while you build. Add company tests on Nowcoder when you are targeting a specific firm’s written round. These two sites are Core because they train speed and pattern memory, not because they teach LLM theory. Pair them with the thirty-day plan so coding never waits until the week before interviews. If you skip everything else on a busy day, still do the two problems.",
+      "terms": [
+        {
+          "zh": "力扣",
+          "en": "LeetCode",
+          "hook": "If they say this, they mean Hot 100 daily practice."
+        },
+        {
+          "zh": "牛客网",
+          "en": "Nowcoder",
+          "hook": "If they say this, they mean company written-test practice."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Useful deep dives",
+      "bodyEn": "After Core, Karpathy’s “Deep Dive into LLMs like ChatGPT” walks the full training pipeline once so pretraining is not a buzzword. Sebastian Raschka’s Build a Large Language Model (From Scratch) is the deeper twin of Project 2 when you want more than the typed-along notebook. Harvard NLP’s The Annotated Transformer lets you read the original paper beside line-by-line code for attention. Open these only when Project 2 already runs and you can explain attention without notes. They are Useful, not blockers for applications.",
+      "terms": [
+        {
+          "zh": "预训练",
+          "en": "pretraining",
+          "hook": "If they say this, Karpathy’s deep dive makes the pipeline concrete."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Useful shipping docs",
+      "bodyEn": "Use the MCP docs at modelcontextprotocol.io and the A2A specification for Chapter 13 and Project 4 when you wire tools and agent-to-agent calls. Use LangChain and LangGraph documentation when you need a drawn workflow instead of ad-hoc Python. Use Hugging Face TRL and PEFT plus LLaMA-Factory on GitHub for Chapter 14 and Project 5 fine-tuning. Use the pgvector README and vLLM docs when you upgrade Project 3 storage or Chapter 15 serving. These docs answer “how do I ship it,” not “what is a Transformer.”",
+      "terms": [
+        {
+          "zh": "MCP",
+          "en": "Model Context Protocol",
+          "hook": "If they say this, they mean the tool-wiring standard for agents."
+        },
+        {
+          "zh": "工作流",
+          "en": "workflow",
+          "hook": "If they say this, LangGraph is how you draw the loop."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Ops books and hubs",
+      "bodyEn": "Read Huang Youcan’s Operations Light for Part 5 operations vocabulary and methods in Mandarin before Project 6 writing. Use open Datawhale tutorials such as llm-universe on GitHub for practical Mandarin walkthroughs of LLM apps. If you take the HR-plus-AI direction from 22 September, add Mike West’s People Analytics For Dummies and Laszlo Bock’s Work Rules!. For downloads inside China, use Hugging Face, ModelScope, and hf-mirror.com for models and datasets. Hubs are logistics; they do not replace Core study.",
+      "terms": [
+        {
+          "zh": "运营",
+          "en": "operations",
+          "hook": "If they say this, Operations Light gives the Mandarin methods."
+        },
+        {
+          "zh": "魔搭",
+          "en": "ModelScope",
+          "hook": "If they say this, they mean the China model download hub."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Core versus Useful",
+      "bodyEn": "Check what you open first when time is short.",
+      "prompt": "When time is short, which sources come first?",
+      "choices": [
+        "Finish every Core source before opening Useful deep dives or hubs",
+        "Open ModelScope hubs first, then skip LeetCode",
+        "Only read Useful papers; Core videos are optional",
+        "Start with HR People Analytics before Project 2"
+      ],
+      "answer": 0,
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Daily coding sites",
+      "bodyEn": "Check which two sites stay Core for coding interviews.",
+      "prompt": "Which pair is Core daily coding practice?",
+      "choices": [
+        "LeetCode Hot 100 every day, plus Nowcoder for company written rounds",
+        "Only ModelScope downloads and hf-mirror mirrors",
+        "Only Anthropic agent essays with no coding",
+        "Only salda.id copywriting drills"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "力扣",
+          "en": "LeetCode",
+          "hook": "If they say this, Hot 100 is the Core daily set."
+        },
+        {
+          "zh": "牛客网",
+          "en": "Nowcoder",
+          "hook": "If they say this, use it for firm-specific written tests."
+        }
+      ],
+      "id": "s9"
+    }
+  ]
+}

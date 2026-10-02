@@ -1,0 +1,348 @@
+{
+  "id": "23",
+  "index": 23,
+  "part": 5,
+  "partTitleEn": "Product and AI operations",
+  "titleEn": "Operations, AIGC, and the platforms",
+  "titleSource": "运营, AIGC, dan platform-platformnya",
+  "sourcePages": "88-89",
+  "when": "Week 3, days 15–16 · Track B core",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What operations means",
+      "bodyEn": "Operations means growing a product or account after it already exists. Chinese interviewers use Mandarin labels for the job types, not English glosses. Five common types show up in Track B posts: content ops, user ops, campaign ops, product ops, and growth. Interns often prove ownership of a publishing calendar, a data sheet, first drafts, and a weekly review without being chased. That ownership rhythm is most of the interview.",
+      "terms": [
+        {
+          "zh": "运营",
+          "en": "operations",
+          "hook": "If they say this, they mean grow what already shipped."
+        },
+        {
+          "zh": "排期",
+          "en": "publishing calendar",
+          "hook": "If they ask daily work, this is the schedule you own."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Five ops types",
+      "bodyEn": "Content ops plans topics, makes posts, publishes, reads the data, and adjusts. User ops segments users, sends messaging, runs owned channels such as WeChat groups, and works on retention. Campaign ops plans an event or promo, runs it, and reports results. Product ops ships features, gathers feedback, reads data, and partners with the PM. Growth finds where many users drop off, then tests fixes. Match the type to the daily job when you answer.",
+      "terms": [
+        {
+          "zh": "内容运营",
+          "en": "content operations",
+          "hook": "If they say this, topics → posts → data → adjust."
+        },
+        {
+          "zh": "用户运营",
+          "en": "user operations",
+          "hook": "If they say this, segments, owned channels, retention."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "AIGC speeds the middle",
+      "bodyEn": "AIGC means AI-generated content. On an ops team, AI speeds some production steps; it does not replace the pipeline. Brief and final check stay with humans. Steps 2–6 are the production middle you already ran for WeUseAI. Steps 7 and 8 — publish/monitor and review — are what Project 6 closes. Never hand final fact-check or usage rights to the model.",
+      "terms": [
+        {
+          "zh": "AIGC",
+          "en": "AI-generated content",
+          "hook": "If they say AIGC, spell it once then talk the pipeline."
+        },
+        {
+          "zh": "复盘",
+          "en": "ops review",
+          "hook": "If they ask the end of the pipeline, this is the write-up."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "Eight-step pipeline",
+      "bodyEn": "Step 1 Brief is human: goal, audience, one message, success metric. Steps 2–4 draft script, images, and video with models; humans edit, then CapCut stays human for the cut. Step 6 check covers facts, faces and usage rights, brand rules, banned words, and the AI label. Steps 7–8 publish and monitor on the platform back end, then write the review. Interviewers want to hear which steps stay human — brief, final check, publish, and review.",
+      "terms": [
+        {
+          "zh": "脚本",
+          "en": "script draft",
+          "hook": "If they ask who writes copy, model drafts and human edits."
+        },
+        {
+          "zh": "剪映",
+          "en": "CapCut",
+          "hook": "If they name this tool, edit stays human."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "How platforms expand",
+      "bodyEn": "Douyin first shows a video to a small audience; if they finish, like, comment, and share, it expands again, and the first three seconds decide most completion. Xiaohongshu is photos and short notes; many users search there like a search engine, so title, keywords, and cover decide the click, and posts stay discoverable for months. WeChat Channels leans on friend shares; Kuaishou is strong outside the biggest cities and in live commerce. Bilibili leans longer, denser, knowledge-heavy video. TikTok and Instagram use the same logic overseas — and you understand Indonesian users better than most Hangzhou applicants on those surfaces.",
+      "terms": [
+        {
+          "zh": "抖音",
+          "en": "Douyin",
+          "hook": "If they name this, cold start then expand on finish and engage."
+        },
+        {
+          "zh": "完播率",
+          "en": "completion rate",
+          "hook": "If they ask Douyin quality, first three seconds matter most."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Short drama ops",
+      "bodyEn": "Overseas short-drama ops localize vertical micro-dramas, unlock later episodes with pay or ads, cut ad clips, run TikTok or Meta paid distribution, and read ROAS per title and country. Indonesian language and taste are exactly what teams entering Indonesia lack — that is why those postings prefer Indonesian speakers. When a post is weak, walk the funnel: impressions, click rate, completion, engagement, then conversion. Change one variable, verify on the next post, and write it into the review.",
+      "terms": [
+        {
+          "zh": "短剧",
+          "en": "short drama",
+          "hook": "If they say this, they mean micro-drama ops overseas."
+        },
+        {
+          "zh": "投放",
+          "en": "paid distribution",
+          "hook": "If they say this, they mean ad buying and ROAS."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "watch",
+      "titleEn": "Weak-post diagnosis",
+      "bodyEn": "If click rate is low, fix cover and title first. If completion is low, fix the first three seconds and pacing. If engagement is low, the idea may not spark saves or comments. If conversion is low after healthy clicks, fix the product page or offer, not another video. One change per next post keeps the review honest. Bring this funnel walk into every ops interview.",
+      "terms": [
+        {
+          "zh": "点击率",
+          "en": "CTR",
+          "hook": "If they say this, clicks divided by impressions."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "idea",
+      "titleEn": "Intern rhythm",
+      "bodyEn": "Interviewers often care less about fancy tools than about whether you own the calendar without being chased. Show a publishing schedule, a data sheet you update daily, first drafts you ship, and a weekly review with numbers. That rhythm maps to content and AIGC ops internships. Project 6 Version A is the proof you already practice it. Say the rhythm out loud before you name the tools.",
+      "terms": [
+        {
+          "zh": "排期",
+          "en": "publishing calendar",
+          "hook": "If they ask what an intern owns daily, start here."
+        },
+        {
+          "zh": "复盘",
+          "en": "weekly review",
+          "hook": "If they ask ownership, show numbers and next change."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Five ops types",
+      "bodyEn": "Track B interviews expect the five ops types and a matching daily job for each.",
+      "prompt": "Which set correctly lists five operations types with a matching daily job?",
+      "choices": [
+        "Content ops (topics/posts/data); user ops (segments/owned channels/retention); campaign ops (events); product ops (features/feedback); growth (find drop-off, test fixes)",
+        "Campus hire, summer intern, daily intern, referral, HR round only",
+        "Online test, hand-write code, standard Q&A, project dig, A/B only",
+        "CTR, CVR, GMV, CAC, LTV as the five operations types"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Human-held steps",
+      "bodyEn": "AI speeds production; humans keep the start, the safety check, and the end.",
+      "prompt": "Which pipeline steps must always stay with humans, and why?",
+      "choices": [
+        "Brief (goal/audience/message/metric) and final check (facts, rights, brand, banned words, AI label)—plus publish/monitor and review; AI only speeds middle production steps",
+        "Only image and video generation—humans never touch those",
+        "Only CapCut edit—everything else is fully automated",
+        "Only ROAS reporting—creative can ship without review"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What operations means",
+      "bodyEn": "Operations means growing a product or account after it already exists. Chinese interviewers use Mandarin labels for the job types, not English glosses. Five common types show up in Track B posts: content ops, user ops, campaign ops, product ops, and growth. Interns often prove ownership of a publishing calendar, a data sheet, first drafts, and a weekly review without being chased. That ownership rhythm is most of the interview.",
+      "terms": [
+        {
+          "zh": "运营",
+          "en": "operations",
+          "hook": "If they say this, they mean grow what already shipped."
+        },
+        {
+          "zh": "排期",
+          "en": "publishing calendar",
+          "hook": "If they ask daily work, this is the schedule you own."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Five ops types",
+      "bodyEn": "Content ops plans topics, makes posts, publishes, reads the data, and adjusts. User ops segments users, sends messaging, runs owned channels such as WeChat groups, and works on retention. Campaign ops plans an event or promo, runs it, and reports results. Product ops ships features, gathers feedback, reads data, and partners with the PM. Growth finds where many users drop off, then tests fixes. Match the type to the daily job when you answer.",
+      "terms": [
+        {
+          "zh": "内容运营",
+          "en": "content operations",
+          "hook": "If they say this, topics → posts → data → adjust."
+        },
+        {
+          "zh": "用户运营",
+          "en": "user operations",
+          "hook": "If they say this, segments, owned channels, retention."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "AIGC speeds the middle",
+      "bodyEn": "AIGC means AI-generated content. On an ops team, AI speeds some production steps; it does not replace the pipeline. Brief and final check stay with humans. Steps 2–6 are the production middle you already ran for WeUseAI. Steps 7 and 8 — publish/monitor and review — are what Project 6 closes. Never hand final fact-check or usage rights to the model.",
+      "terms": [
+        {
+          "zh": "AIGC",
+          "en": "AI-generated content",
+          "hook": "If they say AIGC, spell it once then talk the pipeline."
+        },
+        {
+          "zh": "复盘",
+          "en": "ops review",
+          "hook": "If they ask the end of the pipeline, this is the write-up."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "example",
+      "titleEn": "Eight-step pipeline",
+      "bodyEn": "Step 1 Brief is human: goal, audience, one message, success metric. Steps 2–4 draft script, images, and video with models; humans edit, then CapCut stays human for the cut. Step 6 check covers facts, faces and usage rights, brand rules, banned words, and the AI label. Steps 7–8 publish and monitor on the platform back end, then write the review. Interviewers want to hear which steps stay human — brief, final check, publish, and review.",
+      "terms": [
+        {
+          "zh": "脚本",
+          "en": "script draft",
+          "hook": "If they ask who writes copy, model drafts and human edits."
+        },
+        {
+          "zh": "剪映",
+          "en": "CapCut",
+          "hook": "If they name this tool, edit stays human."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "How platforms expand",
+      "bodyEn": "Douyin first shows a video to a small audience; if they finish, like, comment, and share, it expands again, and the first three seconds decide most completion. Xiaohongshu is photos and short notes; many users search there like a search engine, so title, keywords, and cover decide the click, and posts stay discoverable for months. WeChat Channels leans on friend shares; Kuaishou is strong outside the biggest cities and in live commerce. Bilibili leans longer, denser, knowledge-heavy video. TikTok and Instagram use the same logic overseas — and you understand Indonesian users better than most Hangzhou applicants on those surfaces.",
+      "terms": [
+        {
+          "zh": "抖音",
+          "en": "Douyin",
+          "hook": "If they name this, cold start then expand on finish and engage."
+        },
+        {
+          "zh": "完播率",
+          "en": "completion rate",
+          "hook": "If they ask Douyin quality, first three seconds matter most."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Short drama ops",
+      "bodyEn": "Overseas short-drama ops localize vertical micro-dramas, unlock later episodes with pay or ads, cut ad clips, run TikTok or Meta paid distribution, and read ROAS per title and country. Indonesian language and taste are exactly what teams entering Indonesia lack — that is why those postings prefer Indonesian speakers. When a post is weak, walk the funnel: impressions, click rate, completion, engagement, then conversion. Change one variable, verify on the next post, and write it into the review.",
+      "terms": [
+        {
+          "zh": "短剧",
+          "en": "short drama",
+          "hook": "If they say this, they mean micro-drama ops overseas."
+        },
+        {
+          "zh": "投放",
+          "en": "paid distribution",
+          "hook": "If they say this, they mean ad buying and ROAS."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "watch",
+      "titleEn": "Weak-post diagnosis",
+      "bodyEn": "If click rate is low, fix cover and title first. If completion is low, fix the first three seconds and pacing. If engagement is low, the idea may not spark saves or comments. If conversion is low after healthy clicks, fix the product page or offer, not another video. One change per next post keeps the review honest. Bring this funnel walk into every ops interview.",
+      "terms": [
+        {
+          "zh": "点击率",
+          "en": "CTR",
+          "hook": "If they say this, clicks divided by impressions."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "idea",
+      "titleEn": "Intern rhythm",
+      "bodyEn": "Interviewers often care less about fancy tools than about whether you own the calendar without being chased. Show a publishing schedule, a data sheet you update daily, first drafts you ship, and a weekly review with numbers. That rhythm maps to content and AIGC ops internships. Project 6 Version A is the proof you already practice it. Say the rhythm out loud before you name the tools.",
+      "terms": [
+        {
+          "zh": "排期",
+          "en": "publishing calendar",
+          "hook": "If they ask what an intern owns daily, start here."
+        },
+        {
+          "zh": "复盘",
+          "en": "weekly review",
+          "hook": "If they ask ownership, show numbers and next change."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Five ops types",
+      "bodyEn": "Track B interviews expect the five ops types and a matching daily job for each.",
+      "prompt": "Which set correctly lists five operations types with a matching daily job?",
+      "choices": [
+        "Content ops (topics/posts/data); user ops (segments/owned channels/retention); campaign ops (events); product ops (features/feedback); growth (find drop-off, test fixes)",
+        "Campus hire, summer intern, daily intern, referral, HR round only",
+        "Online test, hand-write code, standard Q&A, project dig, A/B only",
+        "CTR, CVR, GMV, CAC, LTV as the five operations types"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Human-held steps",
+      "bodyEn": "AI speeds production; humans keep the start, the safety check, and the end.",
+      "prompt": "Which pipeline steps must always stay with humans, and why?",
+      "choices": [
+        "Brief (goal/audience/message/metric) and final check (facts, rights, brand, banned words, AI label)—plus publish/monitor and review; AI only speeds middle production steps",
+        "Only image and video generation—humans never touch those",
+        "Only CapCut edit—everything else is fully automated",
+        "Only ROAS reporting—creative can ship without review"
+      ],
+      "answer": 0
+    }
+  ]
+}

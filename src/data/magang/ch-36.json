@@ -1,0 +1,542 @@
+{
+  "id": "36",
+  "index": 36,
+  "part": 8,
+  "partTitleEn": "The long road",
+  "titleEn": "Glossary",
+  "titleSource": "Glosarium",
+  "sourcePages": "139-145",
+  "when": "Anytime; review themed pages before interviews",
+  "sittings": [
+    {
+      "kind": "remember",
+      "titleEn": "Models and architecture",
+      "bodyEn": "A large language model predicts the next token after a tokenizer maps text into a vocabulary. The base model holds parameters in layers of self-attention, multi-head attention, and a feed-forward network, with residual connections and layer norm. Embedding vectors sit in a context window; positional encoding or RoPE and a causal mask keep order and stop looking ahead. At decode time, temperature and sampling shape logits, while a KV cache speeds inference. Watch for hallucination, multimodal inputs, MoE routing, and empty claims about emergent ability.",
+      "terms": [
+        {
+          "zh": "大模型",
+          "en": "large model",
+          "hook": "If they say this, they mean the core LLM object most posts name."
+        },
+        {
+          "zh": "基座模型",
+          "en": "base model",
+          "hook": "If they say this, they mean the pretrained starting point."
+        },
+        {
+          "zh": "词元",
+          "en": "token",
+          "hook": "If they say this, they mean the unit the model predicts."
+        },
+        {
+          "zh": "上下文窗口",
+          "en": "context window",
+          "hook": "If they say this, they mean how much text fits at once."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Training and fine-tuning",
+      "bodyEn": "Pretraining builds the base model, then supervised fine-tuning teaches instructions. Preference stages use RLHF with a reward model, or DPO on chosen versus rejected pairs. Training minimizes a loss such as cross-entropy, reports perplexity, and updates weights with gradient descent under a learning rate. Watch overfitting, underfitting, catastrophic forgetting, and scaling laws as data and compute grow. Practical knobs include full fine-tuning versus PEFT, LoRA or QLoRA, quantization, data mix, and careful labelling.",
+      "terms": [
+        {
+          "zh": "预训练",
+          "en": "pretraining",
+          "hook": "If they say this, they mean building the base model from scratch."
+        },
+        {
+          "zh": "监督微调",
+          "en": "supervised fine-tuning",
+          "hook": "If they say this, they mean SFT on instructions after pretraining."
+        },
+        {
+          "zh": "奖励模型",
+          "en": "reward model",
+          "hook": "If they say this, they mean the scorer inside RLHF."
+        },
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, ask whether they mean full, LoRA, or QLoRA."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Product and applications",
+      "bodyEn": "On the product side you write a prompt or system prompt, add few-shot examples, and may ask for chain-of-thought before structured output. Function calling lets the model request tools, and agents use workflows, orchestration, and memory. RAG retrieves from a knowledge base after chunking into a vector database, often with recall, reranking, and hybrid retrieval. Ops language covers AIGC, text-to-image, image-to-video, digital humans, and content or product operations. Close the loop with a PRD, user persona, competitor analysis, schedule, and retrospective.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, they mean a tool-using loop, not a chatbot slogan."
+        },
+        {
+          "zh": "检索增强生成",
+          "en": "RAG",
+          "hook": "If they say this, they mean retrieve then generate over a knowledge base."
+        },
+        {
+          "zh": "提示词",
+          "en": "prompt",
+          "hook": "If they say this, they mean the instructions you give the model."
+        },
+        {
+          "zh": "知识库",
+          "en": "knowledge base",
+          "hook": "If they say this, they mean the documents RAG searches."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Hiring path words",
+      "bodyEn": "On BOSS you apply as a job seeker, sometimes with a referral code. Paths split into daily or summer internship versus full-time campus hiring for fresh graduates or the class of 2027. Screens include a written or machine test before first, second, manager, and HR interviews. Offers arrive as an offer letter or letter of intent, with headcount, base city, daily pay or fifteen salaries, and later conversion to full-time. Foreign students also track the internship endorsement on the residence permit.",
+      "terms": [
+        {
+          "zh": "校招",
+          "en": "campus hiring",
+          "hook": "If they say this, they mean full-time new-grad hiring—not daily internship."
+        },
+        {
+          "zh": "日常实习",
+          "en": "daily internship",
+          "hook": "If they say this, they mean year-round internship seats."
+        },
+        {
+          "zh": "录用通知",
+          "en": "offer letter",
+          "hook": "If they say this, the visa clock often starts here."
+        },
+        {
+          "zh": "实习加注",
+          "en": "internship endorsement",
+          "hook": "If they say this, they mean the permit note that makes internships legal."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Infra and serving",
+      "bodyEn": "Inference means running a trained model; in Chinese the same word can also mean reasoning, so watch context. Deployment puts the model on company servers, and teams watch time to first token, throughput, concurrency, GPU memory, and compute. Cost talk includes open-weight versus closed models and pay-per-use billing. Low-level infra uses operators on chips such as Ascend, plus serving ideas like continuous batching. Say what you have run—MCP and A2A included—not what you have never compiled.",
+      "terms": [
+        {
+          "zh": "推理",
+          "en": "inference",
+          "hook": "If they say this, check context—running a model or “reasoning”."
+        },
+        {
+          "zh": "首字延迟",
+          "en": "time to first token",
+          "hook": "If they say this, they mean how fast the first token arrives."
+        },
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this, they mean VRAM budget during train or serve."
+        },
+        {
+          "zh": "算子",
+          "en": "operator",
+          "hook": "If they say this on infra posts, they mean low-level chip compute."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Product and model metrics",
+      "bodyEn": "Product teams live in a funnel from impressions to buy, and quote click-through rate, completion, engagement, conversion, retention, DAU, and MAU. Commerce adds average order value, GMV, acquisition cost, ROI, creators, livestream selling, and going global. Release safety uses A/B tests and gradual rollout. Model teams speak evaluation, eval sets, regression tests, and recall when retrieval quality matters. Bring one metric you personally moved whenever you claim ops impact.",
+      "terms": [
+        {
+          "zh": "点击率",
+          "en": "click-through rate",
+          "hook": "If they say this, they mean clicks over impressions."
+        },
+        {
+          "zh": "转化率",
+          "en": "conversion rate",
+          "hook": "If they say this, they mean the share that completed the goal."
+        },
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, they mean a scored test set for the model."
+        },
+        {
+          "zh": "灰度发布",
+          "en": "gradual rollout",
+          "hook": "If they say this, they mean shipping to a small slice first."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Safety and trust",
+      "bodyEn": "Prompt injection hides instructions inside text the system reads, and jailbreak tries to talk the model past its rules. Defenses include guardrails on what an agent may see and do, plus human review before anything goes out. Hallucination is fluent falsehood, so treat it as a product risk. Evaluation, regression tests, and narrow tool permissions limit blast radius when injection wins. Never claim a prompt alone makes a system safe—design so a successful attack cannot move money, spam users, or leak private data.",
+      "terms": [
+        {
+          "zh": "提示词注入",
+          "en": "prompt injection",
+          "hook": "If they say this, they mean hidden instructions in untrusted text."
+        },
+        {
+          "zh": "越狱",
+          "en": "jailbreak",
+          "hook": "If they say this, they mean talking the model past its rules."
+        },
+        {
+          "zh": "护栏",
+          "en": "guardrails",
+          "hook": "If they say this, they mean hard limits on what the agent may do."
+        },
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, they mean fluent falsehood treated as fact."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Interview workplace talk",
+      "bodyEn": "Interview flow words include textbook questions, live coding, project deep dives, and reverse questions at the end. Workplace talk shows up in HR and PM chats: lever, empower, closed loop, align, granularity, playbook, accumulate, land, connect teams, fallback, chain, mental model, pain point, bottleneck, reuse, iterate, and sync. You do not need to sound fake—just understand them when others speak. Pair each buzzword with one concrete action from your project. If a word is empty, ask for the metric or the next step instead of nodding.",
+      "terms": [
+        {
+          "zh": "八股",
+          "en": "textbook questions",
+          "hook": "If they say this, they mean standard interview Q&A drills."
+        },
+        {
+          "zh": "手撕代码",
+          "en": "live coding",
+          "hook": "If they say this, they mean write code by hand in the interview."
+        },
+        {
+          "zh": "项目深挖",
+          "en": "project deep dive",
+          "hook": "If they say this, they will open the repo and ask why-chains."
+        },
+        {
+          "zh": "反问",
+          "en": "reverse questions",
+          "hook": "If they say this, they mean the questions you ask at the end."
+        }
+      ],
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Theme map check",
+      "bodyEn": "Check which eight themes this glossary uses.",
+      "prompt": "Which eight themed pages does this glossary teach?",
+      "choices": [
+        "Models, training, product, hiring, infra, metrics, safety, interview words",
+        "Only Ascend kernels, ACM medals, and full-time campus packages",
+        "Only Indonesian grammar, HSK strokes, and visa forms",
+        "Only salda.id metrics, unaudited GMV, and WeUseAI pricing"
+      ],
+      "answer": 0,
+      "id": "s9"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Safety and hiring words",
+      "bodyEn": "Check two high-stakes word pairs from safety and hiring.",
+      "prompt": "Which pair matches prompt injection and internship endorsement?",
+      "choices": [
+        "Prompt injection is hidden instructions in untrusted text; internship endorsement is the permit note that makes an internship legal",
+        "Prompt injection is LoRA training; internship endorsement is a fifteen-salary full-time offer",
+        "Prompt injection is DAU growth; internship endorsement is a BOSS greeting template",
+        "Prompt injection is Ascend C syntax; internship endorsement is FlashAttention tiling"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "提示词注入",
+          "en": "prompt injection",
+          "hook": "If they say this, they mean hidden instructions in untrusted text."
+        },
+        {
+          "zh": "实习加注",
+          "en": "internship endorsement",
+          "hook": "If they say this, they mean the permit note for legal internships."
+        }
+      ],
+      "id": "s10"
+    }
+  ],
+  "beats": [
+    {
+      "kind": "remember",
+      "titleEn": "Models and architecture",
+      "bodyEn": "A large language model predicts the next token after a tokenizer maps text into a vocabulary. The base model holds parameters in layers of self-attention, multi-head attention, and a feed-forward network, with residual connections and layer norm. Embedding vectors sit in a context window; positional encoding or RoPE and a causal mask keep order and stop looking ahead. At decode time, temperature and sampling shape logits, while a KV cache speeds inference. Watch for hallucination, multimodal inputs, MoE routing, and empty claims about emergent ability.",
+      "terms": [
+        {
+          "zh": "大模型",
+          "en": "large model",
+          "hook": "If they say this, they mean the core LLM object most posts name."
+        },
+        {
+          "zh": "基座模型",
+          "en": "base model",
+          "hook": "If they say this, they mean the pretrained starting point."
+        },
+        {
+          "zh": "词元",
+          "en": "token",
+          "hook": "If they say this, they mean the unit the model predicts."
+        },
+        {
+          "zh": "上下文窗口",
+          "en": "context window",
+          "hook": "If they say this, they mean how much text fits at once."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Training and fine-tuning",
+      "bodyEn": "Pretraining builds the base model, then supervised fine-tuning teaches instructions. Preference stages use RLHF with a reward model, or DPO on chosen versus rejected pairs. Training minimizes a loss such as cross-entropy, reports perplexity, and updates weights with gradient descent under a learning rate. Watch overfitting, underfitting, catastrophic forgetting, and scaling laws as data and compute grow. Practical knobs include full fine-tuning versus PEFT, LoRA or QLoRA, quantization, data mix, and careful labelling.",
+      "terms": [
+        {
+          "zh": "预训练",
+          "en": "pretraining",
+          "hook": "If they say this, they mean building the base model from scratch."
+        },
+        {
+          "zh": "监督微调",
+          "en": "supervised fine-tuning",
+          "hook": "If they say this, they mean SFT on instructions after pretraining."
+        },
+        {
+          "zh": "奖励模型",
+          "en": "reward model",
+          "hook": "If they say this, they mean the scorer inside RLHF."
+        },
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, ask whether they mean full, LoRA, or QLoRA."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Product and applications",
+      "bodyEn": "On the product side you write a prompt or system prompt, add few-shot examples, and may ask for chain-of-thought before structured output. Function calling lets the model request tools, and agents use workflows, orchestration, and memory. RAG retrieves from a knowledge base after chunking into a vector database, often with recall, reranking, and hybrid retrieval. Ops language covers AIGC, text-to-image, image-to-video, digital humans, and content or product operations. Close the loop with a PRD, user persona, competitor analysis, schedule, and retrospective.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, they mean a tool-using loop, not a chatbot slogan."
+        },
+        {
+          "zh": "检索增强生成",
+          "en": "RAG",
+          "hook": "If they say this, they mean retrieve then generate over a knowledge base."
+        },
+        {
+          "zh": "提示词",
+          "en": "prompt",
+          "hook": "If they say this, they mean the instructions you give the model."
+        },
+        {
+          "zh": "知识库",
+          "en": "knowledge base",
+          "hook": "If they say this, they mean the documents RAG searches."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Hiring path words",
+      "bodyEn": "On BOSS you apply as a job seeker, sometimes with a referral code. Paths split into daily or summer internship versus full-time campus hiring for fresh graduates or the class of 2027. Screens include a written or machine test before first, second, manager, and HR interviews. Offers arrive as an offer letter or letter of intent, with headcount, base city, daily pay or fifteen salaries, and later conversion to full-time. Foreign students also track the internship endorsement on the residence permit.",
+      "terms": [
+        {
+          "zh": "校招",
+          "en": "campus hiring",
+          "hook": "If they say this, they mean full-time new-grad hiring—not daily internship."
+        },
+        {
+          "zh": "日常实习",
+          "en": "daily internship",
+          "hook": "If they say this, they mean year-round internship seats."
+        },
+        {
+          "zh": "录用通知",
+          "en": "offer letter",
+          "hook": "If they say this, the visa clock often starts here."
+        },
+        {
+          "zh": "实习加注",
+          "en": "internship endorsement",
+          "hook": "If they say this, they mean the permit note that makes internships legal."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Infra and serving",
+      "bodyEn": "Inference means running a trained model; in Chinese the same word can also mean reasoning, so watch context. Deployment puts the model on company servers, and teams watch time to first token, throughput, concurrency, GPU memory, and compute. Cost talk includes open-weight versus closed models and pay-per-use billing. Low-level infra uses operators on chips such as Ascend, plus serving ideas like continuous batching. Say what you have run—MCP and A2A included—not what you have never compiled.",
+      "terms": [
+        {
+          "zh": "推理",
+          "en": "inference",
+          "hook": "If they say this, check context—running a model or “reasoning”."
+        },
+        {
+          "zh": "首字延迟",
+          "en": "time to first token",
+          "hook": "If they say this, they mean how fast the first token arrives."
+        },
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this, they mean VRAM budget during train or serve."
+        },
+        {
+          "zh": "算子",
+          "en": "operator",
+          "hook": "If they say this on infra posts, they mean low-level chip compute."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Product and model metrics",
+      "bodyEn": "Product teams live in a funnel from impressions to buy, and quote click-through rate, completion, engagement, conversion, retention, DAU, and MAU. Commerce adds average order value, GMV, acquisition cost, ROI, creators, livestream selling, and going global. Release safety uses A/B tests and gradual rollout. Model teams speak evaluation, eval sets, regression tests, and recall when retrieval quality matters. Bring one metric you personally moved whenever you claim ops impact.",
+      "terms": [
+        {
+          "zh": "点击率",
+          "en": "click-through rate",
+          "hook": "If they say this, they mean clicks over impressions."
+        },
+        {
+          "zh": "转化率",
+          "en": "conversion rate",
+          "hook": "If they say this, they mean the share that completed the goal."
+        },
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, they mean a scored test set for the model."
+        },
+        {
+          "zh": "灰度发布",
+          "en": "gradual rollout",
+          "hook": "If they say this, they mean shipping to a small slice first."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Safety and trust",
+      "bodyEn": "Prompt injection hides instructions inside text the system reads, and jailbreak tries to talk the model past its rules. Defenses include guardrails on what an agent may see and do, plus human review before anything goes out. Hallucination is fluent falsehood, so treat it as a product risk. Evaluation, regression tests, and narrow tool permissions limit blast radius when injection wins. Never claim a prompt alone makes a system safe—design so a successful attack cannot move money, spam users, or leak private data.",
+      "terms": [
+        {
+          "zh": "提示词注入",
+          "en": "prompt injection",
+          "hook": "If they say this, they mean hidden instructions in untrusted text."
+        },
+        {
+          "zh": "越狱",
+          "en": "jailbreak",
+          "hook": "If they say this, they mean talking the model past its rules."
+        },
+        {
+          "zh": "护栏",
+          "en": "guardrails",
+          "hook": "If they say this, they mean hard limits on what the agent may do."
+        },
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, they mean fluent falsehood treated as fact."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Interview workplace talk",
+      "bodyEn": "Interview flow words include textbook questions, live coding, project deep dives, and reverse questions at the end. Workplace talk shows up in HR and PM chats: lever, empower, closed loop, align, granularity, playbook, accumulate, land, connect teams, fallback, chain, mental model, pain point, bottleneck, reuse, iterate, and sync. You do not need to sound fake—just understand them when others speak. Pair each buzzword with one concrete action from your project. If a word is empty, ask for the metric or the next step instead of nodding.",
+      "terms": [
+        {
+          "zh": "八股",
+          "en": "textbook questions",
+          "hook": "If they say this, they mean standard interview Q&A drills."
+        },
+        {
+          "zh": "手撕代码",
+          "en": "live coding",
+          "hook": "If they say this, they mean write code by hand in the interview."
+        },
+        {
+          "zh": "项目深挖",
+          "en": "project deep dive",
+          "hook": "If they say this, they will open the repo and ask why-chains."
+        },
+        {
+          "zh": "反问",
+          "en": "reverse questions",
+          "hook": "If they say this, they mean the questions you ask at the end."
+        }
+      ],
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Theme map check",
+      "bodyEn": "Check which eight themes this glossary uses.",
+      "prompt": "Which eight themed pages does this glossary teach?",
+      "choices": [
+        "Models, training, product, hiring, infra, metrics, safety, interview words",
+        "Only Ascend kernels, ACM medals, and full-time campus packages",
+        "Only Indonesian grammar, HSK strokes, and visa forms",
+        "Only salda.id metrics, unaudited GMV, and WeUseAI pricing"
+      ],
+      "answer": 0,
+      "id": "s9"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Safety and hiring words",
+      "bodyEn": "Check two high-stakes word pairs from safety and hiring.",
+      "prompt": "Which pair matches prompt injection and internship endorsement?",
+      "choices": [
+        "Prompt injection is hidden instructions in untrusted text; internship endorsement is the permit note that makes an internship legal",
+        "Prompt injection is LoRA training; internship endorsement is a fifteen-salary full-time offer",
+        "Prompt injection is DAU growth; internship endorsement is a BOSS greeting template",
+        "Prompt injection is Ascend C syntax; internship endorsement is FlashAttention tiling"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "提示词注入",
+          "en": "prompt injection",
+          "hook": "If they say this, they mean hidden instructions in untrusted text."
+        },
+        {
+          "zh": "实习加注",
+          "en": "internship endorsement",
+          "hook": "If they say this, they mean the permit note for legal internships."
+        }
+      ],
+      "id": "s10"
+    }
+  ]
+}

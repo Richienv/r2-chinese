@@ -1,0 +1,322 @@
+{
+  "id": "10",
+  "index": 10,
+  "part": 3,
+  "partTitleEn": "Build something with a model",
+  "titleEn": "Evaluation",
+  "titleSource": "Evaluasi (评测)",
+  "sourcePages": "38-41",
+  "when": "Week 1, days 5–6",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Measure not feel",
+      "bodyEn": "Evaluation means you define what good is, measure it, and prove a change helped. Job posts name effect assessment, root-cause locating, model evaluation, and dialogue quality check. Model output changes every run and every small edit, so feelings are not evidence. The only defense is one fixed test-input set scored the same way every time. In interviews, I raised the prompt from 11/20 to 17/20 is believed; I am good at prompting is not.",
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, they mean measure quality on a fixed set."
+        },
+        {
+          "zh": "效果评估",
+          "en": "effect assessment",
+          "hook": "If they say this, they mean prove a change helped with numbers."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Offline eval loop",
+      "bodyEn": "Define the job in one sentence plus what a good output looks like. Collect 20 to 50 real inputs — customer messages, listings, weird cases — and never invent only easy ones. Write the correct answer when it exists, and write the checkers before you see any model output so you cannot game them. Run version 1, score it, read every failure, change one thing, rerun the same set, and keep the change only if the score rises. Save the set as your regression test and run it after every future change.",
+      "terms": [
+        {
+          "zh": "回归测试",
+          "en": "regression test",
+          "hook": "If they say this, they mean the saved fixed set that catches old wins breaking."
+        },
+        {
+          "zh": "问题定位",
+          "en": "root-cause locating",
+          "hook": "If they say this, they mean find why it failed."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Four ways to score",
+      "bodyEn": "Code checks are fast and certain: JSON valid, max words, no banned words, label in an allowed set — but they only cover what rules can see. Match to reference means predicted intent equals the manual label; it is objective and needs labeled data. A second model can score helpfulness 1 to 5 with a written rubric, but it has bias and must be calibrated. Human review is ground truth: read about 20 outputs and mark pass or fail, then use that to calibrate the cheaper checks. Write scoring rules before you look at model output.",
+      "terms": [
+        {
+          "zh": "代码校验",
+          "en": "code checks",
+          "hook": "If they say this, they mean fast format and rule checks."
+        },
+        {
+          "zh": "大模型裁判",
+          "en": "LLM-as-judge",
+          "hook": "If they say this, they mean a second model scores quality."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Precision and recall",
+      "bodyEn": "On 100 escalate decisions, TP 18 and FP 6 gives precision 0.75 — of predicted escalations, 75% truly needed a human. With FN 4, recall is about 0.818 and F1 about 0.783. Accuracy can look great when the rare class is small, so do not trust accuracy alone. For needs-human, missing an angry refund is expensive — prioritize recall. For auto-sending coupons, a wrong send is expensive — prioritize precision.",
+      "terms": [
+        {
+          "zh": "精确率",
+          "en": "precision",
+          "hook": "If they say this, they ask: of predicted yes, how many were true."
+        },
+        {
+          "zh": "召回率",
+          "en": "recall",
+          "hook": "If they say this, they ask: of true yes, how many did we catch."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Judge bias",
+      "bodyEn": "Model judges prefer the first answer shown, prefer longer answers, and prefer a style like their own. Fix with both orders, a strict rubric plus examples, and human calibration on about 20 items. Do not treat LLM-as-judge as ground truth without that calibration. Interviewers like this because it shows you know cheap scores can lie. Name the three biases and one fix each.",
+      "terms": [
+        {
+          "zh": "裁判偏差",
+          "en": "judge bias",
+          "hook": "If they say this, calibrate LLM judges with humans."
+        },
+        {
+          "zh": "人工抽检",
+          "en": "human spot-check",
+          "hook": "If they say this, they mean humans calibrate cheaper judges."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Verify the verifier",
+      "bodyEn": "An agent can claim success when it failed, so check the real world — did the file actually change? Your harness once counted notes in Recently Deleted as still present. Lesson for every interview: verify the verifier before you trust the score. For agents, score task success against real state, steps and cost, forbidden safety actions, and failure attribution. Public benchmarks like MMLU do not replace your product set.",
+      "terms": [
+        {
+          "zh": "先验证验证器",
+          "en": "verify the verifier",
+          "hook": "If they say this, they mean check your checker first."
+        },
+        {
+          "zh": "真实环境",
+          "en": "real world state",
+          "hook": "If they say this, real checks beat the agent’s self-report."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Online metrics",
+      "bodyEn": "After launch, sample and read about 20 chats a week. Watch thumbs and the escalate-to-human rate, then A/B test with one metric chosen up front. Offline eval finds bugs before users; online eval catches drift after users. Interview answer: offline loop first, then weekly human sample, then A/B with one pre-chosen metric. Do not change five things at once and call it science.",
+      "terms": [
+        {
+          "zh": "转人工率",
+          "en": "escalate rate",
+          "hook": "If they say this, they mean a key online support metric."
+        },
+        {
+          "zh": "A/B 测试",
+          "en": "A/B test",
+          "hook": "If they say this, choose one metric up front."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Precision recall check",
+      "bodyEn": "Precision is TP divided by all predicted yes. Recall is TP divided by all true yes. Here TP is 30, FP is 10, and FN is 20. Compute both numbers carefully. Do not swap the denominators.",
+      "prompt": "TP 30, FP 10, FN 20 — what are precision and recall?",
+      "choices": [
+        "Precision 0.75 (30/40), recall 0.60 (30/50)",
+        "Precision 0.60 (30/50), recall 0.75 (30/40)",
+        "Precision 0.90, recall 0.90",
+        "Precision 30, recall 20"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Verify the verifier",
+      "bodyEn": "Your score is only as good as the checker behind it. This chapter’s phrase means verify the verifier. It came from a harness that counted Recently Deleted notes as still present. Pick the meaning that matches that story. Public benchmarks like MMLU do not teach this lesson.",
+      "prompt": "What does “verify the verifier” mean?",
+      "choices": [
+        "Check that your checker is correct — learned when Recently Deleted notes counted as present",
+        "Ask a second model to grade the first — learned from MMLU",
+        "Rerun failed prompts at temperature 0",
+        "Delete the regression set after launch"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Measure not feel",
+      "bodyEn": "Evaluation means you define what good is, measure it, and prove a change helped. Job posts name effect assessment, root-cause locating, model evaluation, and dialogue quality check. Model output changes every run and every small edit, so feelings are not evidence. The only defense is one fixed test-input set scored the same way every time. In interviews, I raised the prompt from 11/20 to 17/20 is believed; I am good at prompting is not.",
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, they mean measure quality on a fixed set."
+        },
+        {
+          "zh": "效果评估",
+          "en": "effect assessment",
+          "hook": "If they say this, they mean prove a change helped with numbers."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Offline eval loop",
+      "bodyEn": "Define the job in one sentence plus what a good output looks like. Collect 20 to 50 real inputs — customer messages, listings, weird cases — and never invent only easy ones. Write the correct answer when it exists, and write the checkers before you see any model output so you cannot game them. Run version 1, score it, read every failure, change one thing, rerun the same set, and keep the change only if the score rises. Save the set as your regression test and run it after every future change.",
+      "terms": [
+        {
+          "zh": "回归测试",
+          "en": "regression test",
+          "hook": "If they say this, they mean the saved fixed set that catches old wins breaking."
+        },
+        {
+          "zh": "问题定位",
+          "en": "root-cause locating",
+          "hook": "If they say this, they mean find why it failed."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Four ways to score",
+      "bodyEn": "Code checks are fast and certain: JSON valid, max words, no banned words, label in an allowed set — but they only cover what rules can see. Match to reference means predicted intent equals the manual label; it is objective and needs labeled data. A second model can score helpfulness 1 to 5 with a written rubric, but it has bias and must be calibrated. Human review is ground truth: read about 20 outputs and mark pass or fail, then use that to calibrate the cheaper checks. Write scoring rules before you look at model output.",
+      "terms": [
+        {
+          "zh": "代码校验",
+          "en": "code checks",
+          "hook": "If they say this, they mean fast format and rule checks."
+        },
+        {
+          "zh": "大模型裁判",
+          "en": "LLM-as-judge",
+          "hook": "If they say this, they mean a second model scores quality."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Precision and recall",
+      "bodyEn": "On 100 escalate decisions, TP 18 and FP 6 gives precision 0.75 — of predicted escalations, 75% truly needed a human. With FN 4, recall is about 0.818 and F1 about 0.783. Accuracy can look great when the rare class is small, so do not trust accuracy alone. For needs-human, missing an angry refund is expensive — prioritize recall. For auto-sending coupons, a wrong send is expensive — prioritize precision.",
+      "terms": [
+        {
+          "zh": "精确率",
+          "en": "precision",
+          "hook": "If they say this, they ask: of predicted yes, how many were true."
+        },
+        {
+          "zh": "召回率",
+          "en": "recall",
+          "hook": "If they say this, they ask: of true yes, how many did we catch."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Judge bias",
+      "bodyEn": "Model judges prefer the first answer shown, prefer longer answers, and prefer a style like their own. Fix with both orders, a strict rubric plus examples, and human calibration on about 20 items. Do not treat LLM-as-judge as ground truth without that calibration. Interviewers like this because it shows you know cheap scores can lie. Name the three biases and one fix each.",
+      "terms": [
+        {
+          "zh": "裁判偏差",
+          "en": "judge bias",
+          "hook": "If they say this, calibrate LLM judges with humans."
+        },
+        {
+          "zh": "人工抽检",
+          "en": "human spot-check",
+          "hook": "If they say this, they mean humans calibrate cheaper judges."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Verify the verifier",
+      "bodyEn": "An agent can claim success when it failed, so check the real world — did the file actually change? Your harness once counted notes in Recently Deleted as still present. Lesson for every interview: verify the verifier before you trust the score. For agents, score task success against real state, steps and cost, forbidden safety actions, and failure attribution. Public benchmarks like MMLU do not replace your product set.",
+      "terms": [
+        {
+          "zh": "先验证验证器",
+          "en": "verify the verifier",
+          "hook": "If they say this, they mean check your checker first."
+        },
+        {
+          "zh": "真实环境",
+          "en": "real world state",
+          "hook": "If they say this, real checks beat the agent’s self-report."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Online metrics",
+      "bodyEn": "After launch, sample and read about 20 chats a week. Watch thumbs and the escalate-to-human rate, then A/B test with one metric chosen up front. Offline eval finds bugs before users; online eval catches drift after users. Interview answer: offline loop first, then weekly human sample, then A/B with one pre-chosen metric. Do not change five things at once and call it science.",
+      "terms": [
+        {
+          "zh": "转人工率",
+          "en": "escalate rate",
+          "hook": "If they say this, they mean a key online support metric."
+        },
+        {
+          "zh": "A/B 测试",
+          "en": "A/B test",
+          "hook": "If they say this, choose one metric up front."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Precision recall check",
+      "bodyEn": "Precision is TP divided by all predicted yes. Recall is TP divided by all true yes. Here TP is 30, FP is 10, and FN is 20. Compute both numbers carefully. Do not swap the denominators.",
+      "prompt": "TP 30, FP 10, FN 20 — what are precision and recall?",
+      "choices": [
+        "Precision 0.75 (30/40), recall 0.60 (30/50)",
+        "Precision 0.60 (30/50), recall 0.75 (30/40)",
+        "Precision 0.90, recall 0.90",
+        "Precision 30, recall 20"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Verify the verifier",
+      "bodyEn": "Your score is only as good as the checker behind it. This chapter’s phrase means verify the verifier. It came from a harness that counted Recently Deleted notes as still present. Pick the meaning that matches that story. Public benchmarks like MMLU do not teach this lesson.",
+      "prompt": "What does “verify the verifier” mean?",
+      "choices": [
+        "Check that your checker is correct — learned when Recently Deleted notes counted as present",
+        "Ask a second model to grade the first — learned from MMLU",
+        "Rerun failed prompts at temperature 0",
+        "Delete the regression set after launch"
+      ],
+      "answer": 0
+    }
+  ]
+}

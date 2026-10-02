@@ -1,0 +1,308 @@
+{
+  "id": "07",
+  "index": 7,
+  "part": 2,
+  "partTitleEn": "How a language model works",
+  "titleEn": "How a model is trained",
+  "titleSource": "Cara model di-training",
+  "sourcePages": "25-28",
+  "when": "Week 1, day 4. Core theory.",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What training does",
+      "bodyEn": "Training changes the numbers inside the model — its parameters or weights — so guesses get better. For next-token prediction the loss is cross-entropy: the negative log of the probability on the correct next token. At probability 0.9 loss is about 0.105; at 0.1 about 2.303; at 0.01 about 4.605. Perplexity is e to the power of loss, so loss 2.0 means perplexity about 7.39. A random model starts near the natural log of vocabulary size.",
+      "terms": [
+        {
+          "zh": "参数",
+          "en": "parameters",
+          "hook": "If they say this, they mean the numbers training updates."
+        },
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this, they mean the next-token training loss."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Cross-entropy loss",
+      "bodyEn": "Cross-entropy punishes low probability on the true next token. A random model starts near the natural log of vocabulary size. Interviewers want the definition and one number example. Say: loss equals negative log of p on the correct token. Lower loss means the model was more confident on the right answer.",
+      "terms": [
+        {
+          "zh": "困惑度",
+          "en": "perplexity",
+          "hook": "If they say this, they mean e to the power of loss — how many choices."
+        },
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this, they mean the training loss on the true token."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Gradient descent",
+      "bodyEn": "Training computes a gradient for each parameter, then steps the other way. The update is weight minus learning rate times gradient. Learning rate too large overshoots; too small only crawls. Backpropagation is the chain rule run automatically for all gradients. In practice the optimizer is almost always AdamW; for f(w)=(w−3)² at w=0 with rate 0.1, three steps reach about 0.600, 1.080, then 1.464.",
+      "terms": [
+        {
+          "zh": "学习率",
+          "en": "learning rate",
+          "hook": "If they say this, they mean how big each update step is."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Pretraining stage",
+      "bodyEn": "Pretraining reads huge unlabeled text and learns next-token prediction. Here the model learns language, facts, and patterns — and almost all of the compute cost. Scaling laws say loss falls smoothly as parameters, data, and compute grow. Chinchilla found about 20 tokens per parameter for a fixed compute budget. The result is a base model: good at continuing text, not at following instructions.",
+      "terms": [
+        {
+          "zh": "缩放定律",
+          "en": "scaling laws",
+          "hook": "If they say this, they mean how loss falls with scale."
+        },
+        {
+          "zh": "基座模型",
+          "en": "base model",
+          "hook": "If they say this, they mean continues text but does not obey yet."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Supervised fine-tune",
+      "bodyEn": "Supervised fine-tuning trains on instruction–answer pairs with the same next-token loss. That teaches format and manners: follow instructions and stop when done. SFT data is small next to pretraining, but a few thousand excellent examples beat a million careless ones. This is the stage that turns a base model into something that follows prompts. Interviewers ask why base models ignore instructions — answer pretraining only taught continuation.",
+      "terms": [
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this with SFT, they mean the same next-token loss on answer tokens."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "RLHF preference",
+      "bodyEn": "RLHF trains a reward model from human preference pairs, then uses reinforcement learning so the model earns high reward. A KL penalty stops the model from drifting too far from the SFT checkpoint. PPO-style loops are common. Say three parts in interviews: preference data, reward model, RL with KL. This stage teaches preferred style after SFT.",
+      "terms": [
+        {
+          "zh": "基于人类反馈的强化学习",
+          "en": "RLHF",
+          "hook": "If they say this long name, they mean RLHF."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "DPO shortcut",
+      "bodyEn": "DPO keeps preference pairs but throws away the separate reward model and the RL loop. It trains directly on chosen versus rejected answers so the good answer’s probability rises relative to the bad one. Teams like it because it is simpler and often more stable than full RLHF. Preference pairs stay; the reward model goes; the RL loop goes.",
+      "terms": [
+        {
+          "zh": "基于人类反馈的强化学习",
+          "en": "RLHF",
+          "hook": "If they compare DPO to this, say DPO drops reward model and RL."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Reasoning models",
+      "bodyEn": "Reasoning models write a long chain before the final answer. They train with RL on checkable problems — math with a known result, or code with tests. Those hidden tokens cost more latency and money. Use them for multi-step logic; use a fast chat model for rewriting, extraction, and classification. Pipeline: pretraining teaches language; SFT teaches instructions; RLHF or DPO teaches preferred style; reasoning RL teaches longer self-checking.",
+      "terms": [
+        {
+          "zh": "参数",
+          "en": "parameters",
+          "hook": "If they ask cost of reasoning models, mention extra tokens and latency."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Base model check",
+      "bodyEn": "Why base models ignore instructions. Pretraining only teaches continuation. SFT is the stage that teaches follow-the-prompt behavior. Name both halves in interviews.",
+      "prompt": "Why doesn’t a base model follow instructions, and which stage fixes that?",
+      "choices": [
+        "It has no embedding matrix; MoE fixes it",
+        "It only learned to continue text; SFT teaches instruction following",
+        "Temperature is stuck at 2; top-p fixes it",
+        "KV cache is empty; pretraining fixes it"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "DPO removes check",
+      "bodyEn": "What DPO throws away from RLHF. Preference pairs stay. The separate reward model goes. The RL loop goes too.",
+      "prompt": "What does DPO throw away from RLHF?",
+      "choices": [
+        "The preference pairs themselves",
+        "The SFT checkpoint",
+        "The separate reward model and the RL loop",
+        "Next-token prediction forever"
+      ],
+      "answer": 2
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What training does",
+      "bodyEn": "Training changes the numbers inside the model — its parameters or weights — so guesses get better. For next-token prediction the loss is cross-entropy: the negative log of the probability on the correct next token. At probability 0.9 loss is about 0.105; at 0.1 about 2.303; at 0.01 about 4.605. Perplexity is e to the power of loss, so loss 2.0 means perplexity about 7.39. A random model starts near the natural log of vocabulary size.",
+      "terms": [
+        {
+          "zh": "参数",
+          "en": "parameters",
+          "hook": "If they say this, they mean the numbers training updates."
+        },
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this, they mean the next-token training loss."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Cross-entropy loss",
+      "bodyEn": "Cross-entropy punishes low probability on the true next token. A random model starts near the natural log of vocabulary size. Interviewers want the definition and one number example. Say: loss equals negative log of p on the correct token. Lower loss means the model was more confident on the right answer.",
+      "terms": [
+        {
+          "zh": "困惑度",
+          "en": "perplexity",
+          "hook": "If they say this, they mean e to the power of loss — how many choices."
+        },
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this, they mean the training loss on the true token."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Gradient descent",
+      "bodyEn": "Training computes a gradient for each parameter, then steps the other way. The update is weight minus learning rate times gradient. Learning rate too large overshoots; too small only crawls. Backpropagation is the chain rule run automatically for all gradients. In practice the optimizer is almost always AdamW; for f(w)=(w−3)² at w=0 with rate 0.1, three steps reach about 0.600, 1.080, then 1.464.",
+      "terms": [
+        {
+          "zh": "学习率",
+          "en": "learning rate",
+          "hook": "If they say this, they mean how big each update step is."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Pretraining stage",
+      "bodyEn": "Pretraining reads huge unlabeled text and learns next-token prediction. Here the model learns language, facts, and patterns — and almost all of the compute cost. Scaling laws say loss falls smoothly as parameters, data, and compute grow. Chinchilla found about 20 tokens per parameter for a fixed compute budget. The result is a base model: good at continuing text, not at following instructions.",
+      "terms": [
+        {
+          "zh": "缩放定律",
+          "en": "scaling laws",
+          "hook": "If they say this, they mean how loss falls with scale."
+        },
+        {
+          "zh": "基座模型",
+          "en": "base model",
+          "hook": "If they say this, they mean continues text but does not obey yet."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Supervised fine-tune",
+      "bodyEn": "Supervised fine-tuning trains on instruction–answer pairs with the same next-token loss. That teaches format and manners: follow instructions and stop when done. SFT data is small next to pretraining, but a few thousand excellent examples beat a million careless ones. This is the stage that turns a base model into something that follows prompts. Interviewers ask why base models ignore instructions — answer pretraining only taught continuation.",
+      "terms": [
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this with SFT, they mean the same next-token loss on answer tokens."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "RLHF preference",
+      "bodyEn": "RLHF trains a reward model from human preference pairs, then uses reinforcement learning so the model earns high reward. A KL penalty stops the model from drifting too far from the SFT checkpoint. PPO-style loops are common. Say three parts in interviews: preference data, reward model, RL with KL. This stage teaches preferred style after SFT.",
+      "terms": [
+        {
+          "zh": "基于人类反馈的强化学习",
+          "en": "RLHF",
+          "hook": "If they say this long name, they mean RLHF."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "DPO shortcut",
+      "bodyEn": "DPO keeps preference pairs but throws away the separate reward model and the RL loop. It trains directly on chosen versus rejected answers so the good answer’s probability rises relative to the bad one. Teams like it because it is simpler and often more stable than full RLHF. Preference pairs stay; the reward model goes; the RL loop goes.",
+      "terms": [
+        {
+          "zh": "基于人类反馈的强化学习",
+          "en": "RLHF",
+          "hook": "If they compare DPO to this, say DPO drops reward model and RL."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Reasoning models",
+      "bodyEn": "Reasoning models write a long chain before the final answer. They train with RL on checkable problems — math with a known result, or code with tests. Those hidden tokens cost more latency and money. Use them for multi-step logic; use a fast chat model for rewriting, extraction, and classification. Pipeline: pretraining teaches language; SFT teaches instructions; RLHF or DPO teaches preferred style; reasoning RL teaches longer self-checking.",
+      "terms": [
+        {
+          "zh": "参数",
+          "en": "parameters",
+          "hook": "If they ask cost of reasoning models, mention extra tokens and latency."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Base model check",
+      "bodyEn": "Why base models ignore instructions. Pretraining only teaches continuation. SFT is the stage that teaches follow-the-prompt behavior. Name both halves in interviews.",
+      "prompt": "Why doesn’t a base model follow instructions, and which stage fixes that?",
+      "choices": [
+        "It has no embedding matrix; MoE fixes it",
+        "It only learned to continue text; SFT teaches instruction following",
+        "Temperature is stuck at 2; top-p fixes it",
+        "KV cache is empty; pretraining fixes it"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "DPO removes check",
+      "bodyEn": "What DPO throws away from RLHF. Preference pairs stay. The separate reward model goes. The RL loop goes too.",
+      "prompt": "What does DPO throw away from RLHF?",
+      "choices": [
+        "The preference pairs themselves",
+        "The SFT checkpoint",
+        "The separate reward model and the RL loop",
+        "Next-token prediction forever"
+      ],
+      "answer": 2
+    }
+  ]
+}

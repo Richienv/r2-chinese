@@ -1,0 +1,318 @@
+{
+  "id": "01",
+  "index": 1,
+  "part": 1,
+  "partTitleEn": "Map",
+  "titleEn": "The roles that exist and what they test",
+  "titleSource": "Role-role yang ada dan apa yang dites",
+  "sourcePages": "2-5",
+  "when": "Day 1",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Three tracks",
+      "bodyEn": "About twenty AI roles show up on BOSS and company portals. Lined up, they fall into three tracks: application, product and ops, and long-road infra. This chapter maps those tracks so you know what each posting really tests. Read it on Day 1, then reopen it whenever a new job appears. Your goal this month is an internship, so focus on seats you can win now.",
+      "terms": [
+        {
+          "zh": "BOSS直聘",
+          "en": "China job app",
+          "hook": "If they say this, they mean the main China AI job board."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Track A",
+      "bodyEn": "Track A means you build products on top of large models, not the base model itself. Job posts talk about agents, RAG systems, prompt pipelines, evaluation, and small fine-tunes. MCP often sits next to agent titles when tools must plug into the model. Real examples include AI Engineering Intern at Youchuan, AI agent integration at StepFun, and AI application engineer at Huawei. Integra ERP and Salda are Track A proof you already have.",
+      "terms": [
+        {
+          "zh": "大模型应用开发",
+          "en": "app on large models",
+          "hook": "If they say this, they mean ship the product, not train the base model."
+        },
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, they mean an agent that calls tools and loops."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Track B",
+      "bodyEn": "Track B is AI product and operations. You use models to run a product or content business and prove results with numbers, not vibes. Common titles include AIGC ops, content ops, competitor analysis, and use AI tools well. Real posts include AIGC ops at Alibaba Future Life Lab, AI product or ops at Ant, and overseas short-drama ops at Lingjing. A real AI business you run is Track B proof, and you can already compete on Tracks A and B today.",
+      "terms": [
+        {
+          "zh": "AIGC",
+          "en": "AI-generated content",
+          "hook": "If they say this, they mean content made with generative AI."
+        },
+        {
+          "zh": "内容运营",
+          "en": "content operations",
+          "hook": "If they say this, they mean you run the content machine with metrics."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Track C",
+      "bodyEn": "Track C builds the model and the machines under it: operators, CUDA, compilers, training systems, and research. It takes years of deep systems work, so skip Ascend infra seats this month. Table 1.1 salaries are as written; Later means a 2027 full-time role. That path does not finish this year’s internship goal. Keep Track C as vocabulary only until you have years to invest.",
+      "terms": [
+        {
+          "zh": "算子优化",
+          "en": "operator optimization",
+          "hook": "If they say this, they mean low-level GPU math kernels on Track C."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Campus hiring gate",
+      "bodyEn": "Eleven Huawei messages are mostly 2027 full-time campus hiring, not this autumn’s internship. One HR answer decides them: can campus hiring accept a foreign passport? Ask only Shen Luyi or Zhao Dong once, then wait. Do not deep-prep eleven threads before that answer. A blocked passport gate wastes nights no matter how strong your projects are.",
+      "terms": [
+        {
+          "zh": "校招",
+          "en": "campus hiring",
+          "hook": "If they say this, they mean new-grad full-time hiring, often with passport filters."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Skills you have",
+      "bodyEn": "You already ship agents, tool use, guardrails, JSON output, and evaluation habits. You can talk about Claude Code and Cursor in interviews. You also have content ops and AIGC proof for Track B. MCP, A2A, and LangChain are partial — name what you have finished, not what you skimmed. Target both A and B this month, and claim only finished work you can open and explain.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, show your shipped agent loop, not a slide."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Four must-learns",
+      "bodyEn": "Almost every Track A posting marks the same four learn lines. They are large-model principles, RAG with vector databases, fine-tuning with LoRA, and PyTorch or TensorFlow. You already ship agents and ops proof, but these theory gaps still show in interviews. Part 2 and the week projects close them. Daily practice for engineering seats also includes online coding exams and live hand-coding.",
+      "terms": [
+        {
+          "zh": "大模型原理",
+          "en": "how large models work",
+          "hook": "If they say this, they mean next-token, attention, and training stages — not tool tips."
+        },
+        {
+          "zh": "机考",
+          "en": "online coding exam",
+          "hook": "If they say this, they mean the timed computer test before interviews."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Week one test",
+      "bodyEn": "At the end of week 1, explain attention to a classmate in three minutes, in Mandarin, with no notes. Curiosity plus fluent talk means push Track A harder. Hate means stay on Track B and use Part 2 only for vocabulary. Never list unfinished work on the CV. Done means code on GitHub, real numbers in the README, and you can explain every file.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal project",
+          "hook": "If they say this, they mean a finished CV project you can demo."
+        },
+        {
+          "zh": "手撕代码",
+          "en": "live coding",
+          "hook": "If they say this, they mean write code live in the interview."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Three tracks check",
+      "bodyEn": "Pick the book’s three tracks and where you can compete today. Application work and product/ops are the seats you can win this month. The long-road infra track takes years, so it is not your main bet now. Choose the answer that names all three tracks and the two you compete on today.",
+      "prompt": "Which three tracks, and which can you compete on today?",
+      "choices": [
+        "A application; B product/ops; C long-road — compete today on A and B",
+        "A product; B coding tests; C campus hiring — compete only on C",
+        "A Ascend; B Alibaba AIGC; C TikTok Shop — compete only on A",
+        "A fine-tuning; B RAG; C agents — compete only after Part 8"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Four must-learns check",
+      "bodyEn": "Almost every Track A posting marks the same four learn lines. You already ship agents and ops proof, but theory gaps still show in interviews. Those four lines are what Part 2 and the week projects close. Choose the list that matches large-model principles, RAG, fine-tune/LoRA, and a deep learning framework.",
+      "prompt": "Which four Track A lines are still “learn” for you?",
+      "choices": [
+        "Large-model principles; RAG/vector DB; fine-tune/LoRA; PyTorch or TensorFlow",
+        "C++, CUDA, operators, ACM medal only",
+        "Content ops, AIGC, PR copy, short-drama ops",
+        "Passport, Shanghai gate, AIDC slot, 15-salary package"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Three tracks",
+      "bodyEn": "About twenty AI roles show up on BOSS and company portals. Lined up, they fall into three tracks: application, product and ops, and long-road infra. This chapter maps those tracks so you know what each posting really tests. Read it on Day 1, then reopen it whenever a new job appears. Your goal this month is an internship, so focus on seats you can win now.",
+      "terms": [
+        {
+          "zh": "BOSS直聘",
+          "en": "China job app",
+          "hook": "If they say this, they mean the main China AI job board."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Track A",
+      "bodyEn": "Track A means you build products on top of large models, not the base model itself. Job posts talk about agents, RAG systems, prompt pipelines, evaluation, and small fine-tunes. MCP often sits next to agent titles when tools must plug into the model. Real examples include AI Engineering Intern at Youchuan, AI agent integration at StepFun, and AI application engineer at Huawei. Integra ERP and Salda are Track A proof you already have.",
+      "terms": [
+        {
+          "zh": "大模型应用开发",
+          "en": "app on large models",
+          "hook": "If they say this, they mean ship the product, not train the base model."
+        },
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, they mean an agent that calls tools and loops."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Track B",
+      "bodyEn": "Track B is AI product and operations. You use models to run a product or content business and prove results with numbers, not vibes. Common titles include AIGC ops, content ops, competitor analysis, and use AI tools well. Real posts include AIGC ops at Alibaba Future Life Lab, AI product or ops at Ant, and overseas short-drama ops at Lingjing. A real AI business you run is Track B proof, and you can already compete on Tracks A and B today.",
+      "terms": [
+        {
+          "zh": "AIGC",
+          "en": "AI-generated content",
+          "hook": "If they say this, they mean content made with generative AI."
+        },
+        {
+          "zh": "内容运营",
+          "en": "content operations",
+          "hook": "If they say this, they mean you run the content machine with metrics."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Track C",
+      "bodyEn": "Track C builds the model and the machines under it: operators, CUDA, compilers, training systems, and research. It takes years of deep systems work, so skip Ascend infra seats this month. Table 1.1 salaries are as written; Later means a 2027 full-time role. That path does not finish this year’s internship goal. Keep Track C as vocabulary only until you have years to invest.",
+      "terms": [
+        {
+          "zh": "算子优化",
+          "en": "operator optimization",
+          "hook": "If they say this, they mean low-level GPU math kernels on Track C."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Campus hiring gate",
+      "bodyEn": "Eleven Huawei messages are mostly 2027 full-time campus hiring, not this autumn’s internship. One HR answer decides them: can campus hiring accept a foreign passport? Ask only Shen Luyi or Zhao Dong once, then wait. Do not deep-prep eleven threads before that answer. A blocked passport gate wastes nights no matter how strong your projects are.",
+      "terms": [
+        {
+          "zh": "校招",
+          "en": "campus hiring",
+          "hook": "If they say this, they mean new-grad full-time hiring, often with passport filters."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Skills you have",
+      "bodyEn": "You already ship agents, tool use, guardrails, JSON output, and evaluation habits. You can talk about Claude Code and Cursor in interviews. You also have content ops and AIGC proof for Track B. MCP, A2A, and LangChain are partial — name what you have finished, not what you skimmed. Target both A and B this month, and claim only finished work you can open and explain.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, show your shipped agent loop, not a slide."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Four must-learns",
+      "bodyEn": "Almost every Track A posting marks the same four learn lines. They are large-model principles, RAG with vector databases, fine-tuning with LoRA, and PyTorch or TensorFlow. You already ship agents and ops proof, but these theory gaps still show in interviews. Part 2 and the week projects close them. Daily practice for engineering seats also includes online coding exams and live hand-coding.",
+      "terms": [
+        {
+          "zh": "大模型原理",
+          "en": "how large models work",
+          "hook": "If they say this, they mean next-token, attention, and training stages — not tool tips."
+        },
+        {
+          "zh": "机考",
+          "en": "online coding exam",
+          "hook": "If they say this, they mean the timed computer test before interviews."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Week one test",
+      "bodyEn": "At the end of week 1, explain attention to a classmate in three minutes, in Mandarin, with no notes. Curiosity plus fluent talk means push Track A harder. Hate means stay on Track B and use Part 2 only for vocabulary. Never list unfinished work on the CV. Done means code on GitHub, real numbers in the README, and you can explain every file.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal project",
+          "hook": "If they say this, they mean a finished CV project you can demo."
+        },
+        {
+          "zh": "手撕代码",
+          "en": "live coding",
+          "hook": "If they say this, they mean write code live in the interview."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Three tracks check",
+      "bodyEn": "Pick the book’s three tracks and where you can compete today. Application work and product/ops are the seats you can win this month. The long-road infra track takes years, so it is not your main bet now. Choose the answer that names all three tracks and the two you compete on today.",
+      "prompt": "Which three tracks, and which can you compete on today?",
+      "choices": [
+        "A application; B product/ops; C long-road — compete today on A and B",
+        "A product; B coding tests; C campus hiring — compete only on C",
+        "A Ascend; B Alibaba AIGC; C TikTok Shop — compete only on A",
+        "A fine-tuning; B RAG; C agents — compete only after Part 8"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Four must-learns check",
+      "bodyEn": "Almost every Track A posting marks the same four learn lines. You already ship agents and ops proof, but theory gaps still show in interviews. Those four lines are what Part 2 and the week projects close. Choose the list that matches large-model principles, RAG, fine-tune/LoRA, and a deep learning framework.",
+      "prompt": "Which four Track A lines are still “learn” for you?",
+      "choices": [
+        "Large-model principles; RAG/vector DB; fine-tune/LoRA; PyTorch or TensorFlow",
+        "C++, CUDA, operators, ACM medal only",
+        "Content ops, AIGC, PR copy, short-drama ops",
+        "Passport, Shanghai gate, AIDC slot, 15-salary package"
+      ],
+      "answer": 0
+    }
+  ]
+}

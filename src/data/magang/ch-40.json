@@ -1,0 +1,316 @@
+{
+  "id": "40",
+  "index": 40,
+  "part": 10,
+  "partTitleEn": "The flagship",
+  "titleEn": "Integra Copilot",
+  "titleSource": "Integra Copilot",
+  "sourcePages": "150-155",
+  "when": "Before any Track A interview",
+  "sittings": [
+    {
+      "kind": "idea",
+      "titleEn": "Ask your ERP",
+      "bodyEn": "Integra Copilot lets a business owner ask the ERP in Indonesian, Mandarin, or English. It writes one read-only SQL, checks it, runs it, repairs mistakes, then answers with a table, the SQL, and a verified summary. The project sits on the Integra ERP you built alone, so it reuses almost everything in this book. Read this chapter before any Track A interview and run the repo yourself first. In interview language you can call it a large-model application and an agent on top of your own product.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, Copilot is an agent loop on your own ERP."
+        },
+        {
+          "zh": "大模型应用",
+          "en": "large-model application",
+          "hook": "If they say this, this is Track A proof on a real product."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Where it lives",
+      "bodyEn": "Code lives at Documents/Desktop/integra-copilot, built 24 September 2026. Seventy automated tests, a clean install from requirements.txt, and an evaluation harness already pass. If the ChatGPT Mac app is logged in, model calls can go through the Codex CLI inside that app, so a recruiter can open the README without hunting for your personal key. The demo uses a copy of Integra’s real schema with the same table and column names, but the data is fictional for a textile company in West Java. Say that honestly: real schema shape, synthetic rows.",
+      "id": "s2"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "The fixed agent loop",
+      "bodyEn": "The loop is fixed orchestration around the model: question in Indonesian, Mandarin, or English; language detect and BM25 schema retrieval; then a JSON plan with sql, tax, or refuse. Code then runs the guard, executes, repairs, and writes a grounded summary. Code owns retrieval, guard, database limits, retry budget, and number check. The model only decides whether to answer, which SQL to try, and the wording. That split is the story—do not claim the model alone is safe.",
+      "terms": [
+        {
+          "zh": "编排",
+          "en": "orchestration",
+          "hook": "If they say this, code owns the loop; the model only plans and wordings."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Three locks",
+      "bodyEn": "Never hang security on the prompt alone; the model can be talked into anything. Lock one is the prompt asking for one read-only SELECT from a listed view—and it fails when the model is persuaded. Lock two is the sqlglot guard: it parses SQL, allows only one SELECT from sixteen views, and regenerates SQL from the parse tree so comments and tricks never reach the database. Lock three is role copilot_reader: read-only on copilot views, five-second stop, and views that omit salary, BPJS, NPWP, NIK, phone, email, and bank accounts. An attack needs all three locks to fail together.",
+      "terms": [
+        {
+          "zh": "护栏",
+          "en": "guardrails",
+          "hook": "If they say this, they mean the sqlglot parse lock—not prompt faith."
+        },
+        {
+          "zh": "只读",
+          "en": "read-only",
+          "hook": "If they say this, the DB role and the SQL both stay read-only."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "example",
+      "titleEn": "Number grounding",
+      "bodyEn": "Every number in the free-text summary must appear in a result cell, column total, row count, or the question or SQL. Failures are replaced with a plain template sentence so hallucination cannot invent money. A summary that repeats a cell value such as twelve point five million rupiah can pass; a made-up ninety-nine million fails and is replaced. Grounding is code, not a polite request in the prompt. In interview, say you block invented numbers before the user sees them.",
+      "terms": [
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, grounding blocks invented money numbers in the summary."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Fifty-question eval",
+      "bodyEn": "The file eval/questions.jsonl holds fifty questions: forty-one with hand-written reference SQL across six dates, and nine that must be refused. Scoring compares result tables, not SQL text, and reports strict and relaxed accuracy, refusal accuracy, false refusals, schema recall, latency, tokens, and cost. On 24 September 2026, real GPT-6-Sol Run 1 reached relaxed 78.0% and strict 51.2%; after three fixes from reading nine errors, Run 2 reached relaxed 95.1% and strict 63.4%, with refusal 100% and schema recall 100%. Strict stays lower because the model adds readable extra columns. Run 2 is not a blind test, so the honest next step is new unseen questions—and cite only numbers you have run yourself.",
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, quote the 95.1% relaxed Run 2 only with the honesty caveat."
+        },
+        {
+          "zh": "召回",
+          "en": "recall",
+          "hook": "If they say this here, schema recall hit 100% on Run 2."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "What to say honestly",
+      "bodyEn": "Ninety-second story: you built Integra alone, then Copilot with schema retrieval, JSON plan, three locks, repairs, number grounding, and a fifty-question eval from 78% to 95.1% after reading nine errors. Why views: security, clearer names, and stable APIs if tables change; why a parser if the DB role is already read-only: defence in depth and SQL regenerated from the tree. How you know answers are right: execution-scored evaluation plus SQL shown to humans. What you fixed: date windows, cross-language warehouse names, and credit-limit zero meaning unset. For scale and multi-tenant, set tenant filters in views or RLS on the server—never by the model—and never claim Integra launched or a public user count.",
+      "terms": [
+        {
+          "zh": "视图",
+          "en": "view",
+          "hook": "If they say this, views hide sensitive columns and stabilize the API."
+        },
+        {
+          "zh": "多租户",
+          "en": "multi-tenant",
+          "hook": "If they say this, tenant filters belong in views or RLS—not the model."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Three locks check",
+      "bodyEn": "Name the three locks and one failure mode each.",
+      "prompt": "What are the three locks, and how does each fail?",
+      "choices": [
+        "Prompt (persuaded model), sqlglot guard (parser bug), DB role (over-granted)—attack needs all three to fail",
+        "API key, ChatGPT login, and GitHub push",
+        "BM25 retrieval, JSON plan, and summary grounding",
+        "Relaxed accuracy, strict accuracy, and refusal accuracy"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "护栏",
+          "en": "guardrails",
+          "hook": "If they say this, name all three locks—not only the prompt."
+        }
+      ],
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Eval and grounding",
+      "bodyEn": "Check why tables are scored and what grounding accepts.",
+      "prompt": "Why compare result tables, and which numbers does grounding accept?",
+      "choices": [
+        "Different SQL can be correct if tables match; grounding accepts numbers in a result cell, column total, row count, or question/SQL—failures become a template sentence",
+        "SQL text must match exactly; grounding accepts any number within 10%",
+        "Result tables are smaller files; grounding only keeps README numbers forced to 95.1%",
+        "Comparing SQL always yields 95.1%; grounding deletes the SQL on failure"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, score tables—not exact SQL text."
+        },
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, grounding replaces invented numbers."
+        }
+      ],
+      "id": "s9"
+    }
+  ],
+  "beats": [
+    {
+      "kind": "idea",
+      "titleEn": "Ask your ERP",
+      "bodyEn": "Integra Copilot lets a business owner ask the ERP in Indonesian, Mandarin, or English. It writes one read-only SQL, checks it, runs it, repairs mistakes, then answers with a table, the SQL, and a verified summary. The project sits on the Integra ERP you built alone, so it reuses almost everything in this book. Read this chapter before any Track A interview and run the repo yourself first. In interview language you can call it a large-model application and an agent on top of your own product.",
+      "terms": [
+        {
+          "zh": "智能体",
+          "en": "agent",
+          "hook": "If they say this, Copilot is an agent loop on your own ERP."
+        },
+        {
+          "zh": "大模型应用",
+          "en": "large-model application",
+          "hook": "If they say this, this is Track A proof on a real product."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Where it lives",
+      "bodyEn": "Code lives at Documents/Desktop/integra-copilot, built 24 September 2026. Seventy automated tests, a clean install from requirements.txt, and an evaluation harness already pass. If the ChatGPT Mac app is logged in, model calls can go through the Codex CLI inside that app, so a recruiter can open the README without hunting for your personal key. The demo uses a copy of Integra’s real schema with the same table and column names, but the data is fictional for a textile company in West Java. Say that honestly: real schema shape, synthetic rows.",
+      "id": "s2"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "The fixed agent loop",
+      "bodyEn": "The loop is fixed orchestration around the model: question in Indonesian, Mandarin, or English; language detect and BM25 schema retrieval; then a JSON plan with sql, tax, or refuse. Code then runs the guard, executes, repairs, and writes a grounded summary. Code owns retrieval, guard, database limits, retry budget, and number check. The model only decides whether to answer, which SQL to try, and the wording. That split is the story—do not claim the model alone is safe.",
+      "terms": [
+        {
+          "zh": "编排",
+          "en": "orchestration",
+          "hook": "If they say this, code owns the loop; the model only plans and wordings."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Three locks",
+      "bodyEn": "Never hang security on the prompt alone; the model can be talked into anything. Lock one is the prompt asking for one read-only SELECT from a listed view—and it fails when the model is persuaded. Lock two is the sqlglot guard: it parses SQL, allows only one SELECT from sixteen views, and regenerates SQL from the parse tree so comments and tricks never reach the database. Lock three is role copilot_reader: read-only on copilot views, five-second stop, and views that omit salary, BPJS, NPWP, NIK, phone, email, and bank accounts. An attack needs all three locks to fail together.",
+      "terms": [
+        {
+          "zh": "护栏",
+          "en": "guardrails",
+          "hook": "If they say this, they mean the sqlglot parse lock—not prompt faith."
+        },
+        {
+          "zh": "只读",
+          "en": "read-only",
+          "hook": "If they say this, the DB role and the SQL both stay read-only."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "example",
+      "titleEn": "Number grounding",
+      "bodyEn": "Every number in the free-text summary must appear in a result cell, column total, row count, or the question or SQL. Failures are replaced with a plain template sentence so hallucination cannot invent money. A summary that repeats a cell value such as twelve point five million rupiah can pass; a made-up ninety-nine million fails and is replaced. Grounding is code, not a polite request in the prompt. In interview, say you block invented numbers before the user sees them.",
+      "terms": [
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, grounding blocks invented money numbers in the summary."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Fifty-question eval",
+      "bodyEn": "The file eval/questions.jsonl holds fifty questions: forty-one with hand-written reference SQL across six dates, and nine that must be refused. Scoring compares result tables, not SQL text, and reports strict and relaxed accuracy, refusal accuracy, false refusals, schema recall, latency, tokens, and cost. On 24 September 2026, real GPT-6-Sol Run 1 reached relaxed 78.0% and strict 51.2%; after three fixes from reading nine errors, Run 2 reached relaxed 95.1% and strict 63.4%, with refusal 100% and schema recall 100%. Strict stays lower because the model adds readable extra columns. Run 2 is not a blind test, so the honest next step is new unseen questions—and cite only numbers you have run yourself.",
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, quote the 95.1% relaxed Run 2 only with the honesty caveat."
+        },
+        {
+          "zh": "召回",
+          "en": "recall",
+          "hook": "If they say this here, schema recall hit 100% on Run 2."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "What to say honestly",
+      "bodyEn": "Ninety-second story: you built Integra alone, then Copilot with schema retrieval, JSON plan, three locks, repairs, number grounding, and a fifty-question eval from 78% to 95.1% after reading nine errors. Why views: security, clearer names, and stable APIs if tables change; why a parser if the DB role is already read-only: defence in depth and SQL regenerated from the tree. How you know answers are right: execution-scored evaluation plus SQL shown to humans. What you fixed: date windows, cross-language warehouse names, and credit-limit zero meaning unset. For scale and multi-tenant, set tenant filters in views or RLS on the server—never by the model—and never claim Integra launched or a public user count.",
+      "terms": [
+        {
+          "zh": "视图",
+          "en": "view",
+          "hook": "If they say this, views hide sensitive columns and stabilize the API."
+        },
+        {
+          "zh": "多租户",
+          "en": "multi-tenant",
+          "hook": "If they say this, tenant filters belong in views or RLS—not the model."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Three locks check",
+      "bodyEn": "Name the three locks and one failure mode each.",
+      "prompt": "What are the three locks, and how does each fail?",
+      "choices": [
+        "Prompt (persuaded model), sqlglot guard (parser bug), DB role (over-granted)—attack needs all three to fail",
+        "API key, ChatGPT login, and GitHub push",
+        "BM25 retrieval, JSON plan, and summary grounding",
+        "Relaxed accuracy, strict accuracy, and refusal accuracy"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "护栏",
+          "en": "guardrails",
+          "hook": "If they say this, name all three locks—not only the prompt."
+        }
+      ],
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Eval and grounding",
+      "bodyEn": "Check why tables are scored and what grounding accepts.",
+      "prompt": "Why compare result tables, and which numbers does grounding accept?",
+      "choices": [
+        "Different SQL can be correct if tables match; grounding accepts numbers in a result cell, column total, row count, or question/SQL—failures become a template sentence",
+        "SQL text must match exactly; grounding accepts any number within 10%",
+        "Result tables are smaller files; grounding only keeps README numbers forced to 95.1%",
+        "Comparing SQL always yields 95.1%; grounding deletes the SQL on failure"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, score tables—not exact SQL text."
+        },
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, grounding replaces invented numbers."
+        }
+      ],
+      "id": "s9"
+    }
+  ]
+}

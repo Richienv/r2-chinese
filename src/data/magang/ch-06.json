@@ -1,0 +1,308 @@
+{
+  "id": "06",
+  "index": 6,
+  "part": 2,
+  "partTitleEn": "How a language model works",
+  "titleEn": "Transformer, step by step",
+  "titleSource": "Transformer, selangkah demi selangkah",
+  "sourcePages": "19-24",
+  "when": "Week 1, days 2–4. Core theory; most tested interview chapter.",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Decoder-only stack",
+      "bodyEn": "Every chat model in this book is a decoder-only Transformer. Token ids become embeddings plus a position signal, then many repeated blocks. Inside each block, multi-head self-attention lets each token gather from earlier tokens. Then a feed-forward network processes each token alone. Norm runs before each sub-layer, and the result is added back through a residual path.",
+      "terms": [
+        {
+          "zh": "大模型",
+          "en": "large model",
+          "hook": "If they say this, expect decoder-only Transformer as the default chat stack."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Query key value",
+      "bodyEn": "The same word means different things in different sentences, so each token must look at neighbors. Each token vector is multiplied by three learned matrices into Query, Key, and Value. Query is what this token seeks; Key is its label; Value is what it gives if selected. Softmax runs along each row so each token’s weights sum to 1 after scores are scaled.",
+      "terms": [
+        {
+          "zh": "注意力机制",
+          "en": "attention",
+          "hook": "If they say this, they mean how each token gathers context."
+        },
+        {
+          "zh": "查询",
+          "en": "query",
+          "hook": "If they say this, they mean what this token is looking for."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Attention scale",
+      "bodyEn": "Dot-product variance grows with key dimension. Without dividing by the square root of that dimension, scores explode, softmax saturates, and gradients shrink so training stalls. The sequence-by-sequence score matrix makes long context expensive — double the length and that work grows four times. Interviewers ask why divide by sqrt d almost every Transformer round. Answer: keep scores stable so softmax and gradients stay healthy.",
+      "terms": [
+        {
+          "zh": "注意力机制",
+          "en": "attention",
+          "hook": "If they ask why divide by sqrt d, they mean score stability in attention."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Causal mask",
+      "bodyEn": "Token 3 must not see tokens 4 through 6 during training. Future scores are set to negative infinity so after softmax their weights are exactly zero. Using zero instead of negative infinity still leaves a positive weight after softmax. That causal mask is the decoder rule for next-token training. Say both the rule and the negative-infinity trick in interviews.",
+      "terms": [
+        {
+          "zh": "因果掩码",
+          "en": "causal mask",
+          "hook": "If they say this, they mean blocking peeking at the future."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Multi-head attention",
+      "bodyEn": "Multi-head attention runs several smaller Q, K, V heads side by side, then merges them so different heads learn different relations. Many newer models use grouped-query attention — groups of query heads share one key/value head to save memory. Attention alone does not see order, so RoPE rotates query and key by position angle. After attention, each token goes through a feed-forward alone; residuals keep a direct path, and most models use RMSNorm before each sub-layer.",
+      "terms": [
+        {
+          "zh": "多头注意力",
+          "en": "multi-head attention",
+          "hook": "If they say this, they mean several attentions in parallel."
+        },
+        {
+          "zh": "残差连接",
+          "en": "residual connection",
+          "hook": "If they say this, they mean a direct path through many layers."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "KV cache",
+      "bodyEn": "When writing token 501, keys and values from tokens 1 through 500 do not change, so store them in the KV cache instead of recomputing. Example: 32 layers, 8 KV heads of 128, 16-bit, 8192 tokens is about 1 GiB per user; with 32 KV heads it would be 4 GiB — that is GQA’s saving. Cache size grows with layers, KV heads, head dim, and sequence length. Long chats and high concurrency make GPU memory the main cost.",
+      "terms": [
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this with KV cache, they mean VRAM cost of stored keys and values."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Why decoder-only",
+      "bodyEn": "Encoder-only understands both ways, like BERT. Decoder-only is causal generation, like GPT, Qwen, and LLaMA. Encoder-decoder fits translation and summarization, like T5. Decoder-only wins for chat because one next-token objective scales, causal attention matches generation and KV cache, and prompting covers many tasks. MoE replaces one feed-forward with many experts plus a router, so only a few experts run per token.",
+      "terms": [
+        {
+          "zh": "混合专家",
+          "en": "mixture of experts",
+          "hook": "If they say this, they mean many experts, few active per token."
+        },
+        {
+          "zh": "大模型",
+          "en": "large model",
+          "hook": "If they ask why decoder-only, they mean today’s chat LLMs."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Rough model size",
+      "bodyEn": "Roughly twelve times width squared parameters sit in each Transformer block. Width 4096 and 32 blocks plus embedding lands near a 7B label. Interviewers sometimes ask how people estimate billion-parameter counts from width and depth. Say the twelve d-squared rule, then add embedding and output head. You need the order of magnitude story, not exact accounting.",
+      "terms": [
+        {
+          "zh": "参数",
+          "en": "parameters",
+          "hook": "If they say this with 7B, they mean roughly how width and depth set size."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "QKV roles check",
+      "bodyEn": "Query, key, and value in plain words. This is the core of self-attention. Say what each projection does for one token. Wrong answers mix training hyperparams with attention.",
+      "prompt": "What are query, key, and value for one token?",
+      "choices": [
+        "Query is loss, key is learning rate, value is batch size",
+        "Query is what it seeks; key is its label; value is what it gives if selected",
+        "They are three copies of the embedding matrix after softmax",
+        "Query is past, key is future, value is the causal mask"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Causal mask check",
+      "bodyEn": "Why the mask uses negative infinity before softmax. Zero still becomes a positive weight. Negative infinity becomes weight zero after softmax. That is the decoder rule.",
+      "prompt": "Why does the causal mask use −∞, not 0?",
+      "choices": [
+        "0 before softmax still gets positive weight; −∞ becomes weight 0",
+        "−∞ makes training faster on GPUs",
+        "0 would delete the residual connection",
+        "RoPE requires negative infinity at every position"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Decoder-only stack",
+      "bodyEn": "Every chat model in this book is a decoder-only Transformer. Token ids become embeddings plus a position signal, then many repeated blocks. Inside each block, multi-head self-attention lets each token gather from earlier tokens. Then a feed-forward network processes each token alone. Norm runs before each sub-layer, and the result is added back through a residual path.",
+      "terms": [
+        {
+          "zh": "大模型",
+          "en": "large model",
+          "hook": "If they say this, expect decoder-only Transformer as the default chat stack."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Query key value",
+      "bodyEn": "The same word means different things in different sentences, so each token must look at neighbors. Each token vector is multiplied by three learned matrices into Query, Key, and Value. Query is what this token seeks; Key is its label; Value is what it gives if selected. Softmax runs along each row so each token’s weights sum to 1 after scores are scaled.",
+      "terms": [
+        {
+          "zh": "注意力机制",
+          "en": "attention",
+          "hook": "If they say this, they mean how each token gathers context."
+        },
+        {
+          "zh": "查询",
+          "en": "query",
+          "hook": "If they say this, they mean what this token is looking for."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Attention scale",
+      "bodyEn": "Dot-product variance grows with key dimension. Without dividing by the square root of that dimension, scores explode, softmax saturates, and gradients shrink so training stalls. The sequence-by-sequence score matrix makes long context expensive — double the length and that work grows four times. Interviewers ask why divide by sqrt d almost every Transformer round. Answer: keep scores stable so softmax and gradients stay healthy.",
+      "terms": [
+        {
+          "zh": "注意力机制",
+          "en": "attention",
+          "hook": "If they ask why divide by sqrt d, they mean score stability in attention."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Causal mask",
+      "bodyEn": "Token 3 must not see tokens 4 through 6 during training. Future scores are set to negative infinity so after softmax their weights are exactly zero. Using zero instead of negative infinity still leaves a positive weight after softmax. That causal mask is the decoder rule for next-token training. Say both the rule and the negative-infinity trick in interviews.",
+      "terms": [
+        {
+          "zh": "因果掩码",
+          "en": "causal mask",
+          "hook": "If they say this, they mean blocking peeking at the future."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Multi-head attention",
+      "bodyEn": "Multi-head attention runs several smaller Q, K, V heads side by side, then merges them so different heads learn different relations. Many newer models use grouped-query attention — groups of query heads share one key/value head to save memory. Attention alone does not see order, so RoPE rotates query and key by position angle. After attention, each token goes through a feed-forward alone; residuals keep a direct path, and most models use RMSNorm before each sub-layer.",
+      "terms": [
+        {
+          "zh": "多头注意力",
+          "en": "multi-head attention",
+          "hook": "If they say this, they mean several attentions in parallel."
+        },
+        {
+          "zh": "残差连接",
+          "en": "residual connection",
+          "hook": "If they say this, they mean a direct path through many layers."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "KV cache",
+      "bodyEn": "When writing token 501, keys and values from tokens 1 through 500 do not change, so store them in the KV cache instead of recomputing. Example: 32 layers, 8 KV heads of 128, 16-bit, 8192 tokens is about 1 GiB per user; with 32 KV heads it would be 4 GiB — that is GQA’s saving. Cache size grows with layers, KV heads, head dim, and sequence length. Long chats and high concurrency make GPU memory the main cost.",
+      "terms": [
+        {
+          "zh": "显存",
+          "en": "GPU memory",
+          "hook": "If they say this with KV cache, they mean VRAM cost of stored keys and values."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Why decoder-only",
+      "bodyEn": "Encoder-only understands both ways, like BERT. Decoder-only is causal generation, like GPT, Qwen, and LLaMA. Encoder-decoder fits translation and summarization, like T5. Decoder-only wins for chat because one next-token objective scales, causal attention matches generation and KV cache, and prompting covers many tasks. MoE replaces one feed-forward with many experts plus a router, so only a few experts run per token.",
+      "terms": [
+        {
+          "zh": "混合专家",
+          "en": "mixture of experts",
+          "hook": "If they say this, they mean many experts, few active per token."
+        },
+        {
+          "zh": "大模型",
+          "en": "large model",
+          "hook": "If they ask why decoder-only, they mean today’s chat LLMs."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Rough model size",
+      "bodyEn": "Roughly twelve times width squared parameters sit in each Transformer block. Width 4096 and 32 blocks plus embedding lands near a 7B label. Interviewers sometimes ask how people estimate billion-parameter counts from width and depth. Say the twelve d-squared rule, then add embedding and output head. You need the order of magnitude story, not exact accounting.",
+      "terms": [
+        {
+          "zh": "参数",
+          "en": "parameters",
+          "hook": "If they say this with 7B, they mean roughly how width and depth set size."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "QKV roles check",
+      "bodyEn": "Query, key, and value in plain words. This is the core of self-attention. Say what each projection does for one token. Wrong answers mix training hyperparams with attention.",
+      "prompt": "What are query, key, and value for one token?",
+      "choices": [
+        "Query is loss, key is learning rate, value is batch size",
+        "Query is what it seeks; key is its label; value is what it gives if selected",
+        "They are three copies of the embedding matrix after softmax",
+        "Query is past, key is future, value is the causal mask"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Causal mask check",
+      "bodyEn": "Why the mask uses negative infinity before softmax. Zero still becomes a positive weight. Negative infinity becomes weight zero after softmax. That is the decoder rule.",
+      "prompt": "Why does the causal mask use −∞, not 0?",
+      "choices": [
+        "0 before softmax still gets positive weight; −∞ becomes weight 0",
+        "−∞ makes training faster on GPUs",
+        "0 would delete the residual connection",
+        "RoPE requires negative infinity at every position"
+      ],
+      "answer": 0
+    }
+  ]
+}

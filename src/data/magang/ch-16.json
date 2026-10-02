@@ -1,0 +1,252 @@
+{
+  "id": "16",
+  "index": 16,
+  "part": 3,
+  "partTitleEn": "Build something with a model",
+  "titleEn": "Security and AI rules in China",
+  "titleSource": "Keamanan dan aturan AI di China",
+  "sourcePages": "64-66",
+  "when": "Week 4, day 24",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Compliance mindset",
+      "bodyEn": "This chapter summarizes rules so you can follow office talk — it is not legal advice. When unsure, ask the company’s compliance team. Content and compliance questions show up in every operations interview; Track B needs this most. Keep the Mandarin names of the main laws ready even if you never draft filings. Honest limit: sounding fluent about laws you invent will end a hiring loop faster than saying you would ask compliance.",
+      "terms": [
+        {
+          "zh": "合规",
+          "en": "compliance",
+          "hook": "If they say this, they mean fit the company’s and regulator’s rules."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "PIPL basics",
+      "bodyEn": "China’s Personal Information Protection Law (PIPL), in force 1 Nov 2021, requires clear consent and purpose. Collect as little as possible, and treat sensitive data and cross-border transfers more strictly. For your own Indonesian customers, UU PDP has similar duties. In interviews, say what you would not paste into a public chatbot. Honest limit: a privacy policy slide is useless if logs still store raw ID numbers.",
+      "terms": [
+        {
+          "zh": "个人信息保护法",
+          "en": "PIPL",
+          "hook": "If they say this, they mean China’s personal data protection law."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "Generative AI filing",
+      "bodyEn": "Interim generative-AI measures (15 Aug 2023) require a security assessment and filing (备案) for public generative services, plus lawful training data and content. Algorithm recommendation rules also expect registration and some user control. Deep synthesis rules require consent before editing a real person’s face or voice. Honest limit: internship seats rarely own filings — still know why product launches wait on them.",
+      "terms": [
+        {
+          "zh": "备案",
+          "en": "filing",
+          "hook": "If they say this, they mean register the algorithm or service with the regulator."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "AI content labels",
+      "bodyEn": "AI content labeling rules plus GB 45438-2025, in force 1 Sep 2025, need a visible label plus a hidden metadata label on AI text, images, audio, and video. Turn on the platform’s AI label when you post synthetic media. Platforms must check those marks. Honest limit: a watermark in the corner that you crop away is not compliance.",
+      "terms": [
+        {
+          "zh": "标识",
+          "en": "AI label",
+          "hook": "If they say this, they mean visible and hidden marks that content was AI-made."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "watch",
+      "titleEn": "Advertising Law bans",
+      "bodyEn": "China’s Advertising Law bans absolute claims such as 国家级, 最高级, and 最佳. Brands add longer banned-word lists on top. Put those words in the prompt and also check outputs in code. No guaranteed returns and no medical diagnoses in drafts for finance or health products. Honest limit: “the model usually avoids it” is not a control — code and human review are.",
+      "terms": [
+        {
+          "zh": "广告法",
+          "en": "Advertising Law",
+          "hook": "If they say this, they mean bans absolute boast words in ads."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Data and prompt habits",
+      "bodyEn": "Do not paste customer personal data into tools the company has not approved. Redact ID numbers, phones, and addresses before sending text to a model. Treat outside text as data, use least-privilege tools, and require human approval for risky actions. Test known jailbreaks; enforce rules in code, not only in the prompt. Honest limit: Chapter 9 already showed that prompt-only bans leak.",
+      "terms": [
+        {
+          "zh": "禁用词",
+          "en": "banned words",
+          "hook": "If they say this, they mean words blocked in prompts and checked again in code."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "watch",
+      "titleEn": "Keys and agent safety",
+      "bodyEn": "Put API keys in environment variables, never in the repo. Before any public push, search for sk- and provider prefixes; revoke first if a key leaks. Agents that can cause damage need budgets, allowlists, kill switches, and action logs. Honest limit: perfect AI labels do not save you if secrets and agents are wild.",
+      "terms": [
+        {
+          "zh": "密钥",
+          "en": "API key",
+          "hook": "If they say this, they mean a secret for calling a model API — env vars only."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Which labeling rule",
+      "bodyEn": "Check which rule requires AI-generated content to be labeled, and since when. Visible plus hidden metadata is the 2025 pair.",
+      "prompt": "Which rule requires AI-generated content to be labeled, and since when?",
+      "choices": [
+        "AI content labeling rules (plus GB 45438-2025), in force 1 Sep 2025 — visible label plus hidden metadata label",
+        "PIPL only, since 1 Nov 2021 — labels are optional metadata",
+        "UU PDP Indonesia only, since October 2024 — no China labeling rule",
+        "Advertising Law since 1995 — labels replace banned-word lists"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Three banned ad words",
+      "bodyEn": "Name three Advertising Law absolute words this chapter forbids in ads. Brands may ban more, but these three are the core.",
+      "prompt": "Which three absolute advertising words does this chapter say the Advertising Law forbids?",
+      "choices": [
+        "国家级, 最高级, 最佳",
+        "备案, 量化, 微调",
+        "host, client, server",
+        "TTFT, decode, prefill"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Compliance mindset",
+      "bodyEn": "This chapter summarizes rules so you can follow office talk — it is not legal advice. When unsure, ask the company’s compliance team. Content and compliance questions show up in every operations interview; Track B needs this most. Keep the Mandarin names of the main laws ready even if you never draft filings. Honest limit: sounding fluent about laws you invent will end a hiring loop faster than saying you would ask compliance.",
+      "terms": [
+        {
+          "zh": "合规",
+          "en": "compliance",
+          "hook": "If they say this, they mean fit the company’s and regulator’s rules."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "PIPL basics",
+      "bodyEn": "China’s Personal Information Protection Law (PIPL), in force 1 Nov 2021, requires clear consent and purpose. Collect as little as possible, and treat sensitive data and cross-border transfers more strictly. For your own Indonesian customers, UU PDP has similar duties. In interviews, say what you would not paste into a public chatbot. Honest limit: a privacy policy slide is useless if logs still store raw ID numbers.",
+      "terms": [
+        {
+          "zh": "个人信息保护法",
+          "en": "PIPL",
+          "hook": "If they say this, they mean China’s personal data protection law."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "Generative AI filing",
+      "bodyEn": "Interim generative-AI measures (15 Aug 2023) require a security assessment and filing (备案) for public generative services, plus lawful training data and content. Algorithm recommendation rules also expect registration and some user control. Deep synthesis rules require consent before editing a real person’s face or voice. Honest limit: internship seats rarely own filings — still know why product launches wait on them.",
+      "terms": [
+        {
+          "zh": "备案",
+          "en": "filing",
+          "hook": "If they say this, they mean register the algorithm or service with the regulator."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "AI content labels",
+      "bodyEn": "AI content labeling rules plus GB 45438-2025, in force 1 Sep 2025, need a visible label plus a hidden metadata label on AI text, images, audio, and video. Turn on the platform’s AI label when you post synthetic media. Platforms must check those marks. Honest limit: a watermark in the corner that you crop away is not compliance.",
+      "terms": [
+        {
+          "zh": "标识",
+          "en": "AI label",
+          "hook": "If they say this, they mean visible and hidden marks that content was AI-made."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "watch",
+      "titleEn": "Advertising Law bans",
+      "bodyEn": "China’s Advertising Law bans absolute claims such as 国家级, 最高级, and 最佳. Brands add longer banned-word lists on top. Put those words in the prompt and also check outputs in code. No guaranteed returns and no medical diagnoses in drafts for finance or health products. Honest limit: “the model usually avoids it” is not a control — code and human review are.",
+      "terms": [
+        {
+          "zh": "广告法",
+          "en": "Advertising Law",
+          "hook": "If they say this, they mean bans absolute boast words in ads."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "try",
+      "titleEn": "Data and prompt habits",
+      "bodyEn": "Do not paste customer personal data into tools the company has not approved. Redact ID numbers, phones, and addresses before sending text to a model. Treat outside text as data, use least-privilege tools, and require human approval for risky actions. Test known jailbreaks; enforce rules in code, not only in the prompt. Honest limit: Chapter 9 already showed that prompt-only bans leak.",
+      "terms": [
+        {
+          "zh": "禁用词",
+          "en": "banned words",
+          "hook": "If they say this, they mean words blocked in prompts and checked again in code."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "watch",
+      "titleEn": "Keys and agent safety",
+      "bodyEn": "Put API keys in environment variables, never in the repo. Before any public push, search for sk- and provider prefixes; revoke first if a key leaks. Agents that can cause damage need budgets, allowlists, kill switches, and action logs. Honest limit: perfect AI labels do not save you if secrets and agents are wild.",
+      "terms": [
+        {
+          "zh": "密钥",
+          "en": "API key",
+          "hook": "If they say this, they mean a secret for calling a model API — env vars only."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Which labeling rule",
+      "bodyEn": "Check which rule requires AI-generated content to be labeled, and since when. Visible plus hidden metadata is the 2025 pair.",
+      "prompt": "Which rule requires AI-generated content to be labeled, and since when?",
+      "choices": [
+        "AI content labeling rules (plus GB 45438-2025), in force 1 Sep 2025 — visible label plus hidden metadata label",
+        "PIPL only, since 1 Nov 2021 — labels are optional metadata",
+        "UU PDP Indonesia only, since October 2024 — no China labeling rule",
+        "Advertising Law since 1995 — labels replace banned-word lists"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Three banned ad words",
+      "bodyEn": "Name three Advertising Law absolute words this chapter forbids in ads. Brands may ban more, but these three are the core.",
+      "prompt": "Which three absolute advertising words does this chapter say the Advertising Law forbids?",
+      "choices": [
+        "国家级, 最高级, 最佳",
+        "备案, 量化, 微调",
+        "host, client, server",
+        "TTFT, decode, prefill"
+      ],
+      "answer": 0
+    }
+  ]
+}

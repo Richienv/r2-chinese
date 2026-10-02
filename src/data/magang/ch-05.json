@@ -1,0 +1,246 @@
+{
+  "id": "05",
+  "index": 5,
+  "part": 2,
+  "partTitleEn": "How a language model works",
+  "titleEn": "Tokens and embeddings",
+  "titleSource": "Token dan embedding",
+  "sourcePages": "16-18",
+  "when": "Week 1, day 2. Core theory.",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Why tokenize",
+      "bodyEn": "Models cannot read raw letters the way humans do. A tokenizer cuts text into tokens and maps each piece to a fixed numeric id from a vocabulary. Those ids are the only text the neural net ever sees. Without this step, there is nothing to look up or attend over. Interviewers expect you to name the tool and say what it outputs.",
+      "terms": [
+        {
+          "zh": "分词器",
+          "en": "tokenizer",
+          "hook": "If they say this, they mean the tool that turns text into token ids."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Byte-pair encoding",
+      "bodyEn": "Most chat models use byte-pair encoding. Training starts from characters, then repeatedly merges the most common adjacent pairs until the vocabulary is full. From low, lower, lowest, er merges early, then lo and low, so lower can become low plus er. Unseen words still assemble from known pieces. That is why models handle rare words without a new id for every spelling.",
+      "terms": [
+        {
+          "zh": "分词器",
+          "en": "tokenizer",
+          "hook": "If they say this with BPE, they mean how the vocabulary was built."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Token cost by language",
+      "bodyEn": "Common English words are often one token. One Mandarin character is usually one or two tokens. An Indonesian word like pembayarannya can split into three or four. Models are also weak at counting letters because they never see letters — only pieces. Numbers split oddly too, which is one reason plain models miscalculate without tools.",
+      "terms": [
+        {
+          "zh": "分词器",
+          "en": "tokenizer",
+          "hook": "If they ask why letter counting fails, they mean tokens hide letters."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Embedding matrix",
+      "bodyEn": "Each token id looks up one row in the embedding matrix. That row is the token’s embedding — a learned vector of numbers. Training moves those vectors so similar use lands nearby. A classic demo is king minus man plus woman landing near queen. Geometry, not a dictionary definition, is how the model starts representing meaning.",
+      "terms": [
+        {
+          "zh": "嵌入",
+          "en": "embedding",
+          "hook": "If they say this, they mean mapping an id to a vector."
+        },
+        {
+          "zh": "向量",
+          "en": "vector",
+          "hook": "If they say this, they mean the list of numbers that carries meaning."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Cosine similarity",
+      "bodyEn": "Cosine similarity is the cosine of the angle between two vectors. It is 1 if directions match, 0 if unrelated, and −1 if opposite. For vectors a=(1,2,0) and b=(2,3,1), cosine is about 0.956; against c=(0,−1,3) it is about −0.283. Normalize to length 1 and cosine becomes a plain dot product. RAG ranks chunks with this same nearness idea.",
+      "terms": [
+        {
+          "zh": "余弦相似度",
+          "en": "cosine similarity",
+          "hook": "If they say this, they mean how RAG ranks nearby chunks."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "RAG embeddings",
+      "bodyEn": "Token embedding is one vector per token inside the LLM. Sentence embedding is one vector for a whole chunk from a separate embedding model — that is what RAG uses. Models like BGE-M3 return one vector, often 768 or 1,024 numbers, stored in a vector database. At query time you embed the question, find nearest chunks by cosine, then hand those chunks to the chat model. Say this distinction clearly in interviews.",
+      "terms": [
+        {
+          "zh": "向量数据库",
+          "en": "vector database",
+          "hook": "If they say this, name it when you explain RAG retrieval."
+        },
+        {
+          "zh": "余弦相似度",
+          "en": "cosine similarity",
+          "hook": "If they say this, they mean finding the nearest chunks."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Letter counting check",
+      "bodyEn": "Why letter counting is hard for token-based models. Pick the mechanism, not a GPU myth. Tokens hide letters from the network. That is the interview answer.",
+      "prompt": "Why can a model struggle to count letters in a word?",
+      "choices": [
+        "Because GPUs cannot process Unicode",
+        "Because it never sees letters — only token pieces",
+        "Because cosine similarity deletes characters",
+        "Because BPE always keeps every word as one token"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "RAG embedding check",
+      "bodyEn": "Which embedding RAG actually uses at retrieval time. Token embeddings live inside the chat LLM. Sentence embeddings come from a separate model. That distinction is the whole point of this check.",
+      "prompt": "Which kind of embedding does RAG use?",
+      "choices": [
+        "Token embeddings from the chat LLM’s first layer only",
+        "Sentence embeddings from a separate embedding model or API",
+        "Softmax probabilities over the vocabulary",
+        "Random vectors refreshed every request"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Why tokenize",
+      "bodyEn": "Models cannot read raw letters the way humans do. A tokenizer cuts text into tokens and maps each piece to a fixed numeric id from a vocabulary. Those ids are the only text the neural net ever sees. Without this step, there is nothing to look up or attend over. Interviewers expect you to name the tool and say what it outputs.",
+      "terms": [
+        {
+          "zh": "分词器",
+          "en": "tokenizer",
+          "hook": "If they say this, they mean the tool that turns text into token ids."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Byte-pair encoding",
+      "bodyEn": "Most chat models use byte-pair encoding. Training starts from characters, then repeatedly merges the most common adjacent pairs until the vocabulary is full. From low, lower, lowest, er merges early, then lo and low, so lower can become low plus er. Unseen words still assemble from known pieces. That is why models handle rare words without a new id for every spelling.",
+      "terms": [
+        {
+          "zh": "分词器",
+          "en": "tokenizer",
+          "hook": "If they say this with BPE, they mean how the vocabulary was built."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Token cost by language",
+      "bodyEn": "Common English words are often one token. One Mandarin character is usually one or two tokens. An Indonesian word like pembayarannya can split into three or four. Models are also weak at counting letters because they never see letters — only pieces. Numbers split oddly too, which is one reason plain models miscalculate without tools.",
+      "terms": [
+        {
+          "zh": "分词器",
+          "en": "tokenizer",
+          "hook": "If they ask why letter counting fails, they mean tokens hide letters."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "Embedding matrix",
+      "bodyEn": "Each token id looks up one row in the embedding matrix. That row is the token’s embedding — a learned vector of numbers. Training moves those vectors so similar use lands nearby. A classic demo is king minus man plus woman landing near queen. Geometry, not a dictionary definition, is how the model starts representing meaning.",
+      "terms": [
+        {
+          "zh": "嵌入",
+          "en": "embedding",
+          "hook": "If they say this, they mean mapping an id to a vector."
+        },
+        {
+          "zh": "向量",
+          "en": "vector",
+          "hook": "If they say this, they mean the list of numbers that carries meaning."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Cosine similarity",
+      "bodyEn": "Cosine similarity is the cosine of the angle between two vectors. It is 1 if directions match, 0 if unrelated, and −1 if opposite. For vectors a=(1,2,0) and b=(2,3,1), cosine is about 0.956; against c=(0,−1,3) it is about −0.283. Normalize to length 1 and cosine becomes a plain dot product. RAG ranks chunks with this same nearness idea.",
+      "terms": [
+        {
+          "zh": "余弦相似度",
+          "en": "cosine similarity",
+          "hook": "If they say this, they mean how RAG ranks nearby chunks."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "RAG embeddings",
+      "bodyEn": "Token embedding is one vector per token inside the LLM. Sentence embedding is one vector for a whole chunk from a separate embedding model — that is what RAG uses. Models like BGE-M3 return one vector, often 768 or 1,024 numbers, stored in a vector database. At query time you embed the question, find nearest chunks by cosine, then hand those chunks to the chat model. Say this distinction clearly in interviews.",
+      "terms": [
+        {
+          "zh": "向量数据库",
+          "en": "vector database",
+          "hook": "If they say this, name it when you explain RAG retrieval."
+        },
+        {
+          "zh": "余弦相似度",
+          "en": "cosine similarity",
+          "hook": "If they say this, they mean finding the nearest chunks."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Letter counting check",
+      "bodyEn": "Why letter counting is hard for token-based models. Pick the mechanism, not a GPU myth. Tokens hide letters from the network. That is the interview answer.",
+      "prompt": "Why can a model struggle to count letters in a word?",
+      "choices": [
+        "Because GPUs cannot process Unicode",
+        "Because it never sees letters — only token pieces",
+        "Because cosine similarity deletes characters",
+        "Because BPE always keeps every word as one token"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "RAG embedding check",
+      "bodyEn": "Which embedding RAG actually uses at retrieval time. Token embeddings live inside the chat LLM. Sentence embeddings come from a separate model. That distinction is the whole point of this check.",
+      "prompt": "Which kind of embedding does RAG use?",
+      "choices": [
+        "Token embeddings from the chat LLM’s first layer only",
+        "Sentence embeddings from a separate embedding model or API",
+        "Softmax probabilities over the vocabulary",
+        "Random vectors refreshed every request"
+      ],
+      "answer": 1
+    }
+  ]
+}

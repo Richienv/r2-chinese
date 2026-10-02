@@ -1,0 +1,294 @@
+{
+  "id": "34",
+  "index": 34,
+  "part": 8,
+  "partTitleEn": "The long road",
+  "titleEn": "Mathematics, refreshed",
+  "titleSource": "Matematika, di-refresh",
+  "sourcePages": "130-132",
+  "when": "Days 29–30 with Chapter 33",
+  "sittings": [
+    {
+      "kind": "idea",
+      "titleEn": "Why refresh the math",
+      "bodyEn": "This chapter gathers vectors, logs, probability, and derivatives behind Parts 2 and 3. You do not need contest math; you need ideas clear enough to explain in an interview. A vector is a list of numbers, and a dot product multiplies same-position elements and sums them. Attention scores and cosine similarity are both dot products, so attention is geometry, not magic. Divide a vector by its length when you need a unit direction.",
+      "terms": [
+        {
+          "zh": "向量",
+          "en": "vector",
+          "hook": "If they say this, they mean a list of numbers you can multiply and add."
+        },
+        {
+          "zh": "注意力",
+          "en": "attention",
+          "hook": "If they say this, they mean scoring tokens with a kind of dot product."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "example",
+      "titleEn": "Matrix shapes in attention",
+      "bodyEn": "A matrix of shape (m, n) times (n, p) yields (m, p). Inner sizes must match. Almost every model-code bug breaks this rule first. In attention, Q is (T, d) and K transpose is (d, T), so QK transpose is (T, T)—one score for every token pair. If you cannot say the shapes aloud, you cannot debug the layer.",
+      "terms": [
+        {
+          "zh": "矩阵",
+          "en": "matrix",
+          "hook": "If they say this, check that inner sizes match before you multiply."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Softmax and log probability",
+      "bodyEn": "e to the x is always positive and grows fast, so softmax can turn any score into a positive weight. Temperature scales those scores before the exp. A sentence probability is a product of tiny numbers that underflow to zero, so training uses logs and turns the product into a stable sum. Cross-entropy for one token is minus ln p on the correct answer. A language model estimates the next-token probability one by one; generation samples from that distribution, and training maximizes it.",
+      "terms": [
+        {
+          "zh": "温度",
+          "en": "temperature",
+          "hook": "If they say this, they mean scaling scores before softmax."
+        },
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this, they mean minus log probability of the correct token."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Divide by root d",
+      "bodyEn": "If q and k each have variance near 1, their dot product has variance about d. Dividing by the square root of d brings the variance back near 1 so softmax does not saturate. That single scale is why attention keeps working as width grows. Without it, large d makes one token dominate every row. Say this in one sentence when someone asks why the Transformer has that square-root term.",
+      "terms": [
+        {
+          "zh": "注意力",
+          "en": "attention",
+          "hook": "If they ask about the square-root term, they mean this scale fix."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Backprop and p minus y",
+      "bodyEn": "A derivative measures how output changes when an input moves a little. Backpropagation is just the chain rule through every layer so each weight gets a gradient. For softmax plus cross-entropy, the gradient of loss with respect to logits collapses to p minus y—predicted probability minus the one-hot label. Example: logits (2, 1, 0.5) with correct class 0 give softmax about (0.629, 0.231, 0.140), so the gradient is about (−0.371, 0.231, 0.140). Memorize the shape of that result, not a long proof.",
+      "terms": [
+        {
+          "zh": "反向传播",
+          "en": "backpropagation",
+          "hook": "If they say this, they mean the chain rule that fills every weight’s gradient."
+        },
+        {
+          "zh": "损失函数",
+          "en": "loss function",
+          "hook": "If they say this with softmax, the logit gradient is often p minus y."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "example",
+      "titleEn": "Gradient descent picture",
+      "bodyEn": "Gradient descent moves each weight a small step opposite its gradient. The update is w becomes w minus eta times the gradient. The learning rate eta is the step size—too large overshoots, too small crawls. For f(w)=(w−3)² starting at w=0 with eta=0.1, the first three steps reach 0.600, 1.080, and 1.464. AdamW adapts step size per weight, but the idea stays the same: follow the slope downhill.",
+      "terms": [
+        {
+          "zh": "梯度下降",
+          "en": "gradient descent",
+          "hook": "If they say this, they mean step opposite the gradient."
+        },
+        {
+          "zh": "学习率",
+          "en": "learning rate",
+          "hook": "If they say this, they mean the step size eta."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Matrix shape check",
+      "bodyEn": "Check which product is valid and what shape it has.",
+      "prompt": "What is the shape of (4, 7)×(7, 3)? What about (4, 7)×(4, 3)?",
+      "choices": [
+        "(4, 3) is valid; (4, 7)×(4, 3) is invalid because inner sizes do not match",
+        "Both products are (4, 3)",
+        "Both products are (7, 7)",
+        "(4, 7)×(7, 3) is invalid; (4, 7)×(4, 3) yields (7, 3)"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "矩阵",
+          "en": "matrix",
+          "hook": "If they say this, inner sizes must match."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Logs and p minus y",
+      "bodyEn": "Check why training uses log-probability, and what p minus y is for a tiny example.",
+      "prompt": "Why use log-probability in training, and what is p − y for logits (0, 0) with correct class 1?",
+      "choices": [
+        "Logs stop tiny products from underflowing into a stable sum; softmax gives p=(0.5, 0.5), y=(0, 1), so p − y = (0.5, −0.5)",
+        "Log-probability is always larger than 1; p − y = (0, 0) because the logits are equal",
+        "Interviewers ban eˣ in PyTorch; p − y = (1, −1) without softmax",
+        "Raw probability cannot be differentiated; p − y = (−0.371, 0.231) from the other example"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this, think minus log p on the correct class."
+        }
+      ],
+      "id": "s8"
+    }
+  ],
+  "beats": [
+    {
+      "kind": "idea",
+      "titleEn": "Why refresh the math",
+      "bodyEn": "This chapter gathers vectors, logs, probability, and derivatives behind Parts 2 and 3. You do not need contest math; you need ideas clear enough to explain in an interview. A vector is a list of numbers, and a dot product multiplies same-position elements and sums them. Attention scores and cosine similarity are both dot products, so attention is geometry, not magic. Divide a vector by its length when you need a unit direction.",
+      "terms": [
+        {
+          "zh": "向量",
+          "en": "vector",
+          "hook": "If they say this, they mean a list of numbers you can multiply and add."
+        },
+        {
+          "zh": "注意力",
+          "en": "attention",
+          "hook": "If they say this, they mean scoring tokens with a kind of dot product."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "example",
+      "titleEn": "Matrix shapes in attention",
+      "bodyEn": "A matrix of shape (m, n) times (n, p) yields (m, p). Inner sizes must match. Almost every model-code bug breaks this rule first. In attention, Q is (T, d) and K transpose is (d, T), so QK transpose is (T, T)—one score for every token pair. If you cannot say the shapes aloud, you cannot debug the layer.",
+      "terms": [
+        {
+          "zh": "矩阵",
+          "en": "matrix",
+          "hook": "If they say this, check that inner sizes match before you multiply."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Softmax and log probability",
+      "bodyEn": "e to the x is always positive and grows fast, so softmax can turn any score into a positive weight. Temperature scales those scores before the exp. A sentence probability is a product of tiny numbers that underflow to zero, so training uses logs and turns the product into a stable sum. Cross-entropy for one token is minus ln p on the correct answer. A language model estimates the next-token probability one by one; generation samples from that distribution, and training maximizes it.",
+      "terms": [
+        {
+          "zh": "温度",
+          "en": "temperature",
+          "hook": "If they say this, they mean scaling scores before softmax."
+        },
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this, they mean minus log probability of the correct token."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Divide by root d",
+      "bodyEn": "If q and k each have variance near 1, their dot product has variance about d. Dividing by the square root of d brings the variance back near 1 so softmax does not saturate. That single scale is why attention keeps working as width grows. Without it, large d makes one token dominate every row. Say this in one sentence when someone asks why the Transformer has that square-root term.",
+      "terms": [
+        {
+          "zh": "注意力",
+          "en": "attention",
+          "hook": "If they ask about the square-root term, they mean this scale fix."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Backprop and p minus y",
+      "bodyEn": "A derivative measures how output changes when an input moves a little. Backpropagation is just the chain rule through every layer so each weight gets a gradient. For softmax plus cross-entropy, the gradient of loss with respect to logits collapses to p minus y—predicted probability minus the one-hot label. Example: logits (2, 1, 0.5) with correct class 0 give softmax about (0.629, 0.231, 0.140), so the gradient is about (−0.371, 0.231, 0.140). Memorize the shape of that result, not a long proof.",
+      "terms": [
+        {
+          "zh": "反向传播",
+          "en": "backpropagation",
+          "hook": "If they say this, they mean the chain rule that fills every weight’s gradient."
+        },
+        {
+          "zh": "损失函数",
+          "en": "loss function",
+          "hook": "If they say this with softmax, the logit gradient is often p minus y."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "example",
+      "titleEn": "Gradient descent picture",
+      "bodyEn": "Gradient descent moves each weight a small step opposite its gradient. The update is w becomes w minus eta times the gradient. The learning rate eta is the step size—too large overshoots, too small crawls. For f(w)=(w−3)² starting at w=0 with eta=0.1, the first three steps reach 0.600, 1.080, and 1.464. AdamW adapts step size per weight, but the idea stays the same: follow the slope downhill.",
+      "terms": [
+        {
+          "zh": "梯度下降",
+          "en": "gradient descent",
+          "hook": "If they say this, they mean step opposite the gradient."
+        },
+        {
+          "zh": "学习率",
+          "en": "learning rate",
+          "hook": "If they say this, they mean the step size eta."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Matrix shape check",
+      "bodyEn": "Check which product is valid and what shape it has.",
+      "prompt": "What is the shape of (4, 7)×(7, 3)? What about (4, 7)×(4, 3)?",
+      "choices": [
+        "(4, 3) is valid; (4, 7)×(4, 3) is invalid because inner sizes do not match",
+        "Both products are (4, 3)",
+        "Both products are (7, 7)",
+        "(4, 7)×(7, 3) is invalid; (4, 7)×(4, 3) yields (7, 3)"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "矩阵",
+          "en": "matrix",
+          "hook": "If they say this, inner sizes must match."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Logs and p minus y",
+      "bodyEn": "Check why training uses log-probability, and what p minus y is for a tiny example.",
+      "prompt": "Why use log-probability in training, and what is p − y for logits (0, 0) with correct class 1?",
+      "choices": [
+        "Logs stop tiny products from underflowing into a stable sum; softmax gives p=(0.5, 0.5), y=(0, 1), so p − y = (0.5, −0.5)",
+        "Log-probability is always larger than 1; p − y = (0, 0) because the logits are equal",
+        "Interviewers ban eˣ in PyTorch; p − y = (1, −1) without softmax",
+        "Raw probability cannot be differentiated; p − y = (−0.371, 0.231) from the other example"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "交叉熵",
+          "en": "cross-entropy",
+          "hook": "If they say this, think minus log p on the correct class."
+        }
+      ],
+      "id": "s8"
+    }
+  ]
+}

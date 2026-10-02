@@ -51,6 +51,14 @@
   animation-delay: 0.28s;
 }
 
+.course-gate-list .course-gate-card-in:nth-child(4) {
+  animation-delay: 0.35s;
+}
+
+.course-gate-list .course-gate-card-in:nth-child(5) {
+  animation-delay: 0.42s;
+}
+
 .course-back-in {
   animation: course-back-fade 0.4s ease both;
   animation-delay: 0.3s;

@@ -1,0 +1,308 @@
+{
+  "id": "25",
+  "index": 25,
+  "part": 5,
+  "partTitleEn": "Product and AI operations",
+  "titleEn": "Product documents",
+  "titleSource": "Dokumen produk",
+  "sourcePages": "94-95",
+  "when": "Week 3, day 18 · Track B core",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What a PRD is",
+      "bodyEn": "A requirements note or PRD is one page so engineers and designers know what to build and why. Keep it to five sections: user problem, proposed change, out of scope, how you know it worked, and open questions. The problem states who feels it, how often, and how costly now — with evidence, not opinion. The proposed change says what the user will be able to do, in their words. Leave unknowns visible so the note stays honest.",
+      "terms": [
+        {
+          "zh": "需求说明",
+          "en": "requirements note / PRD",
+          "hook": "If they say this, they mean one page with five sections."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Primary vs guardrail",
+      "bodyEn": "Out of scope lists what you deliberately skip now so the build stays small. How you know it worked needs one primary metric that defines success plus one guardrail metric that must not get worse while you chase the primary. Open questions name what you still do not know and who can answer. Interviewers listen for primary versus guardrail by name. A clean note beats a long deck nobody ships.",
+      "terms": [
+        {
+          "zh": "主指标",
+          "en": "primary metric",
+          "hook": "If they ask success, this number defines it."
+        },
+        {
+          "zh": "护栏指标",
+          "en": "guardrail metric",
+          "hook": "If they ask what must not get worse, this is it."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Competitor analysis method",
+      "bodyEn": "Competitor analysis means ask the same questions of two or three products and score them the same way. That is what makes writing analysis instead of opinion. Cover user and job, three core features, timed experience with screenshots, and business model. Then run a scored test — your twenty questions from Project 6 — name one strength per product, and propose one change for your company’s product. Same questions, same scoring, every time.",
+      "terms": [
+        {
+          "zh": "竞品分析",
+          "en": "competitor analysis",
+          "hook": "If they say this, same questions, same scoring."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "User feedback summary",
+      "bodyEn": "A user-feedback summary collects thirty to fifty real comments, clusters them, and counts each cluster. Quote two real examples per cluster. Pick the one cluster you will tackle first — and why. Counting turns complaints into a priority list instead of anecdotes. Without counts, every loud comment looks equally urgent. Bring the count list into the PRD problem section as evidence.",
+      "terms": [
+        {
+          "zh": "用户反馈",
+          "en": "user feedback",
+          "hook": "If they say this, count clusters into a priority list."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Six AI extras",
+      "bodyEn": "AI features need six extra answers in the note: success measured how, failure UX, unit and scale cost, latency budget, when a human takes over, and what data it touches with which rules. Success means an eval set and checks, not vibes. Failure UX means sources, undoable actions, and escalate to a human. Interviewers look for all six. Missing any one makes the note feel like a prompt demo, not a product.",
+      "terms": [
+        {
+          "zh": "评测集",
+          "en": "eval set",
+          "hook": "If they ask how you measure AI success, name this."
+        },
+        {
+          "zh": "转人工",
+          "en": "escalate to a human",
+          "hook": "If they ask must-human cases, this is the phrase."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "Reply suggestions note",
+      "bodyEn": "Problem: the same price and setup questions eat support time — measure that share from chat logs. Change: suggest one reply staff can send, edit, or discard; never auto-send. Primary metric is share of suggestions sent unchanged or lightly edited; guardrail is satisfaction must not fall. On error, one-click discard into the eval set; refunds, angry messages, and personal data get a flag only — no suggestion. In interview, confirm the problem with data, ship the smallest prompt version with a real-data eval set, design failure UX, know cost and latency, define must-human cases, then small launch and A/B.",
+      "terms": [
+        {
+          "zh": "护栏指标",
+          "en": "guardrail metric",
+          "hook": "If they ask AI design, say this next to the primary."
+        },
+        {
+          "zh": "评测集",
+          "en": "eval set",
+          "hook": "If they ask how you test, from real data, one change per run."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "Interview shape",
+      "bodyEn": "When they ask how you would design an AI feature, walk problem → primary and guardrail → prompt-only MVP → failure UX → cost and latency → must-human rules → small A/B. Keep each step one sentence. Offer the one-page note as proof you can write it. Do not start with model names; start with the user problem and the metric. That order is what product interviewers reward.",
+      "terms": [
+        {
+          "zh": "需求说明",
+          "en": "PRD",
+          "hook": "If they ask for a doc, this five-section page is enough."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "watch",
+      "titleEn": "Common PRD mistakes",
+      "bodyEn": "Do not write a long deck with no out-of-scope section. Do not name a primary metric without a guardrail. Do not skip open questions to look certain. For AI features, do not skip failure UX or human escalation. Do not invent user pain without counts from feedback or logs. A short honest note ships; a vague aspirational deck stalls.",
+      "terms": [
+        {
+          "zh": "护栏指标",
+          "en": "guardrail metric",
+          "hook": "If they catch a missing guardrail, your note is incomplete."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Primary vs guardrail",
+      "bodyEn": "Every PRD success section needs both kinds of metric.",
+      "prompt": "What is the difference between a primary metric and a guardrail metric?",
+      "choices": [
+        "Primary is the one number that defines success; guardrail is a number that must not get worse while you chase the primary",
+        "Primary is always revenue; guardrail is always latency",
+        "Primary is for engineers; guardrail is for designers only",
+        "They are synonyms used interchangeably in competitor analysis"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Six AI questions",
+      "bodyEn": "An AI feature note is incomplete without these six answers.",
+      "prompt": "Which six extra questions must an AI feature note answer?",
+      "choices": [
+        "Success/eval; failure UX; unit and scale cost; latency budget; human escalation; data touched and rules",
+        "Only logo color, font, and launch party date",
+        "Only LeetCode patterns and ACM stdin parsing",
+        "Only GMV, ROAS, and cover CTR"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What a PRD is",
+      "bodyEn": "A requirements note or PRD is one page so engineers and designers know what to build and why. Keep it to five sections: user problem, proposed change, out of scope, how you know it worked, and open questions. The problem states who feels it, how often, and how costly now — with evidence, not opinion. The proposed change says what the user will be able to do, in their words. Leave unknowns visible so the note stays honest.",
+      "terms": [
+        {
+          "zh": "需求说明",
+          "en": "requirements note / PRD",
+          "hook": "If they say this, they mean one page with five sections."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Primary vs guardrail",
+      "bodyEn": "Out of scope lists what you deliberately skip now so the build stays small. How you know it worked needs one primary metric that defines success plus one guardrail metric that must not get worse while you chase the primary. Open questions name what you still do not know and who can answer. Interviewers listen for primary versus guardrail by name. A clean note beats a long deck nobody ships.",
+      "terms": [
+        {
+          "zh": "主指标",
+          "en": "primary metric",
+          "hook": "If they ask success, this number defines it."
+        },
+        {
+          "zh": "护栏指标",
+          "en": "guardrail metric",
+          "hook": "If they ask what must not get worse, this is it."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Competitor analysis method",
+      "bodyEn": "Competitor analysis means ask the same questions of two or three products and score them the same way. That is what makes writing analysis instead of opinion. Cover user and job, three core features, timed experience with screenshots, and business model. Then run a scored test — your twenty questions from Project 6 — name one strength per product, and propose one change for your company’s product. Same questions, same scoring, every time.",
+      "terms": [
+        {
+          "zh": "竞品分析",
+          "en": "competitor analysis",
+          "hook": "If they say this, same questions, same scoring."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "User feedback summary",
+      "bodyEn": "A user-feedback summary collects thirty to fifty real comments, clusters them, and counts each cluster. Quote two real examples per cluster. Pick the one cluster you will tackle first — and why. Counting turns complaints into a priority list instead of anecdotes. Without counts, every loud comment looks equally urgent. Bring the count list into the PRD problem section as evidence.",
+      "terms": [
+        {
+          "zh": "用户反馈",
+          "en": "user feedback",
+          "hook": "If they say this, count clusters into a priority list."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "Six AI extras",
+      "bodyEn": "AI features need six extra answers in the note: success measured how, failure UX, unit and scale cost, latency budget, when a human takes over, and what data it touches with which rules. Success means an eval set and checks, not vibes. Failure UX means sources, undoable actions, and escalate to a human. Interviewers look for all six. Missing any one makes the note feel like a prompt demo, not a product.",
+      "terms": [
+        {
+          "zh": "评测集",
+          "en": "eval set",
+          "hook": "If they ask how you measure AI success, name this."
+        },
+        {
+          "zh": "转人工",
+          "en": "escalate to a human",
+          "hook": "If they ask must-human cases, this is the phrase."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "example",
+      "titleEn": "Reply suggestions note",
+      "bodyEn": "Problem: the same price and setup questions eat support time — measure that share from chat logs. Change: suggest one reply staff can send, edit, or discard; never auto-send. Primary metric is share of suggestions sent unchanged or lightly edited; guardrail is satisfaction must not fall. On error, one-click discard into the eval set; refunds, angry messages, and personal data get a flag only — no suggestion. In interview, confirm the problem with data, ship the smallest prompt version with a real-data eval set, design failure UX, know cost and latency, define must-human cases, then small launch and A/B.",
+      "terms": [
+        {
+          "zh": "护栏指标",
+          "en": "guardrail metric",
+          "hook": "If they ask AI design, say this next to the primary."
+        },
+        {
+          "zh": "评测集",
+          "en": "eval set",
+          "hook": "If they ask how you test, from real data, one change per run."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "Interview shape",
+      "bodyEn": "When they ask how you would design an AI feature, walk problem → primary and guardrail → prompt-only MVP → failure UX → cost and latency → must-human rules → small A/B. Keep each step one sentence. Offer the one-page note as proof you can write it. Do not start with model names; start with the user problem and the metric. That order is what product interviewers reward.",
+      "terms": [
+        {
+          "zh": "需求说明",
+          "en": "PRD",
+          "hook": "If they ask for a doc, this five-section page is enough."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "watch",
+      "titleEn": "Common PRD mistakes",
+      "bodyEn": "Do not write a long deck with no out-of-scope section. Do not name a primary metric without a guardrail. Do not skip open questions to look certain. For AI features, do not skip failure UX or human escalation. Do not invent user pain without counts from feedback or logs. A short honest note ships; a vague aspirational deck stalls.",
+      "terms": [
+        {
+          "zh": "护栏指标",
+          "en": "guardrail metric",
+          "hook": "If they catch a missing guardrail, your note is incomplete."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Primary vs guardrail",
+      "bodyEn": "Every PRD success section needs both kinds of metric.",
+      "prompt": "What is the difference between a primary metric and a guardrail metric?",
+      "choices": [
+        "Primary is the one number that defines success; guardrail is a number that must not get worse while you chase the primary",
+        "Primary is always revenue; guardrail is always latency",
+        "Primary is for engineers; guardrail is for designers only",
+        "They are synonyms used interchangeably in competitor analysis"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Six AI questions",
+      "bodyEn": "An AI feature note is incomplete without these six answers.",
+      "prompt": "Which six extra questions must an AI feature note answer?",
+      "choices": [
+        "Success/eval; failure UX; unit and scale cost; latency budget; human escalation; data touched and rules",
+        "Only logo color, font, and launch party date",
+        "Only LeetCode patterns and ACM stdin parsing",
+        "Only GMV, ROAS, and cover CTR"
+      ],
+      "answer": 0
+    }
+  ]
+}

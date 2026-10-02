@@ -1,0 +1,280 @@
+{
+  "id": "38",
+  "index": 38,
+  "part": 9,
+  "partTitleEn": "Reference",
+  "titleEn": "Thirty days, one by one",
+  "titleSource": "Tiga puluh hari, satu per satu",
+  "sourcePages": "145-146",
+  "when": "Every morning",
+  "sittings": [
+    {
+      "kind": "idea",
+      "titleEn": "Daily rhythm",
+      "bodyEn": "Each day in the thirty-day plan stacks reading, build or apply work, LeetCode, and something to ship. Keep a fixed morning rhythm: open the day’s chapter pages, do the project step before optional reading, then finish two coding problems. If time is short, finish the project and skip extra reading—shipping beats polishing notes. Catch-up days (7, 14, 21, 28) exist so backlog does not silently pile into interview week. Use this chapter as week-level intent, then open the day list only for the concrete tasks.",
+      "terms": [
+        {
+          "zh": "每日节奏",
+          "en": "daily rhythm",
+          "hook": "If they say this, they mean project first, then two coding problems."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Week 1 foundations",
+      "bodyEn": "Week 1 is for environment, Track B outreach, and the first two projects. On Day 1 read Chapters 1–3 and 32, finish your BOSS profile, message the apply-now list, and code LeetCode 1 and 49. Days 2–4 walk Karpathy and Chapters 4–8 so Project 2 can download data and run about 200 training steps. Day 5 starts Project 1 with Chapters 9–10 and thirty labeled messages; Day 6 ships Project 1 v1–v3 and a full Project 2 run with three experiments. Day 7 is catch-up: both READMEs and a three-minute Mandarin explanation of attention, plus two repeated problems.",
+      "terms": [
+        {
+          "zh": "BOSS直聘",
+          "en": "BOSS Zhipin",
+          "hook": "If they say this on Day 1, finish the profile before more reading."
+        },
+        {
+          "zh": "注意力",
+          "en": "attention",
+          "hook": "If they say this on Day 7, explain it in Mandarin for three minutes."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Week 2 knowledge base",
+      "bodyEn": "Week 2 is Project 3 end to end: collect documents, build the index, measure retrieval, then apply. Day 8 reads Chapter 11’s first half and collects knowledge-base documents with sources and dates; Day 9 finishes Chapter 11, cleans text, and builds the index with careful chunking. Day 10 reads Chapter 12 and writes thirty questions before searching; Day 11 measures recall and tries three chunk sizes. Day 12 checks answers, writes the README, and applies to StepFun. Day 13 drills Chapter 28 points 1–3 by writing softmax and attention from memory; Day 14 is catch-up with self-checks from Chapters 4–12 and the Project 3 video.",
+      "terms": [
+        {
+          "zh": "知识库",
+          "en": "knowledge base",
+          "hook": "If they say this, Week 2 is collecting documents with sources and dates."
+        },
+        {
+          "zh": "召回",
+          "en": "recall",
+          "hook": "If they say this on Day 11, measure retrieval hit quality."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Week 3 agent and ops",
+      "bodyEn": "Week 3 builds Project 4, starts Project 6, and only then updates the CV. Days 15–16 label twenty listings, run the agent, read logs, and write the Project 6 brief with Chapter 23 operations ideas. Days 17–18 measure a second Project 4 run, build the LangGraph version, and continue competitor work from Chapters 24–25. Day 19 finishes the MCP server path and video, then applies to Youchuan and Shenzhi; Day 20 finishes the Project 6 retrospective. Day 21 is catch-up: read Chapter 39 and move finished work to completed on the CV.",
+      "terms": [
+        {
+          "zh": "MCP",
+          "en": "Model Context Protocol",
+          "hook": "If they say this on Day 19, finish the server path and video."
+        },
+        {
+          "zh": "复盘",
+          "en": "retrospective",
+          "hook": "If they say this on Day 20, close Project 6 with measured notes."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Week 4 interviews",
+      "bodyEn": "Week 4 is Project 5, interview bank, and live follow-up. Days 22–24 write toward two hundred fine-tuning examples, build data, and train on a rented GPU while watching GPU memory. Day 25 scores Project 5 and starts Chapter 29’s textbook-question bank; Day 26 records five stories from Chapters 29–30. Day 27 does a mock self-introduction with a Chinese classmate who interrupts. Day 28 finalizes the CV and follows every open thread; Days 29–30 read Chapters 33–34, run interviews, and keep two coding problems a day.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this in Week 4, they mean Project 5 examples and training."
+        },
+        {
+          "zh": "自我介绍",
+          "en": "self-introduction",
+          "hook": "If they say this on Day 27, rehearse with interruptions."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "When the week slips",
+      "bodyEn": "The plan is dense on purpose; slipping a day is normal if you protect the ship gates. Never let catch-up days absorb new scope—use Days 7, 14, 21, and 28 only to close READMEs, videos, self-checks, and CV honesty. Prefer applying with a running Project 3 or 4 over perfect notes for chapters you already practiced in code. Keep LeetCode as the non-negotiable daily minimum so Part 6 does not restart from zero. Re-enter the plan at the current week’s purpose, not by replaying every missed one-liner.",
+      "terms": [
+        {
+          "zh": "优先级",
+          "en": "priority",
+          "hook": "If they say this, ship and apply beat polished notes."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Catch-up days",
+      "bodyEn": "Check what catch-up days are for.",
+      "prompt": "What are Days 7, 14, 21, and 28 for?",
+      "choices": [
+        "Close READMEs, videos, self-checks, and CV honesty—not new scope",
+        "Start four new projects each catch-up day",
+        "Skip LeetCode forever after Day 7",
+        "Only rewrite company briefs with invented metrics"
+      ],
+      "answer": 0,
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Week purposes",
+      "bodyEn": "Check the main purpose of each week.",
+      "prompt": "Which week map matches the book?",
+      "choices": [
+        "Week 1 foundations and first ships; Week 2 knowledge base; Week 3 agent, ops, honest CV; Week 4 fine-tune, stories, interviews",
+        "Week 1 Ascend kernels; Week 2 ACM medals; Week 3 pretraining; Week 4 campus full-time only",
+        "Week 1 skip BOSS; Week 2 skip Project 3; Week 3 invent GMV; Week 4 no LeetCode",
+        "All four weeks are only visa paperwork"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, Week 4 owns Project 5."
+        }
+      ],
+      "id": "s8"
+    }
+  ],
+  "beats": [
+    {
+      "kind": "idea",
+      "titleEn": "Daily rhythm",
+      "bodyEn": "Each day in the thirty-day plan stacks reading, build or apply work, LeetCode, and something to ship. Keep a fixed morning rhythm: open the day’s chapter pages, do the project step before optional reading, then finish two coding problems. If time is short, finish the project and skip extra reading—shipping beats polishing notes. Catch-up days (7, 14, 21, 28) exist so backlog does not silently pile into interview week. Use this chapter as week-level intent, then open the day list only for the concrete tasks.",
+      "terms": [
+        {
+          "zh": "每日节奏",
+          "en": "daily rhythm",
+          "hook": "If they say this, they mean project first, then two coding problems."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Week 1 foundations",
+      "bodyEn": "Week 1 is for environment, Track B outreach, and the first two projects. On Day 1 read Chapters 1–3 and 32, finish your BOSS profile, message the apply-now list, and code LeetCode 1 and 49. Days 2–4 walk Karpathy and Chapters 4–8 so Project 2 can download data and run about 200 training steps. Day 5 starts Project 1 with Chapters 9–10 and thirty labeled messages; Day 6 ships Project 1 v1–v3 and a full Project 2 run with three experiments. Day 7 is catch-up: both READMEs and a three-minute Mandarin explanation of attention, plus two repeated problems.",
+      "terms": [
+        {
+          "zh": "BOSS直聘",
+          "en": "BOSS Zhipin",
+          "hook": "If they say this on Day 1, finish the profile before more reading."
+        },
+        {
+          "zh": "注意力",
+          "en": "attention",
+          "hook": "If they say this on Day 7, explain it in Mandarin for three minutes."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Week 2 knowledge base",
+      "bodyEn": "Week 2 is Project 3 end to end: collect documents, build the index, measure retrieval, then apply. Day 8 reads Chapter 11’s first half and collects knowledge-base documents with sources and dates; Day 9 finishes Chapter 11, cleans text, and builds the index with careful chunking. Day 10 reads Chapter 12 and writes thirty questions before searching; Day 11 measures recall and tries three chunk sizes. Day 12 checks answers, writes the README, and applies to StepFun. Day 13 drills Chapter 28 points 1–3 by writing softmax and attention from memory; Day 14 is catch-up with self-checks from Chapters 4–12 and the Project 3 video.",
+      "terms": [
+        {
+          "zh": "知识库",
+          "en": "knowledge base",
+          "hook": "If they say this, Week 2 is collecting documents with sources and dates."
+        },
+        {
+          "zh": "召回",
+          "en": "recall",
+          "hook": "If they say this on Day 11, measure retrieval hit quality."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Week 3 agent and ops",
+      "bodyEn": "Week 3 builds Project 4, starts Project 6, and only then updates the CV. Days 15–16 label twenty listings, run the agent, read logs, and write the Project 6 brief with Chapter 23 operations ideas. Days 17–18 measure a second Project 4 run, build the LangGraph version, and continue competitor work from Chapters 24–25. Day 19 finishes the MCP server path and video, then applies to Youchuan and Shenzhi; Day 20 finishes the Project 6 retrospective. Day 21 is catch-up: read Chapter 39 and move finished work to completed on the CV.",
+      "terms": [
+        {
+          "zh": "MCP",
+          "en": "Model Context Protocol",
+          "hook": "If they say this on Day 19, finish the server path and video."
+        },
+        {
+          "zh": "复盘",
+          "en": "retrospective",
+          "hook": "If they say this on Day 20, close Project 6 with measured notes."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Week 4 interviews",
+      "bodyEn": "Week 4 is Project 5, interview bank, and live follow-up. Days 22–24 write toward two hundred fine-tuning examples, build data, and train on a rented GPU while watching GPU memory. Day 25 scores Project 5 and starts Chapter 29’s textbook-question bank; Day 26 records five stories from Chapters 29–30. Day 27 does a mock self-introduction with a Chinese classmate who interrupts. Day 28 finalizes the CV and follows every open thread; Days 29–30 read Chapters 33–34, run interviews, and keep two coding problems a day.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this in Week 4, they mean Project 5 examples and training."
+        },
+        {
+          "zh": "自我介绍",
+          "en": "self-introduction",
+          "hook": "If they say this on Day 27, rehearse with interruptions."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "When the week slips",
+      "bodyEn": "The plan is dense on purpose; slipping a day is normal if you protect the ship gates. Never let catch-up days absorb new scope—use Days 7, 14, 21, and 28 only to close READMEs, videos, self-checks, and CV honesty. Prefer applying with a running Project 3 or 4 over perfect notes for chapters you already practiced in code. Keep LeetCode as the non-negotiable daily minimum so Part 6 does not restart from zero. Re-enter the plan at the current week’s purpose, not by replaying every missed one-liner.",
+      "terms": [
+        {
+          "zh": "优先级",
+          "en": "priority",
+          "hook": "If they say this, ship and apply beat polished notes."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Catch-up days",
+      "bodyEn": "Check what catch-up days are for.",
+      "prompt": "What are Days 7, 14, 21, and 28 for?",
+      "choices": [
+        "Close READMEs, videos, self-checks, and CV honesty—not new scope",
+        "Start four new projects each catch-up day",
+        "Skip LeetCode forever after Day 7",
+        "Only rewrite company briefs with invented metrics"
+      ],
+      "answer": 0,
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Week purposes",
+      "bodyEn": "Check the main purpose of each week.",
+      "prompt": "Which week map matches the book?",
+      "choices": [
+        "Week 1 foundations and first ships; Week 2 knowledge base; Week 3 agent, ops, honest CV; Week 4 fine-tune, stories, interviews",
+        "Week 1 Ascend kernels; Week 2 ACM medals; Week 3 pretraining; Week 4 campus full-time only",
+        "Week 1 skip BOSS; Week 2 skip Project 3; Week 3 invent GMV; Week 4 no LeetCode",
+        "All four weeks are only visa paperwork"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, Week 4 owns Project 5."
+        }
+      ],
+      "id": "s8"
+    }
+  ]
+}

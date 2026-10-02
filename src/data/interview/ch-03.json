@@ -1,0 +1,40 @@
+{
+  "id": "03",
+  "index": 3,
+  "part": 1,
+  "partTitleEn": "Tonight 18:00",
+  "titleEn": "60-second intro",
+  "titleSource": "60-second intro",
+  "sourcePages": "",
+  "when": "Today 18:00",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "interview",
+      "titleEn": "Say the intro slowly",
+      "bodyEn": "One full script. Say it slowly, then stop. Align three things today: what the assistant does each day, who you report to, and whether the time is evening. If you forget, use the short fallback on the next page.",
+      "mandarin": "丁先生您好，我是瑞奇，印度尼西亚人。我现在在浙大读全球 MBA，全日制，英文授课，2027 年 6 月毕业。本科在马来西亚泰莱大学，计算机，一等荣誉。\n2023 到 2025 年，我在印尼 Karunia 集团做运营总监助理，负责公关和客户关系，也协助过设备采购谈判。在那之前，我带 IT 和业务发展，交付过 ERP 和考勤系统。\n我不是职业秘书。我现在自己做 AI 应用，帮企业把信息和流程理清楚。如果做助理，我能做日程、纪要、跟进，还有中文、英文、印尼文的材料。中文是工作沟通，复杂的我会说慢一点。\n我人在紫金港附近。白天有课。工作日晚上和周末可以到。今天想先对齐三件事：这个助理每天做什么，向谁汇报，时间是不是晚上。"
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Fallback if you forget",
+      "bodyEn": "If the long intro sticks, say this shorter line and stop. Do not invent extra claims.",
+      "mandarin": "我是浙大 MBA 在读。之前在印尼给运营总监做助理。我不是职业秘书。晚上和周末可以做日程、纪要和双语材料。"
+    },
+    {
+      "id": "s3",
+      "kind": "check",
+      "titleEn": "Intro check",
+      "bodyEn": "Recall the three things you want to align today after the intro.",
+      "prompt": "After the intro, which three things do you align today?",
+      "choices": [
+        "What the assistant does each day; who you report to; whether the time is evening",
+        "Patent count; funding rounds; a new salary number",
+        "Visa type; social insurance; daytime full-time start date",
+        "Boss private life; chops; government reception as your pitch"
+      ],
+      "answer": 0
+    }
+  ]
+}

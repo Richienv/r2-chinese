@@ -1,0 +1,308 @@
+{
+  "id": "32",
+  "index": 32,
+  "part": 7,
+  "partTitleEn": "Interview",
+  "titleEn": "BOSS Zhipin playbook",
+  "titleSource": "Playbook BOSS 直聘",
+  "sourcePages": "124-126",
+  "when": "Day 1 for profile; 15 minutes daily for messages",
+  "sittings": [
+    {
+      "kind": "idea",
+      "titleEn": "Interviews first",
+      "bodyEn": "BOSS Zhipin is your main daily channel for Chinese internship chats. This playbook covers profile, search, first message, CV send, and what to ignore. Spend Day 1 on the profile, then about fifteen minutes a day on messages. The only early goal is interviews, not perfect replies. Treat every setting as something you set once and then keep clean.",
+      "terms": [
+        {
+          "zh": "BOSS直聘",
+          "en": "BOSS Zhipin",
+          "hook": "If they say this, they mean the main China job app for daily chats."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Three internship slots",
+      "bodyEn": "Set job-expectation slots once: three slots only, all marked internship, cities Hangzhou and Shanghai. For Track A use AI application development or large-model application, plus AI product manager. For Track B use content ops or AIGC ops, plus cross-border e-commerce ops. Delete data analyst, testing, and data-labeling or AI trainer slots because they flood you with wrong posts. Do not leave a full-time campus-hire slot active by mistake.",
+      "terms": [
+        {
+          "zh": "求职期望",
+          "en": "job expectation slots",
+          "hook": "If they say this, they mean the three internship slots you set once."
+        },
+        {
+          "zh": "实习",
+          "en": "internship",
+          "hook": "If they say this, every slot must say this—not full-time campus hire."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Profile and attached CV",
+      "bodyEn": "Write the personal-strengths blurb for AI roles and update it whenever a project finishes. Use the short HR version for HR chats. Fill both work experience and project experience, because an empty section is the first thing recruiters notice. List both degrees in education history so Taylor’s grounds the computer-science bachelor claim. Use a suit headshot, upload the CV for your main track as the attached resume, and check which file BOSS will send before you tap agree.",
+      "mandarin": "浙大全球 MBA 在读，2027 年 6 月毕业，计算机一等荣誉学士。经营 AI 助手产品 WeUseAI，向印尼中小企业和老师销售并交付。每天用 Claude、Codex、Cursor 搭建工具。印尼语母语，英语流利，中文可工作。求 AI 应用或产品运营实习。",
+      "terms": [
+        {
+          "zh": "个人优势",
+          "en": "personal strengths",
+          "hook": "If they say this, they mean the short bio BOSS shows first."
+        },
+        {
+          "zh": "附件简历",
+          "en": "attached resume",
+          "hook": "If they say this, check which file BOSS will send before you agree."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "One keyword search",
+      "bodyEn": "Search one keyword per run and clear stuck filter chips—that is why test-engineer junk appeared before. Set job type to internship every time, then check days-per-week and internship duration before you message. Your rare edge keywords are Indonesia, Indonesian language, and Southeast Asia, searched one at a time. Also rotate going-global, agent, AI Agent, large-model application, AI product, AIGC ops, cross-border e-commerce, and TikTok Shop. Never paste several keywords into one string.",
+      "terms": [
+        {
+          "zh": "求职类型",
+          "en": "job type filter",
+          "hook": "If they say this, set it to internship every search."
+        },
+        {
+          "zh": "出海",
+          "en": "going global",
+          "hook": "If they say this, many Hangzhou teams mean overseas expansion."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Greeting and nationality",
+      "bodyEn": "Replace the default greeting under message settings so the first message is one to three lines whose only job is a reply. After that default, add one job-specific line. For Lingjing Wanwei AI, lead with Indonesian. For Tonghuashun agent posts, say you are not an ACM medalist. Raise nationality with HR first because they can answer; with engineers, raise it on the second or third message.",
+      "mandarin": "您好，我是浙大 GMBA 在读，计算机科学本科，2027 年 6 月毕业，人在杭州。想了解一下这个岗位，方便聊聊吗？",
+      "terms": [
+        {
+          "zh": "打招呼语",
+          "en": "greeting message",
+          "hook": "If they say this, they mean the default first message—replace it before you spam it."
+        },
+        {
+          "zh": "HR",
+          "en": "human resources",
+          "hook": "If they say this, raise nationality here first."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "Ignore junk, keep a log",
+      "bodyEn": "Ignore mass templates sent twice, especially soft “your background fits” lines for C++ or operator roles that do not fit—tap not interested and move on. Ignore part-time tutoring, voice rooms, and other paid side work, because your residence permit does not allow it. Ignore mismatched campus full-time posts whose graduation year is wrong. Log one line per chat with date, company, role, contact, what you sent, reply, next step, and follow-up date, then review every Sunday.",
+      "terms": [
+        {
+          "zh": "不感兴趣",
+          "en": "not interested",
+          "hook": "If they say this, one tap is enough—no reply needed."
+        },
+        {
+          "zh": "兼职",
+          "en": "part-time side job",
+          "hook": "If they say this, ignore it—illegal on your permit."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Expectation slots",
+      "bodyEn": "Check which Track A and Track B expectation slots match this playbook.",
+      "prompt": "Which Track A / Track B expectation slots match the book?",
+      "choices": [
+        "Track A: AI application development or large-model application, and AI product manager; Track B: content ops or AIGC ops, and cross-border e-commerce ops — all internship in Hangzhou/Shanghai",
+        "Only data analyst, testing, and data-labeling or AI trainer",
+        "Only full-time campus slots with no city set",
+        "Only C++ operator and ACM-only agent roles"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "求职期望",
+          "en": "job expectations",
+          "hook": "If they say this, three internship slots only."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Agree and nationality",
+      "bodyEn": "Check the two rules that protect your CV send and your first hard question.",
+      "prompt": "Which pair matches the book: why check the file before agree, and when to raise nationality?",
+      "choices": [
+        "Check the file so the recruiter gets the CV for your main track; raise nationality with HR first, and with engineers on the second or third message",
+        "Agree auto-picks the newest file; raise nationality only in the first engineer greeting",
+        "Agree changes your visa; never mention nationality on BOSS",
+        "Agree publishes salda.id numbers; wait until a signed 2027 offer"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "同意",
+          "en": "agree / send CV",
+          "hook": "If they say this, check the attached file first."
+        }
+      ],
+      "id": "s8"
+    }
+  ],
+  "beats": [
+    {
+      "kind": "idea",
+      "titleEn": "Interviews first",
+      "bodyEn": "BOSS Zhipin is your main daily channel for Chinese internship chats. This playbook covers profile, search, first message, CV send, and what to ignore. Spend Day 1 on the profile, then about fifteen minutes a day on messages. The only early goal is interviews, not perfect replies. Treat every setting as something you set once and then keep clean.",
+      "terms": [
+        {
+          "zh": "BOSS直聘",
+          "en": "BOSS Zhipin",
+          "hook": "If they say this, they mean the main China job app for daily chats."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Three internship slots",
+      "bodyEn": "Set job-expectation slots once: three slots only, all marked internship, cities Hangzhou and Shanghai. For Track A use AI application development or large-model application, plus AI product manager. For Track B use content ops or AIGC ops, plus cross-border e-commerce ops. Delete data analyst, testing, and data-labeling or AI trainer slots because they flood you with wrong posts. Do not leave a full-time campus-hire slot active by mistake.",
+      "terms": [
+        {
+          "zh": "求职期望",
+          "en": "job expectation slots",
+          "hook": "If they say this, they mean the three internship slots you set once."
+        },
+        {
+          "zh": "实习",
+          "en": "internship",
+          "hook": "If they say this, every slot must say this—not full-time campus hire."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Profile and attached CV",
+      "bodyEn": "Write the personal-strengths blurb for AI roles and update it whenever a project finishes. Use the short HR version for HR chats. Fill both work experience and project experience, because an empty section is the first thing recruiters notice. List both degrees in education history so Taylor’s grounds the computer-science bachelor claim. Use a suit headshot, upload the CV for your main track as the attached resume, and check which file BOSS will send before you tap agree.",
+      "mandarin": "浙大全球 MBA 在读，2027 年 6 月毕业，计算机一等荣誉学士。经营 AI 助手产品 WeUseAI，向印尼中小企业和老师销售并交付。每天用 Claude、Codex、Cursor 搭建工具。印尼语母语，英语流利，中文可工作。求 AI 应用或产品运营实习。",
+      "terms": [
+        {
+          "zh": "个人优势",
+          "en": "personal strengths",
+          "hook": "If they say this, they mean the short bio BOSS shows first."
+        },
+        {
+          "zh": "附件简历",
+          "en": "attached resume",
+          "hook": "If they say this, check which file BOSS will send before you agree."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "One keyword search",
+      "bodyEn": "Search one keyword per run and clear stuck filter chips—that is why test-engineer junk appeared before. Set job type to internship every time, then check days-per-week and internship duration before you message. Your rare edge keywords are Indonesia, Indonesian language, and Southeast Asia, searched one at a time. Also rotate going-global, agent, AI Agent, large-model application, AI product, AIGC ops, cross-border e-commerce, and TikTok Shop. Never paste several keywords into one string.",
+      "terms": [
+        {
+          "zh": "求职类型",
+          "en": "job type filter",
+          "hook": "If they say this, set it to internship every search."
+        },
+        {
+          "zh": "出海",
+          "en": "going global",
+          "hook": "If they say this, many Hangzhou teams mean overseas expansion."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Greeting and nationality",
+      "bodyEn": "Replace the default greeting under message settings so the first message is one to three lines whose only job is a reply. After that default, add one job-specific line. For Lingjing Wanwei AI, lead with Indonesian. For Tonghuashun agent posts, say you are not an ACM medalist. Raise nationality with HR first because they can answer; with engineers, raise it on the second or third message.",
+      "mandarin": "您好，我是浙大 GMBA 在读，计算机科学本科，2027 年 6 月毕业，人在杭州。想了解一下这个岗位，方便聊聊吗？",
+      "terms": [
+        {
+          "zh": "打招呼语",
+          "en": "greeting message",
+          "hook": "If they say this, they mean the default first message—replace it before you spam it."
+        },
+        {
+          "zh": "HR",
+          "en": "human resources",
+          "hook": "If they say this, raise nationality here first."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "Ignore junk, keep a log",
+      "bodyEn": "Ignore mass templates sent twice, especially soft “your background fits” lines for C++ or operator roles that do not fit—tap not interested and move on. Ignore part-time tutoring, voice rooms, and other paid side work, because your residence permit does not allow it. Ignore mismatched campus full-time posts whose graduation year is wrong. Log one line per chat with date, company, role, contact, what you sent, reply, next step, and follow-up date, then review every Sunday.",
+      "terms": [
+        {
+          "zh": "不感兴趣",
+          "en": "not interested",
+          "hook": "If they say this, one tap is enough—no reply needed."
+        },
+        {
+          "zh": "兼职",
+          "en": "part-time side job",
+          "hook": "If they say this, ignore it—illegal on your permit."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Expectation slots",
+      "bodyEn": "Check which Track A and Track B expectation slots match this playbook.",
+      "prompt": "Which Track A / Track B expectation slots match the book?",
+      "choices": [
+        "Track A: AI application development or large-model application, and AI product manager; Track B: content ops or AIGC ops, and cross-border e-commerce ops — all internship in Hangzhou/Shanghai",
+        "Only data analyst, testing, and data-labeling or AI trainer",
+        "Only full-time campus slots with no city set",
+        "Only C++ operator and ACM-only agent roles"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "求职期望",
+          "en": "job expectations",
+          "hook": "If they say this, three internship slots only."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Agree and nationality",
+      "bodyEn": "Check the two rules that protect your CV send and your first hard question.",
+      "prompt": "Which pair matches the book: why check the file before agree, and when to raise nationality?",
+      "choices": [
+        "Check the file so the recruiter gets the CV for your main track; raise nationality with HR first, and with engineers on the second or third message",
+        "Agree auto-picks the newest file; raise nationality only in the first engineer greeting",
+        "Agree changes your visa; never mention nationality on BOSS",
+        "Agree publishes salda.id numbers; wait until a signed 2027 offer"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "同意",
+          "en": "agree / send CV",
+          "hook": "If they say this, check the attached file first."
+        }
+      ],
+      "id": "s8"
+    }
+  ]
+}

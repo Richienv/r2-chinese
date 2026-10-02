@@ -1,0 +1,412 @@
+{
+  "id": "35",
+  "index": 35,
+  "part": 7,
+  "partTitleEn": "Interview",
+  "titleEn": "Company briefs",
+  "titleSource": "Brief perusahaan",
+  "sourcePages": "133-138",
+  "when": "Before each interview; refresh facts on the posting day",
+  "sittings": [
+    {
+      "kind": "idea",
+      "titleEn": "How to use briefs",
+      "bodyEn": "One brief per company covers who they are, what to show, what to ask, and what to check. Facts marked first book were checked 23 September 2026, so re-read every posting before the interview. The question “Why choose us?” is only strong when you bring one real product fact from this chapter. Never invent a product line you did not verify. Keep each brief short enough to rehearse aloud in two minutes.",
+      "terms": [
+        {
+          "zh": "为什么选择我们？",
+          "en": "Why choose us?",
+          "hook": "If they say this, bring one real product fact plus one change."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Alibaba Future Life Lab",
+      "bodyEn": "Taobao and Tmall Group built Future Life Lab for large models, multimodal work, and AI-native apps. March 2025 demos included merchant AIGC and image-to-video. Show Project 6A, Project 1, and WeUseAI stills. Ask whether the work faces consumers or merchants. Rehearse one product fact so “Why choose us?” is not empty.",
+      "terms": [
+        {
+          "zh": "未来生活实验室",
+          "en": "Future Life Lab",
+          "hook": "If they say this, they mean Taotian large-model and AIGC work."
+        },
+        {
+          "zh": "AIGC",
+          "en": "AI-generated content",
+          "hook": "If they say this, show merchant content demos you can open."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Lingjing, Feishu, TikTok",
+      "bodyEn": "Lingjing Wanwei AI is overseas short-drama ops with Indonesian as a plus—show TroLive and Project 6, then ask which markets and platforms. Feishu is ByteDance’s office suite for prompt design, chat QA, SOPs, and ClaudeCode—show Project 1 then Project 4, and ask HR about foreign students before you apply. TikTok Shop Indonesia strategy ops wants Indonesia seller strategy. For Shanghai seats, call 0571-88209209 about the internship permit before you accept.",
+      "terms": [
+        {
+          "zh": "灵境万维 AI",
+          "en": "Lingjing Wanwei AI",
+          "hook": "If they say this, lead with Indonesian and overseas short-drama ops."
+        },
+        {
+          "zh": "飞书",
+          "en": "Feishu / Lark",
+          "hook": "If they say this, they mean ByteDance’s office suite and chat QA."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "ISpark and Tonghuashun",
+      "bodyEn": "ISpark (Yuanqian Yaoxiang) builds AI video systems in Hangzhou—show video-prompt before-and-after work, and ask whether PR content is Mandarin-only. Tonghuashun runs iWencai on HithinkGPT; the rival is Miaoxiang from East Money. Show Project 6B on twenty questions and ask about daily pay. Be ready to say you are not an ACM medalist if the agent post expects one.",
+      "terms": [
+        {
+          "zh": "同花顺",
+          "en": "Tonghuashun",
+          "hook": "If they say this, they mean iWencai on HithinkGPT—ask daily pay."
+        },
+        {
+          "zh": "元乾曜象",
+          "en": "ISpark",
+          "hook": "If they say this, they mean Hangzhou AI video systems."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Ant and Maycur",
+      "bodyEn": "Ant runs Alipay with AI lines Ling, Ant Afu, and Abao. Ask whether your June 2027 graduation fits before forms, because the portal often wants October to November 2027 graduates. Maycur sells expense software to finance teams with AI receipt reading. Show a seven-day invoice-mistake sprint and ask brand versus leads. Clear the graduation gate before you spend time on the form.",
+      "terms": [
+        {
+          "zh": "支付宝",
+          "en": "Alipay",
+          "hook": "If they say this, Ant’s AI lines sit on this product."
+        },
+        {
+          "zh": "每刻报销",
+          "en": "Maycur",
+          "hook": "If they say this, they mean expense software with AI receipt reading."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Youchuan and StepFun",
+      "bodyEn": "Youchuan Chuhai builds AI decision systems for cross-border e-commerce with a four-step agent loop and JSON outputs. Show Project 4 with logs and one failure, and ask how much of the role is self-written code. StepFun is a Shanghai model company known for Step multimodal models. Show Projects 3 and 4 plus your MCP server, ask about MCP or A2A, and check the Shanghai permit. Both are strong Track A targets if the gates clear.",
+      "terms": [
+        {
+          "zh": "有船出海",
+          "en": "Youchuan Chuhai",
+          "hook": "If they say this, show Project 4 logs and one failure."
+        },
+        {
+          "zh": "阶跃星辰",
+          "en": "StepFun",
+          "hook": "If they say this, show RAG, agents, and MCP—and check Shanghai."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Shenzhi and Binjiang",
+      "bodyEn": "Shenzhi Tech posts AI-native product and agent work in Python and Java at high daily pay. Ask which agent scenes and confirm five days, two months, and Shanghai. ZJU Binjiang research institute is LLM algorithm research at 150 to 200 per day. Use your ZJU student status, ask the research direction, and show Projects 2 and 5. Research seats still need honest Track C language from Chapter 33.",
+      "terms": [
+        {
+          "zh": "深至科技",
+          "en": "Shenzhi Tech",
+          "hook": "If they say this, confirm days, months, Shanghai, and agent scenes."
+        },
+        {
+          "zh": "浙大滨江研究院",
+          "en": "ZJU Binjiang institute",
+          "hook": "If they say this, they mean LLM algorithm research near campus."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "Huawei and AIDC",
+      "bodyEn": "Huawei builds Ascend chips with CANN, Huawei Cloud, and Pangu models; many messages are campus full-time from teams in Binjiang Changhe. On the application side, show fine-tuning, RAG, evaluation, and AI-assisted testing from Projects 3 to 5. Ask first whether a foreign fresh graduate can join Huawei campus hiring. Alibaba International Forward Youth requires at least one Southeast Asian language and lists Indonesian first—the only posting where being Indonesian is required. Show Project 1, Project 4, and WeUseAI, then ask whether the two-application quota is shared across batches at 0571-28285927 or bravo@aidc.alibaba.com.",
+      "terms": [
+        {
+          "zh": "校招",
+          "en": "campus hiring",
+          "hook": "If they say this at Huawei, ask whether a foreign fresh graduate can join."
+        },
+        {
+          "zh": "阿里国际",
+          "en": "Alibaba International",
+          "hook": "If they say Forward Youth, Indonesian is listed first on purpose."
+        }
+      ],
+      "id": "s8"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Show, ask, gate",
+      "bodyEn": "For every company, rehearse one show item, one ask line, and one gate. Show means a finished project or a one-page product breakdown you can open. Ask means a question that proves you read the product, such as consumer versus merchant, chat QA automation, or research direction. Gate means graduation year, Shanghai or Hangzhou permit, five-day weeks, pay, or the AIDC two-slot quota. If the gate fails, stop politely and do not force a bad seat.",
+      "terms": [
+        {
+          "zh": "日薪",
+          "en": "daily pay",
+          "hook": "If they say this, confirm the number before you accept."
+        },
+        {
+          "zh": "实习加注",
+          "en": "internship endorsement",
+          "hook": "If they say this, it is a Shanghai or Hangzhou permit gate."
+        }
+      ],
+      "id": "s9"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Alibaba and AIDC facts",
+      "bodyEn": "Check which facts match Future Life Lab and Forward Youth.",
+      "prompt": "Which pair matches Future Life Lab and AIDC Forward Youth?",
+      "choices": [
+        "Future Life Lab is Taotian work on large models/AIGC for merchants; Forward Youth requires a Southeast Asian language and lists Indonesian first",
+        "Future Life Lab is Huawei Ascend; Forward Youth is Tonghuashun iWencai only",
+        "Future Life Lab is Feishu chat QA; Forward Youth bans Indonesian speakers",
+        "Future Life Lab is Maycur expense AI; Forward Youth shares no quota questions"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "未来生活实验室",
+          "en": "Future Life Lab",
+          "hook": "If they say this, think Taotian AIGC for merchants."
+        }
+      ],
+      "id": "s10"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Gates before you apply",
+      "bodyEn": "Check the gates you must clear before Huawei campus hiring and Shanghai seats.",
+      "prompt": "Which gates match the book for Huawei and Shanghai roles?",
+      "choices": [
+        "Ask whether a foreign fresh graduate can join Huawei campus hiring; call about the Shanghai internship permit before accepting Shanghai seats",
+        "Skip all passport questions; Shanghai needs no permit call",
+        "Huawei campus hiring always accepts foreign passports; only Hangzhou needs a call",
+        "Wait until after you sign, then ask HR about graduation year"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "校招",
+          "en": "campus hiring",
+          "hook": "If they say this at Huawei, clear the passport gate first."
+        }
+      ],
+      "id": "s11"
+    }
+  ],
+  "beats": [
+    {
+      "kind": "idea",
+      "titleEn": "How to use briefs",
+      "bodyEn": "One brief per company covers who they are, what to show, what to ask, and what to check. Facts marked first book were checked 23 September 2026, so re-read every posting before the interview. The question “Why choose us?” is only strong when you bring one real product fact from this chapter. Never invent a product line you did not verify. Keep each brief short enough to rehearse aloud in two minutes.",
+      "terms": [
+        {
+          "zh": "为什么选择我们？",
+          "en": "Why choose us?",
+          "hook": "If they say this, bring one real product fact plus one change."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Alibaba Future Life Lab",
+      "bodyEn": "Taobao and Tmall Group built Future Life Lab for large models, multimodal work, and AI-native apps. March 2025 demos included merchant AIGC and image-to-video. Show Project 6A, Project 1, and WeUseAI stills. Ask whether the work faces consumers or merchants. Rehearse one product fact so “Why choose us?” is not empty.",
+      "terms": [
+        {
+          "zh": "未来生活实验室",
+          "en": "Future Life Lab",
+          "hook": "If they say this, they mean Taotian large-model and AIGC work."
+        },
+        {
+          "zh": "AIGC",
+          "en": "AI-generated content",
+          "hook": "If they say this, show merchant content demos you can open."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Lingjing, Feishu, TikTok",
+      "bodyEn": "Lingjing Wanwei AI is overseas short-drama ops with Indonesian as a plus—show TroLive and Project 6, then ask which markets and platforms. Feishu is ByteDance’s office suite for prompt design, chat QA, SOPs, and ClaudeCode—show Project 1 then Project 4, and ask HR about foreign students before you apply. TikTok Shop Indonesia strategy ops wants Indonesia seller strategy. For Shanghai seats, call 0571-88209209 about the internship permit before you accept.",
+      "terms": [
+        {
+          "zh": "灵境万维 AI",
+          "en": "Lingjing Wanwei AI",
+          "hook": "If they say this, lead with Indonesian and overseas short-drama ops."
+        },
+        {
+          "zh": "飞书",
+          "en": "Feishu / Lark",
+          "hook": "If they say this, they mean ByteDance’s office suite and chat QA."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "ISpark and Tonghuashun",
+      "bodyEn": "ISpark (Yuanqian Yaoxiang) builds AI video systems in Hangzhou—show video-prompt before-and-after work, and ask whether PR content is Mandarin-only. Tonghuashun runs iWencai on HithinkGPT; the rival is Miaoxiang from East Money. Show Project 6B on twenty questions and ask about daily pay. Be ready to say you are not an ACM medalist if the agent post expects one.",
+      "terms": [
+        {
+          "zh": "同花顺",
+          "en": "Tonghuashun",
+          "hook": "If they say this, they mean iWencai on HithinkGPT—ask daily pay."
+        },
+        {
+          "zh": "元乾曜象",
+          "en": "ISpark",
+          "hook": "If they say this, they mean Hangzhou AI video systems."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Ant and Maycur",
+      "bodyEn": "Ant runs Alipay with AI lines Ling, Ant Afu, and Abao. Ask whether your June 2027 graduation fits before forms, because the portal often wants October to November 2027 graduates. Maycur sells expense software to finance teams with AI receipt reading. Show a seven-day invoice-mistake sprint and ask brand versus leads. Clear the graduation gate before you spend time on the form.",
+      "terms": [
+        {
+          "zh": "支付宝",
+          "en": "Alipay",
+          "hook": "If they say this, Ant’s AI lines sit on this product."
+        },
+        {
+          "zh": "每刻报销",
+          "en": "Maycur",
+          "hook": "If they say this, they mean expense software with AI receipt reading."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Youchuan and StepFun",
+      "bodyEn": "Youchuan Chuhai builds AI decision systems for cross-border e-commerce with a four-step agent loop and JSON outputs. Show Project 4 with logs and one failure, and ask how much of the role is self-written code. StepFun is a Shanghai model company known for Step multimodal models. Show Projects 3 and 4 plus your MCP server, ask about MCP or A2A, and check the Shanghai permit. Both are strong Track A targets if the gates clear.",
+      "terms": [
+        {
+          "zh": "有船出海",
+          "en": "Youchuan Chuhai",
+          "hook": "If they say this, show Project 4 logs and one failure."
+        },
+        {
+          "zh": "阶跃星辰",
+          "en": "StepFun",
+          "hook": "If they say this, show RAG, agents, and MCP—and check Shanghai."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Shenzhi and Binjiang",
+      "bodyEn": "Shenzhi Tech posts AI-native product and agent work in Python and Java at high daily pay. Ask which agent scenes and confirm five days, two months, and Shanghai. ZJU Binjiang research institute is LLM algorithm research at 150 to 200 per day. Use your ZJU student status, ask the research direction, and show Projects 2 and 5. Research seats still need honest Track C language from Chapter 33.",
+      "terms": [
+        {
+          "zh": "深至科技",
+          "en": "Shenzhi Tech",
+          "hook": "If they say this, confirm days, months, Shanghai, and agent scenes."
+        },
+        {
+          "zh": "浙大滨江研究院",
+          "en": "ZJU Binjiang institute",
+          "hook": "If they say this, they mean LLM algorithm research near campus."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "Huawei and AIDC",
+      "bodyEn": "Huawei builds Ascend chips with CANN, Huawei Cloud, and Pangu models; many messages are campus full-time from teams in Binjiang Changhe. On the application side, show fine-tuning, RAG, evaluation, and AI-assisted testing from Projects 3 to 5. Ask first whether a foreign fresh graduate can join Huawei campus hiring. Alibaba International Forward Youth requires at least one Southeast Asian language and lists Indonesian first—the only posting where being Indonesian is required. Show Project 1, Project 4, and WeUseAI, then ask whether the two-application quota is shared across batches at 0571-28285927 or bravo@aidc.alibaba.com.",
+      "terms": [
+        {
+          "zh": "校招",
+          "en": "campus hiring",
+          "hook": "If they say this at Huawei, ask whether a foreign fresh graduate can join."
+        },
+        {
+          "zh": "阿里国际",
+          "en": "Alibaba International",
+          "hook": "If they say Forward Youth, Indonesian is listed first on purpose."
+        }
+      ],
+      "id": "s8"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Show, ask, gate",
+      "bodyEn": "For every company, rehearse one show item, one ask line, and one gate. Show means a finished project or a one-page product breakdown you can open. Ask means a question that proves you read the product, such as consumer versus merchant, chat QA automation, or research direction. Gate means graduation year, Shanghai or Hangzhou permit, five-day weeks, pay, or the AIDC two-slot quota. If the gate fails, stop politely and do not force a bad seat.",
+      "terms": [
+        {
+          "zh": "日薪",
+          "en": "daily pay",
+          "hook": "If they say this, confirm the number before you accept."
+        },
+        {
+          "zh": "实习加注",
+          "en": "internship endorsement",
+          "hook": "If they say this, it is a Shanghai or Hangzhou permit gate."
+        }
+      ],
+      "id": "s9"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Alibaba and AIDC facts",
+      "bodyEn": "Check which facts match Future Life Lab and Forward Youth.",
+      "prompt": "Which pair matches Future Life Lab and AIDC Forward Youth?",
+      "choices": [
+        "Future Life Lab is Taotian work on large models/AIGC for merchants; Forward Youth requires a Southeast Asian language and lists Indonesian first",
+        "Future Life Lab is Huawei Ascend; Forward Youth is Tonghuashun iWencai only",
+        "Future Life Lab is Feishu chat QA; Forward Youth bans Indonesian speakers",
+        "Future Life Lab is Maycur expense AI; Forward Youth shares no quota questions"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "未来生活实验室",
+          "en": "Future Life Lab",
+          "hook": "If they say this, think Taotian AIGC for merchants."
+        }
+      ],
+      "id": "s10"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Gates before you apply",
+      "bodyEn": "Check the gates you must clear before Huawei campus hiring and Shanghai seats.",
+      "prompt": "Which gates match the book for Huawei and Shanghai roles?",
+      "choices": [
+        "Ask whether a foreign fresh graduate can join Huawei campus hiring; call about the Shanghai internship permit before accepting Shanghai seats",
+        "Skip all passport questions; Shanghai needs no permit call",
+        "Huawei campus hiring always accepts foreign passports; only Hangzhou needs a call",
+        "Wait until after you sign, then ask HR about graduation year"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "校招",
+          "en": "campus hiring",
+          "hook": "If they say this at Huawei, clear the passport gate first."
+        }
+      ],
+      "id": "s11"
+    }
+  ]
+}

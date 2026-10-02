@@ -1,0 +1,308 @@
+{
+  "id": "11",
+  "index": 11,
+  "part": 3,
+  "partTitleEn": "Build something with a model",
+  "titleEn": "RAG from zero",
+  "titleSource": "RAG dari nol",
+  "sourcePages": "42-47",
+  "when": "Week 2, days 8–9",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Why RAG exists",
+      "bodyEn": "A base model’s knowledge freezes at training time and cannot see your private files. Pasting every document into the prompt blows the context window and mixes noise. RAG retrieves a few relevant chunks first, then asks the model to answer only from those sources. In interviews, this is the skill behind 检索增强生成 and 知识库 job lines. Honest limit: RAG helps when facts live in documents — it will not fix bad prompts or weak evaluation by itself.",
+      "terms": [
+        {
+          "zh": "检索增强生成",
+          "en": "RAG",
+          "hook": "If they say this, they mean retrieve relevant docs first, then generate the answer."
+        },
+        {
+          "zh": "知识库",
+          "en": "knowledge base",
+          "hook": "If they say this, they mean the document store the system searches."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "idea",
+      "titleEn": "Offline indexing",
+      "bodyEn": "Offline indexing prepares documents before any user asks a question. You load and clean text, split it into chunks, embed with one model, and store vectors plus metadata such as source and section. Dirty text — repeated headers, flattened tables, bad OCR — kills recall before the model ever answers. Interviewers want to hear this loop as a separate pipeline from online answering. Honest limit: a beautiful online prompt cannot rescue an index built on garbage text.",
+      "terms": [
+        {
+          "zh": "向量化",
+          "en": "embedding",
+          "hook": "If they say this, they mean turn text into vectors for search."
+        },
+        {
+          "zh": "元数据",
+          "en": "metadata",
+          "hook": "If they say this, they mean source, page, and filter fields stored with each chunk."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "Online answering",
+      "bodyEn": "Online answering runs when a user asks a question. Embed the question with the same model used for chunks, retrieve top-k, optionally rerank, put numbered sources in the prompt, then generate. Require citations and a fixed refusal when nothing supports an answer. This is the live half interviewers walk through after offline indexing. Honest limit: if retrieval returns the wrong chunks, generation will look confident and still be wrong.",
+      "terms": [
+        {
+          "zh": "检索",
+          "en": "retrieval",
+          "hook": "If they say this, they mean find the chunks that answer the question."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "Chunking",
+      "bodyEn": "Chunking splits documents into passages large enough to stand alone but small enough to retrieve precisely. Project 3 often starts near 400–800 tokens with overlap so a sentence is not cut twice and lost. Structure-aware splits by heading beat blind character cuts on manuals and FAQs. In interviews, weak recall often starts with chunk size, not the generator. Honest limit: one size never fits every corpus — you must measure Hit@k after each change.",
+      "terms": [
+        {
+          "zh": "切块",
+          "en": "chunking",
+          "hook": "If they say this, they mean split documents into searchable pieces."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "Vector search",
+      "bodyEn": "Vector search embeds the question and finds chunks with the closest vectors, usually by cosine similarity after L2 normalize. Chunk vectors and question vectors must come from the same embedding model — different models live in different spaces. Store the embedder name with the index so nobody mixes models later. Interviews often probe this exact mistake. Honest limit: vectors miss exact product codes and article numbers that keyword search catches.",
+      "terms": [
+        {
+          "zh": "向量检索",
+          "en": "vector search",
+          "hook": "If they say this, they mean find similar chunks by embedding distance."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "idea",
+      "titleEn": "Hybrid search",
+      "bodyEn": "Hybrid search runs BM25 keyword search and vector search, then fuses ranks with Reciprocal Rank Fusion. With constant 60, a chunk ranked 2 on both lists scores 1/(60+2)+1/(60+2)=2/62≈0.0323. Strong on both lists usually beats slightly better on only one. Tax and FAQ corpora need this because users mix paraphrases with exact codes. Honest limit: hybrid still fails if cleaning and chunking are wrong — fusion cannot invent a missing passage.",
+      "terms": [
+        {
+          "zh": "混合检索",
+          "en": "hybrid search",
+          "hook": "If they say this, they mean BM25 plus vectors, then fuse the ranks."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "Refuse when missing",
+      "bodyEn": "Put numbered sources in the prompt and require answers only from them, with citations. Use a fixed refusal line when the answer is not in the documents. Score retrieval with Hit@k and MRR; score answers on faithfulness, correctness, and citation. Add unanswerable questions so the system must say “not in the documents” instead of hallucinating. Honest limit: high Hit@3 with wrong answers usually means generation or refuse rules are broken — not “retrieve more.”",
+      "terms": [
+        {
+          "zh": "拒答",
+          "en": "refusal",
+          "hook": "If they say this, they mean say the answer is not in the documents."
+        },
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, they mean inventing facts that are not in the sources."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "RAG versus fine-tuning",
+      "bodyEn": "Use RAG when knowledge changes, needs sources, or needs access control per user. Use fine-tuning when you need stable behavior, format, tone, or a cheap small model on one fixed task. The two can combine: fine-tune style, RAG for live facts. Job posts often list both, so interviewers listen for when you would not fine-tune. Honest limit: fine-tuning will not keep a price list correct tomorrow — that belongs in retrieval.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, they mean change behavior in weights; use RAG for live facts."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Same embedding model",
+      "bodyEn": "Chunk vectors and question vectors must live in the same space. Different embedding models cannot be compared by cosine similarity. L2 normalize does not make two models match. Pick the reason that matches this chapter.",
+      "prompt": "Why must chunks and questions use the same embedding model?",
+      "choices": [
+        "Vectors from different models live in different spaces and cannot be compared",
+        "Different models always produce identical vectors after L2 normalize",
+        "The reranker only accepts pairs from two different embedders",
+        "BM25 requires the embedding model name in the SQL schema"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Hit high answers wrong",
+      "bodyEn": "Hit@3 can look strong while answers stay wrong. That usually points to generation, faithfulness, or refuse rules — not only more retrieval. Unanswerable questions check that the system refuses instead of hallucinating. Pick the choice that covers both ideas.",
+      "prompt": "Hit@3 is 0.9 but answers are still wrong. Where next — and why add unanswerable questions?",
+      "choices": [
+        "Check generation and refuse rules — unanswerables test refusal instead of hallucination",
+        "Only switch embedding models until Hit@3 hits 1.0 — unanswerables inflate Hit@3",
+        "Delete the refusal sentence so the model always invents — unanswerables force HyDE",
+        "Replace hybrid search with vector-only — unanswerables train negative cosine labels"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Why RAG exists",
+      "bodyEn": "A base model’s knowledge freezes at training time and cannot see your private files. Pasting every document into the prompt blows the context window and mixes noise. RAG retrieves a few relevant chunks first, then asks the model to answer only from those sources. In interviews, this is the skill behind 检索增强生成 and 知识库 job lines. Honest limit: RAG helps when facts live in documents — it will not fix bad prompts or weak evaluation by itself.",
+      "terms": [
+        {
+          "zh": "检索增强生成",
+          "en": "RAG",
+          "hook": "If they say this, they mean retrieve relevant docs first, then generate the answer."
+        },
+        {
+          "zh": "知识库",
+          "en": "knowledge base",
+          "hook": "If they say this, they mean the document store the system searches."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "idea",
+      "titleEn": "Offline indexing",
+      "bodyEn": "Offline indexing prepares documents before any user asks a question. You load and clean text, split it into chunks, embed with one model, and store vectors plus metadata such as source and section. Dirty text — repeated headers, flattened tables, bad OCR — kills recall before the model ever answers. Interviewers want to hear this loop as a separate pipeline from online answering. Honest limit: a beautiful online prompt cannot rescue an index built on garbage text.",
+      "terms": [
+        {
+          "zh": "向量化",
+          "en": "embedding",
+          "hook": "If they say this, they mean turn text into vectors for search."
+        },
+        {
+          "zh": "元数据",
+          "en": "metadata",
+          "hook": "If they say this, they mean source, page, and filter fields stored with each chunk."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "idea",
+      "titleEn": "Online answering",
+      "bodyEn": "Online answering runs when a user asks a question. Embed the question with the same model used for chunks, retrieve top-k, optionally rerank, put numbered sources in the prompt, then generate. Require citations and a fixed refusal when nothing supports an answer. This is the live half interviewers walk through after offline indexing. Honest limit: if retrieval returns the wrong chunks, generation will look confident and still be wrong.",
+      "terms": [
+        {
+          "zh": "检索",
+          "en": "retrieval",
+          "hook": "If they say this, they mean find the chunks that answer the question."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "idea",
+      "titleEn": "Chunking",
+      "bodyEn": "Chunking splits documents into passages large enough to stand alone but small enough to retrieve precisely. Project 3 often starts near 400–800 tokens with overlap so a sentence is not cut twice and lost. Structure-aware splits by heading beat blind character cuts on manuals and FAQs. In interviews, weak recall often starts with chunk size, not the generator. Honest limit: one size never fits every corpus — you must measure Hit@k after each change.",
+      "terms": [
+        {
+          "zh": "切块",
+          "en": "chunking",
+          "hook": "If they say this, they mean split documents into searchable pieces."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "Vector search",
+      "bodyEn": "Vector search embeds the question and finds chunks with the closest vectors, usually by cosine similarity after L2 normalize. Chunk vectors and question vectors must come from the same embedding model — different models live in different spaces. Store the embedder name with the index so nobody mixes models later. Interviews often probe this exact mistake. Honest limit: vectors miss exact product codes and article numbers that keyword search catches.",
+      "terms": [
+        {
+          "zh": "向量检索",
+          "en": "vector search",
+          "hook": "If they say this, they mean find similar chunks by embedding distance."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "idea",
+      "titleEn": "Hybrid search",
+      "bodyEn": "Hybrid search runs BM25 keyword search and vector search, then fuses ranks with Reciprocal Rank Fusion. With constant 60, a chunk ranked 2 on both lists scores 1/(60+2)+1/(60+2)=2/62≈0.0323. Strong on both lists usually beats slightly better on only one. Tax and FAQ corpora need this because users mix paraphrases with exact codes. Honest limit: hybrid still fails if cleaning and chunking are wrong — fusion cannot invent a missing passage.",
+      "terms": [
+        {
+          "zh": "混合检索",
+          "en": "hybrid search",
+          "hook": "If they say this, they mean BM25 plus vectors, then fuse the ranks."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "idea",
+      "titleEn": "Refuse when missing",
+      "bodyEn": "Put numbered sources in the prompt and require answers only from them, with citations. Use a fixed refusal line when the answer is not in the documents. Score retrieval with Hit@k and MRR; score answers on faithfulness, correctness, and citation. Add unanswerable questions so the system must say “not in the documents” instead of hallucinating. Honest limit: high Hit@3 with wrong answers usually means generation or refuse rules are broken — not “retrieve more.”",
+      "terms": [
+        {
+          "zh": "拒答",
+          "en": "refusal",
+          "hook": "If they say this, they mean say the answer is not in the documents."
+        },
+        {
+          "zh": "幻觉",
+          "en": "hallucination",
+          "hook": "If they say this, they mean inventing facts that are not in the sources."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "RAG versus fine-tuning",
+      "bodyEn": "Use RAG when knowledge changes, needs sources, or needs access control per user. Use fine-tuning when you need stable behavior, format, tone, or a cheap small model on one fixed task. The two can combine: fine-tune style, RAG for live facts. Job posts often list both, so interviewers listen for when you would not fine-tune. Honest limit: fine-tuning will not keep a price list correct tomorrow — that belongs in retrieval.",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, they mean change behavior in weights; use RAG for live facts."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Same embedding model",
+      "bodyEn": "Chunk vectors and question vectors must live in the same space. Different embedding models cannot be compared by cosine similarity. L2 normalize does not make two models match. Pick the reason that matches this chapter.",
+      "prompt": "Why must chunks and questions use the same embedding model?",
+      "choices": [
+        "Vectors from different models live in different spaces and cannot be compared",
+        "Different models always produce identical vectors after L2 normalize",
+        "The reranker only accepts pairs from two different embedders",
+        "BM25 requires the embedding model name in the SQL schema"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Hit high answers wrong",
+      "bodyEn": "Hit@3 can look strong while answers stay wrong. That usually points to generation, faithfulness, or refuse rules — not only more retrieval. Unanswerable questions check that the system refuses instead of hallucinating. Pick the choice that covers both ideas.",
+      "prompt": "Hit@3 is 0.9 but answers are still wrong. Where next — and why add unanswerable questions?",
+      "choices": [
+        "Check generation and refuse rules — unanswerables test refusal instead of hallucination",
+        "Only switch embedding models until Hit@3 hits 1.0 — unanswerables inflate Hit@3",
+        "Delete the refusal sentence so the model always invents — unanswerables force HyDE",
+        "Replace hybrid search with vector-only — unanswerables train negative cosine labels"
+      ],
+      "answer": 0
+    }
+  ]
+}

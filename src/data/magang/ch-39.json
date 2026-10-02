@@ -1,0 +1,326 @@
+{
+  "id": "39",
+  "index": 39,
+  "part": 9,
+  "partTitleEn": "Reference",
+  "titleEn": "Keep the CV honest",
+  "titleSource": "Jaga CV tetep jujur",
+  "sourcePages": "147-148",
+  "when": "Day 21, Day 28, and whenever a project finishes",
+  "sittings": [
+    {
+      "kind": "idea",
+      "titleEn": "When to open this",
+      "bodyEn": "Read this on Day 21, Day 28, and every time a project finishes. It prepares every “tell me about this CV line” question before you send a file. The goal is not prettier wording; it is that each personal-project line survives a live repository open. Treat unfinished work as learning notes, not résumé content. If a project fails any honesty gate below, leave it off all three CVs.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal projects",
+          "hook": "If they say this, every line must survive a live repo open."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Four honesty gates",
+      "bodyEn": "A book project enters personal projects only when all four gates are true. Code must run from a clean clone with no secret local hacks. The README must include a dated results table you can defend out loud. You must explain every file in Mandarin without reading the repo as a script, and a two-minute demo video must already exist. Missing any gate means the project stays planned and off the CV.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal projects",
+          "hook": "If they say this, all four gates must already be true."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "Unfinished work kills digs",
+      "bodyEn": "In a project deep dive, the first ask is often “open the repository.” A project that is not there, or that fails to run, ends the interview immediately. List only the stack you actually used and only projects that are finished under the four gates. Never pad with half-built demos, private folders, or “almost done” agents. Honesty here is a survival rule, not a style preference.",
+      "terms": [
+        {
+          "zh": "项目深挖",
+          "en": "project deep dive",
+          "hook": "If they say this, they will open the repo first."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Numbers you must defend",
+      "bodyEn": "For Project 1 keep five checks per version, message count, and model; for Project 2 keep params, vocab, first and last val loss, and three experiments. For Project 3 keep docs, chunks, hit@5, MRR, and correct, faithful, and refused counts. For Project 4 keep first-try valid percent on both runs, flagged count, precision, and recall. For Project 5 keep example count, synthetic share, rank, epochs, and the three-system score. For Project 6 keep account, dates, and best views or completion—or two products, twenty questions, and scores.",
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, quote only numbers you measured yourself."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Flip status when done",
+      "bodyEn": "All three CVs read projects.typ, where book projects start as planned and stay off the printed CV. When a project truly finishes, set status to done, fill results and GitHub, then rebuild the PDFs. Do not hand-edit one CV and leave the others stale. Day 21 is the planned moment to move finished work to completed, and Day 28 is the final pass. If status is still planned, the project must not appear under personal projects.",
+      "terms": [
+        {
+          "zh": "已完成",
+          "en": "completed",
+          "hook": "If they say this, status flips only after all four gates pass."
+        },
+        {
+          "zh": "个人项目",
+          "en": "personal projects",
+          "hook": "If status is still planned, keep it off this section."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "No invented metrics",
+      "bodyEn": "Never invent follower counts, views, GMV, revenue, users, clients, or percentages unless you measured them yourself and they are yours. Never use numbers from salda.id—that page is website copywriting, not audited figures. If you cannot show the measurement path, delete the number and keep a plain factual sentence. Interviewers probe soft metrics first because fake ones collapse fast. Empty honesty beats a shiny fake percentage.",
+      "terms": [
+        {
+          "zh": "GMV",
+          "en": "gross merchandise value",
+          "hook": "If they say this, only quote figures you measured yourself."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Honest role wording",
+      "bodyEn": "For Integra ERP say you were the solo developer, built it from zero, and that it is still in testing—never say it launched, and never cite a user count. For TRO Creative you may claim Salda and the company’s Hermes agent workflow, but do not name client brands. For Karunia Group use head of IT and business-development team and later client relationships; do not call it a family business. For Kambyan Network keep database team lead (internship) and the year 2023 exact. Wrong titles are treated like fake projects.",
+      "terms": [
+        {
+          "zh": "独立开发者",
+          "en": "solo developer",
+          "hook": "If they say this for Integra, also say it is still in testing."
+        },
+        {
+          "zh": "从零搭建",
+          "en": "built from zero",
+          "hook": "If they say this, they mean you built it alone from scratch."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "One page, current files",
+      "bodyEn": "Use at most three bullets per job, each starting with a verb. Drop self-praising adjectives and keep the whole CV to one page. Retire 01A/01B/01C, the agent-engineering CV, and old two-column copies. Send only the three CVs rebuilt on 24 September 2026, including the Chinese CV and HR-track CV only when that track is active. If an older file is still in Downloads, archive it so you cannot attach it by mistake.",
+      "terms": [
+        {
+          "zh": "瑞奇_简历_中文.pdf",
+          "en": "Chinese CV",
+          "hook": "If they ask for a Chinese file, send only the rebuilt 24 September version."
+        }
+      ],
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Four gates check",
+      "bodyEn": "Check what must be true before a project enters the CV.",
+      "prompt": "Which four gates must all be true before a book project enters personal projects?",
+      "choices": [
+        "Clean clone runs, dated README results you can defend, Mandarin file-by-file explanation, and a two-minute demo video",
+        "Pretty screenshots, invented GMV, private folder, and “almost done” status",
+        "Only a GitHub star count and a family-business title",
+        "salda.id website numbers plus an old 01A PDF"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal projects",
+          "hook": "If they say this, all four gates must already pass."
+        }
+      ],
+      "id": "s9"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Integra wording check",
+      "bodyEn": "Check the honest Integra line and the salda.id rule.",
+      "prompt": "Which pair matches honest Integra wording and metrics rules?",
+      "choices": [
+        "Solo developer, built from zero, still in testing, no user count; never quote salda.id website numbers",
+        "Say Integra launched with audited users; quote salda.id GMV freely",
+        "Call Karunia a family business; invent follower counts for Project 6",
+        "Send the old 01A CV; skip the demo video if the README exists"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "独立开发者",
+          "en": "solo developer",
+          "hook": "If they say this for Integra, add still-in-testing."
+        }
+      ],
+      "id": "s10"
+    }
+  ],
+  "beats": [
+    {
+      "kind": "idea",
+      "titleEn": "When to open this",
+      "bodyEn": "Read this on Day 21, Day 28, and every time a project finishes. It prepares every “tell me about this CV line” question before you send a file. The goal is not prettier wording; it is that each personal-project line survives a live repository open. Treat unfinished work as learning notes, not résumé content. If a project fails any honesty gate below, leave it off all three CVs.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal projects",
+          "hook": "If they say this, every line must survive a live repo open."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Four honesty gates",
+      "bodyEn": "A book project enters personal projects only when all four gates are true. Code must run from a clean clone with no secret local hacks. The README must include a dated results table you can defend out loud. You must explain every file in Mandarin without reading the repo as a script, and a two-minute demo video must already exist. Missing any gate means the project stays planned and off the CV.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal projects",
+          "hook": "If they say this, all four gates must already be true."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "Unfinished work kills digs",
+      "bodyEn": "In a project deep dive, the first ask is often “open the repository.” A project that is not there, or that fails to run, ends the interview immediately. List only the stack you actually used and only projects that are finished under the four gates. Never pad with half-built demos, private folders, or “almost done” agents. Honesty here is a survival rule, not a style preference.",
+      "terms": [
+        {
+          "zh": "项目深挖",
+          "en": "project deep dive",
+          "hook": "If they say this, they will open the repo first."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "idea",
+      "titleEn": "Numbers you must defend",
+      "bodyEn": "For Project 1 keep five checks per version, message count, and model; for Project 2 keep params, vocab, first and last val loss, and three experiments. For Project 3 keep docs, chunks, hit@5, MRR, and correct, faithful, and refused counts. For Project 4 keep first-try valid percent on both runs, flagged count, precision, and recall. For Project 5 keep example count, synthetic share, rank, epochs, and the three-system score. For Project 6 keep account, dates, and best views or completion—or two products, twenty questions, and scores.",
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, quote only numbers you measured yourself."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "try",
+      "titleEn": "Flip status when done",
+      "bodyEn": "All three CVs read projects.typ, where book projects start as planned and stay off the printed CV. When a project truly finishes, set status to done, fill results and GitHub, then rebuild the PDFs. Do not hand-edit one CV and leave the others stale. Day 21 is the planned moment to move finished work to completed, and Day 28 is the final pass. If status is still planned, the project must not appear under personal projects.",
+      "terms": [
+        {
+          "zh": "已完成",
+          "en": "completed",
+          "hook": "If they say this, status flips only after all four gates pass."
+        },
+        {
+          "zh": "个人项目",
+          "en": "personal projects",
+          "hook": "If status is still planned, keep it off this section."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "No invented metrics",
+      "bodyEn": "Never invent follower counts, views, GMV, revenue, users, clients, or percentages unless you measured them yourself and they are yours. Never use numbers from salda.id—that page is website copywriting, not audited figures. If you cannot show the measurement path, delete the number and keep a plain factual sentence. Interviewers probe soft metrics first because fake ones collapse fast. Empty honesty beats a shiny fake percentage.",
+      "terms": [
+        {
+          "zh": "GMV",
+          "en": "gross merchandise value",
+          "hook": "If they say this, only quote figures you measured yourself."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Honest role wording",
+      "bodyEn": "For Integra ERP say you were the solo developer, built it from zero, and that it is still in testing—never say it launched, and never cite a user count. For TRO Creative you may claim Salda and the company’s Hermes agent workflow, but do not name client brands. For Karunia Group use head of IT and business-development team and later client relationships; do not call it a family business. For Kambyan Network keep database team lead (internship) and the year 2023 exact. Wrong titles are treated like fake projects.",
+      "terms": [
+        {
+          "zh": "独立开发者",
+          "en": "solo developer",
+          "hook": "If they say this for Integra, also say it is still in testing."
+        },
+        {
+          "zh": "从零搭建",
+          "en": "built from zero",
+          "hook": "If they say this, they mean you built it alone from scratch."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "watch",
+      "titleEn": "One page, current files",
+      "bodyEn": "Use at most three bullets per job, each starting with a verb. Drop self-praising adjectives and keep the whole CV to one page. Retire 01A/01B/01C, the agent-engineering CV, and old two-column copies. Send only the three CVs rebuilt on 24 September 2026, including the Chinese CV and HR-track CV only when that track is active. If an older file is still in Downloads, archive it so you cannot attach it by mistake.",
+      "terms": [
+        {
+          "zh": "瑞奇_简历_中文.pdf",
+          "en": "Chinese CV",
+          "hook": "If they ask for a Chinese file, send only the rebuilt 24 September version."
+        }
+      ],
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Four gates check",
+      "bodyEn": "Check what must be true before a project enters the CV.",
+      "prompt": "Which four gates must all be true before a book project enters personal projects?",
+      "choices": [
+        "Clean clone runs, dated README results you can defend, Mandarin file-by-file explanation, and a two-minute demo video",
+        "Pretty screenshots, invented GMV, private folder, and “almost done” status",
+        "Only a GitHub star count and a family-business title",
+        "salda.id website numbers plus an old 01A PDF"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal projects",
+          "hook": "If they say this, all four gates must already pass."
+        }
+      ],
+      "id": "s9"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Integra wording check",
+      "bodyEn": "Check the honest Integra line and the salda.id rule.",
+      "prompt": "Which pair matches honest Integra wording and metrics rules?",
+      "choices": [
+        "Solo developer, built from zero, still in testing, no user count; never quote salda.id website numbers",
+        "Say Integra launched with audited users; quote salda.id GMV freely",
+        "Call Karunia a family business; invent follower counts for Project 6",
+        "Send the old 01A CV; skip the demo video if the README exists"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "独立开发者",
+          "en": "solo developer",
+          "hook": "If they say this for Integra, add still-in-testing."
+        }
+      ],
+      "id": "s10"
+    }
+  ]
+}

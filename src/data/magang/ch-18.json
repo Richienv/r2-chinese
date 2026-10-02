@@ -1,0 +1,202 @@
+{
+  "id": "18",
+  "index": 18,
+  "part": 4,
+  "partTitleEn": "Six projects",
+  "titleEn": "Project 2 · Mini GPT with PyTorch",
+  "titleSource": "Project 2 · GPT mini pakai PyTorch",
+  "sourcePages": "72-74",
+  "when": "Week 1, days 3–7, evening sessions. About 12 hours.",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What this proves",
+      "bodyEn": "Project 2 proves you understand the Transformer and can write PyTorch, not only call an API. You build and train a small character-level GPT on Indonesian text while typing along with Karpathy’s video. When someone asks for 大模型原理, this is the artifact you open. Honest limit: a pasted notebook you cannot explain line by line is worse than no project.",
+      "terms": [
+        {
+          "zh": "大模型原理",
+          "en": "LLM fundamentals",
+          "hook": "If they say this, they mean how a large model works under the hood."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Type while you watch",
+      "bodyEn": "Watch Andrej Karpathy’s “Let’s build GPT” while typing in a notebook — do not paste his finished file. Typing yourself makes tensor shapes stick when you explain later. Download a few million characters of Indonesian Wikipedia into a text file for training. Honest limit: watching without typing feels fast and leaves you empty in a live code review.",
+      "terms": []
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Read the model",
+      "bodyEn": "Read the model top to bottom: attention head, multi-head, block with residual and LayerNorm, then embeddings and the final linear. Point at the causal mask and be ready to say what happens without it. Run a short smoke test and check whether first loss is near ln of the vocab size. Honest limit: if you cannot point at the mask, keep reading before the long train.",
+      "terms": [
+        {
+          "zh": "因果掩码",
+          "en": "causal mask",
+          "hook": "If they say this, they mean block attention from looking at future tokens."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Train and experiment",
+      "bodyEn": "Run the full train and copy loss into a table for train and validation at fixed steps. If validation rises while training falls, say you are overfitting — that is a good finding. Change one thing at a time: fewer layers, shorter block size, then temperature. Honest limit: three knobs changed together give you no experiment story.",
+      "terms": [
+        {
+          "zh": "过拟合",
+          "en": "overfitting",
+          "hook": "If they say this, they mean train loss falls while validation loss rises."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "What done looks like",
+      "bodyEn": "Done means a roughly million-parameter GPT you can explain line by line, including the causal mask. You have a loss table, three honest experiments, and sample text from the model. The README states real differences from Qwen: characters not subwords, learned positions not RoPE, few blocks, no instruction tuning. Honest limit: claiming “like Qwen” without those differences will get challenged.",
+      "terms": []
+    },
+    {
+      "id": "s6",
+      "kind": "watch",
+      "titleEn": "Mask and first loss",
+      "bodyEn": "Without the causal mask, loss can fall near zero without learning language, because the model peeks ahead. First loss should be about ln V because probability starts evenly spread. Your smoke-test numbers will not match any book exactly — report yours. Never put unfinished training on the CV as done. Honest limit: inventing a matching loss is worse than an ugly real table.",
+      "terms": [
+        {
+          "zh": "自注意力",
+          "en": "self-attention",
+          "hook": "If they say this, they mean tokens attend to other tokens in the sequence."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Why first loss is ln V",
+      "bodyEn": "At the start the model spreads probability evenly over the vocabulary. Cross-entropy for that uniform guess is about ln of the vocab size.",
+      "prompt": "Why should the first training loss be about ln of the vocabulary size?",
+      "choices": [
+        "Because the optimizer starts at learning rate ln(V)",
+        "Because at the start the model spreads probability evenly over V characters",
+        "Because causal masking multiplies loss by ln(V)",
+        "Because LayerNorm forces loss to ln(V)"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Causal mask job",
+      "bodyEn": "The causal mask stops attention from looking ahead. Without it, loss can collapse without learning language.",
+      "prompt": "What does the causal mask prevent, and what happens without it?",
+      "choices": [
+        "It prevents overfitting; without it validation loss always rises",
+        "It prevents looking at future characters; without it loss can fall near zero without learning",
+        "It prevents using more than four layers",
+        "It prevents temperature sampling above 1.0"
+      ],
+      "answer": 1
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "What this proves",
+      "bodyEn": "Project 2 proves you understand the Transformer and can write PyTorch, not only call an API. You build and train a small character-level GPT on Indonesian text while typing along with Karpathy’s video. When someone asks for 大模型原理, this is the artifact you open. Honest limit: a pasted notebook you cannot explain line by line is worse than no project.",
+      "terms": [
+        {
+          "zh": "大模型原理",
+          "en": "LLM fundamentals",
+          "hook": "If they say this, they mean how a large model works under the hood."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "try",
+      "titleEn": "Type while you watch",
+      "bodyEn": "Watch Andrej Karpathy’s “Let’s build GPT” while typing in a notebook — do not paste his finished file. Typing yourself makes tensor shapes stick when you explain later. Download a few million characters of Indonesian Wikipedia into a text file for training. Honest limit: watching without typing feels fast and leaves you empty in a live code review.",
+      "terms": []
+    },
+    {
+      "id": "s3",
+      "kind": "try",
+      "titleEn": "Read the model",
+      "bodyEn": "Read the model top to bottom: attention head, multi-head, block with residual and LayerNorm, then embeddings and the final linear. Point at the causal mask and be ready to say what happens without it. Run a short smoke test and check whether first loss is near ln of the vocab size. Honest limit: if you cannot point at the mask, keep reading before the long train.",
+      "terms": [
+        {
+          "zh": "因果掩码",
+          "en": "causal mask",
+          "hook": "If they say this, they mean block attention from looking at future tokens."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "try",
+      "titleEn": "Train and experiment",
+      "bodyEn": "Run the full train and copy loss into a table for train and validation at fixed steps. If validation rises while training falls, say you are overfitting — that is a good finding. Change one thing at a time: fewer layers, shorter block size, then temperature. Honest limit: three knobs changed together give you no experiment story.",
+      "terms": [
+        {
+          "zh": "过拟合",
+          "en": "overfitting",
+          "hook": "If they say this, they mean train loss falls while validation loss rises."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "idea",
+      "titleEn": "What done looks like",
+      "bodyEn": "Done means a roughly million-parameter GPT you can explain line by line, including the causal mask. You have a loss table, three honest experiments, and sample text from the model. The README states real differences from Qwen: characters not subwords, learned positions not RoPE, few blocks, no instruction tuning. Honest limit: claiming “like Qwen” without those differences will get challenged.",
+      "terms": []
+    },
+    {
+      "id": "s6",
+      "kind": "watch",
+      "titleEn": "Mask and first loss",
+      "bodyEn": "Without the causal mask, loss can fall near zero without learning language, because the model peeks ahead. First loss should be about ln V because probability starts evenly spread. Your smoke-test numbers will not match any book exactly — report yours. Never put unfinished training on the CV as done. Honest limit: inventing a matching loss is worse than an ugly real table.",
+      "terms": [
+        {
+          "zh": "自注意力",
+          "en": "self-attention",
+          "hook": "If they say this, they mean tokens attend to other tokens in the sequence."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "check",
+      "titleEn": "Why first loss is ln V",
+      "bodyEn": "At the start the model spreads probability evenly over the vocabulary. Cross-entropy for that uniform guess is about ln of the vocab size.",
+      "prompt": "Why should the first training loss be about ln of the vocabulary size?",
+      "choices": [
+        "Because the optimizer starts at learning rate ln(V)",
+        "Because at the start the model spreads probability evenly over V characters",
+        "Because causal masking multiplies loss by ln(V)",
+        "Because LayerNorm forces loss to ln(V)"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "s8",
+      "kind": "check",
+      "titleEn": "Causal mask job",
+      "bodyEn": "The causal mask stops attention from looking ahead. Without it, loss can collapse without learning language.",
+      "prompt": "What does the causal mask prevent, and what happens without it?",
+      "choices": [
+        "It prevents overfitting; without it validation loss always rises",
+        "It prevents looking at future characters; without it loss can fall near zero without learning",
+        "It prevents using more than four layers",
+        "It prevents temperature sampling above 1.0"
+      ],
+      "answer": 1
+    }
+  ]
+}

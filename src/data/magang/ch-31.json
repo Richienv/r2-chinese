@@ -1,0 +1,336 @@
+{
+  "id": "31",
+  "index": 31,
+  "part": 7,
+  "partTitleEn": "Interview",
+  "titleEn": "Self-intro, fit questions, and visa answers",
+  "titleSource": "Perkenalan, pertanyaan kecocokan, dan jawaban soal visa",
+  "sourcePages": "121-123",
+  "when": "Week 4, days 25–28",
+  "sittings": [
+    {
+      "kind": "idea",
+      "titleEn": "Speak, do not read",
+      "bodyEn": "This chapter trains your one-minute intro, fit answers, reverse questions, and follow-up. Practice by speaking aloud on Week 4, days 25–28—never read from a screen in the real call. Your availability is November 2026, five days a week, for at least three months. If that changes, update this book, all three CVs, and BOSS in the same hour. Same numbers everywhere, or recruiters catch the mismatch.",
+      "terms": [
+        {
+          "zh": "自我介绍",
+          "en": "self-introduction",
+          "hook": "If they say this, they mean your first speaking minute."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Track B one minute",
+      "bodyEn": "Speak the Track B intro under about seventy seconds without notes. Cover your Chinese name, school, advisor, WeUseAI, Salda, Integra, and your start date. Say your Chinese name first, and say Professor Wang Zhongming once, clearly. Timing matters more than fancy adjectives. Rehearse until the order is automatic.",
+      "mandarin": "您好，我叫瑞奇，来自印度尼西亚，现在是浙江大学管理学院全球 MBA 的学生，2027 年 6 月毕业，导师是王重鸣教授。本科在马来西亚泰莱大学读计算机科学，一等荣誉毕业。我经营一家小公司 WeUseAI，向印尼的中小企业和高校老师销售 AI 助手，从获客、演示、定价到售后都是我自己做。我也通过 WeUseAI 为雅加达的 TRO Creative 开发了主播预订平台 Salda，并用 Hermes 为他们搭建了智能体工作流。另外，我一个人从零开发了面向印尼纺织服装中小企业的 ERP 系统 Integra。我可以 11 月到岗，每周 5 天，连续 3 个月以上。谢谢。",
+      "terms": [
+        {
+          "zh": "瑞奇",
+          "en": "Richie",
+          "hook": "If they say this, they mean your Chinese name—say it first."
+        },
+        {
+          "zh": "王重鸣",
+          "en": "Prof. Wang Zhongming",
+          "hook": "If they say this, they mean your advisor—say it once, clearly."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Track A project swap",
+      "bodyEn": "For Track A, swap ops lines for finished projects only. Say what you finished this month, each with code and measured results—mini GPT, Indonesian tax RAG, TikTok agent with MCP, and a Qwen LoRA fine-tune. Fit questions check stickiness, language, documents, and plans. Answer each under ninety seconds in four clear parts. Most fit questions land in the HR round.",
+      "mandarin": "这个月我从零实现了一个小型 GPT，做了一个印尼税务问答的 RAG、一个 TikTok 商品检查的 Agent 并接入了 MCP，还对 Qwen 小模型做了 LoRA 微调，每个都有代码和实测数据。",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, they mean a small tune like LoRA, not full pretraining."
+        },
+        {
+          "zh": "HR 面",
+          "en": "HR interview",
+          "hook": "If they say this, they mean the round where fit questions land."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Fit answers that stick",
+      "bodyEn": "Why intern if you have a company: WeUseAI hours are left, internship days get full focus, and you want to learn how a large team builds AI products. Why choose us: one real product fact from Chapter 35 and one change you would make. Is your Chinese enough: working Mandarin, ZJU course score 84, HSK 4 in December, writing checked with tools and teammates. Duration and pay: November 2026, five days a week, three months or more; the posting range is fine, and daily internships often sit at 200–300 yuan per day.",
+      "mandarin": "你有自己的公司，为什么还要实习？\n为什么选择我们？\n你的中文够用吗？\n能实习多久？每周几天？\n期望薪资？",
+      "terms": [
+        {
+          "zh": "日薪",
+          "en": "daily pay",
+          "hook": "If they say this, they mean intern pay per day, not monthly salary."
+        },
+        {
+          "zh": "为什么选择我们？",
+          "en": "Why choose us?",
+          "hook": "If they say this, they want one real product fact plus one change."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Weakness, plan, clash, proud",
+      "bodyEn": "Weakness: spoken technical Mandarin is slower than your English—you prepare key terms and write a meeting summary after. Career plan: learn how AI products are built at scale, then lead AI products for Southeast Asia; this role is the first step. When opinions clash: align on goals and metrics first, test both options on the same data, then follow the result. Most proud: use Story 1 (WeUseAI) or Story 5 (test harness) from Chapter 30, under ninety seconds.",
+      "mandarin": "你的缺点是什么？\n你的职业规划？\n遇到意见分歧怎么办？\n你最有成就感的一件事？",
+      "terms": [
+        {
+          "zh": "你的缺点是什么？",
+          "en": "What is your weakness?",
+          "hook": "If they say this, they want weakness plus a fix—not only the wound."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Visa answer script",
+      "bodyEn": "Foreign-student internship is a document question—do not invent a visa story. Memorize the Mandarin script on this page word for word. You are a foreign student at Zhejiang University and may intern. Before day one, the school adds an internship note to your residence permit; after an offer it takes about thirty days. You will provide materials and cooperate with the company.",
+      "mandarin": "我是浙江大学在读的外籍学生，可以实习，需要在入职前由学校为居留许可办理实习加注。拿到实习录用通知后，大约需要 30 天。我会配合公司提供材料。",
+      "terms": [
+        {
+          "zh": "实习加注",
+          "en": "internship endorsement",
+          "hook": "If they say this, they mean the permit stamp that makes the internship legal."
+        },
+        {
+          "zh": "居留许可",
+          "en": "residence permit",
+          "hook": "If they say this, they mean the document the school annotates."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Ask two, then follow",
+      "bodyEn": "Always ask two reverse questions—they show you care about the work, not only the offer. Good ones: day-to-day work and how the team judges a good intern; which models and tools they use; path to full-time; who handles internship-annotation documents. Same day, send a short thank-you on BOSS or WeChat. If five working days pass with no news, ask once about the timeline. When an offer arrives, get pay, days, start date, and duration in writing, and ask HR for annotation documents the same day—the thirty-day clock starts there.",
+      "terms": [
+        {
+          "zh": "反问",
+          "en": "questions you ask back",
+          "hook": "If they say this, they mean your reverse questions—always ask two."
+        },
+        {
+          "zh": "转正",
+          "en": "conversion to full-time",
+          "hook": "If they say this, they mean staying after the internship."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Track B timing",
+      "bodyEn": "Check your Track B intro timing target.",
+      "prompt": "What is the timing target for the Track B self-introduction?",
+      "choices": [
+        "Under 70 seconds",
+        "Exactly 3 minutes",
+        "Under 30 seconds with no projects named",
+        "No timing — only email the script"
+      ],
+      "answer": 0,
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Visa and reverse questions",
+      "bodyEn": "Check the visa clock and how many reverse questions you always ask.",
+      "prompt": "Which pair matches the book: visa timing after an offer, and reverse questions?",
+      "choices": [
+        "About 30 days after the offer for the internship endorsement; always ask two reverse questions",
+        "Same-day visa stamp with no school step; always ask zero reverse questions",
+        "One year after graduation; always ask five salary questions first",
+        "No documents needed; reverse questions are only for ACM medalists"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "实习加注",
+          "en": "internship endorsement",
+          "hook": "If they say this, they mean the ~30-day permit note after an offer."
+        },
+        {
+          "zh": "反问",
+          "en": "questions you ask back",
+          "hook": "If they say this, they mean ask two, not zero."
+        }
+      ],
+      "id": "s9"
+    }
+  ],
+  "beats": [
+    {
+      "kind": "idea",
+      "titleEn": "Speak, do not read",
+      "bodyEn": "This chapter trains your one-minute intro, fit answers, reverse questions, and follow-up. Practice by speaking aloud on Week 4, days 25–28—never read from a screen in the real call. Your availability is November 2026, five days a week, for at least three months. If that changes, update this book, all three CVs, and BOSS in the same hour. Same numbers everywhere, or recruiters catch the mismatch.",
+      "terms": [
+        {
+          "zh": "自我介绍",
+          "en": "self-introduction",
+          "hook": "If they say this, they mean your first speaking minute."
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Track B one minute",
+      "bodyEn": "Speak the Track B intro under about seventy seconds without notes. Cover your Chinese name, school, advisor, WeUseAI, Salda, Integra, and your start date. Say your Chinese name first, and say Professor Wang Zhongming once, clearly. Timing matters more than fancy adjectives. Rehearse until the order is automatic.",
+      "mandarin": "您好，我叫瑞奇，来自印度尼西亚，现在是浙江大学管理学院全球 MBA 的学生，2027 年 6 月毕业，导师是王重鸣教授。本科在马来西亚泰莱大学读计算机科学，一等荣誉毕业。我经营一家小公司 WeUseAI，向印尼的中小企业和高校老师销售 AI 助手，从获客、演示、定价到售后都是我自己做。我也通过 WeUseAI 为雅加达的 TRO Creative 开发了主播预订平台 Salda，并用 Hermes 为他们搭建了智能体工作流。另外，我一个人从零开发了面向印尼纺织服装中小企业的 ERP 系统 Integra。我可以 11 月到岗，每周 5 天，连续 3 个月以上。谢谢。",
+      "terms": [
+        {
+          "zh": "瑞奇",
+          "en": "Richie",
+          "hook": "If they say this, they mean your Chinese name—say it first."
+        },
+        {
+          "zh": "王重鸣",
+          "en": "Prof. Wang Zhongming",
+          "hook": "If they say this, they mean your advisor—say it once, clearly."
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Track A project swap",
+      "bodyEn": "For Track A, swap ops lines for finished projects only. Say what you finished this month, each with code and measured results—mini GPT, Indonesian tax RAG, TikTok agent with MCP, and a Qwen LoRA fine-tune. Fit questions check stickiness, language, documents, and plans. Answer each under ninety seconds in four clear parts. Most fit questions land in the HR round.",
+      "mandarin": "这个月我从零实现了一个小型 GPT，做了一个印尼税务问答的 RAG、一个 TikTok 商品检查的 Agent 并接入了 MCP，还对 Qwen 小模型做了 LoRA 微调，每个都有代码和实测数据。",
+      "terms": [
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, they mean a small tune like LoRA, not full pretraining."
+        },
+        {
+          "zh": "HR 面",
+          "en": "HR interview",
+          "hook": "If they say this, they mean the round where fit questions land."
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Fit answers that stick",
+      "bodyEn": "Why intern if you have a company: WeUseAI hours are left, internship days get full focus, and you want to learn how a large team builds AI products. Why choose us: one real product fact from Chapter 35 and one change you would make. Is your Chinese enough: working Mandarin, ZJU course score 84, HSK 4 in December, writing checked with tools and teammates. Duration and pay: November 2026, five days a week, three months or more; the posting range is fine, and daily internships often sit at 200–300 yuan per day.",
+      "mandarin": "你有自己的公司，为什么还要实习？\n为什么选择我们？\n你的中文够用吗？\n能实习多久？每周几天？\n期望薪资？",
+      "terms": [
+        {
+          "zh": "日薪",
+          "en": "daily pay",
+          "hook": "If they say this, they mean intern pay per day, not monthly salary."
+        },
+        {
+          "zh": "为什么选择我们？",
+          "en": "Why choose us?",
+          "hook": "If they say this, they want one real product fact plus one change."
+        }
+      ],
+      "id": "s4"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Weakness, plan, clash, proud",
+      "bodyEn": "Weakness: spoken technical Mandarin is slower than your English—you prepare key terms and write a meeting summary after. Career plan: learn how AI products are built at scale, then lead AI products for Southeast Asia; this role is the first step. When opinions clash: align on goals and metrics first, test both options on the same data, then follow the result. Most proud: use Story 1 (WeUseAI) or Story 5 (test harness) from Chapter 30, under ninety seconds.",
+      "mandarin": "你的缺点是什么？\n你的职业规划？\n遇到意见分歧怎么办？\n你最有成就感的一件事？",
+      "terms": [
+        {
+          "zh": "你的缺点是什么？",
+          "en": "What is your weakness?",
+          "hook": "If they say this, they want weakness plus a fix—not only the wound."
+        }
+      ],
+      "id": "s5"
+    },
+    {
+      "kind": "interview",
+      "titleEn": "Visa answer script",
+      "bodyEn": "Foreign-student internship is a document question—do not invent a visa story. Memorize the Mandarin script on this page word for word. You are a foreign student at Zhejiang University and may intern. Before day one, the school adds an internship note to your residence permit; after an offer it takes about thirty days. You will provide materials and cooperate with the company.",
+      "mandarin": "我是浙江大学在读的外籍学生，可以实习，需要在入职前由学校为居留许可办理实习加注。拿到实习录用通知后，大约需要 30 天。我会配合公司提供材料。",
+      "terms": [
+        {
+          "zh": "实习加注",
+          "en": "internship endorsement",
+          "hook": "If they say this, they mean the permit stamp that makes the internship legal."
+        },
+        {
+          "zh": "居留许可",
+          "en": "residence permit",
+          "hook": "If they say this, they mean the document the school annotates."
+        }
+      ],
+      "id": "s6"
+    },
+    {
+      "kind": "remember",
+      "titleEn": "Ask two, then follow",
+      "bodyEn": "Always ask two reverse questions—they show you care about the work, not only the offer. Good ones: day-to-day work and how the team judges a good intern; which models and tools they use; path to full-time; who handles internship-annotation documents. Same day, send a short thank-you on BOSS or WeChat. If five working days pass with no news, ask once about the timeline. When an offer arrives, get pay, days, start date, and duration in writing, and ask HR for annotation documents the same day—the thirty-day clock starts there.",
+      "terms": [
+        {
+          "zh": "反问",
+          "en": "questions you ask back",
+          "hook": "If they say this, they mean your reverse questions—always ask two."
+        },
+        {
+          "zh": "转正",
+          "en": "conversion to full-time",
+          "hook": "If they say this, they mean staying after the internship."
+        }
+      ],
+      "id": "s7"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Track B timing",
+      "bodyEn": "Check your Track B intro timing target.",
+      "prompt": "What is the timing target for the Track B self-introduction?",
+      "choices": [
+        "Under 70 seconds",
+        "Exactly 3 minutes",
+        "Under 30 seconds with no projects named",
+        "No timing — only email the script"
+      ],
+      "answer": 0,
+      "id": "s8"
+    },
+    {
+      "kind": "check",
+      "titleEn": "Visa and reverse questions",
+      "bodyEn": "Check the visa clock and how many reverse questions you always ask.",
+      "prompt": "Which pair matches the book: visa timing after an offer, and reverse questions?",
+      "choices": [
+        "About 30 days after the offer for the internship endorsement; always ask two reverse questions",
+        "Same-day visa stamp with no school step; always ask zero reverse questions",
+        "One year after graduation; always ask five salary questions first",
+        "No documents needed; reverse questions are only for ACM medalists"
+      ],
+      "answer": 0,
+      "terms": [
+        {
+          "zh": "实习加注",
+          "en": "internship endorsement",
+          "hook": "If they say this, they mean the ~30-day permit note after an offer."
+        },
+        {
+          "zh": "反问",
+          "en": "questions you ask back",
+          "hook": "If they say this, they mean ask two, not zero."
+        }
+      ],
+      "id": "s9"
+    }
+  ]
+}

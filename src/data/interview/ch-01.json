@@ -1,0 +1,47 @@
+{
+  "id": "01",
+  "index": 1,
+  "part": 1,
+  "partTitleEn": "Tonight 18:00",
+  "titleEn": "Three opening lines",
+  "titleSource": "Three opening lines",
+  "sourcePages": "",
+  "when": "Today 18:00",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Not a career secretary",
+      "bodyEn": "Open with who you are not. Then name the Indonesia ops-assistant work. List only calendar, notes, follow-up, and trilingual materials. Chinese is work talk, not native fluency.",
+      "mandarin": "我不是职业秘书。我在印尼给运营总监做过助理。我能做日程、纪要、跟进，以及中文、英文、印尼文材料。中文是工作沟通。"
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "MBA and hours",
+      "bodyEn": "You are a full-time ZJU MBA through June 2027, near Zijingang. Weekday evenings and weekends are possible. Do not promise daytime office today. Check the timetable and what student status allows first.",
+      "mandarin": "我是浙大全日制 MBA，读到 2027 年 6 月，人在紫金港附近。工作日晚上和周末可以到。白天坐班我今天不能答应，要先看课表，也要先看学生身份允许做什么。"
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Make them specify the job",
+      "bodyEn": "Ask what the day looks like, who you report to, and whether 8–12K assumes daytime full-time. Company on the post is 枫翎集团. Place is 杭州市余杭区洋帆中心1幢21楼. Time is today 2026-09-28 18:00 Beijing.",
+      "mandarin": "请先说明：一天主要做什么，向谁汇报，8到12K是不是白天全职的范围。公司是枫翎集团。地点杭州市余杭区洋帆中心1幢21楼。时间是今天2026年9月28日晚上18:00。"
+    },
+    {
+      "id": "s4",
+      "kind": "check",
+      "titleEn": "Opening check",
+      "bodyEn": "Recall the honest opening: not a career secretary; Indonesia ops-assistant; evenings and weekends; do not lock daytime today.",
+      "prompt": "What do you open with?",
+      "choices": [
+        "Not a career secretary; Indonesia ops assistant; evenings/weekends; no daytime promise today",
+        "Career secretary for years; daytime full-time from tomorrow; fluent native Chinese",
+        "Only AI engineer; no assistant work; ignore the 总办 post",
+        "Promise daytime office and a new salary number today"
+      ],
+      "answer": 0
+    }
+  ]
+}

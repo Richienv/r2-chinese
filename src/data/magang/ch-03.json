@@ -1,0 +1,298 @@
+{
+  "id": "03",
+  "index": 3,
+  "part": 1,
+  "partTitleEn": "Map",
+  "titleEn": "One month, the projects, and the daily rhythm",
+  "titleSource": "Sebulan, project-project-nya, dan ritme harian",
+  "sourcePages": "9-11",
+  "when": "Day 1",
+  "sittings": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Month plan",
+      "bodyEn": "Four weeks, six projects, and one daily routine. Application lists run in parallel from week one, so do not wait until you feel ready. Each project takes eight to fourteen hours and ends with a public repo, real numbers, and a one-page write-up. Read this on Day 1, print the week-plan table for your desk, and use Chapter 38 for day-by-day detail.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal project",
+          "hook": "If they say this, a public repo counts only when finished."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Week by week",
+      "bodyEn": "Week 1: learn how models work plus prompting and evaluation; build Projects 1 and 2; apply the apply-now Track B group. Week 2: learn RAG and agents; build Project 3 Indonesian tax Q&A; apply to StepFun once it runs. Week 3: learn MCP, A2A, LangGraph, and ops metrics; build Project 4 listing-checker agent plus MCP and Project 6; apply to Youchuan, Shenzhi, and ask-first seats. Week 4: fine-tuning, serving, interview prep; build Project 5 LoRA; follow up and put only finished projects on the CV.",
+      "terms": [
+        {
+          "zh": "运营",
+          "en": "operations",
+          "hook": "If they say this, they mean ops with numbers, not vibes."
+        },
+        {
+          "zh": "有船出海",
+          "en": "Youchuan",
+          "hook": "If they say this, map their agent loop to Project 4."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Prompt eval project",
+      "bodyEn": "Project 1 is a prompt-evaluation sheet. You measure output instead of guessing, in about eight hours. Recruiters believe 11/20 to 17/20 on real messages, not I am good at prompting. Keep the same fixed test set when you change the prompt. This project proves evaluation habits for Track A and Track B.",
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, show measured scores on a fixed set."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "GPT mini project",
+      "bodyEn": "Project 2 is a tiny GPT in PyTorch. It is your proof for large-model principles, about twelve hours of work. You should be able to explain tokens, attention, and the training loop from this repo. Interviewers dig files, not slogans. Finish it before you claim I understand how large models work.",
+      "terms": [
+        {
+          "zh": "大模型原理",
+          "en": "how large models work",
+          "hook": "If they say this, Project 2 is the proof they want."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "RAG tax project",
+      "bodyEn": "Project 3 is Indonesian tax Q&A with RAG. It covers chunking, embedding, and vector search in about fourteen hours. No other Hangzhou applicant has this domain story. Apply to StepFun once the demo runs clean. This is your main RAG and vector-database proof.",
+      "terms": [
+        {
+          "zh": "RAG",
+          "en": "retrieval then generate",
+          "hook": "If they say this, walk Project 3 end to end."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Agent and LoRA",
+      "bodyEn": "Project 4 is a listing-checker agent plus MCP — tool calling, JSON validation, and retry, about fourteen hours. Project 5 is LoRA for Indonesian customer service, about twelve hours. Project 6 is a content or competitor-analysis sprint with numbers, about eight hours. Integra Copilot is the already-built flagship with agent, RAG, guardrails, MCP, and evaluation inside your ERP — spend about six hours polishing and measuring it.",
+      "terms": [
+        {
+          "zh": "MCP",
+          "en": "Model Context Protocol",
+          "hook": "If they say this, show Project 4 or Integra Copilot’s MCP server."
+        },
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, Project 5 LoRA is your answer."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Daily time blocks",
+      "bodyEn": "Work three to four focused hours a day, six days a week; day seven catches up or rests. Block 1 is 45 minutes of coding practice first: two Chapter 27 problems, done early so they never get skipped. Blocks 2 and 3 are 90 minutes each for reading to a sub-chapter end, then that week’s project with a GitHub commit even if it still errors. Blocks 4 and 5 are 15 minutes each for Mandarin vocab and applying: send, follow up, and log.",
+      "terms": [
+        {
+          "zh": "机考",
+          "en": "online coding exam",
+          "hook": "If they say this, daily coding practice is how you survive it."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Finished means four",
+      "bodyEn": "Before Day 1 ends, create GitHub repo ai-internship-month with one folder per project and a README listing the six projects plus today’s date. A project may enter the CV only when it is finished. Done means four things: clean clone runs from the README; README has a dated results table you measured; you can explain every file in Mandarin without opening files; you have a two-minute screen video of it running. Until all four are true, it is not done.",
+      "terms": [
+        {
+          "zh": "已完成",
+          "en": "finished",
+          "hook": "If they say this, they mean the CV gate for every project."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Proof projects check",
+      "bodyEn": "Match the proof projects to the posting words. Recruiters ask for evidence, not slide decks. Two projects carry the heaviest Track A theory words. Choose which project proves large-model principles and which proves RAG.",
+      "prompt": "Which project proves large-model principles, and which proves RAG?",
+      "choices": [
+        "Project 2 proves large-model principles; Project 3 proves RAG",
+        "Project 6 proves large-model principles; Project 1 proves RAG",
+        "Project 5 proves large-model principles; Project 4 proves RAG",
+        "Integra Copilot alone proves both; no other project is needed"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Finished check",
+      "bodyEn": "Four things must be true before a project is finished. A half-built repo does not enter the CV. Interviewers dig until every claim breaks or holds. Choose the four conditions that make a project finished.",
+      "prompt": "Which four must be true before a project is finished?",
+      "choices": [
+        "Clean-clone run; dated results table; Mandarin file tour without opening files; two-minute screen video",
+        "Private repo; no README; English-only tour; week-4 upload",
+        "BOSS message; Huawei reply; campus form; salary deal",
+        "45 minutes coding; 90 minutes reading; 15 minutes vocab; day-seven rest"
+      ],
+      "answer": 0
+    }
+  ],
+  "beats": [
+    {
+      "id": "s1",
+      "kind": "idea",
+      "titleEn": "Month plan",
+      "bodyEn": "Four weeks, six projects, and one daily routine. Application lists run in parallel from week one, so do not wait until you feel ready. Each project takes eight to fourteen hours and ends with a public repo, real numbers, and a one-page write-up. Read this on Day 1, print the week-plan table for your desk, and use Chapter 38 for day-by-day detail.",
+      "terms": [
+        {
+          "zh": "个人项目",
+          "en": "personal project",
+          "hook": "If they say this, a public repo counts only when finished."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "remember",
+      "titleEn": "Week by week",
+      "bodyEn": "Week 1: learn how models work plus prompting and evaluation; build Projects 1 and 2; apply the apply-now Track B group. Week 2: learn RAG and agents; build Project 3 Indonesian tax Q&A; apply to StepFun once it runs. Week 3: learn MCP, A2A, LangGraph, and ops metrics; build Project 4 listing-checker agent plus MCP and Project 6; apply to Youchuan, Shenzhi, and ask-first seats. Week 4: fine-tuning, serving, interview prep; build Project 5 LoRA; follow up and put only finished projects on the CV.",
+      "terms": [
+        {
+          "zh": "运营",
+          "en": "operations",
+          "hook": "If they say this, they mean ops with numbers, not vibes."
+        },
+        {
+          "zh": "有船出海",
+          "en": "Youchuan",
+          "hook": "If they say this, map their agent loop to Project 4."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "remember",
+      "titleEn": "Prompt eval project",
+      "bodyEn": "Project 1 is a prompt-evaluation sheet. You measure output instead of guessing, in about eight hours. Recruiters believe 11/20 to 17/20 on real messages, not I am good at prompting. Keep the same fixed test set when you change the prompt. This project proves evaluation habits for Track A and Track B.",
+      "terms": [
+        {
+          "zh": "评测",
+          "en": "evaluation",
+          "hook": "If they say this, show measured scores on a fixed set."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "remember",
+      "titleEn": "GPT mini project",
+      "bodyEn": "Project 2 is a tiny GPT in PyTorch. It is your proof for large-model principles, about twelve hours of work. You should be able to explain tokens, attention, and the training loop from this repo. Interviewers dig files, not slogans. Finish it before you claim I understand how large models work.",
+      "terms": [
+        {
+          "zh": "大模型原理",
+          "en": "how large models work",
+          "hook": "If they say this, Project 2 is the proof they want."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "remember",
+      "titleEn": "RAG tax project",
+      "bodyEn": "Project 3 is Indonesian tax Q&A with RAG. It covers chunking, embedding, and vector search in about fourteen hours. No other Hangzhou applicant has this domain story. Apply to StepFun once the demo runs clean. This is your main RAG and vector-database proof.",
+      "terms": [
+        {
+          "zh": "RAG",
+          "en": "retrieval then generate",
+          "hook": "If they say this, walk Project 3 end to end."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "remember",
+      "titleEn": "Agent and LoRA",
+      "bodyEn": "Project 4 is a listing-checker agent plus MCP — tool calling, JSON validation, and retry, about fourteen hours. Project 5 is LoRA for Indonesian customer service, about twelve hours. Project 6 is a content or competitor-analysis sprint with numbers, about eight hours. Integra Copilot is the already-built flagship with agent, RAG, guardrails, MCP, and evaluation inside your ERP — spend about six hours polishing and measuring it.",
+      "terms": [
+        {
+          "zh": "MCP",
+          "en": "Model Context Protocol",
+          "hook": "If they say this, show Project 4 or Integra Copilot’s MCP server."
+        },
+        {
+          "zh": "微调",
+          "en": "fine-tuning",
+          "hook": "If they say this, Project 5 LoRA is your answer."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "remember",
+      "titleEn": "Daily time blocks",
+      "bodyEn": "Work three to four focused hours a day, six days a week; day seven catches up or rests. Block 1 is 45 minutes of coding practice first: two Chapter 27 problems, done early so they never get skipped. Blocks 2 and 3 are 90 minutes each for reading to a sub-chapter end, then that week’s project with a GitHub commit even if it still errors. Blocks 4 and 5 are 15 minutes each for Mandarin vocab and applying: send, follow up, and log.",
+      "terms": [
+        {
+          "zh": "机考",
+          "en": "online coding exam",
+          "hook": "If they say this, daily coding practice is how you survive it."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "remember",
+      "titleEn": "Finished means four",
+      "bodyEn": "Before Day 1 ends, create GitHub repo ai-internship-month with one folder per project and a README listing the six projects plus today’s date. A project may enter the CV only when it is finished. Done means four things: clean clone runs from the README; README has a dated results table you measured; you can explain every file in Mandarin without opening files; you have a two-minute screen video of it running. Until all four are true, it is not done.",
+      "terms": [
+        {
+          "zh": "已完成",
+          "en": "finished",
+          "hook": "If they say this, they mean the CV gate for every project."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "check",
+      "titleEn": "Proof projects check",
+      "bodyEn": "Match the proof projects to the posting words. Recruiters ask for evidence, not slide decks. Two projects carry the heaviest Track A theory words. Choose which project proves large-model principles and which proves RAG.",
+      "prompt": "Which project proves large-model principles, and which proves RAG?",
+      "choices": [
+        "Project 2 proves large-model principles; Project 3 proves RAG",
+        "Project 6 proves large-model principles; Project 1 proves RAG",
+        "Project 5 proves large-model principles; Project 4 proves RAG",
+        "Integra Copilot alone proves both; no other project is needed"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "s10",
+      "kind": "check",
+      "titleEn": "Finished check",
+      "bodyEn": "Four things must be true before a project is finished. A half-built repo does not enter the CV. Interviewers dig until every claim breaks or holds. Choose the four conditions that make a project finished.",
+      "prompt": "Which four must be true before a project is finished?",
+      "choices": [
+        "Clean-clone run; dated results table; Mandarin file tour without opening files; two-minute screen video",
+        "Private repo; no README; English-only tour; week-4 upload",
+        "BOSS message; Huawei reply; campus form; salary deal",
+        "45 minutes coding; 90 minutes reading; 15 minutes vocab; day-seven rest"
+      ],
+      "answer": 0
+    }
+  ]
+}

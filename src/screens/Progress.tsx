@@ -3,12 +3,20 @@ import { getLesson, lessons } from '../lib/content'
 import { readHistory, type HistoryCourse, type HistoryEvent } from '../lib/history'
 import { getJiaochengLesson, jiaochengLessons, nodesForLesson } from '../lib/jiaocheng'
 import { getKerjaChapter, kerjaChapters, nodesForChapter } from '../lib/kerja'
+import {
+  getInterviewChapter,
+  interviewChapters,
+  nodesForChapter as interviewNodesForChapter,
+} from '../lib/interview'
+import { getMagangChapter, magangChapters, nodesForChapter as magangNodesForChapter } from '../lib/magang'
 import { PATH_NODES } from '../lib/wordsSession'
 import { dayKey, useStore } from '../store/store'
 import '../styles/progress.css'
 
 const KERJA_KEY = 'yulu.kerja.v1'
 const JIAOCHENG_KEY = 'yulu.jiaocheng.v1'
+const MAGANG_KEY = 'yulu.magang.v1'
+const INTERVIEW_KEY = 'yulu.interview.v1'
 
 type PathDoneMap = Record<string, string[]>
 
@@ -119,6 +127,50 @@ function jiaochengCourse(pathDone: PathDoneMap): CourseRow {
   return { name: 'Jiaocheng 2', done, total, units }
 }
 
+function magangCourse(pathDone: PathDoneMap): CourseRow {
+  let done = 0
+  let total = 0
+  const units = magangChapters.map((ch) => {
+    const nodes = magangNodesForChapter(ch)
+    const finished = pathDone[String(ch.index)] ?? []
+    total += nodes.length
+    done += countDone(nodes, finished)
+    const title = ch.titleEn || ch.titleSource || `Chapter ${ch.index}`
+    const sittingsDone = countDone(nodes, finished)
+    const isDone = finished.includes('wrap') || (nodes.length > 0 && sittingsDone >= nodes.length)
+    return {
+      key: `magang-${ch.index}`,
+      title,
+      done: isDone,
+      sittingsDone,
+      sittingsTotal: nodes.length,
+    }
+  })
+  return { name: 'Magang AI', done, total, units }
+}
+
+function interviewCourse(pathDone: PathDoneMap): CourseRow {
+  let done = 0
+  let total = 0
+  const units = interviewChapters.map((ch) => {
+    const nodes = interviewNodesForChapter(ch)
+    const finished = pathDone[String(ch.index)] ?? []
+    total += nodes.length
+    done += countDone(nodes, finished)
+    const title = ch.titleEn || ch.titleSource || `Chapter ${ch.index}`
+    const sittingsDone = countDone(nodes, finished)
+    const isDone = nodes.length > 0 && sittingsDone >= nodes.length
+    return {
+      key: `interview-${ch.index}`,
+      title,
+      done: isDone,
+      sittingsDone,
+      sittingsTotal: nodes.length,
+    }
+  })
+  return { name: '总办', done, total, units }
+}
+
 /** Rolling last-7-days card counts, oldest → newest, labelled by weekday. */
 function weekActivity(log: Record<string, { cards: number }>) {
   const out: { label: string; cards: number; today: boolean }[] = []
@@ -141,6 +193,8 @@ const COURSE_LABEL: Record<HistoryCourse, string> = {
   hsk4a: 'HSK 4',
   kerja: '1000 words',
   jiaocheng: 'Jiaocheng 2',
+  magang: 'Magang AI',
+  interview: '总办',
 }
 
 function historyHeadline(ev: HistoryEvent): string {
@@ -169,14 +223,24 @@ function historyDetail(ev: HistoryEvent): string {
             const l = getJiaochengLesson(ev.lesson)
             return l?.titleEn || l?.titleZh || `Lesson ${ev.lesson}`
           })()
-        : (() => {
-            try {
-              const l = getLesson(ev.lesson)
-              return l.title.en || l.title.zh || `Lesson ${ev.lesson}`
-            } catch {
-              return `Lesson ${ev.lesson}`
-            }
-          })()
+        : ev.course === 'magang'
+          ? (() => {
+              const ch = getMagangChapter(ev.lesson)
+              return ch?.titleEn || ch?.titleSource || `Chapter ${ev.lesson}`
+            })()
+          : ev.course === 'interview'
+            ? (() => {
+                const ch = getInterviewChapter(ev.lesson)
+                return ch?.titleEn || ch?.titleSource || `Chapter ${ev.lesson}`
+              })()
+            : (() => {
+                try {
+                  const l = getLesson(ev.lesson)
+                  return l.title.en || l.title.zh || `Lesson ${ev.lesson}`
+                } catch {
+                  return `Lesson ${ev.lesson}`
+                }
+              })()
   const nodeBit = ev.node ? ` · ${ev.node}` : ''
   return `${course} · ${unit}${nodeBit}`
 }
@@ -200,10 +264,14 @@ export function Progress() {
   const courses = useMemo(() => {
     const kerjaDone = readPathDone(KERJA_KEY)
     const jiaochengDone = readPathDone(JIAOCHENG_KEY)
+    const magangDone = readPathDone(MAGANG_KEY)
+    const interviewDone = readPathDone(INTERVIEW_KEY)
     return [
       hskCourse(s.pathDone as PathDoneMap, s.lessonsDone),
       kerjaCourse(kerjaDone),
       jiaochengCourse(jiaochengDone),
+      magangCourse(magangDone),
+      interviewCourse(interviewDone),
     ]
   }, [s.pathDone, s.lessonsDone])
 
@@ -213,7 +281,7 @@ export function Progress() {
     <div className="stack-page progress-page">
       <header className="progress-header">
         <h1 className="h2">Progress</h1>
-        <div className="sub">All three courses</div>
+        <div className="sub">All five courses</div>
       </header>
 
       <section className="metal progress-glance">
