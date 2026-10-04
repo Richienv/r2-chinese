@@ -1,5 +1,6 @@
 import { CourseBack, CourseGate } from '../components/CourseChooser'
 import { LearningPath } from '../components/LearningPath'
+import { HskPracticeEntry } from '../components/HskPracticeEntry'
 import { useCourse } from '../lib/course'
 import { lessons, textNodeIndex, textSitting } from '../lib/content'
 import { NODE_LABEL, PATH_NODES, isLessonReached, isNodePlayable, nextPlayable, nodeCaption } from '../lib/wordsSession'
@@ -63,6 +64,8 @@ export function Learn({
   onMagangPlay,
   onInterviewPlay,
   onBooksPlay,
+  onListening,
+  onCompose,
   isNodeDone,
 }: {
   onLesson: (lesson: number) => void
@@ -73,6 +76,8 @@ export function Learn({
   onMagangPlay?: (chapter: number, node: string) => void
   onInterviewPlay?: (chapter: number, node: string) => void
   onBooksPlay?: (part: number, index: number) => void
+  onListening: () => void
+  onCompose: () => void
   isNodeDone?: (lesson: number, node: PathNode) => boolean
 }) {
   const store = useStore()
@@ -91,6 +96,7 @@ export function Learn({
   return (
     <div className="path-page path-alive">
       <CourseBack />
+      {course === 'hsk4a' && <HskPracticeEntry onListen={onListening} onCompose={onCompose} />}
       {course === 'kerja' ? (
         <KerjaLearn onPlay={(chapter, node) => onKerjaPlay?.(chapter, node)} />
       ) : course === 'jiaocheng' ? (

@@ -16,6 +16,8 @@ import { InterviewSession } from './screens/Interview'
 import { MagangSession } from './screens/Magang'
 import { BooksSession } from './screens/Books'
 import { WordsSession } from './screens/WordsSession'
+import { HskListening } from './screens/HskListening'
+import { HskComposition } from './screens/HskComposition'
 import { CourseProvider } from './lib/course'
 import { load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
 import { AuthProvider, useAuth } from './auth/AuthProvider'
@@ -39,6 +41,8 @@ type Overlay =
   | { kind: 'drill'; words: string[]; title: string }
   | { kind: 'saved' }
   | { kind: 'vocab' }
+  | { kind: 'listening' }
+  | { kind: 'composition' }
   | null
 
 const TAB_KEYS: Tab[] = ['home', 'learn', 'stats', 'profile']
@@ -93,6 +97,8 @@ function Shell() {
             onLesson={(lesson) => setOverlay({ kind: 'lesson', lesson })}
             onReview={() => setOverlay({ kind: 'review' })}
             onTrail={() => setOverlay({ kind: 'saved' })}
+            onListening={() => setOverlay({ kind: 'listening' })}
+            onCompose={() => setOverlay({ kind: 'composition' })}
             onKerjaSession={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
             onJiaochengSession={(lesson, node) => setOverlay({ kind: 'jiaocheng', lesson, node })}
             onMagangSession={(chapter, node) => setOverlay({ kind: 'magang', chapter, node })}
@@ -104,6 +110,8 @@ function Shell() {
           <Learn
             onLesson={(lesson) => setOverlay({ kind: 'lesson', lesson })}
             onVocab={() => setOverlay({ kind: 'vocab' })}
+            onListening={() => setOverlay({ kind: 'listening' })}
+            onCompose={() => setOverlay({ kind: 'composition' })}
             onPlay={(lesson, node) => setOverlay({ kind: 'path', lesson, node })}
             onKerjaPlay={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
             onJiaochengPlay={(lesson, node) => setOverlay({ kind: 'jiaocheng', lesson, node })}
@@ -113,8 +121,19 @@ function Shell() {
             isNodeDone={(lesson, node) => store.isNodeDone(lesson, node)}
           />
         )}
-        {tab === 'stats' && <Progress />}
-        {tab === 'profile' && <Profile />}
+        {tab === 'stats' && (
+          <Progress
+            onLearn={() => setTab('learn')}
+            onReview={(words, title) => setOverlay({ kind: 'review', words, title })}
+          />
+        )}
+        {tab === 'profile' && (
+          <Profile
+            onLearn={() => setTab('learn')}
+            onProgress={() => setTab('stats')}
+            onReview={() => setOverlay({ kind: 'review' })}
+          />
+        )}
       </main>
 
       <BottomNav ref={navRef} tab={tab} onTabChange={setTab} />
@@ -170,6 +189,8 @@ function Shell() {
         />
       )}
       {overlay?.kind === 'vocab' && <VocabBrowser onClose={() => setOverlay(null)} />}
+      {overlay?.kind === 'listening' && <HskListening onClose={closeOverlay} />}
+      {overlay?.kind === 'composition' && <HskComposition onClose={closeOverlay} />}
     </div>
   )
 }

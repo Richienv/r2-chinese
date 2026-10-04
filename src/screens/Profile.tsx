@@ -1,103 +1,136 @@
 import { useState } from 'react'
 import { useAuth } from '../auth/AuthProvider'
 import { isAuthEnabled } from '../lib/supabase'
+import { dueCards } from '../lib/srs'
 import { useStore } from '../store/store'
+import '../styles/profile.css'
 
-export function Profile() {
+export function Profile({
+  onLearn,
+  onProgress,
+  onReview,
+}: {
+  onLearn: () => void
+  onProgress: () => void
+  onReview: () => void
+}) {
   const s = useStore()
   const { user, signOut } = useAuth()
   const [confirmReset, setConfirmReset] = useState(false)
 
   const email = user?.email ?? ''
   const name = email ? email.split('@')[0] : 'Learner'
+  const dueCount = dueCards(s.cardList).length
+  const hasWords = s.cardList.length > 0
 
   return (
-    <div className="stack-page">
-      <header style={{ textAlign: 'center', padding: '26px 0 10px' }}>
-        <div
-          className="avatar"
-          style={{ width: 84, height: 84, borderRadius: 28, fontSize: 34, margin: '0 auto' }}
-        >
-          语
-        </div>
-        <h1 className="h2" style={{ marginTop: 14, textTransform: 'capitalize' }}>
-          {name}
-        </h1>
-        <div className="sub" style={{ marginTop: 8, fontSize: 13 }}>
-          {email || 'HSK 4A'}
-        </div>
+    <div className="stack-page profile-page">
+      <header className="profile-header">
+        <div className="profile-eyebrow">YOUR LEARNING SPACE</div>
+        <h1 className="h2">Profile</h1>
+        <p className="sub">Set up the way you like to learn.</p>
       </header>
 
-      <section className="card" style={{ padding: 4, marginTop: 18 }}>
-        <ToggleRow
-          label="Show pinyin"
-          sub="On by default — under Chinese"
-          value={s.prefs.showPinyin}
-          onChange={(v) => s.setPref('showPinyin', v)}
-        />
-        <ToggleRow
-          label="Show English"
-          sub="On by default — in texts"
-          value={s.prefs.showEnglish}
-          onChange={(v) => s.setPref('showEnglish', v)}
-        />
-        <ToggleRow
-          label="Sound"
-          sub="Mandarin audio and learning feedback sounds"
-          value={s.prefs.soundOn}
-          onChange={(v) => s.setPref('soundOn', v)}
-        />
+      <section className="profile-identity card" aria-label="Learner account">
+        <div className="profile-avatar" aria-hidden="true">语</div>
+        <div className="profile-identity-copy">
+          <h2>{name}</h2>
+          <p>{email || 'Your personal learning space'}</p>
+          <div className="profile-account-meta">
+            <span>{s.wordsLearned} {s.wordsLearned === 1 ? 'word' : 'words'} in your trail</span>
+            <i aria-hidden="true" />
+            <span>{s.xp.toLocaleString()} XP</span>
+          </div>
+        </div>
+        <span className="profile-identity-mark" aria-hidden="true">✳</span>
       </section>
 
-      <section className="card" style={{ padding: 4, marginTop: 12 }}>
+      <section className="profile-quick-actions" aria-label="Learning shortcuts">
+        <button className="profile-action profile-action-primary" type="button" onClick={hasWords ? onReview : onLearn}>
+          <span className="profile-action-icon" aria-hidden="true">{hasWords ? '↻' : '→'}</span>
+          <span className="profile-action-copy">
+            <strong>{hasWords ? (dueCount ? `Review ${dueCount} due ${dueCount === 1 ? 'word' : 'words'}` : 'Practice your words') : 'Choose a course'}</strong>
+            <small>{hasWords ? (dueCount ? 'Strengthen what is ready to return' : 'Keep your learning trail active') : 'Pick up a proven learning path'}</small>
+          </span>
+          <span className="profile-action-arrow" aria-hidden="true">↗</span>
+        </button>
+        <button className="profile-action" type="button" onClick={onProgress}>
+          <span className="profile-action-icon profile-action-icon-soft" aria-hidden="true">⌁</span>
+          <span className="profile-action-copy">
+            <strong>See your progress</strong>
+            <small>Recall, course stages, and recent activity</small>
+          </span>
+          <span className="profile-action-arrow" aria-hidden="true">→</span>
+        </button>
+      </section>
+
+      <section className="profile-settings card">
+        <div className="profile-section-heading">
+          <div>
+            <div className="profile-eyebrow">MAKE IT YOURS</div>
+            <h2>Learning preferences</h2>
+          </div>
+          <span className="profile-settings-ornament" aria-hidden="true">文</span>
+        </div>
+        <p className="profile-section-sub">Changes apply right away across lessons and review.</p>
+        <div className="profile-toggle-list">
+          <ToggleRow
+            label="Show pinyin"
+            sub={s.prefs.showPinyin ? 'Pronunciation appears under Chinese text' : 'Chinese stays on its own for focused recall'}
+            value={s.prefs.showPinyin}
+            onChange={(v) => s.setPref('showPinyin', v)}
+          />
+          <ToggleRow
+            label="Show English"
+            sub={s.prefs.showEnglish ? 'Translations appear when the lesson provides them' : 'Keep the page in Mandarin until you choose a hint'}
+            value={s.prefs.showEnglish}
+            onChange={(v) => s.setPref('showEnglish', v)}
+          />
+          <ToggleRow
+            label="Sound and speech"
+            sub={s.prefs.soundOn ? 'Word audio and learning feedback are on' : 'Study quietly; audio and effects are muted'}
+            value={s.prefs.soundOn}
+            onChange={(v) => s.setPref('soundOn', v)}
+          />
+        </div>
+        <div className="profile-settings-note"><span aria-hidden="true">i</span> Hide a hint when you want a cleaner view or a stronger recall challenge.</div>
+      </section>
+
+      <section className="profile-data card">
+        <div className="profile-section-heading">
+          <div>
+            <div className="profile-eyebrow">ACCOUNT AND DATA</div>
+            <h2>Your progress belongs to you</h2>
+          </div>
+        </div>
+        <p className="profile-section-sub">Reset only when you want to start your learning trail again from zero.</p>
         {confirmReset ? (
-          <div style={{ padding: '14px 16px' }}>
-            <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--err)' }}>
-              Erase all progress?
+          <div className="profile-reset-confirm" role="alert">
+            <div className="profile-reset-alert-mark" aria-hidden="true">!</div>
+            <div className="profile-reset-copy">
+              <strong>Erase all learning progress?</strong>
+              <span>Your streak, XP, saved words, and review schedule will be cleared.</span>
             </div>
-            <div className="sub" style={{ fontSize: 13, marginTop: 4 }}>
-              Streak, XP, saved words and review schedule will be cleared.
-            </div>
-            <div className="row" style={{ marginTop: 12, gap: 10 }}>
-              <button className="btn btn-ghost" onClick={() => setConfirmReset(false)}>
-                Cancel
-              </button>
-              <button
-                className="btn"
-                style={{ background: 'var(--err)', backgroundImage: 'none' }}
-                onClick={() => {
-                  s.reset()
-                  setConfirmReset(false)
-                }}
-              >
-                Reset
-              </button>
+            <div className="profile-reset-actions">
+              <button className="profile-cancel-button" type="button" onClick={() => setConfirmReset(false)}>Keep my progress</button>
+              <button className="profile-danger-button" type="button" onClick={() => { s.reset(); setConfirmReset(false) }}>Reset everything</button>
             </div>
           </div>
         ) : (
-          <button
-            className="between"
-            style={{ width: '100%', padding: '14px 16px', textAlign: 'left', color: 'var(--link-hover)' }}
-            onClick={() => setConfirmReset(true)}
-          >
-            <span style={{ fontWeight: 700, fontSize: 15 }}>Reset progress</span>
+          <button className="profile-data-action" type="button" onClick={() => setConfirmReset(true)}>
+            <span><strong>Reset progress</strong><small>Clear saved learning data on this profile</small></span>
+            <span aria-hidden="true">→</span>
           </button>
         )}
       </section>
 
       {isAuthEnabled && user && (
-        <button
-          className="btn btn-ghost"
-          style={{ marginTop: 14, color: 'var(--err)' }}
-          onClick={() => signOut()}
-        >
-          Sign out
+        <button className="profile-signout" type="button" onClick={() => signOut()}>
+          Sign out <span aria-hidden="true">↗</span>
         </button>
       )}
 
-      <p style={{ fontSize: 11, color: 'var(--muted-3)', margin: '22px 0 8px', lineHeight: 1.5 }}>
-        Content from 标准教程 HSK 4上, Beijing Language and Culture University Press.
-      </p>
+      <p className="profile-source-note">Content from 标准教程 HSK 4上, Beijing Language and Culture University Press.</p>
     </div>
   )
 }
@@ -116,7 +149,7 @@ function ToggleRow({
   return (
     <button
       type="button"
-      className="toggle-row"
+      className="toggle-row profile-toggle-row"
       role="switch"
       aria-checked={value}
       aria-label={label}
@@ -124,9 +157,7 @@ function ToggleRow({
     >
       <span className="toggle-copy">
         <strong>{label}</strong>
-        <span className="sub" style={{ fontSize: 12, marginTop: 1, display: 'block' }}>
-          {sub}
-        </span>
+        <span>{sub}</span>
       </span>
       <span className="switch" data-on={value} aria-hidden>
         <span className="switch-knob" />

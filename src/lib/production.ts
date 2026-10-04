@@ -1,4 +1,5 @@
 import type { LessonText } from './types'
+import { assessmentFailure } from './assessmentService.ts'
 
 export interface ProductionResult {
   correct: boolean
@@ -115,10 +116,11 @@ export async function assessProduction(prompt: ProductionPrompt, signal?: AbortS
     signal,
   })
   if (res.status === 404 || res.status === 503) {
-    return { ...local, unavailable: 'Grammar review is unavailable. Compare with the book below, or retry the check later.' }
+    const failure = await assessmentFailure(res)
+    return { ...local, unavailable: `${failure.message} You can still compare with the book below.` }
   }
   if (!res.ok) {
-    throw new Error(res.status === 429 ? 'Too many checks at once. Wait a moment and retry.' : 'The grammar check could not finish. Retry, or use book comparison.')
+    throw await assessmentFailure(res)
   }
   const result = await res.json() as Partial<ProductionAssessment>
   if (typeof result.accepted !== 'boolean' || typeof result.feedback !== 'string' || typeof result.correctedZh !== 'string' || !Array.isArray(result.issues) || !result.issues.every((issue) => typeof issue === 'string')) {

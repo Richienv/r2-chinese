@@ -18,8 +18,15 @@ export function bookSourcePassages(body: string, paragraphsPerPassage = 2): stri
     let current = ''
     let count = 0
     for (const sentence of sentences) {
-      // A long source sentence also gets a readable break, without losing text.
-      const pieces = sentence.length > 260 ? sentence.match(/.{1,220}(?:\s+|$)|\S+/g)?.map((part) => part.trim()).filter(Boolean) ?? [sentence] : [sentence]
+      // Break long sentences at word boundaries; never split a source word in half.
+      const words = sentence.match(/\S+/g) ?? [sentence]
+      const pieces: string[] = []
+      let piece = ''
+      for (const word of words) {
+        if (piece && piece.length + word.length + 1 > 220) { pieces.push(piece); piece = '' }
+        piece = piece ? `${piece} ${word}` : word
+      }
+      if (piece) pieces.push(piece)
       for (const piece of pieces) {
         if (current && (current.length + piece.length > 260 || count >= 2)) { paragraphs.push(current); current = ''; count = 0 }
         current = current ? `${current} ${piece}` : piece

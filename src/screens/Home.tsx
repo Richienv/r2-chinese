@@ -9,6 +9,7 @@ import { InterviewHomePath } from './Interview'
 import { MagangHomePath } from './Magang'
 import { BooksHomePath } from './Books'
 import { LessonPath } from './Learn'
+import { HskPracticeEntry } from '../components/HskPracticeEntry'
 import { useStore, type PathNode } from '../store/store'
 import '../styles/home-alive.css'
 
@@ -17,6 +18,8 @@ export function Home({
   onLesson,
   onReview,
   onTrail,
+  onListening,
+  onCompose,
   onKerjaSession,
   onJiaochengSession,
   onMagangSession,
@@ -27,6 +30,8 @@ export function Home({
   onLesson: (lesson: number) => void
   onReview: () => void
   onTrail: () => void
+  onListening: () => void
+  onCompose: () => void
   onKerjaSession: (chapter: number, node: PathNode) => void
   onJiaochengSession: (lesson: number, node: PathNode) => void
   onMagangSession: (chapter: number, node: string) => void
@@ -65,6 +70,7 @@ export function Home({
         </div>
       )}
 
+      {course === 'hsk4a' && <HskPracticeEntry onListen={onListening} onCompose={onCompose} />}
       {course === 'kerja' ? (
         <KerjaHomePath onPlay={onKerjaSession} />
       ) : course === 'jiaocheng' ? (

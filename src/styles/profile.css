@@ -1,0 +1,97 @@
+.profile-page {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8px 0 calc(34px + env(safe-area-inset-bottom, 0px));
+}
+
+.profile-header { padding: 20px 2px 17px; }
+.profile-eyebrow { color: #9a7561; font-size: 10px; font-weight: 800; letter-spacing: .13em; line-height: 1.35; }
+.profile-header h1 { margin: 5px 0 0; font-size: clamp(26px, 6vw, 34px); letter-spacing: -.045em; }
+.profile-header .sub { margin-top: 5px; font-size: 12px; }
+
+.profile-identity {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow: hidden;
+  padding: 20px;
+  border-color: #eadcc9;
+  border-radius: 24px;
+  background: linear-gradient(115deg,#fffaf1 0%,#fff 64%,#f7eadc 100%);
+  box-shadow: 0 14px 28px -24px rgba(89,55,33,.48), inset 0 1px 0 rgba(255,255,255,.9);
+  animation: profile-in .45s var(--ease) both;
+}
+.profile-avatar { position: relative; z-index: 1; display: grid; width: 60px; height: 60px; flex: none; place-items: center; border: 1px solid rgba(255,255,255,.8); border-radius: 20px; background: linear-gradient(145deg,#f9b578,#d4432d 62%,#8f1618); color: #fffaf2; font-family: var(--sc); font-size: 29px; font-weight: 750; box-shadow: 0 10px 20px -13px rgba(137,35,28,.82), inset 0 1px 1px rgba(255,255,255,.65); animation: avatar-settle .7s var(--spring) both; }
+.profile-identity-copy { position: relative; z-index: 1; min-width: 0; flex: 1 1 auto; }
+.profile-identity-copy h2 { overflow: hidden; margin: 0; color: #302720; font-size: 17px; font-weight: 800; letter-spacing: -.03em; text-overflow: ellipsis; text-transform: capitalize; white-space: nowrap; }
+.profile-identity-copy p { overflow: hidden; margin: 4px 0 0; color: #948579; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.profile-account-meta { display: flex; align-items: center; gap: 7px; margin-top: 11px; color: #a36a4e; font-size: 9px; font-weight: 750; }
+.profile-account-meta i { width: 3px; height: 3px; border-radius: 50%; background: #d4a07d; }
+.profile-identity-mark { position: absolute; top: -15px; right: 7px; color: rgba(196,132,91,.15); font-size: 100px; line-height: 1; transform: rotate(12deg); }
+
+.profile-quick-actions { display: grid; gap: 9px; margin-top: 12px; }
+.profile-action { display: flex; align-items: center; gap: 12px; width: 100%; min-width: 0; min-height: 72px; padding: 12px 15px; border: 1px solid #e8dfd4; border-radius: 18px; background: rgba(255,255,255,.82); color: var(--ink); text-align: left; box-shadow: 0 9px 20px -22px rgba(57,38,24,.6); transition: transform .2s var(--spring), box-shadow .2s var(--ease), border-color .2s var(--ease); }
+.profile-action:hover { transform: translateY(-2px); border-color: #d9b99f; box-shadow: 0 13px 22px -18px rgba(57,38,24,.48); }
+.profile-action:active { transform: scale(.985); }
+.profile-action-primary { border-color: transparent; background: linear-gradient(115deg,#fff1de,#f8e6d2); }
+.profile-action-icon { display: grid; width: 38px; height: 38px; flex: none; place-items: center; border-radius: 13px; background: linear-gradient(150deg,#ee8053,#ad201e); color: white; font-size: 23px; font-weight: 700; box-shadow: 0 6px 13px -9px rgba(137,35,28,.8); }
+.profile-action-icon-soft { background: #f4ece2; color: #9b6b4d; box-shadow: none; }
+.profile-action-copy { display: grid; gap: 4px; min-width: 0; flex: 1 1 auto; }
+.profile-action-copy strong { overflow: hidden; color: #3c3028; font-size: 12px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+.profile-action-copy small { overflow: hidden; color: #988a7d; font-size: 9px; line-height: 1.4; text-overflow: ellipsis; white-space: nowrap; }
+.profile-action-arrow { flex: none; color: #aa7053; font-size: 16px; transition: transform .2s var(--spring); }
+.profile-action:hover .profile-action-arrow { transform: translate(2px,-2px); }
+
+.profile-settings, .profile-data { margin-top: 12px; padding: 18px 19px 16px; border-radius: 22px; background: rgba(255,255,255,.9); animation: profile-in .48s var(--ease) both; }
+.profile-data { animation-delay: .06s; }
+.profile-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.profile-section-heading h2 { margin: 5px 0 0; color: #302923; font-size: 17px; letter-spacing: -.035em; line-height: 1.2; }
+.profile-section-sub { margin: 7px 0 9px; color: #998d82; font-size: 10px; line-height: 1.5; }
+.profile-settings-ornament { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 11px; background: #f8eee2; color: #a9694b; font-family: var(--sc); font-size: 15px; }
+.profile-toggle-list { display: grid; }
+.profile-toggle-row { min-height: 66px; padding: 11px 1px; border-top: 1px solid #f1ece5; }
+.profile-toggle-row:first-child { border-top: 0; }
+.profile-toggle-row .toggle-copy strong { color: #43382f; font-size: 12px; font-weight: 780; }
+.profile-toggle-row .toggle-copy > span { display: block; max-width: 320px; margin-top: 3px; color: #9c9085; font-size: 9px; line-height: 1.4; }
+.profile-toggle-row .switch { width: 43px; height: 25px; padding: 2.5px; }
+.profile-toggle-row .switch-knob { width: 20px; height: 20px; }
+.profile-toggle-row .switch[data-on='true'] .switch-knob { transform: translateX(18px); }
+.profile-settings-note { display: flex; align-items: flex-start; gap: 7px; margin-top: 9px; padding: 10px 11px; border-radius: 12px; background: #faf6ef; color: #978979; font-size: 9px; line-height: 1.45; }
+.profile-settings-note span { display: grid; width: 14px; height: 14px; flex: none; place-items: center; border: 1px solid #c8ad95; border-radius: 50%; color: #9c7559; font-size: 8px; font-weight: 800; }
+
+.profile-data-action { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 58px; margin-top: 7px; padding: 10px 0 0; border-top: 1px solid #f0ebe4; color: #8f4c37; text-align: left; }
+.profile-data-action > span:first-child { display: grid; gap: 4px; }
+.profile-data-action strong { color: #714a3c; font-size: 11px; font-weight: 800; }
+.profile-data-action small { color: #a4978a; font-size: 9px; }
+.profile-data-action > span:last-child { color: #a57760; font-size: 16px; }
+.profile-reset-confirm { display: grid; grid-template-columns: 29px minmax(0,1fr); gap: 10px; margin-top: 12px; padding: 13px; border: 1px solid #f2cfca; border-radius: 15px; background: #fff7f5; }
+.profile-reset-alert-mark { display: grid; width: 25px; height: 25px; place-items: center; border-radius: 50%; background: #fde9e5; color: #bd4036; font-size: 13px; font-weight: 850; }
+.profile-reset-copy { display: grid; gap: 4px; }
+.profile-reset-copy strong { color: #813e37; font-size: 11px; }
+.profile-reset-copy span { color: #a17870; font-size: 9px; line-height: 1.45; }
+.profile-reset-actions { display: flex; grid-column: 1 / -1; gap: 8px; margin-top: 2px; }
+.profile-reset-actions button { flex: 1 1 0; min-height: 40px; padding: 0 10px; border-radius: 999px; font-size: 10px; font-weight: 800; }
+.profile-cancel-button { border: 1px solid #e8d9cf; background: white; color: #725f53; }
+.profile-danger-button { background: #b83b33; color: white; }
+.profile-signout { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 44px; margin-top: 12px; border: 1px solid #eadfd4; border-radius: 999px; background: rgba(255,255,255,.65); color: #9d5147; font-size: 11px; font-weight: 750; transition: background .2s var(--ease); }
+.profile-signout:hover { background: #fff; }
+.profile-source-note { max-width: 470px; margin: 15px 4px 6px; color: #aaa094; font-size: 9px; line-height: 1.45; }
+
+@keyframes profile-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes avatar-settle { from { opacity: .6; transform: scale(.82) rotate(-8deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+
+@media (max-width: 480px) {
+  .profile-page { padding-top: 4px; }
+  .profile-header { padding-top: 17px; }
+  .profile-identity { gap: 12px; padding: 16px; border-radius: 21px; }
+  .profile-avatar { width: 52px; height: 52px; border-radius: 17px; font-size: 25px; }
+  .profile-account-meta { flex-wrap: wrap; font-size: 8px; }
+  .profile-settings, .profile-data { padding: 16px 14px 14px; border-radius: 20px; }
+  .profile-toggle-row .toggle-copy > span { max-width: 250px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-identity, .profile-settings, .profile-data, .profile-avatar { animation: none; }
+}

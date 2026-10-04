@@ -1,7 +1,8 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { MasteryTracker } from '../components/MasteryTracker'
 import { getLesson, lessons } from '../lib/content'
 import { readHistory, type HistoryCourse, type HistoryEvent } from '../lib/history'
+import { dueCards } from '../lib/srs'
 import { getJiaochengLesson, jiaochengLessons, nodesForLesson } from '../lib/jiaocheng'
 import { getKerjaChapter, kerjaChapters, nodesForChapter } from '../lib/kerja'
 import {
@@ -18,7 +19,7 @@ import {
   nodesForChapter as booksNodesForChapter,
 } from '../lib/books'
 import { PATH_NODES } from '../lib/wordsSession'
-import { dayKey, useStore } from '../store/store'
+import { DAILY_GOAL, dayKey, useStore } from '../store/store'
 import '../styles/progress.css'
 
 const KERJA_KEY = 'yulu.kerja.v1'
@@ -39,8 +40,8 @@ type CourseUnit = {
 
 type CourseRow = {
   name: string
-  done: number
-  total: number
+  stepsDone: number
+  stepsTotal: number
   units: CourseUnit[]
 }
 
@@ -89,7 +90,7 @@ function hskCourse(pathDone: PathDoneMap, lessonsDone: number[]): CourseRow {
     const isDone = lessonsDone.includes(l.lesson) || finished.includes('wrap') || sittingsDone >= nodes.length
     return { key: `hsk-${l.lesson}`, title, done: isDone, sittingsDone, sittingsTotal: nodes.length }
   })
-  return { name: 'HSK 4', done, total, units }
+  return { name: 'HSK 4', stepsDone: done, stepsTotal: total, units }
 }
 
 function kerjaCourse(pathDone: PathDoneMap): CourseRow {
@@ -111,7 +112,7 @@ function kerjaCourse(pathDone: PathDoneMap): CourseRow {
       sittingsTotal: nodes.length,
     }
   })
-  return { name: '1000 words', done, total, units }
+  return { name: '1000 words', stepsDone: done, stepsTotal: total, units }
 }
 
 function jiaochengCourse(pathDone: PathDoneMap): CourseRow {
@@ -133,7 +134,7 @@ function jiaochengCourse(pathDone: PathDoneMap): CourseRow {
       sittingsTotal: nodes.length,
     }
   })
-  return { name: 'Jiaocheng 2', done, total, units }
+  return { name: 'Jiaocheng 2', stepsDone: done, stepsTotal: total, units }
 }
 
 function magangCourse(pathDone: PathDoneMap): CourseRow {
@@ -155,7 +156,7 @@ function magangCourse(pathDone: PathDoneMap): CourseRow {
       sittingsTotal: nodes.length,
     }
   })
-  return { name: 'Magang AI', done, total, units }
+  return { name: 'Magang AI', stepsDone: done, stepsTotal: total, units }
 }
 
 function interviewCourse(pathDone: PathDoneMap): CourseRow {
@@ -177,7 +178,7 @@ function interviewCourse(pathDone: PathDoneMap): CourseRow {
       sittingsTotal: nodes.length,
     }
   })
-  return { name: '总办', done, total, units }
+  return { name: '总办', stepsDone: done, stepsTotal: total, units }
 }
 
 function booksCourse(pathDone: PathDoneMap): CourseRow {
@@ -199,12 +200,12 @@ function booksCourse(pathDone: PathDoneMap): CourseRow {
       sittingsTotal: nodes.length,
     }
   })
-  return { name: 'Books', done, total, units }
+  return { name: 'Books', stepsDone: done, stepsTotal: total, units }
 }
 
 /** Rolling last-7-days card counts, oldest → newest, labelled by weekday. */
 function weekActivity(log: Record<string, { cards: number }>) {
-  const out: { label: string; cards: number; today: boolean }[] = []
+  const out: { label: string; cards: number; today: boolean; date: number }[] = []
   const now = new Date()
   const todayKey = dayKey(now)
   for (let i = 6; i >= 0; i--) {
@@ -212,9 +213,10 @@ function weekActivity(log: Record<string, { cards: number }>) {
     d.setDate(now.getDate() - i)
     const key = dayKey(d)
     out.push({
-      label: ['S', 'M', 'T', 'W', 'T', 'F', 'S'][d.getDay()],
+      label: d.toLocaleDateString(undefined, { weekday: 'short' }),
       cards: log[key]?.cards ?? 0,
       today: key === todayKey,
+      date: d.getDate(),
     })
   }
   return out
@@ -294,9 +296,24 @@ function formatWhen(t: number): string {
   return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
 }
 
-export function Progress() {
+export function Progress({
+  onReview,
+  onLearn,
+}: {
+  onReview: (words?: string[], title?: string) => void
+  onLearn: () => void
+}) {
   const s = useStore()
+  const [showHistory, setShowHistory] = useState(false)
   const week = weekActivity(s.log)
+  const due = dueCards(s.cardList)
+  const hardWords = Object.values(s.mastery)
+    .filter((record) => record.state === 'hard')
+    .sort((a, b) => b.lastSeen - a.lastSeen)
+    .map((record) => record.zh)
+  const weekCards = week.reduce((sum, day) => sum + day.cards, 0)
+  const activeDays = week.filter((day) => day.cards > 0).length
+  const todayProgress = Math.min(100, Math.round((s.today.cards / DAILY_GOAL) * 100))
 
   const courses = useMemo(() => {
     const kerjaDone = readPathDone(KERJA_KEY)
@@ -315,39 +332,129 @@ export function Progress() {
   }, [s.pathDone, s.lessonsDone])
 
   const history = useMemo(() => readHistory(), [s.pathDone, s.log, s.xp, s.cards])
+  const visibleHistory = showHistory ? history : history.slice(0, 5)
+
+  function startReview() {
+    if (due.length) onReview()
+    else if (hardWords.length) onReview(hardWords.slice(0, 8), 'Strengthen hard words')
+    else onReview()
+  }
+
+  const reviewLabel = due.length
+    ? 'Review due words'
+    : hardWords.length
+      ? 'Practice hard words'
+      : 'Practice saved words'
 
   return (
     <div className="stack-page progress-page">
       <header className="progress-header">
-        <h1 className="h2">Progress</h1>
-        <div className="sub">All six courses</div>
+        <div>
+          <div className="progress-eyebrow">YOUR LEARNING, OVER TIME</div>
+          <h1 className="h2">Progress</h1>
+          <div className="sub">Six paths. One growing ability to remember and use what you learn.</div>
+        </div>
+        <button className="progress-header-link" type="button" onClick={onLearn}>
+          Learning paths <span aria-hidden="true">↗</span>
+        </button>
       </header>
 
-      <section className="metal progress-glance">
-        <div className="progress-glance-grid">
-          <Glance value={s.streak} label="Streak" />
-          <Glance value={s.xp} label="XP" />
-          <Glance value={s.wordsLearned} label="Words" />
+      <section className="progress-focus" aria-labelledby="progress-focus-title">
+        <div className="progress-focus-copy">
+          <span className="progress-focus-kicker">TODAY’S PRACTICE</span>
+          <h2 id="progress-focus-title">Make recall feel familiar.</h2>
+          <p>{s.today.cards >= DAILY_GOAL ? `${s.today.cards} practice steps today — your daily goal is complete. Come back later to strengthen recall on another day.` : `${s.today.cards} of ${DAILY_GOAL} practice steps today. Short attempts, repeated over time, are what make words stick.`}</p>
+          <button className="btn progress-focus-button" type="button" onClick={s.cardList.length ? startReview : onLearn}>
+            {s.cardList.length ? reviewLabel : 'Choose a course'}
+            <span aria-hidden="true">→</span>
+          </button>
+          <span className="progress-focus-note">
+            {due.length ? `${due.length} ready to revisit` : hardWords.length ? `${hardWords.length} words are asking for another try` : s.cardList.length ? 'Your saved words are ready for a quick recall' : 'Meet a few words and your review trail starts automatically'}
+          </span>
+        </div>
+        <div className="progress-focus-meter" style={{ '--today-progress': `${todayProgress}%` } as React.CSSProperties} aria-label={`${s.today.cards} practice steps today`}>
+          <div className="progress-focus-meter-core">
+            <strong>{s.today.cards}</strong>
+            <span>{s.today.cards >= DAILY_GOAL ? 'goal reached' : `of ${DAILY_GOAL} goal`}</span>
+            <small>recalls</small>
+          </div>
         </div>
       </section>
 
-      <section className="card progress-section">
-        <h2 className="h2" style={{ fontSize: 18 }}>What stays with you</h2>
-        <p className="sub">Mastery requires unaided recall on separate days. Completing a lesson alone doesn’t count.</p>
+      <section className="progress-stats" aria-label="Learning totals">
+        <Glance value={s.streak} label="day streak" detail="show up again" />
+        <Glance value={s.xp} label="XP earned" detail="practice adds up" />
+        <Glance value={s.wordsLearned} label="words met" detail="kept in your trail" />
+      </section>
+
+      <section className="card progress-section progress-week-section">
+        <div className="progress-section-heading">
+          <div>
+            <div className="progress-eyebrow">THE LAST 7 DAYS</div>
+            <h2>Build a learning rhythm</h2>
+          </div>
+          <div className="progress-week-summary"><strong>{activeDays}</strong><span>active days</span></div>
+        </div>
+        <p className="progress-section-sub">{weekCards} practice {weekCards === 1 ? 'step' : 'steps'} across the week. Returning to a word later is how recognition becomes recall.</p>
+        <div className="progress-week-grid">
+          {week.map((d, i) => {
+            const height = d.cards ? Math.max(12, Math.min(100, (d.cards / Math.max(DAILY_GOAL, ...week.map((day) => day.cards))) * 100)) : 5
+            return (
+              <div
+                key={`${d.date}-${i}`}
+                className="progress-week-day"
+                data-today={d.today ? 'true' : 'false'}
+                data-on={d.cards > 0 ? 'true' : 'false'}
+                title={`${d.cards} practice ${d.cards === 1 ? 'step' : 'steps'}`}
+              >
+                <div className="progress-week-bar-wrap"><i style={{ height: `${height}%` }} /></div>
+                <span className="progress-week-cards">{d.cards || '·'}</span>
+                <span className="progress-week-label">{d.label}</span>
+              </div>
+            )
+          })}
+        </div>
+        <div className="progress-week-foot"><span>Practice is evidence of effort; mastery comes from unaided recall on separate days.</span></div>
+      </section>
+
+      <section className="card progress-section progress-mastery-section">
+        <div className="progress-section-heading">
+          <div>
+            <div className="progress-eyebrow">BEYOND FINISHING A LESSON</div>
+            <h2>What stays with you</h2>
+          </div>
+          <span className="progress-mastery-spark" aria-hidden="true">✳</span>
+        </div>
+        <p className="progress-section-sub">Mastery means retrieving a word without help on more than one day. A completed lesson is only the beginning.</p>
         <MasteryTracker words={s.learningTrail} />
       </section>
 
-      <section className="card progress-section">
-        <div className="kicker-ink">Courses</div>
+      <section className="card progress-section progress-courses-section">
+        <div className="progress-section-heading">
+          <div>
+            <div className="progress-eyebrow">YOUR CURRICULUM</div>
+            <h2>Every path, at a glance</h2>
+          </div>
+          <span className="progress-course-total">{courses.length} paths</span>
+        </div>
+        <p className="progress-section-sub">Open a path to see the units and stages you have already completed.</p>
         <div className="progress-courses">
           {courses.map((c) => (
-            <div key={c.name} className="progress-course">
-              <div className="progress-course-head">
-                <div className="progress-course-name">{c.name}</div>
-                <div className="progress-course-count">
-                  {c.done} / {c.total} sittings
+            <details key={c.name} className="progress-course">
+              <summary>
+                <div className="progress-course-summary">
+                  <div className="progress-course-head">
+                    <span className="progress-course-name">{c.name}</span>
+                    <span className="progress-course-count">{c.units.filter((u) => u.done).length} / {c.units.length} units</span>
+                  </div>
+                  <div className="progress-course-bar"><i style={{ width: `${c.stepsTotal ? Math.round((c.stepsDone / c.stepsTotal) * 100) : 0}%` }} /></div>
+                  <div className="progress-course-foot">
+                    <span>{c.stepsDone} of {c.stepsTotal} learning stages</span>
+                    <span>{c.stepsTotal ? Math.round((c.stepsDone / c.stepsTotal) * 100) : 0}%</span>
+                  </div>
                 </div>
-              </div>
+                <span className="progress-course-chevron" aria-hidden="true">⌄</span>
+              </summary>
               <div className="progress-lesson-list">
                 {c.units.length === 0 ? (
                   <div className="progress-empty">No lessons loaded yet.</div>
@@ -355,54 +462,30 @@ export function Progress() {
                   c.units.map((u) => (
                     <div key={u.key} className="progress-lesson" data-done={u.done ? 'true' : 'false'}>
                       <span className="progress-lesson-mark" aria-hidden>
-                        {u.done ? '✓' : '·'}
+                        {u.done ? '✓' : '○'}
                       </span>
                       <span className="progress-lesson-title">{u.title}</span>
-                      <span className="progress-lesson-count">
-                        {u.sittingsDone}/{u.sittingsTotal}
-                      </span>
+                      <span className="progress-lesson-count">{u.sittingsDone}/{u.sittingsTotal} stages</span>
                     </div>
                   ))
                 )}
               </div>
-            </div>
+            </details>
           ))}
         </div>
+        <button className="progress-secondary-action" type="button" onClick={onLearn}>Open learning paths <span aria-hidden="true">→</span></button>
       </section>
 
       <section className="card progress-section">
-        <div className="kicker-ink">This week</div>
-        <div className="progress-week-grid">
-          {week.map((d, i) => {
-            const on = d.cards > 0
-            return (
-              <div
-                key={i}
-                className="progress-week-day"
-                data-today={d.today ? 'true' : 'false'}
-                data-on={on ? 'true' : 'false'}
-              >
-                <span
-                  className="progress-week-dot"
-                  data-on={on ? 'true' : 'false'}
-                  data-today={d.today ? 'true' : 'false'}
-                  title={`${d.cards} cards`}
-                />
-                <span className="progress-week-cards">{d.cards}</span>
-                <span className="progress-week-label">{d.label}</span>
-              </div>
-            )
-          })}
+        <div className="progress-section-heading progress-history-heading">
+          <div><div className="progress-eyebrow">SMALL STEPS ADD UP</div><h2>Recent activity</h2></div>
+          {history.length > 0 && <span className="progress-course-total">{history.length} entries</span>}
         </div>
-      </section>
-
-      <section className="card progress-section">
-        <div className="kicker-ink">History</div>
         {history.length === 0 ? (
-          <p className="progress-empty">Finish a sitting and it will show up here.</p>
+          <p className="progress-empty">Your lessons, drills, and recall attempts will build a timeline here.</p>
         ) : (
           <div className="progress-history">
-            {history.map((ev, i) => (
+            {visibleHistory.map((ev, i) => (
               <div key={`${ev.t}-${ev.course}-${ev.kind}-${ev.lesson}-${ev.node ?? ''}-${i}`} className="progress-history-item">
                 <div className="progress-history-main">{historyHeadline(ev)}</div>
                 <div className="progress-history-time">{formatWhen(ev.t)}</div>
@@ -411,16 +494,22 @@ export function Progress() {
             ))}
           </div>
         )}
+        {history.length > 5 && (
+          <button className="progress-secondary-action" type="button" onClick={() => setShowHistory((value) => !value)}>
+            {showHistory ? 'Show recent only' : `See all ${history.length} moments`} <span aria-hidden="true">{showHistory ? '↑' : '→'}</span>
+          </button>
+        )}
       </section>
     </div>
   )
 }
 
-function Glance({ value, label }: { value: number; label: string }) {
+function Glance({ value, label, detail }: { value: number; label: string; detail: string }) {
   return (
     <div className="progress-glance-cell">
-      <div className="on-red progress-glance-value">{value.toLocaleString()}</div>
+      <div className="progress-glance-value">{value.toLocaleString()}</div>
       <div className="progress-glance-label">{label}</div>
+      <div className="progress-glance-detail">{detail}</div>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useSyncExternalStore } from 'react'
 import { getSpeechSnapshot, prefetch, speak, speakLines, stopSpeech, subscribeSpeech, unlockSpeech, type SpeakOpts } from '../lib/speech'
 import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 
@@ -36,6 +36,10 @@ export function useSpeechActive(key: string) {
   return on
 }
 
+export function useSpeechSnapshot() {
+  return useSyncExternalStore(subscribeSpeech, getSpeechSnapshot, getSpeechSnapshot)
+}
+
 /** Prefetch + autoplay one Chinese phrase when `text` becomes the current beat. */
 export function useAutoSpeak(text: string, voice: string = VOICE.xiaoxiao, rate?: number) {
   const trimmed = text.trim()
@@ -43,9 +47,9 @@ export function useAutoSpeak(text: string, voice: string = VOICE.xiaoxiao, rate?
   useEffect(() => {
     if (!trimmed || !hasHanzi(trimmed)) return
     const key = `${voice}|${resolvedRate}|${trimmed}`
-    prefetch(trimmed, { voice, rate: resolvedRate })
+    prefetch(trimmed, { voice, rate: resolvedRate, trackWords: true })
     const timer = window.setTimeout(() => {
-      void speak(trimmed, { voice, rate: resolvedRate, key })
+      void speak(trimmed, { voice, rate: resolvedRate, key, trackWords: true })
     }, 280)
     return () => {
       window.clearTimeout(timer)
@@ -98,7 +102,7 @@ export function HearButton({
   const r = rate ?? (speakable ? rateForChinese(speakable) : WORD_RATE)
   const key = speakable ? `${v}|${r}|${speakable}` : ''
   const playing = useSpeechActive(key)
-  const opts: SpeakOpts = { voice: v, rate: r, key }
+  const opts: SpeakOpts = { voice: v, rate: r, key, trackWords: true }
 
   if (!speakable) return null
 

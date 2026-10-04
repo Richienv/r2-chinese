@@ -4,11 +4,12 @@ import { bundledDictionaryEntry, refreshDictionaryEntry, type DictionaryEntry } 
 import { DICTIONARY_LICENSE, DICTIONARY_SOURCE, formatDictionaryDefinition } from '../lib/dictionary-format'
 import { mixWithSaved } from '../lib/drill'
 import { speak, speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
+import { rangesOverlap } from '../lib/speechTiming'
 import { useStore } from '../store/store'
 import type { LessonText, TextLine, Vocab } from '../lib/types'
 import { LINE_RATE, VOICE, WORD_RATE, voiceForSpeaker } from '../lib/voices'
 import { DrillFlow } from '../screens/Drill'
-import { ChineseHear, HearButton, useSpeechActive } from './Hear'
+import { ChineseHear, HearButton, useSpeechActive, useSpeechSnapshot } from './Hear'
 import { BoltIcon, PencilIcon } from './Icons'
 import { SaveStar } from './SaveStar'
 import { Sheet } from './Sheet'
@@ -78,11 +79,17 @@ export function BookExample({
 /** A run of Chinese where known and unknown 汉字 are tappable for a gloss / add-to-drill. */
 export function Glossed({ text, onWord, learnedWords, highlightLearned = true }: { text: string; onWord: (v: Vocab) => void; learnedWords?: string[]; highlightLearned?: boolean }) {
   const { learningTrail, mastery } = useStore()
+  const speech = useSpeechSnapshot()
   const tokens = useMemo(() => segmentForGloss(text), [text])
   const learned = useMemo(() => new Set(learnedWords ?? learningTrail), [learnedWords, learningTrail])
+  const speaking = speech.status === 'playing' && speech.text === text.trim()
+  let offset = -Math.max(0, text.indexOf(text.trim()))
   return (
     <>
       {tokens.map((t, i) => {
+        const start = offset
+        offset += t.text.length
+        const focus = speaking && rangesOverlap(start, t.text.length, speech.charIndex, speech.charLength)
         const vocab = t.vocab ?? (HANZI_ONLY.test(t.text) ? lookup(t.text) : undefined)
         const tappable = vocab || HANZI_ONLY.test(t.text)
         if (!tappable) return <span key={i}>{t.text}</span>
@@ -93,6 +100,7 @@ export function Glossed({ text, onWord, learnedWords, highlightLearned = true }:
             className={vocab ? 'word' : 'word word-unknown'}
             data-learned={highlightLearned && learned.has(t.text)}
             data-mastery={mastery[t.text]?.state ?? 'learning'}
+            data-speaking={focus}
             role="button"
             aria-label={`Look up ${t.text}`}
             tabIndex={0}
@@ -280,7 +288,7 @@ export function DialogueAudio({ text }: { text: LessonText }) {
         voice: voiceForSpeaker(line.speaker),
         rate: LINE_RATE,
       })),
-      { group, key: group },
+      { group, key: group, trackWords: true },
     )
     return () => stopSpeech()
     // Replay only when this 课文 changes, not when the line array identity changes.
@@ -305,7 +313,7 @@ export function DialogueAudio({ text }: { text: LessonText }) {
               voice: voiceForSpeaker(line.speaker),
               rate: LINE_RATE,
             })),
-            { group, key: group },
+            { group, key: group, trackWords: true },
           )
         }}
       >

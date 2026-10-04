@@ -1,0 +1,328 @@
+[
+  {
+    "key": "5:1",
+    "chapterTitle": "Who the New Rich Are",
+    "title": "Freedom is control over ordinary days",
+    "explanation": "Income is useful when it buys choices about time, location and the experiences you actually want. Measuring only the balance can keep you doing unnecessary work even after the life it was meant to fund is affordable.",
+    "anchor": "s1",
+    "family": "freedom",
+    "before": "More money will eventually give me the life I want.",
+    "after": "Define the ordinary life first, then build the income and control it needs."
+  },
+  {
+    "key": "5:2",
+    "chapterTitle": "Rules for a New Game",
+    "title": "Change a rule only when it improves the result",
+    "explanation": "The chapter separates a useful challenge to convention from novelty for its own sake: keep a working method and test an opposite when the common one is failing. A comparison of actual results makes the decision about the method, rather than about being unconventional.",
+    "anchor": "s1",
+    "family": "rules",
+    "before": "The usual way must be right, or the unusual way must be better.",
+    "after": "Test the assumption against the result; neither popularity nor novelty is proof."
+  },
+  {
+    "key": "5:3",
+    "chapterTitle": "Set Fear in Writing",
+    "title": "Give fear a repair plan",
+    "explanation": "Writing the worst case turns a vague threat into separate outcomes you can estimate, prevent or repair. This makes a decision inspectable without pretending that a serious or irreversible downside has disappeared.",
+    "anchor": "s3",
+    "family": "fear",
+    "before": "If a change feels frightening, it must be too dangerous.",
+    "after": "Name the damage, likelihood and repair route before deciding whether the risk is acceptable."
+  },
+  {
+    "key": "5:4",
+    "chapterTitle": "Dreamline Your Next Months",
+    "title": "Turn a desired life into dated steps",
+    "explanation": "Dreamlining connects an experience you want with a timetable, its costs and an action you can take now. That connection prevents an ever-larger money target from substituting for a decision about how you want to spend your week.",
+    "anchor": "s3",
+    "family": "freedom"
+  },
+  {
+    "key": "5:5",
+    "chapterTitle": "Pareto and Parkinson",
+    "title": "Choose worthwhile work before speeding it up",
+    "explanation": "Effectiveness chooses work that moves the goal; efficiency only reduces the waste inside the chosen task. Combining a cut to low-value work with a tighter deadline gives important output room to finish instead of making a full calendar faster.",
+    "anchor": "s3",
+    "family": "eliminate"
+  },
+  {
+    "key": "5:6",
+    "chapterTitle": "The Low-Information Diet",
+    "title": "Choose information by the decision it serves",
+    "explanation": "Every additional input spends attention even if you never use it. Limiting irrelevant or unactionable intake preserves attention for decisions and output, while necessary operational signals still need an explicit route.",
+    "anchor": "s1",
+    "family": "attention"
+  },
+  {
+    "key": "5:7",
+    "chapterTitle": "Refuse and Batch Work",
+    "title": "Use a different rule for each interruption",
+    "explanation": "Unnecessary contacts can be declined, necessary repetitive work can be batched, and approval bottlenecks need delegated authority. Applying the same response to all three leaves either deep work interrupted or required work unattended.",
+    "anchor": "s1",
+    "family": "inbox"
+  },
+  {
+    "key": "5:8",
+    "chapterTitle": "Eliminate then Delegate",
+    "title": "Remove waste before hiring someone to repeat it",
+    "explanation": "Delegation multiplies the process you hand over, including its unnecessary steps. Eliminate or simplify first, then define an observable finished result so a helper buys back useful time instead of returning a new management burden.",
+    "anchor": "s2",
+    "family": "delegate"
+  },
+  {
+    "key": "5:9",
+    "chapterTitle": "Finding the Muse",
+    "title": "Design the income vehicle around its operating load",
+    "explanation": "A small offer must serve a reachable buyer while leaving enough margin and a manageable running workload. Screening distribution and delivery before adding features prevents a product that sells from becoming another full-time job.",
+    "anchor": "s1",
+    "family": "market"
+  },
+  {
+    "key": "5:10",
+    "chapterTitle": "Testing the Muse",
+    "title": "Separate a buying signal from a compliment",
+    "explanation": "A request to buy supplies stronger demand evidence than a polite opinion, but a click, signup and payment are still different signals. A bounded, transparent test lets you compare the offer before committing production money without reporting hypothetical orders as revenue.",
+    "anchor": "s3",
+    "family": "demand"
+  },
+  {
+    "key": "5:11",
+    "chapterTitle": "Management by Absence",
+    "title": "Replace routine founder decisions with rules",
+    "explanation": "A company becomes less dependent on its founder when roles, spending limits, reports and exception routes are explicit. Removing the founder from ordinary routing tests whether those rules can handle the work; abandoning oversight would test something else.",
+    "anchor": "s1",
+    "family": "delegate"
+  },
+  {
+    "key": "5:12",
+    "chapterTitle": "Disappearing Act",
+    "title": "Make the remote proposal measurable",
+    "explanation": "An employer can assess a remote arrangement when it has a record of results, a reliable communication method and a limited trial. Framing the change around the work outcome lowers uncertainty more effectively than asking for an unmeasured personal perk.",
+    "anchor": "s2",
+    "family": "remote"
+  },
+  {
+    "key": "5:13",
+    "chapterTitle": "Beyond Repair",
+    "title": "Define the exit before sunk time decides for you",
+    "explanation": "Past effort does not make a role worth another year. Naming a stop condition, a cash plan and a route back lets you compare staying with leaving on forward consequences rather than on pride in the original decision.",
+    "anchor": "s3",
+    "family": "exit"
+  },
+  {
+    "key": "5:14",
+    "chapterTitle": "Mini-Retirements",
+    "title": "Use freedom in a repeatable stretch",
+    "explanation": "A mini-retirement changes the daily rhythm by giving you time to live in one place rather than race through a checklist. Its usefulness depends on an operational handoff and a budget that can support the stretch, not just on buying a ticket.",
+    "anchor": "s2",
+    "family": "travel"
+  },
+  {
+    "key": "5:15",
+    "chapterTitle": "Filling the Void",
+    "title": "Give freed time an outside purpose",
+    "explanation": "Removing work also removes routine and social contact, so an empty calendar can feel unsettled rather than fulfilled. Learning, relationships and service give the new space a purpose instead of filling it with invented urgency.",
+    "anchor": "s2",
+    "family": "meaning"
+  },
+  {
+    "key": "5:16",
+    "chapterTitle": "New Rich Mistakes",
+    "title": "Avoid rebuilding the approval bottleneck",
+    "explanation": "Repeated rescues teach capable people to wait for your intervention. Written responsibilities and exception limits preserve their authority, while a clear escalation rule keeps genuine problems visible.",
+    "anchor": "s3",
+    "family": "delegate"
+  },
+  {
+    "key": "5:17",
+    "chapterTitle": "Slow Down and Notice",
+    "title": "Evaluate the day you are actually living",
+    "explanation": "A packed calendar proves occupation, not that the day reflects your priorities. Looking for a recurring gap between the life you choose and the agenda you repeat creates a reason to change the routine rather than merely endure it.",
+    "anchor": "s2",
+    "family": "meaning"
+  },
+  {
+    "key": "5:21",
+    "chapterTitle": "Let Bad Things Happen",
+    "title": "Protect attention as well as hours",
+    "explanation": "A brief look at an unresolved queue can occupy the rest of a nominally free afternoon. Deciding which small, repairable delays are acceptable protects a chosen outcome, while essential obligations need their own escalation rule.",
+    "anchor": "s1",
+    "family": "attention"
+  },
+  {
+    "key": "5:22",
+    "chapterTitle": "A Year of Rules",
+    "title": "Make the terms of a favor explicit",
+    "explanation": "An expensive favor with an unnamed exchange can hand the giver control over a later decision. Clear terms and standing boundaries prevent social pressure from becoming an obligation whose price you never chose.",
+    "anchor": "s2",
+    "family": "rules"
+  },
+  {
+    "key": "5:23",
+    "chapterTitle": "Buy It There",
+    "title": "Separate certain needs from contingencies",
+    "explanation": "Packing every possible need creates a certain cost in weight and attention to avoid uncertain small costs later. A light kit and a settling budget let ordinary contingencies wait until the need is real, provided essentials are actually obtainable.",
+    "anchor": "s1",
+    "family": "travel"
+  },
+  {
+    "key": "5:24",
+    "chapterTitle": "Cut Extra Choices",
+    "title": "Close recurring and reversible decisions",
+    "explanation": "A standing rule resolves a repeated choice once, while a time or option cap limits low-consequence deliberation. This returns attention to action without pretending that a consequential, hard-to-reverse decision deserves the same shortcut.",
+    "anchor": "s4",
+    "family": "decision"
+  },
+  {
+    "key": "5:29",
+    "chapterTitle": "Habits Worth Stopping",
+    "title": "Remove one source of static",
+    "explanation": "A not-to-do list prevents a recurring interruption from entering the day at all. Choosing one or two concrete bans creates room for important work more reliably than adding another priority to a calendar that cannot hold it.",
+    "anchor": "s1",
+    "family": "eliminate"
+  },
+  {
+    "key": "5:30",
+    "chapterTitle": "Margin Over Growth",
+    "title": "Measure what remains after the sale",
+    "explanation": "Revenue can rise while kept earnings fall if acquisition, returns, delivery and channel costs rise faster. Reviewing contribution and operating load exposes that trade before growth is mistaken for a healthier business.",
+    "anchor": "s3",
+    "family": "profit"
+  },
+  {
+    "key": "5:31",
+    "chapterTitle": "Leave the Inbox",
+    "title": "Delegate categories, retain exceptions",
+    "explanation": "An inbox becomes transferable when messages are classified by decisions and standard responses rather than by a need to mimic your personality. A concise exception review preserves your judgment while routine processing stops consuming the day.",
+    "anchor": "s3",
+    "family": "inbox"
+  },
+  {
+    "key": "5:32",
+    "chapterTitle": "Rules for Mail",
+    "title": "Write the decisions an assistant may make",
+    "explanation": "A processing sheet turns your repeated preferences into rules another person can apply. Deadlines, spending limits and an urgent route make the handoff useful, while signing as the assistant keeps the representation honest.",
+    "anchor": "s3",
+    "family": "inbox"
+  },
+  {
+    "key": "5:33",
+    "chapterTitle": "Propose Remote Work",
+    "title": "Propose a scoped remote trial",
+    "explanation": "A proposal becomes reviewable when it names duties, observable standards, communication tools and a trial period. Those specifics let a manager evaluate whether delivery survives the location change rather than decide on a vague promise of flexibility.",
+    "anchor": "s3",
+    "family": "remote"
+  },
+  {
+    "key": "5:37",
+    "chapterTitle": "Outsource the Longest Chores",
+    "title": "Hand off the chores that keep returning",
+    "explanation": "The source musician bought time back by giving repetitive research and production tasks a defined owner while keeping work he valued. The change shows that a handoff can be worthwhile when income holds and time returns, without claiming every side-offer test has already succeeded.",
+    "anchor": "s1",
+    "family": "delegate"
+  },
+  {
+    "key": "5:38",
+    "chapterTitle": "Remote, Then the Arts",
+    "title": "Negotiate time, then spend it on a life",
+    "explanation": "In the source case, eliminating waste and negotiating remote work made room for relationships and the arts while the role continued. The useful sequence is to demonstrate output and then choose what the recovered hours are for, rather than create another workload immediately.",
+    "anchor": "s3",
+    "family": "freedom"
+  },
+  {
+    "key": "5:39",
+    "chapterTitle": "Files Instead of Prints",
+    "title": "A product decision can delete an operation",
+    "explanation": "Selling digital files removed printing from the source photographer’s delivery model. Looking for a step the customer need does not require can reduce both cost and dependence on your presence more deeply than executing that step faster.",
+    "anchor": "s2",
+    "family": "eliminate"
+  },
+  {
+    "key": "5:40",
+    "chapterTitle": "Law from Another City",
+    "title": "Separate client delivery from your physical address",
+    "explanation": "The source lawyer kept a domestic contact and document route while doing the work from another city. The transferable idea is to map which parts of delivery actually require a location; professional obligations, confidentiality and client expectations still determine whether that map is usable.",
+    "anchor": "s2",
+    "family": "remote"
+  },
+  {
+    "key": "5:41",
+    "chapterTitle": "A Niche She Loved",
+    "title": "Launch a small collection to learn from the niche",
+    "explanation": "The source founder understood a devoted audience and sent a few designs into production. That provides a focused first test, but an opening site and a printed collection are progress toward demand evidence, not proof of profitable automated income.",
+    "anchor": "s3",
+    "family": "market"
+  },
+  {
+    "key": "5:42",
+    "chapterTitle": "Leave After You Vanish",
+    "title": "Rehearse the communication method before the move",
+    "explanation": "Colleagues in the source case learned to reach the developer through a channel that worked away from the chair. A communication rehearsal tests continuity before distance is added; an explicit arrangement is still needed rather than assuming invisibility is permission.",
+    "anchor": "s1",
+    "family": "remote"
+  },
+  {
+    "key": "5:43",
+    "chapterTitle": "Dollars from Anywhere",
+    "title": "Test mobile delivery before depending on it",
+    "explanation": "The source practitioner ran working trips and adjusted the setup before leaving the hospital role. Testing calls, connections, client acquisition and delivery under real conditions reduces uncertainty that a desirable destination cannot resolve.",
+    "anchor": "s3",
+    "family": "experiment"
+  },
+  {
+    "key": "5:44",
+    "chapterTitle": "School on the Road",
+    "title": "Keep continuity while adding immersion",
+    "explanation": "The source family combined online or home-culture learning with local schooling. That dual track shows how travel can add language and experience without abandoning continuity; whether it fits a child must be assessed from their learning and support needs.",
+    "anchor": "s3",
+    "family": "education"
+  },
+  {
+    "key": "5:45",
+    "chapterTitle": "Sell While Still Hired",
+    "title": "Build the bridge while salary still arrives",
+    "explanation": "A dated exit and a paid service responding to existing requests gave the source analyst a bridge before the guide was ready. Separating bridge income from the eventual product prevents a promising draft from being counted as replacement cash.",
+    "anchor": "s3",
+    "family": "exit"
+  },
+  {
+    "key": "5:46",
+    "chapterTitle": "Build During the Trip",
+    "title": "Use a protected block for the parts only you can do",
+    "explanation": "The source builder combined a short night window with outsourced pieces and an information diet. The mechanism is a bounded block devoted to shipping, while the reported income was a partial replacement rather than proof that quitting is always the right trigger.",
+    "anchor": "s2",
+    "family": "attention"
+  },
+  {
+    "key": "5:47",
+    "chapterTitle": "Propose the Remote Job",
+    "title": "Make the ask concrete and price a refusal",
+    "explanation": "The source employee proposed keeping work she liked from a new city and had savings for a no. A written scope plus a funded fallback makes the decision assessable rather than letting other people’s predictions stand in for the employer’s answer.",
+    "anchor": "s2",
+    "family": "remote"
+  },
+  {
+    "key": "5:48",
+    "chapterTitle": "Crunch the Owner Week",
+    "title": "Use a shorter owner week to expose low-value work",
+    "explanation": "The source owner’s constrained schedule forced work to be removed or handed to people already on the payroll. Keeping tasks connected to sales, cost and required obligations makes the time cut an operational redesign rather than a hope that less attendance alone creates profit.",
+    "anchor": "s2",
+    "family": "profit"
+  },
+  {
+    "key": "5:49",
+    "chapterTitle": "Clear the Week First",
+    "title": "Clear the workflow before changing the location",
+    "explanation": "The source administrator batched messages and removed meetings before asking to work virtually. That sequence made remote delivery visible in the current process, so the proposal could build on observed results instead of rely on a future cleanup.",
+    "anchor": "s2",
+    "family": "remote"
+  },
+  {
+    "key": "5:53",
+    "chapterTitle": "Choosing What to Read",
+    "title": "Start reading from a specific block",
+    "explanation": "A short reading list serves a problem you can name rather than an endless intake target. Pricing the book in time and stopping when the block has moved keeps reading connected to action, without treating a quoted reading speed as your own measured pace.",
+    "anchor": "s1",
+    "family": "resources"
+  }
+]

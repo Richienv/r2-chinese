@@ -20,6 +20,8 @@ test('Mandarin sittings retrieve actual source words and keep production source-
         const expected = node === 'wrap' ? flow.teachVocab(lesson.lesson) : content.textSitting(lesson, content.textNodeIndex(node)).words
         assert.deepEqual(recalls.map((step) => step.word.zh), expected.map((word) => word.zh))
         if (node !== 'wrap') {
+          const examples = active.filter((step) => step.kind === 'teach' && step.phase === 'example').map((step) => step.example.zh)
+          assert.equal(new Set(examples).size, examples.length, 'a standalone example line should not repeat for every word')
           const sitting = content.textSitting(lesson, content.textNodeIndex(node))
           const source = [...sitting.text.lines, ...(sitting.grammar?.examples ?? [])]
           const production = active.filter((step) => step.kind === 'produce')

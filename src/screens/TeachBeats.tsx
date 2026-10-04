@@ -1,4 +1,4 @@
-import { type CSSProperties, useEffect, useId, useMemo, useRef, useState, type PointerEvent } from 'react'
+import { useEffect, useId, useMemo, useRef, useState, type PointerEvent } from 'react'
 import { Glossed, useGloss } from '../components/ChineseText'
 import { HearButton, useAutoSpeak, useSpeechActive } from '../components/Hear'
 import { SaveStar } from '../components/SaveStar'
@@ -294,46 +294,17 @@ function ExampleBeat({
     )
   }
 
-  const bits = splitOnWord(example.zh, word.zh)
   return (
-    <div className="teach-example-stage">
+    <div className="teach-example-stage teach-example-focused">
       <p className="teach-example-line zh" lang="zh-CN">
-        {bits.map((b, i) => (
-          <span
-            key={`${b.text}-${i}`}
-            className={b.hit ? 'teach-tok teach-hit teach-brush' : 'teach-tok'}
-            style={
-              b.hit
-                ? ({ '--teach-delay': `${90 + i * 95}ms` } as CSSProperties)
-                : { animationDelay: `${90 + i * 95}ms` }
-            }
-          >
-            {b.hit ? (
-              <button
-                type="button"
-                className="word teach-hit-tap"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  onWord(word)
-                }}
-              >
-                {b.text}
-              </button>
-            ) : (
-              <Glossed text={b.text} onWord={onWord} />
-            )}
-          </span>
-        ))}
+        <Glossed text={example.zh} onWord={onWord} learnedWords={[word.zh]} />
       </p>
-      {prefs.showPinyin && example.pinyin && (
-        <p className="teach-example-pyin teach-stagger-in" style={{ animationDelay: `${90 + bits.length * 95 + 80}ms` }}>
-          {example.pinyin}
-        </p>
-      )}
-      {prefs.showEnglish && example.en && (
-        <p className="teach-example-yes teach-stagger-in" style={{ animationDelay: `${90 + bits.length * 95 + 200}ms` }}>
-          {example.en}
-        </p>
+      {(prefs.showPinyin || prefs.showEnglish) && (
+        <details className="teach-example-support">
+          <summary>Pronunciation & meaning</summary>
+          {prefs.showPinyin && example.pinyin && <p className="teach-example-pyin">{example.pinyin}</p>}
+          {prefs.showEnglish && example.en && <p className="teach-example-yes">{example.en}</p>}
+        </details>
       )}
       <HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
     </div>

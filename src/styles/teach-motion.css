@@ -143,3 +143,7 @@
     opacity: 1;
   }
 }
+.teach-example-focused .teach-example-support { align-self: stretch; border: 1px solid #dfd6c8; border-radius: 17px; padding: 12px 16px; background: #fcf9f1; color: #9a8972; font-size: 12px; }
+.teach-example-focused .teach-example-support summary { cursor: pointer; }
+.teach-example-focused .teach-example-support .teach-example-pyin { margin: 12px 0 0; font-size: 14px; line-height: 1.7; }
+.teach-example-focused .teach-example-support .teach-example-yes { margin: 10px 0 0; font-size: 15px; line-height: 1.65; }

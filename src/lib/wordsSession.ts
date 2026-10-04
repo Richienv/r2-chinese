@@ -128,11 +128,16 @@ function buildTextSteps(lesson: number, node: Exclude<PathNode, 'wrap'>): Sessio
   if (!sitting) return [{ kind: 'complete' }]
 
   const draft: Array<Exclude<SessionStep, { kind: 'complete' }>> = []
+  const seenExamples = new Set<string>()
 
   for (const word of sitting.words) {
     const example = sessionExample(word.zh, lesson)
     const hook = wordHook(word, example, lesson)
-    const phases: TeachPhase[] = example
+    // A source line can introduce several words. Hear it once as a standalone
+    // example; the full script and later retrieval still revisit it in context.
+    const freshExample = example && !seenExamples.has(example.zh)
+    if (example) seenExamples.add(example.zh)
+    const phases: TeachPhase[] = freshExample
       ? ['meet', 'hook', 'example', 'seal']
       : ['meet', 'hook', 'seal']
     for (const phase of phases) {
