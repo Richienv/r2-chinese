@@ -1,3 +1,4 @@
+import type { BookClip } from './bookAudioIndex.ts'
 import { timingAt, type WordTiming } from './speechTiming.ts'
 
 export type SpeakOpts = {
@@ -33,7 +34,12 @@ const listeners = new Set<() => void>()
 // SpeechSynthesis does not consistently fire onend when cancelled. Resolve
 // playback explicitly so stopping a playlist cannot leave it hung.
 const cancellations = new Set<() => void>()
+// Exact book lines and vocabulary play the publisher's recording when it is
+// installed; everything else (and any missing recording) uses the neural voice.
+let clipFor: (text: string) => BookClip | null = () => null
+const warmed = new Set<string>()
 
+export function setClipResolver(resolve: (text: string) => BookClip | null) { clipFor = resolve }
 export function setSpeechEnabled(on: boolean) {
   if (enabled === on) return
   enabled = on
@@ -102,7 +108,15 @@ function load(text: string, voice: string, rate: number, timings = false): Promi
 export function prefetch(text: string, opts?: SpeakOpts) {
   const trimmed = text.trim()
   if (!enabled || !trimmed) return
+  const recorded = clipFor(trimmed)
+  if (recorded) return warm(recorded.url)
   void load(trimmed, opts?.voice ?? defaultVoice, opts?.rate ?? DEFAULT_RATE, opts?.trackWords).catch(() => {})
+}
+/** Pull a whole track into the browser cache once, so seeking into it is instant. */
+function warm(url: string) {
+  if (warmed.has(url) || typeof fetch === 'undefined') return
+  warmed.add(url)
+  void fetch(url).then((res) => res.blob()).catch(() => { warmed.delete(url) })
 }
 /** Cancellation settles network waits; the cached download may finish. */
 function cancellable<T>(work: Promise<T>, mine: number): Promise<T | undefined> {
@@ -119,6 +133,7 @@ async function playNeural(text: string, voice: string, rate: number, tracked: bo
   const a = element()
   a.src = clip.url
   a.currentTime = 0
+  a.playbackRate = 1
   return new Promise<boolean>((resolve, reject) => {
     let frame = 0
     let finished = false
@@ -155,6 +170,65 @@ async function playNeural(text: string, voice: string, rate: number, tracked: bo
     }).catch((err) => finish(false, err))
   })
 }
+/** The TTS speed scale maps to the recording's tempo: normal, a little slower, much slower. */
+function recordedSpeed(rate: number) { return rate >= -14 ? 1 : rate >= -30 ? .85 : .7 }
+function sameTrack(a: HTMLAudioElement, url: string) { return !!a.src && (a.src === url || a.src.endsWith(url)) }
+/** Plays one stretch of a publisher track, then stops at the end of that line or word. */
+function playRecorded(book: BookClip, rate: number, mine: number, base: SpeechSnapshot): Promise<boolean> {
+  const a = element()
+  const speed = recordedSpeed(rate)
+  return new Promise<boolean>((resolve, reject) => {
+    if (mine !== seq) return resolve(false)
+    let frame = 0
+    let timer = 0
+    let finished = false
+    let lastIndex: number | null = null
+    function finish(completed: boolean, error?: Error) {
+      if (finished) return
+      finished = true
+      cancelAnimationFrame(frame)
+      clearTimeout(timer)
+      a.removeEventListener('ended', ended)
+      a.removeEventListener('error', failed)
+      a.removeEventListener('loadedmetadata', seek)
+      cancellations.delete(cancel)
+      if (mine === seq) a.pause()
+      if (error) reject(error)
+      else resolve(completed)
+    }
+    const cancel = () => finish(false)
+    const ended = () => finish(mine === seq)
+    const failed = () => finish(false, new Error('recording could not load'))
+    // Some browsers ignore a seek made before the track's metadata arrives.
+    const seek = () => { if (!finished && mine === seq && Math.abs(a.currentTime - book.start) > .5) a.currentTime = book.start }
+    const follow = () => {
+      if (finished || mine !== seq) return
+      if (a.currentTime >= book.end) return finish(true)
+      const word = timingAt(book.words, a.currentTime - book.start)
+      if (word && word.charIndex !== lastIndex) {
+        lastIndex = word.charIndex
+        publish({ ...base, status: 'playing', timing: 'words', charIndex: word.charIndex, charLength: word.charLength })
+      }
+      frame = requestAnimationFrame(follow)
+    }
+    cancellations.add(cancel)
+    a.addEventListener('ended', ended)
+    a.addEventListener('error', failed)
+    a.addEventListener('loadedmetadata', seek)
+    if (!sameTrack(a, book.url)) a.src = book.url
+    a.currentTime = book.start
+    a.defaultPlaybackRate = speed
+    a.playbackRate = speed
+    a.preservesPitch = true
+    void a.play().then(() => {
+      if (finished || mine !== seq) return
+      publish({ ...base, status: 'playing', timing: book.words.length ? 'words' : 'line' })
+      // Backstop for hidden tabs, where animation frames pause but audio keeps going.
+      timer = setTimeout(() => finish(true), ((book.end - book.start) / speed) * 1000 + 600) as unknown as number
+      follow()
+    }).catch((err) => finish(false, err))
+  })
+}
 function playWebSpeech(text: string, rate: number, mine: number, base: SpeechSnapshot): Promise<boolean> {
   return new Promise((resolve, reject) => {
     if (mine !== seq) return resolve(false)
@@ -184,6 +258,14 @@ async function playOne(text: string, opts: SpeakOpts | undefined, mine: number):
   const rate = opts?.rate ?? DEFAULT_RATE
   const base: SpeechSnapshot = { ...idle, key: opts?.key ?? cacheKey(trimmed, voice, rate), group: opts?.group ?? '', text: trimmed, status: 'loading' }
   publish(base)
+  const recorded = clipFor(trimmed)
+  if (recorded) {
+    try { return await playRecorded(recorded, rate, mine, base) }
+    catch {
+      if (mine !== seq) return false
+      recorded.fail()
+    }
+  }
   try { return await playNeural(trimmed, voice, rate, !!opts?.trackWords, mine, base) }
   catch {
     if (mine !== seq) return false

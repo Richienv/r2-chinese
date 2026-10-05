@@ -24,7 +24,26 @@ npm run build      # tsc -b && vite build
 
 ## Audio
 
-Pronunciation uses **Microsoft's neural Mandarin voice** (`zh-CN-XiaoxiaoNeural`)
+**The book's own recordings come first.** HSK Standard Course 4A ships with
+recordings of native speakers, which the publisher (BLCU Press) offers free at
+<https://www.blcup.com/Res/ResInfo?rid=55014>. Every line of every 课文 and
+every vocabulary word in the book plays from those recordings, never from a
+synthesized voice. Anything not in the book (extra examples, grammar sentences,
+other courses) uses the neural voice below.
+
+```bash
+node scripts/fetch-book-audio.mjs    # downloads 50 mp3s into public/audio/hsk4a/ (gitignored)
+```
+
+The recordings are the publisher's copyright, so they are **not committed**. What
+is committed is `src/data/hsk4a-audio.json`: for each book line and word, which
+track and which seconds. `scripts/align-book-audio.py` builds it (Whisper word
+timestamps fitted to the book text, edges snapped to the silences, vocabulary
+assigned by position and only trusted when the counts match the book). With the
+files missing, `src/lib/bookAudio.ts` detects it and everything uses the neural
+voice. Set `VITE_BOOK_AUDIO_BASE` to serve the tracks from somewhere else.
+
+For text that is not in the book, pronunciation uses **Microsoft's neural Mandarin voice** (`zh-CN-XiaoxiaoNeural`)
 instead of the robotic browser default. `api/tts.ts` is a Vercel serverless
 function that speaks Edge's "Read Aloud" WebSocket protocol directly — the same
 Azure neural engine, reachable with no API key and no per-character cost. It
@@ -216,5 +235,8 @@ rice-grid writing surface, and the exact HanziWriter config all match.
   which is a fallback, not a feature.
 - **Fonts** come from Google Fonts; self-host for production.
 - **Copyright.** The lesson text, vocabulary and culture notes are the
-  publisher's. This build is fine as a personal study tool; distributing it
-  needs permission from Beijing Language and Culture University Press.
+  publisher's, and so are the recordings. This build is fine as a personal study
+  tool; distributing it needs permission from Beijing Language and Culture
+  University Press. This is why `public/audio/` is gitignored: this repository is
+  public, and a deploy only includes the recordings if you fetch them into the
+  build environment (or host them privately and set `VITE_BOOK_AUDIO_BASE`).

@@ -7,3 +7,7 @@ dist
 .DS_Store
 tsconfig.tsbuildinfo
 .vercel
+
+# Publisher recordings (BLCU copyright): fetch with scripts/fetch-book-audio.mjs, never commit.
+public/audio/
+.cache/

@@ -3,7 +3,8 @@ import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { listeningScripts, nextListeningScript, learnedHskWords, compositionBundle } from '../src/lib/hskPractice.ts'
 import { writingCoverage, reviewComposition } from '../src/lib/composition.ts'
-import { alignSpeechBoundaries, parseSpeechMetadata, rangesOverlap, timingAt } from '../src/lib/speechTiming.ts'
+import { alignSpeechBoundaries, parseSpeechMetadata } from '../api/tts.ts'
+import { rangesOverlap, timingAt } from '../src/lib/speechTiming.ts'
 import assessHandler from '../api/assess.ts'
 
 const { lessons } = JSON.parse(await readFile(new URL('../src/data/hsk4a.json', import.meta.url), 'utf8'))
