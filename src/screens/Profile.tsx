@@ -130,7 +130,7 @@ export function Profile({
         </button>
       )}
 
-      <p className="profile-source-note">Content from 标准教程 HSK 4上, Beijing Language and Culture University Press.</p>
+      <p className="profile-source-note">Content and audio recordings from 标准教程 HSK 4上 (HSK Standard Course 4A), © Beijing Language and Culture University Press. Used here for personal study only, not for sale.</p>
     </div>
   )
 }
