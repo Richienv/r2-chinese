@@ -72,8 +72,7 @@
 .production-form { display: grid; gap: 10px; min-width: 0; }
 .production-compose label,
 .production-form label { font-size: 12px; font-weight: 750; color: #62594f; }
-.production-input,
-.drill-input {
+.production-input {
   display: block;
   width: 100%;
   min-height: 58px;
@@ -90,12 +89,9 @@
   transition: border-color 180ms var(--ease), box-shadow 180ms var(--ease), background-color 180ms var(--ease);
 }
 textarea.production-input { min-height: 112px; max-height: 260px; resize: vertical; }
-.production-input::placeholder,
-.drill-input::placeholder { color: #978b7e; font-family: var(--ui); font-size: 14px; }
-.production-input:focus,
-.drill-input:focus { border-color: #bc5735; background: #fff; box-shadow: 0 0 0 4px #c76b3b12; }
-.production-input:disabled,
-.drill-input:disabled { opacity: 0.65; cursor: default; }
+.production-input::placeholder { color: #978b7e; font-family: var(--ui); font-size: 14px; }
+.production-input:focus { border-color: #bc5735; background: #fff; box-shadow: 0 0 0 4px #c76b3b12; }
+.production-input:disabled { opacity: 0.65; cursor: default; }
 .production-controls,
 .production-actions { display: flex; align-items: center; gap: 9px; }
 .production-controls > *,
@@ -156,8 +152,7 @@ textarea.production-input { min-height: 112px; max-height: 260px; resize: vertic
   transition: transform 180ms var(--spring), color 180ms var(--ease), background-color 180ms var(--ease);
 }
 .production-hints button:disabled { opacity: 0.5; cursor: default; }
-.production-hint,
-.drill-hint {
+.production-hint {
   padding: 14px 16px;
   border-radius: 15px;
   border: 1px solid #e7ceab;
@@ -167,8 +162,7 @@ textarea.production-input { min-height: 112px; max-height: 260px; resize: vertic
   line-height: 1.65;
   animation: learning-arrive 300ms var(--ease) both;
 }
-.production-hint p,
-.drill-hint p { margin: 5px 0 0; }
+.production-hint p { margin: 5px 0 0; }
 .production-hint .zh { font-size: 20px; color: #443024; }
 .production-clues { display: flex; flex-wrap: wrap; gap: 6px; }
 .production-clues span { padding: 5px 10px; border-radius: 8px; background: #ebdfcc; font-size: 13px; color: #70472d; }
@@ -178,8 +172,7 @@ textarea.production-input { min-height: 112px; max-height: 260px; resize: vertic
 .production-review { display: flex; align-items: flex-start; gap: 9px; padding: 13px 0; color: #715d48; font-size: 12px; line-height: 1.6; }
 .production-review input { flex: none; width: 18px; height: 18px; margin: 1px 0 0; accent-color: #9e3928; }
 
-.production-feedback,
-.drill-feedback {
+.production-feedback {
   padding: 17px 18px;
   border: 1px solid #dfcfb7;
   border-radius: 19px;
@@ -187,12 +180,9 @@ textarea.production-input { min-height: 112px; max-height: 260px; resize: vertic
   color: #684b2f;
   animation: learning-arrive 350ms var(--ease) both;
 }
-.production-feedback[data-state='correct'],
-.drill-feedback[data-state='correct'] { background: #edf4e9; border-color: #c4d6bb; color: #2e5736; }
-.production-feedback h3,
-.drill-feedback h3 { margin: 0 0 6px; font-size: 15px; font-weight: 800; line-height: 1.4; }
-.production-feedback p,
-.drill-feedback p { margin: 5px 0 0; font-size: 13px; line-height: 1.65; }
+.production-feedback[data-state='correct'] { background: #edf4e9; border-color: #c4d6bb; color: #2e5736; }
+.production-feedback h3 { margin: 0 0 6px; font-size: 15px; font-weight: 800; line-height: 1.4; }
+.production-feedback p { margin: 5px 0 0; font-size: 13px; line-height: 1.65; }
 .production-feedback .recall-feedback { margin: -8px 0 4px -12px; color: inherit; }
 .production-comparison { display: grid; gap: 12px; padding-top: 13px; margin-top: 13px; border-top: 1px solid #d9cbb7; }
 .production-comparison small,
@@ -328,14 +318,11 @@ textarea.production-input { min-height: 112px; max-height: 260px; resize: vertic
   .production-turn,
   .production-hint,
   .production-feedback,
-  .drill-hint,
-  .drill-feedback,
   .mastery-popover,
   .learning-route [data-active='true']::after { animation: none; }
   .production-mic,
   .production-roles button,
   .production-input,
-  .drill-input,
   .mastery-trigger,
   .home-learning-trail,
   .trail-tabs button,

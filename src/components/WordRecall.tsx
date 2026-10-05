@@ -2,23 +2,42 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { RecallFeedback } from './LearningMotion'
 import { HearButton } from './Hear'
 import { HandwritingPad, useHandwritingWordAssessment } from './HandwritingPad'
+import { ListenCue } from './ListenCue'
+import { StrokeWord } from './StrokeWord'
 import { StudyDisplayControls } from './StudyDisplayControls'
 import { playCorrect, playReveal, playWrong } from '../lib/sfx'
 import { normalizeChinese } from '../lib/production'
+import { hintLadder, type DrillCue, type HintStep } from '../lib/drillRounds'
 import { blankWordInk, handwritingRecallEvidence, handwritingRetryMessage, replaceCharacterInk, wordInkComplete } from '../lib/handwriting-recall'
 import { useStore } from '../store/store'
 import type { Vocab } from '../lib/types'
 
-/** Production before recognition: a lesson word must be retrieved, not picked. */
-export function WordRecall({ word, n, of, externallyAssisted = false, onAssistance, onAttempt, onComplete }: {
+const HEADINGS: Record<DrillCue, string> = {
+  meaning: 'Find the word in your memory',
+  sound: 'Hear it, then write it',
+  pinyin: 'From the sound to the Hanzi',
+}
+const HINT_TITLES: Record<HintStep, string> = { meaning: 'Meaning', first: 'First character', pinyin: 'Pinyin', word: 'Book word' }
+const HINT_BUTTONS: Record<HintStep, string> = { meaning: 'Reveal the meaning', first: 'Reveal the first character', pinyin: 'Reveal pinyin', word: 'Reveal the word' }
+
+/**
+ * Production before recognition: a lesson word must be retrieved, not picked.
+ * `cue` changes what is shown (the meaning by default, or the word's sound, or
+ * its pinyin); the answer is always the Hanzi, typed or drawn.
+ */
+export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, externallyAssisted = false, onAssistance, onAttempt, onComplete }: {
   word: Vocab
   n: number
   of: number
+  cue?: DrillCue
+  /** Replay the word's stroke order once it has been recalled. */
+  showStrokes?: boolean
   externallyAssisted?: boolean
   onAssistance?: () => void
   onAttempt: (correct: boolean, assisted: boolean) => void
   onComplete: () => void
 }) {
+  const ladder = hintLadder(cue)
   const inputId = useId()
   const mounted = useRef(true)
   useEffect(() => {
@@ -96,11 +115,21 @@ export function WordRecall({ word, n, of, externallyAssisted = false, onAssistan
     <section className="production-stage word-recall">
       <header className="production-heading">
         <p className="sub">Recall · {n} of {of}</p>
-        <h2 className="session-step-title">Find the word in your memory</h2>
+        <h2 className="session-step-title">{HEADINGS[cue]}</h2>
       </header>
-      <div className="production-prompt">
-        <p className="production-en">{word.en}</p>
-        <p className="sub">The word from this lesson. Type it, or draw the Hanzi.</p>
+      <div className="production-prompt" data-cue={cue}>
+        {cue === 'meaning' && <>
+          <p className="production-en">{word.en}</p>
+          <p className="sub">The word from this lesson. Type it, or draw the Hanzi.</p>
+        </>}
+        {cue === 'sound' && <>
+          <ListenCue text={word.zh} />
+          <p className="sub">Listen as often as you like, then type it or draw the Hanzi.</p>
+        </>}
+        {cue === 'pinyin' && <>
+          <p className="production-pinyin">{word.pinyin}</p>
+          <p className="sub">Sound it out, then type it or draw the Hanzi.</p>
+        </>}
       </div>
       {!solved && <div className="word-recall-input-mode" aria-label="Answer input mode">
         <button type="button" className="btn btn-ghost" disabled={checking} aria-pressed={inputMode === 'type'} onClick={() => { setInputMode('type'); setFeedback(null) }}>Type Hanzi</button>
@@ -143,19 +172,19 @@ export function WordRecall({ word, n, of, externallyAssisted = false, onAssistan
       </form>}
       {!solved && (
         <div className="production-actions">
-          <button type="button" className="btn btn-ghost" disabled={hint >= 3 || checking} onClick={() => {
-            setHint((value) => Math.min(3, value + 1))
+          <button type="button" className="btn btn-ghost" disabled={hint >= ladder.length || checking} onClick={() => {
+            setHint((value) => Math.min(ladder.length, value + 1))
             onAssistance?.()
             playReveal()
-          }}>{hint === 0 ? 'Reveal a hint' : hint === 1 ? 'Reveal pinyin' : hint === 2 ? 'Reveal the word' : 'Word revealed'}</button>
+          }}>{hint >= ladder.length ? 'Word revealed' : hint === 0 ? 'Reveal a hint' : HINT_BUTTONS[ladder[hint]]}</button>
           <span className="sub">Hints help learning; they count as assisted.</span>
         </div>
       )}
       {hint > 0 && !solved && (
         <div className="production-hint" key={hint}>
-          <span>{hint === 1 ? 'First character' : hint === 2 ? 'Pinyin' : 'Book word'}</span>
-          <strong className={hint === 2 ? '' : 'zh'} lang={hint === 2 ? undefined : 'zh-CN'}>
-            {hint === 1 ? `${Array.from(word.zh)[0]}${'＿'.repeat(Math.max(0, Array.from(word.zh).length - 1))}` : hint === 2 ? word.pinyin : word.zh}
+          <span>{HINT_TITLES[ladder[hint - 1]]}</span>
+          <strong className={ladder[hint - 1] === 'pinyin' || ladder[hint - 1] === 'meaning' ? '' : 'zh'} lang={ladder[hint - 1] === 'pinyin' || ladder[hint - 1] === 'meaning' ? undefined : 'zh-CN'}>
+            {ladder[hint - 1] === 'first' ? `${Array.from(word.zh)[0]}${'＿'.repeat(Math.max(0, Array.from(word.zh).length - 1))}` : ladder[hint - 1] === 'pinyin' ? word.pinyin : ladder[hint - 1] === 'meaning' ? word.en : word.zh}
           </strong>
         </div>
       )}
@@ -164,7 +193,7 @@ export function WordRecall({ word, n, of, externallyAssisted = false, onAssistan
       </div>
       {solved && (
         <div className="production-source">
-          <p className="zh" lang="zh-CN">{word.zh}</p>
+          {showStrokes ? <StrokeWord text={word.zh} className="drill-strokes" showAttribution={false} /> : <p className="zh" lang="zh-CN">{word.zh}</p>}
           {prefs.showPinyin && <p>{word.pinyin}</p>}
           {prefs.showEnglish && <p>{word.en}</p>}
           <HearButton text={word.zh} label="Hear the word" />

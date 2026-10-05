@@ -33,6 +33,13 @@ source reading and choice checks remain knowledge checks, not verified productio
 - `DialoguePractice`: actual source roles, up to three replies, speech or typed input.
 - `SentencePractice`: source English to the learner's Chinese; accepted alternatives
   require the configured text evaluator rather than exact-string grading.
+- `DrillFlow`: the standalone recall drill, built on `WordRecall`. Each pass over a word
+  asks it differently (`src/lib/drillRounds.ts`): from the meaning, from hearing it
+  (the textbook's own recording when it has one), from its pinyin. The answer is always
+  the Hanzi, typed or drawn. There is no multiple choice. A missed word returns a few
+  rounds later, asked by its meaning. The screen reacts (word dots, an unaided-run
+  counter, a glow and shake on the result, stroke order when a word is recalled, haptics
+  on phones) and ends with a per-word breakdown and a drill of just the words to revisit.
 - `MasteryTracker`: current word states and the evidence behind them.
 - `RecallFeedback` / `VoiceWaveform`: finite feedback animation and real input visualization.
 - `sfx`: interaction, hint, listening, success, repair, and completion cues under one mute preference.
@@ -45,6 +52,11 @@ retrieval success. Multiple choice records recognition only. Assisted answers
 and misses return the word to needs practice. A mastered word needs three unaided
 production successes across two distinct days since its latest miss or hint.
 This is a transparent product threshold, not a claim of measured fluency.
+
+In the drill, every hint (including the meaning on a listening or pinyin round) is
+assistance, a wrong check makes the round a miss even if the learner then succeeds with
+help, and a word that needed help stays assisted for the rest of that session, so the
+summary shows "With help", never "Recalled", for it.
 
 Hints and revealed corrections persist across close/reopen. Dialogue hints apply
 to their specific reply. A progress peek that exposes all vocabulary assists the

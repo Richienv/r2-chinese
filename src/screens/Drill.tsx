@@ -1,26 +1,44 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { Fireworks } from '../components/Fireworks'
-import { ChineseHear, HearButton } from '../components/Hear'
 import { CheckIcon, CloseIcon } from '../components/Icons'
 import { MasteryTracker } from '../components/MasteryTracker'
-import { SaveStar } from '../components/SaveStar'
-import { exampleFor, lessonOf, lookup } from '../lib/content'
-import { buildDrillQuestion, buildDrillQueue, requeue } from '../lib/drill'
+import { WordRecall } from '../components/WordRecall'
+import { lessonOf, lookup } from '../lib/content'
+import { buildDrillQueue } from '../lib/drill'
+import {
+  addOutcome, classifyRound, nextStreak, pipState, planRounds, requeueRound, streakTier, wordsToRevisit,
+  type DrillRound, type Outcomes, type PipState,
+} from '../lib/drillRounds'
 import { recordHistory } from '../lib/history'
-import { matchesHanzi } from '../lib/mastery'
-import { playCorrect, playWrong } from '../lib/sfx'
+import { haptic, playAdvance, playComplete } from '../lib/sfx'
 import { unlockSpeech } from '../lib/speech'
-import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 import { useStore } from '../store/store'
 import '../styles/drill-stage.css'
+import '../styles/drill-play.css'
 
 const REP_OPTIONS = [3, 5, 8]
 const DEFAULT_REPS = 3
 const XP_PER_REP = 1
-const REVEAL_MS = 850
 
-/** English → Hanzi production first. Hints/choices help learning, never inflate mastery. */
+const PIP_LABEL: Record<PipState, string> = { waiting: 'not asked yet', current: 'now', unaided: 'recalled', assisted: 'recalled with help', missed: 'needs practice' }
+const RESULT_LABEL = { unaided: 'Recalled', assisted: 'With help', missed: 'Needs practice' } as const
+const CUE_CHIPS = [
+  { cue: 'meaning', zh: '义', label: 'See the meaning' },
+  { cue: 'sound', zh: '听', label: 'Hear the book read it' },
+  { cue: 'pinyin', zh: '拼', label: 'Read the pinyin' },
+] as const
+
+function reducedMotion(): boolean {
+  return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+}
+
+/**
+ * Bring the Hanzi back from memory, asked three different ways so the drill is
+ * not the same tap over and over: from the meaning, from hearing the word, from
+ * its pinyin. Every answer is typed or drawn. Help is never free: it is
+ * recorded, and a word you needed help with comes back.
+ */
 export function DrillFlow({ words, title, onClose }: {
   words: string[]
   title?: string
@@ -29,50 +47,40 @@ export function DrillFlow({ words, title, onClose }: {
   const store = useStore()
   const { encounterWord } = store
   const [reps, setReps] = useState(DEFAULT_REPS)
-  const [queue, setQueue] = useState<string[] | null>(null)
+  const [rounds, setRounds] = useState<DrillRound[] | null>(null)
+  const [focus, setFocus] = useState<string[] | null>(null)
   const [n, setN] = useState(0)
-  const [phase, setPhase] = useState<'ask' | 'feedback' | 'reveal'>('ask')
-  const phaseRef = useRef<'ask' | 'feedback' | 'reveal'>('ask')
-  const composing = useRef(false)
-  const [draft, setDraft] = useState('')
-  const [pinyinHint, setPinyinHint] = useState(false)
-  const [showChoices, setShowChoices] = useState(false)
-  const [picked, setPicked] = useState<string | null>(null)
-  const [correctPick, setCorrectPick] = useState(false)
-  const [unaided, setUnaided] = useState(0)
   const [answered, setAnswered] = useState(0)
+  const [unaided, setUnaided] = useState(0)
+  const [streak, setStreak] = useState(0)
+  const [bestStreak, setBestStreak] = useState(0)
+  const [outcomes, setOutcomes] = useState<Outcomes>({})
   const [fireworksToken, setFireworksToken] = useState(0)
+  const [pulse, setPulse] = useState<{ kind: 'correct' | 'assisted' | 'miss'; n: number }>({ kind: 'correct', n: 0 })
+  const [, setAssistVersion] = useState(0)
   const assistedWords = useRef(new Set<string>())
+  const thisRound = useRef({ missed: false, assisted: false })
+  const card = useRef<HTMLDivElement>(null)
   const committed = useRef(false)
-  const revealTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  const unique = useMemo(() => [...new Set(words.filter(Boolean))], [words])
+  const base = useMemo(() => [...new Set(words.filter(Boolean))], [words])
+  const unique = focus ?? base
   const uniqueCount = unique.length
-  const zh = queue && n < queue.length ? queue[n] : ''
-  // Fallback choices are consistently English → Hanzi; the primary prompt stays English.
-  const question = useMemo(() => zh ? buildDrillQuestion(zh, n * 2 + 1) : null, [zh, n])
+  const current = rounds && n < rounds.length ? rounds[n] : null
+  const zh = current?.zh ?? ''
   const word = zh ? lookup(zh) : undefined
-  const example = zh ? exampleFor(zh) : null
 
   useEffect(() => {
     if (zh) encounterWord(zh, lessonOf(zh) ?? 0)
   }, [zh, encounterWord])
 
-  useEffect(() => () => {
-    if (revealTimer.current) clearTimeout(revealTimer.current)
-  }, [])
+  useEffect(() => { setBestStreak((best) => Math.max(best, streak)) }, [streak])
+  useEffect(() => {
+    if (streak === 3 || streak === 5 || streak === 8) haptic('streak')
+  }, [streak])
 
-  function resetBeat() {
-    phaseRef.current = 'ask'
-    setPhase('ask')
-    setDraft('')
-    composing.current = false
-    setPinyinHint(false)
-    setShowChoices(false)
-    setPicked(null)
-    setCorrectPick(false)
-    if (revealTimer.current) clearTimeout(revealTimer.current)
-    revealTimer.current = null
+  function resetRound() {
+    thisRound.current = { missed: false, assisted: false }
   }
 
   function creditSession() {
@@ -91,169 +99,223 @@ export function DrillFlow({ words, title, onClose }: {
     onClose()
   }
 
+  function begin(wordsToDrill: string[]) {
+    setFocus(wordsToDrill === base ? null : wordsToDrill)
+    setRounds(planRounds(buildDrillQueue(wordsToDrill, reps), store.prefs.soundOn))
+    setN(0)
+    setAnswered(0)
+    setUnaided(0)
+    setStreak(0)
+    setBestStreak(0)
+    setOutcomes({})
+    resetRound()
+  }
+
+  function assistWord(target: string) {
+    if (!assistedWords.current.has(target)) store.recordRecall(target, { correct: false, assisted: true, mode: 'recall' })
+    assistedWords.current.add(target)
+  }
+
+  /** The learner asked for a hint, or looked at the progress sheet. */
   function assist() {
-    if (phaseRef.current !== 'ask' || !zh) return
-    if (!assistedWords.current.has(zh)) {
-      store.recordRecall(zh, { correct: false, assisted: true, mode: 'recall' })
-    }
-    assistedWords.current.add(zh)
+    if (!zh) return
+    assistWord(zh)
+    thisRound.current.assisted = true
+    setStreak(0)
+    setAssistVersion((version) => version + 1)
   }
 
   function revealAllProgress() {
     // The progress sheet names every Hanzi, including later prompts. Treat the
     // whole set as revealed for this session, rather than just the current card.
-    for (const word of unique) {
-      if (!assistedWords.current.has(word)) {
-        store.recordRecall(word, { correct: false, assisted: true, mode: 'recall' })
-      }
-      assistedWords.current.add(word)
+    for (const target of unique) assistWord(target)
+    thisRound.current.assisted = true
+    setStreak(0)
+    setAssistVersion((version) => version + 1)
+  }
+
+  function react(kind: 'correct' | 'assisted' | 'miss') {
+    haptic(kind === 'miss' ? 'miss' : 'good')
+    setPulse((previous) => ({ kind, n: previous.n + 1 }))
+    const element = card.current
+    if (!element || reducedMotion() || typeof element.animate !== 'function') return
+    if (kind === 'miss') {
+      element.animate(
+        [0, -9, 8, -5, 3, 0].map((x) => ({ transform: `translateX(${x}px)` })),
+        { duration: 420, easing: 'cubic-bezier(.36,.07,.19,1)' },
+      )
+    } else {
+      element.animate(
+        [{ transform: 'scale(1)' }, { transform: 'scale(1.016)' }, { transform: 'scale(1)' }],
+        { duration: 520, easing: 'cubic-bezier(.22,1,.36,1)' },
+      )
     }
   }
 
-  function hint(kind: 'pinyin' | 'choices') {
-    if (phaseRef.current !== 'ask' || (kind === 'pinyin' ? pinyinHint : showChoices)) return
-    // Persist the reveal even if the learner exits before submitting an answer.
-    assist()
-    if (kind === 'pinyin') setPinyinHint(true)
-    else setShowChoices(true)
-  }
-
-  function answer(correct: boolean, mode: 'recall' | 'recognition', optionId?: string) {
-    if (phaseRef.current !== 'ask' || !word?.en) return
-    phaseRef.current = 'feedback'
-    const assisted = mode === 'recognition' || assistedWords.current.has(zh)
-    store.recordRecall(zh, { correct, assisted, mode })
-    if (!correct) assistedWords.current.add(zh)
+  function attempt(correct: boolean, assisted: boolean) {
+    if (!zh) return
+    store.recordRecall(zh, { correct, assisted, mode: 'recall' })
     setAnswered((count) => count + 1)
-    setPicked(optionId ?? null)
-    setCorrectPick(correct)
-    setPhase('feedback')
     if (correct) {
-      playCorrect()
+      const clean = !assisted && !thisRound.current.missed && !thisRound.current.assisted
       if (!assisted) {
         setUnaided((count) => count + 1)
         setFireworksToken((token) => token + 1)
       }
-    } else playWrong()
-    revealTimer.current = setTimeout(() => {
-      phaseRef.current = 'reveal'
-      setPhase('reveal')
-    }, REVEAL_MS)
+      if (clean) setStreak((run) => nextStreak(run, 'unaided'))
+      react(assisted ? 'assisted' : 'correct')
+    } else {
+      assistedWords.current.add(zh)
+      thisRound.current.missed = true
+      setStreak(0)
+      setAssistVersion((version) => version + 1)
+      react('miss')
+    }
   }
 
-  function next(repair: boolean) {
-    if (repair) setQueue((current) => current ? requeue(current, n, zh) : current)
-    resetBeat()
+  function complete() {
+    if (!current) return
+    // Once a word has needed help it stays assisted for the rest of the session, as recorded.
+    const result = classifyRound({ missed: thisRound.current.missed, assisted: thisRound.current.assisted || assistedWords.current.has(zh) })
+    setOutcomes((previous) => addOutcome(previous, zh, result))
+    // A word you missed comes back soon, asked by its meaning.
+    if (result === 'missed') setRounds((existing) => existing ? requeueRound(existing, n, zh) : existing)
+    resetRound()
+    setN((index) => index + 1)
+    playAdvance()
+  }
+
+  function skipUnscored() {
+    resetRound()
     setN((index) => index + 1)
   }
 
-  if (!queue) {
+  if (!rounds) {
     return (
       <DrillOverlay onClose={onClose}>
         <Head title={title ?? 'Recall drill'} words={unique} onClose={onClose} onProgressReveal={revealAllProgress} />
-        <div className="overlay-body" style={{ display: 'grid', placeItems: 'center' }}>
-          <div style={{ textAlign: 'center', width: '100%' }}>
-            <div className="medal" style={{ marginBottom: 20 }}><span className="zh" style={{ fontSize: 36, fontWeight: 700 }}>忆</span></div>
-            <h2 className="h2" style={{ fontSize: 22 }}>{uniqueCount === 1 ? 'Bring one word back' : `Bring ${uniqueCount} words back`}</h2>
-            <p className="sub" style={{ marginTop: 8 }}>See the meaning. Produce the Hanzi from memory.<br />Use a hint when you need it — your progress stays honest.</p>
-            <div className="kicker-ink" style={{ margin: '28px 0 10px' }}>Rounds per word</div>
-            <div className="row" style={{ justifyContent: 'center', gap: 10 }}>
-              {REP_OPTIONS.map((count) => <button key={count} className="pill-ink" aria-pressed={reps === count} onClick={() => setReps(count)} style={{ height: 44, minWidth: 56, fontSize: 15, ...(reps === count ? { color: '#fff', backgroundImage: 'var(--metal-sheen), var(--metal-base)', borderColor: 'transparent' } : {}) }}>{count}×</button>)}
-            </div>
-            <p className="sub" style={{ fontSize: 12, marginTop: 14 }}>{uniqueCount * reps} prompts · mastery grows across days</p>
+        <div className="overlay-body drill-intro">
+          <div className="medal"><span className="zh" style={{ fontSize: 36, fontWeight: 700 }}>忆</span></div>
+          <h2 className="h2" style={{ fontSize: 22 }}>{uniqueCount === 1 ? 'Bring one word back' : `Bring ${uniqueCount} words back`}</h2>
+          <p className="sub" style={{ marginTop: 8 }}>Every word is asked three ways, and you answer by writing the Hanzi.<br />Type it, or draw it with your finger.</p>
+          <ul className="drill-ways" aria-label="How each word is asked">
+            {CUE_CHIPS.map((chip, index) => (
+              <li key={chip.cue} style={{ animationDelay: `${120 + index * 90}ms` }}>
+                <span className="zh" aria-hidden="true">{chip.zh}</span>
+                <span>{chip.label}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="kicker-ink" style={{ margin: '24px 0 10px' }}>Rounds per word</div>
+          <div className="row" style={{ justifyContent: 'center', gap: 10 }}>
+            {REP_OPTIONS.map((count) => <button key={count} className="pill-ink" aria-pressed={reps === count} onClick={() => setReps(count)} style={{ height: 44, minWidth: 56, fontSize: 15, ...(reps === count ? { color: '#fff', backgroundImage: 'var(--metal-sheen), var(--metal-base)', borderColor: 'transparent' } : {}) }}>{count}×</button>)}
           </div>
+          <p className="sub" style={{ fontSize: 12, marginTop: 14 }}>{uniqueCount * reps} prompts · hints count as help, so mastery stays honest</p>
         </div>
-        <div className="overlay-foot"><button className="btn" disabled={!uniqueCount} onClick={() => setQueue(buildDrillQueue(unique, reps))}>Start recall</button></div>
+        <div className="overlay-foot"><button className="btn" disabled={!uniqueCount} onPointerDown={() => unlockSpeech()} onClick={() => begin(unique)}>Start recall</button></div>
       </DrillOverlay>
     )
   }
 
-  if (n >= queue.length) {
+  if (n >= rounds.length) {
     const credited = Math.min(answered, uniqueCount * reps)
+    const revisit = wordsToRevisit(outcomes, unique)
+    const clean = answered > 0 && revisit.length === 0 && unaided === answered
     return (
       <DrillOverlay onClose={finish}>
         <Head title={title ?? 'Recall drill'} words={unique} onClose={finish} onProgressReveal={() => {
           // Keep a following "Practise again" in this same session assisted.
-          for (const word of unique) assistedWords.current.add(word)
+          for (const target of unique) assistedWords.current.add(target)
         }} />
-        <div className="overlay-body" style={{ textAlign: 'center', paddingTop: 40 }}>
-          <div className="medal pop"><CheckIcon size={46} /></div>
-          <h2 className="h1" style={{ marginTop: 22 }}>Recall session complete</h2>
-          <div className="row" style={{ justifyContent: 'center', marginTop: 20, flexWrap: 'wrap' }}>
+        <div className="overlay-body drill-summary">
+          <div className="medal pop" onAnimationStart={() => playComplete()}><CheckIcon size={46} /></div>
+          <h2 className="h1" style={{ marginTop: 22 }}>{clean ? 'Clean recall' : 'Recall session complete'}</h2>
+          <div className="row" style={{ justifyContent: 'center', marginTop: 18, flexWrap: 'wrap' }}>
             <span className="pill-ink">{unaided}/{answered} unaided</span>
             <span className="pill-ink">+{credited * XP_PER_REP} XP</span>
+            {bestStreak >= 2 && <span className="pill-ink">Best run {bestStreak}</span>}
           </div>
-          <p className="sub" style={{ marginTop: 20 }}>Words and difficult attempts are saved automatically. Return another day to prove they stayed with you.</p>
+          <ul className="drill-words" aria-label="How each word went">
+            {unique.map((target, index) => {
+              const info = lookup(target)
+              const last = outcomes[target]?.last
+              return (
+                <li key={target} data-state={last ?? 'waiting'} style={{ animationDelay: `${80 + index * 60}ms` }}>
+                  <span className="zh drill-words-hz" lang="zh-CN">{target}</span>
+                  <span className="drill-words-meta"><b>{info?.pinyin}</b><span>{info?.en}</span></span>
+                  <em>{last ? RESULT_LABEL[last] : 'Not reached'}</em>
+                </li>
+              )
+            })}
+          </ul>
+          <p className="sub" style={{ marginTop: 18 }}>Words and difficult attempts are saved automatically. Return another day to prove they stayed with you.</p>
         </div>
         <div className="overlay-foot" style={{ display: 'grid', gap: 10 }}>
-          <button className="btn btn-ghost" onClick={() => {
+          {revisit.length > 0 && <button className="btn" onPointerDown={() => unlockSpeech()} onClick={() => {
             creditSession()
             committed.current = false
-            setQueue(buildDrillQueue(unique, reps))
-            setN(0)
-            resetBeat()
-            setUnaided(0)
-            setAnswered(0)
+            begin(revisit)
+          }}>Drill the {revisit.length === 1 ? 'word' : `${revisit.length} words`} to revisit</button>}
+          <button className={revisit.length ? 'btn btn-ghost' : 'btn'} onClick={() => {
+            creditSession()
+            committed.current = false
+            begin(unique)
             // Same-session repeats after an answer reveal remain assisted.
           }}>Practise again</button>
-          <button className="btn" onClick={finish}>Done</button>
+          <button className="btn btn-ghost" onClick={finish}>Done</button>
         </div>
       </DrillOverlay>
     )
   }
 
-  if (!question) return null
-  const revealed = phase === 'reveal'
+  if (!current) return null
   const noGloss = !word?.en
+  // A pinyin cue needs pinyin; otherwise fall back to the meaning rather than show nothing.
+  const cue = current.cue === 'pinyin' && !word?.pinyin ? 'meaning' : current.cue
   return (
     <DrillOverlay onClose={finish}>
       <Fireworks token={fireworksToken} />
+      <span key={pulse.n} className="drill-pulse" data-kind={pulse.n ? pulse.kind : 'none'} aria-hidden="true" />
       <Head title={title ?? 'Recall drill'} words={unique} onClose={finish} onProgressReveal={revealAllProgress} />
-      <div className="overlay-head" style={{ paddingTop: 0 }}>
-        <div className="step-bar"><i style={{ width: `${(n / queue.length) * 100}%` }} /></div>
-        <span style={{ fontSize: 12, fontWeight: 800, color: 'var(--muted)' }}>{n + 1}/{queue.length}</span>
+      <div className="overlay-head drill-hud">
+        <div className="drill-pips" role="list" aria-label="Words in this drill">
+          {unique.map((target, index) => {
+            const state = pipState(outcomes[target], target === zh)
+            return <span key={target} role="listitem" className="drill-pip" data-state={state} aria-label={`Word ${index + 1}: ${PIP_LABEL[state]}`} />
+          })}
+        </div>
+        <div className="drill-flow" data-tier={streakTier(streak)} data-on={streak >= 2} aria-live="polite">
+          {streak >= 2 ? <><i aria-hidden="true" /><b>{streak}</b> in a row</> : null}
+        </div>
+        <span className="drill-count">{n + 1}/{rounds.length}</span>
       </div>
-      <div className="overlay-body drill-stage" key={n}>
-        <div className="drill-prompt">
-          <div className="kicker-ink">{noGloss ? 'Meaning not in the curriculum yet' : 'Bring the Hanzi to mind'}</div>
-          <div className={noGloss ? 'zh drill-prompt-hz' : 'drill-prompt-en'} lang={noGloss ? 'zh-CN' : undefined}>{noGloss ? zh : word.en}</div>
-          {noGloss && <p className="sub drill-note">This word stays in your trail. It needs a verified meaning before we can test recall.</p>}
-          {pinyinHint && !revealed && <p className="drill-hint" aria-live="polite">{word?.pinyin || 'No pinyin in the curriculum'} · assisted attempt</p>}
-          {!noGloss && !revealed && !showChoices && (
-            <form onSubmit={(event) => { event.preventDefault(); if (!composing.current && draft.trim()) answer(matchesHanzi(draft, zh), 'recall') }}>
-              <label className="sr-only" htmlFor="drill-answer">Write the Hanzi for this meaning</label>
-              <input id="drill-answer" className="drill-input zh" value={draft} onChange={(event) => setDraft(event.target.value)} onCompositionStart={() => { composing.current = true }} onCompositionEnd={() => { composing.current = false }} onKeyDown={(event) => { if (event.key === 'Enter' && (composing.current || event.nativeEvent.isComposing)) event.preventDefault() }} disabled={phase !== 'ask'} autoComplete="off" autoCorrect="off" spellCheck={false} lang="zh-CN" placeholder="写汉字…" aria-describedby="drill-help" />
-              <p id="drill-help" className="sub" style={{ fontSize: 12 }}>Type with your Chinese keyboard. Check before revealing.</p>
-              <button className="btn" type="submit" disabled={phase !== 'ask' || !draft.trim()}>Check my recall</button>
-            </form>
-          )}
-          {phase === 'ask' && !noGloss && <div className="row" style={{ justifyContent: 'center', flexWrap: 'wrap', gap: 10, marginTop: 12 }}>
-            {!pinyinHint && <button type="button" className="pill-ink" onClick={() => hint('pinyin')}>Pinyin hint</button>}
-            {!showChoices && <button type="button" className="pill-ink" onClick={() => hint('choices')}>Show choices</button>}
-          </div>}
-          {revealed && (
-            <div className="drill-reveal">
-              <div className="zh drill-prompt-hz" lang="zh-CN">{zh}</div>
-              <div className="drill-reveal-py">{word?.pinyin}</div>
-              <div className="drill-reveal-en">{word?.en}</div>
-              <div className="drill-tools"><ChineseHear text={zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" /><SaveStar zh={zh} size={22} /></div>
-              {example && <div className="drill-reveal-ex"><div className="zh" lang="zh-CN">{example.zh}</div><div className="drill-reveal-ex-en">{example.en}</div><HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" /></div>}
-            </div>
+      <div className="step-bar drill-bar"><i className="yl-progress" style={{ width: `${(n / rounds.length) * 100}%` }} /></div>
+      <div className="overlay-body drill-stage">
+        <div className="drill-card" ref={card} data-cue={cue}>
+          {noGloss ? (
+            <section className="production-stage">
+              <div className="production-prompt">
+                <div className="kicker-ink">Meaning not in the curriculum yet</div>
+                <div className="zh drill-prompt-hz" lang="zh-CN">{zh}</div>
+                <p className="sub drill-note">This word stays in your trail. It needs a verified meaning before we can test recall.</p>
+              </div>
+              <button className="btn" onClick={skipUnscored}>Continue without scoring</button>
+            </section>
+          ) : (
+            <WordRecall
+              key={`${n}:${zh}:${cue}`}
+              word={word}
+              n={n + 1}
+              of={rounds.length}
+              cue={cue}
+              showStrokes
+              externallyAssisted={assistedWords.current.has(zh)}
+              onAssistance={assist}
+              onAttempt={attempt}
+              onComplete={complete}
+            />
           )}
         </div>
-        {showChoices && !revealed && <div className="drill-choices">
-          {question.options.map((option, index) => {
-            const correct = phase === 'feedback' && option.id === question.answerId
-            const wrong = picked === option.id && option.id !== question.answerId
-            return <button key={option.id} type="button" className={`option drill-choice zh${correct ? ' yl-correct' : wrong ? ' yl-wrong' : ''}`} data-state={correct ? 'correct' : wrong ? 'wrong' : undefined} disabled={phase !== 'ask'} style={{ animationDelay: `${index * 70}ms` }} onPointerDown={() => unlockSpeech()} onClick={() => answer(option.id === question.answerId, 'recognition', option.id)} lang="zh-CN">{option.label}</button>
-          })}
-        </div>}
-        {phase === 'feedback' && <div className="drill-feedback drill-verdict" aria-live="polite">{correctPick ? assistedWords.current.has(zh) ? 'Correct with support — keep practising' : 'Recalled without a hint' : 'Not yet — look, then retrieve it again'}</div>}
-      </div>
-      <div className="overlay-foot">
-        {revealed ? <div className="grid2"><button className="rating" data-k="again" onClick={() => next(true)}>Try it later</button><button className="rating" data-k="good" onClick={() => next(false)}>Continue</button></div>
-          : noGloss ? <button className="btn" onClick={() => next(false)}>Continue without scoring</button>
-            : <p className="sub" style={{ fontSize: 12, textAlign: 'center', margin: 0 }}>{showChoices ? 'Choices help recognition; they do not earn mastery.' : 'Meaning → memory → Hanzi. Your learning trail saves itself.'}</p>}
       </div>
     </DrillOverlay>
   )
