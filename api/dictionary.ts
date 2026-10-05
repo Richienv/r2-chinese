@@ -1,5 +1,5 @@
 import { gunzipSync } from 'node:zlib'
-import { parseCedictWord } from '../src/lib/dictionary-format.ts'
+import { parseCedictWord } from '../src/lib/dictionary-format.js'
 
 const SOURCE = 'https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz'
 let source: { text: string; loadedAt: number } | undefined
