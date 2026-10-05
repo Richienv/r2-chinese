@@ -3,8 +3,8 @@ import { createClipResolver, trackUrl, type AudioManifest } from './bookAudioInd
 import { setClipResolver } from './speech'
 
 /**
- * Where the publisher recordings are served from. They are not in git: run
- * `node scripts/fetch-book-audio.mjs` to install them into public/audio/hsk4a.
+ * Where the publisher recordings are served from: public/audio/hsk4a, or
+ * VITE_BOOK_AUDIO_BASE. `node scripts/fetch-book-audio.mjs` re-fetches them.
  */
 const BASE = (import.meta.env.VITE_BOOK_AUDIO_BASE as string | undefined) || '/audio/hsk4a/'
 

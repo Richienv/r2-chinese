@@ -186,3 +186,21 @@ test('stopping during a recording ends it at once and settles the promise as int
     assert.equal(next, true, 'a later recording still plays after a stop')
   } finally { env.restore() }
 })
+
+test('every track the recordings manifest points at is shipped and long enough for all its clips', () => {
+  const tracks = new Map()
+  for (const entry of [...Object.values(manifest.lines), ...Object.values(manifest.words)]) {
+    tracks.set(entry.f, Math.max(tracks.get(entry.f) ?? 0, entry.e))
+  }
+  assert.equal(tracks.size, 50, 'ten lessons x five texts')
+  for (const [track, lastSecond] of tracks) {
+    const file = new URL(`../public/audio/hsk4a/${track}.mp3`, import.meta.url)
+    const bytes = readFileSync(file)
+    const header = bytes.subarray(0, 3).toString('latin1')
+    assert.ok(header === 'ID3' || (bytes[0] === 0xff && (bytes[1] & 0xe0) === 0xe0), `${track}.mp3 is not an mp3`)
+    // The publisher's tracks are constant 128 kbit/s, so size gives the length.
+    const seconds = (bytes.length * 8) / 128000
+    assert.ok(lastSecond <= seconds + 0.5, `${track}: clips run to ${lastSecond}s but the file is only about ${seconds.toFixed(1)}s`)
+  }
+  assert.ok(readFileSync(new URL('../public/audio/hsk4a/NOTICE.txt', import.meta.url), 'utf8').includes('Beijing Language and Culture University Press'), 'the copyright notice ships with the audio')
+})

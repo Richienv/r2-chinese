@@ -5,8 +5,9 @@
  * offered free (0 points) by Beijing Language and Culture University Press:
  * https://www.blcup.com/Res/ResInfo?rid=55014
  *
- * The recordings are the publisher's copyright, so they are gitignored and
- * never committed. Run this once per machine (or deploy environment):
+ * The recordings are the publisher's copyright. They are kept in this
+ * repository for the owner's personal study (see public/audio/hsk4a/NOTICE.txt).
+ * This script re-fetches them if they are ever missing or need refreshing:
  *
  *   node scripts/fetch-book-audio.mjs
  *
