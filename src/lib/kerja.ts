@@ -1,3 +1,4 @@
+import { buildRecheck } from './dialogue-check'
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
 import { registerVocab, type Example } from './content'
 import type { TeachPhase, WordHook } from './teach'
@@ -216,6 +217,7 @@ export type KerjaSessionStep =
   | { kind: 'read'; id: string; text: LessonText; n: number; of: number }
   | { kind: 'recall'; id: string; word: Vocab; n: number; of: number }
   | { kind: 'dialogue'; id: string; text: LessonText; n: number; of: number }
+  | { kind: 'recheck'; id: string; text: LessonText; words: Vocab[]; n: number; of: number }
   | { kind: 'produce'; id: string; example: Example; words: string[]; grammar?: string; n: number; of: number }
   | { kind: 'note'; id: string; title: string; body: string; example: Example | null; n: number; of: number }
   | { kind: 'quiz'; id: string; question: Question; n: number; of: number }
@@ -226,13 +228,14 @@ function numberSteps(draft: Array<Exclude<KerjaSessionStep, { kind: 'complete' }
   for (const s of draft) {
     if (s.kind === 'teach' && !wordOrder.includes(s.word.zh)) wordOrder.push(s.word.zh)
   }
-  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, produce: 0 }
+  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, recheck: 0, produce: 0 }
   const ofs = {
     read: draft.filter((s) => s.kind === 'read').length,
     note: draft.filter((s) => s.kind === 'note').length,
     quiz: draft.filter((s) => s.kind === 'quiz').length,
     recall: draft.filter((s) => s.kind === 'recall').length,
     dialogue: draft.filter((s) => s.kind === 'dialogue').length,
+    recheck: draft.filter((s) => s.kind === 'recheck').length,
     produce: draft.filter((s) => s.kind === 'produce').length,
   }
   const steps: KerjaSessionStep[] = draft.map((s) => {
@@ -329,6 +332,8 @@ export function buildKerjaSteps(chapterIndex: number, node: KerjaNode): KerjaSes
     for (const [index, text] of texts.entries()) {
       if (text.type === 'dialogue' && text.lines.length > 1 && text.lines.every((line) => !line.zh.trim() || line.en.trim())) {
         draft.push({ kind: 'dialogue', id: `dialogue:t2:${index}`, text, n: 0, of: 0 })
+        const used = ch.words.filter((w) => text.lines.some((line) => line.zh.includes(w.zh))).map(toVocab)
+        if (buildRecheck(text, used).length >= 2) draft.push({ kind: 'recheck', id: `recheck:t2:${index}`, text, words: used, n: 0, of: 0 })
       } else {
         const line = text.lines.find((line) => line.zh.length >= 4 && line.zh.length <= 75 && line.en.trim())
         if (line) draft.push({ kind: 'produce', id: `produce:t2:${index}`, example: line, words: ch.words.filter((w) => line.zh.includes(w.zh)).map((w) => w.zh), n: 0, of: 0 })

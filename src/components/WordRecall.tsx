@@ -1,14 +1,19 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useId, useState } from 'react'
 import { RecallFeedback } from './LearningMotion'
 import { HearButton } from './Hear'
-import { HandwritingPad, useHandwritingWordAssessment } from './HandwritingPad'
+import { useHandwritingWordAssessment } from './HandwritingPad'
+import { HanziDrawing, type DrawingResult } from './HanziDrawing'
 import { ListenCue } from './ListenCue'
+import { ReviewReport } from './ReviewReport'
 import { StrokeWord } from './StrokeWord'
 import { StudyDisplayControls } from './StudyDisplayControls'
 import { playCorrect, playReveal, playWrong } from '../lib/sfx'
 import { normalizeChinese } from '../lib/production'
 import { hintLadder, type DrillCue, type HintStep } from '../lib/drillRounds'
-import { blankWordInk, handwritingRecallEvidence, handwritingRetryMessage, replaceCharacterInk, wordInkComplete } from '../lib/handwriting-recall'
+import { handwritingRecallEvidence, handwritingRetryMessage } from '../lib/handwriting-recall'
+import { recallTask } from '../lib/drawing-flow'
+import { compareReviews, type Review, type ReviewComparison } from '../lib/review'
+import { reviewTypedWord } from '../lib/word-review'
 import { useStore } from '../store/store'
 import type { Vocab } from '../lib/types'
 
@@ -39,28 +44,23 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
 }) {
   const ladder = hintLadder(cue)
   const inputId = useId()
-  const mounted = useRef(true)
-  useEffect(() => {
-    mounted.current = true
-    return () => { mounted.current = false }
-  }, [])
   const { prefs } = useStore()
   const characterCount = Array.from(normalizeChinese(word.zh)).length
   const [answer, setAnswer] = useState('')
   const [inputMode, setInputMode] = useState<'type' | 'draw'>('type')
-  const [drawings, setDrawings] = useState(() => blankWordInk(characterCount))
-  const [position, setPosition] = useState(0)
+  const [drawStarted, setDrawStarted] = useState(false)
   const [hint, setHint] = useState(0)
   const [missed, setMissed] = useState(false)
+  const [helped, setHelped] = useState(false)
   const [solved, setSolved] = useState(false)
   const [resultAssisted, setResultAssisted] = useState(false)
   const [feedback, setFeedback] = useState<'retry' | 'uncertain' | 'error' | null>(null)
   const [feedbackMessage, setFeedbackMessage] = useState('')
   const [checkCount, setCheckCount] = useState(0)
-  const [checking, setChecking] = useState(false)
+  const [typedReview, setTypedReview] = useState<Review | null>(null)
+  const [typedChange, setTypedChange] = useState<ReviewComparison | null>(null)
   const handwriting = useHandwritingWordAssessment(inputMode === 'draw')
-  const assisted = hint > 0 || missed || externallyAssisted
-  const inkComplete = wordInkComplete(drawings)
+  const assisted = hint > 0 || missed || helped || externallyAssisted
 
   function score(correct: boolean, wasAssisted: boolean) {
     setCheckCount((value) => value + 1)
@@ -81,38 +81,35 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
 
   function checkTyped() {
     if (!normalizeChinese(answer) || solved) return
+    const review = reviewTypedWord(recallTask('Type', cue, word, characterCount), answer, word.zh)
+    // Only a fully passing review is a correct answer; the exact-match rule is the same one as before.
     const correct = normalizeChinese(answer) === normalizeChinese(word.zh)
+    setTypedChange(typedReview ? compareReviews(typedReview, review) : null)
+    setTypedReview(review)
     setFeedbackMessage('Try again. Bring back the lesson word.')
     score(correct, assisted)
   }
 
-  async function checkDrawing() {
-    if (solved || checking || !inkComplete || handwriting.status !== 'ready') return
-    const wasAssisted = assisted
-    setChecking(true)
-    setFeedback(null)
-    try {
-      const assessment = await handwriting.assess(drawings, normalizeChinese(word.zh))
-      if (!mounted.current) return
-      const correct = handwritingRecallEvidence(assessment.status)
-      if (correct === undefined) {
-        setFeedback('uncertain')
-        setFeedbackMessage(handwritingRetryMessage(assessment))
-        setCheckCount((value) => value + 1)
-      } else {
-        setFeedbackMessage(correct ? '' : handwritingRetryMessage(assessment))
-        score(correct, wasAssisted)
-      }
-    } catch {
-      if (!mounted.current) return
-      setFeedback('error')
-      setFeedbackMessage('Handwriting could not be checked. Retry the dictionary, or type the word. This attempt isn’t scored.')
-      setCheckCount((value) => value + 1)
-    } finally { if (mounted.current) setChecking(false) }
+  function drawingChecked({ outcome, diagnosis }: DrawingResult) {
+    const correct = handwritingRecallEvidence(outcome)
+    setCheckCount((value) => value + 1)
+    if (correct === undefined) {
+      // Unreadable ink says nothing about what the learner knows: nothing is scored.
+      setFeedback('uncertain')
+      setFeedbackMessage(handwritingRetryMessage(diagnosis.assessment))
+    } else {
+      setFeedbackMessage('')
+      score(correct, assisted)
+    }
+  }
+
+  function assist() {
+    setHelped(true)
+    onAssistance?.()
   }
 
   return (
-    <section className="production-stage word-recall">
+    <section className="production-stage word-recall" data-mode={inputMode}>
       <header className="production-heading">
         <p className="sub">Recall · {n} of {of}</p>
         <h2 className="session-step-title">{HEADINGS[cue]}</h2>
@@ -131,25 +128,13 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
           <p className="sub">Sound it out, then type it or draw the Hanzi.</p>
         </>}
       </div>
-      {!solved && <div className="word-recall-input-mode" aria-label="Answer input mode">
-        <button type="button" className="btn btn-ghost" disabled={checking} aria-pressed={inputMode === 'type'} onClick={() => { setInputMode('type'); setFeedback(null) }}>Type Hanzi</button>
-        <button type="button" className="btn btn-ghost" disabled={checking} aria-pressed={inputMode === 'draw'} onClick={() => { setInputMode('draw'); setFeedback(null) }}>Draw with finger or pen</button>
+      {!solved && <div className="word-recall-input-mode" role="group" aria-label="How to answer">
+        <button type="button" className="btn btn-ghost" aria-pressed={inputMode === 'type'} onClick={() => { setInputMode('type'); setFeedback(null) }}>Type it</button>
+        <button type="button" className="btn btn-ghost" aria-pressed={inputMode === 'draw'} onClick={() => { setInputMode('draw'); setDrawStarted(true); setFeedback(null) }}>Draw it</button>
       </div>}
-      {!solved && inputMode === 'draw' && <div className="handwriting-recall" aria-describedby={`${inputId}-feedback`}>
-        <div className="handwriting-positions" role="group" aria-label="Characters in your word">
-          {drawings.map((drawing, index) => <button type="button" key={index} className="handwriting-position" aria-current={position === index ? 'step' : undefined} aria-label={`Character ${index + 1}${drawing.length ? ', drawn' : ', empty'}`} data-drawn={drawing.length > 0} disabled={checking || (index > position && !drawings.slice(0, index).every((ink) => ink.length > 0))} onClick={() => setPosition(index)}><span>{index + 1}</span><small>{drawing.length ? 'Drawn' : 'Empty'}</small></button>)}
-        </div>
-        <HandwritingPad drawing={drawings[position]} position={position + 1} total={drawings.length} disabled={checking} onChange={(drawing) => { setDrawings((previous) => replaceCharacterInk(previous, position, drawing)); setFeedback(null) }} />
-        <div className="handwriting-navigation">
-          {position > 0 && <button type="button" className="btn btn-ghost" disabled={checking} onClick={() => setPosition((value) => value - 1)}>Previous character</button>}
-          {position < drawings.length - 1 && <button type="button" className="btn" disabled={checking || !drawings[position].length} onClick={() => setPosition((value) => value + 1)}>Next character</button>}
-          {position === drawings.length - 1 && <button type="button" className="btn" disabled={checking || !inkComplete || handwriting.status !== 'ready'} onClick={() => void checkDrawing()}>{checking ? 'Checking the word…' : 'Check whole word'}</button>}
-        </div>
-        <div className="handwriting-status" role="status" aria-live="polite">
-          {handwriting.status === 'loading' ? 'Getting ready… You can start drawing.' : handwriting.status === 'checking' ? 'Checking your handwriting…' : handwriting.status === 'error' ? 'Handwriting could not load. Retry, or use Type Hanzi.' : 'Ready. Check after the whole word.'}
-        </div>
-        {handwriting.status === 'error' && <button type="button" className="btn btn-ghost" onClick={handwriting.retry}>Retry dictionary</button>}
-        {drawings.some((drawing) => drawing.length > 0) && <button type="button" className="btn btn-ghost handwriting-restart" disabled={checking} onClick={() => { setDrawings(blankWordInk(characterCount)); setPosition(0); setFeedback(null) }}>Start drawing again</button>}
+      {drawStarted && <div className="hanzi-host" hidden={inputMode !== 'draw'} aria-describedby={`${inputId}-feedback`}>
+        <HanziDrawing word={normalizeChinese(word.zh)} task={recallTask('Draw', cue, word, characterCount)} handwriting={handwriting} solved={solved}
+          onChecked={drawingChecked} onAssist={assist} onTypeInstead={() => { setInputMode('type'); setFeedback(null) }} />
       </div>}
       {!solved && inputMode === 'type' && <form className="production-form" onSubmit={(event) => { event.preventDefault(); checkTyped() }}>
         <label htmlFor={inputId}>Your word</label>
@@ -170,9 +155,10 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
         />
         <button className="btn" type="submit" disabled={!answer.trim()}>Check recall</button>
       </form>}
+      {inputMode === 'type' && typedReview && (solved || typedReview.verdict !== 'passed') && <ReviewReport review={typedReview} comparison={typedChange} compact={solved} revealed={() => solved} />}
       {!solved && (
         <div className="production-actions">
-          <button type="button" className="btn btn-ghost" disabled={hint >= ladder.length || checking} onClick={() => {
+          <button type="button" className="btn btn-ghost" disabled={hint >= ladder.length} onClick={() => {
             setHint((value) => Math.min(ladder.length, value + 1))
             onAssistance?.()
             playReveal()
@@ -189,7 +175,7 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
         </div>
       )}
       <div id={`${inputId}-feedback`} aria-live="polite">
-        {solved ? <RecallFeedback key={checkCount} state="correct" label={resultAssisted ? 'Retrieved with support' : 'Retrieved without a hint'} /> : feedback && <RecallFeedback key={checkCount} state={feedback === 'retry' ? 'retry' : 'idle'} label={feedbackMessage} />}
+        {solved ? <RecallFeedback key={checkCount} state="correct" label={resultAssisted ? 'Retrieved with support' : 'Retrieved without a hint'} /> : feedback && inputMode === 'type' && <RecallFeedback key={checkCount} state={feedback === 'retry' ? 'retry' : 'idle'} label={feedbackMessage} />}
       </div>
       {solved && (
         <div className="production-source">

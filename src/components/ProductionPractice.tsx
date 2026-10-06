@@ -12,6 +12,9 @@ import { Glossed, useGloss } from './ChineseText'
 import { StudyDisplayControls } from './StudyDisplayControls'
 import { useStore } from '../store/store'
 import { buildGrammarCoach, type GrammarCoach } from '../lib/grammarCoach'
+import { reviewReply } from '../lib/reply-review'
+import { compareReviews, type Review } from '../lib/review'
+import { ReviewReport } from './ReviewReport'
 import '../styles/production-review.css'
 import '../styles/conversation.css'
 
@@ -248,6 +251,9 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   const [reviewed, setReviewed] = useState(false)
   const [completed, setCompleted] = useState(false)
   const [reviewNote, setReviewNote] = useState(0)
+  /** The review of the attempt being fixed, so the retest can say what changed. */
+  const [previous, setPrevious] = useState<Review | null>(null)
+  const [fixList, setFixList] = useState<string[]>([])
   const [recognition, setRecognition] = useState<RecognitionSnapshot>({ status: 'idle', interim: '', error: '' })
   const recognizer = useRef<ReturnType<typeof createMandarinRecognition> | null>(null)
   const request = useRef<AbortController | null>(null)
@@ -262,6 +268,12 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   const recording = listening || recognition.status === 'starting' || recognition.status === 'stopping'
   const sourceClues = targetWords.slice(0, 4).map((word) => ({ zh: word, en: lookup(word)?.en })).filter((word) => word.en)
   const feedbackState = checking ? 'thinking' : listening ? 'listening' : assessment?.accepted === true ? 'correct' : assessment ? 'retry' : 'idle'
+  const task = preferredMode === 'speaking' ? `Reply in Mandarin: “${example.en}”` : `Write in Mandarin: “${example.en}”`
+  const review = useMemo(() => assessment ? reviewReply({
+    task, response: value.trim(), expectedZh: example.zh, assessment,
+    glosses: Object.fromEntries(targetWords.flatMap((word) => { const gloss = lookup(word)?.en?.split(/[;,]/)[0]?.trim(); return gloss ? [[word, gloss]] : [] })),
+  }) : null, [assessment]) // eslint-disable-line react-hooks/exhaustive-deps
+  const change = review && previous ? compareReviews(previous, review) : null
   const reviewNotes = assessment ? [...new Set([assessment.feedback, ...assessment.issues].filter(Boolean))] : []
   useFiniteArrival(hintPanel, hint, hint > 0 && !assessment)
   useFiniteArrival(reviewPanel, assessment, !!assessment)
@@ -374,12 +386,29 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   function retry() {
     setAssisted(true)
     onAssistance?.()
+    setPrevious(null)
+    setFixList([])
     setValue('')
     setHint(0)
     setAssessment(null)
     setReviewed(false)
     setError('')
     recognizer.current?.cancel()
+  }
+
+  /** Keep the reply, say what to fix, and check it again: the loop, not a blank page. */
+  function revise() {
+    if (!review) return
+    setPrevious(review)
+    // Only things the learner can act on: an unverifiable grammar check is not a fix.
+    setFixList(review.issues.flatMap((check) => check.fix && check.status !== 'unverified' ? [check.fix] : []).slice(0, 3))
+    setAssisted(true)
+    onAssistance?.()
+    setAssessment(null)
+    setReviewed(false)
+    setError('')
+    recognizer.current?.cancel()
+    window.setTimeout(() => document.getElementById(id)?.focus(), 0)
   }
 
   function finish() {
@@ -405,6 +434,7 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   return (
     <div className="production-compose">
       <label className="production-speaker" htmlFor={id}>{mode === 'speaking' && value ? 'Recognized Hanzi · edit if needed' : 'Your Mandarin'}</label>
+      {!assessment && fixList.length > 0 && <div className="reply-fixlist" role="note"><strong>Fix before checking again</strong><ul>{fixList.map((note) => <li key={note}>{note}</li>)}</ul></div>}
       <textarea
         id={id}
         className="production-input zh"
@@ -447,8 +477,8 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
       {error && <div className="production-feedback" data-state="retry" role="alert"><p>{error}</p>{/[\u3400-\u9fff]/.test(value) && <button type="button" className="btn btn-ghost" onClick={compareLocally}>Use book comparison</button>}</div>}
       {assessment && (
         <div ref={reviewPanel} className="production-feedback production-recall-review" data-state={assessment.accepted === true ? 'correct' : assessment.accepted === null ? 'unverified' : 'retry'} aria-live="polite">
-          <RecallFeedback state={feedbackState} label={assessment.accepted === true ? 'Meaning recalled' : assessment.accepted === null ? 'Book comparison' : 'Refine your sentence'} />
-          {prefs.showEnglish && <p className="production-verdict">{assessment.accepted === null ? 'Alternative wording is not verified yet.' : assessment.accepted ? assessment.evidence === 'source-match' ? 'Your wording matches the book.' : 'Meaning and grammar checked.' : 'Compare the correction, then try again.'}</p>}
+          {assessment.accepted === true && <RecallFeedback state={feedbackState} label="Meaning recalled" />}
+          {review && <ReviewReport review={review} comparison={change} revealed={() => true} />}
           {assessment.evidence === 'verified' && <p className="production-meta">AI grammar review</p>}
           <div className="production-comparison">
             <div className="production-speaker">{assessment.evidence === 'verified' && assessment.correctedZh !== example.zh ? 'Suggested phrasing' : 'Book phrasing'}</div>
@@ -459,8 +489,9 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
           </div>
           {assessment.accepted === false && <label className="production-review"><input type="checkbox" checked={reviewed} onChange={(event) => { setReviewed(event.target.checked); if (event.target.checked) onAssistance?.() }} />I compared the correction. Keep this as assisted practice.</label>}
           <div className="production-actions">
-            <button type="button" className="btn btn-ghost" onClick={retry} disabled={completed}>Recall again</button>
-            <button type="button" className="btn conversation-continue" onClick={finish} disabled={completed || checking || (assessment.accepted === false && !reviewed)}>{assessment.accepted === null ? 'Keep as practice' : continueLabel}</button>
+            {assessment.accepted !== true && <button type="button" className="btn" onClick={revise} disabled={completed}>Fix and check again</button>}
+            <button type="button" className={assessment.accepted === true ? 'btn conversation-continue' : 'btn btn-ghost conversation-continue'} onClick={finish} disabled={completed || checking || (assessment.accepted === false && !reviewed)}>{assessment.accepted === null ? 'Keep as practice' : continueLabel}</button>
+            {assessment.accepted !== true && <button type="button" className="btn btn-ghost" onClick={retry} disabled={completed}>Start over</button>}
             {assessment.unavailable && <button type="button" className="btn btn-ghost" onClick={() => { void check() }} disabled={checking || completed}>Retry grammar check</button>}
           </div>
           {prefs.showEnglish && reviewNotes.length > 0 && <details className="conversation-review-note conversation-disclosure">

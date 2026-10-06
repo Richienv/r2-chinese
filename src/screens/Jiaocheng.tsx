@@ -4,6 +4,7 @@ import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
 import { Fireworks } from '../components/Fireworks'
 import { MasteryTracker } from '../components/MasteryTracker'
+import { DialogueRecheck, type RecheckSummary } from '../components/DialogueRecheck'
 import { DialoguePractice, SentencePractice } from '../components/ProductionPractice'
 import { WordRecall } from '../components/WordRecall'
 import { StudyDisplayControls } from '../components/StudyDisplayControls'
@@ -295,6 +296,14 @@ function JiaochengRunner({ lesson, node, onClose }: {
     goForward()
   }
 
+  function finishRecheck(summary: RecheckSummary) {
+    if (step.kind !== 'recheck') return
+    credit(step.id)
+    recordHistory({ course: 'jiaocheng', kind: 'quiz', lesson: lesson, node, correct: summary.unaided === summary.total, title: 'Dialogue check' })
+    playAdvance()
+    goForward()
+  }
+
   function answerQuiz(picked: string, answer: string) {
     if (step.kind !== 'quiz') return
     const key = step.id
@@ -318,7 +327,7 @@ function JiaochengRunner({ lesson, node, onClose }: {
 
   const progressPct = isComplete ? 100 : (i / total) * 100
   const showFooter = isComplete || step.kind === 'teach' || step.kind === 'note' || step.kind === 'read' || (step.kind === 'quiz' && quizState?.solved)
-  const activeStage = step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' ? 'Retrieve' : step.kind === 'complete' ? 'Revisit' : 'Produce'
+  const activeStage = step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' || step.kind === 'recheck' ? 'Retrieve' : step.kind === 'complete' ? 'Revisit' : 'Produce'
 
   return (
     <div className="overlay session learning-session">
@@ -343,6 +352,7 @@ function JiaochengRunner({ lesson, node, onClose }: {
                 markAssisted()
               }} onComplete={finishRecall} />
                 : step.kind === 'dialogue' ? <DialoguePractice text={step.text} lesson={lesson} targetWords={unit.words.map((word) => word.zh)} externallyAssisted={assistedSteps[step.id]} assistedTurns={Object.keys(assistedSteps).filter((id) => id.startsWith(`${step.id}::`)).map((id) => id.slice(step.id.length + 2))} onAssistance={markAssisted} onComplete={finishProduction} />
+                  : step.kind === 'recheck' ? <DialogueRecheck text={step.text} words={step.words} onRecord={(zh, correct, assisted) => store.recordRecall(zh, { correct, assisted, mode: 'recognition' })} onDone={finishRecheck} />
                   : step.kind === 'produce' ? <SentencePractice example={step.example} targetWords={step.words} grammar={step.grammar} lesson={lesson} externallyAssisted={assistedSteps[step.id]} onAssistance={markAssisted} onComplete={finishProduction} />
                     : step.kind === 'note' ? <NoteView title={step.title} body={step.body} example={step.example} n={step.n} of={step.of} />
                       : step.kind === 'quiz' ? <MatchView question={step.question} n={step.n} of={step.of} state={quizState} onPick={answerQuiz} />

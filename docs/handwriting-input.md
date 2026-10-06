@@ -50,6 +50,18 @@ Rebuild the asset using `scripts/build-handwriting-corpus.py` with the pinned np
 tarball; its SHA-512 integrity is checked before processing. No dependency or
 global build configuration change is required.
 
+## Diagnosis and review
+
+`src/lib/handwriting-review.ts` explains a drawing; it does not grade it. The verdict stays
+with the blind classifier. Against the expected character's strokes it finds, by minimum-cost
+assignment, which stroke is missing, which drawn stroke is extra, and which is far from where
+it belongs, and describes strokes in plain words ("horizontal stroke at the bottom").
+A stroke is named only when the best explanation fits well and clearly beats the next one;
+otherwise it reports how many strokes are short and, if a few fit equally, a short list.
+On the real corpus a leave-one-stroke-out test over several characters checks that a wrong
+stroke is never named. A wrong stroke count decides the review when the character was not read
+as correct; it never changes the score.
+
 ## Verification
 
 `node --experimental-strip-types --test tests/handwriting.test.mjs` checks corpus

@@ -137,11 +137,11 @@ function strokeDistance(a: Float32Array, b: Float32Array): number {
   return shape + Math.hypot(ag.x - bg.x, ag.y - bg.y) * 0.2 + (Math.abs(ag.width - bg.width) + Math.abs(ag.height - bg.height)) * 0.08
 }
 
-/** Minimum-cost stroke assignment makes pen order independent, while preserving spatial layout. */
-interface StrokeMatch { distance: number; maxStrokeDistance: number; complete: boolean }
-function assignmentDistance(input: Float32Array[], template: Float32Array[], compare: (a: Float32Array, b: Float32Array) => number): StrokeMatch {
-  const n = Math.max(input.length, template.length)
-  const costs = Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => i < input.length && j < template.length ? compare(input[i], template[j]) : 0.55))
+/**
+ * Minimum-cost assignment (Hungarian algorithm) on a square cost matrix.
+ * `rowOfColumn[j]` is the 1-based row assigned to 1-based column `j`.
+ */
+function solveAssignment(costs: number[][], n: number): { rowOfColumn: Uint16Array; total: number } {
   const u = new Float64Array(n + 1), v = new Float64Array(n + 1)
   const p = new Uint16Array(n + 1), way = new Uint16Array(n + 1)
   for (let i = 1; i <= n; i++) {
@@ -167,9 +167,49 @@ function assignmentDistance(input: Float32Array[], template: Float32Array[], com
     } while (p[j0] !== 0)
     do { const j1 = way[j0]; p[j0] = p[j1]; j0 = j1 } while (j0)
   }
+  return { rowOfColumn: p, total: -v[0] }
+}
+
+/** Cost of pairing a stroke with nothing: a missing or an extra stroke. */
+const UNMATCHED_STROKE_COST = 0.55
+
+/** Minimum-cost stroke assignment makes pen order independent, while preserving spatial layout. */
+interface StrokeMatch { distance: number; maxStrokeDistance: number; complete: boolean }
+function assignmentDistance(input: Float32Array[], template: Float32Array[], compare: (a: Float32Array, b: Float32Array) => number): StrokeMatch {
+  const n = Math.max(input.length, template.length)
+  const costs = Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => i < input.length && j < template.length ? compare(input[i], template[j]) : UNMATCHED_STROKE_COST))
+  const { rowOfColumn: p, total } = solveAssignment(costs, n)
   let maxStrokeDistance = 0
   for (let j = 1; j <= n; j++) maxStrokeDistance = Math.max(maxStrokeDistance, costs[p[j] - 1][j - 1])
-  return { distance: -v[0] / n, maxStrokeDistance, complete: input.length === template.length }
+  return { distance: total / n, maxStrokeDistance, complete: input.length === template.length }
+}
+
+export interface StrokeAssignment {
+  /** For each template stroke, the drawn stroke paired with it, or null when nothing was drawn for it. `offset` is how far apart their centres are, in glyph widths. */
+  paired: Array<{ inputIndex: number; distance: number; offset: number } | null>
+  /** Drawn strokes that match no template stroke. */
+  extraInputs: number[]
+  /** Average cost over all pairings, lower is closer. */
+  distance: number
+}
+
+/** Which drawn stroke answers which stroke of a known character. Pen order does not matter. */
+export function assignStrokes(input: Float32Array[], template: Float32Array[]): StrokeAssignment {
+  const n = Math.max(input.length, template.length)
+  if (n === 0) return { paired: [], extraInputs: [], distance: 0 }
+  const costs = Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => i < input.length && j < template.length ? strokeDistance(input[i], template[j]) : UNMATCHED_STROKE_COST))
+  const { rowOfColumn: p, total } = solveAssignment(costs, n)
+  const paired: StrokeAssignment['paired'] = []
+  for (let j = 1; j <= template.length; j++) {
+    const row = p[j] - 1
+    paired.push(row < input.length ? { inputIndex: row, distance: costs[row][j - 1], offset: Math.hypot(geometry(input[row]).x - geometry(template[j - 1]).x, geometry(input[row]).y - geometry(template[j - 1]).y) } : null)
+  }
+  const extraInputs: number[] = []
+  for (let j = template.length + 1; j <= n; j++) {
+    const row = p[j] - 1
+    if (row < input.length) extraInputs.push(row)
+  }
+  return { paired, extraInputs, distance: total / n }
 }
 
 interface StrokeGraph { components: number[]; degrees: number[]; edges: number }

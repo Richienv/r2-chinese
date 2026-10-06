@@ -204,6 +204,20 @@
   margin: 0 auto 6px;
 }
 
+/* Drawing mode keeps the cue to one quiet line so the board fits on screen. */
+.word-recall[data-mode='draw'] .production-heading h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.word-recall[data-mode='draw'] .production-prompt { padding: 10px 16px; border-radius: 18px; }
+/* The task line above the board already says the meaning or pinyin; only the sound cue needs its button. */
+.word-recall[data-mode='draw'] .production-prompt:not([data-cue='sound']) { display: none; }
+.word-recall:has(.hanzi-draw[data-fixing='true']) .word-recall-input-mode { display: none; }
+.word-recall[data-mode='draw'] .production-prompt p.sub { display: none; }
+.word-recall[data-mode='draw'] .production-en { margin: 0; font-size: 19px; }
+.word-recall[data-mode='draw'] .production-pinyin { margin: 0; font-size: 26px; }
+.word-recall[data-mode='draw'] .listen-cue { grid-auto-flow: column; justify-content: center; gap: 12px; padding: 0; }
+.word-recall[data-mode='draw'] .listen-cue-button { width: 48px; height: 48px; }
+.word-recall[data-mode='draw'] .listen-cue-button svg { width: 22px; height: 22px; }
+.word-recall[data-mode='draw'] { gap: 12px; }
+
 /* ---------- listening cue ---------- */
 .listen-cue {
   display: grid;

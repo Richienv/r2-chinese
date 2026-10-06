@@ -3,6 +3,7 @@ import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
 import { Fireworks } from '../components/Fireworks'
 import { MasteryTracker } from '../components/MasteryTracker'
+import { DialogueRecheck, type RecheckSummary } from '../components/DialogueRecheck'
 import { DialoguePractice, SentencePractice } from '../components/ProductionPractice'
 import { WordRecall } from '../components/WordRecall'
 import { StudyDisplayControls } from '../components/StudyDisplayControls'
@@ -195,6 +196,14 @@ function WordsRunner({
     goForward()
   }
 
+  function finishRecheck(summary: RecheckSummary) {
+    if (step.kind !== 'recheck') return
+    credit(step.id)
+    recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: summary.unaided === summary.total, title: 'Dialogue check' })
+    playAdvance()
+    goForward()
+  }
+
   function answerQuiz(picked: string, answer: string) {
     if (step.kind !== 'quiz') return
     const key = step.id
@@ -227,7 +236,7 @@ function WordsRunner({
   const showFooter =
     isComplete || step.kind === 'teach' || step.kind === 'note' || step.kind === 'read' || (step.kind === 'quiz' && quizState?.solved)
   const footerLabel = isComplete ? 'Continue' : 'Next'
-  const activeStage = step.kind === 'complete' || (step.kind === 'recall' && step.id.startsWith('retry:')) ? 'Revisit' : step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' ? 'Retrieve' : 'Produce'
+  const activeStage = step.kind === 'complete' || (step.kind === 'recall' && step.id.startsWith('retry:')) ? 'Revisit' : step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' || step.kind === 'recheck' ? 'Retrieve' : 'Produce'
 
   return (
     <div className="overlay session learning-session">
@@ -280,6 +289,8 @@ function WordsRunner({
               }} onComplete={finishRecall} />
           ) : step.kind === 'dialogue' ? (
             <DialoguePractice text={step.text} lesson={lesson} externallyAssisted={progressPeeks[step.id]} assistedTurns={Object.keys(progressPeeks).filter((id) => id.startsWith(`${step.id}::`)).map((id) => id.slice(step.id.length + 2))} onAssistance={(turnId) => setProgressPeeks((previous) => ({ ...previous, [turnId ? `${step.id}::${turnId}` : step.id]: true }))} targetWords={getLesson(lesson).vocab.map((word) => word.zh)} onComplete={finishProduction} />
+          ) : step.kind === 'recheck' ? (
+            <DialogueRecheck text={step.text} words={step.words} onRecord={(zh, correct, assisted) => store.recordRecall(zh, { correct, assisted, mode: 'recognition' })} onDone={finishRecheck} />
           ) : step.kind === 'produce' ? (
             <SentencePractice example={step.example} targetWords={step.words} grammar={step.grammar} lesson={lesson} externallyAssisted={progressPeeks[step.id]} onAssistance={() => setProgressPeeks((previous) => ({ ...previous, [step.id]: true }))} onComplete={finishProduction} />
           ) : step.kind === 'note' ? (

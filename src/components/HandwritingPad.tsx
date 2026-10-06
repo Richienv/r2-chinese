@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import dictionaryUrl from '../assets/handwriting/medians.bin?url'
 import licenseUrl from '../assets/handwriting/ARPHICPL.TXT?url'
-import { assessHandwritingWord, loadHandwritingModel, type HandwritingModel, type HandwritingWordAssessment, type InkDrawing, type InkPoint, type InkStroke } from '../lib/handwriting'
+import { loadHandwritingModel, type HandwritingModel, type InkDrawing, type InkPoint, type InkStroke } from '../lib/handwriting'
+import { diagnoseWord, type WordDiagnosis } from '../lib/handwriting-review'
+import { EraseIcon, UndoIcon } from './Icons'
 import '../styles/handwriting.css'
 
 const SIZE = 320
@@ -14,26 +16,11 @@ export function HandwritingPad({ drawing, onChange, disabled = false, position =
   position?: number
   total?: number
 }) {
-  const panel = useRef<HTMLElement>(null)
   const canvas = useRef<HTMLCanvasElement>(null)
   const activePointer = useRef<number | null>(null)
   const liveStroke = useRef<InkStroke>([])
   const completedStrokes = useRef<InkDrawing>(drawing)
   const [drawingStroke, setDrawingStroke] = useState(false)
-
-  useEffect(() => {
-    // Only opening the pad scrolls. Drawing and changing character must keep
-    // the writing surface in the same place beneath the learner's hand.
-    const frame = window.requestAnimationFrame(() => {
-      const section = panel.current
-      const body = section?.closest<HTMLElement>('.overlay-body')
-      if (!section || !body) return
-      const top = body.scrollTop + section.getBoundingClientRect().top - body.getBoundingClientRect().top - 24
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      body.scrollTo({ top: Math.max(0, top), behavior: reducedMotion ? 'auto' : 'smooth' })
-    })
-    return () => window.cancelAnimationFrame(frame)
-  }, [])
 
   function redraw() {
     const element = canvas.current
@@ -133,17 +120,18 @@ export function HandwritingPad({ drawing, onChange, disabled = false, position =
   }
 
   return (
-    <section ref={panel} className="handwriting-pad" aria-label="Hanzi handwriting input">
-      <div className="handwriting-intro"><strong>Character {position} of {total}</strong><span>Draw from memory. Check after the whole word.</span></div>
+    <section className="handwriting-pad" aria-label="Hanzi handwriting input">
+      <div className="handwriting-bar">
+        <p className="handwriting-intro">Character {position} of {total}<span className="handwriting-count"> · {drawing.length} {drawing.length === 1 ? 'stroke' : 'strokes'}</span></p>
+        <div className="handwriting-tools">
+          <button type="button" className="handwriting-tool" aria-label="Undo stroke" title="Undo stroke" disabled={disabled || !drawing.length} onClick={() => changeInk(completedStrokes.current.slice(0, -1))}><UndoIcon size={18} /><span>Undo</span></button>
+          <button type="button" className="handwriting-tool" aria-label="Clear character" title="Clear character" disabled={disabled || !drawing.length} onClick={() => changeInk([])}><EraseIcon size={18} /><span>Clear</span></button>
+        </div>
+      </div>
       <div className="handwriting-board" data-disabled={disabled}>
         <span className="handwriting-guide handwriting-guide-h" aria-hidden="true" /><span className="handwriting-guide handwriting-guide-v" aria-hidden="true" />
         <canvas ref={canvas} width={SIZE} height={SIZE} className="handwriting-canvas" aria-label={`Draw character ${position} of ${total} with your finger, pen, or mouse`} onPointerDown={startStroke} onPointerMove={moveStroke} onPointerUp={(event) => endStroke(event)} onPointerCancel={(event) => endStroke(event, true)} onLostPointerCapture={(event) => endStroke(event, true)} />
         {!drawing.length && !drawingStroke && <span className="handwriting-empty" aria-hidden="true">Write here</span>}
-      </div>
-      <div className="handwriting-tools">
-        <span className="sub">{drawing.length} {drawing.length === 1 ? 'stroke' : 'strokes'}</span>
-        <button type="button" className="btn btn-ghost" disabled={disabled || !drawing.length} onClick={() => changeInk(completedStrokes.current.slice(0, -1))}>Undo stroke</button>
-        <button type="button" className="btn btn-ghost" disabled={disabled || !drawing.length} onClick={() => changeInk([])}>Clear character</button>
       </div>
       <p className="handwriting-note">Handwriting is checked on this device. <a href={licenseUrl} target="_blank" rel="noreferrer">Stroke data © Arphic / Make Me a Hanzi · license</a>.</p>
     </section>
@@ -154,10 +142,12 @@ type PendingAssessment = {
   id: number
   drawings: InkDrawing[]
   expectedWord: string
-  resolve: (assessment: HandwritingWordAssessment) => void
+  resolve: (assessment: WordDiagnosis) => void
   reject: (error: Error) => void
   timeout?: number
 }
+
+export type HandwritingAssessor = ReturnType<typeof useHandwritingWordAssessment>
 
 /** One worker handles every captured glyph; a device-local fallback survives worker failures. */
 export function useHandwritingWordAssessment(enabled: boolean) {
@@ -178,7 +168,7 @@ export function useHandwritingWordAssessment(enabled: boolean) {
     setCount(0)
     setStatus('loading')
 
-    const complete = (assessment: HandwritingWordAssessment, id: number) => {
+    const complete = (assessment: WordDiagnosis, id: number) => {
       const request = pending.current
       if (cancelled || !request || request.id !== id) return
       window.clearTimeout(request.timeout)
@@ -192,7 +182,7 @@ export function useHandwritingWordAssessment(enabled: boolean) {
       // Paint the checking state before the synchronous fallback runs.
       window.setTimeout(() => {
         if (cancelled || pending.current?.id !== request.id) return
-        try { complete(assessHandwritingWord(request.drawings, model, request.expectedWord), request.id) }
+        try { complete(diagnoseWord(request.drawings, model, request.expectedWord), request.id) }
         catch {
           window.clearTimeout(request.timeout)
           pending.current = null
@@ -230,7 +220,7 @@ export function useHandwritingWordAssessment(enabled: boolean) {
       else {
         const recognizer = new Worker(new URL('../lib/handwriting.worker.ts', import.meta.url), { type: 'module' })
         worker.current = recognizer
-        recognizer.onmessage = (event: MessageEvent<{ type: string; count?: number; id?: number; assessment?: HandwritingWordAssessment }>) => {
+        recognizer.onmessage = (event: MessageEvent<{ type: string; count?: number; id?: number; assessment?: WordDiagnosis }>) => {
           if (cancelled) return
           if (event.data.type === 'ready') {
             ready = true
@@ -259,7 +249,7 @@ export function useHandwritingWordAssessment(enabled: boolean) {
     }
   }, [enabled, reload])
 
-  function assess(drawings: InkDrawing[], expectedWord: string): Promise<HandwritingWordAssessment> {
+  function assess(drawings: InkDrawing[], expectedWord: string): Promise<WordDiagnosis> {
     if (status !== 'ready' || pending.current) return Promise.reject(new Error('Wait for the handwriting dictionary, then check again.'))
     const id = ++nextRequest.current
     setStatus('checking')
@@ -273,7 +263,7 @@ export function useHandwritingWordAssessment(enabled: boolean) {
         void loadHandwritingModel(dictionaryUrl).then((model) => {
           if (pending.current?.id !== id) return
           fallbackModel.current = model
-          const result = assessHandwritingWord(drawings, model, expectedWord)
+          const result = diagnoseWord(drawings, model, expectedWord)
           pending.current = null
           setStatus('ready')
           resolve(result)
@@ -289,7 +279,7 @@ export function useHandwritingWordAssessment(enabled: boolean) {
         window.setTimeout(() => {
           if (pending.current?.id !== id) return
           try {
-            const result = assessHandwritingWord(drawings, fallbackModel.current!, expectedWord)
+            const result = diagnoseWord(drawings, fallbackModel.current!, expectedWord)
             window.clearTimeout(request.timeout)
             pending.current = null
             setStatus('ready')

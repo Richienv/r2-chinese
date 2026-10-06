@@ -10,6 +10,7 @@ import {
   TEXT_NODES,
   type Example,
 } from './content'
+import { buildRecheck } from './dialogue-check'
 import { clozeQuestion, sentenceQuestions, vocabQuestions, type Question } from './quiz'
 import { wordHook, type TeachPhase, type WordHook } from './teach'
 import type { LessonText, Vocab } from './types'
@@ -34,6 +35,7 @@ export type SessionStep =
   | { kind: 'read'; id: string; text: LessonText; n: number; of: number }
   | { kind: 'recall'; id: string; word: Vocab; n: number; of: number }
   | { kind: 'dialogue'; id: string; text: LessonText; n: number; of: number }
+  | { kind: 'recheck'; id: string; text: LessonText; words: Vocab[]; n: number; of: number }
   | { kind: 'produce'; id: string; example: Example; words: string[]; grammar?: string; n: number; of: number }
   | { kind: 'note'; id: string; title: string; body: string; example: Example | null; kicker?: string; n: number; of: number }
   | { kind: 'quiz'; id: string; question: Question; example: Example | null; n: number; of: number }
@@ -105,13 +107,14 @@ export function nodeCaption(lesson: number, node: PathNode): { en: string; zh: s
 
 function numberSteps(draft: Array<Exclude<SessionStep, { kind: 'complete' }>>): SessionStep[] {
   const words = [...new Set(draft.filter((s) => s.kind === 'teach').map((s) => s.word.zh))]
-  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, produce: 0 }
+  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, recheck: 0, produce: 0 }
   const ofs = {
     read: draft.filter((s) => s.kind === 'read').length,
     note: draft.filter((s) => s.kind === 'note').length,
     quiz: draft.filter((s) => s.kind === 'quiz').length,
     recall: draft.filter((s) => s.kind === 'recall').length,
     dialogue: draft.filter((s) => s.kind === 'dialogue').length,
+    recheck: draft.filter((s) => s.kind === 'recheck').length,
     produce: draft.filter((s) => s.kind === 'produce').length,
   }
   const steps: SessionStep[] = draft.map((s) => {
@@ -169,6 +172,8 @@ function buildTextSteps(lesson: number, node: Exclude<PathNode, 'wrap'>): Sessio
 
   if (sitting.text.type === 'dialogue' && sitting.text.lines.length > 1) {
     draft.push({ kind: 'dialogue', id: `speak:${node}`, text: sitting.text, n: 0, of: 0 })
+    const used = sitting.words.filter((word) => sitting.text.lines.some((line) => line.zh.includes(word.zh)))
+    if (buildRecheck(sitting.text, used).length >= 2) draft.push({ kind: 'recheck', id: `recheck:${node}`, text: sitting.text, words: used, n: 0, of: 0 })
   }
 
   const checks = sentenceQuestions(bookLesson, 3, sitting.text.lines)

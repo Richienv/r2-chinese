@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useAuth } from '../auth/AuthProvider'
 import { HearButton } from '../components/Hear'
+import { ReviewReport } from '../components/ReviewReport'
 import { CloseIcon } from '../components/Icons'
 import { exampleFor, lessons } from '../lib/content'
 import { assessmentStatus, AssessmentServiceError } from '../lib/assessmentService'
 import { reviewComposition, writingCoverage, type CompositionReview } from '../lib/composition'
 import { compositionBundle, learnedHskWords, type PracticeWord } from '../lib/hskPractice'
+import { compareReviews, type Review } from '../lib/review'
+import { reviewWriting } from '../lib/writing-review'
 import { stopSpeech } from '../lib/speech'
 import { useStore } from '../store/store'
 import '../styles/hsk-practice.css'
@@ -36,6 +39,8 @@ export function HskComposition({ onClose }: { onClose: () => void }) {
   const [search, setSearch] = useState('')
   const [round, setRound] = useState(0)
   const [review, setReview] = useState<CompositionReview | null>(null)
+  /** The report of the draft before this revision, so the retest can say what was fixed. */
+  const [previous, setPrevious] = useState<Review | null>(null)
   const [checking, setChecking] = useState(false)
   const [error, setError] = useState('')
   const [serviceIssue, setServiceIssue] = useState<AssessmentServiceError | null>(null)
@@ -49,6 +54,11 @@ export function HskComposition({ onClose }: { onClose: () => void }) {
   const result = useRef<HTMLElement>(null)
   const words = bundle.map((word) => word.zh)
   const coverage = writingCoverage(value, words)
+  const requirements = useMemo(() => reviewWriting({
+    response: value, words, used: coverage.used, reviewerAvailable: !serviceIssue?.needsSetup,
+    grammar: review ? { accepted: review.accepted, corrections: review.corrections.map((entry) => `${entry.original || '＋'} → ${entry.corrected || '∅'}: ${entry.why}`) } : null,
+  }), [value, words.join('|'), review, serviceIssue]) // eslint-disable-line react-hooks/exhaustive-deps
+  const change = review && previous ? compareReviews(previous, requirements) : null
   const sourceExample = bundle.map((word) => exampleFor(word.zh, word.lesson)).find((example) => example !== null)
   const lessonCount = new Set(pool.map((word) => word.lesson)).size
 
@@ -83,10 +93,12 @@ export function HskComposition({ onClose }: { onClose: () => void }) {
   }
   function choose(word: PracticeWord) {
     invalidate()
+    setPrevious(null)
     setBundle((previous) => previous.some((item) => item.zh === word.zh) ? previous.filter((item) => item.zh !== word.zh) : previous.length < 5 ? [...previous, word] : previous)
   }
   function mix(clear = false) {
     invalidate()
+    setPrevious(null)
     stopSpeech()
     setRound(round + 1)
     setBundle(compositionBundle(pool, store.mastery, round + 1))
@@ -115,7 +127,8 @@ export function HskComposition({ onClose }: { onClose: () => void }) {
       setServiceIssue(null)
       setReview(response)
       const id = `${words.join('|')}\u0001${value}`
-      if (response.accepted && !response.missing.length && !credited.current.has(id)) {
+      const verdict = reviewWriting({ response: value, words, used: response.used, grammar: { accepted: response.accepted, corrections: [] }, reviewerAvailable: true }).verdict
+      if (verdict === 'passed' && !credited.current.has(id)) {
         credited.current.add(id)
         // A visible word bank teaches contextual use; it is assisted practice,
         // not proof of unaided retrieval. Leave mastery/SRS evidence unchanged.
@@ -160,16 +173,21 @@ export function HskComposition({ onClose }: { onClose: () => void }) {
             </details>}
             <small>{draftSaved ? 'Your draft is saved on this device.' : 'Your draft stays here in this session.'}</small>
           </aside>}
+          {!review && <ul className="writing-checklist" aria-label="What this task needs" data-pending={!value.trim() || undefined}>
+            <li className="writing-checklist-title">This task needs</li>
+            {requirements.checks.map((check) => <li key={check.id} data-status={check.status}><span aria-hidden="true">{check.status === 'pass' ? '✓' : check.status === 'unverified' ? '?' : check.status === 'partial' ? '!' : '○'}</span><div><strong>{check.label}</strong><small>{check.status === 'pass' ? check.found : check.status === 'unverified' ? 'Checked when you press the button' : value.trim() ? check.fix : check.expected}</small></div></li>)}
+          </ul>}
           <button className="writing-primary" type="button" disabled={checking || !bundle.length || !/[\u3400-\u9fff]/.test(value)} onClick={() => void check()}>{checking ? 'Reviewing your sentences…' : serviceIssue?.needsSetup ? 'Reconnect grammar review' : 'Check my sentences'}<span aria-hidden="true">→</span></button>
           {error && <p className="hsk-lab-error" role="alert">{error}</p>}
         </section>
         {review && <section className="writing-review" ref={result} aria-label="Your grammar feedback" data-correct={review.accepted}>
+          <ReviewReport review={requirements} comparison={change} revealed={() => true} />
           <span className="hsk-lab-eyebrow">Grammar review</span><h2>{review.accepted ? 'Your meaning comes through.' : 'A small change makes it clearer.'}</h2><p className="writing-feedback">{review.feedback}</p>
           {review.corrections.map((correction, i) => <details className="writing-correction" key={i} open={i === 0 ? true : undefined}><summary><span className="writing-correction-number">{i + 1}</span><span lang="zh-CN"><del>{correction.original || '＋'}</del><span aria-hidden="true"> → </span><ins>{correction.corrected || '∅'}</ins></span><b>Why?</b></summary><p>{correction.why}</p><div className="writing-grammar-rule"><small>Keep this pattern</small><span>{correction.rule}</span></div></details>)}
           {!review.accepted && <div className="writing-polished"><small>Your sentence, with the correction</small><p lang="zh-CN">{review.correctedZh}</p><HearButton text={review.correctedZh} label="Hear the correction" /></div>}
           {review.missing.length > 0 && <p className="writing-missing">Still to use: <span lang="zh-CN">{review.missing.join(' · ')}</span>. Add another sentence; your grammar result stays separate from word coverage.</p>}
           {saved && <p className="writing-saved" role="status">Saved as writing practice. Recall without the word bank builds mastery.</p>}
-          <div className="writing-review-actions"><button type="button" onClick={() => { invalidate(); textarea.current?.focus(); textarea.current?.scrollIntoView({ block: 'center' }) }}>Revise in my own words</button><button type="button" onClick={() => mix(true)}>New word set →</button></div>
+          <div className="writing-review-actions"><button type="button" onClick={() => { setPrevious(requirements); invalidate(); textarea.current?.focus(); textarea.current?.scrollIntoView({ block: 'center' }) }}>Fix it and check again</button><button type="button" onClick={() => mix(true)}>New word set →</button></div>
         </section>}
       </>}
     </div>

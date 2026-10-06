@@ -40,10 +40,39 @@ source reading and choice checks remain knowledge checks, not verified productio
   rounds later, asked by its meaning. The screen reacts (word dots, an unaided-run
   counter, a glow and shake on the result, stroke order when a word is recalled, haptics
   on phones) and ends with a per-word breakdown and a drill of just the words to revisit.
+- `ReviewReport`, `HanziDrawing`, `DialogueRecheck`: the validation loop above.
 - `MasteryTracker`: current word states and the evidence behind them.
 - `RecallFeedback` / `VoiceWaveform`: finite feedback animation and real input visualization.
 - `sfx`: interaction, hint, listening, success, repair, and completion cues under one mute preference.
 - Semantic checkpoints: stable activity IDs and assistance scopes, with separate account namespaces.
+
+## The validation loop
+
+Every graded task closes the same loop: instruction, task, result, check, feedback,
+correction, retest. A task turns its result into `ReviewCheck`s (`src/lib/review.ts`),
+each tagged with the stage it tests (followed the instruction, recalled the details,
+made the choice, produced the result), what the learner did, what was needed, and the
+concrete fix. `buildReview` gives the verdict and one next step; `compareReviews` says
+what a retest fixed, what is still wrong and what newly broke. `ReviewReport` renders it.
+
+- Verdicts are `passed`, `revise` and `unverified`. `unverified` is never a pass: it is what a
+  grammar check says when no reviewer is connected, or a drawing says when it cannot be read.
+- Coaching checks (a stroke that looks out of place, how close the wording is to the book) never
+  change the verdict. A check that would print the answer is hidden until it is revealed.
+- The checks never change the evidence rules above. They explain a result; they do not make one.
+
+Where it applies:
+
+| Task | Checks | Correction | Retest |
+| --- | --- | --- | --- |
+| Draw a word (`HanziDrawing`) | every character drawn; each character reads as the lesson word's; the stroke count; which stroke is missing or extra (`handwriting-review.ts`, only when it is certain) | redraw only the characters that failed, keeping ink that is one stroke off; the correct strokes are shown on request and count as help | check again, with what was fixed |
+| Type a word | Hanzi not pinyin, right length, each character (without printing the answer) | retype; the text stays | same |
+| Reply in a dialogue | in Mandarin; the key words from the line; the book's wording or a verified correction (`reply-review.ts`) | "Fix and check again" keeps the reply and lists what to fix | same |
+| Dialogue recall check (`DialogueRecheck`) | what came next, who said it, which key word fits, built from the dialogue itself (`dialogue-check.ts`) | each wrong choice is answered with the book's own line | the misses again, options reordered |
+| Make it yours | Mandarin, two or three sentences, every word used, grammar by the reviewer (`writing-review.ts`) | live checklist while writing; "Fix it and check again" | same |
+
+Handwriting pass or fail still comes from the blind corpus classifier. The stroke diagnosis
+only explains it, and says "one of these" rather than guessing when strokes are alike.
 
 ## Evidence rules
 
