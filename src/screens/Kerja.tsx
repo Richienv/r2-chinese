@@ -358,12 +358,12 @@ function KerjaRunner({ chapter, node, onClose }: {
     <div className="overlay session learning-session">
       <Fireworks token={fireworks} />
       <div className="overlay-head">
-        <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close session"><CloseIcon /></button>
+        <button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close session')}><CloseIcon /></button>
         <div className="step-bar"><i className="yl-progress" style={{ width: `${Math.min(100, progressPct)}%` }} /></div>
         <MasteryTracker words={sessionWords} compact onOpen={revealProgress} />
       </div>
-      <div className="learning-route" aria-label={`Learning stage: ${activeStage}`}>
-        {['Encounter', 'Understand', 'Retrieve', 'Produce', 'Revisit'].map((stage) => <span key={stage} data-active={stage === activeStage} aria-current={stage === activeStage ? 'step' : undefined}>{stage}</span>)}
+      <div className="learning-route" aria-label={t('Learning stage: {stage}', { stage: STAGE_LABEL[activeStage] })}>
+        {STAGES.map((stage) => <span key={stage} data-active={stage === activeStage} aria-current={stage === activeStage ? 'step' : undefined}>{STAGE_LABEL[stage]}</span>)}
       </div>
       <div className="overlay-body" ref={bodyRef}>
         <div key={beatKey} className="session-beat yl-enter">
@@ -384,7 +384,7 @@ function KerjaRunner({ chapter, node, onClose }: {
                         : <DoneView node={node} titleZh={ch.titleZh} titleEn={ch.titleEn} wordCount={kerjaSittingWordCount(chapter, node)} xp={xp} replay={alreadyDone.current} words={sessionWords} />}
         </div>
       </div>
-      {showFooter && <div className="overlay-foot">{(step.kind === 'teach' || step.kind === 'read' || step.kind === 'note') && <StudyDisplayControls />}<button type="button" className="btn" onPointerDown={() => unlockSpeech()} onClick={advance}>{isComplete ? 'Continue' : 'Next'}</button></div>}
+      {showFooter && <div className="overlay-foot">{(step.kind === 'teach' || step.kind === 'read' || step.kind === 'note') && <StudyDisplayControls />}<button type="button" className="btn" onPointerDown={() => unlockSpeech()} onClick={advance}>{isComplete ? t('Continue') : t('Next')}</button></div>}
     </div>
   )
 }
@@ -406,7 +406,7 @@ function ReadView({ text }: { text: LessonText }) {
     <>
       <header className="session-step-head">
         <div className="kicker-ink">
-          {text.label} · {text.type === 'dialogue' ? 'Dialogue' : 'Passage'}
+          {text.type === 'dialogue' ? t('{label} · Dialogue', { label: text.label }) : t('{label} · Passage', { label: text.label })}
         </div>
         <h2 className="session-step-title" lang={hasHanzi(heading) ? 'zh-CN' : undefined}>
           {hasHanzi(heading) ? <Glossed text={heading} onWord={onWord} /> : heading}
@@ -446,7 +446,7 @@ function NoteView({
 }) {
   const { onWord, sheet } = useGloss()
   const { prefs } = useStore()
-  const head = of > 1 ? `Note · ${n} of ${of}` : 'Note'
+  const head = of > 1 ? t('Note · {n} of {of}', { n, of }) : t('Note')
   const exampleZh = hearableZh(example?.zh)
   const titleZh = hearableZh(title)
   const bodyZh = hearableZh(body)
@@ -474,18 +474,18 @@ function NoteView({
           )}
           {prefs.showEnglish && example.en && <p className="sub" style={{ margin: '8px 0 0' }}>{example.en}</p>}
           <div style={{ marginTop: 12 }}>
-            <ChineseHear text={exampleZh} label="Hear the line" rate={LINE_RATE} />
+            <ChineseHear text={exampleZh} label={t('Hear the line')} rate={LINE_RATE} />
           </div>
         </div>
       )}
       {!exampleZh && titleZh && (
         <div style={{ marginTop: 14 }}>
-          <ChineseHear text={titleZh} label="Hear it" />
+          <ChineseHear text={titleZh} label={t('Hear it')} />
         </div>
       )}
       {!exampleZh && !titleZh && bodyZh && (
         <div style={{ marginTop: 14 }}>
-          <ChineseHear text={bodyZh} label="Hear it" />
+          <ChineseHear text={bodyZh} label={t('Hear it')} />
         </div>
       )}
       {sheet}
@@ -522,14 +522,14 @@ function MatchView({
 
   return (
     <>
-      <StepHead kicker={of > 1 ? `Check · ${n} of ${of}` : 'Check'} title={question.prompt} />
+      <StepHead kicker={of > 1 ? t('Check · {n} of {of}', { n, of }) : t('Check')} title={question.prompt} />
       {question.context && (
         <div className="card session-prompt">
           <p className="zh" lang="zh-CN" style={{ fontSize: 22, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
             <Glossed text={question.context.zh} onWord={onWord} />
           </p>
           <div style={{ marginTop: 12 }}>
-            <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+            <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} />
           </div>
         </div>
       )}
@@ -539,7 +539,7 @@ function MatchView({
             type="button"
             className="hear hear-ink"
             data-on={choicesPlaying}
-            aria-label={choicesPlaying ? 'Stop choices' : 'Hear choices'}
+            aria-label={choicesPlaying ? t('Stop choices') : t('Hear choices')}
             aria-pressed={choicesPlaying}
             onPointerDown={() => unlockSpeech()}
             onClick={() => {
@@ -553,7 +553,7 @@ function MatchView({
               )
             }}
           >
-            <span>{choicesPlaying ? 'Playing' : 'Hear choices'}</span>
+            <span>{choicesPlaying ? t('Playing') : t('Hear choices')}</span>
           </button>
         </div>
       )}
@@ -582,7 +582,7 @@ function MatchView({
       {solved && (
         <div className="yl-enter-up" style={{ textAlign: 'center', marginTop: 2 }} aria-live="polite">
           <strong style={{ fontSize: 16, fontWeight: 800, color: 'var(--red-deep)' }}>
-            {missed ? 'That’s it' : 'Nice!'}
+            {missed ? t('That’s it') : t('Nice!')}
           </strong>
         </div>
       )}
@@ -615,12 +615,12 @@ function DoneView({
         <CheckIcon size={46} />
       </div>
       <h2 className="h1 yl-enter" style={{ marginTop: 22, textWrap: 'balance' }}>
-        {label.en} complete
+        {t('{label} complete', { label: label.en })}
       </h2>
       <p className="sub yl-enter-up" style={{ marginTop: 8, animationDelay: '80ms', textWrap: 'pretty' }}>
         {titleZh} · {titleEn}
       </p>
-      <div className="learning-summary"><MasteryTracker words={words} /><p>Your words are tracked automatically. Return on another day to prove recall without hints.</p></div>
+      <div className="learning-summary"><MasteryTracker words={words} /><p>{t('Your words are tracked automatically. Return on another day to prove recall without hints.')}</p></div>
       <div
         className="session-xp yl-pop"
         style={{ marginTop: 20, fontWeight: 800, fontVariantNumeric: 'tabular-nums', animationDelay: '120ms' }}
@@ -631,9 +631,9 @@ function DoneView({
         className="row yl-enter-up"
         style={{ justifyContent: 'center', marginTop: 16, flexWrap: 'wrap', animationDelay: '180ms' }}
       >
-        <span className="pill-ink">+{ITEM_XP} XP / item</span>
-        {!replay && <span className="pill-ink">+{NODE_BONUS_XP} node</span>}
-        {wordCount > 0 && <span className="pill-ink">{wordCount} words</span>}
+        <span className="pill-ink">{t('+{xp} XP / item', { xp: ITEM_XP })}</span>
+        {!replay && <span className="pill-ink">{t('+{xp} node', { xp: NODE_BONUS_XP })}</span>}
+        {wordCount > 0 && <span className="pill-ink">{t('{n} words', { n: wordCount })}</span>}
       </div>
     </div>
   )
@@ -643,7 +643,7 @@ function LockedView({ onClose }: { onClose: () => void }) {
   return (
     <div className="overlay session">
       <div className="overlay-head">
-        <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close">
+        <button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close')}>
           <CloseIcon />
         </button>
       </div>
@@ -651,10 +651,10 @@ function LockedView({ onClose }: { onClose: () => void }) {
         <div className="yl-enter" style={{ textAlign: 'center' }}>
           <LockIcon size={36} />
           <h2 className="h1" style={{ marginTop: 16 }}>
-            Locked
+            {t('Locked')}
           </h2>
           <p className="sub" style={{ marginTop: 8 }}>
-            Finish the earlier Kerja nodes first.
+            {t('Finish the earlier Kerja nodes first.')}
           </p>
         </div>
       </div>
