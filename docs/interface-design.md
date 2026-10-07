@@ -38,7 +38,7 @@ the learner explicitly reveals assistance. Neither animation nor completing a
 screen awards mastery; unaided retrieval evidence across sessions does.
 
 Book comparison does not verify arbitrary alternative grammar. Source-grounded
-explanations are separate from the optional grammar assessment service. Drawing
+explanations are separate from the grammar classifier. Drawing
 classification ranks the independent corpus before comparing the expected word.
 
 Book scenarios illustrate decisions rather than reporting invented business

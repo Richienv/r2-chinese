@@ -9,17 +9,18 @@ replies. The partner's Mandarin is visible and audible; the learner's reply is
 hidden. Sentence creation starts from the source English. Both activities reveal
 meaning clues, then source Hanzi, then pinyin/audio only on an explicit hint tap.
 Hints, correction-based retries, and opening an answer-bearing vocabulary tracker
-make the result assisted. Invalid reviewed grammar requires a retry or an explicit
+make the result assisted. A reply with a known mistake requires a retry or an explicit
 review-and-continue action.
 
 ## Assessment and evidence
 
 - `source-match`: Hanzi matches the curriculum after whitespace and punctuation
-  normalization. No network request is needed.
-- `verified`: optional server assessment reviews the recognized or typed Hanzi's
-  meaning and grammar. Equivalent natural paraphrases can pass.
-- `practice`: no grammar assessment is available. Different wording is explicitly
-  unverified and does not count as either a grammar error or mastery evidence.
+  normalization. This is the only way a reply is confirmed correct, and the only
+  evidence that can be graded.
+- `practice`: any other wording. The free grammar classifier (below) may name a
+  known mistake, which is useful feedback, but nothing can confirm that a
+  different sentence is right. It never counts as either a grammar error on the
+  learner's record or mastery evidence.
 
 The `ProductionResult.outcomes` array preserves each word's result for each
 attempted turn. Consumers should use these outcomes and skip `practice` evidence;
@@ -33,29 +34,23 @@ unreachable speech services retain the typed exercise. Recognition is **not** a
 pronunciation or tone score. The visualization uses real microphone input when
 available and has a static fallback.
 
-## Optional grammar service
+## Grammar checking
 
-Configure `OPENAI_API_KEY` in the server environment. `OPENAI_ASSESS_MODEL` can
-override the default `gpt-4.1-mini`. Neither value belongs in a `VITE_` variable.
-Vercel serves `api/assess.ts`; the Vite API middleware serves the same handler
-locally. The Vite configuration loads these two server keys from `.env.local` or the
-launch environment. Copy `.env.example` to `.env.local` for local setup; the
-secret is never exposed to the browser.
+There is no grammar service, key or network call. `src/lib/grammar/` is a typed,
+rule-based classifier that runs in the browser: see `docs/grammar-checker.md` for
+what it checks and, as important, what it cannot. `assessProduction` compares with
+the book first, then asks the classifier about any other wording. A known mistake
+is named with the fix and why; "no known mistakes" is reported as exactly that and
+the reply stays unverified.
 
-Without a server key, book comparison still works and alternatives remain
-unverified. Source-grounded grammar coaching is available locally, including
-the order and purpose of each part. It explains supported textbook structures
-and specific particle or transcription differences without turning a string
-comparison into a grammar verdict. Unknown structures receive no invented
-decomposition. The endpoint bounds inputs, accepts same-origin JSON requests,
-uses strict structured output, times out, and sets response storage to false.
-It never logs transcripts. Its in-memory request limits are per server instance;
-a shared deployment should add platform authentication and shared rate limiting
-before enabling a paid key.
+Source-grounded grammar coaching (`grammarCoach.ts`) is separate and also local: it
+explains the order and purpose of each part of a supported textbook structure and
+specific particle or transcription differences without turning a string comparison
+into a grammar verdict. Unknown structures receive no invented decomposition.
 
 Browser speech services manage audio processing according to the browser's own
-behavior. The app does not upload microphone audio to its grammar endpoint.
-That endpoint sends only the submitted Hanzi and source context for text review.
+behavior. The app does not upload microphone audio anywhere itself.
+Typed and recognized Hanzi stay on the device: nothing is sent for grammar checking.
 
 ## Review display
 
@@ -72,9 +67,8 @@ optional supporting information rather than the lesson itself.
 Run `npm run typecheck` and
 `node --experimental-strip-types --test tests/production.test.mjs`.
 Tests cover source matching, valid paraphrases, source differences, role selection,
-optional-service fallback, speech lifecycle, origin/configuration checks, and
-structured assessment responses. Real browser microphone access and live model
-assessment require separate end-to-end checks.
+classifier feedback on a different wording, and the speech lifecycle. Real browser
+microphone access requires a separate end-to-end check.
 
 Primary references:
 

@@ -1,4 +1,5 @@
 import { buildReview, type Review, type ReviewCheck } from './review.ts'
+import type { GrammarVerdict } from './grammar/types.ts'
 import { t } from './i18n.ts'
 
 const HANZI = /[㐀-鿿]/gu
@@ -9,10 +10,15 @@ export function sentenceCount(text: string): number {
   return text.split(/[。！？!?.]+/u).filter((part) => /[㐀-鿿]/u.test(part)).length
 }
 
+/** What the free grammar classifier found. It only knows common mistakes, so a clean result is not a guarantee. */
 export interface WritingGrammar {
-  accepted: boolean
-  /** One line per correction, "original → corrected: reason". */
-  corrections: string[]
+  verdict: GrammarVerdict
+  /** One line per mistake that is wrong in standard Mandarin. */
+  errors: string[]
+  /** One line per thing that is only worth a second look. */
+  looks: string[]
+  /** How many mistake patterns were checked. */
+  rulesChecked: number
 }
 
 export interface WritingReviewInput {
@@ -21,10 +27,8 @@ export interface WritingReviewInput {
   words: string[]
   /** Which of those words the draft uses. */
   used: string[]
-  /** The grammar reviewer's answer, or null when it has not run. */
+  /** The classifier's answer, or null when it has not run. */
   grammar: WritingGrammar | null
-  /** Whether a grammar reviewer is connected, so "not run" can say why. */
-  reviewerAvailable: boolean
 }
 
 /** The task as the learner was given it. */
@@ -35,10 +39,10 @@ export function writingTask(wordCount: number): string {
 }
 
 /**
- * Every requirement of the writing task, checked on its own. Everything but grammar
- * is checked on this device, live; grammar is only ever passed by the reviewer.
+ * Every requirement of the writing task, checked on its own, all on this device and live.
+ * Grammar passes when none of the known mistake patterns match; the report says how narrow that is.
  */
-export function reviewWriting({ response, words, used, grammar, reviewerAvailable }: WritingReviewInput): Review {
+export function reviewWriting({ response, words, used, grammar }: WritingReviewInput): Review {
   const checks: ReviewCheck[] = []
   const hanzi = (response.match(HANZI) ?? []).length
   const latin = (response.match(LATIN) ?? []).length
@@ -68,17 +72,23 @@ export function reviewWriting({ response, words, used, grammar, reviewerAvailabl
       ? t('Still to use: {words}. Work it into a sentence.', { words: missing.join('、') })
       : t('Still to use: {words}. Work them into a sentence.', { words: missing.join('、') }),
   })
+  const checked = !!grammar && grammar.verdict !== 'not-chinese'
   checks.push({
-    id: 'grammar', stage: 'output', decisive: true, label: t('Grammar and meaning are correct'),
-    status: grammar ? (grammar.accepted ? 'pass' : 'fail') : 'unverified',
-    found: grammar
-      ? grammar.accepted ? t('Checked by the reviewer')
-        : grammar.corrections.length === 1 ? t('{n} correction suggested', { n: 1 }) : t('{n} corrections suggested', { n: grammar.corrections.length || 1 })
-      : t('Not checked yet'),
-    expected: t('Correct Mandarin'),
-    fix: grammar
-      ? grammar.accepted ? undefined : grammar.corrections.join(' ') || t('See the corrections below.')
-      : reviewerAvailable ? t('Press “{button}” to have the grammar and meaning checked.', { button: t('Check my sentences') }) : t('The grammar reviewer is not connected, so grammar cannot be verified. Everything else is checked here.'),
+    id: 'grammar', stage: 'output', decisive: true, label: t('No common grammar mistakes'),
+    status: !checked ? 'unverified' : grammar.errors.length ? 'fail' : 'pass',
+    found: !checked ? t('Not checked yet')
+      : grammar.errors.length ? grammar.errors.length === 1 ? t('{n} mistake found', { n: 1 }) : t('{n} mistakes found', { n: grammar.errors.length })
+        : t('None of {n} common patterns matched', { n: grammar.rulesChecked }),
+    expected: t('No known mistakes'),
+    fix: !grammar ? t('The grammar check has not run yet.') : !checked ? t('Write some Mandarin to check its grammar.') : grammar.errors.length ? grammar.errors.join(' ') : undefined,
   })
+  if (checked && grammar.looks.length) {
+    checks.push({
+      id: 'grammar-look', stage: 'output', decisive: false, label: t('Worth a second look'),
+      status: 'partial',
+      found: grammar.looks.length === 1 ? t('{n} thing to look at', { n: 1 }) : t('{n} things to look at', { n: grammar.looks.length }),
+      expected: t('Nothing unusual'), fix: grammar.looks.join(' '),
+    })
+  }
   return buildReview(writingTask(words.length), checks)
 }

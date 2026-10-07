@@ -1,13 +1,32 @@
 import { naturalChineseSegments } from './dictionary-format.ts'
 import { compositionCoverage } from './hskPractice.ts'
-import { assessmentFailure, AssessmentServiceError } from './assessmentService.ts'
+import { checkGrammar } from './grammar/check.ts'
+import { errorsOf, looksOf, summarize } from './grammar/describe.ts'
+import type { Finding, GrammarVerdict, Lexicon, Severity } from './grammar/types.ts'
+import { describeChange } from './grammar/describe.ts'
+import type { WritingGrammar } from './writing-review.ts'
 
-export interface GrammarCorrection { original: string; corrected: string; why: string; rule: string }
+export interface GrammarCorrection {
+  original: string
+  /** What to write instead. '' means remove it; null means the sentence has to be reworded. */
+  suggestion: string | null
+  why: string
+  /** The pattern to keep in mind. */
+  rule: string
+  severity: Severity
+}
+
 export interface CompositionReview {
+  verdict: GrammarVerdict
+  /** No known mistake. This is not a claim that the writing is correct. */
   accepted: boolean
+  /** The learner's own text with the known mistakes fixed; unchanged when none. */
   correctedZh: string
+  /** Every mistake has an automatic fix, so correctedZh is complete. */
+  fullyCorrected: boolean
   feedback: string
   corrections: GrammarCorrection[]
+  rulesChecked: number
   used: string[]
   missing: string[]
 }
@@ -16,19 +35,30 @@ export function writingCoverage(response: string, words: string[]) {
   return compositionCoverage(response, words, naturalChineseSegments(response))
 }
 
-export async function reviewComposition(response: string, words: string[], intendedMeaning = '', signal?: AbortSignal): Promise<CompositionReview> {
-  let res: Response
-  try {
-    res = await fetch('/api/assess', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' }, signal,
-      body: JSON.stringify({ mode: 'composition', response, targetWords: words, intendedMeaning }),
-    })
-  } catch (error) {
-    if (signal?.aborted) throw error
-    throw new AssessmentServiceError('assessment_network_error')
+const correction = (finding: Finding): GrammarCorrection => ({
+  original: finding.original, suggestion: finding.suggestion, why: finding.why, rule: finding.pattern, severity: finding.severity,
+})
+
+/**
+ * Check original writing with the free classifier. Word coverage is separate: a draft that skips a
+ * word is not a grammar mistake. Synchronous and offline, so it can run on every keystroke.
+ */
+export function reviewComposition(response: string, words: string[], lexicon?: Lexicon): CompositionReview {
+  const report = checkGrammar(response, { lexicon })
+  return {
+    verdict: report.verdict,
+    accepted: report.verdict !== 'errors' && report.verdict !== 'not-chinese',
+    correctedZh: report.correctedZh,
+    fullyCorrected: report.fullyCorrected,
+    feedback: summarize(report),
+    corrections: [...errorsOf(report), ...looksOf(report)].map(correction),
+    rulesChecked: report.rulesChecked,
+    ...writingCoverage(response, words),
   }
-  if (!res.ok) throw await assessmentFailure(res)
-  const data = await res.json().catch(() => null)
-  if (!data || data.evidence !== 'verified' || typeof data.accepted !== 'boolean' || typeof data.correctedZh !== 'string' || !data.correctedZh.trim() || typeof data.feedback !== 'string' || !data.feedback.trim() || !Array.isArray(data.corrections) || data.corrections.length > 4 || !data.corrections.every((entry: GrammarCorrection) => entry && typeof entry.original === 'string' && typeof entry.corrected === 'string' && typeof entry.why === 'string' && typeof entry.rule === 'string')) throw new AssessmentServiceError('assessment_incomplete')
-  return { accepted: data.accepted, correctedZh: data.accepted ? response : data.correctedZh, feedback: data.feedback, corrections: data.corrections, ...writingCoverage(response, words) }
+}
+
+/** What the writing checklist needs from a review. */
+export function grammarOfReview(review: CompositionReview): WritingGrammar {
+  const lines = (severity: Severity) => review.corrections.filter((entry) => entry.severity === severity).map(describeChange)
+  return { verdict: review.verdict, errors: lines('error'), looks: lines('check'), rulesChecked: review.rulesChecked }
 }

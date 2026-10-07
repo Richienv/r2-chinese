@@ -7,6 +7,7 @@ import review from './id/review.ts'
 import courses from './id/courses.ts'
 import reading from './id/reading.ts'
 import engine from './id/engine.ts'
+import grammar from './id/grammar.ts'
 
-const id: Record<string, string> = { ...shared, ...shell, ...learn, ...practice, ...review, ...courses, ...reading, ...engine }
+const id: Record<string, string> = { ...shared, ...shell, ...learn, ...practice, ...review, ...courses, ...reading, ...engine, ...grammar }
 export default id
