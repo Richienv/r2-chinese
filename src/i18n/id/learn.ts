@@ -64,7 +64,7 @@ const entries: Record<string, string> = {
   'Automatically tracked': 'Dipantau otomatis',
   'Another retrieval session strengthens the trail.': 'Satu sesi ingat-ingat lagi bikin jejak belajarmu makin kuat.',
   'Every lesson word is tracked. Revisit difficult words before they fade.': 'Setiap kata di pelajaran ini dipantau. Tinjau lagi kata-kata yang sulit sebelum terlupa.',
-  'Your learning trail keeps every word. Mastery comes from retrieving it again on another day.': 'Jejak belajarmu menyimpan setiap kata. Kata baru benar-benar nempel kalau kamu ingat-ingat lagi di hari lain.',
+  'Your learning trail keeps every word. Mastery comes from retrieving it again on another day.': 'Jejak belajarmu menyimpan setiap kata. Kata itu baru benar-benar nempel kalau kamu ingat-ingat lagi di hari lain.',
   'Lesson complete!': 'Pelajaran selesai!',
   '+{n} words': '+{n} kata',
   'streak': 'streak',

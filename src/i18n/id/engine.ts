@@ -324,9 +324,9 @@ const entries: Record<string, string> = {
   '1000 words': '1000 kata',
   'Workplace Mandarin for HR and management': 'Mandarin dunia kerja untuk HR dan manajemen',
   'Book 2, part 1 and part 2': 'Buku 2, bagian 1 dan bagian 2',
-  'Internship book · study it slowly': 'Buku magang · dipelajari pelan-pelan',
+  'Internship book · study it slowly': 'Buku magang · pelajari pelan-pelan',
   'Tonight · 18:00': 'Malam ini · 18:00',
   'Books': 'Buku',
-  'Five books, one idea at a time': 'Lima buku, satu ide demi satu ide',
+  'Five books, one idea at a time': 'Lima buku, satu ide tiap kali',
 }
 export default entries
