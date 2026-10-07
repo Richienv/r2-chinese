@@ -2,7 +2,7 @@ import { t } from '../i18n.ts'
 import type { Hit, Lexicon, RuleDefinition, RuleSet, Severity, Unit } from './types.ts'
 import {
   ACTION_VERBS, ACTION_VERBS_SINGLE, ADJECTIVES, BA_VERBS, BEFORE_VERB, DE_QUALITIES, DE_VERBS_AMBIGUOUS, DE_VERBS_CLEAR, DEGREE,
-  DEGREE_STACK_ADJ, EMBEDDING_VERBS, FEELING_VERBS, HAN, LONG_MOVE_VERBS, MEASURE_NOUNS, MOVE_VERBS, NEGATED_VERBS, NO_LONGER,
+  DEGREE_STACK_ADJ, DURATION, EMBEDDING_VERBS, FEELING_VERBS, HAN, LONG_MOVE_VERBS, MEASURE_NOUNS, MOVE_VERBS, NEGATED_VERBS, NO_LONGER,
   PAST_MARKERS, PLACE_BREAK, PLACE_TAIL, PLACES, SHI_EXEMPT, TIME_WORDS, VERB_OBJECT_DE_OBJECTS, VERB_OBJECT_DE_VERBS, WORD_END, alternation,
 } from './tables.ts'
 
@@ -55,6 +55,8 @@ export function createRules(lexicon: Lexicon): RuleSet {
   const biHen = re(`${bi}${biGap}(很|非常|特别|十分|挺|太|真)(?!多|少|久)(?=(?:${adjective}))`)
   const biBu = re(`${bi}${biGap}不(?=(?:${adjective}))`)
   const shiAdjective = re(`(?<=[我你他她它们])是(${degree})?(${adjectiveAfterShi})(?=$|[吗呢吧啊])`)
+  const noLonger = new RegExp(`${NO_LONGER.join('|')}|${DURATION}没`, 'u')
+  const pastMarker = new RegExp(PAST_MARKERS.join('|'), 'u')
   const embedding = new RegExp(alternation(EMBEDDING_VERBS), 'u')
   const aNotA = re(`(${HAN}{1,3})[不没]\\1`)
 
@@ -114,11 +116,19 @@ export function createRules(lexicon: Lexicon): RuleSet {
           t('Age needs no 是: say 我二十岁 or 我今年二十岁.')))),
 
     'meiyou-le': clause('check', (unit) => {
-      if (new RegExp(NO_LONGER.join('|'), 'u').test(unit.text)) return []
-      const past = new RegExp(PAST_MARKERS.join('|'), 'u').test(unit.text)
-      return each(unit, re(`没(?:有)?(${alternation(NEGATED_VERBS)})((?:(?![了的过着])${HAN}){0,4}?)(了)(?=$|[吗呢吧啊嘛])`), (match, index) =>
-        hit(unit, index + match[0].length - 1, 1, '', t('没(有) + verb, no 了'),
-          t('没(有) already says the action did not happen, so it does not take 了. Leave 了 out.'), past ? 'error' : 'check'))
+      // "No longer" (再也没来了) and "for N days I haven't" (三天没吃饭了) are correct with a final 了.
+      if (noLonger.test(unit.text)) return []
+      const past = pastMarker.test(unit.text)
+      const verb = alternation(NEGATED_VERBS)
+      const why = t('没(有) already says the action did not happen, so it does not take 了. Leave 了 out.')
+      const pattern = t('没(有) + verb, no 了')
+      return [
+        ...each(unit, re(`没(?:有)?(${verb})((?:(?![了的过着])${HAN}){0,4}?)(了)(?=$|[吗呢吧啊嘛])`), (match, index) =>
+          hit(unit, index + match[0].length - 1, 1, '', pattern, why, past ? 'error' : 'check')),
+        // 没有去了面试: 了 straight after the verb, with the object still to come. 去了解 is a word, so it is left alone.
+        ...each(unit, re(`没(?:有)?(${verb})(了)(?![解结得])(?=${HAN})`), (match, index) =>
+          hit(unit, index + match[0].length - 1, 1, '', pattern, why, 'error')),
+      ]
     }),
 
     'negation-choice': clause('error', (unit) => [
@@ -212,7 +222,7 @@ export function createRules(lexicon: Lexicon): RuleSet {
     }),
 
     'ba-bare-verb': clause('check', (unit) =>
-      each(unit, re(`(?<![一二两三四五六七八九十几每这那半])把(?![握手柄关守持式])((?:(?![把被了的]|${baVerb})${HAN}){1,5}?)(${baVerb})(?=$|[吗呢吧啊嘛])`), (match, index) =>
+      each(unit, re(`(?<![一二两三四五六七八九十几每这那半])把(?![握手柄关守持式])((?:(?![把被了的]|${baVerb})${HAN}){1,5}?)(?<!一)(${baVerb})(?=$|[吗呢吧啊嘛])`), (match, index) =>
         hit(unit, index, match[0].length, null, t('把 + object + verb + result'),
           t('A 把 sentence must say what happens to the object. Add a result or 了 after the verb: 把{object}{verb}完 or 把{object}{verb}了.', { object: match[1], verb: match[2] })))),
 

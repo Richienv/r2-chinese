@@ -61,6 +61,9 @@ export const PAST_MARKERS = ['昨天', '前天', '上周', '上个星期', '上�
 /** Words that make 没 + verb + 了 mean "no longer", which is correct. */
 export const NO_LONGER = ['再', '也', '都', '从', '一直', '终于', '就', '才', '已经', '还', '越来越', '渐渐', '慢慢', '后来', '现在', '以后', '不再'] as const
 
+/** A stretch of time before 没 means "for N days I have not … ": 三天没吃饭了 is correct with the final 了. */
+export const DURATION = '(?:很久|好久|多久|多长时间|(?:[一二两三四五六七八九十几百]+|半)个?(?:天|年|月|周|星期|分钟|小时))'
+
 export const NEGATED_VERBS = ['吃', '去', '来', '看', '买', '做', '学', '说', '写', '听', '喝', '到', '见', '睡', '找', '问', '回', '走', '跑', '开', '关'] as const
 
 /** Core adjectives. The course vocabulary adds more at run time (Lexicon). */

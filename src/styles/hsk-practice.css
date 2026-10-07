@@ -151,6 +151,8 @@
 .writing-polished > small { color: #8b9876; font-size: 10px; }
 .writing-polished > p { color: #536547; font-family: var(--font-zh,serif); font-size: 21px; line-height: 1.75; margin: 12px 0; }
 .writing-polished .hear { font-size: 11px; padding: 8px 12px; color: #62764c; }
+.writing-scope { display: block; color: #a38b64; font-size: 11px; line-height: 1.7; }
+.writing-correction[data-severity="check"] .writing-correction-number { opacity: 0.6; }
 .writing-missing { color: #a38b64; font-size: 12px; line-height: 1.7; }
 .writing-missing > span { color: #8c6538; }
 .writing-saved { font-size: 11px; line-height: 1.7; color: #7a8a63; }

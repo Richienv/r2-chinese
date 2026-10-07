@@ -36,8 +36,8 @@ const MISTAKES = {
     ['我是二十岁。', '我二十岁。'], ['他是十八岁。', '他十八岁。'], ['她是三十岁了。', '她三十岁了。'],
   ], clean: ['我是二十岁的时候来的。', '他是二十岁左右。', '我今年二十岁。'] },
   'meiyou-le': { found: [
-    ['我昨天没吃饭了。', '我昨天没吃饭。'], ['上周他没来了。', '上周他没来。'], ['我去年没去北京了。', '我去年没去北京。'],
-  ], clean: ['我没钱了。', '我再也没吃了。', '他没有了。', '我没吃饭。', '我吃了饭了。', '他从来没去了。'] },
+    ['我昨天没吃饭了。', '我昨天没吃饭。'], ['上周他没来了。', '上周他没来。'], ['我去年没去北京了。', '我去年没去北京。'], ['我昨天没有去了面试。', '我昨天没有去面试。'],
+  ], clean: ['我没钱了。', '我再也没吃了。', '他没有了。', '我没吃饭。', '我吃了饭了。', '他从来没去了。', '我很久没去运动了。', '他三天没吃饭了。', '我好几天没睡觉了。', '我没去了解情况。'] },
   'negation-choice': { found: [
     ['我不有钱。', '我没有钱。'], ['我没是学生。', '我不是学生。'], ['我不去过中国。', '我没去过中国。'], ['他不吃过这个菜。', '他没吃过这个菜。'],
   ], clean: ['不用过去。', '我不看过去。', '不过我喜欢。', '我没有钱。', '我不是学生。', '我没去过。', '我不去过年。'] },
@@ -76,7 +76,7 @@ const MISTAKES = {
   ], clean: ['我很累。', '我有点累。', '很有点意思。', '我有点儿累。'] },
   'ba-bare-verb': { found: [
     ['你把书看。', null], ['我把饭吃。', null], ['他把作业写。', null],
-  ], clean: ['我把书看完了。', '把门关上。', '我有把握。', '一把椅子。', '你把灯打开。', '我把书放在桌子上。'] },
+  ], clean: ['我把书看完了。', '把门关上。', '我有把握。', '一把椅子。', '你把灯打开。', '我把书放在桌子上。', '很多人一回家就把门一关。'] },
   'conjunction-pair': { found: [
     ['虽然他很累，所以他去了。', '虽然他很累，但是他去了。'], ['虽然很贵，所以他买了。', '虽然很贵，但是他买了。'], ['因为下雨，但是我去了。', null],
   ], clean: ['虽然他很累，但是他去了。', '因为下雨，所以我没去。', '虽然他很累，他还是去了，所以我也去了。', '我没去，因为下雨，但是我会去。'] },
@@ -232,4 +232,14 @@ test('no sentence in any course is reported (precision on thousands of correct s
     for (const finding of checkGrammar(sentence, { lexicon }).findings) flagged.push(`${finding.rule} [${finding.original}] in ${sentence.slice(0, 60)}`)
   }
   assert.deepEqual(flagged, [])
+})
+
+test('it catches mistakes the course itself lists under "avoid", and does not claim the rest', () => {
+  // Kerja chapter 17, "Klinik kalimat": the authors' own wrong sentences.
+  const caught = { '他说的很清楚。': 'de-for-de', '我昨天没有去了面试。': 'meiyou-le', '虽然他有经验，所以我们还要看沟通能力。': 'conjunction-pair' }
+  for (const [sentence, rule] of Object.entries(caught)) assert.ok(checkGrammar(sentence).findings.some((finding) => finding.rule === rule), `${rule} should catch ${sentence}`)
+  // These are real mistakes too, but outside the patterns this checker knows. It stays silent rather than guess.
+  for (const sentence of ['我跟经理讨论明天这个问题。', '我给经理讨论这个问题。', '这份报告被我写。', '报告我做。']) {
+    assert.equal(checkGrammar(sentence).verdict, 'no-known-errors', sentence)
+  }
 })

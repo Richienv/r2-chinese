@@ -73,4 +73,3 @@ microphone access requires a separate end-to-end check.
 Primary references:
 
 - [MDN SpeechRecognition](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)
-- [OpenAI structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs)
