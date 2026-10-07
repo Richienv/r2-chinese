@@ -1,5 +1,6 @@
-import { CourseBack, CourseGate } from '../components/CourseChooser'
+import { CourseBack, CourseGate, LanguageChip } from '../components/CourseChooser'
 import { COURSE_META, useCourse } from '../lib/course'
+import { t } from '../lib/i18n'
 import { lessons } from '../lib/content'
 import { dueCards } from '../lib/srs'
 import { nextPlayable } from '../lib/wordsSession'
@@ -49,23 +50,26 @@ export function Home({
   if (!entered) {
     return (
       <div className="home-page home-alive">
-        <CourseGate />
+        <CourseGate corner={<LanguageChip />} />
       </div>
     )
   }
 
   return (
     <div className="home-page home-alive">
-      <div className="home-topbar"><CourseBack /><h1>{COURSE_META[course].title}</h1></div>
+      <div className="home-topbar">
+        <CourseBack />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}><h1>{COURSE_META[course].title}</h1><LanguageChip /></div>
+      </div>
       {course !== 'books' && (languageCourse || reviewsDue > 0) && (
         <div className="home-recall-dock" data-home-dock>
           {languageCourse && <button type="button" className="home-dock-button home-dock-trail" data-home-trail onClick={onTrail}>
-            <span>Word trail</span>
+            <span>{t('Word trail')}</span>
             {recentWords.length > 0 && <small lang="zh-CN">{recentWords.join(' · ')}</small>}
             <span className="home-dock-arrow" aria-hidden>↗</span>
           </button>}
           {reviewsDue > 0 && <button type="button" className="home-dock-button home-dock-review" data-home-review onClick={onReview}>
-            <span>{languageCourse ? 'Review' : 'Mandarin review'}</span><small>{reviewsDue} due</small><span className="home-dock-arrow" aria-hidden>→</span>
+            <span>{languageCourse ? t('Review') : t('Mandarin review')}</span><small>{t('{n} due', { n: reviewsDue })}</small><span className="home-dock-arrow" aria-hidden>→</span>
           </button>}
         </div>
       )}

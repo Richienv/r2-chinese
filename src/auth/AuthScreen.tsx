@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { LanguageChip } from '../components/CourseChooser'
+import { t } from '../lib/i18n'
 import { useAuth } from './AuthProvider'
 
 export function AuthScreen() {
@@ -16,7 +18,7 @@ export function AuthScreen() {
     setError(null)
     setNotice(null)
     if (!email || password.length < 6) {
-      setError('Enter an email and a password of at least 6 characters.')
+      setError(t('Enter an email and a password of at least 6 characters.'))
       return
     }
     setBusy(true)
@@ -25,7 +27,7 @@ export function AuthScreen() {
     if (res.error) {
       setError(res.error)
     } else if ('needsConfirm' in res && res.needsConfirm) {
-      setNotice('Check your email for a confirmation link, then sign in.')
+      setNotice(t('Check your email for a confirmation link, then sign in.'))
       setMode('in')
     }
     // On success with a session, AuthProvider flips and the app renders.
@@ -34,6 +36,9 @@ export function AuthScreen() {
   return (
     <div className="app">
       <div className="safe-top" />
+      <div style={{ position: 'absolute', top: 'calc(env(safe-area-inset-top, 0px) + 10px)', right: 'var(--pad)', zIndex: 1 }}>
+        <LanguageChip />
+      </div>
       <div className="scroll" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingBottom: 40 }}>
         <div style={{ textAlign: 'center', marginBottom: 26 }}>
           <div
@@ -46,7 +51,7 @@ export function AuthScreen() {
             hsk4-r2
           </h1>
           <p className="sub" style={{ marginTop: 6 }}>
-            {mode === 'in' ? 'Sign in to keep your progress' : 'Create an account to save your progress'}
+            {mode === 'in' ? t('Sign in to keep your progress') : t('Create an account to save your progress')}
           </p>
         </div>
 
@@ -57,8 +62,8 @@ export function AuthScreen() {
             inputMode="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            aria-label="Email"
+            placeholder={t('Email')}
+            aria-label={t('Email')}
             style={inputStyle}
           />
           <input
@@ -66,8 +71,8 @@ export function AuthScreen() {
             autoComplete={mode === 'in' ? 'current-password' : 'new-password'}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            aria-label="Password"
+            placeholder={t('Password')}
+            aria-label={t('Password')}
             style={inputStyle}
           />
 
@@ -89,7 +94,7 @@ export function AuthScreen() {
           )}
 
           <button className="btn" type="submit" disabled={busy} style={{ marginTop: 4 }}>
-            {busy ? 'Please wait…' : mode === 'in' ? 'Sign in' : 'Create account'}
+            {busy ? t('Please wait…') : mode === 'in' ? t('Sign in') : t('Create account')}
           </button>
         </form>
 
@@ -102,11 +107,11 @@ export function AuthScreen() {
             setNotice(null)
           }}
         >
-          {mode === 'in' ? 'New here? Create an account' : 'Already have an account? Sign in'}
+          {mode === 'in' ? t('New here? Create an account') : t('Already have an account? Sign in')}
         </button>
 
         <p style={{ fontSize: 11, color: 'var(--muted-3)', textAlign: 'center', marginTop: 22, lineHeight: 1.5 }}>
-          Your progress syncs to your account across devices.
+          {t('Your progress syncs to your account across devices.')}
         </p>
       </div>
     </div>
