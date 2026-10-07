@@ -1,6 +1,7 @@
 import type { InkDrawing } from './handwriting.ts'
 import type { WordDiagnosis } from './handwriting-review.ts'
 import type { DrillCue } from './drillRounds.ts'
+import { t } from './i18n.ts'
 
 /**
  * The drawing task as a loop: instruction, draw, check, feedback, redraw, recheck.
@@ -10,10 +11,11 @@ import type { DrillCue } from './drillRounds.ts'
 
 /** The instruction, restated so the result can be read against it. It never reveals the answer. */
 export function recallTask(verb: 'Draw' | 'Type', cue: DrillCue, word: { en: string; pinyin: string }, characterCount: number): string {
-  const size = characterCount === 1 ? '1 character' : `${characterCount} characters`
-  if (cue === 'sound') return `${verb} the word you hear (${size})`
-  if (cue === 'pinyin') return `${verb} the word read “${word.pinyin}” (${size})`
-  return `${verb} the word for “${word.en}” (${size})`
+  const size = characterCount === 1 ? t('{n} character', { n: 1 }) : t('{n} characters', { n: characterCount })
+  const draw = verb === 'Draw'
+  if (cue === 'sound') return draw ? t('Draw the word you hear ({size})', { size }) : t('Type the word you hear ({size})', { size })
+  if (cue === 'pinyin') return draw ? t('Draw the word read “{pinyin}” ({size})', { pinyin: word.pinyin, size }) : t('Type the word read “{pinyin}” ({size})', { pinyin: word.pinyin, size })
+  return draw ? t('Draw the word for “{meaning}” ({size})', { meaning: word.en, size }) : t('Type the word for “{meaning}” ({size})', { meaning: word.en, size })
 }
 
 export function drawingTask(cue: DrillCue, word: { en: string; pinyin: string }, characterCount: number): string {
@@ -42,9 +44,9 @@ export function inkForRetry(drawings: InkDrawing[], diagnosis: WordDiagnosis): I
 
 /** "Redraw character 2", "Redraw characters 1 and 3", or "Redraw the word" when everything needs it. */
 export function redrawLabel(positions: number[], characterCount: number): string {
-  if (!positions.length) return 'Check again'
-  if (characterCount > 1 && positions.length === characterCount) return 'Redraw the word'
+  if (!positions.length) return t('Check again')
+  if (characterCount > 1 && positions.length === characterCount) return t('Redraw the word')
   const numbers = positions.map((position) => position + 1)
-  if (numbers.length === 1) return `Redraw character ${numbers[0]}`
-  return `Redraw characters ${numbers.slice(0, -1).join(', ')} and ${numbers[numbers.length - 1]}`
+  if (numbers.length === 1) return t('Redraw character {n}', { n: numbers[0] })
+  return t('Redraw characters {list} and {last}', { list: numbers.slice(0, -1).join(', '), last: numbers[numbers.length - 1] })
 }

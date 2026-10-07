@@ -4,7 +4,7 @@ import { useSpeechSnapshot } from '../components/Hear'
 import { CloseIcon } from '../components/Icons'
 import { StudyDisplayControls } from '../components/StudyDisplayControls'
 import { lessons } from '../lib/content'
-import { t } from '../lib/i18n'
+import { getLang, t } from '../lib/i18n'
 import { listeningScripts, nextListeningScript, type ListeningRepeat } from '../lib/hskPractice'
 import { getSpeechSnapshot, prefetch, setSpeechEnabled, speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
 import { voiceForSpeaker } from '../lib/voices'
@@ -151,7 +151,7 @@ export function HskListening({ onClose }: { onClose: () => void }) {
           <button className="listening-speaker" type="button" onPointerDown={unlockSpeech} onClick={() => { if (!store.prefs.soundOn) store.setPref('soundOn', true); void playFrom(index, i) }} aria-label={line.speaker ? t('Listen from line {n}, {speaker}', { n: i + 1, speaker: line.speaker }) : t('Listen from line {n}', { n: i + 1 })}><span>{line.speaker || `段 ${i + 1}`}</span><span aria-hidden="true">{running && i === lineIndex ? '●' : '▷'}</span></button>
           <p className="listening-zh"><Glossed text={line.zh} onWord={(word) => { halt(); onWord(word) }} highlightLearned={false} /></p>
           {store.prefs.showPinyin && <p className="listening-pinyin" lang="zh-Latn">{line.pinyin}</p>}
-          {store.prefs.showEnglish && <p className="listening-english" lang="en">{line.en}</p>}
+          {store.prefs.showEnglish && <p className="listening-english" lang={getLang()}>{line.en}</p>}
         </div>)}
       </div>
       {finished && <p className="listening-finished" role="status">{t('Script finished. Replay it, or choose another.')}</p>}
