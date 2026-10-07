@@ -52,7 +52,7 @@ const STAGE_LABEL: Record<Stage, string> = {
   Revisit: t('Revisit'),
 }
 
-/** Put elements into a translated sentence at its `{slot}` markers, wherever the language places them. */
+/** Swap a translated sentence's `{slot}` markers for elements, so a sentence that holds <code> is still one string to translate. */
 function withSlots(sentence: string, slots: Record<string, ReactNode>): ReactNode[] {
   return sentence.split(/(\{\w+\})/).map((piece, index) => {
     const slot = /^\{(\w+)\}$/.exec(piece)?.[1]
@@ -70,7 +70,7 @@ export function KerjaEmptyState() {
       <p className="kerja-empty-en">{KERJA_BOOK.title}</p>
       <p className="sub" style={{ textWrap: 'pretty', marginTop: 10 }}>
         {withSlots(
-          // The slot stays in the sentence as it is, then becomes a <code> element.
+          // {path} stays in the text as a marker, then becomes the <code> element.
           t('{blurb}. Chapters appear here automatically when unit JSON is added under {path}.', { blurb: KERJA_BOOK.blurb, path: '{path}' }),
           { path: <code>src/data/kerja/units/</code> },
         )}

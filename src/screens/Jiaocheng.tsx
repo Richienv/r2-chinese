@@ -50,7 +50,7 @@ const STAGE_LABEL: Record<Stage, string> = {
   Revisit: t('Revisit'),
 }
 
-/** Put elements into a translated sentence at its `{slot}` markers, wherever the language places them. */
+/** Swap a translated sentence's `{slot}` markers for elements, so a sentence that holds <code> is still one string to translate. */
 function withSlots(sentence: string, slots: Record<string, ReactNode>): ReactNode[] {
   return sentence.split(/(\{\w+\})/).map((piece, index) => {
     const slot = /^\{(\w+)\}$/.exec(piece)?.[1]
@@ -72,7 +72,7 @@ export function JiaochengEmptyState() {
       <p className="kerja-empty-en">{JIAOCHENG_BOOK.title}</p>
       <p className="sub" style={{ textWrap: 'pretty', marginTop: 10 }}>
         {withSlots(
-          // The slots stay in the sentence as they are, then become <code> elements.
+          // {part1} and {part2} stay in the text as markers, then become the <code> elements.
           t('{blurb}. Lessons appear when JSON lands under {part1} and {part2}.', { blurb: JIAOCHENG_BOOK.blurb, part1: '{part1}', part2: '{part2}' }),
           { part1: <code>src/data/jiaocheng/part1/</code>, part2: <code>part2/</code> },
         )}

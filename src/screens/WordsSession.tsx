@@ -602,8 +602,8 @@ function DoneView({
         className="row yl-enter-up"
         style={{ justifyContent: 'center', marginTop: 16, flexWrap: 'wrap', animationDelay: '180ms' }}
       >
-        <span className="pill-ink">{t('+{n} XP / item', { n: ITEM_XP })}</span>
-        {!replay && <span className="pill-ink">{t('+{n} node', { n: NODE_BONUS_XP })}</span>}
+        <span className="pill-ink">{t('+{xp} XP / item', { xp: ITEM_XP })}</span>
+        {!replay && <span className="pill-ink">{t('+{xp} node', { xp: NODE_BONUS_XP })}</span>}
         {node !== 'wrap' && wordCount > 0 && <span className="pill-ink">{t('{n} words', { n: wordCount })}</span>}
         <span className="pill-ink">
           {t('Automatically tracked')}

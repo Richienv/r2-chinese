@@ -3,7 +3,7 @@ const entries: Record<string, string> = {
   // Empty states
   '{blurb}. Lessons appear when JSON lands under {part1} and {part2}.': '{blurb}. Pelajaran bakal muncul begitu JSON masuk ke {part1} dan {part2}.',
   'No lessons loaded yet — nothing fake to start.': 'Belum ada pelajaran yang dimuat — gak ada konten palsu buat dimulai.',
-  '{blurb}. Chapters appear here automatically when unit JSON is added under {path}.': '{blurb}. Bab bakal muncul di sini otomatis begitu JSON unit ditambahkan ke {path}.',
+  '{blurb}. Chapters appear here automatically when unit JSON is added under {path}.': '{blurb}. Bab bakal muncul di sini otomatis begitu JSON unit ditambahkan di {path}.',
   'No chapters loaded yet — nothing fake to start.': 'Belum ada bab yang dimuat — gak ada konten palsu buat dimulai.',
 
   // Book details (lib constants)
