@@ -1,15 +1,16 @@
 import type { ReactNode } from 'react'
+import { t } from '../lib/i18n'
 import { describeComparison, passedCount, type CheckStage, type CheckStatus, type Review, type ReviewCheck, type ReviewComparison } from '../lib/review'
 import '../styles/review.css'
 
 const STAGES: Array<{ stage: CheckStage; label: string }> = [
-  { stage: 'instruction', label: 'Followed the instructions' },
-  { stage: 'recall', label: 'Recalled the details' },
-  { stage: 'choice', label: 'Made the right choices' },
-  { stage: 'output', label: 'Result matches the task' },
+  { stage: 'instruction', label: t('Followed the instructions') },
+  { stage: 'recall', label: t('Recalled the details') },
+  { stage: 'choice', label: t('Made the right choices') },
+  { stage: 'output', label: t('Result matches the task') },
 ]
 const MARK: Record<CheckStatus, string> = { pass: '✓', partial: '!', fail: '✕', unverified: '?' }
-const SPOKEN: Record<CheckStatus, string> = { pass: 'Passed', partial: 'Partly met', fail: 'Not met', unverified: 'Cannot be verified' }
+const SPOKEN: Record<CheckStatus, string> = { pass: t('Passed'), partial: t('Partly met'), fail: t('Not met'), unverified: t('Cannot be verified') }
 
 /**
  * A graded task, laid out the same way every time: what was asked, each requirement
@@ -28,17 +29,17 @@ export function ReviewReport({ review, comparison, revealed, compact = false, ch
   const { passed, total } = passedCount(review)
   const failing = review.issues.filter((check) => check.decisive)
   return (
-    <section className="review" data-verdict={review.verdict} data-compact={compact || undefined} aria-label="Check results">
+    <section className="review" data-verdict={review.verdict} data-compact={compact || undefined} aria-label={t('Check results')}>
       <header className="review-head">
         <span className="review-seal" aria-hidden="true">{review.verdict === 'passed' ? '✓' : review.verdict === 'revise' ? '✕' : '?'}</span>
         <div>
           <h3 className="review-headline" role="status">{review.headline}</h3>
-          <p className="review-count">{passed} of {total} checks passed{comparison ? ` · ${describeComparison(comparison)}` : ''}</p>
+          <p className="review-count">{t('{passed} of {total} checks passed', { passed, total })}{comparison ? ` · ${describeComparison(comparison)}` : ''}</p>
         </div>
       </header>
-      <p className="review-task"><span>Task</span>{review.task}</p>
-      {comparison && comparison.fixed.length > 0 && <ul className="review-fixed" aria-label="Fixed since your last attempt">
-        {comparison.fixed.map((check) => <li key={check.id}><span aria-hidden="true">✓</span>Fixed: {check.label}</li>)}
+      <p className="review-task"><span>{t('Task')}</span>{review.task}</p>
+      {comparison && comparison.fixed.length > 0 && <ul className="review-fixed" aria-label={t('Fixed since your last attempt')}>
+        {comparison.fixed.map((check) => <li key={check.id}><span aria-hidden="true">✓</span>{t('Fixed: {label}', { label: check.label })}</li>)}
       </ul>}
       <div className="review-stages">
         {STAGES.map(({ stage, label }) => {
@@ -55,12 +56,12 @@ export function ReviewReport({ review, comparison, revealed, compact = false, ch
                     <li className="review-check" key={check.id} data-status={check.status} data-decisive={check.decisive}>
                       <span className="review-mark" aria-hidden="true">{MARK[check.status]}</span>
                       <div>
-                        <p className="review-label"><strong>{check.label}</strong><span className="sr-only"> — {SPOKEN[check.status]}</span>{!check.decisive && check.status !== 'pass' && <em>tip</em>}</p>
+                        <p className="review-label"><strong>{check.label}</strong><span className="sr-only"> — {SPOKEN[check.status]}</span>{!check.decisive && check.status !== 'pass' && <em>{t('tip')}</em>}</p>
                         {check.status === 'pass'
                           ? !compact && <p className="review-found">{check.found}</p>
                           : <dl className="review-facts">
-                            <div><dt>You</dt><dd>{check.found}</dd></div>
-                            {showNeeded && <div><dt>Needed</dt><dd>{check.expected}</dd></div>}
+                            <div><dt>{t('You')}</dt><dd>{check.found}</dd></div>
+                            {showNeeded && <div><dt>{t('Needed')}</dt><dd>{check.expected}</dd></div>}
                           </dl>}
                         {show && check.fix && <p className="review-fix">{check.fix}</p>}
                       </div>
@@ -72,7 +73,7 @@ export function ReviewReport({ review, comparison, revealed, compact = false, ch
           )
         })}
       </div>
-      {review.verdict !== 'passed' && <p className="review-next"><span>{failing.length || review.issues.length ? 'Do this next' : 'Next'}</span>{review.nextStep}</p>}
+      {review.verdict !== 'passed' && <p className="review-next"><span>{failing.length || review.issues.length ? t('Do this next') : t('Next')}</span>{review.nextStep}</p>}
       {children}
     </section>
   )

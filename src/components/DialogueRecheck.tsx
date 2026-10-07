@@ -3,6 +3,7 @@ import { Glossed, useGloss } from './ChineseText'
 import { HearButton } from './Hear'
 import { ReviewReport } from './ReviewReport'
 import { buildRecheck, retestQuestions, reviewRecheck, type RecheckAnswer, type RecheckQuestion } from '../lib/dialogue-check'
+import { t } from '../lib/i18n'
 import { compareReviews, type Review } from '../lib/review'
 import { playCorrect, playWrong } from '../lib/sfx'
 import { unlockSpeech } from '../lib/speech'
@@ -42,14 +43,14 @@ export function DialogueRecheck({ text, words, onRecord, onDone }: {
   const [previous, setPrevious] = useState<Review | null>(null)
   const firstTry = useRef<Record<string, boolean>>({})
   const root = useRef<HTMLDivElement>(null)
-  const task = 'Answer from what the dialogue said'
+  const task = t('Answer from what the dialogue said')
 
   useEffect(() => {
     root.current?.closest<HTMLElement>('.session-body, .overlay-body')?.scrollTo({ top: 0 })
   }, [phase, position, attempt])
 
   if (!all.length) {
-    return <div ref={root}><p className="sub">No check for this text.</p><button type="button" className="btn" onClick={() => onDone({ total: 0, unaided: 0, unresolved: 0 })}>Continue</button></div>
+    return <div ref={root}><p className="sub">{t('No check for this text.')}</p><button type="button" className="btn" onClick={() => onDone({ total: 0, unaided: 0, unresolved: 0 })}>{t('Continue')}</button></div>
   }
 
   const question = round[position]
@@ -97,11 +98,11 @@ export function DialogueRecheck({ text, words, onRecord, onDone }: {
     const open = review.issues.filter((check) => check.id !== 'answered-all').length
     return (
       <div ref={root} className="recheck-report">
-        <header className="session-step-head"><div className="kicker-ink">Dialogue check · results</div><h2 className="session-step-title">{open ? 'What to fix before moving on' : 'You recalled the dialogue'}</h2></header>
+        <header className="session-step-head"><div className="kicker-ink">{t('Dialogue check · results')}</div><h2 className="session-step-title">{open ? t('What to fix before moving on') : t('You recalled the dialogue')}</h2></header>
         <ReviewReport review={review} comparison={change} revealed={() => true}>
           <div className="recheck-actions">
-            {open > 0 && <button type="button" className="btn" onClick={retest}>Retest the {open === 1 ? 'one I missed' : `${open} I missed`}</button>}
-            <button type="button" className={open ? 'btn btn-ghost' : 'btn'} onClick={finish}>{open ? 'Move on with these still open' : 'Continue'}</button>
+            {open > 0 && <button type="button" className="btn" onClick={retest}>{open === 1 ? t('Retest the one I missed') : t('Retest the {n} I missed', { n: open })}</button>}
+            <button type="button" className={open ? 'btn btn-ghost' : 'btn'} onClick={finish}>{open ? t('Move on with these still open') : t('Continue')}</button>
           </div>
         </ReviewReport>
         {sheet}
@@ -112,16 +113,16 @@ export function DialogueRecheck({ text, words, onRecord, onDone }: {
   return (
     <div ref={root} className="recheck">
       <header className="session-step-head">
-        <div className="kicker-ink">{attempt > 0 ? `Retest · ${position + 1} of ${round.length}` : `Dialogue check · ${position + 1} of ${round.length}`}</div>
+        <div className="kicker-ink">{attempt > 0 ? t('Retest · {n} of {total}', { n: position + 1, total: round.length }) : t('Dialogue check · {n} of {total}', { n: position + 1, total: round.length })}</div>
         <h2 className="session-step-title">{question.prompt}</h2>
       </header>
       <div className="card session-prompt recheck-context">
         {question.context.speaker && <p className="recheck-speaker">{question.context.speaker}</p>}
         <p className="zh" lang="zh-CN"><Glossed text={question.context.zh} onWord={onWord} /></p>
-        {question.kind !== 'word' && <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />}
-        {question.clue && <p className="sub recheck-clue">Meaning: {question.clue}</p>}
+        {question.kind !== 'word' && <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} />}
+        {question.clue && <p className="sub recheck-clue">{t('Meaning: {clue}', { clue: question.clue })}</p>}
       </div>
-      <div className="session-options" role="group" aria-label="Choices">
+      <div className="session-options" role="group" aria-label={t('Choices')}>
         {question.options.map((option) => {
           const state = picked === null ? undefined : option === question.answer ? 'correct' : option === picked ? 'wrong' : undefined
           return (
@@ -132,10 +133,10 @@ export function DialogueRecheck({ text, words, onRecord, onDone }: {
       </div>
       {picked !== null && (
         <div className="recheck-feedback" data-right={right} role="status" aria-live="polite">
-          <strong>{right ? 'Right' : 'Not quite'}</strong>
-          {!right && <p className="recheck-compare"><span>You chose</span><span className="zh" lang="zh-CN">{picked}</span><span>The dialogue has</span><span className="zh" lang="zh-CN">{question.answer}</span></p>}
+          <strong>{right ? t('Right') : t('Not quite')}</strong>
+          {!right && <p className="recheck-compare"><span>{t('You chose')}</span><span className="zh" lang="zh-CN">{picked}</span><span>{t('The dialogue has')}</span><span className="zh" lang="zh-CN">{question.answer}</span></p>}
           <p className="recheck-quote">{question.explanation}</p>
-          <button type="button" className="btn" onClick={next}>{position < round.length - 1 ? 'Next question' : 'See results'}</button>
+          <button type="button" className="btn" onClick={next}>{position < round.length - 1 ? t('Next question') : t('See results')}</button>
         </div>
       )}
       {sheet}

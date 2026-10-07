@@ -11,6 +11,7 @@ import { playCorrect, playReveal, playWrong } from '../lib/sfx'
 import { normalizeChinese } from '../lib/production'
 import { hintLadder, type DrillCue, type HintStep } from '../lib/drillRounds'
 import { handwritingRecallEvidence, handwritingRetryMessage } from '../lib/handwriting-recall'
+import { t } from '../lib/i18n'
 import { recallTask } from '../lib/drawing-flow'
 import { compareReviews, type Review, type ReviewComparison } from '../lib/review'
 import { reviewTypedWord } from '../lib/word-review'
@@ -18,12 +19,12 @@ import { useStore } from '../store/store'
 import type { Vocab } from '../lib/types'
 
 const HEADINGS: Record<DrillCue, string> = {
-  meaning: 'Find the word in your memory',
-  sound: 'Hear it, then write it',
-  pinyin: 'From the sound to the Hanzi',
+  meaning: t('Find the word in your memory'),
+  sound: t('Hear it, then write it'),
+  pinyin: t('From the sound to the Hanzi'),
 }
-const HINT_TITLES: Record<HintStep, string> = { meaning: 'Meaning', first: 'First character', pinyin: 'Pinyin', word: 'Book word' }
-const HINT_BUTTONS: Record<HintStep, string> = { meaning: 'Reveal the meaning', first: 'Reveal the first character', pinyin: 'Reveal pinyin', word: 'Reveal the word' }
+const HINT_TITLES: Record<HintStep, string> = { meaning: t('Meaning'), first: t('First character'), pinyin: t('Pinyin'), word: t('Book word') }
+const HINT_BUTTONS: Record<HintStep, string> = { meaning: t('Reveal the meaning'), first: t('Reveal the first character'), pinyin: t('Reveal pinyin'), word: t('Reveal the word') }
 
 /**
  * Production before recognition: a lesson word must be retrieved, not picked.
@@ -86,7 +87,7 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
     const correct = normalizeChinese(answer) === normalizeChinese(word.zh)
     setTypedChange(typedReview ? compareReviews(typedReview, review) : null)
     setTypedReview(review)
-    setFeedbackMessage('Try again. Bring back the lesson word.')
+    setFeedbackMessage(t('Try again. Bring back the lesson word.'))
     score(correct, assisted)
   }
 
@@ -111,33 +112,33 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
   return (
     <section className="production-stage word-recall" data-mode={inputMode}>
       <header className="production-heading">
-        <p className="sub">Recall · {n} of {of}</p>
+        <p className="sub">{t('Recall · {n} of {of}', { n, of })}</p>
         <h2 className="session-step-title">{HEADINGS[cue]}</h2>
       </header>
       <div className="production-prompt" data-cue={cue}>
         {cue === 'meaning' && <>
           <p className="production-en">{word.en}</p>
-          <p className="sub">The word from this lesson. Type it, or draw the Hanzi.</p>
+          <p className="sub">{t('The word from this lesson. Type it, or draw the Hanzi.')}</p>
         </>}
         {cue === 'sound' && <>
           <ListenCue text={word.zh} />
-          <p className="sub">Listen as often as you like, then type it or draw the Hanzi.</p>
+          <p className="sub">{t('Listen as often as you like, then type it or draw the Hanzi.')}</p>
         </>}
         {cue === 'pinyin' && <>
           <p className="production-pinyin">{word.pinyin}</p>
-          <p className="sub">Sound it out, then type it or draw the Hanzi.</p>
+          <p className="sub">{t('Sound it out, then type it or draw the Hanzi.')}</p>
         </>}
       </div>
-      {!solved && <div className="word-recall-input-mode" role="group" aria-label="How to answer">
-        <button type="button" className="btn btn-ghost" aria-pressed={inputMode === 'type'} onClick={() => { setInputMode('type'); setFeedback(null) }}>Type it</button>
-        <button type="button" className="btn btn-ghost" aria-pressed={inputMode === 'draw'} onClick={() => { setInputMode('draw'); setDrawStarted(true); setFeedback(null) }}>Draw it</button>
+      {!solved && <div className="word-recall-input-mode" role="group" aria-label={t('How to answer')}>
+        <button type="button" className="btn btn-ghost" aria-pressed={inputMode === 'type'} onClick={() => { setInputMode('type'); setFeedback(null) }}>{t('Type it')}</button>
+        <button type="button" className="btn btn-ghost" aria-pressed={inputMode === 'draw'} onClick={() => { setInputMode('draw'); setDrawStarted(true); setFeedback(null) }}>{t('Draw it')}</button>
       </div>}
       {drawStarted && <div className="hanzi-host" hidden={inputMode !== 'draw'} aria-describedby={`${inputId}-feedback`}>
         <HanziDrawing word={normalizeChinese(word.zh)} task={recallTask('Draw', cue, word, characterCount)} handwriting={handwriting} solved={solved}
           onChecked={drawingChecked} onAssist={assist} onTypeInstead={() => { setInputMode('type'); setFeedback(null) }} />
       </div>}
       {!solved && inputMode === 'type' && <form className="production-form" onSubmit={(event) => { event.preventDefault(); checkTyped() }}>
-        <label htmlFor={inputId}>Your word</label>
+        <label htmlFor={inputId}>{t('Your word')}</label>
         <input
           id={inputId}
           className="production-input zh"
@@ -153,7 +154,7 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
           spellCheck={false}
           aria-describedby={`${inputId}-feedback`}
         />
-        <button className="btn" type="submit" disabled={!answer.trim()}>Check recall</button>
+        <button className="btn" type="submit" disabled={!answer.trim()}>{t('Check recall')}</button>
       </form>}
       {inputMode === 'type' && typedReview && (solved || typedReview.verdict !== 'passed') && <ReviewReport review={typedReview} comparison={typedChange} compact={solved} revealed={() => solved} />}
       {!solved && (
@@ -162,8 +163,8 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
             setHint((value) => Math.min(ladder.length, value + 1))
             onAssistance?.()
             playReveal()
-          }}>{hint >= ladder.length ? 'Word revealed' : hint === 0 ? 'Reveal a hint' : HINT_BUTTONS[ladder[hint]]}</button>
-          <span className="sub">Hints help learning; they count as assisted.</span>
+          }}>{hint >= ladder.length ? t('Word revealed') : hint === 0 ? t('Reveal a hint') : HINT_BUTTONS[ladder[hint]]}</button>
+          <span className="sub">{t('Hints help learning; they count as assisted.')}</span>
         </div>
       )}
       {hint > 0 && !solved && (
@@ -175,16 +176,16 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
         </div>
       )}
       <div id={`${inputId}-feedback`} aria-live="polite">
-        {solved ? <RecallFeedback key={checkCount} state="correct" label={resultAssisted ? 'Retrieved with support' : 'Retrieved without a hint'} /> : feedback && inputMode === 'type' && <RecallFeedback key={checkCount} state={feedback === 'retry' ? 'retry' : 'idle'} label={feedbackMessage} />}
+        {solved ? <RecallFeedback key={checkCount} state="correct" label={resultAssisted ? t('Retrieved with support') : t('Retrieved without a hint')} /> : feedback && inputMode === 'type' && <RecallFeedback key={checkCount} state={feedback === 'retry' ? 'retry' : 'idle'} label={feedbackMessage} />}
       </div>
       {solved && (
         <div className="production-source">
           {showStrokes ? <StrokeWord text={word.zh} className="drill-strokes" showAttribution={false} /> : <p className="zh" lang="zh-CN">{word.zh}</p>}
           {prefs.showPinyin && <p>{word.pinyin}</p>}
           {prefs.showEnglish && <p>{word.en}</p>}
-          <HearButton text={word.zh} label="Hear the word" />
-          {prefs.showEnglish && <p className="sub">{resultAssisted ? 'You’ll meet this word again for an unaided attempt.' : 'One successful retrieval. Future sessions check whether it stays.'}</p>}
-          <button type="button" className="btn production-next" onClick={onComplete}>Continue</button>
+          <HearButton text={word.zh} label={t('Hear the word')} />
+          {prefs.showEnglish && <p className="sub">{resultAssisted ? t('You’ll meet this word again for an unaided attempt.') : t('One successful retrieval. Future sessions check whether it stays.')}</p>}
+          <button type="button" className="btn production-next" onClick={onComplete}>{t('Continue')}</button>
         </div>
       )}
       <StudyDisplayControls />

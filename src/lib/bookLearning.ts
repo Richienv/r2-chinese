@@ -1,5 +1,6 @@
 import workweekPlans from '../data/books/workweek-learning.json'
 import type { BooksChapter, BooksSitting } from './books'
+import { t } from './i18n.ts'
 
 export interface BookLearningPlan {
   principle: { title: string; explanation: string; sourceSittingId: string }
@@ -171,8 +172,8 @@ function chapterSource(chapter: BooksChapter): Source[] {
 function makeCase(plan: { title: string }, family: string): BookLearningPlan['caseStudy'] {
   const recipe = cases[family] ?? cases[caseAliases[family]] ?? cases.learning
   return {
-    label: 'Practice scenario',
-    title: `Try the idea: ${plan.title}`,
+    label: t('Practice scenario'),
+    title: t('Try the idea: {title}', { title: plan.title }),
     situation: recipe.situation,
     question: recipe.question,
     choices: recipe.options.map((label, index) => ({ label, consequence: recipe.consequences[index], reason: recipe.reasons[index] })),
@@ -190,22 +191,22 @@ export function getBookLearningPlan(chapter: BooksChapter): BookLearningPlan {
   const sourceId = authoredPlan?.source ?? workweekPlan?.anchor
   const source = items.find((item) => item.id === sourceId) ?? items.find((item) => item.kind === 'idea' && item.bodyEn.trim()) ?? items.find((item) => item.bodyEn.trim()) ?? items[0]
   const principleTitle = sourcePlan?.title ?? source?.titleEn ?? chapter.titleEn
-  const explanation = sourcePlan?.explanation ?? `Read “${source?.titleEn ?? chapter.titleEn}” as a claim to inspect: name what changes, how that could affect a real decision, and which condition would make the idea fail. Use the source passage to find evidence and limits before applying it.`
+  const explanation = sourcePlan?.explanation ?? t('Read “{title}” as a claim to inspect: name what changes, how that could affect a real decision, and which condition would make the idea fail. Use the source passage to find evidence and limits before applying it.', { title: source?.titleEn ?? chapter.titleEn })
   const family = sourcePlan?.family ?? 'learning'
   const [defaultBefore, defaultAfter] = shifts[family] ?? shifts.learning
   const trySitting = items.find((item) => item.kind === 'try' && item.bodyEn.trim())
   const actionPrompt = trySitting
-    ? `Use the chapter exercise “${trySitting.titleEn}” on a real, low-risk decision. Write your prediction, the action you take and what evidence would change your mind.`
-    : `Apply “${principleTitle}” to one current decision. Write the smallest next action, your prediction and the evidence you will review.`
+    ? t('Use the chapter exercise “{title}” on a real, low-risk decision. Write your prediction, the action you take and what evidence would change your mind.', { title: trySitting.titleEn })
+    : t('Apply “{title}” to one current decision. Write the smallest next action, your prediction and the evidence you will review.', { title: principleTitle })
   const mindset = sourcePlan && 'before' in sourcePlan
-    ? { before: sourcePlan.before, after: sourcePlan.after, why: `The chapter’s example about “${source?.titleEn ?? principleTitle}” supports a more precise question: what would have to be true for this mechanism to work?`, prompt: `Where could “${principleTitle}” change a real choice you face—and what limit would you keep?` }
-    : { before: defaultBefore, after: defaultAfter, why: `The source passage “${source?.titleEn ?? principleTitle}” is an example to examine, not a rule to copy. Check the conditions before carrying the idea into your own situation.`, prompt: `Where could “${principleTitle}” change a real choice you face—and what limit would you keep?` }
+    ? { before: sourcePlan.before, after: sourcePlan.after, why: t('The chapter’s example about “{title}” supports a more precise question: what would have to be true for this mechanism to work?', { title: source?.titleEn ?? principleTitle }), prompt: t('Where could “{title}” change a real choice you face—and what limit would you keep?', { title: principleTitle }) }
+    : { before: defaultBefore, after: defaultAfter, why: t('The source passage “{title}” is an example to examine, not a rule to copy. Check the conditions before carrying the idea into your own situation.', { title: source?.titleEn ?? principleTitle }), prompt: t('Where could “{title}” change a real choice you face—and what limit would you keep?', { title: principleTitle }) }
   return {
     principle: { title: principleTitle, explanation, sourceSittingId: source?.id ?? '' },
     caseStudy: makeCase(sourcePlan ?? { title: principleTitle }, family),
     mindset,
-    teachBackPrompt: `Without reopening the source, explain “${principleTitle}”: what changes, why might it work, and what condition could make it fail?`,
+    teachBackPrompt: t('Without reopening the source, explain “{title}”: what changes, why might it work, and what condition could make it fail?', { title: principleTitle }),
     actionPrompt,
-    reviewPrompt: `Tomorrow, recall the mechanism and its limit in “${principleTitle}.” What evidence from your action changed or strengthened your view?`,
+    reviewPrompt: t('Tomorrow, recall the mechanism and its limit in “{title}.” What evidence from your action changed or strengthened your view?', { title: principleTitle }),
   }
 }

@@ -5,6 +5,7 @@ import { ReviewReport } from './ReviewReport'
 import { StrokeWord } from './StrokeWord'
 import { CheckIcon } from './Icons'
 import { inkForRetry, positionsToFix, redrawLabel } from '../lib/drawing-flow'
+import { t } from '../lib/i18n'
 import { blankWordInk, replaceCharacterInk, wordInkComplete } from '../lib/handwriting-recall'
 import { reviewDrawing, type WordDiagnosis } from '../lib/handwriting-review'
 import { compareReviews, type Review, type ReviewComparison } from '../lib/review'
@@ -89,7 +90,7 @@ export function HanziDrawing({ word, task, handwriting, solved, onChecked, onAss
     } catch {
       if (!mounted.current) return
       setPhase('draw')
-      setError('Handwriting could not be checked. Retry, or type the word. This attempt isn’t scored.')
+      setError(t('Handwriting could not be checked. Retry, or type the word. This attempt isn’t scored.'))
     }
   }
 
@@ -128,46 +129,46 @@ export function HanziDrawing({ word, task, handwriting, solved, onChecked, onAss
           const match = /^char-(\d+)-/.exec(check.id)
           return !!match && shown.includes(Number(match[1]) - 1)
         }} />
-        {outcome === 'uncertain' && <p className="hanzi-unscored">Not scored. The handwriting could not be read with confidence, so this attempt does not count for or against you.</p>}
+        {outcome === 'uncertain' && <p className="hanzi-unscored">{t('Not scored. The handwriting could not be read with confidence, so this attempt does not count for or against you.')}</p>}
         {fix.map((index) => (
           <article className="hanzi-fix" key={index}>
-            <h4>{count === 1 ? 'Your character' : `Character ${index + 1}`}</h4>
+            <h4>{count === 1 ? t('Your character') : t('Character {n}', { n: index + 1 })}</h4>
             <div className="hanzi-fix-pair">
               <figure>
-                <InkThumb drawing={drawings[index]} label={`Your drawing of character ${index + 1}`} />
-                <figcaption>You drew · {drawings[index].length} {drawings[index].length === 1 ? 'stroke' : 'strokes'}</figcaption>
+                <InkThumb drawing={drawings[index]} label={t('Your drawing of character {n}', { n: index + 1 })} />
+                <figcaption>{drawings[index].length === 1 ? t('You drew · {n} stroke', { n: drawings[index].length }) : t('You drew · {n} strokes', { n: drawings[index].length })}</figcaption>
               </figure>
               <figure>
                 {shown.includes(index)
                   ? <StrokeWord text={characters[index]} className="hanzi-fix-strokes" showAttribution={false} />
-                  : <button type="button" className="btn btn-ghost hanzi-reveal" onClick={() => reveal(index)}>Show the correct strokes</button>}
-                <figcaption>{shown.includes(index) ? `Correct · ${diagnosis.characters[index]?.expectedStrokes ?? '?'} strokes` : 'Counts as help'}</figcaption>
+                  : <button type="button" className="btn btn-ghost hanzi-reveal" onClick={() => reveal(index)}>{t('Show the correct strokes')}</button>}
+                <figcaption>{shown.includes(index) ? t('Correct · {n} strokes', { n: diagnosis.characters[index]?.expectedStrokes ?? '?' }) : t('Counts as help')}</figcaption>
               </figure>
             </div>
           </article>
         ))}
         <div className="hanzi-actions">
-          {fix.length > 0 && <button type="button" className="btn hanzi-primary" onClick={startFix}>{unverifiedOnly ? 'Redraw it more clearly' : redrawLabel(fix, count)}</button>}
-          <button type="button" className="btn btn-ghost" onClick={onTypeInstead}>Type the word instead</button>
+          {fix.length > 0 && <button type="button" className="btn hanzi-primary" onClick={startFix}>{unverifiedOnly ? t('Redraw it more clearly') : redrawLabel(fix, count)}</button>}
+          <button type="button" className="btn btn-ghost" onClick={onTypeInstead}>{t('Type the word instead')}</button>
         </div>
       </div>
     )
   }
 
   const here = review?.issues.filter((check) => check.id.startsWith(`char-${position + 1}-`) && check.fix) ?? []
-  const primaryLabel = phase === 'checking' ? 'Checking…'
-    : !atLast ? 'Next character'
-      : fixing ? 'Check again'
-        : count === 1 ? 'Check character' : 'Check word'
+  const primaryLabel = phase === 'checking' ? t('Checking…')
+    : !atLast ? t('Next character')
+      : fixing ? t('Check again')
+        : count === 1 ? t('Check character') : t('Check word')
   return (
     <div className="hanzi-draw" data-phase={phase} data-fixing={!!fixing} ref={root}>
       <p className="hanzi-task">{task}</p>
-      {count > 1 && <div className="hanzi-slots" role="group" aria-label="Characters in your word">
+      {count > 1 && <div className="hanzi-slots" role="group" aria-label={t('Characters in your word')}>
         {drawings.map((drawing, index) => {
           const locked = !!fixing && !fixing.includes(index)
           const reachable = fixing ? fixing.includes(index) : firstEmpty === -1 || index <= firstEmpty
           return (
-            <button key={index} type="button" className="hanzi-slot" aria-label={`Character ${index + 1}${locked ? ', correct, locked' : drawing.length ? ', drawn' : ', empty'}`}
+            <button key={index} type="button" className="hanzi-slot" aria-label={locked ? t('Character {n}, correct, locked', { n: index + 1 }) : drawing.length ? t('Character {n}, drawn', { n: index + 1 }) : t('Character {n}, empty', { n: index + 1 })}
               aria-current={position === index ? 'step' : undefined} data-state={locked ? 'locked' : position === index ? 'current' : drawing.length ? 'done' : 'empty'}
               disabled={phase === 'checking' || locked || !reachable} onClick={() => setPosition(index)}>
               {drawing.length ? <InkThumb drawing={drawing} label="" /> : <span>{index + 1}</span>}
@@ -176,15 +177,15 @@ export function HanziDrawing({ word, task, handwriting, solved, onChecked, onAss
           )
         })}
       </div>}
-      {here.length > 0 && <p className="hanzi-note"><b>Fix</b>{here[0].fix}</p>}
+      {here.length > 0 && <p className="hanzi-note"><b>{t('Fix')}</b>{here[0].fix}</p>}
       <HandwritingPad drawing={current} position={position + 1} total={count} disabled={phase === 'checking'}
         onChange={(drawing) => { setDrawings((previous) => replaceCharacterInk(previous, position, drawing)); setError('') }} />
       <div className="hanzi-actions">
         <button type="button" className="btn hanzi-primary" disabled={phase === 'checking' || !current.length || (atLast && !ready)} onClick={advance}>
-          {atLast && !ready && phase !== 'checking' && handwriting.status === 'loading' ? 'Getting ready…' : primaryLabel}
+          {atLast && !ready && phase !== 'checking' && handwriting.status === 'loading' ? t('Getting ready…') : primaryLabel}
         </button>
         {error && <p className="hanzi-error" role="alert">{error}</p>}
-        {handwriting.status === 'error' && <button type="button" className="btn btn-ghost" onClick={handwriting.retry}>Retry the handwriting dictionary</button>}
+        {handwriting.status === 'error' && <button type="button" className="btn btn-ghost" onClick={handwriting.retry}>{t('Retry the handwriting dictionary')}</button>}
       </div>
     </div>
   )

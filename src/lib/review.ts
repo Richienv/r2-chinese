@@ -7,6 +7,8 @@
  * Pure on purpose: screens only render these decisions.
  */
 
+import { t } from './i18n.ts'
+
 export type CheckStatus = 'pass' | 'partial' | 'fail' | 'unverified'
 
 /** What a check looks at, in the order a learner should fix things. */
@@ -74,23 +76,20 @@ export function issuesOf(checks: ReviewCheck[]): ReviewCheck[] {
     .sort((a, b) => STAGE_ORDER.indexOf(a.stage) - STAGE_ORDER.indexOf(b.stage) || STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status))
 }
 
-function count(checks: ReviewCheck[], word: string): string {
-  return `${checks.length} ${word}${checks.length === 1 ? '' : 's'}`
-}
-
 export function buildReview(task: string, checks: ReviewCheck[]): Review {
   const verdict = verdictOf(checks)
   const issues = issuesOf(checks)
   const decisive = checks.filter((check) => check.decisive)
+  const toFix = issues.filter((check) => check.decisive).length
   const headline = verdict === 'passed'
-    ? decisive.length > 1 ? `All ${decisive.length} requirements met` : 'Requirement met'
+    ? decisive.length > 1 ? t('All {n} requirements met', { n: decisive.length }) : t('Requirement met')
     : verdict === 'unverified'
-      ? 'Everything we could check is right, but one part cannot be verified yet'
-      : `${count(issues.filter((check) => check.decisive), 'requirement')} to fix`
+      ? t('Everything we could check is right, but one part cannot be verified yet')
+      : toFix === 1 ? t('{n} requirement to fix', { n: toFix }) : t('{n} requirements to fix', { n: toFix })
   const first = issues.find((check) => check.decisive) ?? issues[0]
   const nextStep = verdict === 'passed'
-    ? issues.length ? `Passed. Optional: ${issues[0].fix ?? issues[0].label}` : 'Nothing to fix. Continue.'
-    : first?.fix ?? first?.label ?? 'Review the details and try again.'
+    ? issues.length ? t('Passed. Optional: {step}', { step: issues[0].fix ?? issues[0].label }) : t('Nothing to fix. Continue.')
+    : first?.fix ?? first?.label ?? t('Review the details and try again.')
   return { task, checks, verdict, headline, nextStep, issues }
 }
 
@@ -118,10 +117,10 @@ export function compareReviews(before: Review, after: Review): ReviewComparison 
 export function describeComparison(comparison: ReviewComparison): string {
   const { fixed, remaining, regressed } = comparison
   const parts: string[] = []
-  if (fixed.length) parts.push(`Fixed ${fixed.length}`)
-  if (remaining.length) parts.push(`${remaining.length} still to fix`)
-  if (regressed.length) parts.push(`${regressed.length} newly wrong`)
-  return parts.length ? parts.join(' · ') : 'No change from your last attempt'
+  if (fixed.length) parts.push(t('Fixed {n}', { n: fixed.length }))
+  if (remaining.length) parts.push(t('{n} still to fix', { n: remaining.length }))
+  if (regressed.length) parts.push(t('{n} newly wrong', { n: regressed.length }))
+  return parts.length ? parts.join(' · ') : t('No change from your last attempt')
 }
 
 export function passedCount(review: Review): { passed: number; total: number } {

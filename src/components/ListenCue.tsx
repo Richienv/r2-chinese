@@ -1,4 +1,5 @@
 import { useAutoSpeak, useSpeechActive } from './Hear'
+import { t } from '../lib/i18n'
 import { speak, stopSpeech, unlockSpeech } from '../lib/speech'
 import { VOICE, WORD_RATE } from '../lib/voices'
 
@@ -27,7 +28,7 @@ export function ListenCue({ text }: { text: string }) {
       <button
         type="button"
         className="listen-cue-button"
-        aria-label={normal ? 'Stop the word' : 'Hear the word'}
+        aria-label={normal ? t('Stop the word') : t('Hear the word')}
         aria-pressed={normal}
         onPointerDown={() => unlockSpeech()}
         onClick={() => play(WORD_RATE, normalKey, normal)}
@@ -46,7 +47,7 @@ export function ListenCue({ text }: { text: string }) {
         onPointerDown={() => unlockSpeech()}
         onClick={() => play(SLOW_RATE, slowKey, slow)}
       >
-        {slow ? 'Playing slowly' : 'Slower'}
+        {slow ? t('Playing slowly') : t('Slower')}
       </button>
     </div>
   )

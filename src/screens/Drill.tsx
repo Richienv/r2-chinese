@@ -11,6 +11,7 @@ import {
   type DrillRound, type Outcomes, type PipState,
 } from '../lib/drillRounds'
 import { recordHistory } from '../lib/history'
+import { t } from '../lib/i18n'
 import { haptic, playAdvance, playComplete } from '../lib/sfx'
 import { unlockSpeech } from '../lib/speech'
 import { useStore } from '../store/store'
@@ -21,12 +22,12 @@ const REP_OPTIONS = [3, 5, 8]
 const DEFAULT_REPS = 3
 const XP_PER_REP = 1
 
-const PIP_LABEL: Record<PipState, string> = { waiting: 'not asked yet', current: 'now', unaided: 'recalled', assisted: 'recalled with help', missed: 'needs practice' }
-const RESULT_LABEL = { unaided: 'Recalled', assisted: 'With help', missed: 'Needs practice' } as const
+const PIP_LABEL: Record<PipState, string> = { waiting: t('not asked yet'), current: t('now'), unaided: t('recalled'), assisted: t('recalled with help'), missed: t('needs practice') }
+const RESULT_LABEL = { unaided: t('Recalled'), assisted: t('With help'), missed: t('Needs practice') } as const
 const CUE_CHIPS = [
-  { cue: 'meaning', zh: '义', label: 'See the meaning' },
-  { cue: 'sound', zh: '听', label: 'Hear the book read it' },
-  { cue: 'pinyin', zh: '拼', label: 'Read the pinyin' },
+  { cue: 'meaning', zh: '义', label: t('See the meaning') },
+  { cue: 'sound', zh: '听', label: t('Hear the book read it') },
+  { cue: 'pinyin', zh: '拼', label: t('Read the pinyin') },
 ] as const
 
 function reducedMotion(): boolean {
@@ -91,7 +92,7 @@ export function DrillFlow({ words, title, onClose }: {
     if (!doneReps) return
     const xp = doneReps * XP_PER_REP
     store.logDrill(doneReps, xp)
-    recordHistory({ course: 'hsk4a', kind: 'drill', lesson: 0, title: title ?? 'Recall drill', xp })
+    recordHistory({ course: 'hsk4a', kind: 'drill', lesson: 0, title: title ?? t('Recall drill'), xp })
   }
 
   function finish() {
@@ -193,12 +194,12 @@ export function DrillFlow({ words, title, onClose }: {
   if (!rounds) {
     return (
       <DrillOverlay onClose={onClose}>
-        <Head title={title ?? 'Recall drill'} words={unique} onClose={onClose} onProgressReveal={revealAllProgress} />
+        <Head title={title ?? t('Recall drill')} words={unique} onClose={onClose} onProgressReveal={revealAllProgress} />
         <div className="overlay-body drill-intro">
           <div className="medal"><span className="zh" style={{ fontSize: 36, fontWeight: 700 }}>忆</span></div>
-          <h2 className="h2" style={{ fontSize: 22 }}>{uniqueCount === 1 ? 'Bring one word back' : `Bring ${uniqueCount} words back`}</h2>
-          <p className="sub" style={{ marginTop: 8 }}>Every word is asked three ways, and you answer by writing the Hanzi.<br />Type it, or draw it with your finger.</p>
-          <ul className="drill-ways" aria-label="How each word is asked">
+          <h2 className="h2" style={{ fontSize: 22 }}>{uniqueCount === 1 ? t('Bring one word back') : t('Bring {n} words back', { n: uniqueCount })}</h2>
+          <p className="sub" style={{ marginTop: 8 }}>{t('Every word is asked three ways, and you answer by writing the Hanzi.')}<br />{t('Type it, or draw it with your finger.')}</p>
+          <ul className="drill-ways" aria-label={t('How each word is asked')}>
             {CUE_CHIPS.map((chip, index) => (
               <li key={chip.cue} style={{ animationDelay: `${120 + index * 90}ms` }}>
                 <span className="zh" aria-hidden="true">{chip.zh}</span>
@@ -206,13 +207,13 @@ export function DrillFlow({ words, title, onClose }: {
               </li>
             ))}
           </ul>
-          <div className="kicker-ink" style={{ margin: '24px 0 10px' }}>Rounds per word</div>
+          <div className="kicker-ink" style={{ margin: '24px 0 10px' }}>{t('Rounds per word')}</div>
           <div className="row" style={{ justifyContent: 'center', gap: 10 }}>
             {REP_OPTIONS.map((count) => <button key={count} className="pill-ink" aria-pressed={reps === count} onClick={() => setReps(count)} style={{ height: 44, minWidth: 56, fontSize: 15, ...(reps === count ? { color: '#fff', backgroundImage: 'var(--metal-sheen), var(--metal-base)', borderColor: 'transparent' } : {}) }}>{count}×</button>)}
           </div>
-          <p className="sub" style={{ fontSize: 12, marginTop: 14 }}>{uniqueCount * reps} prompts · hints count as help, so mastery stays honest</p>
+          <p className="sub" style={{ fontSize: 12, marginTop: 14 }}>{t('{n} prompts · hints count as help, so mastery stays honest', { n: uniqueCount * reps })}</p>
         </div>
-        <div className="overlay-foot"><button className="btn" disabled={!uniqueCount} onPointerDown={() => unlockSpeech()} onClick={() => begin(unique)}>Start recall</button></div>
+        <div className="overlay-foot"><button className="btn" disabled={!uniqueCount} onPointerDown={() => unlockSpeech()} onClick={() => begin(unique)}>{t('Start recall')}</button></div>
       </DrillOverlay>
     )
   }
@@ -223,19 +224,19 @@ export function DrillFlow({ words, title, onClose }: {
     const clean = answered > 0 && revisit.length === 0 && unaided === answered
     return (
       <DrillOverlay onClose={finish}>
-        <Head title={title ?? 'Recall drill'} words={unique} onClose={finish} onProgressReveal={() => {
+        <Head title={title ?? t('Recall drill')} words={unique} onClose={finish} onProgressReveal={() => {
           // Keep a following "Practise again" in this same session assisted.
           for (const target of unique) assistedWords.current.add(target)
         }} />
         <div className="overlay-body drill-summary">
           <div className="medal pop" onAnimationStart={() => playComplete()}><CheckIcon size={46} /></div>
-          <h2 className="h1" style={{ marginTop: 22 }}>{clean ? 'Clean recall' : 'Recall session complete'}</h2>
+          <h2 className="h1" style={{ marginTop: 22 }}>{clean ? t('Clean recall') : t('Recall session complete')}</h2>
           <div className="row" style={{ justifyContent: 'center', marginTop: 18, flexWrap: 'wrap' }}>
-            <span className="pill-ink">{unaided}/{answered} unaided</span>
+            <span className="pill-ink">{t('{unaided}/{answered} unaided', { unaided, answered })}</span>
             <span className="pill-ink">+{credited * XP_PER_REP} XP</span>
-            {bestStreak >= 2 && <span className="pill-ink">Best run {bestStreak}</span>}
+            {bestStreak >= 2 && <span className="pill-ink">{t('Best run {n}', { n: bestStreak })}</span>}
           </div>
-          <ul className="drill-words" aria-label="How each word went">
+          <ul className="drill-words" aria-label={t('How each word went')}>
             {unique.map((target, index) => {
               const info = lookup(target)
               const last = outcomes[target]?.last
@@ -243,26 +244,26 @@ export function DrillFlow({ words, title, onClose }: {
                 <li key={target} data-state={last ?? 'waiting'} style={{ animationDelay: `${80 + index * 60}ms` }}>
                   <span className="zh drill-words-hz" lang="zh-CN">{target}</span>
                   <span className="drill-words-meta"><b>{info?.pinyin}</b><span>{info?.en}</span></span>
-                  <em>{last ? RESULT_LABEL[last] : 'Not reached'}</em>
+                  <em>{last ? RESULT_LABEL[last] : t('Not reached')}</em>
                 </li>
               )
             })}
           </ul>
-          <p className="sub" style={{ marginTop: 18 }}>Words and difficult attempts are saved automatically. Return another day to prove they stayed with you.</p>
+          <p className="sub" style={{ marginTop: 18 }}>{t('Words and difficult attempts are saved automatically. Return another day to prove they stayed with you.')}</p>
         </div>
         <div className="overlay-foot" style={{ display: 'grid', gap: 10 }}>
           {revisit.length > 0 && <button className="btn" onPointerDown={() => unlockSpeech()} onClick={() => {
             creditSession()
             committed.current = false
             begin(revisit)
-          }}>Drill the {revisit.length === 1 ? 'word' : `${revisit.length} words`} to revisit</button>}
+          }}>{revisit.length === 1 ? t('Drill the word to revisit') : t('Drill the {n} words to revisit', { n: revisit.length })}</button>}
           <button className={revisit.length ? 'btn btn-ghost' : 'btn'} onClick={() => {
             creditSession()
             committed.current = false
             begin(unique)
             // Same-session repeats after an answer reveal remain assisted.
-          }}>Practise again</button>
-          <button className="btn btn-ghost" onClick={finish}>Done</button>
+          }}>{t('Practise again')}</button>
+          <button className="btn btn-ghost" onClick={finish}>{t('Done')}</button>
         </div>
       </DrillOverlay>
     )
@@ -276,16 +277,16 @@ export function DrillFlow({ words, title, onClose }: {
     <DrillOverlay onClose={finish}>
       <Fireworks token={fireworksToken} />
       <span key={pulse.n} className="drill-pulse" data-kind={pulse.n ? pulse.kind : 'none'} aria-hidden="true" />
-      <Head title={title ?? 'Recall drill'} words={unique} onClose={finish} onProgressReveal={revealAllProgress} />
+      <Head title={title ?? t('Recall drill')} words={unique} onClose={finish} onProgressReveal={revealAllProgress} />
       <div className="overlay-head drill-hud">
-        <div className="drill-pips" role="list" aria-label="Words in this drill">
+        <div className="drill-pips" role="list" aria-label={t('Words in this drill')}>
           {unique.map((target, index) => {
             const state = pipState(outcomes[target], target === zh)
-            return <span key={target} role="listitem" className="drill-pip" data-state={state} aria-label={`Word ${index + 1}: ${PIP_LABEL[state]}`} />
+            return <span key={target} role="listitem" className="drill-pip" data-state={state} aria-label={t('Word {n}: {state}', { n: index + 1, state: PIP_LABEL[state] })} />
           })}
         </div>
         <div className="drill-flow" data-tier={streakTier(streak)} data-on={streak >= 2} aria-live="polite">
-          {streak >= 2 ? <><i aria-hidden="true" /><b>{streak}</b> in a row</> : null}
+          {streak >= 2 ? <><i aria-hidden="true" /><b>{streak}</b> {t('in a row')}</> : null}
         </div>
         <span className="drill-count">{n + 1}/{rounds.length}</span>
       </div>
@@ -295,11 +296,11 @@ export function DrillFlow({ words, title, onClose }: {
           {noGloss ? (
             <section className="production-stage">
               <div className="production-prompt">
-                <div className="kicker-ink">Meaning not in the curriculum yet</div>
+                <div className="kicker-ink">{t('Meaning not in the curriculum yet')}</div>
                 <div className="zh drill-prompt-hz" lang="zh-CN">{zh}</div>
-                <p className="sub drill-note">This word stays in your trail. It needs a verified meaning before we can test recall.</p>
+                <p className="sub drill-note">{t('This word stays in your trail. It needs a verified meaning before we can test recall.')}</p>
               </div>
-              <button className="btn" onClick={skipUnscored}>Continue without scoring</button>
+              <button className="btn" onClick={skipUnscored}>{t('Continue without scoring')}</button>
             </section>
           ) : (
             <WordRecall
@@ -328,7 +329,7 @@ function DrillOverlay({ children, onClose }: { children: ReactNode; onClose: () 
   close.current = onClose
   useEffect(() => {
     const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null
-    root.current?.querySelector<HTMLButtonElement>('[aria-label="Close drill"]')?.focus()
+    root.current?.querySelector<HTMLButtonElement>('[data-drill-close]')?.focus()
     function keyboard(event: KeyboardEvent) {
       // The progress popup handles its own Escape before this outer drill.
       if (root.current?.querySelector('.mastery-popover') || document.querySelector('.dictionary-backdrop')) return
@@ -350,9 +351,9 @@ function DrillOverlay({ children, onClose }: { children: ReactNode; onClose: () 
       if (previousFocus?.isConnected) previousFocus.focus({ preventScroll: true })
     }
   }, [])
-  return createPortal(<div ref={root} className="overlay" style={{ zIndex: 90 }} role="dialog" aria-modal="true" aria-label="Word recall drill">{children}</div>, document.body)
+  return createPortal(<div ref={root} className="overlay" style={{ zIndex: 90 }} role="dialog" aria-modal="true" aria-label={t('Word recall drill')}>{children}</div>, document.body)
 }
 
 function Head({ title, words, onClose, onProgressReveal }: { title: string; words: string[]; onClose: () => void; onProgressReveal?: () => void }) {
-  return <div className="overlay-head"><button className="icon-round tap44" onClick={onClose} aria-label="Close drill"><CloseIcon /></button><strong style={{ fontSize: 15, flex: 1 }}>{title}</strong><MasteryTracker words={words} compact onOpen={onProgressReveal} /></div>
+  return <div className="overlay-head"><button className="icon-round tap44" data-drill-close onClick={onClose} aria-label={t('Close drill')}><CloseIcon /></button><strong style={{ fontSize: 15, flex: 1 }}>{title}</strong><MasteryTracker words={words} compact onOpen={onProgressReveal} /></div>
 }

@@ -3,6 +3,7 @@ import {
   type HandwritingAssessment, type HandwritingCandidate, type HandwritingModel, type HandwritingWordAssessment, type InkDrawing, type StrokeAssignment,
 } from './handwriting.ts'
 import { buildReview, type Review, type ReviewCheck } from './review.ts'
+import { t } from './i18n.ts'
 
 /**
  * Explaining a drawing, not grading it. Pass or fail still comes from
@@ -57,7 +58,7 @@ const WORK_LIMIT = 4_000_000
 /** "a horizontal stroke at the bottom": a plain-words name for one stroke of a character. */
 export function describeStroke(stroke: Float32Array): string {
   const count = stroke.length / 2
-  if (count < 2) return 'dot'
+  if (count < 2) return t('dot')
   const x0 = stroke[0], y0 = stroke[1], x1 = stroke[stroke.length - 2], y1 = stroke[stroke.length - 1]
   let length = 0, cx = 0, cy = 0, bend = 0
   const dx = x1 - x0, dy = y1 - y0, chord = Math.hypot(dx, dy) || 1
@@ -69,19 +70,23 @@ export function describeStroke(stroke: Float32Array): string {
   }
   cx /= count; cy /= count
   let kind: string
-  if (length < 0.1) kind = 'dot'
+  if (length < 0.1) kind = t('dot')
   else {
     const horizontal = Math.abs(dy) < Math.abs(dx) * 0.4
     const vertical = Math.abs(dx) < Math.abs(dy) * 0.4
-    kind = horizontal ? 'horizontal stroke'
-      : vertical ? (dy >= 0 ? 'vertical stroke' : 'upward stroke')
-        : dy > 0 ? (dx < 0 ? 'left-falling stroke' : 'right-falling stroke') : 'rising stroke'
-    if (bend > 0.09) kind = `bent ${kind}`
+    kind = horizontal ? t('horizontal stroke')
+      : vertical ? (dy >= 0 ? t('vertical stroke') : t('upward stroke'))
+        : dy > 0 ? (dx < 0 ? t('left-falling stroke') : t('right-falling stroke')) : t('rising stroke')
+    if (bend > 0.09) kind = t('bent {kind}', { kind })
   }
-  const vertical = cy < 0.34 ? 'top' : cy > 0.66 ? 'bottom' : ''
-  const horizontal = cx < 0.34 ? 'left' : cx > 0.66 ? 'right' : ''
-  const place = vertical && horizontal ? `at the ${vertical} ${horizontal}` : vertical ? `at the ${vertical}` : horizontal ? `on the ${horizontal}` : 'in the middle'
-  return `${kind} ${place}`
+  return t('{kind} {place}', { kind, place: placeOf(cy < 0.34 ? 'top' : cy > 0.66 ? 'bottom' : '', cx < 0.34 ? 'left' : cx > 0.66 ? 'right' : '') })
+}
+
+/** Where on the character a stroke sits. Whole phrases, because "top left" is "kiri atas" in Indonesian. */
+function placeOf(vertical: 'top' | 'bottom' | '', horizontal: 'left' | 'right' | ''): string {
+  if (vertical === 'top') return horizontal === 'left' ? t('at the top left') : horizontal === 'right' ? t('at the top right') : t('at the top')
+  if (vertical === 'bottom') return horizontal === 'left' ? t('at the bottom left') : horizontal === 'right' ? t('at the bottom right') : t('at the bottom')
+  return horizontal === 'left' ? t('on the left') : horizontal === 'right' ? t('on the right') : t('in the middle')
 }
 
 function asInk(strokes: Float32Array[]): InkDrawing {
@@ -201,25 +206,33 @@ export function diagnoseWord(drawings: InkDrawing[], model: HandwritingModel, ex
   }
 }
 
-function plural(count: number, word: string): string {
-  return `${count} ${word}${count === 1 ? '' : 's'}`
-}
-
 /** Plain-language fixes for one character, from most to least certain. */
 export function strokeAdvice(diagnosis: CharacterDiagnosis): string[] {
   const advice: string[] = []
-  for (const stroke of diagnosis.strokes) if (stroke.status === 'missing') advice.push(`Add the ${stroke.description} (stroke ${stroke.index} of ${diagnosis.expectedStrokes}).`)
+  const total = diagnosis.expectedStrokes ?? 0
+  for (const stroke of diagnosis.strokes) if (stroke.status === 'missing') advice.push(t('Add the {stroke} (stroke {index} of {total}).', { stroke: stroke.description, index: stroke.index, total }))
   if (diagnosis.unlocatedMissing) {
-    const short = `You are ${plural(diagnosis.unlocatedMissing, 'stroke')} short`
+    const n = diagnosis.unlocatedMissing
     const where = diagnosis.possiblyMissing.map((index) => diagnosis.strokes[index - 1]).filter(Boolean)
+    const list = where.map((stroke) => t('the {stroke} (stroke {index})', { stroke: stroke.description, index: stroke.index })).join('; ')
     advice.push(where.length
-      ? `${short}. It is one of: ${where.map((stroke) => `the ${stroke.description} (stroke ${stroke.index})`).join('; ')}.`
-      : `${short}. Count your strokes against the stroke order shown.`)
+      ? n === 1 ? t('You are {n} stroke short. It is one of: {list}.', { n, list }) : t('You are {n} strokes short. It is one of: {list}.', { n, list })
+      : n === 1 ? t('You are {n} stroke short. Count your strokes against the stroke order shown.', { n }) : t('You are {n} strokes short. Count your strokes against the stroke order shown.', { n }))
   }
-  if (diagnosis.extraStrokes.length) advice.push(`Remove ${diagnosis.extraStrokes.length === 1 ? 'the extra stroke' : 'the extra strokes'} (stroke${diagnosis.extraStrokes.length === 1 ? '' : 's'} ${diagnosis.extraStrokes.join(', ')} of what you drew; this character has ${diagnosis.expectedStrokes}).`)
-  if (diagnosis.unlocatedExtra) advice.push(`You drew ${plural(diagnosis.unlocatedExtra, 'stroke')} too many (this character has ${diagnosis.expectedStrokes}). Count them against the stroke order shown.`)
+  if (diagnosis.extraStrokes.length) {
+    const list = diagnosis.extraStrokes.join(', ')
+    advice.push(diagnosis.extraStrokes.length === 1
+      ? t('Remove the extra stroke (stroke {list} of what you drew; this character has {total}).', { list, total })
+      : t('Remove the extra strokes (strokes {list} of what you drew; this character has {total}).', { list, total }))
+  }
+  if (diagnosis.unlocatedExtra) {
+    const n = diagnosis.unlocatedExtra
+    advice.push(n === 1
+      ? t('You drew {n} stroke too many (this character has {total}). Count them against the stroke order shown.', { n, total })
+      : t('You drew {n} strokes too many (this character has {total}). Count them against the stroke order shown.', { n, total }))
+  }
   // Per-stroke comments are meaningless when the whole character read as a different one.
-  if (diagnosis.assessment.status !== 'incorrect') for (const stroke of diagnosis.strokes) if (stroke.status === 'off') advice.push(`Check the ${stroke.description} (stroke ${stroke.index}): it looks out of place.`)
+  if (diagnosis.assessment.status !== 'incorrect') for (const stroke of diagnosis.strokes) if (stroke.status === 'off') advice.push(t('Check the {stroke} (stroke {index}): it looks out of place.', { stroke: stroke.description, index: stroke.index }))
   return advice
 }
 
@@ -234,14 +247,15 @@ export function reviewDrawing(context: DrawingContext, diagnosis: WordDiagnosis)
   const checks: ReviewCheck[] = []
   const drawnCharacters = diagnosis.characters.filter((entry) => entry.drawnStrokes > 0).length
   checks.push({
-    id: 'drawn-all', stage: 'instruction', decisive: true, label: context.characterCount === 1 ? 'The character is drawn' : 'Every character is drawn',
+    id: 'drawn-all', stage: 'instruction', decisive: true, label: context.characterCount === 1 ? t('The character is drawn') : t('Every character is drawn'),
     status: drawnCharacters === context.characterCount ? 'pass' : 'fail',
-    found: `${drawnCharacters} of ${context.characterCount} drawn`, expected: `${context.characterCount} character${context.characterCount === 1 ? '' : 's'}`,
-    fix: `Draw the ${context.characterCount - drawnCharacters === 1 ? 'missing character' : 'missing characters'} before checking.`,
+    found: t('{drawn} of {total} drawn', { drawn: drawnCharacters, total: context.characterCount }),
+    expected: context.characterCount === 1 ? t('{n} character', { n: context.characterCount }) : t('{n} characters', { n: context.characterCount }),
+    fix: context.characterCount - drawnCharacters === 1 ? t('Draw the missing character before checking.') : t('Draw the missing characters before checking.'),
   })
   diagnosis.characters.forEach((entry, index) => {
     const position = index + 1
-    const name = diagnosis.characters.length === 1 ? 'The character' : `Character ${position}`
+    const single = diagnosis.characters.length === 1
     const advice = strokeAdvice(entry)
     // The closest look-alike is only worth showing when it is not the answer itself.
     const closest = entry.candidates[0]?.character
@@ -250,13 +264,13 @@ export function reviewDrawing(context: DrawingContext, diagnosis: WordDiagnosis)
     const countOff = entry.known && entry.drawnStrokes !== entry.expectedStrokes
     checks.push({
       id: `char-${position}-reads`, stage: 'output', decisive: true, spoils: true,
-      label: `${name} reads as ${entry.expected}`,
+      label: single ? t('The character reads as {char}', { char: entry.expected }) : t('Character {n} reads as {char}', { n: position, char: entry.expected }),
       status: reads === 'correct' ? 'pass' : reads === 'incorrect' ? 'fail' : 'unverified',
-      found: reads === 'correct' ? `Read as ${entry.expected}` : reads === 'incorrect' ? `Read as ${entry.assessment.recognized}` : lookAlike ? `Too unclear to read (closest: ${lookAlike})` : 'Too unclear to read',
+      found: reads === 'correct' ? t('Read as {char}', { char: entry.expected }) : reads === 'incorrect' ? t('Read as {char}', { char: entry.assessment.recognized ?? '' }) : lookAlike ? t('Too unclear to read (closest: {char})', { char: lookAlike }) : t('Too unclear to read'),
       expected: entry.expected,
       // The strokes check below carries the specific correction, so this one never repeats it.
-      fix: reads === 'incorrect' ? 'This looks like a different character. Redraw it from memory, following the stroke order.'
-        : reads === 'uncertain' && !(countOff && advice.length) ? 'Redraw it with clear, separate strokes, or type the word.' : undefined,
+      fix: reads === 'incorrect' ? t('This looks like a different character. Redraw it from memory, following the stroke order.')
+        : reads === 'uncertain' && !(countOff && advice.length) ? t('Redraw it with clear, separate strokes, or type the word.') : undefined,
     })
     if (entry.known) {
       const counted = entry.drawnStrokes === entry.expectedStrokes
@@ -268,9 +282,10 @@ export function reviewDrawing(context: DrawingContext, diagnosis: WordDiagnosis)
       const wrongCount = reads !== 'correct' && !counted
       checks.push({
         id: `char-${position}-strokes`, stage: 'recall', decisive: wrongCount,
-        label: `${name} has the right strokes`,
+        label: single ? t('The character has the right strokes') : t('Character {n} has the right strokes', { n: position }),
         status: wrongCount ? 'fail' : coaching ? 'partial' : 'pass',
-        found: `${plural(entry.drawnStrokes, 'stroke')} drawn`, expected: `${plural(entry.expectedStrokes ?? 0, 'stroke')}`,
+        found: entry.drawnStrokes === 1 ? t('{n} stroke drawn', { n: entry.drawnStrokes }) : t('{n} strokes drawn', { n: entry.drawnStrokes }),
+        expected: entry.expectedStrokes === 1 ? t('{n} stroke', { n: 1 }) : t('{n} strokes', { n: entry.expectedStrokes ?? 0 }),
         fix: coaching ? advice.join(' ') || undefined : undefined,
       })
     }

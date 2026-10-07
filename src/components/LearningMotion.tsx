@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { t } from '../lib/i18n'
 
 function useReducedMotion(): boolean {
   const [reduced, setReduced] = useState(() =>
@@ -142,11 +143,11 @@ const glyphs: Record<RecallState, number[]> = {
   retry: [33, 18, 26, 15, 18, 18, 16, 26, 23, 32],
 }
 const labels: Record<RecallState, string> = {
-  idle: 'Retrieve before revealing',
-  listening: 'Listening to your response',
-  thinking: 'Checking your response',
-  correct: 'Retrieved from memory',
-  retry: 'Try retrieving it again',
+  idle: t('Retrieve before revealing'),
+  listening: t('Listening to your response'),
+  thinking: t('Checking your response'),
+  correct: t('Retrieved from memory'),
+  retry: t('Try retrieving it again'),
 }
 
 /** A continuous SVG morph with a single, frame-driven burst on retrieval. */

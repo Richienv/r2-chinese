@@ -1,10 +1,15 @@
 import raw from '../data/hsk4a.json'
+import idOverlay from '../data/i18n/id/hsk4a.json'
+import { getLang } from './i18n'
+import { applyOverlay, type Overlay } from './localize'
 import { overlayKeys, overlayWord } from './overlays'
 import { cachedDictionaryEntry } from './dictionary'
 import { formatDictionaryDefinition, naturalChineseSegments } from './dictionary-format'
 import type { BookData, GrammarPoint, IndexedVocab, Lesson, LessonText, Vocab } from './types'
 
 const data = raw as unknown as BookData
+// Meanings, translations and explanations come from the overlay in the learner's language.
+if (getLang() === 'id') applyOverlay(data, idOverlay as unknown as Overlay)
 
 export const book = data.book
 export const lessons: Lesson[] = data.lessons

@@ -1,12 +1,13 @@
 import { useCallback, useSyncExternalStore } from 'react'
+import { t } from './i18n.ts'
 
 /** Books path progress — never written into HSK / Kerja / Jiaocheng / Magang / Interview keys. */
 export const BOOKS_PROGRESS_KEY = 'yulu.books.v1'
 
 export const BOOKS_COURSE = {
-  title: 'Books',
-  titleZh: 'Books',
-  blurb: 'Five books, one idea at a time',
+  title: t('Books'),
+  titleZh: t('Books'),
+  blurb: t('Five books, one idea at a time'),
 } as const
 
 /** One playable path node per chapter. */
@@ -48,11 +49,11 @@ export type BooksNode = typeof LESSON_NODE
 const SITTING_KINDS = new Set<BooksSittingKind>(['idea', 'remember', 'check', 'try', 'example'])
 
 export const SITTING_KIND_LABEL: Record<BooksSittingKind, string> = {
-  idea: 'Idea',
-  remember: 'Remember',
-  check: 'Check',
-  try: 'Try',
-  example: 'Example',
+  idea: t('Idea'),
+  remember: t('Remember'),
+  check: t('Check'),
+  try: t('Try'),
+  example: t('Example'),
 }
 
 type GlobModule = { default: unknown } | unknown
@@ -74,10 +75,10 @@ function asTerms(raw: unknown): BooksTerm[] | undefined {
   const terms: BooksTerm[] = []
   for (const item of raw) {
     if (!item || typeof item !== 'object' || Array.isArray(item)) continue
-    const t = item as Record<string, unknown>
-    if (typeof t.en !== 'string' || !t.en.trim()) continue
-    const term: BooksTerm = { en: t.en.trim() }
-    if (typeof t.hook === 'string' && t.hook.trim()) term.hook = t.hook.trim()
+    const entry = item as Record<string, unknown>
+    if (typeof entry.en !== 'string' || !entry.en.trim()) continue
+    const term: BooksTerm = { en: entry.en.trim() }
+    if (typeof entry.hook === 'string' && entry.hook.trim()) term.hook = entry.hook.trim()
     terms.push(term)
   }
   return terms.length > 0 ? terms : undefined
@@ -203,7 +204,7 @@ export function booksParts(): { part: number; titleEn: string; chapters: BooksCh
   for (const ch of booksChapters) {
     let group = map.get(ch.part)
     if (!group) {
-      group = { part: ch.part, titleEn: ch.partTitleEn || `Book ${ch.part}`, chapters: [] }
+      group = { part: ch.part, titleEn: ch.partTitleEn || t('Book {n}', { n: ch.part }), chapters: [] }
       map.set(ch.part, group)
     }
     if (!group.titleEn && ch.partTitleEn) group.titleEn = ch.partTitleEn
@@ -213,7 +214,7 @@ export function booksParts(): { part: number; titleEn: string; chapters: BooksCh
 }
 
 export function nodeLabelBooks(ch: BooksChapter): string {
-  return ch.titleEn || `Chapter ${ch.index}`
+  return ch.titleEn || t('Chapter {n}', { n: ch.index })
 }
 
 /**
@@ -252,7 +253,7 @@ function quizFields(
     return null
   }
   return {
-    prompt: sitting.prompt?.trim() || sitting.titleEn.trim() || 'Choose the best answer',
+    prompt: sitting.prompt?.trim() || sitting.titleEn.trim() || t('Choose the best answer'),
     choices,
     answer: sitting.answer,
   }

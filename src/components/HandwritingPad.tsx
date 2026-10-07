@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import dictionaryUrl from '../assets/handwriting/medians.bin?url'
 import licenseUrl from '../assets/handwriting/ARPHICPL.TXT?url'
+import { t } from '../lib/i18n'
 import { loadHandwritingModel, type HandwritingModel, type InkDrawing, type InkPoint, type InkStroke } from '../lib/handwriting'
 import { diagnoseWord, type WordDiagnosis } from '../lib/handwriting-review'
 import { EraseIcon, UndoIcon } from './Icons'
@@ -120,20 +121,20 @@ export function HandwritingPad({ drawing, onChange, disabled = false, position =
   }
 
   return (
-    <section className="handwriting-pad" aria-label="Hanzi handwriting input">
+    <section className="handwriting-pad" aria-label={t('Hanzi handwriting input')}>
       <div className="handwriting-bar">
-        <p className="handwriting-intro">Character {position} of {total}<span className="handwriting-count"> · {drawing.length} {drawing.length === 1 ? 'stroke' : 'strokes'}</span></p>
+        <p className="handwriting-intro">{t('Character {position} of {total}', { position, total })}<span className="handwriting-count"> · {drawing.length === 1 ? t('{n} stroke', { n: drawing.length }) : t('{n} strokes', { n: drawing.length })}</span></p>
         <div className="handwriting-tools">
-          <button type="button" className="handwriting-tool" aria-label="Undo stroke" title="Undo stroke" disabled={disabled || !drawing.length} onClick={() => changeInk(completedStrokes.current.slice(0, -1))}><UndoIcon size={18} /><span>Undo</span></button>
-          <button type="button" className="handwriting-tool" aria-label="Clear character" title="Clear character" disabled={disabled || !drawing.length} onClick={() => changeInk([])}><EraseIcon size={18} /><span>Clear</span></button>
+          <button type="button" className="handwriting-tool" aria-label={t('Undo stroke')} title={t('Undo stroke')} disabled={disabled || !drawing.length} onClick={() => changeInk(completedStrokes.current.slice(0, -1))}><UndoIcon size={18} /><span>{t('Undo')}</span></button>
+          <button type="button" className="handwriting-tool" aria-label={t('Clear character')} title={t('Clear character')} disabled={disabled || !drawing.length} onClick={() => changeInk([])}><EraseIcon size={18} /><span>{t('Clear')}</span></button>
         </div>
       </div>
       <div className="handwriting-board" data-disabled={disabled}>
         <span className="handwriting-guide handwriting-guide-h" aria-hidden="true" /><span className="handwriting-guide handwriting-guide-v" aria-hidden="true" />
-        <canvas ref={canvas} width={SIZE} height={SIZE} className="handwriting-canvas" aria-label={`Draw character ${position} of ${total} with your finger, pen, or mouse`} onPointerDown={startStroke} onPointerMove={moveStroke} onPointerUp={(event) => endStroke(event)} onPointerCancel={(event) => endStroke(event, true)} onLostPointerCapture={(event) => endStroke(event, true)} />
-        {!drawing.length && !drawingStroke && <span className="handwriting-empty" aria-hidden="true">Write here</span>}
+        <canvas ref={canvas} width={SIZE} height={SIZE} className="handwriting-canvas" aria-label={t('Draw character {position} of {total} with your finger, pen, or mouse', { position, total })} onPointerDown={startStroke} onPointerMove={moveStroke} onPointerUp={(event) => endStroke(event)} onPointerCancel={(event) => endStroke(event, true)} onLostPointerCapture={(event) => endStroke(event, true)} />
+        {!drawing.length && !drawingStroke && <span className="handwriting-empty" aria-hidden="true">{t('Write here')}</span>}
       </div>
-      <p className="handwriting-note">Handwriting is checked on this device. <a href={licenseUrl} target="_blank" rel="noreferrer">Stroke data © Arphic / Make Me a Hanzi · license</a>.</p>
+      <p className="handwriting-note">{t('Handwriting is checked on this device.')} <a href={licenseUrl} target="_blank" rel="noreferrer">{t('Stroke data © Arphic / Make Me a Hanzi · license')}</a>.</p>
     </section>
   )
 }
@@ -187,7 +188,7 @@ export function useHandwritingWordAssessment(enabled: boolean) {
           window.clearTimeout(request.timeout)
           pending.current = null
           setStatus('error')
-          request.reject(new Error('Handwriting could not be checked. Retry or type your answer.'))
+          request.reject(new Error(t('Handwriting could not be checked. Retry or type your answer.')))
         }
       }, 0)
     }
@@ -210,7 +211,7 @@ export function useHandwritingWordAssessment(enabled: boolean) {
         if (request) {
           window.clearTimeout(request.timeout)
           pending.current = null
-          request.reject(new Error('The handwriting dictionary could not load. Retry or type your answer.'))
+          request.reject(new Error(t('The handwriting dictionary could not load. Retry or type your answer.')))
         }
       })
     }
@@ -244,13 +245,13 @@ export function useHandwritingWordAssessment(enabled: boolean) {
       if (request) {
         window.clearTimeout(request.timeout)
         pending.current = null
-        request.reject(new Error('Handwriting check cancelled.'))
+        request.reject(new Error(t('Handwriting check cancelled.')))
       }
     }
   }, [enabled, reload])
 
   function assess(drawings: InkDrawing[], expectedWord: string): Promise<WordDiagnosis> {
-    if (status !== 'ready' || pending.current) return Promise.reject(new Error('Wait for the handwriting dictionary, then check again.'))
+    if (status !== 'ready' || pending.current) return Promise.reject(new Error(t('Wait for the handwriting dictionary, then check again.')))
     const id = ++nextRequest.current
     setStatus('checking')
     return new Promise((resolve, reject) => {
@@ -271,7 +272,7 @@ export function useHandwritingWordAssessment(enabled: boolean) {
           if (pending.current?.id !== id) return
           pending.current = null
           setStatus('error')
-          reject(new Error('Handwriting could not be checked. Retry or type your answer.'))
+          reject(new Error(t('Handwriting could not be checked. Retry or type your answer.')))
         })
       }, 15000)
       if (worker.current) worker.current.postMessage({ type: 'assess-word', id, drawings, expectedWord })
@@ -288,7 +289,7 @@ export function useHandwritingWordAssessment(enabled: boolean) {
             window.clearTimeout(request.timeout)
             pending.current = null
             setStatus('error')
-            reject(new Error('Handwriting could not be checked. Retry or type your answer.'))
+            reject(new Error(t('Handwriting could not be checked. Retry or type your answer.')))
           }
         }, 0)
       }
