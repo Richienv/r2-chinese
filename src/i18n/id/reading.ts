@@ -166,7 +166,7 @@ const entries: Record<string, string> = {
   'Finish the earlier {book} chapters first.': 'Selesaikan dulu bab {book} sebelumnya.',
   'Chapter complete': 'Bab selesai',
   '+{xp} XP': '+{xp} XP',
-  '+{n} XP / item': '+{n} XP / item',
+  '+{n} XP / item': '+{n} XP per item',
   '+{n} node': '+{n} bonus bab',
   'Source covered and ideas checked. Revisit this chapter later and explain one idea without opening the notes.': 'Sumber udah dibaca dan ide-idenya udah dicek. Balik lagi ke bab ini nanti, lalu jelaskan satu ide tanpa membuka catatan.',
   'Interview terms': 'Istilah wawancara',

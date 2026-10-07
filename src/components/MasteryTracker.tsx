@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react'
+import { t } from '../lib/i18n'
 import { masteryLabel, type MasteryState } from '../lib/mastery'
 import { useStore } from '../store/store'
 import { CloseIcon } from './Icons'
@@ -42,35 +43,35 @@ export function MasteryTracker({ words, compact = false, onOpen }: { words: stri
         ref={trigger}
         type="button"
         className={`mastery-trigger${compact ? ' is-compact' : ''}`}
-        aria-label={`Word progress: ${counts.mastered} mastered, ${counts.hard} need practice, ${counts.learning} learning, ${counts.new} new`}
+        aria-label={t('Word progress: {mastered} mastered, {hard} need practice, {learning} learning, {fresh} new', { mastered: counts.mastered, hard: counts.hard, learning: counts.learning, fresh: counts.new })}
         aria-expanded={open}
         aria-controls={open ? id : undefined}
         aria-haspopup="dialog"
         onClick={() => { if (!open) onOpen?.(); setOpen((value) => !value) }}
       >
-        <span className="mastery-count" data-state="mastered" title="Mastered"><i className="mastery-dot" data-state="mastered" aria-hidden="true" />{counts.mastered}<span>{compact ? ' M' : ' mastered'}</span></span>
-        <span className="mastery-count" data-state="hard" title="Needs practice"><i className="mastery-dot" data-state="hard" aria-hidden="true" />{counts.hard}<span>{compact ? ' H' : ' hard'}</span></span>
+        <span className="mastery-count" data-state="mastered" title={masteryLabel.mastered}><i className="mastery-dot" data-state="mastered" aria-hidden="true" />{counts.mastered}<span>{' '}{compact ? t('M') : t('mastered')}</span></span>
+        <span className="mastery-count" data-state="hard" title={masteryLabel.hard}><i className="mastery-dot" data-state="hard" aria-hidden="true" />{counts.hard}<span>{' '}{compact ? t('H') : t('hard')}</span></span>
       </button>
       {open && (
-        <div className="mastery-popover" id={id} role="dialog" aria-label="Word progress details">
+        <div className="mastery-popover" id={id} role="dialog" aria-label={t('Word progress details')}>
           <div className="between">
-            <strong>Retrieval progress</strong>
+            <strong>{t('Retrieval progress')}</strong>
             <button
               ref={close}
               type="button"
               className="icon-round tap44"
-              aria-label="Close word progress"
+              aria-label={t('Close word progress')}
               onClick={() => { setOpen(false); trigger.current?.focus() }}
             ><CloseIcon size={16} /></button>
           </div>
-          <p className="sub">Mastery needs 3 correct answers without hints across at least 2 days. Multiple choice does not earn it.</p>
+          <p className="sub">{t('Mastery needs 3 correct answers without hints across at least 2 days. Multiple choice does not earn it.')}</p>
           <div className="row" style={{ flexWrap: 'wrap', gap: 8, margin: '14px 0' }}>
             {(['new', 'learning', 'hard', 'mastered'] as const).map((state) => (
               <span key={state} className="mastery-state" data-state={state}>{counts[state]} {masteryLabel[state].toLowerCase()}</span>
             ))}
           </div>
           <div className="mastery-list">
-            {unique.length === 0 ? <p className="sub">Words appear here as you meet them.</p> : unique.map((zh) => {
+            {unique.length === 0 ? <p className="sub">{t('Words appear here as you meet them.')}</p> : unique.map((zh) => {
               const record = mastery[zh]
               const state = record?.state ?? 'new'
               return (
@@ -79,7 +80,11 @@ export function MasteryTracker({ words, compact = false, onOpen }: { words: stri
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <strong className="zh" lang="zh-CN">{zh}</strong>
                     <div className="sub" style={{ fontSize: 11 }}>
-                      {record?.attempts ? `${record.unaidedSuccesses} unaided · ${record.successDays.length} ${record.successDays.length === 1 ? 'day' : 'days'} · ${record.hints} assisted` : 'Met, not tested yet'}
+                      {record?.attempts
+                        ? record.successDays.length === 1
+                          ? t('{unaided} unaided · {days} day · {hints} assisted', { unaided: record.unaidedSuccesses, days: record.successDays.length, hints: record.hints })
+                          : t('{unaided} unaided · {days} days · {hints} assisted', { unaided: record.unaidedSuccesses, days: record.successDays.length, hints: record.hints })
+                        : t('Met, not tested yet')}
                     </div>
                   </div>
                   <span className="mastery-state" data-state={state}>{masteryLabel[state]}</span>
