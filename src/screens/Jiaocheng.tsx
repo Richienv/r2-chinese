@@ -39,6 +39,25 @@ import { TeachView } from './TeachBeats'
 
 type QuizState = { wrong: string[]; solved: boolean; missed: boolean }
 
+/** The five stages of a sitting. The English names are ids the code compares; the labels are what the learner reads. */
+const STAGES = ['Encounter', 'Understand', 'Retrieve', 'Produce', 'Revisit'] as const
+type Stage = (typeof STAGES)[number]
+const STAGE_LABEL: Record<Stage, string> = {
+  Encounter: t('Encounter'),
+  Understand: t('Understand'),
+  Retrieve: t('Retrieve'),
+  Produce: t('Produce'),
+  Revisit: t('Revisit'),
+}
+
+/** Put elements into a translated sentence at its `{slot}` markers, wherever the language places them. */
+function withSlots(sentence: string, slots: Record<string, ReactNode>): ReactNode[] {
+  return sentence.split(/(\{\w+\})/).map((piece, index) => {
+    const slot = /^\{(\w+)\}$/.exec(piece)?.[1]
+    return slot && slot in slots ? <Fragment key={index}>{slots[slot]}</Fragment> : piece
+  })
+}
+
 function bookPartLabel(book: JiaochengLesson['book']): string {
   return book === '2-2' ? '下' : '上'
 }
@@ -52,11 +71,14 @@ export function JiaochengEmptyState() {
       </h2>
       <p className="kerja-empty-en">{JIAOCHENG_BOOK.title}</p>
       <p className="sub" style={{ textWrap: 'pretty', marginTop: 10 }}>
-        {JIAOCHENG_BOOK.blurb}. Lessons appear when JSON lands under{' '}
-        <code>src/data/jiaocheng/part1/</code> and <code>part2/</code>.
+        {withSlots(
+          // The slots stay in the sentence as they are, then become <code> elements.
+          t('{blurb}. Lessons appear when JSON lands under {part1} and {part2}.', { blurb: JIAOCHENG_BOOK.blurb, part1: '{part1}', part2: '{part2}' }),
+          { part1: <code>src/data/jiaocheng/part1/</code>, part2: <code>part2/</code> },
+        )}
       </p>
       <p className="sub" style={{ marginTop: 8 }}>
-        No lessons loaded yet — nothing fake to start.
+        {t('No lessons loaded yet — nothing fake to start.')}
       </p>
     </section>
   )
@@ -83,7 +105,7 @@ export function JiaochengPath({
       kicker={`第 ${lesson.bookLesson} 课 · 第二册${bookPartLabel(lesson.book)}`}
       title={lesson.titleZh || lesson.titleEn}
       subtitle={lesson.titleEn}
-      source={lesson.sourcePages ? `pp. ${lesson.sourcePages}` : undefined}
+      source={lesson.sourcePages ? t('pp. {pages}', { pages: lesson.sourcePages }) : undefined}
       open={progress.isLessonReached(lesson.index)}
       items={nodes.map(node => {
         const done = nodeDone(lesson.index, node)
@@ -292,7 +314,7 @@ function JiaochengRunner({ lesson, node, onClose }: {
       store.recordRecall(outcome.word, { correct: outcome.correct, assisted: outcome.assisted, mode: outcome.mode })
     }
     credit(step.id)
-    recordHistory({ course: 'jiaocheng', kind: 'quiz', lesson: lesson, node, correct: result.evidence === 'practice' ? undefined : result.correct, title: result.evidence === 'practice' ? 'Sentence practice · ungraded' : undefined })
+    recordHistory({ course: 'jiaocheng', kind: 'quiz', lesson: lesson, node, correct: result.evidence === 'practice' ? undefined : result.correct, title: result.evidence === 'practice' ? t('Sentence practice · ungraded') : undefined })
     playAdvance()
     goForward()
   }
@@ -300,7 +322,7 @@ function JiaochengRunner({ lesson, node, onClose }: {
   function finishRecheck(summary: RecheckSummary) {
     if (step.kind !== 'recheck') return
     credit(step.id)
-    recordHistory({ course: 'jiaocheng', kind: 'quiz', lesson: lesson, node, correct: summary.unaided === summary.total, title: 'Dialogue check' })
+    recordHistory({ course: 'jiaocheng', kind: 'quiz', lesson: lesson, node, correct: summary.unaided === summary.total, title: t('Dialogue check') })
     playAdvance()
     goForward()
   }
@@ -328,18 +350,18 @@ function JiaochengRunner({ lesson, node, onClose }: {
 
   const progressPct = isComplete ? 100 : (i / total) * 100
   const showFooter = isComplete || step.kind === 'teach' || step.kind === 'note' || step.kind === 'read' || (step.kind === 'quiz' && quizState?.solved)
-  const activeStage = step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' || step.kind === 'recheck' ? 'Retrieve' : step.kind === 'complete' ? 'Revisit' : 'Produce'
+  const activeStage: Stage = step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' || step.kind === 'recheck' ? 'Retrieve' : step.kind === 'complete' ? 'Revisit' : 'Produce'
 
   return (
     <div className="overlay session learning-session">
       <Fireworks token={fireworks} />
       <div className="overlay-head">
-        <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close session"><CloseIcon /></button>
+        <button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close session')}><CloseIcon /></button>
         <div className="step-bar"><i className="yl-progress" style={{ width: `${Math.min(100, progressPct)}%` }} /></div>
         <MasteryTracker words={sessionWords} compact onOpen={revealProgress} />
       </div>
-      <div className="learning-route" aria-label={`Learning stage: ${activeStage}`}>
-        {['Encounter', 'Understand', 'Retrieve', 'Produce', 'Revisit'].map((stage) => <span key={stage} data-active={stage === activeStage} aria-current={stage === activeStage ? 'step' : undefined}>{stage}</span>)}
+      <div className="learning-route" aria-label={t('Learning stage: {stage}', { stage: STAGE_LABEL[activeStage] })}>
+        {STAGES.map((stage) => <span key={stage} data-active={stage === activeStage} aria-current={stage === activeStage ? 'step' : undefined}>{STAGE_LABEL[stage]}</span>)}
       </div>
       <div className="overlay-body" ref={bodyRef}>
         <div key={beatKey} className="session-beat yl-enter">
@@ -360,7 +382,7 @@ function JiaochengRunner({ lesson, node, onClose }: {
                         : <DoneView node={node} titleZh={unit.titleZh} titleEn={unit.titleEn} wordCount={jiaochengSittingWordCount(lesson, node)} xp={xp} replay={alreadyDone.current} words={sessionWords} />}
         </div>
       </div>
-      {showFooter && <div className="overlay-foot">{(step.kind === 'teach' || step.kind === 'read' || step.kind === 'note') && <StudyDisplayControls />}<button type="button" className="btn" onPointerDown={() => unlockSpeech()} onClick={advance}>{isComplete ? 'Continue' : 'Next'}</button></div>}
+      {showFooter && <div className="overlay-foot">{(step.kind === 'teach' || step.kind === 'read' || step.kind === 'note') && <StudyDisplayControls />}<button type="button" className="btn" onPointerDown={() => unlockSpeech()} onClick={advance}>{isComplete ? t('Continue') : t('Next')}</button></div>}
     </div>
   )
 }
@@ -382,7 +404,7 @@ function ReadView({ text }: { text: LessonText }) {
     <>
       <header className="session-step-head">
         <div className="kicker-ink">
-          {text.label} · {text.type === 'dialogue' ? 'Dialogue' : 'Passage'}
+          {text.type === 'dialogue' ? t('{label} · Dialogue', { label: text.label }) : t('{label} · Passage', { label: text.label })}
         </div>
         <h2 className="session-step-title" lang={hasHanzi(heading) ? 'zh-CN' : undefined}>
           {hasHanzi(heading) ? <Glossed text={heading} onWord={onWord} /> : heading}
@@ -422,7 +444,7 @@ function NoteView({
 }) {
   const { onWord, sheet } = useGloss()
   const { prefs } = useStore()
-  const head = of > 1 ? `Note · ${n} of ${of}` : 'Note'
+  const head = of > 1 ? t('Note · {n} of {of}', { n, of }) : t('Note')
   const exampleZh = hearableZh(example?.zh)
   const titleZh = hearableZh(title)
   const bodyZh = hearableZh(body)
@@ -450,18 +472,18 @@ function NoteView({
           )}
           {prefs.showEnglish && example.en && <p className="sub" style={{ margin: '8px 0 0' }}>{example.en}</p>}
           <div style={{ marginTop: 12 }}>
-            <ChineseHear text={exampleZh} label="Hear the line" rate={LINE_RATE} />
+            <ChineseHear text={exampleZh} label={t('Hear the line')} rate={LINE_RATE} />
           </div>
         </div>
       )}
       {!exampleZh && titleZh && (
         <div style={{ marginTop: 14 }}>
-          <ChineseHear text={titleZh} label="Hear it" />
+          <ChineseHear text={titleZh} label={t('Hear it')} />
         </div>
       )}
       {!exampleZh && !titleZh && bodyZh && (
         <div style={{ marginTop: 14 }}>
-          <ChineseHear text={bodyZh} label="Hear it" />
+          <ChineseHear text={bodyZh} label={t('Hear it')} />
         </div>
       )}
       {sheet}
@@ -498,14 +520,14 @@ function MatchView({
 
   return (
     <>
-      <StepHead kicker={of > 1 ? `Check · ${n} of ${of}` : 'Check'} title={question.prompt} />
+      <StepHead kicker={of > 1 ? t('Check · {n} of {of}', { n, of }) : t('Check')} title={question.prompt} />
       {question.context && (
         <div className="card session-prompt">
           <p className="zh" lang="zh-CN" style={{ fontSize: 22, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
             <Glossed text={question.context.zh} onWord={onWord} />
           </p>
           <div style={{ marginTop: 12 }}>
-            <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+            <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} />
           </div>
         </div>
       )}
@@ -515,7 +537,7 @@ function MatchView({
             type="button"
             className="hear hear-ink"
             data-on={choicesPlaying}
-            aria-label={choicesPlaying ? 'Stop choices' : 'Hear choices'}
+            aria-label={choicesPlaying ? t('Stop choices') : t('Hear choices')}
             aria-pressed={choicesPlaying}
             onPointerDown={() => unlockSpeech()}
             onClick={() => {
@@ -529,7 +551,7 @@ function MatchView({
               )
             }}
           >
-            <span>{choicesPlaying ? 'Playing' : 'Hear choices'}</span>
+            <span>{choicesPlaying ? t('Playing') : t('Hear choices')}</span>
           </button>
         </div>
       )}
@@ -558,7 +580,7 @@ function MatchView({
       {solved && (
         <div className="yl-enter-up" style={{ textAlign: 'center', marginTop: 2 }} aria-live="polite">
           <strong style={{ fontSize: 16, fontWeight: 800, color: 'var(--red-deep)' }}>
-            {missed ? 'That’s it' : 'Nice!'}
+            {missed ? t('That’s it') : t('Nice!')}
           </strong>
         </div>
       )}
@@ -591,12 +613,12 @@ function DoneView({
         <CheckIcon size={46} />
       </div>
       <h2 className="h1 yl-enter" style={{ marginTop: 22, textWrap: 'balance' }}>
-        {label.en} complete
+        {t('{label} complete', { label: label.en })}
       </h2>
       <p className="sub yl-enter-up" style={{ marginTop: 8, animationDelay: '80ms', textWrap: 'pretty' }}>
         {titleZh} · {titleEn}
       </p>
-      <div className="learning-summary"><MasteryTracker words={words} /><p>Your words are tracked automatically. Return on another day to prove recall without hints.</p></div>
+      <div className="learning-summary"><MasteryTracker words={words} /><p>{t('Your words are tracked automatically. Return on another day to prove recall without hints.')}</p></div>
       <div
         className="session-xp yl-pop"
         style={{ marginTop: 20, fontWeight: 800, fontVariantNumeric: 'tabular-nums', animationDelay: '120ms' }}
@@ -607,9 +629,9 @@ function DoneView({
         className="row yl-enter-up"
         style={{ justifyContent: 'center', marginTop: 16, flexWrap: 'wrap', animationDelay: '180ms' }}
       >
-        <span className="pill-ink">+{ITEM_XP} XP / item</span>
-        {!replay && <span className="pill-ink">+{NODE_BONUS_XP} node</span>}
-        {wordCount > 0 && <span className="pill-ink">{wordCount} words</span>}
+        <span className="pill-ink">{t('+{xp} XP / item', { xp: ITEM_XP })}</span>
+        {!replay && <span className="pill-ink">{t('+{xp} node', { xp: NODE_BONUS_XP })}</span>}
+        {wordCount > 0 && <span className="pill-ink">{t('{n} words', { n: wordCount })}</span>}
       </div>
     </div>
   )
@@ -619,7 +641,7 @@ function LockedView({ onClose }: { onClose: () => void }) {
   return (
     <div className="overlay session">
       <div className="overlay-head">
-        <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close">
+        <button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close')}>
           <CloseIcon />
         </button>
       </div>
@@ -627,10 +649,10 @@ function LockedView({ onClose }: { onClose: () => void }) {
         <div className="yl-enter" style={{ textAlign: 'center' }}>
           <LockIcon size={36} />
           <h2 className="h1" style={{ marginTop: 16 }}>
-            Locked
+            {t('Locked')}
           </h2>
           <p className="sub" style={{ marginTop: 8 }}>
-            Finish the earlier Jiaocheng nodes first.
+            {t('Finish the earlier Jiaocheng nodes first.')}
           </p>
         </div>
       </div>
