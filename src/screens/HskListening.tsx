@@ -4,6 +4,7 @@ import { useSpeechSnapshot } from '../components/Hear'
 import { CloseIcon } from '../components/Icons'
 import { StudyDisplayControls } from '../components/StudyDisplayControls'
 import { lessons } from '../lib/content'
+import { getLang, t } from '../lib/i18n'
 import { listeningScripts, nextListeningScript, type ListeningRepeat } from '../lib/hskPractice'
 import { getSpeechSnapshot, prefetch, setSpeechEnabled, speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
 import { voiceForSpeaker } from '../lib/voices'
@@ -93,7 +94,7 @@ export function HskListening({ onClose }: { onClose: () => void }) {
         },
       })
       if (mine !== token.current) return
-      if (!done) { setRunning(false); setError(getSpeechSnapshot().error ?? 'Playback stopped. Tap play to continue from this line.'); return }
+      if (!done) { setRunning(false); setError(getSpeechSnapshot().error ?? t('Playback stopped. Tap play to continue from this line.')); return }
       const next = nextListeningScript(cursor, scripts.length, options.current.automatic, options.current.repeat)
       if (next === null) { setRunning(false); setFinished(true); return }
       cursor = next
@@ -131,47 +132,47 @@ export function HskListening({ onClose }: { onClose: () => void }) {
 
   return <section className="overlay hsk-lab listening-room" role="dialog" aria-modal="true" aria-labelledby="listening-title">
     <header className="overlay-head hsk-lab-head">
-      <button className="icon-btn" type="button" aria-label="Close listening room" onClick={onClose}><CloseIcon size={20} /></button>
-      <div><span>HSK 4 · Lessons 1–5</span><h1 id="listening-title">Listening room</h1></div>
+      <button className="icon-btn" type="button" aria-label={t('Close listening room')} onClick={onClose}><CloseIcon size={20} /></button>
+      <div><span>{t('HSK 4 · Lessons 1–5')}</span><h1 id="listening-title">{t('Listening room')}</h1></div>
       <div className="listening-wave" data-playing={running && !loading} aria-hidden="true"><i /><i /><i /><i /><i /></div>
     </header>
     <div className="overlay-body hsk-lab-body" ref={scroll}>
-      <nav className="listening-range" aria-label="Listening lesson range">
-        {[0, 1, 2, 3, 4, 5].map((value) => <button type="button" key={value} aria-pressed={value === lesson} onClick={() => selectRange(value)}>{value ? `L${value}` : 'All 5'}</button>)}
+      <nav className="listening-range" aria-label={t('Listening lesson range')}>
+        {[0, 1, 2, 3, 4, 5].map((value) => <button type="button" key={value} aria-pressed={value === lesson} onClick={() => selectRange(value)}>{value ? `L${value}` : t('All 5')}</button>)}
       </nav>
       <details className="listening-queue">
-        <summary><span>Choose a script</span><small>{index + 1} / {scripts.length}</small></summary>
-        <button className="listening-type" type="button" aria-pressed={dialoguesOnly} onClick={() => selectRange(lesson, !dialoguesOnly)}>{dialoguesOnly ? 'Dialogues only' : 'Dialogues + passages'}</button>
+        <summary><span>{t('Choose a script')}</span><small>{index + 1} / {scripts.length}</small></summary>
+        <button className="listening-type" type="button" aria-pressed={dialoguesOnly} onClick={() => selectRange(lesson, !dialoguesOnly)}>{dialoguesOnly ? t('Dialogues only') : t('Dialogues + passages')}</button>
         <div className="listening-queue-list">{scripts.map((item, i) => <button type="button" key={item.id} aria-current={item.id === script.id ? 'true' : undefined} onClick={() => selectScript(i)}><small>L{item.lesson} · {item.text.label}</small><span>{item.title}</span></button>)}</div>
       </details>
-      <header className="listening-script-head"><span className="hsk-lab-eyebrow">Lesson {script.lesson} · {script.text.label}</span><h2>{script.text.heading_zh || script.lessonTitle}</h2>{store.prefs.showEnglish && <p>{script.title}</p>}</header>
+      <header className="listening-script-head"><span className="hsk-lab-eyebrow">{t('Lesson {lesson} · {label}', { lesson: script.lesson, label: script.text.label })}</span><h2>{script.text.heading_zh || script.lessonTitle}</h2>{store.prefs.showEnglish && <p>{script.title}</p>}</header>
       <div className="listening-script" lang="zh-CN">
         {script.text.lines.map((line, i) => <div className="listening-line" key={`${script.id}:${i}`} ref={(node) => { lineNodes.current[i] = node }} data-current={running && i === lineIndex} data-past={running && i < lineIndex}>
-          <button className="listening-speaker" type="button" onPointerDown={unlockSpeech} onClick={() => { if (!store.prefs.soundOn) store.setPref('soundOn', true); void playFrom(index, i) }} aria-label={`Listen from line ${i + 1}${line.speaker ? `, ${line.speaker}` : ''}`}><span>{line.speaker || `段 ${i + 1}`}</span><span aria-hidden="true">{running && i === lineIndex ? '●' : '▷'}</span></button>
+          <button className="listening-speaker" type="button" onPointerDown={unlockSpeech} onClick={() => { if (!store.prefs.soundOn) store.setPref('soundOn', true); void playFrom(index, i) }} aria-label={line.speaker ? t('Listen from line {n}, {speaker}', { n: i + 1, speaker: line.speaker }) : t('Listen from line {n}', { n: i + 1 })}><span>{line.speaker || `段 ${i + 1}`}</span><span aria-hidden="true">{running && i === lineIndex ? '●' : '▷'}</span></button>
           <p className="listening-zh"><Glossed text={line.zh} onWord={(word) => { halt(); onWord(word) }} highlightLearned={false} /></p>
           {store.prefs.showPinyin && <p className="listening-pinyin" lang="zh-Latn">{line.pinyin}</p>}
-          {store.prefs.showEnglish && <p className="listening-english" lang="en">{line.en}</p>}
+          {store.prefs.showEnglish && <p className="listening-english" lang={getLang()}>{line.en}</p>}
         </div>)}
       </div>
-      {finished && <p className="listening-finished" role="status">Script finished. Replay it, or choose another.</p>}
+      {finished && <p className="listening-finished" role="status">{t('Script finished. Replay it, or choose another.')}</p>}
     </div>
     <footer className="overlay-foot listening-player">
       {error && <p className="hsk-lab-error" role="alert">{error}</p>}
       <div className="listening-transport">
-        <button type="button" className="listening-skip" disabled={index === 0} aria-label="Previous script" onPointerDown={unlockSpeech} onClick={() => selectScript(index - 1)}>‹</button>
+        <button type="button" className="listening-skip" disabled={index === 0} aria-label={t('Previous script')} onPointerDown={unlockSpeech} onClick={() => selectScript(index - 1)}>‹</button>
         <button type="button" className="listening-play" aria-pressed={running} onPointerDown={unlockSpeech} onClick={() => {
           if (running) halt()
           else { if (!store.prefs.soundOn) store.setPref('soundOn', true); void playFrom(index, finished ? 0 : lineIndex) }
-        }}><span aria-hidden="true">{running ? 'Ⅱ' : '▷'}</span>{running ? loading ? 'Loading · stop' : 'Pause' : finished ? 'Replay script' : lineIndex ? 'Resume listening' : 'Play scripts'}</button>
-        <button type="button" className="listening-skip" disabled={index === scripts.length - 1} aria-label="Next script" onPointerDown={unlockSpeech} onClick={() => selectScript(index + 1)}>›</button>
+        }}><span aria-hidden="true">{running ? 'Ⅱ' : '▷'}</span>{running ? loading ? t('Loading · stop') : t('Pause') : finished ? t('Replay script') : lineIndex ? t('Resume listening') : t('Play scripts')}</button>
+        <button type="button" className="listening-skip" disabled={index === scripts.length - 1} aria-label={t('Next script')} onPointerDown={unlockSpeech} onClick={() => selectScript(index + 1)}>›</button>
       </div>
       <div className="listening-settings">
-        <button type="button" aria-pressed={automatic} onClick={() => { setAutomatic(!automatic); if (automatic && repeat === 'all') setRepeat('off') }}>Auto-next <b>{automatic ? 'On' : 'Off'}</b></button>
-        <label><span>Loop</span><select aria-label="Listening loop" value={repeat} onChange={(e) => { const value = e.target.value as ListeningRepeat; setRepeat(value); if (value === 'all') setAutomatic(true) }}><option value="all">All scripts</option><option value="script">This script</option><option value="off">Off</option></select></label>
-        <label><span>Speed</span><select aria-label="Listening speed" value={rate} onChange={(e) => changeRate(Number(e.target.value))}><option value={-6}>Natural</option><option value={-22}>Slower</option><option value={-38}>Slowest</option></select></label>
+        <button type="button" aria-pressed={automatic} onClick={() => { setAutomatic(!automatic); if (automatic && repeat === 'all') setRepeat('off') }}>{t('Auto-next')} <b>{automatic ? t('On') : t('Off')}</b></button>
+        <label><span>{t('Loop')}</span><select aria-label={t('Listening loop')} value={repeat} onChange={(e) => { const value = e.target.value as ListeningRepeat; setRepeat(value); if (value === 'all') setAutomatic(true) }}><option value="all">{t('All scripts')}</option><option value="script">{t('This script')}</option><option value="off">{t('Off')}</option></select></label>
+        <label><span>{t('Speed')}</span><select aria-label={t('Listening speed')} value={rate} onChange={(e) => changeRate(Number(e.target.value))}><option value={-6}>{t('Natural')}</option><option value={-22}>{t('Slower')}</option><option value={-38}>{t('Slowest')}</option></select></label>
       </div>
-      <div className="listening-display"><StudyDisplayControls /><button className="listening-follow" type="button" aria-pressed={follow} onClick={() => setFollow(!follow)}>Follow {follow ? 'On' : 'Off'}</button></div>
-      {running && speech.status === 'playing' && speech.timing === 'line' && <small className="listening-timing-note">This voice supports line focus; word timing is unavailable.</small>}
+      <div className="listening-display"><StudyDisplayControls /><button className="listening-follow" type="button" aria-pressed={follow} onClick={() => setFollow(!follow)}>{follow ? t('Follow On') : t('Follow Off')}</button></div>
+      {running && speech.status === 'playing' && speech.timing === 'line' && <small className="listening-timing-note">{t('This voice supports line focus; word timing is unavailable.')}</small>}
     </footer>
     {sheet}
   </section>

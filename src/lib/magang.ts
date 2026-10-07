@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
+import { t } from './i18n.ts'
 
 /** Magang path progress — never written into HSK / Kerja / Jiaocheng keys. */
 const PROGRESS_KEY = 'yulu.magang.v1'
@@ -6,7 +7,7 @@ const PROGRESS_KEY = 'yulu.magang.v1'
 export const MAGANG_BOOK = {
   title: 'Magang AI',
   titleZh: 'Magang AI',
-  blurb: 'Internship book · study it slowly',
+  blurb: t('Internship book · study it slowly'),
 } as const
 
 /** One playable path node per chapter. */
@@ -71,14 +72,14 @@ const SITTING_KINDS = new Set<MagangSittingKind>([
 ])
 
 export const SITTING_KIND_LABEL: Record<MagangSittingKind | 'wrap', string> = {
-  idea: 'Idea',
-  remember: 'Remember',
-  watch: 'Watch',
-  try: 'Try',
-  interview: 'Interview',
-  example: 'Example',
-  check: 'Check',
-  wrap: 'Wrap-up',
+  idea: t('Idea'),
+  remember: t('Remember'),
+  watch: t('Watch'),
+  try: t('Try'),
+  interview: t('Interview'),
+  example: t('Example'),
+  check: t('Check'),
+  wrap: t('Wrap-up'),
 }
 
 type GlobModule = { default: unknown } | unknown
@@ -107,10 +108,10 @@ function asSitting(raw: unknown): MagangSitting | null {
     const terms: MagangTerm[] = []
     for (const item of o.terms) {
       if (!item || typeof item !== 'object' || Array.isArray(item)) continue
-      const t = item as Record<string, unknown>
-      if (typeof t.zh !== 'string' || typeof t.en !== 'string') continue
-      const term: MagangTerm = { zh: t.zh, en: t.en }
-      if (typeof t.hook === 'string') term.hook = t.hook
+      const entry = item as Record<string, unknown>
+      if (typeof entry.zh !== 'string' || typeof entry.en !== 'string') continue
+      const term: MagangTerm = { zh: entry.zh, en: entry.en }
+      if (typeof entry.hook === 'string') term.hook = entry.hook
       terms.push(term)
     }
     if (terms.length > 0) sitting.terms = terms
@@ -198,7 +199,7 @@ export function magangParts(): { part: number; titleEn: string; chapters: Magang
   for (const ch of magangChapters) {
     let group = map.get(ch.part)
     if (!group) {
-      group = { part: ch.part, titleEn: ch.partTitleEn || `Part ${ch.part}`, chapters: [] }
+      group = { part: ch.part, titleEn: ch.partTitleEn || t('Part {n}', { n: ch.part }), chapters: [] }
       map.set(ch.part, group)
     }
     if (!group.titleEn && ch.partTitleEn) group.titleEn = ch.partTitleEn
@@ -212,13 +213,13 @@ export function nodeCaptionMagang(
   _node: MagangNode,
 ): { en: string; hint: string } {
   return {
-    en: ch.titleEn || ch.titleSource || `Chapter ${ch.index}`,
-    hint: ch.when || (ch.sourcePages ? `pp. ${ch.sourcePages}` : ''),
+    en: ch.titleEn || ch.titleSource || t('Chapter {n}', { n: ch.index }),
+    hint: ch.when || (ch.sourcePages ? t('pp. {pages}', { pages: ch.sourcePages }) : ''),
   }
 }
 
 export function nodeLabelMagang(ch: MagangChapter, _node: MagangNode): string {
-  return ch.titleEn || ch.titleSource || `Chapter ${ch.index}`
+  return ch.titleEn || ch.titleSource || t('Chapter {n}', { n: ch.index })
 }
 
 /** One player screen — idea, one term, say-line, or quiz (never stacked terms). */
@@ -261,7 +262,7 @@ export type MagangSessionStep =
   | { kind: 'complete' }
 
 function validTerms(beat: MagangBeat): MagangTerm[] {
-  return beat.terms?.filter((t) => t.zh.trim() && t.en.trim()) ?? []
+  return beat.terms?.filter((term) => term.zh.trim() && term.en.trim()) ?? []
 }
 
 /** Expand chapter beats into HSK-style screens: idea → one term each → say → quiz. */
@@ -290,7 +291,7 @@ export function buildMagangSteps(chapterIndex: number, node: MagangNode): Magang
           kind: 'quiz',
           id: `check:${beat.id}`,
           beat,
-          prompt: beat.prompt?.trim() || beat.titleEn || 'Choose the best answer',
+          prompt: beat.prompt?.trim() || beat.titleEn || t('Choose the best answer'),
           choices,
           answer,
           beatNum,

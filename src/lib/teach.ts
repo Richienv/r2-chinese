@@ -1,4 +1,5 @@
 import type { Example } from './content'
+import { getLang, t } from './i18n.ts'
 import { overlayWord } from './overlays'
 import type { Vocab } from './types'
 
@@ -10,22 +11,28 @@ export type WordHook = {
 }
 
 export const TEACH_KICKER: Record<TeachPhase, string> = {
-  meet: 'See it',
-  hook: 'Remember it',
-  example: 'Hear it',
-  seal: 'Lock it',
+  meet: t('See it'),
+  hook: t('Remember it'),
+  example: t('Hear it'),
+  seal: t('Lock it'),
 }
 
 export const TEACH_TITLE: Record<TeachPhase, string> = {
-  meet: 'This is the word',
-  hook: 'How to remember it',
-  example: 'Hear it in context',
-  seal: 'Hanzi, then pinyin',
+  meet: t('This is the word'),
+  hook: t('How to remember it'),
+  example: t('Hear it in context'),
+  seal: t('Hanzi, then pinyin'),
 }
 
-function firstSense(en: string): string {
-  const bit = en.split(/[;,/]/)[0]?.trim() ?? en
-  return bit.replace(/^to\s+/i, '').toLowerCase() || en.toLowerCase()
+/**
+ * The first meaning of a gloss, ready to drop into a sentence. English glosses are verb phrases ("to prepare") or
+ * nouns ("law"), so the leading "to" goes and the rest is lowercased. Indonesian glosses are already plain words
+ * ("mempersiapkan; bersiap", "hukum") and may be proper nouns, so they are used exactly as written.
+ */
+function firstSense(gloss: string): string {
+  const bit = gloss.split(/[;,/]/)[0]?.trim() ?? gloss
+  if (getLang() !== 'en') return bit || gloss
+  return bit.replace(/^to\s+/i, '').toLowerCase() || gloss.toLowerCase()
 }
 
 function posKey(pos: string): 'n' | 'v' | 'adj' | 'adv' | 'conj' | 'name' | 'num' | 'other' {
@@ -44,39 +51,41 @@ function defaultHook(word: Vocab, example: Example | null): WordHook {
   const sense = firstSense(word.en)
   const kind = posKey(word.pos)
   const note = word.note.trim()
+  const vars = { word: word.zh, sense }
 
   const when =
     kind === 'v'
-      ? `Remember ${word.zh} like the word you’ll use when you want to ${sense}.`
+      ? t('Remember {word} like the word you’ll use when you want to {sense}.', vars)
       : kind === 'adj'
-        ? `Remember ${word.zh} like the word you’ll use when something is ${sense}.`
+        ? t('Remember {word} like the word you’ll use when something is {sense}.', vars)
         : kind === 'adv'
-          ? `Remember ${word.zh} like the word you’ll use when you mean “${sense}”.`
+          ? t('Remember {word} like the word you’ll use when you mean “{sense}”.', vars)
           : kind === 'conj'
-            ? `Remember ${word.zh} like the glue you’ll use when you need “${sense}” between two ideas.`
+            ? t('Remember {word} like the glue you’ll use when you need “{sense}” between two ideas.', vars)
             : kind === 'name'
-              ? `Remember ${word.zh} as the name ${word.en}. Say it when that person or place comes up.`
+              ? t('Remember {word} as the name {name}. Say it when that person or place comes up.', { word: word.zh, name: word.en })
               : kind === 'num'
-                ? `Connect ${word.zh} to the amount or counting expression “${sense}”.`
-                : `Remember ${word.zh} like the word you’ll use when you need to talk about ${sense}.`
+                ? t('Connect {word} to the amount or counting expression “{sense}”.', vars)
+                : t('Remember {word} like the word you’ll use when you need to talk about {sense}.', vars)
 
+  // The sentence must keep ending in ": {line}": TeachBeats lifts that line out into its own "book example" reveal.
   const usage =
     note ||
     (example?.zh.includes(word.zh)
-      ? `Notice what comes before and after ${word.zh} in the lesson line: ${example.zh}`
+      ? t('Notice what comes before and after {word} in the lesson line: {line}', { word: word.zh, line: example.zh })
       : kind === 'v'
-      ? `Connect this action to its subject and object. Use your curriculum’s example to keep the sentence pattern accurate.`
+      ? t('Connect this action to its subject and object. Use your curriculum’s example to keep the sentence pattern accurate.')
       : kind === 'adj'
-        ? `Attach this description to a concrete person or thing, then retrieve the description without looking.`
+        ? t('Attach this description to a concrete person or thing, then retrieve the description without looking.')
         : kind === 'adv'
-          ? `Notice where this word sits in the source sentence and what it changes about the meaning.`
+          ? t('Notice where this word sits in the source sentence and what it changes about the meaning.')
           : kind === 'conj'
-            ? `Keep the two ideas it connects together when you practise the source sentence.`
+            ? t('Keep the two ideas it connects together when you practise the source sentence.')
             : kind === 'name'
-              ? `Treat it as a proper name. Don’t translate it — just recognise it.`
+              ? t('Treat it as a proper name. Don’t translate it — just recognise it.')
               : kind === 'num'
-                ? `Keep its counting pattern from the curriculum together with the word.`
-                : `Link this noun to a concrete example and an action that you can use with it.`)
+                ? t('Keep its counting pattern from the curriculum together with the word.')
+                : t('Link this noun to a concrete example and an action that you can use with it.'))
 
   return { when, usage }
 }

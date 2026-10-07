@@ -15,6 +15,7 @@ import { CheckIcon, ChevronLeft, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { Writer } from '../components/Writer'
 import { focusChar, getLesson, sameCharWords } from '../lib/content'
+import { t } from '../lib/i18n'
 import { clozeQuestion, vocabQuestions, type Question } from '../lib/quiz'
 import { playCorrect, playWrong } from '../lib/sfx'
 import { speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
@@ -69,8 +70,8 @@ export function LessonFlow({
   const { onWord, sheet } = useGloss()
 
   const steps = useMemo<Step[]>(() => {
-    const dialogues = l.texts.filter((t) => t.type === 'dialogue')
-    const passages = l.texts.filter((t) => t.type === 'passage')
+    const dialogues = l.texts.filter((text) => text.type === 'dialogue')
+    const passages = l.texts.filter((text) => text.type === 'passage')
     const cloze = clozeQuestion(l)
     return [
       ...dialogues.map((text) => ({ kind: 'text' as const, text })),
@@ -168,12 +169,12 @@ export function LessonFlow({
   }
 
   const footerLabel = isComplete
-    ? 'Continue'
+    ? t('Continue')
     : footerLocked
-      ? 'Choose an answer'
+      ? t('Choose an answer')
       : step.kind === 'notes'
-        ? 'Finish lesson'
-        : 'Next'
+        ? t('Finish lesson')
+        : t('Next')
 
   const progress = ((i + (count > 1 ? cursor / count : 0)) / total) * 100
 
@@ -184,7 +185,7 @@ export function LessonFlow({
         <button
           className="icon-round tap44"
           onClick={back}
-          aria-label={i === 0 && cursor === 0 ? 'Close lesson' : 'Back'}
+          aria-label={i === 0 && cursor === 0 ? t('Close lesson') : t('Back')}
         >
           <ChevronLeft />
         </button>
@@ -194,7 +195,7 @@ export function LessonFlow({
         <span style={{ fontSize: 12, fontWeight: 800, color: 'var(--muted)' }}>
           {Math.min(i + 1, total)}/{total}
         </span>
-        <button className="icon-round tap44" onClick={onClose} aria-label="Close lesson" style={{ marginLeft: 2 }}>
+        <button className="icon-round tap44" onClick={onClose} aria-label={t('Close lesson')} style={{ marginLeft: 2 }}>
           <CloseIcon />
         </button>
       </div>
@@ -221,7 +222,7 @@ export function LessonFlow({
           <CompleteView
             lesson={l.lesson}
             onReview={
-              onWords ? () => onWords(l.vocab.map((v) => v.zh), `Review · ${l.title.zh}`) : undefined
+              onWords ? () => onWords(l.vocab.map((v) => v.zh), t('Review · {title}', { title: l.title.zh })) : undefined
             }
           />
         )}
@@ -258,8 +259,8 @@ function TextView({ text, onWord }: { text: LessonText; onWord: (v: Vocab) => vo
   return (
     <>
       <StepHead
-        kicker={`${text.label} · ${text.type === 'dialogue' ? 'Dialogue' : 'Passage'}`}
-        title={text.heading_zh || text.heading_en || 'Read'}
+        kicker={text.type === 'dialogue' ? t('{label} · Dialogue', { label: text.label }) : t('{label} · Passage', { label: text.label })}
+        title={text.heading_zh || text.heading_en || t('Read')}
       />
       {text.heading_en && text.heading_zh && (
         <p className="sub" style={{ marginTop: -10, marginBottom: 14 }}>
@@ -273,14 +274,14 @@ function TextView({ text, onWord }: { text: LessonText; onWord: (v: Vocab) => vo
           onClick={() => store.setPref('showPinyin', !pinyin)}
           style={pinyin ? { color: 'var(--link-hover)', borderColor: '#f3d6c4' } : undefined}
         >
-          Pinyin {pinyin ? 'on' : 'off'}
+          {pinyin ? t('Pinyin on') : t('Pinyin off')}
         </button>
         <button
           className="pill-ink"
           onClick={() => store.setPref('showEnglish', !english)}
           style={english ? { color: 'var(--link-hover)', borderColor: '#f3d6c4' } : undefined}
         >
-          English {english ? 'on' : 'off'}
+          {english ? t('English on') : t('English off')}
         </button>
       </div>
 
@@ -298,7 +299,7 @@ function TextView({ text, onWord }: { text: LessonText; onWord: (v: Vocab) => vo
       ))}
 
       <p style={{ fontSize: 12, color: 'var(--muted-3)', marginTop: 6 }}>
-        Tap an underlined word for its meaning.
+        {t('Tap an underlined word for its meaning.')}
       </p>
     </>
   )
@@ -316,19 +317,19 @@ function VocabView({
   const word = words[cursor]
   return (
     <>
-      <StepHead kicker={`New words · ${cursor + 1} of ${words.length}`} title="生词" />
+      <StepHead kicker={t('New words · {n} of {of}', { n: cursor + 1, of: words.length })} title="生词" />
       <FlipCard
         word={word}
         teach
         footer={
           <div className="row" style={{ marginTop: 14, gap: 8, justifyContent: 'center' }}>
-            <span style={{ fontSize: 12, color: 'var(--on-red-3)', fontWeight: 700 }}>Save to drill</span>
+            <span style={{ fontSize: 12, color: 'var(--on-red-3)', fontWeight: 700 }}>{t('Save to drill')}</span>
             <SaveStar zh={word.zh} lesson={lesson} size={22} onRed />
           </div>
         }
       />
       <p style={{ fontSize: 12, color: 'var(--muted-3)', marginTop: 18, textAlign: 'center' }}>
-        汉字, pinyin, English, and a book sentence — Next steps through all {words.length} words.
+        {t('{hanzi}, pinyin, English, and a book sentence — Next steps through all {n} words.', { hanzi: '汉字', n: words.length })}
       </p>
     </>
   )
@@ -349,7 +350,7 @@ function GrammarView({
 
   return (
     <>
-      <StepHead kicker={`Grammar · ${cursor + 1} of ${points.length}`} title="语言点" />
+      <StepHead kicker={t('Grammar · {n} of {of}', { n: cursor + 1, of: points.length })} title="语言点" />
 
       <section className="metal" style={{ padding: 18 }}>
         <div className="zh on-red" style={{ fontSize: 24, fontWeight: 700, lineHeight: 1.3 }} lang="zh-CN">
@@ -358,7 +359,7 @@ function GrammarView({
         <div style={{ color: 'var(--gold)', fontWeight: 700, fontSize: 13, marginTop: 4 }}>{p.pinyin}</div>
         {hasHanzi(p.point) && (
           <div style={{ marginTop: 12 }}>
-            <HearButton text={p.point} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the pattern" tone="on-red" />
+            <HearButton text={p.point} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the pattern')} tone="on-red" />
           </div>
         )}
       </section>
@@ -366,7 +367,7 @@ function GrammarView({
       <p style={{ fontSize: 14, lineHeight: 1.6, color: '#3a3a40', marginTop: 16 }}>{p.explanation}</p>
 
       <h4 className="kicker-ink" style={{ margin: '20px 0 10px' }}>
-        Examples
+        {t('Examples')}
       </h4>
       {p.examples.map((ex, i) => (
         <div className="card" key={i} style={{ marginBottom: 10, padding: 15 }}>
@@ -376,7 +377,7 @@ function GrammarView({
           <div style={{ fontSize: 12, color: 'var(--muted-2)', marginTop: 5 }}>{ex.pinyin}</div>
           <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 6 }}>{ex.en}</div>
           <div style={{ marginTop: 10 }}>
-            <HearButton text={ex.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+            <HearButton text={ex.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} />
           </div>
         </div>
       ))}
@@ -413,7 +414,7 @@ function QuizView({
 
   return (
     <>
-      <StepHead kicker={total > 1 ? `Check · ${index + 1} of ${total}` : 'Check'} title={question.prompt} />
+      <StepHead kicker={total > 1 ? t('Check · {n} of {of}', { n: index + 1, of: total }) : t('Check')} title={question.prompt} />
 
       {question.context && (
         <div className="card" style={{ marginBottom: 16 }}>
@@ -422,7 +423,7 @@ function QuizView({
           </div>
           <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 8 }}>{question.context.en}</div>
           <div style={{ marginTop: 12 }}>
-            <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+            <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} />
           </div>
         </div>
       )}
@@ -433,7 +434,7 @@ function QuizView({
             type="button"
             className="hear hear-ink"
             data-on={choicesPlaying}
-            aria-label={choicesPlaying ? 'Stop choices' : 'Hear choices'}
+            aria-label={choicesPlaying ? t('Stop choices') : t('Hear choices')}
             aria-pressed={choicesPlaying}
             onPointerDown={() => unlockSpeech()}
             onClick={() => {
@@ -447,7 +448,7 @@ function QuizView({
               )
             }}
           >
-            <span>{choicesPlaying ? 'Playing' : 'Hear choices'}</span>
+            <span>{choicesPlaying ? t('Playing') : t('Hear choices')}</span>
           </button>
         </div>
       )}
@@ -475,7 +476,7 @@ function QuizView({
 
       {!solved && wrong.length > 0 && (
         <div className="explain pop" style={{ marginTop: 14, background: 'var(--warn-bg)', borderColor: 'var(--warn-line)', color: 'var(--warn)' }}>
-          Not quite — try another.
+          {t('Not quite — try another.')}
         </div>
       )}
 
@@ -492,18 +493,18 @@ function WriteView({ char, lesson }: { char: string; lesson: number }) {
   const [done, setDone] = useState(false)
   return (
     <>
-      <StepHead kicker={`Handwriting · Lesson ${lesson}`} title={`Write ${char}`} />
+      <StepHead kicker={t('Handwriting · Lesson {n}', { n: lesson })} title={t('Write {char}', { char })} />
       <div style={{ marginBottom: 14 }}>
-        <ChineseHear text={char} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the character" />
+        <ChineseHear text={char} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear the character')} />
       </div>
       <Writer char={char} onComplete={() => setDone(true)} />
       {done && (
         <div className="explain pop" style={{ marginTop: 18, background: 'var(--ok-bg)', borderColor: 'var(--ok-line)', color: 'var(--ok)' }}>
-          ✅ Stroke order correct.
+          ✅ {t('Stroke order correct.')}
         </div>
       )}
       <p style={{ fontSize: 12, color: 'var(--muted-3)', marginTop: 16, textAlign: 'center' }}>
-        Animate to watch the stroke order, then Practice to trace it yourself.
+        {t('Animate to watch the stroke order, then Practice to trace it yourself.')}
       </p>
     </>
   )
@@ -522,11 +523,11 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
 
   return (
     <>
-      <StepHead kicker="Notes" title="提示" />
+      <StepHead kicker={t('Notes')} title="提示" />
 
       {l.warmup.length > 0 && (
         <section className="card" style={{ marginBottom: 14 }}>
-          <div className="kicker-ink">热身 · Warm-up</div>
+          <div className="kicker-ink">热身 · {t('Warm-up')}</div>
           <div style={{ display: 'grid', gap: 10, marginTop: 10 }}>
             {l.warmup.map((item, i) => (
               <p key={i} style={{ fontSize: 13, lineHeight: 1.65, color: '#3a3a40', margin: 0, whiteSpace: 'pre-wrap' }}>
@@ -539,7 +540,7 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
 
       {compare && (
         <section className="card" style={{ marginBottom: 14 }}>
-          <div className="kicker-ink">Easily confused</div>
+          <div className="kicker-ink">{t('Easily confused')}</div>
           <div className="zh" style={{ fontSize: 24, fontWeight: 700, margin: '8px 0 10px' }} lang="zh-CN">
             {compare.a} — {compare.b}
           </div>
@@ -549,7 +550,7 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
               text={`${compare.a} ${compare.b}`}
               voice={VOICE.xiaoxiao}
               rate={WORD_RATE}
-              label="Hear the pair"
+              label={t('Hear the pair')}
             />
           </div>
         </section>
@@ -557,7 +558,7 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
 
       {sameChar && (
         <section className="metal" style={{ padding: 18, marginBottom: 14 }}>
-          <div className="kicker">Same character</div>
+          <div className="kicker">{t('Same character')}</div>
           <div
             className="zh on-red"
             style={{ fontSize: 40, fontWeight: 700, lineHeight: 1.1, margin: '6px 0 12px' }}
@@ -566,7 +567,7 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
             {sameChar.char}
           </div>
           <div style={{ marginBottom: 12 }}>
-            <HearButton text={sameChar.char} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the character" tone="on-red" />
+            <HearButton text={sameChar.char} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear the character')} tone="on-red" />
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {words.map((w) => (
@@ -587,7 +588,7 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
                   )}
                   {ex.en && <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.86)', marginTop: 6 }}>{ex.en}</div>}
                   <div style={{ marginTop: 10 }}>
-                    <HearButton text={ex.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" tone="on-red" />
+                    <HearButton text={ex.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} tone="on-red" />
                   </div>
                 </div>
               ))}
@@ -598,7 +599,7 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
 
       {culture && (
         <section className="card" style={{ marginBottom: 14 }}>
-          <div className="kicker-ink">Culture</div>
+          <div className="kicker-ink">{t('Culture')}</div>
           <div className="zh" style={{ fontSize: 19, fontWeight: 700, margin: '8px 0 2px' }} lang="zh-CN">
             {culture.title_zh}
           </div>
@@ -608,7 +609,7 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
           <p style={{ fontSize: 13, lineHeight: 1.65, color: '#3a3a40', margin: 0, whiteSpace: 'pre-wrap' }}>{culture.summary}</p>
           {hasHanzi(culture.title_zh) && (
             <div style={{ marginTop: 12 }}>
-              <HearButton text={culture.title_zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the title" />
+              <HearButton text={culture.title_zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the title')} />
             </div>
           )}
         </section>
@@ -616,7 +617,7 @@ function NotesView({ lesson, onWord }: { lesson: number; onWord: (v: Vocab) => v
 
       {l.extras.exercises.length > 0 && (
         <section className="card">
-          <div className="kicker-ink">练习 · Exercises</div>
+          <div className="kicker-ink">练习 · {t('Exercises')}</div>
           <ol style={{ margin: '10px 0 0', paddingLeft: 18 }}>
             {l.extras.exercises.map((item, i) => (
               <li key={i} style={{ fontSize: 13, lineHeight: 1.65, color: '#3a3a40', marginBottom: 10, whiteSpace: 'pre-wrap' }}>
@@ -638,23 +639,23 @@ function CompleteView({ lesson, onReview }: { lesson: number; onReview?: () => v
         <CheckIcon size={46} />
       </div>
       <h2 className="h1" style={{ marginTop: 22 }}>
-        Lesson complete!
+        {t('Lesson complete!')}
       </h2>
       <p className="sub" style={{ marginTop: 8 }}>
         {l.title.zh} · {l.title.en}
       </p>
       <div className="row" style={{ justifyContent: 'center', marginTop: 22, flexWrap: 'wrap' }}>
         <span className="pill-ink">+{XP_PER_LESSON} XP</span>
-        <span className="pill-ink">+{l.vocab.length} words</span>
-        <span className="pill-ink">🔥 streak</span>
+        <span className="pill-ink">{t('+{n} words', { n: l.vocab.length })}</span>
+        <span className="pill-ink">🔥 {t('streak')}</span>
       </div>
       {onReview && (
         <button className="btn" style={{ marginTop: 24 }} onClick={onReview}>
-          Review these {l.vocab.length} words now
+          {t('Review these {n} words now', { n: l.vocab.length })}
         </button>
       )}
       <p style={{ fontSize: 12, color: 'var(--muted-3)', marginTop: 16, lineHeight: 1.5 }}>
-        All {l.vocab.length} new words from this lesson are now in your review deck.
+        {t('All {n} new words from this lesson are now in your review deck.', { n: l.vocab.length })}
       </p>
     </div>
   )

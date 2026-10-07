@@ -1,3 +1,6 @@
+import { getLang } from './i18n'
+import { applyOverlay, type Overlay } from './localize'
+
 export type OverlayExample = {
   zh: string
   pinyin: string
@@ -21,6 +24,7 @@ export type LessonOverlay = {
 }
 
 const files = import.meta.glob('../data/teach/lesson-*.json', { eager: true })
+const idFiles = import.meta.glob('../data/i18n/id/lesson-*.json', { eager: true })
 
 const byLesson = new Map<number, Map<string, OverlayWord>>()
 const byZh = new Map<string, OverlayWord>()
@@ -29,6 +33,10 @@ for (const [path, mod] of Object.entries(files)) {
   if (!/lesson-\d+\.json$/.test(path)) continue
   const data = (mod as { default: LessonOverlay }).default
   if (!data?.words) continue
+  if (getLang() === 'id') {
+    const translation = idFiles[path.replace('../data/teach/', '../data/i18n/id/')] as { default: Overlay } | undefined
+    if (translation) applyOverlay(data, translation.default)
+  }
   const map = new Map<string, OverlayWord>()
   for (const [zh, word] of Object.entries(data.words)) {
     map.set(zh, word)

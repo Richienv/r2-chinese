@@ -1,5 +1,6 @@
 import type { LessonText } from './types'
 import { assessmentFailure } from './assessmentService.ts'
+import { t } from './i18n.ts'
 
 export interface ProductionResult {
   correct: boolean
@@ -48,7 +49,7 @@ export function sourceWords(text: string, candidates: string[]): string[] {
 
 export function dialogueRoles(text: LessonText): string[] {
   const speakers = [...new Set(text.lines.map((line) => line.speaker).filter(Boolean))]
-  return speakers.length > 1 ? speakers : ['Your turn']
+  return speakers.length > 1 ? speakers : [t('Your turn')]
 }
 
 export function dialogueTurnIndexes(text: LessonText, role: string): number[] {
@@ -68,8 +69,8 @@ export function sourceAssessment(prompt: ProductionPrompt): ProductionAssessment
     accepted: match ? true : null,
     evidence: match ? 'source-match' : 'practice',
     feedback: match
-      ? 'You recalled the book sentence. The Hanzi and word order match; punctuation is flexible.'
-      : 'Your wording differs from the book. It may be a valid alternative; source comparison alone cannot verify its grammar or meaning.',
+      ? t('You recalled the book sentence. The Hanzi and word order match; punctuation is flexible.')
+      : t('Your wording differs from the book. It may be a valid alternative; source comparison alone cannot verify its grammar or meaning.'),
     correctedZh: prompt.expectedZh,
     issues: [],
     usedWords,
@@ -117,14 +118,14 @@ export async function assessProduction(prompt: ProductionPrompt, signal?: AbortS
   })
   if (res.status === 404 || res.status === 503) {
     const failure = await assessmentFailure(res)
-    return { ...local, unavailable: `${failure.message} You can still compare with the book below.` }
+    return { ...local, unavailable: t('{message} You can still compare with the book below.', { message: failure.message }) }
   }
   if (!res.ok) {
     throw await assessmentFailure(res)
   }
   const result = await res.json() as Partial<ProductionAssessment>
   if (typeof result.accepted !== 'boolean' || typeof result.feedback !== 'string' || typeof result.correctedZh !== 'string' || !Array.isArray(result.issues) || !result.issues.every((issue) => typeof issue === 'string')) {
-    throw new Error('The grammar check returned an incomplete result. Retry, or use book comparison.')
+    throw new Error(t('The grammar check returned an incomplete result. Retry, or use book comparison.'))
   }
   return {
     accepted: result.accepted,

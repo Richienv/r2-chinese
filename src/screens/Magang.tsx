@@ -21,6 +21,7 @@ import {
   type MagangTerm,
 } from '../lib/magang'
 import { recordHistory } from '../lib/history'
+import { t } from '../lib/i18n'
 import { clearStep, readStep, writeStep } from '../lib/resume'
 import { playAdvance, playComplete, playCorrect, playWrong } from '../lib/sfx'
 import { unlockSpeech } from '../lib/speech'
@@ -33,6 +34,8 @@ import '../styles/magang.css'
 
 
 type QuizState = { wrong: number[]; solved: boolean; missed: boolean }
+/** The stage ids are compared in code; only the label is shown to the learner. */
+const STAGES = [{ id: 'Encounter', label: t('Encounter') }, { id: 'Understand', label: t('Understand') }, { id: 'Check', label: t('Check') }, { id: 'Revisit', label: t('Revisit') }] as const
 
 function splitSentences(body: string): string[] {
   const trimmed = body.trim()
@@ -43,6 +46,8 @@ function splitSentences(body: string): string[] {
 }
 
 export function MagangEmptyState() {
+  // One translatable sentence; the path sits in its own <code> element, so split around a marker.
+  const [beforePath, afterPath] = t('{blurb}. Chapters appear here when unit JSON is added under {path}.', { blurb: MAGANG_BOOK.blurb, path: '\u0000' }).split('\u0000')
   return (
     <section className="kerja-empty metal">
       <div className="kicker">Magang AI</div>
@@ -51,11 +56,10 @@ export function MagangEmptyState() {
       </h2>
       <p className="kerja-empty-en">{MAGANG_BOOK.title}</p>
       <p className="sub" style={{ textWrap: 'pretty', marginTop: 10 }}>
-        {MAGANG_BOOK.blurb}. Chapters appear here when unit JSON is added under{' '}
-        <code>src/data/magang/</code>.
+        {beforePath}<code>src/data/magang/</code>{afterPath}
       </p>
       <p className="sub" style={{ marginTop: 8 }}>
-        No chapters loaded yet — nothing fake to start.
+        {t('No chapters loaded yet — nothing fake to start.')}
       </p>
     </section>
   )
@@ -83,9 +87,9 @@ export function MagangPartPath({
   return (
     <LearningPath
       fill={fill}
-      kicker={`Part ${part} · Magang AI`}
+      kicker={t('Part {n} · {title}', { n: part, title: MAGANG_BOOK.title })}
       title={partTitle}
-      subtitle={`${chapters.length} chapter${chapters.length === 1 ? '' : 's'}`}
+      subtitle={chapters.length === 1 ? t('{n} chapter', { n: chapters.length }) : t('{n} chapters', { n: chapters.length })}
       open={chapters.some(ch => progress.isChapterReached(ch.index))}
       items={chapters.map(chapter => {
         const node = LESSON_NODE
@@ -93,8 +97,8 @@ export function MagangPartPath({
         const on = current.chapter === chapter.index && current.node === node
         return {
           id: chapter.id,
-          label: `Chapter ${chapter.index}`,
-          title: chapter.titleEn || chapter.titleSource || `Chapter ${chapter.index}`,
+          label: t('Chapter {n}', { n: chapter.index }),
+          title: chapter.titleEn || chapter.titleSource || t('Chapter {n}', { n: chapter.index }),
           state: done ? 'done' as const : on ? 'current' as const : 'locked' as const,
           playable: progress.isNodePlayable(chapter.index, node),
           onSelect: () => onPlay?.(chapter.index, node),
@@ -114,7 +118,7 @@ export function MagangHomePath({
   const chapter = getMagangChapter(nextPlayable.chapter) ?? magangChapters[0]
   const partGroup =
     magangParts().find((p) => p.part === chapter.part) ??
-    ({ part: chapter.part, titleEn: chapter.partTitleEn || `Part ${chapter.part}`, chapters: [chapter] } as const)
+    ({ part: chapter.part, titleEn: chapter.partTitleEn || t('Part {n}', { n: chapter.part }), chapters: [chapter] } as const)
   return (
     <MagangPartPath
       fill
@@ -268,7 +272,7 @@ function MagangRunner({ chapter, onClose }: { chapter: number; onClose: () => vo
 
     if (picked === answer) {
       playCorrect()
-      setFwToken((t) => t + 1)
+      setFwToken((token) => token + 1)
       credit(key)
       recordHistory({ course: 'magang', kind: 'quiz', lesson: chapter, node, correct: true })
       setQuiz((q) => ({
@@ -288,30 +292,30 @@ function MagangRunner({ chapter, onClose }: { chapter: number; onClose: () => vo
 
   const progressPct = isComplete ? 100 : total > 0 ? ((i + 1) / total) * 100 : 0
   const showFooter = isComplete || step.kind !== 'quiz' || quizState?.solved
-  const footerLabel = isComplete ? 'Continue' : 'Next'
+  const footerLabel = isComplete ? t('Continue') : t('Next')
   const phase = isComplete ? 'Revisit' : step.kind === 'quiz' ? 'Check' : step.kind === 'idea' ? 'Encounter' : 'Understand'
 
   return (
     <div className="overlay session learning-session">
       <Fireworks token={fwToken} />
       <div className="overlay-head">
-        <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close session">
+        <button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close session')}>
           <CloseIcon />
         </button>
         <div className="step-bar">
           <i className="yl-progress" style={{ width: `${Math.min(100, progressPct)}%` }} />
         </div>
         {xp > 0 && (
-          <span key={xp} className="session-xp yl-pop" aria-label={`${xp} XP earned this session`}>
+          <span key={xp} className="session-xp yl-pop" aria-label={t('{xp} XP earned this session', { xp })}>
             +{xp}
           </span>
         )}
       </div>
 
       <div className="overlay-body" ref={bodyRef}>
-        <nav className="learning-route" aria-label="Learning stages">
-          {(['Encounter', 'Understand', 'Check', 'Revisit'] as const).map((stage) => (
-            <span key={stage} data-active={phase === stage} aria-current={phase === stage ? 'step' : undefined}>{stage}</span>
+        <nav className="learning-route" aria-label={t('Learning stages')}>
+          {STAGES.map((stage) => (
+            <span key={stage.id} data-active={phase === stage.id} aria-current={phase === stage.id ? 'step' : undefined}>{stage.label}</span>
           ))}
         </nav>
         <div key={beatKey} className="session-beat yl-enter">
@@ -394,12 +398,12 @@ function IdeaScreen({
   const kindLabel = SITTING_KIND_LABEL[beat.kind]
   const sentences = useMemo(() => splitSentences(beat.bodyEn), [beat.bodyEn])
   const terms = useMemo(
-    () => beat.terms?.filter((t) => t.zh.trim() && t.en.trim()) ?? [],
+    () => beat.terms?.filter((term) => term.zh.trim() && term.en.trim()) ?? [],
     [beat.terms],
   )
   const [shown, setShown] = useState(0)
   const [chipsOn, setChipsOn] = useState(false)
-  const kicker = beatOf > 1 ? `${kindLabel} · ${beatNum} of ${beatOf}` : kindLabel
+  const kicker = beatOf > 1 ? t('{kind} · {n} of {of}', { kind: kindLabel, n: beatNum, of: beatOf }) : kindLabel
   const hero = beat.titleEn?.trim() || kindLabel
 
   useEffect(() => {
@@ -422,7 +426,7 @@ function IdeaScreen({
       )
     }
     return () => {
-      for (const t of timers) window.clearTimeout(t)
+      for (const timer of timers) window.clearTimeout(timer)
     }
   }, [beat.id, sentences])
 
@@ -433,7 +437,7 @@ function IdeaScreen({
         <h2 className="magang-skill-hero">{hero}</h2>
         <div className="magang-skill-body">
           {sentences.length === 0 ? (
-            <p className="magang-line magang-line-in">No explanation for this beat.</p>
+            <p className="magang-line magang-line-in">{t('No explanation for this beat.')}</p>
           ) : (
             sentences.map((sentence, idx) => (
               <p
@@ -446,7 +450,7 @@ function IdeaScreen({
           )}
         </div>
         {terms.length > 0 && chipsOn ? (
-          <ul className="magang-term-chips" aria-label="Interview terms">
+          <ul className="magang-term-chips" aria-label={t('Interview terms')}>
             {terms.map((term, idx) => (
               <li
                 key={`${beat.id}-chip-${term.zh}-${idx}`}
@@ -484,8 +488,8 @@ function TermScreen({
 }) {
   const kicker =
     termOf > 1
-      ? `Term · ${termNum} of ${termOf} · ${SITTING_KIND_LABEL[kind]}`
-      : `Term · ${SITTING_KIND_LABEL[kind]}`
+      ? t('Term · {n} of {of} · {kind}', { n: termNum, of: termOf, kind: SITTING_KIND_LABEL[kind] })
+      : t('Term · {kind}', { kind: SITTING_KIND_LABEL[kind] })
 
   return (
     <div className="magang-stage" data-phase="term">
@@ -497,7 +501,7 @@ function TermScreen({
         </p>
         {term.hook?.trim() ? <p className="magang-term-hook">{term.hook}</p> : null}
         <div className="magang-term-hear">
-          <HearButton text={term.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" tone="ink" />
+          <HearButton text={term.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear the word')} tone="ink" />
         </div>
       </article>
     </div>
@@ -514,11 +518,11 @@ function SayScreen({
   beatOf: number
 }) {
   const glyphs = splitHanzi(mandarin)
-  const kicker = beatOf > 1 ? `Say · ${beatNum} of ${beatOf}` : 'Say'
+  const kicker = beatOf > 1 ? t('Say · {n} of {of}', { n: beatNum, of: beatOf }) : t('Say')
 
   return (
     <div className="teach-stage" data-phase="seal">
-      <StepHead kicker={kicker} title="Say this line" />
+      <StepHead kicker={kicker} title={t('Say this line')} />
       <div className="teach-seal">
         <div className="teach-glyphs" lang="zh-CN" aria-label={mandarin}>
           {glyphs.map((g, i) => (
@@ -532,7 +536,7 @@ function SayScreen({
           ))}
         </div>
         <div style={{ marginTop: 18 }}>
-          <HearButton text={mandarin} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+          <HearButton text={mandarin} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} />
         </div>
       </div>
     </div>
@@ -564,7 +568,7 @@ function CheckScreen({
 
   return (
     <>
-      <StepHead kicker={beatOf > 1 ? `Check · ${beatNum} of ${beatOf}` : 'Check'} title={prompt} />
+      <StepHead kicker={beatOf > 1 ? t('Check · {n} of {of}', { n: beatNum, of: beatOf }) : t('Check')} title={prompt} />
       <div className="session-options">
         {choices.map((label, idx) => {
           const isAnswer = idx === answer
@@ -591,12 +595,12 @@ function CheckScreen({
           <RecallFeedback
             key={`${solved}:${wrong.length}`}
             state={solved ? 'correct' : 'retry'}
-            label={solved ? missed ? 'Resolved after a retry' : 'Source check passed' : 'Compare the idea, then try again'}
+            label={solved ? missed ? t('Resolved after a retry') : t('Source check passed') : t('Compare the idea, then try again')}
           />
-          {solved && <p>Explain why this answer fits before moving on.</p>}
+          {solved && <p>{t('Explain why this answer fits before moving on.')}</p>}
           {sourceNotes.trim() && (
             <details className="production-source">
-              <summary>Revisit the source notes</summary>
+              <summary>{t('Revisit the source notes')}</summary>
               <p>{sourceNotes}</p>
             </details>
           )}
@@ -622,7 +626,7 @@ function DoneView({
         <CheckIcon size={46} />
       </div>
       <h2 className="h1 yl-enter" style={{ marginTop: 22, textWrap: 'balance' }}>
-        Chapter complete
+        {t('Chapter complete')}
       </h2>
       <p className="sub yl-enter-up" style={{ marginTop: 8, animationDelay: '80ms', textWrap: 'pretty' }}>
         {label}
@@ -631,17 +635,17 @@ function DoneView({
         className="session-xp yl-pop"
         style={{ marginTop: 20, fontWeight: 800, fontVariantNumeric: 'tabular-nums', animationDelay: '120ms' }}
       >
-        +{xp} XP
+        {t('+{xp} XP', { xp })}
       </div>
       <div
         className="row yl-enter-up"
         style={{ justifyContent: 'center', marginTop: 16, flexWrap: 'wrap', animationDelay: '180ms' }}
       >
-        <span className="pill-ink">+{ITEM_XP} XP / item</span>
-        {!replay && <span className="pill-ink">+{NODE_BONUS_XP} node</span>}
+        <span className="pill-ink">{t('+{n} XP / item', { n: ITEM_XP })}</span>
+        {!replay && <span className="pill-ink">{t('+{n} node', { n: NODE_BONUS_XP })}</span>}
       </div>
       <div className="learning-summary">
-        <p>Source covered and ideas checked. Revisit this chapter later and explain one idea without opening the notes.</p>
+        <p>{t('Source covered and ideas checked. Revisit this chapter later and explain one idea without opening the notes.')}</p>
       </div>
     </div>
   )
@@ -651,7 +655,7 @@ function LockedView({ onClose }: { onClose: () => void }) {
   return (
     <div className="overlay session">
       <div className="overlay-head">
-        <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close">
+        <button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close')}>
           <CloseIcon />
         </button>
       </div>
@@ -659,16 +663,16 @@ function LockedView({ onClose }: { onClose: () => void }) {
         <div className="yl-enter" style={{ textAlign: 'center' }}>
           <LockIcon size={36} />
           <h2 className="h1" style={{ marginTop: 16 }}>
-            Locked
+            {t('Locked')}
           </h2>
           <p className="sub" style={{ marginTop: 8 }}>
-            Finish the earlier Magang chapters first.
+            {t('Finish the earlier Magang chapters first.')}
           </p>
         </div>
       </div>
       <div className="overlay-foot">
         <button type="button" className="btn" onClick={onClose}>
-          Continue
+          {t('Continue')}
         </button>
       </div>
     </div>

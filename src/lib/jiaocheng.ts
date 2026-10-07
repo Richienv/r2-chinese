@@ -1,5 +1,8 @@
+import { buildRecheck } from './dialogue-check'
+import { applyOverlay, type Overlay } from './localize'
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
 import { registerVocab, type Example } from './content'
+import { getLang, t } from './i18n.ts'
 import type { TeachPhase, WordHook } from './teach'
 import type { LessonText, TextLine, Vocab } from './types'
 import type { PathNode } from '../store/store'
@@ -12,7 +15,7 @@ export const JIAOCHENG_BOOK = {
   title: '汉语教程 Level 2',
   titleZh: '汉语教程 · 第二册',
   edition: '第3版 · 上+下',
-  blurb: 'Yang Jizhou · parts 1 & 2 as one path',
+  blurb: t('Yang Jizhou · parts 1 & 2 as one path'),
 } as const
 
 export interface JiaochengExample {
@@ -64,12 +67,12 @@ export interface JiaochengLesson {
 export const JIAOCHENG_NODES: PathNode[] = ['t1', 't2', 't3', 'wrap']
 
 export const JIAOCHENG_NODE_LABEL: Record<PathNode, { en: string; zh: string }> = {
-  t1: { en: 'Words', zh: '生词' },
-  t2: { en: 'Dialogue', zh: '对话' },
-  t3: { en: 'Notes', zh: '笔记' },
-  t4: { en: 'Extra', zh: '补充' },
-  t5: { en: 'Extra', zh: '补充' },
-  wrap: { en: 'Wrap-up', zh: '整理' },
+  t1: { en: t('Words'), zh: '生词' },
+  t2: { en: t('Dialogue'), zh: '对话' },
+  t3: { en: t('Notes'), zh: '笔记' },
+  t4: { en: t('Extra'), zh: '补充' },
+  t5: { en: t('Extra'), zh: '补充' },
+  wrap: { en: t('Wrap-up'), zh: '整理' },
 }
 
 type GlobModule = { default: RawLesson } | RawLesson
@@ -94,6 +97,17 @@ const part1Modules = import.meta.glob('../data/jiaocheng/part1/lesson-*.json', {
 const part2Modules = import.meta.glob('../data/jiaocheng/part2/lesson-*.json', {
   eager: true,
 }) as Record<string, GlobModule>
+
+// Indonesian meanings, translations and notes, applied once when the lessons load.
+if (getLang() === 'id') {
+  const overlays = import.meta.glob('../data/i18n/id/jiaocheng-part*-lesson-*.json', { eager: true }) as Record<string, { default: Overlay }>
+  for (const part of ['part1', 'part2'] as const) {
+    for (const [path, mod] of Object.entries(part === 'part1' ? part1Modules : part2Modules)) {
+      const overlay = overlays[path.replace(`../data/jiaocheng/${part}/`, `../data/i18n/id/jiaocheng-${part}-`)]
+      if (overlay) applyOverlay('default' in mod ? mod.default : mod, overlay.default)
+    }
+  }
+}
 
 function asRaw(mod: GlobModule): RawLesson | null {
   const raw = mod && typeof mod === 'object' && 'default' in mod ? mod.default : (mod as RawLesson)
@@ -189,11 +203,11 @@ export function noteExample(n: JiaochengNote): Example | null {
 }
 
 export function jiaochengHook(w: JiaochengWord): WordHook {
-  const when = w.when?.trim() || `Remember ${w.zh} when you need “${w.en || 'this meaning'}”.`
+  const when = w.when?.trim() || t('Remember {word} when you need “{meaning}”.', { word: w.zh, meaning: w.en || t('this meaning') })
   const usage =
     w.usage?.trim() ||
     w.note?.trim() ||
-    `Most Chinese speakers use ${w.zh} for “${w.en || 'this'}”.`
+    t('Most Chinese speakers use {word} for “{meaning}”.', { word: w.zh, meaning: w.en || t('this') })
   return { when, usage }
 }
 
@@ -211,6 +225,7 @@ export type JiaochengSessionStep =
   | { kind: 'read'; id: string; text: LessonText; n: number; of: number }
   | { kind: 'recall'; id: string; word: Vocab; n: number; of: number }
   | { kind: 'dialogue'; id: string; text: LessonText; n: number; of: number }
+  | { kind: 'recheck'; id: string; text: LessonText; words: Vocab[]; n: number; of: number }
   | { kind: 'produce'; id: string; example: Example; words: string[]; grammar?: string; n: number; of: number }
   | { kind: 'note'; id: string; title: string; body: string; example: Example | null; n: number; of: number }
   | { kind: 'quiz'; id: string; question: Question; n: number; of: number }
@@ -221,13 +236,14 @@ function numberSteps(draft: Array<Exclude<JiaochengSessionStep, { kind: 'complet
   for (const s of draft) {
     if (s.kind === 'teach' && !wordOrder.includes(s.word.zh)) wordOrder.push(s.word.zh)
   }
-  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, produce: 0 }
+  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, recheck: 0, produce: 0 }
   const ofs = {
     read: draft.filter((s) => s.kind === 'read').length,
     note: draft.filter((s) => s.kind === 'note').length,
     quiz: draft.filter((s) => s.kind === 'quiz').length,
     recall: draft.filter((s) => s.kind === 'recall').length,
     dialogue: draft.filter((s) => s.kind === 'dialogue').length,
+    recheck: draft.filter((s) => s.kind === 'recheck').length,
     produce: draft.filter((s) => s.kind === 'produce').length,
   }
   const steps: JiaochengSessionStep[] = draft.map((s) => {
@@ -255,7 +271,7 @@ function simpleVocabQuiz(words: JiaochengWord[], count: number): Question[] {
       .map((w) => ({ zh: w.zh, label: w.zh }))
     const rotated = [...options.slice(i % options.length), ...options.slice(0, i % options.length)]
     out.push({
-      prompt: `Which word means “${answer.en}”?`,
+      prompt: t('Which word means “{meaning}”?', { meaning: answer.en }),
       options: rotated,
       answer: answer.zh,
       explanation: `${answer.zh} · ${answer.en}`,
@@ -313,6 +329,8 @@ export function buildJiaochengSteps(lessonIndex: number, node: PathNode): Jiaoch
     for (const [index, text] of texts.entries()) {
       if (text.type === 'dialogue' && text.lines.length > 1 && text.lines.every((line) => !line.zh.trim() || line.en.trim())) {
         draft.push({ kind: 'dialogue', id: `dialogue:t2:${index}`, text, n: 0, of: 0 })
+        const used = lesson.words.filter((w) => text.lines.some((line) => line.zh.includes(w.zh))).map(toVocab)
+        if (buildRecheck(text, used).length >= 2) draft.push({ kind: 'recheck', id: `recheck:t2:${index}`, text, words: used, n: 0, of: 0 })
       } else {
         const line = text.lines.find((line) => line.zh.length >= 4 && line.zh.length <= 75 && line.en.trim())
         if (line) draft.push({ kind: 'produce', id: `produce:t2:${index}`, example: line, words: lesson.words.filter((w) => line.zh.includes(w.zh)).map((w) => w.zh), n: 0, of: 0 })
@@ -323,7 +341,7 @@ export function buildJiaochengSteps(lessonIndex: number, node: PathNode): Jiaoch
       draft.push({
         kind: 'note',
         id: `note:t3:${i}:${note.title}`,
-        title: note.title || 'Note',
+        title: note.title || t('Note'),
         body: note.body || '',
         example: noteExample(note),
         n: 0,
@@ -353,8 +371,8 @@ export function buildJiaochengSteps(lessonIndex: number, node: PathNode): Jiaoch
       draft.push({
         kind: 'note',
         id: 'wrap:done',
-        title: lesson.titleZh || lesson.titleEn || `Lesson ${lesson.bookLesson}`,
-        body: 'Lesson wrap-up. More checks appear once words are in this unit.',
+        title: lesson.titleZh || lesson.titleEn || t('Lesson {n}', { n: lesson.bookLesson }),
+        body: t('Lesson wrap-up. More checks appear once words are in this unit.'),
         example: null,
         n: 0,
         of: 0,
@@ -382,10 +400,10 @@ export function nodeCaptionJiaocheng(
   node: PathNode,
 ): { en: string; zh: string; hint: string } {
   const label = JIAOCHENG_NODE_LABEL[node]
-  if (node === 't1') return { ...label, hint: lesson.words[0]?.zh || `${lesson.words.length} words` }
+  if (node === 't1') return { ...label, hint: lesson.words[0]?.zh || t('{n} words', { n: lesson.words.length }) }
   if (node === 't2') return { ...label, hint: lesson.dialogues[0]?.headingZh || lesson.dialogues[0]?.label || '对话' }
   if (node === 't3') return { ...label, hint: lesson.notes[0]?.title || '笔记' }
-  return { ...label, hint: 'Check' }
+  return { ...label, hint: t('Check') }
 }
 
 interface JiaochengPersisted {
@@ -491,8 +509,8 @@ const HANZI = /[\u3400-\u9FFF]/
 
 /** True when a note/example string should get a Hear control (Chinese only). */
 export function hearableZh(text: string | undefined | null): string {
-  const t = text?.trim() ?? ''
-  return t && HANZI.test(t) ? t : ''
+  const trimmed = text?.trim() ?? ''
+  return trimmed && HANZI.test(trimmed) ? trimmed : ''
 }
 
 /** Seed the shared gloss/drill lexicon so 汉语教程 words star into the same list. */

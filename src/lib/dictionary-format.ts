@@ -33,12 +33,16 @@ export function tonePinyin(text: string): string {
   })
 }
 
-/** Friendly presentation of CC-CEDICT references; the source assets stay raw. */
-export function formatDictionaryDefinition(text: string): string {
+/**
+ * Friendly presentation of CC-CEDICT references; the source assets stay raw.
+ * `measureWord` names what CC-CEDICT calls "CL:". It is a parameter, not a t() call, because this module is also
+ * bundled into the dictionary API function, which must not pull in the interface-language code.
+ */
+export function formatDictionaryDefinition(text: string, measureWord = 'measure word'): string {
   return text
     .replace(/([\p{Script=Han}·・]+)(?:\|([\p{Script=Han}·・]+))?\[([^\]]+)\]/gu, (_match, traditional: string, simplified: string | undefined, pinyin: string) => `${simplified || traditional} (${tonePinyin(pinyin)})`)
     .replace(/\[([A-Za-züÜvV:1-5\s·,'-]+)\]/g, (_match, pinyin: string) => `(${tonePinyin(pinyin)})`)
-    .replace(/\bCL:\s*/g, 'measure word: ')
+    .replace(/\bCL:\s*/g, () => `${measureWord}: `)
 }
 
 /** ICU versions sometimes glue function words; these are not lexical compounds. */

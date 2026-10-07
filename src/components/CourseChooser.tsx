@@ -1,14 +1,15 @@
-import { useEffect, useRef, type PointerEvent } from 'react'
+import { useEffect, useRef, type CSSProperties, type PointerEvent, type ReactNode } from 'react'
 import { COURSE_META, COURSE_ORDER, useCourse, type CourseId } from '../lib/course'
+import { LANGUAGES, getLang, setLang, t } from '../lib/i18n'
 import '../styles/course-gate.css'
 
 const COURSE_BOOKS: Record<CourseId, { mark: string; spine: string; subtitle: string; topic: string }> = {
-  hsk4a: { mark: '4', spine: 'HSK', subtitle: '标准教程 · 上册', topic: 'Mandarin' },
-  kerja: { mark: '言', spine: 'WORK', subtitle: 'Mandarin for HR & management', topic: 'Workplace' },
-  jiaocheng: { mark: '二', spine: '教程', subtitle: '汉语教程 · 第二册上、下', topic: 'Mandarin' },
-  magang: { mark: 'AI', spine: '实习', subtitle: 'AI internship preparation', topic: 'Careers' },
-  interview: { mark: '总', spine: 'OFFICE', subtitle: 'Interview preparation', topic: 'Practice' },
-  books: { mark: '读', spine: 'BOOKS', subtitle: 'Five books · practical ideas', topic: 'Reading' },
+  hsk4a: { mark: '4', spine: 'HSK', subtitle: '标准教程 · 上册', topic: t('Mandarin') },
+  kerja: { mark: '言', spine: t('WORK'), subtitle: t('Mandarin for HR & management'), topic: t('Workplace') },
+  jiaocheng: { mark: '二', spine: '教程', subtitle: '汉语教程 · 第二册上、下', topic: t('Mandarin') },
+  magang: { mark: 'AI', spine: '实习', subtitle: t('AI internship preparation'), topic: t('Careers') },
+  interview: { mark: '总', spine: t('OFFICE'), subtitle: t('Interview preparation'), topic: t('Practice') },
+  books: { mark: '读', spine: t('BOOKS'), subtitle: t('Five books · practical ideas'), topic: t('Reading') },
 }
 
 function CourseBook({ id, onSelect }: { id: CourseId; onSelect: () => void }) {
@@ -83,7 +84,7 @@ function CourseBook({ id, onSelect }: { id: CourseId; onSelect: () => void }) {
       onPointerLeave={reset}
       onPointerCancel={reset}
       onBlur={reset}
-      aria-label={`Open ${meta.title}. ${book.subtitle}`}
+      aria-label={t('Open {title}. {subtitle}', { title: meta.title, subtitle: book.subtitle })}
     >
       <span className="library-book-stage" aria-hidden>
         <span className="library-book-shadow" />
@@ -102,8 +103,11 @@ function CourseBook({ id, onSelect }: { id: CourseId; onSelect: () => void }) {
   )
 }
 
-/** Real course selection, presented as a small library rather than six primary actions. */
-export function CourseGate() {
+/**
+ * Real course selection, presented as a small library rather than six primary actions.
+ * `corner` is an optional small control (the language chip) tucked above the heading.
+ */
+export function CourseGate({ corner }: { corner?: ReactNode }) {
   const { setCourse } = useCourse()
   const library = useRef<HTMLDivElement>(null)
 
@@ -121,8 +125,11 @@ export function CourseGate() {
 
   return (
     <div className="course-gate course-library" ref={library}>
-      <div className="library-heading"><span className="library-eyebrow">Your library</span><h1 className="course-gate-title">What will you learn?</h1><p>Choose a course. Pick up where you left off.</p></div>
-      <div className="course-gate-list" role="group" aria-label="Courses">
+      <div className="library-heading" style={corner ? { position: 'relative' } : undefined}>
+        {corner && <div style={{ position: 'absolute', top: -26, right: 0 }}>{corner}</div>}
+        <span className="library-eyebrow">{t('Your library')}</span><h1 className="course-gate-title">{t('What will you learn?')}</h1><p>{t('Choose a course. Pick up where you left off.')}</p>
+      </div>
+      <div className="course-gate-list" role="group" aria-label={t('Courses')}>
         {COURSE_ORDER.map(id => <div className="library-slot" key={id}><CourseBook id={id} onSelect={() => setCourse(id)} /></div>)}
       </div>
     </div>
@@ -131,5 +138,63 @@ export function CourseGate() {
 
 export function CourseBack() {
   const { leaveCourse } = useCourse()
-  return <button type="button" className="course-back library-back tap44" onClick={leaveCourse}><span aria-hidden>←</span> Courses</button>
+  return <button type="button" className="course-back library-back tap44" onClick={leaveCourse}><span aria-hidden>←</span> {t('Courses')}</button>
+}
+
+/**
+ * Two-letter language switch ("EN" / "ID"), small enough for a corner and one tap from the first screen.
+ * The option names come straight from LANGUAGES (each in its own language, never through t()).
+ * Choosing the other language reloads the page, see setLang().
+ */
+export function LanguageChip() {
+  const current = getLang()
+  return (
+    <div role="group" aria-label={t('Language')} style={chipStyle}>
+      {LANGUAGES.map(({ id, name }) => (
+        <button
+          key={id}
+          type="button"
+          lang={id}
+          title={name}
+          aria-label={`${id.toUpperCase()} · ${name}`}
+          aria-pressed={id === current}
+          onClick={() => setLang(id)}
+          style={id === current ? { ...chipSegment, ...chipSegmentOn } : chipSegment}
+        >
+          {id.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+const chipStyle: CSSProperties = {
+  display: 'inline-flex',
+  gap: 2,
+  padding: 2,
+  border: '1px solid #e4d8c7',
+  borderRadius: 999,
+  background: 'rgba(255, 251, 244, .88)',
+}
+
+const chipSegment: CSSProperties = {
+  minWidth: 32,
+  height: 22,
+  padding: '0 8px',
+  border: 0,
+  borderRadius: 999,
+  background: 'transparent',
+  color: '#8d6b52',
+  fontSize: 10,
+  fontWeight: 700,
+  letterSpacing: '.06em',
+  lineHeight: 1,
+  transition: 'background-color .15s, color .15s',
+}
+
+const chipSegmentOn: CSSProperties = {
+  background: '#f0dcc6',
+  color: '#7d3320',
+  fontWeight: 800,
+  boxShadow: 'inset 0 0 0 1px #e1c4a5',
 }

@@ -8,6 +8,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
+import { t } from './i18n.ts'
 
 /** Separate from HSK / Kerja / Jiaocheng / Magang / Interview / Books progress keys so old saves stay untouched. */
 const COURSE_KEY = 'yulu.course.v1'
@@ -24,37 +25,37 @@ export const COURSE_META: Record<
     id: 'hsk4a',
     title: 'HSK 4',
     titleZh: '标准教程 HSK 4上',
-    blurb: 'Textbook path · 课文 units',
+    blurb: t('Textbook path · {term} units', { term: '课文' }),
   },
   kerja: {
     id: 'kerja',
-    title: '1000 words',
+    title: t('1000 words'),
     titleZh: '把话说清楚，把事情做好。',
-    blurb: 'Workplace Mandarin for HR and management',
+    blurb: t('Workplace Mandarin for HR and management'),
   },
   jiaocheng: {
     id: 'jiaocheng',
     title: 'Jiaocheng 2',
     titleZh: '汉语教程 · 第二册',
-    blurb: 'Book 2, part 1 and part 2',
+    blurb: t('Book 2, part 1 and part 2'),
   },
   magang: {
     id: 'magang',
     title: 'Magang AI',
     titleZh: 'Magang AI',
-    blurb: 'Internship book · study it slowly',
+    blurb: t('Internship book · study it slowly'),
   },
   interview: {
     id: 'interview',
     title: '总办',
     titleZh: '总办',
-    blurb: 'Tonight · 18:00',
+    blurb: t('Tonight · 18:00'),
   },
   books: {
     id: 'books',
-    title: 'Books',
+    title: t('Books'),
     titleZh: 'Books',
-    blurb: 'Five books, one idea at a time',
+    blurb: t('Five books, one idea at a time'),
   },
 }
 

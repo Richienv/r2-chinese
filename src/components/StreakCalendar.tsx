@@ -1,7 +1,12 @@
 import { useState } from 'react'
+import { getLang, t } from '../lib/i18n'
 import { dayKey } from '../store/store'
 
-const WEEKDAYS = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
+const indonesian = getLang() === 'id'
+// Monday first. Indonesian initials: Senin, Selasa, Rabu, Kamis, Jumat, Sabtu, Minggu.
+const WEEKDAYS = indonesian ? ['S', 'S', 'R', 'K', 'J', 'S', 'M'] : ['M', 'T', 'W', 'T', 'F', 'S', 'S']
+/** The `data-state` values stay as they are for CSS; only the spoken label is translated. */
+const STATE_LABEL = { done: t('done'), future: t('future'), missed: t('missed') }
 
 export function StreakCalendar({ days }: { days: string[] }) {
   const [selected, setSelected] = useState<string | null>(null)
@@ -21,19 +26,19 @@ export function StreakCalendar({ days }: { days: string[] }) {
     ...Array.from({ length }, (_, i) => new Date(year, month, i + 1)),
   ]
 
-  const monthName = today.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+  const monthName = today.toLocaleDateString(indonesian ? 'id-ID' : 'en-US', { month: 'long', year: 'numeric' })
   const practisedThisMonth = cells.filter((d) => d && done.has(dayKey(d))).length
 
   return (
     <section className="metal" style={{ padding: 18, marginTop: 14 }}>
       <div className="between" style={{ marginBottom: 12 }}>
         <div>
-          <div className="kicker">Practice calendar</div>
+          <div className="kicker">{t('Practice calendar')}</div>
           <div className="on-red" style={{ fontWeight: 800, fontSize: 17, marginTop: 3 }}>
             {monthName}
           </div>
         </div>
-        <span className="pill">{practisedThisMonth} days</span>
+        <span className="pill">{t('{n} days', { n: practisedThisMonth })}</span>
       </div>
 
       <div className="cal" style={{ marginBottom: 6 }}>
@@ -67,7 +72,7 @@ export function StreakCalendar({ days }: { days: string[] }) {
               data-state={state}
               data-sel={selected === key}
               onClick={() => setSelected(selected === key ? null : key)}
-              aria-label={`${key} — ${state}`}
+              aria-label={t('{date} — {state}', { date: key, state: STATE_LABEL[state] })}
             >
               {d.getDate()}
             </button>
@@ -78,11 +83,11 @@ export function StreakCalendar({ days }: { days: string[] }) {
       <div style={{ marginTop: 12, fontSize: 12, color: 'rgba(255,236,228,.82)' }}>
         {selected
           ? done.has(selected)
-            ? `${selected} · practised ✅`
+            ? t('{date} · practised ✅', { date: selected })
             : selected > todayKey
-              ? `${selected} · not yet`
-              : `${selected} · missed`
-          : 'Tap a day to inspect it.'}
+              ? t('{date} · not yet', { date: selected })
+              : t('{date} · missed', { date: selected })
+          : t('Tap a day to inspect it.')}
       </div>
     </section>
   )

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import HanziWriter from 'hanzi-writer'
+import { t } from '../lib/i18n'
 import { PencilIcon, PlayIcon, RefreshIcon } from './Icons'
 
 const CONFIG = {
@@ -64,7 +65,7 @@ export function Writer({ char, onComplete }: { char: string; onComplete?: () => 
 
       {failed && (
         <p style={{ textAlign: 'center', fontSize: 12, color: 'var(--muted)', marginTop: 10 }}>
-          Stroke data unavailable offline — showing the character instead.
+          {t('Stroke data unavailable offline — showing the character instead.')}
         </p>
       )}
 
@@ -75,7 +76,7 @@ export function Writer({ char, onComplete }: { char: string; onComplete?: () => 
           disabled={failed}
           onClick={() => writer.current?.animateCharacter()}
         >
-          <PlayIcon size={15} /> Animate
+          <PlayIcon size={15} /> {t('Animate')}
         </button>
         <button
           className="btn btn-dark"
@@ -87,12 +88,12 @@ export function Writer({ char, onComplete }: { char: string; onComplete?: () => 
             })
           }
         >
-          <PencilIcon size={16} /> Practice
+          <PencilIcon size={16} /> {t('Practice')}
         </button>
         <button
           className="icon-round"
           style={{ width: 46, height: 46 }}
-          aria-label="Reset"
+          aria-label={t('Reset')}
           disabled={failed}
           onClick={() => {
             writer.current?.cancelQuiz()

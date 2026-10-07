@@ -1,36 +1,12 @@
 import { lessons, vocabIndex } from './content'
+import { getLang, t } from './i18n.ts'
+import { rng, seedOf, shuffle } from './seeded'
 import type { GrammarPoint, Lesson, TextLine, Vocab } from './types'
 
-/** Deterministic per (lesson, index) so a question doesn't reshuffle on re-render. */
-function rng(seed: number) {
-  let s = seed >>> 0 || 1
-  return () => {
-    s ^= s << 13
-    s ^= s >>> 17
-    s ^= s << 5
-    return ((s >>> 0) % 100_000) / 100_000
-  }
-}
+/** Indonesian meanings run about a tenth longer than English. Scale the length limits so the same share of words and lines stays eligible. */
+const room = (limit: number) => (getLang() === 'en' ? limit : Math.round(limit * 1.1))
 
-function shuffle<T>(items: T[], rand: () => number): T[] {
-  const a = items.slice()
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
-
-function seedOf(text: string): number {
-  let h = 2166136261
-  for (let i = 0; i < text.length; i++) {
-    h ^= text.charCodeAt(i)
-    h = Math.imul(h, 16777619)
-  }
-  return h >>> 0
-}
-
-const glossable = (v: { en: string; pos: string }) => v.en.length > 0 && v.en.length < 40
+const glossable = (v: { en: string; pos: string }) => v.en.length > 0 && v.en.length < room(40)
 
 const properNouns = new Set(vocabIndex.filter((v) => v.tag === 'proper').map((v) => v.zh))
 
@@ -76,7 +52,7 @@ export function vocabQuestions(lesson: Lesson, count = 3, pool?: Vocab[]): Quest
         r,
       ).map((v) => ({ zh: v.zh, label: v.zh }))
       return {
-        prompt: `Which word means “${answer.en}”?`,
+        prompt: t('Which word means “{meaning}”?', { meaning: answer.en }),
         options,
         answer: answer.zh,
         explanation: `${answer.zh} (${answer.pinyin}) — ${answer.pos} ${answer.en}`,
@@ -101,7 +77,7 @@ export function clozeQuestion(lesson: Lesson, point?: GrammarPoint): Question | 
       .filter((k): k is string => !!k && k !== keyword)
     const options = shuffle([keyword, ...shuffle([...new Set(wrong)], rand).slice(0, 3)], rand)
     return {
-      prompt: 'Fill in the blank',
+      prompt: t('Fill in the blank'),
       context: {
         zh: example.zh.replace(keyword, '＿＿'),
         pinyin: example.pinyin,
@@ -124,8 +100,8 @@ function grammarKeyword(point: GrammarPoint): string | null {
 
 /** Meaning-check on 课文 lines. Pass `from` to stay inside one 课文. Options are English. */
 export function sentenceQuestions(lesson: Lesson, count = 8, from?: TextLine[]): Question[] {
-  const lines = (from ?? lesson.texts.flatMap((t) => t.lines)).filter(
-    (l) => l.zh.length >= 4 && l.en.length > 2 && l.en.length < 90,
+  const lines = (from ?? lesson.texts.flatMap((text) => text.lines)).filter(
+    (l) => l.zh.length >= 4 && l.en.length > 2 && l.en.length < room(90),
   )
   if (!lines.length) return []
   const seed = from?.length
@@ -134,8 +110,8 @@ export function sentenceQuestions(lesson: Lesson, count = 8, from?: TextLine[]):
   const rand = rng(seedOf(seed))
   const picked = shuffle(lines, rand).slice(0, Math.min(count, lines.length))
   const distractorPool = lesson.texts
-    .flatMap((t) => t.lines)
-    .filter((l) => l.en.length > 2 && l.en.length < 90)
+    .flatMap((text) => text.lines)
+    .filter((l) => l.en.length > 2 && l.en.length < room(90))
   return picked.map((line) => {
     const r = rng(seedOf(line.zh))
     const wrong = shuffle(
@@ -144,7 +120,7 @@ export function sentenceQuestions(lesson: Lesson, count = 8, from?: TextLine[]):
     ).slice(0, 3)
     const options = shuffle([line, ...wrong], r).map((l) => ({ zh: l.en, label: l.en }))
     return {
-      prompt: 'What does this mean?',
+      prompt: t('What does this mean?'),
       context: { zh: line.zh, pinyin: line.pinyin, en: line.en },
       options,
       answer: line.en,

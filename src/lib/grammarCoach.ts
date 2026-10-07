@@ -1,3 +1,5 @@
+import { t } from './i18n.ts'
+
 export interface GrammarCoachInput {
   expectedZh: string
   expectedEn?: string
@@ -37,11 +39,11 @@ function observationsFor(source: string, response: string): GrammarCoachObservat
   const reference = compact(source)
   const actual = compact(response)
   if (reference.includes('法律') && actual.includes('法录') && !actual.includes('法律')) {
-    result.push({ kind: 'word', text: '法录 → 法律', reason: 'The source uses 法律 (fǎlǜ) for “law”. 法录 has different Hanzi. If this came from speech, check the recognized spelling before drawing a conclusion about your grammar.' })
+    result.push({ kind: 'word', text: '法录 → 法律', reason: t('The source uses 法律 (fǎlǜ) for “law”. 法录 has different Hanzi. If this came from speech, check the recognized spelling before drawing a conclusion about your grammar.') })
   }
   // A bare 半 elsewhere (半天, 一点半) is valid and is never treated as 班.
   if (reference.includes('一个班') && actual.includes('一个半') && !actual.includes('一个班')) {
-    result.push({ kind: 'word', text: '一个半 → 一个班', reason: 'Here the book means “the same class”: 班 (bān), not 半 (bàn, “half”). Check the Hanzi and the intended meaning; this comparison does not judge a different sentence using 半.' })
+    result.push({ kind: 'word', text: '一个半 → 一个班', reason: t('Here the book means “the same class”: 班 (bān), not 半 (bàn, “half”). Check the Hanzi and the intended meaning; this comparison does not judge a different sentence using 半.') })
   }
   for (const verb of ['踢', '说', '写', '做', '学', '唱', '跑', '吃', '睡', '玩']) {
     if (!reference.includes(`${verb}得`) || actual.includes(`${verb}得`)) continue
@@ -58,7 +60,7 @@ function observationsFor(source: string, response: string): GrammarCoachObservat
         if (following && actual.includes(`${verb}的${inSource[1]}${following}`)) quality = inSource[1]
       }
     }
-    if (quality) result.push({ kind: 'particle', text: `${verb}的${quality} → ${verb}得${quality}`, reason: `In the source, ${verb} is an action and the following phrase describes how well it is performed. 得 links the verb to that description. 的 usually builds a noun modifier or a “what …” phrase; they share the sound de but do different jobs. This observation concerns this action–quality frame, not every use of 的.` })
+    if (quality) result.push({ kind: 'particle', text: `${verb}的${quality} → ${verb}得${quality}`, reason: t('In the source, {verb} is an action and the following phrase describes how well it is performed. 得 links the verb to that description. 的 usually builds a noun modifier or a “what …” phrase; they share the sound de but do different jobs. This observation concerns this action–quality frame, not every use of 的.', { verb }) })
   }
   return result
 }
@@ -72,13 +74,13 @@ function study(source: string, observations: GrammarCoachObservation[]): Candida
   if (!match) return null
   return {
     pattern: '学的 + 是 + 专业', priority: lawFirst ? 100 : 70,
-    summary: '学的 means “what someone studies”. Put 的 after 学 to turn that action into the thing being identified; 是 then names the field. This is a noun-phrase structure, distinct from the completed-event emphasis pattern 是……的.',
+    summary: t('学的 means “what someone studies”. Put 的 after 学 to turn that action into the thing being identified; 是 then names the field. This is a noun-phrase structure, distinct from the completed-event emphasis pattern 是……的.'),
     parts: [
-      part(match[1], 'Person', 'Name the person whose studies you are talking about before 学.'),
-      part('学', 'Action', 'The action comes before 的: together 学的 means “what [this person] studies”.'),
-      part('的', 'Make “what …”', '的 closes the action phrase and makes it a noun-like unit that 是 can identify. It is not 得, which introduces a description of how an action is performed.'),
-      part('是', 'Identify', '是 goes after the completed 学的 phrase, then introduces its identity or category.'),
-      part(match[2], 'Field of study', 'The field belongs after 是 because it answers what the person studies. 我学法律 is also a possible simpler sentence; this frame puts the field in focus.'),
+      part(match[1], t('Person'), t('Name the person whose studies you are talking about before 学.')),
+      part('学', t('Action'), t('The action comes before 的: together 学的 means “what [this person] studies”.')),
+      part('的', t('Make “what …”'), t('的 closes the action phrase and makes it a noun-like unit that 是 can identify. It is not 得, which introduces a description of how an action is performed.')),
+      part('是', t('Identify'), t('是 goes after the completed 学的 phrase, then introduces its identity or category.')),
+      part(match[2], t('Field of study'), t('The field belongs after 是 because it answers what the person studies. 我学法律 is also a possible simpler sentence; this frame puts the field in focus.')),
     ],
   }
 }
@@ -90,13 +92,13 @@ function sameClass(source: string, observations: GrammarCoachObservation[]): Can
   if (!person) return null
   return {
     pattern: '人 + 不是 + 一个班', priority: observations.some((observation) => observation.text.includes('一个班')) ? 100 : 60,
-    summary: 'In this book line, 一个班 means one shared class. Name the people first, negate 是 with 不 before it, then give the class relationship. 我们不在同一个班 is a valid way to express a similar meaning.',
+    summary: t('In this book line, 一个班 means one shared class. Name the people first, negate 是 with 不 before it, then give the class relationship. 我们不在同一个班 is a valid way to express a similar meaning.'),
     parts: [
-      part(person, 'People', 'Keep the coordinated people together: 我和他 means “he and I”. The relationship that follows applies to both.'),
-      part('不', 'Negation', '不 goes immediately before 是 to negate this class relationship. It does not negate the noun 班 on its own.'),
-      part('是', 'Relationship', '是 links the people to the shared-class description; together 不是 says that relationship is not true.'),
-      part('一个', 'One shared unit', 'The number 一 and classifier 个 come before the noun. Here they indicate being members of one and the same class.'),
-      part('班', 'Class', '班 names the class. It is bān, distinct from 半 (bàn, “half”).'),
+      part(person, t('People'), t('Keep the coordinated people together: 我和他 means “he and I”. The relationship that follows applies to both.')),
+      part('不', t('Negation'), t('不 goes immediately before 是 to negate this class relationship. It does not negate the noun 班 on its own.')),
+      part('是', t('Relationship'), t('是 links the people to the shared-class description; together 不是 says that relationship is not true.')),
+      part('一个', t('One shared unit'), t('The number 一 and classifier 个 come before the noun. Here they indicate being members of one and the same class.')),
+      part('班', t('Class'), t('班 names the class. It is bān, distinct from 半 (bàn, “half”).')),
     ],
   }
 }
@@ -109,12 +111,18 @@ function degree(source: string, observations: GrammarCoachObservation[]): Candid
   const soccer = match[2] === '踢' && prefix.includes('足球')
   return {
     pattern: '动作 + 得 + 程度', priority: observations.some((observation) => observation.kind === 'particle') ? 110 : 50,
-    summary: `得 follows the action verb and opens the description of how it is performed. Keep ${match[2]} → 得 → ${match[3]} together.${soccer ? ` In this source, 足球 is put before 踢 while 得${match[3]} stays attached to the action.` : ''} 的 and 得 both sound de here, but their written functions are different.`,
+    summary: soccer
+      ? t('得 follows the action verb and opens the description of how it is performed. Keep {verb} → 得 → {quality} together. In this source, 足球 is put before 踢 while 得{quality} stays attached to the action. 的 and 得 both sound de here, but their written functions are different.', { verb: match[2], quality: match[3] })
+      : t('得 follows the action verb and opens the description of how it is performed. Keep {verb} → 得 → {quality} together. 的 and 得 both sound de here, but their written functions are different.', { verb: match[2], quality: match[3] }),
     parts: [
-      ...(prefix ? [part(prefix, 'Person / topic', `This source places the person or activity topic before the action.${soccer ? ' 足球 comes before 踢 so the verb and its 得 complement stay together.' : ''}`)] : []),
-      part(match[2], 'Action', 'Put the action before 得 so the following quality clearly describes that action.'),
-      part('得', 'Link to quality', '得 introduces the degree or quality complement immediately after the verb. It is not the noun-modifying 的.'),
-      part(match[3], 'How it is done', `This description follows 得 because it evaluates the performance of ${match[2]}.${soccer && match[3] === '好' ? ' 踢得好 means “play/kick well”.' : ''}`),
+      ...(prefix ? [part(prefix, t('Person / topic'), soccer
+        ? t('This source places the person or activity topic before the action. 足球 comes before 踢 so the verb and its 得 complement stay together.')
+        : t('This source places the person or activity topic before the action.'))] : []),
+      part(match[2], t('Action'), t('Put the action before 得 so the following quality clearly describes that action.')),
+      part('得', t('Link to quality'), t('得 introduces the degree or quality complement immediately after the verb. It is not the noun-modifying 的.')),
+      part(match[3], t('How it is done'), soccer && match[3] === '好'
+        ? t('This description follows 得 because it evaluates the performance of {verb}. 踢得好 means “play/kick well”.', { verb: match[2] })
+        : t('This description follows 得 because it evaluates the performance of {verb}.', { verb: match[2] })),
     ],
   }
 }
@@ -125,30 +133,106 @@ function notOnly(source: string): Candidate | null {
   if (!match) return null
   const soccerPersonality = match[2].includes('足球踢得') && match[3] === '性格'
   const parts = [
-    ...(match[1] ? [part(match[1], 'Person / setup', 'This source names the person before 不仅 because the added qualities concern that person. With two different subjects, 不仅 can appear before the first subject.')] : []),
-    part('不仅', 'Not only', 'Put 不仅 before the first quality or action. It signals that the first point will be followed by another.'),
-    part(match[2], 'First point', match[2].includes('足球踢得') ? '足球 is the activity topic; 踢 is the action; 得 links it to the following description. Keep verb → 得 → quality together, with 足球 before the action.' : 'State the first quality or action after 不仅. The second clause will add another point rather than negate this one.'),
-    ...(match[3] ? [part(match[3], 'Second topic', `Name the second topic before its comment.${soccerPersonality ? ' Here 性格 is the topic and 也不错 is the comment about it.' : ''}`)] : []),
-    part(match[4], 'Add another point', match[4] === '而且' ? '而且 introduces the added clause. It connects the second point to the first.' : `${match[4]} comes before the second predicate, adding another quality or action. It need not sit immediately beside 不仅.`),
-    part(match[5], 'Second point', 'End with the added quality or action. The second clause completes the “not only … also …” relationship.'),
+    ...(match[1] ? [part(match[1], t('Person / setup'), t('This source names the person before 不仅 because the added qualities concern that person. With two different subjects, 不仅 can appear before the first subject.'))] : []),
+    part('不仅', t('Not only'), t('Put 不仅 before the first quality or action. It signals that the first point will be followed by another.')),
+    part(match[2], t('First point'), match[2].includes('足球踢得') ? t('足球 is the activity topic; 踢 is the action; 得 links it to the following description. Keep verb → 得 → quality together, with 足球 before the action.') : t('State the first quality or action after 不仅. The second clause will add another point rather than negate this one.')),
+    ...(match[3] ? [part(match[3], t('Second topic'), soccerPersonality
+      ? t('Name the second topic before its comment. Here 性格 is the topic and 也不错 is the comment about it.')
+      : t('Name the second topic before its comment.'))] : []),
+    part(match[4], t('Add another point'), match[4] === '而且' ? t('而且 introduces the added clause. It connects the second point to the first.') : t('{marker} comes before the second predicate, adding another quality or action. It need not sit immediately beside 不仅.', { marker: match[4] })),
+    part(match[5], t('Second point'), t('End with the added quality or action. The second clause completes the “not only … also …” relationship.')),
   ]
-  return { pattern: `不仅……${match[4]}……`, priority: 80, summary: `Give the first point after 不仅, then use 也、还 or 而且 to add a second point.${soccerPersonality ? ' In this source, the first point is his soccer performance and the second is his personality; 性格 comes before 也 because it is the topic being described.' : ' The second marker belongs with the added point, rather than beside 不仅.'}`, parts }
+  return {
+    pattern: `不仅……${match[4]}……`, priority: 80,
+    summary: soccerPersonality
+      ? t('Give the first point after 不仅, then use 也、还 or 而且 to add a second point. In this source, the first point is his soccer performance and the second is his personality; 性格 comes before 也 because it is the topic being described.')
+      : t('Give the first point after 不仅, then use 也、还 or 而且 to add a second point. The second marker belongs with the added point, rather than beside 不仅.'),
+    parts,
+  }
 }
 
-type PairRule = { first: string; seconds: string[]; pattern: string; summary: string; firstReason: string; middleReason: string; secondReason: string; finalReason: string; priority?: number }
+type PairText = { summary: string; firstReason: string; middleReason: string; secondReason: string; finalReason: string }
+/** `text` is a thunk: only the rule that matches is ever translated, and in the language in use at that moment. */
+type PairRule = { first: string; seconds: string[]; pattern: string; text: () => PairText; priority?: number }
 
 const PAIRS: PairRule[] = [
-  { first: '即使', seconds: ['也'], pattern: '即使……也……', summary: '即使 introduces a concession; the result after 也 still holds despite it. Both 即使 before the subject and after the subject are possible.', firstReason: 'Place 即使 before the condition or concession you want the listener to consider.', middleReason: 'Complete the concession before giving the result that remains true.', secondReason: '也 appears before the result predicate to show that the concession does not change the outcome.', finalReason: 'The result follows 也 because it is the point that still holds.' },
-  { first: '既', seconds: ['又', '也', '还'], pattern: '既……又/也/还……', summary: '既 and its partner connect two coexisting qualities or actions. Keep the two sides parallel in meaning and structure.', firstReason: '既 introduces the first of the two coexisting qualities or actions.', middleReason: 'Finish the first quality or action before connecting the second.', secondReason: 'The partner marker introduces the second quality or action at the same structural level.', finalReason: 'The second quality or action follows the partner marker and completes the pair.' },
-  { first: '要是', seconds: ['就'], pattern: '要是……就……', summary: 'State the assumed condition after 要是, then the action or result after 就. This source uses the condition before its consequence.', firstReason: '要是 opens the assumed condition; it is not the result marker.', middleReason: 'Give the condition first so the listener knows when the result applies.', secondReason: '就 goes before the consequence or response to that condition.', finalReason: 'The result follows 就 because it depends on the earlier assumption.' },
-  { first: '只要', seconds: ['就', '一定'], pattern: '只要……就/一定……', summary: '只要 introduces a sufficient condition: when it is met, the following result is assured. It does not mean the condition is the only possible route.', firstReason: '只要 comes before the condition presented as sufficient for the result.', middleReason: 'State what is enough to bring about the result before giving that result.', secondReason: '就 or 一定 introduces or strengthens the result that follows from the sufficient condition.', finalReason: 'Give the result after the condition-and-result marker.' },
-  { first: '不管', seconds: ['都'], pattern: '不管……都……', summary: '不管 opens the varying circumstances; 都 introduces the outcome that does not change across them.', firstReason: '不管 introduces the range of circumstances, often with 什么、谁、怎么 or an alternative.', middleReason: 'Complete the range of possible circumstances before stating what stays constant.', secondReason: '都 belongs before the unchanged result predicate.', finalReason: 'The result follows 都 because it applies across all the circumstances just named.' },
-  { first: '尽管', seconds: ['还是', '却', '但是', '可是'], pattern: '尽管……还是/却/但是……', summary: '尽管 states a fact; the later clause gives an outcome that contrasts with what that fact would normally lead you to expect.', firstReason: '尽管 introduces the acknowledged fact before the contrasting outcome.', middleReason: 'Finish the fact that creates the expectation before showing the contrast.', secondReason: 'The transition introduces the contrasting result; 还是 and 却 precede its predicate.', finalReason: 'The outcome follows the contrast marker and is understood against the earlier fact.' },
-  { first: '虽然', seconds: ['但是', '可是', '却', '还是'], pattern: '虽然……但是/可是……', summary: '虽然 acknowledges one fact; the second clause contrasts with the expectation created by that fact.', firstReason: '虽然 introduces the acknowledged fact first.', middleReason: 'State the fact before adding the contrasting point.', secondReason: 'The transition marks the start of the contrasting point.', finalReason: 'The contrasting outcome belongs after its transition marker.' },
-  { first: '因为', seconds: ['所以'], pattern: '因为……所以……', summary: 'This source gives the reason after 因为 and the consequence after 所以. The relation explains why the consequence happens.', firstReason: '因为 introduces the reason.', middleReason: 'Give the reason before its consequence in this source frame.', secondReason: '所以 opens the consequence of the stated reason.', finalReason: 'The consequence belongs after 所以. Other sentence arrangements can also express causation.' },
-  { first: '由于', seconds: ['所以'], pattern: '由于……所以……', summary: '由于 introduces the cause; 所以 introduces the consequence in this book example.', firstReason: '由于 goes before the reason or cause, either a phrase or a clause.', middleReason: 'State the cause before moving to the consequence.', secondReason: '所以 introduces the consequence of the cause just named.', finalReason: 'The consequence follows 所以 in this source pattern.' },
-  { first: '首先', seconds: ['其次'], pattern: '首先……其次……', summary: '首先 opens the first listed point; 其次 opens the next one. These markers organize the sequence of the explanation.', firstReason: '首先 signals the first point before it is stated.', middleReason: 'Complete the first point before introducing the next one.', secondReason: '其次 signals the next point before it is stated.', finalReason: 'The next point follows 其次, keeping the explanation ordered.' },
-  { first: '越', seconds: ['越'], pattern: '越……越……', summary: 'The first 越 introduces a changing degree; the second 越 introduces the related change. The two degrees move together.', firstReason: 'The first 越 goes immediately before the first changing action or degree.', middleReason: 'Describe the first change before its linked effect.', secondReason: 'The second 越 introduces the linked change in degree, sometimes after 也就.', finalReason: 'This degree follows the second 越 and changes with the first.' },
+  { first: '即使', seconds: ['也'], pattern: '即使……也……', text: () => ({
+    summary: t('即使 introduces a concession; the result after 也 still holds despite it. Both 即使 before the subject and after the subject are possible.'),
+    firstReason: t('Place 即使 before the condition or concession you want the listener to consider.'),
+    middleReason: t('Complete the concession before giving the result that remains true.'),
+    secondReason: t('也 appears before the result predicate to show that the concession does not change the outcome.'),
+    finalReason: t('The result follows 也 because it is the point that still holds.'),
+  }) },
+  { first: '既', seconds: ['又', '也', '还'], pattern: '既……又/也/还……', text: () => ({
+    summary: t('既 and its partner connect two coexisting qualities or actions. Keep the two sides parallel in meaning and structure.'),
+    firstReason: t('既 introduces the first of the two coexisting qualities or actions.'),
+    middleReason: t('Finish the first quality or action before connecting the second.'),
+    secondReason: t('The partner marker introduces the second quality or action at the same structural level.'),
+    finalReason: t('The second quality or action follows the partner marker and completes the pair.'),
+  }) },
+  { first: '要是', seconds: ['就'], pattern: '要是……就……', text: () => ({
+    summary: t('State the assumed condition after 要是, then the action or result after 就. This source uses the condition before its consequence.'),
+    firstReason: t('要是 opens the assumed condition; it is not the result marker.'),
+    middleReason: t('Give the condition first so the listener knows when the result applies.'),
+    secondReason: t('就 goes before the consequence or response to that condition.'),
+    finalReason: t('The result follows 就 because it depends on the earlier assumption.'),
+  }) },
+  { first: '只要', seconds: ['就', '一定'], pattern: '只要……就/一定……', text: () => ({
+    summary: t('只要 introduces a sufficient condition: when it is met, the following result is assured. It does not mean the condition is the only possible route.'),
+    firstReason: t('只要 comes before the condition presented as sufficient for the result.'),
+    middleReason: t('State what is enough to bring about the result before giving that result.'),
+    secondReason: t('就 or 一定 introduces or strengthens the result that follows from the sufficient condition.'),
+    finalReason: t('Give the result after the condition-and-result marker.'),
+  }) },
+  { first: '不管', seconds: ['都'], pattern: '不管……都……', text: () => ({
+    summary: t('不管 opens the varying circumstances; 都 introduces the outcome that does not change across them.'),
+    firstReason: t('不管 introduces the range of circumstances, often with 什么、谁、怎么 or an alternative.'),
+    middleReason: t('Complete the range of possible circumstances before stating what stays constant.'),
+    secondReason: t('都 belongs before the unchanged result predicate.'),
+    finalReason: t('The result follows 都 because it applies across all the circumstances just named.'),
+  }) },
+  { first: '尽管', seconds: ['还是', '却', '但是', '可是'], pattern: '尽管……还是/却/但是……', text: () => ({
+    summary: t('尽管 states a fact; the later clause gives an outcome that contrasts with what that fact would normally lead you to expect.'),
+    firstReason: t('尽管 introduces the acknowledged fact before the contrasting outcome.'),
+    middleReason: t('Finish the fact that creates the expectation before showing the contrast.'),
+    secondReason: t('The transition introduces the contrasting result; 还是 and 却 precede its predicate.'),
+    finalReason: t('The outcome follows the contrast marker and is understood against the earlier fact.'),
+  }) },
+  { first: '虽然', seconds: ['但是', '可是', '却', '还是'], pattern: '虽然……但是/可是……', text: () => ({
+    summary: t('虽然 acknowledges one fact; the second clause contrasts with the expectation created by that fact.'),
+    firstReason: t('虽然 introduces the acknowledged fact first.'),
+    middleReason: t('State the fact before adding the contrasting point.'),
+    secondReason: t('The transition marks the start of the contrasting point.'),
+    finalReason: t('The contrasting outcome belongs after its transition marker.'),
+  }) },
+  { first: '因为', seconds: ['所以'], pattern: '因为……所以……', text: () => ({
+    summary: t('This source gives the reason after 因为 and the consequence after 所以. The relation explains why the consequence happens.'),
+    firstReason: t('因为 introduces the reason.'),
+    middleReason: t('Give the reason before its consequence in this source frame.'),
+    secondReason: t('所以 opens the consequence of the stated reason.'),
+    finalReason: t('The consequence belongs after 所以. Other sentence arrangements can also express causation.'),
+  }) },
+  { first: '由于', seconds: ['所以'], pattern: '由于……所以……', text: () => ({
+    summary: t('由于 introduces the cause; 所以 introduces the consequence in this book example.'),
+    firstReason: t('由于 goes before the reason or cause, either a phrase or a clause.'),
+    middleReason: t('State the cause before moving to the consequence.'),
+    secondReason: t('所以 introduces the consequence of the cause just named.'),
+    finalReason: t('The consequence follows 所以 in this source pattern.'),
+  }) },
+  { first: '首先', seconds: ['其次'], pattern: '首先……其次……', text: () => ({
+    summary: t('首先 opens the first listed point; 其次 opens the next one. These markers organize the sequence of the explanation.'),
+    firstReason: t('首先 signals the first point before it is stated.'),
+    middleReason: t('Complete the first point before introducing the next one.'),
+    secondReason: t('其次 signals the next point before it is stated.'),
+    finalReason: t('The next point follows 其次, keeping the explanation ordered.'),
+  }) },
+  { first: '越', seconds: ['越'], pattern: '越……越……', text: () => ({
+    summary: t('The first 越 introduces a changing degree; the second 越 introduces the related change. The two degrees move together.'),
+    firstReason: t('The first 越 goes immediately before the first changing action or degree.'),
+    middleReason: t('Describe the first change before its linked effect.'),
+    secondReason: t('The second 越 introduces the linked change in degree, sometimes after 也就.'),
+    finalReason: t('This degree follows the second 越 and changes with the first.'),
+  }) },
 ]
 
 function paired(source: string, rule: PairRule): Candidate | null {
@@ -177,7 +261,8 @@ function paired(source: string, rule: PairRule): Candidate | null {
       firstText = firstText.slice(0, comma).trim()
     }
   }
-  return { pattern: rule.pattern, priority: rule.priority ?? 40, summary: rule.summary, parts: [part(rule.first, 'Open the relation', rule.firstReason), part(firstText, 'First part', rule.middleReason), ...(resultSubject ? [part(resultSubject, 'Result subject', 'The subject of the result appears before the second marker, which qualifies its following predicate.')] : []), part(second.text, 'Connect the result', rule.secondReason), part(lastText, 'Second part', rule.finalReason)] }
+  const text = rule.text()
+  return { pattern: rule.pattern, priority: rule.priority ?? 40, summary: text.summary, parts: [part(rule.first, t('Open the relation'), text.firstReason), part(firstText, t('First part'), text.middleReason), ...(resultSubject ? [part(resultSubject, t('Result subject'), t('The subject of the result appears before the second marker, which qualifies its following predicate.'))] : []), part(second.text, t('Connect the result'), text.secondReason), part(lastText, t('Second part'), text.finalReason)] }
 }
 
 function perspective(source: string): Candidate | null {
@@ -186,7 +271,7 @@ function perspective(source: string): Candidate | null {
   const first = match[2] ? '对' : '在'
   const person = match[2] ?? match[3]
   const last = first === '对' ? '来说' : '看来'
-  return { pattern: `${first}……${last}`, priority: 45, summary: 'Establish whose viewpoint matters before giving the judgment. This frame marks a perspective rather than claiming the judgment is true for everyone.', parts: [part(first, 'Open the perspective', `${first} comes before the person or group whose viewpoint is being named.`), part(person, 'Whose viewpoint', `Keep the viewpoint holder between ${first} and ${last}.`), part(last, 'Close the perspective', `${last} closes the perspective phrase, preparing the listener for the statement that follows.`), part(match[4], 'Judgment', 'The judgment follows the viewpoint frame so the listener knows who it applies to.')] }
+  return { pattern: `${first}……${last}`, priority: 45, summary: t('Establish whose viewpoint matters before giving the judgment. This frame marks a perspective rather than claiming the judgment is true for everyone.'), parts: [part(first, t('Open the perspective'), t('{marker} comes before the person or group whose viewpoint is being named.', { marker: first })), part(person, t('Whose viewpoint'), t('Keep the viewpoint holder between {first} and {last}.', { first, last })), part(last, t('Close the perspective'), t('{marker} closes the perspective phrase, preparing the listener for the statement that follows.', { marker: last })), part(match[4], t('Judgment'), t('The judgment follows the viewpoint frame so the listener knows who it applies to.'))] }
 }
 
 /** Return null rather than inventing a generic decomposition for an unknown frame. */

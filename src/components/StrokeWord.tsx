@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import HanziWriter, { type CharacterJson, type RenderTargetInitFunction } from 'hanzi-writer'
 import introStrokeData from '../data/strokes/intro.json'
 import strokeLicenseUrl from '../data/strokes/ARPHICPL.TXT?url'
+import { t } from '../lib/i18n'
 import { PlayIcon, RefreshIcon } from './Icons'
 import '../styles/stroke-word.css'
 
@@ -92,7 +93,7 @@ export function StrokeWord({ text, autoPlay = true, className = '', showAttribut
   const [loading, setLoading] = useState(true)
   const [playing, setPlaying] = useState(false)
   const [progress, setProgress] = useState<Progress | null>(null)
-  const [status, setStatus] = useState('Loading stroke order…')
+  const [status, setStatus] = useState(() => t('Loading stroke order…'))
 
   useEffect(() => {
     let disposed = false
@@ -108,7 +109,7 @@ export function StrokeWord({ text, autoPlay = true, className = '', showAttribut
     setLoading(true)
     setPlaying(false)
     setProgress(null)
-    setStatus('Loading stroke order…')
+    setStatus(t('Loading stroke order…'))
     for (const host of hosts.current) host?.replaceChildren()
 
     function show(writer: Writer) {
@@ -132,7 +133,7 @@ export function StrokeWord({ text, autoPlay = true, className = '', showAttribut
       if (!disposed) {
         setPlaying(false)
         setProgress(null)
-        setStatus('Stroke order paused. Replay when you’re ready.')
+        setStatus(t('Stroke order paused. Replay when you’re ready.'))
       }
     }
 
@@ -142,7 +143,7 @@ export function StrokeWord({ text, autoPlay = true, className = '', showAttribut
       const run = ++generation
       setPlaying(true)
       setProgress(null)
-      setStatus('Watch each stroke follow its natural direction.')
+      setStatus(t('Watch each stroke follow its natural direction.'))
       const current = () => !disposed && run === generation
       try {
         await Promise.all(writers.map((writer) => writer?.hideCharacter({ duration: 0 })))
@@ -164,14 +165,14 @@ export function StrokeWord({ text, autoPlay = true, className = '', showAttribut
         if (current()) {
           setProgress(null)
           setStatus(loaded.some((glyph) => glyph.state === 'fallback')
-            ? 'Stroke order complete. Some characters are shown as text.'
-            : 'Stroke order complete. Bring the shape to mind.')
+            ? t('Stroke order complete. Some characters are shown as text.')
+            : t('Stroke order complete. Bring the shape to mind.'))
         }
       } catch {
         if (current()) {
           for (const writer of writers) if (writer) show(writer)
           setProgress(null)
-          setStatus('Animation stopped. The characters remain visible; try replaying.')
+          setStatus(t('Animation stopped. The characters remain visible; try replaying.'))
         }
       } finally {
         if (current()) {
@@ -229,9 +230,9 @@ export function StrokeWord({ text, autoPlay = true, className = '', showAttribut
       if (disposed) return
       setLoading(false)
       const ready = writers.some(Boolean)
-      setStatus(!ready ? 'Stroke data unavailable. The word is still shown below.'
-        : loaded.some((glyph) => glyph.state === 'fallback') ? 'Some stroke data is unavailable. Those characters remain visible.'
-          : motion.matches || !autoPlay ? 'Follow the stroke order whenever you’re ready.' : 'Watch the word take shape.')
+      setStatus(!ready ? t('Stroke data unavailable. The word is still shown below.')
+        : loaded.some((glyph) => glyph.state === 'fallback') ? t('Some stroke data is unavailable. Those characters remain visible.')
+          : motion.matches || !autoPlay ? t('Follow the stroke order whenever you’re ready.') : t('Watch the word take shape.'))
       if (ready && autoPlay && !motion.matches) void animate()
     }
     void prepare()
@@ -271,16 +272,16 @@ export function StrokeWord({ text, autoPlay = true, className = '', showAttribut
       </div>
       <div className="stroke-word-controls">
         {loading ? <span className="stroke-word-loading" aria-hidden="true" /> : ready ? (
-          <button type="button" className="stroke-word-replay" onClick={() => playing ? session.current?.stop() : session.current?.play()} aria-label={playing ? `Stop stroke animation for ${text}` : `Replay stroke order for ${text}`}>
+          <button type="button" className="stroke-word-replay" onClick={() => playing ? session.current?.stop() : session.current?.play()} aria-label={playing ? t('Stop stroke animation for {text}', { text }) : t('Replay stroke order for {text}', { text })}>
             {playing ? <span className="stroke-word-stop" aria-hidden="true" /> : <PlayIcon size={13} />}
-            {playing ? 'Stop' : 'Replay'}
+            {playing ? t('Stop') : t('Replay')}
           </button>
         ) : (
-          <button type="button" className="stroke-word-replay" onClick={() => setReload((value) => value + 1)}><RefreshIcon size={13} />Retry strokes</button>
+          <button type="button" className="stroke-word-replay" onClick={() => setReload((value) => value + 1)}><RefreshIcon size={13} />{t('Retry strokes')}</button>
         )}
       </div>
       <span className="sr-only" role="status" aria-live="polite">{status}</span>
-      {unavailable && <p className="stroke-word-fallback">Some stroke data couldn’t load. You can still learn the word.</p>}
+      {unavailable && <p className="stroke-word-fallback">{t('Some stroke data couldn’t load. You can still learn the word.')}</p>}
       {showAttribution && <StrokeDataAttribution />}
     </div>
   )
@@ -288,5 +289,5 @@ export function StrokeWord({ text, autoPlay = true, className = '', showAttribut
 
 /** Keep the data credit available without interrupting the lesson itself. */
 export function StrokeDataAttribution() {
-  return <div className="stroke-data-footer"><a className="stroke-word-attribution" href={strokeLicenseUrl} target="_blank" rel="noreferrer" title="Stroke data © Arphic / Make Me a Hanzi · Arphic Public License">Stroke data · credits &amp; license</a></div>
+  return <div className="stroke-data-footer"><a className="stroke-word-attribution" href={strokeLicenseUrl} target="_blank" rel="noreferrer" title={t('Stroke data © Arphic / Make Me a Hanzi · Arphic Public License')}>{t('Stroke data · credits & license')}</a></div>
 }

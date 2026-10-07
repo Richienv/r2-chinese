@@ -1,3 +1,5 @@
+import { t } from './i18n.ts'
+
 /** Browser speech recognition transcribes Mandarin; it does not grade pronunciation. */
 export type RecognitionStatus = 'idle' | 'starting' | 'listening' | 'stopping' | 'error' | 'unsupported'
 
@@ -51,17 +53,17 @@ export function recognitionError(code: string): string {
   switch (code) {
     case 'not-allowed':
     case 'service-not-allowed':
-      return 'Microphone access was blocked. Allow it in browser settings, or type your response.'
+      return t('Microphone access was blocked. Allow it in browser settings, or type your response.')
     case 'audio-capture':
-      return 'No microphone is available. Connect a microphone, or type your response.'
+      return t('No microphone is available. Connect a microphone, or type your response.')
     case 'network':
-      return 'The browser could not reach its speech service. Retry, or type your response.'
+      return t('The browser could not reach its speech service. Retry, or type your response.')
     case 'no-speech':
-      return 'No speech was detected. Tap the microphone and try again.'
+      return t('No speech was detected. Tap the microphone and try again.')
     case 'language-not-supported':
-      return 'This browser cannot recognize Mandarin. Type your response instead.'
+      return t('This browser cannot recognize Mandarin. Type your response instead.')
     default:
-      return 'Speech input stopped. Retry the microphone, or type your response.'
+      return t('Speech input stopped. Retry the microphone, or type your response.')
   }
 }
 
@@ -97,7 +99,7 @@ export function createMandarinRecognition(callbacks: {
       if (disposed || status === 'starting' || status === 'listening' || status === 'stopping') return
       const Ctor = constructor()
       if (!Ctor) {
-        error = 'Speech input is unavailable in this browser. Type below, or use a browser with Mandarin speech recognition on HTTPS.'
+        error = t('Speech input is unavailable in this browser. Type below, or use a browser with Mandarin speech recognition on HTTPS.')
         publish('unsupported')
         return
       }

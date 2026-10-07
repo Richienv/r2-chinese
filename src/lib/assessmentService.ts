@@ -1,28 +1,31 @@
+import { t } from './i18n.ts'
+
 type AssessmentErrorCode =
   | 'assessment_not_configured' | 'assessment_route_missing' | 'assessment_auth_failed'
   | 'assessment_model_unavailable' | 'assessment_quota_exceeded' | 'rate_limited'
   | 'assessment_timeout' | 'assessment_incomplete' | 'assessment_service_unavailable'
   | 'assessment_network_error' | 'invalid_prompt'
 
-const messages: Record<AssessmentErrorCode, string> = {
-  assessment_not_configured: 'The grammar reviewer has not been connected yet. A server API key is required.',
-  assessment_route_missing: 'This app cannot reach its grammar endpoint. The review service needs to be connected.',
-  assessment_auth_failed: 'The grammar provider rejected the server API key. Update the reviewer connection before retrying.',
-  assessment_model_unavailable: 'The configured grammar model is unavailable to this API key. Update the reviewer model.',
-  assessment_quota_exceeded: 'The grammar provider has no available API credit. Restore its API balance before retrying.',
-  rate_limited: 'A few checks ran close together. Wait a minute, then try again.',
-  assessment_timeout: 'The grammar review took too long. Try again.',
-  assessment_incomplete: 'The grammar review was incomplete. Try again to get an explanation.',
-  assessment_service_unavailable: 'The grammar service is temporarily unavailable. Try again.',
-  assessment_network_error: 'The app could not reach the grammar service. Check your connection and try again.',
-  invalid_prompt: 'Write some Mandarin and choose at least one word before checking.',
+/** Looked up when an error is made, not when this file loads, so each message is in the language in use. */
+const messages: Record<AssessmentErrorCode, () => string> = {
+  assessment_not_configured: () => t('The grammar reviewer has not been connected yet. A server API key is required.'),
+  assessment_route_missing: () => t('This app cannot reach its grammar endpoint. The review service needs to be connected.'),
+  assessment_auth_failed: () => t('The grammar provider rejected the server API key. Update the reviewer connection before retrying.'),
+  assessment_model_unavailable: () => t('The configured grammar model is unavailable to this API key. Update the reviewer model.'),
+  assessment_quota_exceeded: () => t('The grammar provider has no available API credit. Restore its API balance before retrying.'),
+  rate_limited: () => t('A few checks ran close together. Wait a minute, then try again.'),
+  assessment_timeout: () => t('The grammar review took too long. Try again.'),
+  assessment_incomplete: () => t('The grammar review was incomplete. Try again to get an explanation.'),
+  assessment_service_unavailable: () => t('The grammar service is temporarily unavailable. Try again.'),
+  assessment_network_error: () => t('The app could not reach the grammar service. Check your connection and try again.'),
+  invalid_prompt: () => t('Write some Mandarin and choose at least one word before checking.'),
 }
 
 export class AssessmentServiceError extends Error {
   readonly code: AssessmentErrorCode
   readonly needsSetup: boolean
   constructor(code: AssessmentErrorCode) {
-    super(messages[code])
+    super(messages[code]())
     this.name = 'AssessmentServiceError'
     this.code = code
     this.needsSetup = ['assessment_not_configured', 'assessment_route_missing', 'assessment_auth_failed', 'assessment_model_unavailable', 'assessment_quota_exceeded'].includes(code)

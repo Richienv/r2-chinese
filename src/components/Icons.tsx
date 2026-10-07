@@ -77,6 +77,19 @@ export const CloseIcon = ({ size = 20 }: P) => (
   </svg>
 )
 
+export const UndoIcon = ({ size = 18 }: P) => (
+  <svg {...base(size)}>
+    <path d="M9 7 4.5 11.5 9 16" />
+    <path d="M5 11.5h8.5a5.5 5.5 0 0 1 0 11H11" transform="translate(0 -4)" />
+  </svg>
+)
+
+export const EraseIcon = ({ size = 18 }: P) => (
+  <svg {...base(size)}>
+    <path d="M4.5 7.5h15M9.5 7.5V5h5v2.5M6.5 7.5l.8 11a1.5 1.5 0 0 0 1.5 1.4h6.4a1.5 1.5 0 0 0 1.5-1.4l.8-11" />
+  </svg>
+)
+
 export const RefreshIcon = ({ size = 18 }: P) => (
   <svg {...base(size)}>
     <path d="M20 12a8 8 0 1 1-2.5-5.8" />

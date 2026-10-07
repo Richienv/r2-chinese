@@ -6,8 +6,37 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import type { Session, User } from '@supabase/supabase-js'
+import type { AuthError, Session, User } from '@supabase/supabase-js'
+import { isIndonesian, t } from '../lib/i18n'
 import { isAuthEnabled, supabase } from '../lib/supabase'
+
+/**
+ * Supabase answers in English. English mode shows its message untouched; Indonesian mode
+ * gets a friendly line for the failures people actually hit, and anything else passes through.
+ */
+function authMessage(error: AuthError): string {
+  if (!isIndonesian()) return error.message
+  switch (error.code) {
+    case 'invalid_credentials':
+      return t('Invalid login credentials')
+    case 'email_not_confirmed':
+      return t('Email not confirmed')
+    case 'user_already_exists':
+    case 'email_exists':
+      return t('User already registered')
+    case 'over_request_rate_limit':
+    case 'over_email_send_rate_limit':
+      return t('Too many attempts. Wait a moment and try again.')
+    case 'email_address_invalid':
+      return t('That email address does not look right.')
+    case 'signup_disabled':
+      return t('Sign-ups are closed right now.')
+    default:
+      return error.name === 'AuthRetryableFetchError'
+        ? t('Could not reach the server. Check your connection and try again.')
+        : error.message
+  }
+}
 
 interface AuthValue {
   /** false while the initial session is being restored */
@@ -43,12 +72,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       async signIn(email, password) {
         if (!supabase) return {}
         const { error } = await supabase.auth.signInWithPassword({ email, password })
-        return error ? { error: error.message } : {}
+        return error ? { error: authMessage(error) } : {}
       },
       async signUp(email, password) {
         if (!supabase) return {}
         const { data, error } = await supabase.auth.signUp({ email, password })
-        if (error) return { error: error.message }
+        if (error) return { error: authMessage(error) }
         // With email confirmation on, there's no session until the link is clicked.
         return { needsConfirm: !data.session }
       },

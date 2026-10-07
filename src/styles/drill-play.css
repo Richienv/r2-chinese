@@ -1,0 +1,363 @@
+/* Recall drill: a stage that reacts. Motion is finite and never delays an input. */
+
+/* ---------- intro ---------- */
+.drill-intro {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.drill-ways {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  max-width: 330px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.drill-ways li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: var(--paper, #fbfaf8);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 10px 20px -16px rgba(70, 45, 20, 0.4);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  animation: drill-rise 0.5s var(--ease) both;
+}
+
+.drill-ways .zh {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  background-image: var(--metal-sheen), var(--metal-base);
+}
+
+@keyframes drill-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- heads-up display ---------- */
+/* Compound selectors: styles.css loads after this file and would win a tie. */
+.overlay-head.drill-hud {
+  padding-top: 0;
+  min-height: 30px;
+}
+
+.drill-pips {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.drill-pip {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: inset 0 0 0 2px #d6cdc1;
+  transition: background-color 0.3s var(--ease), box-shadow 0.3s var(--ease), transform 0.4s var(--spring);
+}
+
+.drill-pip[data-state='current'] {
+  background: var(--warm-hot, #fa5a3c);
+  box-shadow: 0 0 0 4px rgba(250, 90, 60, 0.2);
+  transform: scale(1.12);
+}
+
+.drill-pip[data-state='unaided'] { background: var(--ok); box-shadow: none; transform: scale(1.05); }
+.drill-pip[data-state='assisted'] { background: #e0a43b; box-shadow: none; }
+.drill-pip[data-state='missed'] { background: var(--err); box-shadow: none; }
+
+.drill-flow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px 0 8px;
+  border-radius: 999px;
+  color: var(--red-deep);
+  font-size: 12px;
+  font-weight: 700;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transform: translateY(-4px) scale(0.92);
+  transition: opacity 0.25s var(--ease), transform 0.4s var(--spring), box-shadow 0.4s var(--ease);
+  pointer-events: none;
+}
+
+.drill-flow[data-on='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+.drill-flow b {
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+.drill-flow i {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--warm-hot, #fa5a3c);
+}
+
+.drill-flow[data-tier='1'] { box-shadow: 0 0 0 1px rgba(250, 90, 60, 0.4), 0 6px 16px -8px rgba(250, 90, 60, 0.6); }
+.drill-flow[data-tier='2'] {
+  box-shadow: 0 0 0 1.5px rgba(226, 44, 28, 0.55), 0 8px 20px -8px rgba(226, 44, 28, 0.75);
+  animation: drill-flow-breathe 1.6s ease-in-out infinite;
+}
+.drill-flow[data-tier='3'] {
+  color: #fff;
+  background-image: var(--metal-sheen), var(--metal-base);
+  box-shadow: var(--metal-emboss-sm);
+  animation: drill-flow-breathe 1.2s ease-in-out infinite;
+}
+.drill-flow[data-tier='3'] i { background: var(--gold, #ffe3b0); }
+
+@keyframes drill-flow-breathe {
+  50% { transform: scale(1.06); }
+}
+
+.drill-count {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.step-bar.drill-bar {
+  flex: none;
+  height: 6px;
+  margin: 0 var(--pad, 18px) 4px;
+}
+
+/* ---------- the card that reacts ---------- */
+.drill-stage {
+  gap: 0;
+}
+
+.drill-card {
+  position: relative;
+  border-radius: 28px;
+}
+
+.drill-card .production-stage {
+  padding-top: 4px;
+}
+
+.drill-pulse {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.drill-pulse[data-kind='correct'] { animation: drill-pulse-good 0.9s var(--ease) both; }
+.drill-pulse[data-kind='assisted'] { animation: drill-pulse-help 0.9s var(--ease) both; }
+.drill-pulse[data-kind='miss'] { animation: drill-pulse-miss 0.7s var(--ease) both; }
+
+/* An edge glow across the whole screen: the result is felt without covering the answer. */
+@keyframes drill-pulse-good {
+  0% { opacity: 1; box-shadow: inset 0 0 0 3px rgba(27, 122, 62, 0.5), inset 0 0 90px rgba(27, 122, 62, 0.24); }
+  100% { opacity: 0; box-shadow: inset 0 0 0 3px rgba(27, 122, 62, 0), inset 0 0 90px rgba(27, 122, 62, 0); }
+}
+@keyframes drill-pulse-help {
+  0% { opacity: 1; box-shadow: inset 0 0 0 3px rgba(224, 164, 59, 0.55), inset 0 0 90px rgba(224, 164, 59, 0.24); }
+  100% { opacity: 0; box-shadow: inset 0 0 0 3px rgba(224, 164, 59, 0), inset 0 0 90px rgba(224, 164, 59, 0); }
+}
+@keyframes drill-pulse-miss {
+  0% { opacity: 1; box-shadow: inset 0 0 0 3px rgba(194, 59, 58, 0.6), inset 0 0 90px rgba(194, 59, 58, 0.26); }
+  100% { opacity: 0; box-shadow: inset 0 0 0 3px rgba(194, 59, 58, 0), inset 0 0 90px rgba(194, 59, 58, 0); }
+}
+
+.production-pinyin {
+  margin: 4px 0 0;
+  color: var(--warm-hot, #fa5a3c);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+}
+
+.drill-strokes {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 6px;
+}
+
+/* Drawing mode keeps the cue to one quiet line so the board fits on screen. */
+.word-recall[data-mode='draw'] .production-heading h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.word-recall[data-mode='draw'] .production-prompt { padding: 10px 16px; border-radius: 18px; }
+/* The task line above the board already says the meaning or pinyin; only the sound cue needs its button. */
+.word-recall[data-mode='draw'] .production-prompt:not([data-cue='sound']) { display: none; }
+.word-recall:has(.hanzi-draw[data-fixing='true']) .word-recall-input-mode { display: none; }
+.word-recall[data-mode='draw'] .production-prompt p.sub { display: none; }
+.word-recall[data-mode='draw'] .production-en { margin: 0; font-size: 19px; }
+.word-recall[data-mode='draw'] .production-pinyin { margin: 0; font-size: 26px; }
+.word-recall[data-mode='draw'] .listen-cue { grid-auto-flow: column; justify-content: center; gap: 12px; padding: 0; }
+.word-recall[data-mode='draw'] .listen-cue-button { width: 48px; height: 48px; }
+.word-recall[data-mode='draw'] .listen-cue-button svg { width: 22px; height: 22px; }
+.word-recall[data-mode='draw'] { gap: 12px; }
+
+/* ---------- listening cue ---------- */
+.listen-cue {
+  display: grid;
+  justify-items: center;
+  gap: 22px;
+  padding: 10px 0 2px;
+}
+
+.listen-cue-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  background-image: var(--metal-sheen), var(--metal-base);
+  box-shadow: var(--metal-emboss-sm);
+  transition: transform 0.25s var(--spring);
+}
+
+.listen-cue-button:active { transform: scale(0.94); }
+.listen-cue-button svg { position: relative; z-index: 1; }
+
+.listen-cue-rings {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.listen-cue-rings i {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px rgba(226, 44, 28, 0.5);
+  opacity: 0;
+}
+
+.listen-cue[data-playing='true'] .listen-cue-rings i {
+  animation: listen-ring 1.5s ease-out infinite;
+}
+.listen-cue[data-playing='true'] .listen-cue-rings i:nth-child(2) { animation-delay: 0.5s; }
+.listen-cue[data-playing='true'] .listen-cue-rings i:nth-child(3) { animation-delay: 1s; }
+
+@keyframes listen-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+.listen-cue-slow {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--red-deep);
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.listen-cue-slow[aria-pressed='true'] {
+  background: #fff0e3;
+  box-shadow: 0 0 0 1px rgba(250, 90, 60, 0.5);
+}
+
+/* ---------- summary ---------- */
+.drill-summary {
+  text-align: center;
+  padding-top: 28px;
+}
+
+.drill-words {
+  display: grid;
+  gap: 8px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.drill-words li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: var(--paper, #fbfaf8);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #d6cdc1;
+  animation: drill-rise 0.45s var(--ease) both;
+}
+
+.drill-words li[data-state='unaided'] { border-left-color: var(--ok); }
+.drill-words li[data-state='assisted'] { border-left-color: #e0a43b; }
+.drill-words li[data-state='missed'] { border-left-color: var(--err); }
+
+.drill-words-hz {
+  min-width: 2.4em;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.drill-words-meta {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.drill-words-meta b {
+  color: var(--warm-hot, #fa5a3c);
+  font-size: 13px;
+}
+
+.drill-words li em {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.drill-words li[data-state='unaided'] em { color: var(--ok); }
+.drill-words li[data-state='assisted'] em { color: var(--warn); }
+.drill-words li[data-state='missed'] em { color: var(--err); }
+
+/* ---------- reduced motion: keep every state, drop the movement ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .drill-ways li,
+  .drill-words li { animation: none; }
+  .drill-pip,
+  .drill-flow { transition: none; }
+  .drill-flow[data-tier='2'],
+  .drill-flow[data-tier='3'] { animation: none; }
+  .drill-pulse { animation: none !important; opacity: 0; }
+  .listen-cue[data-playing='true'] .listen-cue-rings i { animation: none; opacity: 0.5; transform: scale(1.25); }
+  .listen-cue-button { transition: none; }
+}

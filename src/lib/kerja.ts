@@ -1,5 +1,8 @@
+import { buildRecheck } from './dialogue-check'
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
 import { registerVocab, type Example } from './content'
+import { getLang, t } from './i18n.ts'
+import { applyOverlay, type Overlay } from './localize'
 import type { TeachPhase, WordHook } from './teach'
 import type { LessonText, TextLine, Vocab } from './types'
 import type { Question } from './quiz'
@@ -11,10 +14,10 @@ const PROGRESS_KEY = 'yulu.kerja.v1'
 export const WORDS_PER_SITTING = 4
 
 export const KERJA_BOOK = {
-  title: '1000 words',
+  title: t('1000 words'),
   titleZh: '把话说清楚，把事情做好。',
-  edition: 'Field edition 2026',
-  blurb: 'Workplace Mandarin for HR and management',
+  edition: t('Field edition 2026'),
+  blurb: t('Workplace Mandarin for HR and management'),
 } as const
 
 export interface KerjaExample {
@@ -64,16 +67,16 @@ export type KerjaWordNode = `w${number}`
 export type KerjaNode = KerjaWordNode | 't2' | 't3' | 'wrap'
 
 const BEAT_LABEL: Record<'t2' | 't3' | 'wrap' | 't4' | 't5', { en: string; zh: string }> = {
-  t2: { en: 'Dialogue', zh: '对话' },
-  t3: { en: 'Notes', zh: '笔记' },
-  t4: { en: 'Extra', zh: '补充' },
-  t5: { en: 'Extra', zh: '补充' },
-  wrap: { en: 'Wrap-up', zh: '整理' },
+  t2: { en: t('Dialogue'), zh: '对话' },
+  t3: { en: t('Notes'), zh: '笔记' },
+  t4: { en: t('Extra'), zh: '补充' },
+  t5: { en: t('Extra'), zh: '补充' },
+  wrap: { en: t('Wrap-up'), zh: '整理' },
 }
 
 /** Labels for fixed beats (word chunks use dynamic 生词 N). */
 export const KERJA_NODE_LABEL: Record<string, { en: string; zh: string }> = {
-  t1: { en: 'Words', zh: '生词' },
+  t1: { en: t('Words'), zh: '生词' },
   ...BEAT_LABEL,
 }
 
@@ -114,6 +117,15 @@ type GlobModule = { default: KerjaChapter } | KerjaChapter
 const chapterModules = import.meta.glob('../data/kerja/units/chapter-*.json', {
   eager: true,
 }) as Record<string, GlobModule>
+
+// Indonesian meanings, translations and notes, applied once when the chapters load.
+if (getLang() === 'id') {
+  const overlays = import.meta.glob('../data/i18n/id/kerja-chapter-*.json', { eager: true }) as Record<string, { default: Overlay }>
+  for (const [path, mod] of Object.entries(chapterModules)) {
+    const overlay = overlays[path.replace('../data/kerja/units/', '../data/i18n/id/kerja-')]
+    if (overlay) applyOverlay('default' in mod ? mod.default : mod, overlay.default)
+  }
+}
 
 function asChapter(mod: GlobModule): KerjaChapter | null {
   const raw = mod && typeof mod === 'object' && 'default' in mod ? mod.default : (mod as KerjaChapter)
@@ -194,11 +206,11 @@ export function noteExample(n: KerjaNote): Example | null {
 }
 
 export function kerjaHook(w: KerjaWord): WordHook {
-  const when = w.when?.trim() || `Remember ${w.zh} when you need “${w.en || 'this meaning'}”.`
+  const when = w.when?.trim() || t('Remember {word} when you need “{meaning}”.', { word: w.zh, meaning: w.en || t('this meaning') })
   const usage =
     w.usage?.trim() ||
     w.note?.trim() ||
-    `Most Chinese speakers use ${w.zh} in workplace talk for “${w.en || 'this'}”.`
+    t('Most Chinese speakers use {word} in workplace talk for “{meaning}”.', { word: w.zh, meaning: w.en || t('this') })
   return { when, usage }
 }
 
@@ -216,6 +228,7 @@ export type KerjaSessionStep =
   | { kind: 'read'; id: string; text: LessonText; n: number; of: number }
   | { kind: 'recall'; id: string; word: Vocab; n: number; of: number }
   | { kind: 'dialogue'; id: string; text: LessonText; n: number; of: number }
+  | { kind: 'recheck'; id: string; text: LessonText; words: Vocab[]; n: number; of: number }
   | { kind: 'produce'; id: string; example: Example; words: string[]; grammar?: string; n: number; of: number }
   | { kind: 'note'; id: string; title: string; body: string; example: Example | null; n: number; of: number }
   | { kind: 'quiz'; id: string; question: Question; n: number; of: number }
@@ -226,13 +239,14 @@ function numberSteps(draft: Array<Exclude<KerjaSessionStep, { kind: 'complete' }
   for (const s of draft) {
     if (s.kind === 'teach' && !wordOrder.includes(s.word.zh)) wordOrder.push(s.word.zh)
   }
-  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, produce: 0 }
+  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, recheck: 0, produce: 0 }
   const ofs = {
     read: draft.filter((s) => s.kind === 'read').length,
     note: draft.filter((s) => s.kind === 'note').length,
     quiz: draft.filter((s) => s.kind === 'quiz').length,
     recall: draft.filter((s) => s.kind === 'recall').length,
     dialogue: draft.filter((s) => s.kind === 'dialogue').length,
+    recheck: draft.filter((s) => s.kind === 'recheck').length,
     produce: draft.filter((s) => s.kind === 'produce').length,
   }
   const steps: KerjaSessionStep[] = draft.map((s) => {
@@ -261,7 +275,7 @@ function simpleVocabQuiz(words: KerjaWord[], count: number): Question[] {
     // rotate so answer isn't always first
     const rotated = [...options.slice(i % options.length), ...options.slice(0, i % options.length)]
     out.push({
-      prompt: `Which word means “${answer.en}”?`,
+      prompt: t('Which word means “{meaning}”?', { meaning: answer.en }),
       options: rotated,
       answer: answer.zh,
       explanation: `${answer.zh} · ${answer.en}`,
@@ -329,6 +343,8 @@ export function buildKerjaSteps(chapterIndex: number, node: KerjaNode): KerjaSes
     for (const [index, text] of texts.entries()) {
       if (text.type === 'dialogue' && text.lines.length > 1 && text.lines.every((line) => !line.zh.trim() || line.en.trim())) {
         draft.push({ kind: 'dialogue', id: `dialogue:t2:${index}`, text, n: 0, of: 0 })
+        const used = ch.words.filter((w) => text.lines.some((line) => line.zh.includes(w.zh))).map(toVocab)
+        if (buildRecheck(text, used).length >= 2) draft.push({ kind: 'recheck', id: `recheck:t2:${index}`, text, words: used, n: 0, of: 0 })
       } else {
         const line = text.lines.find((line) => line.zh.length >= 4 && line.zh.length <= 75 && line.en.trim())
         if (line) draft.push({ kind: 'produce', id: `produce:t2:${index}`, example: line, words: ch.words.filter((w) => line.zh.includes(w.zh)).map((w) => w.zh), n: 0, of: 0 })
@@ -339,7 +355,7 @@ export function buildKerjaSteps(chapterIndex: number, node: KerjaNode): KerjaSes
       draft.push({
         kind: 'note',
         id: `note:t3:${i}:${note.title}`,
-        title: note.title || 'Note',
+        title: note.title || t('Note'),
         body: note.body || '',
         example: noteExample(note),
         n: 0,
@@ -369,8 +385,8 @@ export function buildKerjaSteps(chapterIndex: number, node: KerjaNode): KerjaSes
       draft.push({
         kind: 'note',
         id: 'wrap:done',
-        title: ch.titleZh || ch.titleEn || `Chapter ${ch.index}`,
-        body: 'Chapter wrap-up. More checks appear once words are in this unit.',
+        title: ch.titleZh || ch.titleEn || t('Chapter {n}', { n: ch.index }),
+        body: t('Chapter wrap-up. More checks appear once words are in this unit.'),
         example: null,
         n: 0,
         of: 0,
@@ -399,21 +415,21 @@ export function nodeCaptionKerja(ch: KerjaChapter, node: KerjaNode): { en: strin
     const slice = wordChunkIndex(node) + 1
     const words = wordsForNode(ch, node)
     return {
-      en: `Words ${slice}`,
+      en: t('Words {n}', { n: slice }),
       zh: `生词 ${slice}`,
-      hint: words[0]?.zh || `${words.length} words`,
+      hint: words[0]?.zh || t('{n} words', { n: words.length }),
     }
   }
   const label = BEAT_LABEL[node]
   if (node === 't2') return { ...label, hint: ch.dialogues[0]?.headingZh || ch.dialogues[0]?.label || '对话' }
   if (node === 't3') return { ...label, hint: ch.notes[0]?.title || '笔记' }
-  return { ...label, hint: 'Check' }
+  return { ...label, hint: t('Check') }
 }
 
 export function nodeLabelKerja(node: KerjaNode): { en: string; zh: string } {
   if (isKerjaWordNode(node)) {
     const slice = wordChunkIndex(node) + 1
-    return { en: `Words ${slice}`, zh: `生词 ${slice}` }
+    return { en: t('Words {n}', { n: slice }), zh: `生词 ${slice}` }
   }
   return BEAT_LABEL[node]
 }
@@ -553,8 +569,8 @@ const HANZI = /[\u3400-\u9FFF]/
 
 /** True when a note/example string should get a Hear control (Chinese only). */
 export function hearableZh(text: string | undefined | null): string {
-  const t = text?.trim() ?? ''
-  return t && HANZI.test(t) ? t : ''
+  const trimmed = text?.trim() ?? ''
+  return trimmed && HANZI.test(trimmed) ? trimmed : ''
 }
 
 /** Seed the shared gloss/drill lexicon so Kerja words star into the same list. */

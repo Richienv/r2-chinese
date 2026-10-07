@@ -97,6 +97,12 @@ function play(notes: Note[], volume = 0.2): void {
 }
 
 /** A bright, compact resolved interval when an answer is retrieved. */
+/** A short buzz on phones, under the same mute switch as the sounds. */
+export function haptic(kind: 'good' | 'miss' | 'streak'): void {
+  if (!enabled || typeof navigator === 'undefined' || typeof navigator.vibrate !== 'function') return
+  try { navigator.vibrate(kind === 'good' ? [12, 26, 18] : kind === 'streak' ? [14, 30, 14, 30, 26] : [34]) } catch { /* Not every browser allows it. */ }
+}
+
 export function playCorrect(): void {
   play([
     { frequency: 523.25, duration: 0.23, gain: 0.28 },

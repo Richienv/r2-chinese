@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
+import { t } from './i18n.ts'
 
 /** Interview path progress — never written into HSK / Kerja / Jiaocheng / Magang keys. */
 const PROGRESS_KEY = 'yulu.interview.v1'
@@ -6,7 +7,7 @@ const PROGRESS_KEY = 'yulu.interview.v1'
 export const INTERVIEW_BOOK = {
   title: '总办',
   titleZh: '总办',
-  blurb: 'Tonight · 18:00',
+  blurb: t('Tonight · 18:00'),
 } as const
 
 /** One playable path node per chapter. */
@@ -68,14 +69,14 @@ const SITTING_KINDS = new Set<InterviewSittingKind>([
 ])
 
 export const SITTING_KIND_LABEL: Record<InterviewSittingKind | 'wrap', string> = {
-  idea: 'Idea',
-  remember: 'Remember',
-  watch: 'Watch',
-  try: 'Try',
-  interview: 'Interview',
-  example: 'Example',
-  check: 'Check',
-  wrap: 'Wrap-up',
+  idea: t('Idea'),
+  remember: t('Remember'),
+  watch: t('Watch'),
+  try: t('Try'),
+  interview: t('Interview'),
+  example: t('Example'),
+  check: t('Check'),
+  wrap: t('Wrap-up'),
 }
 
 type GlobModule = { default: unknown } | unknown
@@ -104,10 +105,10 @@ function asSitting(raw: unknown): InterviewSitting | null {
     const terms: InterviewTerm[] = []
     for (const item of o.terms) {
       if (!item || typeof item !== 'object' || Array.isArray(item)) continue
-      const t = item as Record<string, unknown>
-      if (typeof t.zh !== 'string' || typeof t.en !== 'string') continue
-      const term: InterviewTerm = { zh: t.zh, en: t.en }
-      if (typeof t.hook === 'string') term.hook = t.hook
+      const entry = item as Record<string, unknown>
+      if (typeof entry.zh !== 'string' || typeof entry.en !== 'string') continue
+      const term: InterviewTerm = { zh: entry.zh, en: entry.en }
+      if (typeof entry.hook === 'string') term.hook = entry.hook
       terms.push(term)
     }
     if (terms.length > 0) sitting.terms = terms
@@ -190,7 +191,7 @@ export function interviewParts(): {
   for (const ch of interviewChapters) {
     let group = map.get(ch.part)
     if (!group) {
-      group = { part: ch.part, titleEn: ch.partTitleEn || `Part ${ch.part}`, chapters: [] }
+      group = { part: ch.part, titleEn: ch.partTitleEn || t('Part {n}', { n: ch.part }), chapters: [] }
       map.set(ch.part, group)
     }
     if (!group.titleEn && ch.partTitleEn) group.titleEn = ch.partTitleEn
@@ -200,7 +201,7 @@ export function interviewParts(): {
 }
 
 export function nodeLabelInterview(ch: InterviewChapter, _node: InterviewNode): string {
-  return ch.titleEn || ch.titleSource || `Chapter ${ch.index}`
+  return ch.titleEn || ch.titleSource || t('Chapter {n}', { n: ch.index })
 }
 
 export type InterviewSessionStep =
@@ -242,7 +243,7 @@ export type InterviewSessionStep =
   | { kind: 'complete' }
 
 function validTerms(beat: InterviewBeat): InterviewTerm[] {
-  return beat.terms?.filter((t) => t.zh.trim() && t.en.trim()) ?? []
+  return beat.terms?.filter((term) => term.zh.trim() && term.en.trim()) ?? []
 }
 
 export function buildInterviewSteps(chapterIndex: number, node: InterviewNode): InterviewSessionStep[] {
@@ -270,7 +271,7 @@ export function buildInterviewSteps(chapterIndex: number, node: InterviewNode): 
           kind: 'quiz',
           id: `check:${beat.id}`,
           beat,
-          prompt: beat.prompt?.trim() || beat.titleEn || 'Choose the best answer',
+          prompt: beat.prompt?.trim() || beat.titleEn || t('Choose the best answer'),
           choices,
           answer,
           beatNum,
