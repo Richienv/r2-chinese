@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { LearningPath } from '../components/LearningPath'
 import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
@@ -25,6 +25,7 @@ import {
   useJiaochengProgress,
   type JiaochengLesson,
 } from '../lib/jiaocheng'
+import { t } from '../lib/i18n'
 import { recordHistory } from '../lib/history'
 import { clearLearningCheckpoint, readLearningCheckpoint, writeLearningCheckpoint } from '../lib/resume'
 import { playAdvance, playComplete, playCorrect, playWrong } from '../lib/sfx'
