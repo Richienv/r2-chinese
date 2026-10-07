@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'react'
 import { MasteryTracker } from '../components/MasteryTracker'
 import { getLesson, lessons } from '../lib/content'
+import { COURSE_META } from '../lib/course'
 import { readHistory, type HistoryCourse, type HistoryEvent } from '../lib/history'
+import { getLang, t } from '../lib/i18n'
 import { dueCards } from '../lib/srs'
 import { getJiaochengLesson, jiaochengLessons, nodesForLesson } from '../lib/jiaocheng'
 import { getKerjaChapter, kerjaChapters, nodesForChapter } from '../lib/kerja'
@@ -27,6 +29,11 @@ const JIAOCHENG_KEY = 'yulu.jiaocheng.v1'
 const MAGANG_KEY = 'yulu.magang.v1'
 const INTERVIEW_KEY = 'yulu.interview.v1'
 const BOOKS_KEY = BOOKS_PROGRESS_KEY
+
+/** Weekday and clock text follow the app language, not the browser's. */
+const DATE_LOCALE = getLang() === 'id' ? 'id-ID' : undefined
+const lessonFallback = (n: number) => t('Lesson {n}', { n })
+const chapterFallback = (n: number) => t('Chapter {n}', { n })
 
 type PathDoneMap = Record<string, string[]>
 
@@ -81,16 +88,16 @@ function hskCourse(pathDone: PathDoneMap, lessonsDone: number[]): CourseRow {
     const title = (() => {
       try {
         const full = getLesson(l.lesson)
-        return full.title.en || full.title.zh || `Lesson ${l.lesson}`
+        return full.title.en || full.title.zh || lessonFallback(l.lesson)
       } catch {
-        return `Lesson ${l.lesson}`
+        return lessonFallback(l.lesson)
       }
     })()
     const sittingsDone = countDone(nodes, finished)
     const isDone = lessonsDone.includes(l.lesson) || finished.includes('wrap') || sittingsDone >= nodes.length
     return { key: `hsk-${l.lesson}`, title, done: isDone, sittingsDone, sittingsTotal: nodes.length }
   })
-  return { name: 'HSK 4', stepsDone: done, stepsTotal: total, units }
+  return { name: COURSE_META.hsk4a.title, stepsDone: done, stepsTotal: total, units }
 }
 
 function kerjaCourse(pathDone: PathDoneMap): CourseRow {
@@ -101,7 +108,7 @@ function kerjaCourse(pathDone: PathDoneMap): CourseRow {
     const finished = pathDone[String(ch.index)] ?? []
     total += nodes.length
     done += countDone(nodes, finished)
-    const title = ch.titleEn || ch.titleZh || `Chapter ${ch.index}`
+    const title = ch.titleEn || ch.titleZh || chapterFallback(ch.index)
     const sittingsDone = countDone(nodes, finished)
     const isDone = finished.includes('wrap') || (nodes.length > 0 && sittingsDone >= nodes.length)
     return {
@@ -112,7 +119,7 @@ function kerjaCourse(pathDone: PathDoneMap): CourseRow {
       sittingsTotal: nodes.length,
     }
   })
-  return { name: '1000 words', stepsDone: done, stepsTotal: total, units }
+  return { name: COURSE_META.kerja.title, stepsDone: done, stepsTotal: total, units }
 }
 
 function jiaochengCourse(pathDone: PathDoneMap): CourseRow {
@@ -123,7 +130,7 @@ function jiaochengCourse(pathDone: PathDoneMap): CourseRow {
     const finished = pathDone[String(lesson.index)] ?? []
     total += nodes.length
     done += countDone(nodes, finished)
-    const title = lesson.titleEn || lesson.titleZh || `Lesson ${lesson.index}`
+    const title = lesson.titleEn || lesson.titleZh || lessonFallback(lesson.index)
     const sittingsDone = countDone(nodes, finished)
     const isDone = finished.includes('wrap') || (nodes.length > 0 && sittingsDone >= nodes.length)
     return {
@@ -134,7 +141,7 @@ function jiaochengCourse(pathDone: PathDoneMap): CourseRow {
       sittingsTotal: nodes.length,
     }
   })
-  return { name: 'Jiaocheng 2', stepsDone: done, stepsTotal: total, units }
+  return { name: COURSE_META.jiaocheng.title, stepsDone: done, stepsTotal: total, units }
 }
 
 function magangCourse(pathDone: PathDoneMap): CourseRow {
@@ -145,7 +152,7 @@ function magangCourse(pathDone: PathDoneMap): CourseRow {
     const finished = pathDone[String(ch.index)] ?? []
     total += nodes.length
     done += countDone(nodes, finished)
-    const title = ch.titleEn || ch.titleSource || `Chapter ${ch.index}`
+    const title = ch.titleEn || ch.titleSource || chapterFallback(ch.index)
     const sittingsDone = countDone(nodes, finished)
     const isDone = finished.includes('wrap') || (nodes.length > 0 && sittingsDone >= nodes.length)
     return {
@@ -156,7 +163,7 @@ function magangCourse(pathDone: PathDoneMap): CourseRow {
       sittingsTotal: nodes.length,
     }
   })
-  return { name: 'Magang AI', stepsDone: done, stepsTotal: total, units }
+  return { name: COURSE_META.magang.title, stepsDone: done, stepsTotal: total, units }
 }
 
 function interviewCourse(pathDone: PathDoneMap): CourseRow {
@@ -167,7 +174,7 @@ function interviewCourse(pathDone: PathDoneMap): CourseRow {
     const finished = pathDone[String(ch.index)] ?? []
     total += nodes.length
     done += countDone(nodes, finished)
-    const title = ch.titleEn || ch.titleSource || `Chapter ${ch.index}`
+    const title = ch.titleEn || ch.titleSource || chapterFallback(ch.index)
     const sittingsDone = countDone(nodes, finished)
     const isDone = nodes.length > 0 && sittingsDone >= nodes.length
     return {
@@ -178,7 +185,7 @@ function interviewCourse(pathDone: PathDoneMap): CourseRow {
       sittingsTotal: nodes.length,
     }
   })
-  return { name: '总办', stepsDone: done, stepsTotal: total, units }
+  return { name: COURSE_META.interview.title, stepsDone: done, stepsTotal: total, units }
 }
 
 function booksCourse(pathDone: PathDoneMap): CourseRow {
@@ -189,7 +196,7 @@ function booksCourse(pathDone: PathDoneMap): CourseRow {
     const finished = pathDone[booksProgressKey(ch.part, ch.index)] ?? []
     total += nodes.length
     done += countDone(nodes, finished)
-    const title = ch.titleEn || ch.partTitleEn || `Chapter ${ch.index}`
+    const title = ch.titleEn || ch.partTitleEn || chapterFallback(ch.index)
     const sittingsDone = countDone(nodes, finished)
     const isDone = nodes.length > 0 && sittingsDone >= nodes.length
     return {
@@ -200,7 +207,7 @@ function booksCourse(pathDone: PathDoneMap): CourseRow {
       sittingsTotal: nodes.length,
     }
   })
-  return { name: 'Books', stepsDone: done, stepsTotal: total, units }
+  return { name: COURSE_META.books.title, stepsDone: done, stepsTotal: total, units }
 }
 
 /** Rolling last-7-days card counts, oldest → newest, labelled by weekday. */
@@ -213,7 +220,7 @@ function weekActivity(log: Record<string, { cards: number }>) {
     d.setDate(now.getDate() - i)
     const key = dayKey(d)
     out.push({
-      label: d.toLocaleDateString(undefined, { weekday: 'short' }),
+      label: d.toLocaleDateString(DATE_LOCALE, { weekday: 'short' }),
       cards: log[key]?.cards ?? 0,
       today: key === todayKey,
       date: d.getDate(),
@@ -223,21 +230,21 @@ function weekActivity(log: Record<string, { cards: number }>) {
 }
 
 const COURSE_LABEL: Record<HistoryCourse, string> = {
-  hsk4a: 'HSK 4',
-  kerja: '1000 words',
-  jiaocheng: 'Jiaocheng 2',
-  magang: 'Magang AI',
-  interview: '总办',
-  books: 'Books',
+  hsk4a: COURSE_META.hsk4a.title,
+  kerja: COURSE_META.kerja.title,
+  jiaocheng: COURSE_META.jiaocheng.title,
+  magang: COURSE_META.magang.title,
+  interview: COURSE_META.interview.title,
+  books: COURSE_META.books.title,
 }
 
 function historyHeadline(ev: HistoryEvent): string {
-  if (ev.kind === 'drill') return ev.title?.trim() || 'Drill'
-  if (ev.kind === 'quiz') return ev.title?.trim() || (ev.correct === true ? 'Recall correct' : ev.correct === false ? 'Recall needs practice' : 'Practice · ungraded')
+  if (ev.kind === 'drill') return ev.title?.trim() || t('Drill')
+  if (ev.kind === 'quiz') return ev.title?.trim() || (ev.correct === true ? t('Recall correct') : ev.correct === false ? t('Recall needs practice') : t('Practice · ungraded'))
   // node
   if (ev.title?.trim()) return ev.title.trim()
-  if (ev.node) return `${ev.node} finished`
-  return 'Node finished'
+  if (ev.node) return t('{node} finished', { node: ev.node })
+  return t('Node finished')
 }
 
 function historyDetail(ev: HistoryEvent): string {
@@ -250,12 +257,12 @@ function historyDetail(ev: HistoryEvent): string {
     ev.course === 'kerja'
       ? (() => {
           const ch = getKerjaChapter(ev.lesson)
-          return ch?.titleEn || ch?.titleZh || `Chapter ${ev.lesson}`
+          return ch?.titleEn || ch?.titleZh || chapterFallback(ev.lesson)
         })()
       : ev.course === 'jiaocheng'
         ? (() => {
             const l = getJiaochengLesson(ev.lesson)
-            return l?.titleEn || l?.titleZh || `Lesson ${ev.lesson}`
+            return l?.titleEn || l?.titleZh || lessonFallback(ev.lesson)
           })()
         : ev.course === 'magang'
           ? (() => {

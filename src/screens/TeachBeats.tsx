@@ -4,6 +4,7 @@ import { HearButton, useAutoSpeak, useSpeechActive } from '../components/Hear'
 import { SaveStar } from '../components/SaveStar'
 import { StrokeDataAttribution, StrokeWord } from '../components/StrokeWord'
 import type { Example } from '../lib/content'
+import { t } from '../lib/i18n'
 import { memoryTips } from '../lib/memoryTips'
 import { useCourse } from '../lib/course'
 import { teachingExamples } from '../lib/teachingExamples'
@@ -43,7 +44,7 @@ export function TeachView({
   of: number
 }) {
   const { onWord, sheet } = useGloss()
-  const kicker = `Word · ${n} of ${of} · ${TEACH_KICKER[phase]}`
+  const kicker = t('Word · {n} of {of} · {step}', { n, of, step: TEACH_KICKER[phase] })
   return (
     <div className="teach-stage" data-phase={phase}>
       <StepHead kicker={kicker} title={TEACH_TITLE[phase]} />
@@ -76,14 +77,26 @@ function MeetBeat({ word, lesson }: { word: Vocab; lesson: number }) {
         {word.en}
       </p>}
       <div className="teach-meet-hear" style={{ animationDelay: `${80 + glyphs.length * 110 + 320}ms` }}>
-        <HearButton text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" tone="on-red" />
+        <HearButton text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear the word')} tone="on-red" />
       </div>
       <div className="teach-meet-save" style={{ animationDelay: `${80 + glyphs.length * 110 + 340}ms` }}>
-        <span>Tracked automatically · star a favourite</span>
+        <span>{t('Tracked automatically · star a favourite')}</span>
         <SaveStar zh={word.zh} lesson={lesson} size={22} onRed />
       </div>
     </div>
   )
+}
+
+/** Short tab label for each kind of memory insight, keyed by the insight's English key. */
+const TIP_LABEL: Record<string, string> = {
+  'How people use it': t('Use'), 'Give the shape a cue': t('Shape'), 'Keep a useful pair': t('Pairs'),
+  'Catch the common mistake': t('Notice'), 'Link sound to the shape': t('Sound'),
+  'Retrieve it inside the book line': t('Book line'), 'Make it come back': t('Revisit'),
+  'Make a personal scene': t('Your scene'), 'Give the word an image': t('Image'),
+  'Keep the sentence frame': t('Frame'), 'Connect two meanings': t('Meaning'), 'Recall the opposite': t('Opposite'),
+  'Give it a personal scene': t('Your scene'), 'Separate two ideas': t('Compare'),
+  'Learn the whole bridge': t('Pattern'), 'Make the two sides yours': t('Make it yours'),
+  'Give it a real person': t('Your scene'), 'Ask a usable question': t('Ask'),
 }
 
 function HookBeat({ word, hook, example, lesson }: { word: Vocab; hook: WordHook; example: Example | null; lesson: number }) {
@@ -112,13 +125,14 @@ function HookBeat({ word, hook, example, lesson }: { word: Vocab; hook: WordHook
   const usageBody = example && hook.usage.includes(example.zh)
     ? hook.usage.replace(example.zh, '').trim().replace(/[:：]$/, '.')
     : hook.usage
-  const insights = [{ title: 'How people use it', body: usageBody, cue: usageExample?.zh }, ...tips]
+  const insights = [{ key: 'How people use it', title: t('How people use it'), body: usageBody, cue: usageExample?.zh }, ...tips]
   const insight = insights[active]
   const open = !!revealed[active]
-  const cloze = insight.title === 'Retrieve it inside the book line'
-  const sound = insight.title === 'Link sound to the shape'
-  const shape = insight.title === 'Give the shape a cue'
-  const revisit = insight.title === 'Make it come back'
+  // Kinds are told apart by their English key; the displayed title is translated.
+  const cloze = insight.key === 'Retrieve it inside the book line'
+  const sound = insight.key === 'Link sound to the shape'
+  const shape = insight.key === 'Give the shape a cue'
+  const revisit = insight.key === 'Make it come back'
   const usage = active === 0
   const sourceLine = open ? cloze ? example : usage ? usageExample : null : null
   const cue = sourceLine ? sourceLine.zh : sound ? prefs.showPinyin ? insight.cue : word.zh : insight.cue
@@ -209,21 +223,10 @@ function HookBeat({ word, hook, example, lesson }: { word: Vocab; hook: WordHook
     resetDepth()
   }
 
-  const labels: Record<string, string> = {
-    'How people use it': 'Use', 'Give the shape a cue': 'Shape', 'Keep a useful pair': 'Pairs',
-    'Catch the common mistake': 'Notice', 'Link sound to the shape': 'Sound',
-    'Retrieve it inside the book line': 'Book line', 'Make it come back': 'Revisit',
-    'Make a personal scene': 'Your scene', 'Give the word an image': 'Image',
-    'Keep the sentence frame': 'Frame', 'Connect two meanings': 'Meaning', 'Recall the opposite': 'Opposite',
-    'Give it a personal scene': 'Your scene', 'Separate two ideas': 'Compare',
-    'Learn the whole bridge': 'Pattern', 'Make the two sides yours': 'Make it yours',
-    'Give it a real person': 'Your scene', 'Ask a usable question': 'Ask',
-  }
-
   return (
     <div className="teach-hook teach-memory teach-paced">
-      <p className="teach-memory-word" data-speaking={playing} lang={covered ? undefined : 'zh-CN'}>{covered ? <span className="paced-covered">Word covered · recall it</span> : word.zh}</p>
-      {!covered && prefs.showEnglish && <div className="paced-moment"><button type="button" className="paced-moment-trigger" aria-expanded={momentOpen} aria-controls={momentId} onClick={() => setMomentOpen((value) => !value)}>Picture the moment<span aria-hidden="true">{momentOpen ? '−' : '+'}</span></button>{momentOpen && <p ref={moment} id={momentId} className="teach-hook-when">
+      <p className="teach-memory-word" data-speaking={playing} lang={covered ? undefined : 'zh-CN'}>{covered ? <span className="paced-covered">{t('Word covered · recall it')}</span> : word.zh}</p>
+      {!covered && prefs.showEnglish && <div className="paced-moment"><button type="button" className="paced-moment-trigger" aria-expanded={momentOpen} aria-controls={momentId} onClick={() => setMomentOpen((value) => !value)}>{t('Picture the moment')}<span aria-hidden="true">{momentOpen ? '−' : '+'}</span></button>{momentOpen && <p ref={moment} id={momentId} className="teach-hook-when">
         {hook.when.split(word.zh).map((chunk, i, all) => (
           <span key={i}>
             {chunk}
@@ -235,10 +238,10 @@ function HookBeat({ word, hook, example, lesson }: { word: Vocab; hook: WordHook
           </span>
         ))}
       </p>}</div>}
-      <div className="paced-position"><span>Insight {active + 1} of {insights.length}</span><span>Take one idea with you.</span></div>
-      <div className="paced-progress" role="progressbar" aria-label="Current memory insight" aria-valuemin={1} aria-valuemax={insights.length} aria-valuenow={active + 1}><span ref={progress} style={{ transform: `scaleX(${(active + 1) / insights.length})` }} /></div>
-      <nav className="paced-insights" aria-label="Memory insights">
-        {insights.map((tip, index) => <button type="button" key={tip.title} aria-current={index === active ? 'step' : undefined} aria-label={`Insight ${index + 1}: ${tip.title}`} onClick={() => selectInsight(index)}><span>{index + 1}</span>{labels[tip.title] ?? 'Insight'}</button>)}
+      <div className="paced-position"><span>{t('Insight {n} of {total}', { n: active + 1, total: insights.length })}</span><span>{t('Take one idea with you.')}</span></div>
+      <div className="paced-progress" role="progressbar" aria-label={t('Current memory insight')} aria-valuemin={1} aria-valuemax={insights.length} aria-valuenow={active + 1}><span ref={progress} style={{ transform: `scaleX(${(active + 1) / insights.length})` }} /></div>
+      <nav className="paced-insights" aria-label={t('Memory insights')}>
+        {insights.map((tip, index) => <button type="button" key={tip.key} aria-current={index === active ? 'step' : undefined} aria-label={t('Insight {n}: {title}', { n: index + 1, title: tip.title })} onClick={() => selectInsight(index)}><span>{index + 1}</span>{TIP_LABEL[tip.key] ?? t('Insight')}</button>)}
       </nav>
       <div ref={depth} className="paced-card-depth" onPointerMove={moveDepth} onPointerLeave={resetDepth}>
         <article ref={card} className="paced-card" data-cloze={cloze} aria-labelledby={titleId}>
@@ -248,21 +251,21 @@ function HookBeat({ word, hook, example, lesson }: { word: Vocab; hook: WordHook
           {!prefs.showEnglish && !insight.cue && !sound && !covered && <CueText text={word.zh} word={word.zh} />}
           {cloze && !open && cue && <CueText text={cue} word={word.zh} />}
           {cloze && !open && prefs.showEnglish && example?.en && <p className="paced-example-en">{example.en}</p>}
-          {(insight.cue || sound) && <button type="button" className="paced-reveal" aria-expanded={open} onClick={() => setRevealed((current) => ({ ...current, [active]: !open }))}>{open ? cloze ? 'Hide the answer' : 'Fold it away' : cloze ? 'Reveal after my attempt' : usage ? 'Show the book example' : sound ? 'Practice the sound' : 'Unfold the cue'}<span aria-hidden="true">{open ? '−' : '+'}</span></button>}
+          {(insight.cue || sound) && <button type="button" className="paced-reveal" aria-expanded={open} onClick={() => setRevealed((current) => ({ ...current, [active]: !open }))}>{open ? cloze ? t('Hide the answer') : t('Fold it away') : cloze ? t('Reveal after my attempt') : usage ? t('Show the book example') : sound ? t('Practice the sound') : t('Unfold the cue')}<span aria-hidden="true">{open ? '−' : '+'}</span></button>}
           {open && cue && <div className="paced-reveal-content" data-shape={shape}>
-            <span className="paced-cue-label">{sourceLine ? 'From your curriculum' : sound ? 'Listen, then say it from memory' : 'A cue to hold onto'}</span>
+            <span className="paced-cue-label">{sourceLine ? t('From your curriculum') : sound ? t('Listen, then say it from memory') : t('A cue to hold onto')}</span>
             <CueText text={cue} word={word.zh} shape={shape} sound={sound && prefs.showPinyin} speaking={playing} />
             {sourceLine && prefs.showPinyin && sourceLine.pinyin && <p className="paced-example-py">{sourceLine.pinyin}</p>}
             {sourceLine && prefs.showEnglish && sourceLine.en && <p className="paced-example-en">{sourceLine.en}</p>}
-            {(sourceLine || sound) && <HearButton text={sourceLine ? sourceLine.zh : word.zh} voice={VOICE.xiaoxiao} rate={sourceLine ? LINE_RATE : WORD_RATE} label={sourceLine ? 'Hear the complete line' : 'Hear the word'} />}
-            {usage && examples.length > 1 && <div className="paced-example-navigation" role="group" aria-label="Source examples"><span role="status">Example {exampleIndex + 1} of {examples.length}</span><button type="button" className="btn btn-ghost" onClick={() => { stopSpeech(); setExampleIndex((index) => (index + 1) % examples.length) }}>Another example</button></div>}
-            {sound && !prefs.showPinyin && <p className="sub">{prefs.showEnglish ? 'Pinyin is off. Listen, then say the word from the Hanzi.' : 'Pinyin off'}</p>}
+            {(sourceLine || sound) && <HearButton text={sourceLine ? sourceLine.zh : word.zh} voice={VOICE.xiaoxiao} rate={sourceLine ? LINE_RATE : WORD_RATE} label={sourceLine ? t('Hear the complete line') : t('Hear the word')} />}
+            {usage && examples.length > 1 && <div className="paced-example-navigation" role="group" aria-label={t('Source examples')}><span role="status">{t('Example {n} of {total}', { n: exampleIndex + 1, total: examples.length })}</span><button type="button" className="btn btn-ghost" onClick={() => { stopSpeech(); setExampleIndex((index) => (index + 1) % examples.length) }}>{t('Another example')}</button></div>}
+            {sound && !prefs.showPinyin && <p className="sub">{prefs.showEnglish ? t('Pinyin is off. Listen, then say the word from the Hanzi.') : t('Pinyin off')}</p>}
           </div>}
-          {revisit && <button type="button" className="paced-reveal" aria-pressed={covered} onClick={() => setCovered((value) => !value)}>{covered ? 'Bring the word back' : 'Cover the word and try'}<span aria-hidden="true">{covered ? '+' : '−'}</span></button>}
+          {revisit && <button type="button" className="paced-reveal" aria-pressed={covered} onClick={() => setCovered((value) => !value)}>{covered ? t('Bring the word back') : t('Cover the word and try')}<span aria-hidden="true">{covered ? '+' : '−'}</span></button>}
         </article>
       </div>
-      <div className="paced-navigation"><button type="button" className="btn btn-ghost" disabled={active === 0} onClick={() => selectInsight(active - 1)}>Previous insight</button><button type="button" className="btn" onClick={() => selectInsight(active === insights.length - 1 ? 0 : active + 1)}>{active === insights.length - 1 ? 'Revisit the first idea' : 'Next insight'}</button></div>
-      {prefs.showEnglish && <p className="teach-memory-source">Sentence practice uses your curriculum. Shape images are memory cues.</p>}
+      <div className="paced-navigation"><button type="button" className="btn btn-ghost" disabled={active === 0} onClick={() => selectInsight(active - 1)}>{t('Previous insight')}</button><button type="button" className="btn" onClick={() => selectInsight(active === insights.length - 1 ? 0 : active + 1)}>{active === insights.length - 1 ? t('Revisit the first idea') : t('Next insight')}</button></div>
+      {prefs.showEnglish && <p className="teach-memory-source">{t('Sentence practice uses your curriculum. Shape images are memory cues.')}</p>}
     </div>
   )
 }
@@ -288,7 +291,7 @@ function ExampleBeat({
     return (
       <div className="teach-example-stage">
         <p className="sub" style={{ textWrap: 'pretty' }}>
-          You’ll meet {word.zh} in this 课文. Listen for it when you read.
+          {t('You’ll meet {word} in this {text}. Listen for it when you read.', { word: word.zh, text: '课文' })}
         </p>
       </div>
     )
@@ -301,12 +304,12 @@ function ExampleBeat({
       </p>
       {(prefs.showPinyin || prefs.showEnglish) && (
         <details className="teach-example-support">
-          <summary>Pronunciation & meaning</summary>
+          <summary>{t('Pronunciation & meaning')}</summary>
           {prefs.showPinyin && example.pinyin && <p className="teach-example-pyin">{example.pinyin}</p>}
           {prefs.showEnglish && example.en && <p className="teach-example-yes">{example.en}</p>}
         </details>
       )}
-      <HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+      <HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} />
     </div>
   )
 }
@@ -324,7 +327,7 @@ function SealBeat({ word }: { word: Vocab }) {
         {word.en}
       </p>}
       <div style={{ marginTop: 18 }}>
-        <HearButton text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
+        <HearButton text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear the word')} />
       </div>
     </div>
   )
