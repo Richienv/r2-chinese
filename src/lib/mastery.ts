@@ -1,3 +1,5 @@
+import { t } from './i18n.ts'
+
 /** Evidence of retrieval, kept separate from exposure, favourites and SRS dates. */
 export type MasteryState = 'new' | 'learning' | 'hard' | 'mastered'
 export type RecallMode = 'recognition' | 'recall' | 'speaking' | 'writing'
@@ -147,7 +149,7 @@ export function normalizeMastery(
 }
 
 export const masteryLabel: Record<MasteryState, string> = {
-  new: 'New', learning: 'Learning', hard: 'Needs practice', mastered: 'Mastered',
+  new: t('New'), learning: t('Learning'), hard: t('Needs practice'), mastered: t('Mastered'),
 }
 
 /** Punctuation and whitespace are harmless; Hanzi themselves must match. */
