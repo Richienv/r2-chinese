@@ -1,6 +1,7 @@
 import { buildRecheck } from './dialogue-check'
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
 import { registerVocab, type Example } from './content'
+import { t } from './i18n.ts'
 import type { TeachPhase, WordHook } from './teach'
 import type { LessonText, TextLine, Vocab } from './types'
 import type { PathNode } from '../store/store'
@@ -13,7 +14,7 @@ export const JIAOCHENG_BOOK = {
   title: '汉语教程 Level 2',
   titleZh: '汉语教程 · 第二册',
   edition: '第3版 · 上+下',
-  blurb: 'Yang Jizhou · parts 1 & 2 as one path',
+  blurb: t('Yang Jizhou · parts 1 & 2 as one path'),
 } as const
 
 export interface JiaochengExample {
@@ -65,12 +66,12 @@ export interface JiaochengLesson {
 export const JIAOCHENG_NODES: PathNode[] = ['t1', 't2', 't3', 'wrap']
 
 export const JIAOCHENG_NODE_LABEL: Record<PathNode, { en: string; zh: string }> = {
-  t1: { en: 'Words', zh: '生词' },
-  t2: { en: 'Dialogue', zh: '对话' },
-  t3: { en: 'Notes', zh: '笔记' },
-  t4: { en: 'Extra', zh: '补充' },
-  t5: { en: 'Extra', zh: '补充' },
-  wrap: { en: 'Wrap-up', zh: '整理' },
+  t1: { en: t('Words'), zh: '生词' },
+  t2: { en: t('Dialogue'), zh: '对话' },
+  t3: { en: t('Notes'), zh: '笔记' },
+  t4: { en: t('Extra'), zh: '补充' },
+  t5: { en: t('Extra'), zh: '补充' },
+  wrap: { en: t('Wrap-up'), zh: '整理' },
 }
 
 type GlobModule = { default: RawLesson } | RawLesson
@@ -190,11 +191,11 @@ export function noteExample(n: JiaochengNote): Example | null {
 }
 
 export function jiaochengHook(w: JiaochengWord): WordHook {
-  const when = w.when?.trim() || `Remember ${w.zh} when you need “${w.en || 'this meaning'}”.`
+  const when = w.when?.trim() || t('Remember {word} when you need “{meaning}”.', { word: w.zh, meaning: w.en || t('this meaning') })
   const usage =
     w.usage?.trim() ||
     w.note?.trim() ||
-    `Most Chinese speakers use ${w.zh} for “${w.en || 'this'}”.`
+    t('Most Chinese speakers use {word} for “{meaning}”.', { word: w.zh, meaning: w.en || t('this') })
   return { when, usage }
 }
 
@@ -258,7 +259,7 @@ function simpleVocabQuiz(words: JiaochengWord[], count: number): Question[] {
       .map((w) => ({ zh: w.zh, label: w.zh }))
     const rotated = [...options.slice(i % options.length), ...options.slice(0, i % options.length)]
     out.push({
-      prompt: `Which word means “${answer.en}”?`,
+      prompt: t('Which word means “{meaning}”?', { meaning: answer.en }),
       options: rotated,
       answer: answer.zh,
       explanation: `${answer.zh} · ${answer.en}`,
@@ -328,7 +329,7 @@ export function buildJiaochengSteps(lessonIndex: number, node: PathNode): Jiaoch
       draft.push({
         kind: 'note',
         id: `note:t3:${i}:${note.title}`,
-        title: note.title || 'Note',
+        title: note.title || t('Note'),
         body: note.body || '',
         example: noteExample(note),
         n: 0,
@@ -358,8 +359,8 @@ export function buildJiaochengSteps(lessonIndex: number, node: PathNode): Jiaoch
       draft.push({
         kind: 'note',
         id: 'wrap:done',
-        title: lesson.titleZh || lesson.titleEn || `Lesson ${lesson.bookLesson}`,
-        body: 'Lesson wrap-up. More checks appear once words are in this unit.',
+        title: lesson.titleZh || lesson.titleEn || t('Lesson {n}', { n: lesson.bookLesson }),
+        body: t('Lesson wrap-up. More checks appear once words are in this unit.'),
         example: null,
         n: 0,
         of: 0,
@@ -387,10 +388,10 @@ export function nodeCaptionJiaocheng(
   node: PathNode,
 ): { en: string; zh: string; hint: string } {
   const label = JIAOCHENG_NODE_LABEL[node]
-  if (node === 't1') return { ...label, hint: lesson.words[0]?.zh || `${lesson.words.length} words` }
+  if (node === 't1') return { ...label, hint: lesson.words[0]?.zh || t('{n} words', { n: lesson.words.length }) }
   if (node === 't2') return { ...label, hint: lesson.dialogues[0]?.headingZh || lesson.dialogues[0]?.label || '对话' }
   if (node === 't3') return { ...label, hint: lesson.notes[0]?.title || '笔记' }
-  return { ...label, hint: 'Check' }
+  return { ...label, hint: t('Check') }
 }
 
 interface JiaochengPersisted {
@@ -496,8 +497,8 @@ const HANZI = /[\u3400-\u9FFF]/
 
 /** True when a note/example string should get a Hear control (Chinese only). */
 export function hearableZh(text: string | undefined | null): string {
-  const t = text?.trim() ?? ''
-  return t && HANZI.test(t) ? t : ''
+  const trimmed = text?.trim() ?? ''
+  return trimmed && HANZI.test(trimmed) ? trimmed : ''
 }
 
 /** Seed the shared gloss/drill lexicon so 汉语教程 words star into the same list. */

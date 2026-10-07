@@ -1,5 +1,6 @@
 import { rng, seedOf, shuffle } from './seeded.ts'
 import { buildReview, type Review, type ReviewCheck } from './review.ts'
+import { t } from './i18n.ts'
 import type { LessonText, Vocab } from './types.ts'
 
 /**
@@ -60,8 +61,8 @@ export function buildRecheck(text: LessonText, words: Vocab[]): RecheckQuestion[
     const wrong = [...new Set(pool.map((entry) => entry.zh))].slice(0, 3)
     if (wrong.length < 2) continue
     questions.push({
-      id: `reply:${line.index}`, kind: 'reply', label: 'What came next',
-      prompt: speakers && line.speaker ? `What did ${line.speaker} say next?` : 'Which line came next?',
+      id: `reply:${line.index}`, kind: 'reply', label: t('What came next'),
+      prompt: speakers && line.speaker ? t('What did {speaker} say next?', { speaker: line.speaker }) : t('Which line came next?'),
       context: { speaker: before.speaker || undefined, zh: before.zh },
       options: shuffle([line.zh, ...wrong], rand), answer: line.zh,
       explanation: `${before.speaker ? `${before.speaker}: ` : ''}${before.zh}  →  ${line.speaker ? `${line.speaker}: ` : ''}${line.zh} (${line.en})`,
@@ -75,7 +76,7 @@ export function buildRecheck(text: LessonText, words: Vocab[]): RecheckQuestion[
     const target = shuffle(lines.filter((line) => line.speaker.trim() && line.zh.length >= 4), rand).find((line) => !used.has(line.zh))
     if (target) {
       questions.push({
-        id: `speaker:${target.index}`, kind: 'speaker', label: 'Who said it', prompt: 'Who said this?',
+        id: `speaker:${target.index}`, kind: 'speaker', label: t('Who said it'), prompt: t('Who said this?'),
         context: { zh: target.zh }, options: people, answer: target.speaker.trim(),
         explanation: `${target.speaker}: ${target.zh} (${target.en})`,
       })
@@ -93,10 +94,10 @@ export function buildRecheck(text: LessonText, words: Vocab[]): RecheckQuestion[
     const wrong = [...new Set([...shuffle(alike, rand), ...shuffle(near, rand)].map((other) => other.zh))].slice(0, 3)
     if (wrong.length < 2) continue
     questions.push({
-      id: `word:${word.zh}`, kind: 'word', label: 'Key word', prompt: 'Which word fits the blank?',
+      id: `word:${word.zh}`, kind: 'word', label: t('Key word'), prompt: t('Which word fits the blank?'),
       context: { speaker: line.speaker || undefined, zh: line.zh.replace(word.zh, BLANK) }, clue: line.en,
       options: shuffle([word.zh, ...wrong], rand), answer: word.zh, word: word.zh,
-      explanation: `${word.zh} (${word.pinyin}), ${word.en}. In the book: ${line.zh} (${line.en})`,
+      explanation: t('{zh} ({pinyin}), {meaning}. In the book: {line} ({gloss})', { zh: word.zh, pinyin: word.pinyin, meaning: word.en, line: line.zh, gloss: line.en }),
     })
   }
 
@@ -108,10 +109,10 @@ export function reviewRecheck(task: string, questions: RecheckQuestion[], answer
   const byId = new Map(answers.map((answer) => [answer.id, answer.picked]))
   const answered = questions.filter((question) => byId.has(question.id)).length
   const checks: ReviewCheck[] = [{
-    id: 'answered-all', stage: 'instruction', decisive: true, label: 'Answered every question',
+    id: 'answered-all', stage: 'instruction', decisive: true, label: t('Answered every question'),
     status: answered === questions.length ? 'pass' : 'fail',
-    found: `${answered} of ${questions.length} answered`, expected: `${questions.length} answers`,
-    fix: 'Answer the remaining questions before the check.',
+    found: t('{answered} of {total} answered', { answered, total: questions.length }), expected: t('{n} answers', { n: questions.length }),
+    fix: t('Answer the remaining questions before the check.'),
   }]
   for (const question of questions) {
     const picked = byId.get(question.id)
@@ -120,7 +121,7 @@ export function reviewRecheck(task: string, questions: RecheckQuestion[], answer
       id: question.id, stage: 'choice', decisive: true,
       label: `${question.label}: ${question.context.zh}`,
       status: picked === undefined ? 'fail' : right ? 'pass' : 'fail',
-      found: picked ?? 'No answer', expected: question.answer,
+      found: picked ?? t('No answer'), expected: question.answer,
       fix: right ? undefined : question.explanation,
     })
   }

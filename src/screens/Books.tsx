@@ -13,6 +13,7 @@ import {
 import { getBookLearningPlan } from '../lib/bookLearning'
 import { bookReviewDate, hasMeaningfulBookReflection, useBookJournal, type BookCompletionMode } from '../lib/bookJournal'
 import { recordHistory } from '../lib/history'
+import { t } from '../lib/i18n'
 import { clearLearningCheckpoint, clearStep, readLearningCheckpoint, readStep, writeLearningCheckpoint, writeStep } from '../lib/resume'
 import { playAdvance, playComplete, playCorrect, playWrong } from '../lib/sfx'
 import { ITEM_XP, NODE_BONUS_XP } from '../lib/wordsSession'
@@ -20,6 +21,8 @@ import { useStore } from '../store/store'
 import '../styles/books.css'
 
 type QuizState = { wrong: number[]; solved: boolean; missed: boolean }
+/** The stage ids are compared in code; only the label is shown to the learner. */
+const STAGES = [{ id: 'Read', label: t('Read') }, { id: 'Understand', label: t('Understand') }, { id: 'Apply', label: t('Apply') }, { id: 'Reflect', label: t('Reflect') }] as const
 const SELECTED_BOOK_KEY = 'yulu.books.selected.v1'
 const SELECTED_BOOK_EVENT = 'books:selected'
 
@@ -56,17 +59,17 @@ function openBookJournal(part: number, index: number, onPlay: (part: number, ind
 }
 
 export function BooksEmptyState() {
-  return <section className="books-empty"><div className="kicker">Books</div><h2>{BOOKS_COURSE.title}</h2><p>{BOOKS_COURSE.blurb}.</p><p>The book library is being prepared.</p></section>
+  return <section className="books-empty"><div className="kicker">{t('Books')}</div><h2>{BOOKS_COURSE.title}</h2><p>{BOOKS_COURSE.blurb}.</p><p>{t('The book library is being prepared.')}</p></section>
 }
 
 /** Each book keeps its own source order and unlock sequence. */
 export function BooksPartPath({ chapters, partTitle, onPlay }: { chapters: BooksChapter[]; partTitle: string; onPlay?: (part: number, index: number) => void }) {
   const progress = useBooksProgress()
-  return <div className="books-book-path"><LearningPath kicker="Book path" title={partTitle} subtitle={`${chapters.length} chapters · Read, understand, apply, reflect`} items={chapters.map((chapter) => {
+  return <div className="books-book-path"><LearningPath kicker={t('Book path')} title={partTitle} subtitle={t('{n} chapters · Read, understand, apply, reflect', { n: chapters.length })} items={chapters.map((chapter) => {
     const node: BooksNode = LESSON_NODE
     const done = progress.isNodeDone(chapter.part, chapter.index, node)
     const playable = progress.isNodePlayable(chapter.part, chapter.index, node)
-    return { id: `${chapter.part}:${chapter.index}`, label: `Chapter ${chapter.index}`, title: nodeLabelBooks(chapter), state: done ? 'done' as const : playable ? 'current' as const : 'locked' as const, playable, onSelect: () => onPlay?.(chapter.part, chapter.index) }
+    return { id: `${chapter.part}:${chapter.index}`, label: t('Chapter {n}', { n: chapter.index }), title: nodeLabelBooks(chapter), state: done ? 'done' as const : playable ? 'current' as const : 'locked' as const, playable, onSelect: () => onPlay?.(chapter.part, chapter.index) }
   })} /></div>
 }
 
@@ -87,7 +90,7 @@ export function BooksLearn({ onPlay }: { onPlay: (part: number, index: number) =
   if (!parts.length) return <BooksEmptyState />
   const current = parts.find((part) => part.part === selected) ?? parts[0]
   return <div className="books-learn">
-    <section className="books-library-selector" aria-label="Choose a book"><div className="books-library-heading"><span>Five books</span><p>One idea, then something to try.</p></div><div className="books-library-tabs" role="group" aria-label="Books">{parts.map((part, position) => <button type="button" key={part.part} aria-pressed={part.part === current.part} onClick={() => select(part.part)}><span aria-hidden="true">{String(position + 1).padStart(2, '0')}</span>{part.titleEn}</button>)}</div></section>
+    <section className="books-library-selector" aria-label={t('Choose a book')}><div className="books-library-heading"><span>{t('Five books')}</span><p>{t('One idea, then something to try.')}</p></div><div className="books-library-tabs" role="group" aria-label={t('Books')}>{parts.map((part, position) => <button type="button" key={part.part} aria-pressed={part.part === current.part} onClick={() => select(part.part)}><span aria-hidden="true">{String(position + 1).padStart(2, '0')}</span>{part.titleEn}</button>)}</div></section>
     <BookJournalReview onOpen={(part, index) => { select(part); openBookJournal(part, index, onPlay) }} />
     <BooksPartPath key={current.part} partTitle={current.titleEn} chapters={current.chapters} onPlay={onPlay} />
   </div>
@@ -142,7 +145,7 @@ function BooksRunner({ part, index, onClose }: { part: number; index: number; on
     clearStep(resumeId)
     clearLearningCheckpoint(resumeId)
     markNodeDone(part, index, LESSON_NODE)
-    recordHistory({ course: 'books', kind: 'node', lesson: lessonNo, node: LESSON_NODE, title: `${chapter.titleEn} · ${completionMode === 'reflection-drafted' ? 'reflection drafted' : 'reading complete'}` })
+    recordHistory({ course: 'books', kind: 'node', lesson: lessonNo, node: LESSON_NODE, title: completionMode === 'reflection-drafted' ? t('{title} · reflection drafted', { title: chapter.titleEn }) : t('{title} · reading complete', { title: chapter.titleEn }) })
     // A reading advance earns nothing. The bonus acknowledges a completed reflection draft.
     if (!alreadyDone.current && completionMode === 'reflection-drafted') {
       awardXp(NODE_BONUS_XP)
@@ -177,7 +180,7 @@ function BooksRunner({ part, index, onClose }: { part: number; index: number; on
       playCorrect()
       credit(key)
       const missed = previous.missed || assisted.includes(key) || previous.wrong.length > 0
-      recordHistory({ course: 'books', kind: 'quiz', lesson: lessonNo, node: LESSON_NODE, title: `${chapter.titleEn} · ${missed ? 'resolved after assistance' : 'source check'}`, correct: true })
+      recordHistory({ course: 'books', kind: 'quiz', lesson: lessonNo, node: LESSON_NODE, title: missed ? t('{title} · resolved after assistance', { title: chapter.titleEn }) : t('{title} · source check', { title: chapter.titleEn }), correct: true })
       setQuiz((current) => ({ ...current, [key]: { wrong: previous.wrong, solved: true, missed } }))
     } else {
       playWrong()
@@ -197,16 +200,16 @@ function BooksRunner({ part, index, onClose }: { part: number; index: number; on
   const showFooter = !step || isComplete || step.kind === 'scenario' || step.kind === 'mindset' || step.kind === 'journal'
 
   return <div className="overlay session learning-session books-session">
-    <div className="overlay-head"><button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close chapter"><CloseIcon /></button><div className="step-bar"><i className="yl-progress" style={{ width: `${isComplete ? 100 : Math.min(100, (i + 1) / total * 100)}%` }} /></div>{xp > 0 && <span className="session-xp" aria-label={`${xp} XP earned this session`}>+{xp}</span>}</div>
+    <div className="overlay-head"><button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close chapter')}><CloseIcon /></button><div className="step-bar"><i className="yl-progress" style={{ width: `${isComplete ? 100 : Math.min(100, (i + 1) / total * 100)}%` }} /></div>{xp > 0 && <span className="session-xp" aria-label={t('{xp} XP earned this session', { xp })}>+{xp}</span>}</div>
     <div className="overlay-body" ref={bodyRef}>
-      <nav className="learning-route" aria-label="Learning stages">{(['Read', 'Understand', 'Apply', 'Reflect'] as const).map((stage) => <span key={stage} data-active={phase === stage} aria-current={phase === stage ? 'step' : undefined}>{stage}</span>)}</nav>
-      <div className="books-chapter-context"><span>{chapter.partTitleEn}</span><span>Chapter {index}</span></div>
+      <nav className="learning-route" aria-label={t('Learning stages')}>{STAGES.map((stage) => <span key={stage.id} data-active={phase === stage.id} aria-current={phase === stage.id ? 'step' : undefined}>{stage.label}</span>)}</nav>
+      <div className="books-chapter-context"><span>{chapter.partTitleEn}</span><span>{t('Chapter {n}', { n: index })}</span></div>
       <div key={!step ? 'empty' : step.kind === 'complete' ? 'complete' : step.id} className="session-beat">
-        {!step ? <EmptyChapter /> : step.kind === 'idea' ? <BookSourceReader sitting={step.sitting} n={step.n} of={step.of} passageKey={`${resumeId}:passage:${step.sitting.id}`} onNext={goForward} /> : step.kind === 'quiz' ? <CheckScreen prompt={step.prompt} choices={step.choices} answer={step.answer} sitting={step.sitting} n={step.n} of={step.of} state={quizState} onPick={answerQuiz} passageKey={`${resumeId}:passage:${step.sitting.id}`} onNext={goForward} /> : step.kind === 'explain' ? <BookPrinciple plan={plan} source={source && source.kind !== 'complete' ? source.sitting : undefined} onNext={goForward} /> : step.kind === 'scenario' ? <BookScenario plan={plan} selected={scenario} onPick={setScenario} /> : step.kind === 'mindset' ? <BookMindset plan={plan} /> : step.kind === 'journal' ? <div className="books-stage books-notebook-stage"><div className="books-reading-meta"><span>Reflect · Your own words</span></div><BookJournal chapter={chapter} teachBackPrompt={plan.teachBackPrompt} actionPrompt={plan.actionPrompt} reviewPrompt={plan.reviewPrompt} /><p className="books-passages-note">A complete draft keeps an explanation and an action. Understanding and real-world results are yours to revisit.</p></div> : <DoneView chapter={chapter} xp={xp} mode={completionMode} />}
+        {!step ? <EmptyChapter /> : step.kind === 'idea' ? <BookSourceReader sitting={step.sitting} n={step.n} of={step.of} passageKey={`${resumeId}:passage:${step.sitting.id}`} onNext={goForward} /> : step.kind === 'quiz' ? <CheckScreen prompt={step.prompt} choices={step.choices} answer={step.answer} sitting={step.sitting} n={step.n} of={step.of} state={quizState} onPick={answerQuiz} passageKey={`${resumeId}:passage:${step.sitting.id}`} onNext={goForward} /> : step.kind === 'explain' ? <BookPrinciple plan={plan} source={source && source.kind !== 'complete' ? source.sitting : undefined} onNext={goForward} /> : step.kind === 'scenario' ? <BookScenario plan={plan} selected={scenario} onPick={setScenario} /> : step.kind === 'mindset' ? <BookMindset plan={plan} /> : step.kind === 'journal' ? <div className="books-stage books-notebook-stage"><div className="books-reading-meta"><span>{t('Reflect · Your own words')}</span></div><BookJournal chapter={chapter} teachBackPrompt={plan.teachBackPrompt} actionPrompt={plan.actionPrompt} reviewPrompt={plan.reviewPrompt} /><p className="books-passages-note">{t('A complete draft keeps an explanation and an action. Understanding and real-world results are yours to revisit.')}</p></div> : <DoneView chapter={chapter} xp={xp} mode={completionMode} />}
       </div>
     </div>
     {showFooter && <div className="overlay-foot">
-      {step?.kind === 'journal' ? <><button type="button" className="btn" disabled={!reflectionReady} onClick={() => finish('reflection-drafted')}>Finish with my reflection</button><button type="button" className="books-text-button books-reading-only" onClick={() => finish('reading-only')}>Skip reflection · finish reading only</button></> : <button type="button" className="btn" disabled={step?.kind === 'scenario' && scenario === null} onClick={isComplete || !step ? onClose : goForward}>{isComplete || !step ? 'Return to the book' : step.kind === 'scenario' ? 'Consider your perspective' : 'Open my notebook'}</button>}
+      {step?.kind === 'journal' ? <><button type="button" className="btn" disabled={!reflectionReady} onClick={() => finish('reflection-drafted')}>{t('Finish with my reflection')}</button><button type="button" className="books-text-button books-reading-only" onClick={() => finish('reading-only')}>{t('Skip reflection · finish reading only')}</button></> : <button type="button" className="btn" disabled={step?.kind === 'scenario' && scenario === null} onClick={isComplete || !step ? onClose : goForward}>{isComplete || !step ? t('Return to the book') : step.kind === 'scenario' ? t('Consider your perspective') : t('Open my notebook')}</button>}
     </div>}
   </div>
 }
@@ -216,19 +219,19 @@ function CheckScreen({ prompt, choices, answer, sitting, n, of, state, onPick, p
   const solved = state?.solved ?? false
   return <div className="books-stage books-source-check" data-phase="check">
     {solved ? <>
-      <div className="books-check-result"><RecallFeedback state="correct" label={state?.missed ? 'Resolved after a retry' : 'Source check passed'} /><details className="books-disclosure"><summary>Question and answer</summary><p>{prompt}</p><p>{choices[answer]}</p></details></div>
+      <div className="books-check-result"><RecallFeedback state="correct" label={state?.missed ? t('Resolved after a retry') : t('Source check passed')} /><details className="books-disclosure"><summary>{t('Question and answer')}</summary><p>{prompt}</p><p>{choices[answer]}</p></details></div>
       <BookSourceReader sitting={sitting} n={n} of={of} passageKey={passageKey} onNext={onNext} />
     </> : <>
-      <div className="books-reading-meta"><span>Source check · {n} / {of}</span></div><h2 className="books-check-q">{prompt}</h2>
+      <div className="books-reading-meta"><span>{t('Source check · {n} / {of}', { n, of })}</span></div><h2 className="books-check-q">{prompt}</h2>
       <div className="session-options">{choices.map((label, index) => { const missed = wrong.includes(index); return <button key={index} type="button" className="option" data-state={missed ? 'wrong' : undefined} disabled={missed} onClick={() => onPick(index, answer)}>{label}</button> })}</div>
-      {wrong.length > 0 && <div className="books-check-result"><RecallFeedback state="retry" label="Revisit the idea and choose again" /><details className="books-disclosure"><summary>Revisit the source notes</summary><div className="books-reading-copy">{sitting.bodyEn.split(/\n\s*\n/).map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div></details></div>}
+      {wrong.length > 0 && <div className="books-check-result"><RecallFeedback state="retry" label={t('Revisit the idea and choose again')} /><details className="books-disclosure"><summary>{t('Revisit the source notes')}</summary><div className="books-reading-copy">{sitting.bodyEn.split(/\n\s*\n/).map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div></details></div>}
     </>}
   </div>
 }
 
 function DoneView({ chapter, xp, mode }: { chapter: BooksChapter; xp: number; mode: BookCompletionMode }) {
   const reflected = mode === 'reflection-drafted'
-  return <div className="books-done"><div className="books-done-seal"><CheckIcon size={28} /></div><span className="books-reading-meta">Chapter {chapter.index}</span><h2>{reflected ? 'Reflection drafted' : 'Reading complete'}</h2><p>{nodeLabelBooks(chapter)}</p>{xp > 0 && <span className="books-earned-xp">+{xp} XP from checks and workshop participation</span>}<div className="books-reading-copy"><p>{reflected ? 'Your explanation and next action are kept in your notebook. Try the action, then return to see what changed.' : 'You finished the source and explored the scenario. Your unfinished notebook stays available for another visit.'}</p><p>Revisit one idea without opening the notes. A finished chapter does not automatically prove understanding.</p></div></div>
+  return <div className="books-done"><div className="books-done-seal"><CheckIcon size={28} /></div><span className="books-reading-meta">{t('Chapter {n}', { n: chapter.index })}</span><h2>{reflected ? t('Reflection drafted') : t('Reading complete')}</h2><p>{nodeLabelBooks(chapter)}</p>{xp > 0 && <span className="books-earned-xp">{t('+{xp} XP from checks and workshop participation', { xp })}</span>}<div className="books-reading-copy"><p>{reflected ? t('Your explanation and next action are kept in your notebook. Try the action, then return to see what changed.') : t('You finished the source and explored the scenario. Your unfinished notebook stays available for another visit.')}</p><p>{t('Revisit one idea without opening the notes. A finished chapter does not automatically prove understanding.')}</p></div></div>
 }
-function EmptyChapter() { return <div className="books-empty"><h2>This chapter is being prepared</h2><p>Come back when its source passages are ready.</p></div> }
-function LockedView({ onClose }: { onClose: () => void }) { return <div className="overlay session books-session"><div className="overlay-head"><button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close"><CloseIcon /></button></div><div className="overlay-body books-locked"><div><LockIcon size={32} /><h2>Continue the book in order</h2><p>Finish the previous chapter in this book first.</p></div></div><div className="overlay-foot"><button type="button" className="btn" onClick={onClose}>Return to the book</button></div></div> }
+function EmptyChapter() { return <div className="books-empty"><h2>{t('This chapter is being prepared')}</h2><p>{t('Come back when its source passages are ready.')}</p></div> }
+function LockedView({ onClose }: { onClose: () => void }) { return <div className="overlay session books-session"><div className="overlay-head"><button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close')}><CloseIcon /></button></div><div className="overlay-body books-locked"><div><LockIcon size={32} /><h2>{t('Continue the book in order')}</h2><p>{t('Finish the previous chapter in this book first.')}</p></div></div><div className="overlay-foot"><button type="button" className="btn" onClick={onClose}>{t('Return to the book')}</button></div></div> }

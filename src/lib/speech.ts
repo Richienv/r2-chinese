@@ -1,5 +1,6 @@
 import type { BookClip } from './bookAudioIndex.ts'
 import { timingAt, type WordTiming } from './speechTiming.ts'
+import { t } from './i18n.ts'
 
 export type SpeakOpts = {
   voice?: string
@@ -273,13 +274,13 @@ async function playOne(text: string, opts: SpeakOpts | undefined, mine: number):
   }
 }
 function run(work: (mine: number) => Promise<boolean>): Promise<boolean> {
-  if (!enabled) { publish({ ...idle, error: 'Sound is off. Enable it to listen.' }); return Promise.resolve(false) }
+  if (!enabled) { publish({ ...idle, error: t('Sound is off. Enable it to listen.') }); return Promise.resolve(false) }
   const mine = begin()
   return work(mine).then((completed) => {
     if (mine === seq) publish(idle)
     return completed
   }).catch(() => {
-    if (mine === seq) publish({ ...idle, error: 'Audio could not play. Check your connection and try again.' })
+    if (mine === seq) publish({ ...idle, error: t('Audio could not play. Check your connection and try again.') })
     return false
   })
 }

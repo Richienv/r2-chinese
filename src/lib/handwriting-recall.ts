@@ -1,4 +1,5 @@
 import type { HandwritingWordAssessment, InkDrawing } from './handwriting'
+import { t } from './i18n.ts'
 
 /** Each character keeps independent raw ink, including while revisiting earlier positions. */
 export function blankWordInk(characterCount: number): InkDrawing[] {
@@ -21,8 +22,13 @@ export function handwritingRecallEvidence(status: HandwritingWordAssessment['sta
 
 export function handwritingRetryMessage(assessment: HandwritingWordAssessment): string {
   const positions = assessment.characters.flatMap((character, index) => character.status !== 'correct' ? [index + 1] : [])
-  const location = positions.length ? `${positions.length === 1 ? 'character' : 'characters'} ${positions.join(', ')}` : 'your characters'
-  return assessment.status === 'uncertain'
-    ? `I can’t confidently read ${location}. Redraw with clearer, separate strokes, or type the word. This attempt isn’t scored.`
-    : `The drawing for ${location} doesn’t match the lesson word. Revisit it and try again.`
+  const list = positions.join(', ')
+  if (assessment.status === 'uncertain') {
+    return !positions.length ? t('I can’t confidently read your characters. Redraw with clearer, separate strokes, or type the word. This attempt isn’t scored.')
+      : positions.length === 1 ? t('I can’t confidently read character {list}. Redraw with clearer, separate strokes, or type the word. This attempt isn’t scored.', { list })
+        : t('I can’t confidently read characters {list}. Redraw with clearer, separate strokes, or type the word. This attempt isn’t scored.', { list })
+  }
+  return !positions.length ? t('The drawing for your characters doesn’t match the lesson word. Revisit it and try again.')
+    : positions.length === 1 ? t('The drawing for character {list} doesn’t match the lesson word. Revisit it and try again.', { list })
+      : t('The drawing for characters {list} doesn’t match the lesson word. Revisit it and try again.', { list })
 }
