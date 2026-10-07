@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { LearningPath } from '../components/LearningPath'
 import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
@@ -28,6 +28,7 @@ import {
   type KerjaChapter,
   type KerjaNode,
 } from '../lib/kerja'
+import { t } from '../lib/i18n'
 import { recordHistory } from '../lib/history'
 import { clearLearningCheckpoint, readLearningCheckpoint, writeLearningCheckpoint } from '../lib/resume'
 import { playAdvance, playComplete, playCorrect, playWrong } from '../lib/sfx'
@@ -40,20 +41,42 @@ import { TeachView } from './TeachBeats'
 
 type QuizState = { wrong: string[]; solved: boolean; missed: boolean }
 
+/** The five stages of a sitting. The English names are ids the code compares; the labels are what the learner reads. */
+const STAGES = ['Encounter', 'Understand', 'Retrieve', 'Produce', 'Revisit'] as const
+type Stage = (typeof STAGES)[number]
+const STAGE_LABEL: Record<Stage, string> = {
+  Encounter: t('Encounter'),
+  Understand: t('Understand'),
+  Retrieve: t('Retrieve'),
+  Produce: t('Produce'),
+  Revisit: t('Revisit'),
+}
+
+/** Put elements into a translated sentence at its `{slot}` markers, wherever the language places them. */
+function withSlots(sentence: string, slots: Record<string, ReactNode>): ReactNode[] {
+  return sentence.split(/(\{\w+\})/).map((piece, index) => {
+    const slot = /^\{(\w+)\}$/.exec(piece)?.[1]
+    return slot && slot in slots ? <Fragment key={index}>{slots[slot]}</Fragment> : piece
+  })
+}
+
 export function KerjaEmptyState() {
   return (
     <section className="kerja-empty metal">
-      <div className="kicker">1000 words</div>
+      <div className="kicker">{t('1000 words')}</div>
       <h2 className="zh" lang="zh-CN">
         {KERJA_BOOK.titleZh}
       </h2>
       <p className="kerja-empty-en">{KERJA_BOOK.title}</p>
       <p className="sub" style={{ textWrap: 'pretty', marginTop: 10 }}>
-        {KERJA_BOOK.blurb}. Chapters appear here automatically when unit JSON is added under{' '}
-        <code>src/data/kerja/units/</code>.
+        {withSlots(
+          // The slot stays in the sentence as it is, then becomes a <code> element.
+          t('{blurb}. Chapters appear here automatically when unit JSON is added under {path}.', { blurb: KERJA_BOOK.blurb, path: '{path}' }),
+          { path: <code>src/data/kerja/units/</code> },
+        )}
       </p>
       <p className="sub" style={{ marginTop: 8 }}>
-        No chapters loaded yet — nothing fake to start.
+        {t('No chapters loaded yet — nothing fake to start.')}
       </p>
     </section>
   )
@@ -78,10 +101,10 @@ export function KerjaPath({
   return (
     <LearningPath
       fill={fill}
-      kicker={`Bab ${chapter.index} · 1000 words`}
+      kicker={t('Bab {n} · 1000 words', { n: chapter.index })}
       title={chapter.titleZh || chapter.titleEn}
       subtitle={chapter.titleEn}
-      source={chapter.sourcePages ? `pp. ${chapter.sourcePages}` : undefined}
+      source={chapter.sourcePages ? t('pp. {pages}', { pages: chapter.sourcePages }) : undefined}
       open={progress.isChapterReached(chapter.index)}
       items={nodes.map(node => {
         const done = nodeDone(chapter.index, node)
@@ -293,7 +316,7 @@ function KerjaRunner({ chapter, node, onClose }: {
       store.recordRecall(outcome.word, { correct: outcome.correct, assisted: outcome.assisted, mode: outcome.mode })
     }
     credit(step.id)
-    recordHistory({ course: 'kerja', kind: 'quiz', lesson: chapter, node, correct: result.evidence === 'practice' ? undefined : result.correct, title: result.evidence === 'practice' ? 'Sentence practice · ungraded' : undefined })
+    recordHistory({ course: 'kerja', kind: 'quiz', lesson: chapter, node, correct: result.evidence === 'practice' ? undefined : result.correct, title: result.evidence === 'practice' ? t('Sentence practice · ungraded') : undefined })
     playAdvance()
     goForward()
   }
@@ -301,7 +324,7 @@ function KerjaRunner({ chapter, node, onClose }: {
   function finishRecheck(summary: RecheckSummary) {
     if (step.kind !== 'recheck') return
     credit(step.id)
-    recordHistory({ course: 'kerja', kind: 'quiz', lesson: chapter, node, correct: summary.unaided === summary.total, title: 'Dialogue check' })
+    recordHistory({ course: 'kerja', kind: 'quiz', lesson: chapter, node, correct: summary.unaided === summary.total, title: t('Dialogue check') })
     playAdvance()
     goForward()
   }
@@ -329,7 +352,7 @@ function KerjaRunner({ chapter, node, onClose }: {
 
   const progressPct = isComplete ? 100 : (i / total) * 100
   const showFooter = isComplete || step.kind === 'teach' || step.kind === 'note' || step.kind === 'read' || (step.kind === 'quiz' && quizState?.solved)
-  const activeStage = step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' || step.kind === 'recheck' ? 'Retrieve' : step.kind === 'complete' ? 'Revisit' : 'Produce'
+  const activeStage: Stage = step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' || step.kind === 'recheck' ? 'Retrieve' : step.kind === 'complete' ? 'Revisit' : 'Produce'
 
   return (
     <div className="overlay session learning-session">
