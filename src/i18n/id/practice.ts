@@ -127,7 +127,7 @@ const entries: Record<string, string> = {
 
   // HanziDrawing
   'Handwriting could not be checked. Retry, or type the word. This attempt isn’t scored.': 'Tulisan tangannya gak bisa dicek. Coba lagi, atau ketik katanya. Percobaan ini gak dinilai.',
-  'Not scored. The handwriting could not be read with confidence, so this attempt does not count for or against you.': 'Gak dinilai. Tulisan tangannya belum bisa dibaca dengan yakin, jadi percobaan ini gak dihitung untuk maupun melawanmu.',
+  'Not scored. The handwriting could not be read with confidence, so this attempt does not count for or against you.': 'Gak dinilai. Tulisan tangannya belum bisa dibaca dengan yakin, jadi percobaan ini gak dihitung, baik yang menguntungkan maupun yang merugikanmu.',
   'Your character': 'Karaktermu',
   'Character {n}': 'Karakter {n}',
   'Your drawing of character {n}': 'Gambarmu untuk karakter {n}',
