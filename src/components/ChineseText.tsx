@@ -3,6 +3,7 @@ import { courseVocab, exampleFor, lessonOf, lookup, segmentForGloss, unknownVoca
 import { bundledDictionaryEntry, refreshDictionaryEntry, type DictionaryEntry } from '../lib/dictionary'
 import { DICTIONARY_LICENSE, DICTIONARY_SOURCE, formatDictionaryDefinition } from '../lib/dictionary-format'
 import { mixWithSaved } from '../lib/drill'
+import { t } from '../lib/i18n'
 import { speak, speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
 import { rangesOverlap } from '../lib/speechTiming'
 import { useStore } from '../store/store'
@@ -15,6 +16,9 @@ import { SaveStar } from './SaveStar'
 import { Sheet } from './Sheet'
 
 const HANZI_ONLY = /^[\u3400-\u9fff\uf900-\ufaff]+$/
+
+/** A CC-CEDICT definition, with its "CL:" references spelled out in the interface language. */
+const define = (text: string) => formatDictionaryDefinition(text, t('measure word'))
 
 /** Book sentence with 汉字 + pinyin + English always visible. Never invent. */
 export function BookExample({
@@ -53,7 +57,7 @@ export function BookExample({
         {(showPinyin ?? prefs.showPinyin) && <div className="teach-example-py">{example.pinyin}</div>}
         {(showEnglish ?? prefs.showEnglish) && <div className="teach-example-en">{example.en}</div>}
         <div style={{ marginTop: 10 }}>
-          <ChineseHear text={example.zh} autoplay={autoplay} label="Hear the line" rate={LINE_RATE} tone="on-red" />
+          <ChineseHear text={example.zh} autoplay={autoplay} label={t('Hear the line')} rate={LINE_RATE} tone="on-red" />
         </div>
         {glossable && !onWord && gloss.sheet}
       </div>
@@ -62,14 +66,14 @@ export function BookExample({
 
   return (
     <div className="card pop book-example" style={style}>
-      <div className="kicker-ink">From the book</div>
+      <div className="kicker-ink">{t('From the book')}</div>
       <div className="book-example-zh zh" lang="zh-CN">
         {zhNode}
       </div>
       {(showPinyin ?? prefs.showPinyin) && <div className="book-example-py">{example.pinyin}</div>}
       {(showEnglish ?? prefs.showEnglish) && <div className="book-example-en">{example.en}</div>}
       <div style={{ marginTop: 12 }}>
-        <ChineseHear text={example.zh} autoplay={autoplay} label="Hear the line" rate={LINE_RATE} />
+        <ChineseHear text={example.zh} autoplay={autoplay} label={t('Hear the line')} rate={LINE_RATE} />
       </div>
       {glossable && !onWord && gloss.sheet}
     </div>
@@ -86,23 +90,23 @@ export function Glossed({ text, onWord, learnedWords, highlightLearned = true }:
   let offset = -Math.max(0, text.indexOf(text.trim()))
   return (
     <>
-      {tokens.map((t, i) => {
+      {tokens.map((token, i) => {
         const start = offset
-        offset += t.text.length
-        const focus = speaking && rangesOverlap(start, t.text.length, speech.charIndex, speech.charLength)
-        const vocab = t.vocab ?? (HANZI_ONLY.test(t.text) ? lookup(t.text) : undefined)
-        const tappable = vocab || HANZI_ONLY.test(t.text)
-        if (!tappable) return <span key={i}>{t.text}</span>
-        const target = vocab ?? unknownVocab(t.text)
+        offset += token.text.length
+        const focus = speaking && rangesOverlap(start, token.text.length, speech.charIndex, speech.charLength)
+        const vocab = token.vocab ?? (HANZI_ONLY.test(token.text) ? lookup(token.text) : undefined)
+        const tappable = vocab || HANZI_ONLY.test(token.text)
+        if (!tappable) return <span key={i}>{token.text}</span>
+        const target = vocab ?? unknownVocab(token.text)
         return (
           <span
             key={i}
             className={vocab ? 'word' : 'word word-unknown'}
-            data-learned={highlightLearned && learned.has(t.text)}
-            data-mastery={mastery[t.text]?.state ?? 'learning'}
+            data-learned={highlightLearned && learned.has(token.text)}
+            data-mastery={mastery[token.text]?.state ?? 'learning'}
             data-speaking={focus}
             role="button"
-            aria-label={`Look up ${t.text}`}
+            aria-label={t('Look up {word}', { word: token.text })}
             tabIndex={0}
             onClick={(e) => {
               e.stopPropagation()
@@ -117,7 +121,7 @@ export function Glossed({ text, onWord, learnedWords, highlightLearned = true }:
               }
             }}
           >
-            {t.text}
+            {token.text}
           </span>
         )
       })}
@@ -169,7 +173,7 @@ export function GlossSheet({ word, onClose, onDrill, onStrokes, onWord }: {
         const found = await Promise.all(Array.from(word.zh).map((char) => bundledDictionaryEntry(char).catch(() => null)))
         if (active) setParts(found.filter((part): part is DictionaryEntry => Boolean(part)))
       }
-    }).catch(() => { if (active) setStatus('Loading the online dictionary…') }).finally(() => { if (active) setLoading(false) })
+    }).catch(() => { if (active) setStatus(t('Loading the online dictionary…')) }).finally(() => { if (active) setLoading(false) })
     void refreshDictionaryEntry(word.zh).then((entry) => {
       if (!active) return
       if (entry) { refreshed = true; applyEntry(entry) }
@@ -190,39 +194,39 @@ export function GlossSheet({ word, onClose, onDrill, onStrokes, onWord }: {
     const entry = await refreshDictionaryEntry(word.zh, true)
     if (currentWord.current !== requestedWord) return
     if (entry) applyEntry(entry)
-    else setStatus(resolved.en ? 'Online refresh unavailable. The saved dictionary definition is still available.' : 'No exact CC-CEDICT headword returned. Explore its characters below or open the source dictionary.')
+    else setStatus(resolved.en ? t('Online refresh unavailable. The saved dictionary definition is still available.') : t('No exact CC-CEDICT headword returned. Explore its characters below or open the source dictionary.'))
     setRefreshing(false)
   }
 
   return (
-    <Sheet onClose={onClose} label={`Definition of ${word.zh}`}>
+    <Sheet onClose={onClose} label={t('Definition of {word}', { word: word.zh })}>
       <div className="teach-gloss dictionary-word-head">
         <div className="zh teach-gloss-hz" lang="zh-CN">{word.zh}</div>
         {display.pinyin && <div className="teach-gloss-py">{display.pinyin}</div>}
         {display.pos && <div className="teach-gloss-pos">{display.pos}</div>}
       </div>
       <div className="dictionary-word-actions">
-        <HearButton text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
+        <HearButton text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear the word')} />
         <SaveStar zh={word.zh} size={22} />
       </div>
-      {display.en ? dictionary && !fromCourse && dictionary.readings.length > 1 ? null : <p className="teach-gloss-en">{fromCourse ? display.en : formatDictionaryDefinition(display.en)}</p>
-        : loading ? <div className="dictionary-loading" role="status">Finding the dictionary definition…</div>
-          : <p className="dictionary-status">This exact phrase is not a CC-CEDICT headword. Its characters have their own definitions:</p>}
-      {!display.en && parts.length > 0 && <div className="dictionary-readings">{parts.map((part, index) => <button key={`${part.zh}:${index}`} type="button" className="card" style={{ textAlign: 'left', padding: 12 }} onClick={() => onWord?.({ zh: part.zh, pinyin: part.pinyin, en: part.en, pos: '', note: '' })}><strong className="zh" lang="zh-CN">{part.zh}</strong><span>{part.pinyin}</span><p className="sub">{formatDictionaryDefinition(part.en)}</p></button>)}</div>}
+      {display.en ? dictionary && !fromCourse && dictionary.readings.length > 1 ? null : <p className="teach-gloss-en">{fromCourse ? display.en : define(display.en)}</p>
+        : loading ? <div className="dictionary-loading" role="status">{t('Finding the dictionary definition…')}</div>
+          : <p className="dictionary-status">{t('This exact phrase is not a CC-CEDICT headword. Its characters have their own definitions:')}</p>}
+      {!display.en && parts.length > 0 && <div className="dictionary-readings">{parts.map((part, index) => <button key={`${part.zh}:${index}`} type="button" className="card" style={{ textAlign: 'left', padding: 12 }} onClick={() => onWord?.({ zh: part.zh, pinyin: part.pinyin, en: part.en, pos: '', note: '' })}><strong className="zh" lang="zh-CN">{part.zh}</strong><span>{part.pinyin}</span><p className="sub">{define(part.en)}</p></button>)}</div>}
       {display.note && <p className="sub" style={{ marginTop: 8, lineHeight: 1.6 }}>{display.note}</p>}
-      {dictionary && !fromCourse && dictionary.readings.length > 1 && <ul className="dictionary-readings">{dictionary.readings.map((reading, index) => <li key={index}><strong>{reading.pinyin}</strong>{formatDictionaryDefinition(reading.definitions.join('; '))}</li>)}</ul>}
+      {dictionary && !fromCourse && dictionary.readings.length > 1 && <ul className="dictionary-readings">{dictionary.readings.map((reading, index) => <li key={index}><strong>{reading.pinyin}</strong>{define(reading.definitions.join('; '))}</li>)}</ul>}
       <div className="dictionary-source">
-        {fromCourse && <span>Course definition</span>}
+        {fromCourse && <span>{t('Course definition')}</span>}
         {(!fromCourse || dictionary) && <><a href={DICTIONARY_SOURCE} target="_blank" rel="noreferrer">CC-CEDICT · MDBG</a><a href={DICTIONARY_LICENSE} target="_blank" rel="noreferrer">CC BY-SA 4.0</a></>}
-        {!fromCourse && <button type="button" disabled={refreshing} onClick={() => { void refresh() }}>{refreshing ? 'Refreshing…' : 'Refresh definition'}</button>}
+        {!fromCourse && <button type="button" disabled={refreshing} onClick={() => { void refresh() }}>{refreshing ? t('Refreshing…') : t('Refresh definition')}</button>}
       </div>
       {status && <p className="dictionary-status" role="status">{status}</p>}
       {example && <BookExample example={example} style={{ marginTop: 18 }} onWord={onWord} glossable={Boolean(onWord)} />}
       <div className="row" style={{ marginTop: 20, gap: 10 }}>
-        {onDrill && <button className="btn" disabled={!display.en} onClick={() => onDrill(word.zh)}><BoltIcon size={18} /> Recall this word</button>}
-        {onStrokes && <button className="btn btn-dark" style={onDrill ? { width: 'auto', padding: '0 20px', flex: 'none' } : undefined} onClick={() => onStrokes(word.zh[0])} aria-label="Practise strokes"><PencilIcon size={18} /></button>}
+        {onDrill && <button className="btn" disabled={!display.en} onClick={() => onDrill(word.zh)}><BoltIcon size={18} /> {t('Recall this word')}</button>}
+        {onStrokes && <button className="btn btn-dark" style={onDrill ? { width: 'auto', padding: '0 20px', flex: 'none' } : undefined} onClick={() => onStrokes(word.zh[0])} aria-label={t('Practise strokes')}><PencilIcon size={18} /></button>}
       </div>
-      <p className="dictionary-status">Saved to your learning trail automatically. Star it only when you want a favourite.</p>
+      <p className="dictionary-status">{t('Saved to your learning trail automatically. Star it only when you want a favourite.')}</p>
     </Sheet>
   )
 }
@@ -253,7 +257,7 @@ export function Line({
         type="button"
         className="speaker"
         data-on={playing}
-        aria-label={line.speaker ? `Hear ${line.speaker}` : 'Hear this line'}
+        aria-label={line.speaker ? t('Hear {speaker}', { speaker: line.speaker }) : t('Hear this line')}
         onPointerDown={() => unlockSpeech()}
         onClick={(e) => {
           e.stopPropagation()
@@ -317,9 +321,9 @@ export function DialogueAudio({ text }: { text: LessonText }) {
           )
         }}
       >
-        <span>{playing ? 'Stop' : text.type === 'dialogue' ? 'Play dialogue' : 'Play passage'}</span>
+        <span>{playing ? t('Stop') : text.type === 'dialogue' ? t('Play dialogue') : t('Play passage')}</span>
       </button>
-      <p className="dialogue-audio-hint">Tap a name to hear that line.</p>
+      <p className="dialogue-audio-hint">{t('Tap a name to hear that line.')}</p>
     </div>
   )
 }
@@ -362,7 +366,7 @@ export function useGloss(onStrokes?: (char: string) => void) {
       {drill && (
         <DrillFlow
           words={drill}
-          title={drill.length > 1 ? `Drill ${drill.length} saved` : `Drill ${drill[0]}`}
+          title={drill.length > 1 ? t('Drill {n} saved', { n: drill.length }) : t('Drill {word}', { word: drill[0] })}
           onClose={() => setDrill(null)}
         />
       )}

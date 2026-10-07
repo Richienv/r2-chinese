@@ -4,14 +4,15 @@ import { HearButton } from '../components/Hear'
 import { ChevronLeft } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { vocabIndex } from '../lib/content'
+import { t } from '../lib/i18n'
 import type { Vocab } from '../lib/types'
 import { VOICE, WORD_RATE } from '../lib/voices'
 
 const TAGS: { key: string; label: string }[] = [
-  { key: '', label: 'All' },
-  { key: 'known-char', label: 'Known-char' },
-  { key: 'proper', label: 'Proper nouns' },
-  { key: 'supra', label: 'Beyond HSK 4' },
+  { key: '', label: t('All') },
+  { key: 'known-char', label: t('Known-char') },
+  { key: 'proper', label: t('Proper nouns') },
+  { key: 'supra', label: t('Beyond HSK 4') },
 ]
 
 /** Searchable index of all 361 book words — the missing "look anything up" screen. */
@@ -40,10 +41,10 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
   return (
     <div className="overlay">
       <div className="overlay-head">
-        <button className="icon-round tap44" onClick={onClose} aria-label="Back">
+        <button className="icon-round tap44" onClick={onClose} aria-label={t('Back')}>
           <ChevronLeft />
         </button>
-        <strong style={{ fontSize: 15, flex: 1 }}>Vocabulary</strong>
+        <strong style={{ fontSize: 15, flex: 1 }}>{t('Vocabulary')}</strong>
         <span style={{ fontSize: 12, fontWeight: 800, color: 'var(--muted)' }}>{results.length}</span>
       </div>
 
@@ -51,8 +52,8 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Search hanzi, pinyin or meaning…"
-          aria-label="Search vocabulary"
+          placeholder={t('Search hanzi, pinyin or meaning…')}
+          aria-label={t('Search vocabulary')}
           style={{
             width: '100%',
             height: 48,
@@ -66,18 +67,18 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
           }}
         />
         <div style={{ display: 'flex', gap: 8, overflowX: 'auto', marginTop: 10, paddingBottom: 2 }}>
-          {TAGS.map((t) => (
+          {TAGS.map((item) => (
             <button
-              key={t.key}
+              key={item.key}
               className="pill-ink"
-              onClick={() => setTag(t.key)}
+              onClick={() => setTag(item.key)}
               style={
-                tag === t.key
+                tag === item.key
                   ? { color: '#fff', backgroundImage: 'var(--metal-sheen), var(--metal-base)', borderColor: 'transparent', flex: 'none' }
                   : { flex: 'none' }
               }
             >
-              {t.label}
+              {item.label}
             </button>
           ))}
         </div>
@@ -87,7 +88,7 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
             onClick={() => setLesson(0)}
             style={lesson === 0 ? { color: 'var(--link-hover)', borderColor: '#f3d6c4', flex: 'none' } : { flex: 'none' }}
           >
-            All lessons
+            {t('All lessons')}
           </button>
           {lessonNums.map((n) => (
             <button
@@ -105,7 +106,7 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
       <div className="overlay-body" style={{ paddingTop: 8 }}>
         {results.length === 0 ? (
           <p className="sub" style={{ textAlign: 'center', marginTop: 40 }}>
-            No words match “{q}”.
+            {t('No words match “{q}”.', { q })}
           </p>
         ) : (
           <div style={{ display: 'grid', gap: 8 }}>
@@ -116,18 +117,18 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
                   <button
                     style={{ textAlign: 'left', flex: 1, minWidth: 0 }}
                     onClick={() => onWord(vocab)}
-                    aria-label={`${v.zh} details`}
+                    aria-label={t('{word} details', { word: v.zh })}
                   >
                     <div className="zh" style={{ fontSize: 18, fontWeight: 700 }} lang="zh-CN">
                       {v.zh}
                       {v.tag === 'proper' && (
                         <span style={{ fontSize: 10, color: 'var(--muted-3)', fontWeight: 700, marginLeft: 6 }}>
-                          proper
+                          {t('proper')}
                         </span>
                       )}
                       {v.tag === 'supra' && (
                         <span style={{ fontSize: 10, color: 'var(--warm)', fontWeight: 700, marginLeft: 6 }}>
-                          beyond HSK 4
+                          {t('beyond HSK 4')}
                         </span>
                       )}
                     </div>
@@ -136,7 +137,7 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
                     </div>
                     <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 2 }}>{v.en}</div>
                   </button>
-                  <HearButton text={v.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear" />
+                  <HearButton text={v.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear')} />
                   <SaveStar zh={v.zh} lesson={v.lesson} size={20} />
                 </div>
               )

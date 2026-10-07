@@ -4,6 +4,7 @@ import { ChevronLeft } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { Writer } from '../components/Writer'
 import { lessonOf, lookup, vocabIndex } from '../lib/content'
+import { t } from '../lib/i18n'
 import type { Vocab } from '../lib/types'
 import { VOICE, WORD_RATE } from '../lib/voices'
 
@@ -16,10 +17,10 @@ export function CharacterOverlay({ char, onClose }: { char: string; onClose: () 
   return (
     <div className="overlay">
       <div className="overlay-head">
-        <button className="icon-round tap44" onClick={onClose} aria-label="Back">
+        <button className="icon-round tap44" onClick={onClose} aria-label={t('Back')}>
           <ChevronLeft />
         </button>
-        <strong style={{ fontSize: 15, flex: 1, textAlign: 'center' }}>Character</strong>
+        <strong style={{ fontSize: 15, flex: 1, textAlign: 'center' }}>{t('Character')}</strong>
         <SaveStar zh={char} lesson={lesson} />
       </div>
 
@@ -32,22 +33,22 @@ export function CharacterOverlay({ char, onClose }: { char: string; onClose: () 
             {headword?.pinyin ?? char}
           </div>
           <div className="sub" style={{ marginTop: 4 }}>
-            {headword?.en ?? 'Character practice'}
+            {headword?.en ?? t('Character practice')}
           </div>
           <div style={{ marginTop: 14, display: 'flex', justifyContent: 'center' }}>
-            <ChineseHear text={char} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the character" />
+            <ChineseHear text={char} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear the character')} />
           </div>
           <div className="row" style={{ justifyContent: 'center', marginTop: 14, flexWrap: 'wrap' }}>
             <span className="pill-ink">HSK 4</span>
-            {lesson && <span className="pill-ink">Lesson {lesson}</span>}
-            <span className="pill-ink">{words.length} words</span>
+            {lesson && <span className="pill-ink">{t('Lesson {n}', { n: lesson })}</span>}
+            <span className="pill-ink">{t('{n} words', { n: words.length })}</span>
           </div>
         </div>
 
         <Writer char={char} />
 
         <h3 className="kicker-ink" style={{ margin: '26px 0 12px' }}>
-          Words with {char}
+          {t('Words with {char}', { char })}
         </h3>
         <div style={{ display: 'grid', gap: 10 }}>
           {words.map((w) => {
@@ -68,7 +69,7 @@ export function CharacterOverlay({ char, onClose }: { char: string; onClose: () 
                     <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 4 }}>{w.en}</div>
                   </div>
                 </button>
-                <HearButton text={w.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear" />
+                <HearButton text={w.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear')} />
               </div>
             )
           })}
