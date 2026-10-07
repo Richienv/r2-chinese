@@ -2,9 +2,9 @@
 const entries: Record<string, string> = {
   // Empty states
   '{blurb}. Lessons appear when JSON lands under {part1} and {part2}.': '{blurb}. Pelajaran bakal muncul begitu JSON masuk ke {part1} dan {part2}.',
-  'No lessons loaded yet — nothing fake to start.': 'Belum ada pelajaran yang dimuat — gak ada yang palsu buat dimulai.',
+  'No lessons loaded yet — nothing fake to start.': 'Belum ada pelajaran yang dimuat — gak ada konten palsu buat dimulai.',
   '{blurb}. Chapters appear here automatically when unit JSON is added under {path}.': '{blurb}. Bab bakal muncul di sini otomatis begitu JSON unit ditambahkan ke {path}.',
-  'No chapters loaded yet — nothing fake to start.': 'Belum ada bab yang dimuat — gak ada yang palsu buat dimulai.',
+  'No chapters loaded yet — nothing fake to start.': 'Belum ada bab yang dimuat — gak ada konten palsu buat dimulai.',
 
   // Book details (lib constants)
   'Yang Jizhou · parts 1 & 2 as one path': 'Yang Jizhou · bagian 1 & 2 jadi satu jalur',
@@ -22,17 +22,17 @@ const entries: Record<string, string> = {
   'Dialogue': 'Dialog',
   'Notes': 'Catatan',
   'Extra': 'Tambahan',
-  'Wrap-up': 'Rekap',
+  'Wrap-up': 'Rangkuman',
 
   // Session frame
   'Close session': 'Tutup sesi',
   'Close': 'Tutup',
   'Learning stage: {stage}': 'Tahap belajar: {stage}',
   'Encounter': 'Kenalan',
-  'Understand': 'Paham',
-  'Retrieve': 'Ingat lagi',
+  'Understand': 'Pahami',
+  'Retrieve': 'Ingat-ingat',
   'Produce': 'Praktik',
-  'Revisit': 'Balik lagi',
+  'Revisit': 'Tinjau ulang',
   'Next': 'Lanjut',
   'Continue': 'Lanjut',
 
@@ -49,8 +49,8 @@ const entries: Record<string, string> = {
   'Check · {n} of {of}': 'Cek · {n} dari {of}',
   'Which word means “{meaning}”?': 'Kata mana yang artinya “{meaning}”?',
   'Hear choices': 'Dengerin pilihan',
-  'Stop choices': 'Stop dengerin pilihan',
-  'Playing': 'Lagi diputar',
+  'Stop choices': 'Hentikan pilihan',
+  'Playing': 'Diputar',
   'Nice!': 'Mantap!',
   'That’s it': 'Nah, itu dia',
 
@@ -61,7 +61,7 @@ const entries: Record<string, string> = {
   // Done screen
   '{label} complete': '{label} selesai',
   'Your words are tracked automatically. Return on another day to prove recall without hints.': 'Kata-katamu dipantau otomatis. Balik lagi di hari lain buat buktiin kamu bisa ingat tanpa petunjuk.',
-  '+{xp} XP / item': '+{xp} XP / item',
+  '+{xp} XP / item': '+{xp} XP per item',
   '+{xp} node': '+{xp} bonus langkah',
   '{n} words': '{n} kata',
 
@@ -78,7 +78,7 @@ const entries: Record<string, string> = {
   'this': 'ini',
   'Lesson {n}': 'Pelajaran {n}',
   'Chapter {n}': 'Bab {n}',
-  'Lesson wrap-up. More checks appear once words are in this unit.': 'Rekap pelajaran. Cek lainnya bakal muncul begitu ada kata di unit ini.',
-  'Chapter wrap-up. More checks appear once words are in this unit.': 'Rekap bab. Cek lainnya bakal muncul begitu ada kata di unit ini.',
+  'Lesson wrap-up. More checks appear once words are in this unit.': 'Rangkuman pelajaran. Cek lainnya bakal muncul begitu ada kata di unit ini.',
+  'Chapter wrap-up. More checks appear once words are in this unit.': 'Rangkuman bab. Cek lainnya bakal muncul begitu ada kata di unit ini.',
 }
 export default entries
