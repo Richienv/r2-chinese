@@ -1,6 +1,6 @@
 import raw from '../data/hsk4a.json'
 import idOverlay from '../data/i18n/id/hsk4a.json'
-import { getLang } from './i18n'
+import { getLang, t } from './i18n'
 import { applyOverlay, type Overlay } from './localize'
 import { overlayKeys, overlayWord } from './overlays'
 import { cachedDictionaryEntry } from './dictionary'
@@ -42,7 +42,7 @@ export function lookup(word: string): Vocab | undefined {
   if (source?.en && source.pinyin) return source
   const dictionary = cachedDictionaryEntry(word)
   if (!dictionary) return source
-  return { zh: word, pinyin: source?.pinyin || dictionary.pinyin, en: source?.en || formatDictionaryDefinition(dictionary.en), pos: source?.pos || '', note: source?.note || '' }
+  return { zh: word, pinyin: source?.pinyin || dictionary.pinyin, en: source?.en || formatDictionaryDefinition(dictionary.en, t('measure word')), pos: source?.pos || '', note: source?.note || '' }
 }
 
 /** Exact source-course entry, independent of dictionary cache/provenance. */
