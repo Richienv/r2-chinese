@@ -267,40 +267,40 @@ function historyDetail(ev: HistoryEvent): string {
         : ev.course === 'magang'
           ? (() => {
               const ch = getMagangChapter(ev.lesson)
-              return ch?.titleEn || ch?.titleSource || `Chapter ${ev.lesson}`
+              return ch?.titleEn || ch?.titleSource || chapterFallback(ev.lesson)
             })()
           : ev.course === 'interview'
             ? (() => {
                 const ch = getInterviewChapter(ev.lesson)
-                return ch?.titleEn || ch?.titleSource || `Chapter ${ev.lesson}`
+                return ch?.titleEn || ch?.titleSource || chapterFallback(ev.lesson)
               })()
             : ev.course === 'books'
               ? (() => {
                   const ch = getBooksChapterByLesson(ev.lesson)
-                  return ch?.titleEn || `Chapter ${ev.lesson}`
+                  return ch?.titleEn || chapterFallback(ev.lesson)
                 })()
               : (() => {
                 try {
                   const l = getLesson(ev.lesson)
-                  return l.title.en || l.title.zh || `Lesson ${ev.lesson}`
+                  return l.title.en || l.title.zh || lessonFallback(ev.lesson)
                 } catch {
-                  return `Lesson ${ev.lesson}`
+                  return lessonFallback(ev.lesson)
                 }
               })()
   const nodeBit = ev.node ? ` · ${ev.node}` : ''
   return `${course} · ${unit}${nodeBit}`
 }
 
-function formatWhen(t: number): string {
-  const d = new Date(t)
+function formatWhen(when: number): string {
+  const d = new Date(when)
   const now = new Date()
   const sameDay = dayKey(d) === dayKey(now)
-  const time = d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' })
+  const time = d.toLocaleTimeString(DATE_LOCALE, { hour: 'numeric', minute: '2-digit' })
   if (sameDay) return time
   const yesterday = new Date(now)
   yesterday.setDate(now.getDate() - 1)
-  if (dayKey(d) === dayKey(yesterday)) return `Yesterday ${time}`
-  return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
+  if (dayKey(d) === dayKey(yesterday)) return t('Yesterday {time}', { time })
+  return d.toLocaleDateString(DATE_LOCALE, { month: 'short', day: 'numeric' })
 }
 
 export function Progress({
@@ -343,66 +343,66 @@ export function Progress({
 
   function startReview() {
     if (due.length) onReview()
-    else if (hardWords.length) onReview(hardWords.slice(0, 8), 'Strengthen hard words')
+    else if (hardWords.length) onReview(hardWords.slice(0, 8), t('Strengthen hard words'))
     else onReview()
   }
 
   const reviewLabel = due.length
-    ? 'Review due words'
+    ? t('Review due words')
     : hardWords.length
-      ? 'Practice hard words'
-      : 'Practice saved words'
+      ? t('Practice hard words')
+      : t('Practice saved words')
 
   return (
     <div className="stack-page progress-page">
       <header className="progress-header">
         <div>
-          <div className="progress-eyebrow">YOUR LEARNING, OVER TIME</div>
-          <h1 className="h2">Progress</h1>
-          <div className="sub">Six paths. One growing ability to remember and use what you learn.</div>
+          <div className="progress-eyebrow">{t('YOUR LEARNING, OVER TIME')}</div>
+          <h1 className="h2">{t('Progress')}</h1>
+          <div className="sub">{t('Six paths. One growing ability to remember and use what you learn.')}</div>
         </div>
         <button className="progress-header-link" type="button" onClick={onLearn}>
-          Learning paths <span aria-hidden="true">↗</span>
+          {t('Learning paths')} <span aria-hidden="true">↗</span>
         </button>
       </header>
 
       <section className="progress-focus" aria-labelledby="progress-focus-title">
         <div className="progress-focus-copy">
-          <span className="progress-focus-kicker">TODAY’S PRACTICE</span>
-          <h2 id="progress-focus-title">Make recall feel familiar.</h2>
-          <p>{s.today.cards >= DAILY_GOAL ? `${s.today.cards} practice steps today — your daily goal is complete. Come back later to strengthen recall on another day.` : `${s.today.cards} of ${DAILY_GOAL} practice steps today. Short attempts, repeated over time, are what make words stick.`}</p>
+          <span className="progress-focus-kicker">{t('TODAY’S PRACTICE')}</span>
+          <h2 id="progress-focus-title">{t('Make recall feel familiar.')}</h2>
+          <p>{s.today.cards >= DAILY_GOAL ? t('{n} practice steps today — your daily goal is complete. Come back later to strengthen recall on another day.', { n: s.today.cards }) : t('{n} of {goal} practice steps today. Short attempts, repeated over time, are what make words stick.', { n: s.today.cards, goal: DAILY_GOAL })}</p>
           <button className="btn progress-focus-button" type="button" onClick={s.cardList.length ? startReview : onLearn}>
-            {s.cardList.length ? reviewLabel : 'Choose a course'}
+            {s.cardList.length ? reviewLabel : t('Choose a course')}
             <span aria-hidden="true">→</span>
           </button>
           <span className="progress-focus-note">
-            {due.length ? `${due.length} ready to revisit` : hardWords.length ? `${hardWords.length} words are asking for another try` : s.cardList.length ? 'Your saved words are ready for a quick recall' : 'Meet a few words and your review trail starts automatically'}
+            {due.length ? t('{n} ready to revisit', { n: due.length }) : hardWords.length ? t('{n} words are asking for another try', { n: hardWords.length }) : s.cardList.length ? t('Your saved words are ready for a quick recall') : t('Meet a few words and your review trail starts automatically')}
           </span>
         </div>
-        <div className="progress-focus-meter" style={{ '--today-progress': `${todayProgress}%` } as React.CSSProperties} aria-label={`${s.today.cards} practice steps today`}>
+        <div className="progress-focus-meter" style={{ '--today-progress': `${todayProgress}%` } as React.CSSProperties} aria-label={t('{n} practice steps today', { n: s.today.cards })}>
           <div className="progress-focus-meter-core">
             <strong>{s.today.cards}</strong>
-            <span>{s.today.cards >= DAILY_GOAL ? 'goal reached' : `of ${DAILY_GOAL} goal`}</span>
-            <small>recalls</small>
+            <span>{s.today.cards >= DAILY_GOAL ? t('goal reached') : t('of {goal} goal', { goal: DAILY_GOAL })}</span>
+            <small>{t('recalls')}</small>
           </div>
         </div>
       </section>
 
-      <section className="progress-stats" aria-label="Learning totals">
-        <Glance value={s.streak} label="day streak" detail="show up again" />
-        <Glance value={s.xp} label="XP earned" detail="practice adds up" />
-        <Glance value={s.wordsLearned} label="words met" detail="kept in your trail" />
+      <section className="progress-stats" aria-label={t('Learning totals')}>
+        <Glance value={s.streak} label={t('day streak')} detail={t('show up again')} />
+        <Glance value={s.xp} label={t('XP earned')} detail={t('practice adds up')} />
+        <Glance value={s.wordsLearned} label={t('words met')} detail={t('kept in your trail')} />
       </section>
 
       <section className="card progress-section progress-week-section">
         <div className="progress-section-heading">
           <div>
-            <div className="progress-eyebrow">THE LAST 7 DAYS</div>
-            <h2>Build a learning rhythm</h2>
+            <div className="progress-eyebrow">{t('THE LAST 7 DAYS')}</div>
+            <h2>{t('Build a learning rhythm')}</h2>
           </div>
-          <div className="progress-week-summary"><strong>{activeDays}</strong><span>active days</span></div>
+          <div className="progress-week-summary"><strong>{activeDays}</strong><span>{t('active days')}</span></div>
         </div>
-        <p className="progress-section-sub">{weekCards} practice {weekCards === 1 ? 'step' : 'steps'} across the week. Returning to a word later is how recognition becomes recall.</p>
+        <p className="progress-section-sub">{weekCards === 1 ? t('{n} practice step across the week. Returning to a word later is how recognition becomes recall.', { n: weekCards }) : t('{n} practice steps across the week. Returning to a word later is how recognition becomes recall.', { n: weekCards })}</p>
         <div className="progress-week-grid">
           {week.map((d, i) => {
             const height = d.cards ? Math.max(12, Math.min(100, (d.cards / Math.max(DAILY_GOAL, ...week.map((day) => day.cards))) * 100)) : 5
@@ -412,7 +412,7 @@ export function Progress({
                 className="progress-week-day"
                 data-today={d.today ? 'true' : 'false'}
                 data-on={d.cards > 0 ? 'true' : 'false'}
-                title={`${d.cards} practice ${d.cards === 1 ? 'step' : 'steps'}`}
+                title={d.cards === 1 ? t('{n} practice step', { n: d.cards }) : t('{n} practice steps', { n: d.cards })}
               >
                 <div className="progress-week-bar-wrap"><i style={{ height: `${height}%` }} /></div>
                 <span className="progress-week-cards">{d.cards || '·'}</span>
@@ -421,30 +421,30 @@ export function Progress({
             )
           })}
         </div>
-        <div className="progress-week-foot"><span>Practice is evidence of effort; mastery comes from unaided recall on separate days.</span></div>
+        <div className="progress-week-foot"><span>{t('Practice is evidence of effort; mastery comes from unaided recall on separate days.')}</span></div>
       </section>
 
       <section className="card progress-section progress-mastery-section">
         <div className="progress-section-heading">
           <div>
-            <div className="progress-eyebrow">BEYOND FINISHING A LESSON</div>
-            <h2>What stays with you</h2>
+            <div className="progress-eyebrow">{t('BEYOND FINISHING A LESSON')}</div>
+            <h2>{t('What stays with you')}</h2>
           </div>
           <span className="progress-mastery-spark" aria-hidden="true">✳</span>
         </div>
-        <p className="progress-section-sub">Mastery means retrieving a word without help on more than one day. A completed lesson is only the beginning.</p>
+        <p className="progress-section-sub">{t('Mastery means retrieving a word without help on more than one day. A completed lesson is only the beginning.')}</p>
         <MasteryTracker words={s.learningTrail} />
       </section>
 
       <section className="card progress-section progress-courses-section">
         <div className="progress-section-heading">
           <div>
-            <div className="progress-eyebrow">YOUR CURRICULUM</div>
-            <h2>Every path, at a glance</h2>
+            <div className="progress-eyebrow">{t('YOUR CURRICULUM')}</div>
+            <h2>{t('Every path, at a glance')}</h2>
           </div>
-          <span className="progress-course-total">{courses.length} paths</span>
+          <span className="progress-course-total">{t('{n} paths', { n: courses.length })}</span>
         </div>
-        <p className="progress-section-sub">Open a path to see the units and stages you have already completed.</p>
+        <p className="progress-section-sub">{t('Open a path to see the units and stages you have already completed.')}</p>
         <div className="progress-courses">
           {courses.map((c) => (
             <details key={c.name} className="progress-course">
@@ -452,11 +452,11 @@ export function Progress({
                 <div className="progress-course-summary">
                   <div className="progress-course-head">
                     <span className="progress-course-name">{c.name}</span>
-                    <span className="progress-course-count">{c.units.filter((u) => u.done).length} / {c.units.length} units</span>
+                    <span className="progress-course-count">{t('{done} / {total} units', { done: c.units.filter((u) => u.done).length, total: c.units.length })}</span>
                   </div>
                   <div className="progress-course-bar"><i style={{ width: `${c.stepsTotal ? Math.round((c.stepsDone / c.stepsTotal) * 100) : 0}%` }} /></div>
                   <div className="progress-course-foot">
-                    <span>{c.stepsDone} of {c.stepsTotal} learning stages</span>
+                    <span>{t('{done} of {total} learning stages', { done: c.stepsDone, total: c.stepsTotal })}</span>
                     <span>{c.stepsTotal ? Math.round((c.stepsDone / c.stepsTotal) * 100) : 0}%</span>
                   </div>
                 </div>
@@ -464,7 +464,7 @@ export function Progress({
               </summary>
               <div className="progress-lesson-list">
                 {c.units.length === 0 ? (
-                  <div className="progress-empty">No lessons loaded yet.</div>
+                  <div className="progress-empty">{t('No lessons loaded yet.')}</div>
                 ) : (
                   c.units.map((u) => (
                     <div key={u.key} className="progress-lesson" data-done={u.done ? 'true' : 'false'}>
@@ -472,7 +472,7 @@ export function Progress({
                         {u.done ? '✓' : '○'}
                       </span>
                       <span className="progress-lesson-title">{u.title}</span>
-                      <span className="progress-lesson-count">{u.sittingsDone}/{u.sittingsTotal} stages</span>
+                      <span className="progress-lesson-count">{t('{done}/{total} stages', { done: u.sittingsDone, total: u.sittingsTotal })}</span>
                     </div>
                   ))
                 )}
@@ -480,16 +480,16 @@ export function Progress({
             </details>
           ))}
         </div>
-        <button className="progress-secondary-action" type="button" onClick={onLearn}>Open learning paths <span aria-hidden="true">→</span></button>
+        <button className="progress-secondary-action" type="button" onClick={onLearn}>{t('Open learning paths')} <span aria-hidden="true">→</span></button>
       </section>
 
       <section className="card progress-section">
         <div className="progress-section-heading progress-history-heading">
-          <div><div className="progress-eyebrow">SMALL STEPS ADD UP</div><h2>Recent activity</h2></div>
-          {history.length > 0 && <span className="progress-course-total">{history.length} entries</span>}
+          <div><div className="progress-eyebrow">{t('SMALL STEPS ADD UP')}</div><h2>{t('Recent activity')}</h2></div>
+          {history.length > 0 && <span className="progress-course-total">{t('{n} entries', { n: history.length })}</span>}
         </div>
         {history.length === 0 ? (
-          <p className="progress-empty">Your lessons, drills, and recall attempts will build a timeline here.</p>
+          <p className="progress-empty">{t('Your lessons, drills, and recall attempts will build a timeline here.')}</p>
         ) : (
           <div className="progress-history">
             {visibleHistory.map((ev, i) => (
@@ -503,7 +503,7 @@ export function Progress({
         )}
         {history.length > 5 && (
           <button className="progress-secondary-action" type="button" onClick={() => setShowHistory((value) => !value)}>
-            {showHistory ? 'Show recent only' : `See all ${history.length} moments`} <span aria-hidden="true">{showHistory ? '↑' : '→'}</span>
+            {showHistory ? t('Show recent only') : t('See all {n} moments', { n: history.length })} <span aria-hidden="true">{showHistory ? '↑' : '→'}</span>
           </button>
         )}
       </section>

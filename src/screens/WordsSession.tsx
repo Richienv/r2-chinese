@@ -11,6 +11,7 @@ import { ChineseHear, hasHanzi, HearButton, useAutoSpeak, useAutoSpeakLines, use
 import { CheckIcon, CloseIcon, LockIcon } from '../components/Icons'
 import { getLesson, type Example } from '../lib/content'
 import { recordHistory } from '../lib/history'
+import { t } from '../lib/i18n'
 import { clearLearningCheckpoint, readLearningCheckpoint, writeLearningCheckpoint } from '../lib/resume'
 import { playAdvance, playComplete, playCorrect, playWrong } from '../lib/sfx'
 import type { ProductionResult } from '../lib/production'
@@ -34,6 +35,17 @@ import {
 import { useStore, type PathNode } from '../store/store'
 
 type QuizState = { wrong: string[]; solved: boolean; missed: boolean }
+
+/** The five stages of a sitting. The English name is the id the code compares; the label is what the learner reads. */
+const STAGES = ['Encounter', 'Understand', 'Retrieve', 'Produce', 'Revisit'] as const
+type Stage = (typeof STAGES)[number]
+const STAGE_LABEL: Record<Stage, string> = {
+  Encounter: t('Encounter'),
+  Understand: t('Understand'),
+  Retrieve: t('Retrieve'),
+  Produce: t('Produce'),
+  Revisit: t('Revisit'),
+}
 
 export function WordsSession({
   lesson,
@@ -192,14 +204,14 @@ function WordsRunner({
       store.recordRecall(outcome.word, { correct: outcome.correct, assisted: outcome.assisted, mode: outcome.mode })
     }
     credit(step.id)
-    recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: result.evidence === 'practice' ? undefined : result.correct, title: result.evidence === 'practice' ? 'Sentence practice · ungraded' : undefined })
+    recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: result.evidence === 'practice' ? undefined : result.correct, title: result.evidence === 'practice' ? t('Sentence practice · ungraded') : undefined })
     goForward()
   }
 
   function finishRecheck(summary: RecheckSummary) {
     if (step.kind !== 'recheck') return
     credit(step.id)
-    recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: summary.unaided === summary.total, title: 'Dialogue check' })
+    recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: summary.unaided === summary.total, title: t('Dialogue check') })
     playAdvance()
     goForward()
   }
@@ -235,14 +247,14 @@ function WordsRunner({
   const progress = isComplete ? 100 : (i / total) * 100
   const showFooter =
     isComplete || step.kind === 'teach' || step.kind === 'note' || step.kind === 'read' || (step.kind === 'quiz' && quizState?.solved)
-  const footerLabel = isComplete ? 'Continue' : 'Next'
-  const activeStage = step.kind === 'complete' || (step.kind === 'recall' && step.id.startsWith('retry:')) ? 'Revisit' : step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' || step.kind === 'recheck' ? 'Retrieve' : 'Produce'
+  const footerLabel = isComplete ? t('Continue') : t('Next')
+  const activeStage: Stage = step.kind === 'complete' || (step.kind === 'recall' && step.id.startsWith('retry:')) ? 'Revisit' : step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' || step.kind === 'recheck' ? 'Retrieve' : 'Produce'
 
   return (
     <div className="overlay session learning-session">
       <Fireworks token={fwToken} />
       <div className="overlay-head">
-        <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close session">
+        <button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close session')}>
           <CloseIcon />
         </button>
         <div className="step-bar">
@@ -255,8 +267,8 @@ function WordsRunner({
         }} />
       </div>
 
-      <div className="learning-route" aria-label={`Learning stage: ${activeStage}`}>
-        {['Encounter', 'Understand', 'Retrieve', 'Produce', 'Revisit'].map((stage) => <span key={stage} data-active={stage === activeStage} aria-current={stage === activeStage ? 'step' : undefined}>{stage}</span>)}
+      <div className="learning-route" aria-label={t('Learning stage: {stage}', { stage: STAGE_LABEL[activeStage] })}>
+        {STAGES.map((stage) => <span key={stage} data-active={stage === activeStage} aria-current={stage === activeStage ? 'step' : undefined}>{STAGE_LABEL[stage]}</span>)}
       </div>
 
       <div className="overlay-body" ref={bodyRef}>
@@ -352,7 +364,7 @@ function ReadView({ text }: { text: LessonText }) {
   return (
     <>
       <StepHead
-        kicker={`${text.label} · ${text.type === 'dialogue' ? 'Dialogue' : 'Passage'}`}
+        kicker={text.type === 'dialogue' ? t('{label} · Dialogue', { label: text.label }) : t('{label} · Passage', { label: text.label })}
         title={heading}
       />
       {prefs.showEnglish && text.heading_en && text.heading_zh && <p className="session-read-en">{text.heading_en}</p>}
@@ -403,7 +415,7 @@ function MatchView({
 
   return (
     <>
-      <StepHead kicker={of > 1 ? `Check · ${n} of ${of}` : 'Check'} title={question.prompt} />
+      <StepHead kicker={of > 1 ? t('Check · {n} of {of}', { n, of }) : t('Check')} title={question.prompt} />
       {question.context && (
         <div className="card session-prompt">
           <p className="zh" lang="zh-CN" style={{ fontSize: 22, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
@@ -415,7 +427,7 @@ function MatchView({
             </p>
           )}
           <div style={{ marginTop: 12 }}>
-            <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+            <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} />
           </div>
         </div>
       )}
@@ -425,7 +437,7 @@ function MatchView({
             type="button"
             className="hear hear-ink"
             data-on={choicesPlaying}
-            aria-label={choicesPlaying ? 'Stop choices' : 'Hear choices'}
+            aria-label={choicesPlaying ? t('Stop choices') : t('Hear choices')}
             aria-pressed={choicesPlaying}
             onPointerDown={() => unlockSpeech()}
             onClick={() => {
@@ -439,7 +451,7 @@ function MatchView({
               )
             }}
           >
-            <span>{choicesPlaying ? 'Playing' : 'Hear choices'}</span>
+            <span>{choicesPlaying ? t('Playing') : t('Hear choices')}</span>
           </button>
         </div>
       )}
@@ -476,7 +488,7 @@ function MatchView({
               textWrap: 'balance',
             }}
           >
-            {missed ? 'That’s it' : 'Nice!'}
+            {missed ? t('That’s it') : t('Nice!')}
           </strong>
         </div>
       )}
@@ -502,12 +514,13 @@ function NoteView({
 }) {
   const { onWord, sheet } = useGloss()
   const { prefs } = useStore()
+  // The grammar notes arrive already labelled (in the interface language), so compare against the same label.
   const head =
-    kicker && kicker !== 'Grammar'
+    kicker && kicker !== t('Grammar')
       ? kicker
       : of > 1
-        ? `Grammar · ${n} of ${of}`
-        : (kicker ?? 'Grammar')
+        ? t('Grammar · {n} of {of}', { n, of })
+        : (kicker ?? t('Grammar'))
   const fallBackZh = example?.zh?.trim()
     ? ''
     : hasHanzi(title)
@@ -535,13 +548,13 @@ function NoteView({
           )}
           {prefs.showEnglish && example.en && <p className="sub" style={{ margin: '8px 0 0' }}>{example.en}</p>}
           <div style={{ marginTop: 12 }}>
-            <ChineseHear text={example.zh} label="Hear the line" rate={LINE_RATE} />
+            <ChineseHear text={example.zh} label={t('Hear the line')} rate={LINE_RATE} />
           </div>
         </div>
       )}
       {!example && spoken && (
         <div style={{ marginTop: 14 }}>
-          <ChineseHear text={spoken} label="Hear it" />
+          <ChineseHear text={spoken} label={t('Hear it')} />
         </div>
       )}
       {sheet}
@@ -573,7 +586,7 @@ function DoneView({
         <CheckIcon size={46} />
       </div>
       <h2 className="h1 yl-enter" style={{ marginTop: 22, textWrap: 'balance' }}>
-        {label.en} complete
+        {t('{label} complete', { label: label.en })}
       </h2>
       <p className="sub yl-enter-up" style={{ marginTop: 8, animationDelay: '80ms', textWrap: 'pretty' }}>
         {titleZh} · {titleEn}
@@ -589,11 +602,11 @@ function DoneView({
         className="row yl-enter-up"
         style={{ justifyContent: 'center', marginTop: 16, flexWrap: 'wrap', animationDelay: '180ms' }}
       >
-        <span className="pill-ink">+{ITEM_XP} XP / item</span>
-        {!replay && <span className="pill-ink">+{NODE_BONUS_XP} node</span>}
-        {node !== 'wrap' && wordCount > 0 && <span className="pill-ink">{wordCount} words</span>}
+        <span className="pill-ink">{t('+{n} XP / item', { n: ITEM_XP })}</span>
+        {!replay && <span className="pill-ink">{t('+{n} node', { n: NODE_BONUS_XP })}</span>}
+        {node !== 'wrap' && wordCount > 0 && <span className="pill-ink">{t('{n} words', { n: wordCount })}</span>}
         <span className="pill-ink">
-          Automatically tracked
+          {t('Automatically tracked')}
         </span>
       </div>
       <p
@@ -608,10 +621,10 @@ function DoneView({
         }}
       >
         {replay
-          ? 'Another retrieval session strengthens the trail.'
+          ? t('Another retrieval session strengthens the trail.')
           : node === 'wrap'
-            ? 'Every lesson word is tracked. Revisit difficult words before they fade.'
-            : 'Your learning trail keeps every word. Mastery comes from retrieving it again on another day.'}
+            ? t('Every lesson word is tracked. Revisit difficult words before they fade.')
+            : t('Your learning trail keeps every word. Mastery comes from retrieving it again on another day.')}
       </p>
     </div>
   )
@@ -621,7 +634,7 @@ function LockedView({ onClose }: { onClose: () => void }) {
   return (
     <div className="overlay session">
       <div className="overlay-head">
-        <button type="button" className="icon-round tap44" onClick={onClose} aria-label="Close">
+        <button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close')}>
           <CloseIcon />
         </button>
       </div>
@@ -631,16 +644,16 @@ function LockedView({ onClose }: { onClose: () => void }) {
             <LockIcon size={36} />
           </div>
           <h2 className="h2" style={{ marginTop: 18, textWrap: 'balance' }}>
-            This sitting isn’t open yet
+            {t('This sitting isn’t open yet')}
           </h2>
           <p className="sub" style={{ marginTop: 8, textWrap: 'pretty' }}>
-            Finish the sitting before this one first.
+            {t('Finish the sitting before this one first.')}
           </p>
         </div>
       </div>
       <div className="overlay-foot">
         <button type="button" className="btn" onClick={onClose}>
-          Continue
+          {t('Continue')}
         </button>
       </div>
     </div>
