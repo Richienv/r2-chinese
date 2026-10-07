@@ -2,7 +2,9 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { withLang } from '../src/lib/i18n.ts'
 import { compareReviews, describeComparison } from '../src/lib/review.ts'
-import { describeStroke } from '../src/lib/handwriting-review.ts'
+import { readFileSync } from 'node:fs'
+import { decodeHandwritingModel } from '../src/lib/handwriting.ts'
+import { describeStroke, diagnoseWord, reviewDrawing } from '../src/lib/handwriting-review.ts'
 import { drawingTask, redrawLabel } from '../src/lib/drawing-flow.ts'
 import { sourceAssessment } from '../src/lib/production.ts'
 import { reviewReply } from '../src/lib/reply-review.ts'
@@ -118,4 +120,25 @@ test('the retest summary, stroke names, drawing task and service errors follow t
   // Leaving Indonesian mode leaves nothing behind.
   assert.equal(describeStroke(Float32Array.from([0.2, 0.9, 0.8, 0.9])), 'horizontal stroke at the bottom')
   assert.equal(new AssessmentServiceError('rate_limited').message, 'A few checks ran close together. Wait a minute, then try again.')
+})
+
+test('a drawing review reads in Indonesian, and says what is missing in plain Indonesian stroke words', () => {
+  const data = readFileSync(new URL('../src/assets/handwriting/medians.bin', import.meta.url))
+  const model = decodeHandwritingModel(data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength))
+  const ink = (character, drop = []) => model.templates.find((entry) => entry.character === character).strokes
+    .filter((_, s) => !drop.includes(s))
+    .map((stroke) => Array.from({ length: stroke.length / 2 }, (_, i) => [stroke[i * 2] * 240 + 30, stroke[i * 2 + 1] * 240 + 40]))
+  // The diagnosis names strokes in the language in use, so it is built inside the language, as the app does.
+  const build = (lang) => withLang(lang, () => reviewDrawing({ task: drawingTask('meaning', { en: 'x', pinyin: 'fǎlǜ' }, 2), characterCount: 2 }, diagnoseWord([ink('法'), ink('律', [0])], model, '法律')))
+
+  const english = build('en')
+  assert.equal(english.headline, '2 requirements to fix')
+  assert.match(english.nextStep, /^Add the .+ \(stroke 1 of \d+\)\.$/)
+
+  const indonesian = build('id')
+  assert.equal(indonesian.verdict, english.verdict, 'the verdict does not depend on the language')
+  assert.equal(indonesian.headline, '2 syarat yang perlu diperbaiki')
+  assert.match(indonesian.nextStep, /^Tambahkan goresan .+ \(goresan ke-1 dari \d+\)\.$/)
+  assert.ok(indonesian.checks.some((check) => /^Karakter 2 terbaca sebagai 律$/.test(check.label)))
+  assertIndonesian(indonesian)
 })
