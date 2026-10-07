@@ -93,6 +93,10 @@ whole word set. A scored word cannot be reopened to manufacture another unaided
 success from its displayed answer. Unverified alternative sentences remain
 ungraded practice and never become incorrect grammar events or mastery evidence.
 
+## Languages
+
+English and Indonesian (Gen Z) are both supported end to end; see `i18n.md`.
+
 ## Authoring another curriculum
 
 Implement a small content adapter with source examples and stable IDs. Render the
