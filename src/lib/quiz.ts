@@ -3,8 +3,8 @@ import { getLang, t } from './i18n.ts'
 import { rng, seedOf, shuffle } from './seeded'
 import type { GrammarPoint, Lesson, TextLine, Vocab } from './types'
 
-/** Indonesian runs about a third longer than English. Scale the length limits so the same words and lines stay eligible. */
-const room = (limit: number) => (getLang() === 'en' ? limit : Math.round(limit * 1.3))
+/** Indonesian meanings run about a tenth longer than English. Scale the length limits so the same share of words and lines stays eligible. */
+const room = (limit: number) => (getLang() === 'en' ? limit : Math.round(limit * 1.1))
 
 const glossable = (v: { en: string; pos: string }) => v.en.length > 0 && v.en.length < room(40)
 

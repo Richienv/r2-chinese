@@ -48,6 +48,19 @@ export const SOURCES = {
     kind: (p) => courseKind(p),
     context: (root, p) => courseContext(root, p),
   },
+  // English note titles that the main extraction left out. Same files and overlays as kerja / jiaocheng.
+  'kerja-notes': {
+    files: () => SOURCES.kerja.files(),
+    wanted: (p, key, value) => /^notes\.\d+\.title$/.test(p) && /[A-Za-z]{3,}/.test(value),
+    kind: () => 'line',
+    context: (root, p) => ({ ...pick(at(root, p.split('.').slice(0, 2).join('.')), ['body']), }),
+  },
+  'jiaocheng-notes': {
+    files: () => SOURCES.jiaocheng.files(),
+    wanted: (p, key, value) => /^notes\.\d+\.title$/.test(p) && /[A-Za-z]{3,}/.test(value),
+    kind: () => 'line',
+    context: () => ({}),
+  },
 }
 
 /** Kerja and Jiaocheng share one JSON shape: words, dialogues (lines) and notes. */

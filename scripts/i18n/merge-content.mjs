@@ -52,13 +52,15 @@ fs.mkdirSync(outDir, { recursive: true })
 let total = 0
 for (const [overlay, entries] of overlays) {
   const root = JSON.parse(fs.readFileSync(files.get(overlay), 'utf8'))
-  const result = {}
+  // Several extractions can feed one overlay file, so keep what earlier merges wrote.
+  const target = path.join(outDir, `${overlay}.json`)
+  const result = fs.existsSync(target) ? JSON.parse(fs.readFileSync(target, 'utf8')) : {}
   for (const [p, text] of Object.entries(entries)) {
     const original = at(root, p)
     if (typeof original !== 'string') { console.log(`path vanished: ${overlay} ${p}`); continue }
     result[p] = [hashOf(original), text]
   }
-  total += Object.keys(result).length
-  fs.writeFileSync(path.join(outDir, `${overlay}.json`), JSON.stringify(result))
+  total += Object.keys(entries).length
+  fs.writeFileSync(target, JSON.stringify(result))
 }
 console.log(`${course}: wrote ${overlays.size} overlay file(s), ${total} strings; ${missing} site(s) without a translation yet; ${problems} validation problem(s)`)
