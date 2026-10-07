@@ -121,7 +121,7 @@ const entries: Record<string, string> = {
   'Hints help learning; they count as assisted.': 'Petunjuk membantu belajar, tapi dihitung sebagai dibantu.',
   'Retrieved with support': 'Berhasil diingat dengan bantuan',
   'Retrieved without a hint': 'Berhasil diingat tanpa petunjuk',
-  'Hear the word': 'Dengerin kata ini',
+  'Hear the word': 'Dengerin katanya',
   'You’ll meet this word again for an unaided attempt.': 'Kata ini bakal muncul lagi untuk percobaan tanpa bantuan.',
   'One successful retrieval. Future sessions check whether it stays.': 'Satu kali berhasil diingat. Sesi berikutnya bakal ngecek apakah kata ini nempel.',
 
@@ -179,7 +179,7 @@ const entries: Record<string, string> = {
   'Move on with these still open': 'Lanjut walau ini belum beres',
   'Retest · {n} of {total}': 'Tes ulang · {n} dari {total}',
   'Dialogue check · {n} of {total}': 'Cek dialog · {n} dari {total}',
-  'Hear the line': 'Dengerin baris ini',
+  'Hear the line': 'Dengerin kalimatnya',
   'Meaning: {clue}': 'Arti: {clue}',
   'Choices': 'Pilihan',
   'Right': 'Benar',
@@ -206,7 +206,7 @@ const entries: Record<string, string> = {
   'tip': 'tips',
   'Needed': 'Yang dibutuhkan',
   'Do this next': 'Lakukan ini berikutnya',
-  'Next': 'Berikutnya',
+  'Next': 'Lanjut',
 
   // ListenCue
   'Stop the word': 'Hentikan kata',

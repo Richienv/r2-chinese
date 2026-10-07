@@ -1,7 +1,8 @@
 import { buildRecheck } from './dialogue-check'
+import { applyOverlay, type Overlay } from './localize'
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
 import { registerVocab, type Example } from './content'
-import { t } from './i18n.ts'
+import { getLang, t } from './i18n.ts'
 import type { TeachPhase, WordHook } from './teach'
 import type { LessonText, TextLine, Vocab } from './types'
 import type { PathNode } from '../store/store'
@@ -96,6 +97,17 @@ const part1Modules = import.meta.glob('../data/jiaocheng/part1/lesson-*.json', {
 const part2Modules = import.meta.glob('../data/jiaocheng/part2/lesson-*.json', {
   eager: true,
 }) as Record<string, GlobModule>
+
+// Indonesian meanings, translations and notes, applied once when the lessons load.
+if (getLang() === 'id') {
+  const overlays = import.meta.glob('../data/i18n/id/jiaocheng-part*-lesson-*.json', { eager: true }) as Record<string, { default: Overlay }>
+  for (const part of ['part1', 'part2'] as const) {
+    for (const [path, mod] of Object.entries(part === 'part1' ? part1Modules : part2Modules)) {
+      const overlay = overlays[path.replace(`../data/jiaocheng/${part}/`, `../data/i18n/id/jiaocheng-${part}-`)]
+      if (overlay) applyOverlay('default' in mod ? mod.default : mod, overlay.default)
+    }
+  }
+}
 
 function asRaw(mod: GlobModule): RawLesson | null {
   const raw = mod && typeof mod === 'object' && 'default' in mod ? mod.default : (mod as RawLesson)

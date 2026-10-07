@@ -27,7 +27,7 @@ const entries: Record<string, string> = {
   // Listening buttons
   'Hear': 'Dengerin',
   'Hear it': 'Dengerin',
-  'Hear the word': 'Dengerin kata',
+  'Hear the word': 'Dengerin katanya',
 
   // Words used across screens
   'Review': 'Review',

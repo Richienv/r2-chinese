@@ -1,7 +1,8 @@
 import { buildRecheck } from './dialogue-check'
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
 import { registerVocab, type Example } from './content'
-import { t } from './i18n.ts'
+import { getLang, t } from './i18n.ts'
+import { applyOverlay, type Overlay } from './localize'
 import type { TeachPhase, WordHook } from './teach'
 import type { LessonText, TextLine, Vocab } from './types'
 import type { Question } from './quiz'
@@ -116,6 +117,15 @@ type GlobModule = { default: KerjaChapter } | KerjaChapter
 const chapterModules = import.meta.glob('../data/kerja/units/chapter-*.json', {
   eager: true,
 }) as Record<string, GlobModule>
+
+// Indonesian meanings, translations and notes, applied once when the chapters load.
+if (getLang() === 'id') {
+  const overlays = import.meta.glob('../data/i18n/id/kerja-chapter-*.json', { eager: true }) as Record<string, { default: Overlay }>
+  for (const [path, mod] of Object.entries(chapterModules)) {
+    const overlay = overlays[path.replace('../data/kerja/units/', '../data/i18n/id/kerja-')]
+    if (overlay) applyOverlay('default' in mod ? mod.default : mod, overlay.default)
+  }
+}
 
 function asChapter(mod: GlobModule): KerjaChapter | null {
   const raw = mod && typeof mod === 'object' && 'default' in mod ? mod.default : (mod as KerjaChapter)
