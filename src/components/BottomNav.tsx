@@ -1,15 +1,16 @@
 import { forwardRef, useLayoutEffect, useRef } from 'react'
 import { BarsIcon, BookIcon, HomeIcon, UserIcon } from './Icons'
+import { t } from '../lib/i18n'
 import { advanceDockSpring, dockSpringAt, dockSpringSettled, type DockSpring, type DockTarget } from '../lib/navigationMotion'
 import '../styles/bottom-navigation.css'
 
 export type NavigationTab = 'home' | 'learn' | 'stats' | 'profile'
 
 const DESTINATIONS = [
-  { key: 'home', label: 'Home', Icon: HomeIcon },
-  { key: 'learn', label: 'Learn', Icon: BookIcon },
-  { key: 'stats', label: 'Progress', Icon: BarsIcon },
-  { key: 'profile', label: 'Profile', Icon: UserIcon },
+  { key: 'home', label: t('Home'), Icon: HomeIcon },
+  { key: 'learn', label: t('Learn'), Icon: BookIcon },
+  { key: 'stats', label: t('Progress'), Icon: BarsIcon },
+  { key: 'profile', label: t('Profile'), Icon: UserIcon },
 ] as const
 
 /** A flow-layout dock: measured spring motion never changes the navigation semantics. */
@@ -117,7 +118,7 @@ export const BottomNav = forwardRef<HTMLElement, { tab: NavigationTab; onTabChan
     onTabChange(next)
   }
 
-  return <nav ref={navRef} className="bottom-nav" aria-label="Main">
+  return <nav ref={navRef} className="bottom-nav" aria-label={t('Main')}>
     <div ref={dock} className="bottom-nav-dock">
       <span ref={indicator} className="bottom-nav-marker" aria-hidden="true"><i /></span>
       {DESTINATIONS.map(({ key, label, Icon }) => <button key={key} ref={(button) => { if (button) buttons.current[key] = button; else delete buttons.current[key] }} type="button" className="bottom-nav-item" aria-current={tab === key ? 'page' : undefined} onClick={() => select(key)}><span className="bottom-nav-icon" aria-hidden="true"><Icon size={21} /></span><span className="bottom-nav-label">{label}</span></button>)}

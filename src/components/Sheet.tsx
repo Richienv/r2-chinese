@@ -1,10 +1,11 @@
 import { useEffect, useRef, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
+import { t } from '../lib/i18n'
 import { CloseIcon } from './Icons'
 import '../styles/dictionary.css'
 
 /** Body portal: transformed teaching cards must never contain a fixed dialog. */
-export function Sheet({ onClose, children, label = 'Word details' }: { onClose: () => void; children: ReactNode; label?: string }) {
+export function Sheet({ onClose, children, label = t('Word details') }: { onClose: () => void; children: ReactNode; label?: string }) {
   const dialog = useRef<HTMLDivElement>(null)
   const close = useRef<HTMLButtonElement>(null)
   const onCloseRef = useRef(onClose)
@@ -45,7 +46,7 @@ export function Sheet({ onClose, children, label = 'Word details' }: { onClose: 
       if (event.target === event.currentTarget) onClose()
     }}>
       <div ref={dialog} className="sheet dictionary-sheet" role="dialog" aria-modal="true" aria-label={label} tabIndex={-1}>
-        <button ref={close} type="button" className="dictionary-close icon-round tap44" aria-label="Close word details" onClick={onClose}><CloseIcon size={20} /></button>
+        <button ref={close} type="button" className="dictionary-close icon-round tap44" aria-label={t('Close word details')} onClick={onClose}><CloseIcon size={20} /></button>
         <div className="dictionary-scroll">{children}</div>
       </div>
     </div>,

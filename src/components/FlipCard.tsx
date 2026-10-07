@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { exampleFor } from '../lib/content'
+import { t } from '../lib/i18n'
 import type { Vocab } from '../lib/types'
 import { VOICE, WORD_RATE } from '../lib/voices'
 import { BookExample } from './ChineseText'
@@ -61,7 +62,7 @@ export function FlipCard({
         <div className="face metal teach-face">
           <TeachFace word={word} />
           <div style={{ marginTop: 14 }}>
-            <ChineseHear text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" tone="on-red" />
+            <ChineseHear text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear the word')} tone="on-red" />
           </div>
           {example && <BookExample example={example} tone="quiet" autoplay={false} />}
         </div>
@@ -78,9 +79,9 @@ export function FlipCard({
           <div className="big-hz" lang="zh-CN">
             {word.zh}
           </div>
-          <div style={{ fontSize: 13, color: 'var(--muted-2)', marginTop: 8 }}>Tap to reveal</div>
+          <div style={{ fontSize: 13, color: 'var(--muted-2)', marginTop: 8 }}>{t('Tap to reveal')}</div>
           <div style={{ marginTop: 14 }}>
-            <ChineseHear text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
+            <ChineseHear text={word.zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear the word')} />
           </div>
         </div>
         <div className="face face-back metal" aria-hidden={!flipped}>
@@ -91,7 +92,7 @@ export function FlipCard({
               autoplay={false}
               voice={VOICE.xiaoxiao}
               rate={WORD_RATE}
-              label="Hear the word"
+              label={t('Hear the word')}
               tone="on-red"
             />
           </div>
@@ -100,7 +101,7 @@ export function FlipCard({
 
       <button
         className="tap-catch"
-        aria-label={flipped ? 'Hide meaning' : 'Reveal meaning'}
+        aria-label={flipped ? t('Hide meaning') : t('Reveal meaning')}
         onClick={onFlip}
       />
 

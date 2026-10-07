@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState, type PointerEvent } from 'react'
 import { CheckIcon, LockIcon } from './Icons'
+import { t } from '../lib/i18n'
 import { unlockSpeech } from '../lib/speech'
 import '../styles/home-alive.css'
 
@@ -110,7 +111,11 @@ function LessonPlaque({ item, index }: { item: LearningPathItem; index: number }
       data-state={item.state === 'current' ? 'on' : item.state === 'locked' ? 'lock' : 'done'}
       disabled={!item.playable}
       aria-current={item.state === 'current' ? 'step' : undefined}
-      aria-label={`${item.label}: ${item.title}, ${item.state === 'current' ? 'continue learning' : item.state === 'done' ? 'completed, revisit' : 'locked'}`}
+      aria-label={item.state === 'current'
+        ? t('{label}: {title}, continue learning', { label: item.label, title: item.title })
+        : item.state === 'done'
+          ? t('{label}: {title}, completed, revisit', { label: item.label, title: item.title })
+          : t('{label}: {title}, locked', { label: item.label, title: item.title })}
       onPointerDown={() => {
         surface.onPointerDown()
         if (item.playable) unlockSpeech()
@@ -127,7 +132,7 @@ function LessonPlaque({ item, index }: { item: LearningPathItem; index: number }
         </span>
         <span className="atlas-step-title">{item.title}</span>
         {item.subtitle && item.subtitle.trim() !== item.title.trim() && <span className="atlas-step-subtitle">{item.subtitle}</span>}
-        {item.state === 'current' && <span className="atlas-continue">Continue <span aria-hidden>→</span></span>}
+        {item.state === 'current' && <span className="atlas-continue">{t('Continue')} <span aria-hidden>→</span></span>}
       </span>
     </button>
   )
@@ -180,9 +185,9 @@ export function LearningPath({ kicker, title, subtitle, source, items, open = tr
 
   return (
     <section className={`learning-atlas${fill ? ' learning-atlas-home' : ''}${open ? '' : ' learning-atlas-locked'}`}>
-      {onOpen ? <button className="atlas-header" type="button" disabled={!open} onClick={onOpen}>{heading}<span className="atlas-open">Read lesson <span aria-hidden>↗</span></span></button> : <div className="atlas-header">{heading}</div>}
-      <div className="atlas-progress" aria-label={`${done} of ${items.length} steps completed`}>
-        <span>{currentIndex >= 0 ? 'Your next step' : done === items.length && items.length ? 'Ready to revisit' : 'Learning path'}</span>
+      {onOpen ? <button className="atlas-header" type="button" disabled={!open} onClick={onOpen}>{heading}<span className="atlas-open">{t('Read lesson')} <span aria-hidden>↗</span></span></button> : <div className="atlas-header">{heading}</div>}
+      <div className="atlas-progress" aria-label={t('{done} of {total} steps completed', { done, total: items.length })}>
+        <span>{currentIndex >= 0 ? t('Your next step') : done === items.length && items.length ? t('Ready to revisit') : t('Learning path')}</span>
         <span className="atlas-progress-marks" aria-hidden>{items.map(item => <i key={item.id} data-state={item.state} />)}</span>
         <span className="atlas-progress-count">{done}<span> / {items.length}</span></span>
       </div>

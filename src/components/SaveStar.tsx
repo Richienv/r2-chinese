@@ -1,4 +1,5 @@
 import { lessonOf } from '../lib/content'
+import { t } from '../lib/i18n'
 import { useStore } from '../store/store'
 import { StarIcon } from './Icons'
 
@@ -22,7 +23,7 @@ export function SaveStar({
   return (
     <button
       className="tap44"
-      aria-label={on ? `Unstar ${zh}` : `Star ${zh} as a favourite`}
+      aria-label={on ? t('Unstar {word}', { word: zh }) : t('Star {word} as a favourite', { word: zh })}
       aria-pressed={on}
       onClick={(e) => {
         e.stopPropagation()
