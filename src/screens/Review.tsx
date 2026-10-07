@@ -4,6 +4,7 @@ import { ChineseHear, HearButton } from '../components/Hear'
 import { CheckIcon, CloseIcon } from '../components/Icons'
 import { SaveStar } from '../components/SaveStar'
 import { exampleFor, lookup } from '../lib/content'
+import { t } from '../lib/i18n'
 import { unlockSpeech } from '../lib/speech'
 import { dueCards, type Card, type Rating } from '../lib/srs'
 import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
@@ -15,10 +16,10 @@ const XP_PER_CARD = 4
 const GUARD_MS = 260
 
 const RATINGS: { key: Rating; label: string; hint: string }[] = [
-  { key: 'again', label: 'Again', hint: '<1 min' },
-  { key: 'hard', label: 'Hard', hint: '1 d' },
-  { key: 'good', label: 'Good', hint: 'on track' },
-  { key: 'easy', label: 'Easy', hint: '3 d+' },
+  { key: 'again', label: t('Again'), hint: t('<1 min') },
+  { key: 'hard', label: t('Hard'), hint: t('1 d') },
+  { key: 'good', label: t('Good'), hint: t('on track') },
+  { key: 'easy', label: t('Easy'), hint: t('3 d+') },
 ]
 
 export function ReviewFlow({
@@ -66,23 +67,23 @@ export function ReviewFlow({
   // one frame before this effect runs.
   useEffect(() => {
     if (!shown) return
-    const t = setTimeout(() => setCanRate(true), GUARD_MS)
-    return () => clearTimeout(t)
+    const timer = setTimeout(() => setCanRate(true), GUARD_MS)
+    return () => clearTimeout(timer)
   }, [shown, n])
 
   if (queue.length === 0) {
     return (
       <div className="overlay">
-        <Head title={title ?? 'Review'} onClose={onClose} />
+        <Head title={title ?? t('Review')} onClose={onClose} />
         <div className="overlay-body" style={{ display: 'grid', placeItems: 'center' }}>
           <div style={{ textAlign: 'center' }}>
-            <p style={{ fontSize: 17, fontWeight: 700 }}>Nothing to review yet</p>
-            <p className="sub">Finish a lesson or save a word and it lands here.</p>
+            <p style={{ fontSize: 17, fontWeight: 700 }}>{t('Nothing to review yet')}</p>
+            <p className="sub">{t('Finish a lesson or save a word and it lands here.')}</p>
           </div>
         </div>
         <div className="overlay-foot">
           <button className="btn" onClick={onClose}>
-            Back
+            {t('Back')}
           </button>
         </div>
       </div>
@@ -159,35 +160,35 @@ export function ReviewFlow({
       : dueCards(store.cardList).filter((c) => !queue.includes(c.zh)).length
     return (
       <div className="overlay">
-        <Head title={practiceMode && !words ? 'Practice' : (title ?? 'Review')} onClose={onClose} />
+        <Head title={practiceMode && !words ? t('Practice') : (title ?? t('Review'))} onClose={onClose} />
         <div className="overlay-body" style={{ textAlign: 'center', paddingTop: 40 }}>
           <div className="medal pop">
             <CheckIcon size={46} />
           </div>
           <h2 className="h1" style={{ marginTop: 22 }}>
-            {practiceMode && words ? 'Nicely practised!' : 'Review complete!'}
+            {practiceMode && words ? t('Nicely practised!') : t('Review complete!')}
           </h2>
           <div className="row" style={{ justifyContent: 'center', marginTop: 20, flexWrap: 'wrap' }}>
-            <span className="pill-ink">{rated} reviewed</span>
+            <span className="pill-ink">{t('{n} reviewed', { n: rated })}</span>
             <span className="pill-ink">
-              {rated ? Math.round((recalled / rated) * 100) : 0}% recalled
+              {t('{pct}% recalled', { pct: rated ? Math.round((recalled / rated) * 100) : 0 })}
             </span>
             <span className="pill-ink">+{recalled * XP_PER_CARD} XP</span>
           </div>
           {moreDue > 0 && (
             <p style={{ fontSize: 13, color: 'var(--muted)', marginTop: 20 }}>
-              {moreDue} more still due today.
+              {t('{n} more still due today.', { n: moreDue })}
             </p>
           )}
         </div>
         <div className="overlay-foot" style={{ display: 'grid', gap: 10 }}>
           {moreDue > 0 && (
             <button className="btn" onClick={keepGoing}>
-              Keep going — {moreDue} more
+              {t('Keep going — {n} more', { n: moreDue })}
             </button>
           )}
           <button className={moreDue > 0 ? 'btn btn-ghost' : 'btn'} onClick={onClose}>
-            Done
+            {t('Done')}
           </button>
         </div>
       </div>
@@ -199,7 +200,7 @@ export function ReviewFlow({
   return (
     <div className="overlay">
       <Head
-        title={practiceMode && !words ? 'Practice' : (title ?? 'Review')}
+        title={practiceMode && !words ? t('Practice') : (title ?? t('Review'))}
         onClose={onClose}
         onUndo={undo ? undoLast : undefined}
       />
@@ -221,7 +222,7 @@ export function ReviewFlow({
           className="card"
           onClick={reveal}
           onPointerDown={() => unlockSpeech()}
-          aria-label={shown ? undefined : `Reveal ${zh}`}
+          aria-label={shown ? undefined : t('Reveal {word}', { word: zh })}
           disabled={shown}
           style={{
             background: 'var(--paper)',
@@ -247,12 +248,12 @@ export function ReviewFlow({
             {zh}
           </div>
           {!shown && (
-            <div style={{ fontSize: 13, color: 'var(--muted-2)', marginTop: 16 }}>Tap to reveal</div>
+            <div style={{ fontSize: 13, color: 'var(--muted-2)', marginTop: 16 }}>{t('Tap to reveal')}</div>
           )}
         </button>
 
         <div style={{ marginTop: 14, display: 'flex', justifyContent: 'center' }}>
-          <ChineseHear text={zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label="Hear the word" />
+          <ChineseHear text={zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear the word')} />
         </div>
 
         {shown && (
@@ -276,7 +277,7 @@ export function ReviewFlow({
               <div
                 style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid var(--line-3)' }}
               >
-                <div className="kicker-ink">From the book</div>
+                <div className="kicker-ink">{t('From the book')}</div>
                 <div className="zh" style={{ fontSize: 16, lineHeight: 1.7, marginTop: 4 }} lang="zh-CN">
                   <Glossed text={example.zh} onWord={onWord} />
                 </div>
@@ -285,7 +286,7 @@ export function ReviewFlow({
                 </div>
                 <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 6 }}>{example.en}</div>
                 <div style={{ marginTop: 10 }}>
-                  <HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label="Hear the line" />
+                  <HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} />
                 </div>
               </div>
             )}
@@ -313,7 +314,7 @@ export function ReviewFlow({
           </div>
         ) : (
           <button className="btn" onClick={reveal}>
-            Show answer
+            {t('Show answer')}
           </button>
         )}
       </div>
@@ -334,7 +335,7 @@ function Head({
 }) {
   return (
     <div className="overlay-head">
-      <button className="icon-round tap44" onClick={onClose} aria-label="Close review">
+      <button className="icon-round tap44" onClick={onClose} aria-label={t('Close review')}>
         <CloseIcon />
       </button>
       <strong style={{ fontSize: 15, flex: 1 }}>{title}</strong>
@@ -343,9 +344,9 @@ function Head({
           className="pill-ink tap44"
           onClick={onUndo}
           style={{ height: 32 }}
-          aria-label="Undo last rating"
+          aria-label={t('Undo last rating')}
         >
-          ↶ Undo
+          ↶ {t('Undo')}
         </button>
       )}
     </div>

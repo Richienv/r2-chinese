@@ -1,4 +1,5 @@
 import { useEffect, useState, useSyncExternalStore } from 'react'
+import { t } from '../lib/i18n'
 import { getSpeechSnapshot, prefetch, speak, speakLines, stopSpeech, subscribeSpeech, unlockSpeech, type SpeakOpts } from '../lib/speech'
 import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 
@@ -60,7 +61,7 @@ export function useAutoSpeak(text: string, voice: string = VOICE.xiaoxiao, rate?
 
 /** Prefetch + autoplay several short Chinese items (e.g. quiz choices) in order. */
 export function useAutoSpeakLines(lines: string[], voice: string = VOICE.xiaoxiao, rate: number = WORD_RATE) {
-  const audible = lines.map((t) => t.trim()).filter((t) => t && hasHanzi(t))
+  const audible = lines.map((line) => line.trim()).filter((line) => line && hasHanzi(line))
   const joined = audible.join('\u0001')
   useEffect(() => {
     if (audible.length === 0) return
@@ -85,7 +86,7 @@ export function HearButton({
   text,
   voice,
   rate,
-  label = 'Hear it',
+  label = t('Hear it'),
   tone = 'ink',
   className,
 }: {
@@ -111,7 +112,7 @@ export function HearButton({
       type="button"
       className={`hear hear-${tone}${className ? ` ${className}` : ''}`}
       data-on={playing}
-      aria-label={playing ? `Stop ${label}` : label}
+      aria-label={playing ? t('Stop {label}', { label }) : label}
       aria-pressed={playing}
       onPointerDown={() => unlockSpeech()}
       onClick={(e) => {
@@ -121,7 +122,7 @@ export function HearButton({
       }}
     >
       {playing ? <PauseMark /> : <PlayMark />}
-      <span>{playing ? 'Playing' : label}</span>
+      <span>{playing ? t('Playing') : label}</span>
     </button>
   )
 }
@@ -133,7 +134,7 @@ export function HearButton({
 export function ChineseHear({
   text,
   autoplay = true,
-  label = 'Hear it',
+  label = t('Hear it'),
   tone = 'ink',
   voice = VOICE.xiaoxiao,
   rate,

@@ -11,6 +11,7 @@ import {
   type Example,
 } from './content'
 import { buildRecheck } from './dialogue-check'
+import { t } from './i18n.ts'
 import { clozeQuestion, sentenceQuestions, vocabQuestions, type Question } from './quiz'
 import { wordHook, type TeachPhase, type WordHook } from './teach'
 import type { LessonText, Vocab } from './types'
@@ -88,13 +89,14 @@ export function isLessonReached(
   return lesson <= next.lesson || PATH_NODES.some((n) => isDone(lesson, n))
 }
 
+/** `en` is the label in the interface language (kept under that name for the screens that read it). */
 export const NODE_LABEL: Record<PathNode, { en: string; zh: string }> = {
-  t1: { en: 'Text 1', zh: '课文1' },
-  t2: { en: 'Text 2', zh: '课文2' },
-  t3: { en: 'Text 3', zh: '课文3' },
-  t4: { en: 'Text 4', zh: '课文4' },
-  t5: { en: 'Text 5', zh: '课文5' },
-  wrap: { en: 'Wrap-up', zh: '整理' },
+  t1: { en: t('Text 1'), zh: '课文1' },
+  t2: { en: t('Text 2'), zh: '课文2' },
+  t3: { en: t('Text 3'), zh: '课文3' },
+  t4: { en: t('Text 4'), zh: '课文4' },
+  t5: { en: t('Text 5'), zh: '课文5' },
+  wrap: { en: t('Wrap-up'), zh: '整理' },
 }
 
 /** Path chip: 课文 N + first new word, or 整理. */
@@ -196,7 +198,7 @@ function buildTextSteps(lesson: number, node: Exclude<PathNode, 'wrap'>): Sessio
       title: g.point,
       body: g.explanation,
       example: g.examples[0] ?? null,
-      kicker: 'Grammar',
+      kicker: t('Grammar'),
       n: 0,
       of: 0,
     })
@@ -251,7 +253,7 @@ function buildWrapSteps(lesson: number): SessionStep[] {
       kind: 'note',
       id: `same:${same.char}`,
       title: `同字词 · ${same.char}`,
-      body: names ? `${same.char}：${names}` : `${same.char} family`,
+      body: names ? `${same.char}：${names}` : t('{char} family', { char: same.char }),
       example: same.examples[0] ?? null,
       kicker: '同字词',
       n: 0,
