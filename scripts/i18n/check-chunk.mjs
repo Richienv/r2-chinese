@@ -17,7 +17,8 @@ export function validate(chunk, out) {
     if (sorted(item.text, HAN) !== sorted(got, HAN)) problems.push(`CHINESE CHANGED ${tag}\n   -> ${got.slice(0, 160)}`)
     if (sorted(item.text, MARKS) !== sorted(got, MARKS)) problems.push(`NUMBERS/MARKS CHANGED ${tag}\n   -> ${got.slice(0, 160)}`)
     const english = item.text.replace(HAN, ' ')
-    const words = got.replace(HAN, ' ').toLowerCase().match(/[a-z']+/g) ?? []
+    // Single letters are dialogue speakers (A：B：) and option labels, not English words.
+    const words = (got.replace(HAN, ' ').toLowerCase().match(/[a-z']+/g) ?? []).filter((word) => word.length >= 2)
     const stops = words.filter((w) => STOP.has(w)).length
     if (words.length >= 6 && stops / words.length > 0.2) problems.push(`STILL ENGLISH? ${tag}\n   -> ${got.slice(0, 160)}`)
     if (got === item.text && /[A-Za-z]{3,}\s+[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(english)) problems.push(`UNCHANGED ${tag}`)
