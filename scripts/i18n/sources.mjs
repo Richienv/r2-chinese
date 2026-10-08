@@ -48,6 +48,20 @@ export const SOURCES = {
     kind: (p) => courseKind(p),
     context: (root, p) => courseContext(root, p),
   },
+  // Magang and Interview share one shape: chapters of sittings (and a beats copy of the same sittings). Both copies are
+  // listed, and identical texts are translated once.
+  magang: {
+    files: () => fs.readdirSync('src/data/magang').filter((f) => /^ch-\d+\.json$/.test(f)).sort().map((f) => ({ path: path.join('src/data/magang', f), overlay: 'magang-' + f.replace('.json', '') })),
+    wanted: (p) => guideWanted(p),
+    kind: (p) => guideKind(p),
+    context: (root, p) => guideContext(root, p),
+  },
+  interview: {
+    files: () => fs.readdirSync('src/data/interview').filter((f) => /^ch-\d+\.json$/.test(f)).sort().map((f) => ({ path: path.join('src/data/interview', f), overlay: 'interview-' + f.replace('.json', '') })),
+    wanted: (p) => guideWanted(p),
+    kind: (p) => guideKind(p),
+    context: (root, p) => guideContext(root, p),
+  },
   // English note titles that the main extraction left out. Same files and overlays as kerja / jiaocheng.
   'kerja-notes': {
     files: () => SOURCES.kerja.files(),
@@ -77,5 +91,34 @@ function courseContext(root, p) {
   const owner = at(root, keys.slice(0, -1).join('.'))
   const base = pick(owner, ['zh', 'pinyin', 'pos', 'speaker', 'title'])
   if (keys[0] === 'words') return { ...base, ...pick(at(root, keys.slice(0, 2).join('.')), ['zh', 'pinyin', 'pos']) }
+  return base
+}
+
+/** Magang / Interview: chapter titles, sitting prose, quiz questions and options, and the gloss and hook of each term. */
+function guideWanted(p) {
+  return /^(partTitleEn|titleEn|when)$/.test(p)
+    || /^(sittings|beats)\.\d+\.(titleEn|bodyEn|prompt)$/.test(p)
+    || /^(sittings|beats)\.\d+\.choices\.\d+$/.test(p)
+    || /^(sittings|beats)\.\d+\.terms\.\d+\.(en|hook)$/.test(p)
+}
+
+function guideKind(p) {
+  if (/^(partTitleEn|titleEn|when)$/.test(p) || /\.titleEn$/.test(p)) return 'title'
+  if (/\.bodyEn$/.test(p)) return 'body'
+  if (/\.(prompt|choices\.\d+)$/.test(p)) return 'quiz'
+  if (/\.terms\.\d+\.en$/.test(p)) return 'gloss'
+  return 'hook'
+}
+
+function guideContext(root, p) {
+  const keys = p.split('.')
+  if (keys.length === 1) return { chapter: root.titleEn }
+  const sitting = at(root, keys.slice(0, 2).join('.'))
+  const base = { chapter: root.titleEn, title: sitting?.titleEn }
+  if (keys[2] === 'terms') {
+    const term = at(root, keys.slice(0, 4).join('.'))
+    return { ...base, zh: term?.zh, ...(keys[4] === 'hook' ? { en: term?.en } : {}) }
+  }
+  if (keys[2] === 'choices') return { ...base, prompt: sitting?.prompt }
   return base
 }

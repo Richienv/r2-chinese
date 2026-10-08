@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
-import { t } from './i18n.ts'
+import { getLang, t } from './i18n.ts'
+import { applyOverlay, type Overlay } from './localize'
 
 /** Interview path progress — never written into HSK / Kerja / Jiaocheng / Magang keys. */
 const PROGRESS_KEY = 'yulu.interview.v1'
@@ -84,6 +85,15 @@ type GlobModule = { default: unknown } | unknown
 const chapterModules = import.meta.glob('../data/interview/ch-*.json', {
   eager: true,
 }) as Record<string, GlobModule>
+
+// Indonesian titles, lesson text, quizzes and term meanings, applied once when the chapters load.
+if (getLang() === 'id') {
+  const overlays = import.meta.glob('../data/i18n/id/interview-ch-*.json', { eager: true }) as Record<string, { default: Overlay }>
+  for (const [path, mod] of Object.entries(chapterModules)) {
+    const overlay = overlays[path.replace('../data/interview/', '../data/i18n/id/interview-')]
+    if (overlay) applyOverlay((mod && typeof mod === 'object' && 'default' in mod ? (mod as { default: unknown }).default : mod) as Record<string, unknown>, overlay.default)
+  }
+}
 
 function asSitting(raw: unknown): InterviewSitting | null {
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null
