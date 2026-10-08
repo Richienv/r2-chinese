@@ -10,7 +10,7 @@ const at = (root, dotted) => dotted.split('.').reduce((node, key) => node?.[key]
 
 // For every course: each overlay entry still matches the English it was written against, and nearly every
 // translatable string has a translation. A stale entry would silently fall back to English in the app.
-for (const course of ['hsk4a', 'teach', 'kerja', 'jiaocheng']) {
+for (const course of ['hsk4a', 'teach', 'kerja', 'jiaocheng', 'magang', 'interview']) {
   test(`${course}: overlays match their source and cover the course`, () => {
     const source = SOURCES[course]
     const stale = []
