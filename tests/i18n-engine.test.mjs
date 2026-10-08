@@ -8,7 +8,6 @@ import { describeStroke, diagnoseWord, reviewDrawing } from '../src/lib/handwrit
 import { drawingTask, redrawLabel } from '../src/lib/drawing-flow.ts'
 import { sourceAssessment } from '../src/lib/production.ts'
 import { reviewReply } from '../src/lib/reply-review.ts'
-import { reviewWriting, writingTask } from '../src/lib/writing-review.ts'
 import { buildRecheck, reviewRecheck } from '../src/lib/dialogue-check.ts'
 import { checkGrammar } from '../src/lib/grammar/check.ts'
 import { summarize } from '../src/lib/grammar/describe.ts'
@@ -48,19 +47,6 @@ test('a reply review reads in Indonesian, with the headline, next step and every
     assert.equal(passed.headline, 'Semua 2 syarat terpenuhi')
     assert.equal(passed.nextStep, 'Gak ada yang perlu diperbaiki. Lanjut.')
     assertIndonesian(passed)
-  })
-})
-
-test('a writing review reads in Indonesian and quotes the button it points at in Indonesian too', () => {
-  withLang('id', () => {
-    const words = ['熟悉', '印象']
-    const review = reviewWriting({ response: '我熟悉这里。', words, used: ['熟悉'], grammar: null })
-    assert.equal(review.headline, '3 syarat yang perlu diperbaiki')
-    assert.match(review.nextStep, /^Tambahkan satu kalimat lagi/)
-    assert.match(review.checks.find((check) => check.id === 'grammar').fix, /belum jalan/)
-    assert.equal(review.task, writingTask(2))
-    assert.match(review.task, /^Tulis 2 atau 3 kalimat Mandarin/)
-    assertIndonesian(review)
   })
 })
 

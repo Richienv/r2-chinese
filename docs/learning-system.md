@@ -69,7 +69,7 @@ Where it applies:
 | Type a word | Hanzi not pinyin, right length, each character (without printing the answer) | retype; the text stays | same |
 | Reply in a dialogue | in Mandarin; the key words from the line; the book's wording or a verified correction (`reply-review.ts`) | "Fix and check again" keeps the reply and lists what to fix | same |
 | Dialogue recall check (`DialogueRecheck`) | what came next, who said it, which key word fits, built from the dialogue itself (`dialogue-check.ts`) | each wrong choice is answered with the book's own line | the misses again, options reordered |
-| Make it yours | Mandarin, two or three sentences, every word used, no known grammar mistakes from the free classifier (`writing-review.ts`, `docs/grammar-checker.md`) | live checklist while writing; "Fix it and check again" | same |
+| Make it yours | three words, one box, an optional hint from the book, then a check by the free classifier (`HskComposition`, `docs/grammar-checker.md`). Next is always allowed | the mistakes listed, each with its fix and why | "Fix it and check again" as often as you like; Next is never blocked |
 
 Handwriting pass or fail still comes from the blind corpus classifier. The stroke diagnosis
 only explains it, and says "one of these" rather than guessing when strokes are alike.

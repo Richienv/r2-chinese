@@ -103,8 +103,12 @@ that register. It does not show they never fire on a correct learner sentence of
 
 ## Where it is used
 
-- **Make it yours** (`HskComposition`): the grammar line of the checklist is live while typing. Pressing
-  "Check my sentences" opens the explanations, the fixed sentence and credits the practice.
+- **Make it yours** (`HskComposition`): three words from the learner's own lessons, one box to write in, an optional
+  hint (up to four sentences and dialogue lines from the book that use the words, with the words highlighted; see
+  `writing-hints.ts`), and a Check button. Check lists what looks wrong, each as pattern, change and why, with the
+  sentence fixed. **Next is always available**, right or wrong: writing the sentence and seeing the mistakes is the
+  point, so nothing blocks on being correct. Only a sentence that uses every word and has no known mistake earns the
+  small practice credit, and it never touches mastery.
 - **Reply and sentence practice** (`assessProduction`): the book's sentence is confirmed. A different wording gets
   the classifier's findings as feedback, and stays `practice` evidence, never graded.
 

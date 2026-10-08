@@ -20,19 +20,7 @@ const entries: Record<string, string> = {
   'Your wording differs from the book. No common mistakes turned up, but this check only knows a fixed set of patterns, so it cannot confirm your sentence is right. Compare it with the book.': 'Tulisanmu beda dari buku. Gak ada kesalahan umum yang muncul, tapi pengecek ini cuma kenal sejumlah pola tetap, jadi belum bisa memastikan kalimatmu benar. Bandingkan dengan buku.',
   'Your wording differs from the book. It may be valid, but a free checker can only catch common mistakes, so its grammar and meaning cannot be confirmed. Compare it with the book wording.': 'Tulisanmu beda dari buku. Bisa jadi tetap benar, tapi pengecek gratis cuma bisa menangkap kesalahan umum, jadi tata bahasa dan artinya belum bisa dipastikan. Bandingkan dengan tulisan di buku.',
 
-  // ---- Make it yours: the requirement and the review (writing-review.ts, HskComposition.tsx) ----
-  'No common grammar mistakes': 'Gak ada kesalahan tata bahasa umum',
-  '{n} mistake found': '{n} kesalahan ketemu',
-  '{n} mistakes found': '{n} kesalahan ketemu',
-  'None of {n} common patterns matched': 'Gak ada dari {n} pola umum yang cocok',
-  'No known mistakes': 'Gak ada kesalahan yang dikenal',
-  'The grammar check has not run yet.': 'Pengecekan tata bahasa belum jalan.',
-  'Write some Mandarin to check its grammar.': 'Tulis sedikit Mandarin dulu supaya tata bahasanya bisa dicek.',
   'Worth a second look': 'Perlu dilihat lagi',
-  '{n} thing to look at': '{n} hal yang perlu dilihat',
-  '{n} things to look at': '{n} hal yang perlu dilihat',
-  'Nothing unusual': 'Gak ada yang janggal',
-  'Common mistakes check': 'Cek kesalahan umum',
   'No common mistakes found.': 'Gak ada kesalahan umum yang ketemu.',
   'Some mistakes need rewording, so this is only partly corrected.': 'Sebagian kesalahan harus ditulis ulang, jadi ini baru dibenerin sebagian.',
 
@@ -114,5 +102,9 @@ const entries: Record<string, string> = {
   'number + measure word + noun': 'angka + kata bantu bilangan + kata benda',
   'A number needs a measure word before the noun: {number}{measure}{noun}. Indonesian can say “tiga buku”; Chinese cannot say 三书.': 'Angka butuh kata bantu bilangan sebelum kata bendanya: {number}{measure}{noun}. Bahasa Indonesia boleh bilang “tiga buku”; Mandarin gak bisa bilang 三书.',
   'A question about time goes before the verb too: 你{when}{verb}. Indonesian puts “kapan” last; Chinese puts it right after the subject.': 'Pertanyaan soal waktu juga ditaruh sebelum kata kerja: 你{when}{verb}. Bahasa Indonesia menaruh “kapan” di akhir; Mandarin menaruhnya tepat setelah subjek.',
+  // ---- Make it yours (HskComposition.tsx): three words, a box, a check ----
+  'Write a sentence with these words': 'Tulis kalimat pakai kata-kata ini',
+  'Hint': 'Petunjuk',
+  'Hide hint': 'Tutup petunjuk',
 }
 export default entries

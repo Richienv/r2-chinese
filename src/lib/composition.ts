@@ -3,8 +3,6 @@ import { compositionCoverage } from './hskPractice.ts'
 import { checkGrammar } from './grammar/check.ts'
 import { errorsOf, looksOf, summarize } from './grammar/describe.ts'
 import type { Finding, GrammarVerdict, Lexicon, Severity } from './grammar/types.ts'
-import { describeChange } from './grammar/describe.ts'
-import type { WritingGrammar } from './writing-review.ts'
 
 export interface GrammarCorrection {
   original: string
@@ -55,10 +53,4 @@ export function reviewComposition(response: string, words: string[], lexicon?: L
     rulesChecked: report.rulesChecked,
     ...writingCoverage(response, words),
   }
-}
-
-/** What the writing checklist needs from a review. */
-export function grammarOfReview(review: CompositionReview): WritingGrammar {
-  const lines = (severity: Severity) => review.corrections.filter((entry) => entry.severity === severity).map(describeChange)
-  return { verdict: review.verdict, errors: lines('error'), looks: lines('check'), rulesChecked: review.rulesChecked }
 }
