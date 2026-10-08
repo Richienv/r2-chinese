@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { sourceAssessment } from '../src/lib/production.ts'
+import { assessProduction, sourceAssessment } from '../src/lib/production.ts'
 import { reviewReply } from '../src/lib/reply-review.ts'
 import { compareReviews } from '../src/lib/review.ts'
 
@@ -8,7 +8,7 @@ const expectedZh = '我们应该遵守法律。'
 const prompt = (response) => ({ expectedZh, expectedEn: 'We should obey the law.', response, targetWords: ['遵守', '法律'] })
 const task = 'Reply as the second speaker'
 const glosses = { 遵守: 'to obey', 法律: 'law' }
-const review = (response, assessment = sourceAssessment(prompt(response))) => reviewReply({ task, response, expectedZh, glosses, assessment })
+const review = (response, assessment = assessProduction(prompt(response))) => reviewReply({ task, response, expectedZh, glosses, assessment })
 const find = (result, id) => result.checks.find((check) => check.id === id)
 
 test('the book sentence passes every requirement', () => {
@@ -23,7 +23,7 @@ test('a different wording with every key word is unverified, not passed, when no
   assert.equal(result.verdict, 'unverified')
   assert.equal(find(result, 'matches').status, 'unverified')
   assert.equal(find(result, 'key-words').status, 'pass')
-  assert.match(find(result, 'matches').fix, /cannot be verified/)
+  assert.match(find(result, 'matches').fix, /cannot be confirmed/)
 })
 
 test('a missing key word is named by meaning, not printed, and fails the review', () => {
@@ -53,21 +53,25 @@ test('writing in English or not at all fails the instruction first', () => {
   assert.equal(find(mixed, 'mandarin').status, 'partial')
 })
 
-test('a verified reply is correct even when it skipped a lesson word, and the skipped word is only a tip', () => {
-  const verified = { ...sourceAssessment(prompt('我们必须守法')), accepted: true, evidence: 'verified', feedback: 'Good.', issues: [] }
-  const result = review('我们必须守法', verified)
-  assert.equal(result.verdict, 'passed')
-  assert.equal(find(result, 'key-words').decisive, false)
-  assert.equal(find(result, 'key-words').status, 'fail')
-  assert.match(result.nextStep, /Optional/)
+test('only the book sentence is ever confirmed correct; a different wording with no known mistake is never a pass', () => {
+  const result = review('我们必须遵守法律')
+  assert.equal(result.verdict, 'unverified')
+  assert.equal(find(result, 'matches').status, 'unverified')
+  assert.equal(find(result, 'key-words').status, 'pass')
 })
 
-test('a rejected reply carries the reviewer’s reason and correction', () => {
-  const rejected = { ...sourceAssessment(prompt('我们遵守应该法律')), accepted: false, evidence: 'verified', feedback: 'Word order is off.', issues: ['应该 goes before the verb 遵守.'], correctedZh: '我们应该遵守法律。' }
-  const result = review('我们遵守应该法律', rejected)
+test('a known mistake is named with its reason and the learner’s own sentence, fixed', () => {
+  const result = review('我们应该遵守法律，我累很。')
   assert.equal(result.verdict, 'revise')
-  assert.match(find(result, 'matches').fix, /应该 goes before the verb/)
-  assert.match(find(result, 'matches').fix, /Suggested: 我们应该遵守法律/)
+  assert.equal(find(result, 'matches').status, 'fail')
+  assert.match(find(result, 'matches').fix, /degree word goes before the adjective/)
+  assert.match(find(result, 'matches').fix, /Suggested: 我们应该遵守法律，我很累。/)
+})
+
+test('a mistake that needs rewording quotes the reason without printing the book reply', () => {
+  const result = review('我们把法律遵守。')
+  assert.equal(find(result, 'matches').status, 'unverified', 'a worth-a-look note is not a failure')
+  assert.doesNotMatch(find(result, 'matches').fix ?? '', /我们应该遵守法律/)
 })
 
 test('the closeness check names what is missing and what is extra, and never decides the verdict', () => {

@@ -1,6 +1,6 @@
 import { useEffect, useId, useMemo, useRef, useState, type RefObject } from 'react'
 import { lookup, segment } from '../lib/content'
-import { alignChinese, assessProduction, dialogueRoles, dialogueTurnIndexes, sourceAssessment, sourceWords, type ProductionAssessment, type ProductionResult } from '../lib/production'
+import { alignChinese, assessProduction, dialogueRoles, dialogueTurnIndexes, sourceWords, type ProductionAssessment, type ProductionResult } from '../lib/production'
 import { canRecognizeMandarin, createMandarinRecognition, type RecognitionSnapshot } from '../lib/recognition'
 import { playCorrect, playListen, playReveal, playWrong } from '../lib/sfx'
 import { stopSpeech } from '../lib/speech'
@@ -13,6 +13,7 @@ import { Glossed, useGloss } from './ChineseText'
 import { StudyDisplayControls } from './StudyDisplayControls'
 import { useStore } from '../store/store'
 import { buildGrammarCoach, type GrammarCoach } from '../lib/grammarCoach'
+import { courseLexicon } from '../lib/grammar/course-lexicon'
 import { reviewReply } from '../lib/reply-review'
 import { compareReviews, type Review } from '../lib/review'
 import { ReviewReport } from './ReviewReport'
@@ -75,7 +76,7 @@ export function DialoguePractice({ text, lesson, targetWords, externallyAssisted
       assisted: results.some((item) => item.assisted),
       words: [...new Set(results.flatMap((item) => item.words))],
       mode: results.some((item) => item.mode === 'speaking') ? 'speaking' : 'writing',
-      evidence: results.some((item) => item.evidence === 'practice') ? 'practice' : results.some((item) => item.evidence === 'verified') ? 'verified' : 'source-match',
+      evidence: results.some((item) => item.evidence === 'practice') ? 'practice' : 'source-match',
       outcomes: results.flatMap((item) => item.outcomes ?? []),
     })
   }
@@ -247,7 +248,6 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   const [hint, setHint] = useState(0)
   const [assisted, setAssisted] = useState(false)
   const [assessment, setAssessment] = useState<ProductionAssessment | null>(null)
-  const [checking, setChecking] = useState(false)
   const [error, setError] = useState('')
   const [reviewed, setReviewed] = useState(false)
   const [completed, setCompleted] = useState(false)
@@ -257,7 +257,6 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   const [fixList, setFixList] = useState<string[]>([])
   const [recognition, setRecognition] = useState<RecognitionSnapshot>({ status: 'idle', interim: '', error: '' })
   const recognizer = useRef<ReturnType<typeof createMandarinRecognition> | null>(null)
-  const request = useRef<AbortController | null>(null)
   const baseTranscript = useRef('')
   const disposed = useRef(false)
   const latestValue = useRef(value)
@@ -268,7 +267,7 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   const listening = recognition.status === 'listening'
   const recording = listening || recognition.status === 'starting' || recognition.status === 'stopping'
   const sourceClues = targetWords.slice(0, 4).map((word) => ({ zh: word, en: lookup(word)?.en })).filter((word) => word.en)
-  const feedbackState = checking ? 'thinking' : listening ? 'listening' : assessment?.accepted === true ? 'correct' : assessment ? 'retry' : 'idle'
+  const feedbackState = listening ? 'listening' : assessment?.accepted === true ? 'correct' : assessment ? 'retry' : 'idle'
   const task = preferredMode === 'speaking' ? t('Reply in Mandarin: “{en}”', { en: example.en }) : t('Write in Mandarin: “{en}”', { en: example.en })
   const review = useMemo(() => assessment ? reviewReply({
     task, response: value.trim(), expectedZh: example.zh, assessment,
@@ -293,7 +292,6 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
     recognizer.current = controller
     return () => {
       disposed.current = true
-      request.current?.abort()
       controller.dispose()
       stopSpeech()
     }
@@ -307,9 +305,6 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   }
 
   function changeValue(next: string) {
-    request.current?.abort()
-    request.current = null
-    setChecking(false)
     if (assessment) {
       setAssisted(true)
       onAssistance?.()
@@ -344,44 +339,22 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
     return { expectedZh: example.zh, expectedEn: example.en, response: value.trim(), targetWords, grammar, context }
   }
 
-  async function check() {
-    if (checking || recording || completed) return
+  function check() {
+    if (recording || completed) return
     if (!/[\u3400-\u9fff]/.test(value)) {
       setError(t('Write or speak your response in Hanzi first.'))
       return
     }
-    request.current?.abort()
-    const controller = new AbortController()
-    request.current = controller
-    const timeout = window.setTimeout(() => controller.abort(), 25000)
-    setChecking(true)
+    const result = assessProduction(prompt(), courseLexicon)
     setError('')
-    try {
-      const result = await assessProduction(prompt(), controller.signal)
-      if (disposed.current || controller.signal.aborted) return
-      setAssessment(result)
-      setReviewNote(0)
-      setReviewed(false)
-      // The reference/correction is now visible; persist that exposure before
-      // the learner can close the lesson and attempt the same checkpoint again.
-      if (result.accepted !== true) onAssistance?.()
-      if (result.accepted === true) playCorrect()
-      else if (result.accepted === false) playWrong()
-    } catch (cause) {
-      if (disposed.current || request.current !== controller) return
-      setError(controller.signal.aborted ? t('The check took too long. Retry, or compare with the book.') : cause instanceof Error ? cause.message : t('The check could not finish. Please retry.'))
-    } finally {
-      window.clearTimeout(timeout)
-      if (!disposed.current && request.current === controller) setChecking(false)
-    }
-  }
-
-  function compareLocally() {
-    const result = sourceAssessment(prompt())
     setAssessment(result)
     setReviewNote(0)
+    setReviewed(false)
+    // The reference/correction is now visible; persist that exposure before
+    // the learner can close the lesson and attempt the same checkpoint again.
     if (result.accepted !== true) onAssistance?.()
-    setError('')
+    if (result.accepted === true) playCorrect()
+    else if (result.accepted === false) playWrong()
   }
 
   function retry() {
@@ -413,7 +386,7 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   }
 
   function finish() {
-    if (!assessment || checking || completed || (assessment.accepted === false && !reviewed)) return
+    if (!assessment || completed || (assessment.accepted === false && !reviewed)) return
     setCompleted(true)
     recognizer.current?.cancel()
     stopSpeech()
@@ -430,6 +403,7 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
     }, value.trim())
   }
 
+  const shownZh = assessment ? assessment.suggestedZh ?? assessment.correctedZh : ''
   const coach = assessment ? buildGrammarCoach({ expectedZh: example.zh, expectedEn: example.en, response: value, grammar }) : null
 
   return (
@@ -443,16 +417,16 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
         value={value}
         rows={2}
         maxLength={500}
-        disabled={recording || checking || completed}
+        disabled={recording || completed}
         placeholder="用中文说，或写下来…"
         onChange={(event) => changeValue(event.target.value)}
         aria-describedby={`${id}-status`}
       />
       {!assessment && <div className="production-controls">
-        <button type="button" className="btn btn-ghost production-mic" data-active={recording} aria-pressed={recording} disabled={!supported || checking || completed} onClick={toggleMicrophone}>
+        <button type="button" className="btn btn-ghost production-mic" data-active={recording} aria-pressed={recording} disabled={!supported || completed} onClick={toggleMicrophone}>
           <MicrophoneIcon />{recording ? t('Stop') : value.trim() ? t('Add speech') : t('Speak')}
         </button>
-        <button type="button" className="btn" disabled={!value.trim() || recording || checking || completed} onClick={() => { void check() }}>{checking ? t('Checking…') : preferredMode === 'speaking' ? t('Check reply') : t('Check sentence')}</button>
+        <button type="button" className="btn" disabled={!value.trim() || recording || completed} onClick={check}>{preferredMode === 'speaking' ? t('Check reply') : t('Check sentence')}</button>
       </div>}
       <div id={`${id}-status`} className="production-status" role="status" aria-live="polite">
         {recording && <VoiceWaveform active={listening} />}
@@ -465,7 +439,7 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
       </div>
       {!assessment && <>
         <div className="production-hints">
-          {hint < 3 && <button className="btn btn-ghost" type="button" onClick={showHint} disabled={checking || recording}>{[t('Need a clue?'), t('Reveal Hanzi'), t('Reveal pinyin')][hint]}</button>}
+          {hint < 3 && <button className="btn btn-ghost" type="button" onClick={showHint} disabled={recording}>{[t('Need a clue?'), t('Reveal Hanzi'), t('Reveal pinyin')][hint]}</button>}
           {hint > 0 && <span>{t('Assisted attempt')}</span>}
         </div>
         {hint > 0 && <div ref={hintPanel} className="production-hint">
@@ -474,26 +448,24 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
           {hint >= 3 && <><p className="production-pinyin">{example.pinyin}</p><HearButton text={example.zh} label={t('Hear the book reply')} /></>}
         </div>}
       </>}
-      {checking && <RecallFeedback state={feedbackState} label={t('Checking meaning and grammar…')} />}
-      {error && <div className="production-feedback" data-state="retry" role="alert"><p>{error}</p>{/[\u3400-\u9fff]/.test(value) && <button type="button" className="btn btn-ghost" onClick={compareLocally}>{t('Use book comparison')}</button>}</div>}
+      {error && <div className="production-feedback" data-state="retry" role="alert"><p>{error}</p></div>}
       {assessment && (
         <div ref={reviewPanel} className="production-feedback production-recall-review" data-state={assessment.accepted === true ? 'correct' : assessment.accepted === null ? 'unverified' : 'retry'} aria-live="polite">
           {assessment.accepted === true && <RecallFeedback state={feedbackState} label={t('Meaning recalled')} />}
           {review && <ReviewReport review={review} comparison={change} revealed={() => true} />}
-          {assessment.evidence === 'verified' && <p className="production-meta">{t('AI grammar review')}</p>}
+          {assessment.grammar && <p className="production-meta">{t('Checked against {n} common mistake patterns. Not a full grammar check.', { n: assessment.grammar.rulesChecked })}</p>}
           <div className="production-comparison">
-            <div className="production-speaker">{assessment.evidence === 'verified' && assessment.correctedZh !== example.zh ? t('Suggested phrasing') : t('Book phrasing')}</div>
-            <p className="production-zh zh" lang="zh-CN">{assessment.correctedZh}</p>
-            {prefs.showPinyin && assessment.correctedZh === example.zh && <p className="production-pinyin">{example.pinyin}</p>}
-            {prefs.showEnglish && assessment.correctedZh === example.zh && <p className="production-en">{example.en}</p>}
-            <HearButton text={assessment.correctedZh} label={t('Hear this phrasing')} />
+            <div className="production-speaker">{assessment.suggestedZh ? t('Your sentence, fixed') : t('Book phrasing')}</div>
+            <p className="production-zh zh" lang="zh-CN">{shownZh}</p>
+            {prefs.showPinyin && shownZh === example.zh && <p className="production-pinyin">{example.pinyin}</p>}
+            {prefs.showEnglish && shownZh === example.zh && <p className="production-en">{example.en}</p>}
+            <HearButton text={shownZh} label={t('Hear this phrasing')} />
           </div>
           {assessment.accepted === false && <label className="production-review"><input type="checkbox" checked={reviewed} onChange={(event) => { setReviewed(event.target.checked); if (event.target.checked) onAssistance?.() }} />{t('I compared the correction. Keep this as assisted practice.')}</label>}
           <div className="production-actions">
             {assessment.accepted !== true && <button type="button" className="btn" onClick={revise} disabled={completed}>{t('Fix and check again')}</button>}
-            <button type="button" className={assessment.accepted === true ? 'btn conversation-continue' : 'btn btn-ghost conversation-continue'} onClick={finish} disabled={completed || checking || (assessment.accepted === false && !reviewed)}>{assessment.accepted === null ? t('Keep as practice') : continueLabel}</button>
+            <button type="button" className={assessment.accepted === true ? 'btn conversation-continue' : 'btn btn-ghost conversation-continue'} onClick={finish} disabled={completed || (assessment.accepted === false && !reviewed)}>{assessment.accepted === null ? t('Keep as practice') : continueLabel}</button>
             {assessment.accepted !== true && <button type="button" className="btn btn-ghost" onClick={retry} disabled={completed}>{t('Start over')}</button>}
-            {assessment.unavailable && <button type="button" className="btn btn-ghost" onClick={() => { void check() }} disabled={checking || completed}>{t('Retry grammar check')}</button>}
           </div>
           {prefs.showEnglish && reviewNotes.length > 0 && <details className="conversation-review-note conversation-disclosure">
             <summary>{t('Review note')}{reviewNotes.length > 1 && <span>{reviewNote + 1} / {reviewNotes.length}</span>}</summary>
@@ -501,9 +473,8 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
             {reviewNotes.length > 1 && <button type="button" className="grammar-coach-next" onClick={() => setReviewNote((current) => (current + 1) % reviewNotes.length)}>{t('Next note')}<span>{reviewNote + 1} / {reviewNotes.length}</span></button>}
           </details>}
           {coach && <details className="conversation-review-pattern conversation-disclosure"><summary>{t('Explore the word order')}</summary><GrammarCoachView coach={coach} showEnglish={prefs.showEnglish} /></details>}
-          {(assessment.accepted === null || targetWords.length > 0 || assessment.unavailable) && <details className="production-review-details">
+          {(assessment.accepted === null || targetWords.length > 0) && <details className="production-review-details">
             <summary>{t('Compare wording')}</summary>
-            {prefs.showEnglish && assessment.unavailable && <p className="production-meta">{t('Alternative grammar check unavailable. The lesson pattern below remains available.')}</p>}
             {assessment.accepted === null && <div className="production-comparison">
               <span className="production-speaker">{t('Your wording → book wording')}</span>
               <p className="production-diff zh" lang="zh-CN">{alignChinese(value, example.zh).map((part, index) => part.kind === 'same' ? <span key={index}>{part.text}</span> : part.kind === 'added' ? <del key={index} title={t('In your wording')}>{part.text}</del> : <ins key={index} title={t('In the book wording')}>{part.text}</ins>)}</p>

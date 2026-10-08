@@ -8,9 +8,9 @@ import { describeStroke, diagnoseWord, reviewDrawing } from '../src/lib/handwrit
 import { drawingTask, redrawLabel } from '../src/lib/drawing-flow.ts'
 import { sourceAssessment } from '../src/lib/production.ts'
 import { reviewReply } from '../src/lib/reply-review.ts'
-import { reviewWriting, writingTask } from '../src/lib/writing-review.ts'
 import { buildRecheck, reviewRecheck } from '../src/lib/dialogue-check.ts'
-import { AssessmentServiceError } from '../src/lib/assessmentService.ts'
+import { checkGrammar } from '../src/lib/grammar/check.ts'
+import { summarize } from '../src/lib/grammar/describe.ts'
 
 /** Words that only the English templates use. Indonesian text, Hanzi and data never contain them. */
 const LEFTOVER = /\b(the|and|your|you|to|of|is|are|with|from|not|this|that|it|was|word|words|sentence|sentences|requirement|requirements|fix|check|checked|answer|answered|try|again|missing|reply|book|used|none|passed|optional|next)\b/i
@@ -50,19 +50,6 @@ test('a reply review reads in Indonesian, with the headline, next step and every
   })
 })
 
-test('a writing review reads in Indonesian and quotes the button it points at in Indonesian too', () => {
-  withLang('id', () => {
-    const words = ['熟悉', '印象']
-    const review = reviewWriting({ response: '我熟悉这里。', words, used: ['熟悉'], grammar: null, reviewerAvailable: true })
-    assert.equal(review.headline, '3 syarat yang perlu diperbaiki')
-    assert.match(review.nextStep, /^Tambahkan satu kalimat lagi/)
-    assert.match(review.checks.find((check) => check.id === 'grammar').fix, /“Cek kalimatku”/)
-    assert.equal(review.task, writingTask(2))
-    assert.match(review.task, /^Tulis 2 atau 3 kalimat Mandarin/)
-    assertIndonesian(review)
-  })
-})
-
 test('a dialogue recheck reads in Indonesian, from the question label to the book quote', () => {
   withLang('id', () => {
     const line = (speaker, zh, en) => ({ speaker, zh, pinyin: '', en })
@@ -99,7 +86,7 @@ test('a dialogue recheck reads in Indonesian, from the question label to the boo
   })
 })
 
-test('the retest summary, stroke names, drawing task and service errors follow the language', () => {
+test('the retest summary, stroke names, drawing task and grammar notes follow the language', () => {
   withLang('id', () => {
     const check = (id, status) => ({ id, stage: 'output', label: id, status, found: 'f', expected: 'e', decisive: true, fix: 'x' })
     const before = reviewReply({ task: 't', response: '我们应该守法', expectedZh, glosses, assessment: sourceAssessment(prompt('我们应该守法')) })
@@ -115,11 +102,11 @@ test('the retest summary, stroke names, drawing task and service errors follow t
     assert.equal(drawingTask('meaning', { en: 'hukum', pinyin: 'fǎlǜ' }, 2), 'Gambar kata untuk “hukum” (2 karakter)')
     assert.equal(redrawLabel([0, 2], 3), 'Gambar ulang karakter 1 dan 3')
     assert.equal(redrawLabel([0, 1], 2), 'Gambar ulang katanya')
-    assert.equal(new AssessmentServiceError('rate_limited').message, 'Beberapa pengecekan berjalan berdekatan. Tunggu semenit, lalu coba lagi.')
+    assert.equal(summarize(checkGrammar('我累很。')), '1 kesalahan umum muncul.')
   })
   // Leaving Indonesian mode leaves nothing behind.
   assert.equal(describeStroke(Float32Array.from([0.2, 0.9, 0.8, 0.9])), 'horizontal stroke at the bottom')
-  assert.equal(new AssessmentServiceError('rate_limited').message, 'A few checks ran close together. Wait a minute, then try again.')
+  assert.equal(summarize(checkGrammar('我累很。')), 'One common mistake turned up.')
 })
 
 test('a drawing review reads in Indonesian, and says what is missing in plain Indonesian stroke words', () => {

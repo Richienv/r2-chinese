@@ -1,5 +1,7 @@
 import type { LessonText } from './types'
-import { assessmentFailure } from './assessmentService.ts'
+import { checkGrammar } from './grammar/check.ts'
+import { describeFinding, errorsOf, looksOf } from './grammar/describe.ts'
+import type { GrammarVerdict, Lexicon } from './grammar/types.ts'
 import { t } from './i18n.ts'
 
 export interface ProductionResult {
@@ -7,14 +9,14 @@ export interface ProductionResult {
   assisted: boolean
   words: string[]
   mode: 'speaking' | 'writing'
-  evidence?: 'verified' | 'source-match' | 'practice'
+  evidence?: 'source-match' | 'practice'
   /** Keep each assessed turn separate; one difficult reply must not downgrade another. */
   outcomes?: Array<{
     word: string
     correct: boolean
     assisted: boolean
     mode: 'speaking' | 'writing'
-    evidence: 'verified' | 'source-match' | 'practice'
+    evidence: 'source-match' | 'practice'
   }>
 }
 
@@ -28,15 +30,23 @@ export interface ProductionPrompt {
 }
 
 export interface ProductionAssessment {
-  /** null means grammar/meaning has not been assessed, rather than incorrect. */
+  /**
+   * true: the book's sentence, so correct. false: a known mistake was found in it.
+   * null: not verified. Nothing can confirm a different sentence is right, so it is never true for one.
+   */
   accepted: boolean | null
-  evidence: 'verified' | 'source-match' | 'practice'
+  /** 'source-match' can be graded. 'practice' is feedback only and never counts for or against mastery. */
+  evidence: 'source-match' | 'practice'
   feedback: string
+  /** The book's sentence, shown for comparison once the learner has checked. */
   correctedZh: string
+  /** The learner's own sentence with the known mistakes fixed. Only when every one has a fix. */
+  suggestedZh?: string
   issues: string[]
   usedWords: string[]
   missingWords: string[]
-  unavailable?: string
+  /** What the free classifier concluded, when it ran. */
+  grammar?: { verdict: GrammarVerdict; rulesChecked: number }
 }
 
 export function normalizeChinese(text: string): string {
@@ -107,33 +117,35 @@ export function alignChinese(response: string, reference: string): Array<{ text:
   return parts
 }
 
-export async function assessProduction(prompt: ProductionPrompt, signal?: AbortSignal): Promise<ProductionAssessment> {
+/**
+ * The book's sentence is the only thing that can be confirmed correct. For any other wording the free grammar
+ * classifier looks for known mistakes: finding one is useful feedback; finding none is not proof of anything.
+ * Either way the result is practice evidence, so it never reaches the mastery record.
+ */
+export function assessProduction(prompt: ProductionPrompt, lexicon?: Lexicon): ProductionAssessment {
   const local = sourceAssessment(prompt)
   if (local.accepted) return local
-  const res = await fetch('/api/assess', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(prompt),
-    signal,
-  })
-  if (res.status === 404 || res.status === 503) {
-    const failure = await assessmentFailure(res)
-    return { ...local, unavailable: t('{message} You can still compare with the book below.', { message: failure.message }) }
-  }
-  if (!res.ok) {
-    throw await assessmentFailure(res)
-  }
-  const result = await res.json() as Partial<ProductionAssessment>
-  if (typeof result.accepted !== 'boolean' || typeof result.feedback !== 'string' || typeof result.correctedZh !== 'string' || !Array.isArray(result.issues) || !result.issues.every((issue) => typeof issue === 'string')) {
-    throw new Error(t('The grammar check returned an incomplete result. Retry, or use book comparison.'))
+  const report = checkGrammar(prompt.response, { lexicon })
+  const errors = errorsOf(report)
+  const looks = looksOf(report)
+  const grammar = { verdict: report.verdict, rulesChecked: report.rulesChecked }
+  const issues = [...errors, ...looks].map(describeFinding)
+  if (errors.length) {
+    return {
+      ...local,
+      accepted: false,
+      grammar,
+      issues,
+      feedback: errors.length === 1 ? t('One common mistake turned up in your wording.') : t('{n} common mistakes turned up in your wording.', { n: errors.length }),
+      ...(report.fullyCorrected ? { suggestedZh: report.correctedZh } : {}),
+    }
   }
   return {
-    accepted: result.accepted,
-    evidence: 'verified',
-    feedback: result.feedback,
-    correctedZh: result.correctedZh,
-    issues: result.issues,
-    usedWords: local.usedWords,
-    missingWords: local.missingWords,
+    ...local,
+    grammar,
+    issues,
+    feedback: looks.length
+      ? t('Your wording differs from the book. Nothing is clearly wrong, but some parts are worth a second look. The checker cannot confirm the rest, so compare with the book.')
+      : t('Your wording differs from the book. No common mistakes turned up, but this check only knows a fixed set of patterns, so it cannot confirm your sentence is right. Compare it with the book.'),
   }
 }
