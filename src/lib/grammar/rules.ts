@@ -1,29 +1,12 @@
 import { t } from '../i18n.ts'
-import type { Hit, Lexicon, RuleDefinition, RuleSet, Severity, Unit } from './types.ts'
+import type { Hit, Lexicon, RuleSet, Severity, TransferRuleId } from './types.ts'
+import { clause, each, hit, re, sentence } from './rule-kit.ts'
+import { createTransferRules } from './rules-transfer.ts'
 import {
-  ACTION_VERBS, ACTION_VERBS_SINGLE, ADJECTIVES, BA_VERBS, BEFORE_VERB, DE_QUALITIES, DE_VERBS_AMBIGUOUS, DE_VERBS_CLEAR, DEGREE,
-  DEGREE_STACK_ADJ, DURATION, EMBEDDING_VERBS, FEELING_VERBS, HAN, LONG_MOVE_VERBS, MEASURE_NOUNS, MOVE_VERBS, NEGATED_VERBS, NO_LONGER,
+  ACTION_VERBS, ACTION_VERBS_SINGLE, ADJECTIVES, ASK_TIME, BA_VERBS, BEFORE_VERB, DE_QUALITIES, DE_VERBS_AMBIGUOUS, DE_VERBS_CLEAR, DEGREE,
+  DEGREE_STACK_ADJ, DURATION, EMBEDDING_VERBS, FEELING_VERBS, HABIT_WORDS, HAN, LONG_MOVE_VERBS, MEASURE_NOUNS, MOVE_VERBS, NEGATED_VERBS, NO_LONGER,
   PAST_MARKERS, PLACE_BREAK, PLACE_TAIL, PLACES, SHI_EXEMPT, TIME_WORDS, VERB_OBJECT_DE_OBJECTS, VERB_OBJECT_DE_VERBS, WORD_END, alternation,
 } from './tables.ts'
-
-const re = (source: string) => new RegExp(source, 'gu')
-
-/** A rule's way of reporting: offsets are relative to the unit here and absolute in the Hit. */
-function hit(unit: Unit, index: number, length: number, replacement: string | null, pattern: string, why: string, severity?: Severity): Hit {
-  return { start: unit.start + index, end: unit.start + index + length, replacement, pattern, why, ...(severity ? { severity } : {}) }
-}
-
-function each(unit: Unit, pattern: RegExp, visit: (match: RegExpMatchArray, index: number) => Hit | null): Hit[] {
-  const hits: Hit[] = []
-  for (const match of unit.text.matchAll(pattern)) {
-    const found = visit(match, match.index ?? 0)
-    if (found) hits.push(found)
-  }
-  return hits
-}
-
-const clause = (severity: Severity, find: (unit: Unit) => Hit[]): RuleDefinition => ({ scope: 'clause', severity, find })
-const sentence = (severity: Severity, find: (unit: Unit) => Hit[]): RuleDefinition => ({ scope: 'sentence', severity, find })
 
 /**
  * Every rule, built once per lexicon. Each one looks for a single shape of mistake and says nothing otherwise.
@@ -35,14 +18,18 @@ export function createRules(lexicon: Lexicon): RuleSet {
   const adjectiveAfterShi = alternation([...adjectives].filter((word) => !SHI_EXEMPT.has(word)))
   const degree = alternation(DEGREE)
   const places = alternation(PLACES)
-  const time = alternation(TIME_WORDS)
+  const time = alternation([...TIME_WORDS, ...HABIT_WORDS])
 
   const placeAfterLong = re(`(${alternation(ACTION_VERBS)})在(${places})${PLACE_TAIL}${PLACE_BREAK}`)
   const placeAfterSingle = re(`${BEFORE_VERB}(${alternation(ACTION_VERBS_SINGLE)})在(${places})${PLACE_TAIL}${PLACE_BREAK}`)
 
   const timeGap = `((?:(?!${time}|[的了过着是在到从至于])${HAN})`
-  const timeAfterLong = re(`(${alternation(LONG_MOVE_VERBS)})${timeGap}{0,6}?)(${time})$`)
-  const timeAfterSingle = re(`${BEFORE_VERB}(${alternation(MOVE_VERBS)})${timeGap}{1,6}?)(${time})$`)
+  const timeSequence = `((?:${time})+)`
+  const timeAfterLong = re(`(${alternation(LONG_MOVE_VERBS)})${timeGap}{0,6}?)${timeSequence}$`)
+  const timeAfterSingle = re(`${BEFORE_VERB}(${alternation(MOVE_VERBS)})${timeGap}{1,6}?)${timeSequence}$`)
+  const ask = alternation(ASK_TIME)
+  const askAfterLong = re(`(${alternation(LONG_MOVE_VERBS)})${timeGap}{0,6}?)(${ask})$`)
+  const askAfterSingle = re(`${BEFORE_VERB}(${alternation(MOVE_VERBS)})${timeGap}{0,6}?)(${ask})$`)
 
   const bi = '比(?!如|较|赛|方|喻|例|率|分)'
   const biGap = `((?:(?![的是有吗])${HAN}){1,6}?)`
@@ -63,7 +50,7 @@ export function createRules(lexicon: Lexicon): RuleSet {
   const deClear = re(`${BEFORE_VERB}(${alternation(DE_VERBS_CLEAR)})(的)((?:${degree})?(?:${alternation(DE_QUALITIES)}))(?=$|[吧呢啊了吗])`)
   const deAmbiguous = re(`${BEFORE_VERB}(${alternation(DE_VERBS_AMBIGUOUS)})(的)((?:${degree})?(?:${alternation(DE_QUALITIES)}))(?=$|[吧呢啊了吗])`)
 
-  return {
+  const core = {
     'place-after-verb': clause('error', (unit) => {
       const found = (match: RegExpMatchArray, index: number) => {
         const [whole, verb, place] = match
@@ -75,13 +62,18 @@ export function createRules(lexicon: Lexicon): RuleSet {
     }),
 
     'time-after-verb': clause('check', (unit) => {
-      const found = (match: RegExpMatchArray, index: number) => {
+      const found = (asking: boolean) => (match: RegExpMatchArray, index: number) => {
         const [whole, verb, gap, when] = match
         // The lookbehind consumed nothing, so the verb starts exactly where the match does.
-        return hit(unit, index, whole.length, `${when}${verb}${gap}`, t('time + verb'),
-          t('A time word such as {time} goes before the verb, right after the subject, not at the end of the sentence.', { time: when }))
+        return hit(unit, index, whole.length, `${when}${verb}${gap}`, t('time + verb'), asking
+          ? t('A question about time goes before the verb too: 你{when}{verb}. Indonesian puts “kapan” last; Chinese puts it right after the subject.', { when, verb })
+          : t('A time word such as {time} goes before the verb, right after the subject, not at the end of the sentence.', { time: when }),
+        asking ? 'error' : 'check')
       }
-      return [...each(unit, timeAfterLong, found), ...each(unit, timeAfterSingle, found)]
+      return [
+        ...each(unit, timeAfterLong, found(false)), ...each(unit, timeAfterSingle, found(false)),
+        ...each(unit, askAfterLong, found(true)), ...each(unit, askAfterSingle, found(true)),
+      ]
     }),
 
     'hen-after-adj': clause('error', (unit) =>
@@ -238,5 +230,7 @@ export function createRules(lexicon: Lexicon): RuleSet {
       if (but < 0 || /所以|因此/u.test(unit.text)) return []
       return [hit(unit, but, 2, null, t('因为 … 所以 …'), t('因为 pairs with 所以: “because … so …”. 但是 starts a contrast, which does not follow “because”.'))]
     }),
-  }
+  } satisfies Omit<RuleSet, TransferRuleId>
+
+  return { ...core, ...createTransferRules(adjective) }
 }

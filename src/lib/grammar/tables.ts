@@ -123,3 +123,58 @@ export const DEGREE_STACK_ADJ = ['累', '贵', '冷', '热', '难', '饿', '渴'
 export const BA_VERBS = ['看', '买', '吃', '喝', '做', '写', '学', '用', '洗', '说', '读', '听', '拿', '放', '找', '打', '关', '开', '唱', '画', '修', '卖', '带'] as const
 
 export const NUMERALS = '[一二两三四五六七八九十百几]'
+
+// ---- Language transfer: what the rules in rules-transfer.ts look for ----
+
+/** Habits and frequencies go before the verb like a time word: 我每天去学校, not 我去学校每天. */
+export const HABIT_WORDS = ['每天', '每周', '每年', '每个月', '每个星期', '周末', '经常', '常常', '总是'] as const
+
+/** Questions about time go before the verb: 你什么时候去, not 你去什么时候. */
+export const ASK_TIME = ['什么时候', '几点', '哪天', '几号'] as const
+
+/** One date part: a number and 年, 月 or 号/日. */
+export const DATE_PART = '(?:\\d{1,4}|[〇零一二三四五六七八九十]{1,4})(?:年|月|号|日)'
+
+/** 一起 goes before the verb: 我们一起去, not 我们去一起. 住 is left out: 住一起 is said. */
+export const TOGETHER_LONG = ['学习', '吃饭', '旅行', '旅游', '看电影', '看书', '工作', '运动', '唱歌', '跳舞', '回家', '开会', '上课'] as const
+export const TOGETHER_SINGLE = ['去', '来', '吃', '喝', '玩', '看', '做', '学', '买', '唱', '听', '走', '跑'] as const
+
+/** Verbs that need 得 before how well or how fast they are done: 跑得很快, not 跑很快. 说 看 听 are left out: 他说很好, 我看很好 are said. */
+export const DE_MISSING_VERBS = ['跑', '走', '睡', '玩', '跳', '游', '飞', '笑', '哭', '长', '过', '活', '起', '来', '站', '爬', '开', '唱', '学', '写', '做', '吃', '画'] as const
+/** 多 少 远 久 are left out: 吃很多, 走很远 are said. 太 is left out too: 跑太快了 is said. */
+export const DE_MISSING_QUALITIES = ['好', '快', '慢', '早', '晚', '流利', '认真', '开心', '高兴', '努力', '清楚', '漂亮', '不错', '高', '累'] as const
+export const DE_MISSING_DEGREE = ['很', '非常', '特别', '十分', '挺', '比较', '相当'] as const
+
+/** Topics after 感兴趣 that show the 对 is missing: 我对中文感兴趣, not 我感兴趣中文. */
+export const INTEREST_TOPICS = [
+  '中文', '汉语', '英语', '英文', '日语', '音乐', '电影', '历史', '文化', '足球', '篮球', '体育', '运动', '政治', '经济', '科学', '艺术',
+  '旅游', '美食', '书法', '绘画', '编程', '电脑', '游戏', '新闻', '法律', '医学', '数学', '汉字', '科技', '摄影', '舞蹈', '文学', '哲学',
+  '心理学', '管理', '市场', '商业', '创业', '投资', '金融', '技术', '人工智能', '中国', '北京',
+] as const
+
+/** Places that take 在 and nothing after: 在北京, not 在北京里. */
+export const CITIES = [
+  '北京', '上海', '杭州', '广州', '深圳', '成都', '重庆', '香港', '台湾', '中国', '印尼', '印度尼西亚', '雅加达', '万隆', '泗水', '巴厘岛',
+  '马来西亚', '吉隆坡', '新加坡', '日本', '东京', '韩国', '首尔', '美国', '英国', '泰国', '越南', '澳大利亚',
+] as const
+
+/** Verbs that wrongly take 也 or 都 after them: 我也去, not 我去也. */
+export const ADVERB_AFTER_VERBS = [
+  '喜欢', '知道', '认识', '同意', '明白', '觉得', '学习', '工作', '开始', '去', '来', '吃', '喝', '看', '学', '买', '做', '说', '写', '听', '玩', '爱', '想', '是', '有', '要', '会', '能', '懂',
+] as const
+
+/** Jobs and nationalities after 不 show the 是 is missing: 我不是学生, not 我不学生. */
+export const IDENTITY_NOUNS = [
+  '学生', '老师', '医生', '工程师', '大学生', '经理', '老板', '朋友', '同学', '同事', '秘书', '律师', '护士', '司机', '厨师',
+  '中国人', '印尼人', '印度尼西亚人', '马来西亚人', '美国人', '日本人', '韩国人', '英国人', '新加坡人',
+] as const
+
+/** An adjective before 比 is the comparison in the wrong place: 我比他高, not 我高比他. 好 is left out: 好比 is a word. */
+export const COMPARISON_STOP = '(?!例|重|分|赛|较|率|如|方|喻|拼|萨|特|利)'
+
+/** A number straight onto the noun, with no measure word: 三本书, not 三书. */
+export const MEASURE_MISSING: ReadonlyArray<readonly [noun: string, measure: string]> = [
+  ['书', '本'], ['杂志', '本'], ['朋友', '个'], ['学生', '个'], ['同学', '个'], ['孩子', '个'], ['苹果', '个'], ['问题', '个'],
+  ['电影', '部'], ['电脑', '台'], ['手机', '个'], ['狗', '只'], ['猫', '只'], ['椅子', '把'], ['桌子', '张'], ['衣服', '件'],
+  ['车', '辆'], ['老师', '位'], ['医生', '位'], ['房间', '个'], ['照片', '张'], ['裤子', '条'], ['鱼', '条'], ['歌', '首'],
+]

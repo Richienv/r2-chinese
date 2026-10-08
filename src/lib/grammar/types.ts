@@ -7,8 +7,8 @@
  * not treat it as verified grammar.
  */
 
-/** Every rule the classifier has. RULES (rules.ts) must define exactly these, which the compiler enforces. */
-export const RULE_IDS = [
+/** Mistakes learners make whatever their first language: wrong order, wrong particle, wrong pair. */
+export const CORE_RULE_IDS = [
   'place-after-verb',
   'time-after-verb',
   'hen-after-adj',
@@ -34,7 +34,28 @@ export const RULE_IDS = [
   'conjunction-pair',
 ] as const
 
+/**
+ * Mistakes that come from translating word for word out of Indonesian or English: the date written
+ * day-month-year, "together" left at the end, "I interested in" with no 对. Same engine, own file.
+ */
+export const TRANSFER_RULE_IDS = [
+  'date-order',
+  'together-after-verb',
+  'de-missing',
+  'ganxingqu-order',
+  'double-degree',
+  'place-li',
+  'adverb-after-verb',
+  'bu-shi-missing',
+  'bi-order',
+  'measure-missing',
+] as const
+
+/** Every rule the classifier has. createRules (rules.ts) must define exactly these, which the compiler enforces. */
+export const RULE_IDS = [...CORE_RULE_IDS, ...TRANSFER_RULE_IDS] as const
+
 export type RuleId = (typeof RULE_IDS)[number]
+export type TransferRuleId = (typeof TRANSFER_RULE_IDS)[number]
 
 /**
  * - error: wrong in standard Mandarin (and on the HSK). Counts against the sentence.

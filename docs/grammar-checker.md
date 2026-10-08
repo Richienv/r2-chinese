@@ -23,8 +23,8 @@ written as a **typed rule**, and says nothing about anything else.
 
 ## The rules
 
-`RULE_IDS` in `types.ts` is the list. `createRules` in `rules.ts` returns a `RuleSet`, a mapped type over
-`RuleId`, so adding an id without a rule, or a rule without an id, does not compile.
+`RULE_IDS` in `types.ts` is the list (`CORE_RULE_IDS` plus `TRANSFER_RULE_IDS`). `createRules` in `rules.ts` returns a
+`RuleSet`, a mapped type over `RuleId`, so adding an id without a rule, or a rule without an id, does not compile.
 
 | Rule | Catches | Example |
 | --- | --- | --- |
@@ -52,6 +52,27 @@ written as a **typed rule**, and says nothing about anything else.
 | `ba-bare-verb` | 把 + object + bare verb | 你把书看 (check, reword) |
 | `conjunction-pair` | 虽然 … 所以, 因为 … 但是 | 虽然他很累，所以他去了 (check) |
 
+### Mistakes that come from translating word for word
+
+Ten more rules (`rules-transfer.ts`) target what an Indonesian or English speaker writes when each word is carried
+over in the same order. The explanations name the Indonesian habit, so the learner sees why it feels natural.
+
+| Rule | Catches | Example |
+| --- | --- | --- |
+| `date-order` | day-month-year | 8号10月2026年 → 2026年10月8号 |
+| `together-after-verb` | 一起 left at the end ("bersama") | 我们去北京一起 → 我们一起去北京 |
+| `de-missing` | no 得 before how well or how fast | 他跑很快 → 他跑得很快 |
+| `ganxingqu-order` | 感兴趣 with the topic after it, no 对 | 我感兴趣中文 → 我对中文感兴趣 |
+| `double-degree` | two degree words | 我很非常高兴 → 我非常高兴 |
+| `place-li` | 里 after a city or country | 在北京里工作 → 在北京工作 |
+| `adverb-after-verb` | 也 or 都 after the verb | 我去也 → 我也去 |
+| `bu-shi-missing` | 不 before a noun, no 是 ("bukan") | 我不学生 → 我不是学生 |
+| `bi-order` | the comparison put last | 我高比他 → 我比他高 |
+| `measure-missing` | number straight onto the noun | 我有三书 → 我有三本书 |
+
+`time-after-verb` also covers questions about time (你去什么时候 → 你什么时候去, an `error`) and habits such as 每天
+and 经常 at the end of the sentence (a `check`).
+
 ## How a rule stays precise
 
 False alarms are worse than silence for a learner, so each rule is narrow on purpose:
@@ -70,7 +91,8 @@ False alarms are worse than silence for a learner, so each rule is narrow on pur
 1. **Every rule has at least three mistakes** with the exact fixed sentence, and the fixed sentence must itself be clean.
 2. **Every rule has correct look-alikes** that it must not flag.
 3. **Zero false positives over the whole course**: every Chinese sentence in `src/data` (about 3,900) is correct
-   Mandarin, so the checker must report nothing on any of them.
+   Mandarin, so the checker must report nothing on any of them. (Scanning every Chinese string in the data, not only
+   sentences, also reports only the book's own "avoid" examples.)
 4. A list of natural HSK 3-4 sentences that must stay clean.
 
 Adding a rule means adding its examples there first. Widening a word list means adding a look-alike that it must
