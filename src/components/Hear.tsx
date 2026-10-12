@@ -87,6 +87,8 @@ export function HearButton({
   voice,
   rate,
   label = t('Hear it'),
+  playingLabel = t('Playing'),
+  stopLabel,
   tone = 'ink',
   className,
 }: {
@@ -94,6 +96,8 @@ export function HearButton({
   voice?: string
   rate?: number
   label?: string
+  playingLabel?: string
+  stopLabel?: string
   tone?: 'ink' | 'on-red'
   className?: string
 }) {
@@ -112,7 +116,7 @@ export function HearButton({
       type="button"
       className={`hear hear-${tone}${className ? ` ${className}` : ''}`}
       data-on={playing}
-      aria-label={playing ? t('Stop {label}', { label }) : label}
+      aria-label={playing ? stopLabel ? `${stopLabel} ${label}` : t('Stop {label}', { label }) : label}
       aria-pressed={playing}
       onPointerDown={() => unlockSpeech()}
       onClick={(e) => {
@@ -122,7 +126,7 @@ export function HearButton({
       }}
     >
       {playing ? <PauseMark /> : <PlayMark />}
-      <span>{playing ? t('Playing') : label}</span>
+      <span>{playing ? playingLabel : label}</span>
     </button>
   )
 }

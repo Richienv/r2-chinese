@@ -22,6 +22,8 @@ import {
 } from '../lib/books'
 import { PATH_NODES } from '../lib/wordsSession'
 import { DAILY_GOAL, dayKey, useStore } from '../store/store'
+import { jiayinUnits, useJiayinProgress } from '../lib/jiayin'
+import { JIAYIN_STAGES } from '../lib/jiayinPractice'
 import '../styles/progress.css'
 
 const KERJA_KEY = 'yulu.kerja.v1'
@@ -236,6 +238,7 @@ const COURSE_LABEL: Record<HistoryCourse, string> = {
   magang: COURSE_META.magang.title,
   interview: COURSE_META.interview.title,
   books: COURSE_META.books.title,
+  jiayin: COURSE_META.jiayin.title,
 }
 
 function historyHeadline(ev: HistoryEvent): string {
@@ -249,6 +252,7 @@ function historyHeadline(ev: HistoryEvent): string {
 
 function historyDetail(ev: HistoryEvent): string {
   const course = COURSE_LABEL[ev.course]
+  if (ev.course === 'jiayin') return `${course} · ${jiayinUnits.find(u => u.id === ev.lesson)?.title ?? 'Simulasi / pengulangan'}${ev.node ? ` · ${ev.node}` : ''}`
   if (ev.kind === 'drill') {
     const xp = typeof ev.xp === 'number' ? ` · ${ev.xp} XP` : ''
     return `${course}${xp}`
@@ -311,6 +315,7 @@ export function Progress({
   onLearn: () => void
 }) {
   const s = useStore()
+  const { progress: jiayinProgress } = useJiayinProgress()
   const [showHistory, setShowHistory] = useState(false)
   const week = weekActivity(s.log)
   const due = dueCards(s.cardList)
@@ -335,8 +340,17 @@ export function Progress({
       magangCourse(magangDone),
       interviewCourse(interviewDone),
       booksCourse(booksDone),
+      {
+        name: 'Wawancara Jiayin',
+        stepsDone: jiayinUnits.reduce((sum, unit) => sum + JIAYIN_STAGES.filter(stage => jiayinProgress.pathDone[String(unit.id)]?.includes(stage)).length, 0),
+        stepsTotal: jiayinUnits.length * JIAYIN_STAGES.length,
+        units: jiayinUnits.map(unit => {
+          const finished = JIAYIN_STAGES.filter(stage => jiayinProgress.pathDone[String(unit.id)]?.includes(stage)).length
+          return { key: `jiayin-${unit.id}`, title: unit.title, done: finished === JIAYIN_STAGES.length, sittingsDone: finished, sittingsTotal: JIAYIN_STAGES.length }
+        }),
+      },
     ]
-  }, [s.pathDone, s.lessonsDone])
+  }, [s.pathDone, s.lessonsDone, jiayinProgress.pathDone])
 
   const history = useMemo(() => readHistory(), [s.pathDone, s.log, s.xp, s.cards])
   const visibleHistory = showHistory ? history : history.slice(0, 5)
@@ -359,7 +373,7 @@ export function Progress({
         <div>
           <div className="progress-eyebrow">{t('YOUR LEARNING, OVER TIME')}</div>
           <h1 className="h2">{t('Progress')}</h1>
-          <div className="sub">{t('Six paths. One growing ability to remember and use what you learn.')}</div>
+          <div className="sub">{t('{n} paths. One growing ability to remember and use what you learn.', { n: courses.length })}</div>
         </div>
         <button className="progress-header-link" type="button" onClick={onLearn}>
           {t('Learning paths')} <span aria-hidden="true">↗</span>

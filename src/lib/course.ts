@@ -13,9 +13,9 @@ import { t } from './i18n.ts'
 /** Separate from HSK / Kerja / Jiaocheng / Magang / Interview / Books progress keys so old saves stay untouched. */
 const COURSE_KEY = 'yulu.course.v1'
 
-export type CourseId = 'hsk4a' | 'kerja' | 'jiaocheng' | 'magang' | 'interview' | 'books'
+export type CourseId = 'hsk4a' | 'kerja' | 'jiaocheng' | 'magang' | 'interview' | 'books' | 'jiayin'
 
-export const COURSE_ORDER: CourseId[] = ['hsk4a', 'kerja', 'jiaocheng', 'magang', 'interview', 'books']
+export const COURSE_ORDER: CourseId[] = ['jiayin', 'hsk4a', 'kerja', 'jiaocheng', 'magang', 'interview', 'books']
 
 export const COURSE_META: Record<
   CourseId,
@@ -57,6 +57,12 @@ export const COURSE_META: Record<
     titleZh: 'Books',
     blurb: t('Five books, one idea at a time'),
   },
+  jiayin: {
+    id: 'jiayin',
+    title: 'Wawancara Jiayin',
+    titleZh: '嘉银面试',
+    blurb: 'Fokus 15 Oktober · 16 unit · penjelasan Indonesia',
+  },
 }
 
 function readCourse(): CourseId {
@@ -68,7 +74,8 @@ function readCourse(): CourseId {
       raw === 'jiaocheng' ||
       raw === 'magang' ||
       raw === 'interview' ||
-      raw === 'books'
+      raw === 'books' ||
+      raw === 'jiayin'
     ) {
       return raw
     }

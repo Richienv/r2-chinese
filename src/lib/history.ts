@@ -4,7 +4,7 @@ const HISTORY_KEY = 'yulu.history.v1'
 const MAX_EVENTS = 400
 const DEDUPE_MS = 2000
 
-export type HistoryCourse = 'hsk4a' | 'kerja' | 'jiaocheng' | 'magang' | 'interview' | 'books'
+export type HistoryCourse = 'hsk4a' | 'kerja' | 'jiaocheng' | 'magang' | 'interview' | 'books' | 'jiayin'
 
 export type HistoryEvent = {
   t: number
@@ -24,7 +24,8 @@ function isHistoryCourse(v: unknown): v is HistoryCourse {
     v === 'jiaocheng' ||
     v === 'magang' ||
     v === 'interview' ||
-    v === 'books'
+    v === 'books' ||
+    v === 'jiayin'
   )
 }
 

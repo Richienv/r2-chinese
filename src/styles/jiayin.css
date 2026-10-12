@@ -1,0 +1,84 @@
+.jiayin-path { display:grid; gap:14px; padding-bottom:28px; }
+.jiayin-hero { padding:24px 20px; border:1px solid var(--line-2); border-radius:20px; background:var(--surface); }
+.jiayin-hero h2 { margin:12px 0; font-size:clamp(24px,5vw,32px); line-height:1.2; letter-spacing:-.6px; }
+.jiayin-hero p { line-height:1.6; margin:12px 0 20px; }
+.jiayin-hero .btn { white-space:normal; height:auto; min-height:64px; padding:12px; line-height:1.4; flex-direction:column; gap:4px; }
+.jiayin-hero .btn small { display:block; font-size:12px; opacity:.85; font-weight:500; }
+.jiayin-summary { display:flex; flex-wrap:wrap; gap:8px 18px; margin:16px 0 6px; font-size:13px; font-weight:650; }
+.jiayin-hero > small, .jiayin-source { font-size:12px; line-height:1.6; color:var(--muted); overflow-wrap:anywhere; }
+.jiayin-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.jiayin-secondary { border:1px solid var(--line-2); border-radius:12px; padding:14px; min-height:48px; background:var(--surface); color:var(--ink); text-align:left; font-size:14px; font-weight:650; line-height:1.45; }
+.jiayin-secondary small { display:block; color:var(--muted); font-size:11px; font-weight:500; margin-top:5px; }
+.jiayin-panel { padding:16px; background:var(--surface); border:1px solid var(--line-2); border-radius:16px; min-width:0; }
+.jiayin-panel summary, .jiayin-worksheet summary { cursor:pointer; font-size:15px; font-weight:700; min-height:28px; line-height:1.4; }
+.jiayin-panel p { font-size:14px; line-height:1.7; }
+.jiayin-units { display:grid; gap:10px; }
+.jiayin-unit > summary { display:flex; gap:12px; align-items:center; list-style:none; }
+.jiayin-unit > summary::-webkit-details-marker { display:none; }
+.jiayin-unit > summary small { display:block; margin-top:4px; font-size:11px; color:var(--muted); font-weight:500; }
+.jiayin-unit-number { padding:9px; border:1px solid var(--line-2); border-radius:10px; font-size:13px; }
+.jiayin-unit-goal { color:var(--muted); }
+.jiayin-learning-route { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.jiayin-learning-route span { display:flex; align-items:center; gap:7px; font-size:11px; padding:10px 6px; border:1px solid var(--line-2); border-radius:10px; }
+.jiayin-learning-route b { color:var(--red-deep); }
+.jiayin-stage-buttons { margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.jiayin-stage-buttons button { padding:12px 6px; border:1px solid var(--line-2); background:var(--card); color:var(--ink); border-radius:10px; min-height:48px; font-size:13px; }
+.jiayin-stage-buttons button[data-next=true] { color:var(--red-deep); border-color:var(--red-deep); font-weight:750; }
+.jiayin-stage-buttons button[data-done=true] { color:#245d46; background:#eff7f1; }
+.jiayin-plan-day { margin-top:18px; }
+.jiayin-plan-day p { margin:6px 0; }
+.jiayin-worksheet { margin-top:14px; border-top:1px solid var(--line-2); padding-top:14px; }
+.jiayin-worksheet label, .jiayin-answer-input, .jiayin-evidence-note { display:grid; gap:8px; font-size:14px; line-height:1.5; margin-top:14px; }
+.jiayin-path textarea, .jiayin-session textarea { border:1px solid var(--line-2); border-radius:10px; background:var(--card); width:100%; padding:12px; color:var(--ink); font:inherit; font-size:16px; resize:vertical; }
+.jiayin-vocab-bank { margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.jiayin-vocab-bank button { display:grid; gap:4px; padding:12px; text-align:left; border:1px solid var(--line-2); border-radius:10px; background:var(--card); color:var(--ink); }
+.jiayin-vocab-bank strong { font-size:20px; }
+.jiayin-vocab-bank small { color:var(--muted); }.jiayin-vocab-bank span { font-size:12px; }
+.jiayin-session { padding-bottom:calc(32px + env(safe-area-inset-bottom)); }
+.jiayin-session-label { font-size:12px; color:var(--muted); line-height:1.5; margin:8px 0 20px; }
+.jiayin-step-count { font-size:12px; flex:none; }
+.jiayin-teach, .jiayin-done { width:100%; max-width:38rem; margin:0 auto; display:flex; flex-direction:column; gap:16px; }
+.jiayin-teach h2, .jiayin-done h2 { margin:0; font-size:24px; line-height:1.6; overflow-wrap:anywhere; }
+.jiayin-teach p { margin:0; line-height:1.7; font-size:16px; overflow-wrap:anywhere; }
+.jiayin-teach h3 { font-size:14px; line-height:1.5; margin:0 0 8px; }
+.jiayin-context-block { border:1px solid var(--line-2); padding:16px; border-radius:12px; background:var(--surface); }
+.jiayin-context-block ol { padding-left:20px; margin:4px 0 0; font-size:15px; line-height:1.9; }
+.jiayin-context-block small { display:block; margin-top:10px; font-size:11px; color:var(--muted); }
+.jiayin-coach p + p { margin-top:8px; }
+.jiayin-teach .jiayin-word { font-size:56px; text-align:center; line-height:1.4; margin-top:24px; }
+.jiayin-pinyin { color:var(--muted); font-size:14px !important; }
+.jiayin-display { display:flex; flex-wrap:wrap; gap:8px; }
+.jiayin-display button { min-height:44px; padding:8px 12px; font-size:12px; color:var(--ink); border:1px solid var(--line-2); border-radius:999px; background:var(--card); }
+.jiayin-display button[aria-pressed=true] { border-color:var(--red-deep); }
+.jiayin-pattern { background:var(--card); border-radius:12px; padding:14px; font-size:14px; }
+.jiayin-pattern summary { min-height:32px; cursor:pointer; }.jiayin-pattern p { margin:10px 0; }
+.jiayin-pattern small { color:var(--muted); font-size:11px; }
+.jiayin-answer-chunks { display:grid; gap:12px; }
+.jiayin-answer-line { padding:16px; border:1px solid var(--line-2); border-radius:14px; background:var(--surface); font-size:21px !important; animation:jiayin-appear .2s ease-out; }
+.jiayin-answer-line p[lang=zh-CN] { font-size:21px; }.jiayin-answer-line .jiayin-pinyin { margin-top:12px; font-size:13px !important; }
+.jiayin-answer-line > small { display:block; color:var(--muted); font-size:11px; margin-bottom:8px; }
+.jiayin-answer-line .jiayin-line-meaning { border-top:1px solid var(--line-2); padding-top:12px; margin-top:12px; font-size:15px; }
+.jiayin-answer-line > button { margin-top:12px; }
+.jiayin-inline-word { display:inline; min-height:0; padding:0; color:var(--red-deep); border-bottom:1px dotted var(--red-deep); font:inherit; }
+.jiayin-translation { border-left:3px solid var(--line-2); padding-left:14px; }.jiayin-translation span { display:block; font-size:11px; color:var(--muted); margin-bottom:8px; }
+.jiayin-coach, .jiayin-evidence { border-radius:12px; padding:14px; background:#f6eedc; font-size:14px !important; }
+.jiayin-options { display:grid; gap:10px; }
+.jiayin-options button { padding:16px; min-height:56px; text-align:left; border:1px solid var(--line-2); background:var(--surface); border-radius:12px; color:var(--ink); font-size:15px; line-height:1.6; }
+.jiayin-options button[data-picked=true] { border-color:var(--red-deep); }.jiayin-options button[data-correct=true] { border-color:#245d46; background:#eff7f1; }
+.jiayin-feedback { padding:16px; border-radius:12px; background:var(--card); line-height:1.7; font-size:14px !important; }.jiayin-feedback p { margin-top:8px; }
+.jiayin-timer { display:flex; align-items:center; justify-content:space-between; gap:12px; font-variant-numeric:tabular-nums; }.jiayin-timer span { font-size:20px; font-weight:750; }.jiayin-timer button { padding:10px 14px; min-height:44px; border:1px solid var(--line-2); border-radius:10px; }.jiayin-timer[data-overtime=true] span { color:var(--red-deep); }
+.jiayin-checklist { display:grid; gap:10px; }.jiayin-checklist label { display:flex; align-items:flex-start; gap:10px; font-size:13px; line-height:1.6; }.jiayin-checklist input { accent-color:var(--red-deep); width:20px; height:20px; flex:none; }
+.jiayin-ratings { display:grid; gap:8px; }.jiayin-ratings button { min-height:48px; border:1px solid var(--line-2); border-radius:10px; color:var(--ink); padding:12px; font-size:14px; }.jiayin-ratings button:last-child { border-color:var(--red-deep); color:var(--red-deep); }
+.jiayin-reference { padding:16px; border:1px solid var(--line-2); border-radius:12px; display:grid; gap:12px; }
+.jiayin-built-answer { min-height:100px; display:grid; gap:8px; border:1px dashed var(--line-2); border-radius:14px; padding:12px; }
+.jiayin-built-answer > span { font-size:13px; color:var(--muted); align-self:center; text-align:center; }
+.jiayin-built-answer button, .jiayin-build-bank button { border:1px solid var(--line-2); border-radius:10px; background:var(--surface); color:var(--ink); text-align:left; padding:12px; font-size:18px; line-height:1.7; overflow-wrap:anywhere; min-height:48px; }
+.jiayin-built-answer button { display:flex; align-items:baseline; gap:10px; }
+.jiayin-built-answer button small { color:var(--red-deep); flex:none; font-size:12px; }
+.jiayin-build-bank { display:grid; gap:8px; }
+.jiayin-build-bank button:disabled { opacity:.3; }
+.jiayin-word-sheet { padding:24px; line-height:1.8; }.jiayin-word-sheet h2 { font-size:40px; margin:12px 0; }
+.jiayin-overlay button:disabled { opacity:.45; cursor:default; }.jiayin-overlay button:focus-visible, .jiayin-path button:focus-visible { outline:2px solid var(--red-deep); outline-offset:3px; }
+@keyframes jiayin-appear { from { opacity:0; transform:translateY(6px) } to { opacity:1; transform:translateY(0) } }
+@media (prefers-reduced-motion:reduce) { .jiayin-answer-line { animation:none; } }
+@media (max-width:340px) { .jiayin-hero { padding:20px 16px; }.jiayin-actions { grid-template-columns:1fr; }.jiayin-teach h2 { font-size:21px; } }

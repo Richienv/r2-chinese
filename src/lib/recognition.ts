@@ -49,7 +49,18 @@ export function canRecognizeMandarin(): boolean {
   return !!constructor()
 }
 
-export function recognitionError(code: string): string {
+export function recognitionError(code: string, language: 'en' | 'id' = 'en'): string {
+  if (language === 'id') {
+    switch (code) {
+      case 'not-allowed':
+      case 'service-not-allowed': return 'Akses mikrofon diblokir. Izinkan melalui pengaturan browser atau ketik jawaban.'
+      case 'audio-capture': return 'Mikrofon tidak tersedia. Hubungkan mikrofon atau ketik jawaban.'
+      case 'network': return 'Layanan transkripsi belum terhubung. Coba lagi atau ketik jawaban.'
+      case 'no-speech': return 'Suara belum terdeteksi. Tekan mikrofon dan coba lagi.'
+      case 'language-not-supported': return 'Browser ini belum mendukung transkripsi Mandarin. Ketik jawaban.'
+      default: return 'Transkripsi berhenti. Coba mikrofon lagi atau ketik jawaban.'
+    }
+  }
   switch (code) {
     case 'not-allowed':
     case 'service-not-allowed':
@@ -71,6 +82,7 @@ export function recognitionError(code: string): string {
 export function createMandarinRecognition(callbacks: {
   onState: (snapshot: RecognitionSnapshot) => void
   onFinal: (transcript: string) => void
+  language?: 'en' | 'id'
 }) {
   let recognition: BrowserRecognition | null = null
   let disposed = false
@@ -99,7 +111,7 @@ export function createMandarinRecognition(callbacks: {
       if (disposed || status === 'starting' || status === 'listening' || status === 'stopping') return
       const Ctor = constructor()
       if (!Ctor) {
-        error = t('Speech input is unavailable in this browser. Type below, or use a browser with Mandarin speech recognition on HTTPS.')
+        error = callbacks.language === 'id' ? 'Transkripsi belum tersedia di browser ini. Ketik jawaban atau gunakan browser yang mendukung transkripsi Mandarin melalui HTTPS.' : t('Speech input is unavailable in this browser. Type below, or use a browser with Mandarin speech recognition on HTTPS.')
         publish('unsupported')
         return
       }
@@ -128,7 +140,7 @@ export function createMandarinRecognition(callbacks: {
       recognition.onerror = (event) => {
         interim = ''
         if (event.error === 'aborted') return
-        error = recognitionError(event.error)
+        error = recognitionError(event.error, callbacks.language)
         publish('error')
       }
       recognition.onend = () => {
@@ -139,7 +151,7 @@ export function createMandarinRecognition(callbacks: {
       try {
         recognition.start()
       } catch {
-        error = recognitionError('start-failed')
+        error = recognitionError('start-failed', callbacks.language)
         publish('error')
       }
     },

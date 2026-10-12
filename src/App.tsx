@@ -15,6 +15,7 @@ import { JiaochengSession } from './screens/Jiaocheng'
 import { InterviewSession } from './screens/Interview'
 import { MagangSession } from './screens/Magang'
 import { BooksSession } from './screens/Books'
+import { JiayinSession, type JiayinSessionMode } from './screens/Jiayin'
 import { WordsSession } from './screens/WordsSession'
 import { HskListening } from './screens/HskListening'
 import { HskComposition } from './screens/HskComposition'
@@ -36,6 +37,7 @@ type Overlay =
   | { kind: 'magang'; chapter: number; node: string }
   | { kind: 'interview'; chapter: number; node: string }
   | { kind: 'books'; part: number; index: number; node: string }
+  | { kind: 'jiayin'; unit: number; stage: JiayinSessionMode }
   | { kind: 'review'; words?: string[]; title?: string }
   | { kind: 'character'; char: string }
   | { kind: 'drill'; words: string[]; title: string }
@@ -104,6 +106,7 @@ function Shell() {
             onMagangSession={(chapter, node) => setOverlay({ kind: 'magang', chapter, node })}
             onInterviewSession={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
             onBooksSession={(part, index) => setOverlay({ kind: 'books', part, index, node: 'lesson' })}
+            onJiayinSession={(unit, stage) => setOverlay({ kind: 'jiayin', unit, stage })}
           />
         )}
         {tab === 'learn' && (
@@ -118,6 +121,7 @@ function Shell() {
             onMagangPlay={(chapter, node) => setOverlay({ kind: 'magang', chapter, node })}
             onInterviewPlay={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
             onBooksPlay={(part, index) => setOverlay({ kind: 'books', part, index, node: 'lesson' })}
+            onJiayinPlay={(unit, stage) => setOverlay({ kind: 'jiayin', unit, stage })}
             isNodeDone={(lesson, node) => store.isNodeDone(lesson, node)}
           />
         )}
@@ -172,6 +176,9 @@ function Shell() {
           node={overlay.node}
           onClose={() => setOverlay(null)}
         />
+      )}
+      {overlay?.kind === 'jiayin' && (
+        <JiayinSession key={`${overlay.unit}:${overlay.stage}`} unit={overlay.unit} stage={overlay.stage} onClose={closeOverlay} onPlay={(unit, stage) => setOverlay({ kind: 'jiayin', unit, stage })} />
       )}
       {overlay?.kind === 'review' && (
         <ReviewFlow words={overlay.words} title={overlay.title} onClose={() => setOverlay(null)} />

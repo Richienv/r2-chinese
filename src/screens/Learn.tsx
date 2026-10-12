@@ -11,6 +11,7 @@ import { KerjaLearn } from './Kerja'
 import { InterviewLearn } from './Interview'
 import { MagangLearn } from './Magang'
 import { BooksLearn } from './Books'
+import { JiayinPath, type JiayinOpen } from './Jiayin'
 
 export function LessonPath({
   lesson,
@@ -65,6 +66,7 @@ export function Learn({
   onMagangPlay,
   onInterviewPlay,
   onBooksPlay,
+  onJiayinPlay,
   onListening,
   onCompose,
   isNodeDone,
@@ -77,6 +79,7 @@ export function Learn({
   onMagangPlay?: (chapter: number, node: string) => void
   onInterviewPlay?: (chapter: number, node: string) => void
   onBooksPlay?: (part: number, index: number) => void
+  onJiayinPlay: JiayinOpen
   onListening: () => void
   onCompose: () => void
   isNodeDone?: (lesson: number, node: PathNode) => boolean
@@ -98,7 +101,9 @@ export function Learn({
     <div className="path-page path-alive">
       <CourseBack />
       {course === 'hsk4a' && <HskPracticeEntry onListen={onListening} onCompose={onCompose} />}
-      {course === 'kerja' ? (
+      {course === 'jiayin' ? (
+        <JiayinPath onPlay={onJiayinPlay} />
+      ) : course === 'kerja' ? (
         <KerjaLearn onPlay={(chapter, node) => onKerjaPlay?.(chapter, node)} />
       ) : course === 'jiaocheng' ? (
         <JiaochengLearn onPlay={(lesson, node) => onJiaochengPlay?.(lesson, node)} />

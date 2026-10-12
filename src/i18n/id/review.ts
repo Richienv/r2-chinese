@@ -44,6 +44,7 @@ const entries: Record<string, string> = {
   'Practice saved words': 'Latihan kata tersimpan',
   'YOUR LEARNING, OVER TIME': 'BELAJARMU DARI WAKTU KE WAKTU',
   'Six paths. One growing ability to remember and use what you learn.': 'Enam jalur. Satu kemampuan yang terus tumbuh untuk mengingat dan memakai apa yang kamu pelajari.',
+  '{n} paths. One growing ability to remember and use what you learn.': '{n} jalur. Satu kemampuan yang terus tumbuh untuk mengingat dan memakai apa yang kamu pelajari.',
   'Learning paths': 'Jalur belajar',
   'TODAY’S PRACTICE': 'LATIHAN HARI INI',
   'Make recall feel familiar.': 'Bikin recall terasa akrab.',

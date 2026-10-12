@@ -9,6 +9,7 @@ import { KerjaHomePath } from './Kerja'
 import { InterviewHomePath } from './Interview'
 import { MagangHomePath } from './Magang'
 import { BooksHomePath } from './Books'
+import { JiayinPath, type JiayinOpen } from './Jiayin'
 import { LessonPath } from './Learn'
 import { HskPracticeEntry } from '../components/HskPracticeEntry'
 import { useStore, type PathNode } from '../store/store'
@@ -26,6 +27,7 @@ export function Home({
   onMagangSession,
   onInterviewSession,
   onBooksSession,
+  onJiayinSession,
 }: {
   onSession: (lesson: number, node: PathNode) => void
   onLesson: (lesson: number) => void
@@ -38,6 +40,7 @@ export function Home({
   onMagangSession: (chapter: number, node: string) => void
   onInterviewSession: (chapter: number, node: string) => void
   onBooksSession: (part: number, index: number) => void
+  onJiayinSession: JiayinOpen
 }) {
   const s = useStore()
   const { course, entered } = useCourse()
@@ -75,7 +78,9 @@ export function Home({
       )}
 
       {course === 'hsk4a' && <HskPracticeEntry onListen={onListening} onCompose={onCompose} />}
-      {course === 'kerja' ? (
+      {course === 'jiayin' ? (
+        <JiayinPath onPlay={onJiayinSession} />
+      ) : course === 'kerja' ? (
         <KerjaHomePath onPlay={onKerjaSession} />
       ) : course === 'jiaocheng' ? (
         <JiaochengHomePath onPlay={onJiaochengSession} />
