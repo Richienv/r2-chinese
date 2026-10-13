@@ -56,7 +56,7 @@ concrete fix. `buildReview` gives the verdict and one next step; `compareReviews
 what a retest fixed, what is still wrong and what newly broke. `ReviewReport` renders it.
 
 - Verdicts are `passed`, `revise` and `unverified`. `unverified` is never a pass: it is what a
-  grammar check says when no reviewer is connected, or a drawing says when it cannot be read.
+  reply wording that differs from the book says when no known mistake was found (nothing can confirm it), or a drawing says when it cannot be read.
 - Coaching checks (a stroke that looks out of place, how close the wording is to the book) never
   change the verdict. A check that would print the answer is hidden until it is revealed.
 - The checks never change the evidence rules above. They explain a result; they do not make one.
@@ -69,7 +69,7 @@ Where it applies:
 | Type a word | Hanzi not pinyin, right length, each character (without printing the answer) | retype; the text stays | same |
 | Reply in a dialogue | in Mandarin; the key words from the line; the book's wording or a verified correction (`reply-review.ts`) | "Fix and check again" keeps the reply and lists what to fix | same |
 | Dialogue recall check (`DialogueRecheck`) | what came next, who said it, which key word fits, built from the dialogue itself (`dialogue-check.ts`) | each wrong choice is answered with the book's own line | the misses again, options reordered |
-| Make it yours | Mandarin, two or three sentences, every word used, grammar by the reviewer (`writing-review.ts`) | live checklist while writing; "Fix it and check again" | same |
+| Make it yours | three words, one box, an optional hint from the book, then a check by the free classifier (`HskComposition`, `docs/grammar-checker.md`). Next is always allowed | the mistakes listed, each with its fix and why | "Fix it and check again" as often as you like; Next is never blocked |
 
 Handwriting pass or fail still comes from the blind corpus classifier. The stroke diagnosis
 only explains it, and says "one of these" rather than guessing when strokes are alike.

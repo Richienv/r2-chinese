@@ -23,8 +23,8 @@ function listed(words: string[]): string {
 /**
  * Check a reply recalled from a dialogue against what the task needed: it is in
  * Mandarin, it carries the key information from the line, and it is right (the
- * book's words, or verified meaning and grammar). Anything that cannot be verified
- * says so; it is never reported as passing.
+ * book's words). Known mistakes are named and fixed. A different wording with no
+ * known mistake cannot be confirmed, so it is reported as unverified, never as passing.
  */
 export function reviewReply({ task, response, expectedZh, glosses = {}, assessment }: ReplyReviewInput): Review {
   const checks: ReviewCheck[] = []
@@ -46,7 +46,7 @@ export function reviewReply({ task, response, expectedZh, glosses = {}, assessme
     const hints = missing.map((word) => glosses[word]).filter(Boolean).map((gloss) => `“${gloss}”`)
     checks.push({
       id: 'key-words', stage: 'recall',
-      // A verified reply that skipped a lesson word is still correct; it just did not practise the word.
+      // The book sentence has every key word, so it never fails here. Anything else is judged by what it lacks.
       decisive: assessment.accepted !== true,
       label: keyWords.length === 1 ? t('Used the key word from the line') : t('Used the key words from the line'),
       status: !missing.length ? 'pass' : used.length ? 'partial' : 'fail',
@@ -58,19 +58,16 @@ export function reviewReply({ task, response, expectedZh, glosses = {}, assessme
     })
   }
 
-  const exact = assessment.accepted === true && assessment.evidence === 'source-match'
   checks.push({
     id: 'matches', stage: 'output', decisive: true,
-    label: exact ? t('Matches the book sentence') : assessment.evidence === 'verified' ? t('Meaning and grammar are correct') : t('Matches the book, or is verified correct'),
+    label: t('Matches the book sentence'),
     status: assessment.accepted === true ? 'pass' : assessment.accepted === false ? 'fail' : 'unverified',
-    found: assessment.accepted === true ? (exact ? t('Same Hanzi and word order') : t('Meaning and grammar checked')) : response.trim(),
+    found: assessment.accepted === true ? t('Same Hanzi and word order') : response.trim(),
     expected: expectedZh, spoils: true,
     fix: assessment.accepted === false
-      ? [assessment.issues[0] ?? assessment.feedback, assessment.correctedZh ? t('Suggested: {zh}', { zh: assessment.correctedZh }) : ''].filter(Boolean).join(' ')
+      ? [assessment.issues[0] ?? assessment.feedback, assessment.suggestedZh ? t('Suggested: {zh}', { zh: assessment.suggestedZh }) : ''].filter(Boolean).join(' ')
       : assessment.accepted === null
-        ? assessment.unavailable
-          ? t('Your wording differs from the book. It may be valid, but its grammar and meaning cannot be verified right now. Compare it with the book wording, or retry the grammar check.')
-          : t('Your wording differs from the book. It may be valid, but its grammar and meaning cannot be verified without the grammar reviewer. Compare it with the book wording, or retry the grammar check.')
+        ? t('Your wording differs from the book. It may be valid, but a free checker can only catch common mistakes, so its grammar and meaning cannot be confirmed. Compare it with the book wording.')
         : undefined,
   })
 

@@ -43,7 +43,7 @@ export interface ReviewCheck {
  * - passed: every decisive check passed.
  * - revise: at least one decisive check failed or is only partly met.
  * - unverified: nothing failed, but a decisive check could not be verified
- *   (for example grammar with no reviewer connected). This is never a pass.
+ *   (for example a reply in different wording that no rule flags, which nothing can confirm). This is never a pass.
  */
 export type Verdict = 'passed' | 'revise' | 'unverified'
 

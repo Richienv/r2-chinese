@@ -2,7 +2,6 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { normalizeChinese, sourceAssessment, sourceWords, alignChinese, dialogueTurnIndexes, assessProduction } from '../src/lib/production.ts'
 import { createMandarinRecognition, canRecognizeMandarin } from '../src/lib/recognition.ts'
-import assessHandler from '../api/assess.ts'
 
 const prompt = {
   expectedZh: '他不仅足球踢得好，性格也不错。',
@@ -43,17 +42,28 @@ test('dialogue selects the requested source speaker and caps each activity at th
   assert.deepEqual(dialogueTurnIndexes(text, '孙月'), [0, 2, 4])
 })
 
-test('source matches need no network; absent grammar service returns transparent practice evidence', async () => {
-  const originalFetch = globalThis.fetch
-  try {
-    globalThis.fetch = async () => { throw new Error('source match must not use network') }
-    assert.equal((await assessProduction(prompt)).evidence, 'source-match')
-    globalThis.fetch = async () => new Response('{}', { status: 503 })
-    const result = await assessProduction({ ...prompt, response: '他足球踢得很好，而且性格也很好。' })
-    assert.equal(result.accepted, null)
-    assert.equal(result.evidence, 'practice')
-    assert.match(result.unavailable, /unavailable/)
-  } finally { globalThis.fetch = originalFetch }
+test('the book sentence is correct; a different wording is feedback only and never graded', () => {
+  assert.equal(assessProduction(prompt).evidence, 'source-match')
+  assert.equal(assessProduction(prompt).accepted, true)
+  const differentButFine = assessProduction({ ...prompt, response: '他足球踢得很好，而且性格也很好。' })
+  assert.equal(differentButFine.accepted, null)
+  assert.equal(differentButFine.evidence, 'practice')
+  assert.equal(differentButFine.grammar.verdict, 'no-known-errors')
+  assert.match(differentButFine.feedback, /cannot confirm/)
+  assert.equal(differentButFine.suggestedZh, undefined)
+})
+
+test('a known mistake in a different wording is named and fixed, still as practice evidence', () => {
+  const wrong = assessProduction({ ...prompt, response: '他不仅足球踢得好，性格也不有错。' })
+  assert.equal(wrong.accepted, false)
+  assert.equal(wrong.evidence, 'practice', 'a heuristic must never write a wrong answer into mastery')
+  assert.equal(wrong.suggestedZh, '他不仅足球踢得好，性格也没有错。')
+  assert.equal(wrong.correctedZh, prompt.expectedZh, 'the book wording is still what is compared against')
+  assert.match(wrong.issues[0], /没有/)
+  const reword = assessProduction({ ...prompt, response: '你把书看。' })
+  assert.equal(reword.accepted, null, 'only a "worth a look" note, so nothing is called wrong')
+  assert.equal(reword.evidence, 'practice')
+  assert.equal(reword.issues.length, 1)
 })
 
 test('recognition is user-started, includes interim Mandarin, replaces repeated finals, and aborts on disposal', () => {
@@ -105,51 +115,4 @@ test('unsupported recognition retains a typed fallback without microphone reques
     assert.match(snapshot.error, /Type below/)
     controller.dispose()
   } finally { globalThis.window = originalWindow }
-})
-
-function mockResponse() {
-  return { headers: {}, statusCode: 0, setHeader(key, value) { this.headers[key] = value }, end(body) { this.body = JSON.parse(body) } }
-}
-
-test('grammar route requires server configuration and rejects cross-origin requests', async () => {
-  const key = process.env.OPENAI_API_KEY
-  try {
-    delete process.env.OPENAI_API_KEY
-    const absent = mockResponse()
-    await assessHandler({ method: 'POST', headers: { 'content-type': 'application/json' }, body: prompt }, absent)
-    assert.equal(absent.statusCode, 503)
-    process.env.OPENAI_API_KEY = 'test-placeholder'
-    const foreign = mockResponse()
-    await assessHandler({ method: 'POST', headers: { 'content-type': 'application/json', host: 'localhost:5174', origin: 'https://other.invalid' }, body: prompt }, foreign)
-    assert.equal(foreign.statusCode, 403)
-  } finally {
-    if (key === undefined) delete process.env.OPENAI_API_KEY
-    else process.env.OPENAI_API_KEY = key
-  }
-})
-
-test('grammar route uses strict structured output, disables response storage, and accepts a reviewed paraphrase', async () => {
-  const key = process.env.OPENAI_API_KEY
-  const originalFetch = globalThis.fetch
-  try {
-    process.env.OPENAI_API_KEY = 'test-placeholder'
-    globalThis.fetch = async (_url, options) => {
-      const payload = JSON.parse(options.body)
-      assert.equal(payload.store, false)
-      assert.equal(payload.text.format.type, 'json_schema')
-      assert.equal(payload.text.format.strict, true)
-      assert.match(payload.instructions, /not the only correct answer/)
-      return new Response(JSON.stringify({ output: [{ content: [{ type: 'output_text', text: JSON.stringify({ accepted: true, feedback: '而且 links two compatible descriptions naturally.', correctedZh: '他足球踢得很好，而且性格也很好。', issues: [] }) }] }] }))
-    }
-    const res = mockResponse()
-    await assessHandler({ method: 'POST', headers: { 'content-type': 'application/json' }, body: { ...prompt, response: '他足球踢得很好，而且性格也很好。' } }, res)
-    assert.equal(res.statusCode, 200)
-    assert.equal(res.body.accepted, true)
-    assert.equal(res.body.evidence, 'verified')
-    assert.equal(res.headers['Cache-Control'], 'no-store')
-  } finally {
-    globalThis.fetch = originalFetch
-    if (key === undefined) delete process.env.OPENAI_API_KEY
-    else process.env.OPENAI_API_KEY = key
-  }
 })

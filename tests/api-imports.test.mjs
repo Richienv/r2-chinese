@@ -18,7 +18,7 @@ test('the guard recognizes the import form that crashed /api/tts and /api/dictio
 
 test('no serverless function imports a .ts file by path, which answers FUNCTION_INVOCATION_FAILED on Vercel', () => {
   const files = readdirSync(apiDir).filter((name) => name.endsWith('.ts'))
-  assert.ok(files.length >= 3, 'expected the tts, dictionary and assess functions')
+  assert.ok(files.length >= 2, 'expected the tts and dictionary functions')
   for (const name of files) {
     assert.deepEqual(tsExtensionImports(readFileSync(new URL(name, apiDir), 'utf8')), [], `api/${name} must not import .ts paths`)
   }
