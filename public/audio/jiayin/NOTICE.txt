@@ -1,0 +1,19 @@
+Jiayin interview practice audio
+
+These files are generated Mandarin speech, not recordings supplied by Jiayin,
+the PDF author, an interviewer, or the HSK textbook publisher.
+The spoken text is taken verbatim from src/data/jiayin.json: its vocabulary,
+sentence chunks and complete answers. Indonesian explanations are not spoken.
+
+Generator: scripts/generate-interview-audio.py
+Engine: Piper (https://github.com/OHF-Voice/piper1-gpl)
+Voice: zh_CN-huayan-medium, 22,050 Hz source, encoded as mono 24 kHz MP3.
+Model and model card:
+https://huggingface.co/rhasspy/piper-voices/tree/main/zh/zh_CN/huayan/medium
+The model repository lists the MIT license. The voice's model card separately
+describes its training dataset license as unknown. No training dataset or
+model weights are distributed with this app.
+
+src/data/jiayin-audio.json records the model checksum, exact text mapping,
+measured clip durations and individual MP3 checksums. Word-boundary timing is
+not inferred: these clips use line-level playback.

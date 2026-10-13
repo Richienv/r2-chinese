@@ -1,4 +1,5 @@
 import manifest from '../data/hsk4a-audio.json'
+import interviewManifest from '../data/jiayin-audio.json'
 import { createClipResolver, trackUrl, type AudioManifest } from './bookAudioIndex'
 import { setClipResolver } from './speech'
 
@@ -20,6 +21,10 @@ async function recordingsInstalled(): Promise<boolean> {
 }
 
 export function initBookAudio() {
-  setClipResolver(createClipResolver(manifest as unknown as AudioManifest, BASE, () => installed))
+  const publisher = createClipResolver(manifest as unknown as AudioManifest, BASE, () => installed)
+  const interview = createClipResolver(interviewManifest as unknown as AudioManifest, '/audio/jiayin/')
+  // Preserve the textbook recording whenever it matches. Interview clips cover
+  // the supplied material even when neural TTS and browser voices are unavailable.
+  setClipResolver(text => publisher(text) ?? interview(text))
   void recordingsInstalled().then((ok) => { installed = ok })
 }
