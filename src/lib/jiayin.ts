@@ -1,11 +1,13 @@
 import { useSyncExternalStore } from 'react'
 import data from '../data/jiayin.json'
-import { emptyJiayinProgress, parseJiayinProgress, type JiayinAttempt, type JiayinProgress, type JiayinStage, type JiayinUnit } from './jiayinPractice'
+import { emptyJiayinProgress, parseJiayinProgress, type JiayinAttempt, type JiayinExerciseAttempt, type JiayinProgress, type JiayinStage, type JiayinUnit } from './jiayinPractice'
+import { buildJiayinLessons } from './jiayinLesson'
 
 export const JIAYIN_PROGRESS_KEY = 'yulu.jiayin.v1'
 export const jiayinData = data
 export const jiayinUnits: JiayinUnit[] = data.units
 export const jiayinItems = jiayinUnits.flatMap(u => u.items)
+export const jiayinLessons = buildJiayinLessons(jiayinUnits, data.extraVocab)
 function load(): JiayinProgress {
   try { return parseJiayinProgress(JSON.parse(localStorage.getItem(JIAYIN_PROGRESS_KEY) ?? 'null')) }
   catch { return emptyJiayinProgress() }
@@ -30,5 +32,9 @@ export function useJiayinProgress() {
     },
     note: (key: string, text: string) => write({ ...cache, notes: { ...cache.notes, [key]: text } }),
     attempt: (id: string, attempt: JiayinAttempt) => write({ ...cache, attempts: { ...cache.attempts, [id]: [...cache.attempts[id] ?? [], attempt].slice(-20) } }),
+    finishLesson: (id: string) => {
+      if (!cache.lessonsDone[id]) write({ ...cache, lessonsDone: { ...cache.lessonsDone, [id]: Date.now() } })
+    },
+    exercise: (id: string, attempt: JiayinExerciseAttempt) => write({ ...cache, exercises: { ...cache.exercises, [id]: [...cache.exercises[id] ?? [], attempt].slice(-20) } }),
   }
 }

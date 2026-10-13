@@ -30,10 +30,13 @@ export function reviewReply({ task, response, expectedZh, glosses = {}, assessme
   const checks: ReviewCheck[] = []
   const hanzi = (response.match(HANZI) ?? []).length
   const latin = (response.match(LATIN) ?? []).length
+  const matchesReference = assessment.accepted === true && assessment.evidence === 'source-match'
+    && normalizeChinese(response) === normalizeChinese(expectedZh)
 
   checks.push({
     id: 'mandarin', stage: 'instruction', decisive: true, label: t('Answered in Mandarin'),
-    status: hanzi === 0 ? 'fail' : latin > hanzi ? 'partial' : 'pass',
+    // An exact Mandarin reference may contain long company names or course titles.
+    status: hanzi === 0 ? 'fail' : latin > hanzi && !matchesReference ? 'partial' : 'pass',
     found: hanzi === 0 ? t('No Hanzi') : latin ? t('{hanzi} Hanzi and {latin} English letters', { hanzi, latin }) : t('{hanzi} Hanzi', { hanzi }),
     expected: t('A reply in Hanzi'),
     fix: hanzi === 0 ? t('Write or say the reply in Chinese.') : t('Write the English parts in Chinese too.'),

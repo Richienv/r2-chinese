@@ -22,8 +22,7 @@ import {
 } from '../lib/books'
 import { PATH_NODES } from '../lib/wordsSession'
 import { DAILY_GOAL, dayKey, useStore } from '../store/store'
-import { jiayinUnits, useJiayinProgress } from '../lib/jiayin'
-import { JIAYIN_STAGES } from '../lib/jiayinPractice'
+import { jiayinLessons, jiayinUnits, useJiayinProgress } from '../lib/jiayin'
 import '../styles/progress.css'
 
 const KERJA_KEY = 'yulu.kerja.v1'
@@ -342,15 +341,16 @@ export function Progress({
       booksCourse(booksDone),
       {
         name: 'Wawancara Jiayin',
-        stepsDone: jiayinUnits.reduce((sum, unit) => sum + JIAYIN_STAGES.filter(stage => jiayinProgress.pathDone[String(unit.id)]?.includes(stage)).length, 0),
-        stepsTotal: jiayinUnits.length * JIAYIN_STAGES.length,
+        stepsDone: jiayinLessons.filter(lesson => jiayinProgress.lessonsDone[lesson.id]).length,
+        stepsTotal: jiayinLessons.length,
         units: jiayinUnits.map(unit => {
-          const finished = JIAYIN_STAGES.filter(stage => jiayinProgress.pathDone[String(unit.id)]?.includes(stage)).length
-          return { key: `jiayin-${unit.id}`, title: unit.title, done: finished === JIAYIN_STAGES.length, sittingsDone: finished, sittingsTotal: JIAYIN_STAGES.length }
+          const lessons = jiayinLessons.filter(lesson => lesson.unit.id === unit.id)
+          const finished = lessons.filter(lesson => jiayinProgress.lessonsDone[lesson.id]).length
+          return { key: `jiayin-${unit.id}`, title: unit.title, done: finished === lessons.length, sittingsDone: finished, sittingsTotal: lessons.length }
         }),
       },
     ]
-  }, [s.pathDone, s.lessonsDone, jiayinProgress.pathDone])
+  }, [s.pathDone, s.lessonsDone, jiayinProgress.lessonsDone])
 
   const history = useMemo(() => readHistory(), [s.pathDone, s.log, s.xp, s.cards])
   const visibleHistory = showHistory ? history : history.slice(0, 5)

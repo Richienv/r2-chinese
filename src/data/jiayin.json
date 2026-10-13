@@ -3884,5 +3884,1023 @@
     }
   ],
   "language": "id",
-  "teachingNote": "Mandarin dan fakta mengikuti PDF. Arti per kalimat, tujuan belajar, dan latihan penyusunan ditambahkan sebagai materi pengajaran dalam bahasa Indonesia."
+  "teachingNote": "Pertanyaan dan jawaban Mandarin mengikuti PDF. Arti Indonesia, maksud pertanyaan, latihan, dan kosakata tambahan diambil dari kalimat sumber untuk pengajaran. Kosakata tambahan tidak diklaim sebagai daftar kata tercetak dalam PDF.",
+  "extraVocab": [
+    {
+      "zh": "团队",
+      "pinyin": "tuán duì",
+      "id": "tim",
+      "page": 4,
+      "tip": "Ingat sebagai “tim”. Latih bersama kalimat wawancara yang memuat 团队, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "系统",
+      "pinyin": "xì tǒng",
+      "id": "sistem",
+      "page": 4,
+      "tip": "Ingat sebagai “sistem”. Latih bersama kalimat wawancara yang memuat 系统, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "经验",
+      "pinyin": "jīng yàn",
+      "id": "pengalaman",
+      "page": 4,
+      "tip": "Ingat sebagai “pengalaman”. Latih bersama kalimat wawancara yang memuat 经验, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-short"
+    },
+    {
+      "zh": "业务",
+      "pinyin": "yè wù",
+      "id": "kegiatan bisnis",
+      "page": 4,
+      "tip": "Ingat sebagai “kegiatan bisnis”. Latih bersama kalimat wawancara yang memuat 业务, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "学习",
+      "pinyin": "xué xí",
+      "id": "belajar",
+      "page": 5,
+      "tip": "Ingat sebagai “belajar”. Latih bersama kalimat wawancara yang memuat 学习, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q02"
+    },
+    {
+      "zh": "负责",
+      "pinyin": "fù zé",
+      "id": "bertanggung jawab atas",
+      "page": 4,
+      "tip": "Ingat sebagai “bertanggung jawab atas”. Latih bersama kalimat wawancara yang memuat 负责, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "数据",
+      "pinyin": "shù jù",
+      "id": "data",
+      "page": 4,
+      "tip": "Ingat sebagai “data”. Latih bersama kalimat wawancara yang memuat 数据, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "用户",
+      "pinyin": "yòng hù",
+      "id": "pengguna",
+      "page": 5,
+      "tip": "Ingat sebagai “pengguna”. Latih bersama kalimat wawancara yang memuat 用户, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q02"
+    },
+    {
+      "zh": "沟通",
+      "pinyin": "gōu tōng",
+      "id": "komunikasi",
+      "page": 4,
+      "tip": "Ingat sebagai “komunikasi”. Latih bersama kalimat wawancara yang memuat 沟通, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-short"
+    },
+    {
+      "zh": "具体",
+      "pinyin": "jù tǐ",
+      "id": "konkret atau spesifik",
+      "page": 4,
+      "tip": "Ingat sebagai “konkret atau spesifik”. Latih bersama kalimat wawancara yang memuat 具体, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "closing"
+    },
+    {
+      "zh": "确认",
+      "pinyin": "què rèn",
+      "id": "memastikan atau mengonfirmasi",
+      "page": 7,
+      "tip": "Ingat sebagai “memastikan atau mengonfirmasi”. Latih bersama kalimat wawancara yang memuat 确认, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q08"
+    },
+    {
+      "zh": "目标",
+      "pinyin": "mù biāo",
+      "id": "tujuan",
+      "page": 7,
+      "tip": "Ingat sebagai “tujuan”. Latih bersama kalimat wawancara yang memuat 目标, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q08"
+    },
+    {
+      "zh": "结果",
+      "pinyin": "jié guǒ",
+      "id": "hasil",
+      "page": 4,
+      "tip": "Ingat sebagai “hasil”. Latih bersama kalimat wawancara yang memuat 结果, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "closing"
+    },
+    {
+      "zh": "判断",
+      "pinyin": "pàn duàn",
+      "id": "menilai atau mengambil kesimpulan",
+      "page": 15,
+      "tip": "Ingat sebagai “menilai atau mengambil kesimpulan”. Latih bersama kalimat wawancara yang memuat 判断, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q29"
+    },
+    {
+      "zh": "范围",
+      "pinyin": "fàn wéi",
+      "id": "cakupan",
+      "page": 9,
+      "tip": "Ingat sebagai “cakupan”. Latih bersama kalimat wawancara yang memuat 范围, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q13"
+    },
+    {
+      "zh": "问题",
+      "pinyin": "wèn tí",
+      "id": "masalah atau pertanyaan",
+      "page": 4,
+      "tip": "Ingat sebagai “masalah atau pertanyaan”. Latih bersama kalimat wawancara yang memuat 问题, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "决定",
+      "pinyin": "jué dìng",
+      "id": "keputusan atau memutuskan",
+      "page": 10,
+      "tip": "Ingat sebagai “keputusan atau memutuskan”. Latih bersama kalimat wawancara yang memuat 决定, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q15"
+    },
+    {
+      "zh": "记录",
+      "pinyin": "jì lù",
+      "id": "catatan atau mencatat",
+      "page": 9,
+      "tip": "Ingat sebagai “catatan atau mencatat”. Latih bersama kalimat wawancara yang memuat 记录, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q12"
+    },
+    {
+      "zh": "权限",
+      "pinyin": "quán xiàn",
+      "id": "hak akses atau wewenang",
+      "page": 11,
+      "tip": "Ingat sebagai “hak akses atau wewenang”. Latih bersama kalimat wawancara yang memuat 权限, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q19"
+    },
+    {
+      "zh": "风险",
+      "pinyin": "fēng xiǎn",
+      "id": "risiko",
+      "page": 7,
+      "tip": "Ingat sebagai “risiko”. Latih bersama kalimat wawancara yang memuat 风险, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q06"
+    },
+    {
+      "zh": "质量",
+      "pinyin": "zhì liàng",
+      "id": "kualitas",
+      "page": 11,
+      "tip": "Ingat sebagai “kualitas”. Latih bersama kalimat wawancara yang memuat 质量, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q17"
+    },
+    {
+      "zh": "效率",
+      "pinyin": "xiào lǜ",
+      "id": "efisiensi",
+      "page": 11,
+      "tip": "Ingat sebagai “efisiensi”. Latih bersama kalimat wawancara yang memuat 效率, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q19"
+    },
+    {
+      "zh": "成本",
+      "pinyin": "chéng běn",
+      "id": "biaya",
+      "page": 9,
+      "tip": "Ingat sebagai “biaya”. Latih bersama kalimat wawancara yang memuat 成本, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q12"
+    },
+    {
+      "zh": "分析",
+      "pinyin": "fēn xī",
+      "id": "menganalisis",
+      "page": 4,
+      "tip": "Ingat sebagai “menganalisis”. Latih bersama kalimat wawancara yang memuat 分析, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-short"
+    },
+    {
+      "zh": "核对",
+      "pinyin": "hé duì",
+      "id": "mencocokkan atau memverifikasi",
+      "page": 10,
+      "tip": "Ingat sebagai “mencocokkan atau memverifikasi”. Latih bersama kalimat wawancara yang memuat 核对, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q14"
+    },
+    {
+      "zh": "来源",
+      "pinyin": "lái yuán",
+      "id": "sumber",
+      "page": 11,
+      "tip": "Ingat sebagai “sumber”. Latih bersama kalimat wawancara yang memuat 来源, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q19"
+    },
+    {
+      "zh": "样本",
+      "pinyin": "yàng běn",
+      "id": "sampel",
+      "page": 9,
+      "tip": "Ingat sebagai “sampel”. Latih bersama kalimat wawancara yang memuat 样本, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q12"
+    },
+    {
+      "zh": "条件",
+      "pinyin": "tiáo jiàn",
+      "id": "kondisi atau persyaratan",
+      "page": 9,
+      "tip": "Ingat sebagai “kondisi atau persyaratan”. Latih bersama kalimat wawancara yang memuat 条件, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q12"
+    },
+    {
+      "zh": "时间",
+      "pinyin": "shí jiān",
+      "id": "waktu",
+      "page": 14,
+      "tip": "Ingat sebagai “waktu”. Latih bersama kalimat wawancara yang memuat 时间, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q25"
+    },
+    {
+      "zh": "任务",
+      "pinyin": "rèn wù",
+      "id": "tugas",
+      "page": 4,
+      "tip": "Ingat sebagai “tugas”. Latih bersama kalimat wawancara yang memuat 任务, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "closing"
+    },
+    {
+      "zh": "优先",
+      "pinyin": "yōu xiān",
+      "id": "mendahulukan",
+      "page": 9,
+      "tip": "Ingat sebagai “mendahulukan”. Latih bersama kalimat wawancara yang memuat 优先, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q11"
+    },
+    {
+      "zh": "协调",
+      "pinyin": "xié tiáo",
+      "id": "mengoordinasikan",
+      "page": 4,
+      "tip": "Ingat sebagai “mengoordinasikan”. Latih bersama kalimat wawancara yang memuat 协调, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "期限",
+      "pinyin": "qī xiàn",
+      "id": "jangka waktu",
+      "page": 13,
+      "tip": "Ingat sebagai “jangka waktu”. Latih bersama kalimat wawancara yang memuat 期限, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q24"
+    },
+    {
+      "zh": "费用",
+      "pinyin": "fèi yòng",
+      "id": "biaya yang dikenakan",
+      "page": 13,
+      "tip": "Ingat sebagai “biaya yang dikenakan”. Latih bersama kalimat wawancara yang memuat 费用, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q24"
+    },
+    {
+      "zh": "金额",
+      "pinyin": "jīn é",
+      "id": "nominal uang",
+      "page": 11,
+      "tip": "Ingat sebagai “nominal uang”. Latih bersama kalimat wawancara yang memuat 金额, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q19"
+    },
+    {
+      "zh": "客户",
+      "pinyin": "kè hù",
+      "id": "pelanggan",
+      "page": 4,
+      "tip": "Ingat sebagai “pelanggan”. Latih bersama kalimat wawancara yang memuat 客户, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "建议",
+      "pinyin": "jiàn yì",
+      "id": "saran atau menyarankan",
+      "page": 14,
+      "tip": "Ingat sebagai “saran atau menyarankan”. Latih bersama kalimat wawancara yang memuat 建议, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q26"
+    },
+    {
+      "zh": "承担",
+      "pinyin": "chéng dān",
+      "id": "mengambil tanggung jawab",
+      "page": 6,
+      "tip": "Ingat sebagai “mengambil tanggung jawab”. Latih bersama kalimat wawancara yang memuat 承担, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q03"
+    },
+    {
+      "zh": "贡献",
+      "pinyin": "gòng xiàn",
+      "id": "kontribusi",
+      "page": 5,
+      "tip": "Ingat sebagai “kontribusi”. Latih bersama kalimat wawancara yang memuat 贡献, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q02"
+    },
+    {
+      "zh": "证明",
+      "pinyin": "zhèng míng",
+      "id": "membuktikan",
+      "page": 16,
+      "tip": "Ingat sebagai “membuktikan”. Latih bersama kalimat wawancara yang memuat 证明, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q33"
+    },
+    {
+      "zh": "实际",
+      "pinyin": "shí jì",
+      "id": "nyata atau aktual",
+      "page": 5,
+      "tip": "Ingat sebagai “nyata atau aktual”. Latih bersama kalimat wawancara yang memuat 实际, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q02"
+    },
+    {
+      "zh": "直接",
+      "pinyin": "zhí jiē",
+      "id": "langsung",
+      "page": 6,
+      "tip": "Ingat sebagai “langsung”. Latih bersama kalimat wawancara yang memuat 直接, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q04"
+    },
+    {
+      "zh": "长期",
+      "pinyin": "cháng qī",
+      "id": "jangka panjang",
+      "page": 6,
+      "tip": "Ingat sebagai “jangka panjang”. Latih bersama kalimat wawancara yang memuat 长期, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q05"
+    },
+    {
+      "zh": "个人",
+      "pinyin": "gè rén",
+      "id": "pribadi",
+      "page": 21,
+      "tip": "Ingat sebagai “pribadi”. Latih bersama kalimat wawancara yang memuat 个人, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q46"
+    },
+    {
+      "zh": "安排",
+      "pinyin": "ān pái",
+      "id": "pengaturan",
+      "page": 7,
+      "tip": "Ingat sebagai “pengaturan”. Latih bersama kalimat wawancara yang memuat 安排, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q08"
+    },
+    {
+      "zh": "待遇",
+      "pinyin": "dài yù",
+      "id": "paket kompensasi dan fasilitas",
+      "page": 19,
+      "tip": "Ingat sebagai “paket kompensasi dan fasilitas”. Latih bersama kalimat wawancara yang memuat 待遇, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q42"
+    },
+    {
+      "zh": "解释",
+      "pinyin": "jiě shì",
+      "id": "menjelaskan",
+      "page": 12,
+      "tip": "Ingat sebagai “menjelaskan”. Latih bersama kalimat wawancara yang memuat 解释, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q20"
+    },
+    {
+      "zh": "准确",
+      "pinyin": "zhǔn què",
+      "id": "akurat",
+      "page": 10,
+      "tip": "Ingat sebagai “akurat”. Latih bersama kalimat wawancara yang memuat 准确, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q16"
+    },
+    {
+      "zh": "证书",
+      "pinyin": "zhèng shū",
+      "id": "sertifikat",
+      "page": 20,
+      "tip": "Ingat sebagai “sertifikat”. Latih bersama kalimat wawancara yang memuat 证书, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q43"
+    },
+    {
+      "zh": "学位证",
+      "pinyin": "xué wèi zhèng",
+      "id": "sertifikat gelar",
+      "page": 4,
+      "tip": "Ingat sebagai “sertifikat gelar”. Latih bersama kalimat wawancara yang memuat 学位证, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "全职",
+      "pinyin": "quán zhí",
+      "id": "penuh waktu",
+      "page": 4,
+      "tip": "Ingat sebagai “penuh waktu”. Latih bersama kalimat wawancara yang memuat 全职, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "入职",
+      "pinyin": "rù zhí",
+      "id": "mulai bekerja di perusahaan",
+      "page": 19,
+      "tip": "Ingat sebagai “mulai bekerja di perusahaan”. Latih bersama kalimat wawancara yang memuat 入职, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q41"
+    },
+    {
+      "zh": "毕业",
+      "pinyin": "bì yè",
+      "id": "lulus",
+      "page": 4,
+      "tip": "Ingat sebagai “lulus”. Latih bersama kalimat wawancara yang memuat 毕业, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "母语",
+      "pinyin": "mǔ yǔ",
+      "id": "bahasa ibu",
+      "page": 20,
+      "tip": "Ingat sebagai “bahasa ibu”. Latih bersama kalimat wawancara yang memuat 母语, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q43"
+    },
+    {
+      "zh": "流利",
+      "pinyin": "liú lì",
+      "id": "lancar",
+      "page": 20,
+      "tip": "Ingat sebagai “lancar”. Latih bersama kalimat wawancara yang memuat 流利, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q43"
+    },
+    {
+      "zh": "误解",
+      "pinyin": "wù jiě",
+      "id": "salah paham",
+      "page": 15,
+      "tip": "Ingat sebagai “salah paham”. Latih bersama kalimat wawancara yang memuat 误解, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q29"
+    },
+    {
+      "zh": "书面",
+      "pinyin": "shū miàn",
+      "id": "tertulis",
+      "page": 20,
+      "tip": "Ingat sebagai “tertulis”. Latih bersama kalimat wawancara yang memuat 书面, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q43"
+    },
+    {
+      "zh": "培训",
+      "pinyin": "péi xùn",
+      "id": "pelatihan",
+      "page": 7,
+      "tip": "Ingat sebagai “pelatihan”. Latih bersama kalimat wawancara yang memuat 培训, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q08"
+    },
+    {
+      "zh": "工资",
+      "pinyin": "gōng zī",
+      "id": "gaji",
+      "page": 10,
+      "tip": "Ingat sebagai “gaji”. Latih bersama kalimat wawancara yang memuat 工资, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q14"
+    },
+    {
+      "zh": "绩效",
+      "pinyin": "jì xiào",
+      "id": "kinerja",
+      "page": 20,
+      "tip": "Ingat sebagai “kinerja”. Latih bersama kalimat wawancara yang memuat 绩效, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q44"
+    },
+    {
+      "zh": "期望",
+      "pinyin": "qī wàng",
+      "id": "harapan atau ekspektasi",
+      "page": 19,
+      "tip": "Ingat sebagai “harapan atau ekspektasi”. Latih bersama kalimat wawancara yang memuat 期望, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q40"
+    },
+    {
+      "zh": "独立",
+      "pinyin": "dú lì",
+      "id": "mandiri",
+      "page": 6,
+      "tip": "Ingat sebagai “mandiri”. Latih bersama kalimat wawancara yang memuat 独立, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q05"
+    },
+    {
+      "zh": "创业",
+      "pinyin": "chuàng yè",
+      "id": "berwirausaha",
+      "page": 6,
+      "tip": "Ingat sebagai “berwirausaha”. Latih bersama kalimat wawancara yang memuat 创业, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q05"
+    },
+    {
+      "zh": "兼职",
+      "pinyin": "jiān zhí",
+      "id": "pekerjaan sampingan",
+      "page": 21,
+      "tip": "Ingat sebagai “pekerjaan sampingan”. Latih bersama kalimat wawancara yang memuat 兼职, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q46"
+    },
+    {
+      "zh": "利益冲突",
+      "pinyin": "lì yì chōng tū",
+      "id": "benturan kepentingan",
+      "page": 21,
+      "tip": "Ingat sebagai “benturan kepentingan”. Latih bersama kalimat wawancara yang memuat 利益冲突, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q46"
+    },
+    {
+      "zh": "知识产权",
+      "pinyin": "zhī shí chǎn quán",
+      "id": "kekayaan intelektual",
+      "page": 21,
+      "tip": "Ingat sebagai “kekayaan intelektual”. Latih bersama kalimat wawancara yang memuat 知识产权, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q46"
+    },
+    {
+      "zh": "资源",
+      "pinyin": "zī yuán",
+      "id": "sumber daya",
+      "page": 7,
+      "tip": "Ingat sebagai “sumber daya”. Latih bersama kalimat wawancara yang memuat 资源, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q07"
+    },
+    {
+      "zh": "累计",
+      "pinyin": "lěi jì",
+      "id": "kumulatif",
+      "page": 21,
+      "tip": "Ingat sebagai “kumulatif”. Latih bersama kalimat wawancara yang memuat 累计, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q47"
+    },
+    {
+      "zh": "学期",
+      "pinyin": "xué qī",
+      "id": "semester",
+      "page": 21,
+      "tip": "Ingat sebagai “semester”. Latih bersama kalimat wawancara yang memuat 学期, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q47"
+    },
+    {
+      "zh": "加权",
+      "pinyin": "jiā quán",
+      "id": "tertimbang",
+      "page": 21,
+      "tip": "Ingat sebagai “tertimbang”. Latih bersama kalimat wawancara yang memuat 加权, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q47"
+    },
+    {
+      "zh": "成绩",
+      "pinyin": "chéng jì",
+      "id": "hasil akademik atau nilai",
+      "page": 21,
+      "tip": "Ingat sebagai “hasil akademik atau nilai”. Latih bersama kalimat wawancara yang memuat 成绩, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q47"
+    },
+    {
+      "zh": "课程",
+      "pinyin": "kè chéng",
+      "id": "kursus atau mata kuliah",
+      "page": 21,
+      "tip": "Ingat sebagai “kursus atau mata kuliah”. Latih bersama kalimat wawancara yang memuat 课程, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q47"
+    },
+    {
+      "zh": "验证",
+      "pinyin": "yàn zhèng",
+      "id": "memvalidasi",
+      "page": 13,
+      "tip": "Ingat sebagai “memvalidasi”. Latih bersama kalimat wawancara yang memuat 验证, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q23"
+    },
+    {
+      "zh": "异常",
+      "pinyin": "yì cháng",
+      "id": "kejanggalan atau pengecualian",
+      "page": 10,
+      "tip": "Ingat sebagai “kejanggalan atau pengecualian”. Latih bersama kalimat wawancara yang memuat 异常, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q14"
+    },
+    {
+      "zh": "截止时间",
+      "pinyin": "jié zhǐ shí jiān",
+      "id": "tenggat waktu",
+      "page": 17,
+      "tip": "Ingat sebagai “tenggat waktu”. Latih bersama kalimat wawancara yang memuat 截止时间, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q36"
+    },
+    {
+      "zh": "本地",
+      "pinyin": "běn dì",
+      "id": "lokal",
+      "page": 4,
+      "tip": "Ingat sebagai “lokal”. Latih bersama kalimat wawancara yang memuat 本地, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-short"
+    },
+    {
+      "zh": "总部",
+      "pinyin": "zǒng bù",
+      "id": "kantor pusat",
+      "page": 5,
+      "tip": "Ingat sebagai “kantor pusat”. Latih bersama kalimat wawancara yang memuat 总部, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q02"
+    },
+    {
+      "zh": "印尼",
+      "pinyin": "yìn ní",
+      "id": "Indonesia",
+      "page": 4,
+      "tip": "Ingat sebagai “Indonesia”. Latih bersama kalimat wawancara yang memuat 印尼, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "采购",
+      "pinyin": "cǎi gòu",
+      "id": "pengadaan",
+      "page": 4,
+      "tip": "Ingat sebagai “pengadaan”. Latih bersama kalimat wawancara yang memuat 采购, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "供应商",
+      "pinyin": "gōng yìng shāng",
+      "id": "pemasok",
+      "page": 6,
+      "tip": "Ingat sebagai “pemasok”. Latih bersama kalimat wawancara yang memuat 供应商, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q03"
+    },
+    {
+      "zh": "董事",
+      "pinyin": "dǒng shì",
+      "id": "direktur",
+      "page": 4,
+      "tip": "Ingat sebagai “direktur”. Latih bersama kalimat wawancara yang memuat 董事, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "intro-long"
+    },
+    {
+      "zh": "开发",
+      "pinyin": "kāi fā",
+      "id": "pengembangan",
+      "page": 6,
+      "tip": "Ingat sebagai “pengembangan”. Latih bersama kalimat wawancara yang memuat 开发, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q03"
+    },
+    {
+      "zh": "测试",
+      "pinyin": "cè shì",
+      "id": "pengujian",
+      "page": 9,
+      "tip": "Ingat sebagai “pengujian”. Latih bersama kalimat wawancara yang memuat 测试, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q12"
+    },
+    {
+      "zh": "生产环境",
+      "pinyin": "shēng chǎn huán jìng",
+      "id": "lingkungan produksi",
+      "page": 28,
+      "tip": "Ingat sebagai “lingkungan produksi”. Latih bersama kalimat wawancara yang memuat 生产环境, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "phrase6"
+    },
+    {
+      "zh": "审批",
+      "pinyin": "shěn pī",
+      "id": "persetujuan",
+      "page": 11,
+      "tip": "Ingat sebagai “persetujuan”. Latih bersama kalimat wawancara yang memuat 审批, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q19"
+    },
+    {
+      "zh": "文档",
+      "pinyin": "wén dàng",
+      "id": "dokumen",
+      "page": 9,
+      "tip": "Ingat sebagai “dokumen”. Latih bersama kalimat wawancara yang memuat 文档, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q13"
+    },
+    {
+      "zh": "检索",
+      "pinyin": "jiǎn suǒ",
+      "id": "penelusuran informasi",
+      "page": 9,
+      "tip": "Ingat sebagai “penelusuran informasi”. Latih bersama kalimat wawancara yang memuat 检索, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q13"
+    },
+    {
+      "zh": "架构",
+      "pinyin": "jià gòu",
+      "id": "arsitektur",
+      "page": 9,
+      "tip": "Ingat sebagai “arsitektur”. Latih bersama kalimat wawancara yang memuat 架构, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q13"
+    },
+    {
+      "zh": "库存",
+      "pinyin": "kù cún",
+      "id": "persediaan",
+      "page": 10,
+      "tip": "Ingat sebagai “persediaan”. Latih bersama kalimat wawancara yang memuat 库存, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q16"
+    },
+    {
+      "zh": "报价",
+      "pinyin": "bào jià",
+      "id": "penawaran harga",
+      "page": 10,
+      "tip": "Ingat sebagai “penawaran harga”. Latih bersama kalimat wawancara yang memuat 报价, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q16"
+    },
+    {
+      "zh": "资金",
+      "pinyin": "zī jīn",
+      "id": "modal atau dana",
+      "page": 10,
+      "tip": "Ingat sebagai “modal atau dana”. Latih bersama kalimat wawancara yang memuat 资金, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q16"
+    },
+    {
+      "zh": "提醒",
+      "pinyin": "tí xǐng",
+      "id": "pengingat atau mengingatkan",
+      "page": 15,
+      "tip": "Ingat sebagai “pengingat atau mengingatkan”. Latih bersama kalimat wawancara yang memuat 提醒, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q28"
+    },
+    {
+      "zh": "支付",
+      "pinyin": "zhī fù",
+      "id": "pembayaran",
+      "page": 13,
+      "tip": "Ingat sebagai “pembayaran”. Latih bersama kalimat wawancara yang memuat 支付, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q23"
+    },
+    {
+      "zh": "对账",
+      "pinyin": "duì zhàng",
+      "id": "rekonsiliasi",
+      "page": 23,
+      "tip": "Ingat sebagai “rekonsiliasi”. Latih bersama kalimat wawancara yang memuat 对账, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "case4"
+    },
+    {
+      "zh": "日志",
+      "pinyin": "rì zhì",
+      "id": "catatan aktivitas sistem",
+      "page": 11,
+      "tip": "Ingat sebagai “catatan aktivitas sistem”. Latih bersama kalimat wawancara yang memuat 日志, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q19"
+    },
+    {
+      "zh": "恢复",
+      "pinyin": "huī fù",
+      "id": "memulihkan",
+      "page": 24,
+      "tip": "Ingat sebagai “memulihkan”. Latih bersama kalimat wawancara yang memuat 恢复, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "case5"
+    },
+    {
+      "zh": "修正",
+      "pinyin": "xiū zhèng",
+      "id": "memperbaiki",
+      "page": 15,
+      "tip": "Ingat sebagai “memperbaiki”. Latih bersama kalimat wawancara yang memuat 修正, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q29"
+    },
+    {
+      "zh": "试点",
+      "pinyin": "shì diǎn",
+      "id": "uji coba terbatas",
+      "page": 14,
+      "tip": "Ingat sebagai “uji coba terbatas”. Latih bersama kalimat wawancara yang memuat 试点, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q27"
+    },
+    {
+      "zh": "基线",
+      "pinyin": "jī xiàn",
+      "id": "kondisi awal sebagai pembanding",
+      "page": 22,
+      "tip": "Ingat sebagai “kondisi awal sebagai pembanding”. Latih bersama kalimat wawancara yang memuat 基线, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "case1"
+    },
+    {
+      "zh": "改善",
+      "pinyin": "gǎi shàn",
+      "id": "memperbaiki atau perbaikan",
+      "page": 5,
+      "tip": "Ingat sebagai “memperbaiki atau perbaikan”. Latih bersama kalimat wawancara yang memuat 改善, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q02"
+    },
+    {
+      "zh": "责任",
+      "pinyin": "zé rèn",
+      "id": "tanggung jawab",
+      "page": 6,
+      "tip": "Ingat sebagai “tanggung jawab”. Latih bersama kalimat wawancara yang memuat 责任, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q03"
+    },
+    {
+      "zh": "产品",
+      "pinyin": "chǎn pǐn",
+      "id": "produk",
+      "page": 7,
+      "tip": "Ingat sebagai “produk”. Latih bersama kalimat wawancara yang memuat 产品, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q06"
+    },
+    {
+      "zh": "运营",
+      "pinyin": "yùn yíng",
+      "id": "operasi bisnis",
+      "page": 5,
+      "tip": "Ingat sebagai “operasi bisnis”. Latih bersama kalimat wawancara yang memuat 运营, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q02"
+    },
+    {
+      "zh": "金融科技",
+      "pinyin": "jīn róng kē jì",
+      "id": "teknologi keuangan",
+      "page": 7,
+      "tip": "Ingat sebagai “teknologi keuangan”. Latih bersama kalimat wawancara yang memuat 金融科技, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q06"
+    },
+    {
+      "zh": "市场",
+      "pinyin": "shì chǎng",
+      "id": "pasar",
+      "page": 7,
+      "tip": "Ingat sebagai “pasar”. Latih bersama kalimat wawancara yang memuat 市场, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q07"
+    },
+    {
+      "zh": "战略",
+      "pinyin": "zhàn lüè",
+      "id": "strategi",
+      "page": 7,
+      "tip": "Ingat sebagai “strategi”. Latih bersama kalimat wawancara yang memuat 战略, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q07"
+    },
+    {
+      "zh": "转移",
+      "pinyin": "zhuǎn yí",
+      "id": "memindahkan atau menerapkan di lokasi lain",
+      "page": 7,
+      "tip": "Ingat sebagai “memindahkan atau menerapkan di lokasi lain”. Latih bersama kalimat wawancara yang memuat 转移, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q07"
+    },
+    {
+      "zh": "人工",
+      "pinyin": "rén gōng",
+      "id": "dilakukan manusia",
+      "page": 10,
+      "tip": "Ingat sebagai “dilakukan manusia”. Latih bersama kalimat wawancara yang memuat 人工, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q14"
+    },
+    {
+      "zh": "清楚",
+      "pinyin": "qīng chǔ",
+      "id": "jelas",
+      "page": 4,
+      "tip": "Ingat sebagai “jelas”. Latih bersama kalimat wawancara yang memuat 清楚, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "closing"
+    },
+    {
+      "zh": "不同",
+      "pinyin": "bù tóng",
+      "id": "berbeda",
+      "page": 8,
+      "tip": "Ingat sebagai “berbeda”. Latih bersama kalimat wawancara yang memuat 不同, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q10"
+    },
+    {
+      "zh": "持续",
+      "pinyin": "chí xù",
+      "id": "berkelanjutan",
+      "page": 5,
+      "tip": "Ingat sebagai “berkelanjutan”. Latih bersama kalimat wawancara yang memuat 持续, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q02"
+    },
+    {
+      "zh": "承诺",
+      "pinyin": "chéng nuò",
+      "id": "janji atau komitmen",
+      "page": 10,
+      "tip": "Ingat sebagai “janji atau komitmen”. Latih bersama kalimat wawancara yang memuat 承诺, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q16"
+    },
+    {
+      "zh": "信息",
+      "pinyin": "xìn xī",
+      "id": "informasi",
+      "page": 10,
+      "tip": "Ingat sebagai “informasi”. Latih bersama kalimat wawancara yang memuat 信息, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q15"
+    },
+    {
+      "zh": "反馈",
+      "pinyin": "fǎn kuì",
+      "id": "umpan balik",
+      "page": 6,
+      "tip": "Ingat sebagai “umpan balik”. Latih bersama kalimat wawancara yang memuat 反馈, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q05"
+    },
+    {
+      "zh": "重复",
+      "pinyin": "chóng fù",
+      "id": "berulang",
+      "page": 17,
+      "tip": "Ingat sebagai “berulang”. Latih bersama kalimat wawancara yang memuat 重复, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q34"
+    },
+    {
+      "zh": "影响",
+      "pinyin": "yǐng xiǎng",
+      "id": "dampak atau memengaruhi",
+      "page": 11,
+      "tip": "Ingat sebagai “dampak atau memengaruhi”. Latih bersama kalimat wawancara yang memuat 影响, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q19"
+    },
+    {
+      "zh": "错误",
+      "pinyin": "cuò wù",
+      "id": "kesalahan",
+      "page": 11,
+      "tip": "Ingat sebagai “kesalahan”. Latih bersama kalimat wawancara yang memuat 错误, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q19"
+    },
+    {
+      "zh": "人数",
+      "pinyin": "rén shù",
+      "id": "jumlah orang",
+      "page": 17,
+      "tip": "Ingat sebagai “jumlah orang”. Latih bersama kalimat wawancara yang memuat 人数, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q36"
+    },
+    {
+      "zh": "不好意思",
+      "pinyin": "bù hǎo yì sī",
+      "id": "maaf atau permisi",
+      "page": 28,
+      "tip": "Ingat sebagai “maaf atau permisi”. Latih bersama kalimat wawancara yang memuat 不好意思, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "phrase1"
+    },
+    {
+      "zh": "说法",
+      "pinyin": "shuō fǎ",
+      "id": "cara menjelaskan",
+      "page": 28,
+      "tip": "Ingat sebagai “cara menjelaskan”. Latih bersama kalimat wawancara yang memuat 说法, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "phrase1"
+    },
+    {
+      "zh": "意思",
+      "pinyin": "yì si",
+      "id": "maksud atau arti",
+      "page": 28,
+      "tip": "Ingat sebagai “maksud atau arti”. Latih bersama kalimat wawancara yang memuat 意思, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "phrase1"
+    },
+    {
+      "zh": "英语",
+      "pinyin": "yīng yǔ",
+      "id": "bahasa Inggris",
+      "page": 6,
+      "tip": "Ingat sebagai “bahasa Inggris”. Latih bersama kalimat wawancara yang memuat 英语, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q04"
+    },
+    {
+      "zh": "例子",
+      "pinyin": "lì zi",
+      "id": "contoh",
+      "page": 28,
+      "tip": "Ingat sebagai “contoh”. Latih bersama kalimat wawancara yang memuat 例子, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "phrase4"
+    },
+    {
+      "zh": "结论",
+      "pinyin": "jié lùn",
+      "id": "kesimpulan",
+      "page": 15,
+      "tip": "Ingat sebagai “kesimpulan”. Latih bersama kalimat wawancara yang memuat 结论, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q30"
+    },
+    {
+      "zh": "成果",
+      "pinyin": "chéng guǒ",
+      "id": "hasil kerja",
+      "page": 28,
+      "tip": "Ingat sebagai “hasil kerja”. Latih bersama kalimat wawancara yang memuat 成果, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "phrase5"
+    },
+    {
+      "zh": "目前",
+      "pinyin": "mù qián",
+      "id": "saat ini",
+      "page": 11,
+      "tip": "Ingat sebagai “saat ini”. Latih bersama kalimat wawancara yang memuat 目前, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "q18"
+    },
+    {
+      "zh": "方面",
+      "pinyin": "fāng miàn",
+      "id": "bidang atau aspek",
+      "page": 28,
+      "tip": "Ingat sebagai “bidang atau aspek”. Latih bersama kalimat wawancara yang memuat 方面, lalu tulis kembali tanpa melihat.",
+      "sourceItem": "phrase7"
+    }
+  ]
 }

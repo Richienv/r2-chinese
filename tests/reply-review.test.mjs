@@ -53,6 +53,17 @@ test('writing in English or not at all fails the instruction first', () => {
   assert.equal(find(mixed, 'mandarin').status, 'partial')
 })
 
+test('a Mandarin source with long English proper names remains valid when recalled exactly', () => {
+  const expectedZh = '我完成了 Google Advanced Data Analytics 和 Text Retrieval and Search Engines 课程。'
+  const assessment = sourceAssessment({ expectedZh, expectedEn: 'Completed the courses.', response: expectedZh, targetWords: ['完成', '课程'] })
+  const result = reviewReply({ task, response: expectedZh, expectedZh, assessment })
+  assert.equal(result.verdict, 'passed')
+  assert.equal(find(result, 'mandarin').status, 'pass')
+  const changed = '我 completed Google Advanced Data Analytics and Text Retrieval and Search Engines courses.'
+  const different = sourceAssessment({ expectedZh, expectedEn: 'Completed the courses.', response: changed, targetWords: ['完成', '课程'] })
+  assert.equal(find(reviewReply({ task, response: changed, expectedZh, assessment: different }), 'mandarin').status, 'partial')
+})
+
 test('a verified reply is correct even when it skipped a lesson word, and the skipped word is only a tip', () => {
   const verified = { ...sourceAssessment(prompt('我们必须守法')), accepted: true, evidence: 'verified', feedback: 'Good.', issues: [] }
   const result = review('我们必须守法', verified)

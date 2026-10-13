@@ -21,11 +21,17 @@ export interface JiayinUnit {
 export interface JiayinAttempt {
   at: number; rating: 1 | 2 | 3; assisted: boolean; answer: string; seconds: number
 }
+export interface JiayinExerciseAttempt {
+  at: number; correct: boolean; assisted: boolean
+  evidence: 'exact' | 'source-match' | 'verified' | 'practice'
+  response?: string
+}
 export interface JiayinProgress {
   pathDone: Record<string, string[]>; notes: Record<string, string>; attempts: Record<string, JiayinAttempt[]>
+  lessonsDone: Record<string, number>; exercises: Record<string, JiayinExerciseAttempt[]>
 }
 export interface JiayinWorksheet { id: string; title: string; questionIds: string[]; fields: string[] }
-export function emptyJiayinProgress(): JiayinProgress { return { pathDone: {}, notes: {}, attempts: {} } }
+export function emptyJiayinProgress(): JiayinProgress { return { pathDone: {}, notes: {}, attempts: {}, lessonsDone: {}, exercises: {} } }
 
 /** Tolerant of old/malformed device saves without leaking them into other courses. */
 export function parseJiayinProgress(raw: unknown): JiayinProgress {
@@ -39,6 +45,14 @@ export function parseJiayinProgress(raw: unknown): JiayinProgress {
   for (const [key, attempts] of Object.entries(value.attempts ?? {})) {
     if (!Array.isArray(attempts)) continue
     result.attempts[key] = attempts.filter(a => a && typeof a === 'object' && Number.isFinite(a.at) && [1, 2, 3].includes(a.rating) && typeof a.assisted === 'boolean' && typeof a.answer === 'string' && Number.isFinite(a.seconds)).slice(-20)
+  }
+  for (const [key, at] of Object.entries(value.lessonsDone ?? {})) if (typeof at === 'number' && Number.isFinite(at) && at > 0) result.lessonsDone[key] = at
+  for (const [key, attempts] of Object.entries(value.exercises ?? {})) {
+    if (!Array.isArray(attempts)) continue
+    result.exercises[key] = attempts.filter(a => a && typeof a === 'object' && Number.isFinite(a.at)
+      && typeof a.correct === 'boolean' && typeof a.assisted === 'boolean'
+      && ['exact', 'source-match', 'verified', 'practice'].includes(a.evidence)
+      && (a.response === undefined || typeof a.response === 'string')).slice(-20)
   }
   return result
 }

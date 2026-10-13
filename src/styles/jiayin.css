@@ -1,4 +1,18 @@
 .jiayin-path { display:grid; gap:14px; padding-bottom:28px; }
+.jiayin-guided .production-stage, .jiayin-guided .production-practice { max-width:38rem; margin:0 auto; }
+.jiayin-phase-track { display:flex; flex-wrap:wrap; gap:6px; max-width:38rem; margin:0 auto 24px; }
+.jiayin-phase-track span { border:1px solid var(--line-2); border-radius:999px; padding:6px 10px; font-size:11px; color:var(--muted); }
+.jiayin-phase-track span[data-current=true] { border-color:var(--red-deep); color:var(--red-deep); background:var(--surface); font-weight:700; }
+.jiayin-task-lead { max-width:38rem; margin:0 auto 20px; line-height:1.6; font-size:14px; }
+.jiayin-answer-criteria { border-left:3px solid var(--line-2); padding-left:14px; }
+.jiayin-answer-criteria p { font-size:13px; }
+.jiayin-answer-criteria p + p { margin-top:8px; }
+.jiayin-guided .jiayin-done .btn { white-space:normal; min-height:56px; height:auto; padding:14px; line-height:1.5; }
+.jiayin-curriculum-explanation { padding-left:20px; font-size:14px; line-height:1.8; }
+.jiayin-unit > .learning-atlas { margin:12px 0; }
+.jiayin-unit .atlas-track { margin-bottom:0; }
+.jiayin-unit .atlas-step-title { white-space:normal; overflow:visible; line-height:1.45; }
+.jiayin-secondary:disabled { opacity:.45; cursor:default; }
 .jiayin-hero { padding:24px 20px; border:1px solid var(--line-2); border-radius:20px; background:var(--surface); }
 .jiayin-hero h2 { margin:12px 0; font-size:clamp(24px,5vw,32px); line-height:1.2; letter-spacing:-.6px; }
 .jiayin-hero p { line-height:1.6; margin:12px 0 20px; }

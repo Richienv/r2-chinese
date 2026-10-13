@@ -9,7 +9,7 @@ export interface LearningPathItem {
   label: string
   title: string
   subtitle?: string
-  state: 'done' | 'current' | 'locked'
+  state: 'done' | 'current' | 'locked' | 'available'
   playable: boolean
   onSelect: () => void
 }
@@ -108,13 +108,14 @@ function LessonPlaque({ item, index }: { item: LearningPathItem; index: number }
       type="button"
       className={`atlas-plaque atlas-plaque-${item.state}`}
       data-path-item={item.id}
-      data-state={item.state === 'current' ? 'on' : item.state === 'locked' ? 'lock' : 'done'}
+      data-state={item.state === 'current' ? 'on' : item.state === 'locked' ? 'lock' : item.state === 'done' ? 'done' : 'available'}
       disabled={!item.playable}
       aria-current={item.state === 'current' ? 'step' : undefined}
       aria-label={item.state === 'current'
         ? t('{label}: {title}, continue learning', { label: item.label, title: item.title })
         : item.state === 'done'
           ? t('{label}: {title}, completed, revisit', { label: item.label, title: item.title })
+          : item.state === 'available' ? `${item.label}: ${item.title}`
           : t('{label}: {title}, locked', { label: item.label, title: item.title })}
       onPointerDown={() => {
         surface.onPointerDown()

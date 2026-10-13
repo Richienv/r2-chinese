@@ -2,7 +2,10 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { CloseIcon } from '../components/Icons'
 import { HearButton } from '../components/Hear'
 import { Sheet } from '../components/Sheet'
-import { jiayinData, jiayinItems, jiayinUnits, useJiayinProgress } from '../lib/jiayin'
+import { LearningPath } from '../components/LearningPath'
+import { JiayinLessonSession } from './JiayinLesson'
+import { jiayinData, jiayinItems, jiayinLessons, jiayinUnits, useJiayinProgress } from '../lib/jiayin'
+import { buildJiayinLessonSteps, isJiayinExerciseIndependent, JIAYIN_LEARNING_STAGES, jiayinLessonReviewSteps, lastJiayinExercise, nextJiayinLesson, nextJiayinLessonReview } from '../lib/jiayinLesson'
 import {
   answerChunks, buildJiayinQuiz, isJiayinAssemblyCorrect, isJiayinRetained, isUnaidedAttempt,
   jiayinBuildParts, jiayinEvidenceNotes, jiayinRecallPrompt, JIAYIN_STAGES, JIAYIN_STAGE_LABEL, lastJiayinAttempt,
@@ -16,12 +19,18 @@ import { clearStep, readStep, writeStep } from '../lib/resume'
 import { useStore } from '../store/store'
 import '../styles/jiayin.css'
 
-export type JiayinSessionMode = JiayinStage | 'mock' | 'review'
+type LegacyJiayinMode = JiayinStage | 'mock' | 'review'
+export type JiayinSessionMode = LegacyJiayinMode | `lesson:${string}` | `review:${string}`
 export type JiayinOpen = (unit: number, stage: JiayinSessionMode) => void
 
 export function JiayinPath({ onPlay }: { onPlay: JiayinOpen }) {
   const { progress, note } = useJiayinProgress()
   const next = nextJiayinStage(jiayinUnits, progress)
+  const nextLesson = nextJiayinLesson(jiayinLessons, progress) ?? jiayinLessons[0]
+  const reviewLesson = nextJiayinLessonReview(jiayinLessons, progress)
+  const lessonsDone = jiayinLessons.filter(lesson => progress.lessonsDone[lesson.id]).length
+  const checkedAnswers = jiayinLessons.filter(lesson => lesson.id.startsWith('q') && isJiayinExerciseIndependent(lastJiayinExercise(progress, `answer:${lesson.id}`))).length
+  const reviewCount = jiayinLessons.reduce((count, lesson) => count + jiayinLessonReviewSteps(lesson, progress).length, 0)
   const [word, setWord] = useState<JiayinWord | null>(null)
   const questions = jiayinItems.filter(item => item.id.startsWith('q'))
   const unaided = questions.filter(item => isUnaidedAttempt(lastJiayinAttempt(progress.attempts[item.id]))).length
@@ -32,18 +41,19 @@ export function JiayinPath({ onPlay }: { onPlay: JiayinOpen }) {
     <div className="jiayin-path">
       <section className="jiayin-hero">
         <span className="kicker-ink">嘉银 · Fokus wawancara · 15 Oktober 2026</span>
-        <h2>Pahami maksudnya. Jawab dengan bukti.</h2>
-        <p>16 unit bertahap · 48 pertanyaan · 6 studi kasus. Seluruh penjelasan dalam bahasa Indonesia, dengan Mandarin dan pinyin untuk latihan.</p>
-        <button className="btn" onClick={() => onPlay(next.unit, next.stage)}>
-          Lanjut: {JIAYIN_STAGE_LABEL[next.stage]}<small>{jiayinUnits.find(u => u.id === next.unit)?.title}</small>
+        <h2>Satu pertanyaan. Latih sampai bisa menjawab.</h2>
+        <p>16 bab · 73 pelajaran kecil. Ikuti alur HSK: belajar kata, ingat tanpa contoh, tulis kalimat, lalu jawab pewawancara sendiri.</p>
+        <button className="btn" onClick={() => onPlay(nextLesson.unit.id, `lesson:${nextLesson.id}`)}>
+          {lessonsDone ? 'Lanjut pelajaran' : 'Mulai pelajaran pertama'}<small>{nextLesson.item.questionId}</small>
         </button>
-        <div className="jiayin-summary"><span>{completed}/{jiayinUnits.length * JIAYIN_STAGES.length} tahap selesai</span><span>{unaided}/48 jawaban mandiri*</span><span>{retained}/48 konsisten lintas hari*</span></div>
-        <small>*Penilaian diri. Konsisten = jawaban mandiri pada sedikitnya dua hari berbeda; bukan skor pelafalan.</small>
+        <div className="jiayin-summary"><span>{lessonsDone}/73 pelajaran selesai</span><span>{checkedAnswers}/48 jawaban Mandarin mandiri diperiksa</span></div>
+        <small>Kata dan kalimat diperiksa seperti HSK. Jawaban alternatif memerlukan pemeriksa bahasa; hasil yang belum terverifikasi tetap tercatat sebagai latihan.</small>
       </section>
-      <div className="jiayin-learning-route" aria-label="Urutan belajar">{JIAYIN_STAGES.map((stage, index) => <span key={stage}><b>{index + 1}</b>{JIAYIN_STAGE_LABEL[stage]}</span>)}</div>
+      <div className="jiayin-learning-route" aria-label="Urutan belajar HSK">{JIAYIN_LEARNING_STAGES.map((stage, index) => <span key={stage}><b>{index + 1}</b>{stage}</span>)}</div>
+      <details className="jiayin-panel"><summary>Begini alur satu pelajaran</summary><ol className="jiayin-curriculum-explanation"><li>Kenali kata Mandarin dengan pinyin, arti, audio, dan contoh wawancara.</li><li>Pahami jawaban satu kalimat setiap kali.</li><li>Active recall: ketik atau gambar Hanzi dari arti Indonesia.</li><li>Ubah arti setiap kalimat menjadi Mandarin; periksa lalu perbaiki jawabanmu.</li><li>Jawab pertanyaan lengkap tanpa skrip, lalu cek pemahaman isi.</li><li>Kesalahan atau bantuan membuat latihan itu muncul kembali di akhir pelajaran dan pada pengulangan berikutnya.</li></ol><p>Buka pelajaran mana pun jika ingin fokus pada pertanyaan tertentu. Tombol utama menunjukkan urutan belajar yang disarankan.</p></details>
       <div className="jiayin-actions">
-        <button className="jiayin-secondary" onClick={() => onPlay(0, 'mock')}>Simulasi wawancara<small>12 pertanyaan + 3 kasus · pengukur waktu</small></button>
-        <button className="jiayin-secondary" onClick={() => onPlay(0, 'review')}>Ulangi bagian yang lemah<small>{due} latihan perlu dikerjakan atau diulang</small></button>
+        <button className="jiayin-secondary" onClick={() => onPlay(0, 'mock')}>Simulasi wawancara<small>12 pertanyaan + 3 kasus · penilaian isi olehmu</small></button>
+        <button className="jiayin-secondary" disabled={!reviewLesson} onClick={() => { if (reviewLesson) onPlay(reviewLesson.unit.id, `review:${reviewLesson.id}`) }}>Ulangi yang salah atau dibantu<small>{reviewCount ? `${reviewCount} kata, kalimat, atau jawaban perlu diulang` : 'Daftar ini terisi setelah kamu mencoba latihan'}</small></button>
       </div>
       <details className="jiayin-panel">
         <summary>Rencana sampai Kamis</summary>
@@ -53,10 +63,12 @@ export function JiayinPath({ onPlay }: { onPlay: JiayinOpen }) {
       <section className="jiayin-units" aria-label="Kurikulum Jiayin">
         {jiayinUnits.map(unit => {
           const done = progress.pathDone[String(unit.id)] ?? []
-          return <details className="jiayin-panel jiayin-unit" key={unit.id} open={unit.id === next.unit || undefined}>
-            <summary><span className="jiayin-unit-number">{String(unit.id).padStart(2, '0')}</span><span>{unit.title}<small>{unit.items.length} latihan · {JIAYIN_STAGES.filter(s => done.includes(s)).length}/{JIAYIN_STAGES.length} tahap</small></span></summary>
+          const lessons = jiayinLessons.filter(lesson => lesson.unit.id === unit.id)
+          return <details className="jiayin-panel jiayin-unit" key={unit.id} open={unit.id === nextLesson.unit.id || undefined}>
+            <summary><span className="jiayin-unit-number">{String(unit.id).padStart(2, '0')}</span><span>{unit.title}<small>{lessons.filter(lesson => progress.lessonsDone[lesson.id]).length}/{lessons.length} pelajaran selesai</small></span></summary>
             <p className="jiayin-unit-goal">{unit.teaching.goal}</p>
-            <div className="jiayin-stage-buttons">{JIAYIN_STAGES.map(stage => <button key={stage} data-done={done.includes(stage)} data-next={next.unit === unit.id && next.stage === stage} onClick={() => onPlay(unit.id, stage)}>{done.includes(stage) ? '✓ ' : ''}{JIAYIN_STAGE_LABEL[stage]}</button>)}</div>
+            <LearningPath kicker={`Bab ${String(unit.id).padStart(2, '0')}`} title={unit.title} subtitle="Pilih satu pertanyaan. Semua tahap belajar ada di dalamnya." items={lessons.map((lesson, index) => ({ id: lesson.id, label: lesson.item.number ? `Pertanyaan ${lesson.item.number}` : `Pelajaran ${index + 1}`, title: lesson.item.questionId, subtitle: `${lesson.words.length} kata · ${lesson.item.chunkId.length} kalimat · ${buildJiayinLessonSteps(lesson).length - 1} aktivitas`, state: progress.lessonsDone[lesson.id] ? 'done' : lesson.id === nextLesson.id ? 'current' : 'available', playable: true, onSelect: () => onPlay(unit.id, `lesson:${lesson.id}`) }))} />
+            <details className="jiayin-pattern"><summary>Latih satu bagian saja</summary><div className="jiayin-stage-buttons">{JIAYIN_STAGES.map(stage => <button key={stage} data-done={done.includes(stage)} onClick={() => onPlay(unit.id, stage)}>{done.includes(stage) ? '✓ ' : ''}{JIAYIN_STAGE_LABEL[stage]}</button>)}</div></details>
           </details>
         })}
       </section>
@@ -71,7 +83,8 @@ export function JiayinPath({ onPlay }: { onPlay: JiayinOpen }) {
       <details className="jiayin-panel"><summary>Perusahaan dan posisi · dari PDF</summary><p className="jiayin-source">{jiayinData.source.note}</p>
         {jiayinData.company.map(section => <details key={section.heading} className="jiayin-worksheet"><summary>{section.heading}</summary><p lang="zh-CN">{section.zh}</p><p>{section.id}</p><small>PDF hlm. {section.page} · {section.source}</small></details>)}
       </details>
-      <details className="jiayin-panel"><summary>Bank kosakata · 25 kata</summary><div className="jiayin-vocab-bank">{Array.from(new Map(jiayinUnits.flatMap(u => u.vocab).map(w => [w.zh, w])).values()).map(w => <button key={w.zh} onClick={() => setWord(w)}><strong lang="zh-CN">{w.zh}</strong><small>{w.pinyin}</small><span>{w.id}</span></button>)}</div></details>
+      <details className="jiayin-panel"><summary>Bank kosakata · 25 dari daftar PDF + {jiayinData.extraVocab.length} dari kalimatnya</summary><div className="jiayin-vocab-bank">{Array.from(new Map([...jiayinUnits.flatMap(u => u.vocab), ...jiayinData.extraVocab].map(w => [w.zh, w])).values()).map(w => <button key={w.zh} onClick={() => setWord(w)}><strong lang="zh-CN">{w.zh}</strong><small>{w.pinyin}</small><span>{w.id}</span></button>)}</div></details>
+      <details className="jiayin-panel"><summary>Catatan latihan sebelumnya</summary><p>{completed}/96 tahap versi awal selesai · {unaided}/48 jawaban dengan penilaian diri · {retained}/48 konsisten lintas hari. {due} pertanyaan dan kasus perlu dilatih atau diulang.</p><button className="jiayin-secondary" onClick={() => onPlay(next.unit, next.stage)}>Lanjut latihan per tahap sebelumnya</button></details>
       <p className="jiayin-source">{jiayinData.teachingNote} Sumber: {jiayinData.source.filename} · 31 halaman. Kemajuan dan catatan tersimpan di perangkat ini.</p>
       {word && <WordSheet word={word} onClose={() => setWord(null)} />}
     </div>
@@ -86,6 +99,11 @@ function WordSheet({ word, onClose }: { word: JiayinWord; onClose: () => void })
 }
 
 export function JiayinSession({ unit: unitId, stage, onClose, onPlay }: { unit: number; stage: JiayinSessionMode; onClose: () => void; onPlay: JiayinOpen }) {
+  if (stage.startsWith('lesson:') || stage.startsWith('review:')) return <JiayinLessonSession itemId={stage.slice(stage.indexOf(':') + 1)} review={stage.startsWith('review:')} onClose={onClose} onNextLesson={lesson => onPlay(lesson.unit.id, `lesson:${lesson.id}`)} />
+  return <LegacyJiayinSession unit={unitId} stage={stage as LegacyJiayinMode} onClose={onClose} onPlay={onPlay} />
+}
+
+function LegacyJiayinSession({ unit: unitId, stage, onClose, onPlay }: { unit: number; stage: LegacyJiayinMode; onClose: () => void; onPlay: JiayinOpen }) {
   const { progress, complete } = useJiayinProgress()
   const store = useStore()
   const unit = jiayinUnits.find(u => u.id === unitId)

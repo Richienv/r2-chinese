@@ -228,7 +228,7 @@ export function SentencePractice({ example, targetWords, grammar, lesson, extern
   )
 }
 
-function ResponsePractice({ example, targetWords, grammar, context, preferredMode, externallyAssisted, onAssistance, onVoiceStart, continueLabel, onComplete }: {
+export function ResponsePractice({ example, targetWords, grammar, context, preferredMode, externallyAssisted, onAssistance, onVoiceStart, continueLabel, onComplete, glosses = {}, taskLabel, onChecked }: {
   example: GrammarExample
   targetWords: string[]
   grammar?: string
@@ -239,6 +239,11 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   onVoiceStart?: () => void
   continueLabel: string
   onComplete: (result: ProductionResult, response: string) => void
+  /** Source-specific meanings for a course outside the HSK dictionary. */
+  glosses?: Record<string, string>
+  taskLabel?: string
+  /** Persist a checked outcome before closing the view can lose it. */
+  onChecked?: (assessment: ProductionAssessment, response: string, assisted: boolean) => void
 }) {
   const id = useId()
   const { prefs } = useStore()
@@ -260,6 +265,7 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   const request = useRef<AbortController | null>(null)
   const baseTranscript = useRef('')
   const disposed = useRef(false)
+  const checkedAssistance = useRef<boolean | null>(null)
   const latestValue = useRef(value)
   const hintPanel = useRef<HTMLDivElement>(null)
   const reviewPanel = useRef<HTMLDivElement>(null)
@@ -267,12 +273,13 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   const supported = canRecognizeMandarin()
   const listening = recognition.status === 'listening'
   const recording = listening || recognition.status === 'starting' || recognition.status === 'stopping'
-  const sourceClues = targetWords.slice(0, 4).map((word) => ({ zh: word, en: lookup(word)?.en })).filter((word) => word.en)
+  const usedAssistance = assisted || reviewed || (checkedAssistance.current ?? externallyAssisted)
+  const sourceClues = targetWords.slice(0, 4).map((word) => ({ zh: word, en: glosses[word] ?? lookup(word)?.en })).filter((word) => word.en)
   const feedbackState = checking ? 'thinking' : listening ? 'listening' : assessment?.accepted === true ? 'correct' : assessment ? 'retry' : 'idle'
-  const task = preferredMode === 'speaking' ? t('Reply in Mandarin: “{en}”', { en: example.en }) : t('Write in Mandarin: “{en}”', { en: example.en })
+  const task = taskLabel ?? (preferredMode === 'speaking' ? t('Reply in Mandarin: “{en}”', { en: example.en }) : t('Write in Mandarin: “{en}”', { en: example.en }))
   const review = useMemo(() => assessment ? reviewReply({
     task, response: value.trim(), expectedZh: example.zh, assessment,
-    glosses: Object.fromEntries(targetWords.flatMap((word) => { const gloss = lookup(word)?.en?.split(/[;,]/)[0]?.trim(); return gloss ? [[word, gloss]] : [] })),
+    glosses: Object.fromEntries(targetWords.flatMap((word) => { const gloss = glosses[word] ?? lookup(word)?.en?.split(/[;,]/)[0]?.trim(); return gloss ? [[word, gloss]] : [] })),
   }) : null, [assessment]) // eslint-disable-line react-hooks/exhaustive-deps
   const change = review && previous ? compareReviews(previous, review) : null
   const reviewNotes = assessment ? [...new Set([assessment.feedback, ...assessment.issues].filter(Boolean))] : []
@@ -360,6 +367,10 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
       const result = await assessProduction(prompt(), controller.signal)
       if (disposed.current || controller.signal.aborted) return
       setAssessment(result)
+      if (onChecked) {
+        checkedAssistance.current = assisted || externallyAssisted
+        onChecked(result, value.trim(), checkedAssistance.current)
+      }
       setReviewNote(0)
       setReviewed(false)
       // The reference/correction is now visible; persist that exposure before
@@ -379,6 +390,10 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
   function compareLocally() {
     const result = sourceAssessment(prompt())
     setAssessment(result)
+    if (onChecked) {
+      checkedAssistance.current = assisted || externallyAssisted
+      onChecked(result, value.trim(), checkedAssistance.current)
+    }
     setReviewNote(0)
     if (result.accepted !== true) onAssistance?.()
     setError('')
@@ -418,7 +433,6 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
     recognizer.current?.cancel()
     stopSpeech()
     const correct = assessment.accepted === true
-    const usedAssistance = assisted || reviewed || externallyAssisted
     const words = correct ? assessment.usedWords : targetWords
     onComplete({
       correct,
@@ -511,7 +525,7 @@ function ResponsePractice({ example, targetWords, grammar, context, preferredMod
             {targetWords.length > 0 && <div className="production-clues"><span className="production-speaker">{t('Lesson words')}</span>{targetWords.map((word) => <span key={word} lang="zh-CN" data-used={assessment.usedWords.includes(word)}>{word}{prefs.showEnglish ? ` · ${assessment.usedWords.includes(word) ? t('used') : t('in the book')}` : ''}</span>)}</div>}
           </details>}
           <StudyDisplayControls />
-          {prefs.showEnglish && (assisted || externallyAssisted) && <p className="production-meta">{t('Assisted practice. Try again from memory on your next review.')}</p>}
+          {prefs.showEnglish && usedAssistance && <p className="production-meta">{t('Assisted practice. Try again from memory on your next review.')}</p>}
         </div>
       )}
     </div>
