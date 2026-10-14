@@ -61,7 +61,7 @@ export const COURSE_META: Record<
     id: 'jiayin',
     title: 'Wawancara Jiayin',
     titleZh: '嘉银面试',
-    blurb: 'Fokus 15 Oktober · 16 unit · penjelasan Indonesia',
+    blurb: 'Global MT · English + Indonesia · Mandarin opsional',
   },
 }
 

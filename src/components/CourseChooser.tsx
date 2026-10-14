@@ -10,7 +10,7 @@ const COURSE_BOOKS: Record<CourseId, { mark: string; spine: string; subtitle: st
   magang: { mark: 'AI', spine: '实习', subtitle: t('AI internship preparation'), topic: t('Careers') },
   interview: { mark: '总', spine: t('OFFICE'), subtitle: t('Interview preparation'), topic: t('Practice') },
   books: { mark: '读', spine: t('BOOKS'), subtitle: t('Five books · practical ideas'), topic: t('Reading') },
-  jiayin: { mark: '嘉', spine: 'JIAYIN', subtitle: '16 unit · penjelasan Indonesia', topic: 'Fokus wawancara' },
+  jiayin: { mark: 'MT', spine: 'JIAYIN', subtitle: 'English + Indonesia · Mandarin opsional', topic: 'Global Management Trainee' },
 }
 
 function CourseBook({ id, onSelect }: { id: CourseId; onSelect: () => void }) {

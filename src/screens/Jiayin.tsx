@@ -4,6 +4,7 @@ import { HearButton } from '../components/Hear'
 import { Sheet } from '../components/Sheet'
 import { LearningPath } from '../components/LearningPath'
 import { JiayinLessonSession } from './JiayinLesson'
+import { JiayinEnglishPath, JiayinEnglishSession } from './JiayinEnglish'
 import { jiayinData, jiayinItems, jiayinLessons, jiayinUnits, useJiayinProgress } from '../lib/jiayin'
 import { buildJiayinLessonSteps, isJiayinExerciseIndependent, JIAYIN_LEARNING_STAGES, jiayinLessonReviewSteps, lastJiayinExercise, nextJiayinLesson, nextJiayinLessonReview } from '../lib/jiayinLesson'
 import {
@@ -20,10 +21,16 @@ import { useStore } from '../store/store'
 import '../styles/jiayin.css'
 
 type LegacyJiayinMode = JiayinStage | 'mock' | 'review'
-export type JiayinSessionMode = LegacyJiayinMode | `lesson:${string}` | `review:${string}`
+export type JiayinSessionMode = LegacyJiayinMode | `lesson:${string}` | `review:${string}` | `english:${string}` | 'english-mock' | 'english-review'
 export type JiayinOpen = (unit: number, stage: JiayinSessionMode) => void
 
 export function JiayinPath({ onPlay }: { onPlay: JiayinOpen }) {
+  const [mandarin, setMandarin] = useState(false)
+  if (!mandarin) return <JiayinEnglishPath onPlay={onPlay} onMandarin={() => setMandarin(true)} />
+  return <><button className="jiayin-secondary" onClick={() => setMandarin(false)}>Kembali ke persiapan English</button><JiayinMandarinPath onPlay={onPlay} /></>
+}
+
+function JiayinMandarinPath({ onPlay }: { onPlay: JiayinOpen }) {
   const { progress, note } = useJiayinProgress()
   const next = nextJiayinStage(jiayinUnits, progress)
   const nextLesson = nextJiayinLesson(jiayinLessons, progress) ?? jiayinLessons[0]
@@ -99,6 +106,7 @@ function WordSheet({ word, onClose }: { word: JiayinWord; onClose: () => void })
 }
 
 export function JiayinSession({ unit: unitId, stage, onClose, onPlay }: { unit: number; stage: JiayinSessionMode; onClose: () => void; onPlay: JiayinOpen }) {
+  if (stage.startsWith('english')) return <JiayinEnglishSession mode={stage} onClose={onClose} onPlay={onPlay} />
   if (stage.startsWith('lesson:') || stage.startsWith('review:')) return <JiayinLessonSession itemId={stage.slice(stage.indexOf(':') + 1)} review={stage.startsWith('review:')} onClose={onClose} onNextLesson={lesson => onPlay(lesson.unit.id, `lesson:${lesson.id}`)} />
   return <LegacyJiayinSession unit={unitId} stage={stage as LegacyJiayinMode} onClose={onClose} onPlay={onPlay} />
 }

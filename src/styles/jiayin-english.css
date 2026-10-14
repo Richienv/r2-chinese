@@ -1,0 +1,25 @@
+.jiayin-english-hero h2 { max-width:24ch; }
+.jiayin-english-tags { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 20px; }
+.jiayin-english-tags span { border:1px solid var(--line-2); border-radius:999px; padding:7px 10px; font-size:11px; }
+.jiayin-english-path h3 { font-size:18px; line-height:1.5; margin:0 0 12px; }
+.jiayin-english-positioning h3 { font-size:20px; line-height:1.6; font-weight:550; }
+.jiayin-english-pillars { display:grid; gap:0; }
+.jiayin-english-pillars details { border-top:1px solid var(--line-2); padding:14px 0; }
+.jiayin-english-pillars summary { display:flex; gap:12px; align-items:baseline; }
+.jiayin-english-pillars summary span { font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.jiayin-english-question-list { display:grid; gap:8px; }
+.jiayin-english-question { width:100%; display:grid; grid-template-columns:auto 1fr auto; align-items:start; gap:12px; border:1px solid var(--line-2); border-radius:12px; padding:14px 12px; text-align:left; background:var(--card); color:var(--ink); min-height:64px; }
+.jiayin-english-question strong { font-size:15px; line-height:1.6; font-weight:650; }
+.jiayin-english-question small { display:block; font-size:11px; line-height:1.6; color:var(--muted); margin-top:6px; }
+.jiayin-english-status { color:var(--red-deep); font-size:11px; padding-top:9px; }
+.jiayin-english-back-question { border-top:1px solid var(--line-2); padding:12px 0; }
+.jiayin-english-back-question small { color:var(--muted); font-size:12px; }
+.jiayin-english-path a.jiayin-secondary { text-decoration:none; display:block; }
+.jiayin-english-answer .jiayin-english-intent { color:var(--muted); font-size:14px; }
+.jiayin-english-answer .jiayin-reference p[lang=en] { font-size:17px; line-height:1.9; }
+.jiayin-english-check, .jiayin-english-result { display:grid; gap:16px; border-top:1px solid var(--line-2); padding-top:20px; }
+.jiayin-english-evidence { display:grid; gap:10px; }
+.jiayin-english-preserve-lines { white-space:pre-wrap; }
+.jiayin-english-result .btn, .jiayin-done .btn { height:auto; min-height:56px; white-space:normal; padding:14px; }
+.jiayin-english-path button:focus-visible, .jiayin-english-path a:focus-visible { outline:2px solid var(--red-deep); outline-offset:3px; }
+@media(max-width:390px) { .jiayin-english-question { gap:8px; padding:12px 9px; }.jiayin-english-question strong { font-size:14px; }.jiayin-english-question .jiayin-unit-number { padding:7px; }.jiayin-english-tags { gap:6px; } }

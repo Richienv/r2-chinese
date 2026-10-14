@@ -1,0 +1,852 @@
+{
+  "title": "Global MT · Indonesia & overseas business",
+  "language": "English",
+  "explanationLanguage": "Indonesia",
+  "sourceNote": "Disusun dari materi wawancara 11 Oktober 2026, CV International Business / Digital Transformation, dan arahan persiapan yang kamu berikan pada 14 Oktober. English adalah asumsi latihan, bukan konfirmasi bahasa wawancara. Contoh jawaban perlu disesuaikan dengan pengalaman asli.",
+  "positioning": "An Indonesian business operator and project leader who uses technology and data to connect stakeholder needs with execution.",
+  "positioningId": "Tampilkan diri sebagai orang yang memahami kebutuhan bisnis Indonesia, mampu mengoordinasikan tim, dan mengeksekusi proyek dengan teknologi serta data.",
+  "pillars": [
+    {
+      "id": "stakeholders",
+      "title": "Stakeholder & bisnis Indonesia",
+      "proof": "Karunia: membantu direktur dalam pengadaan, pertemuan klien, dan koordinasi mitra Bayan, Kideco, SANY. CV Kid Gemilang: pemasok, PO, pengiriman, persediaan.",
+      "relevance": "Komunikasi mitra, persiapan negosiasi, proposal kerja sama, dan tindak lanjut kanal Indonesia.",
+      "boundary": "Pengalaman mitra industri dapat dipindahkan ke BD. Jangan menjanjikan jaringan mitra fintech, nilai kontrak, atau otoritas penjualan yang belum terbukti."
+    },
+    {
+      "id": "execution",
+      "title": "Project management & koordinasi",
+      "proof": "Tim 15 orang, 12 sistem internal, ERP sekitar 1.000 pengguna harian; Sprint, Slack, kebutuhan lintas departemen.",
+      "relevance": "Menyelaraskan prioritas, menjaga owner dan deadline, serta membawa proyek kecil sampai bisa digunakan.",
+      "boundary": "Bedakan hasil tim dari tindakan pribadi. Siapkan satu modul dan satu keputusan nyata."
+    },
+    {
+      "id": "bridge",
+      "title": "Jembatan China–Indonesia",
+      "proof": "Indonesia bahasa ibu, English lancar, GMBA berbahasa Inggris di Zhejiang University; pengalaman Indonesia dan studi Malaysia/China.",
+      "relevance": "Menjelaskan kebutuhan lokal kepada HQ dan mengubah keputusan HQ menjadi langkah yang jelas untuk tim Indonesia.",
+      "boundary": "Tinggal di China bukan bukti pengalaman kerja korporat China. Mandarin sekitar HSK 3–4; rincian kompleks memakai English atau konfirmasi tertulis."
+    },
+    {
+      "id": "data",
+      "title": "Business & data thinking",
+      "proof": "10.000+ catatan dalam proyek bersama tim Bayan; ERP dan agen bisnis AI; dasar database dari Kambyan.",
+      "relevance": "Riset pasar, laporan, kualitas data, funnel, operasi dan koordinasi risiko.",
+      "boundary": "ERP bukan pengalaman underwriting. Angka 75% memerlukan metrik dan bukti; Copilot 95,1% adalah uji pengembangan."
+    },
+    {
+      "id": "founder",
+      "title": "Founder & kebutuhan pelanggan",
+      "proof": "CV Kid Gemilang; Integra ERP untuk SME Indonesia; WeUseAI dan pekerjaan klien.",
+      "relevance": "Mengenali kebutuhan pelanggan, menguji solusi, memikirkan penerimaan pasar, dan mengambil tanggung jawab hasil.",
+      "boundary": "Integra dan hosted WeUseAI sebelum peluncuran menurut sumber. Jangan mengklaim pelanggan berbayar atau traction yang belum ada."
+    }
+  ],
+  "role": {
+    "summary": "Program MT overseas dengan arah Indonesia: pelatihan Shanghai, paparan produk, risiko, operasi dan BD/channel, lalu tanggung jawab yang meningkat berdasarkan hasil.",
+    "tasks": [
+      "Pelajari perjalanan pelanggan dan alur transaksi sampai layanan lanjutan.",
+      "Koordinasikan kebutuhan HQ dengan stakeholder Indonesia, termasuk dokumen dan rapat.",
+      "Bantu evaluasi mitra, persiapan proposal dan negosiasi.",
+      "Riset pengguna/kompetitor, analisis data, dan laporan yang menghasilkan keputusan.",
+      "Ambil proyek kecil: tujuan, owner, deadline, pilot, dan ukuran hasil."
+    ],
+    "confirm": "Durasi training, rotasi aktual, mentor 1-on-1, entitas pemberi kerja, ukuran hasil 90 hari, dan penempatan perlu dikonfirmasi. Program MT tidak menjamin langsung menjadi manajer atau kepala bisnis Indonesia.",
+    "businessEn": "Based on the preparation brief, Jiayin connects borrowers with financial institutions and supports the business through technology, operations and risk-related services.",
+    "journeyId": "Alur yang perlu kamu jelaskan: kebutuhan pengguna > akuisisi dan onboarding > verifikasi informasi > pengajuan dan risk approval > pencairan > repayment dan layanan lanjutan. Setiap langkah punya data, owner dan kontrol yang berbeda.",
+    "tradeoffsId": "Nilai pengalaman pengguna, biaya, kualitas pembayaran, keluhan dan batas risiko bersama-sama. Growth atau CAC murah saja belum cukup; keputusan kredit dan persetujuan kepatuhan tetap pada owner yang berwenang."
+  },
+  "resume": [
+    {
+      "id": "karunia",
+      "title": "Karunia Wahananusa / PT Karunia Rental Indonesia",
+      "period": "Juni 2023–Juni 2025",
+      "explain": "IT Staff kemudian IT Specialist; juga fungsi IT team lead dan membantu direktur. Ceritakan kebutuhan bisnis, koordinasi stakeholder, proyek, dan penggunaan sistem.",
+      "numbers": "Tim ERP 15 / 12 sistem / sekitar 1.000 pengguna harian; proyek agen bisnis terpisah: tim 10 / 8 bulan / sekitar 100 pengguna.",
+      "followup": "Apa keputusanmu sendiri? Departemen mana? Siapa menentukan keputusan akhir? Bagaimana hasil diukur?",
+      "question": "erp"
+    },
+    {
+      "id": "kid-gemilang",
+      "title": "CV Kid Gemilang",
+      "period": "2023–2025",
+      "explain": "Sourcing, quotation, pembelian dari 8 pemasok, cocokkan delivery dengan PO, dan inventory valuation; lebih dari 1.000 komponen kendaraan per bulan.",
+      "numbers": "1.000+ komponen/bulan bukan 1.000 pengguna ERP.",
+      "followup": "Ceritakan satu pesanan, masalah supplier, pemeriksaan PO, dan tindakanmu.",
+      "question": "supply"
+    },
+    {
+      "id": "kambyan",
+      "title": "Kambyan Network, Malaysia",
+      "period": "2022–2023; bulan akhir perlu dicocokkan dengan CV yang dikirim",
+      "explain": "Database-engineering internship untuk otomasi drone perkebunan: struktur data, cleaning, SQL, data operasional dan hasil image recognition.",
+      "numbers": "CV lama mencantumkan Januari 2023; materi wawancara terbaru mencatat Juli 2023. Verifikasi sebelum memakai bulan pasti.",
+      "followup": "Sebut satu dataset, masalah kualitas, dan bagaimana kamu memeriksa hasilnya.",
+      "question": "kambyan"
+    },
+    {
+      "id": "integra",
+      "title": "Integra ERP / Copilot",
+      "period": "2025–sekarang; sebelum peluncuran menurut sumber",
+      "explain": "Founder dan sole developer. Tekankan kebutuhan SME, proses bisnis, tanggung jawab dari kebutuhan sampai solusi. Rincian stack hanya jika diminta.",
+      "numbers": "Copilot 95,1% adalah dev-set; bukan blind test atau akurasi produksi.",
+      "followup": "Siapa pengguna sasaran? Masalah apa? Apa yang sudah dibangun dan apa yang belum dibuktikan di pasar?",
+      "question": "founder"
+    },
+    {
+      "id": "weuseai",
+      "title": "WeUseAI",
+      "period": "2025–sekarang",
+      "explain": "Pisahkan hosted product yang pre-launch dari pekerjaan klien TRO Creative / program creator-barter Hansaplast Indonesia yang tercantum di CV.",
+      "numbers": "Jelaskan scope dan hasil pekerjaan klien yang bisa kamu tunjukkan; jangan menyamakan prototype dengan production traction.",
+      "followup": "Apa business problem klien, apa yang kamu kirim, dan apa kontribusimu sendiri?",
+      "question": "ventures"
+    },
+    {
+      "id": "education",
+      "title": "Taylor’s + Zhejiang University GMBA",
+      "period": "GMBA September 2025–diperkirakan Juni 2027",
+      "explain": "Computer Science/Data Science sebagai dasar analitis; GMBA menghubungkan praktik dengan strategi, corporate finance, operations, dan international business.",
+      "numbers": "89,21/100 adalah nilai semester terbaru. Taylor’s: first-class honours; angka/tanggal persis ikuti dokumen yang dikirim (versi lama berbeda).",
+      "followup": "Hubungkan satu proyek kuliah dengan masalah bisnis; course project bukan pengalaman memimpin bisnis tersebut.",
+      "question": "education"
+    }
+  ],
+  "questions": [
+    {
+      "id": "intro",
+      "sourceId": "intro-short",
+      "pillar": "bridge",
+      "priority": true,
+      "title": "Pembuka 60 detik",
+      "questionEn": "Tell me about yourself.",
+      "questionId": "Perkenalan: siapa kamu, bukti bisnis dan proyek, lalu relevansi MT.",
+      "answerEn": "I'm Richie from Indonesia, currently studying in the English-taught Global MBA at Zhejiang University. My background combines business coordination with technology and data. At Karunia, I assisted the director with purchasing and client coordination, and led a 15-person team that delivered 12 internal systems. The ERP later reached around 1,000 daily users. I want to bring that experience to an overseas business team supporting Indonesia, while learning fintech through rotations and concrete responsibilities.",
+      "coachId": "Urutan: Indonesia + GMBA > koordinasi bisnis > bukti tim > kontribusi MT. Jangan membuka dengan daftar bahasa pemrograman.",
+      "outline": [
+        "Indonesia / GMBA",
+        "Karunia: bisnis + tim",
+        "15 orang / 12 sistem",
+        "Kontribusi Indonesia + belajar fintech"
+      ],
+      "criteria": [
+        "Identitas dan GMBA jelas",
+        "Ada bukti bisnis dan hasil tim",
+        "Relevansi dengan MT Indonesia jelas"
+      ],
+      "followupEn": "What did you personally contribute to those projects?",
+      "seconds": 60,
+      "evidenceFields": []
+    },
+    {
+      "id": "stakeholders",
+      "sourceId": "q15",
+      "pillar": "stakeholders",
+      "priority": true,
+      "title": "Stakeholder Indonesia & BD",
+      "questionEn": "How does your Indonesian business experience prepare you for this role?",
+      "questionId": "Buktikan pengalaman stakeholder yang dapat dipindahkan ke BD dan operasi Indonesia.",
+      "answerEn": "At Karunia, I assisted the director with purchasing, client meetings and partner coordination involving companies such as Bayan, Kideco and SANY. My contribution was to understand business needs, prepare information and follow up on the next actions. That experience is relevant to partner communication and cooperation proposals in Indonesia. I would apply the same discipline in fintech while learning the product, partner requirements and local processes. I would not treat industrial relationships as an existing fintech sales network.",
+      "coachId": "Saran temanmu tentang relasi industri relevan. Perjelas siapa mitranya, tindakanmu, dan keputusan direktur; tambahkan satu kejadian asli sebelum wawancara.",
+      "outline": [
+        "Konteks mitra",
+        "Informasi / tindakan saya",
+        "Keputusan owner",
+        "Tindak lanjut",
+        "Relevansi BD"
+      ],
+      "criteria": [
+        "Peran pribadi dan keputusan direktur dibedakan",
+        "Satu contoh stakeholder nyata tersedia",
+        "Relevansi partner coordination jelas"
+      ],
+      "followupEn": "Walk me through one meeting or purchasing negotiation you supported.",
+      "seconds": 90,
+      "evidenceFields": [
+        "Kebutuhan stakeholder dan konteks pertemuan",
+        "Informasi yang saya siapkan dan tindakan saya",
+        "Keputusan akhir owner, hasil, dan tindak lanjut"
+      ]
+    },
+    {
+      "id": "erp",
+      "sourceId": "q10",
+      "pillar": "execution",
+      "priority": true,
+      "title": "ERP sebagai bukti eksekusi",
+      "questionEn": "Tell me about a project you led across different departments.",
+      "questionId": "Jelaskan ERP sebagai proyek bisnis lintas fungsi, lalu beri satu modul asli.",
+      "answerEn": "A representative project is Karunia's internal ERP, covering logistics, purchasing and billing. I contributed to core development and coordinated business requirements and team delivery. Our 15-person team delivered 12 internal systems, and the ERP later reached around 1,000 daily users. The business value was getting departments to work with consistent processes and data. I can walk you through one specific module to show my own decision and its outcome.",
+      "coachId": "Angka skala adalah hasil tim. Isi satu modul, satu keputusan dan bukti hasil. Kalimat terakhir adalah pengantar; jangan berhenti tanpa menjelaskan modul asli.",
+      "outline": [
+        "Masalah departemen",
+        "Keputusan pribadi",
+        "Koordinasi tim",
+        "Hasil terukur",
+        "Pelajaran MT"
+      ],
+      "criteria": [
+        "Modul dan masalah pengguna konkret",
+        "Kontribusi pribadi dibedakan dari tim",
+        "Bukti hasil dan batas metrik dijelaskan"
+      ],
+      "followupEn": "What trade-off did you make, and how did you know the solution worked?",
+      "seconds": 90,
+      "evidenceFields": [
+        "Nama modul, pengguna, dan masalah sebelum",
+        "Keputusan saya dan alternatif yang tidak dipilih",
+        "Hasil, periode, sumber bukti, dan kontribusi tim"
+      ]
+    },
+    {
+      "id": "team",
+      "sourceId": "q11",
+      "pillar": "execution",
+      "priority": false,
+      "title": "Memimpin tim 15 orang",
+      "questionEn": "How did you manage the team and competing priorities?",
+      "questionId": "Jelaskan pembagian kerja, Sprint, prioritas dan satu keputusan nyata.",
+      "answerEn": "We used sprints and Slack to track work at Karunia. I translated business needs into development tasks and coordinated priorities and progress. My focus was to make the objective, owner and delivery standard clear. When priorities competed, I would compare business impact, deadlines and dependencies, then confirm the trade-off with the responsible decision-maker. I can illustrate this with a sprint decision I actually handled.",
+      "coachId": "Jelaskan proses mengelola tim, bukan sekadar ukuran tim. Isi contoh satu Sprint dan pihak yang menyepakati prioritas.",
+      "outline": [
+        "Tujuan",
+        "Owner",
+        "Prioritas / kapasitas",
+        "Standar hasil",
+        "Keputusan Sprint"
+      ],
+      "criteria": [
+        "Cara kerja tim konkret",
+        "Prioritas punya alasan bisnis",
+        "Contoh keputusan pribadi tersedia"
+      ],
+      "followupEn": "What did you do when a department disagreed with the priority?",
+      "seconds": 90,
+      "evidenceFields": [
+        "Sprint atau kebutuhan yang diprioritaskan",
+        "Trade-off, keputusan saya, dan persetujuan owner",
+        "Hasil dan bagaimana saya mengomunikasikannya"
+      ]
+    },
+    {
+      "id": "bridge",
+      "sourceId": "q37",
+      "pillar": "bridge",
+      "priority": true,
+      "title": "Menghubungkan HQ dan Indonesia",
+      "questionEn": "How would you bridge the Shanghai team and Indonesian stakeholders?",
+      "questionId": "Jembatan bisnis berarti pemahaman dan keputusan yang sama, lalu eksekusi.",
+      "answerEn": "I would first make sure both sides agree on the business objective and definitions. I would explain local needs with concrete examples, clarify misunderstandings, and document decisions, owners and deadlines. My Indonesian experience and English-taught GMBA in China help me understand both contexts. I would use English for complex business discussions and written confirmation where needed, while continuing to improve my Mandarin. The goal is that both teams can act on the same understanding.",
+      "coachId": "Jangan mengklaim Mandarin bisnis lancar atau tahu semua budaya kerja China. Bukti terbaik: satu perbedaan pemahaman yang kamu luruskan dengan contoh dan action list.",
+      "outline": [
+        "Tujuan sama",
+        "Contoh lokal",
+        "Konfirmasi makna",
+        "Owner + deadline",
+        "Bahasa kerja akurat"
+      ],
+      "criteria": [
+        "Tujuan dan definisi disamakan",
+        "Keputusan, owner dan deadline jelas",
+        "Batas kemampuan bahasa akurat"
+      ],
+      "followupEn": "What would you do if the two teams reported different numbers?",
+      "seconds": 75,
+      "evidenceFields": []
+    },
+    {
+      "id": "data",
+      "sourceId": "q14",
+      "pillar": "data",
+      "priority": true,
+      "title": "Data untuk keputusan bisnis",
+      "questionEn": "Give an example of using data to improve business operations.",
+      "questionId": "Proyek Bayan: jelaskan data, peranmu, validasi, dan manfaat bisnis.",
+      "answerEn": "In projects with the Bayan team, we consolidated more than 10,000 records covering logistics, attendance, item status, payroll and overtime. My contribution was to align the data structure with business processes and reduce manual handling. The relevant skill is turning fragmented operational information into something teams can use consistently. I can explain one real data-quality issue, how I checked it and which result we could substantiate.",
+      "coachId": "Bayan adalah mitra, bukan pemberi kerja. Isi satu data exception dan validasi asli; jangan mengarang persentase penghematan.",
+      "outline": [
+        "Data dan pertanyaan bisnis",
+        "Masalah kualitas",
+        "Validasi saya",
+        "Manfaat yang terbukti"
+      ],
+      "criteria": [
+        "Sumber dan tujuan data jelas",
+        "Satu validasi / exception asli tersedia",
+        "Hasil dibedakan dari asumsi"
+      ],
+      "followupEn": "How did you check that the combined records were accurate?",
+      "seconds": 90,
+      "evidenceFields": [
+        "Dataset dan masalah bisnis",
+        "Exception nyata dan aturan validasi saya",
+        "Cara rekonsiliasi dan hasil yang dapat dibuktikan"
+      ]
+    },
+    {
+      "id": "agent",
+      "sourceId": "q13",
+      "pillar": "data",
+      "priority": false,
+      "title": "Agen bisnis AI vs ERP",
+      "questionEn": "How was your business AI agent different from the ERP project?",
+      "questionId": "Bedakan dua proyek dan jelaskan akses informasi bisnis.",
+      "answerEn": "The ERP and the business AI agent were related but had different scopes. The agent project involved a ten-person team over about eight months and was used by around 100 staff for natural-language queries, document retrieval and business documents. I contributed to requirements, architecture and core code. The business purpose was to make finance, purchasing and logistics information easier to access. Those figures are separate from the 15-person team and the ERP's roughly 1,000 daily users.",
+      "coachId": "Dahulukan masalah akses informasi dan keputusan bisnis. Jelaskan Text-to-SQL atau stack hanya jika diminta.",
+      "outline": [
+        "Masalah akses informasi",
+        "Kontribusi saya",
+        "10 / 8 bulan / 100",
+        "Bedakan dari ERP"
+      ],
+      "criteria": [
+        "Cakupan dua proyek dibedakan",
+        "Angka tidak tertukar",
+        "Kontribusi dan manfaat bisnis jelas"
+      ],
+      "followupEn": "What controls prevented incorrect or unauthorised answers?",
+      "seconds": 75,
+      "evidenceFields": []
+    },
+    {
+      "id": "founder",
+      "sourceId": "q18",
+      "pillar": "founder",
+      "priority": true,
+      "title": "Founder & customer thinking",
+      "questionEn": "What has building your own product taught you about business?",
+      "questionId": "Integra: kebutuhan SME, keputusan produk dan status aktual.",
+      "answerEn": "With Integra ERP, I am developing a product for Indonesian SMEs and taking responsibility for the application and architecture. It has made me think about customer workflows, usable solutions and how a product could fit the local market. It is still pre-launch, so I distinguish what I have built from market adoption that has not yet been proven. The transferable strength is ownership from the business problem through execution, while being clear about the evidence behind each claim.",
+      "coachId": "Ini bukti ownership dan customer thinking, bukan bukti traction. Tambahkan satu keputusan produk yang benar-benar kamu ambil.",
+      "outline": [
+        "Pengguna sasaran",
+        "Workflow / masalah",
+        "Keputusan produk",
+        "Pre-launch",
+        "Ownership"
+      ],
+      "criteria": [
+        "Pengguna dan masalah bisnis jelas",
+        "Satu keputusan produk nyata tersedia",
+        "Status pre-launch dinyatakan akurat"
+      ],
+      "followupEn": "What have you validated, and what still needs validation?",
+      "seconds": 75,
+      "evidenceFields": [
+        "SME dan workflow yang ditargetkan",
+        "Satu keputusan produk saya dan alasannya",
+        "Apa yang telah diuji dan belum terbukti di pasar"
+      ]
+    },
+    {
+      "id": "why-mt",
+      "sourceId": "q06",
+      "pillar": "execution",
+      "priority": true,
+      "title": "Mengapa MT setelah memimpin tim?",
+      "questionEn": "Why join a management trainee programme after leading a team and founding products?",
+      "questionId": "Pengalaman tetap berguna; fintech baru, rotasi memberi konteks bisnis.",
+      "answerEn": "I already have project and team experience, but overseas fintech is a new domain for me. I want to understand the product, operations, risk and partner processes before taking broader responsibility. Rotations would let me build that foundation while contributing through coordination, data and execution. I am comfortable starting with concrete work and learning from feedback. I care about the growth path and actual responsibility, rather than the title alone.",
+      "coachId": "Tunjukkan kesiapan rotasi dan tugas awal. Jalur MT adalah kesempatan mengambil tanggung jawab secara bertahap, bukan janji langsung jadi manager.",
+      "outline": [
+        "Pengalaman transferable",
+        "Fintech bidang baru",
+        "Rotasi",
+        "Kontribusi awal",
+        "Tanggung jawab bertahap"
+      ],
+      "criteria": [
+        "Alasan MT masuk akal",
+        "Bersedia mengerjakan tugas dasar",
+        "Kontribusi dan belajar berjalan bersamaan"
+      ],
+      "followupEn": "Why not stay a founder, and how will you respond when you are not the final decision-maker?",
+      "seconds": 60,
+      "evidenceFields": []
+    },
+    {
+      "id": "why-jiayin",
+      "sourceId": "q02",
+      "pillar": "bridge",
+      "priority": true,
+      "title": "Mengapa Jiayin / overseas business?",
+      "questionEn": "Why are you interested in Jiayin's overseas business role?",
+      "questionId": "Hubungkan Indonesia, HQ, tugas MT dan kontribusi awal.",
+      "answerEn": "The role interests me because it connects Indonesian market understanding with product, operations and cross-border execution. I have worked on business coordination and system delivery in Indonesia and am now studying in China. I want to apply that combination to understanding local users, coordinating with headquarters and improving business processes. I would first learn the team's product and priorities, then contribute through reporting, partner follow-up or a focused operational project.",
+      "coachId": "Jawab berdasarkan tugas yang dijelaskan, bukan menghafal angka perusahaan. Training, entitas, mentor dan scope aktual tetap dikonfirmasi.",
+      "outline": [
+        "Tugas Indonesia–HQ",
+        "Pengalaman relevan",
+        "Belajar produk",
+        "Kontribusi awal konkret"
+      ],
+      "criteria": [
+        "Alasan terkait tugas posisi",
+        "Ada hubungan dengan pengalaman",
+        "Kontribusi awal realistis"
+      ],
+      "followupEn": "Which rotation would you contribute to first, and why?",
+      "seconds": 60,
+      "evidenceFields": []
+    },
+    {
+      "id": "financial-gap",
+      "sourceId": "q22",
+      "pillar": "data",
+      "priority": true,
+      "title": "Belum punya pengalaman kredit",
+      "questionEn": "You do not have lending experience. Why should we hire you?",
+      "questionId": "Akui batas domain, tunjukkan kemampuan transferable dan tugas awal.",
+      "answerEn": "I would not describe ERP experience as lending experience. My transferable foundation is business processes, data quality and team delivery. I would learn the product, risk definitions and local requirements, then start with reporting, exception handling or process improvement under the appropriate owners. That lets me contribute while learning the domain. I would work with risk and compliance specialists rather than claim authority over credit decisions.",
+      "coachId": "Pengalaman teknis adalah alat. Tunjukkan belajar cepat lewat tugas konkret; jangan mengaku underwriting atau memutuskan kelayakan kredit.",
+      "outline": [
+        "Akui gap",
+        "Proses / data / tim",
+        "Pelajari produk dan risiko",
+        "Tugas awal",
+        "Owner domain"
+      ],
+      "criteria": [
+        "Tidak menyamakan ERP dengan kredit",
+        "Kontribusi awal realistis",
+        "Batas risiko dan otoritas jelas"
+      ],
+      "followupEn": "What would you prioritise in your first 30 days?",
+      "seconds": 60,
+      "evidenceFields": []
+    },
+    {
+      "id": "failure",
+      "sourceId": "q34",
+      "pillar": "execution",
+      "priority": true,
+      "title": "Satu kegagalan asli",
+      "questionEn": "Tell me about a mistake or failure and what you changed afterward.",
+      "questionId": "Siapkan kejadian asli; tidak ada cerita jadi yang dibuatkan.",
+      "answerEn": "Use a real incident: what happened, what you were responsible for, the impact, how you discovered it, what you did to recover, and what changed afterward. Keep the focus on your decision and the lesson, without blaming the team.",
+      "coachId": "Ini kerangka, bukan jawaban siap ucap. Isi kejadian dan bukti sebelum menyebut jawabanmu siap.",
+      "outline": [
+        "Kejadian",
+        "Tanggung jawab",
+        "Dampak",
+        "Pemulihan",
+        "Pencegahan"
+      ],
+      "criteria": [
+        "Kejadian nyata dan tanggung jawab jelas",
+        "Tindakan pemulihan spesifik",
+        "Ada perubahan cara kerja sesudahnya"
+      ],
+      "followupEn": "What would you do differently if the same situation happened again?",
+      "seconds": 90,
+      "evidenceFields": [
+        "Kesalahan asli dan tanggung jawab saya",
+        "Dampak, penemuan masalah, dan pemulihan",
+        "Perubahan validasi / komunikasi dan bukti setelahnya"
+      ]
+    },
+    {
+      "id": "start",
+      "sourceId": "q41",
+      "pillar": "bridge",
+      "priority": true,
+      "title": "Tanggal mulai dan administrasi",
+      "questionEn": "When can you start full-time, and are you open to Shanghai training followed by Indonesia?",
+      "questionId": "Tanggal mulai dan gelar berbeda; jelaskan keterbukaan penempatan.",
+      "answerEn": "My earliest full-time start date is 1 May 2027, and I expect to receive my MBA degree certificate in June 2027. I am open to a Shanghai training period followed by an Indonesia assignment. I would like to confirm the programme timeline, responsibilities, employment entity and the work-permit process if training involves working in China. My availability date should be considered separately from the completion of onboarding and work authorisation.",
+      "coachId": "Jangan menjanjikan full-time sekarang. Kecocokan kohort, durasi training, kontrak dan izin belum diasumsikan selesai.",
+      "outline": [
+        "1 Mei 2027",
+        "Gelar Juni 2027",
+        "Terbuka Shanghai–Indonesia",
+        "Timeline / entity / permit"
+      ],
+      "criteria": [
+        "Tanggal dan gelar tepat",
+        "Terbuka penempatan dengan scope jelas",
+        "Izin dan onboarding tidak dianggap selesai"
+      ],
+      "followupEn": "Would your start date fit our training cohort?",
+      "seconds": 60,
+      "evidenceFields": []
+    },
+    {
+      "id": "language",
+      "sourceId": "q43",
+      "pillar": "bridge",
+      "priority": true,
+      "title": "Bahasa kerja",
+      "questionEn": "Can you work with Chinese and Indonesian teams?",
+      "questionId": "Indonesia native, English lancar, Mandarin level saat ini.",
+      "answerEn": "Indonesian is my native language, and I can work fluently in English. My Mandarin is around HSK 3–4 for everyday communication. For complex business discussions, I prefer English or written confirmation so the meaning is accurate. I am continuing to improve my Mandarin. Studying in China gives me cross-cultural exposure, and I still make a point of confirming each team's expectations rather than assuming them.",
+      "coachId": "Persiapan English bukan konfirmasi bahasa besok. Gunakan frasa Mandarin opsional untuk meminta klarifikasi atau pindah ke English.",
+      "outline": [
+        "Indonesia",
+        "English",
+        "Mandarin jujur",
+        "Konfirmasi tertulis",
+        "Adaptasi tim"
+      ],
+      "criteria": [
+        "Kemampuan bahasa akurat",
+        "Ada cara menangani topik kompleks",
+        "Tidak mengaku sertifikat yang belum diperoleh"
+      ],
+      "followupEn": "What would you do if you did not understand a question in Mandarin?",
+      "seconds": 45,
+      "evidenceFields": []
+    },
+    {
+      "id": "business",
+      "sourceId": "q03",
+      "pillar": "execution",
+      "priority": false,
+      "title": "Mengapa peran bisnis?",
+      "questionEn": "Why move from a technical background into a business role?",
+      "questionId": "Jelaskan teknologi sebagai alat dan minat pada hasil bisnis.",
+      "answerEn": "Technology is my tool, but the business problem is what interests me most. At Karunia, I worked with users, suppliers, clients and the director as well as developing systems. I enjoy the full process from defining the problem to implementing a solution. This role would let me use technology and data while taking broader responsibility for business execution.",
+      "coachId": "Tunjukkan pilihan yang sadar dan satu contoh koordinasi; hindari berfokus pada stack.",
+      "outline": [
+        "Masalah bisnis",
+        "Stakeholder",
+        "Definisi sampai implementasi",
+        "Tanggung jawab"
+      ],
+      "criteria": [
+        "Pilihan peran bisnis jelas",
+        "Pengalaman koordinasi mendukung",
+        "Teknologi dihubungkan ke hasil"
+      ],
+      "followupEn": "What business problem would you solve without writing any code?",
+      "seconds": 60,
+      "evidenceFields": []
+    },
+    {
+      "id": "supply",
+      "sourceId": "q16",
+      "pillar": "stakeholders",
+      "priority": false,
+      "title": "CV Kid Gemilang & supplier",
+      "questionEn": "What did running a parts-supply business teach you?",
+      "questionId": "Jelaskan sourcing, PO, supplier dan execution.",
+      "answerEn": "CV Kid Gemilang handled more than 1,000 vehicle parts per month and worked with eight suppliers. I was responsible for sourcing, quotations, purchasing, checking deliveries against customer purchase orders and inventory valuation. It taught me to connect a customer's requirement with supplier execution, accurate records and delivery commitments. For a partner-facing role, I would bring the same discipline to preparation, follow-up and checking whether commitments have actually been met.",
+      "coachId": "Beri contoh satu order asli. Jumlah komponen berbeda dari jumlah pengguna sistem.",
+      "outline": [
+        "Permintaan pelanggan",
+        "Supplier / quotation",
+        "PO vs delivery",
+        "Komitmen"
+      ],
+      "criteria": [
+        "Tanggung jawab operasional jelas",
+        "Angka sesuai proyek",
+        "Kaitan ke partner execution jelas"
+      ],
+      "followupEn": "Describe one supplier problem and how you followed it through.",
+      "seconds": 75,
+      "evidenceFields": []
+    },
+    {
+      "id": "kambyan",
+      "sourceId": "q17",
+      "pillar": "data",
+      "priority": false,
+      "title": "Internship database di Malaysia",
+      "questionEn": "How does your earlier database internship relate to this role?",
+      "questionId": "Dasar kualitas data dan operations; detail drone cukup sebagai konteks.",
+      "answerEn": "At Kambyan in Malaysia, I worked as a database-engineering intern on a drone-automation project for plantations. I helped structure operational and image-recognition data, clean and transform records, and support analysis and visualisation. It gave me a foundation in data quality and understanding how a process produces data. I later applied that foundation to enterprise workflows, which is relevant to accurate operational reporting.",
+      "coachId": "Cocokkan bulan akhir magang dengan CV yang dikirim; versi lama berbeda. Siapkan satu contoh data asli.",
+      "outline": [
+        "Konteks internship",
+        "Data operasional",
+        "Cleaning / struktur",
+        "Kualitas laporan"
+      ],
+      "criteria": [
+        "Kontribusi data spesifik",
+        "Kaitan ke operasi jelas",
+        "Tidak membesar-besarkan peran internship"
+      ],
+      "followupEn": "What data-quality issue did you find?",
+      "seconds": 60,
+      "evidenceFields": []
+    },
+    {
+      "id": "education",
+      "sourceId": "q47",
+      "pillar": "bridge",
+      "priority": false,
+      "title": "GMBA dan pendidikan",
+      "questionEn": "How has your education prepared you for international business?",
+      "questionId": "Sambungkan Computer Science dan GMBA ke keputusan bisnis.",
+      "answerEn": "My Computer Science background gives me an analytical foundation, while the English-taught GMBA at Zhejiang University helps me connect it with strategy, finance, operations and international business. I can discuss course projects such as SANY's internationalisation or a market-entry simulation, while distinguishing academic analysis from work experience. My latest-term weighted average is 89.21 out of 100; it is not a cumulative GPA. I would connect one relevant course insight to a real operational decision.",
+      "coachId": "First-class honours dapat disebut. Angka Taylor’s dan tanggal akhir berbeda antarversi; cocokkan dokumen. Proyek kelas bukan hasil komersial perusahaan.",
+      "outline": [
+        "Dasar analitis",
+        "GMBA",
+        "Satu proyek kelas",
+        "Penerapan bisnis",
+        "Nilai semester"
+      ],
+      "criteria": [
+        "Pendidikan dikaitkan ke keputusan",
+        "Akademik dan pekerjaan dipisahkan",
+        "Nilai 89,21 tidak disebut CGPA"
+      ],
+      "followupEn": "What is one lesson from the SANY or market-entry project?",
+      "seconds": 60,
+      "evidenceFields": []
+    },
+    {
+      "id": "ventures",
+      "sourceId": "q46",
+      "pillar": "founder",
+      "priority": false,
+      "title": "WeUseAI dan komitmen full-time",
+      "questionEn": "How will you handle your ventures if you join full-time?",
+      "questionId": "Jelaskan status proyek dan komitmen tanpa membuat tanggal penutupan palsu.",
+      "answerEn": "My ventures are independent projects developed alongside the GMBA. I distinguish hosted products that are pre-launch from specific client work described in my resume. If I join full-time, the job's responsibilities will be my priority, and I will follow the company's rules on outside work, conflicts of interest and intellectual property. I will not use company data or resources for personal projects or make conflicting commitments.",
+      "coachId": "Siapkan scope pekerjaan TRO Creative / Hansaplast yang benar-benar kamu kerjakan. Tidak perlu mengarang rencana menutup usaha.",
+      "outline": [
+        "Status produk vs kerja klien",
+        "Scope saya",
+        "Prioritas full-time",
+        "Conflict / IP"
+      ],
+      "criteria": [
+        "Status venture tepat",
+        "Rencana komitmen jelas",
+        "Data dan sumber daya perusahaan dipisahkan"
+      ],
+      "followupEn": "What exactly did you deliver for your client?",
+      "seconds": 60,
+      "evidenceFields": []
+    },
+    {
+      "id": "measurement",
+      "sourceId": "q12",
+      "pillar": "data",
+      "priority": false,
+      "title": "Pertanyaan tentang angka 75%",
+      "questionEn": "What does the 75% improvement in your resume measure?",
+      "questionId": "Wajib jelaskan definisi metrik, baseline dan bukti asli.",
+      "answerEn": "The figure must refer to a specific system or process measure, not a 75% reduction in the whole company's costs. I would explain the same task before and after the change, the unit, conditions, period and sample. If I cannot substantiate the precise figure, I will explain the verified improvement and adoption evidence instead of presenting an estimate as a controlled experiment.",
+      "coachId": "Isi metriknya sebelum memakai jawaban ini. Jangan mengubah klaim 'faster' menjadi waktu turun 75% tanpa metode; gunakan rumus yang sesuai definisi.",
+      "outline": [
+        "Apa yang diukur",
+        "Unit / baseline",
+        "Kondisi sesudah",
+        "Sampel / periode",
+        "Keterbatasan"
+      ],
+      "criteria": [
+        "Metrik dan unit pasti",
+        "Sumber bukti asli tersedia",
+        "Tidak menyebut cost reduction perusahaan"
+      ],
+      "followupEn": "What was the baseline, and was it a controlled comparison?",
+      "seconds": 75,
+      "evidenceFields": [
+        "Nama metrik dan unit; definisi faster vs waktu pengerjaan",
+        "Baseline, hasil, periode dan sampel asli",
+        "Bukti dan keterbatasan pengukuran"
+      ]
+    },
+    {
+      "id": "conflict",
+      "sourceId": "q33",
+      "pillar": "execution",
+      "priority": false,
+      "title": "Perbedaan pendapat",
+      "questionEn": "Tell me about a disagreement with another team.",
+      "questionId": "Gunakan kejadian asli dan fokus pada kerja sama.",
+      "answerEn": "Use a real project: explain the two objectives, the decision in dispute, how you clarified requirements or evidence, who made the final decision, and what happened afterward. Show how you preserved cooperation rather than trying to prove the other person wrong.",
+      "coachId": "Kerangka, bukan cerita jadi. Isi pihak, keputusan dan hasil asli.",
+      "outline": [
+        "Dua tujuan",
+        "Keputusan",
+        "Bukti",
+        "Komunikasi",
+        "Hasil"
+      ],
+      "criteria": [
+        "Konflik nyata dan tujuan kedua pihak jelas",
+        "Tindakan pribadi konkret",
+        "Hasil dan hubungan kerja dijelaskan"
+      ],
+      "followupEn": "What would the other team say about how you handled it?",
+      "seconds": 90,
+      "evidenceFields": [
+        "Dua tujuan dan keputusan yang diperdebatkan",
+        "Bukti dan cara saya berkomunikasi",
+        "Keputusan owner, hasil dan kondisi hubungan kerja"
+      ]
+    },
+    {
+      "id": "partner",
+      "sourceId": "q27",
+      "pillar": "stakeholders",
+      "priority": false,
+      "hypothetical": true,
+      "title": "Kasus: evaluasi partner",
+      "questionEn": "How would you assess a potential channel partner in Indonesia?",
+      "questionId": "Hipotetis: tujuan, entitas, sumber customer, data, kualitas dan pilot.",
+      "answerEn": "I would define the cooperation objective, verify the partner entity, customer sources, data permissions and fee structure. I would compare customer quality, cost and complaints as well as volume. I would prepare a pilot proposal with agreed metrics, owners and stop conditions, working with risk and compliance before scaling. My purchasing and stakeholder experience is relevant preparation, but I have not already built a lending channel.",
+      "coachId": "Ikuti saran temanmu soal BD, tetapi bedakan transferable skill dari pengalaman kanal kredit.",
+      "outline": [
+        "Tujuan",
+        "Verifikasi partner",
+        "Kualitas / biaya",
+        "Pilot",
+        "Risk / compliance"
+      ],
+      "criteria": [
+        "Volume bukan satu-satunya metrik",
+        "Due diligence dan owner jelas",
+        "Pilot dan stop condition ada"
+      ],
+      "followupEn": "What if the partner's CAC is low but complaints are high?",
+      "seconds": 90,
+      "evidenceFields": []
+    },
+    {
+      "id": "research",
+      "sourceId": "q32",
+      "pillar": "data",
+      "priority": false,
+      "hypothetical": true,
+      "title": "Kasus: riset pasar Indonesia",
+      "questionEn": "How would you research Indonesian users and competitors?",
+      "questionId": "Hipotetis: keputusan bisnis dahulu, lalu data dan wawancara.",
+      "answerEn": "I would start with the decision the team needs to make and learn the current product and customer journey. I would review process data and support records, then speak with different users and frontline staff about real tasks. I would compare competitors using verifiable information on the same dimensions, distinguish facts from assumptions, and turn the findings into a small test or a clear recommendation. I would validate local requirements with the relevant team.",
+      "coachId": "Indonesia bukan satu segmen homogen. Tanyakan produk, target user dan keputusan yang dibutuhkan sebelum riset besar.",
+      "outline": [
+        "Keputusan bisnis",
+        "Journey / data",
+        "User dan frontline",
+        "Kompetitor",
+        "Rekomendasi / uji"
+      ],
+      "criteria": [
+        "Tujuan riset jelas",
+        "Fakta dan asumsi dipisahkan",
+        "Temuan menghasilkan tindakan"
+      ],
+      "followupEn": "What would your report recommend if the evidence was mixed?",
+      "seconds": 90,
+      "evidenceFields": []
+    },
+    {
+      "id": "first-30",
+      "sourceId": "case6",
+      "pillar": "execution",
+      "priority": false,
+      "hypothetical": true,
+      "title": "Kasus: 30 hari pertama",
+      "questionEn": "How would you improve one Indonesian process in your first 30 days?",
+      "questionId": "Hipotetis: tujuan dan baseline dulu, pilot kecil lalu evaluasi.",
+      "answerEn": "In week one, I would confirm the objective, workflow, data and owners. In week two, I would choose one high-impact, controllable problem and establish a baseline. In week three, I would run a small pilot with human review. In week four, I would compare results, document issues and prepare handover recommendations. The responsible owner would confirm the target and rollout scope; I would not promise an untested improvement percentage.",
+      "coachId": "Beri hasil tiap minggu. Target harus disepakati dan pilot dapat dihentikan.",
+      "outline": [
+        "M1 tujuan / owner",
+        "M2 baseline",
+        "M3 pilot",
+        "M4 evaluasi / handover"
+      ],
+      "criteria": [
+        "Urutan mingguan konkret",
+        "Baseline dan pilot jelas",
+        "Tidak menjanjikan angka tanpa bukti"
+      ],
+      "followupEn": "How would you choose between two competing process problems?",
+      "seconds": 90,
+      "evidenceFields": []
+    },
+    {
+      "id": "funnel",
+      "sourceId": "case1",
+      "pillar": "data",
+      "priority": false,
+      "hypothetical": true,
+      "title": "Kasus: conversion funnel",
+      "questionEn": "10,000 visits lead to 6,000 registrations, 2,400 applications, 1,800 approvals and 1,440 disbursements. How would you analyse this?",
+      "questionId": "Hipotetis: cohort dan denominator sama, hitung lalu bandingkan baseline.",
+      "answerEn": "I would first confirm the cohort, period and whether the counts are users or events. The stage conversions are 60%, 40%, 75% and 80%, with 14.4% overall. A single period does not establish a decline. I would compare a baseline and segment by channel, device and user group. If applications deteriorated, I would examine form friction, verification, errors and fee clarity, then propose a small test within risk boundaries.",
+      "coachId": "Tahap 40% paling rendah, tetapi itu belum membuktikan akar masalah atau penurunan. Approval adalah keputusan risiko, bukan friksi UI saja.",
+      "outline": [
+        "Definisi",
+        "60 / 40 / 75 / 80",
+        "14,4 total",
+        "Baseline / segmen",
+        "Test + batas risiko"
+      ],
+      "criteria": [
+        "Konversi dan denominator tepat",
+        "Tidak menyimpulkan penurunan dari satu periode",
+        "Uji dan risk boundary jelas"
+      ],
+      "followupEn": "Would you loosen approvals to increase disbursements?",
+      "seconds": 90,
+      "evidenceFields": []
+    },
+    {
+      "id": "ai-risk",
+      "sourceId": "case5",
+      "pillar": "data",
+      "priority": false,
+      "hypothetical": true,
+      "title": "Kasus: AI salah nominal",
+      "questionEn": "An AI support agent gives the wrong repayment amount. What would you do?",
+      "questionId": "Hipotetis: lindungi pengguna, telusuri sumber, perbaiki kontrol.",
+      "answerEn": "I would restrict the faulty function through the responsible owner and have support handle affected users. I would check whether the error came from data, retrieval or generation. Repayment amounts must come from the authorised system, not a model's guess. I would add validation, logs and human escalation, then test the fix before restoring the feature.",
+      "coachId": "Business controls dan dampak customer dahulu; debugging model sesudahnya. Pemulihan sesuai wewenang.",
+      "outline": [
+        "Containment",
+        "Pengguna terdampak",
+        "Sumber error",
+        "Sistem authorised",
+        "Uji / restore"
+      ],
+      "criteria": [
+        "Dampak pengguna ditangani",
+        "Nominal dari sumber sah",
+        "Kontrol, owner dan uji jelas"
+      ],
+      "followupEn": "How would you confirm the issue affected no other users?",
+      "seconds": 90,
+      "evidenceFields": []
+    }
+  ],
+  "backQuestions": [
+    {
+      "en": "What is the most important Indonesian business problem this trainee should help solve, and how will success be assessed in the first 90 days?",
+      "id": "Perjelas mandat dan ukuran hasil."
+    },
+    {
+      "en": "How are the product, risk, operations and business-development rotations organised, and who will mentor me?",
+      "id": "Konfirmasi rotasi dan mentor; jangan menganggap program terstruktur sudah dijamin."
+    },
+    {
+      "en": "Which entity and team would employ me, and how would the Shanghai training and Indonesia assignment fit my May 2027 availability?",
+      "id": "Konfirmasi entitas, timeline, kontrak, training dan izin bila relevan."
+    }
+  ],
+  "closingEn": "This role fits the combination of my Indonesian business experience, project coordination and data skills. I am interested in joining, learning the fintech domain and demonstrating results through rotations and concrete work.",
+  "nightPlan": [
+    "15 menit: intro, alasan MT/Jiayin, dan lima kekuatan.",
+    "25 menit: isi cerita stakeholder, modul ERP dan data; siapkan satu kegagalan asli.",
+    "20 menit: simulasi English satu pertanyaan setiap kali; cek isi, lalu ulang jawaban lemah.",
+    "10 menit: satu kasus partner dan satu kasus data/operasi.",
+    "5 menit: CV yang dikirim, Tencent, kamera/mikrofon, koneksi dan waktu undangan."
+  ],
+  "factChecks": [
+    "Karunia: IT Staff lalu IT Specialist, sekaligus fungsi pemimpin tim dan membantu direktur; bukan formal CTO.",
+    "ERP 15 orang / 12 sistem / sekitar 1.000 pengguna; agen bisnis 10 orang / 8 bulan / sekitar 100 pengguna.",
+    "Bayan, Kideco dan SANY adalah mitra, bukan pemberi kerja. Tidak ada angka sales quota atau nilai kontrak yang boleh dibuat.",
+    "75% perlu definisi metrik, baseline, kondisi, periode, sampel dan bukti. 95,1% Copilot adalah dev-set, bukan blind test atau produksi.",
+    "Integra dan hosted WeUseAI sebelum peluncuran menurut sumber; kerja klien dibedakan dari produk hosted.",
+    "89,21/100 adalah semester GMBA terbaru. Tanggal akhir Taylor’s/Kambyan dan angka Taylor’s berbeda antarversi CV; cocokkan dengan dokumen yang dikirim.",
+    "Full-time paling awal 1 Mei 2027; sertifikat gelar diperkirakan Juni 2027. Jadwal, izin kerja dan onboarding terpisah.",
+    "Mandarin sekitar HSK 3–4; ujian yang direncanakan bukan sertifikat yang telah diperoleh."
+  ]
+}

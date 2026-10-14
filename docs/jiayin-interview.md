@@ -1,4 +1,18 @@
-# Kurikulum wawancara Jiayin
+# Persiapan Global MT Jiayin: English dahulu
+
+Per 14 Oktober 2026, Home dan Learn membuka persiapan interview English dengan penjelasan Indonesia. Mandarin menjadi pilihan: materi HSK lama, 73 pelajaran, audio, worksheets dan progresnya tetap tersedia.
+
+Jalur utama berisi 12 pertanyaan prioritas, ditambah pertanyaan CV dan kasus hingga 26 item. Lima fokusnya adalah stakeholder Indonesia/BD, project management, koordinasi China–Indonesia, business/data thinking dan pengalaman founder. Peta CV menjelaskan Karunia, CV Kid Gemilang, Kambyan, Integra, WeUseAI dan pendidikan. Contoh English disusun dari sumber pribadi dan masukan pengguna; bukan pertanyaan pasti atau pengalaman baru yang dibuat.
+
+Satu sesi menampilkan satu pertanyaan English. Pengguna menjawab lisan atau menulis ringkasan, membuka contoh bila perlu, lalu mengevaluasi kriteria isi dalam Indonesia. Cerita stakeholder, ERP, data, founder, failure, conflict dan pengukuran harus dilengkapi dari pengalaman asli. Pemeriksaan ini adalah penilaian diri; tidak mengklaim grammar, pelafalan atau fakta terverifikasi otomatis.
+
+Progres English memakai `yulu.jiayin.english.v1`, terpisah dari `yulu.jiayin.v1` dan kursus lainnya. Draf dan status bantuan bertahan ketika sesi ditutup atau dimuat ulang. Contoh English, jawaban Mandarin atau catatan lama yang dibuka membuat percobaan berbantuan. Tombol siap mandiri memerlukan jawaban, seluruh kriteria isi, bukti pribadi untuk item yang relevan, dan tidak ada bantuan. Ulangi dengan percobaan baru tanpa contoh. Simulasi mencakup 12 pertanyaan utama dan tiga kasus; review mencakup jawaban lemah/dibantu serta draf yang belum selesai.
+
+PDF cetak yang sama dengan materi utama tersedia di `/preparation/Jiayin_MT_English_First_Prep_EN_ID.pdf`: 10 halaman, English/Indonesia pada halaman 1–9, Mandarin opsional pada halaman 10. Versi sumber dan PDF Mandarin lama tidak diganti. Versi CV yang dibaca memiliki perbedaan tanggal akhir Taylor’s/Kambyan serta angka Taylor’s; peta CV meminta pengguna mencocokkan dokumen yang benar-benar dikirim. Entitas, rotasi, mentor, training, izin dan jalur jabatan tetap harus dikonfirmasi.
+
+Validasi: 230 tes lulus dan production build berhasil dalam salinan Git sementara dengan aset handwriting dari HEAD. Penghapusan lokal `medians.bin` yang sudah ada tetap dipertahankan. Browser mobile memeriksa default tanpa Hanzi, draf setelah tutup/buka, status bantuan, pembatasan siap mandiri, penyimpanan percobaan, akses kembali ke Mandarin dan unduhan PDF dengan checksum yang sama.
+
+## Kurikulum Mandarin opsional
 
 Buka **Wawancara Jiayin**, buku pertama di perpustakaan. Kursus tersedia di Home dan Learn, dengan kemajuan terpisah di Progress.
 

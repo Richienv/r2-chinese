@@ -23,6 +23,8 @@ import {
 import { PATH_NODES } from '../lib/wordsSession'
 import { DAILY_GOAL, dayKey, useStore } from '../store/store'
 import { jiayinLessons, jiayinUnits, useJiayinProgress } from '../lib/jiayin'
+import { englishPrepQuestions, jiayinEnglishData, useJiayinEnglishProgress } from '../lib/jiayinEnglish'
+import { isEnglishPrepReady, latestEnglishAttempt } from '../lib/jiayinEnglishPractice'
 import '../styles/progress.css'
 
 const KERJA_KEY = 'yulu.kerja.v1'
@@ -315,6 +317,7 @@ export function Progress({
 }) {
   const s = useStore()
   const { progress: jiayinProgress } = useJiayinProgress()
+  const { progress: englishProgress } = useJiayinEnglishProgress()
   const [showHistory, setShowHistory] = useState(false)
   const week = weekActivity(s.log)
   const due = dueCards(s.cardList)
@@ -340,7 +343,17 @@ export function Progress({
       interviewCourse(interviewDone),
       booksCourse(booksDone),
       {
-        name: 'Wawancara Jiayin',
+        name: 'Jiayin · English (penilaian diri)',
+        stepsDone: englishPrepQuestions.filter(q => q.priority && isEnglishPrepReady(q, latestEnglishAttempt(englishProgress, q.id))).length,
+        stepsTotal: englishPrepQuestions.filter(q => q.priority).length,
+        units: jiayinEnglishData.pillars.map(pillar => {
+          const questions = englishPrepQuestions.filter(q => q.priority && q.pillar === pillar.id)
+          const ready = questions.filter(q => isEnglishPrepReady(q, latestEnglishAttempt(englishProgress, q.id))).length
+          return { key: `jiayin-english-${pillar.id}`, title: pillar.title, done: ready === questions.length, sittingsDone: ready, sittingsTotal: questions.length }
+        }),
+      },
+      {
+        name: 'Jiayin · Mandarin opsional',
         stepsDone: jiayinLessons.filter(lesson => jiayinProgress.lessonsDone[lesson.id]).length,
         stepsTotal: jiayinLessons.length,
         units: jiayinUnits.map(unit => {
@@ -350,9 +363,9 @@ export function Progress({
         }),
       },
     ]
-  }, [s.pathDone, s.lessonsDone, jiayinProgress.lessonsDone])
+  }, [s.pathDone, s.lessonsDone, jiayinProgress.lessonsDone, englishProgress.attempts])
 
-  const history = useMemo(() => readHistory(), [s.pathDone, s.log, s.xp, s.cards])
+  const history = useMemo(() => readHistory(), [s.pathDone, s.log, s.xp, s.cards, englishProgress.attempts])
   const visibleHistory = showHistory ? history : history.slice(0, 5)
 
   function startReview() {
