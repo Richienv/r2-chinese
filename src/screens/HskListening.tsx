@@ -1,3 +1,4 @@
+import { StudyMusic } from '../components/StudyMusic'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Glossed, useGloss } from '../components/ChineseText'
 import { useSpeechSnapshot } from '../components/Hear'
@@ -132,7 +133,7 @@ export function HskListening({ onClose }: { onClose: () => void }) {
 
   return <section className="overlay hsk-lab listening-room" role="dialog" aria-modal="true" aria-labelledby="listening-title">
     <header className="overlay-head hsk-lab-head">
-      <button className="icon-btn" type="button" aria-label={t('Close listening room')} onClick={onClose}><CloseIcon size={20} /></button>
+      <button className="icon-btn" type="button" aria-label={t('Close listening room')} onClick={onClose}><CloseIcon size={20} /></button><StudyMusic compact />
       <div><span>{t('HSK 4 · Lessons 1–5')}</span><h1 id="listening-title">{t('Listening')}</h1></div>
       <div className="listening-wave" data-playing={running && !loading} aria-hidden="true"><i /><i /><i /><i /><i /></div>
     </header>

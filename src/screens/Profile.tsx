@@ -23,7 +23,7 @@ export function Profile() {
         <p className="sub">{t('Set up the way you like to learn.')}</p>
       </header>
 
-      <StudyMusic lifted={false} />
+      <StudyMusic />
       <section className="profile-identity card" aria-label={t('Learner account')}>
         <div className="profile-avatar" aria-hidden="true">
           语

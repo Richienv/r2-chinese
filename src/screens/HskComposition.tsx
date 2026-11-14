@@ -1,3 +1,4 @@
+import { StudyMusic } from '../components/StudyMusic'
 import { RepairEditor } from '../components/RepairEditor'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useAuth } from '../auth/AuthProvider'
@@ -249,7 +250,7 @@ export function HskComposition({ onClose }: { onClose: () => void }) {
           onClick={onClose}
         >
           <CloseIcon size={20} />
-        </button>
+        </button><StudyMusic compact />
         <div>
           <span>{t('HSK 4 · Across your learning trail')}</span>
           <h1 id="writing-title">{t('Sentence practice')}</h1>

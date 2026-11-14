@@ -1,3 +1,4 @@
+import { StudyMusic } from '../components/StudyMusic'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { LearningPath } from '../components/LearningPath'
 import { RecallFeedback } from '../components/LearningMotion'
@@ -200,7 +201,7 @@ function BooksRunner({ part, index, onClose }: { part: number; index: number; on
   const showFooter = !step || isComplete || step.kind === 'scenario' || step.kind === 'mindset' || step.kind === 'journal'
 
   return <div className="overlay session learning-session books-session">
-    <div className="overlay-head"><button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close chapter')}><CloseIcon /></button><div className="step-bar"><i className="yl-progress" style={{ width: `${isComplete ? 100 : Math.min(100, (i + 1) / total * 100)}%` }} /></div>{xp > 0 && <span className="session-xp" aria-label={t('{xp} XP earned this session', { xp })}>+{xp}</span>}</div>
+    <div className="overlay-head"><button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close chapter')}><CloseIcon /></button><StudyMusic compact /><div className="step-bar"><i className="yl-progress" style={{ width: `${isComplete ? 100 : Math.min(100, (i + 1) / total * 100)}%` }} /></div>{xp > 0 && <span className="session-xp" aria-label={t('{xp} XP earned this session', { xp })}>+{xp}</span>}</div>
     <div className="overlay-body" ref={bodyRef}>
       <nav className="learning-route" aria-label={t('Learning stages')}>{STAGES.map((stage) => <span key={stage.id} data-active={phase === stage.id} aria-current={phase === stage.id ? 'step' : undefined}>{stage.label}</span>)}</nav>
       <div className="books-chapter-context"><span>{chapter.partTitleEn}</span><span>{t('Chapter {n}', { n: index })}</span></div>

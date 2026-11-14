@@ -1,3 +1,4 @@
+import { StudyMusic } from '../components/StudyMusic'
 import { RepairEditor } from '../components/RepairEditor'
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { HearButton } from '../components/Hear'
@@ -174,7 +175,7 @@ export function ReviewFlow({
       <header className="focus-head">
         <button className="focus-icon" onClick={onClose} aria-label={t('Close review')}>
           <CloseIcon />
-        </button>
+        </button><StudyMusic compact />
         <span>{placement ? t('Quick placement') : (title ?? t('Recall'))}</span>
         {undo ? (
           <button className="focus-link" onClick={undoLast}>

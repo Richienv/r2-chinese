@@ -1,3 +1,6 @@
+import { StudyMusic } from '../components/StudyMusic'
+import { ChapterCheck } from '../components/ChapterCheck'
+import { quizAssisted } from '../lib/choiceSupport'
 import { isComfortable } from '../lib/learningEngine'
 import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { LearningPath } from '../components/LearningPath'
@@ -13,10 +16,6 @@ import type { ProductionResult } from '../lib/production'
 import {
   ChineseHear,
   hasHanzi,
-  HearButton,
-  useAutoSpeak,
-  useAutoSpeakLines,
-  useSpeechActive,
 } from '../components/Hear'
 import { CheckIcon, CloseIcon, LockIcon } from '../components/Icons'
 import {
@@ -40,10 +39,10 @@ import { t } from '../lib/i18n'
 import { recordHistory } from '../lib/history'
 import { clearLearningCheckpoint, readLearningCheckpoint, writeLearningCheckpoint } from '../lib/resume'
 import { playAdvance, playComplete, playCorrect, playWrong } from '../lib/sfx'
-import { unlockSpeech, speakLines, stopSpeech } from '../lib/speech'
+import { unlockSpeech } from '../lib/speech'
 import { ITEM_XP, NODE_BONUS_XP } from '../lib/wordsSession'
 import type { LessonText } from '../lib/types'
-import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
+import { LINE_RATE } from '../lib/voices'
 import { useStore, type PathNode } from '../store/store'
 import { TeachView } from './TeachBeats'
 
@@ -393,7 +392,7 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
     goForward()
   }
 
-  function answerQuiz(picked: string, answer: string) {
+  function answerQuiz(picked: string, answer: string, helped = false) {
     if (step.kind !== 'quiz') return
     const key = step.id
     const previous = quiz[key] ?? { wrong: [], solved: false, missed: false }
@@ -401,7 +400,7 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
     if (ch.words.some((word) => word.zh === answer)) {
       store.recordRecall(answer, {
         correct: picked === answer,
-        assisted: previous.missed,
+        assisted: quizAssisted(previous.missed, !!assistedSteps[step.id], helped),
         mode: 'recognition',
       })
     }
@@ -448,7 +447,7 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
       <div className="overlay-head">
         <button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close session')}>
           <CloseIcon />
-        </button>
+        </button><StudyMusic compact />
         <div className="step-bar">
           <i className="yl-progress" style={{ width: `${Math.min(100, progressPct)}%` }} />
         </div>
@@ -533,11 +532,14 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
           ) : step.kind === 'note' ? (
             <NoteView title={step.title} body={step.body} example={step.example} n={step.n} of={step.of} />
           ) : step.kind === 'quiz' ? (
-            <MatchView
+            <ChapterCheck
+              key={step.id}
               question={step.question}
               n={step.n}
               of={step.of}
               state={quizState}
+              assisted={!!assistedSteps[step.id]}
+              onAssistance={markAssisted}
               onPick={answerQuiz}
             />
           ) : (
@@ -567,14 +569,6 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
   )
 }
 
-function StepHead({ kicker, title }: { kicker: string; title: string }) {
-  return (
-    <header className="session-step-head">
-      <div className="kicker-ink">{kicker}</div>
-      <h2 className="session-step-title">{title}</h2>
-    </header>
-  )
-}
 
 function ReadView({ text }: { text: LessonText }) {
   const { onWord, sheet } = useGloss()
@@ -687,117 +681,6 @@ function NoteView({
   )
 }
 
-function MatchView({
-  question,
-  n,
-  of,
-  state,
-  onPick,
-}: {
-  question: {
-    prompt: string
-    context?: { zh: string; pinyin: string; en: string }
-    options: { zh: string; label: string }[]
-    answer: string
-  }
-  n: number
-  of: number
-  state: QuizState | undefined
-  onPick: (picked: string, answer: string) => void
-}) {
-  const wrong = state?.wrong ?? []
-  const solved = state?.solved ?? false
-  const missed = state?.missed ?? false
-  const { onWord, sheet } = useGloss()
-  const contextZh = question.context?.zh?.trim() ?? ''
-  const chineseChoices = question.options
-    .map((o) => o.label)
-    .filter((label) => hasHanzi(label) && !/[A-Za-z]{3,}/.test(label))
-  const choiceKey = chineseChoices.join('\u0001')
-  const choicesPlaying = useSpeechActive(`lines|${choiceKey}`)
-
-  useAutoSpeak(contextZh, VOICE.xiaoxiao, LINE_RATE)
-  useAutoSpeakLines(contextZh ? [] : chineseChoices, VOICE.xiaoxiao, WORD_RATE)
-
-  return (
-    <>
-      <StepHead kicker={of > 1 ? t('Check · {n} of {of}', { n, of }) : t('Check')} title={question.prompt} />
-      {question.context && (
-        <div className="card session-prompt">
-          <p
-            className="zh"
-            lang="zh-CN"
-            style={{ fontSize: 22, fontWeight: 800, margin: 0, textWrap: 'pretty' }}
-          >
-            <Glossed text={question.context.zh} onWord={onWord} />
-          </p>
-          <div style={{ marginTop: 12 }}>
-            <HearButton
-              text={question.context.zh}
-              voice={VOICE.xiaoxiao}
-              rate={LINE_RATE}
-              label={t('Hear the line')}
-            />
-          </div>
-        </div>
-      )}
-      {!question.context && chineseChoices.length > 0 && (
-        <div style={{ marginBottom: 12 }}>
-          <button
-            type="button"
-            className="hear hear-ink"
-            data-on={choicesPlaying}
-            aria-label={choicesPlaying ? t('Stop choices') : t('Hear choices')}
-            aria-pressed={choicesPlaying}
-            onPointerDown={() => unlockSpeech()}
-            onClick={() => {
-              if (choicesPlaying) {
-                stopSpeech()
-                return
-              }
-              void speakLines(
-                chineseChoices.map((text) => ({ text, voice: VOICE.xiaoxiao, rate: WORD_RATE })),
-                { group: `lines|${choiceKey}`, key: `lines|${choiceKey}` },
-              )
-            }}
-          >
-            <span>{choicesPlaying ? t('Playing') : t('Hear choices')}</span>
-          </button>
-        </div>
-      )}
-      <div className="session-options">
-        {question.options.map((o) => {
-          const isAnswer = o.zh === question.answer
-          const isWrong = wrong.includes(o.zh)
-          const st = solved && isAnswer ? 'correct' : isWrong ? 'wrong' : undefined
-          const motion = solved && isAnswer ? ' yl-correct' : isWrong ? ' yl-wrong' : ''
-          return (
-            <button
-              key={isWrong ? `${o.zh}-miss` : o.zh}
-              type="button"
-              className={`option zh${motion}`}
-              data-state={st}
-              disabled={solved || isWrong}
-              onPointerDown={() => unlockSpeech()}
-              onClick={() => onPick(o.zh, question.answer)}
-              lang="zh-CN"
-            >
-              {o.label}
-            </button>
-          )
-        })}
-      </div>
-      {solved && (
-        <div className="yl-enter-up" style={{ textAlign: 'center', marginTop: 2 }} aria-live="polite">
-          <strong style={{ fontSize: 16, fontWeight: 800, color: 'var(--red-deep)' }}>
-            {missed ? t('That’s it') : t('Nice!')}
-          </strong>
-        </div>
-      )}
-      {sheet}
-    </>
-  )
-}
 
 function DoneView({
   node,

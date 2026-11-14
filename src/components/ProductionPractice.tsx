@@ -733,6 +733,9 @@ export function ResponsePractice({
           <div className="scaffold-line" lang="zh-CN">
             <span>{scaffold.prefix}</span>
             <input
+              id={id}
+              lang="zh-CN"
+              autoComplete="off"
               aria-label={t('Missing lesson word')}
               value={blankValue}
               onChange={(e) => {
@@ -752,9 +755,9 @@ export function ResponsePractice({
         </section>
       )}
 
-      <label className="production-speaker" htmlFor={id}>
+      {(!guided || assessment) && <label className="production-speaker" htmlFor={id}>
         {mode === 'speaking' && value ? t('Recognized Hanzi · edit if needed') : t('Your Mandarin')}
-      </label>
+      </label>}
       {!assessment && fixList.length > 0 && (
         <div className="reply-fixlist" role="note">
           <strong>{t('Fix before checking again')}</strong>
@@ -784,7 +787,7 @@ export function ResponsePractice({
       )}
       {!assessment && (
         <div className="production-controls">
-          <button
+          {!guided && <button
             type="button"
             className="btn btn-ghost production-mic"
             data-active={recording}
@@ -794,7 +797,7 @@ export function ResponsePractice({
           >
             <MicrophoneIcon />
             {recording ? t('Stop') : value.trim() ? t('Add speech') : t('Speak')}
-          </button>
+          </button>}
           <button
             type="button"
             className="btn"
@@ -805,6 +808,7 @@ export function ResponsePractice({
           >
             {checking
               ? t('Checking…')
+              : guided ? t('Check word')
               : preferredMode === 'speaking'
                 ? t('Check reply')
                 : t('Check sentence')}
@@ -825,7 +829,7 @@ export function ResponsePractice({
         {recognition.error && <p>{recognition.error}</p>}
         {!assessment && !recording && !recognition.error && (
           <p>
-            {supported
+            {guided ? t('Type only the missing word. You can try a full sentence when ready.') : supported
               ? value && mode === 'speaking'
                 ? t('Check the recognized words, then check your reply.')
                 : t('Speak or type. Your book reply stays hidden.')
