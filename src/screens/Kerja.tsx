@@ -1,3 +1,6 @@
+import { compactLessonSteps, compactStepId } from '../lib/sessionRoute'
+import { useSessionRoute } from '../components/useSessionRoute'
+import { PracticeChoiceScreen, PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
 import { StudyMusic } from '../components/StudyMusic'
 import { ChapterCheck } from '../components/ChapterCheck'
 import { quizAssisted } from '../lib/choiceSupport'
@@ -6,18 +9,15 @@ import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from '
 import { LearningPath } from '../components/LearningPath'
 import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
-import { Fireworks } from '../components/Fireworks'
-import { MasteryTracker } from '../components/MasteryTracker'
 import { DialogueRecheck, type RecheckSummary } from '../components/DialogueRecheck'
 import { DialoguePractice, SentencePractice } from '../components/ProductionPractice'
 import { WordRecall } from '../components/WordRecall'
-import { StudyDisplayControls } from '../components/StudyDisplayControls'
 import type { ProductionResult } from '../lib/production'
 import {
   ChineseHear,
   hasHanzi,
 } from '../components/Hear'
-import { CheckIcon, CloseIcon, LockIcon } from '../components/Icons'
+import { CloseIcon, LockIcon } from '../components/Icons'
 import {
   asKerjaNode,
   buildKerjaSteps,
@@ -25,10 +25,7 @@ import {
   hearableZh,
   KERJA_BOOK,
   kerjaChapters,
-  kerjaPlayableCount,
-  kerjaSittingWordCount,
   nodeCaptionKerja,
-  nodeLabelKerja,
   nodesForChapter,
   useKerjaProgress,
   wordsForNode,
@@ -48,16 +45,6 @@ import { TeachView } from './TeachBeats'
 
 type QuizState = { wrong: string[]; solved: boolean; missed: boolean }
 
-/** The five stages of a sitting. The English names are ids the code compares; the labels are what the learner reads. */
-const STAGES = ['Encounter', 'Understand', 'Retrieve', 'Produce', 'Revisit'] as const
-type Stage = (typeof STAGES)[number]
-const STAGE_LABEL: Record<Stage, string> = {
-  Encounter: t('Encounter'),
-  Understand: t('Understand'),
-  Retrieve: t('Retrieve'),
-  Produce: t('Produce'),
-  Revisit: t('Revisit'),
-}
 
 /** Swap a translated sentence's `{slot}` markers for elements, so a sentence that holds <code> is still one string to translate. */
 function withSlots(sentence: string, slots: Record<string, ReactNode>): ReactNode[] {
@@ -203,14 +190,14 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
   const checkpoint = useRef(readLearningCheckpoint(resumeId))
   const steps = useMemo(
     () =>
-      buildKerjaSteps(chapter, node).filter(
+      compactLessonSteps(buildKerjaSteps(chapter, node).filter(
         (step) =>
           !(
             (step.kind === 'teach' || step.kind === 'recall') &&
             isComfortable(store, step.word.zh) &&
-            step.id !== checkpoint.current?.stepId
+            step.id !== compactStepId(checkpoint.current?.stepId)
           ),
-      ),
+      )),
     [chapter, node],
   )
   const sessionWords = useMemo(
@@ -233,24 +220,15 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
   const credited = useRef(new Set<string>())
   const finished = useRef(false)
   const left = useRef(new Set<number>())
-  const xpRef = useRef(0)
   const bodyRef = useRef<HTMLDivElement>(null)
-  const [i, setI] = useState(() => {
-    const saved = steps.findIndex(
-      (activity) => activity.kind !== 'complete' && activity.id === checkpoint.current?.stepId,
-    )
-    return saved >= 0 ? saved : 0
-  })
+  const route = useSessionRoute(steps, checkpoint.current)
+  const { i, step } = route
   const [quiz, setQuiz] = useState<Record<string, QuizState>>({})
-  const [xp, setXp] = useState(0)
-  const [fireworks, setFireworks] = useState(0)
   const [assistedSteps, setAssistedSteps] = useState<Record<string, boolean>>(() =>
     Object.fromEntries((checkpoint.current?.assistedSteps ?? []).map((id) => [id, true])),
   )
-  const step = steps[Math.min(i, steps.length - 1)]
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
   const isComplete = step.kind === 'complete'
-  const total = kerjaPlayableCount(steps)
   const footerLocked = step.kind === 'quiz' && !quizState?.solved
   const beatKey = step.kind === 'complete' ? 'complete' : step.id
 
@@ -269,10 +247,11 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
     if (isComplete) return
     writeLearningCheckpoint(resumeId, {
       stepId: step.id,
+      practiceIds: route.selected ?? [],
       retryWords: [],
       assistedSteps: Object.keys(assistedSteps).filter((id) => assistedSteps[id]),
     })
-  }, [i, isComplete, resumeId, step, assistedSteps])
+  }, [i, isComplete, resumeId, step, assistedSteps, route.selected])
 
   useEffect(() => {
     if (!isComplete || finished.current) return
@@ -289,8 +268,6 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
     })
     if (!alreadyDone.current) {
       store.awardXp(NODE_BONUS_XP)
-      xpRef.current += NODE_BONUS_XP
-      setXp(xpRef.current)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isComplete, chapter, node, resumeId])
@@ -298,8 +275,6 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
   function credit(id: string) {
     if (credited.current.has(id)) return
     credited.current.add(id)
-    xpRef.current += ITEM_XP
-    setXp(xpRef.current)
     store.awardXp(ITEM_XP)
     store.practiceLog()
   }
@@ -310,27 +285,10 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
     setAssistedSteps((previous) => (previous[scope] ? previous : { ...previous, [scope]: true }))
   }
 
-  function revealProgress() {
-    if (step.kind !== 'recall' && step.kind !== 'dialogue' && step.kind !== 'produce') return
-    if (step.kind === 'recall' && !assistedSteps[step.id])
-      store.recordRecall(step.word.zh, { correct: false, assisted: true, mode: 'recall' })
-    setAssistedSteps((previous) => ({
-      ...previous,
-      ...Object.fromEntries(
-        steps
-          .filter(
-            (activity) =>
-              activity.kind === 'recall' || activity.kind === 'dialogue' || activity.kind === 'produce',
-          )
-          .map((activity) => [activity.id, true]),
-      ),
-    }))
-  }
-
   function goForward() {
     if (left.current.has(i)) return
     left.current.add(i)
-    setI((current) => Math.min(current + 1, steps.length - 1))
+    route.next()
   }
 
   function advance() {
@@ -406,7 +364,6 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
     }
     if (picked === answer) {
       playCorrect()
-      setFireworks((value) => value + 1)
       credit(key)
       recordHistory({ course: 'kerja', kind: 'quiz', lesson: chapter, node, correct: true })
       setQuiz((questions) => ({
@@ -423,27 +380,16 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
     }
   }
 
-  const progressPct = isComplete ? 100 : (i / total) * 100
+  const progressPct = route.progress
   const showFooter =
     isComplete ||
     step.kind === 'teach' ||
     step.kind === 'note' ||
     step.kind === 'read' ||
     (step.kind === 'quiz' && quizState?.solved)
-  const activeStage: Stage =
-    step.kind === 'teach'
-      ? 'Encounter'
-      : step.kind === 'read' || step.kind === 'note'
-        ? 'Understand'
-        : step.kind === 'recall' || step.kind === 'quiz' || step.kind === 'recheck'
-          ? 'Retrieve'
-          : step.kind === 'complete'
-            ? 'Revisit'
-            : 'Produce'
 
   return (
     <div className="overlay session learning-session">
-      <Fireworks token={fireworks} />
       <div className="overlay-head">
         <button type="button" className="icon-round tap44" onClick={onClose} aria-label={t('Close session')}>
           <CloseIcon />
@@ -451,25 +397,12 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
         <div className="step-bar">
           <i className="yl-progress" style={{ width: `${Math.min(100, progressPct)}%` }} />
         </div>
-        <MasteryTracker words={sessionWords} compact onOpen={revealProgress} />
       </div>
-      <div
-        className="learning-route"
-        aria-label={t('Learning stage: {stage}', { stage: STAGE_LABEL[activeStage] })}
-      >
-        {STAGES.map((stage) => (
-          <span
-            key={stage}
-            data-active={stage === activeStage}
-            aria-current={stage === activeStage ? 'step' : undefined}
-          >
-            {STAGE_LABEL[stage]}
-          </span>
-        ))}
-      </div>
+      <SessionProgress kind={step.kind} />
+
       <div className="overlay-body" ref={bodyRef}>
         <div key={beatKey} className="session-beat yl-enter">
-          {step.kind === 'teach' ? (
+          {route.choosing ? <PracticeChoiceScreen choices={route.choices} onChoose={route.choose} onFinish={route.finish} /> : step.kind === 'teach' ? (
             <TeachView
               phase={step.phase}
               word={step.word}
@@ -488,8 +421,6 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
               of={step.of}
               externallyAssisted={assistedSteps[step.id]}
               onAssistance={() => {
-                if (!assistedSteps[step.id])
-                  store.recordRecall(step.word.zh, { correct: false, assisted: true, mode: 'recall' })
                 markAssisted()
               }}
               onAttempt={(correct, assisted, mode) => {
@@ -500,6 +431,7 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
             />
           ) : step.kind === 'dialogue' ? (
             <DialoguePractice
+              short
               text={step.text}
               lesson={chapter}
               targetWords={ch.words.map((word) => word.zh)}
@@ -543,32 +475,21 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
               onPick={answerQuiz}
             />
           ) : (
-            <DoneView
-              node={node}
-              titleZh={ch.titleZh}
-              titleEn={ch.titleEn}
-              wordCount={kerjaSittingWordCount(chapter, node)}
-              xp={xp}
-              replay={alreadyDone.current}
-              words={sessionWords}
-            />
+            <SessionSummary title={ch.titleZh} words={sessionWords} />
           )}
+          {route.inPractice && !route.choosing && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onSkip={goForward} onFinish={route.finish} />}
         </div>
       </div>
-      {showFooter && (
+      {showFooter && !route.choosing && (
         <div className="overlay-foot">
-          {(step.kind === 'teach' || step.kind === 'read' || step.kind === 'note') && (
-            <StudyDisplayControls />
-          )}
           <button type="button" className="btn" onPointerDown={() => unlockSpeech()} onClick={advance}>
-            {isComplete ? t('Continue') : t('Next')}
+            {isComplete ? t('Done') : t('Continue')}
           </button>
         </div>
       )}
     </div>
   )
 }
-
 
 function ReadView({ text }: { text: LessonText }) {
   const { onWord, sheet } = useGloss()
@@ -681,64 +602,6 @@ function NoteView({
   )
 }
 
-
-function DoneView({
-  node,
-  titleZh,
-  titleEn,
-  wordCount,
-  xp,
-  replay,
-  words,
-}: {
-  node: KerjaNode
-  titleZh: string
-  titleEn: string
-  wordCount: number
-  xp: number
-  replay: boolean
-  words: string[]
-}) {
-  const label = nodeLabelKerja(node)
-  return (
-    <div style={{ textAlign: 'center', paddingTop: 36 }}>
-      <div className="medal pop">
-        <CheckIcon size={46} />
-      </div>
-      <h2 className="h1 yl-enter" style={{ marginTop: 22, textWrap: 'balance' }}>
-        {t('{label} complete', { label: label.en })}
-      </h2>
-      <p className="sub yl-enter-up" style={{ marginTop: 8, animationDelay: '80ms', textWrap: 'pretty' }}>
-        {titleZh} · {titleEn}
-      </p>
-      <div className="learning-summary">
-        <MasteryTracker words={words} />
-        <p>
-          {t('Your words are tracked automatically. Return on another day to prove recall without hints.')}
-        </p>
-      </div>
-      <div
-        className="session-xp yl-pop"
-        style={{
-          marginTop: 20,
-          fontWeight: 800,
-          fontVariantNumeric: 'tabular-nums',
-          animationDelay: '120ms',
-        }}
-      >
-        +{xp} XP
-      </div>
-      <div
-        className="row yl-enter-up"
-        style={{ justifyContent: 'center', marginTop: 16, flexWrap: 'wrap', animationDelay: '180ms' }}
-      >
-        <span className="pill-ink">{t('+{xp} XP / item', { xp: ITEM_XP })}</span>
-        {!replay && <span className="pill-ink">{t('+{xp} node', { xp: NODE_BONUS_XP })}</span>}
-        {wordCount > 0 && <span className="pill-ink">{t('{n} words', { n: wordCount })}</span>}
-      </div>
-    </div>
-  )
-}
 
 function LockedView({ onClose }: { onClose: () => void }) {
   return (

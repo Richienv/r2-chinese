@@ -1,3 +1,4 @@
+import '../styles/compact-session.css'
 import { RepairEditor } from './RepairEditor'
 import { useId, useState } from 'react'
 import { RecallFeedback } from './LearningMotion'
@@ -7,7 +8,6 @@ import { HanziDrawing, type DrawingResult } from './HanziDrawing'
 import { ListenCue } from './ListenCue'
 import { ReviewReport } from './ReviewReport'
 import { StrokeWord } from './StrokeWord'
-import { StudyDisplayControls } from './StudyDisplayControls'
 import { playCorrect, playReveal, playWrong } from '../lib/sfx'
 import { normalizeChinese } from '../lib/production'
 import { hintLadder, type DrillCue, type HintStep } from '../lib/drillRounds'
@@ -75,6 +75,7 @@ export function WordRecall({
   const [missed, setMissed] = useState(false)
   const [helped, setHelped] = useState(false)
   const [solved, setSolved] = useState(false)
+  const [revealed, setRevealed] = useState(false)
   const [resultAssisted, setResultAssisted] = useState(false)
   const [feedback, setFeedback] = useState<'retry' | 'uncertain' | 'error' | null>(null)
   const [feedbackMessage, setFeedbackMessage] = useState('')
@@ -131,32 +132,15 @@ export function WordRecall({
   }
 
   return (
-    <section className="production-stage word-recall" data-mode={inputMode}>
-      <header className="production-heading">
-        <p className="sub">{t('Recall · {n} of {of}', { n, of })}</p>
-        <h2 className="session-step-title">{HEADINGS[cue]}</h2>
+    <section className="production-stage word-recall compact-recall" data-mode={inputMode} data-finished={solved || revealed}>
+      <header className="compact-recall-heading">
+        <p className="compact-eyebrow">{t('Recall · {n} of {of}', { n, of })}</p>
+        <h2>{cue === 'meaning' ? word.en : HEADINGS[cue]}</h2>
+        {cue === 'meaning' && <p>{t('Write the Mandarin word.')}</p>}
+        {cue === 'sound' && <ListenCue text={word.zh} />}
+        {cue === 'pinyin' && <p className="production-pinyin">{word.pinyin}</p>}
       </header>
-      <div className="production-prompt" data-cue={cue}>
-        {cue === 'meaning' && (
-          <>
-            <p className="production-en">{word.en}</p>
-            <p className="sub">{t('The word from this lesson. Type it, or draw the Hanzi.')}</p>
-          </>
-        )}
-        {cue === 'sound' && (
-          <>
-            <ListenCue text={word.zh} />
-            <p className="sub">{t('Listen as often as you like, then type it or draw the Hanzi.')}</p>
-          </>
-        )}
-        {cue === 'pinyin' && (
-          <>
-            <p className="production-pinyin">{word.pinyin}</p>
-            <p className="sub">{t('Sound it out, then type it or draw the Hanzi.')}</p>
-          </>
-        )}
-      </div>
-      {!solved && (
+      {!solved && !revealed && (
         <div className="word-recall-input-mode" role="group" aria-label={t('How to answer')}>
           <button
             type="button"
@@ -183,7 +167,7 @@ export function WordRecall({
           </button>
         </div>
       )}
-      {drawStarted && (
+      {drawStarted && !revealed && (
         <div className="hanzi-host" hidden={inputMode !== 'draw'} aria-describedby={`${inputId}-feedback`}>
           <HanziDrawing
             word={normalizeChinese(word.zh)}
@@ -199,7 +183,7 @@ export function WordRecall({
           />
         </div>
       )}
-      {!solved && inputMode === 'type' && (
+      {!solved && !revealed && inputMode === 'type' && !typedReview && (
         <form
           className="production-form"
           onSubmit={(event) => {
@@ -232,7 +216,7 @@ export function WordRecall({
           </button>
         </form>
       )}
-      {inputMode === 'type' && typedReview && !solved && (
+      {inputMode === 'type' && typedReview && !solved && !revealed && (
         <RepairEditor
           key={checkCount}
           response={answer}
@@ -254,9 +238,9 @@ export function WordRecall({
         />
       )}
       {inputMode === 'type' && typedReview && solved && (
-        <ReviewReport review={typedReview} comparison={typedChange} compact revealed={() => true} />
+        <details className="recall-answer-details"><summary>{t('Answer details')}</summary><ReviewReport review={typedReview} comparison={typedChange} compact revealed={() => true} /></details>
       )}
-      {!solved && (
+      {!solved && !revealed && (
         <div className="production-actions">
           <button
             type="button"
@@ -271,13 +255,13 @@ export function WordRecall({
             {hint >= ladder.length
               ? t('Word revealed')
               : hint === 0
-                ? t('Reveal a hint')
+                ? t('Hint')
                 : HINT_BUTTONS[ladder[hint]]}
           </button>
-          <span className="sub">{t('Hints help learning; they count as assisted.')}</span>
+          <button type="button" className="btn btn-ghost" onClick={() => { assist(); setRevealed(true); playReveal() }}>{t('Show answer')}</button>
         </div>
       )}
-      {hint > 0 && !solved && (
+      {hint > 0 && !solved && !revealed && (
         <div className="production-hint" key={hint}>
           <span>{HINT_TITLES[ladder[hint - 1]]}</span>
           <strong
@@ -299,10 +283,10 @@ export function WordRecall({
           <RecallFeedback
             key={checkCount}
             state="correct"
-            label={resultAssisted ? t('Retrieved with support') : t('Retrieved without a hint')}
+            label={resultAssisted ? t('Practised with help') : t('Remembered')}
           />
         ) : (
-          feedback &&
+          !revealed && feedback &&
           inputMode === 'type' && (
             <RecallFeedback
               key={checkCount}
@@ -312,7 +296,7 @@ export function WordRecall({
           )
         )}
       </div>
-      {solved && (
+      {(solved || revealed) && (
         <div className="production-source">
           {showStrokes ? (
             <StrokeWord text={word.zh} className="drill-strokes" showAttribution={false} />
@@ -324,19 +308,12 @@ export function WordRecall({
           {prefs.showPinyin && <p>{word.pinyin}</p>}
           {prefs.showEnglish && <p>{word.en}</p>}
           <HearButton text={word.zh} label={t('Hear the word')} />
-          {prefs.showEnglish && (
-            <p className="sub">
-              {resultAssisted
-                ? t('You’ll meet this word again for an unaided attempt.')
-                : t('One successful retrieval. Future sessions check whether it stays.')}
-            </p>
-          )}
+          {revealed && <p className="sub">{t('Look once. Try remembering it another day.')}</p>}
           <button type="button" className="btn production-next" onClick={onComplete}>
             {t('Continue')}
           </button>
         </div>
       )}
-      <StudyDisplayControls />
     </section>
   )
 }

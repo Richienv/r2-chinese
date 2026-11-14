@@ -31,27 +31,26 @@ async function withTeachingRender(assertion) {
   } finally { rmSync(directory, { recursive: true, force: true }) }
 }
 
-test('teaching starts with one insight, preserves every direct tip destination, and keeps the source example folded', async () => {
+test('every legacy word phase renders one compact source-faithful card', async () => {
   await withTeachingRender((render) => {
-    const html = render({ showEnglish: true, showPinyin: true, soundOn: false })
-    assert.equal((html.match(/<article\b/g) ?? []).length, 1)
-    assert.match(html, /Insight 1 of 6/)
-    for (const title of ['How people use it', 'Give the shape a cue', 'Keep a useful pair', 'Link sound to the shape', 'Retrieve it inside the book line', 'Make it come back']) assert.ok(html.includes(title))
-    assert.match(html, /Show the book example/)
-    assert.match(html, /aria-expanded="false"/)
-    assert.doesNotMatch(html, /我学法律，因为我喜欢法律。|I study law because I like law\./)
-    assert.match(html, /Keep the action attached to the noun\./)
-    assert.match(html, /Picture the moment/)
-    assert.doesNotMatch(html, /Use this word for a real rule\./)
+    for (const phase of ['meet', 'hook', 'example', 'seal']) {
+      const html = render({ showEnglish: true, showPinyin: true, soundOn: false }, phase)
+      assert.equal((html.match(/<article\b/g) ?? []).length, 1)
+      assert.match(html, /Word 1 of 3/)
+      assert.match(html, /I study law because I like law\./)
+      assert.match(html, /fǎ lǜ/)
+      assert.match(html, /One useful cue/)
+      assert.match(html, /Writing &amp; display/)
+      assert.doesNotMatch(html, /Next insight|Previous insight|Insight 1 of|Show the book example/)
+    }
   })
 })
 
-test('English Off removes coaching paragraphs while retaining compact navigation and the Hanzi', async () => {
+test('display preferences hide translations and pinyin while retaining the source Hanzi', async () => {
   await withTeachingRender((render) => {
     const html = render({ showEnglish: false, showPinyin: false, soundOn: false })
     assert.match(html, /法律/)
-    assert.match(html, /Next insight/)
-    assert.match(html, /Show the book example/)
-    assert.doesNotMatch(html, /teach-hook-when|paced-card-body|Keep the action attached|Use this word for|Sentence practice uses|fǎ lǜ|I study law/)
+    assert.match(html, /Word 1 of 3/)
+    assert.doesNotMatch(html, /One useful cue|fǎ lǜ|I study law|Use this word for/)
   })
 })

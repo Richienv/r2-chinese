@@ -55,6 +55,8 @@ export function clearStep(id: string): void {
 /** Semantic checkpoints survive inserted activities and retain assisted-attempt evidence. */
 const LEARNING_KEY = 'yulu.learning-checkpoints.v1'
 export interface LearningCheckpoint {
+  /** Selected short practice; an empty array means the choice screen. */
+  practiceIds?: string[]
   stepId: string
   retryWords: string[]
   assistedSteps: string[]
@@ -71,6 +73,7 @@ function readLearningMap(): Record<string, LearningCheckpoint> {
       if (typeof value.stepId !== 'string') continue
       result[id] = {
         stepId: value.stepId,
+        ...(Array.isArray(value.practiceIds) ? { practiceIds: [...new Set(value.practiceIds.filter((id): id is string => typeof id === 'string'))] } : {}),
         retryWords: Array.isArray(value.retryWords) ? [...new Set(value.retryWords.filter((word): word is string => typeof word === 'string'))] : [],
         assistedSteps: Array.isArray(value.assistedSteps) ? [...new Set(value.assistedSteps.filter((step): step is string => typeof step === 'string'))] : [],
       }

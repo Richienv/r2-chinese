@@ -37,6 +37,7 @@ type Attempt = { response: string; result: ProductionResult }
 export function DialoguePractice({
   text,
   lesson,
+  short = false,
   targetWords,
   externallyAssisted = false,
   assistedTurns = [],
@@ -45,6 +46,7 @@ export function DialoguePractice({
 }: {
   text: LessonText
   lesson: number
+  short?: boolean
   targetWords?: string[]
   externallyAssisted?: boolean
   assistedTurns?: string[]
@@ -59,7 +61,7 @@ export function DialoguePractice({
   const [partnerMuted, setPartnerMuted] = useState(false)
   const [roleAssisted, setRoleAssisted] = useState(false)
   const [attempts, setAttempts] = useState<Attempt[]>([])
-  const indexes = useMemo(() => dialogueTurnIndexes(text, role), [text, role])
+  const indexes = useMemo(() => { const turns = dialogueTurnIndexes(text, role); return short ? turns.slice(0, 1) : turns }, [text, role, short])
   const sourceIndex = indexes[turn]
   const turnScope = `${role}:${sourceIndex}`
   const line = text.lines[sourceIndex]
@@ -144,7 +146,7 @@ export function DialoguePractice({
           </span>
         </div>
       </header>
-      {roles.length > 1 && (
+      {roles.length > 1 && !short && (
         <div className="conversation-role-switch" aria-label={t('Choose your role')}>
           <span>{t('You play')}</span>
           <div className="production-roles">
@@ -428,7 +430,6 @@ export function ResponsePractice({
   const [assessment, setAssessment] = useState<ProductionAssessment | null>(null)
   const [checking, setChecking] = useState(false)
   const [error, setError] = useState('')
-  const [reviewed, setReviewed] = useState(false)
   const [completed, setCompleted] = useState(false)
   const [reviewNote, setReviewNote] = useState(0)
   /** The review of the attempt being fixed, so the retest can say what changed. */
@@ -451,7 +452,7 @@ export function ResponsePractice({
   const supported = canRecognizeMandarin()
   const listening = recognition.status === 'listening'
   const recording = listening || recognition.status === 'starting' || recognition.status === 'stopping'
-  const usedAssistance = assisted || reviewed || (checkedAssistance.current ?? externallyAssisted)
+  const usedAssistance = assisted || assessment?.accepted === false || (checkedAssistance.current ?? externallyAssisted)
   const sourceClues = targetWords
     .slice(0, 4)
     .map((word) => ({ zh: word, en: glosses[word] ?? lookup(word)?.en }))
@@ -534,7 +535,6 @@ export function ResponsePractice({
     setMode('writing')
     setAssessment(null)
     setError('')
-    setReviewed(false)
   }
 
   function toggleMicrophone() {
@@ -547,7 +547,6 @@ export function ResponsePractice({
       onAssistance?.()
     }
     setAssessment(null)
-    setReviewed(false)
     setError('')
     onVoiceStart?.()
     stopSpeech()
@@ -597,7 +596,6 @@ export function ResponsePractice({
         onChecked(result, candidate.trim(), checkedAssistance.current)
       }
       setReviewNote(0)
-      setReviewed(false)
       // The reference/correction is now visible; persist that exposure before
       // the learner can close the lesson and attempt the same checkpoint again.
       if (result.accepted !== true) onAssistance?.()
@@ -640,7 +638,6 @@ export function ResponsePractice({
     setValue('')
     setHint(0)
     setAssessment(null)
-    setReviewed(false)
     setError('')
     recognizer.current?.cancel()
   }
@@ -659,14 +656,13 @@ export function ResponsePractice({
     setAssisted(true)
     onAssistance?.()
     setAssessment(null)
-    setReviewed(false)
     setError('')
     recognizer.current?.cancel()
     window.setTimeout(() => document.getElementById(id)?.focus(), 0)
   }
 
   function finish() {
-    if (!assessment || checking || completed || (assessment.accepted === false && !reviewed)) return
+    if (!assessment || checking || completed) return
     setCompleted(true)
     recognizer.current?.cancel()
     stopSpeech()
@@ -699,7 +695,7 @@ export function ResponsePractice({
     : null
 
   return (
-    <div className="production-compose">
+    <div className="production-compose" data-reviewed={!!assessment} data-checking={checking}>
       {scaffold && !assessment && (
         <div className="practice-difficulty" role="group" aria-label={t('Practice difficulty')}>
           <button
@@ -755,7 +751,7 @@ export function ResponsePractice({
         </section>
       )}
 
-      {(!guided || assessment) && <label className="production-speaker" htmlFor={id}>
+      {!guided && !assessment && <label className="production-speaker" htmlFor={id}>
         {mode === 'speaking' && value ? t('Recognized Hanzi · edit if needed') : t('Your Mandarin')}
       </label>}
       {!assessment && fixList.length > 0 && (
@@ -768,7 +764,7 @@ export function ResponsePractice({
           </ul>
         </div>
       )}
-      {(!guided || assessment) && (
+      {!guided && !assessment && (
         <textarea
           id={id}
           className="production-input zh"
@@ -949,19 +945,6 @@ export function ResponsePractice({
             )}
             <HearButton text={assessment.correctedZh} label={t('Hear this phrasing')} />
           </details>
-          {assessment.accepted === false && (
-            <label className="production-review">
-              <input
-                type="checkbox"
-                checked={reviewed}
-                onChange={(event) => {
-                  setReviewed(event.target.checked)
-                  if (event.target.checked) onAssistance?.()
-                }}
-              />
-              {t('I compared the correction. Keep this as assisted practice.')}
-            </label>
-          )}
           <div className="production-actions">
             {assessment.accepted !== true && (
               <button type="button" className="btn" onClick={revise} disabled={completed}>
@@ -976,7 +959,7 @@ export function ResponsePractice({
                   : 'btn btn-ghost conversation-continue'
               }
               onClick={finish}
-              disabled={completed || checking || (assessment.accepted === false && !reviewed)}
+              disabled={completed || checking}
             >
               {assessment.accepted === null ? t('Keep as practice') : continueLabel}
             </button>
