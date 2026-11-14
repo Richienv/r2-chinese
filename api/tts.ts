@@ -1,5 +1,6 @@
-import { createHash, randomUUID } from 'node:crypto'
+import { randomUUID } from 'node:crypto'
 import WebSocket from 'ws'
+import { edgeToken, EDGE_TOKEN_VERSION } from '../server/edge-token.js'
 
 /**
  * Serverless proxy for Microsoft Edge's "Read Aloud" neural TTS. This is the
@@ -12,8 +13,8 @@ import WebSocket from 'ws'
 
 /**
  * Self-contained on purpose: Vercel's function runtime cannot resolve imports
- * of ../src/*.ts (the function answers FUNCTION_INVOCATION_FAILED), so nothing
- * here may import from outside api/. The browser's copy of WordTiming lives in
+ * of ../src/*.ts (the function answers FUNCTION_INVOCATION_FAILED). The server
+ * token adapter uses a runtime-resolvable .js module. The browser's WordTiming lives in
  * src/lib/speechTiming.ts.
  */
 /** Word boundaries from the synthesizer, in audio seconds and UTF-16 offsets. */
@@ -80,7 +81,6 @@ export function alignSpeechBoundaries(text: string, boundaries: SpokenBoundary[]
 
 const TRUSTED_CLIENT_TOKEN = '6A5AA1D4EAFF4E9FB37E23D68491D6F4'
 const WSS_URL = 'wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1'
-const EDGE_VERSION = '1-143.0.3650.75'
 const ALLOWED_VOICES = new Set([
   'zh-CN-XiaoxiaoNeural',
   'zh-CN-YunxiNeural',
@@ -88,14 +88,6 @@ const ALLOWED_VOICES = new Set([
   'zh-CN-YunjianNeural',
 ])
 const DEFAULT_VOICE = 'zh-CN-XiaoxiaoNeural'
-
-/** Microsoft's DRM token: SHA-256 of (5-min-rounded Windows filetime + token). */
-function secMsGec(): string {
-  let seconds = Math.floor(Date.now() / 1000) + 11_644_473_600
-  seconds -= seconds % 300
-  const ticks = BigInt(seconds) * 10_000_000n
-  return createHash('sha256').update(`${ticks}${TRUSTED_CLIENT_TOKEN}`, 'ascii').digest('hex').toUpperCase()
-}
 
 function escapeXml(s: string): string {
   return s
@@ -115,10 +107,14 @@ function synthesize(
   return new Promise((resolve, reject) => {
     const url =
       `${WSS_URL}?TrustedClientToken=${TRUSTED_CLIENT_TOKEN}` +
-      `&Sec-MS-GEC=${secMsGec()}&Sec-MS-GEC-Version=${EDGE_VERSION}`
+      `&ConnectionId=${randomUUID().replace(/-/g, '')}` +
+      `&Sec-MS-GEC=${edgeToken()}&Sec-MS-GEC-Version=${EDGE_TOKEN_VERSION}`
     const ws = new WebSocket(url, {
       headers: {
-        Origin: 'chrome-extension://jdiccldimpfdibmpgcfnpblgcbfnnjkbf',
+        Origin: 'chrome-extension://jdiccldimpdaibmpdkjnbmckianbfold',
+        'Cache-Control': 'no-cache',
+        Pragma: 'no-cache',
+        Cookie: `muid=${randomUUID().replace(/-/g, '').toUpperCase()};`,
         'User-Agent':
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0',
       },
