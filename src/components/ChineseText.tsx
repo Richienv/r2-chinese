@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties }
 import { courseVocab, exampleFor, lessonOf, lookup, segmentForGloss, unknownVocab, type Example } from '../lib/content'
 import { bundledDictionaryEntry, refreshDictionaryEntry, type DictionaryEntry } from '../lib/dictionary'
 import { DICTIONARY_LICENSE, DICTIONARY_SOURCE, formatDictionaryDefinition } from '../lib/dictionary-format'
-import { mixWithSaved } from '../lib/drill'
 import { t } from '../lib/i18n'
 import { speak, speakLines, stopSpeech, unlockSpeech } from '../lib/speech'
 import { rangesOverlap } from '../lib/speechTiming'
@@ -330,8 +329,7 @@ export function DialogueAudio({ text }: { text: LessonText }) {
 
 /**
  * Wraps gloss-on-tap for any screen. The returned node renders both the gloss
- * sheet and a mixed drill. Drill this stars the word, then alternates it
- * with the other saved cards.
+ * sheet and a focused drill for exactly the selected word.
  */
 export function useGloss(onStrokes?: (char: string) => void) {
   const store = useStore()
@@ -351,7 +349,7 @@ export function useGloss(onStrokes?: (char: string) => void) {
           onDrill={(zh) => {
             store.encounterWord(zh, lessonOf(zh) ?? 0)
             setWord(null)
-            setDrill(mixWithSaved(zh, store.starred))
+            setDrill([zh])
           }}
           onStrokes={
             onStrokes

@@ -1,3 +1,4 @@
+import usability from './id/usability.ts'
 import compact from './id/compact.ts'
 import focus from './id/focus.ts'
 /** Indonesian (Gen Z) interface strings, keyed by the exact English source. One file per area. */
@@ -14,6 +15,7 @@ import engine from './id/engine.ts'
 const id: Record<string, string> = {
   ...focus,
   ...compact,
+  ...usability,
   'Your practice, memory, and completed lessons.': 'Latihan, ingatan, dan materi yang sudah selesai.',
   'One session at a time.': 'Satu sesi, satu langkah.',
   '{n} practice steps. Daily goal complete.': '{n} langkah latihan. Target hari ini selesai.',

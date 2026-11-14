@@ -1,10 +1,11 @@
+import { StudyMusic } from '../components/StudyMusic'
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
-import { Fireworks } from '../components/Fireworks'
 import { CheckIcon, CloseIcon } from '../components/Icons'
-import { MasteryTracker } from '../components/MasteryTracker'
 import { WordRecall } from '../components/WordRecall'
 import { lessonOf, lookup } from '../lib/content'
+import { drillSelection, SHORT_DRILL_WORDS } from '../lib/practiceExperience'
+import '../styles/usability.css'
 import { buildDrillQueue } from '../lib/drill'
 import {
   addOutcome,
@@ -12,7 +13,6 @@ import {
   nextStreak,
   pipState,
   planRounds,
-  requeueRound,
   streakTier,
   wordsToRevisit,
   type DrillRound,
@@ -27,7 +27,7 @@ import { useStore } from '../store/store'
 import '../styles/drill-stage.css'
 import '../styles/drill-play.css'
 
-const REP_OPTIONS = [3, 5, 8]
+const REP_OPTIONS = [1, 2, 3]
 const DEFAULT_REPS = 1
 const XP_PER_REP = 1
 
@@ -43,22 +43,12 @@ const RESULT_LABEL = {
   assisted: t('With help'),
   missed: t('Needs practice'),
 } as const
-const CUE_CHIPS = [
-  { cue: 'meaning', zh: '义', label: t('See the meaning') },
-  { cue: 'sound', zh: '听', label: t('Hear the book read it') },
-  { cue: 'pinyin', zh: '拼', label: t('Read the pinyin') },
-] as const
 
 function reducedMotion(): boolean {
   return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
-/**
- * Bring the Hanzi back from memory, asked three different ways so the drill is
- * not the same tap over and over: from the meaning, from hearing the word, from
- * its pinyin. Every answer is typed or drawn. Help is never free: it is
- * recorded, and a word you needed help with comes back.
- */
+/** A bounded practice round. Missed words can be retried by choice at the end. */
 export function DrillFlow({
   words,
   title,
@@ -70,8 +60,12 @@ export function DrillFlow({
 }) {
   const store = useStore()
   const { encounterWord } = store
+  const [allWords, setAllWords] = useState(false)
   const [reps, setReps] = useState(DEFAULT_REPS)
-  const [rounds, setRounds] = useState<DrillRound[] | null>(null)
+  const [rounds, setRounds] = useState<DrillRound[] | null>(() => {
+    const selected = drillSelection(words)
+    return selected.length === 1 ? planRounds(selected, store.prefs.soundOn) : null
+  })
   const [focus, setFocus] = useState<string[] | null>(null)
   const [n, setN] = useState(0)
   const [answered, setAnswered] = useState(0)
@@ -79,7 +73,6 @@ export function DrillFlow({
   const [streak, setStreak] = useState(0)
   const [bestStreak, setBestStreak] = useState(0)
   const [outcomes, setOutcomes] = useState<Outcomes>({})
-  const [fireworksToken, setFireworksToken] = useState(0)
   const [pulse, setPulse] = useState<{ kind: 'correct' | 'assisted' | 'miss'; n: number }>({
     kind: 'correct',
     n: 0,
@@ -88,10 +81,10 @@ export function DrillFlow({
   const assistedWords = useRef(new Set<string>())
   const thisRound = useRef({ missed: false, assisted: false })
   const card = useRef<HTMLDivElement>(null)
-  const repairs = useRef<Record<string, number>>({})
   const committed = useRef(false)
 
-  const base = useMemo(() => [...new Set(words.filter(Boolean))], [words])
+  const totalWords = useMemo(() => drillSelection(words, true), [words])
+  const base = useMemo(() => drillSelection(totalWords, allWords), [totalWords, allWords])
   const unique = focus ?? base
   const uniqueCount = unique.length
   const current = rounds && n < rounds.length ? rounds[n] : null
@@ -132,7 +125,6 @@ export function DrillFlow({
   function begin(wordsToDrill: string[]) {
     setFocus(wordsToDrill === base ? null : wordsToDrill)
     setRounds(planRounds(buildDrillQueue(wordsToDrill, reps), store.prefs.soundOn))
-    repairs.current = {}
     setN(0)
     setAnswered(0)
     setUnaided(0)
@@ -143,8 +135,6 @@ export function DrillFlow({
   }
 
   function assistWord(target: string) {
-    if (!assistedWords.current.has(target))
-      store.recordRecall(target, { correct: false, assisted: true, mode: 'recall' })
     assistedWords.current.add(target)
   }
 
@@ -152,15 +142,6 @@ export function DrillFlow({
   function assist() {
     if (!zh) return
     assistWord(zh)
-    thisRound.current.assisted = true
-    setStreak(0)
-    setAssistVersion((version) => version + 1)
-  }
-
-  function revealAllProgress() {
-    // The progress sheet names every Hanzi, including later prompts. Treat the
-    // whole set as revealed for this session, rather than just the current card.
-    for (const target of unique) assistWord(target)
     thisRound.current.assisted = true
     setStreak(0)
     setAssistVersion((version) => version + 1)
@@ -197,7 +178,6 @@ export function DrillFlow({
       const clean = !assisted && !thisRound.current.missed && !thisRound.current.assisted
       if (!assisted) {
         setUnaided((count) => count + 1)
-        setFireworksToken((token) => token + 1)
       }
       if (clean) setStreak((run) => nextStreak(run, 'unaided'))
       react(assisted ? 'assisted' : 'correct')
@@ -218,19 +198,30 @@ export function DrillFlow({
       assisted: thisRound.current.assisted || assistedWords.current.has(zh),
     })
     setOutcomes((previous) => addOutcome(previous, zh, result))
-    // A word you missed comes back soon, asked by its meaning.
-    if (result === 'missed' && (repairs.current[zh] ?? 0) < 2) {
-      repairs.current[zh] = (repairs.current[zh] ?? 0) + 1
-      setRounds((existing) => (existing ? requeueRound(existing, n, zh) : existing))
-    }
     resetRound()
     setN((index) => index + 1)
     playAdvance()
   }
 
+  function keepVisibleOutcome() {
+    // An already checked miss stays visible in the summary; skipping creates no new review event.
+    if (current && (thisRound.current.missed || thisRound.current.assisted)) {
+      const result = classifyRound(thisRound.current)
+      setOutcomes(previous => addOutcome(previous, current.zh, result))
+    }
+  }
+
   function skipUnscored() {
+    keepVisibleOutcome()
     resetRound()
     setN((index) => index + 1)
+  }
+
+  function endPractice() {
+    if (!rounds) return
+    keepVisibleOutcome()
+    resetRound()
+    setN(rounds.length)
   }
 
   if (!rounds) {
@@ -238,64 +229,26 @@ export function DrillFlow({
       <DrillOverlay onClose={onClose}>
         <Head
           title={title ?? t('Recall drill')}
-          words={unique}
           onClose={onClose}
-          onProgressReveal={revealAllProgress}
         />
         <div className="overlay-body drill-intro">
-          <div className="medal">
-            <span className="zh" style={{ fontSize: 36, fontWeight: 700 }}>
-              忆
-            </span>
-          </div>
-          <h2 className="h2" style={{ fontSize: 22 }}>
-            {uniqueCount === 1 ? t('Bring one word back') : t('Bring {n} words back', { n: uniqueCount })}
-          </h2>
-          <p className="sub" style={{ marginTop: 8 }}>
-            {t('Every word is asked three ways, and you answer by writing the Hanzi.')}
-            <br />
-            {t('Type it, or draw it with your finger.')}
-          </p>
-          <ul className="drill-ways" aria-label={t('How each word is asked')}>
-            {CUE_CHIPS.map((chip, index) => (
-              <li key={chip.cue} style={{ animationDelay: `${120 + index * 90}ms` }}>
-                <span className="zh" aria-hidden="true">
-                  {chip.zh}
-                </span>
-                <span>{chip.label}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="kicker-ink" style={{ margin: '24px 0 10px' }}>
-            {t('Rounds per word')}
-          </div>
-          <div className="row" style={{ justifyContent: 'center', gap: 10 }}>
-            {REP_OPTIONS.map((count) => (
-              <button
-                key={count}
-                className="pill-ink"
-                aria-pressed={reps === count}
-                onClick={() => setReps(count)}
-                style={{
-                  height: 44,
-                  minWidth: 56,
-                  fontSize: 15,
-                  ...(reps === count
-                    ? {
-                        color: '#fff',
-                        backgroundImage: 'var(--metal-sheen), var(--metal-base)',
-                        borderColor: 'transparent',
-                      }
-                    : {}),
-                }}
-              >
-                {count}×
-              </button>
-            ))}
-          </div>
-          <p className="sub" style={{ fontSize: 12, marginTop: 14 }}>
-            {t('{n} prompts · hints count as help, so mastery stays honest', { n: uniqueCount * reps })}
-          </p>
+          <p className="compact-eyebrow">{t('A short recall round')}</p>
+          <h2 className="h2">{t('{n} words, at your pace.', { n: uniqueCount })}</h2>
+          <p className="sub">{t('One pass to start. Missed words can wait for another round.')}</p>
+          {totalWords.length > base.length && <p className="sub">{t('The other {n} words stay in your trail.', { n: totalWords.length - base.length })}</p>}
+          <details className="practice-options">
+            <summary>{t('More practice options')}</summary>
+            {totalWords.length > SHORT_DRILL_WORDS && <div className="practice-scope" role="group" aria-label={t('Words in this round')}>
+              <button className="pill-ink" aria-pressed={!allWords} onClick={() => setAllWords(false)}>{t('Short round · {n} words', { n: SHORT_DRILL_WORDS })}</button>
+              <button className="pill-ink" aria-pressed={allWords} onClick={() => setAllWords(true)}>{t('All {n} words', { n: totalWords.length })}</button>
+            </div>}
+            <p className="sub">{t('Passes per word')}</p>
+            <div className="practice-scope" role="group" aria-label={t('Passes per word')}>
+              {REP_OPTIONS.map(count => <button key={count} className="pill-ink" aria-pressed={reps === count} onClick={() => setReps(count)}>{count}×</button>)}
+            </div>
+            <p className="sub">{t('Extra passes add listening and pinyin prompts.')}</p>
+          </details>
+          <p className="drill-round-size">{t('{n} questions in this round', { n: uniqueCount * reps })}</p>
         </div>
         <div className="overlay-foot">
           <button
@@ -314,17 +267,13 @@ export function DrillFlow({
   if (n >= rounds.length) {
     const credited = Math.min(answered, uniqueCount * reps)
     const revisit = wordsToRevisit(outcomes, unique)
-    const clean = answered > 0 && revisit.length === 0 && unaided === answered
+    const clean = answered > 0 && revisit.length === 0 && unaided === answered && unique.every(word => outcomes[word]?.last === 'unaided')
     return (
       <DrillOverlay onClose={finish}>
         <Head
           title={title ?? t('Recall drill')}
-          words={unique}
           onClose={finish}
-          onProgressReveal={() => {
-            // Keep a following "Practise again" in this same session assisted.
-            for (const target of unique) assistedWords.current.add(target)
-          }}
+
         />
         <div className="overlay-body drill-summary">
           <div className="medal pop" onAnimationStart={() => playComplete()}>
@@ -333,11 +282,9 @@ export function DrillFlow({
           <h2 className="h1" style={{ marginTop: 22 }}>
             {clean ? t('Clean recall') : t('Recall session complete')}
           </h2>
-          <div className="row" style={{ justifyContent: 'center', marginTop: 18, flexWrap: 'wrap' }}>
-            <span className="pill-ink">{t('{unaided}/{answered} unaided', { unaided, answered })}</span>
-            <span className="pill-ink">+{credited * XP_PER_REP} XP</span>
-            {bestStreak >= 2 && <span className="pill-ink">{t('Best run {n}', { n: bestStreak })}</span>}
-          </div>
+          <p className="sub">{t('{n} answers checked. Your progress is saved.', { n: answered })}</p>
+          <details className="practice-options"><summary>{t('Round details')}</summary>
+          <p className="sub">{t('{unaided}/{answered} unaided', { unaided, answered })} · +{credited * XP_PER_REP} XP{bestStreak >= 2 ? ` · ${t('Best run {n}', { n: bestStreak })}` : ''}</p>
           <ul className="drill-words" aria-label={t('How each word went')}>
             {unique.map((target, index) => {
               const info = lookup(target)
@@ -359,7 +306,7 @@ export function DrillFlow({
                 </li>
               )
             })}
-          </ul>
+          </ul></details>
           <p className="sub" style={{ marginTop: 18 }}>
             {t(
               'Words and difficult attempts are saved automatically. Return another day to prove they stayed with you.',
@@ -367,35 +314,10 @@ export function DrillFlow({
           </p>
         </div>
         <div className="overlay-foot" style={{ display: 'grid', gap: 10 }}>
-          {revisit.length > 0 && (
-            <button
-              className="btn"
-              onPointerDown={() => unlockSpeech()}
-              onClick={() => {
-                creditSession()
-                committed.current = false
-                begin(revisit)
-              }}
-            >
-              {revisit.length === 1
-                ? t('Drill the word to revisit')
-                : t('Drill the {n} words to revisit', { n: revisit.length })}
-            </button>
-          )}
-          <button
-            className={revisit.length ? 'btn btn-ghost' : 'btn'}
-            onClick={() => {
-              creditSession()
-              committed.current = false
-              begin(unique)
-              // Same-session repeats after an answer reveal remain assisted.
-            }}
-          >
-            {t('Practise again')}
-          </button>
-          <button className="btn btn-ghost" onClick={finish}>
-            {t('Done')}
-          </button>
+          <button className="btn" onClick={finish}>{t('Done')}</button>
+          {revisit.length > 0 && <button className="btn btn-ghost" onClick={() => {
+            creditSession(); committed.current = false; begin(revisit)
+          }}>{t('Practise {n} tricky words again', { n: revisit.length })}</button>}
         </div>
       </DrillOverlay>
     )
@@ -407,7 +329,6 @@ export function DrillFlow({
   const cue = current.cue === 'pinyin' && !word?.pinyin ? 'meaning' : current.cue
   return (
     <DrillOverlay onClose={finish}>
-      <Fireworks token={fireworksToken} />
       <span
         key={pulse.n}
         className="drill-pulse"
@@ -416,9 +337,7 @@ export function DrillFlow({
       />
       <Head
         title={title ?? t('Recall drill')}
-        words={unique}
         onClose={finish}
-        onProgressReveal={revealAllProgress}
       />
       <div className="overlay-head drill-hud">
         <div className="drill-pips" role="list" aria-label={t('Words in this drill')}>
@@ -450,7 +369,7 @@ export function DrillFlow({
       <div className="step-bar drill-bar">
         <i className="yl-progress" style={{ width: `${(n / rounds.length) * 100}%` }} />
       </div>
-      <div className="overlay-body drill-stage">
+      <div className="overlay-body drill-stage compact-drill">
         <div className="drill-card" ref={card} data-cue={cue}>
           {noGloss ? (
             <section className="production-stage">
@@ -482,6 +401,7 @@ export function DrillFlow({
             />
           )}
         </div>
+        <div className="practice-exit"><button onClick={skipUnscored}>{t('Skip for now')}</button><button onClick={endPractice}>{t('Finish practice')}</button></div>
       </div>
     </DrillOverlay>
   )
@@ -550,14 +470,10 @@ function DrillOverlay({ children, onClose }: { children: ReactNode; onClose: () 
 
 function Head({
   title,
-  words,
   onClose,
-  onProgressReveal,
 }: {
   title: string
-  words: string[]
   onClose: () => void
-  onProgressReveal?: () => void
 }) {
   return (
     <div className="overlay-head">
@@ -565,7 +481,7 @@ function Head({
         <CloseIcon />
       </button>
       <strong style={{ fontSize: 15, flex: 1 }}>{title}</strong>
-      <MasteryTracker words={words} compact onOpen={onProgressReveal} />
+      <StudyMusic compact />
     </div>
   )
 }

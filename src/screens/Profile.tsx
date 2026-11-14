@@ -33,9 +33,9 @@ export function Profile() {
           <p>{email || t('Your personal learning space')}</p>
           <div className="profile-account-meta">
             <span>
-              {s.wordsLearned === 1
-                ? t('{n} word in your trail', { n: s.wordsLearned })
-                : t('{n} words in your trail', { n: s.wordsLearned })}
+              {s.learningTrail.length === 1
+                ? t('{n} word in your trail', { n: s.learningTrail.length })
+                : t('{n} words in your trail', { n: s.learningTrail.length })}
             </span>
             <i aria-hidden="true" />
             <span>{s.xp.toLocaleString()} XP</span>

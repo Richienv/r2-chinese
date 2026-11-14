@@ -1,3 +1,6 @@
+import { progressAction } from '../lib/practiceExperience'
+import { recommendedWords } from '../lib/learningEngine'
+import '../styles/usability.css'
 import { useMemo, useState } from 'react'
 import { MasteryTracker } from '../components/MasteryTracker'
 import { getLesson, lessons } from '../lib/content'
@@ -276,10 +279,10 @@ export function Progress({
   const [showHistory, setShowHistory] = useState(false)
   const week = weekActivity(s.log)
   const due = dueCards(s.cardList)
-  const hardWords = Object.values(s.mastery)
+  const hardWords = recommendedWords(s, Object.values(s.mastery)
     .filter((record) => record.state === 'hard')
     .sort((a, b) => b.lastSeen - a.lastSeen)
-    .map((record) => record.zh)
+    .map((record) => record.zh))
   const weekCards = week.reduce((sum, day) => sum + day.cards, 0)
   const activeDays = week.filter((day) => day.cards > 0).length
   const todayProgress = Math.min(100, Math.round((s.today.cards / DAILY_GOAL) * 100))
@@ -302,17 +305,18 @@ export function Progress({
   )
   const visibleHistory = showHistory ? history : history.slice(0, 5)
 
+  const nextAction = progressAction(due.length, hardWords.length)
   function startReview() {
-    if (due.length) onReview()
-    else if (hardWords.length) onReview(hardWords.slice(0, 8), t('Strengthen hard words'))
-    else onReview()
+    if (nextAction === 'due') onReview()
+    else if (nextAction === 'hard') onReview(hardWords.slice(0, 8), t('Strengthen hard words'))
+    else onLearn()
   }
 
   const reviewLabel = due.length
     ? t('Review due words')
     : hardWords.length
       ? t('Practice hard words')
-      : t('Practice saved words')
+      : t('Continue learning')
 
   return (
     <div className="stack-page progress-page">
@@ -345,9 +349,9 @@ export function Progress({
           <button
             className="btn progress-focus-button"
             type="button"
-            onClick={s.cardList.length ? startReview : onLearn}
+            onClick={startReview}
           >
-            {s.cardList.length ? reviewLabel : t('Choose a course')}
+            {reviewLabel}
             <span aria-hidden="true">→</span>
           </button>
           <span className="progress-focus-note">
@@ -356,7 +360,7 @@ export function Progress({
               : hardWords.length
                 ? t('{n} words are asking for another try', { n: hardWords.length })
                 : s.cardList.length
-                  ? t('Your saved words are ready for a quick recall')
+                  ? t('All caught up. Continue a lesson when you feel like it.')
                   : t('Start with a lesson you like.')}
           </span>
         </div>
@@ -370,15 +374,17 @@ export function Progress({
             <span>
               {s.today.cards >= DAILY_GOAL ? t('goal reached') : t('of {goal} goal', { goal: DAILY_GOAL })}
             </span>
-            <small>{t('recalls')}</small>
+            <small>{t('practice steps')}</small>
           </div>
         </div>
       </section>
 
+      <details className="progress-activity-details">
+        <summary>{t('Practice over time')}</summary>
       <section className="progress-stats" aria-label={t('Learning totals')}>
         <Glance value={s.streak} label={t('day streak')} detail={t('show up again')} />
         <Glance value={s.xp} label={t('XP earned')} detail={t('practice adds up')} />
-        <Glance value={s.wordsLearned} label={t('words met')} detail={t('kept in your trail')} />
+        <Glance value={s.learningTrail.length} label={t('words met')} detail={t('kept in your trail')} />
       </section>
 
       <section className="card progress-section progress-week-section">
@@ -438,6 +444,8 @@ export function Progress({
           </span>
         </div>
       </section>
+
+      </details>
 
       <section className="card progress-section progress-mastery-section">
         <div className="progress-section-heading">

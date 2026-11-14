@@ -1,3 +1,4 @@
+import { reviewRatings } from '../lib/practiceExperience'
 import { StudyMusic } from '../components/StudyMusic'
 import { RepairEditor } from '../components/RepairEditor'
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
@@ -72,6 +73,7 @@ export function ReviewFlow({
     [hadMiss, setHadMiss] = useState(false)
   const skill: Skill = skillOverride ?? (placement ? 'recall' : (store.cards[zh]?.skill ?? 'recall'))
   const selfMode = skill === 'reading' || skill === 'speaking'
+  const ratings = reviewRatings({ hadMiss, checked, helped, selfMode })
   const card = zh ? (wordState(store, zh).skills[skill] ?? newCard(zh, lessonOf(zh) ?? 0)) : undefined
   const example = zh ? exampleFor(zh) : null
   const now = shownAt || Date.now()
@@ -125,7 +127,7 @@ export function ReviewFlow({
   }
   function rate(rating: Rating) {
     if (!ratingReady || committed.current || !zh) return
-    if (hadMiss && rating !== 'again') return
+    if (!ratings.includes(rating)) return
     committed.current = true
     const actual = hadMiss
       ? 'again'
@@ -275,11 +277,10 @@ export function ReviewFlow({
                 </button>
               </form>
             )}
-            {!revealed && (
-              <button className="focus-link focus-reveal" onClick={reveal}>
-                {selfMode ? t('Show answer') : t('I need to see it')}
-              </button>
-            )}
+            {!revealed && <div className="focus-help-actions">
+              <button className="focus-link focus-reveal" onClick={reveal}>{t('Show answer')}</button>
+              <button className="focus-link focus-reveal" onClick={() => { stopSpeech(); setIndex(current => current + 1) }}>{t('Skip for now')}</button>
+            </div>}
             {revealed && missed && answer && (
               <RepairEditor
                 key={answer}
@@ -337,25 +338,22 @@ export function ReviewFlow({
       </main>
       {!empty && !done && revealed && (
         <footer className="focus-foot">
-          {hadMiss&&checked?<button className="focus-primary focus-repaired" disabled={!ratingReady} onClick={()=>rate('again')}>{t('Save the correction')} · {previews.again?intervalText(previews.again.due,now):''}</button>:<div className="focus-ratings">
-            {(Object.keys(LABELS) as Rating[]).map((r) => {
-              const disabled =
-                !ratingReady ||
-                (hadMiss && r !== 'again') ||
-                (((!checked && !selfMode) || helped) && (r === 'easy' || r === 'good'))
-              return (
-                <button key={r} data-rating={r} disabled={disabled} onClick={() => rate(r)}>
-                  <strong>{LABELS[r]}</strong>
-                  <span>{previews[r] ? intervalText(previews[r].due, now) : ''}</span>
-                </button>
-              )
-            })}
-          </div>}
-          <p>
-            {hadMiss&&checked?t('Repaired with help. We will check it again soon.'):missed
-              ? t('Repair the highlighted parts, or choose Again to revisit later.')
-              : t('Choose how the recall felt. Dates adapt to your history.')}
-          </p>
+          {ratings.length === 1 ? <>
+            <button className="focus-primary focus-repaired" disabled={!ratingReady} onClick={() => rate('again')}>
+              {checked ? t('Save the correction') : t('Continue · review again soon')}
+              <span className="focus-next-date">{previews.again ? intervalText(previews.again.due, now) : ''}</span>
+            </button>
+            <p>{checked ? t('Repaired with help. We will check it again soon.') : t('You can repair the answer above or continue for now.')}</p>
+          </> : <>
+            <div className="focus-ratings" style={{ gridTemplateColumns: `repeat(${ratings.length}, minmax(0, 1fr))` }}>
+              {ratings.map(r => <button key={r} data-rating={r} disabled={!ratingReady} onClick={() => rate(r)}>
+                <strong>{r === 'hard' && !checked && !selfMode ? t('Seen with help') : LABELS[r]}</strong>
+                <span>{previews[r] ? intervalText(previews[r].due, now) : ''}</span>
+              </button>)}
+            </div>
+            <p>{ratings.length === 2 ? t('Kept as assisted practice. Try it independently another day.') : t('Choose how the recall felt. Dates adapt to your history.')}</p>
+          </>}
+
         </footer>
       )}
     </div>

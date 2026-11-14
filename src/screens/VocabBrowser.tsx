@@ -1,3 +1,5 @@
+import { matchesWord } from '../lib/wordSearch'
+import '../styles/usability.css'
 import { useMemo, useState } from 'react'
 import { useGloss } from '../components/ChineseText'
 import { HearButton } from '../components/Hear'
@@ -10,7 +12,7 @@ import { VOICE, WORD_RATE } from '../lib/voices'
 
 const TAGS: { key: string; label: string }[] = [
   { key: '', label: t('All') },
-  { key: 'known-char', label: t('Known-char') },
+  { key: 'known-char', label: t('Known characters') },
   { key: 'proper', label: t('Proper nouns') },
   { key: 'supra', label: t('Beyond HSK 4') },
 ]
@@ -23,16 +25,10 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
   const [lesson, setLesson] = useState<number | 0>(0)
 
   const results = useMemo(() => {
-    const needle = q.trim().toLowerCase()
     return vocabIndex.filter((v) => {
       if (tag && v.tag !== tag) return false
       if (lesson && v.lesson !== lesson) return false
-      if (!needle) return true
-      return (
-        v.zh.includes(needle) ||
-        v.pinyin.toLowerCase().includes(needle) ||
-        v.en.toLowerCase().includes(needle)
-      )
+      return matchesWord(v, q)
     })
   }, [q, tag, lesson])
 
@@ -48,66 +44,23 @@ export function VocabBrowser({ onClose }: { onClose: () => void }) {
         <span style={{ fontSize: 12, fontWeight: 800, color: 'var(--muted)' }}>{results.length}</span>
       </div>
 
-      <div style={{ padding: '4px 22px 8px', flex: 'none' }}>
-        <input
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          placeholder={t('Search hanzi, pinyin or meaning…')}
-          aria-label={t('Search vocabulary')}
-          style={{
-            width: '100%',
-            height: 48,
-            borderRadius: 14,
-            border: '1px solid var(--line-2)',
-            background: 'var(--surface)',
-            padding: '0 16px',
-            fontSize: 16,
-            color: 'var(--ink)',
-            fontFamily: 'var(--ui)',
-          }}
-        />
-        <div style={{ display: 'flex', gap: 8, overflowX: 'auto', marginTop: 10, paddingBottom: 2 }}>
-          {TAGS.map((item) => (
-            <button
-              key={item.key}
-              className="pill-ink"
-              onClick={() => setTag(item.key)}
-              style={
-                tag === item.key
-                  ? { color: '#fff', backgroundImage: 'var(--metal-sheen), var(--metal-base)', borderColor: 'transparent', flex: 'none' }
-                  : { flex: 'none' }
-              }
-            >
-              {item.label}
-            </button>
-          ))}
+      <div className="word-search-controls">
+        <div className="word-search-row">
+          <input className="word-search-input" value={q} onChange={event => setQ(event.target.value)} placeholder={t('Search hanzi, pinyin or meaning…')} aria-label={t('Search vocabulary')} />
+          {(q || tag || lesson > 0) && <button className="word-search-reset" onClick={() => { setQ(''); setTag(''); setLesson(0) }}>{t('Reset')}</button>}
         </div>
-        <div style={{ display: 'flex', gap: 8, overflowX: 'auto', marginTop: 8, paddingBottom: 2 }}>
-          <button
-            className="pill-ink"
-            onClick={() => setLesson(0)}
-            style={lesson === 0 ? { color: 'var(--link-hover)', borderColor: '#f3d6c4', flex: 'none' } : { flex: 'none' }}
-          >
-            {t('All lessons')}
-          </button>
-          {lessonNums.map((n) => (
-            <button
-              key={n}
-              className="pill-ink"
-              onClick={() => setLesson(n)}
-              style={lesson === n ? { color: 'var(--link-hover)', borderColor: '#f3d6c4', flex: 'none' } : { flex: 'none' }}
-            >
-              L{n}
-            </button>
-          ))}
-        </div>
+        <details className="word-search-filters">
+          <summary>{t('Filters')}{(tag || lesson > 0) && <span>{t('{n} active', { n: Number(!!tag) + Number(lesson > 0) })}</span>}</summary>
+          <div className="word-search-selects">
+            <label>{t('Word type')}<select value={tag} aria-label={t('Word type')} onChange={event => setTag(event.target.value)}>{TAGS.map(item => <option key={item.key} value={item.key}>{item.label}</option>)}</select></label>
+            <label>{t('Lesson')}<select value={lesson} aria-label={t('Vocabulary lesson')} onChange={event => setLesson(Number(event.target.value))}><option value={0}>{t('All lessons')}</option>{lessonNums.map(n => <option key={n} value={n}>L{n}</option>)}</select></label>
+          </div>
+        </details>
       </div>
 
       <div className="overlay-body" style={{ paddingTop: 8 }}>
         {results.length === 0 ? (
-          <p className="sub" style={{ textAlign: 'center', marginTop: 40 }}>
-            {t('No words match “{q}”.', { q })}
-          </p>
+          <div className="word-search-empty"><h2 className="h2">{t('No matching words')}</h2><p className="sub">{t('Try another spelling or reset the filters.')}</p><button className="btn btn-ghost" onClick={() => { setQ(''); setTag(''); setLesson(0) }}>{t('Clear search and filters')}</button></div>
         ) : (
           <div style={{ display: 'grid', gap: 8 }}>
             {results.map((v) => {

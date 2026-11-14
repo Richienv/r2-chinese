@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type RefObject } from 'react'
+import { useEffect, useMemo, useRef, type RefObject } from 'react'
 import type { BooksSitting } from '../lib/books'
 import { SITTING_KIND_LABEL } from '../lib/books'
 import type { BookLearningPlan } from '../lib/bookLearning'
@@ -21,41 +21,54 @@ function useBookArrival<T extends HTMLElement>(reference: RefObject<T>, trigger:
 
 export function BookSourceReader({ sitting, n, of, passageKey, onNext }: { sitting: BooksSitting; n: number; of: number; passageKey: string; onNext: () => void }) {
   const passages = useMemo(() => bookSourcePassages(sitting.bodyEn), [sitting.bodyEn])
-  const [page, setPage] = useState(() => Math.min(readStep(passageKey), Math.max(0, passages.length - 1)))
+  const saved = useRef(Math.min(readStep(passageKey), Math.max(0, passages.length - 1)))
   const passage = useRef<HTMLDivElement>(null)
-  const terms = sitting.terms ?? []
-  const [term, setTerm] = useState(0)
-  const activeTerm = terms[Math.min(term, terms.length - 1)]
-  useBookArrival(passage, page)
-  useEffect(() => { writeStep(passageKey, page) }, [passageKey, page])
-  const last = page >= passages.length - 1
-  function next() {
-    if (last) { clearStep(passageKey); onNext(); return }
-    setPage((current) => current + 1)
-    passage.current?.closest<HTMLElement>('.overlay-body')?.scrollTo({ top: 0, behavior: 'auto' })
-  }
+  const finished = useRef(false)
+  useEffect(() => {
+    const element = passage.current
+    const scroller = element?.closest<HTMLElement>('.overlay-body')
+    if (!element || !scroller) return
+    const sections = [...element.querySelectorAll<HTMLElement>('[data-source-passage]')]
+    // Old paginated bookmarks point into the same source groups in the continuous reader.
+    const target = sections[saved.current]
+    let restoring = saved.current > 0 && !!target
+    // Run after the parent session resets its scroll position for this activity.
+    const restoreFrame = restoring ? requestAnimationFrame(() => {
+      scroller.scrollTop += target.getBoundingClientRect().top - scroller.getBoundingClientRect().top - 12
+      restoring = false
+    }) : 0
+    let frame = 0
+    function remember() {
+      if (frame || restoring || finished.current) return
+      frame = requestAnimationFrame(() => {
+        frame = 0
+        if (finished.current) return
+        const top = scroller!.getBoundingClientRect().top + 28
+        let current = 0
+        sections.forEach((section, index) => { if (section.getBoundingClientRect().top <= top) current = index })
+        if (current !== saved.current) { saved.current = current; writeStep(passageKey, current) }
+      })
+    }
+    scroller.addEventListener('scroll', remember, { passive: true })
+    return () => { scroller.removeEventListener('scroll', remember); cancelAnimationFrame(frame); cancelAnimationFrame(restoreFrame) }
+  }, [passageKey])
+  function next() { finished.current = true; clearStep(passageKey); onNext() }
   return <article className="books-stage books-source-reader" data-phase="read">
     <div className="books-reading-meta"><span>{t('From the book · {kind}', { kind: SITTING_KIND_LABEL[sitting.kind] })}</span><span>{n} / {of}</span></div>
     <h2 className="books-skill-hero">{sitting.titleEn.trim() || SITTING_KIND_LABEL[sitting.kind]}</h2>
-    <div className="books-passage-progress" aria-label={t('Passage {n} of {of}', { n: page + 1, of: Math.max(1, passages.length) })}><span>{t('Passage {n} of {of}', { n: page + 1, of: Math.max(1, passages.length) })}</span><span aria-hidden="true">{passages.map((_, index) => <i key={index} data-current={index === page} data-read={index < page} />)}</span></div>
-    <div ref={passage} className="books-reading-copy" aria-live="polite">{(passages[page] ?? []).map((paragraph, index) => <p key={`${page}:${index}`}>{paragraph}</p>)}</div>
-    {activeTerm && <section className="books-key-term" aria-label={t('Key term')}><span>{t('Keep this idea')}</span><strong>{activeTerm.en}</strong>{activeTerm.hook && <p>{activeTerm.hook}</p>}{terms.length > 1 && <button type="button" className="books-text-button" onClick={() => setTerm((current) => (current + 1) % terms.length)}>{t('Next key term')} <span>{term + 1} / {terms.length}</span></button>}</section>}
-    <div className="books-passage-actions">{page > 0 && <button type="button" className="btn btn-ghost" onClick={() => setPage((current) => current - 1)}>{t('Previous passage')}</button>}<button type="button" className="btn" onClick={next}>{last ? n < of ? t('Next source sitting') : t('Continue') : t('Next passage')}</button></div>
-    <details className="books-disclosure books-full-source"><summary>{t('Full source passage')}</summary><div className="books-reading-copy">{sitting.bodyEn.split(/\n\s*\n/).map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div></details>
+    <div ref={passage} className="books-reading-copy">{passages.map((paragraphs, group) => <div key={group} data-source-passage={group}>{paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>)}</div>
+    {!!sitting.terms?.length && <details className="books-disclosure"><summary>{t('Key terms')}</summary>{sitting.terms.map((term, index) => <div className="books-key-term" key={index}><strong>{term.en}</strong>{term.hook && <p>{term.hook}</p>}</div>)}</details>}
+    <div className="books-passage-actions"><button type="button" className="btn" onClick={next}>{t('Continue')}</button></div>
   </article>
 }
 
 export function BookPrinciple({ plan, source, onNext }: { plan: BookLearningPlan; source?: BooksSitting; onNext: () => void }) {
-  const passages = useMemo(() => bookSourcePassages(plan.principle.explanation), [plan.principle.explanation])
-  const [page, setPage] = useState(0)
-  const passage = useRef<HTMLDivElement>(null)
-  useBookArrival(passage, page)
+  const paragraphs = useMemo(() => bookSourcePassages(plan.principle.explanation).flat(), [plan.principle.explanation])
   return <article className="books-stage books-workshop" data-phase="understand">
     <div className="books-reading-meta"><span>{t('Understand · Added teaching')}</span></div>
     <h2 className="books-skill-hero">{plan.principle.title}</h2>
-    <div ref={passage} className="books-reading-copy">{(passages[page] ?? []).map((paragraph, index) => <p key={`${page}:${index}`}>{paragraph}</p>)}</div>
-    {passages.length > 1 && <p className="books-passages-note">{t('Explanation {n} of {of}', { n: page + 1, of: passages.length })}</p>}
-    <button type="button" className="btn" onClick={() => page < passages.length - 1 ? setPage((current) => current + 1) : onNext()}>{page < passages.length - 1 ? t('Next passage') : t('Work through a scenario')}</button>
+    <div className="books-reading-copy">{paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
+    <button type="button" className="btn" onClick={onNext}>{t('Work through a scenario')}</button>
     {source && <details className="books-disclosure"><summary>{t('Where this idea comes from')}<span>{source.titleEn}</span></summary><div className="books-reading-copy"><p>{source.bodyEn}</p></div></details>}
   </article>
 }
