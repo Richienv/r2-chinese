@@ -56,7 +56,7 @@ export function BookSourceReader({ sitting, n, of, passageKey, onNext }: { sitti
   return <article className="books-stage books-source-reader" data-phase="read">
     <div className="books-reading-meta"><span>{t('From the book · {kind}', { kind: SITTING_KIND_LABEL[sitting.kind] })}</span><span>{n} / {of}</span></div>
     <h2 className="books-skill-hero">{sitting.titleEn.trim() || SITTING_KIND_LABEL[sitting.kind]}</h2>
-    <div ref={passage} className="books-reading-copy">{passages.map((paragraphs, group) => <div key={group} data-source-passage={group}>{paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>)}</div>
+    <div ref={passage} className="books-reading-copy">{passages.map((paragraphs, group) => <div key={group} data-source-passage={group} style={{ marginTop: group ? '1.05em' : undefined }}>{paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>)}</div>
     {!!sitting.terms?.length && <details className="books-disclosure"><summary>{t('Key terms')}</summary>{sitting.terms.map((term, index) => <div className="books-key-term" key={index}><strong>{term.en}</strong>{term.hook && <p>{term.hook}</p>}</div>)}</details>}
     <div className="books-passage-actions"><button type="button" className="btn" onClick={next}>{t('Continue')}</button></div>
   </article>
