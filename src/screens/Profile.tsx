@@ -3,27 +3,16 @@ import { useState } from 'react'
 import { useAuth } from '../auth/AuthProvider'
 import { LANGUAGES, getLang, setLang, t } from '../lib/i18n'
 import { isAuthEnabled } from '../lib/supabase'
-import { dueCards } from '../lib/srs'
 import { useStore } from '../store/store'
 import '../styles/profile.css'
 
-export function Profile({
-  onLearn,
-  onProgress,
-  onReview,
-}: {
-  onLearn: () => void
-  onProgress: () => void
-  onReview: () => void
-}) {
+export function Profile() {
   const s = useStore()
   const { user, signOut } = useAuth()
   const [confirmReset, setConfirmReset] = useState(false)
 
   const email = user?.email ?? ''
   const name = email ? email.split('@')[0] : t('Learner')
-  const dueCount = dueCards(s.cardList).length
-  const hasWords = s.cardList.length > 0
   const language = getLang()
 
   return (
@@ -52,54 +41,6 @@ export function Profile({
             <span>{s.xp.toLocaleString()} XP</span>
           </div>
         </div>
-        <span className="profile-identity-mark" aria-hidden="true">
-          ✳
-        </span>
-      </section>
-
-      <section className="profile-quick-actions" aria-label={t('Learning shortcuts')}>
-        <button
-          className="profile-action profile-action-primary"
-          type="button"
-          onClick={hasWords ? onReview : onLearn}
-        >
-          <span className="profile-action-icon" aria-hidden="true">
-            {hasWords ? '↻' : '→'}
-          </span>
-          <span className="profile-action-copy">
-            <strong>
-              {hasWords
-                ? dueCount
-                  ? dueCount === 1
-                    ? t('Review {n} due word', { n: dueCount })
-                    : t('Review {n} due words', { n: dueCount })
-                  : t('Practice your words')
-                : t('Choose a course')}
-            </strong>
-            <small>
-              {hasWords
-                ? dueCount
-                  ? t('Strengthen what is ready to return')
-                  : t('Keep your learning trail active')
-                : t('Pick up a proven learning path')}
-            </small>
-          </span>
-          <span className="profile-action-arrow" aria-hidden="true">
-            ↗
-          </span>
-        </button>
-        <button className="profile-action" type="button" onClick={onProgress}>
-          <span className="profile-action-icon profile-action-icon-soft" aria-hidden="true">
-            ⌁
-          </span>
-          <span className="profile-action-copy">
-            <strong>{t('See your progress')}</strong>
-            <small>{t('Recall, course stages, and recent activity')}</small>
-          </span>
-          <span className="profile-action-arrow" aria-hidden="true">
-            →
-          </span>
-        </button>
       </section>
 
       <section className="profile-language card">
@@ -148,7 +89,7 @@ export function Profile({
             onChange={(v) => s.setPref('showPinyin', v)}
           />
           <ToggleRow
-            label={t('Show English')}
+            label={t('Show translation')}
             sub={
               s.prefs.showEnglish
                 ? t('Translations appear when the lesson provides them')
@@ -175,6 +116,12 @@ export function Profile({
       </section>
 
       <section className="profile-data card">
+        <div className="profile-section-heading">
+          <div>
+            <div className="profile-eyebrow">{t('ACCOUNT AND DATA')}</div>
+            <h2>{t('Your progress belongs to you')}</h2>
+          </div>
+        </div>
         <button type="button" className="btn btn-ghost" onClick={s.exportProgress}>
           {t('Export progress backup')}
         </button>
@@ -187,12 +134,7 @@ export function Profile({
                 ? t('Saving progress…')
                 : t('Saved on this device')}
         </p>
-        <div className="profile-section-heading">
-          <div>
-            <div className="profile-eyebrow">{t('ACCOUNT AND DATA')}</div>
-            <h2>{t('Your progress belongs to you')}</h2>
-          </div>
-        </div>
+        <details className="profile-reset-disclosure"><summary>{t('Start over')}</summary>
         <p className="profile-section-sub">
           {t('Reset only when you want to start your learning trail again from zero.')}
         </p>
@@ -230,6 +172,7 @@ export function Profile({
             <span aria-hidden="true">→</span>
           </button>
         )}
+        </details>
       </section>
 
       {isAuthEnabled && user && (

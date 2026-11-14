@@ -63,9 +63,9 @@ export function BooksEmptyState() {
 }
 
 /** Each book keeps its own source order and unlock sequence. */
-export function BooksPartPath({ chapters, partTitle, onPlay }: { chapters: BooksChapter[]; partTitle: string; onPlay?: (part: number, index: number) => void }) {
+export function BooksPartPath({ chapters, partTitle, onPlay, fill }: { chapters: BooksChapter[]; partTitle: string; onPlay?: (part: number, index: number) => void; fill?: boolean }) {
   const progress = useBooksProgress()
-  return <div className="books-book-path"><LearningPath kicker={t('Book path')} title={partTitle} subtitle={t('{n} chapters · Read, understand, apply, reflect', { n: chapters.length })} items={chapters.map((chapter) => {
+  return <div className="books-book-path"><LearningPath fill={fill} kicker={t('Book path')} title={partTitle} subtitle={t('{n} chapters · Read, understand, apply, reflect', { n: chapters.length })} items={chapters.map((chapter) => {
     const node: BooksNode = LESSON_NODE
     const done = progress.isNodeDone(chapter.part, chapter.index, node)
     const playable = progress.isNodePlayable(chapter.part, chapter.index, node)
@@ -79,7 +79,7 @@ export function BooksHomePath({ onPlay }: { onPlay: (part: number, index: number
   const [selected] = useSelectedBook(next?.part ?? 1)
   if (!next) return <BooksEmptyState />
   const part = booksParts().find((book) => book.part === selected) ?? booksParts()[0]
-  return <div className="books-learn books-home"><BookJournalReview onOpen={(part, index) => openBookJournal(part, index, onPlay)} /><BooksPartPath chapters={part.chapters} partTitle={part.titleEn} onPlay={onPlay} /></div>
+  return <div className="books-learn books-home"><BookJournalReview onOpen={(part, index) => openBookJournal(part, index, onPlay)} /><BooksPartPath fill chapters={part.chapters} partTitle={part.titleEn} onPlay={onPlay} /></div>
 }
 
 export function BooksLearn({ onPlay }: { onPlay: (part: number, index: number) => void }) {

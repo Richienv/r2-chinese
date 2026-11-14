@@ -14,7 +14,7 @@ export type NavigationTab = 'home' | 'learn' | 'stats' | 'profile'
 
 const DESTINATIONS = [
   { key: 'home', label: t('Home'), Icon: HomeIcon },
-  { key: 'learn', label: t('Learn'), Icon: BookIcon },
+  { key: 'learn', label: t('Materials'), Icon: BookIcon },
   { key: 'stats', label: t('Progress'), Icon: BarsIcon },
   { key: 'profile', label: t('Profile'), Icon: UserIcon },
 ] as const
@@ -109,6 +109,7 @@ export const BottomNav = forwardRef<
   useLayoutEffect(measure, [tab])
 
   function select(next: NavigationTab) {
+    if (next === active.current) return
     flourishes.current.forEach((animation) => animation.cancel())
     flourishes.current = []
     const button = buttons.current[next]
@@ -119,18 +120,18 @@ export const BottomNav = forwardRef<
         icon.animate(
           [
             { transform: 'translateY(0) rotate(0) scale(1)', offset: 0 },
-            { transform: 'translateY(-4px) rotate(-5deg) scale(1.09)', offset: 0.42 },
-            { transform: 'translateY(1px) rotate(1deg) scale(.98)', offset: 0.76 },
+            { transform: 'translateY(-2px) rotate(0) scale(1.03)', offset: 0.42 },
+            { transform: 'translateY(0) rotate(0) scale(1)', offset: 0.76 },
             { transform: 'translateY(0) rotate(0) scale(1)', offset: 1 },
           ],
-          { duration: 480, easing: 'cubic-bezier(.2,.8,.3,1)' },
+          { duration: 240, easing: 'cubic-bezier(.2,.8,.3,1)' },
         ),
         label.animate(
           [
             { opacity: 0.6, transform: 'translateY(2px)' },
             { opacity: 1, transform: 'translateY(0)' },
           ],
-          { duration: 340, delay: 55, easing: 'ease-out' },
+          { duration: 200, easing: 'ease-out' },
         ),
       ]
     }

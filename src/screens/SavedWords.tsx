@@ -91,7 +91,7 @@ export function SavedWords({
         <button className="icon-round tap44" onClick={onClose} aria-label={t('Back')}>
           <ChevronLeft />
         </button>
-        <strong style={{ fontSize: 15, flex: 1 }}>{t('Learning trail')}</strong>
+        <strong style={{ fontSize: 15, flex: 1 }}>{t('My words')}</strong>
         <MasteryTracker words={store.learningTrail} compact />
       </div>
       <div className="trail-intro" style={{ padding: '0 22px 18px' }}>

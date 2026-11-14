@@ -12,7 +12,7 @@ export type Lang = 'en' | 'id'
 
 export const LANGUAGES: ReadonlyArray<{ id: Lang; name: string; hint: string }> = [
   { id: 'en', name: 'English', hint: 'Meanings and tips in English' },
-  { id: 'id', name: 'Indonesia (Gen Z)', hint: 'Arti dan tips pakai bahasa santai' },
+  { id: 'id', name: 'Indonesia', hint: 'Arti dan tips pakai bahasa santai' },
 ]
 
 const KEY = 'yulu.lang.v1'

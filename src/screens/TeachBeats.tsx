@@ -95,7 +95,7 @@ const TIP_LABEL: Record<string, string> = {
   'Make a personal scene': t('Your scene'), 'Give the word an image': t('Image'),
   'Keep the sentence frame': t('Frame'), 'Connect two meanings': t('Meaning'), 'Recall the opposite': t('Opposite'),
   'Give it a personal scene': t('Your scene'), 'Separate two ideas': t('Compare'),
-  'Learn the whole bridge': t('Pattern'), 'Make the two sides yours': t('Make it yours'),
+  'Learn the whole bridge': t('Pattern'), 'Make the two sides yours': t('Sentence practice'),
   'Give it a real person': t('Your scene'), 'Ask a usable question': t('Ask'),
 }
 

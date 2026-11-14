@@ -321,26 +321,24 @@ export function Progress({
           <div className="progress-eyebrow">{t('YOUR LEARNING, OVER TIME')}</div>
           <h1 className="h2">{t('Progress')}</h1>
           <div className="sub">
-            {t('{n} paths. One growing ability to remember and use what you learn.', { n: courses.length })}
+            {t('Your practice, memory, and completed lessons.')}
           </div>
         </div>
-        <button className="progress-header-link" type="button" onClick={onLearn}>
-          {t('Learning paths')} <span aria-hidden="true">↗</span>
-        </button>
+
       </header>
 
       <section className="progress-focus" aria-labelledby="progress-focus-title">
         <div className="progress-focus-copy">
           <span className="progress-focus-kicker">{t('TODAY’S PRACTICE')}</span>
-          <h2 id="progress-focus-title">{t('Make recall feel familiar.')}</h2>
+          <h2 id="progress-focus-title">{t('One session at a time.')}</h2>
           <p>
             {s.today.cards >= DAILY_GOAL
               ? t(
-                  '{n} practice steps today — your daily goal is complete. Come back later to strengthen recall on another day.',
+                  '{n} practice steps. Daily goal complete.',
                   { n: s.today.cards },
                 )
               : t(
-                  '{n} of {goal} practice steps today. Short attempts, repeated over time, are what make words stick.',
+                  '{n} of {goal} practice steps today.',
                   { n: s.today.cards, goal: DAILY_GOAL },
                 )}
           </p>
@@ -359,7 +357,7 @@ export function Progress({
                 ? t('{n} words are asking for another try', { n: hardWords.length })
                 : s.cardList.length
                   ? t('Your saved words are ready for a quick recall')
-                  : t('Meet a few words and your review trail starts automatically')}
+                  : t('Start with a lesson you like.')}
           </span>
         </div>
         <div

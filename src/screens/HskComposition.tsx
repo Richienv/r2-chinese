@@ -252,7 +252,7 @@ export function HskComposition({ onClose }: { onClose: () => void }) {
         </button>
         <div>
           <span>{t('HSK 4 · Across your learning trail')}</span>
-          <h1 id="writing-title">{t('Make it yours')}</h1>
+          <h1 id="writing-title">{t('Sentence practice')}</h1>
         </div>
         <span className="writing-head-glyph" aria-hidden="true">
           写

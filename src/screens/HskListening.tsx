@@ -133,7 +133,7 @@ export function HskListening({ onClose }: { onClose: () => void }) {
   return <section className="overlay hsk-lab listening-room" role="dialog" aria-modal="true" aria-labelledby="listening-title">
     <header className="overlay-head hsk-lab-head">
       <button className="icon-btn" type="button" aria-label={t('Close listening room')} onClick={onClose}><CloseIcon size={20} /></button>
-      <div><span>{t('HSK 4 · Lessons 1–5')}</span><h1 id="listening-title">{t('Listening room')}</h1></div>
+      <div><span>{t('HSK 4 · Lessons 1–5')}</span><h1 id="listening-title">{t('Listening')}</h1></div>
       <div className="listening-wave" data-playing={running && !loading} aria-hidden="true"><i /><i /><i /><i /><i /></div>
     </header>
     <div className="overlay-body hsk-lab-body" ref={scroll}>
@@ -166,12 +166,14 @@ export function HskListening({ onClose }: { onClose: () => void }) {
         }}><span aria-hidden="true">{running ? 'Ⅱ' : '▷'}</span>{running ? loading ? t('Loading · stop') : t('Pause') : finished ? t('Replay script') : lineIndex ? t('Resume listening') : t('Play scripts')}</button>
         <button type="button" className="listening-skip" disabled={index === scripts.length - 1} aria-label={t('Next script')} onPointerDown={unlockSpeech} onClick={() => selectScript(index + 1)}>›</button>
       </div>
+      <details className="playback-options"><summary>{t('Playback options')}</summary>
       <div className="listening-settings">
         <button type="button" aria-pressed={automatic} onClick={() => { setAutomatic(!automatic); if (automatic && repeat === 'all') setRepeat('off') }}>{t('Auto-next')} <b>{automatic ? t('On') : t('Off')}</b></button>
         <label><span>{t('Loop')}</span><select aria-label={t('Listening loop')} value={repeat} onChange={(e) => { const value = e.target.value as ListeningRepeat; setRepeat(value); if (value === 'all') setAutomatic(true) }}><option value="all">{t('All scripts')}</option><option value="script">{t('This script')}</option><option value="off">{t('Off')}</option></select></label>
         <label><span>{t('Speed')}</span><select aria-label={t('Listening speed')} value={rate} onChange={(e) => changeRate(Number(e.target.value))}><option value={-6}>{t('Natural')}</option><option value={-22}>{t('Slower')}</option><option value={-38}>{t('Slowest')}</option></select></label>
       </div>
       <div className="listening-display"><StudyDisplayControls /><button className="listening-follow" type="button" aria-pressed={follow} onClick={() => setFollow(!follow)}>{follow ? t('Follow On') : t('Follow Off')}</button></div>
+      </details>
       {running && speech.status === 'playing' && speech.timing === 'line' && <small className="listening-timing-note">{t('This voice supports line focus; word timing is unavailable.')}</small>}
     </footer>
     {sheet}

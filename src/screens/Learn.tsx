@@ -2,7 +2,7 @@ import { lazy } from 'react'
 import { CourseBack, CourseGate } from '../components/CourseChooser'
 import { LearningPath } from '../components/LearningPath'
 import { HskPracticeEntry } from '../components/HskPracticeEntry'
-import { useCourse } from '../lib/course'
+import { COURSE_META, useCourse } from '../lib/course'
 import { t } from '../lib/i18n'
 import { lessons, textNodeIndex, textSitting } from '../lib/content'
 import {
@@ -117,6 +117,7 @@ export function Learn({
   return (
     <div className="path-page path-alive">
       <CourseBack />
+      <header className="page-heading"><p>{COURSE_META[course].title}</p><h1>{t('Materials')}</h1><span>{t('Lessons and practice, in one place.')}</span></header>
       {course === 'hsk4a' && <HskPracticeEntry onListen={onListening} onCompose={onCompose} />}
       {course === 'jiayin' ? (
         <JiayinPath onPlay={onJiayinPlay} />

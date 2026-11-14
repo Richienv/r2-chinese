@@ -184,11 +184,10 @@ function Shell() {
             <Home
               onSession={(lesson, node) => setOverlay({ kind: 'path', lesson, node })}
               onLesson={(lesson) => setOverlay({ kind: 'lesson', lesson })}
+              onBrowse={() => setTab('learn')}
               onPlacement={() => setOverlay({ kind: 'review', placement: true })}
               onReview={() => setOverlay({ kind: 'review' })}
               onTrail={() => setOverlay({ kind: 'saved' })}
-              onListening={() => setOverlay({ kind: 'listening' })}
-              onCompose={() => setOverlay({ kind: 'composition' })}
               onKerjaSession={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
               onJiaochengSession={(lesson, node) => setOverlay({ kind: 'jiaocheng', lesson, node })}
               onMagangSession={(chapter, node) => setOverlay({ kind: 'magang', chapter, node })}
@@ -219,13 +218,7 @@ function Shell() {
               onReview={(words, title) => setOverlay({ kind: 'review', words, title })}
             />
           )}
-          {tab === 'profile' && (
-            <Profile
-              onLearn={() => setTab('learn')}
-              onProgress={() => setTab('stats')}
-              onReview={() => setOverlay({ kind: 'review' })}
-            />
-          )}
+          {tab === 'profile' && <Profile />}
         </Suspense>
       </main>
 

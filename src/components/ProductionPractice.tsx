@@ -360,7 +360,7 @@ export function SentencePractice({
       aria-label={t('Create a Chinese sentence')}
     >
       <header className="conversation-heading">
-        <h2>{t('Make it yours')}</h2>
+        <h2>{t('Sentence practice')}</h2>
         <span className="conversation-lesson">{t('Lesson {lesson}', { lesson })}</span>
       </header>
       <div className="conversation-reply-cue">
