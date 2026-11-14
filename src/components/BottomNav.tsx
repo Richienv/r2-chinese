@@ -1,7 +1,13 @@
 import { forwardRef, useLayoutEffect, useRef } from 'react'
 import { BarsIcon, BookIcon, HomeIcon, UserIcon } from './Icons'
 import { t } from '../lib/i18n'
-import { advanceDockSpring, dockSpringAt, dockSpringSettled, type DockSpring, type DockTarget } from '../lib/navigationMotion'
+import {
+  advanceDockSpring,
+  dockSpringAt,
+  dockSpringSettled,
+  type DockSpring,
+  type DockTarget,
+} from '../lib/navigationMotion'
 import '../styles/bottom-navigation.css'
 
 export type NavigationTab = 'home' | 'learn' | 'stats' | 'profile'
@@ -14,7 +20,10 @@ const DESTINATIONS = [
 ] as const
 
 /** A flow-layout dock: measured spring motion never changes the navigation semantics. */
-export const BottomNav = forwardRef<HTMLElement, { tab: NavigationTab; onTabChange: (tab: NavigationTab) => void }>(function BottomNav({ tab, onTabChange }, navRef) {
+export const BottomNav = forwardRef<
+  HTMLElement,
+  { tab: NavigationTab; onTabChange: (tab: NavigationTab) => void }
+>(function BottomNav({ tab, onTabChange }, navRef) {
   const dock = useRef<HTMLDivElement>(null)
   const indicator = useRef<HTMLSpanElement>(null)
   const buttons = useRef<Partial<Record<NavigationTab, HTMLButtonElement>>>({})
@@ -31,8 +40,8 @@ export const BottomNav = forwardRef<HTMLElement, { tab: NavigationTab; onTabChan
   function paint() {
     const marker = indicator.current
     if (!marker) return
-    marker.style.width = `${Math.max(1, spring.current.width.position).toFixed(3)}px`
-    marker.style.transform = `translate3d(${spring.current.x.position.toFixed(3)}px, 0, 0)`
+    marker.style.width = '100px'
+    marker.style.transform = `translate3d(${spring.current.x.position.toFixed(3)}px, 0, 0) scaleX(${Math.max(0.01, spring.current.width.position / 100).toFixed(4)})`
     marker.dataset.ready = 'true'
   }
 
@@ -65,7 +74,8 @@ export const BottomNav = forwardRef<HTMLElement, { tab: NavigationTab; onTabChan
       initialized.current = true
       spring.current = dockSpringAt(target.current)
       paint()
-    } else if (!frame.current && !dockSpringSettled(spring.current, target.current)) frame.current = window.requestAnimationFrame(animate)
+    } else if (!frame.current && !dockSpringSettled(spring.current, target.current))
+      frame.current = window.requestAnimationFrame(animate)
   }
 
   useLayoutEffect(() => {
@@ -106,22 +116,50 @@ export const BottomNav = forwardRef<HTMLElement, { tab: NavigationTab; onTabChan
     const label = button?.querySelector<HTMLElement>('.bottom-nav-label')
     if (!reduced.current && icon && label && typeof icon.animate === 'function') {
       flourishes.current = [
-        icon.animate([
-          { transform: 'translateY(0) rotate(0) scale(1)', offset: 0 },
-          { transform: 'translateY(-4px) rotate(-5deg) scale(1.09)', offset: .42 },
-          { transform: 'translateY(1px) rotate(1deg) scale(.98)', offset: .76 },
-          { transform: 'translateY(0) rotate(0) scale(1)', offset: 1 },
-        ], { duration: 480, easing: 'cubic-bezier(.2,.8,.3,1)' }),
-        label.animate([{ opacity: .6, transform: 'translateY(2px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 340, delay: 55, easing: 'ease-out' }),
+        icon.animate(
+          [
+            { transform: 'translateY(0) rotate(0) scale(1)', offset: 0 },
+            { transform: 'translateY(-4px) rotate(-5deg) scale(1.09)', offset: 0.42 },
+            { transform: 'translateY(1px) rotate(1deg) scale(.98)', offset: 0.76 },
+            { transform: 'translateY(0) rotate(0) scale(1)', offset: 1 },
+          ],
+          { duration: 480, easing: 'cubic-bezier(.2,.8,.3,1)' },
+        ),
+        label.animate(
+          [
+            { opacity: 0.6, transform: 'translateY(2px)' },
+            { opacity: 1, transform: 'translateY(0)' },
+          ],
+          { duration: 340, delay: 55, easing: 'ease-out' },
+        ),
       ]
     }
     onTabChange(next)
   }
 
-  return <nav ref={navRef} className="bottom-nav" aria-label={t('Main')}>
-    <div ref={dock} className="bottom-nav-dock">
-      <span ref={indicator} className="bottom-nav-marker" aria-hidden="true"><i /></span>
-      {DESTINATIONS.map(({ key, label, Icon }) => <button key={key} ref={(button) => { if (button) buttons.current[key] = button; else delete buttons.current[key] }} type="button" className="bottom-nav-item" aria-current={tab === key ? 'page' : undefined} onClick={() => select(key)}><span className="bottom-nav-icon" aria-hidden="true"><Icon size={21} /></span><span className="bottom-nav-label">{label}</span></button>)}
-    </div>
-  </nav>
+  return (
+    <nav ref={navRef} className="bottom-nav" aria-label={t('Main')}>
+      <div ref={dock} className="bottom-nav-dock">
+        <span ref={indicator} className="bottom-nav-marker" aria-hidden="true" />
+        {DESTINATIONS.map(({ key, label, Icon }) => (
+          <button
+            key={key}
+            ref={(button) => {
+              if (button) buttons.current[key] = button
+              else delete buttons.current[key]
+            }}
+            type="button"
+            className="bottom-nav-item"
+            aria-current={tab === key ? 'page' : undefined}
+            onClick={() => select(key)}
+          >
+            <span className="bottom-nav-icon" aria-hidden="true">
+              <Icon size={21} />
+            </span>
+            <span className="bottom-nav-label">{label}</span>
+          </button>
+        ))}
+      </div>
+    </nav>
+  )
 })

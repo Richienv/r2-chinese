@@ -1,17 +1,26 @@
+import { lazy } from 'react'
 import { CourseBack, CourseGate } from '../components/CourseChooser'
 import { LearningPath } from '../components/LearningPath'
 import { HskPracticeEntry } from '../components/HskPracticeEntry'
 import { useCourse } from '../lib/course'
 import { t } from '../lib/i18n'
 import { lessons, textNodeIndex, textSitting } from '../lib/content'
-import { NODE_LABEL, PATH_NODES, isLessonReached, isNodePlayable, nextPlayable, nodeCaption } from '../lib/wordsSession'
+import {
+  NODE_LABEL,
+  PATH_NODES,
+  isLessonReached,
+  isNodePlayable,
+  nextPlayable,
+  nodeCaption,
+} from '../lib/wordsSession'
 import { useStore, type PathNode } from '../store/store'
-import { JiaochengLearn } from './Jiaocheng'
-import { KerjaLearn } from './Kerja'
-import { InterviewLearn } from './Interview'
-import { MagangLearn } from './Magang'
-import { BooksLearn } from './Books'
-import { JiayinPath, type JiayinOpen } from './Jiayin'
+const JiaochengLearn = lazy(() => import('./Jiaocheng').then((m) => ({ default: m.JiaochengLearn })))
+const KerjaLearn = lazy(() => import('./Kerja').then((m) => ({ default: m.KerjaLearn })))
+const InterviewLearn = lazy(() => import('./Interview').then((m) => ({ default: m.InterviewLearn })))
+const MagangLearn = lazy(() => import('./Magang').then((m) => ({ default: m.MagangLearn })))
+const BooksLearn = lazy(() => import('./Books').then((m) => ({ default: m.BooksLearn })))
+import type { JiayinOpen } from './Jiayin'
+const JiayinPath = lazy(() => import('./Jiayin').then((m) => ({ default: m.JiayinPath })))
 
 export function LessonPath({
   lesson,
@@ -37,19 +46,27 @@ export function LessonPath({
       subtitle={lesson.title.en}
       open={lessonOpen}
       onOpen={onLesson ? () => onLesson(lesson.lesson) : undefined}
-      items={PATH_NODES.map(node => {
+      items={PATH_NODES.map((node) => {
         const done = nodeDone(lesson.lesson, node)
         const on = current.lesson === lesson.lesson && current.node === node
         const caption = nodeCaption(lesson.lesson, node)
         const sitting = node !== 'wrap' ? textSitting(lesson, textNodeIndex(node)) : undefined
-        const title = sitting?.text.heading_zh || sitting?.text.heading_en || (node === 'wrap' ? `${lesson.title.zh} · 整理` : lesson.title.zh)
+        const title =
+          sitting?.text.heading_zh ||
+          sitting?.text.heading_en ||
+          (node === 'wrap' ? `${lesson.title.zh} · 整理` : lesson.title.zh)
         const english = sitting?.text.heading_en
         return {
           id: node,
           label: NODE_LABEL[node].zh,
           title,
-          subtitle: english && english !== title ? english : node === 'wrap' ? t('Recall · connect · use') : caption.en,
-          state: done ? 'done' as const : on ? 'current' as const : 'locked' as const,
+          subtitle:
+            english && english !== title
+              ? english
+              : node === 'wrap'
+                ? t('Recall · connect · use')
+                : caption.en,
+          state: done ? ('done' as const) : on ? ('current' as const) : ('locked' as const),
           playable: isNodePlayable(lesson.lesson, node, nodeDone),
           onSelect: () => onPlay?.(lesson.lesson, node),
         }

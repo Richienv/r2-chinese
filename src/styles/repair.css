@@ -1,0 +1,19 @@
+.repair-editor{padding:20px;border:1px solid #bad7ca;border-radius:20px;background:#eff7f1;color:#244a41;margin:18px 0;text-align:left}
+.repair-editor h3{font-size:15px;line-height:1.5;margin:0 0 8px;font-weight:650}
+.repair-explanation{font-family:var(--ui);font-size:11px;line-height:1.8;color:#4a6c61;margin:0 0 18px}
+.repair-parts{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:23px;line-height:1.8;margin-bottom:18px}
+.repair-kept{color:#176342;border-bottom:2px solid #6ba58b;padding:2px 3px;white-space:pre-wrap;overflow-wrap:anywhere}
+.repair-slot{display:flex;flex-direction:column;gap:5px;min-width:66px;max-width:100%;flex:0 1 120px}
+.repair-slot>span,.repair-slot small{font:10px/1.5 var(--ui);color:#8b4a28}
+.repair-slot input{font-family:var(--sc);font-size:22px;width:100%;min-height:46px;padding:5px 8px;border:1px solid #b66a3b;border-radius:9px;background:#fff8ed;color:#79411e;outline-offset:3px}
+.repair-submit{font-size:12px!important;min-height:44px}
+.sentence-scaffold{border:1px solid #d3e3dd;background:#f2f7f3;border-radius:18px;padding:20px;margin-bottom:16px}
+.sentence-scaffold>p{font-size:12px;line-height:1.8;color:#4c6e67;margin:0 0 12px}
+.scaffold-line{font-family:var(--sc);font-size:23px;line-height:2;overflow-wrap:anywhere}
+.scaffold-line input{display:inline-block;width:7em;max-width:100%;min-height:48px;font:inherit;border:1px solid #79a89a;border-radius:9px;background:white;margin:0 6px;padding:3px 9px;color:#1e4e45;text-align:center}
+.scaffold-clue{font-size:11px!important;margin-top:14px!important}
+.practice-difficulty{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.practice-difficulty button{font-size:11px;min-height:40px;padding:9px 14px;border-radius:999px;border:1px solid #cadfd7;color:#36594e;background:transparent}
+.practice-difficulty button[aria-pressed=true]{background:#dbece2;border-color:#a6c8b9}
+.recall-focus .repair-editor{max-width:480px;margin:20px auto;background:#f0f8f2;color:#204b40}
+.recall-focus .repair-editor button{color:#effaf7;background:#295b50;border:0}

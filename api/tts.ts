@@ -17,9 +17,18 @@ import WebSocket from 'ws'
  * src/lib/speechTiming.ts.
  */
 /** Word boundaries from the synthesizer, in audio seconds and UTF-16 offsets. */
-export interface WordTiming { start: number; duration: number; charIndex: number; charLength: number }
+export interface WordTiming {
+  start: number
+  duration: number
+  charIndex: number
+  charLength: number
+}
 
-export interface SpokenBoundary { text: string; offset: number; duration: number }
+export interface SpokenBoundary {
+  text: string
+  offset: number
+  duration: number
+}
 
 export function parseSpeechMetadata(message: string): SpokenBoundary[] {
   const split = message.indexOf('\r\n\r\n')
@@ -29,13 +38,26 @@ export function parseSpeechMetadata(message: string): SpokenBoundary[] {
     if (!Array.isArray(body.Metadata)) return []
     return body.Metadata.flatMap((entry: any) => {
       const data = entry?.Data
-      if (entry?.Type !== 'WordBoundary' || typeof data?.text?.Text !== 'string' || !Number.isFinite(data.Offset) || !Number.isFinite(data.Duration) || data.Offset < 0 || data.Duration < 0) return []
-      const text = data.text.Text.replace(/&(amp|lt|gt|quot|apos);/g, (_: string, key: string) => ({ amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" }[key]!))
+      if (
+        entry?.Type !== 'WordBoundary' ||
+        typeof data?.text?.Text !== 'string' ||
+        !Number.isFinite(data.Offset) ||
+        !Number.isFinite(data.Duration) ||
+        data.Offset < 0 ||
+        data.Duration < 0
+      )
+        return []
+      const text = data.text.Text.replace(
+        /&(amp|lt|gt|quot|apos);/g,
+        (_: string, key: string) => ({ amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" })[key]!,
+      )
       // Edge's metadata uses 100ns ticks. Keep the service timing; never infer
       // word positions from a timer or from the length of a Chinese sentence.
       return [{ text, offset: data.Offset / 10000000, duration: data.Duration / 10000000 }]
     })
-  } catch { return [] }
+  } catch {
+    return []
+  }
 }
 
 export function alignSpeechBoundaries(text: string, boundaries: SpokenBoundary[]): WordTiming[] {
@@ -45,15 +67,19 @@ export function alignSpeechBoundaries(text: string, boundaries: SpokenBoundary[]
     if (!boundary.text || !Number.isFinite(boundary.offset) || boundary.offset < 0) continue
     const index = text.indexOf(boundary.text, cursor)
     if (index < 0) continue
-    words.push({ start: boundary.offset, duration: boundary.duration, charIndex: index, charLength: boundary.text.length })
+    words.push({
+      start: boundary.offset,
+      duration: boundary.duration,
+      charIndex: index,
+      charLength: boundary.text.length,
+    })
     cursor = index + boundary.text.length
   }
   return words.sort((a, b) => a.start - b.start)
 }
 
 const TRUSTED_CLIENT_TOKEN = '6A5AA1D4EAFF4E9FB37E23D68491D6F4'
-const WSS_URL =
-  'wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1'
+const WSS_URL = 'wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1'
 const EDGE_VERSION = '1-143.0.3650.75'
 const ALLOWED_VOICES = new Set([
   'zh-CN-XiaoxiaoNeural',
@@ -68,10 +94,7 @@ function secMsGec(): string {
   let seconds = Math.floor(Date.now() / 1000) + 11_644_473_600
   seconds -= seconds % 300
   const ticks = BigInt(seconds) * 10_000_000n
-  return createHash('sha256')
-    .update(`${ticks}${TRUSTED_CLIENT_TOKEN}`, 'ascii')
-    .digest('hex')
-    .toUpperCase()
+  return createHash('sha256').update(`${ticks}${TRUSTED_CLIENT_TOKEN}`, 'ascii').digest('hex').toUpperCase()
 }
 
 function escapeXml(s: string): string {
@@ -83,7 +106,12 @@ function escapeXml(s: string): string {
     .replace(/'/g, '&apos;')
 }
 
-function synthesize(text: string, voice: string, rate: string, timings: boolean): Promise<{ audio: Buffer; boundaries: SpokenBoundary[] }> {
+function synthesize(
+  text: string,
+  voice: string,
+  rate: string,
+  timings: boolean,
+): Promise<{ audio: Buffer; boundaries: SpokenBoundary[] }> {
   return new Promise((resolve, reject) => {
     const url =
       `${WSS_URL}?TrustedClientToken=${TRUSTED_CLIENT_TOKEN}` +
@@ -133,7 +161,14 @@ function synthesize(text: string, voice: string, rate: string, timings: boolean)
         if (buf.length < 2) return
         // frame = [uint16 header length][header text][audio bytes]
         const headerLen = buf.readUInt16BE(0)
-        if (2 + headerLen > buf.length || !buf.subarray(2, 2 + headerLen).toString().includes('Path:audio')) return
+        if (
+          2 + headerLen > buf.length ||
+          !buf
+            .subarray(2, 2 + headerLen)
+            .toString()
+            .includes('Path:audio')
+        )
+          return
         chunks.push(buf.subarray(2 + headerLen))
       } else {
         const message = data.toString()
@@ -148,14 +183,16 @@ function synthesize(text: string, voice: string, rate: string, timings: boolean)
     })
 
     ws.on('error', fail)
-    ws.on('close', () => { if (!settled) fail(new Error('tts connection closed before completion')) })
+    ws.on('close', () => {
+      if (!settled) fail(new Error('tts connection closed before completion'))
+    })
   })
 }
 
 export default async function handler(req: any, res: any) {
   try {
     const params = new URL(req.url, 'http://localhost').searchParams
-    const text = (params.get('text') ?? '').slice(0, 400).trim()
+    const text = (params.get('text') ?? '').trim()
     const voiceParam = params.get('voice') ?? DEFAULT_VOICE
     const voice = ALLOWED_VOICES.has(voiceParam) ? voiceParam : DEFAULT_VOICE
     const rawRate = Number(params.get('rate') ?? -8)
@@ -163,6 +200,10 @@ export default async function handler(req: any, res: any) {
     const rate = `${rateNum >= 0 ? '+' : ''}${rateNum}%`
     const timings = params.get('timings') === '1'
 
+    if (text.length > 400) {
+      res.statusCode = 413
+      return res.end('text exceeds 400 characters')
+    }
     if (!text) {
       res.statusCode = 400
       return res.end('missing text')
@@ -178,7 +219,11 @@ export default async function handler(req: any, res: any) {
     // Deterministic output → cache aggressively at the edge and in the browser.
     res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
     res.statusCode = 200
-    res.end(timings ? JSON.stringify({ audio: audio.toString('base64'), words: alignSpeechBoundaries(text, boundaries) }) : audio)
+    res.end(
+      timings
+        ? JSON.stringify({ audio: audio.toString('base64'), words: alignSpeechBoundaries(text, boundaries) })
+        : audio,
+    )
   } catch (err) {
     res.statusCode = 502
     res.end(`tts failed: ${(err as Error).message}`)

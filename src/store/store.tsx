@@ -8,18 +8,32 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import { newCard, schedule, type Card, type Rating } from '../lib/srs'
+import { type Card, type Rating, type Skill } from '../lib/srs'
 import { setSpeechEnabled } from '../lib/speech'
 import { setSfxEnabled } from '../lib/sfx'
 import { saveProgress } from '../lib/sync'
-import { encounter, normalizeMastery, recordRetrieval, type MasteryRecord, type RecallInput } from '../lib/mastery'
+import { encounter, normalizeMastery, type MasteryRecord, type RecallInput } from '../lib/mastery'
 
-const KEY = 'yulu.hsk4a.v1'
+import {
+  initLearning,
+  creditProgress,
+  enqueueWords,
+  eventFor,
+  applyEvent,
+  undoEvent,
+  type LearningState,
+  type ReviewEvent,
+} from '../lib/learningEngine'
+import {
+  progressKey,
+  readProgress,
+  persistProgress,
+  mergeProgress,
+  exportLearningStorage,
+} from '../lib/progressStorage'
+import { t } from '../lib/i18n'
 
 /** localStorage cache is namespaced per account so switching users can't mix data. */
-function storageKey(userId?: string): string {
-  return userId ? `${KEY}.${userId}` : KEY
-}
 
 export type PathNode = 't1' | 't2' | 't3' | 't4' | 't5' | 'wrap'
 
@@ -46,7 +60,13 @@ function normalizePathDone(parsed: Partial<Persisted> | null | undefined): Recor
   if (raw && typeof raw === 'object' && !Array.isArray(raw)) {
     for (const [k, v] of Object.entries(raw)) {
       if (!Array.isArray(v)) continue
-      const nodes = [...new Set(v.map((n) => (typeof n === 'string' ? migrateNode(n) : undefined)).filter((n): n is PathNode => !!n))]
+      const nodes = [
+        ...new Set(
+          v
+            .map((n) => (typeof n === 'string' ? migrateNode(n) : undefined))
+            .filter((n): n is PathNode => !!n),
+        ),
+      ]
       if (nodes.length) out[k] = nodes
     }
   }
@@ -68,13 +88,14 @@ function normalizePathDone(parsed: Partial<Persisted> | null | undefined): Recor
 /** Merge a partial persisted blob (from storage or the server) onto the defaults. */
 export function normalize(parsed: Partial<Persisted> | null | undefined): Persisted {
   if (!parsed) return empty
-  return {
+  const result = {
     ...empty,
     ...parsed,
     prefs: { ...empty.prefs, ...parsed.prefs },
     pathDone: normalizePathDone(parsed),
     mastery: normalizeMastery(parsed.mastery, parsed.cards, parsed.starred),
   }
+  return { ...result, learning: initLearning(result) }
 }
 
 export interface Prefs {
@@ -89,6 +110,10 @@ export interface DayLog {
 }
 
 export interface Persisted {
+  resetAt?: number
+  starChanges?: Record<string, { at: number; on: boolean }>
+  updatedAt?: number
+  learning?: LearningState
   lessonsDone: number[]
   xp: number
   /** dayKey → what was practised that day; keys double as the streak record */
@@ -135,17 +160,14 @@ export function dayKey(d: Date | number = Date.now()): string {
 
 export function load(userId?: string): Persisted {
   try {
-    const stored = localStorage.getItem(storageKey(userId))
-    return normalize(stored ? (JSON.parse(stored) as Partial<Persisted>) : null)
+    const key = progressKey(userId)
+    return normalize(readProgress(localStorage, key) as Partial<Persisted> | undefined)
   } catch {
     return empty
   }
 }
 
-function bump(
-  log: Record<string, DayLog>,
-  delta: Partial<DayLog>,
-): Record<string, DayLog> {
+function bump(log: Record<string, DayLog>, delta: Partial<DayLog>): Record<string, DayLog> {
   const key = dayKey()
   const prev = log[key] ?? { lessons: 0, cards: 0 }
   return {
@@ -171,6 +193,21 @@ function streakOf(days: string[]): number {
 }
 
 interface Store extends Persisted {
+  storageProblem: boolean
+  syncStatus: string
+  exportProgress: () => void
+  reviewWord: (
+    zh: string,
+    rating: Rating,
+    options?: {
+      skill?: Skill
+      evidence?: ReviewEvent['evidence']
+      assisted?: boolean
+      eventId?: string
+      at?: number
+    },
+  ) => string | null
+  undoReview: (id: string) => boolean
   /** Every encountered word, most recently seen first. */
   learningTrail: string[]
   encounterWord: (zh: string, lesson: number) => void
@@ -214,106 +251,209 @@ export function StoreProvider({
   /** server-provided starting state (overrides the local cache on login) */
   initial?: Persisted
 }) {
-  const [state, setState] = useState<Persisted>(() => initial ? normalize(initial) : load(userId))
-  const syncTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  // Fast local cache (offline + instant reload), namespaced per account.
+  const [state, setReactState] = useState<Persisted>(() => (initial ? normalize(initial) : load(userId)))
+  const latest = useRef(state)
+  const [storageProblem, setStorageProblem] = useState(false)
+  const [syncStatus, setSyncStatus] = useState(userId ? 'pending' : 'local')
+  const key = progressKey(userId)
+  const setState = useCallback(
+    (update: (s: Persisted) => Persisted): boolean => {
+      const next = update(latest.current)
+      if (next === latest.current) return true
+      const saved = { ...next, updatedAt: Date.now() }
+      try {
+        persistProgress(localStorage, key, saved)
+      } catch {
+        setStorageProblem(true)
+        return false
+      }
+      latest.current = saved
+      setReactState(saved)
+      setStorageProblem(false)
+      return true
+    },
+    [key],
+  )
+  const exportProgress = useCallback(() => {
+    const file = new Blob([exportLearningStorage(localStorage, key)], { type: 'application/json' })
+    const url = URL.createObjectURL(file),
+      anchor = document.createElement('a')
+    anchor.href = url
+    anchor.download = 'yulu-progress-backup.json'
+    anchor.click()
+    setTimeout(() => URL.revokeObjectURL(url), 1000)
+  }, [key])
+  // Import is non-destructive: account caches and pre-migration snapshots stay separate.
   useEffect(() => {
-    localStorage.setItem(storageKey(userId), JSON.stringify(state))
-  }, [state, userId])
-
-  // Debounced cloud sync so a burst of changes is one write.
+    try {
+      persistProgress(localStorage, key, latest.current)
+    } catch {
+      setStorageProblem(true)
+    }
+  }, [key])
+  useEffect(() => {
+    const receive = (event: StorageEvent) => {
+      if (event.key !== key || !event.newValue) return
+      try {
+        const remote = normalize(JSON.parse(event.newValue))
+        const merged = mergeProgress(latest.current, remote)
+        if (JSON.stringify(merged) !== JSON.stringify(latest.current)) setState(() => merged)
+      } catch {
+        /* Preserve the valid in-memory state when a different tab has bad data. */
+      }
+    }
+    window.addEventListener('storage', receive)
+    return () => window.removeEventListener('storage', receive)
+  }, [key, setState])
   useEffect(() => {
     if (!userId) return
-    if (syncTimer.current) clearTimeout(syncTimer.current)
-    syncTimer.current = setTimeout(() => saveProgress(userId, state), 900)
-    return () => {
-      if (syncTimer.current) clearTimeout(syncTimer.current)
+    let cancelled = false,
+      running = false
+    const flush = async () => {
+      if (cancelled || running) return
+      running = true
+      setSyncStatus('pending')
+      try {
+        const sent = latest.current
+        const merged = await saveProgress(userId, sent, (a, b) => mergeProgress(normalize(a), normalize(b)))
+        if (!cancelled) {
+          if (merged) {
+            const combined = mergeProgress(latest.current, merged)
+            if (JSON.stringify(combined) !== JSON.stringify(latest.current)) setState(() => combined)
+          }
+          setSyncStatus('saved')
+        }
+      } catch {
+        if (!cancelled) setSyncStatus('offline')
+      } finally {
+        running = false
+      }
     }
-  }, [state, userId])
+    const timer = setTimeout(flush, 900),
+      retry = setInterval(flush, 30000)
+    window.addEventListener('online', flush)
+    return () => {
+      cancelled = true
+      clearTimeout(timer)
+      clearInterval(retry)
+      window.removeEventListener('online', flush)
+    }
+  }, [userId, state, setState])
 
   setSpeechEnabled(state.prefs.soundOn)
   setSfxEnabled(state.prefs.soundOn)
 
-  const addCards = useCallback((lesson: number, words: { zh: string }[]) => {
-    setState((s) => {
-      const cards = { ...s.cards }
-      const mastery = { ...s.mastery }
-      let added = 0
-      for (const w of words) {
-        if (!w.zh.trim()) continue
-        mastery[w.zh] = encounter(mastery[w.zh], w.zh, lesson)
-        if (!cards[w.zh]) {
-          cards[w.zh] = newCard(w.zh, lesson)
-          added++
-        }
-      }
-      return { ...s, cards, mastery, log: added ? bump(s.log, { cards: added }) : s.log }
-    })
-  }, [])
+  const addCards = useCallback(
+    (lesson: number, words: { zh: string }[]) => {
+      setState((s) => enqueueWords(s, lesson, words))
+    },
+    [setState],
+  )
 
   const encounterWord = useCallback((zh: string, lesson: number) => {
     if (!zh.trim()) return
     setState((s) => {
-      const isNew = !s.cards[zh]
       return {
         ...s,
         mastery: { ...s.mastery, [zh]: encounter(s.mastery[zh], zh, lesson) },
-        cards: isNew ? { ...s.cards, [zh]: newCard(zh, lesson) } : s.cards,
-        log: isNew ? bump(s.log, { cards: 1 }) : s.log,
       }
     })
   }, [])
 
-  const recordRecall = useCallback((zh: string, input: RecallInput) => {
-    if (!zh.trim()) return
+  const recordRecall = useCallback(
+    (zh: string, input: RecallInput) => {
+      if (!zh.trim()) return
+      const event = eventFor(
+        zh,
+        latest.current.cards[zh]?.lesson ?? latest.current.mastery[zh]?.lesson ?? 0,
+        input,
+      )
+      setState((s) => applyEvent(s, event))
+    },
+    [setState],
+  )
+
+  const finishLesson = useCallback((lesson: number, words: { zh: string }[], xp: number) => {
     setState((s) => {
-      const prior = s.mastery[zh] ?? encounter(undefined, zh, s.cards[zh]?.lesson ?? 0)
-      return { ...s, mastery: { ...s.mastery, [zh]: recordRetrieval(prior, input) } }
+      const next = creditProgress(enqueueWords(s, lesson, words), {
+        id: crypto.randomUUID(),
+        at: Date.now(),
+        day: dayKey(),
+        xp,
+        cards: 0,
+        lessons: 1,
+        source: 'lesson',
+      })
+      return {
+        ...next,
+
+        inProgress: s.inProgress?.lesson === lesson ? null : s.inProgress,
+        lessonsDone: s.lessonsDone.includes(lesson)
+          ? s.lessonsDone
+          : [...s.lessonsDone, lesson].sort((a, b) => a - b),
+      }
     })
   }, [])
 
-  const finishLesson = useCallback(
-    (lesson: number, words: { zh: string }[], xp: number) => {
-      setState((s) => {
-        const cards = { ...s.cards }
-        const mastery = { ...s.mastery }
-        let added = 0
-        for (const w of words) {
-          if (!w.zh.trim()) continue
-          mastery[w.zh] = encounter(mastery[w.zh], w.zh, lesson)
-          if (!cards[w.zh]) {
-            cards[w.zh] = newCard(w.zh, lesson)
-            added++
-          }
-        }
+  const reviewWord = useCallback(
+    (
+      zh: string,
+      rating: Rating,
+      options: {
+        skill?: Skill
+        evidence?: ReviewEvent['evidence']
+        assisted?: boolean
+        eventId?: string
+        at?: number
+      } = {},
+    ) => {
+      const card = latest.current.cards[zh]
+      const event: ReviewEvent = {
+        id: options.eventId ?? crypto.randomUUID(),
+        zh,
+        lesson: card?.lesson ?? latest.current.mastery[zh]?.lesson ?? 0,
+        skill: options.skill ?? card?.skill ?? 'recall',
+        at: options.at ?? Date.now(),
+        day: dayKey(options.at ?? Date.now()),
+        rating,
+        evidence: options.evidence ?? 'self-report',
+        assisted: !!options.assisted,
+        source: 'review',
+        scheduler: 'fsrs-6/ts-fsrs@5.2.3/yulu-2',
+        xp: rating === 'again' ? 0 : 4,
+      }
+      const saved = setState((s) => {
+        if (s.learning?.events[event.id]) return s
+        const next = applyEvent(s, event)
+        return { ...next, xp: s.xp + event.xp, log: bump(s.log, { cards: 1 }) }
+      })
+      return saved ? event.id : null
+    },
+    [setState],
+  )
+  const undoReview = useCallback(
+    (id: string) => {
+      return setState((s) => {
+        const event = s.learning?.events[id]
+        if (!event || s.learning?.undone[id]) return s
+        const next = undoEvent(s, id),
+          day = event.day ?? dayKey(event.at),
+          prior = s.log[day]
         return {
-          ...s,
-          cards,
-          mastery,
-          xp: s.xp + xp,
-          log: bump(s.log, { lessons: 1, cards: added }),
-          inProgress: s.inProgress?.lesson === lesson ? null : s.inProgress,
-          lessonsDone: s.lessonsDone.includes(lesson)
-            ? s.lessonsDone
-            : [...s.lessonsDone, lesson].sort((a, b) => a - b),
+          ...next,
+          xp: Math.max(0, s.xp - event.xp),
+          log: prior ? { ...s.log, [day]: { ...prior, cards: Math.max(0, prior.cards - 1) } } : s.log,
         }
       })
     },
-    [],
+    [setState],
   )
-
-  const rate = useCallback((zh: string, rating: Rating) => {
-    setState((s) => {
-      const card = s.cards[zh]
-      if (!card) return s
-      return {
-        ...s,
-        cards: { ...s.cards, [zh]: schedule(card, rating) },
-        log: bump(s.log, { cards: 1 }),
-      }
-    })
-  }, [])
+  const rate = useCallback(
+    (zh: string, rating: Rating) => {
+      reviewWord(zh, rating)
+    },
+    [reviewWord],
+  )
 
   /** Put a card's schedule back exactly as it was (for a review Undo). */
   const restoreCard = useCallback((zh: string, card: Card) => {
@@ -322,7 +462,17 @@ export function StoreProvider({
 
   /** Credit a rep toward the day without touching any SRS schedule. */
   const practiceLog = useCallback(() => {
-    setState((s) => ({ ...s, log: bump(s.log, { cards: 1 }) }))
+    setState((s) =>
+      creditProgress(s, {
+        id: crypto.randomUUID(),
+        at: Date.now(),
+        day: dayKey(),
+        xp: 0,
+        cards: 1,
+        lessons: 0,
+        source: 'practice',
+      }),
+    )
   }, [])
 
   /** Reverse one day-credit (for an undone review), never below zero. */
@@ -335,7 +485,21 @@ export function StoreProvider({
     })
   }, [])
 
-  const awardXp = useCallback((n: number) => setState((s) => ({ ...s, xp: s.xp + n })), [])
+  const awardXp = useCallback(
+    (n: number) =>
+      setState((s) =>
+        creditProgress(s, {
+          id: crypto.randomUUID(),
+          at: Date.now(),
+          day: dayKey(),
+          xp: n,
+          cards: 0,
+          lessons: 0,
+          source: 'lesson-step',
+        }),
+      ),
+    [setState],
+  )
 
   const isNodeDone = useCallback(
     (lesson: number, node: PathNode) => (state.pathDone[String(lesson)] ?? []).includes(node),
@@ -352,7 +516,17 @@ export function StoreProvider({
   }, [])
 
   const logDrill = useCallback((reps: number, xp: number) => {
-    setState((s) => ({ ...s, xp: s.xp + xp, log: bump(s.log, { cards: reps }) }))
+    setState((s) =>
+      creditProgress(s, {
+        id: crypto.randomUUID(),
+        at: Date.now(),
+        day: dayKey(),
+        xp,
+        cards: reps,
+        lessons: 0,
+        source: 'drill',
+      }),
+    )
   }, [])
 
   const setLessonProgress = useCallback((lesson: number, step: number) => {
@@ -376,8 +550,9 @@ export function StoreProvider({
       const on = s.starred.includes(zh)
       return {
         ...s,
+        starChanges: { ...s.starChanges, [zh]: { at: Date.now(), on: !on } },
         starred: on ? s.starred.filter((w) => w !== zh) : [zh, ...s.starred],
-        cards: on || s.cards[zh] ? s.cards : { ...s.cards, [zh]: newCard(zh, lesson) },
+
         mastery: s.mastery[zh] ? s.mastery : { ...s.mastery, [zh]: encounter(undefined, zh, lesson) },
       }
     })
@@ -387,20 +562,35 @@ export function StoreProvider({
     setState((s) => ({ ...s, prefs: { ...s.prefs, [key]: value } }))
   }, [])
 
-  const reset = useCallback(() => setState(empty), [])
+  const reset = useCallback(() => {
+    try {
+      localStorage.setItem(key + '.before-reset.' + Date.now(), JSON.stringify(latest.current))
+    } catch {
+      setStorageProblem(true)
+      return
+    }
+    setState(() => ({ ...empty, resetAt: Date.now(), learning: initLearning(empty) }))
+  }, [key, setState])
 
   const value = useMemo<Store>(() => {
     const cardList = Object.values(state.cards)
     const practiceDays = Object.keys(state.log)
     return {
       ...state,
-      learningTrail: Object.values(state.mastery).sort((a, b) => b.lastSeen - a.lastSeen || a.zh.localeCompare(b.zh)).map((word) => word.zh),
+      storageProblem,
+      syncStatus,
+      exportProgress,
+      reviewWord,
+      undoReview,
+      learningTrail: Object.values(state.mastery)
+        .sort((a, b) => b.lastSeen - a.lastSeen || a.zh.localeCompare(b.zh))
+        .map((word) => word.zh),
       encounterWord,
       recordRecall,
       cardList,
       practiceDays,
       today: state.log[dayKey()] ?? { lessons: 0, cards: 0 },
-      wordsLearned: cardList.length,
+      wordsLearned: Object.values(state.mastery).filter((m) => m.unaidedSuccesses > 0).length,
       streak: streakOf(practiceDays),
       isStarred: (zh: string) => state.starred.includes(zh),
       toggleStar,
@@ -422,6 +612,11 @@ export function StoreProvider({
     }
   }, [
     state,
+    storageProblem,
+    syncStatus,
+    exportProgress,
+    reviewWord,
+    undoReview,
     finishLesson,
     rate,
     addCards,
@@ -442,7 +637,35 @@ export function StoreProvider({
     setLastTab,
   ])
 
-  return <Ctx.Provider value={value}>{children}</Ctx.Provider>
+  return (
+    <Ctx.Provider value={value}>
+      {children}
+      {storageProblem && (
+        <div
+          className="storage-blocker"
+          role="alertdialog"
+          aria-modal="true"
+          aria-label={t('Progress could not be saved')}
+        >
+          <div>
+            <h2>{t('Progress could not be saved')}</h2>
+            <p>{t('Your previous progress is safe. Free some storage before continuing.')}</p>
+            <button onClick={exportProgress}>{t('Export progress backup')}</button>
+            <button
+              onClick={() => {
+                try {
+                  persistProgress(localStorage, key, latest.current)
+                  setStorageProblem(false)
+                } catch {}
+              }}
+            >
+              {t('Try saving again')}
+            </button>
+          </div>
+        </div>
+      )}
+    </Ctx.Provider>
+  )
 }
 
 export function useStore(): Store {

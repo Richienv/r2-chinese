@@ -56,7 +56,10 @@ export function dialogueTurnIndexes(text: LessonText, role: string): number[] {
   const named = dialogueRoles(text).length > 1
   return text.lines
     .map((line, index) => ({ line, index }))
-    .filter(({ line, index }) => line.zh.trim() && (named ? line.speaker === role : index % 2 === 1 || text.lines.length === 1))
+    .filter(
+      ({ line, index }) =>
+        line.zh.trim() && (named ? line.speaker === role : index % 2 === 1 || text.lines.length === 1),
+    )
     .slice(0, 3)
     .map(({ index }) => index)
 }
@@ -64,13 +67,17 @@ export function dialogueTurnIndexes(text: LessonText, role: string): number[] {
 export function sourceAssessment(prompt: ProductionPrompt): ProductionAssessment {
   const targetWords = sourceWords(prompt.expectedZh, prompt.targetWords)
   const usedWords = sourceWords(prompt.response, targetWords)
-  const match = !!normalizeChinese(prompt.response) && normalizeChinese(prompt.response) === normalizeChinese(prompt.expectedZh)
+  const match =
+    !!normalizeChinese(prompt.response) &&
+    normalizeChinese(prompt.response) === normalizeChinese(prompt.expectedZh)
   return {
     accepted: match ? true : null,
     evidence: match ? 'source-match' : 'practice',
     feedback: match
       ? t('You recalled the book sentence. The Hanzi and word order match; punctuation is flexible.')
-      : t('Your wording differs from the book. It may be a valid alternative; source comparison alone cannot verify its grammar or meaning.'),
+      : t(
+          'Your wording differs from the book. It may be a valid alternative; source comparison alone cannot verify its grammar or meaning.',
+        ),
     correctedZh: prompt.expectedZh,
     issues: [],
     usedWords,
@@ -79,9 +86,12 @@ export function sourceAssessment(prompt: ProductionPrompt): ProductionAssessment
 }
 
 /** Character alignment describes differences; it never pretends they are grammar errors. */
-export function alignChinese(response: string, reference: string): Array<{ text: string; kind: 'same' | 'added' | 'missing' }> {
-  const user = [...normalizeChinese(response)].slice(0, 400)
-  const source = [...normalizeChinese(reference)].slice(0, 400)
+export function alignChinese(
+  response: string,
+  reference: string,
+): Array<{ text: string; kind: 'same' | 'added' | 'missing' }> {
+  const user = [...normalizeChinese(response)].slice(0, 600)
+  const source = [...normalizeChinese(reference)].slice(0, 600)
   const rows = Array.from({ length: user.length + 1 }, () => new Uint16Array(source.length + 1))
   for (let i = user.length - 1; i >= 0; i--) {
     for (let j = source.length - 1; j >= 0; j--) {
@@ -107,7 +117,10 @@ export function alignChinese(response: string, reference: string): Array<{ text:
   return parts
 }
 
-export async function assessProduction(prompt: ProductionPrompt, signal?: AbortSignal): Promise<ProductionAssessment> {
+export async function assessProduction(
+  prompt: ProductionPrompt,
+  signal?: AbortSignal,
+): Promise<ProductionAssessment> {
   const local = sourceAssessment(prompt)
   if (local.accepted) return local
   const res = await fetch('/api/assess', {
@@ -118,13 +131,22 @@ export async function assessProduction(prompt: ProductionPrompt, signal?: AbortS
   })
   if (res.status === 404 || res.status === 503) {
     const failure = await assessmentFailure(res)
-    return { ...local, unavailable: t('{message} You can still compare with the book below.', { message: failure.message }) }
+    return {
+      ...local,
+      unavailable: t('{message} You can still compare with the book below.', { message: failure.message }),
+    }
   }
   if (!res.ok) {
     throw await assessmentFailure(res)
   }
-  const result = await res.json() as Partial<ProductionAssessment>
-  if (typeof result.accepted !== 'boolean' || typeof result.feedback !== 'string' || typeof result.correctedZh !== 'string' || !Array.isArray(result.issues) || !result.issues.every((issue) => typeof issue === 'string')) {
+  const result = (await res.json()) as Partial<ProductionAssessment>
+  if (
+    typeof result.accepted !== 'boolean' ||
+    typeof result.feedback !== 'string' ||
+    typeof result.correctedZh !== 'string' ||
+    !Array.isArray(result.issues) ||
+    !result.issues.every((issue) => typeof issue === 'string')
+  ) {
     throw new Error(t('The grammar check returned an incomplete result. Retry, or use book comparison.'))
   }
   return {

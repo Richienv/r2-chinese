@@ -1,3 +1,4 @@
+import { syncProgress } from './progressSyncCore'
 import { PROGRESS_TABLE, supabase } from './supabase'
 
 /** Fetch a user's stored progress blob, or null if they have no row yet / offline. */
@@ -16,16 +17,52 @@ export async function fetchProgress(userId: string): Promise<unknown | null> {
   }
 }
 
-/** Upsert a user's progress blob (last-write-wins). Best-effort; ignores offline errors. */
-export async function saveProgress(userId: string, state: unknown): Promise<void> {
-  if (!supabase) return
-  try {
-    await supabase
-      .from(PROGRESS_TABLE)
-      .upsert({ user_id: userId, state, updated_at: new Date().toISOString() })
-  } catch {
-    /* offline — the localStorage cache still holds the change until next sync */
-  }
+/** Compare-and-swap prevents concurrent devices from silently replacing each other. */
+export async function saveProgress<T>(
+  userId: string,
+  state: T,
+  merge: (local: T, remote: T) => T,
+): Promise<T | null> {
+  if (!supabase) return null
+  const db = supabase
+  return syncProgress(
+    state,
+    {
+      read: async () => {
+        const { data, error } = await db
+          .from(PROGRESS_TABLE)
+          .select('state,updated_at')
+          .eq('user_id', userId)
+          .maybeSingle()
+        if (error) throw error
+        return data ? { value: data.state as T, token: data.updated_at as string } : null
+      },
+      backup: (value) => {
+        const key = 'yulu.hsk4a.v1.' + userId + '.server-before-v2'
+        if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(value))
+      },
+      update: async (value, token) => {
+        const updated_at = new Date(Math.max(Date.now(), Date.parse(token) + 1)).toISOString()
+        const { data, error } = await db
+          .from(PROGRESS_TABLE)
+          .update({ state: value, updated_at })
+          .eq('user_id', userId)
+          .eq('updated_at', token)
+          .select('state')
+          .maybeSingle()
+        if (error) throw error
+        return !!data
+      },
+      insert: async (value) => {
+        const { error } = await db
+          .from(PROGRESS_TABLE)
+          .insert({ user_id: userId, state: value, updated_at: new Date().toISOString() })
+        if (error && error.code !== '23505') throw error
+        return !error
+      },
+    },
+    merge,
+  )
 }
 
 const HISTORY_TABLE = 'user_history'

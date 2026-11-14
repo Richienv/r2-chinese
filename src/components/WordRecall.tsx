@@ -1,3 +1,4 @@
+import { RepairEditor } from './RepairEditor'
 import { useId, useState } from 'react'
 import { RecallFeedback } from './LearningMotion'
 import { HearButton } from './Hear'
@@ -23,15 +24,35 @@ const HEADINGS: Record<DrillCue, string> = {
   sound: t('Hear it, then write it'),
   pinyin: t('From the sound to the Hanzi'),
 }
-const HINT_TITLES: Record<HintStep, string> = { meaning: t('Meaning'), first: t('First character'), pinyin: t('Pinyin'), word: t('Book word') }
-const HINT_BUTTONS: Record<HintStep, string> = { meaning: t('Reveal the meaning'), first: t('Reveal the first character'), pinyin: t('Reveal pinyin'), word: t('Reveal the word') }
+const HINT_TITLES: Record<HintStep, string> = {
+  meaning: t('Meaning'),
+  first: t('First character'),
+  pinyin: t('Pinyin'),
+  word: t('Book word'),
+}
+const HINT_BUTTONS: Record<HintStep, string> = {
+  meaning: t('Reveal the meaning'),
+  first: t('Reveal the first character'),
+  pinyin: t('Reveal pinyin'),
+  word: t('Reveal the word'),
+}
 
 /**
  * Production before recognition: a lesson word must be retrieved, not picked.
  * `cue` changes what is shown (the meaning by default, or the word's sound, or
  * its pinyin); the answer is always the Hanzi, typed or drawn.
  */
-export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, externallyAssisted = false, onAssistance, onAttempt, onComplete }: {
+export function WordRecall({
+  word,
+  n,
+  of,
+  cue = 'meaning',
+  showStrokes = false,
+  externallyAssisted = false,
+  onAssistance,
+  onAttempt,
+  onComplete,
+}: {
   word: Vocab
   n: number
   of: number
@@ -40,7 +61,7 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
   showStrokes?: boolean
   externallyAssisted?: boolean
   onAssistance?: () => void
-  onAttempt: (correct: boolean, assisted: boolean) => void
+  onAttempt: (correct: boolean, assisted: boolean, mode: 'recall' | 'writing') => void
   onComplete: () => void
 }) {
   const ladder = hintLadder(cue)
@@ -65,7 +86,7 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
 
   function score(correct: boolean, wasAssisted: boolean) {
     setCheckCount((value) => value + 1)
-    onAttempt(correct, wasAssisted)
+    onAttempt(correct, wasAssisted, inputMode === 'draw' ? 'writing' : 'recall')
     if (correct) {
       // The parent may immediately persist the visible-answer assistance flag.
       // Keep the outcome of this attempt stable after that update.
@@ -116,76 +137,203 @@ export function WordRecall({ word, n, of, cue = 'meaning', showStrokes = false, 
         <h2 className="session-step-title">{HEADINGS[cue]}</h2>
       </header>
       <div className="production-prompt" data-cue={cue}>
-        {cue === 'meaning' && <>
-          <p className="production-en">{word.en}</p>
-          <p className="sub">{t('The word from this lesson. Type it, or draw the Hanzi.')}</p>
-        </>}
-        {cue === 'sound' && <>
-          <ListenCue text={word.zh} />
-          <p className="sub">{t('Listen as often as you like, then type it or draw the Hanzi.')}</p>
-        </>}
-        {cue === 'pinyin' && <>
-          <p className="production-pinyin">{word.pinyin}</p>
-          <p className="sub">{t('Sound it out, then type it or draw the Hanzi.')}</p>
-        </>}
+        {cue === 'meaning' && (
+          <>
+            <p className="production-en">{word.en}</p>
+            <p className="sub">{t('The word from this lesson. Type it, or draw the Hanzi.')}</p>
+          </>
+        )}
+        {cue === 'sound' && (
+          <>
+            <ListenCue text={word.zh} />
+            <p className="sub">{t('Listen as often as you like, then type it or draw the Hanzi.')}</p>
+          </>
+        )}
+        {cue === 'pinyin' && (
+          <>
+            <p className="production-pinyin">{word.pinyin}</p>
+            <p className="sub">{t('Sound it out, then type it or draw the Hanzi.')}</p>
+          </>
+        )}
       </div>
-      {!solved && <div className="word-recall-input-mode" role="group" aria-label={t('How to answer')}>
-        <button type="button" className="btn btn-ghost" aria-pressed={inputMode === 'type'} onClick={() => { setInputMode('type'); setFeedback(null) }}>{t('Type it')}</button>
-        <button type="button" className="btn btn-ghost" aria-pressed={inputMode === 'draw'} onClick={() => { setInputMode('draw'); setDrawStarted(true); setFeedback(null) }}>{t('Draw it')}</button>
-      </div>}
-      {drawStarted && <div className="hanzi-host" hidden={inputMode !== 'draw'} aria-describedby={`${inputId}-feedback`}>
-        <HanziDrawing word={normalizeChinese(word.zh)} task={recallTask('Draw', cue, word, characterCount)} handwriting={handwriting} solved={solved}
-          onChecked={drawingChecked} onAssist={assist} onTypeInstead={() => { setInputMode('type'); setFeedback(null) }} />
-      </div>}
-      {!solved && inputMode === 'type' && <form className="production-form" onSubmit={(event) => { event.preventDefault(); checkTyped() }}>
-        <label htmlFor={inputId}>{t('Your word')}</label>
-        <input
-          id={inputId}
-          className="production-input zh"
-          lang="zh-CN"
-          value={answer}
-          onChange={(event) => { setAnswer(event.target.value); setFeedback(null) }}
-          onKeyDown={(event) => {
-            if (event.key === 'Enter' && (event.nativeEvent.isComposing || event.keyCode === 229)) event.preventDefault()
+      {!solved && (
+        <div className="word-recall-input-mode" role="group" aria-label={t('How to answer')}>
+          <button
+            type="button"
+            className="btn btn-ghost"
+            aria-pressed={inputMode === 'type'}
+            onClick={() => {
+              setInputMode('type')
+              setFeedback(null)
+            }}
+          >
+            {t('Type it')}
+          </button>
+          <button
+            type="button"
+            className="btn btn-ghost"
+            aria-pressed={inputMode === 'draw'}
+            onClick={() => {
+              setInputMode('draw')
+              setDrawStarted(true)
+              setFeedback(null)
+            }}
+          >
+            {t('Draw it')}
+          </button>
+        </div>
+      )}
+      {drawStarted && (
+        <div className="hanzi-host" hidden={inputMode !== 'draw'} aria-describedby={`${inputId}-feedback`}>
+          <HanziDrawing
+            word={normalizeChinese(word.zh)}
+            task={recallTask('Draw', cue, word, characterCount)}
+            handwriting={handwriting}
+            solved={solved}
+            onChecked={drawingChecked}
+            onAssist={assist}
+            onTypeInstead={() => {
+              setInputMode('type')
+              setFeedback(null)
+            }}
+          />
+        </div>
+      )}
+      {!solved && inputMode === 'type' && (
+        <form
+          className="production-form"
+          onSubmit={(event) => {
+            event.preventDefault()
+            checkTyped()
           }}
-          placeholder="输入汉字"
-          autoComplete="off"
-          autoCapitalize="off"
-          spellCheck={false}
-          aria-describedby={`${inputId}-feedback`}
+        >
+          <label htmlFor={inputId}>{t('Your word')}</label>
+          <input
+            id={inputId}
+            className="production-input zh"
+            lang="zh-CN"
+            value={answer}
+            onChange={(event) => {
+              setAnswer(event.target.value)
+              setFeedback(null)
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' && (event.nativeEvent.isComposing || event.keyCode === 229))
+                event.preventDefault()
+            }}
+            placeholder="输入汉字"
+            autoComplete="off"
+            autoCapitalize="off"
+            spellCheck={false}
+            aria-describedby={`${inputId}-feedback`}
+          />
+          <button className="btn" type="submit" disabled={!answer.trim()}>
+            {t('Check recall')}
+          </button>
+        </form>
+      )}
+      {inputMode === 'type' && typedReview && !solved && (
+        <RepairEditor
+          key={checkCount}
+          response={answer}
+          reference={word.zh}
+          exact
+          onApply={(next) => {
+            setAnswer(next)
+            assist()
+            const correct = normalizeChinese(next) === normalizeChinese(word.zh)
+            setTypedChange(
+              compareReviews(
+                typedReview,
+                reviewTypedWord(recallTask('Type', cue, word, characterCount), next, word.zh),
+              ),
+            )
+            setTypedReview(reviewTypedWord(recallTask('Type', cue, word, characterCount), next, word.zh))
+            score(correct, true)
+          }}
         />
-        <button className="btn" type="submit" disabled={!answer.trim()}>{t('Check recall')}</button>
-      </form>}
-      {inputMode === 'type' && typedReview && (solved || typedReview.verdict !== 'passed') && <ReviewReport review={typedReview} comparison={typedChange} compact={solved} revealed={() => solved} />}
+      )}
+      {inputMode === 'type' && typedReview && solved && (
+        <ReviewReport review={typedReview} comparison={typedChange} compact revealed={() => true} />
+      )}
       {!solved && (
         <div className="production-actions">
-          <button type="button" className="btn btn-ghost" disabled={hint >= ladder.length} onClick={() => {
-            setHint((value) => Math.min(ladder.length, value + 1))
-            onAssistance?.()
-            playReveal()
-          }}>{hint >= ladder.length ? t('Word revealed') : hint === 0 ? t('Reveal a hint') : HINT_BUTTONS[ladder[hint]]}</button>
+          <button
+            type="button"
+            className="btn btn-ghost"
+            disabled={hint >= ladder.length}
+            onClick={() => {
+              setHint((value) => Math.min(ladder.length, value + 1))
+              onAssistance?.()
+              playReveal()
+            }}
+          >
+            {hint >= ladder.length
+              ? t('Word revealed')
+              : hint === 0
+                ? t('Reveal a hint')
+                : HINT_BUTTONS[ladder[hint]]}
+          </button>
           <span className="sub">{t('Hints help learning; they count as assisted.')}</span>
         </div>
       )}
       {hint > 0 && !solved && (
         <div className="production-hint" key={hint}>
           <span>{HINT_TITLES[ladder[hint - 1]]}</span>
-          <strong className={ladder[hint - 1] === 'pinyin' || ladder[hint - 1] === 'meaning' ? '' : 'zh'} lang={ladder[hint - 1] === 'pinyin' || ladder[hint - 1] === 'meaning' ? undefined : 'zh-CN'}>
-            {ladder[hint - 1] === 'first' ? `${Array.from(word.zh)[0]}${'＿'.repeat(Math.max(0, Array.from(word.zh).length - 1))}` : ladder[hint - 1] === 'pinyin' ? word.pinyin : ladder[hint - 1] === 'meaning' ? word.en : word.zh}
+          <strong
+            className={ladder[hint - 1] === 'pinyin' || ladder[hint - 1] === 'meaning' ? '' : 'zh'}
+            lang={ladder[hint - 1] === 'pinyin' || ladder[hint - 1] === 'meaning' ? undefined : 'zh-CN'}
+          >
+            {ladder[hint - 1] === 'first'
+              ? `${Array.from(word.zh)[0]}${'＿'.repeat(Math.max(0, Array.from(word.zh).length - 1))}`
+              : ladder[hint - 1] === 'pinyin'
+                ? word.pinyin
+                : ladder[hint - 1] === 'meaning'
+                  ? word.en
+                  : word.zh}
           </strong>
         </div>
       )}
       <div id={`${inputId}-feedback`} aria-live="polite">
-        {solved ? <RecallFeedback key={checkCount} state="correct" label={resultAssisted ? t('Retrieved with support') : t('Retrieved without a hint')} /> : feedback && inputMode === 'type' && <RecallFeedback key={checkCount} state={feedback === 'retry' ? 'retry' : 'idle'} label={feedbackMessage} />}
+        {solved ? (
+          <RecallFeedback
+            key={checkCount}
+            state="correct"
+            label={resultAssisted ? t('Retrieved with support') : t('Retrieved without a hint')}
+          />
+        ) : (
+          feedback &&
+          inputMode === 'type' && (
+            <RecallFeedback
+              key={checkCount}
+              state={feedback === 'retry' ? 'retry' : 'idle'}
+              label={feedbackMessage}
+            />
+          )
+        )}
       </div>
       {solved && (
         <div className="production-source">
-          {showStrokes ? <StrokeWord text={word.zh} className="drill-strokes" showAttribution={false} /> : <p className="zh" lang="zh-CN">{word.zh}</p>}
+          {showStrokes ? (
+            <StrokeWord text={word.zh} className="drill-strokes" showAttribution={false} />
+          ) : (
+            <p className="zh" lang="zh-CN">
+              {word.zh}
+            </p>
+          )}
           {prefs.showPinyin && <p>{word.pinyin}</p>}
           {prefs.showEnglish && <p>{word.en}</p>}
           <HearButton text={word.zh} label={t('Hear the word')} />
-          {prefs.showEnglish && <p className="sub">{resultAssisted ? t('You’ll meet this word again for an unaided attempt.') : t('One successful retrieval. Future sessions check whether it stays.')}</p>}
-          <button type="button" className="btn production-next" onClick={onComplete}>{t('Continue')}</button>
+          {prefs.showEnglish && (
+            <p className="sub">
+              {resultAssisted
+                ? t('You’ll meet this word again for an unaided attempt.')
+                : t('One successful retrieval. Future sessions check whether it stays.')}
+            </p>
+          )}
+          <button type="button" className="btn production-next" onClick={onComplete}>
+            {t('Continue')}
+          </button>
         </div>
       )}
       <StudyDisplayControls />

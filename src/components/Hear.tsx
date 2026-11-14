@@ -1,6 +1,15 @@
 import { useEffect, useState, useSyncExternalStore } from 'react'
 import { t } from '../lib/i18n'
-import { getSpeechSnapshot, prefetch, speak, speakLines, stopSpeech, subscribeSpeech, unlockSpeech, type SpeakOpts } from '../lib/speech'
+import {
+  getSpeechSnapshot,
+  prefetch,
+  speak,
+  speakLines,
+  stopSpeech,
+  subscribeSpeech,
+  unlockSpeech,
+  type SpeakOpts,
+} from '../lib/speech'
 import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
 
 const HANZI = /[\u3400-\u9FFF]/
@@ -13,7 +22,7 @@ export function hasHanzi(text: string): boolean {
 /** Strip to spoken Chinese runs; empty when there is nothing to say. */
 export function chineseOnly(text: string): string {
   const parts = text.match(/[\u3400-\u9FFF]+(?:[\u3400-\u9FFF\s、，。！？：；…·—\-_/／]+)*/g)
-  return (parts?.join(' ').replace(/\s+/g, ' ').trim() ?? '')
+  return parts?.join(' ').replace(/\s+/g, ' ').trim() ?? ''
 }
 
 export function rateForChinese(text: string): number {
@@ -66,7 +75,7 @@ export function useAutoSpeakLines(lines: string[], voice: string = VOICE.xiaoxia
   useEffect(() => {
     if (audible.length === 0) return
     const group = `lines|${joined}`
-    for (const text of audible) prefetch(text, { voice, rate })
+    for (const text of audible.slice(0, 2)) prefetch(text, { voice, rate })
     const timer = window.setTimeout(() => {
       void speakLines(
         audible.map((text) => ({ text, voice, rate })),
@@ -107,6 +116,8 @@ export function HearButton({
   const r = rate ?? (speakable ? rateForChinese(speakable) : WORD_RATE)
   const key = speakable ? `${v}|${r}|${speakable}` : ''
   const playing = useSpeechActive(key)
+  const snapshot = useSpeechSnapshot()
+  const source = snapshot.key === key ? snapshot.source : undefined
   const opts: SpeakOpts = { voice: v, rate: r, key, trackWords: true }
 
   if (!speakable) return null
@@ -116,7 +127,7 @@ export function HearButton({
       type="button"
       className={`hear hear-${tone}${className ? ` ${className}` : ''}`}
       data-on={playing}
-      aria-label={playing ? stopLabel ? `${stopLabel} ${label}` : t('Stop {label}', { label }) : label}
+      aria-label={playing ? (stopLabel ? `${stopLabel} ${label}` : t('Stop {label}', { label })) : label}
       aria-pressed={playing}
       onPointerDown={() => unlockSpeech()}
       onClick={(e) => {
@@ -126,7 +137,18 @@ export function HearButton({
       }}
     >
       {playing ? <PauseMark /> : <PlayMark />}
-      <span>{playing ? playingLabel : label}</span>
+      <span>
+        {playing ? playingLabel : label}
+        {source && (
+          <small className="audio-source">
+            {source === 'recording'
+              ? t('Original recording')
+              : source === 'neural'
+                ? t('Neural voice')
+                : t('Device voice · fallback')}
+          </small>
+        )}
+      </span>
     </button>
   )
 }
@@ -157,7 +179,9 @@ export function ChineseHear({
   const r = rate ?? (speakable ? rateForChinese(speakable) : WORD_RATE)
   useAutoSpeak(autoplay ? speakable : '', voice, r)
   if (!speakable) return null
-  return <HearButton text={speakable} voice={voice} rate={r} label={label} tone={tone} className={className} />
+  return (
+    <HearButton text={speakable} voice={voice} rate={r} label={label} tone={tone} className={className} />
+  )
 }
 
 function PlayMark() {

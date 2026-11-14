@@ -1,0 +1,51 @@
+.study-music {
+  position: fixed;
+  z-index: 80;
+  left: 12px;
+  bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: min(240px, calc(100vw - 24px));
+  padding: 6px 8px 6px 6px;
+  border-radius: 999px;
+  background: rgba(255, 252, 247, 0.94);
+  border: 1px solid rgba(42, 24, 16, 0.08);
+  box-shadow: 0 10px 24px -16px rgba(70, 30, 16, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+.study-music[data-lifted='true'] {
+  bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+}
+
+.study-music-play {
+  flex: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 7px 10px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+
+.study-music[data-ducked='true'] .study-music-play {
+  background: var(--red-deep);
+}
+
+.study-music-volume {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.study-music-volume input {
+  width: 84px;
+  accent-color: var(--red-deep);
+}

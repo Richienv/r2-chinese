@@ -49,21 +49,33 @@ function normalize(entries: Record<string, ClipEntry>): Map<string, ClipEntry> {
  * Resolves exact book text to a recorded clip. Anything that is not an exact
  * line or vocabulary word of the book returns null and keeps the synthesized voice.
  */
-export function createClipResolver(manifest: AudioManifest, base: string, isReady: () => boolean = () => true) {
+export function createClipResolver(
+  manifest: AudioManifest,
+  base: string,
+  isReady: () => boolean = () => true,
+  now: () => number = Date.now,
+) {
   const lines = normalize(manifest.lines)
   const words = normalize(manifest.words)
-  const broken = new Set<string>()
+  const broken = new Map<string, number>()
   return function resolve(text: string): BookClip | null {
     if (!isReady()) return null
     const key = clipKey(text)
     const hit = lines.get(key) ?? words.get(key)
-    if (!hit || broken.has(hit.f)) return null
+    if (!hit || (broken.get(hit.f) ?? 0) > now()) return null
     return {
       url: trackUrl(base, hit.f),
       start: hit.s,
       end: hit.e,
-      words: (hit.w ?? []).map(([charIndex, charLength, start, duration]) => ({ charIndex, charLength, start, duration })),
-      fail: () => { broken.add(hit.f) },
+      words: (hit.w ?? []).map(([charIndex, charLength, start, duration]) => ({
+        charIndex,
+        charLength,
+        start,
+        duration,
+      })),
+      fail: () => {
+        broken.set(hit.f, now() + 30000)
+      },
     }
   }
 }

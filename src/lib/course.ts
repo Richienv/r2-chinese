@@ -15,68 +15,58 @@ const COURSE_KEY = 'yulu.course.v1'
 
 export type CourseId = 'hsk4a' | 'kerja' | 'jiaocheng' | 'magang' | 'interview' | 'books' | 'jiayin'
 
-export const COURSE_ORDER: CourseId[] = ['jiayin', 'hsk4a', 'kerja', 'jiaocheng', 'magang', 'interview', 'books']
+export const COURSE_ORDER: CourseId[] = ['hsk4a', 'jiaocheng', 'kerja']
 
-export const COURSE_META: Record<
-  CourseId,
-  { id: CourseId; title: string; titleZh: string; blurb: string }
-> = {
-  hsk4a: {
-    id: 'hsk4a',
-    title: 'HSK 4',
-    titleZh: '标准教程 HSK 4上',
-    blurb: t('Textbook path · {term} units', { term: '课文' }),
-  },
-  kerja: {
-    id: 'kerja',
-    title: t('1000 words'),
-    titleZh: '把话说清楚，把事情做好。',
-    blurb: t('Workplace Mandarin for HR and management'),
-  },
-  jiaocheng: {
-    id: 'jiaocheng',
-    title: 'Jiaocheng 2',
-    titleZh: '汉语教程 · 第二册',
-    blurb: t('Book 2, part 1 and part 2'),
-  },
-  magang: {
-    id: 'magang',
-    title: 'Magang AI',
-    titleZh: 'Magang AI',
-    blurb: t('Internship book · study it slowly'),
-  },
-  interview: {
-    id: 'interview',
-    title: '总办',
-    titleZh: '总办',
-    blurb: t('Tonight · 18:00'),
-  },
-  books: {
-    id: 'books',
-    title: t('Books'),
-    titleZh: 'Books',
-    blurb: t('Five books, one idea at a time'),
-  },
-  jiayin: {
-    id: 'jiayin',
-    title: 'Wawancara Jiayin',
-    titleZh: '嘉银面试',
-    blurb: 'Global MT · English + Indonesia · Mandarin opsional',
-  },
-}
+export const COURSE_META: Record<CourseId, { id: CourseId; title: string; titleZh: string; blurb: string }> =
+  {
+    hsk4a: {
+      id: 'hsk4a',
+      title: 'HSK 4',
+      titleZh: '标准教程 HSK 4上',
+      blurb: t('Textbook path · {term} units', { term: '课文' }),
+    },
+    kerja: {
+      id: 'kerja',
+      title: t('1000 words'),
+      titleZh: '把话说清楚，把事情做好。',
+      blurb: t('Workplace Mandarin for HR and management'),
+    },
+    jiaocheng: {
+      id: 'jiaocheng',
+      title: 'Jiaocheng 2',
+      titleZh: '汉语教程 · 第二册',
+      blurb: t('Book 2, part 1 and part 2'),
+    },
+    magang: {
+      id: 'magang',
+      title: 'Magang AI',
+      titleZh: 'Magang AI',
+      blurb: t('Internship book · study it slowly'),
+    },
+    interview: {
+      id: 'interview',
+      title: '总办',
+      titleZh: '总办',
+      blurb: t('Tonight · 18:00'),
+    },
+    books: {
+      id: 'books',
+      title: t('Books'),
+      titleZh: 'Books',
+      blurb: t('Five books, one idea at a time'),
+    },
+    jiayin: {
+      id: 'jiayin',
+      title: 'Wawancara Jiayin',
+      titleZh: '嘉银面试',
+      blurb: 'Global MT · English + Indonesia · Mandarin opsional',
+    },
+  }
 
 function readCourse(): CourseId {
   try {
     const raw = localStorage.getItem(COURSE_KEY)
-    if (
-      raw === 'kerja' ||
-      raw === 'hsk4a' ||
-      raw === 'jiaocheng' ||
-      raw === 'magang' ||
-      raw === 'interview' ||
-      raw === 'books' ||
-      raw === 'jiayin'
-    ) {
+    if (raw === 'kerja' || raw === 'hsk4a' || raw === 'jiaocheng' || raw === 'books') {
       return raw
     }
   } catch {

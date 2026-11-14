@@ -1,3 +1,4 @@
+import { isComfortable } from '../lib/learningEngine'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
@@ -7,7 +8,14 @@ import { DialogueRecheck, type RecheckSummary } from '../components/DialogueRech
 import { DialoguePractice, SentencePractice } from '../components/ProductionPractice'
 import { WordRecall } from '../components/WordRecall'
 import { StudyDisplayControls } from '../components/StudyDisplayControls'
-import { ChineseHear, hasHanzi, HearButton, useAutoSpeak, useAutoSpeakLines, useSpeechActive } from '../components/Hear'
+import {
+  ChineseHear,
+  hasHanzi,
+  HearButton,
+  useAutoSpeak,
+  useAutoSpeakLines,
+  useSpeechActive,
+} from '../components/Hear'
 import { CheckIcon, CloseIcon, LockIcon } from '../components/Icons'
 import { getLesson, type Example } from '../lib/content'
 import { recordHistory } from '../lib/history'
@@ -63,29 +71,32 @@ export function WordsSession({
   return <WordsRunner lesson={lesson} node={node} onClose={onClose} />
 }
 
-function WordsRunner({
-  lesson,
-  node,
-  onClose,
-}: {
-  lesson: number
-  node: PathNode
-  onClose: () => void
-}) {
+function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode; onClose: () => void }) {
   const store = useStore()
   const { user } = useAuth()
   // Production activities change the sequence; don't reinterpret old numeric checkpoints.
   const resumeId = `hsk:production-v2:${user?.id ?? 'local'}:${lesson}:${node}`
   const checkpoint = useRef(readLearningCheckpoint(resumeId))
   const [steps, setSteps] = useState(() => {
-    const base = buildSteps(lesson, node)
+    const base = buildSteps(lesson, node).filter(
+      (step) =>
+        !(
+          (step.kind === 'teach' || step.kind === 'recall') &&
+          isComfortable(store, step.word.zh) &&
+          step.id !== checkpoint.current?.stepId &&
+          !checkpoint.current?.retryWords?.includes(step.word.zh)
+        ),
+    )
     const retries = (checkpoint.current?.retryWords ?? []).flatMap((zh) => {
       const recall = base.find((activity) => activity.kind === 'recall' && activity.word.zh === zh)
       return recall ? [{ ...recall, id: `retry:${zh}`, n: 1, of: 1 } as SessionStep] : []
     })
     return [...base.slice(0, -1), ...retries, base[base.length - 1]]
   })
-  const sessionWords = useMemo(() => [...new Set(steps.filter((s) => s.kind === 'recall').map((s) => s.word.zh))], [steps])
+  const sessionWords = useMemo(
+    () => [...new Set(steps.filter((s) => s.kind === 'recall').map((s) => s.word.zh))],
+    [steps],
+  )
   const alreadyDone = useRef(store.isNodeDone(lesson, node))
   const credited = useRef(new Set<string>())
   const finished = useRef(false)
@@ -96,13 +107,17 @@ function WordsRunner({
   const needsSupport = useRef(new Set<string>())
 
   const [i, setI] = useState(() => {
-    const saved = steps.findIndex((activity) => activity.kind !== 'complete' && activity.id === checkpoint.current?.stepId)
+    const saved = steps.findIndex(
+      (activity) => activity.kind !== 'complete' && activity.id === checkpoint.current?.stepId,
+    )
     return saved >= 0 ? saved : 0
   })
   const [quiz, setQuiz] = useState<Record<string, QuizState>>({})
   const [xp, setXp] = useState(0)
   const [fwToken, setFwToken] = useState(0)
-  const [progressPeeks, setProgressPeeks] = useState<Record<string, boolean>>(() => Object.fromEntries((checkpoint.current?.assistedSteps ?? []).map((id) => [id, true])))
+  const [progressPeeks, setProgressPeeks] = useState<Record<string, boolean>>(() =>
+    Object.fromEntries((checkpoint.current?.assistedSteps ?? []).map((id) => [id, true])),
+  )
 
   const step = steps[Math.min(i, steps.length - 1)]
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
@@ -124,7 +139,9 @@ function WordsRunner({
   useEffect(() => {
     if (isComplete) return
     writeLearningCheckpoint(resumeId, {
-      stepId: step.id, retryWords: [...retryWords.current], assistedSteps: Object.keys(progressPeeks).filter((id) => progressPeeks[id]),
+      stepId: step.id,
+      retryWords: [...retryWords.current],
+      assistedSteps: Object.keys(progressPeeks).filter((id) => progressPeeks[id]),
     })
   }, [i, isComplete, resumeId, step, progressPeeks])
 
@@ -201,17 +218,35 @@ function WordsRunner({
     const outcomes = result.outcomes ?? result.words.map((word) => ({ word, ...result }))
     for (const outcome of outcomes) {
       if (outcome.evidence === 'practice') continue
-      store.recordRecall(outcome.word, { correct: outcome.correct, assisted: outcome.assisted, mode: outcome.mode })
+      store.recordRecall(outcome.word, {
+        correct: outcome.correct,
+        assisted: outcome.assisted,
+        mode: outcome.mode,
+      })
     }
     credit(step.id)
-    recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: result.evidence === 'practice' ? undefined : result.correct, title: result.evidence === 'practice' ? t('Sentence practice · ungraded') : undefined })
+    recordHistory({
+      course: 'hsk4a',
+      kind: 'quiz',
+      lesson,
+      node,
+      correct: result.evidence === 'practice' ? undefined : result.correct,
+      title: result.evidence === 'practice' ? t('Sentence practice · ungraded') : undefined,
+    })
     goForward()
   }
 
   function finishRecheck(summary: RecheckSummary) {
     if (step.kind !== 'recheck') return
     credit(step.id)
-    recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: summary.unaided === summary.total, title: t('Dialogue check') })
+    recordHistory({
+      course: 'hsk4a',
+      kind: 'quiz',
+      lesson,
+      node,
+      correct: summary.unaided === summary.total,
+      title: t('Dialogue check'),
+    })
     playAdvance()
     goForward()
   }
@@ -222,7 +257,12 @@ function WordsRunner({
     const prev = quiz[key] ?? { wrong: [], solved: false, missed: false }
     if (prev.solved || prev.wrong.includes(picked)) return
     const trackedWord = sessionWords.includes(answer) ? answer : undefined
-    if (trackedWord) store.recordRecall(trackedWord, { correct: picked === answer, assisted: prev.missed, mode: 'recognition' })
+    if (trackedWord)
+      store.recordRecall(trackedWord, {
+        correct: picked === answer,
+        assisted: prev.missed,
+        mode: 'recognition',
+      })
 
     if (picked === answer) {
       playCorrect()
@@ -246,9 +286,22 @@ function WordsRunner({
 
   const progress = isComplete ? 100 : (i / total) * 100
   const showFooter =
-    isComplete || step.kind === 'teach' || step.kind === 'note' || step.kind === 'read' || (step.kind === 'quiz' && quizState?.solved)
+    isComplete ||
+    step.kind === 'teach' ||
+    step.kind === 'note' ||
+    step.kind === 'read' ||
+    (step.kind === 'quiz' && quizState?.solved)
   const footerLabel = isComplete ? t('Continue') : t('Next')
-  const activeStage: Stage = step.kind === 'complete' || (step.kind === 'recall' && step.id.startsWith('retry:')) ? 'Revisit' : step.kind === 'teach' ? 'Encounter' : step.kind === 'read' || step.kind === 'note' ? 'Understand' : step.kind === 'recall' || step.kind === 'quiz' || step.kind === 'recheck' ? 'Retrieve' : 'Produce'
+  const activeStage: Stage =
+    step.kind === 'complete' || (step.kind === 'recall' && step.id.startsWith('retry:'))
+      ? 'Revisit'
+      : step.kind === 'teach'
+        ? 'Encounter'
+        : step.kind === 'read' || step.kind === 'note'
+          ? 'Understand'
+          : step.kind === 'recall' || step.kind === 'quiz' || step.kind === 'recheck'
+            ? 'Retrieve'
+            : 'Produce'
 
   return (
     <div className="overlay session learning-session">
@@ -260,15 +313,42 @@ function WordsRunner({
         <div className="step-bar">
           <i className="yl-progress" style={{ width: `${Math.min(100, progress)}%` }} />
         </div>
-        <MasteryTracker words={sessionWords} compact onOpen={() => {
-          if (step.kind === 'recall' || step.kind === 'dialogue' || step.kind === 'produce') {
-            setProgressPeeks((previous) => ({ ...previous, ...Object.fromEntries(steps.filter((activity) => activity.kind === 'recall' || activity.kind === 'dialogue' || activity.kind === 'produce').map((activity) => [activity.id, true])) }))
-          }
-        }} />
+        <MasteryTracker
+          words={sessionWords}
+          compact
+          onOpen={() => {
+            if (step.kind === 'recall' || step.kind === 'dialogue' || step.kind === 'produce') {
+              setProgressPeeks((previous) => ({
+                ...previous,
+                ...Object.fromEntries(
+                  steps
+                    .filter(
+                      (activity) =>
+                        activity.kind === 'recall' ||
+                        activity.kind === 'dialogue' ||
+                        activity.kind === 'produce',
+                    )
+                    .map((activity) => [activity.id, true]),
+                ),
+              }))
+            }
+          }}
+        />
       </div>
 
-      <div className="learning-route" aria-label={t('Learning stage: {stage}', { stage: STAGE_LABEL[activeStage] })}>
-        {STAGES.map((stage) => <span key={stage} data-active={stage === activeStage} aria-current={stage === activeStage ? 'step' : undefined}>{STAGE_LABEL[stage]}</span>)}
+      <div
+        className="learning-route"
+        aria-label={t('Learning stage: {stage}', { stage: STAGE_LABEL[activeStage] })}
+      >
+        {STAGES.map((stage) => (
+          <span
+            key={stage}
+            data-active={stage === activeStage}
+            aria-current={stage === activeStage ? 'step' : undefined}
+          >
+            {STAGE_LABEL[stage]}
+          </span>
+        ))}
       </div>
 
       <div className="overlay-body" ref={bodyRef}>
@@ -286,25 +366,61 @@ function WordsRunner({
           ) : step.kind === 'read' ? (
             <ReadView text={step.text} />
           ) : step.kind === 'recall' ? (
-            <WordRecall word={step.word} n={step.n} of={step.of} externallyAssisted={progressPeeks[step.id]}
+            <WordRecall
+              word={step.word}
+              n={step.n}
+              of={step.of}
+              externallyAssisted={progressPeeks[step.id]}
               onAssistance={() => {
                 needsSupport.current.add(step.word.zh)
                 setProgressPeeks((previous) => ({ ...previous, [step.id]: true }))
               }}
-              onAttempt={(correct, assisted) => {
-                store.recordRecall(step.word.zh, { correct, assisted, mode: 'recall' })
+              onAttempt={(correct, assisted, mode) => {
+                store.recordRecall(step.word.zh, { correct, assisted, mode })
                 // Once scored, the source answer is visible; reopening is assisted.
                 setProgressPeeks((previous) => ({ ...previous, [step.id]: true }))
                 if (!correct || assisted) {
                   needsSupport.current.add(step.word.zh)
                 }
-              }} onComplete={finishRecall} />
+              }}
+              onComplete={finishRecall}
+            />
           ) : step.kind === 'dialogue' ? (
-            <DialoguePractice text={step.text} lesson={lesson} externallyAssisted={progressPeeks[step.id]} assistedTurns={Object.keys(progressPeeks).filter((id) => id.startsWith(`${step.id}::`)).map((id) => id.slice(step.id.length + 2))} onAssistance={(turnId) => setProgressPeeks((previous) => ({ ...previous, [turnId ? `${step.id}::${turnId}` : step.id]: true }))} targetWords={getLesson(lesson).vocab.map((word) => word.zh)} onComplete={finishProduction} />
+            <DialoguePractice
+              text={step.text}
+              lesson={lesson}
+              externallyAssisted={progressPeeks[step.id]}
+              assistedTurns={Object.keys(progressPeeks)
+                .filter((id) => id.startsWith(`${step.id}::`))
+                .map((id) => id.slice(step.id.length + 2))}
+              onAssistance={(turnId) =>
+                setProgressPeeks((previous) => ({
+                  ...previous,
+                  [turnId ? `${step.id}::${turnId}` : step.id]: true,
+                }))
+              }
+              targetWords={getLesson(lesson).vocab.map((word) => word.zh)}
+              onComplete={finishProduction}
+            />
           ) : step.kind === 'recheck' ? (
-            <DialogueRecheck text={step.text} words={step.words} onRecord={(zh, correct, assisted) => store.recordRecall(zh, { correct, assisted, mode: 'recognition' })} onDone={finishRecheck} />
+            <DialogueRecheck
+              text={step.text}
+              words={step.words}
+              onRecord={(zh, correct, assisted) =>
+                store.recordRecall(zh, { correct, assisted, mode: 'recognition' })
+              }
+              onDone={finishRecheck}
+            />
           ) : step.kind === 'produce' ? (
-            <SentencePractice example={step.example} targetWords={step.words} grammar={step.grammar} lesson={lesson} externallyAssisted={progressPeeks[step.id]} onAssistance={() => setProgressPeeks((previous) => ({ ...previous, [step.id]: true }))} onComplete={finishProduction} />
+            <SentencePractice
+              example={step.example}
+              targetWords={step.words}
+              grammar={step.grammar}
+              lesson={lesson}
+              externallyAssisted={progressPeeks[step.id]}
+              onAssistance={() => setProgressPeeks((previous) => ({ ...previous, [step.id]: true }))}
+              onComplete={finishProduction}
+            />
           ) : step.kind === 'note' ? (
             <NoteView
               title={step.title}
@@ -338,7 +454,9 @@ function WordsRunner({
 
       {showFooter && (
         <div className="overlay-foot">
-          {(step.kind === 'teach' || step.kind === 'read' || step.kind === 'note') && <StudyDisplayControls />}
+          {(step.kind === 'teach' || step.kind === 'read' || step.kind === 'note') && (
+            <StudyDisplayControls />
+          )}
           <button type="button" className="btn" onPointerDown={() => unlockSpeech()} onClick={advance}>
             {footerLabel}
           </button>
@@ -364,10 +482,16 @@ function ReadView({ text }: { text: LessonText }) {
   return (
     <>
       <StepHead
-        kicker={text.type === 'dialogue' ? t('{label} · Dialogue', { label: text.label }) : t('{label} · Passage', { label: text.label })}
+        kicker={
+          text.type === 'dialogue'
+            ? t('{label} · Dialogue', { label: text.label })
+            : t('{label} · Passage', { label: text.label })
+        }
         title={heading}
       />
-      {prefs.showEnglish && text.heading_en && text.heading_zh && <p className="session-read-en">{text.heading_en}</p>}
+      {prefs.showEnglish && text.heading_en && text.heading_zh && (
+        <p className="session-read-en">{text.heading_en}</p>
+      )}
       <DialogueAudio text={text} />
       <div className="session-read">
         {text.lines.map((line, i) => (
@@ -418,7 +542,11 @@ function MatchView({
       <StepHead kicker={of > 1 ? t('Check · {n} of {of}', { n, of }) : t('Check')} title={question.prompt} />
       {question.context && (
         <div className="card session-prompt">
-          <p className="zh" lang="zh-CN" style={{ fontSize: 22, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
+          <p
+            className="zh"
+            lang="zh-CN"
+            style={{ fontSize: 22, fontWeight: 800, margin: 0, textWrap: 'pretty' }}
+          >
             <Glossed text={question.context.zh} onWord={onWord} />
           </p>
           {solved && question.context.en && (
@@ -427,7 +555,12 @@ function MatchView({
             </p>
           )}
           <div style={{ marginTop: 12 }}>
-            <HearButton text={question.context.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} />
+            <HearButton
+              text={question.context.zh}
+              voice={VOICE.xiaoxiao}
+              rate={LINE_RATE}
+              label={t('Hear the line')}
+            />
           </div>
         </div>
       )}
@@ -521,13 +654,7 @@ function NoteView({
       : of > 1
         ? t('Grammar · {n} of {of}', { n, of })
         : (kicker ?? t('Grammar'))
-  const fallBackZh = example?.zh?.trim()
-    ? ''
-    : hasHanzi(title)
-      ? title
-      : hasHanzi(body)
-        ? body
-        : ''
+  const fallBackZh = example?.zh?.trim() ? '' : hasHanzi(title) ? title : hasHanzi(body) ? body : ''
   const spoken = (example?.zh ?? fallBackZh).trim()
 
   return (
@@ -538,7 +665,11 @@ function NoteView({
       </p>
       {example && (
         <div className="card session-prompt">
-          <p className="zh" lang="zh-CN" style={{ fontSize: 20, fontWeight: 800, margin: 0, textWrap: 'pretty' }}>
+          <p
+            className="zh"
+            lang="zh-CN"
+            style={{ fontSize: 20, fontWeight: 800, margin: 0, textWrap: 'pretty' }}
+          >
             <Glossed text={example.zh} onWord={onWord} />
           </p>
           {prefs.showPinyin && example.pinyin && (
@@ -546,7 +677,11 @@ function NoteView({
               {example.pinyin}
             </p>
           )}
-          {prefs.showEnglish && example.en && <p className="sub" style={{ margin: '8px 0 0' }}>{example.en}</p>}
+          {prefs.showEnglish && example.en && (
+            <p className="sub" style={{ margin: '8px 0 0' }}>
+              {example.en}
+            </p>
+          )}
           <div style={{ marginTop: 12 }}>
             <ChineseHear text={example.zh} label={t('Hear the line')} rate={LINE_RATE} />
           </div>
@@ -591,10 +726,17 @@ function DoneView({
       <p className="sub yl-enter-up" style={{ marginTop: 8, animationDelay: '80ms', textWrap: 'pretty' }}>
         {titleZh} · {titleEn}
       </p>
-      <div className="learning-summary"><MasteryTracker words={words} /></div>
+      <div className="learning-summary">
+        <MasteryTracker words={words} />
+      </div>
       <div
         className="session-xp yl-pop"
-        style={{ marginTop: 20, fontWeight: 800, fontVariantNumeric: 'tabular-nums', animationDelay: '120ms' }}
+        style={{
+          marginTop: 20,
+          fontWeight: 800,
+          fontVariantNumeric: 'tabular-nums',
+          animationDelay: '120ms',
+        }}
       >
         +{xp} XP
       </div>
@@ -604,10 +746,10 @@ function DoneView({
       >
         <span className="pill-ink">{t('+{xp} XP / item', { xp: ITEM_XP })}</span>
         {!replay && <span className="pill-ink">{t('+{xp} node', { xp: NODE_BONUS_XP })}</span>}
-        {node !== 'wrap' && wordCount > 0 && <span className="pill-ink">{t('{n} words', { n: wordCount })}</span>}
-        <span className="pill-ink">
-          {t('Automatically tracked')}
-        </span>
+        {node !== 'wrap' && wordCount > 0 && (
+          <span className="pill-ink">{t('{n} words', { n: wordCount })}</span>
+        )}
+        <span className="pill-ink">{t('Automatically tracked')}</span>
       </div>
       <p
         className="yl-enter-up"
@@ -624,7 +766,9 @@ function DoneView({
           ? t('Another retrieval session strengthens the trail.')
           : node === 'wrap'
             ? t('Every lesson word is tracked. Revisit difficult words before they fade.')
-            : t('Your learning trail keeps every word. Mastery comes from retrieving it again on another day.')}
+            : t(
+                'Your learning trail keeps every word. Mastery comes from retrieving it again on another day.',
+              )}
       </p>
     </div>
   )

@@ -4,7 +4,8 @@ import { reviewWriting, sentenceCount, writingTask } from '../src/lib/writing-re
 import { compareReviews } from '../src/lib/review.ts'
 
 const words = ['熟悉', '印象']
-const review = (response, used, grammar = null, reviewerAvailable = true) => reviewWriting({ response, words, used, grammar, reviewerAvailable })
+const review = (response, used, grammar = null, reviewerAvailable = true) =>
+  reviewWriting({ response, words, used, grammar, reviewerAvailable })
 const find = (result, id) => result.checks.find((check) => check.id === id)
 
 test('sentences are counted by their endings, and a fragment with Hanzi still counts as one', () => {
@@ -44,10 +45,17 @@ test('grammar is never passed without the reviewer, and the page says why', () =
 test('a reviewed draft passes only when the reviewer accepts and every requirement holds', () => {
   const text = '我熟悉这里。我对这里印象很深。'
   assert.equal(review(text, words, { accepted: true, corrections: [] }).verdict, 'passed')
-  const rejected = review(text, words, { accepted: false, corrections: ['对这里印象 → 对这里的印象: add 的 before the noun.'] })
+  const rejected = review(text, words, {
+    accepted: false,
+    corrections: ['对这里印象 → 对这里的印象: add 的 before the noun.'],
+  })
   assert.equal(rejected.verdict, 'revise')
   assert.match(find(rejected, 'grammar').fix, /add 的/)
-  assert.equal(review('I know this place. I like it.', [], { accepted: true, corrections: [] }).verdict, 'revise', 'an accepted draft in English is still not Mandarin')
+  assert.equal(
+    review('I know this place. I like it.', [], { accepted: true, corrections: [] }).verdict,
+    'revise',
+    'an accepted draft in English is still not Mandarin',
+  )
 })
 
 test('a revision reports what was fixed', () => {
@@ -55,4 +63,15 @@ test('a revision reports what was fixed', () => {
   const after = review('我熟悉这里。我对这里印象很深。', words)
   const change = compareReviews(before, after)
   assert.deepEqual(change.fixed.map((check) => check.id).sort(), ['sentences', 'words'])
+})
+test('the gentle writing mode accepts one sentence while still requiring checked grammar', () => {
+  const common = {
+    minSentences: 1,
+    response: '我喜欢学习汉语。',
+    words: ['学习'],
+    used: ['学习'],
+    reviewerAvailable: true,
+  }
+  assert.equal(reviewWriting({ ...common, grammar: { accepted: true, corrections: [] } }).verdict, 'passed')
+  assert.equal(reviewWriting({ ...common, grammar: null }).verdict, 'unverified')
 })

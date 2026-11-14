@@ -1,15 +1,18 @@
+import { lazy } from 'react'
+import { MemoryHorizon } from '../components/MemoryHorizon'
 import { CourseBack, CourseGate, LanguageChip } from '../components/CourseChooser'
 import { COURSE_META, useCourse } from '../lib/course'
 import { t } from '../lib/i18n'
 import { lessons } from '../lib/content'
 import { dueCards } from '../lib/srs'
 import { nextPlayable } from '../lib/wordsSession'
-import { JiaochengHomePath } from './Jiaocheng'
-import { KerjaHomePath } from './Kerja'
-import { InterviewHomePath } from './Interview'
-import { MagangHomePath } from './Magang'
-import { BooksHomePath } from './Books'
-import { JiayinPath, type JiayinOpen } from './Jiayin'
+const JiaochengHomePath = lazy(() => import('./Jiaocheng').then((m) => ({ default: m.JiaochengHomePath })))
+const KerjaHomePath = lazy(() => import('./Kerja').then((m) => ({ default: m.KerjaHomePath })))
+const InterviewHomePath = lazy(() => import('./Interview').then((m) => ({ default: m.InterviewHomePath })))
+const MagangHomePath = lazy(() => import('./Magang').then((m) => ({ default: m.MagangHomePath })))
+const BooksHomePath = lazy(() => import('./Books').then((m) => ({ default: m.BooksHomePath })))
+import type { JiayinOpen } from './Jiayin'
+const JiayinPath = lazy(() => import('./Jiayin').then((m) => ({ default: m.JiayinPath })))
 import { LessonPath } from './Learn'
 import { HskPracticeEntry } from '../components/HskPracticeEntry'
 import { useStore, type PathNode } from '../store/store'
@@ -19,6 +22,7 @@ export function Home({
   onSession,
   onLesson,
   onReview,
+  onPlacement,
   onTrail,
   onListening,
   onCompose,
@@ -31,6 +35,7 @@ export function Home({
 }: {
   onSession: (lesson: number, node: PathNode) => void
   onLesson: (lesson: number) => void
+  onPlacement: () => void
   onReview: () => void
   onTrail: () => void
   onListening: () => void
@@ -62,18 +67,42 @@ export function Home({
     <div className="home-page home-alive">
       <div className="home-topbar">
         <CourseBack />
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}><h1>{COURSE_META[course].title}</h1><LanguageChip /></div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}>
+          <h1>{COURSE_META[course].title}</h1>
+          <LanguageChip />
+        </div>
       </div>
+      {languageCourse && <MemoryHorizon onReview={onReview} onPlacement={onPlacement} />}
       {course !== 'books' && (languageCourse || reviewsDue > 0) && (
         <div className="home-recall-dock" data-home-dock>
-          {languageCourse && <button type="button" className="home-dock-button home-dock-trail" data-home-trail onClick={onTrail}>
-            <span>{t('Word trail')}</span>
-            {recentWords.length > 0 && <small lang="zh-CN">{recentWords.join(' · ')}</small>}
-            <span className="home-dock-arrow" aria-hidden>↗</span>
-          </button>}
-          {reviewsDue > 0 && <button type="button" className="home-dock-button home-dock-review" data-home-review onClick={onReview}>
-            <span>{languageCourse ? t('Review') : t('Mandarin review')}</span><small>{t('{n} due', { n: reviewsDue })}</small><span className="home-dock-arrow" aria-hidden>→</span>
-          </button>}
+          {languageCourse && (
+            <button
+              type="button"
+              className="home-dock-button home-dock-trail"
+              data-home-trail
+              onClick={onTrail}
+            >
+              <span>{t('Word trail')}</span>
+              {recentWords.length > 0 && <small lang="zh-CN">{recentWords.join(' · ')}</small>}
+              <span className="home-dock-arrow" aria-hidden>
+                ↗
+              </span>
+            </button>
+          )}
+          {reviewsDue > 0 && (
+            <button
+              type="button"
+              className="home-dock-button home-dock-review"
+              data-home-review
+              onClick={onReview}
+            >
+              <span>{languageCourse ? t('Review') : t('Mandarin review')}</span>
+              <small>{t('{n} due', { n: reviewsDue })}</small>
+              <span className="home-dock-arrow" aria-hidden>
+                →
+              </span>
+            </button>
+          )}
         </div>
       )}
 
@@ -100,7 +129,6 @@ export function Home({
           onPlay={onSession}
         />
       )}
-
     </div>
   )
 }

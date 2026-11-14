@@ -1,11 +1,17 @@
+import type { Rating, Skill } from './srs.ts'
 import { t } from './i18n.ts'
 
 /** Evidence of retrieval, kept separate from exposure, favourites and SRS dates. */
 export type MasteryState = 'new' | 'learning' | 'hard' | 'mastered'
-export type RecallMode = 'recognition' | 'recall' | 'speaking' | 'writing'
+export type RecallMode = 'recognition' | 'recall' | 'speaking' | 'writing' | 'listening'
 
 export interface RecallInput {
   correct: boolean
+  skill?: Skill
+  rating?: Rating
+  placement?: boolean
+  unverified?: boolean
+  source?: string
   assisted?: boolean
   mode: RecallMode
 }
@@ -28,7 +34,7 @@ export interface MasteryRecord {
   modes: Record<RecallMode, { attempts: number; successes: number }>
 }
 
-const MODES: RecallMode[] = ['recognition', 'recall', 'speaking', 'writing']
+const MODES: RecallMode[] = ['recognition', 'recall', 'speaking', 'writing', 'listening']
 
 function practiceDay(now: number): string {
   const d = new Date(now)
@@ -37,6 +43,7 @@ function practiceDay(now: number): string {
 
 function emptyModes(): MasteryRecord['modes'] {
   return {
+    listening: { attempts: 0, successes: 0 },
     recognition: { attempts: 0, successes: 0 },
     recall: { attempts: 0, successes: 0 },
     speaking: { attempts: 0, successes: 0 },
@@ -46,14 +53,28 @@ function emptyModes(): MasteryRecord['modes'] {
 
 export function newMastery(zh: string, lesson = 0, now = Date.now()): MasteryRecord {
   return {
-    zh, lesson, state: 'new', encounters: 1, attempts: 0, successes: 0,
-    hints: 0, unaidedSuccesses: 0, successDays: [], lastSeen: now,
-    lastPractice: null, modes: emptyModes(),
+    zh,
+    lesson,
+    state: 'new',
+    encounters: 1,
+    attempts: 0,
+    successes: 0,
+    hints: 0,
+    unaidedSuccesses: 0,
+    successDays: [],
+    lastSeen: now,
+    lastPractice: null,
+    modes: emptyModes(),
   }
 }
 
 /** Calling this repeatedly on the same day updates recency, never retrieval evidence. */
-export function encounter(record: MasteryRecord | undefined, zh: string, lesson = 0, now = Date.now()): MasteryRecord {
+export function encounter(
+  record: MasteryRecord | undefined,
+  zh: string,
+  lesson = 0,
+  now = Date.now(),
+): MasteryRecord {
   if (!record) return newMastery(zh, lesson, now)
   return {
     ...record,
@@ -74,14 +95,18 @@ export function recordRetrieval(record: MasteryRecord, input: RecallInput, now =
   const production = reliable && input.mode !== 'recognition'
   const unaidedSuccesses = reliable ? record.unaidedSuccesses + (production ? 1 : 0) : 0
   const successDays = reliable
-    ? production ? [...new Set([...record.successDays, practiceDay(now)])] : record.successDays
+    ? production
+      ? [...new Set([...record.successDays, practiceDay(now)])]
+      : record.successDays
     : []
   const state: MasteryState = !reliable
     ? 'hard'
     : unaidedSuccesses >= 3 && successDays.length >= 2
       ? 'mastered'
-      : record.state === 'hard' && !production ? 'hard' : 'learning'
-  const mode = record.modes[input.mode]
+      : record.state === 'hard' && !production
+        ? 'hard'
+        : 'learning'
+  const mode = record.modes[input.mode] ?? { attempts: 0, successes: 0 }
   return {
     ...record,
     state,
@@ -99,8 +124,10 @@ export function recordRetrieval(record: MasteryRecord, input: RecallInput, now =
   }
 }
 
-const nonnegative = (value: unknown): number => typeof value === 'number' && Number.isFinite(value) ? Math.max(0, Math.floor(value)) : 0
-const object = (value: unknown): Record<string, unknown> => value && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : {}
+const nonnegative = (value: unknown): number =>
+  typeof value === 'number' && Number.isFinite(value) ? Math.max(0, Math.floor(value)) : 0
+const object = (value: unknown): Record<string, unknown> =>
+  value && typeof value === 'object' && !Array.isArray(value) ? (value as Record<string, unknown>) : {}
 
 /** Older decks get an automatic trail, without manufacturing past recall evidence. */
 export function normalizeMastery(
@@ -111,7 +138,9 @@ export function normalizeMastery(
 ): Record<string, MasteryRecord> {
   const records: Record<string, MasteryRecord> = {}
   const cardMap = object(cards) as Record<string, { lesson?: number }>
-  const favourites = Array.isArray(starred) ? starred.filter((zh): zh is string => typeof zh === 'string') : []
+  const favourites = Array.isArray(starred)
+    ? starred.filter((zh): zh is string => typeof zh === 'string')
+    : []
   for (const [zh, value] of Object.entries(object(raw))) {
     if (!zh.trim()) continue
     const data = object(value)
@@ -120,7 +149,13 @@ export function normalizeMastery(
     const hints = Math.min(attempts, nonnegative(data.hints))
     const unaidedSuccesses = Math.min(successes, nonnegative(data.unaidedSuccesses))
     const successDays = Array.isArray(data.successDays)
-      ? [...new Set(data.successDays.filter((day): day is string => typeof day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(day)))]
+      ? [
+          ...new Set(
+            data.successDays.filter(
+              (day): day is string => typeof day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(day),
+            ),
+          ),
+        ]
       : []
     const lastSeen = nonnegative(data.lastSeen) || now
     const modes = emptyModes()
@@ -131,13 +166,25 @@ export function normalizeMastery(
       modes[mode].successes = Math.min(modes[mode].attempts, nonnegative(detail.successes))
     }
     // A stale/malformed "mastered" label is never sufficient evidence by itself.
-    const state: MasteryState = attempts === 0 ? 'new'
-      : data.state === 'hard' ? 'hard'
-        : unaidedSuccesses >= 3 && successDays.length >= 2 ? 'mastered' : 'learning'
+    const state: MasteryState =
+      attempts === 0
+        ? 'new'
+        : data.state === 'hard'
+          ? 'hard'
+          : unaidedSuccesses >= 3 && successDays.length >= 2
+            ? 'mastered'
+            : 'learning'
     records[zh] = {
-      zh, lesson: nonnegative(data.lesson) || nonnegative(cardMap[zh]?.lesson),
-      state, encounters: Math.max(1, nonnegative(data.encounters)), attempts, successes,
-      hints, unaidedSuccesses, successDays, lastSeen,
+      zh,
+      lesson: nonnegative(data.lesson) || nonnegative(cardMap[zh]?.lesson),
+      state,
+      encounters: Math.max(1, nonnegative(data.encounters)),
+      attempts,
+      successes,
+      hints,
+      unaidedSuccesses,
+      successDays,
+      lastSeen,
       lastPractice: attempts ? nonnegative(data.lastPractice) || lastSeen : null,
       modes,
     }
@@ -149,7 +196,10 @@ export function normalizeMastery(
 }
 
 export const masteryLabel: Record<MasteryState, string> = {
-  new: t('New'), learning: t('Learning'), hard: t('Needs practice'), mastered: t('Mastered'),
+  new: t('New'),
+  learning: t('Learning'),
+  hard: t('Needs practice'),
+  mastered: t('Mastered'),
 }
 
 /** Punctuation and whitespace are harmless; Hanzi themselves must match. */

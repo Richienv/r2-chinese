@@ -1,353 +1,361 @@
-import { useEffect, useMemo, useState } from 'react'
-import { Glossed, useGloss } from '../components/ChineseText'
-import { ChineseHear, HearButton } from '../components/Hear'
-import { CheckIcon, CloseIcon } from '../components/Icons'
-import { SaveStar } from '../components/SaveStar'
-import { exampleFor, lookup } from '../lib/content'
+import { RepairEditor } from '../components/RepairEditor'
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
+import { HearButton } from '../components/Hear'
+import { CloseIcon } from '../components/Icons'
+import { exampleFor, lessonOf, lookup, vocabIndex } from '../lib/content'
 import { t } from '../lib/i18n'
-import { unlockSpeech } from '../lib/speech'
-import { dueCards, type Card, type Rating } from '../lib/srs'
-import { LINE_RATE, VOICE, WORD_RATE } from '../lib/voices'
+import { matchesHanzi } from '../lib/mastery'
+import { isComfortable, wordState } from '../lib/learningEngine'
+import { dueCards, intervalText, newCard, schedule, type Rating, type Skill } from '../lib/srs'
+import { prefetch, stopSpeech } from '../lib/speech'
 import { useStore } from '../store/store'
+import '../styles/recall-focus.css'
 
-const SESSION = 8
-const XP_PER_CARD = 4
-/** ratings are only tappable this long after reveal, to stop a double-tap misfire */
-const GUARD_MS = 260
-
-const RATINGS: { key: Rating; label: string; hint: string }[] = [
-  { key: 'again', label: t('Again'), hint: t('<1 min') },
-  { key: 'hard', label: t('Hard'), hint: t('1 d') },
-  { key: 'good', label: t('Good'), hint: t('on track') },
-  { key: 'easy', label: t('Easy'), hint: t('3 d+') },
-]
-
+const WritingRecall = lazy(() =>
+  import('../components/WritingRecall').then((m) => ({ default: m.WritingRecall })),
+)
+const LABELS = { again: t('Again'), hard: t('Hard'), good: t('Good'), easy: t('Easy') }
+const SKILLS: Record<Skill, string> = {
+  recall: t('Bring back the word'),
+  reading: t('Read and remember'),
+  listening: t('Listen and remember'),
+  writing: t('Write from memory'),
+  speaking: t('Say it from memory'),
+}
 export function ReviewFlow({
   words,
   title,
   onClose,
+  placement = false,
 }: {
   words?: string[]
   title?: string
   onClose: () => void
+  placement?: boolean
 }) {
   const store = useStore()
-  const { onWord, sheet } = useGloss()
-
-  // Scoped list (from a lesson) is explicit practice; otherwise pull what's due.
-  // With nothing due, we fall back to practising early — but in that "practice"
-  // mode we must not push not-yet-due cards further out (see rate()).
-  const { initial, practiceMode } = useMemo(() => {
-    if (words && words.length) return { initial: words, practiceMode: true }
-    const due = dueCards(store.cardList)
-    if (due.length) return { initial: due.slice(0, SESSION).map((c) => c.zh), practiceMode: false }
-    const pool = store.cardList.slice().sort((a, b) => a.due - b.due)
-    return { initial: pool.slice(0, SESSION).map((c) => c.zh), practiceMode: true }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  // Live queue: 'again' pushes the word back on so it genuinely re-tests.
-  const [queue, setQueue] = useState<string[]>(initial)
-  const [n, setN] = useState(0)
-  const [shown, setShown] = useState(false)
-  const [canRate, setCanRate] = useState(false)
-  const [rated, setRated] = useState(0)
-  const [recalled, setRecalled] = useState(0)
-  // Full snapshot so Undo can reverse the queue mutation an 'again' performs.
-  const [undo, setUndo] = useState<{
-    zh: string
-    card: Card
-    wasRecalled: boolean
-    queue: string[]
-    n: number
-  } | null>(null)
-
-  // Briefly lock the ratings after reveal so a fast double-tap can't misfire.
-  // Re-armed synchronously in reveal() too, so card 2+ isn't tappable for the
-  // one frame before this effect runs.
+  const initial = useMemo(
+    () =>
+      placement
+        ? (words?.length
+            ? words
+            : store.learningTrail.length
+              ? store.learningTrail.filter((zh) => !store.cards[zh]?.baseline && !isComfortable(store, zh))
+              : vocabIndex.slice(0, 12).map((w) => w.zh)
+          )
+            .filter((w) => lookup(w))
+            .slice(0, 12)
+        : words?.length
+          ? [...new Set(words)].filter((w) => lookup(w))
+          : dueCards(store.cardList)
+              .slice(0, 12)
+              .map((c) => c.zh),
+    [],
+  )
+  const [queue] = useState(initial),
+    [index, setIndex] = useState(0),
+    [answer, setAnswer] = useState('')
+  const [revealed, setRevealed] = useState(false),
+    [checked, setChecked] = useState(false),
+    [missed, setMissed] = useState(false)
+  const [shownAt, setShownAt] = useState(0),
+    [ratingReady, setRatingReady] = useState(false)
+  const [completed, setCompleted] = useState(0),
+    [undo, setUndo] = useState<{ id: string; index: number } | null>(null)
+  const committed = useRef(false)
+  const [attemptId, setAttemptId] = useState(() => crypto.randomUUID())
+  const zh = queue[index],
+    word = zh ? lookup(zh) : undefined
+  const [skillOverride, setSkillOverride] = useState<Skill | null>(null)
+  const [helped, setHelped] = useState(false),
+    [hadMiss, setHadMiss] = useState(false)
+  const skill: Skill = skillOverride ?? (placement ? 'recall' : (store.cards[zh]?.skill ?? 'recall'))
+  const selfMode = skill === 'reading' || skill === 'speaking'
+  const card = zh ? (wordState(store, zh).skills[skill] ?? newCard(zh, lessonOf(zh) ?? 0)) : undefined
+  const example = zh ? exampleFor(zh) : null
+  const now = shownAt || Date.now()
+  const previews = card
+    ? Object.fromEntries(
+        (Object.keys(LABELS) as Rating[]).map((r) => [
+          r,
+          schedule(
+            card,
+            hadMiss ? 'again' : ((!checked && !selfMode) || helped) && r !== 'again' ? 'hard' : r,
+            now,
+            placement && checked && !missed && !helped,
+          ),
+        ]),
+      )
+    : {}
   useEffect(() => {
-    if (!shown) return
-    const timer = setTimeout(() => setCanRate(true), GUARD_MS)
+    stopSpeech()
+    setSkillOverride(null)
+    setHelped(false)
+    setHadMiss(false)
+    setAnswer('')
+    setRevealed(false)
+    setChecked(false)
+    setMissed(false)
+    setShownAt(0)
+    setRatingReady(false)
+    committed.current = false
+    setAttemptId(crypto.randomUUID())
+    const next = queue[index + 1]
+    if (next) prefetch(next)
+    return () => stopSpeech()
+  }, [index, queue])
+  useEffect(() => {
+    if (!revealed) return
+    const timer = setTimeout(() => setRatingReady(true), 260)
     return () => clearTimeout(timer)
-  }, [shown, n])
-
-  if (queue.length === 0) {
-    return (
-      <div className="overlay">
-        <Head title={title ?? t('Review')} onClose={onClose} />
-        <div className="overlay-body" style={{ display: 'grid', placeItems: 'center' }}>
-          <div style={{ textAlign: 'center' }}>
-            <p style={{ fontSize: 17, fontWeight: 700 }}>{t('Nothing to review yet')}</p>
-            <p className="sub">{t('Finish a lesson or save a word and it lands here.')}</p>
-          </div>
-        </div>
-        <div className="overlay-foot">
-          <button className="btn" onClick={onClose}>
-            {t('Back')}
-          </button>
-        </div>
-      </div>
-    )
-  }
-
-  const done = n >= queue.length
-  const zh = queue[Math.min(n, queue.length - 1)]
-  const word = lookup(zh)
-  const example = exampleFor(zh)
-
+  }, [revealed])
   function reveal() {
-    if (shown) return
-    setCanRate(false) // arm the guard in the same commit that reveals the card
-    setShown(true)
+    setRevealed(true)
+    setShownAt(Date.now())
+    setRatingReady(false)
   }
-
+  function check() {
+    if (!answer.trim() || revealed || !zh) return
+    const correct = matchesHanzi(answer, zh)
+    setChecked(correct)
+    setMissed(!correct)
+    if (!correct) setHadMiss(true)
+    reveal()
+  }
   function rate(rating: Rating) {
-    if (!canRate) return
-    const prevCard = store.cards[zh]
-    const isRecalled = rating !== 'again'
-    // Snapshot BEFORE any mutation so Undo restores the exact prior session state.
-    setUndo(prevCard ? { zh, card: prevCard, wasRecalled: isRecalled, queue, n } : null)
-    // Practice mode leaves the SRS schedule untouched; it only logs the rep.
-    if (practiceMode) store.practiceLog()
-    else store.rate(zh, rating)
-    if (rating === 'again') {
-      // re-test this word later in the same session
-      setQueue((q) => {
-        const rest = q.slice(n + 1)
-        rest.splice(Math.min(rest.length, 2), 0, zh)
-        return [...q.slice(0, n + 1), ...rest]
-      })
-    } else {
-      store.awardXp(XP_PER_CARD)
-      setRecalled((r) => r + 1)
+    if (!ratingReady || committed.current || !zh) return
+    if (hadMiss && rating !== 'again') return
+    committed.current = true
+    const actual = hadMiss
+      ? 'again'
+      : ((!checked && !selfMode) || helped) && rating !== 'again'
+        ? 'hard'
+        : rating
+    const evidence = hadMiss
+      ? 'checked'
+      : checked
+        ? placement && !missed && !helped
+          ? 'placement'
+          : 'checked'
+        : 'self-report'
+    const id = store.reviewWord(zh, actual, {
+      skill,
+      evidence,
+      assisted: helped || (!checked && !hadMiss && !selfMode),
+      eventId: attemptId,
+      at: now,
+    })
+    if (!id) {
+      committed.current = false
+      return
     }
-    setRated((r) => r + 1)
-    setShown(false)
-    setN(n + 1)
+    stopSpeech()
+    setUndo({ id, index })
+    setCompleted((n) => n + 1)
+    setIndex((n) => n + 1)
   }
-
   function undoLast() {
     if (!undo) return
-    if (!practiceMode) store.restoreCard(undo.zh, undo.card)
-    store.undoLog() // both rate() and practiceLog() bumped the day once
-    if (undo.wasRecalled) {
-      store.awardXp(-XP_PER_CARD)
-      setRecalled((r) => Math.max(0, r - 1))
-    }
-    setRated((r) => Math.max(0, r - 1))
-    setQueue(undo.queue) // reverse the 'again' re-insertion
-    setN(undo.n)
+    if (!store.undoReview(undo.id)) return
+    setIndex(undo.index)
+    setCompleted((n) => Math.max(0, n - 1))
     setUndo(null)
-    setShown(false)
   }
-
-  // Only real (non-practice) sessions may pull in more due cards, since practice
-  // mode intentionally never schedules — appending due cards there would strand them.
-  function keepGoing() {
-    const more = dueCards(store.cardList)
-      .map((c) => c.zh)
-      .filter((w) => !queue.includes(w))
-      .slice(0, SESSION)
-    if (more.length === 0) return onClose()
-    setQueue((q) => [...q, ...more])
-    setShown(false)
-  }
-
-  if (done) {
-    // Practice sessions never schedule, so they must not absorb real due cards.
-    const moreDue = practiceMode
-      ? 0
-      : dueCards(store.cardList).filter((c) => !queue.includes(c.zh)).length
-    return (
-      <div className="overlay">
-        <Head title={practiceMode && !words ? t('Practice') : (title ?? t('Review'))} onClose={onClose} />
-        <div className="overlay-body" style={{ textAlign: 'center', paddingTop: 40 }}>
-          <div className="medal pop">
-            <CheckIcon size={46} />
-          </div>
-          <h2 className="h1" style={{ marginTop: 22 }}>
-            {practiceMode && words ? t('Nicely practised!') : t('Review complete!')}
-          </h2>
-          <div className="row" style={{ justifyContent: 'center', marginTop: 20, flexWrap: 'wrap' }}>
-            <span className="pill-ink">{t('{n} reviewed', { n: rated })}</span>
-            <span className="pill-ink">
-              {t('{pct}% recalled', { pct: rated ? Math.round((recalled / rated) * 100) : 0 })}
-            </span>
-            <span className="pill-ink">+{recalled * XP_PER_CARD} XP</span>
-          </div>
-          {moreDue > 0 && (
-            <p style={{ fontSize: 13, color: 'var(--muted)', marginTop: 20 }}>
-              {t('{n} more still due today.', { n: moreDue })}
-            </p>
-          )}
-        </div>
-        <div className="overlay-foot" style={{ display: 'grid', gap: 10 }}>
-          {moreDue > 0 && (
-            <button className="btn" onClick={keepGoing}>
-              {t('Keep going — {n} more', { n: moreDue })}
-            </button>
-          )}
-          <button className={moreDue > 0 ? 'btn btn-ghost' : 'btn'} onClick={onClose}>
-            {t('Done')}
-          </button>
-        </div>
-      </div>
-    )
-  }
-
-  const locked = shown && !canRate
-
+  const empty = queue.length === 0,
+    done = index >= queue.length
   return (
-    <div className="overlay">
-      <Head
-        title={practiceMode && !words ? t('Practice') : (title ?? t('Review'))}
-        onClose={onClose}
-        onUndo={undo ? undoLast : undefined}
-      />
-      <div className="overlay-head" style={{ paddingTop: 0 }}>
-        <div className="step-bar">
-          <i style={{ width: `${(n / queue.length) * 100}%` }} />
-        </div>
-        <span style={{ fontSize: 12, fontWeight: 800, color: 'var(--muted)' }}>
-          {Math.min(n + 1, queue.length)}/{queue.length}
-        </span>
-      </div>
-
-      <div
-        className="overlay-body"
-        key={`${zh}-${n}`}
-        style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-      >
-        <button
-          className="card"
-          onClick={reveal}
-          onPointerDown={() => unlockSpeech()}
-          aria-label={shown ? undefined : t('Reveal {word}', { word: zh })}
-          disabled={shown}
-          style={{
-            background: 'var(--paper)',
-            borderRadius: 26,
-            padding: shown ? '22px 26px' : 26,
-            textAlign: 'center',
-            width: '100%',
-            display: 'block',
-            cursor: shown ? 'default' : 'pointer',
-          }}
-        >
-          <div
-            className="zh"
-            style={{
-              fontSize: shown ? 64 : 88,
-              fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: '-1px',
-              transition: 'font-size .25s',
-            }}
-            lang="zh-CN"
-          >
-            {zh}
-          </div>
-          {!shown && (
-            <div style={{ fontSize: 13, color: 'var(--muted-2)', marginTop: 16 }}>{t('Tap to reveal')}</div>
-          )}
+    <div
+      className="overlay recall-focus"
+      data-focus-session
+      role="dialog"
+      aria-modal="true"
+      aria-label={t('Recall')}
+    >
+      <header className="focus-head">
+        <button className="focus-icon" onClick={onClose} aria-label={t('Close review')}>
+          <CloseIcon />
         </button>
-
-        <div style={{ marginTop: 14, display: 'flex', justifyContent: 'center' }}>
-          <ChineseHear text={zh} voice={VOICE.xiaoxiao} rate={WORD_RATE} label={t('Hear the word')} />
-        </div>
-
-        {shown && (
-          <div className="pop card" style={{ marginTop: 12, padding: 20 }}>
-            <div className="between" style={{ alignItems: 'flex-start' }}>
-              <div>
-                <div style={{ color: 'var(--warm-hot)', fontWeight: 800, fontSize: 22 }}>
-                  {word?.pinyin}
-                </div>
-                <div style={{ fontSize: 17, fontWeight: 600, marginTop: 6, lineHeight: 1.4 }}>
-                  {word?.en}
-                </div>
-                {word?.pos && (
-                  <div style={{ fontSize: 12, color: 'var(--muted-2)', marginTop: 5 }}>{word.pos}</div>
-                )}
-              </div>
-              <SaveStar zh={zh} lesson={word ? undefined : 0} size={22} />
-            </div>
-
-            {example && (
-              <div
-                style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid var(--line-3)' }}
-              >
-                <div className="kicker-ink">{t('From the book')}</div>
-                <div className="zh" style={{ fontSize: 16, lineHeight: 1.7, marginTop: 4 }} lang="zh-CN">
-                  <Glossed text={example.zh} onWord={onWord} />
-                </div>
-                <div style={{ fontSize: 12, color: 'var(--muted-2)', marginTop: 5 }}>
-                  {example.pinyin}
-                </div>
-                <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 6 }}>{example.en}</div>
-                <div style={{ marginTop: 10 }}>
-                  <HearButton text={example.zh} voice={VOICE.xiaoxiao} rate={LINE_RATE} label={t('Hear the line')} />
-                </div>
-              </div>
-            )}
-          </div>
+        <span>{placement ? t('Quick placement') : (title ?? t('Recall'))}</span>
+        {undo ? (
+          <button className="focus-link" onClick={undoLast}>
+            {t('Undo')}
+          </button>
+        ) : (
+          <span className="focus-count">
+            {empty ? '' : Math.min(index + 1, queue.length) + ' / ' + queue.length}
+          </span>
         )}
-      </div>
-
-      <div className="overlay-foot">
-        {shown ? (
-          <div className="grid2" style={{ opacity: locked ? 0.5 : 1, transition: 'opacity .2s' }}>
-            {RATINGS.map((r) => (
-              <button
-                key={r.key}
-                className="rating"
-                data-k={r.key}
-                disabled={locked}
-                onClick={() => rate(r.key)}
-              >
-                {r.label}
-                <div style={{ fontSize: 11, fontWeight: 600, opacity: 0.7, marginTop: 2 }}>
-                  {r.hint}
-                </div>
-              </button>
-            ))}
+      </header>
+      {!empty && !done && (
+        <div className="focus-progress" aria-label={t('Session progress')}>
+          <i style={{ transform: `scaleX(${index / queue.length})` }} />
+        </div>
+      )}
+      <main className="focus-body" key={index}>
+        {empty || done ? (
+          <div className="focus-complete">
+            <div className="focus-glyph" lang="zh-CN">
+              {empty ? '闲' : '记'}
+            </div>
+            <p className="focus-eyebrow">{empty ? t('You have room to breathe') : t('A little stronger')}</p>
+            <h1>{empty ? t('Nothing is due.') : t('Enough for today.')}</h1>
+            <p>
+              {empty
+                ? t('Strong words are resting. Come back when they need you.')
+                : t('{n} words reviewed. Your next dates are saved.', { n: completed })}
+            </p>
+            <button className="focus-primary" onClick={onClose}>
+              {t('Back to learning')}
+            </button>
           </div>
         ) : (
-          <button className="btn" onClick={reveal}>
-            {t('Show answer')}
-          </button>
+          <>
+            <div className="focus-prompt">
+              <p className="focus-eyebrow">
+                {placement ? t('Already know this? Prove it once.') : SKILLS[skill]}
+              </p>
+              {skill === 'listening' ? (
+                <HearButton text={zh} label={t('Listen to the word')} />
+              ) : (
+                <h1 lang={skill === 'reading' ? 'zh-CN' : undefined}>
+                  {skill === 'reading' ? zh : (word?.en ?? t('Word unavailable'))}
+                </h1>
+              )}
+              <p className="focus-instruction">
+                {selfMode
+                  ? t('Recall it first. Reveal when you are ready.')
+                  : skill === 'writing'
+                    ? t('Draw the Hanzi without a hint.')
+                    : t('Type the Hanzi without a hint.')}
+              </p>
+            </div>
+            {!revealed && skill === 'writing' && word && (
+              <Suspense fallback={<p role="status">{t('Loading writing pad…')}</p>}>
+                <WritingRecall
+                  word={word}
+                  onAttempt={(correct, assisted) => {
+                    setChecked(correct)
+                    setMissed(!correct)
+                    if (!correct) setHadMiss(true)
+                    setHelped(assisted)
+                    reveal()
+                  }}
+                  onType={() => setSkillOverride('recall')}
+                />
+              </Suspense>
+            )}
+            {!revealed && !selfMode && skill !== 'writing' && (
+              <form
+                className="focus-form"
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  check()
+                }}
+              >
+                <label className="sr-only" htmlFor="recall-answer">
+                  {t('Your answer')}
+                </label>
+                <input
+                  id="recall-answer"
+                  value={answer}
+                  onChange={(e) => setAnswer(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && (e.nativeEvent.isComposing || e.keyCode === 229))
+                      e.preventDefault()
+                  }}
+                  placeholder={t('Your answer')}
+                  autoComplete="off"
+                  autoCorrect="off"
+                  spellCheck={false}
+                  lang="zh-CN"
+                />
+                <button type="submit" className="focus-primary" disabled={!answer.trim()}>
+                  {t('Check answer')}
+                </button>
+              </form>
+            )}
+            {!revealed && (
+              <button className="focus-link focus-reveal" onClick={reveal}>
+                {selfMode ? t('Show answer') : t('I need to see it')}
+              </button>
+            )}
+            {revealed && missed && answer && (
+              <RepairEditor
+                key={answer}
+                response={answer}
+                reference={zh}
+                exact
+                onApply={(next) => {
+                  setAnswer(next)
+                  setHelped(true)
+                  setChecked(matchesHanzi(next, zh))
+                  setMissed(!matchesHanzi(next, zh))
+                  setShownAt(Date.now())
+                }}
+              />
+            )}
+            {revealed && !missed && (
+              <section className="focus-answer" aria-live="polite">
+                <p className="focus-eyebrow">
+                  {helped
+                    ? t('Retrieved with support')
+                    : checked
+                      ? t('Recalled without help')
+                      : missed
+                        ? t('A word to rebuild')
+                        : t('Self-check · no verified answer')}
+                </p>
+                <h2 lang="zh-CN">{zh}</h2>
+                <p className="focus-pinyin">{word?.pinyin}</p>
+                <p>{word?.en}</p>
+                <HearButton text={zh} label={t('Hear the word')} />
+                {example && (
+                  <details>
+                    <summary>{t('See it in context')}</summary>
+                    <p lang="zh-CN">{example.zh}</p>
+                    <p>{example.en}</p>
+                    <HearButton text={example.zh} label={t('Hear the line')} />
+                  </details>
+                )}
+              </section>
+            )}
+            <details className="focus-why">
+              <summary>{t('Why this word?')}</summary>
+              <p>
+                {placement
+                  ? t('A short check for words you already know. Passing starts a two-week baseline.')
+                  : words?.length
+                    ? t(
+                        'You chose this practice. Early successful practice does not inflate the next interval.',
+                      )
+                    : t('This skill is due. Other skills keep their own progress.')}
+              </p>
+            </details>
+          </>
         )}
-      </div>
-
-      {sheet}
-    </div>
-  )
-}
-
-function Head({
-  title,
-  onClose,
-  onUndo,
-}: {
-  title: string
-  onClose: () => void
-  onUndo?: () => void
-}) {
-  return (
-    <div className="overlay-head">
-      <button className="icon-round tap44" onClick={onClose} aria-label={t('Close review')}>
-        <CloseIcon />
-      </button>
-      <strong style={{ fontSize: 15, flex: 1 }}>{title}</strong>
-      {onUndo && (
-        <button
-          className="pill-ink tap44"
-          onClick={onUndo}
-          style={{ height: 32 }}
-          aria-label={t('Undo last rating')}
-        >
-          ↶ {t('Undo')}
-        </button>
+      </main>
+      {!empty && !done && revealed && (
+        <footer className="focus-foot">
+          {hadMiss&&checked?<button className="focus-primary focus-repaired" disabled={!ratingReady} onClick={()=>rate('again')}>{t('Save the correction')} · {previews.again?intervalText(previews.again.due,now):''}</button>:<div className="focus-ratings">
+            {(Object.keys(LABELS) as Rating[]).map((r) => {
+              const disabled =
+                !ratingReady ||
+                (hadMiss && r !== 'again') ||
+                (((!checked && !selfMode) || helped) && (r === 'easy' || r === 'good'))
+              return (
+                <button key={r} data-rating={r} disabled={disabled} onClick={() => rate(r)}>
+                  <strong>{LABELS[r]}</strong>
+                  <span>{previews[r] ? intervalText(previews[r].due, now) : ''}</span>
+                </button>
+              )
+            })}
+          </div>}
+          <p>
+            {hadMiss&&checked?t('Repaired with help. We will check it again soon.'):missed
+              ? t('Repair the highlighted parts, or choose Again to revisit later.')
+              : t('Choose how the recall felt. Dates adapt to your history.')}
+          </p>
+        </footer>
       )}
     </div>
   )
