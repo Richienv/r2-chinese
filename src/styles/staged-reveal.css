@@ -1,0 +1,12 @@
+/* One part at a time: rise, sharpen, settle. Space is reserved so nothing jumps. */
+[data-reveal]{transition:opacity 520ms cubic-bezier(.22,1,.36,1),transform 680ms cubic-bezier(.22,1,.36,1),filter 520ms ease;will-change:opacity,transform}
+[data-reveal=false]{opacity:0;transform:translateY(16px);filter:blur(6px);pointer-events:none}
+[data-reveal=true]{opacity:1;transform:none;filter:none}
+[data-reveal-kind=hanzi][data-reveal=false]{transform:translateY(10px) scale(.86);filter:blur(10px)}
+[data-reveal-kind=hanzi][data-reveal=true]{animation:reveal-hanzi 900ms cubic-bezier(.22,1,.36,1) both}
+@keyframes reveal-hanzi{0%{letter-spacing:.24em;opacity:0}60%{opacity:1}100%{letter-spacing:.02em;opacity:1}}
+.replay-sequence{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted);font:inherit;font-size:12px;font-weight:600;cursor:pointer;transition:transform 160ms ease,color 160ms ease}
+.replay-sequence:hover{color:var(--accent)}
+.replay-sequence:active{transform:scale(.96)}
+.replay-sequence svg{width:14px;height:14px}
+@media(prefers-reduced-motion:reduce){[data-reveal]{transition:none;filter:none!important;transform:none!important}[data-reveal-kind=hanzi][data-reveal=true]{animation:none}}

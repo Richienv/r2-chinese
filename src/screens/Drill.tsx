@@ -2,8 +2,9 @@ import { StudyMusic } from '../components/StudyMusic'
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { CheckIcon, CloseIcon } from '../components/Icons'
-import { WordRecall } from '../components/WordRecall'
+import { WordRecall, type RecallAttemptMode } from '../components/WordRecall'
 import { lessonOf, lookup } from '../lib/content'
+import { bundledDictionaryEntry } from '../lib/dictionary'
 import { drillSelection, SHORT_DRILL_WORDS } from '../lib/practiceExperience'
 import '../styles/usability.css'
 import { buildDrillQueue } from '../lib/drill'
@@ -89,11 +90,20 @@ export function DrillFlow({
   const uniqueCount = unique.length
   const current = rounds && n < rounds.length ? rounds[n] : null
   const zh = current?.zh ?? ''
+  const [, setResolved] = useState(0)
   const word = zh ? lookup(zh) : undefined
 
   useEffect(() => {
     if (zh) encounterWord(zh, lessonOf(zh) ?? 0)
   }, [zh, encounterWord])
+
+  // Words saved from readers may only have an evicted dictionary entry; fetch it before showing a gap.
+  useEffect(() => {
+    if (!zh || lookup(zh)?.en) return
+    let live = true
+    void bundledDictionaryEntry(zh).then((entry) => { if (live && entry) setResolved((value) => value + 1) }).catch(() => {})
+    return () => { live = false }
+  }, [zh])
 
   useEffect(() => {
     setBestStreak((best) => Math.max(best, streak))
@@ -165,7 +175,7 @@ export function DrillFlow({
     }
   }
 
-  function attempt(correct: boolean, assisted: boolean, mode: 'recall' | 'writing' = 'recall') {
+  function attempt(correct: boolean, assisted: boolean, mode: RecallAttemptMode = 'recall') {
     if (!zh) return
     store.recordRecall(zh, {
       correct,
@@ -401,7 +411,7 @@ export function DrillFlow({
             />
           )}
         </div>
-        <div className="practice-exit"><button onClick={skipUnscored}>{t('Skip for now')}</button><button onClick={endPractice}>{t('Finish practice')}</button></div>
+        <div className="practice-exit"><button onClick={endPractice}>{t('Finish practice')}</button></div>
       </div>
     </DrillOverlay>
   )

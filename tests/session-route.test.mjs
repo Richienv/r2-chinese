@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { compactLessonSteps, compactStepId, resumeSessionIndex, practiceChoices, resumePracticeIds, nextSessionIndex } from '../src/lib/sessionRoute.ts'
+import { compactLessonSteps, compactStepId, resumeSessionIndex, practiceRound, requeue, MAX_REPEATS, resumePracticeIds, nextSessionIndex } from '../src/lib/sessionRoute.ts'
 import { readLearningCheckpoint, writeLearningCheckpoint } from '../src/lib/resume.ts'
 
 const source = [
@@ -23,14 +23,22 @@ test('one word card preserves source objects and stable IDs; reading precedes op
   assert.equal(compactStepId('recall:t1:法律'),'recall:t1:法律')
 })
 
-test('practice offers bounded rounds and chooses the source sentence over a full dialogue',()=>{
-  assert.deepEqual(practiceChoices(compact),[
-    {mode:'words',ids:['recall:0','recall:1','recall:2']},
-    {mode:'meaning',ids:['quiz:0','quiz:1','quiz:2']},
-    {mode:'sentence',ids:['produce:1']}
-  ])
-  assert.deepEqual(practiceChoices([{kind:'dialogue',id:'d'}]),[{mode:'sentence',ids:['d']}])
-  assert.deepEqual(practiceChoices([{kind:'complete'}]),[])
+test('practice retrieves every word in a mixed order, then two line checks and one sentence',()=>{
+  const round=practiceRound(compact)
+  const recalls=round.filter(id=>id.startsWith('recall:'))
+  assert.deepEqual([...recalls].sort(),['recall:0','recall:1','recall:2','recall:3','recall:4','recall:5','recall:6'])
+  assert.notDeepEqual(recalls,['recall:0','recall:1','recall:2','recall:3','recall:4','recall:5','recall:6'])
+  assert.notEqual(recalls[0],'recall:6')
+  assert.deepEqual(round.slice(recalls.length),['quiz:0','quiz:1','produce:1','dialogue:1'])
+  assert.deepEqual(practiceRound(compact),round)
+  assert.deepEqual(practiceRound([{kind:'dialogue',id:'d'}]),['d'])
+  assert.deepEqual(practiceRound([{kind:'complete'}]),[])
+})
+
+test('a word that needed help comes back after two other items, a bounded number of times',()=>{
+  assert.deepEqual(requeue(['a','b','c','d'],0,'a'),['a','b','c','a','d'])
+  assert.deepEqual(requeue(['a','b'],1,'b'),['a','b','b'])
+  assert.equal(MAX_REPEATS,2)
 })
 
 test('continue or skip follows only the selected round and ends without forcing other modes',()=>{

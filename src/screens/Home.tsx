@@ -26,6 +26,7 @@ export function Home({
   onBrowse,
   onKerjaSession,
   onJiaochengSession,
+  onJiaochengMidterm,
   onMagangSession,
   onInterviewSession,
   onBooksSession,
@@ -39,6 +40,7 @@ export function Home({
   onBrowse: () => void
   onKerjaSession: (chapter: number, node: PathNode) => void
   onJiaochengSession: (lesson: number, node: PathNode) => void
+  onJiaochengMidterm: () => void
   onMagangSession: (chapter: number, node: string) => void
   onInterviewSession: (chapter: number, node: string) => void
   onBooksSession: (part: number, index: number) => void
@@ -75,7 +77,7 @@ export function Home({
       ) : course === 'kerja' ? (
         <KerjaHomePath onPlay={onKerjaSession} />
       ) : course === 'jiaocheng' ? (
-        <JiaochengHomePath onPlay={onJiaochengSession} />
+        <JiaochengHomePath onPlay={onJiaochengSession} onMidterm={onJiaochengMidterm} />
       ) : course === 'magang' ? (
         <MagangHomePath onPlay={onMagangSession} />
       ) : course === 'interview' ? (

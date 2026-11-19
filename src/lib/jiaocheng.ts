@@ -287,29 +287,35 @@ export function buildJiaochengSteps(lessonIndex: number, node: PathNode): Jiaoch
   const draft: Array<Exclude<JiaochengSessionStep, { kind: 'complete' }>> = []
 
   if (node === 't1') {
-    for (const w of lesson.words) {
-      const word = toVocab(w)
-      const example = wordExample(w)
-      const hook = jiaochengHook(w)
-      const phases: TeachPhase[] = example ? ['meet', 'hook', 'example', 'seal'] : ['meet', 'hook', 'seal']
-      for (const phase of phases) {
-        draft.push({
-          kind: 'teach',
-          phase,
-          id: `${phase}:t1:${w.zh}`,
-          word,
-          example,
-          hook,
-          n: 0,
-          of: 0,
-        })
+    // Eight words, then those eight are retrieved, then the next eight. A 40-word
+    // list is no longer one sitting that only practises the first handful.
+    const CHUNK = 8
+    for (let start = 0; start < lesson.words.length; start += CHUNK) {
+      const slice = lesson.words.slice(start, start + CHUNK)
+      for (const w of slice) {
+        const word = toVocab(w)
+        const example = wordExample(w)
+        const hook = jiaochengHook(w)
+        const phases: TeachPhase[] = example ? ['meet', 'hook', 'example', 'seal'] : ['meet', 'hook', 'seal']
+        for (const phase of phases) {
+          draft.push({
+            kind: 'teach',
+            phase,
+            id: `${phase}:t1:${w.zh}`,
+            word,
+            example,
+            hook,
+            n: 0,
+            of: 0,
+          })
+        }
+      }
+      for (const w of slice.filter((w) => w.zh.trim() && w.en.trim())) {
+        draft.push({ kind: 'recall', id: `recall:t1:${w.zh}`, word: toVocab(w), n: 0, of: 0 })
       }
     }
     const sourceDialogue = lesson.dialogues.find((d) => lesson.words.some((w) => d.lines.some((line) => line.zh.includes(w.zh))))
     if (sourceDialogue) draft.push({ kind: 'read', id: `read:t1:${sourceDialogue.label}`, text: toLessonText(sourceDialogue), n: 0, of: 0 })
-    for (const w of lesson.words.filter((w) => w.zh.trim() && w.en.trim())) {
-      draft.push({ kind: 'recall', id: `recall:t1:${w.zh}`, word: toVocab(w), n: 0, of: 0 })
-    }
     const example = lesson.words.map(wordExample).find((e) => e?.zh.trim() && e.en.trim())
     if (example) draft.push({ kind: 'produce', id: 'produce:t1', example, words: lesson.words.filter((w) => example.zh.includes(w.zh)).map((w) => w.zh), n: 0, of: 0 })
   } else if (node === 't2') {

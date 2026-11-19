@@ -1,6 +1,6 @@
 import { compactLessonSteps, compactStepId } from '../lib/sessionRoute'
 import { useSessionRoute } from '../components/useSessionRoute'
-import { PracticeChoiceScreen, PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
+import { PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
 import { StudyMusic } from '../components/StudyMusic'
 import { ChapterCheck } from '../components/ChapterCheck'
 import { quizAssisted } from '../lib/choiceSupport'
@@ -11,7 +11,7 @@ import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
 import { DialogueRecheck, type RecheckSummary } from '../components/DialogueRecheck'
 import { DialoguePractice, SentencePractice } from '../components/ProductionPractice'
-import { WordRecall } from '../components/WordRecall'
+import { WordRecall, type RecallResult } from '../components/WordRecall'
 import type { ProductionResult } from '../lib/production'
 import {
   ChineseHear,
@@ -219,7 +219,7 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
   const alreadyDone = useRef(progress.isNodeDone(chapter, node))
   const credited = useRef(new Set<string>())
   const finished = useRef(false)
-  const left = useRef(new Set<number>())
+  const left = useRef(new Set<string>())
   const bodyRef = useRef<HTMLDivElement>(null)
   const route = useSessionRoute(steps, checkpoint.current)
   const { i, step } = route
@@ -230,7 +230,7 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
   const isComplete = step.kind === 'complete'
   const footerLocked = step.kind === 'quiz' && !quizState?.solved
-  const beatKey = step.kind === 'complete' ? 'complete' : step.id
+  const beatKey = step.kind === 'complete' ? 'complete' : route.key
 
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 })
@@ -285,10 +285,10 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
     setAssistedSteps((previous) => (previous[scope] ? previous : { ...previous, [scope]: true }))
   }
 
-  function goForward() {
-    if (left.current.has(i)) return
-    left.current.add(i)
-    route.next()
+  function goForward(repeat = false) {
+    if (left.current.has(route.key)) return
+    left.current.add(route.key)
+    route.next(repeat)
   }
 
   function advance() {
@@ -303,11 +303,11 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
     goForward()
   }
 
-  function finishRecall() {
+  function finishRecall(result: RecallResult) {
     if (step.kind !== 'recall') return
     credit(step.id)
     playAdvance()
-    goForward()
+    goForward(result.missed || result.assisted)
   }
 
   function finishProduction(result: ProductionResult) {
@@ -398,11 +398,11 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
           <i className="yl-progress" style={{ width: `${Math.min(100, progressPct)}%` }} />
         </div>
       </div>
-      <SessionProgress kind={step.kind} />
+      <SessionProgress kind={step.kind} {...('n' in step && (step.kind === 'teach' || route.inPractice) ? { n: step.n, of: step.of } : {})} />
 
       <div className="overlay-body" ref={bodyRef}>
         <div key={beatKey} className="session-beat yl-enter">
-          {route.choosing ? <PracticeChoiceScreen choices={route.choices} onChoose={route.choose} onFinish={route.finish} /> : step.kind === 'teach' ? (
+          {step.kind === 'teach' ? (
             <TeachView
               phase={step.phase}
               word={step.word}
@@ -419,7 +419,9 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
               word={step.word}
               n={step.n}
               of={step.of}
-              externallyAssisted={assistedSteps[step.id]}
+              cue={node === 'wrap' ? 'sound' : 'sentence'}
+              repeatOnHelp={route.canRepeat}
+              externallyAssisted={route.pass ? false : assistedSteps[step.id]}
               onAssistance={() => {
                 markAssisted()
               }}
@@ -477,10 +479,10 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
           ) : (
             <SessionSummary title={ch.titleZh} words={sessionWords} />
           )}
-          {route.inPractice && !route.choosing && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onSkip={goForward} onFinish={route.finish} />}
+          {route.inPractice && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onFinish={route.finish} />}
         </div>
       </div>
-      {showFooter && !route.choosing && (
+      {showFooter && (
         <div className="overlay-foot">
           <button type="button" className="btn" onPointerDown={() => unlockSpeech()} onClick={advance}>
             {isComplete ? t('Done') : t('Continue')}

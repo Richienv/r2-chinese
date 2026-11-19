@@ -198,6 +198,13 @@ export function hasWordToken(haystack: string, word: string): boolean {
   return false
 }
 
+/** The book sentence with the word blanked out, when the book has one that contains it. */
+export function blankedExample(word: string): (Example & { blank: string }) | null {
+  const example = exampleFor(word)
+  if (!example?.zh.includes(word)) return null
+  return { ...example, blank: example.zh.replace(word, '＿'.repeat(Array.from(word).length)) }
+}
+
 /** Overlay / course example first; else the book's shortest sentence that contains the word as a token. */
 export function exampleFor(word: string, lesson?: number): Example | null {
   const overlay = overlayWord(word, lesson)

@@ -80,6 +80,7 @@ export function Learn({
   onPlay,
   onKerjaPlay,
   onJiaochengPlay,
+  onJiaochengMidterm,
   onMagangPlay,
   onInterviewPlay,
   onBooksPlay,
@@ -93,6 +94,7 @@ export function Learn({
   onPlay?: (lesson: number, node: PathNode) => void
   onKerjaPlay?: (chapter: number, node: PathNode) => void
   onJiaochengPlay?: (lesson: number, node: PathNode) => void
+  onJiaochengMidterm?: () => void
   onMagangPlay?: (chapter: number, node: string) => void
   onInterviewPlay?: (chapter: number, node: string) => void
   onBooksPlay?: (part: number, index: number) => void
@@ -124,7 +126,7 @@ export function Learn({
       ) : course === 'kerja' ? (
         <KerjaLearn onPlay={(chapter, node) => onKerjaPlay?.(chapter, node)} />
       ) : course === 'jiaocheng' ? (
-        <JiaochengLearn onPlay={(lesson, node) => onJiaochengPlay?.(lesson, node)} />
+        <JiaochengLearn onPlay={(lesson, node) => onJiaochengPlay?.(lesson, node)} onMidterm={onJiaochengMidterm} />
       ) : course === 'magang' ? (
         <MagangLearn onPlay={(chapter, node) => onMagangPlay?.(chapter, node)} />
       ) : course === 'interview' ? (

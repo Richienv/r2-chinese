@@ -13,6 +13,8 @@ export interface ReviewEvent {
   source: string
   scheduler: string
   xp: number
+  /** A return date the learner chose, in days; replaces the model's interval. */
+  delayDays?: number
 }
 export interface CreditEvent {
   id: string
@@ -84,7 +86,7 @@ export function wordState(data: LearningData, zh: string) {
     const before = skills[e.skill] ?? newCard(zh, e.lesson, e.at)
     const rating = e.assisted && e.rating !== 'again' ? 'hard' : e.rating
     skills[e.skill] = {
-      ...schedule(before, rating, e.at, e.evidence === 'placement' && !e.assisted),
+      ...schedule(before, rating, e.at, e.evidence === 'placement' && !e.assisted, e.delayDays),
       skill: e.skill,
     }
     if (e.evidence !== 'self-report')

@@ -73,7 +73,7 @@ test('short drill defaults to eight words and one pass, with longer settings fol
 test('one selected word opens the actual recall immediately without a second Start screen',()=>{
  const html=ui.render('drill',{words:['法律']})
  assert.match(html,/<h2>law<\/h2>/)
- assert.match(html,/Skip for now/)
+ assert.doesNotMatch(html,/Skip for now/)
  assert.match(html,/Finish practice/)
  assert.doesNotMatch(html,/Start recall|More practice options|Word progress:/)
 })
@@ -84,10 +84,12 @@ test('all-caught-up progress continues learning instead of opening an empty revi
  ui.activate('Continue learning→')
  assert.deepEqual(ui.actions,['learn'])
 })
-test('scheduled review offers an unscored skip and a clear reveal without exposing the answer',()=>{
+test('scheduled review offers a hint ladder, its lesson and memory stage, without a skip or the answer',()=>{
  const html=ui.render('review',{words:['法律']})
- assert.match(html,/Skip for now/)
- assert.match(html,/Show answer/)
+ assert.doesNotMatch(html,/Skip for now|Show answer|Bring back the word|Type the Hanzi without a hint/)
+ assert.match(html,/Hint/)
+ assert.match(html,/Lesson 1/)
+ assert.match(html,/aria-current="step"><i><\/i><span>New<\/span>/)
  assert.doesNotMatch(html,/>法律<|I need to see it/)
 })
 

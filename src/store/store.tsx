@@ -205,6 +205,7 @@ interface Store extends Persisted {
       assisted?: boolean
       eventId?: string
       at?: number
+      delayDays?: number
     },
   ) => string | null
   undoReview: (id: string) => boolean
@@ -405,6 +406,7 @@ export function StoreProvider({
         assisted?: boolean
         eventId?: string
         at?: number
+        delayDays?: number
       } = {},
     ) => {
       const card = latest.current.cards[zh]
@@ -421,6 +423,7 @@ export function StoreProvider({
         source: 'review',
         scheduler: 'fsrs-6/ts-fsrs@5.2.3/yulu-2',
         xp: rating === 'again' ? 0 : 4,
+        ...(options.delayDays !== undefined ? { delayDays: options.delayDays } : {}),
       }
       const saved = setState((s) => {
         if (s.learning?.events[event.id]) return s

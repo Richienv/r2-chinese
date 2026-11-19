@@ -1,6 +1,6 @@
 import { compactLessonSteps, compactStepId } from '../lib/sessionRoute'
 import { useSessionRoute } from '../components/useSessionRoute'
-import { PracticeChoiceScreen, PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
+import { PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
 import { StudyMusic } from '../components/StudyMusic'
 import { ChapterCheck } from '../components/ChapterCheck'
 import { quizAssisted } from '../lib/choiceSupport'
@@ -11,7 +11,7 @@ import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
 import { DialogueRecheck, type RecheckSummary } from '../components/DialogueRecheck'
 import { DialoguePractice, SentencePractice } from '../components/ProductionPractice'
-import { WordRecall } from '../components/WordRecall'
+import { WordRecall, type RecallResult } from '../components/WordRecall'
 import type { ProductionResult } from '../lib/production'
 import {
   ChineseHear,
@@ -39,6 +39,7 @@ import type { LessonText } from '../lib/types'
 import { LINE_RATE } from '../lib/voices'
 import { useStore, type PathNode } from '../store/store'
 import { TeachView } from './TeachBeats'
+import '../styles/jiaocheng-midterm.css'
 
 type QuizState = { wrong: string[]; solved: boolean; missed: boolean }
 
@@ -49,6 +50,17 @@ function withSlots(sentence: string, slots: Record<string, ReactNode>): ReactNod
     const slot = /^\{(\w+)\}$/.exec(piece)?.[1]
     return slot && slot in slots ? <Fragment key={index}>{slots[slot]}</Fragment> : piece
   })
+}
+
+function MidtermEntry({ onClick }: { onClick?: () => void }) {
+  if (!onClick) return null
+  return (
+    <button type="button" className="jiaocheng-midterm-entry" onClick={onClick}>
+      <span className="kicker">第二册上 · 第1–12课</span>
+      <strong>{t('Midterm mock')}</strong>
+      <span>{t('The textbook’s own blanks, choices, corrections and reading.')}</span>
+    </button>
+  )
 }
 
 function bookPartLabel(book: JiaochengLesson['book']): string {
@@ -146,20 +158,26 @@ export function JiaochengPath({
   )
 }
 
-export function JiaochengHomePath({ onPlay }: { onPlay: (lesson: number, node: PathNode) => void }) {
+export function JiaochengHomePath({ onPlay, onMidterm }: { onPlay: (lesson: number, node: PathNode) => void; onMidterm?: () => void }) {
   const { nextPlayable, isNodeDone } = useJiaochengProgress()
   if (jiaochengLessons.length === 0) return <JiaochengEmptyState />
   const lesson = getJiaochengLesson(nextPlayable.lesson) ?? jiaochengLessons[0]
-  return <JiaochengPath fill lesson={lesson} current={nextPlayable} nodeDone={isNodeDone} onPlay={onPlay} />
+  return (
+    <>
+      <MidtermEntry onClick={onMidterm} />
+      <JiaochengPath fill lesson={lesson} current={nextPlayable} nodeDone={isNodeDone} onPlay={onPlay} />
+    </>
+  )
 }
 
-export function JiaochengLearn({ onPlay }: { onPlay: (lesson: number, node: PathNode) => void }) {
+export function JiaochengLearn({ onPlay, onMidterm }: { onPlay: (lesson: number, node: PathNode) => void; onMidterm?: () => void }) {
   const { nextPlayable, isNodeDone } = useJiaochengProgress()
   if (jiaochengLessons.length === 0) {
     return <JiaochengEmptyState />
   }
   return (
     <>
+      <MidtermEntry onClick={onMidterm} />
       {jiaochengLessons.map((unit) => (
         <JiaochengPath
           key={unit.id}
@@ -199,7 +217,7 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
   const checkpoint = useRef(readLearningCheckpoint(resumeId))
   const steps = useMemo(
     () =>
-      compactLessonSteps(buildJiaochengSteps(lesson, node).filter(
+      (node === 't1' ? (steps: ReturnType<typeof buildJiaochengSteps>) => steps : compactLessonSteps)(buildJiaochengSteps(lesson, node).filter(
         (step) =>
           !(
             (step.kind === 'teach' || step.kind === 'recall') &&
@@ -228,7 +246,7 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
   const alreadyDone = useRef(progress.isNodeDone(lesson, node))
   const credited = useRef(new Set<string>())
   const finished = useRef(false)
-  const left = useRef(new Set<number>())
+  const left = useRef(new Set<string>())
   const bodyRef = useRef<HTMLDivElement>(null)
   const route = useSessionRoute(steps, checkpoint.current)
   const { i, step } = route
@@ -239,7 +257,7 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
   const isComplete = step.kind === 'complete'
   const footerLocked = step.kind === 'quiz' && !quizState?.solved
-  const beatKey = step.kind === 'complete' ? 'complete' : step.id
+  const beatKey = step.kind === 'complete' ? 'complete' : route.key
 
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 })
@@ -294,10 +312,10 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
     setAssistedSteps((previous) => (previous[scope] ? previous : { ...previous, [scope]: true }))
   }
 
-  function goForward() {
-    if (left.current.has(i)) return
-    left.current.add(i)
-    route.next()
+  function goForward(repeat = false) {
+    if (left.current.has(route.key)) return
+    left.current.add(route.key)
+    route.next(repeat)
   }
 
   function advance() {
@@ -312,11 +330,11 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
     goForward()
   }
 
-  function finishRecall() {
+  function finishRecall(result: RecallResult) {
     if (step.kind !== 'recall') return
     credit(step.id)
     playAdvance()
-    goForward()
+    goForward(result.missed || result.assisted)
   }
 
   function finishProduction(result: ProductionResult) {
@@ -407,11 +425,11 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
           <i className="yl-progress" style={{ width: `${Math.min(100, progressPct)}%` }} />
         </div>
       </div>
-      <SessionProgress kind={step.kind} />
+      <SessionProgress kind={step.kind} {...('n' in step && (step.kind === 'teach' || route.inPractice) ? { n: step.n, of: step.of } : {})} />
 
       <div className="overlay-body" ref={bodyRef}>
         <div key={beatKey} className="session-beat yl-enter">
-          {route.choosing ? <PracticeChoiceScreen choices={route.choices} onChoose={route.choose} onFinish={route.finish} /> : step.kind === 'teach' ? (
+          {step.kind === 'teach' ? (
             <TeachView
               phase={step.phase}
               word={step.word}
@@ -428,7 +446,9 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
               word={step.word}
               n={step.n}
               of={step.of}
-              externallyAssisted={assistedSteps[step.id]}
+              cue={node === 't2' ? 'sentence' : node === 'wrap' ? 'meaning' : 'sound'}
+              repeatOnHelp={route.canRepeat}
+              externallyAssisted={route.pass ? false : assistedSteps[step.id]}
               onAssistance={() => {
                 markAssisted()
               }}
@@ -486,10 +506,10 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
           ) : (
             <SessionSummary title={unit.titleZh} words={sessionWords} />
           )}
-          {route.inPractice && !route.choosing && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onSkip={goForward} onFinish={route.finish} />}
+          {route.inPractice && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onFinish={route.finish} />}
         </div>
       </div>
-      {showFooter && !route.choosing && (
+      {showFooter && (
         <div className="overlay-foot">
           <button type="button" className="btn" onPointerDown={() => unlockSpeech()} onClick={advance}>
             {isComplete ? t('Done') : t('Continue')}

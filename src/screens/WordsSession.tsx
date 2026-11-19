@@ -1,6 +1,6 @@
 import { compactLessonSteps, compactStepId } from '../lib/sessionRoute'
 import { useSessionRoute } from '../components/useSessionRoute'
-import { PracticeChoiceScreen, PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
+import { PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
 import { StudyMusic } from '../components/StudyMusic'
 import { ChapterCheck } from '../components/ChapterCheck'
 import { quizAssisted } from '../lib/choiceSupport'
@@ -10,7 +10,7 @@ import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
 import { DialogueRecheck, type RecheckSummary } from '../components/DialogueRecheck'
 import { DialoguePractice, SentencePractice } from '../components/ProductionPractice'
-import { WordRecall } from '../components/WordRecall'
+import { WordRecall, type RecallResult } from '../components/WordRecall'
 import {
   ChineseHear,
   hasHanzi,
@@ -86,7 +86,7 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
   const alreadyDone = useRef(store.isNodeDone(lesson, node))
   const credited = useRef(new Set<string>())
   const finished = useRef(false)
-  const left = useRef(new Set<number>())
+  const left = useRef(new Set<string>())
   const bodyRef = useRef<HTMLDivElement>(null)
   const retryWords = useRef(new Set(checkpoint.current?.retryWords ?? []))
 
@@ -100,7 +100,7 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
   const quizState = step.kind === 'quiz' ? quiz[step.id] : undefined
   const isComplete = step.kind === 'complete'
   const footerLocked = step.kind === 'quiz' && !quizState?.solved
-  const beatKey = step.kind === 'complete' ? 'complete' : step.id
+  const beatKey = step.kind === 'complete' ? 'complete' : route.key
 
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 })
@@ -156,10 +156,10 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
     credit(id)
   }
 
-  function goForward() {
-    if (left.current.has(i)) return
-    left.current.add(i)
-    route.next()
+  function goForward(repeat = false) {
+    if (left.current.has(route.key)) return
+    left.current.add(route.key)
+    route.next(repeat)
   }
 
   function advance() {
@@ -174,10 +174,10 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
     goForward()
   }
 
-  function finishRecall() {
+  function finishRecall(result: RecallResult) {
     if (step.kind !== 'recall') return
     credit(step.id)
-    goForward()
+    goForward(result.missed || result.assisted)
   }
 
   function finishProduction(result: ProductionResult) {
@@ -270,11 +270,11 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
         </div>
       </div>
 
-      <SessionProgress kind={step.kind} />
+      <SessionProgress kind={step.kind} {...('n' in step && (step.kind === 'teach' || route.inPractice) ? { n: step.n, of: step.of } : {})} />
 
       <div className="overlay-body" ref={bodyRef}>
         <div key={beatKey} className="session-beat yl-enter">
-          {route.choosing ? <PracticeChoiceScreen choices={route.choices} onChoose={route.choose} onFinish={route.finish} /> : step.kind === 'teach' ? (
+          {step.kind === 'teach' ? (
             <TeachView
               phase={step.phase}
               word={step.word}
@@ -291,7 +291,9 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
               word={step.word}
               n={step.n}
               of={step.of}
-              externallyAssisted={progressPeeks[step.id]}
+              cue={node === 'wrap' ? 'sentence' : 'meaning'}
+              repeatOnHelp={route.canRepeat}
+              externallyAssisted={route.pass ? false : progressPeeks[step.id]}
               onAssistance={() => {
                 setProgressPeeks((previous) => ({ ...previous, [step.id]: true }))
               }}
@@ -362,11 +364,11 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
           ) : (
             <SessionSummary title={getLesson(lesson).title.zh} words={sessionWords} />
           )}
-          {route.inPractice && !route.choosing && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onSkip={goForward} onFinish={route.finish} />}
+          {route.inPractice && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onFinish={route.finish} />}
         </div>
       </div>
 
-      {showFooter && !route.choosing && (
+      {showFooter && (
         <div className="overlay-foot">
           <button type="button" className="btn" onPointerDown={() => unlockSpeech()} onClick={advance}>
             {footerLabel}

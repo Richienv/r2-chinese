@@ -146,14 +146,14 @@
         {
           "zh": "落地",
           "pinyin": "luòdì",
-          "id": "penerapan nyata",
+          "id": "eksekusi nyata, jalan beneran",
           "page": 29,
           "tip": "Secara harfiah “mendarat”; dalam bisnis berarti ide atau rencana benar-benar diterapkan."
         },
         {
           "zh": "交付",
           "pinyin": "jiāofù",
-          "id": "penyelesaian dan penyerahan hasil",
+          "id": "delivery, serahin hasil",
           "page": 29,
           "tip": "Tekankan hasil yang diterima serta digunakan, bukan hanya pekerjaan yang sudah ditulis."
         }
@@ -343,7 +343,7 @@
         {
           "zh": "本地化",
           "pinyin": "běndìhuà",
-          "id": "penyesuaian dengan pasar lokal",
+          "id": "lokalisasi, nyesuaiin pasar lokal",
           "page": 29,
           "tip": "Mencakup proses, pengguna, pembayaran, dan layanan; penerjemahan merupakan salah satu bagian."
         },
@@ -357,7 +357,7 @@
         {
           "zh": "落地",
           "pinyin": "luòdì",
-          "id": "penerapan nyata",
+          "id": "eksekusi nyata, jalan beneran",
           "page": 29,
           "tip": "Secara harfiah “mendarat”; dalam bisnis berarti ide atau rencana benar-benar diterapkan."
         }
@@ -535,7 +535,7 @@
         {
           "zh": "管培生",
           "pinyin": "guǎnpéishēng",
-          "id": "peserta program pengembangan calon manajer",
+          "id": "management trainee, MT",
           "page": 29,
           "tip": "Singkatan dari 管理培训生. Jelaskan kesiapan mengikuti rotasi dan mengambil tanggung jawab."
         },
@@ -549,14 +549,14 @@
         {
           "zh": "协同",
           "pinyin": "xiétóng",
-          "id": "koordinasi dan kerja sama",
+          "id": "kolaborasi, kerja bareng",
           "page": 29,
           "tip": "Menghubungkan pekerjaan beberapa pihak agar tujuan serta pelaksanaannya selaras."
         },
         {
           "zh": "责任人",
           "pinyin": "zérènrén",
-          "id": "penanggung jawab",
+          "id": "PIC, penanggung jawab",
           "page": 29,
           "tip": "责任 = tanggung jawab; 人 = orang. Selalu jelaskan siapa yang berwenang memutuskan."
         }
@@ -747,21 +747,21 @@
         {
           "zh": "流程",
           "pinyin": "liúchéng",
-          "id": "alur proses",
+          "id": "alur, flow kerja",
           "page": 29,
           "tip": "Urutan pekerjaan yang bisa diamati. Jelaskan proses sebelum dan sesudah perbaikan."
         },
         {
           "zh": "交付",
           "pinyin": "jiāofù",
-          "id": "penyelesaian dan penyerahan hasil",
+          "id": "delivery, serahin hasil",
           "page": 29,
           "tip": "Tekankan hasil yang diterima serta digunakan, bukan hanya pekerjaan yang sudah ditulis."
         },
         {
           "zh": "可追溯",
           "pinyin": "kě zhuīsù",
-          "id": "dapat ditelusuri",
+          "id": "bisa dilacak",
           "page": 29,
           "tip": "可 berarti dapat. Data atau tindakan harus bisa ditelusuri kembali ke sumber dan catatannya."
         }
@@ -965,28 +965,28 @@
         {
           "zh": "数据口径",
           "pinyin": "shùjù kǒujìng",
-          "id": "definisi dan dasar penghitungan data",
+          "id": "definisi data, cara hitung data",
           "page": 29,
           "tip": "Lebih luas dari terjemahan “metrik”: termasuk penyebut, rentang waktu, unit, dan aturan penyertaan."
         },
         {
           "zh": "可追溯",
           "pinyin": "kě zhuīsù",
-          "id": "dapat ditelusuri",
+          "id": "bisa dilacak",
           "page": 29,
           "tip": "可 berarti dapat. Data atau tindakan harus bisa ditelusuri kembali ke sumber dan catatannya."
         },
         {
           "zh": "责任人",
           "pinyin": "zérènrén",
-          "id": "penanggung jawab",
+          "id": "PIC, penanggung jawab",
           "page": 29,
           "tip": "责任 = tanggung jawab; 人 = orang. Selalu jelaskan siapa yang berwenang memutuskan."
         },
         {
           "zh": "交付",
           "pinyin": "jiāofù",
-          "id": "penyelesaian dan penyerahan hasil",
+          "id": "delivery, serahin hasil",
           "page": 29,
           "tip": "Tekankan hasil yang diterima serta digunakan, bukan hanya pekerjaan yang sudah ditulis."
         }
@@ -1187,21 +1187,21 @@
         {
           "zh": "复核",
           "pinyin": "fùhé",
-          "id": "pemeriksaan ulang",
+          "id": "cek ulang, double check",
           "page": 29,
           "tip": "核 adalah memeriksa atau mencocokkan. Penting sebelum keputusan nominal atau dampak pelanggan."
         },
         {
           "zh": "可追溯",
           "pinyin": "kě zhuīsù",
-          "id": "dapat ditelusuri",
+          "id": "bisa dilacak",
           "page": 29,
           "tip": "可 berarti dapat. Data atau tindakan harus bisa ditelusuri kembali ke sumber dan catatannya."
         },
         {
           "zh": "合规",
           "pinyin": "héguī",
-          "id": "kepatuhan terhadap ketentuan",
+          "id": "patuh aturan, compliance",
           "page": 29,
           "tip": "Batas keputusan dan proses yang harus mengikuti aturan serta otorisasi yang berlaku."
         }
@@ -1452,35 +1452,35 @@
         {
           "zh": "获客成本",
           "pinyin": "huòkè chéngběn",
-          "id": "biaya akuisisi pelanggan",
+          "id": "biaya akuisisi pelanggan, CAC",
           "page": 29,
           "tip": "获客 = memperoleh pelanggan; 成本 = biaya. CAC perlu dibandingkan pada pelanggan dan periode yang sebanding."
         },
         {
           "zh": "转化率",
           "pinyin": "zhuǎnhuàlǜ",
-          "id": "tingkat konversi",
+          "id": "conversion rate",
           "page": 29,
           "tip": "率 menandai rasio. Selalu sebut dari tahap mana ke tahap mana dan apa penyebutnya."
         },
         {
           "zh": "风控",
           "pinyin": "fēngkòng",
-          "id": "pengendalian risiko",
+          "id": "manajemen risiko, risk control",
           "page": 29,
           "tip": "Singkatan dari 风险控制. Tim risiko menetapkan batas; kamu mengajukan analisis dan usulan."
         },
         {
           "zh": "合规",
           "pinyin": "héguī",
-          "id": "kepatuhan terhadap ketentuan",
+          "id": "patuh aturan, compliance",
           "page": 29,
           "tip": "Batas keputusan dan proses yang harus mengikuti aturan serta otorisasi yang berlaku."
         },
         {
           "zh": "渠道",
           "pinyin": "qúdào",
-          "id": "kanal",
+          "id": "channel, kanal",
           "page": 29,
           "tip": "Jalur memperoleh atau melayani pengguna. Jumlah pengguna harus dinilai bersama kualitasnya."
         }
@@ -1738,35 +1738,35 @@
         {
           "zh": "放款",
           "pinyin": "fàngkuǎn",
-          "id": "pencairan dana",
+          "id": "pencairan dana, cairin pinjaman",
           "page": 29,
           "tip": "Tahap dana disalurkan. Bedakan pengajuan, persetujuan, dan pencairan berhasil."
         },
         {
           "zh": "还款",
           "pinyin": "huánkuǎn",
-          "id": "pembayaran kembali",
+          "id": "bayar cicilan, pelunasan",
           "page": 29,
           "tip": "还 di sini dibaca huán. Bedakan pembayaran kembali oleh pelanggan dari pencairan dana kepada pelanggan."
         },
         {
           "zh": "逾期",
           "pinyin": "yúqī",
-          "id": "keterlambatan melewati jatuh tempo",
+          "id": "telat bayar, lewat jatuh tempo",
           "page": 29,
           "tip": "期 adalah batas waktu. Perlu definisi keterlambatan serta usia pengamatan yang sama."
         },
         {
           "zh": "投诉",
           "pinyin": "tóusù",
-          "id": "keluhan atau pengaduan",
+          "id": "komplain, aduan",
           "page": 29,
           "tip": "Masukan pelanggan yang memerlukan pemeriksaan dan penanganan resmi."
         },
         {
           "zh": "渠道",
           "pinyin": "qúdào",
-          "id": "kanal",
+          "id": "channel, kanal",
           "page": 29,
           "tip": "Jalur memperoleh atau melayani pengguna. Jumlah pengguna harus dinilai bersama kualitasnya."
         }
@@ -1963,21 +1963,21 @@
         {
           "zh": "流程",
           "pinyin": "liúchéng",
-          "id": "alur proses",
+          "id": "alur, flow kerja",
           "page": 29,
           "tip": "Urutan pekerjaan yang bisa diamati. Jelaskan proses sebelum dan sesudah perbaikan."
         },
         {
           "zh": "复核",
           "pinyin": "fùhé",
-          "id": "pemeriksaan ulang",
+          "id": "cek ulang, double check",
           "page": 29,
           "tip": "核 adalah memeriksa atau mencocokkan. Penting sebelum keputusan nominal atau dampak pelanggan."
         },
         {
           "zh": "责任人",
           "pinyin": "zérènrén",
-          "id": "penanggung jawab",
+          "id": "PIC, penanggung jawab",
           "page": 29,
           "tip": "责任 = tanggung jawab; 人 = orang. Selalu jelaskan siapa yang berwenang memutuskan."
         }
@@ -2167,28 +2167,28 @@
         {
           "zh": "协同",
           "pinyin": "xiétóng",
-          "id": "koordinasi dan kerja sama",
+          "id": "kolaborasi, kerja bareng",
           "page": 29,
           "tip": "Menghubungkan pekerjaan beberapa pihak agar tujuan serta pelaksanaannya selaras."
         },
         {
           "zh": "数据口径",
           "pinyin": "shùjù kǒujìng",
-          "id": "definisi dan dasar penghitungan data",
+          "id": "definisi data, cara hitung data",
           "page": 29,
           "tip": "Lebih luas dari terjemahan “metrik”: termasuk penyebut, rentang waktu, unit, dan aturan penyertaan."
         },
         {
           "zh": "合规",
           "pinyin": "héguī",
-          "id": "kepatuhan terhadap ketentuan",
+          "id": "patuh aturan, compliance",
           "page": 29,
           "tip": "Batas keputusan dan proses yang harus mengikuti aturan serta otorisasi yang berlaku."
         },
         {
           "zh": "责任人",
           "pinyin": "zérènrén",
-          "id": "penanggung jawab",
+          "id": "PIC, penanggung jawab",
           "page": 29,
           "tip": "责任 = tanggung jawab; 人 = orang. Selalu jelaskan siapa yang berwenang memutuskan."
         }
@@ -2378,7 +2378,7 @@
         {
           "zh": "管培生",
           "pinyin": "guǎnpéishēng",
-          "id": "peserta program pengembangan calon manajer",
+          "id": "management trainee, MT",
           "page": 29,
           "tip": "Singkatan dari 管理培训生. Jelaskan kesiapan mengikuti rotasi dan mengambil tanggung jawab."
         },
@@ -2399,7 +2399,7 @@
         {
           "zh": "派驻",
           "pinyin": "pàizhù",
-          "id": "penugasan ke lokasi lain",
+          "id": "ditugasin ke luar, penempatan",
           "page": 29,
           "tip": "Penempatan kerja di luar lokasi asal tim; perjelas durasi, entitas kontrak, serta paketnya."
         },
@@ -2600,7 +2600,7 @@
         {
           "zh": "管培生",
           "pinyin": "guǎnpéishēng",
-          "id": "peserta program pengembangan calon manajer",
+          "id": "management trainee, MT",
           "page": 29,
           "tip": "Singkatan dari 管理培训生. Jelaskan kesiapan mengikuti rotasi dan mengambil tanggung jawab."
         },
@@ -2614,7 +2614,7 @@
         {
           "zh": "交付",
           "pinyin": "jiāofù",
-          "id": "penyelesaian dan penyerahan hasil",
+          "id": "delivery, serahin hasil",
           "page": 29,
           "tip": "Tekankan hasil yang diterima serta digunakan, bukan hanya pekerjaan yang sudah ditulis."
         }
@@ -2779,28 +2779,28 @@
         {
           "zh": "数据口径",
           "pinyin": "shùjù kǒujìng",
-          "id": "definisi dan dasar penghitungan data",
+          "id": "definisi data, cara hitung data",
           "page": 29,
           "tip": "Lebih luas dari terjemahan “metrik”: termasuk penyebut, rentang waktu, unit, dan aturan penyertaan."
         },
         {
           "zh": "获客成本",
           "pinyin": "huòkè chéngběn",
-          "id": "biaya akuisisi pelanggan",
+          "id": "biaya akuisisi pelanggan, CAC",
           "page": 29,
           "tip": "获客 = memperoleh pelanggan; 成本 = biaya. CAC perlu dibandingkan pada pelanggan dan periode yang sebanding."
         },
         {
           "zh": "转化率",
           "pinyin": "zhuǎnhuàlǜ",
-          "id": "tingkat konversi",
+          "id": "conversion rate",
           "page": 29,
           "tip": "率 menandai rasio. Selalu sebut dari tahap mana ke tahap mana dan apa penyebutnya."
         },
         {
           "zh": "放款",
           "pinyin": "fàngkuǎn",
-          "id": "pencairan dana",
+          "id": "pencairan dana, cairin pinjaman",
           "page": 29,
           "tip": "Tahap dana disalurkan. Bedakan pengajuan, persetujuan, dan pencairan berhasil."
         }
@@ -2962,28 +2962,28 @@
         {
           "zh": "还款",
           "pinyin": "huánkuǎn",
-          "id": "pembayaran kembali",
+          "id": "bayar cicilan, pelunasan",
           "page": 29,
           "tip": "还 di sini dibaca huán. Bedakan pembayaran kembali oleh pelanggan dari pencairan dana kepada pelanggan."
         },
         {
           "zh": "投诉",
           "pinyin": "tóusù",
-          "id": "keluhan atau pengaduan",
+          "id": "komplain, aduan",
           "page": 29,
           "tip": "Masukan pelanggan yang memerlukan pemeriksaan dan penanganan resmi."
         },
         {
           "zh": "复核",
           "pinyin": "fùhé",
-          "id": "pemeriksaan ulang",
+          "id": "cek ulang, double check",
           "page": 29,
           "tip": "核 adalah memeriksa atau mencocokkan. Penting sebelum keputusan nominal atau dampak pelanggan."
         },
         {
           "zh": "可追溯",
           "pinyin": "kě zhuīsù",
-          "id": "dapat ditelusuri",
+          "id": "bisa dilacak",
           "page": 29,
           "tip": "可 berarti dapat. Data atau tindakan harus bisa ditelusuri kembali ke sumber dan catatannya."
         }
@@ -3316,21 +3316,21 @@
         {
           "zh": "数据口径",
           "pinyin": "shùjù kǒujìng",
-          "id": "definisi dan dasar penghitungan data",
+          "id": "definisi data, cara hitung data",
           "page": 29,
           "tip": "Lebih luas dari terjemahan “metrik”: termasuk penyebut, rentang waktu, unit, dan aturan penyertaan."
         },
         {
           "zh": "协同",
           "pinyin": "xiétóng",
-          "id": "koordinasi dan kerja sama",
+          "id": "kolaborasi, kerja bareng",
           "page": 29,
           "tip": "Menghubungkan pekerjaan beberapa pihak agar tujuan serta pelaksanaannya selaras."
         },
         {
           "zh": "责任人",
           "pinyin": "zérènrén",
-          "id": "penanggung jawab",
+          "id": "PIC, penanggung jawab",
           "page": 29,
           "tip": "责任 = tanggung jawab; 人 = orang. Selalu jelaskan siapa yang berwenang memutuskan."
         }
@@ -3627,7 +3627,7 @@
         {
           "zh": "管培生",
           "pinyin": "guǎnpéishēng",
-          "id": "peserta program pengembangan calon manajer",
+          "id": "management trainee, MT",
           "page": 29,
           "tip": "Singkatan dari 管理培训生. Jelaskan kesiapan mengikuti rotasi dan mengambil tanggung jawab."
         },
@@ -3648,7 +3648,7 @@
         {
           "zh": "派驻",
           "pinyin": "pàizhù",
-          "id": "penugasan ke lokasi lain",
+          "id": "ditugasin ke luar, penempatan",
           "page": 29,
           "tip": "Penempatan kerja di luar lokasi asal tim; perjelas durasi, entitas kontrak, serta paketnya."
         },

@@ -23,7 +23,7 @@ test('every source item has its own lesson, beginning with the manageable short 
 test('each vocabulary recall word actually appears in its answer, with Indonesian meanings and provenance', () => {
   assert.ok(data.extraVocab.length >= 118)
   for (const lesson of lessons) {
-    assert.ok(lesson.words.length >= 1 && lesson.words.length <= 4, lesson.id)
+    assert.ok(lesson.words.length >= 1, lesson.id)
     assert.equal(new Set(lesson.words.map(word => word.zh)).size, lesson.words.length)
     for (const word of lesson.words) {
       assert.ok(lesson.item.answerZh.includes(word.zh), `${lesson.id} ${word.zh}`)

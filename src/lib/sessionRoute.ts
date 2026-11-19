@@ -1,3 +1,5 @@
+import { rng, seedOf, shuffle } from './seeded.ts'
+
 /** A presentation route. It never records a review or changes a memory schedule. */
 export interface RoutableStep { kind: string; id?: string; phase?: string; word?: { zh: string }; n?: number; of?: number }
 export const isPracticeStep = (step: RoutableStep) => ['recall', 'quiz', 'dialogue', 'recheck', 'produce'].includes(step.kind)
@@ -20,15 +22,37 @@ export function compactLessonSteps<T extends RoutableStep>(steps: readonly T[]):
     ...steps.filter(step => step.kind === 'complete'),
   ]
 }
-export interface PracticeChoice { mode: 'words' | 'meaning' | 'sentence'; ids: string[] }
-export function practiceChoices(steps: readonly RoutableStep[]): PracticeChoice[] {
-  const ids = (kind: string, max: number) => steps.filter(step => step.kind === kind && step.id).slice(0, max).map(step => step.id!)
-  const choices: PracticeChoice[] = [
-    { mode: 'words', ids: ids('recall', 3) },
-    { mode: 'meaning', ids: ids('quiz', 3) },
-    { mode: 'sentence', ids: ids('produce', 1).length ? ids('produce', 1) : ids('dialogue', 1) },
-  ]
-  return choices.filter(choice => choice.ids.length > 0)
+/** A word that needed help comes back at most this many extra times in one sitting. */
+export const MAX_REPEATS = 2
+const REPEAT_GAP = 2
+
+/**
+ * Every word in this block is retrieved once, in a different order from how it was taught,
+ * then up to two line checks, one sentence, and one spoken dialogue when the block has them.
+ */
+export function practiceRound(steps: readonly RoutableStep[]): string[] {
+  const ids = (kind: string) => steps.filter(step => step.kind === kind && step.id).map(step => step.id!)
+  const recalls = ids('recall')
+  let mixed = recalls.length > 2 ? shuffle(recalls, rng(seedOf(recalls.join('|')))) : recalls
+  // The last word taught is still in working memory; don't open with it.
+  if (mixed.length > 2 && mixed[0] === recalls[recalls.length - 1]) mixed = [...mixed.slice(1), mixed[0]]
+  return [...mixed, ...ids('quiz').slice(0, 2), ...ids('produce').slice(0, 1), ...ids('dialogue').slice(0, 1)]
+}
+
+/** The contiguous run of practice steps that contains `index`. */
+export function practiceBlock<T extends RoutableStep>(steps: readonly T[], index: number): { start: number; end: number; steps: T[] } | null {
+  if (!isPracticeStep(steps[index])) return null
+  let start = index
+  while (start > 0 && isPracticeStep(steps[start - 1])) start--
+  let end = index
+  while (end + 1 < steps.length && isPracticeStep(steps[end + 1])) end++
+  return { start, end, steps: steps.slice(start, end + 1) }
+}
+
+/** Ask `id` again after a couple of other items, so the retry is a real retrieval. */
+export function requeue(queue: readonly string[], pos: number, id: string): string[] {
+  const at = Math.min(queue.length, pos + 1 + REPEAT_GAP)
+  return [...queue.slice(0, at), id, ...queue.slice(at)]
 }
 export function resumePracticeIds(steps: readonly RoutableStep[], stepId?: string, saved?: string[]): string[] | null {
   if (saved) {

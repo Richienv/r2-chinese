@@ -8,3 +8,4 @@ dist
 tsconfig.tsbuildinfo
 .vercel
 .cache/
+public/study-lofi.m4a

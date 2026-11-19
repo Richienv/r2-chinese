@@ -20,11 +20,24 @@ export function buildJiayinLessons(units: JiayinUnit[], extra: JiayinWord[] = []
   const bank = [...new Map([...units.flatMap(unit => unit.vocab), ...extra].map(word => [word.zh, word])).values()]
   return units.flatMap(unit => {
     const items = unit.id === 1 ? [...unit.items].sort((a, b) => (a.id === 'intro-short' ? -1 : b.id === 'intro-short' ? 1 : 0)) : unit.items
-    return items.map(item => {
-      const candidates = [...unit.vocab, ...bank].filter(word => item.answerZh.includes(word.zh))
-      const words = [...new Map(candidates.map(word => [word.zh, word])).values()].slice(0, 4)
+    const covered = new Set<string>()
+    const lessons = items.map(item => {
+      const candidates = [...new Map([...unit.vocab, ...bank].filter(word => item.answerZh.includes(word.zh)).map(word => [word.zh, word])).values()]
+      // Prefer words no earlier lesson in this unit has taken, and keep a lesson to four.
+      const words = [...candidates].sort((a, b) => Number(covered.has(a.zh)) - Number(covered.has(b.zh))).slice(0, 4)
+      for (const word of words) covered.add(word.zh)
       return { id: item.id, unit, item, words }
     })
+    // A word that lost the draw in every answer it appears in still has to be learned.
+    const pending = [...new Map([...unit.vocab, ...bank].map(word => [word.zh, word])).values()].filter(word => !covered.has(word.zh))
+    for (const word of pending) {
+      const hosts = lessons.filter(lesson => lesson.item.answerZh.includes(word.zh))
+      const host = hosts.sort((a, b) => a.words.length - b.words.length)[0]
+      if (!host) continue
+      host.words.push(word)
+      covered.add(word.zh)
+    }
+    return lessons
   })
 }
 export function asJiayinVocab(word: JiayinWord): Vocab { return { zh: word.zh, pinyin: word.pinyin, en: word.id, pos: '', note: word.tip } }
