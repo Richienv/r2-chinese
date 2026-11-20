@@ -14,8 +14,12 @@ import { prefetch, stopSpeech } from '../lib/speech'
 import { bundledDictionaryEntry } from '../lib/dictionary'
 import { playCorrect, playHint, playRate, playReveal, playWrong } from '../lib/sfx'
 import { useStagedReveal } from '../components/useStagedReveal'
-import { useStore } from '../store/store'
+import { DAILY_GOAL, useStore } from '../store/store'
 import '../styles/recall-focus.css'
+import { coreMeaning, otherMeanings } from '../lib/exercises'
+import { Fireworks } from '../components/Fireworks'
+import { Flame } from '../components/Flame'
+import { GoalRing } from '../components/TodayHud'
 
 const WritingRecall = lazy(() =>
   import('../components/WritingRecall').then((m) => ({ default: m.WritingRecall })),
@@ -299,6 +303,7 @@ export function ReviewFlow({
             </div>
             <h1>{empty ? t('Nothing is due.') : t('Enough for today.')}</h1>
             {done && <p>{t('{n} words reviewed. Your next dates are saved.', { n: completed })}</p>}
+            {done && completed > 0 && <ReviewWin />}
             <button className="focus-primary" onClick={onClose}>
               {t('Back to learning')}
             </button>
@@ -338,7 +343,10 @@ export function ReviewFlow({
                     {sentence.en && <p className="focus-sentence-translation">{sentence.en}</p>}
                   </div>
                 ) : (
-                  <h1 lang={skill === 'reading' ? 'zh-CN' : undefined}>{skill === 'reading' ? zh : word?.en}</h1>
+                  <>
+                    <h1 lang={skill === 'reading' ? 'zh-CN' : undefined}>{skill === 'reading' ? zh : coreMeaning(word?.en ?? '') || word?.en}</h1>
+                    {skill !== 'reading' && word && otherMeanings(word.en) && <p className="recall-other-meanings">{otherMeanings(word.en)}</p>}
+                  </>
                 )}
               </div>
             )}
@@ -522,3 +530,27 @@ function CalendarGlyph() {
   )
 }
 
+
+/** The review ends on the same win as a lesson: streak and today's ring. */
+function ReviewWin() {
+  const store = useStore()
+  const [burst, setBurst] = useState(0)
+  useEffect(() => {
+    const timer = window.setTimeout(() => setBurst(1), 240)
+    return () => window.clearTimeout(timer)
+  }, [])
+  const goal = store.today.cards / DAILY_GOAL
+  return (
+    <div className="duo-victory-day focus-win">
+      <Fireworks token={burst} />
+      <span className="duo-victory-streak"><Flame size={30} /><b>{store.streak}</b><small>{t('day streak')}</small></span>
+      <span className="duo-victory-goal">
+        <GoalRing value={goal} size={54} stroke={6} />
+        <span>
+          <b>{goal >= 1 ? t('Daily goal done') : t('{n} of {goal} today', { n: store.today.cards, goal: DAILY_GOAL })}</b>
+          <small>{goal >= 1 ? t('Come back tomorrow to keep the flame.') : t('One more session fills the ring.')}</small>
+        </span>
+      </span>
+    </div>
+  )
+}

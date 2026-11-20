@@ -218,3 +218,5 @@ body .btn.duo-next { width:100%; }
 .duo-why>summary::after { content:'+'; margin-left:auto; font-size:20px; font-weight:400; }
 .duo-why[open]>summary::after { content:'−'; }
 .duo-why[open]>.sub { animation:duo-rise .3s var(--ease) both; }
+.recall-focus .recall-other-meanings { color:inherit; opacity:.72; }
+.focus-win { width:100%; max-width:360px; margin:18px auto 10px; text-align:left; }

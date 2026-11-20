@@ -73,13 +73,10 @@ type Overlay =
   | { kind: 'composition' }
   | null
 
-const TAB_KEYS: Tab[] = ['home', 'learn', 'stats', 'profile']
-
 function Shell() {
   const store = useStore()
-  const [tab, setTabState] = useState<Tab>(() =>
-    TAB_KEYS.includes(store.lastTab as Tab) ? (store.lastTab as Tab) : 'home',
-  )
+  // Every launch starts on Home: the day's ring and the next session are the first thing seen.
+  const [tab, setTabState] = useState<Tab>('home')
   const [overlay, setOverlay] = useState<Overlay>(null)
   const mainRef = useRef<HTMLElement>(null)
   const navRef = useRef<HTMLElement>(null)
