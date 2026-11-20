@@ -2,7 +2,7 @@ import { rng, seedOf, shuffle } from './seeded.ts'
 
 /** A presentation route. It never records a review or changes a memory schedule. */
 export interface RoutableStep { kind: string; id?: string; phase?: string; word?: { zh: string }; n?: number; of?: number }
-export const isPracticeStep = (step: RoutableStep) => ['recall', 'quiz', 'dialogue', 'recheck', 'produce'].includes(step.kind)
+export const isPracticeStep = (step: RoutableStep) => ['recall', 'quiz', 'dialogue', 'recheck', 'produce', 'exercise'].includes(step.kind)
 export function compactStepId(id?: string): string | undefined {
   return id?.replace(/^(hook|example|seal):/, 'meet:')
 }
@@ -32,11 +32,73 @@ const REPEAT_GAP = 2
  */
 export function practiceRound(steps: readonly RoutableStep[]): string[] {
   const ids = (kind: string) => steps.filter(step => step.kind === kind && step.id).map(step => step.id!)
-  const recalls = ids('recall')
+  const exercises = ids('exercise')
+  // A word built from its characters in this round is not typed again straight after.
+  const built = new Set(exercises.filter(id => id.startsWith(BUILD_PREFIX)).map(id => id.slice(BUILD_PREFIX.length)))
+  const recalls = steps.filter(step => step.kind === 'recall' && step.id && !built.has(step.word?.zh ?? '')).map(step => step.id!)
   let mixed = recalls.length > 2 ? shuffle(recalls, rng(seedOf(recalls.join('|')))) : recalls
   // The last word taught is still in working memory; don't open with it.
   if (mixed.length > 2 && mixed[0] === recalls[recalls.length - 1]) mixed = [...mixed.slice(1), mixed[0]]
-  return [...mixed, ...ids('quiz').slice(0, 2), ...ids('produce').slice(0, 1), ...ids('dialogue').slice(0, 1)]
+  // Easy to hard: recognise and use first, build, then produce from memory.
+  const early = exercises.filter(id => !id.startsWith('ex3:'))
+  const late = exercises.filter(id => id.startsWith('ex3:'))
+  return [...early, ...late, ...mixed, ...ids('quiz').slice(0, 2), ...ids('produce').slice(0, 1), ...ids('dialogue').slice(0, 1)]
+}
+
+const BUILD_PREFIX = 'ex3:build:'
+
+export interface ComposedPractice<E extends RoutableStep> {
+  groups: { words: string[]; exercises: E[] }[]
+  context: E[]
+  produce: E[]
+}
+
+/** Sittings with more new words than this are split into waves of practice. */
+export const LONG_SITTING = 12
+/** Groups of new words per wave in a long sitting (two groups ≈ eight words). */
+export const WAVE_GROUPS = 2
+
+/**
+ * Duolingo rhythm: meet up to four words, recognise them straight away, meet the
+ * next few, then read, then one mixed round from easy to hard. A long sitting
+ * (30 words in one Jiaocheng text) closes a wave after every eight words: build
+ * and recall those eight, then go on. Steps the composer did not cover keep their
+ * compact order, so nothing from the book is dropped.
+ */
+export function duoLessonSteps<T extends RoutableStep, E extends RoutableStep>(steps: readonly T[], composed: ComposedPractice<E>): (T | E)[] {
+  const meets = steps.filter(step => step.kind === 'teach' && step.phase === 'meet')
+  const numbered = meets.map((step, index) => ({ ...step, n: index + 1, of: meets.length }))
+  const long = meets.length > LONG_SITTING
+  const placed = new Set<string>()
+  const moved = new Set<T | E>()
+  const out: (T | E)[] = []
+  let wave: string[] = []
+  composed.groups.forEach((group, index) => {
+    const groupMeets = numbered.filter(step => group.words.includes(step.word?.zh ?? '') && !placed.has(step.id ?? ''))
+    groupMeets.forEach(step => placed.add(step.id ?? ''))
+    out.push(...groupMeets, ...group.exercises)
+    if (!long) return
+    wave.push(...group.words)
+    if (index % WAVE_GROUPS !== WAVE_GROUPS - 1 && index !== composed.groups.length - 1) return
+    const inWave = (step: T | E) => wave.includes(step.word?.zh ?? '')
+    const production = [
+      ...composed.produce.filter(inWave),
+      ...steps.filter(step => step.kind === 'recall' && inWave(step)),
+    ]
+    production.forEach(step => moved.add(step))
+    out.push(...production)
+    wave = []
+  })
+  const rest = numbered.filter(step => !placed.has(step.id ?? ''))
+  return [
+    ...rest,
+    ...out,
+    ...steps.filter(step => step.kind === 'read' || step.kind === 'note'),
+    ...composed.context,
+    ...composed.produce.filter(step => !moved.has(step)),
+    ...steps.filter(step => isPracticeStep(step) && !moved.has(step)),
+    ...steps.filter(step => step.kind === 'complete'),
+  ]
 }
 
 /** The contiguous run of practice steps that contains `index`. */
