@@ -35,14 +35,7 @@ The honesty rules from LEARNING_ENGINE_V2 stay: easy multiple choice never count
 
 Exercises are interleaved: two of the same kind or the same word never sit next to each other when that can be avoided. Distractors prefer the sitting's own words, then the same part of speech.
 
-Evidence recorded:
-
-| Exercise | Store event |
-| --- | --- |
-| meaning-pick, hanzi-pick, cloze, match | `recognition` |
-| listen-pick | `listening` |
-| char-build, recall via tiles | `recall`, assisted |
-| arrange, continue | none per word (XP and daily credit only) |
+Evidence recorded (revised after code review): every mixed exercise picks among offered answers, so it records `recognition` only, which never counts as production or mastery. Arrange and continue record nothing per word. Every word is still typed from memory (the existing recall) after its tile build. The recall's own *Susun* tiles count as help, like a hint.
 
 All three courses (HSK 4, Jiaocheng 2, 1000 words) build the same step objects. `duoLessonSteps()` replaces `compactLessonSteps()`, so the change is one composer plus one renderer shared by all three.
 
@@ -87,6 +80,6 @@ CSS transforms and opacity only, 120–420 ms, with spring easing for wins and a
 - **Visible progress.** The Home HUD shows streak, XP, today's ring and the week. A winding lesson map, "Pelajaran N dari M", a combo badge with milestone bursts, XP floats, and a progress bar that keeps growing across waves.
 - **Peak-end.** A victory screen with fireworks, XP gained, accuracy, best combo, streak and the daily ring. The review ends with the streak and ring too.
 - **Less friction.** The app opens on Home every launch, straight into the last course.
-- **Fixes.** The Progress ring label no longer overflows. Arrange only uses lines with natural word tiles. Review sittings keep typing from memory (at most 4 built from tiles).
+- **Fixes.** The Progress ring label no longer overflows. Arrange only uses lines with natural word tiles. After code review: "Finish practice" appears only once every word has been met. Builds and listening picks record recognition only. A match mix-up marks only the tapped word. The Continue button takes focus. Exercises don't flood history. The course chooser is skipped only after an explicit choice.
 
 Verification: 20 new tests (composer, route, every real sitting in all three courses), the full suite, typecheck and production build. Browser walkthrough at 375×812 on a separate localhost origin with test data only.
