@@ -95,6 +95,8 @@ export function useSessionRoute<T extends RoutableStep>(steps: T[], checkpoint?:
       }
       setI(ahead)
     },
+    /** "Finish practice" ends the sitting; only offered once every new word has been met. */
+    canFinish: inPractice && !steps.slice(i + 1).some(entry => entry.kind === 'teach'),
     finish: () => setI(steps.length - 1),
   }
 }

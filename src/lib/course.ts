@@ -75,9 +75,12 @@ function readCourse(): CourseId {
   return 'hsk4a'
 }
 
+const ENTERED_KEY = 'yulu.course-entered.v1'
+
+/** True once the learner has picked a course themselves (the default course is saved on first load). */
 function hasSavedCourse(): boolean {
   try {
-    return localStorage.getItem(COURSE_KEY) !== null
+    return localStorage.getItem(ENTERED_KEY) === '1'
   } catch {
     return false
   }
@@ -109,6 +112,11 @@ export function CourseProvider({ children }: { children: ReactNode }) {
   const setCourse = useCallback((id: CourseId) => {
     setCourseState(id)
     setEntered(true)
+    try {
+      localStorage.setItem(ENTERED_KEY, '1')
+    } catch {
+      /* ignore */
+    }
   }, [])
 
   const leaveCourse = useCallback(() => {

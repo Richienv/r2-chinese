@@ -353,7 +353,6 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
   function finishExercise(outcome: ExerciseOutcome) {
     if (step.kind !== 'exercise') return
     credit(step.id)
-    recordHistory({ course: 'jiaocheng', kind: 'quiz', lesson: lesson, node, correct: !outcome.missed, title: t('Mixed practice') })
     goForward(outcome.missed)
   }
 
@@ -545,7 +544,7 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
           ) : (
             <SessionSummary title={unit.titleZh} words={sessionWords} />
           )}
-          {route.inPractice && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onFinish={route.finish} />}
+          {route.canFinish && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onFinish={route.finish} />}
         </div>
       </div>
       {showFooter && (

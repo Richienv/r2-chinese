@@ -10,7 +10,8 @@ import { HearButton, rateForChinese, useAutoSpeak } from './Hear'
 import { useMomentum } from './Momentum'
 import '../styles/duo.css'
 
-export type EvidenceMode = 'recognition' | 'listening' | 'recall'
+/** Every mixed exercise picks among offered answers, so it is recognition evidence, never production. */
+export type EvidenceMode = 'recognition'
 export interface ExerciseOutcome {
   missed: boolean
   assisted: boolean
@@ -83,8 +84,7 @@ function useJudge({ attemptKey, repeat, onRecord }: ExerciseProps): Judge {
     settle(correct, words, mode, clean = correct) {
       if (settled.current) return
       settled.current = true
-      // Building from offered tiles is supported recall, never unaided production.
-      if (mode) for (const zh of words) onRecord(zh, correct, helpedRef.current || mode === 'recall', mode)
+      if (mode) for (const zh of words) onRecord(zh, correct, helpedRef.current, mode)
       momentum.register(attemptKey, clean)
       setMixed(correct && !clean)
       if (correct) {
@@ -150,7 +150,8 @@ function Pick({ exercise, judge }: { exercise: PickExercise; judge: Judge }) {
   const [showMeaning, setShowMeaning] = useState(false)
   const [showPinyin, setShowPinyin] = useState(false)
   const { word, options } = exercise
-  const mode: EvidenceMode = exercise.kind === 'listen-pick' ? 'listening' : 'recognition'
+  // Four options to listen against is recognition; real dictation stays in recall.
+  const mode: EvidenceMode = 'recognition'
   const done = judge.verdict !== null
   const byMeaning = exercise.kind === 'meaning-pick'
 
@@ -334,7 +335,8 @@ function CharBuild({ exercise, judge }: { exercise: Extract<Exercise, { kind: 'c
   useEffect(() => {
     if (!full || done) return
     // A beat to see the last character land before the verdict.
-    const timer = window.setTimeout(() => judge.settle(sameText(tiles.text, exercise.answer), [exercise.word.zh], 'recall'), 260)
+    // Choosing offered characters is recognition; typing it from memory follows later in the round.
+    const timer = window.setTimeout(() => judge.settle(sameText(tiles.text, exercise.answer), [exercise.word.zh], 'recognition'), 260)
     return () => window.clearTimeout(timer)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [full, done])
@@ -414,7 +416,8 @@ function MatchBoard({ exercise, judge, onRecord }: { exercise: Extract<Exercise,
       }
       return
     }
-    for (const zh of [l, r]) if (!first.current.has(zh)) first.current.set(zh, false)
+    // The Hanzi tapped was given the wrong meaning; the other word was never tried.
+    if (!first.current.has(l)) first.current.set(l, false)
     missed.current = true
     playWrong()
     haptic('miss')
@@ -478,7 +481,11 @@ function Feedback({ exercise, right, mixed, attemptKey, onNext }: { exercise: Ex
   const { combo } = useMomentum()
   const { prefs } = useStore()
   const next = useRef<HTMLButtonElement>(null)
-  useEffect(() => { next.current?.focus({ preventScroll: true }) }, [])
+  useEffect(() => {
+    // The bar moves into the overlay on its first layout pass; focus the moved button.
+    const frame = requestAnimationFrame(() => next.current?.focus({ preventScroll: true }))
+    return () => cancelAnimationFrame(frame)
+  }, [])
   const praise = PRAISE_T[PRAISE[seedOf(attemptKey) % PRAISE.length]]
   const title = mixed
     ? t('All matched! The mixed-up ones come back later.')

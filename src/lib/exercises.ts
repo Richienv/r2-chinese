@@ -285,7 +285,8 @@ export function composeContext(words: readonly ExSource[], lines: readonly ExSen
   const target = [...splittable].sort((a, b) => wordsIn(b.s) - wordsIn(a.s))[0]
   if (target) {
     const rand = rng(seedOf(`${ctx.seed}:continue:${target.s.zh}`))
-    const endings = shuffle(splittable.filter((c) => c.parts.tail !== target.parts.tail && c.s.zh !== target.s.zh), rand)
+    const unique = [...new Map(splittable.map((c) => [c.parts.tail, c])).values()]
+    const endings = shuffle(unique.filter((c) => c.parts.tail !== target.parts.tail && c.s.zh !== target.s.zh), rand)
       .sort((a, b) => Math.abs(hanLength(a.parts.tail) - hanLength(target.parts.tail)) - Math.abs(hanLength(b.parts.tail) - hanLength(target.parts.tail)))
       .slice(0, 2)
       .map((c) => c.parts.tail)
@@ -333,13 +334,16 @@ function dedupeSentences(list: readonly ExSentence[]): ExSentence[] {
 /** Stage 3: build the word from its characters, from the meaning alone. */
 export function composeProduce(words: readonly ExSource[], ctx: ComposeContext, waves = false): ExerciseStep[] {
   const out: ExerciseStep[] = []
-  // A long sitting of new words builds a third of them, so every wave has some tiles.
-  // A review sitting keeps typing from memory for all but a few.
-  const cap = waves ? Math.max(MAX_BUILD, Math.ceil(words.length / 3)) : MAX_BUILD
-  for (const word of words) {
-    if (out.length >= cap) break
+  const eligible = words.filter((word) => {
+    const chars = Array.from(word.zh)
+    return chars.length >= 2 && chars.every((c) => HAN.test(c)) && !!coreMeaning(word.en)
+  })
+  // A long sitting gets about one build per wave of eight, spread out; others up to four.
+  const cap = waves ? Math.max(1, Math.ceil(words.length / (GROUP_SIZE * 2))) : MAX_BUILD
+  const stride = Math.max(1, Math.floor(eligible.length / cap))
+  const chosen = eligible.filter((_, index) => index % stride === 0).slice(0, cap)
+  for (const word of chosen) {
     const answer = Array.from(word.zh)
-    if (answer.length < 2 || !answer.every((c) => HAN.test(c)) || !coreMeaning(word.en)) continue
     const rand = rng(seedOf(`${ctx.seed}:build:${word.zh}`))
     out.push(step(`ex3:build:${word.zh}`, { kind: 'char-build', stage: 3, word: plain(word), answer, tiles: characterTiles(word.zh, [...words, ...ctx.pool], rand) }))
   }

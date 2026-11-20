@@ -33,9 +33,8 @@ const REPEAT_GAP = 2
 export function practiceRound(steps: readonly RoutableStep[]): string[] {
   const ids = (kind: string) => steps.filter(step => step.kind === kind && step.id).map(step => step.id!)
   const exercises = ids('exercise')
-  // A word built from its characters in this round is not typed again straight after.
-  const built = new Set(exercises.filter(id => id.startsWith(BUILD_PREFIX)).map(id => id.slice(BUILD_PREFIX.length)))
-  const recalls = steps.filter(step => step.kind === 'recall' && step.id && !built.has(step.word?.zh ?? '')).map(step => step.id!)
+  // Building a word from tiles is a warm-up; every word is still typed from memory after it.
+  const recalls = ids('recall')
   let mixed = recalls.length > 2 ? shuffle(recalls, rng(seedOf(recalls.join('|')))) : recalls
   // The last word taught is still in working memory; don't open with it.
   if (mixed.length > 2 && mixed[0] === recalls[recalls.length - 1]) mixed = [...mixed.slice(1), mixed[0]]
@@ -44,8 +43,6 @@ export function practiceRound(steps: readonly RoutableStep[]): string[] {
   const late = exercises.filter(id => id.startsWith('ex3:'))
   return [...early, ...late, ...mixed, ...ids('quiz').slice(0, 2), ...ids('produce').slice(0, 1), ...ids('dialogue').slice(0, 1)]
 }
-
-const BUILD_PREFIX = 'ex3:build:'
 
 export interface ComposedPractice<E extends RoutableStep> {
   groups: { words: string[]; exercises: E[] }[]

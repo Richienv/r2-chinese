@@ -35,11 +35,12 @@ test('words are met in small groups, each followed by its own quick recognition 
   // The first wave is only the first group's recognition.
   const first = practiceBlock(steps, 3)
   assert.deepEqual(practiceRound(first.steps), ['ex1:meaning-pick:法律', 'ex1:match:a'])
-  // The final round: use in context, build, then type only the words that were not built.
+  // The final round: use in context, build as a warm-up, then type every word from memory.
   const last = practiceBlock(steps, 10)
   const round = practiceRound(last.steps)
   assert.deepEqual(round.slice(0, 4), ['ex2:cloze:法律', 'ex2:arrange:x', 'ex3:build:法律', 'ex3:build:印象'])
-  assert.deepEqual(round.filter((id) => id.startsWith('recall:')).sort(), ['recall:性格', 'recall:深', 'recall:熟悉'].sort())
+  assert.deepEqual(round.filter((id) => id.startsWith('recall:')).sort(), ['recall:法律', 'recall:印象', 'recall:熟悉', 'recall:性格', 'recall:深'].sort())
+  assert.ok(round.indexOf('ex3:build:法律') < round.indexOf('recall:法律'), 'building comes before typing')
   assert.equal(round.at(-1), 'quiz:0')
 })
 

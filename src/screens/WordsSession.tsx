@@ -189,7 +189,6 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
   function finishExercise(outcome: ExerciseOutcome) {
     if (step.kind !== 'exercise') return
     credit(step.id)
-    recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: !outcome.missed, title: t('Mixed practice') })
     goForward(outcome.missed)
   }
 
@@ -395,7 +394,7 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
           ) : (
             <SessionSummary title={getLesson(lesson).title.zh} words={sessionWords} />
           )}
-          {route.inPractice && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onFinish={route.finish} />}
+          {route.canFinish && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onFinish={route.finish} />}
         </div>
       </div>
 

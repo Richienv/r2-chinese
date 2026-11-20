@@ -326,7 +326,6 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
   function finishExercise(outcome: ExerciseOutcome) {
     if (step.kind !== 'exercise') return
     credit(step.id)
-    recordHistory({ course: 'kerja', kind: 'quiz', lesson: chapter, node, correct: !outcome.missed, title: t('Mixed practice') })
     goForward(outcome.missed)
   }
 
@@ -518,7 +517,7 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
           ) : (
             <SessionSummary title={ch.titleZh} words={sessionWords} />
           )}
-          {route.inPractice && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onFinish={route.finish} />}
+          {route.canFinish && !(step.kind === 'quiz' && quizState?.solved) && <PracticeExit onFinish={route.finish} />}
         </div>
       </div>
       {showFooter && (

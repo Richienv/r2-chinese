@@ -22,7 +22,6 @@ const entries: Record<string, string> = {
   'Tap a word, then its meaning.': 'Ketuk katanya, lalu artinya.',
   'Correct answer:': 'Jawaban yang benar:',
   'All matched! The mixed-up ones come back later.': 'Semua cocok! Yang tadi ketuker bakal muncul lagi nanti.',
-  'Mixed practice': 'Latihan campur',
   'Nice!': 'Mantap!',
   'Great!': 'Keren!',
   'Spot on!': 'Pas banget!',

@@ -151,6 +151,27 @@ test('character building covers multi-character words, with the right characters
   assert.notEqual(tiles.slice(0, 2).join(''), '法律')
 })
 
+test('a long sitting spreads its few builds across the list instead of front-loading them', () => {
+  const many = Array.from({ length: 24 }, (_, i) => W(`${'甲乙丙丁戊己庚辛壬癸子丑'[i % 12]}${'寅卯辰巳午未'[i % 6]}${i}`.replace(/\d+/, ''), `arti ${i}`))
+  const unique = [...new Map(many.map((w) => [w.zh, w])).values()]
+  const steps = composeProduce(unique, ctx, true)
+  assert.ok(steps.length >= 1 && steps.length <= Math.ceil(unique.length / 8))
+  const positions = steps.map((s) => unique.findIndex((w) => w.zh === s.exercise.word.zh))
+  if (positions.length > 1) assert.ok(positions.at(-1) >= unique.length / 2, 'later words get built too')
+})
+
+test('continue never offers the same ending twice', () => {
+  const lines = [
+    { zh: '我们班跟他们班比赛，他一个人踢进两个球。', en: 'a' },
+    { zh: '他学的是法律，我学的是新闻。', en: 'b' },
+    { zh: '她学的是历史，我学的是新闻。', en: 'c' },
+    { zh: '他不仅足球踢得好，性格也不错。', en: 'd' },
+  ]
+  const cont = composeContext(words, lines, ctx).find((s) => s.exercise.kind === 'continue')
+  assert.ok(cont)
+  assert.equal(new Set(cont.exercise.options).size, cont.exercise.options.length)
+})
+
 test('interleave avoids the same kind or word back to back when it can', () => {
   const items = [
     { k: 'a', w: ['1'] }, { k: 'a', w: ['2'] }, { k: 'b', w: ['1'] }, { k: 'b', w: ['3'] }, { k: 'c', w: ['2'] },
