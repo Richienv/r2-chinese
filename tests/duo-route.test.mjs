@@ -116,6 +116,12 @@ test('every real sitting in all three courses builds a valid mixed session', asy
       const early = steps.slice(0, readAt < 0 ? steps.length : readAt).filter((s) => s.kind === 'exercise')
       const recognised = new Set(early.flatMap((s) => s.exercise.kind === 'match' ? s.exercise.pairs.map((w) => w.zh) : 'word' in s.exercise ? [s.exercise.word.zh] : []))
       for (const zh of met) assert.ok(recognised.has(zh), `${where}: ${zh} recognised after it is met`)
+      // In a long sitting, a word built from tiles is built in its own wave, before the reading.
+      if (met.length > R.LONG_SITTING && readAt > 0) {
+        const builds = steps.filter((s) => s.kind === 'exercise' && s.exercise.kind === 'char-build' && met.includes(s.exercise.word.zh))
+        assert.ok(builds.length > 0, `${where}: long sitting has builds`)
+        for (const b of builds) assert.ok(steps.indexOf(b) < readAt, `${where}: ${b.id} sits in its wave`)
+      }
       // No sitting balloons: the whole played queue stays bounded.
       let played = 0
       for (let i = 0; i < steps.length; i++) {

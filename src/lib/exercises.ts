@@ -40,6 +40,8 @@ export interface ExerciseStep {
   kind: 'exercise'
   id: string
   exercise: Exercise
+  /** The single word an exercise is about, so the route can place it in that word's wave. */
+  word?: { zh: string }
   n: number
   of: number
 }
@@ -165,7 +167,8 @@ export function exerciseWords(exercise: Exercise): string[] {
 }
 
 function step(id: string, exercise: Exercise): ExerciseStep {
-  return { kind: 'exercise', id, exercise, n: 0, of: 0 }
+  const words = exerciseWords(exercise)
+  return { kind: 'exercise', id, exercise, ...(words.length === 1 && exercise.kind !== 'match' ? { word: { zh: words[0] } } : {}), n: 0, of: 0 }
 }
 
 /** Balanced groups of at most four: 7 → 4 + 3, 5 → 3 + 2. */
