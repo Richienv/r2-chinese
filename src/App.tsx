@@ -199,6 +199,7 @@ function Shell() {
               onInterviewSession={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
               onBooksSession={(part, index) => setOverlay({ kind: 'books', part, index, node: 'lesson' })}
               onJiayinSession={(unit, stage) => setOverlay({ kind: 'jiayin', unit, stage })}
+              onProgress={() => setTab('stats')}
             />
           )}
           {tab === 'learn' && (

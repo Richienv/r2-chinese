@@ -9,7 +9,7 @@ let sharedPool: ExWord[] | null = null
 /** The course's own words, used as wrong answers before the HSK book. */
 const coursePool = () => (sharedPool ??= poolOf(poolUnits))
 import { useSessionRoute } from '../components/useSessionRoute'
-import { PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
+import { Explain, PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
 import { StudyMusic } from '../components/StudyMusic'
 import { ChapterCheck } from '../components/ChapterCheck'
 import { quizAssisted } from '../lib/choiceSupport'
@@ -112,6 +112,7 @@ export function KerjaPath({
       subtitle={chapter.titleEn}
       source={chapter.sourcePages ? t('pp. {pages}', { pages: chapter.sourcePages }) : undefined}
       open={progress.isChapterReached(chapter.index)}
+      position={{ index: kerjaChapters.indexOf(chapter) + 1, total: kerjaChapters.length, label: t('Lesson {n} of {total}', { n: kerjaChapters.indexOf(chapter) + 1, total: kerjaChapters.length }) }}
       items={nodes.map((node) => {
         const done = nodeDone(chapter.index, node)
         const on = current.chapter === chapter.index && current.node === node
@@ -589,13 +590,14 @@ function NoteView({
   const bodyZh = hearableZh(body)
 
   return (
-    <>
+    <div className="duo-note">
       <header className="session-step-head">
         <div className="kicker-ink">{head}</div>
         <h2 className="session-step-title" lang={hasHanzi(title) ? 'zh-CN' : undefined}>
           {hasHanzi(title) ? <Glossed text={title} onWord={onWord} /> : title}
         </h2>
       </header>
+      <Explain folded={!!example && body.length > 140}>
       <p
         className="sub"
         style={{ textWrap: 'pretty', lineHeight: 1.55 }}
@@ -603,6 +605,7 @@ function NoteView({
       >
         {hasHanzi(body) ? <Glossed text={body} onWord={onWord} /> : body}
       </p>
+      </Explain>
       {example && exampleZh && (
         <div className="card session-prompt">
           <p
@@ -638,7 +641,7 @@ function NoteView({
         </div>
       )}
       {sheet}
-    </>
+    </div>
   )
 }
 

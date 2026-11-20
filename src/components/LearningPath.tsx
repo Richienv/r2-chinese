@@ -22,6 +22,8 @@ export interface LearningPathProps {
   open?: boolean
   onOpen?: () => void
   fill?: boolean
+  /** Where this unit sits in the whole course, e.g. lesson 3 of 10. */
+  position?: { index: number; total: number; label: string }
 }
 
 function LessonStep({ item, index }: { item: LearningPathItem; index: number }) {
@@ -58,12 +60,49 @@ function LessonStep({ item, index }: { item: LearningPathItem; index: number }) 
   )
 }
 
-/** Home presents the next step; Materials retains the full, revisitable sequence. */
-export function LearningPath({ kicker, title, subtitle, source, items, open = true, onOpen, fill }: LearningPathProps) {
+const WIND = [0, 34, 54, 34, 0, -34, -54, -34]
+
+/** Duolingo-style winding map of this unit's sittings: done, the one to start now, and what is next. */
+function PathMap({ items }: { items: LearningPathItem[] }) {
+  return (
+    <ol className="duo-path" aria-label={t('Learning path')}>
+      {items.map((item, index) => {
+        const current = item.state === 'current'
+        return (
+          <li key={item.id} className="duo-path-stop" data-state={item.state} style={{ ['--x' as string]: `${WIND[index % WIND.length]}px`, ['--i' as string]: index }}>
+            {current && <span className="duo-path-tip" aria-hidden>{t('Start')}</span>}
+            <button
+              type="button"
+              className="duo-node"
+              data-state={item.state}
+              disabled={!item.playable}
+              aria-current={current ? 'step' : undefined}
+              aria-label={`${item.label}: ${item.title}`}
+              onPointerDown={() => { if (item.playable) unlockSpeech() }}
+              onClick={() => { if (item.playable) item.onSelect() }}
+            >
+              {item.state === 'done' ? <CheckIcon size={22} /> : item.state === 'locked' ? <LockIcon size={18} /> : <span className="duo-node-n">{index + 1}</span>}
+            </button>
+            <span className="duo-node-label" lang="zh-CN">{item.label}</span>
+          </li>
+        )
+      })}
+    </ol>
+  )
+}
+
+/** Home presents the map and the next step; Materials retains the full, revisitable sequence. */
+export function LearningPath({ kicker, title, subtitle, source, items, open = true, onOpen, fill, position }: LearningPathProps) {
   const done = items.filter(item => item.state === 'done').length
   const current = items.find(item => item.state === 'current') ?? items.find(item => item.playable)
   const visible = fill && current ? [current] : items
   const heading = <>
+    {fill && position && (
+      <span className="duo-course-progress">
+        <span>{position.label}</span>
+        <span className="duo-course-bar" aria-hidden><i style={{ width: `${Math.round((Math.max(0, position.index - 1) / Math.max(1, position.total)) * 100)}%` }} /></span>
+      </span>
+    )}
     {kicker && <span className="atlas-kicker">{kicker}</span>}
     <h2 className="atlas-title">{title}</h2>
     {subtitle && subtitle !== title && <span className="atlas-subtitle">{subtitle}</span>}
@@ -77,6 +116,7 @@ export function LearningPath({ kicker, title, subtitle, source, items, open = tr
       <span className="atlas-progress-marks" aria-hidden>{items.map(item => <i key={item.id} data-state={item.state} />)}</span>
       <span className="atlas-progress-count">{done} / {items.length}</span>
     </div>
+    {fill && <PathMap items={items} />}
     <ol className="atlas-track">{visible.map(item => <LessonStep key={item.id} item={item} index={items.indexOf(item)} />)}</ol>
   </>
   return fill ? (

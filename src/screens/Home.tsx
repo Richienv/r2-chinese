@@ -1,6 +1,7 @@
 import { StudyMusic } from '../components/StudyMusic'
 import { lazy } from 'react'
 import { MemoryHorizon } from '../components/MemoryHorizon'
+import { TodayHud } from '../components/TodayHud'
 import { CourseBack, CourseGate, LanguageChip } from '../components/CourseChooser'
 import { COURSE_META, useCourse } from '../lib/course'
 import { t } from '../lib/i18n'
@@ -31,6 +32,7 @@ export function Home({
   onInterviewSession,
   onBooksSession,
   onJiayinSession,
+  onProgress,
 }: {
   onSession: (lesson: number, node: PathNode) => void
   onLesson: (lesson: number) => void
@@ -45,6 +47,7 @@ export function Home({
   onInterviewSession: (chapter: number, node: string) => void
   onBooksSession: (part: number, index: number) => void
   onJiayinSession: JiayinOpen
+  onProgress?: () => void
 }) {
   const s = useStore()
   const { course, entered } = useCourse()
@@ -70,8 +73,7 @@ export function Home({
           <LanguageChip />
         </div>
       </div>
-      <header className="page-heading today-heading"><p>{t('YOUR DAILY PRACTICE')}</p><h2>{t('A small step today.')}</h2><span>{t('Pick up where you left off.')}</span></header>
-      {languageCourse && <MemoryHorizon onReview={onReview} onPlacement={onPlacement} />}
+      <TodayHud onOpen={onProgress} />
       {course === 'jiayin' ? (
         <JiayinPath onPlay={onJiayinSession} />
       ) : course === 'kerja' ? (
@@ -94,6 +96,7 @@ export function Home({
           onPlay={onSession}
         />
       )}
+      {languageCourse && <MemoryHorizon onReview={onReview} onPlacement={onPlacement} />}
       <StudyMusic />
       <div className="home-shortcuts">
         <button type="button" className="home-dock-button" onClick={onBrowse}><span>{t('Browse materials')}</span><span aria-hidden>→</span></button>

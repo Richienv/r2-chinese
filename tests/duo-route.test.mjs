@@ -43,6 +43,18 @@ test('words are met in small groups, each followed by its own quick recognition 
   assert.equal(round.at(-1), 'quiz:0')
 })
 
+test('a long sitting counts words inside the current group, not out of thirty', () => {
+  const words = Array.from({ length: 14 }, (_, i) => `词${i}`)
+  const source = [...words.map(meet), ...words.map((zh) => ({ kind: 'recall', id: `recall:${zh}`, word: { zh } })), { kind: 'complete' }]
+  const groups = [0, 4, 8, 11].map((start, g) => ({ words: words.slice(start, [4, 8, 11, 14][g]), exercises: [ex(`ex1:g${g}`)] }))
+  const steps = duoLessonSteps(source, { groups, context: [], produce: [] })
+  const counts = steps.filter((s) => s.kind === 'teach').map((s) => `${s.n}/${s.of}`)
+  assert.deepEqual(counts.slice(0, 5), ['1/4', '2/4', '3/4', '4/4', '1/4'])
+  // Waves: after every two groups, those words are recalled before the next group is met.
+  const firstRecall = steps.findIndex((s) => s.kind === 'recall')
+  assert.ok(firstRecall < steps.findIndex((s) => s.id === 'meet:t1:词8'))
+})
+
 test('meets the composer did not group still come first, and nothing from the book is dropped', () => {
   const source = [meet('甲'), meet('乙'), { kind: 'read', id: 'r' }, { kind: 'recall', id: 'recall:甲', word: { zh: '甲' } }, { kind: 'complete' }]
   const steps = duoLessonSteps(source, { groups: [], context: [], produce: [] })

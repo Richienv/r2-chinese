@@ -9,7 +9,11 @@ import { ListenCue } from './ListenCue'
 import { ReviewReport } from './ReviewReport'
 import { StrokeWord } from './StrokeWord'
 import { playAdvance, playCorrect, playHint, playReveal, playWrong } from '../lib/sfx'
-import { blankedExample, exampleFor } from '../lib/content'
+import { blankedExample, exampleFor, vocabIndex } from '../lib/content'
+import { characterTiles, coreMeaning, otherMeanings, type ExWord } from '../lib/exercises'
+import { rng, seedOf, shuffle } from '../lib/seeded'
+import { playTick } from '../lib/sfx'
+import '../styles/duo.css'
 import { useStagedReveal } from './useStagedReveal'
 import { normalizeChinese } from '../lib/production'
 import { hintLadder, type DrillCue, type HintStep } from '../lib/drillRounds'
@@ -152,7 +156,7 @@ function TypedRecall({
   const inputId = useId()
   const characterCount = Array.from(normalizeChinese(word.zh)).length
   const [answer, setAnswer] = useState('')
-  const [inputMode, setInputMode] = useState<'type' | 'draw'>('type')
+  const [inputMode, setInputMode] = useState<'type' | 'draw' | 'tiles'>('type')
   const [drawStarted, setDrawStarted] = useState(false)
   const [hint, setHint] = useState(0)
   const [missed, setMissed] = useState(false)
@@ -239,7 +243,7 @@ function TypedRecall({
             {sentence.en && <p className="recall-sentence-translation">{sentence.en}</p>}
           </div>
         ) : (
-          <h2>{cue === 'meaning' ? word.en : HEADINGS[cue]}</h2>
+          cue === 'meaning' ? <MeaningHeading gloss={word.en} /> : <h2>{HEADINGS[cue]}</h2>
         )}
         {cue === 'sound' && <ListenCue text={word.zh} />}
         {cue === 'pinyin' && <p className="production-pinyin">{word.pinyin}</p>}
@@ -269,7 +273,29 @@ function TypedRecall({
           >
             {t('Draw it')}
           </button>
+          <button
+            type="button"
+            className="btn btn-ghost"
+            aria-pressed={inputMode === 'tiles'}
+            data-nudge={(missed && inputMode === 'type') || undefined}
+            onClick={() => {
+              setInputMode('tiles')
+              setFeedback(null)
+            }}
+          >
+            {t('Build it')}
+          </button>
         </div>
+      )}
+      {inputMode === 'tiles' && !solved && !revealed && (
+        <TileAnswer
+          zh={normalizeChinese(word.zh)}
+          onResult={(correct) => {
+            // Choosing from offered characters is supported recall, never unaided.
+            assist()
+            score(correct, true)
+          }}
+        />
       )}
       {drawStarted && !revealed && (
         <div className="hanzi-host" hidden={inputMode !== 'draw'} aria-describedby={`${inputId}-feedback`}>
@@ -356,7 +382,7 @@ function TypedRecall({
       )}
       <div id={`${inputId}-feedback`} aria-live="polite">
         {solved ? (
-          <RecallFeedback key={checkCount} state="correct" />
+          <RecallFeedback key={checkCount} state="correct" label={resultAssisted ? t('Practised with help') : undefined} />
         ) : (
           !revealed && feedback &&
           inputMode === 'type' && (
@@ -441,7 +467,7 @@ function SpeakRecall({ word, n, of, externallyAssisted = false, repeatOnHelp = f
   return (
     <section className="production-stage word-recall compact-recall speak-recall" data-cue="speak" data-finished={phase === 'done'}>
       <header className="compact-recall-heading" aria-label={t('Recall · {n} of {of}', { n, of })}>
-        <h2>{word.en}</h2>
+        <MeaningHeading gloss={word.en} />
         <p className="speak-recall-lead">{t('Say it in Mandarin')}</p>
       </header>
       {phase === 'ask' && (
@@ -545,5 +571,71 @@ function MicGlyph() {
       <rect x="9" y="3" width="6" height="11" rx="3" />
       <path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21" />
     </svg>
+  )
+}
+
+/** The plain Indonesian word first; the other senses quietly below. */
+function MeaningHeading({ gloss }: { gloss: string }) {
+  const core = coreMeaning(gloss) || gloss
+  const rest = otherMeanings(gloss)
+  return (
+    <>
+      <h2>{core}</h2>
+      {rest && <p className="recall-other-meanings">{rest}</p>}
+    </>
+  )
+}
+
+let tileSource: ExWord[] | null = null
+const tilePool = () => (tileSource ??= shuffle(vocabIndex.filter((v) => v.tag !== 'proper').map((v) => ({ zh: v.zh, pinyin: v.pinyin, en: v.en })), rng(7)))
+
+/** Build the word from offered characters: a way out of a blank, scored as help. */
+function TileAnswer({ zh, onResult }: { zh: string; onResult: (correct: boolean) => void }) {
+  const answer = Array.from(zh)
+  const [tiles] = useState(() => characterTiles(zh, tilePool(), rng(seedOf(`recall-tiles:${zh}`))))
+  const [placed, setPlaced] = useState<number[]>([])
+  const [wrong, setWrong] = useState(false)
+  useEffect(() => {
+    if (placed.length !== answer.length) return
+    const correct = placed.map((index) => tiles[index]).join('') === zh
+    onResult(correct)
+    if (correct) return
+    setWrong(true)
+    const timer = window.setTimeout(() => {
+      setPlaced([])
+      setWrong(false)
+    }, 650)
+    return () => window.clearTimeout(timer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [placed])
+  return (
+    <div className="recall-tiles">
+      <div className="duo-slots" aria-live="polite">
+        {answer.map((_, slot) => {
+          const index = placed[slot]
+          const filled = index !== undefined
+          return (
+            <button key={slot} type="button" className="duo-slot zh" lang="zh-CN" data-filled={filled || undefined}
+              data-tone={wrong ? 'wrong' : undefined} disabled={!filled}
+              onClick={() => filled && setPlaced((list) => list.filter((i) => i !== index))}
+              aria-label={filled ? tiles[index] : t('Empty slot')}>
+              {filled ? tiles[index] : ''}
+            </button>
+          )
+        })}
+      </div>
+      <div className="duo-bank duo-bank-chars">
+        {tiles.map((tile, index) => {
+          const used = placed.includes(index)
+          return (
+            <span key={index} className="duo-tile-socket" style={{ ['--i' as string]: index }}>
+              <button type="button" className="duo-tile zh" lang="zh-CN" data-used={used || undefined}
+                disabled={used || placed.length >= answer.length}
+                onClick={() => { playTick(); setPlaced((list) => [...list, index]) }}>{tile}</button>
+            </span>
+          )
+        })}
+      </div>
+    </div>
   )
 }

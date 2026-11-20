@@ -3,7 +3,7 @@ import { withMixedPractice } from '../lib/duoSession'
 import { ExerciseView, type ExerciseOutcome, type EvidenceMode } from '../components/Exercises'
 import { ComboBadge, MomentumProvider, useMomentum, XpFloat } from '../components/Momentum'
 import { useSessionRoute } from '../components/useSessionRoute'
-import { PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
+import { Explain, PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
 import { StudyMusic } from '../components/StudyMusic'
 import { ChapterCheck } from '../components/ChapterCheck'
 import { quizAssisted } from '../lib/choiceSupport'
@@ -482,11 +482,13 @@ function NoteView({
   const spoken = (example?.zh ?? fallBackZh).trim()
 
   return (
-    <>
+    <div className="duo-note">
       <StepHead kicker={head} title={title} />
+      <Explain folded={!!example && body.length > 140}>
       <p className="sub" style={{ textWrap: 'pretty', lineHeight: 1.55 }}>
         {body}
       </p>
+      </Explain>
       {example && (
         <div className="card session-prompt">
           <p
@@ -517,7 +519,7 @@ function NoteView({
         </div>
       )}
       {sheet}
-    </>
+    </div>
   )
 }
 

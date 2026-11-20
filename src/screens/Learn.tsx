@@ -45,6 +45,7 @@ export function LessonPath({
       title={lesson.title.zh}
       subtitle={lesson.title.en}
       open={lessonOpen}
+      position={{ index: lessons.indexOf(lesson) + 1, total: lessons.length, label: t('Lesson {n} of {total}', { n: lessons.indexOf(lesson) + 1, total: lessons.length }) }}
       onOpen={onLesson ? () => onLesson(lesson.lesson) : undefined}
       items={PATH_NODES.map((node) => {
         const done = nodeDone(lesson.lesson, node)

@@ -74,8 +74,10 @@ export function duoLessonSteps<T extends RoutableStep, E extends RoutableStep>(s
   const out: (T | E)[] = []
   let wave: string[] = []
   composed.groups.forEach((group, index) => {
-    const groupMeets = numbered.filter(step => group.words.includes(step.word?.zh ?? '') && !placed.has(step.id ?? ''))
-    groupMeets.forEach(step => placed.add(step.id ?? ''))
+    const found = numbered.filter(step => group.words.includes(step.word?.zh ?? '') && !placed.has(step.id ?? ''))
+    found.forEach(step => placed.add(step.id ?? ''))
+    // "Word 1 of 30" is daunting; a long sitting counts inside the current group instead.
+    const groupMeets = long ? found.map((step, i) => ({ ...step, n: i + 1, of: found.length })) : found
     out.push(...groupMeets, ...group.exercises)
     if (!long) return
     wave.push(...group.words)
