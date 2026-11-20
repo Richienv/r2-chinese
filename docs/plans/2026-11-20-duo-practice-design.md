@@ -77,3 +77,16 @@ CSS transforms and opacity only, 120–420 ms, with spring easing for wins and a
 
 - R2 Fit. Its daily loop already has rings and a level avatar. The same HUD/victory ideas can follow later.
 - Hearts/lives (punitive), leagues, notifications.
+
+## What shipped (20 Nov 2026)
+
+- **Mixed practice in all three courses.** Eight exercise types: meaning, sound, Hanzi, match board, choose the word, continue the sentence, arrange the sentence, build the word. Across all sittings that comes to roughly 4,600 exercises.
+- **Shorter teaching.** One card per word (Jiaocheng's first sitting used to show four cards per word). Words come in groups of up to four, each group recognised straight away. Long sittings (more than 12 new words) run in waves of eight and count "Kata 1 dari 4", not "dari 30".
+- **Never a dead end.** Every miss shows the answer with its Indonesian meaning and comes back two steps later. Recall offers *Susun* tiles (recorded as assisted). A finished match board is a win even after a mix-up.
+- **Meaning first.** The core sense is shown big and the other senses small, in recall, the review and the exercises. Long grammar paragraphs fold behind "Kenapa begitu?" after the example.
+- **Visible progress.** The Home HUD shows streak, XP, today's ring and the week. A winding lesson map, "Pelajaran N dari M", a combo badge with milestone bursts, XP floats, and a progress bar that keeps growing across waves.
+- **Peak-end.** A victory screen with fireworks, XP gained, accuracy, best combo, streak and the daily ring. The review ends with the streak and ring too.
+- **Less friction.** The app opens on Home every launch, straight into the last course.
+- **Fixes.** The Progress ring label no longer overflows. Arrange only uses lines with natural word tiles. Review sittings keep typing from memory (at most 4 built from tiles).
+
+Verification: 20 new tests (composer, route, every real sitting in all three courses), the full suite, typecheck and production build. Browser walkthrough at 375×812 on a separate localhost origin with test data only.
