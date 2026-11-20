@@ -328,10 +328,11 @@ function dedupeSentences(list: readonly ExSentence[]): ExSentence[] {
 }
 
 /** Stage 3: build the word from its characters, from the meaning alone. */
-export function composeProduce(words: readonly ExSource[], ctx: ComposeContext): ExerciseStep[] {
+export function composeProduce(words: readonly ExSource[], ctx: ComposeContext, waves = false): ExerciseStep[] {
   const out: ExerciseStep[] = []
-  // A long sitting builds a third of its words, so every wave has some tiles.
-  const cap = Math.max(MAX_BUILD, Math.ceil(words.length / 3))
+  // A long sitting of new words builds a third of them, so every wave has some tiles.
+  // A review sitting keeps typing from memory for all but a few.
+  const cap = waves ? Math.max(MAX_BUILD, Math.ceil(words.length / 3)) : MAX_BUILD
   for (const word of words) {
     if (out.length >= cap) break
     const answer = Array.from(word.zh)
@@ -372,7 +373,7 @@ export function composeSitting(words: readonly ExSource[], lines: readonly ExSen
   return {
     groups,
     context: interleave(composeContext(words, lines, ctx), kindOf, wordsOf),
-    produce: composeProduce(words, ctx),
+    produce: composeProduce(words, ctx, long),
   }
 }
 
