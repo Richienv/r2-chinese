@@ -1,4 +1,13 @@
-import { compactLessonSteps, compactStepId } from '../lib/sessionRoute'
+import { compactStepId } from '../lib/sessionRoute'
+import { poolOf, withMixedPractice } from '../lib/duoSession'
+import type { ExWord } from '../lib/exercises'
+import { jiaochengLessons as poolUnits } from '../lib/jiaocheng'
+import { ExerciseView, type ExerciseOutcome, type EvidenceMode } from '../components/Exercises'
+import { ComboBadge, MomentumProvider, useMomentum, XpFloat } from '../components/Momentum'
+
+let sharedPool: ExWord[] | null = null
+/** The course's own words, used as wrong answers before the HSK book. */
+const coursePool = () => (sharedPool ??= poolOf(poolUnits))
 import { useSessionRoute } from '../components/useSessionRoute'
 import { PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
 import { StudyMusic } from '../components/StudyMusic'
@@ -205,7 +214,11 @@ export function JiaochengSession({
   if (!unit || !progress.isNodePlayable(lesson, node)) {
     return <LockedView onClose={onClose} />
   }
-  return <JiaochengRunner lesson={lesson} node={node} onClose={onClose} />
+  return (
+    <MomentumProvider>
+      <JiaochengRunner lesson={lesson} node={node} onClose={onClose} />
+    </MomentumProvider>
+  )
 }
 
 function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: PathNode; onClose: () => void }) {
@@ -213,11 +226,12 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
   const progress = useJiaochengProgress()
   const unit = getJiaochengLesson(lesson)!
   const { user } = useAuth()
-  const resumeId = `jiaocheng:production-v2:${user?.id ?? 'local'}:${lesson}:${node}`
+  const resumeId = `jiaocheng:duo-v1:${user?.id ?? 'local'}:${lesson}:${node}`
+  const momentum = useMomentum()
   const checkpoint = useRef(readLearningCheckpoint(resumeId))
   const steps = useMemo(
     () =>
-      (node === 't1' ? (steps: ReturnType<typeof buildJiaochengSteps>) => steps : compactLessonSteps)(buildJiaochengSteps(lesson, node).filter(
+      ((steps: ReturnType<typeof buildJiaochengSteps>) => withMixedPractice(steps, `jc:${lesson}:${node}`, coursePool()))(buildJiaochengSteps(lesson, node).filter(
         (step) =>
           !(
             (step.kind === 'teach' || step.kind === 'recall') &&
@@ -330,6 +344,18 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
     goForward()
   }
 
+  function recordExercise(zh: string, correct: boolean, assisted: boolean, mode: EvidenceMode) {
+    store.encounterWord(zh, lesson + 3000)
+    store.recordRecall(zh, { correct, assisted, mode })
+  }
+
+  function finishExercise(outcome: ExerciseOutcome) {
+    if (step.kind !== 'exercise') return
+    credit(step.id)
+    recordHistory({ course: 'jiaocheng', kind: 'quiz', lesson: lesson, node, correct: !outcome.missed, title: t('Mixed practice') })
+    goForward(outcome.missed)
+  }
+
   function finishRecall(result: RecallResult) {
     if (step.kind !== 'recall') return
     credit(step.id)
@@ -389,6 +415,7 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
         mode: 'recognition',
       })
     }
+    momentum.register(route.key, picked === answer)
     if (picked === answer) {
       playCorrect()
       credit(key)
@@ -424,6 +451,8 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
         <div className="step-bar">
           <i className="yl-progress" style={{ width: `${Math.min(100, progressPct)}%` }} />
         </div>
+        <ComboBadge />
+        <XpFloat />
       </div>
       <SessionProgress kind={step.kind} {...('n' in step && (step.kind === 'teach' || route.inPractice) ? { n: step.n, of: step.of } : {})} />
 
@@ -441,6 +470,14 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
             />
           ) : step.kind === 'read' ? (
             <ReadView text={step.text} />
+          ) : step.kind === 'exercise' ? (
+            <ExerciseView
+              step={step}
+              attemptKey={route.key}
+              repeat={route.pass > 0}
+              onRecord={recordExercise}
+              onDone={finishExercise}
+            />
           ) : step.kind === 'recall' ? (
             <WordRecall
               word={step.word}
@@ -453,6 +490,7 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
                 markAssisted()
               }}
               onAttempt={(correct, assisted, mode) => {
+                momentum.register(route.key, correct)
                 store.recordRecall(step.word.zh, { correct, assisted, mode })
                 markAssisted()
               }}

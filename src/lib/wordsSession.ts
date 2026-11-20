@@ -1,3 +1,4 @@
+import type { ExerciseStep } from './exercises'
 import {
   exampleFor,
   getLesson,
@@ -40,6 +41,7 @@ export type SessionStep =
   | { kind: 'produce'; id: string; example: Example; words: string[]; grammar?: string; n: number; of: number }
   | { kind: 'note'; id: string; title: string; body: string; example: Example | null; kicker?: string; n: number; of: number }
   | { kind: 'quiz'; id: string; question: Question; example: Example | null; n: number; of: number }
+  | ExerciseStep
   | { kind: 'complete' }
 
 export const TEACH_GLOSS = { showPinyin: true, showEnglish: true } as const
@@ -109,7 +111,7 @@ export function nodeCaption(lesson: number, node: PathNode): { en: string; zh: s
 
 function numberSteps(draft: Array<Exclude<SessionStep, { kind: 'complete' }>>): SessionStep[] {
   const words = [...new Set(draft.filter((s) => s.kind === 'teach').map((s) => s.word.zh))]
-  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, recheck: 0, produce: 0 }
+  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, recheck: 0, produce: 0, exercise: 0 }
   const ofs = {
     read: draft.filter((s) => s.kind === 'read').length,
     note: draft.filter((s) => s.kind === 'note').length,
@@ -118,6 +120,7 @@ function numberSteps(draft: Array<Exclude<SessionStep, { kind: 'complete' }>>): 
     dialogue: draft.filter((s) => s.kind === 'dialogue').length,
     recheck: draft.filter((s) => s.kind === 'recheck').length,
     produce: draft.filter((s) => s.kind === 'produce').length,
+    exercise: draft.filter((s) => s.kind === 'exercise').length,
   }
   const steps: SessionStep[] = draft.map((s) => {
     if (s.kind === 'teach') return { ...s, n: words.indexOf(s.word.zh) + 1, of: words.length }

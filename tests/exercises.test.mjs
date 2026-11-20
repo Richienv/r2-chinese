@@ -41,7 +41,10 @@ test('the core meaning is the first plain sense, without notes in brackets', () 
   assert.equal(coreMeaning('habis, hilang (setelah kata kerja)'), 'habis')
   assert.equal(coreMeaning('hukum'), 'hukum')
   assert.equal(coreMeaning(''), '')
-  assert.equal(otherMeanings('kesan, impresi'), 'kesan, impresi')
+  assert.equal(otherMeanings('kesan, impresi'), 'impresi')
+  assert.equal(otherMeanings('hukum; undang-undang'), 'undang-undang')
+  assert.equal(otherMeanings('habis, hilang (setelah kata kerja)'), 'hilang (setelah kata kerja)')
+  assert.equal(otherMeanings('love (between a man and a woman)'), 'between a man and a woman')
   assert.equal(otherMeanings('hukum'), '')
 })
 
@@ -117,11 +120,17 @@ test('arrange tiles rebuild the sentence, and the spare tile is not part of it',
   }
 })
 
-test('sentence tiles glue punctuation to words and cap the count at eight', () => {
+test('sentence tiles are natural words with punctuation glued on, never arbitrary chunks', () => {
   assert.deepEqual(sentenceTiles('我对他印象很深。', segment), ['我', '对', '他', '印象', '很', '深。'])
-  const long = sentenceTiles('我们是在一次足球比赛中认识的我们班跟他们班比赛。', segment)
-  assert.ok(long.length <= 8)
-  assert.equal(long.join(''), '我们是在一次足球比赛中认识的我们班跟他们班比赛。')
+  const long = sentenceTiles('我们是在一次足球比赛中认识的。', segment)
+  assert.equal(long.join(''), '我们是在一次足球比赛中认识的。')
+  assert.ok(long.every((tile) => tile.length <= 3 || tile.endsWith('。')))
+})
+
+test('a line with more than eight words is not offered for arranging', () => {
+  const lines = [{ zh: '听说你男朋友李进跟你是一个学校的，是你同学吗？', en: 'Katanya pacarmu satu sekolah sama kamu?' }]
+  const steps = composeContext([words[4]], lines, ctx)
+  assert.equal(steps.filter((s) => s.exercise.kind === 'arrange').length, 0)
 })
 
 test('a comma split needs real words on both sides', () => {

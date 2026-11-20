@@ -20,6 +20,19 @@ export function useSessionRoute<T extends RoutableStep>(steps: T[], checkpoint?:
     }
     return { index: steps.findIndex(entry => entry.id === round[0]), queue: round, pos: 0, blockEnd: block.end }
   })
+  // Planned practice per wave, so the bar keeps growing across waves instead of restarting.
+  const [plan] = useState(() => {
+    const rounds: { end: number; size: number }[] = []
+    for (let index = 0; index < steps.length; index++) {
+      const block = practiceBlock(steps, index)
+      if (!block) continue
+      rounds.push({ end: block.end, size: practiceRound(block.steps).length })
+      index = block.end
+    }
+    return rounds
+  })
+  const [finished, setFinished] = useState(() => plan.filter(round => round.end < start.index).reduce((n, round) => n + round.size, 0))
+  const [extra, setExtra] = useState(0)
   const [i, setI] = useState(start.index)
   const [queue, setQueue] = useState<string[] | null>(start.queue)
   const [pos, setPos] = useState(start.pos)
@@ -30,9 +43,9 @@ export function useSessionRoute<T extends RoutableStep>(steps: T[], checkpoint?:
   const pass = inPractice && queue ? queue.slice(0, pos).filter(id => id === raw.id).length : 0
   const step = inPractice && queue ? { ...raw, n: pos + 1, of: queue.length } : raw
   const knowledgeCount = steps.filter(entry => !isPracticeStep(entry) && entry.kind !== 'complete').length
-  const practiceCount = steps.filter(isPracticeStep).length
+  const practiceCount = plan.reduce((n, round) => n + round.size, 0) + extra
   const doneKnowledge = steps.slice(0, i).filter(entry => !isPracticeStep(entry) && entry.kind !== 'complete').length
-  const progress = raw.kind === 'complete' ? 100 : Math.min(98, ((doneKnowledge + (inPractice ? pos : 0)) / Math.max(1, knowledgeCount + practiceCount)) * 100)
+  const progress = raw.kind === 'complete' ? 100 : Math.min(98, ((doneKnowledge + finished + (inPractice ? pos : 0)) / Math.max(1, knowledgeCount + practiceCount)) * 100)
 
   function enter(nextQueue: string[], nextPos: number, end: number | null) {
     setBlockEnd(end)
@@ -58,11 +71,13 @@ export function useSessionRoute<T extends RoutableStep>(steps: T[], checkpoint?:
           repeats.current.set(id, (repeats.current.get(id) ?? 0) + 1)
           nextQueue = requeue(queue, pos, id)
           setQueue(nextQueue)
+          setExtra(n => n + 1)
         }
         if (pos + 1 < nextQueue.length) {
           enter(nextQueue, pos + 1, blockEnd)
           return
         }
+        setFinished(n => n + nextQueue.length)
         setQueue(null)
         setPos(0)
         setI(Math.min((blockEnd ?? i) + 1, steps.length - 1))

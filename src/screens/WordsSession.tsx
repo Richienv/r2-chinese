@@ -1,4 +1,7 @@
-import { compactLessonSteps, compactStepId } from '../lib/sessionRoute'
+import { compactStepId } from '../lib/sessionRoute'
+import { withMixedPractice } from '../lib/duoSession'
+import { ExerciseView, type ExerciseOutcome, type EvidenceMode } from '../components/Exercises'
+import { ComboBadge, MomentumProvider, useMomentum, XpFloat } from '../components/Momentum'
 import { useSessionRoute } from '../components/useSessionRoute'
 import { PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
 import { StudyMusic } from '../components/StudyMusic'
@@ -54,14 +57,19 @@ export function WordsSession({
   if (!isSessionOpen(lesson, node) || !isNodePlayable(lesson, node, store.isNodeDone)) {
     return <LockedView onClose={onClose} />
   }
-  return <WordsRunner lesson={lesson} node={node} onClose={onClose} />
+  return (
+    <MomentumProvider>
+      <WordsRunner lesson={lesson} node={node} onClose={onClose} />
+    </MomentumProvider>
+  )
 }
 
 function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode; onClose: () => void }) {
   const store = useStore()
   const { user } = useAuth()
   // Production activities change the sequence; don't reinterpret old numeric checkpoints.
-  const resumeId = `hsk:production-v2:${user?.id ?? 'local'}:${lesson}:${node}`
+  const resumeId = `hsk:duo-v1:${user?.id ?? 'local'}:${lesson}:${node}`
+  const momentum = useMomentum()
   const checkpoint = useRef(readLearningCheckpoint(resumeId))
   const [steps] = useState(() => {
     const base = buildSteps(lesson, node).filter(
@@ -77,7 +85,7 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
       const recall = base.find((activity) => activity.kind === 'recall' && activity.word.zh === zh)
       return recall ? [{ ...recall, id: `retry:${zh}`, n: 1, of: 1 } as SessionStep] : []
     })
-    return compactLessonSteps([...base.slice(0, -1), ...retries, base[base.length - 1]])
+    return withMixedPractice([...base.slice(0, -1), ...retries, base[base.length - 1]], `hsk:${lesson}:${node}`)
   })
   const sessionWords = useMemo(
     () => [...new Set(steps.filter((s) => s.kind === 'recall').map((s) => s.word.zh))],
@@ -174,6 +182,17 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
     goForward()
   }
 
+  function recordExercise(zh: string, correct: boolean, assisted: boolean, mode: EvidenceMode) {
+    store.recordRecall(zh, { correct, assisted, mode })
+  }
+
+  function finishExercise(outcome: ExerciseOutcome) {
+    if (step.kind !== 'exercise') return
+    credit(step.id)
+    recordHistory({ course: 'hsk4a', kind: 'quiz', lesson, node, correct: !outcome.missed, title: t('Mixed practice') })
+    goForward(outcome.missed)
+  }
+
   function finishRecall(result: RecallResult) {
     if (step.kind !== 'recall') return
     credit(step.id)
@@ -231,6 +250,7 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
         mode: 'recognition',
       })
 
+    momentum.register(route.key, picked === answer)
     if (picked === answer) {
       playCorrect()
       credit(key)
@@ -268,6 +288,8 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
         <div className="step-bar">
           <i className="yl-progress" style={{ width: `${Math.min(100, progress)}%` }} />
         </div>
+        <ComboBadge />
+        <XpFloat />
       </div>
 
       <SessionProgress kind={step.kind} {...('n' in step && (step.kind === 'teach' || route.inPractice) ? { n: step.n, of: step.of } : {})} />
@@ -286,6 +308,14 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
             />
           ) : step.kind === 'read' ? (
             <ReadView text={step.text} />
+          ) : step.kind === 'exercise' ? (
+            <ExerciseView
+              step={step}
+              attemptKey={route.key}
+              repeat={route.pass > 0}
+              onRecord={recordExercise}
+              onDone={finishExercise}
+            />
           ) : step.kind === 'recall' ? (
             <WordRecall
               word={step.word}
@@ -298,6 +328,7 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
                 setProgressPeeks((previous) => ({ ...previous, [step.id]: true }))
               }}
               onAttempt={(correct, assisted, mode) => {
+                momentum.register(route.key, correct)
                 store.recordRecall(step.word.zh, { correct, assisted, mode })
                 // Once scored, the source answer is visible; reopening is assisted.
                 setProgressPeeks((previous) => ({ ...previous, [step.id]: true }))

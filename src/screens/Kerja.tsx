@@ -1,4 +1,13 @@
-import { compactLessonSteps, compactStepId } from '../lib/sessionRoute'
+import { compactStepId } from '../lib/sessionRoute'
+import { poolOf, withMixedPractice } from '../lib/duoSession'
+import type { ExWord } from '../lib/exercises'
+import { kerjaChapters as poolUnits } from '../lib/kerja'
+import { ExerciseView, type ExerciseOutcome, type EvidenceMode } from '../components/Exercises'
+import { ComboBadge, MomentumProvider, useMomentum, XpFloat } from '../components/Momentum'
+
+let sharedPool: ExWord[] | null = null
+/** The course's own words, used as wrong answers before the HSK book. */
+const coursePool = () => (sharedPool ??= poolOf(poolUnits))
 import { useSessionRoute } from '../components/useSessionRoute'
 import { PracticeExit, SessionProgress, SessionSummary } from '../components/SessionFlow'
 import { StudyMusic } from '../components/StudyMusic'
@@ -178,7 +187,11 @@ export function KerjaSession({
   if (!ch || !kerjaNode || !progress.isNodePlayable(chapter, kerjaNode)) {
     return <LockedView onClose={onClose} />
   }
-  return <KerjaRunner chapter={chapter} node={kerjaNode} onClose={onClose} />
+  return (
+    <MomentumProvider>
+      <KerjaRunner chapter={chapter} node={kerjaNode} onClose={onClose} />
+    </MomentumProvider>
+  )
 }
 
 function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaNode; onClose: () => void }) {
@@ -186,18 +199,19 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
   const progress = useKerjaProgress()
   const ch = getKerjaChapter(chapter)!
   const { user } = useAuth()
-  const resumeId = `kerja:production-v2:${user?.id ?? 'local'}:${chapter}:${node}`
+  const resumeId = `kerja:duo-v1:${user?.id ?? 'local'}:${chapter}:${node}`
+  const momentum = useMomentum()
   const checkpoint = useRef(readLearningCheckpoint(resumeId))
   const steps = useMemo(
     () =>
-      compactLessonSteps(buildKerjaSteps(chapter, node).filter(
+      withMixedPractice(buildKerjaSteps(chapter, node).filter(
         (step) =>
           !(
             (step.kind === 'teach' || step.kind === 'recall') &&
             isComfortable(store, step.word.zh) &&
             step.id !== compactStepId(checkpoint.current?.stepId)
           ),
-      )),
+      ), `kerja:${chapter}:${node}`, coursePool()),
     [chapter, node],
   )
   const sessionWords = useMemo(
@@ -303,6 +317,18 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
     goForward()
   }
 
+  function recordExercise(zh: string, correct: boolean, assisted: boolean, mode: EvidenceMode) {
+    store.encounterWord(zh, chapter + 1000)
+    store.recordRecall(zh, { correct, assisted, mode })
+  }
+
+  function finishExercise(outcome: ExerciseOutcome) {
+    if (step.kind !== 'exercise') return
+    credit(step.id)
+    recordHistory({ course: 'kerja', kind: 'quiz', lesson: chapter, node, correct: !outcome.missed, title: t('Mixed practice') })
+    goForward(outcome.missed)
+  }
+
   function finishRecall(result: RecallResult) {
     if (step.kind !== 'recall') return
     credit(step.id)
@@ -362,6 +388,7 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
         mode: 'recognition',
       })
     }
+    momentum.register(route.key, picked === answer)
     if (picked === answer) {
       playCorrect()
       credit(key)
@@ -397,6 +424,8 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
         <div className="step-bar">
           <i className="yl-progress" style={{ width: `${Math.min(100, progressPct)}%` }} />
         </div>
+        <ComboBadge />
+        <XpFloat />
       </div>
       <SessionProgress kind={step.kind} {...('n' in step && (step.kind === 'teach' || route.inPractice) ? { n: step.n, of: step.of } : {})} />
 
@@ -414,6 +443,14 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
             />
           ) : step.kind === 'read' ? (
             <ReadView text={step.text} />
+          ) : step.kind === 'exercise' ? (
+            <ExerciseView
+              step={step}
+              attemptKey={route.key}
+              repeat={route.pass > 0}
+              onRecord={recordExercise}
+              onDone={finishExercise}
+            />
           ) : step.kind === 'recall' ? (
             <WordRecall
               word={step.word}
@@ -426,6 +463,7 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
                 markAssisted()
               }}
               onAttempt={(correct, assisted, mode) => {
+                momentum.register(route.key, correct)
                 store.recordRecall(step.word.zh, { correct, assisted, mode })
                 markAssisted()
               }}

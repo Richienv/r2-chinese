@@ -1,3 +1,4 @@
+import type { ExerciseStep } from './exercises'
 import { buildRecheck } from './dialogue-check'
 import { applyOverlay, type Overlay } from './localize'
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
@@ -229,6 +230,7 @@ export type JiaochengSessionStep =
   | { kind: 'produce'; id: string; example: Example; words: string[]; grammar?: string; n: number; of: number }
   | { kind: 'note'; id: string; title: string; body: string; example: Example | null; n: number; of: number }
   | { kind: 'quiz'; id: string; question: Question; n: number; of: number }
+  | ExerciseStep
   | { kind: 'complete' }
 
 function numberSteps(draft: Array<Exclude<JiaochengSessionStep, { kind: 'complete' }>>): JiaochengSessionStep[] {
@@ -236,7 +238,7 @@ function numberSteps(draft: Array<Exclude<JiaochengSessionStep, { kind: 'complet
   for (const s of draft) {
     if (s.kind === 'teach' && !wordOrder.includes(s.word.zh)) wordOrder.push(s.word.zh)
   }
-  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, recheck: 0, produce: 0 }
+  const counts = { read: 0, note: 0, quiz: 0, recall: 0, dialogue: 0, recheck: 0, produce: 0, exercise: 0 }
   const ofs = {
     read: draft.filter((s) => s.kind === 'read').length,
     note: draft.filter((s) => s.kind === 'note').length,
@@ -245,6 +247,7 @@ function numberSteps(draft: Array<Exclude<JiaochengSessionStep, { kind: 'complet
     dialogue: draft.filter((s) => s.kind === 'dialogue').length,
     recheck: draft.filter((s) => s.kind === 'recheck').length,
     produce: draft.filter((s) => s.kind === 'produce').length,
+    exercise: draft.filter((s) => s.kind === 'exercise').length,
   }
   const steps: JiaochengSessionStep[] = draft.map((s) => {
     if (s.kind === 'teach') return { ...s, n: wordOrder.indexOf(s.word.zh) + 1, of: wordOrder.length }

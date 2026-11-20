@@ -75,6 +75,14 @@ function readCourse(): CourseId {
   return 'hsk4a'
 }
 
+function hasSavedCourse(): boolean {
+  try {
+    return localStorage.getItem(COURSE_KEY) !== null
+  } catch {
+    return false
+  }
+}
+
 interface CourseStore {
   course: CourseId
   /** False until the learner picks a course on the opening page. */
@@ -87,7 +95,8 @@ const Ctx = createContext<CourseStore | null>(null)
 
 export function CourseProvider({ children }: { children: ReactNode }) {
   const [course, setCourseState] = useState<CourseId>(() => readCourse())
-  const [entered, setEntered] = useState(false)
+  // A returning learner opens straight on their last course: one tap less every morning.
+  const [entered, setEntered] = useState(() => hasSavedCourse())
 
   useEffect(() => {
     try {

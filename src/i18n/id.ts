@@ -11,8 +11,10 @@ import review from './id/review.ts'
 import courses from './id/courses.ts'
 import reading from './id/reading.ts'
 import engine from './id/engine.ts'
+import duo from './id/duo.ts'
 
 const id: Record<string, string> = {
+  ...duo,
   ...focus,
   ...compact,
   ...usability,

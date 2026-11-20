@@ -67,6 +67,7 @@ export const MAX_CLOZE = 2
 export const MAX_ARRANGE = 2
 export const MAX_BUILD = 4
 export const MAX_TILES = 8
+export const MAX_ARRANGE_HAN = 16
 /** Mirrors LONG_SITTING in sessionRoute: above this, a sitting runs in waves. */
 export const LONG_WORDS = 12
 
@@ -84,12 +85,12 @@ export function coreMeaning(gloss: string): string {
   return (head || first || plain).trim()
 }
 
-/** The rest of the gloss after the core meaning, for a quiet second line. */
+/** The other senses after the core meaning ("kesan, impresi" → "impresi"), for a quiet second line. */
 export function otherMeanings(gloss: string): string {
-  const core = coreMeaning(gloss)
-  const rest = gloss.trim()
-  if (!core || rest === core) return ''
-  return rest
+  const senses = gloss.trim().split(/\s*[;,]\s*(?![^（(]*[）)])/).filter(Boolean)
+  if (!senses.length) return ''
+  const note = senses[0].match(/[（(]([^）)]*)[）)]/)?.[1]?.trim()
+  return [note, ...senses.slice(1)].filter((part): part is string => !!part && part !== coreMeaning(gloss)).join(', ')
 }
 
 const key = (text: string) => text.toLocaleLowerCase().replace(/\s+/g, ' ').trim()
@@ -219,7 +220,7 @@ function plain(w: ExWord): ExWord {
   return { zh: w.zh, pinyin: w.pinyin, en: w.en, ...(w.pos ? { pos: w.pos } : {}) }
 }
 
-/** Sentence tiles: natural words, punctuation glued to its neighbour, at most eight tiles. */
+/** Sentence tiles: natural words, with punctuation glued to its neighbour. Never arbitrary chunks. */
 export function sentenceTiles(zh: string, segment: (zh: string) => string[]): string[] {
   const raw = segment(zh).filter((part) => part.length > 0)
   const tiles: string[] = []
@@ -230,13 +231,6 @@ export function sentenceTiles(zh: string, segment: (zh: string) => string[]): st
   }
   // A leading punctuation tile joins the next one.
   if (tiles.length > 1 && PUNCT.test(tiles[0])) tiles.splice(0, 2, tiles[0] + tiles[1])
-  while (tiles.length > MAX_TILES) {
-    let best = 0
-    for (let i = 1; i < tiles.length - 1; i++) {
-      if (tiles[i].length + tiles[i + 1].length < tiles[best].length + tiles[best + 1].length) best = i
-    }
-    tiles.splice(best, 2, tiles[best] + tiles[best + 1])
-  }
   return tiles
 }
 
@@ -303,14 +297,15 @@ export function composeContext(words: readonly ExSource[], lines: readonly ExSen
   // Arrange: build the line from tiles, cued by its meaning, plus one tile that does not belong.
   const arrangeable = sentences.filter((s) => {
     const n = hanLength(s.zh)
-    return !!s.en && n >= 5 && n <= 22 && !usedSentences.has(s.zh) && s.zh !== target?.s.zh
+    return !!s.en && n >= 5 && n <= MAX_ARRANGE_HAN && !usedSentences.has(s.zh) && s.zh !== target?.s.zh
   })
   const ranked = [...arrangeable].sort((a, b) => wordsIn(b) - wordsIn(a))
   let arranged = 0
   for (const sentence of ranked) {
     if (arranged >= MAX_ARRANGE) break
     const answer = sentenceTiles(sentence.zh, ctx.segment)
-    if (answer.length < 3) continue
+    // Too many words would mean gluing them into odd chunks; such a line is skipped.
+    if (answer.length < 3 || answer.length > MAX_TILES) continue
     const rand = rng(seedOf(`${ctx.seed}:arrange:${sentence.zh}`))
     const spare = shuffle([...words, ...ctx.pool].filter((w) => HAN.test(w.zh) && !sentence.zh.includes(w.zh) && !answer.includes(w.zh)), rand)[0]
     const tiles = shuffle([...answer, ...(spare ? [spare.zh] : [])], rand)
