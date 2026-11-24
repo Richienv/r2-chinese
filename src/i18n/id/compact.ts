@@ -71,6 +71,7 @@ export default {
   'From the meaning': 'Dari arti',
   'From the sound': 'Dari suara',
   'From the sentence': 'Dari kalimat',
+  'In a sentence': 'Dalam kalimat',
   'Say it': 'Ucapin',
   'How to recall': 'Cara mengingat',
   'Midterm mock': 'Ujian tengah semester',

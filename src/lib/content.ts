@@ -202,7 +202,23 @@ export function hasWordToken(haystack: string, word: string): boolean {
 export function blankedExample(word: string): (Example & { blank: string }) | null {
   const example = exampleFor(word)
   if (!example?.zh.includes(word)) return null
-  return { ...example, blank: example.zh.replace(word, '＿'.repeat(Array.from(word).length)) }
+  const gap = '＿'.repeat(Array.from(word).length)
+  // Blank every place the word stands on its own, so a sentence that uses it twice
+  // (毕业 … 毕业后) never shows the answer.
+  let blank = ''
+  let at = 0
+  let from = 0
+  while (from < example.zh.length) {
+    const i = example.zh.indexOf(word, from)
+    if (i < 0) break
+    from = i + word.length
+    if (insideLongerToken(example.zh, i, word)) continue
+    blank += example.zh.slice(at, i) + gap
+    at = from
+  }
+  blank += example.zh.slice(at)
+  // A copy left inside a longer word (窗 in 窗户, 堵 in 堵车) would still give it away.
+  return { ...example, blank: blank.split(word).join(gap) }
 }
 
 /** Overlay / course example first; else the book's shortest sentence that contains the word as a token. */

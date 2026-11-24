@@ -205,6 +205,10 @@ body .btn.duo-next { width:100%; }
 
 /* Recall: meaning first, and a tile way out when the mind goes blank */
 .recall-other-meanings { margin:6px 0 0; font-size:14px; line-height:1.5; color:var(--muted); text-align:center; }
+.recall-context { max-width:460px; margin:14px auto 0; padding:10px 14px 12px; border-radius:14px; background:var(--accent-soft); text-align:center; }
+.recall-context-label { margin:0 0 4px; font-size:11px; font-weight:700; letter-spacing:.04em; color:var(--muted); }
+.recall-context .zh { margin:0; font-family:var(--sc); font-size:clamp(17px,4.8vw,21px); line-height:1.6; color:var(--ink); text-wrap:balance; }
+.recall-context-translation { margin:6px 0 0; font-size:13px; line-height:1.5; color:var(--muted); text-wrap:pretty; }
 .recall-tiles { display:grid; gap:12px; padding:6px 0 4px; }
 .word-recall-input-mode .btn[data-nudge] { border-color:var(--duo-gold); color:var(--duo-gold-ink); background:var(--duo-gold-bg); animation:duo-nudge 1.6s ease-in-out 2; }
 @keyframes duo-nudge { 50% { transform:translateY(-3px); box-shadow:0 6px 16px -8px rgba(232,163,58,.6); } }

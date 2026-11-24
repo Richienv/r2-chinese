@@ -10,6 +10,7 @@ import { ReviewReport } from './ReviewReport'
 import { StrokeWord } from './StrokeWord'
 import { playAdvance, playCorrect, playHint, playReveal, playWrong } from '../lib/sfx'
 import { blankedExample, exampleFor, vocabIndex } from '../lib/content'
+import { contextWindow } from '../lib/recallContext'
 import { characterTiles, coreMeaning, otherMeanings, type ExWord } from '../lib/exercises'
 import { rng, seedOf, shuffle } from '../lib/seeded'
 import { playTick } from '../lib/sfx'
@@ -152,6 +153,10 @@ function TypedRecall({
   const sentence = requested === 'sentence' ? blankedExample(word.zh) : null
   // A word the book never uses in a sentence is asked from its meaning instead.
   const cue: DrillCue = requested === 'sound' || requested === 'pinyin' ? requested : 'meaning'
+  // The meaning alone can fit several words. The book's own sentence, with the word blanked,
+  // says which one is meant. It is context, not a hint, so it never marks the attempt as helped.
+  const contextSource = cue === 'meaning' && !sentence ? blankedExample(word.zh) : null
+  const context = contextSource ? contextWindow(contextSource.blank, contextSource.en) : null
   const ladder = hintLadder(cue)
   const inputId = useId()
   const characterCount = Array.from(normalizeChinese(word.zh)).length
@@ -244,6 +249,13 @@ function TypedRecall({
           </div>
         ) : (
           cue === 'meaning' ? <MeaningHeading gloss={word.en} /> : <h2>{HEADINGS[cue]}</h2>
+        )}
+        {context && !solved && !revealed && (
+          <div className="recall-context">
+            <p className="recall-context-label">{t('In a sentence')}</p>
+            <p className="zh" lang="zh-CN">{context.zh}</p>
+            {context.en && <p className="recall-context-translation">{context.en}</p>}
+          </div>
         )}
         {cue === 'sound' && <ListenCue text={word.zh} />}
         {cue === 'pinyin' && <p className="production-pinyin">{word.pinyin}</p>}
