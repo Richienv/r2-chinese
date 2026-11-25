@@ -1,5 +1,9 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
+import { createServer } from 'vite'
+import { createServer as createHttpServer } from 'node:http'
+import { createElement } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
 import {
   availableGrammarTags,
   buildExamPaper,
@@ -143,4 +147,98 @@ test('buildExamPaper supports mixed mode, grammar focus filtering, and graph wea
   })
   const prioritized = buildExamPaper({ course: 'mixed', mode: 'grammar', graph: g })
   assert.equal(prioritized[0].breakdown.grammarTag, targetTag)
+})
+
+test('JiaochengMidterm UI & HskPracticeEntry render cleanly across all 5 question types for hsk4a and jiaocheng', async () => {
+  const transport = createHttpServer()
+  const server = await createServer({
+    configFile: false,
+    server: { middlewareMode: true, hmr: { server: transport } },
+    appType: 'custom',
+  })
+  try {
+    const [
+      { withLang },
+      { JiaochengMidterm, ExamPartCard },
+      { HskPracticeEntry },
+      { StoreProvider, normalize },
+    ] = await Promise.all([
+      server.ssrLoadModule('/src/lib/i18n.ts'),
+      server.ssrLoadModule('/src/screens/JiaochengMidterm.tsx'),
+      server.ssrLoadModule('/src/components/HskPracticeEntry.tsx'),
+      server.ssrLoadModule('/src/store/store.tsx'),
+    ])
+    const initial = normalize(undefined)
+
+    withLang('id', () => {
+      // 1. Practice entry buttons for Exam & Grammar Drill
+      const entryHtml = renderToStaticMarkup(
+        createElement(
+          StoreProvider,
+          { initial },
+          createElement(HskPracticeEntry, {
+            onListen: () => {},
+            onCompose: () => {},
+            onExam: () => {},
+          }),
+        ),
+      )
+      assert.match(entryHtml, /hsk-practice-door-exam/)
+      assert.match(entryHtml, /hsk-practice-door-grammar/)
+
+      // 2. Clean overlay structure: compact header + Atur button + progress bar + sticky footer + collapsed setup panel
+      for (const [course, expectedTitle] of [
+        ['hsk4a', 'Tryout HSK 4'],
+        ['jiaocheng', 'Tryout Jiaocheng'],
+        ['mixed', 'Final Campuran'],
+      ]) {
+        const html = renderToStaticMarkup(
+          createElement(
+            StoreProvider,
+            { initial },
+            createElement(JiaochengMidterm, {
+              initialCourse: course,
+              onClose: () => {},
+            }),
+          ),
+        )
+        assert.ok(html.includes(expectedTitle), `Expected concise title ${expectedTitle}`)
+        assert.match(html, /jiaocheng-midterm-setup-btn[^>]*aria-expanded="false"[^>]*>Atur</)
+        assert.match(html, /jiaocheng-midterm-progress/)
+        assert.doesNotMatch(html, /jiaocheng-midterm-dots/)
+        assert.doesNotMatch(html, /id="exam-setup-panel"/)
+        assert.match(html, /jiaocheng-midterm-foot/)
+      }
+
+      // 3. Render all 5 question types for both hsk4a and jiaocheng (both unchecked and checked breakdown)
+      for (const [courseName, parts] of [
+        ['hsk4a', buildHsk4Exam()],
+        ['jiaocheng', buildJiaochengMidterm()],
+      ]) {
+        for (const kind of ['blanks', 'choice', 'order', 'error', 'reading']) {
+          const sample = parts.find((p) => p.kind === kind)
+          assert.ok(sample, `Missing ${kind} in ${courseName}`)
+          const uncheckedHtml = renderToStaticMarkup(
+            createElement(ExamPartCard, { part: sample, checked: false }),
+          )
+          assert.match(uncheckedHtml, /jiaocheng-midterm-card/)
+          assert.ok(uncheckedHtml.includes(sample.title), `Expected title for ${courseName}:${kind}`)
+
+          const checkedHtml = renderToStaticMarkup(
+            createElement(ExamPartCard, {
+              part: sample,
+              checked: true,
+              picked: 'answer' in sample ? sample.answer : undefined,
+              score: partPoints(sample),
+            }),
+          )
+          assert.match(checkedHtml, /jiaocheng-midterm-reveal/)
+          assert.match(checkedHtml, /jiaocheng-midterm-breakdown/)
+        }
+      }
+    })
+  } finally {
+    await server.close()
+    transport.close()
+  }
 })

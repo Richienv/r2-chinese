@@ -19,6 +19,7 @@ const JiayinPath = lazy(() => import('./Jiayin').then((m) => ({ default: m.Jiayi
 import { LessonPath } from './Learn'
 import { useStore, type PathNode } from '../store/store'
 import '../styles/home-alive.css'
+import '../styles/jiaocheng-midterm.css'
 
 export function Home({
   onSession,

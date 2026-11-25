@@ -46,6 +46,7 @@ import {
   mergeProgress,
   exportLearningStorage,
 } from '../lib/progressStorage'
+import { isCoreBookVocab } from '../lib/content'
 import { t } from '../lib/i18n'
 
 /** localStorage cache is namespaced per account so switching users can't mix data. */
@@ -424,13 +425,15 @@ export function StoreProvider({
 
   const addCards = useCallback(
     (lesson: number, words: { zh: string }[]) => {
-      setState((s) => enqueueWords(s, lesson, words))
+      const core = words.filter((w) => isCoreBookVocab(w.zh))
+      if (!core.length) return
+      setState((s) => enqueueWords(s, lesson, core))
     },
     [setState],
   )
 
   const encounterWord = useCallback((zh: string, lesson: number) => {
-    if (!zh.trim()) return
+    if (!zh.trim() || !isCoreBookVocab(zh)) return
     setState((s) => {
       return {
         ...s,
@@ -441,7 +444,7 @@ export function StoreProvider({
 
   const recordRecall = useCallback(
     (zh: string, input: RecallInput) => {
-      if (!zh.trim()) return
+      if (!zh.trim() || !isCoreBookVocab(zh)) return
       const lessonOffset = latest.current.cards[zh]?.lesson ?? latest.current.mastery[zh]?.lesson ?? 0
       const event = eventFor(zh, lessonOffset, input)
       const { course, unit } = graphCourseOf(lessonOffset)
@@ -465,8 +468,9 @@ export function StoreProvider({
   )
 
   const finishLesson = useCallback((lesson: number, words: { zh: string }[], xp: number) => {
+    const core = words.filter((w) => isCoreBookVocab(w.zh))
     setState((s) => {
-      const next = creditProgress(enqueueWords(s, lesson, words), {
+      const next = creditProgress(enqueueWords(s, lesson, core), {
         id: crypto.randomUUID(),
         at: Date.now(),
         day: dayKey(),
@@ -643,11 +647,12 @@ export function StoreProvider({
             next.lessonsDone.includes(spec.lesson) || PATH_NODES.every((n) => nodes.includes(n))
           if (alreadyDone) continue
           newlySkipped.push(spec.lesson)
-          next = enqueueWords(next, spec.lesson, spec.words, now)
+          const coreWords = spec.words.filter((w) => isCoreBookVocab(w.zh))
+          next = enqueueWords(next, spec.lesson, coreWords, now)
           graphSpecs.push({
             lesson: spec.lesson,
             title: spec.title,
-            words: spec.words.map((w) => w.zh),
+            words: coreWords.map((w) => w.zh),
             grammarPoints: spec.grammarPoints,
           })
         }
@@ -687,7 +692,7 @@ export function StoreProvider({
       setState((s) => {
         let next = s
         for (const spec of skippedSpecs) {
-          next = enqueueWords(next, lessonOffset + spec.lesson, spec.words, now)
+          next = enqueueWords(next, lessonOffset + spec.lesson, spec.words.filter((w) => isCoreBookVocab(w.zh)), now)
         }
         const course = skippedSpecs[0].course
         const learnerGraph = recordSkippedLessons(next.learnerGraph, {
@@ -695,7 +700,7 @@ export function StoreProvider({
           lessons: skippedSpecs.map((spec) => ({
             lesson: spec.lesson,
             title: spec.title,
-            words: spec.words.map((w) => w.zh),
+            words: spec.words.filter((w) => isCoreBookVocab(w.zh)).map((w) => w.zh),
             grammarPoints: spec.grammarPoints,
           })),
           at: now,

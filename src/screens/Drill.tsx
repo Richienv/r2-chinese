@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { CheckIcon, CloseIcon } from '../components/Icons'
 import { WordRecall, type RecallAttemptMode } from '../components/WordRecall'
-import { lessonOf, lookup } from '../lib/content'
+import { isCoreBookVocab, lessonOf, lookup } from '../lib/content'
 import { bundledDictionaryEntry } from '../lib/dictionary'
 import { drillSelection, SHORT_DRILL_WORDS } from '../lib/practiceExperience'
 import '../styles/usability.css'
@@ -94,7 +94,7 @@ export function DrillFlow({
   const word = zh ? lookup(zh) : undefined
 
   useEffect(() => {
-    if (zh) encounterWord(zh, lessonOf(zh) ?? 0)
+    if (zh && isCoreBookVocab(zh)) encounterWord(zh, lessonOf(zh) ?? 0)
   }, [zh, encounterWord])
 
   // Words saved from readers may only have an evicted dictionary entry; fetch it before showing a gap.

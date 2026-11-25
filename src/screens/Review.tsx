@@ -4,7 +4,7 @@ import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { HearButton } from '../components/Hear'
 import { ListenCue } from '../components/ListenCue'
 import { CloseIcon } from '../components/Icons'
-import { blankedExample, corpusPeers, enrichVocab, exampleFor, lessonOf, lookup, vocabIndex } from '../lib/content'
+import { blankedExample, corpusPeers, enrichVocab, exampleFor, isCoreBookVocab, lessonOf, lookup, vocabIndex } from '../lib/content'
 import { getLang, t } from '../lib/i18n'
 import { matchesHanzi } from '../lib/mastery'
 import { isComfortable, wordState } from '../lib/learningEngine'
@@ -78,6 +78,49 @@ const LOOKUP_POOL = 30
 /** One verdict per attempt, shown as a colour and a short word. */
 type Verdict = 'correct' | 'helped' | 'wrong' | 'unknown' | 'self'
 
+/** Select default or placement Active Recall candidates strictly from core curriculum vocabulary. */
+export function selectRecallCandidates({
+  words,
+  placement = false,
+  cardList,
+  cards,
+  learningTrail,
+  graph,
+  isWordComfortable,
+}: {
+  words?: string[]
+  placement?: boolean
+  cardList: Card[]
+  cards: Record<string, Card>
+  learningTrail: string[]
+  graph: ReturnType<typeof getLearnerGraphSnapshot>
+  isWordComfortable: (zh: string) => boolean
+}): string[] {
+  if (words?.length) return [...new Set(words)].slice(0, LOOKUP_POOL)
+  if (placement) {
+    const coreTrail = learningTrail.filter(isCoreBookVocab)
+    const base = coreTrail.length
+      ? coreTrail.filter((zh) => !cards[zh]?.baseline && !isWordComfortable(zh))
+      : vocabIndex.map((w) => w.zh).filter(isCoreBookVocab).slice(0, QUEUE_SIZE)
+    return prioritizeWords(graph, base).slice(0, LOOKUP_POOL)
+  }
+  const dueList = dueCards(cardList)
+    .map((c) => c.zh)
+    .filter(isCoreBookVocab)
+  const skippedList = skippedWordsForRecall(graph).filter((w) => isCoreBookVocab(w) && !isWordComfortable(w))
+  const weakGraphWords = Object.values(graph.nodes)
+    .filter(
+      (n) =>
+        n.kind === 'word' &&
+        isCoreBookVocab(n.label) &&
+        priorityScore(graph, n.label) >= 1.5 &&
+        !isWordComfortable(n.label),
+    )
+    .map((n) => n.label)
+  const combined = [...new Set([...dueList, ...skippedList, ...weakGraphWords])]
+  return prioritizeWords(graph, combined).slice(0, LOOKUP_POOL)
+}
+
 export function ReviewFlow({
   words,
   title,
@@ -91,23 +134,19 @@ export function ReviewFlow({
 }) {
   const store = useStore()
   const graph = store.learnerGraph ?? getLearnerGraphSnapshot()
-  const candidates = useMemo(() => {
-    if (words?.length) return [...new Set(words)].slice(0, LOOKUP_POOL)
-    if (placement) {
-      const base = store.learningTrail.length
-        ? store.learningTrail.filter((zh) => !store.cards[zh]?.baseline && !isComfortable(store, zh))
-        : vocabIndex.slice(0, QUEUE_SIZE).map((w) => w.zh)
-      return prioritizeWords(graph, base).slice(0, LOOKUP_POOL)
-    }
-    const dueList = dueCards(store.cardList).map((c) => c.zh)
-    const skippedList = skippedWordsForRecall(graph).filter((w) => !isComfortable(store, w))
-    const weakGraphWords = Object.values(graph.nodes)
-      .filter((n) => n.kind === 'word' && priorityScore(graph, n.label) >= 1.5 && !isComfortable(store, n.label))
-      .map((n) => n.label)
-    const combined = [...new Set([...dueList, ...skippedList, ...weakGraphWords])]
-    return prioritizeWords(graph, combined).slice(0, LOOKUP_POOL)
+  const candidates = useMemo(
+    () =>
+      selectRecallCandidates({
+        words,
+        placement,
+        cardList: store.cardList,
+        cards: store.cards,
+        learningTrail: store.learningTrail,
+        graph,
+        isWordComfortable: (zh) => isComfortable(store, zh),
+      }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  [])
   const [queue, setQueue] = useState<string[] | null>(() =>
     candidates.every(usable) ? candidates.slice(0, QUEUE_SIZE) : null,
   )
@@ -342,7 +381,7 @@ export function ReviewFlow({
             </button>
           </div>
         ) : (
-          <div className="focus-stage" data-verdict={revealed ? verdict : 'asking'} data-style={style}>
+          <div className="focus-stage" data-verdict={revealed ? verdict : 'asking'} data-revealed={revealed || undefined} data-style={style}>
             <div className="focus-where" aria-label={t('Where this word is')}>
               <div className="focus-chips">
                 {bookLabel && <span className="focus-lesson">{bookLabel}</span>}

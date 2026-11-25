@@ -1,4 +1,5 @@
 import { useStore } from '../store/store'
+import { isCoreBookVocab } from '../lib/content'
 import { isComfortable } from '../lib/learningEngine'
 import { skippedWordsForRecall } from '../lib/learnerGraph'
 import { dueCards, memoryTier } from '../lib/srs'
@@ -6,10 +7,10 @@ import { t } from '../lib/i18n'
 
 export function MemoryHorizon({ onReview, onPlacement }: { onReview: () => void; onPlacement: () => void }) {
   const store = useStore()
-  const dueList = dueCards(store.cardList).map((c) => c.zh)
-  const skippedDue = skippedWordsForRecall(store.learnerGraph).filter((zh) => !isComfortable(store, zh))
+  const dueList = dueCards(store.cardList).map((c) => c.zh).filter(isCoreBookVocab)
+  const skippedDue = skippedWordsForRecall(store.learnerGraph).filter((zh) => isCoreBookVocab(zh) && !isComfortable(store, zh))
   const due = new Set([...dueList, ...skippedDue]).size
-  const resting = store.cardList.filter((c) => c.due > Date.now() && c.interval >= 14)
+  const resting = store.cardList.filter((c) => isCoreBookVocab(c.zh) && c.due > Date.now() && c.interval >= 14)
   const longTerm = resting.filter((c) => ['strong', 'maintained'].includes(memoryTier(c))).length
   return (
     <section className="memory-horizon" data-due={due > 0} aria-label={t('Your memory, over time')}>

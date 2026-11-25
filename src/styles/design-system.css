@@ -144,8 +144,10 @@ body .progress-history-meta { font-size:12px; }
 /* Listening and writing keep their own controls, sharing the same surfaces. */
 body .hsk-practice-entry { padding:0; margin:0; border:0; background:none; box-shadow:none; }
 body .hsk-practice-entry-head { font-size:14px; font-weight:600; color:var(--ink); }
-body .hsk-practice-door { border:0; border-radius:var(--radius-sm); background:var(--surface); color:var(--accent); box-shadow:var(--shadow-card); padding:16px; }
-body .hsk-practice-door strong { font-size:15px; font-weight:600; }
+body .hsk-practice-door { border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--surface); color:var(--accent); box-shadow:var(--shadow-card); padding:16px; }
+body .hsk-practice-door-exam { background:linear-gradient(155deg,var(--surface),var(--accent-soft)); border-color:var(--accent-line); }
+body .hsk-practice-door-grammar { background:var(--surface); border-color:var(--line); }
+body .hsk-practice-door strong { font-size:15px; font-weight:600; color:var(--ink); }
 body .hsk-practice-door small { font-size:12px; color:var(--muted); opacity:1; }
 body .hsk-practice-door:active { transform:scale(.96); box-shadow:var(--shadow-card); }
 body .hsk-lab .hsk-lab-head { background:var(--bg); color:var(--ink); border-color:var(--line); }
@@ -199,7 +201,7 @@ body .repair-slot>span,body .repair-slot small { font:12px/1.5 var(--ui); color:
 body .repair-kept { color:var(--ok); border-color:var(--ok); }
 body .repair-slot input { background:var(--err-bg); color:var(--err); border-color:var(--err-line); }
 body .overlay.recall-focus { background:radial-gradient(ellipse at 12% 100%,#326e68 0%,transparent 64%),linear-gradient(155deg,#233f3d,#245553 76%); }
-body .focus-body { padding-bottom:24px; }
+body .focus-body { padding-bottom:calc(36px + env(safe-area-inset-bottom,0px)); }
 body .focus-ratings strong { font-size:13px; }
 body .focus-ratings span { font-size:12px; }
 body .books-home { padding-bottom:0; }

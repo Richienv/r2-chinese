@@ -210,6 +210,7 @@ export function registerVocab(word: Vocab, example?: Example | null) {
   tokenLexicon.add(word.zh)
   if (word.zh.length > maxToken) maxToken = word.zh.length
   if (word.zh.length > maxWordLen) maxWordLen = word.zh.length
+  if (word.zh.trim() && !isProperPos(word.pos)) coreVocab.add(word.zh.trim())
 }
 
 /** Register dialogue / note lines from additional courses as fallback context sentences. */
@@ -429,7 +430,40 @@ export const TEXT_WORD_CAP = 10
 export const TEXT_NODES = ['t1', 't2', 't3', 't4', 't5'] as const
 export type TextNode = (typeof TEXT_NODES)[number]
 
-const properPos = (v: Vocab) => /proper|pr\.n/i.test(v.pos)
+const properPos = (v: Vocab) => /proper|pr\.? ?n|专名/i.test(v.pos)
+const isProperPos = (pos?: string) => /proper|pr\.? ?n|专名/i.test(pos ?? '')
+
+type CoreWordRecord = { zh?: string; pos?: string }
+type CoreLessonGlob = { default?: { words?: CoreWordRecord[] }; words?: CoreWordRecord[] }
+
+function safeCoreGlob(read: () => Record<string, CoreLessonGlob>): Record<string, CoreLessonGlob> {
+  try {
+    return read()
+  } catch {
+    return {}
+  }
+}
+
+const jiaochengPart1Modules = safeCoreGlob(
+  () =>
+    import.meta.glob('../data/jiaocheng/part1/lesson-*.json', {
+      eager: true,
+    }) as Record<string, CoreLessonGlob>,
+)
+const jiaochengPart2Modules = safeCoreGlob(
+  () =>
+    import.meta.glob('../data/jiaocheng/part2/lesson-*.json', {
+      eager: true,
+    }) as Record<string, CoreLessonGlob>,
+)
+const kerjaUnitModules = safeCoreGlob(
+  () =>
+    import.meta.glob('../data/kerja/units/chapter-*.json', {
+      eager: true,
+    }) as Record<string, CoreLessonGlob>,
+)
+
+const coreVocab = new Set<string>()
 
 function asTeachable(v: Vocab): Vocab | null {
   if (!v.zh || !v.en || properPos(v)) return null
@@ -521,4 +555,35 @@ export function sittingHint(l: Lesson, textIndex: number): string {
   const first = sitting.words[0]?.zh
   if (first) return first
   return sitting.text.heading_zh || sitting.text.heading_en || sitting.text.label
+}
+
+function seedCoreVocabFromGlob(modules: Record<string, CoreLessonGlob>) {
+  for (const mod of Object.values(modules)) {
+    const lesson = mod && typeof mod === 'object' && 'default' in mod ? mod.default : mod
+    if (!lesson || !Array.isArray(lesson.words)) continue
+    for (const w of lesson.words) {
+      const zh = w.zh?.trim()
+      if (zh && !isProperPos(w.pos)) coreVocab.add(zh)
+    }
+  }
+}
+
+for (const l of lessons) {
+  for (const v of teachableVocab(l)) {
+    if (v.zh.trim()) coreVocab.add(v.zh.trim())
+  }
+}
+seedCoreVocabFromGlob(jiaochengPart1Modules)
+seedCoreVocabFromGlob(jiaochengPart2Modules)
+seedCoreVocabFromGlob(kerjaUnitModules)
+
+/** Canonical set of actual curriculum lesson vocabulary across HSK 4A, Jiaocheng, and Kerja. */
+export function coreBookVocabSet(): Set<string> {
+  return new Set(coreVocab)
+}
+
+/** True only when `zh` belongs to core lesson vocabulary across HSK 4A, Jiaocheng, or Kerja. */
+export function isCoreBookVocab(zh: string): boolean {
+  const clean = zh.trim()
+  return !!clean && coreVocab.has(clean)
 }

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
-import { courseVocab, exampleFor, lessonOf, lookup, segmentForGloss, unknownVocab, type Example } from '../lib/content'
+import { courseVocab, exampleFor, isCoreBookVocab, lessonOf, lookup, segmentForGloss, unknownVocab, type Example } from '../lib/content'
 import { bundledDictionaryEntry, refreshDictionaryEntry, type DictionaryEntry } from '../lib/dictionary'
 import { DICTIONARY_LICENSE, DICTIONARY_SOURCE, formatDictionaryDefinition } from '../lib/dictionary-format'
 import { t } from '../lib/i18n'
@@ -225,7 +225,11 @@ export function GlossSheet({ word, onClose, onDrill, onStrokes, onWord }: {
         {onDrill && <button className="btn" disabled={!display.en} onClick={() => onDrill(word.zh)}><BoltIcon size={18} /> {t('Recall this word')}</button>}
         {onStrokes && <button className="btn btn-dark" style={onDrill ? { width: 'auto', padding: '0 20px', flex: 'none' } : undefined} onClick={() => onStrokes(word.zh[0])} aria-label={t('Practise strokes')}><PencilIcon size={18} /></button>}
       </div>
-      <p className="dictionary-status">{t('Saved to your learning trail automatically. Star it only when you want a favourite.')}</p>
+      <p className="dictionary-status">
+        {isCoreBookVocab(word.zh)
+          ? t('Saved to your learning trail automatically. Star it only when you want a favourite.')
+          : t('Dictionary lookup only. Star it if you want to keep it separately.')}
+      </p>
     </Sheet>
   )
 }
@@ -336,7 +340,7 @@ export function useGloss(onStrokes?: (char: string) => void) {
   const [word, setWord] = useState<Vocab | null>(null)
   const [drill, setDrill] = useState<string[] | null>(null)
   const onWord = useCallback((next: Vocab) => {
-    store.encounterWord(next.zh, lessonOf(next.zh) ?? 0)
+    if (isCoreBookVocab(next.zh)) store.encounterWord(next.zh, lessonOf(next.zh) ?? 0)
     setWord(next)
   }, [store.encounterWord])
   const sheet = (
@@ -347,7 +351,7 @@ export function useGloss(onStrokes?: (char: string) => void) {
           onClose={() => setWord(null)}
           onWord={onWord}
           onDrill={(zh) => {
-            store.encounterWord(zh, lessonOf(zh) ?? 0)
+            if (isCoreBookVocab(zh)) store.encounterWord(zh, lessonOf(zh) ?? 0)
             setWord(null)
             setDrill([zh])
           }}

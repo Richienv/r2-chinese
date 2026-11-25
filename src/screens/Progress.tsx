@@ -4,7 +4,7 @@ import { graphSummary } from '../lib/learnerGraph'
 import '../styles/usability.css'
 import { useMemo, useState } from 'react'
 import { MasteryTracker } from '../components/MasteryTracker'
-import { getLesson, lessons } from '../lib/content'
+import { getLesson, isCoreBookVocab, lessons } from '../lib/content'
 import { COURSE_META } from '../lib/course'
 import { readHistory, type HistoryCourse, type HistoryEvent } from '../lib/history'
 import { getLang, t } from '../lib/i18n'
@@ -279,11 +279,11 @@ export function Progress({
   const s = useStore()
   const [showHistory, setShowHistory] = useState(false)
   const week = weekActivity(s.log)
-  const due = dueCards(s.cardList)
+  const due = dueCards(s.cardList).filter((c) => isCoreBookVocab(c.zh))
   const hardWords = recommendedWords(
     s,
     Object.values(s.mastery)
-      .filter((record) => record.state === 'hard')
+      .filter((record) => record.state === 'hard' && isCoreBookVocab(record.zh))
       .sort((a, b) => b.lastSeen - a.lastSeen)
       .map((record) => record.zh),
     Date.now(),
@@ -366,7 +366,7 @@ export function Progress({
               ? t('{n} ready to revisit', { n: due.length })
               : hardWords.length
                 ? t('{n} words are asking for another try', { n: hardWords.length })
-                : s.cardList.length
+                : s.cardList.some((c) => isCoreBookVocab(c.zh))
                   ? t('All caught up. Continue a lesson when you feel like it.')
                   : t('Start with a lesson you like.')}
           </span>

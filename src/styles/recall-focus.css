@@ -1,5 +1,5 @@
 /* One calm field, a stable action shelf and no animated blur. */
-.overlay.recall-focus{--focus-ink:#eff9fa;--focus-muted:#c3d9dd;display:flex;flex-direction:column;background:radial-gradient(ellipse at 12% 100%,#276e77 0%,transparent 64%),linear-gradient(155deg,#253c55,#244951 76%);color:var(--focus-ink);overflow:hidden;padding:0;isolation:isolate}
+.overlay.recall-focus{--focus-ink:#eff9fa;--focus-muted:#c3d9dd;display:flex;flex-direction:column;height:100%;height:100dvh;max-height:100dvh;background:radial-gradient(ellipse at 12% 100%,#276e77 0%,transparent 64%),linear-gradient(155deg,#253c55,#244951 76%);color:var(--focus-ink);overflow:hidden;padding:0;isolation:isolate}
 .recall-focus button{font:inherit;touch-action:manipulation;color:inherit}
 .focus-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex:none;min-height:72px;padding:16px 24px 8px;font-size:13px;letter-spacing:.025em}
 .focus-head>span:nth-child(2){opacity:.85}
@@ -30,7 +30,7 @@
 .focus-answer details{border-top:1px solid #ffffff20;margin:24px auto 0;padding:12px 0;font-size:13px;line-height:1.8;color:#e2f0f1}
 .focus-why{font-size:11px;color:var(--focus-muted);line-height:1.8;max-width:400px;margin:28px auto 0}
 .focus-why summary,.focus-answer summary{cursor:pointer;min-height:36px;padding:8px}
-.focus-foot{padding:16px 20px calc(16px + env(safe-area-inset-bottom,0px));flex:none;background:#16333d66;border-top:1px solid #ffffff19}
+.focus-foot{padding:14px 18px calc(16px + env(safe-area-inset-bottom,0px));flex:none;position:relative;z-index:2;background:rgba(21,47,50,.94);backdrop-filter:blur(10px);border-top:1px solid #ffffff22}
 .focus-ratings{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:530px;margin:auto}
 .focus-ratings button{display:flex;flex-direction:column;align-items:center;gap:8px;min-height:66px;padding:12px 4px;background:#ffffff0b;border:1px solid #ffffff28;border-radius:17px;transition:transform 150ms ease,background-color 150ms ease,opacity 150ms ease}
 .focus-ratings strong{font-size:12px;font-weight:550}
@@ -54,10 +54,11 @@
 
 .focus-repaired{display:block;width:100%;max-width:400px;margin:auto}
 
-/* Centered stage: prompt, answer and help sit in the middle of the screen. */
-.focus-body{display:flex;flex-direction:column;padding-top:20px;padding-bottom:20px}
-.focus-stage{margin:auto 0;width:100%;display:flex;flex-direction:column;align-items:stretch}
-.focus-where{display:flex;flex-direction:column;align-items:center;gap:12px;margin:0 auto 34px}
+/* Centered stage: prompt, answer and help sit cleanly with Safari-safe scroll clearance. */
+.overlay.recall-focus .focus-body{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:clamp(16px,3vh,36px) 22px calc(36px + env(safe-area-inset-bottom,0px))}
+.focus-stage{margin:auto 0;width:100%;display:flex;flex-direction:column;align-items:stretch;padding-bottom:24px}
+.focus-stage[data-revealed=true] .focus-where{margin-bottom:18px}
+.focus-where{display:flex;flex-direction:column;align-items:center;gap:10px;margin:0 auto 28px}
 .focus-lesson{font-size:11px;font-weight:650;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:#ffffff14;border:1px solid #ffffff26;color:var(--focus-ink)}
 .focus-ladder{display:flex;align-items:flex-start;list-style:none;margin:0;padding:0}
 .focus-ladder li{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;width:66px;font-size:10px;color:var(--focus-muted);opacity:.6}
@@ -88,11 +89,12 @@
 .recall-focus .focus-continue .focus-next-date{color:#1d3c45aa}
 .focus-ratings button{min-height:72px}.focus-ratings strong{font-size:14px}
 .focus-hint-steps{display:inline-flex;gap:4px;margin-left:4px}.focus-hint-steps i{width:6px;height:6px;border-radius:50%;background:#fff;opacity:.28;transition:opacity 220ms ease}.focus-hint-steps i[data-on=true]{opacity:1}
-.focus-answer{margin:0 auto}.focus-answer>div:first-child{display:flex;flex-direction:column;align-items:center}
-.focus-answer h2{margin:0 0 4px}
+.focus-answer{margin:0 auto;padding-bottom:20px;width:100%;max-width:440px}.focus-answer>div:first-child{display:flex;flex-direction:column;align-items:center}
+.focus-answer h2{font-size:clamp(38px,10vw,60px);margin:0 0 4px}
 .focus-answer .focus-pinyin{font-size:18px;margin:0 0 6px}
-.focus-meaning{font-size:21px!important;font-weight:550;margin:18px 0 0!important;text-wrap:balance}
-.focus-example{margin:20px auto 0;padding:16px 18px;border-radius:20px;background:#ffffff0f;border:1px solid #ffffff22;text-align:left}
+.focus-meaning{font-size:20px!important;font-weight:550;margin:14px 0 0!important;text-wrap:balance}
+.focus-example{margin:16px auto 0;padding:15px 16px 16px;border-radius:18px;background:#ffffff0f;border:1px solid #ffffff22;text-align:left}
+.focus-example .hear{margin-top:12px;width:100%;justify-content:center}
 .focus-example p{margin:0;line-height:1.7}.focus-example p[lang]{font-family:var(--sc);font-size:19px}.focus-example p:not([lang]){font-size:13px;color:var(--focus-muted);margin-top:6px}
 @media(prefers-reduced-motion:reduce){.focus-ladder [data-state=now] i{animation:none}.focus-hint{animation:none}}
 .focus-help-actions{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}.focus-help-actions button{min-height:44px}.focus-next-date{display:block;font-size:11px;font-weight:400;margin-top:7px}.focus-answer summary,.focus-why summary{min-height:44px}
