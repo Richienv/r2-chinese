@@ -5,6 +5,7 @@ import {
   type LearningData,
   type LearningState,
 } from './learningEngine.ts'
+import { mergeLearnerGraphs, type LearnerGraphState } from './learnerGraph.ts'
 export const PROGRESS_KEY = 'yulu.hsk4a.v1'
 export function progressKey(userId?: string) {
   return userId ? PROGRESS_KEY + '.' + userId : PROGRESS_KEY
@@ -46,6 +47,7 @@ export function exportLearningStorage(storage: StorageLike, key: string): string
     'yulu.history.v1',
     'yulu.step.v1',
     'yulu.learning-checkpoints.v1',
+    'yulu.learner-graph.v1',
   ])
   const account = key === PROGRESS_KEY ? 'local' : key.slice(PROGRESS_KEY.length + 1)
   deviceKeys.add('yulu.hsk-writing.v1:' + account)
@@ -73,6 +75,9 @@ type Progress = LearningData & {
   starred: string[]
   log: Record<string, { cards: number; lessons: number }>
   pathDone: Record<string, string[]>
+  skippedLessons?: number[]
+  unlockedLesson?: number
+  learnerGraph?: LearnerGraphState
   updatedAt?: number
   resetAt?: number
   starChanges?: Record<string, { at: number; on: boolean }>
@@ -120,6 +125,13 @@ export function mergeProgress<T extends Progress>(left: T, right: T): T {
     events: { ...a.events, ...b.events },
     undone: { ...a.undone, ...b.undone },
   }
+  const lessonsDone = [...new Set([...left.lessonsDone, ...right.lessonsDone])].sort((a, b) => a - b)
+  const doneSet = new Set(lessonsDone)
+  const skippedLessons = [...new Set([...(left.skippedLessons ?? []), ...(right.skippedLessons ?? [])])]
+    .filter((n) => Number.isFinite(n) && !doneSet.has(n))
+    .sort((a, b) => a - b)
+  const unlockedLesson = Math.max(left.unlockedLesson ?? 1, right.unlockedLesson ?? 1)
+  const hasGraph = Boolean(left.learnerGraph || right.learnerGraph)
   const merged = {
     ...left,
     ...right,
@@ -127,7 +139,10 @@ export function mergeProgress<T extends Progress>(left: T, right: T): T {
     learning,
     cards: { ...left.cards, ...right.cards },
     mastery: { ...left.mastery, ...right.mastery },
-    lessonsDone: [...new Set([...left.lessonsDone, ...right.lessonsDone])].sort((a, b) => a - b),
+    lessonsDone,
+    ...(skippedLessons.length ? { skippedLessons } : {}),
+    ...(unlockedLesson > 1 ? { unlockedLesson } : {}),
+    ...(hasGraph ? { learnerGraph: mergeLearnerGraphs(left.learnerGraph, right.learnerGraph) } : {}),
     starred: [...new Set([...left.starred, ...right.starred])],
     pathDone: { ...left.pathDone },
     log: { ...left.log },

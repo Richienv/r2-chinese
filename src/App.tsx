@@ -7,7 +7,11 @@ import { t } from './lib/i18n'
 const CharacterOverlay = lazy(() =>
   import('./screens/Character').then((m) => ({ default: m.CharacterOverlay })),
 )
-const DrillFlow = lazy(() => import('./screens/Drill').then((m) => ({ default: m.DrillFlow })))
+const DrillFlow = lazy(() =>
+  Promise.all([import('./screens/Drill'), import('./lib/jiaocheng'), import('./lib/kerja')]).then(([m]) => ({
+    default: m.DrillFlow,
+  })),
+)
 const Home = lazy(() => import('./screens/Home').then((m) => ({ default: m.Home })))
 const Learn = lazy(() => import('./screens/Learn').then((m) => ({ default: m.Learn })))
 const LessonFlow = lazy(() => import('./screens/Lesson').then((m) => ({ default: m.LessonFlow })))
@@ -23,11 +27,18 @@ const SavedWords = lazy(() =>
     ([m]) => ({ default: m.SavedWords }),
   ),
 )
-const VocabBrowser = lazy(() => import('./screens/VocabBrowser').then((m) => ({ default: m.VocabBrowser })))
+const VocabBrowser = lazy(() =>
+  Promise.all([import('./screens/VocabBrowser'), import('./lib/jiaocheng'), import('./lib/kerja')]).then(([m]) => ({
+    default: m.VocabBrowser,
+  })),
+)
 const KerjaSession = lazy(() => import('./screens/Kerja').then((m) => ({ default: m.KerjaSession })))
 const JiaochengSession = lazy(() =>
   import('./screens/Jiaocheng').then((m) => ({ default: m.JiaochengSession })),
 )
+type ExamCourse = import('./lib/jiaochengMidterm').ExamCourse
+type ExamMode = import('./lib/jiaochengMidterm').ExamMode
+
 const JiaochengMidterm = lazy(() =>
   import('./screens/JiaochengMidterm').then((m) => ({ default: m.JiaochengMidterm })),
 )
@@ -38,7 +49,11 @@ const MagangSession = lazy(() => import('./screens/Magang').then((m) => ({ defau
 const BooksSession = lazy(() => import('./screens/Books').then((m) => ({ default: m.BooksSession })))
 import type { JiayinSessionMode } from './screens/Jiayin'
 const JiayinSession = lazy(() => import('./screens/Jiayin').then((m) => ({ default: m.JiayinSession })))
-const WordsSession = lazy(() => import('./screens/WordsSession').then((m) => ({ default: m.WordsSession })))
+const WordsSession = lazy(() =>
+  Promise.all([import('./screens/WordsSession'), import('./lib/jiaocheng'), import('./lib/kerja')]).then(([m]) => ({
+    default: m.WordsSession,
+  })),
+)
 const HskListening = lazy(() => import('./screens/HskListening').then((m) => ({ default: m.HskListening })))
 const HskComposition = lazy(() =>
   import('./screens/HskComposition').then((m) => ({ default: m.HskComposition })),
@@ -59,7 +74,7 @@ type Overlay =
   | { kind: 'path'; lesson: number; node: PathNode }
   | { kind: 'kerja'; chapter: number; node: PathNode }
   | { kind: 'jiaocheng'; lesson: number; node: PathNode }
-  | { kind: 'jiaocheng-midterm' }
+  | { kind: 'jiaocheng-midterm'; course?: ExamCourse; mode?: ExamMode }
   | { kind: 'magang'; chapter: number; node: string }
   | { kind: 'interview'; chapter: number; node: string }
   | { kind: 'books'; part: number; index: number; node: string }
@@ -191,7 +206,7 @@ function Shell() {
               onTrail={() => setOverlay({ kind: 'saved' })}
               onKerjaSession={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
               onJiaochengSession={(lesson, node) => setOverlay({ kind: 'jiaocheng', lesson, node })}
-              onJiaochengMidterm={() => setOverlay({ kind: 'jiaocheng-midterm' })}
+              onJiaochengMidterm={(course, mode) => setOverlay({ kind: 'jiaocheng-midterm', course, mode })}
               onMagangSession={(chapter, node) => setOverlay({ kind: 'magang', chapter, node })}
               onInterviewSession={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
               onBooksSession={(part, index) => setOverlay({ kind: 'books', part, index, node: 'lesson' })}
@@ -208,7 +223,7 @@ function Shell() {
               onPlay={(lesson, node) => setOverlay({ kind: 'path', lesson, node })}
               onKerjaPlay={(chapter, node) => setOverlay({ kind: 'kerja', chapter, node })}
               onJiaochengPlay={(lesson, node) => setOverlay({ kind: 'jiaocheng', lesson, node })}
-              onJiaochengMidterm={() => setOverlay({ kind: 'jiaocheng-midterm' })}
+              onJiaochengMidterm={(course, mode) => setOverlay({ kind: 'jiaocheng-midterm', course, mode })}
               onMagangPlay={(chapter, node) => setOverlay({ kind: 'magang', chapter, node })}
               onInterviewPlay={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
               onBooksPlay={(part, index) => setOverlay({ kind: 'books', part, index, node: 'lesson' })}
@@ -256,7 +271,14 @@ function Shell() {
         {overlay?.kind === 'jiaocheng' && (
           <JiaochengSession lesson={overlay.lesson} node={overlay.node} onClose={closeOverlay} />
         )}
-        {overlay?.kind === 'jiaocheng-midterm' && <JiaochengMidterm onClose={closeOverlay} />}
+        {overlay?.kind === 'jiaocheng-midterm' && (
+          <JiaochengMidterm
+            initialCourse={overlay.course}
+            initialMode={overlay.mode}
+            onOpenRecall={(words, title) => setOverlay({ kind: 'review', words, title })}
+            onClose={closeOverlay}
+          />
+        )}
         {overlay?.kind === 'magang' && (
           <MagangSession chapter={overlay.chapter} node={overlay.node} onClose={closeOverlay} />
         )}

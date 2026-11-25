@@ -4,10 +4,19 @@ import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { HearButton } from '../components/Hear'
 import { ListenCue } from '../components/ListenCue'
 import { CloseIcon } from '../components/Icons'
-import { blankedExample, exampleFor, lessonOf, lookup, vocabIndex } from '../lib/content'
+import { blankedExample, corpusPeers, enrichVocab, exampleFor, lessonOf, lookup, vocabIndex } from '../lib/content'
 import { getLang, t } from '../lib/i18n'
 import { matchesHanzi } from '../lib/mastery'
 import { isComfortable, wordState } from '../lib/learningEngine'
+import { normalizeChinese } from '../lib/production'
+import { buildRecallPromptContext, nearSynonymFeedback, type NearSynonymMatch } from '../lib/recallContext'
+import {
+  getLearnerGraphSnapshot,
+  prioritizeWords,
+  priorityScore,
+  skippedWordsForRecall,
+  wordNodeId,
+} from '../lib/learnerGraph'
 import { DAY, dueCards, newCard, recallChance, schedule, whenText, type Card, type Skill } from '../lib/srs'
 import { BOOK_STYLE, bookOf, recallChoices, timelinePosition, type RecallChoice } from '../lib/recallPlan'
 import { prefetch, stopSpeech } from '../lib/speech'
@@ -16,7 +25,6 @@ import { playCorrect, playHint, playRate, playReveal, playWrong } from '../lib/s
 import { useStagedReveal } from '../components/useStagedReveal'
 import { DAILY_GOAL, useStore } from '../store/store'
 import '../styles/recall-focus.css'
-import { coreMeaning, otherMeanings } from '../lib/exercises'
 import { Fireworks } from '../components/Fireworks'
 import { Flame } from '../components/Flame'
 import { GoalRing } from '../components/TodayHud'
@@ -82,24 +90,24 @@ export function ReviewFlow({
   placement?: boolean
 }) {
   const store = useStore()
-  const candidates = useMemo(
-    () =>
-      [
-        ...new Set(
-          placement
-            ? words?.length
-              ? words
-              : store.learningTrail.length
-                ? store.learningTrail.filter((zh) => !store.cards[zh]?.baseline && !isComfortable(store, zh))
-                : vocabIndex.slice(0, QUEUE_SIZE).map((w) => w.zh)
-            : words?.length
-              ? words
-              : dueCards(store.cardList).map((c) => c.zh),
-        ),
-      ].slice(0, LOOKUP_POOL),
+  const graph = store.learnerGraph ?? getLearnerGraphSnapshot()
+  const candidates = useMemo(() => {
+    if (words?.length) return [...new Set(words)].slice(0, LOOKUP_POOL)
+    if (placement) {
+      const base = store.learningTrail.length
+        ? store.learningTrail.filter((zh) => !store.cards[zh]?.baseline && !isComfortable(store, zh))
+        : vocabIndex.slice(0, QUEUE_SIZE).map((w) => w.zh)
+      return prioritizeWords(graph, base).slice(0, LOOKUP_POOL)
+    }
+    const dueList = dueCards(store.cardList).map((c) => c.zh)
+    const skippedList = skippedWordsForRecall(graph).filter((w) => !isComfortable(store, w))
+    const weakGraphWords = Object.values(graph.nodes)
+      .filter((n) => n.kind === 'word' && priorityScore(graph, n.label) >= 1.5 && !isComfortable(store, n.label))
+      .map((n) => n.label)
+    const combined = [...new Set([...dueList, ...skippedList, ...weakGraphWords])]
+    return prioritizeWords(graph, combined).slice(0, LOOKUP_POOL)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  )
+  }, [])
   const [queue, setQueue] = useState<string[] | null>(() =>
     candidates.every(usable) ? candidates.slice(0, QUEUE_SIZE) : null,
   )
@@ -131,13 +139,16 @@ export function ReviewFlow({
   const committed = useRef(false)
   const [attemptId, setAttemptId] = useState(() => crypto.randomUUID())
   const zh = list[index],
-    word = zh ? lookup(zh) : undefined
+    rawWord = zh ? lookup(zh) : undefined
   const [skillOverride, setSkillOverride] = useState<Skill | null>(null)
   const [helped, setHelped] = useState(false),
     [hadMiss, setHadMiss] = useState(false),
     [gaveUp, setGaveUp] = useState(false)
   const [hint, setHint] = useState(0)
   const [focusKey, setFocusKey] = useState<RecallChoice['key'] | null>(null)
+  const [synonymMatch, setSynonymMatch] = useState<NearSynonymMatch | null>(null)
+  const triedSynonyms = useRef(new Set<string>())
+  const answerInputRef = useRef<HTMLInputElement>(null)
   const skill: Skill = skillOverride ?? (placement ? 'recall' : (store.cards[zh]?.skill ?? 'recall'))
   const selfMode = skill === 'reading' || skill === 'speaking'
   const allowed = reviewRatings({ hadMiss, checked, helped, selfMode })
@@ -148,8 +159,15 @@ export function ReviewFlow({
   const example = zh ? exampleFor(zh) : null
   const stage = memoryStage(card)
   const { book, unit } = bookOf(store.cards[zh]?.lesson ?? card?.lesson)
+  const word = rawWord ? enrichVocab(rawWord, lessonOf(zh) ?? unit) : undefined
+  const peers = useMemo(() => corpusPeers(), [])
   const style = skill === 'recall' ? BOOK_STYLE[book] : 'meaning'
-  const sentence = zh && style === 'sentence' ? blankedExample(zh) : null
+  const hideMeaning = skill === 'listening' || style === 'dictation'
+  const rawBlank = zh && skill !== 'reading' && !hideMeaning ? blankedExample(zh, lessonOf(zh) ?? unit) : null
+  const ctx = word && skill !== 'reading'
+    ? buildRecallPromptContext({ word, blanked: rawBlank, peers, hideMeaning })
+    : null
+  const safeMeaning = ctx ? (ctx.otherMeanings ? `${ctx.coreMeaning}; ${ctx.otherMeanings}` : ctx.coreMeaning) : (word?.en ?? '')
   const hintSteps = style === 'dictation' ? (['meaning', 'first'] as const) : (['pinyin', 'first'] as const)
   const answerReveal = useStagedReveal(ANSWER_STAGES, `${index}:${zh}`, revealed)
   const now = shownAt || Date.now()
@@ -182,6 +200,8 @@ export function ReviewFlow({
     setGaveUp(false)
     setHint(0)
     setFocusKey(null)
+    setSynonymMatch(null)
+    triedSynonyms.current.clear()
     setAnswer('')
     setTried('')
     setRevealed(false)
@@ -206,8 +226,21 @@ export function ReviewFlow({
     setRatingReady(false)
   }
   function check() {
+    const cleaned = normalizeChinese(answer)
     if (!answer.trim() || revealed || !zh) return
     const correct = matchesHanzi(answer, zh)
+    if (!correct && word && cleaned && !triedSynonyms.current.has(cleaned)) {
+      const synonym = nearSynonymFeedback(answer, word, peers)
+      if (synonym) {
+        triedSynonyms.current.add(cleaned)
+        store.recordNearSynonymConfusion(zh, synonym.typedZh)
+        setSynonymMatch(synonym)
+        setAnswer('')
+        answerInputRef.current?.focus()
+        return
+      }
+    }
+    setSynonymMatch(null)
     setTried(answer.trim())
     setChecked(correct)
     if (!correct) setHadMiss(true)
@@ -313,6 +346,9 @@ export function ReviewFlow({
             <div className="focus-where" aria-label={t('Where this word is')}>
               <div className="focus-chips">
                 {bookLabel && <span className="focus-lesson">{bookLabel}</span>}
+                {zh && graph.nodes[wordNodeId(zh)]?.skippedPending && (
+                  <span className="focus-skipped-pill">{t('Skipped · Active recall')}</span>
+                )}
                 {chance !== null && (
                   <span className="focus-chance" data-level={chance >= 0.8 ? 'high' : chance >= 0.5 ? 'mid' : 'low'} title={t('Chance you still remember it now')}>
                     <i style={{ ['--chance' as string]: chance }} aria-hidden="true" />
@@ -332,20 +368,38 @@ export function ReviewFlow({
             </div>
             {!revealed && (
               <div className="focus-prompt">
-                {skill === 'listening' || style === 'dictation' ? (
+                {ctx && (ctx.posLabel || ctx.charCountLabel) && (
+                  <div className="recall-meta-pills focus-meta-pills">
+                    {ctx.posLabel && <span className="recall-pos-pill">{ctx.posLabel}</span>}
+                    <span className="recall-slot-pill">
+                      {ctx.charCountLabel}
+                      <span className="recall-slots-preview zh" lang="zh-CN" aria-hidden="true">{ctx.slots}</span>
+                    </span>
+                  </div>
+                )}
+                {hideMeaning ? (
                   <>
                     <ListenCue text={zh} />
                     <p className="focus-prompt-note">{t('Write the word you hear')}</p>
                   </>
-                ) : sentence ? (
-                  <div className="focus-sentence">
-                    <p lang="zh-CN">{sentence.blank}</p>
-                    {sentence.en && <p className="focus-sentence-translation">{sentence.en}</p>}
-                  </div>
+                ) : skill === 'reading' ? (
+                  <h1 lang="zh-CN">{zh}</h1>
                 ) : (
                   <>
-                    <h1 lang={skill === 'reading' ? 'zh-CN' : undefined}>{skill === 'reading' ? zh : coreMeaning(word?.en ?? '') || word?.en}</h1>
-                    {skill !== 'reading' && word && otherMeanings(word.en) && <p className="recall-other-meanings">{otherMeanings(word.en)}</p>}
+                    <h1>{ctx?.coreMeaning || word?.en}</h1>
+                    {ctx?.otherMeanings && <p className="recall-other-meanings">{ctx.otherMeanings}</p>}
+                    {ctx?.sentence && (
+                      <div className="focus-sentence">
+                        <p lang="zh-CN">{ctx.sentence.zh}</p>
+                        {ctx.sentence.en && <p className="focus-sentence-translation">{ctx.sentence.en}</p>}
+                      </div>
+                    )}
+                    {(ctx?.whenCue || ctx?.disambiguation) && (
+                      <div className="focus-cue-note">
+                        {ctx.whenCue && <p className="recall-when-cue"><span>{t('Usage cue')}</span> {ctx.whenCue}</p>}
+                        {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
+                      </div>
+                    )}
                   </>
                 )}
               </div>
@@ -378,6 +432,7 @@ export function ReviewFlow({
                   {t('Your answer')}
                 </label>
                 <input
+                  ref={answerInputRef}
                   id="recall-answer"
                   value={answer}
                   onChange={(e) => setAnswer(e.target.value)}
@@ -391,13 +446,19 @@ export function ReviewFlow({
                   spellCheck={false}
                   lang="zh-CN"
                 />
+                {synonymMatch && (
+                  <div className="recall-synonym-feedback focus-synonym-feedback" role="status" aria-live="polite">
+                    <strong>{t('Close match — different nuance')}</strong>
+                    <p>{synonymMatch.message}</p>
+                  </div>
+                )}
                 {hint > 0 && word && (
                   <div className="focus-hints" aria-live="polite">
                     {hintSteps.slice(0, hint).map((step) => (
                       <div className="focus-hint" key={step}>
                         <span>{step === 'pinyin' ? t('Pinyin') : step === 'meaning' ? t('Meaning') : t('First character')}</span>
                         <strong lang={step === 'first' ? 'zh-CN' : undefined}>
-                          {step === 'pinyin' ? word.pinyin : step === 'meaning' ? word.en : `${first[0]}${'＿'.repeat(Math.max(0, first.length - 1))}`}
+                          {step === 'pinyin' ? word.pinyin : step === 'meaning' ? (safeMeaning || word.en) : `${first[0]}${'＿'.repeat(Math.max(0, first.length - 1))}`}
                         </strong>
                       </div>
                     ))}

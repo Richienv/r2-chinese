@@ -53,3 +53,5 @@ body .compact-recall .recall-row{display:grid;grid-template-columns:auto 1fr;gap
 .recall-cue-choices{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:0 0 14px}
 .recall-cue-choices button{min-height:36px;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);font:inherit;font-size:12px;font-weight:700;cursor:pointer}
 .recall-cue-choices button[aria-pressed=true]{background:var(--accent-soft);color:var(--accent);border-color:var(--accent)}
+.recall-meta-pills{margin-top:8px;gap:5px}
+.recall-cue-note,.recall-synonym-feedback{padding:9px 12px}

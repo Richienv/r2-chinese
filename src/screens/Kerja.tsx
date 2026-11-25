@@ -1,5 +1,5 @@
 import { compactStepId } from '../lib/sessionRoute'
-import { poolOf, withMixedPractice } from '../lib/duoSession'
+import { buildSkippedCarryover, poolOf, withMixedPractice } from '../lib/duoSession'
 import type { ExWord } from '../lib/exercises'
 import { kerjaChapters as poolUnits } from '../lib/kerja'
 import { ExerciseView, type ExerciseOutcome, type EvidenceMode } from '../components/Exercises'
@@ -16,6 +16,8 @@ import { quizAssisted } from '../lib/choiceSupport'
 import { isComfortable } from '../lib/learningEngine'
 import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { LearningPath } from '../components/LearningPath'
+import { SkipLevelControl } from '../components/SkipLevelModal'
+import { lookup } from '../lib/content'
 import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
 import { DialogueRecheck, type RecheckSummary } from '../components/DialogueRecheck'
@@ -102,8 +104,10 @@ export function KerjaPath({
   onPlay?: (chapter: number, node: PathNode) => void
   fill?: boolean
 }) {
+  const store = useStore()
   const progress = useKerjaProgress()
   const nodes = nodesForChapter(chapter)
+  const skipped = progress.isChapterSkipped(chapter.index)
   return (
     <LearningPath
       fill={fill}
@@ -112,6 +116,11 @@ export function KerjaPath({
       subtitle={chapter.titleEn}
       source={chapter.sourcePages ? t('pp. {pages}', { pages: chapter.sourcePages }) : undefined}
       open={progress.isChapterReached(chapter.index)}
+      skipped={skipped}
+      onUnskip={skipped ? () => {
+        progress.unskipChapter(chapter.index)
+        store.unskipCourseLessonInGraph('kerja', chapter.index)
+      } : undefined}
       position={{ index: kerjaChapters.indexOf(chapter) + 1, total: kerjaChapters.length, label: t('Lesson {n} of {total}', { n: kerjaChapters.indexOf(chapter) + 1, total: kerjaChapters.length }) }}
       items={nodes.map((node) => {
         const done = nodeDone(chapter.index, node)
@@ -142,7 +151,7 @@ export function KerjaPath({
           label: caption.zh,
           title,
           subtitle: subtitle?.trim() !== title.trim() ? subtitle : undefined,
-          state: done ? ('done' as const) : on ? ('current' as const) : ('locked' as const),
+          state: done ? ('done' as const) : on ? ('current' as const) : skipped ? ('skipped' as const) : ('locked' as const),
           playable: progress.isNodePlayable(chapter.index, node),
           onSelect: () => onPlay?.(chapter.index, node as PathNode),
         }
@@ -151,11 +160,40 @@ export function KerjaPath({
   )
 }
 
+function KerjaSkipControl() {
+  const store = useStore()
+  const { skippedChapters, nextPlayable, isNodeDone, skipToChapter } = useKerjaProgress()
+  const skippedSet = new Set(skippedChapters)
+  return (
+    <SkipLevelControl
+      courseLabel="1000 words"
+      currentLesson={nextPlayable.chapter}
+      options={kerjaChapters.map((ch) => ({
+        lesson: ch.index,
+        label: t('Bab {n}', { n: ch.index }),
+        title: ch.titleZh || ch.titleEn,
+        wordCount: ch.words.length,
+        done: nodesForChapter(ch).every((n) => isNodeDone(ch.index, n)),
+        skipped: skippedSet.has(ch.index),
+      }))}
+      onSkipTo={(target) => {
+        const specs = skipToChapter(target)
+        store.enqueueSkippedWords(1000, specs)
+      }}
+    />
+  )
+}
+
 export function KerjaHomePath({ onPlay }: { onPlay: (chapter: number, node: PathNode) => void }) {
   const { nextPlayable, isNodeDone } = useKerjaProgress()
   if (kerjaChapters.length === 0) return <KerjaEmptyState />
   const chapter = getKerjaChapter(nextPlayable.chapter) ?? kerjaChapters[0]
-  return <KerjaPath fill chapter={chapter} current={nextPlayable} nodeDone={isNodeDone} onPlay={onPlay} />
+  return (
+    <>
+      <KerjaSkipControl />
+      <KerjaPath fill chapter={chapter} current={nextPlayable} nodeDone={isNodeDone} onPlay={onPlay} />
+    </>
+  )
 }
 
 export function KerjaLearn({ onPlay }: { onPlay: (chapter: number, node: PathNode) => void }) {
@@ -165,6 +203,7 @@ export function KerjaLearn({ onPlay }: { onPlay: (chapter: number, node: PathNod
   }
   return (
     <>
+      <KerjaSkipControl />
       {kerjaChapters.map((ch) => (
         <KerjaPath key={ch.id} chapter={ch} current={nextPlayable} nodeDone={isNodeDone} onPlay={onPlay} />
       ))}
@@ -204,15 +243,28 @@ function KerjaRunner({ chapter, node, onClose }: { chapter: number; node: KerjaN
   const momentum = useMomentum()
   const checkpoint = useRef(readLearningCheckpoint(resumeId))
   const steps = useMemo(
-    () =>
-      withMixedPractice(buildKerjaSteps(chapter, node).filter(
-        (step) =>
-          !(
-            (step.kind === 'teach' || step.kind === 'recall') &&
-            isComfortable(store, step.word.zh) &&
-            step.id !== compactStepId(checkpoint.current?.stepId)
-          ),
-      ), `kerja:${chapter}:${node}`, coursePool()),
+    () => {
+      const pool = coursePool()
+      const skippedCarryover = buildSkippedCarryover(
+        store.learnerGraph,
+        (zh) => isComfortable(store, zh),
+        pool,
+        lookup,
+      )
+      return withMixedPractice(
+        buildKerjaSteps(chapter, node).filter(
+          (step) =>
+            !(
+              (step.kind === 'teach' || step.kind === 'recall') &&
+              isComfortable(store, step.word.zh) &&
+              step.id !== compactStepId(checkpoint.current?.stepId)
+            ),
+        ),
+        `kerja:${chapter}:${node}`,
+        pool,
+        { graph: store.learnerGraph, skippedCarryover },
+      )
+    },
     [chapter, node],
   )
   const sessionWords = useMemo(

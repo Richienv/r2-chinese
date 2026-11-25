@@ -1,5 +1,6 @@
 import { encounter, recordRetrieval, type MasteryRecord, type RecallInput } from './mastery.ts'
 import { newCard, schedule, type Card, type Rating, type Skill, SCHEDULER } from './srs.ts'
+import { priorityScore, type LearnerGraphState } from './learnerGraph.ts'
 export interface ReviewEvent {
   id: string
   day?: string
@@ -150,10 +151,19 @@ export function isComfortable(
   const card = wordState(data, zh).skills[skill]
   return !!card && card.interval >= 14 && card.due > now
 }
-export function recommendedWords(data: LearningData, words: string[], now = Date.now()): string[] {
+export function recommendedWords(
+  data: LearningData,
+  words: string[],
+  now = Date.now(),
+  graph?: LearnerGraphState,
+): string[] {
   return [...new Set(words)]
     .filter((zh) => !isComfortable(data, zh, now))
-    .sort((a, b) => Number(data.mastery[b]?.state === 'hard') - Number(data.mastery[a]?.state === 'hard'))
+    .sort((a, b) => {
+      const scoreB = (data.mastery[b]?.state === 'hard' ? 10 : 0) + (graph ? priorityScore(graph, b) : 0)
+      const scoreA = (data.mastery[a]?.state === 'hard' ? 10 : 0) + (graph ? priorityScore(graph, a) : 0)
+      return scoreB - scoreA
+    })
 }
 export function activeEvents(data: LearningData): ReviewEvent[] {
   const s = initLearning(data)

@@ -25,6 +25,21 @@ import {
   type ReviewEvent,
 } from '../lib/learningEngine'
 import {
+  createEmptyGraph,
+  getLearnerGraphSnapshot,
+  mergeLearnerGraphs,
+  normalizeLearnerGraph,
+  recordExamOutcome,
+  recordRecallOutcome,
+  recordSkippedLessons,
+  replaceLearnerGraph,
+  subscribeLearnerGraph,
+  unskipLessonInGraph,
+  type CourseKey,
+  type ExamOutcomeInput,
+  type LearnerGraphState,
+} from '../lib/learnerGraph'
+import {
   progressKey,
   readProgress,
   persistProgress,
@@ -85,6 +100,12 @@ function normalizePathDone(parsed: Partial<Persisted> | null | undefined): Recor
   return out
 }
 
+function graphCourseOf(lessonOffset: number): { course: CourseKey; unit: number } {
+  if (lessonOffset >= 3000) return { course: 'jiaocheng', unit: lessonOffset - 3000 }
+  if (lessonOffset >= 1000) return { course: 'kerja', unit: lessonOffset - 1000 }
+  return { course: 'hsk4a', unit: lessonOffset }
+}
+
 /** Merge a partial persisted blob (from storage or the server) onto the defaults. */
 export function normalize(parsed: Partial<Persisted> | null | undefined): Persisted {
   if (!parsed) return empty
@@ -93,6 +114,14 @@ export function normalize(parsed: Partial<Persisted> | null | undefined): Persis
     ...parsed,
     prefs: { ...empty.prefs, ...parsed.prefs },
     pathDone: normalizePathDone(parsed),
+    skippedLessons: Array.isArray(parsed.skippedLessons)
+      ? [...new Set(parsed.skippedLessons.filter((n): n is number => typeof n === 'number' && Number.isFinite(n)))]
+      : [],
+    unlockedLesson:
+      typeof parsed.unlockedLesson === 'number' && Number.isFinite(parsed.unlockedLesson) && parsed.unlockedLesson >= 1
+        ? parsed.unlockedLesson
+        : 1,
+    learnerGraph: normalizeLearnerGraph(parsed.learnerGraph),
     mastery: normalizeMastery(parsed.mastery, parsed.cards, parsed.starred),
   }
   return { ...result, learning: initLearning(result) }
@@ -132,6 +161,12 @@ export interface Persisted {
    * Additive — older saves without this key normalize to {}. Never finishLesson.
    */
   pathDone: Record<string, PathNode[]>
+  /** HSK lessons skipped via Skip-Level (never faked as completed; words carry over to Active Recall). */
+  skippedLessons: number[]
+  /** Highest HSK lesson explicitly jumped to via Skip-Level. */
+  unlockedLesson: number
+  /** Real-time learner knowledge, confusion, grammar, and skip-carryover graph. */
+  learnerGraph: LearnerGraphState
   prefs: Prefs
 }
 
@@ -148,6 +183,9 @@ const empty: Persisted = {
   inProgress: null,
   lastTab: 'home',
   pathDone: {},
+  skippedLessons: [],
+  unlockedLesson: 1,
+  learnerGraph: createEmptyGraph(0),
   prefs: { showPinyin: true, showEnglish: true, soundOn: true },
 }
 
@@ -235,6 +273,20 @@ interface Store extends Persisted {
   isNodeDone: (lesson: number, node: PathNode) => boolean
   /** persist a path node; does not call finishLesson */
   markNodeDone: (lesson: number, node: PathNode) => void
+  /** Skip earlier HSK lessons into Active Recall without marking words comfortable or mastered. */
+  skipToHskLesson: (
+    targetLesson: number,
+    skippedSpecs: Array<{ lesson: number; title: string; words: { zh: string }[]; grammarPoints: string[] }>,
+  ) => void
+  unskipHskLesson: (lesson: number) => void
+  /** Enqueue skipped words from Jiaocheng / Kerja into SRS + Learner Graph without fake mastery. */
+  enqueueSkippedWords: (
+    lessonOffset: number,
+    skippedSpecs: Array<{ course: CourseKey; lesson: number; title?: string; words: { zh: string }[]; grammarPoints?: string[] }>,
+  ) => void
+  unskipCourseLessonInGraph: (course: CourseKey, lesson: number) => void
+  recordNearSynonymConfusion: (targetZh: string, typedZh: string, lesson?: number, course?: CourseKey) => void
+  recordExamAttemptInGraph: (input: ExamOutcomeInput) => void
   setPref: <K extends keyof Prefs>(key: K, value: Prefs[K]) => void
   reset: () => void
 }
@@ -252,7 +304,15 @@ export function StoreProvider({
   /** server-provided starting state (overrides the local cache on login) */
   initial?: Persisted
 }) {
-  const [state, setReactState] = useState<Persisted>(() => (initial ? normalize(initial) : load(userId)))
+  const [state, setReactState] = useState<Persisted>(() => {
+    if (initial) return normalize(initial)
+    const loaded = load(userId)
+    const storedGraph = getLearnerGraphSnapshot()
+    if (Object.keys(storedGraph.nodes).length || Object.keys(storedGraph.edges).length) {
+      return { ...loaded, learnerGraph: mergeLearnerGraphs(loaded.learnerGraph, storedGraph) }
+    }
+    return loaded
+  })
   const latest = useRef(state)
   const [storageProblem, setStorageProblem] = useState(false)
   const [syncStatus, setSyncStatus] = useState(userId ? 'pending' : 'local')
@@ -261,6 +321,7 @@ export function StoreProvider({
     (update: (s: Persisted) => Persisted): boolean => {
       const next = update(latest.current)
       if (next === latest.current) return true
+      const prevGraph = latest.current.learnerGraph
       const saved = { ...next, updatedAt: Date.now() }
       try {
         persistProgress(localStorage, key, saved)
@@ -269,12 +330,29 @@ export function StoreProvider({
         return false
       }
       latest.current = saved
+      if (!initial && saved.learnerGraph !== prevGraph) {
+        replaceLearnerGraph(saved.learnerGraph)
+      }
       setReactState(saved)
       setStorageProblem(false)
       return true
     },
-    [key],
+    [key, initial],
   )
+  // Keep standalone localStorage learnerGraph mirror aligned when running in browser mode.
+  useEffect(() => {
+    if (initial) return
+    replaceLearnerGraph(latest.current.learnerGraph)
+  }, [initial])
+  useEffect(() => {
+    if (initial) return
+    return subscribeLearnerGraph(() => {
+      const snap = getLearnerGraphSnapshot()
+      if (snap.updatedAt > (latest.current.learnerGraph?.updatedAt ?? 0)) {
+        setState((s) => ({ ...s, learnerGraph: mergeLearnerGraphs(s.learnerGraph, snap) }))
+      }
+    })
+  }, [initial, setState])
   const exportProgress = useCallback(() => {
     const file = new Blob([exportLearningStorage(localStorage, key)], { type: 'application/json' })
     const url = URL.createObjectURL(file),
@@ -364,12 +442,24 @@ export function StoreProvider({
   const recordRecall = useCallback(
     (zh: string, input: RecallInput) => {
       if (!zh.trim()) return
-      const event = eventFor(
-        zh,
-        latest.current.cards[zh]?.lesson ?? latest.current.mastery[zh]?.lesson ?? 0,
-        input,
-      )
-      setState((s) => applyEvent(s, event))
+      const lessonOffset = latest.current.cards[zh]?.lesson ?? latest.current.mastery[zh]?.lesson ?? 0
+      const event = eventFor(zh, lessonOffset, input)
+      const { course, unit } = graphCourseOf(lessonOffset)
+      setState((s) => {
+        const applied = applyEvent(s, event)
+        return {
+          ...applied,
+          learnerGraph: recordRecallOutcome(applied.learnerGraph, {
+            zh,
+            correct: input.correct,
+            assisted: !!input.assisted,
+            mode: input.mode,
+            course,
+            lesson: unit || undefined,
+            at: event.at,
+          }),
+        }
+      })
     },
     [setState],
   )
@@ -392,6 +482,7 @@ export function StoreProvider({
         lessonsDone: s.lessonsDone.includes(lesson)
           ? s.lessonsDone
           : [...s.lessonsDone, lesson].sort((a, b) => a - b),
+        skippedLessons: s.skippedLessons.filter((n) => n !== lesson),
       }
     })
   }, [])
@@ -428,7 +519,17 @@ export function StoreProvider({
       const saved = setState((s) => {
         if (s.learning?.events[event.id]) return s
         const next = applyEvent(s, event)
-        return { ...next, xp: s.xp + event.xp, log: bump(s.log, { cards: 1 }) }
+        const { course, unit } = graphCourseOf(event.lesson)
+        const learnerGraph = recordRecallOutcome(next.learnerGraph, {
+          zh,
+          correct: rating !== 'again',
+          assisted: !!options.assisted,
+          mode: event.skill,
+          course,
+          lesson: unit || undefined,
+          at: event.at,
+        })
+        return { ...next, learnerGraph, xp: s.xp + event.xp, log: bump(s.log, { cards: 1 }) }
       })
       return saved ? event.id : null
     },
@@ -514,9 +615,139 @@ export function StoreProvider({
     setState((s) => {
       const prev = s.pathDone[key] ?? []
       if (prev.includes(node)) return s
-      return { ...s, pathDone: { ...s.pathDone, [key]: [...prev, node] } }
+      const nextNodes = [...prev, node]
+      const allDone = PATH_NODES.every((n) => nextNodes.includes(n))
+      return {
+        ...s,
+        pathDone: { ...s.pathDone, [key]: nextNodes },
+        skippedLessons: allDone ? s.skippedLessons.filter((n) => n !== lesson) : s.skippedLessons,
+      }
     })
   }, [])
+
+  const skipToHskLesson = useCallback(
+    (
+      targetLesson: number,
+      skippedSpecs: Array<{ lesson: number; title: string; words: { zh: string }[]; grammarPoints: string[] }>,
+    ) => {
+      if (targetLesson <= 1) return
+      const now = Date.now()
+      setState((s) => {
+        let next = s
+        const newlySkipped: number[] = []
+        const graphSpecs: Array<{ lesson: number; title: string; words: string[]; grammarPoints: string[] }> = []
+        for (const spec of skippedSpecs) {
+          if (spec.lesson >= targetLesson) continue
+          const nodes = next.pathDone[String(spec.lesson)] ?? []
+          const alreadyDone =
+            next.lessonsDone.includes(spec.lesson) || PATH_NODES.every((n) => nodes.includes(n))
+          if (alreadyDone) continue
+          newlySkipped.push(spec.lesson)
+          next = enqueueWords(next, spec.lesson, spec.words, now)
+          graphSpecs.push({
+            lesson: spec.lesson,
+            title: spec.title,
+            words: spec.words.map((w) => w.zh),
+            grammarPoints: spec.grammarPoints,
+          })
+        }
+        const skippedLessons = [...new Set([...next.skippedLessons, ...newlySkipped])].sort((a, b) => a - b)
+        const learnerGraph = graphSpecs.length
+          ? recordSkippedLessons(next.learnerGraph, { course: 'hsk4a', lessons: graphSpecs, at: now })
+          : next.learnerGraph
+        return {
+          ...next,
+          skippedLessons,
+          unlockedLesson: Math.max(next.unlockedLesson ?? 1, targetLesson),
+          learnerGraph,
+        }
+      })
+    },
+    [setState],
+  )
+
+  const unskipHskLesson = useCallback(
+    (lesson: number) => {
+      setState((s) => ({
+        ...s,
+        skippedLessons: s.skippedLessons.filter((n) => n !== lesson),
+        learnerGraph: unskipLessonInGraph(s.learnerGraph, { course: 'hsk4a', lesson }),
+      }))
+    },
+    [setState],
+  )
+
+  const enqueueSkippedWords = useCallback(
+    (
+      lessonOffset: number,
+      skippedSpecs: Array<{ course: CourseKey; lesson: number; title?: string; words: { zh: string }[]; grammarPoints?: string[] }>,
+    ) => {
+      if (!skippedSpecs.length) return
+      const now = Date.now()
+      setState((s) => {
+        let next = s
+        for (const spec of skippedSpecs) {
+          next = enqueueWords(next, lessonOffset + spec.lesson, spec.words, now)
+        }
+        const course = skippedSpecs[0].course
+        const learnerGraph = recordSkippedLessons(next.learnerGraph, {
+          course,
+          lessons: skippedSpecs.map((spec) => ({
+            lesson: spec.lesson,
+            title: spec.title,
+            words: spec.words.map((w) => w.zh),
+            grammarPoints: spec.grammarPoints,
+          })),
+          at: now,
+        })
+        return { ...next, learnerGraph }
+      })
+    },
+    [setState],
+  )
+
+  const unskipCourseLessonInGraph = useCallback(
+    (course: CourseKey, lesson: number) => {
+      setState((s) => ({
+        ...s,
+        learnerGraph: unskipLessonInGraph(s.learnerGraph, { course, lesson }),
+      }))
+    },
+    [setState],
+  )
+
+  const recordNearSynonymConfusion = useCallback(
+    (targetZh: string, typedZh: string, lesson?: number, course?: CourseKey) => {
+      if (!targetZh.trim() || !typedZh.trim()) return
+      setState((s) => {
+        const offset = s.cards[targetZh]?.lesson ?? s.mastery[targetZh]?.lesson ?? lesson ?? 0
+        const resolved = course ? { course, unit: lesson ?? 0 } : graphCourseOf(offset)
+        return {
+          ...s,
+          learnerGraph: recordRecallOutcome(s.learnerGraph, {
+            zh: targetZh,
+            correct: false,
+            assisted: true,
+            mode: 'synonym-confusion',
+            course: resolved.course,
+            lesson: resolved.unit || undefined,
+            confusedWith: typedZh,
+          }),
+        }
+      })
+    },
+    [setState],
+  )
+
+  const recordExamAttemptInGraph = useCallback(
+    (input: ExamOutcomeInput) => {
+      setState((s) => ({
+        ...s,
+        learnerGraph: recordExamOutcome(s.learnerGraph, input),
+      }))
+    },
+    [setState],
+  )
 
   const logDrill = useCallback((reps: number, xp: number) => {
     setState((s) =>
@@ -572,8 +803,10 @@ export function StoreProvider({
       setStorageProblem(true)
       return
     }
-    setState(() => ({ ...empty, resetAt: Date.now(), learning: initLearning(empty) }))
-  }, [key, setState])
+    const freshGraph = createEmptyGraph(Date.now())
+    if (!initial) replaceLearnerGraph(freshGraph)
+    setState(() => ({ ...empty, learnerGraph: freshGraph, resetAt: Date.now(), learning: initLearning(empty) }))
+  }, [key, setState, initial])
 
   const value = useMemo<Store>(() => {
     const cardList = Object.values(state.cards)
@@ -610,6 +843,12 @@ export function StoreProvider({
       awardXp,
       isNodeDone,
       markNodeDone,
+      skipToHskLesson,
+      unskipHskLesson,
+      enqueueSkippedWords,
+      unskipCourseLessonInGraph,
+      recordNearSynonymConfusion,
+      recordExamAttemptInGraph,
       setPref,
       reset,
     }
@@ -628,6 +867,12 @@ export function StoreProvider({
     awardXp,
     isNodeDone,
     markNodeDone,
+    skipToHskLesson,
+    unskipHskLesson,
+    enqueueSkippedWords,
+    unskipCourseLessonInGraph,
+    recordNearSynonymConfusion,
+    recordExamAttemptInGraph,
     setPref,
     reset,
     toggleStar,

@@ -58,11 +58,21 @@ export function isSessionOpen(lesson: number, node: PathNode): boolean {
   return lessons.some((l) => l.lesson === lesson) && PATH_NODES.includes(node)
 }
 
-export function nextPlayable(isDone: (lesson: number, node: PathNode) => boolean): {
+export interface SkipOptions {
+  skippedLessons?: readonly number[]
+  unlockedLesson?: number
+}
+
+export function nextPlayable(
+  isDone: (lesson: number, node: PathNode) => boolean,
+  skipOpts?: SkipOptions,
+): {
   lesson: number
   node: PathNode
 } {
+  const skipped = new Set(skipOpts?.skippedLessons ?? [])
   for (const l of lessons) {
+    if (skipped.has(l.lesson) && !PATH_NODES.every((n) => isDone(l.lesson, n))) continue
     for (const node of PATH_NODES) {
       if (!isDone(l.lesson, node)) return { lesson: l.lesson, node }
     }
@@ -70,25 +80,37 @@ export function nextPlayable(isDone: (lesson: number, node: PathNode) => boolean
   return { lesson: lessons[lessons.length - 1].lesson, node: 'wrap' }
 }
 
-/** Current sitting or a finished one (replay). Locked-ahead nodes stay closed. */
+/** Current sitting, skipped-for-recall, or a finished one (replay). Locked-ahead nodes stay closed. */
 export function isNodePlayable(
   lesson: number,
   node: PathNode,
   isDone: (lesson: number, node: PathNode) => boolean,
+  skipOpts?: SkipOptions,
 ): boolean {
   if (!isSessionOpen(lesson, node)) return false
   if (isDone(lesson, node)) return true
-  const next = nextPlayable(isDone)
+  if (skipOpts?.skippedLessons?.includes(lesson)) return true
+  if (skipOpts?.unlockedLesson && lesson === skipOpts.unlockedLesson) {
+    const firstOpen = PATH_NODES.find((n) => !isDone(lesson, n))
+    if (firstOpen === node) return true
+  }
+  const next = nextPlayable(isDone, skipOpts)
   return next.lesson === lesson && next.node === node
 }
 
-/** Textbook overlay is only for a lesson the learner has reached. */
+/** Textbook overlay is only for a lesson the learner has reached or skipped. */
 export function isLessonReached(
   lesson: number,
   isDone: (lesson: number, node: PathNode) => boolean,
+  skipOpts?: SkipOptions,
 ): boolean {
-  const next = nextPlayable(isDone)
-  return lesson <= next.lesson || PATH_NODES.some((n) => isDone(lesson, n))
+  const next = nextPlayable(isDone, skipOpts)
+  const highest = Math.max(next.lesson, skipOpts?.unlockedLesson ?? 1)
+  return (
+    lesson <= highest ||
+    !!skipOpts?.skippedLessons?.includes(lesson) ||
+    PATH_NODES.some((n) => isDone(lesson, n))
+  )
 }
 
 /** `en` is the label in the interface language (kept under that name for the screens that read it). */

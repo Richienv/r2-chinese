@@ -1,5 +1,5 @@
 import { compactStepId } from '../lib/sessionRoute'
-import { poolOf, withMixedPractice } from '../lib/duoSession'
+import { buildSkippedCarryover, poolOf, withMixedPractice } from '../lib/duoSession'
 import type { ExWord } from '../lib/exercises'
 import { jiaochengLessons as poolUnits } from '../lib/jiaocheng'
 import { ExerciseView, type ExerciseOutcome, type EvidenceMode } from '../components/Exercises'
@@ -16,6 +16,9 @@ import { quizAssisted } from '../lib/choiceSupport'
 import { isComfortable } from '../lib/learningEngine'
 import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { LearningPath } from '../components/LearningPath'
+import { SkipLevelControl } from '../components/SkipLevelModal'
+import { lookup } from '../lib/content'
+import type { ExamCourse, ExamMode } from '../lib/jiaochengMidterm'
 import { useAuth } from '../auth/AuthProvider'
 import { DialogueAudio, Glossed, Line, useGloss } from '../components/ChineseText'
 import { DialogueRecheck, type RecheckSummary } from '../components/DialogueRecheck'
@@ -61,14 +64,49 @@ function withSlots(sentence: string, slots: Record<string, ReactNode>): ReactNod
   })
 }
 
-function MidtermEntry({ onClick }: { onClick?: () => void }) {
+function MidtermEntry({ onClick }: { onClick?: (course?: ExamCourse, mode?: ExamMode) => void }) {
   if (!onClick) return null
   return (
-    <button type="button" className="jiaocheng-midterm-entry" onClick={onClick}>
-      <span className="kicker">第二册上 · 第1–12课</span>
-      <strong>{t('Midterm mock')}</strong>
-      <span>{t('The textbook’s own blanks, choices, corrections and reading.')}</span>
-    </button>
+    <div className="jiaocheng-exam-hub">
+      <button type="button" className="jiaocheng-midterm-entry" onClick={() => onClick('jiaocheng', 'mock')}>
+        <span className="kicker">第二册 上+下 · 第1–25课</span>
+        <strong>{t('Midterm & Final mock')}</strong>
+        <span>{t('Fill-blanks, grammar choices, word order, error spotting & reading with step-by-step breakdown.')}</span>
+      </button>
+      <div className="jiaocheng-exam-quick-row">
+        <button type="button" className="skip-level-btn skip-level-btn-secondary" onClick={() => onClick('jiaocheng', 'grammar')}>
+          {t('Grammar drill')}
+        </button>
+        <button type="button" className="skip-level-btn skip-level-btn-secondary" onClick={() => onClick('mixed', 'mock')}>
+          {t('Mixed Final (JC + HSK 4)')}
+        </button>
+      </div>
+    </div>
+  )
+}
+
+function JiaochengSkipControl() {
+  const store = useStore()
+  const { skippedLessons, nextPlayable, isNodeDone, skipToLesson } = useJiaochengProgress()
+  const skippedSet = new Set(skippedLessons)
+  return (
+    <SkipLevelControl
+      courseLabel="汉语教程"
+      currentLesson={nextPlayable.lesson}
+      recommendedLesson={13}
+      options={jiaochengLessons.map((l) => ({
+        lesson: l.index,
+        label: t('Lesson {n}', { n: l.bookLesson }) + ` · 第二册${bookPartLabel(l.book)}`,
+        title: l.titleZh || l.titleEn,
+        wordCount: l.words.length,
+        done: nodesForLesson(l).every((n) => isNodeDone(l.index, n)),
+        skipped: skippedSet.has(l.index),
+      }))}
+      onSkipTo={(target) => {
+        const specs = skipToLesson(target)
+        store.enqueueSkippedWords(3000, specs)
+      }}
+    />
   )
 }
 
@@ -115,8 +153,10 @@ export function JiaochengPath({
   onPlay?: (lesson: number, node: PathNode) => void
   fill?: boolean
 }) {
+  const store = useStore()
   const progress = useJiaochengProgress()
   const nodes = nodesForLesson(lesson)
+  const skipped = progress.isLessonSkipped(lesson.index)
   return (
     <LearningPath
       fill={fill}
@@ -125,6 +165,11 @@ export function JiaochengPath({
       subtitle={lesson.titleEn}
       source={lesson.sourcePages ? t('pp. {pages}', { pages: lesson.sourcePages }) : undefined}
       open={progress.isLessonReached(lesson.index)}
+      skipped={skipped}
+      onUnskip={skipped ? () => {
+        progress.unskipLesson(lesson.index)
+        store.unskipCourseLessonInGraph('jiaocheng', lesson.index)
+      } : undefined}
       position={{ index: jiaochengLessons.indexOf(lesson) + 1, total: jiaochengLessons.length, label: t('Lesson {n} of {total}', { n: jiaochengLessons.indexOf(lesson) + 1, total: jiaochengLessons.length }) }}
       items={nodes.map((node) => {
         const done = nodeDone(lesson.index, node)
@@ -159,7 +204,7 @@ export function JiaochengPath({
           label: caption.zh,
           title,
           subtitle: subtitle?.trim() !== title.trim() ? subtitle : undefined,
-          state: done ? ('done' as const) : on ? ('current' as const) : ('locked' as const),
+          state: done ? ('done' as const) : on ? ('current' as const) : skipped ? ('skipped' as const) : ('locked' as const),
           playable: progress.isNodePlayable(lesson.index, node),
           onSelect: () => onPlay?.(lesson.index, node),
         }
@@ -168,19 +213,20 @@ export function JiaochengPath({
   )
 }
 
-export function JiaochengHomePath({ onPlay, onMidterm }: { onPlay: (lesson: number, node: PathNode) => void; onMidterm?: () => void }) {
+export function JiaochengHomePath({ onPlay, onMidterm }: { onPlay: (lesson: number, node: PathNode) => void; onMidterm?: (course?: ExamCourse, mode?: ExamMode) => void }) {
   const { nextPlayable, isNodeDone } = useJiaochengProgress()
   if (jiaochengLessons.length === 0) return <JiaochengEmptyState />
   const lesson = getJiaochengLesson(nextPlayable.lesson) ?? jiaochengLessons[0]
   return (
     <>
       <MidtermEntry onClick={onMidterm} />
+      <JiaochengSkipControl />
       <JiaochengPath fill lesson={lesson} current={nextPlayable} nodeDone={isNodeDone} onPlay={onPlay} />
     </>
   )
 }
 
-export function JiaochengLearn({ onPlay, onMidterm }: { onPlay: (lesson: number, node: PathNode) => void; onMidterm?: () => void }) {
+export function JiaochengLearn({ onPlay, onMidterm }: { onPlay: (lesson: number, node: PathNode) => void; onMidterm?: (course?: ExamCourse, mode?: ExamMode) => void }) {
   const { nextPlayable, isNodeDone } = useJiaochengProgress()
   if (jiaochengLessons.length === 0) {
     return <JiaochengEmptyState />
@@ -188,6 +234,7 @@ export function JiaochengLearn({ onPlay, onMidterm }: { onPlay: (lesson: number,
   return (
     <>
       <MidtermEntry onClick={onMidterm} />
+      <JiaochengSkipControl />
       {jiaochengLessons.map((unit) => (
         <JiaochengPath
           key={unit.id}
@@ -231,15 +278,28 @@ function JiaochengRunner({ lesson, node, onClose }: { lesson: number; node: Path
   const momentum = useMomentum()
   const checkpoint = useRef(readLearningCheckpoint(resumeId))
   const steps = useMemo(
-    () =>
-      ((steps: ReturnType<typeof buildJiaochengSteps>) => withMixedPractice(steps, `jc:${lesson}:${node}`, coursePool()))(buildJiaochengSteps(lesson, node).filter(
-        (step) =>
-          !(
-            (step.kind === 'teach' || step.kind === 'recall') &&
-            isComfortable(store, step.word.zh) &&
-            step.id !== compactStepId(checkpoint.current?.stepId)
-          ),
-      )),
+    () => {
+      const pool = coursePool()
+      const skippedCarryover = buildSkippedCarryover(
+        store.learnerGraph,
+        (zh) => isComfortable(store, zh),
+        pool,
+        lookup,
+      )
+      return withMixedPractice(
+        buildJiaochengSteps(lesson, node).filter(
+          (step) =>
+            !(
+              (step.kind === 'teach' || step.kind === 'recall') &&
+              isComfortable(store, step.word.zh) &&
+              step.id !== compactStepId(checkpoint.current?.stepId)
+            ),
+        ),
+        `jc:${lesson}:${node}`,
+        pool,
+        { graph: store.learnerGraph, skippedCarryover },
+      )
+    },
     [lesson, node],
   )
   const sessionWords = useMemo(

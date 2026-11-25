@@ -127,3 +127,12 @@
 .focus-timeline-date{text-align:center}
 @keyframes focus-hint-in{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.focus-hints .focus-hint{animation:none}}
+.focus-meta-pills{margin-top:10px}
+.recall-focus .recall-pos-pill,.recall-focus .recall-slot-pill,.focus-meta-pills .recall-pos-pill,.focus-meta-pills .recall-slot-pill{background:rgba(255,255,255,.08);background:color-mix(in srgb,currentColor 11%,transparent);border:1px solid color-mix(in srgb,currentColor 20%,transparent);color:inherit}
+.recall-focus .recall-slots-preview,.focus-meta-pills .recall-slots-preview{color:inherit;opacity:.88}
+.focus-cue-note,.recall-focus .recall-cue-note{max-width:460px;margin:10px auto 0;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.16);border-color:color-mix(in srgb,currentColor 18%,transparent);background:rgba(255,255,255,.06);background:color-mix(in srgb,currentColor 7%,transparent);text-align:left;color:inherit}
+.focus-cue-note .recall-when-cue,.focus-cue-note .recall-disambiguation,.recall-focus .recall-when-cue,.recall-focus .recall-disambiguation{color:inherit}
+.focus-cue-note .recall-when-cue span,.recall-focus .recall-when-cue span{color:inherit;opacity:.92}
+.focus-cue-note .recall-disambiguation,.recall-focus .recall-disambiguation{opacity:.82}
+.focus-synonym-feedback,.recall-focus .recall-synonym-feedback{border-color:color-mix(in srgb,currentColor 28%,transparent);background:rgba(255,255,255,.1);background:color-mix(in srgb,currentColor 12%,transparent);color:inherit}
+.focus-synonym-feedback strong,.recall-focus .recall-synonym-feedback strong{color:inherit}

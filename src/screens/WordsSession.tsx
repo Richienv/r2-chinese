@@ -1,5 +1,5 @@
 import { compactStepId } from '../lib/sessionRoute'
-import { withMixedPractice } from '../lib/duoSession'
+import { buildSkippedCarryover, withMixedPractice } from '../lib/duoSession'
 import { ExerciseView, type ExerciseOutcome, type EvidenceMode } from '../components/Exercises'
 import { ComboBadge, MomentumProvider, useMomentum, XpFloat } from '../components/Momentum'
 import { useSessionRoute } from '../components/useSessionRoute'
@@ -19,7 +19,7 @@ import {
   hasHanzi,
 } from '../components/Hear'
 import { CloseIcon, LockIcon } from '../components/Icons'
-import { getLesson, type Example } from '../lib/content'
+import { getLesson, lookup, type Example } from '../lib/content'
 import { recordHistory } from '../lib/history'
 import { t } from '../lib/i18n'
 import { clearLearningCheckpoint, readLearningCheckpoint, writeLearningCheckpoint } from '../lib/resume'
@@ -54,7 +54,7 @@ export function WordsSession({
   onClose: () => void
 }) {
   const store = useStore()
-  if (!isSessionOpen(lesson, node) || !isNodePlayable(lesson, node, store.isNodeDone)) {
+  if (!isSessionOpen(lesson, node) || !isNodePlayable(lesson, node, store.isNodeDone, { skippedLessons: store.skippedLessons, unlockedLesson: store.unlockedLesson })) {
     return <LockedView onClose={onClose} />
   }
   return (
@@ -85,7 +85,16 @@ function WordsRunner({ lesson, node, onClose }: { lesson: number; node: PathNode
       const recall = base.find((activity) => activity.kind === 'recall' && activity.word.zh === zh)
       return recall ? [{ ...recall, id: `retry:${zh}`, n: 1, of: 1 } as SessionStep] : []
     })
-    return withMixedPractice([...base.slice(0, -1), ...retries, base[base.length - 1]], `hsk:${lesson}:${node}`)
+    const skippedCarryover = buildSkippedCarryover(
+      store.learnerGraph,
+      (zh) => isComfortable(store, zh),
+      [],
+      lookup,
+    )
+    return withMixedPractice([...base.slice(0, -1), ...retries, base[base.length - 1]], `hsk:${lesson}:${node}`, [], {
+      graph: store.learnerGraph,
+      skippedCarryover,
+    })
   })
   const sessionWords = useMemo(
     () => [...new Set(steps.filter((s) => s.kind === 'recall').map((s) => s.word.zh))],

@@ -9,9 +9,9 @@ import { ListenCue } from './ListenCue'
 import { ReviewReport } from './ReviewReport'
 import { StrokeWord } from './StrokeWord'
 import { playAdvance, playCorrect, playHint, playReveal, playWrong } from '../lib/sfx'
-import { blankedExample, exampleFor, vocabIndex } from '../lib/content'
-import { contextWindow } from '../lib/recallContext'
-import { characterTiles, coreMeaning, otherMeanings, type ExWord } from '../lib/exercises'
+import { blankedExample, corpusPeers, enrichVocab, exampleFor, vocabIndex } from '../lib/content'
+import { buildRecallPromptContext, nearSynonymFeedback, type NearSynonymMatch, type RecallPromptContext } from '../lib/recallContext'
+import { characterTiles, type ExWord } from '../lib/exercises'
 import { rng, seedOf, shuffle } from '../lib/seeded'
 import { playTick } from '../lib/sfx'
 import '../styles/duo.css'
@@ -96,16 +96,16 @@ export function WordRecall(props: RecallProps) {
   )
 }
 
-function hintText(step: HintStep, word: Vocab) {
+function hintText(step: HintStep, word: Vocab, safeMeaning: string) {
   const chars = Array.from(word.zh)
   if (step === 'first') return `${chars[0]}${'＿'.repeat(Math.max(0, chars.length - 1))}`
   if (step === 'pinyin') return word.pinyin
-  if (step === 'meaning') return word.en
+  if (step === 'meaning') return safeMeaning || word.en
   return word.zh
 }
 
 /** Every hint taken so far stays visible, so the learner can combine them. */
-function HintStack({ steps, word }: { steps: HintStep[]; word: Vocab }) {
+function HintStack({ steps, word, safeMeaning }: { steps: HintStep[]; word: Vocab; safeMeaning: string }) {
   const shown = steps.filter((step) => step !== 'word')
   if (!shown.length) return null
   return (
@@ -116,12 +116,50 @@ function HintStack({ steps, word }: { steps: HintStep[]; word: Vocab }) {
           <div className="production-hint" key={step}>
             <span>{HINT_TITLES[step]}</span>
             <strong className={zh ? 'zh' : ''} lang={zh ? 'zh-CN' : undefined}>
-              {hintText(step, word)}
+              {hintText(step, word, safeMeaning)}
             </strong>
           </div>
         )
       })}
     </div>
+  )
+}
+
+function RecallMetaPills({ ctx }: { ctx: RecallPromptContext }) {
+  if (!ctx.posLabel && !ctx.charCountLabel) return null
+  return (
+    <div className="recall-meta-pills">
+      {ctx.posLabel && <span className="recall-pos-pill">{ctx.posLabel}</span>}
+      <span className="recall-slot-pill">
+        {ctx.charCountLabel}
+        <span className="recall-slots-preview zh" lang="zh-CN" aria-hidden="true">{ctx.slots}</span>
+      </span>
+    </div>
+  )
+}
+
+function RecallContextDetails({ ctx, hidden }: { ctx: RecallPromptContext; hidden: boolean }) {
+  if (hidden || (!ctx.sentence && !ctx.whenCue && !ctx.disambiguation)) return null
+  return (
+    <>
+      {ctx.sentence && (
+        <div className="recall-context">
+          <p className="recall-context-label">{t('In a sentence')}</p>
+          <p className="zh" lang="zh-CN">{ctx.sentence.zh}</p>
+          {ctx.sentence.en && <p className="recall-context-translation">{ctx.sentence.en}</p>}
+        </div>
+      )}
+      {(ctx.whenCue || ctx.disambiguation) && (
+        <div className="recall-cue-note">
+          {ctx.whenCue && (
+            <p className="recall-when-cue">
+              <span>{t('Usage cue')}</span> {ctx.whenCue}
+            </p>
+          )}
+          {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
+        </div>
+      )}
+    </>
   )
 }
 
@@ -139,7 +177,7 @@ function HintButton({ ladder, hint, onClick, nudge }: { ladder: HintStep[]; hint
 }
 
 function TypedRecall({
-  word,
+  word: rawWord,
   n,
   of,
   cue: requested = 'meaning',
@@ -150,16 +188,22 @@ function TypedRecall({
   onAttempt,
   onComplete,
 }: RecallProps) {
-  const sentence = requested === 'sentence' ? blankedExample(word.zh) : null
+  const store = useStore()
+  const word = enrichVocab(rawWord)
+  const peers = corpusPeers()
+  const rawBlank = requested === 'sentence' || requested === 'meaning' ? blankedExample(word.zh) : null
+  const sentenceMode = requested === 'sentence' && !!rawBlank
   // A word the book never uses in a sentence is asked from its meaning instead.
   const cue: DrillCue = requested === 'sound' || requested === 'pinyin' ? requested : 'meaning'
-  // The meaning alone can fit several words. The book's own sentence, with the word blanked,
-  // says which one is meant. It is context, not a hint, so it never marks the attempt as helped.
-  const contextSource = cue === 'meaning' && !sentence ? blankedExample(word.zh) : null
-  const context = contextSource ? contextWindow(contextSource.blank, contextSource.en) : null
+  const hideMeaning = cue === 'sound' || cue === 'pinyin'
+  const ctx = buildRecallPromptContext({ word, blanked: rawBlank, peers, hideMeaning })
+  const safeMeaning = ctx.otherMeanings ? `${ctx.coreMeaning}; ${ctx.otherMeanings}` : ctx.coreMeaning
+  const taskWord = { ...word, en: safeMeaning || word.en }
   const ladder = hintLadder(cue)
   const inputId = useId()
-  const characterCount = Array.from(normalizeChinese(word.zh)).length
+  const inputRef = useRef<HTMLInputElement>(null)
+  const triedSynonyms = useRef(new Set<string>())
+  const characterCount = Math.max(1, ctx.charCount)
   const [answer, setAnswer] = useState('')
   const [inputMode, setInputMode] = useState<'type' | 'draw' | 'tiles'>('type')
   const [drawStarted, setDrawStarted] = useState(false)
@@ -171,6 +215,7 @@ function TypedRecall({
   const [resultAssisted, setResultAssisted] = useState(false)
   const [feedback, setFeedback] = useState<'retry' | 'uncertain' | 'error' | null>(null)
   const [feedbackMessage, setFeedbackMessage] = useState('')
+  const [synonymMatch, setSynonymMatch] = useState<NearSynonymMatch | null>(null)
   const [checkCount, setCheckCount] = useState(0)
   const [typedReview, setTypedReview] = useState<Review | null>(null)
   const [typedChange, setTypedChange] = useState<ReviewComparison | null>(null)
@@ -187,6 +232,7 @@ function TypedRecall({
       setResultAssisted(wasAssisted)
       setSolved(true)
       setFeedback(null)
+      setSynonymMatch(null)
       playCorrect()
     } else {
       setMissed(true)
@@ -196,10 +242,24 @@ function TypedRecall({
   }
 
   function checkTyped() {
-    if (!normalizeChinese(answer) || solved) return
-    const review = reviewTypedWord(recallTask('Type', cue, word, characterCount), answer, word.zh)
+    const cleaned = normalizeChinese(answer)
+    if (!cleaned || solved) return
+    const correct = cleaned === normalizeChinese(word.zh)
+    if (!correct && !triedSynonyms.current.has(cleaned)) {
+      const synonym = nearSynonymFeedback(answer, word, peers)
+      if (synonym) {
+        triedSynonyms.current.add(cleaned)
+        store.recordNearSynonymConfusion(word.zh, synonym.typedZh)
+        setSynonymMatch(synonym)
+        setFeedback(null)
+        setAnswer('')
+        inputRef.current?.focus()
+        return
+      }
+    }
+    setSynonymMatch(null)
+    const review = reviewTypedWord(recallTask('Type', cue, taskWord, characterCount), answer, word.zh)
     // Only a fully passing review is a correct answer; the exact-match rule is the same one as before.
-    const correct = normalizeChinese(answer) === normalizeChinese(word.zh)
     setTypedChange(typedReview ? compareReviews(typedReview, review) : null)
     setTypedReview(review)
     setFeedbackMessage(t('Not quite'))
@@ -240,22 +300,28 @@ function TypedRecall({
   const typing = !solved && !revealed && inputMode === 'type' && !typedReview
 
   return (
-    <section className="production-stage word-recall compact-recall" data-mode={inputMode} data-cue={sentence ? 'sentence' : cue} data-finished={solved || revealed}>
+    <section className="production-stage word-recall compact-recall" data-mode={inputMode} data-cue={sentenceMode ? 'sentence' : cue} data-finished={solved || revealed}>
       <header className="compact-recall-heading" aria-label={t('Recall · {n} of {of}', { n, of })}>
-        {sentence ? (
-          <div className="recall-sentence">
-            <p className="zh" lang="zh-CN">{sentence.blank}</p>
-            {sentence.en && <p className="recall-sentence-translation">{sentence.en}</p>}
-          </div>
+        <RecallMetaPills ctx={ctx} />
+        {sentenceMode && ctx.sentence ? (
+          <>
+            <div className="recall-sentence">
+              <p className="zh" lang="zh-CN">{ctx.sentence.zh}</p>
+              {ctx.sentence.en && <p className="recall-sentence-translation">{ctx.sentence.en}</p>}
+            </div>
+            {ctx.coreMeaning && <MeaningHeading core={ctx.coreMeaning} other={ctx.otherMeanings} />}
+            {!solved && !revealed && (ctx.whenCue || ctx.disambiguation) && (
+              <div className="recall-cue-note">
+                {ctx.whenCue && <p className="recall-when-cue"><span>{t('Usage cue')}</span> {ctx.whenCue}</p>}
+                {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
+              </div>
+            )}
+          </>
         ) : (
-          cue === 'meaning' ? <MeaningHeading gloss={word.en} /> : <h2>{HEADINGS[cue]}</h2>
-        )}
-        {context && !solved && !revealed && (
-          <div className="recall-context">
-            <p className="recall-context-label">{t('In a sentence')}</p>
-            <p className="zh" lang="zh-CN">{context.zh}</p>
-            {context.en && <p className="recall-context-translation">{context.en}</p>}
-          </div>
+          <>
+            {cue === 'meaning' ? <MeaningHeading core={ctx.coreMeaning} other={ctx.otherMeanings} /> : <h2>{HEADINGS[cue]}</h2>}
+            {cue === 'meaning' && <RecallContextDetails ctx={ctx} hidden={solved || revealed} />}
+          </>
         )}
         {cue === 'sound' && <ListenCue text={word.zh} />}
         {cue === 'pinyin' && <p className="production-pinyin">{word.pinyin}</p>}
@@ -313,7 +379,7 @@ function TypedRecall({
         <div className="hanzi-host" hidden={inputMode !== 'draw'} aria-describedby={`${inputId}-feedback`}>
           <HanziDrawing
             word={normalizeChinese(word.zh)}
-            task={recallTask('Draw', cue, word, characterCount)}
+            task={recallTask('Draw', cue, taskWord, characterCount)}
             handwriting={handwriting}
             solved={solved}
             onChecked={drawingChecked}
@@ -335,6 +401,7 @@ function TypedRecall({
         >
           <label className="sr-only" htmlFor={inputId}>{t('Your word')}</label>
           <input
+            ref={inputRef}
             id={inputId}
             className="production-input zh"
             lang="zh-CN"
@@ -353,7 +420,13 @@ function TypedRecall({
             spellCheck={false}
             aria-describedby={`${inputId}-feedback`}
           />
-          <HintStack steps={ladder.slice(0, hint)} word={word} />
+          {synonymMatch && (
+            <div className="recall-synonym-feedback" role="status" aria-live="polite">
+              <strong>{t('Close match — different nuance')}</strong>
+              <p>{synonymMatch.message}</p>
+            </div>
+          )}
+          <HintStack steps={ladder.slice(0, hint)} word={word} safeMeaning={safeMeaning} />
           <div className="recall-row">
             {hintButton}
             <button className="btn" type="submit" disabled={!answer.trim()}>
@@ -375,10 +448,10 @@ function TypedRecall({
             setTypedChange(
               compareReviews(
                 typedReview,
-                reviewTypedWord(recallTask('Type', cue, word, characterCount), next, word.zh),
+                reviewTypedWord(recallTask('Type', cue, taskWord, characterCount), next, word.zh),
               ),
             )
-            setTypedReview(reviewTypedWord(recallTask('Type', cue, word, characterCount), next, word.zh))
+            setTypedReview(reviewTypedWord(recallTask('Type', cue, taskWord, characterCount), next, word.zh))
             score(correct, true)
           }}
         />
@@ -388,7 +461,7 @@ function TypedRecall({
       )}
       {!typing && !solved && !revealed && (
         <>
-          <HintStack steps={ladder.slice(0, hint)} word={word} />
+          <HintStack steps={ladder.slice(0, hint)} word={word} safeMeaning={safeMeaning} />
           <div className="production-actions">{hintButton}</div>
         </>
       )}
@@ -422,7 +495,11 @@ function TypedRecall({
 const SPEAK_LADDER: HintStep[] = ['first', 'pinyin', 'word']
 
 /** Say the word out loud. The browser transcript checks it when it can; otherwise the learner judges. */
-function SpeakRecall({ word, n, of, externallyAssisted = false, repeatOnHelp = false, onAssistance, onAttempt, onComplete }: RecallProps) {
+function SpeakRecall({ word: rawWord, n, of, externallyAssisted = false, repeatOnHelp = false, onAssistance, onAttempt, onComplete }: RecallProps) {
+  const word = enrichVocab(rawWord)
+  const peers = corpusPeers()
+  const ctx = buildRecallPromptContext({ word, blanked: blankedExample(word.zh), peers })
+  const safeMeaning = ctx.otherMeanings ? `${ctx.coreMeaning}; ${ctx.otherMeanings}` : ctx.coreMeaning
   const [hint, setHint] = useState(0)
   const [missed, setMissed] = useState(false)
   const [phase, setPhase] = useState<'ask' | 'judge' | 'done'>('ask')
@@ -479,7 +556,9 @@ function SpeakRecall({ word, n, of, externallyAssisted = false, repeatOnHelp = f
   return (
     <section className="production-stage word-recall compact-recall speak-recall" data-cue="speak" data-finished={phase === 'done'}>
       <header className="compact-recall-heading" aria-label={t('Recall · {n} of {of}', { n, of })}>
-        <MeaningHeading gloss={word.en} />
+        <RecallMetaPills ctx={ctx} />
+        <MeaningHeading core={ctx.coreMeaning} other={ctx.otherMeanings} />
+        <RecallContextDetails ctx={ctx} hidden={phase !== 'ask'} />
         <p className="speak-recall-lead">{t('Say it in Mandarin')}</p>
       </header>
       {phase === 'ask' && (
@@ -501,7 +580,7 @@ function SpeakRecall({ word, n, of, externallyAssisted = false, repeatOnHelp = f
           )}
           {snapshot.error && <p className="speak-recall-error">{snapshot.error}</p>}
           {missed && heard && <RecallFeedback state="retry" label={t('Not quite')} />}
-          <HintStack steps={SPEAK_LADDER.slice(0, hint)} word={word} />
+          <HintStack steps={SPEAK_LADDER.slice(0, hint)} word={word} safeMeaning={safeMeaning} />
           <div className="recall-row">
             <HintButton ladder={SPEAK_LADDER} hint={hint} onClick={nextHint} nudge={missed && hint === 0} />
             <button type="button" className="btn" onClick={() => { playReveal(); setPhase('judge') }}>
@@ -587,13 +666,11 @@ function MicGlyph() {
 }
 
 /** The plain Indonesian word first; the other senses quietly below. */
-function MeaningHeading({ gloss }: { gloss: string }) {
-  const core = coreMeaning(gloss) || gloss
-  const rest = otherMeanings(gloss)
+function MeaningHeading({ core, other }: { core: string; other: string }) {
   return (
     <>
       <h2>{core}</h2>
-      {rest && <p className="recall-other-meanings">{rest}</p>}
+      {other && <p className="recall-other-meanings">{other}</p>}
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { progressAction } from '../lib/practiceExperience'
 import { recommendedWords } from '../lib/learningEngine'
+import { graphSummary } from '../lib/learnerGraph'
 import '../styles/usability.css'
 import { useMemo, useState } from 'react'
 import { MasteryTracker } from '../components/MasteryTracker'
@@ -279,10 +280,16 @@ export function Progress({
   const [showHistory, setShowHistory] = useState(false)
   const week = weekActivity(s.log)
   const due = dueCards(s.cardList)
-  const hardWords = recommendedWords(s, Object.values(s.mastery)
-    .filter((record) => record.state === 'hard')
-    .sort((a, b) => b.lastSeen - a.lastSeen)
-    .map((record) => record.zh))
+  const hardWords = recommendedWords(
+    s,
+    Object.values(s.mastery)
+      .filter((record) => record.state === 'hard')
+      .sort((a, b) => b.lastSeen - a.lastSeen)
+      .map((record) => record.zh),
+    Date.now(),
+    s.learnerGraph,
+  )
+  const graphInfo = useMemo(() => graphSummary(s.learnerGraph), [s.learnerGraph])
   const weekCards = week.reduce((sum, day) => sum + day.cards, 0)
   const activeDays = week.filter((day) => day.cards > 0).length
   const todayProgress = Math.min(100, Math.round((s.today.cards / DAILY_GOAL) * 100))
@@ -463,6 +470,22 @@ export function Progress({
           )}
         </p>
         <MasteryTracker words={s.learningTrail} />
+        {(graphInfo.skippedPendingCount > 0 || graphInfo.weakGrammarCount > 0 || graphInfo.confusionPairCount > 0) && (
+          <details className="progress-graph-details" style={{ marginTop: 12 }}>
+            <summary>{t('Active recall priorities from your graph')}</summary>
+            <div style={{ display: 'grid', gap: 6, marginTop: 8, fontSize: 13 }}>
+              {graphInfo.skippedPendingCount > 0 && (
+                <span>{t('{n} words from skipped lessons queued for active recall', { n: graphInfo.skippedPendingCount })}</span>
+              )}
+              {graphInfo.weakGrammar.length > 0 && (
+                <span>{t('Weak grammar')}: {graphInfo.weakGrammar.map((g) => g.point).join(' · ')}</span>
+              )}
+              {graphInfo.confusions.length > 0 && (
+                <span>{t('Confused pairs')}: {graphInfo.confusions.map((c) => c.label).join(' · ')}</span>
+              )}
+            </div>
+          </details>
+        )}
       </section>
 
       <section className="card progress-section progress-courses-section">

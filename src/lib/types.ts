@@ -12,6 +12,8 @@ export interface Vocab {
   pos: string
   en: string
   note: string
+  when?: string
+  usage?: string
 }
 
 /** Entry in the book-wide index — same as Vocab plus provenance. */

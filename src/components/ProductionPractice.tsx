@@ -1,7 +1,8 @@
 import { guidedPrompt } from '../lib/repair'
 import { RepairEditor } from './RepairEditor'
 import { useEffect, useId, useMemo, useRef, useState, type RefObject } from 'react'
-import { lookup, segment } from '../lib/content'
+import { corpusPeers, enrichVocab, lookup, segment } from '../lib/content'
+import { buildRecallPromptContext } from '../lib/recallContext'
 import {
   alignChinese,
   assessProduction,
@@ -723,33 +724,52 @@ export function ResponsePractice({
           </button>
         </div>
       )}
-      {guided && scaffold && !assessment && (
-        <section className="sentence-scaffold">
-          <p>{t('Complete one word from this lesson. The rest is already provided.')}</p>
-          <div className="scaffold-line" lang="zh-CN">
-            <span>{scaffold.prefix}</span>
-            <input
-              id={id}
-              lang="zh-CN"
-              autoComplete="off"
-              aria-label={t('Missing lesson word')}
-              value={blankValue}
-              onChange={(e) => {
-                setBlankValue(e.target.value)
-                changeValue(scaffold.prefix + e.target.value + scaffold.suffix)
-              }}
-              placeholder="…"
-              disabled={checking || completed}
-            />
-            <span>{scaffold.suffix}</span>
-          </div>
-          <p className="scaffold-clue">
-            {t('Meaning: {meaning}', {
-              meaning: glosses[scaffold.target] ?? lookup(scaffold.target)?.en ?? example.en,
-            })}
-          </p>
-        </section>
-      )}
+      {guided && scaffold && !assessment && (() => {
+        const targetRaw = lookup(scaffold.target)
+        const targetWord = enrichVocab(
+          targetRaw ?? { zh: scaffold.target, pinyin: '', pos: '', en: glosses[scaffold.target] ?? example.en, note: '' },
+        )
+        if (glosses[scaffold.target]) targetWord.en = glosses[scaffold.target]
+        const ctx = buildRecallPromptContext({ word: targetWord, blanked: null, peers: corpusPeers() })
+        return (
+          <section className="sentence-scaffold">
+            <p>{t('Complete one word from this lesson. The rest is already provided.')}</p>
+            {(ctx.posLabel || ctx.charCountLabel) && (
+              <div className="recall-meta-pills scaffold-meta-pills">
+                {ctx.posLabel && <span className="recall-pos-pill">{ctx.posLabel}</span>}
+                <span className="recall-slot-pill">{ctx.charCountLabel}</span>
+              </div>
+            )}
+            <div className="scaffold-line" lang="zh-CN">
+              <span>{scaffold.prefix}</span>
+              <input
+                id={id}
+                lang="zh-CN"
+                autoComplete="off"
+                aria-label={t('Missing lesson word')}
+                value={blankValue}
+                onChange={(e) => {
+                  setBlankValue(e.target.value)
+                  changeValue(scaffold.prefix + e.target.value + scaffold.suffix)
+                }}
+                placeholder="…"
+                disabled={checking || completed}
+              />
+              <span>{scaffold.suffix}</span>
+            </div>
+            <p className="scaffold-clue">
+              {t('Meaning: {meaning}', {
+                meaning: ctx.otherMeanings ? `${ctx.coreMeaning}; ${ctx.otherMeanings}` : ctx.coreMeaning || targetWord.en,
+              })}
+            </p>
+            {(ctx.disambiguation || ctx.whenCue) && (
+              <p className="scaffold-clue scaffold-disambiguation">
+                {ctx.disambiguation || ctx.whenCue}
+              </p>
+            )}
+          </section>
+        )
+      })()}
 
       {!guided && !assessment && <label className="production-speaker" htmlFor={id}>
         {mode === 'speaking' && value ? t('Recognized Hanzi · edit if needed') : t('Your Mandarin')}

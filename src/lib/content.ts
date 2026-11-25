@@ -24,9 +24,28 @@ export function getLesson(n: number): Lesson {
 /** zh → entry, for tap-to-gloss. Lesson vocab wins over the book index. */
 const byZh = new Map<string, Vocab>()
 for (const v of vocabIndex) {
-  byZh.set(v.zh, { zh: v.zh, pinyin: v.pinyin, pos: v.pos, en: v.en, note: '' })
+  const ov = overlayWord(v.zh, v.lesson)
+  byZh.set(v.zh, {
+    zh: v.zh,
+    pinyin: v.pinyin,
+    pos: v.pos || ov?.pos || '',
+    en: v.en,
+    note: '',
+    when: ov?.when || '',
+    usage: ov?.usage || '',
+  })
 }
-for (const l of lessons) for (const v of l.vocab) byZh.set(v.zh, v)
+for (const l of lessons) {
+  for (const v of l.vocab) {
+    const ov = overlayWord(v.zh, l.lesson)
+    byZh.set(v.zh, {
+      ...v,
+      pos: v.pos || ov?.pos || '',
+      when: v.when || ov?.when || '',
+      usage: v.usage || ov?.usage || '',
+    })
+  }
+}
 
 export interface Example {
   zh: string
@@ -35,7 +54,15 @@ export interface Example {
 }
 
 /** Course-extra examples (Kerja / 汉语教程) keyed by zh — never invent glosses. */
-const extraExamples = new Map<string, Example>()
+const extraExamples = new Map<string, Example[]>()
+const extraLines: Example[] = []
+const PROSE_EXAMPLE = /^(Most Chinese|Remember|Inget|Kebanyakan|Listed under|Book 专名)\b/i
+
+/** True when `ex.zh` is genuine Mandarin text rather than stray English/Indonesian metadata prose. */
+export function isValidChineseExample(ex: Example | null | undefined): ex is Example {
+  const zh = ex?.zh?.trim()
+  return Boolean(zh && /\p{Script=Han}/u.test(zh) && !PROSE_EXAMPLE.test(zh))
+}
 
 export function lookup(word: string): Vocab | undefined {
   const source = byZh.get(word)
@@ -161,15 +188,37 @@ export function registerVocab(word: Vocab, example?: Example | null) {
   const prev = byZh.get(word.zh)
   if (!prev) {
     byZh.set(word.zh, word)
-  } else if (!prev.en && word.en) {
-    byZh.set(word.zh, { ...prev, ...word, en: word.en })
-  } else if (word.pinyin && !prev.pinyin) {
-    byZh.set(word.zh, { ...prev, pinyin: word.pinyin, pos: prev.pos || word.pos, note: prev.note || word.note })
+  } else {
+    byZh.set(word.zh, {
+      ...prev,
+      pinyin: prev.pinyin || word.pinyin,
+      pos: prev.pos || word.pos,
+      en: prev.en || word.en,
+      note: prev.note || word.note,
+      when: prev.when || word.when || '',
+      usage: prev.usage || word.usage || '',
+    })
   }
-  if (example?.zh?.trim()) extraExamples.set(word.zh, example)
+  if (isValidChineseExample(example)) {
+    const list = extraExamples.get(word.zh) ?? []
+    if (!list.some((item) => item.zh === example.zh)) {
+      list.push(example)
+      extraExamples.set(word.zh, list)
+    }
+    exampleCache.delete(word.zh)
+  }
   tokenLexicon.add(word.zh)
   if (word.zh.length > maxToken) maxToken = word.zh.length
   if (word.zh.length > maxWordLen) maxWordLen = word.zh.length
+}
+
+/** Register dialogue / note lines from additional courses as fallback context sentences. */
+export function registerExamples(lines: readonly (Example | null | undefined)[]) {
+  for (const line of lines) {
+    if (!isValidChineseExample(line)) continue
+    if (!extraLines.some((item) => item.zh === line.zh)) extraLines.push(line)
+  }
+  exampleCache.clear()
 }
 
 function insideLongerToken(haystack: string, index: number, word: string): boolean {
@@ -198,39 +247,106 @@ export function hasWordToken(haystack: string, word: string): boolean {
   return false
 }
 
-/** The book sentence with the word blanked out, when the book has one that contains it. */
-export function blankedExample(word: string): (Example & { blank: string }) | null {
-  const example = exampleFor(word)
-  if (!example?.zh.includes(word)) return null
-  const gap = '＿'.repeat(Array.from(word).length)
+function wordForms(word: string): string[] {
+  const out: string[] = [word]
+  if (/[()（）]/.test(word)) {
+    const joined = word.replace(/[()（）]/g, '')
+    const strippedOptional = word.replace(/[（(][儿一][）)]/g, '')
+    for (const variant of [joined, strippedOptional]) {
+      if (variant && Array.from(variant).length >= 2 && !out.includes(variant)) out.push(variant)
+    }
+  }
+  return out
+}
+
+function blankSingleForm(text: string, form: string): string | null {
+  if (!form || !text.includes(form)) return null
+  const gap = '＿'.repeat(Array.from(form).length)
   // Blank every place the word stands on its own, so a sentence that uses it twice
   // (毕业 … 毕业后) never shows the answer.
   let blank = ''
   let at = 0
   let from = 0
-  while (from < example.zh.length) {
-    const i = example.zh.indexOf(word, from)
+  while (from < text.length) {
+    const i = text.indexOf(form, from)
     if (i < 0) break
-    from = i + word.length
-    if (insideLongerToken(example.zh, i, word)) continue
-    blank += example.zh.slice(at, i) + gap
+    from = i + form.length
+    if (insideLongerToken(text, i, form)) continue
+    blank += text.slice(at, i) + gap
     at = from
   }
-  blank += example.zh.slice(at)
+  blank += text.slice(at)
   // A copy left inside a longer word (窗 in 窗户, 堵 in 堵车) would still give it away.
-  return { ...example, blank: blank.split(word).join(gap) }
+  const out = blank.split(form).join(gap)
+  return out.includes('＿') && !out.includes(form) ? out : null
+}
+
+function blankExampleWith(example: Example, word: string): (Example & { blank: string }) | null {
+  if (!isValidChineseExample(example)) return null
+  for (const form of wordForms(word)) {
+    const blank = blankSingleForm(example.zh, form)
+    if (blank) return { ...example, blank }
+  }
+  if (word.includes('……')) {
+    const parts = word
+      .split(/……+/)
+      .map((part) => part.replace(/[()（）\s，。！？,.!?]/g, '').trim())
+      .filter((part) => /\p{Script=Han}/u.test(part))
+    if (parts.length >= 2 && parts.every((part) => hasWordToken(example.zh, part))) {
+      let blank = example.zh
+      for (const part of parts) {
+        blank = blankSingleForm(blank, part) ?? blank.split(part).join('＿'.repeat(Array.from(part).length))
+      }
+      if (blank.includes('＿') && parts.every((part) => !blank.includes(part))) return { ...example, blank }
+    }
+  }
+  return null
+}
+
+/** The book sentence with the word blanked out, when the book has one that contains it. */
+export function blankedExample(word: string, lesson?: number): (Example & { blank: string }) | null {
+  const candidates: Example[] = []
+  const overlay = overlayWord(word, lesson)
+  if (isValidChineseExample(overlay?.example)) candidates.push(overlay.example)
+  const extras = extraExamples.get(word)
+  if (extras?.length) {
+    candidates.push(...[...extras].sort((a, b) => a.zh.length - b.zh.length))
+  }
+  for (const candidate of candidates) {
+    const hit = blankExampleWith(candidate, word)
+    if (hit) return hit
+  }
+  let best: (Example & { blank: string }) | null = null
+  const consider = (e: Example) => {
+    const hit = blankExampleWith(e, word)
+    if (!hit) return
+    if (!best || hit.zh.length < best.zh.length) best = hit
+  }
+  for (const l of lessons) {
+    for (const t of l.texts) for (const line of t.lines) consider(line)
+    for (const g of l.grammar) for (const ex of g.examples) consider(ex)
+    for (const sc of l.extras.same_char) for (const ex of sc.examples) consider(ex)
+  }
+  if (best) return best
+  for (const line of extraLines) consider(line)
+  return best
 }
 
 /** Overlay / course example first; else the book's shortest sentence that contains the word as a token. */
 export function exampleFor(word: string, lesson?: number): Example | null {
   const overlay = overlayWord(word, lesson)
-  if (overlay?.example?.zh) return overlay.example
-  const extra = extraExamples.get(word)
-  if (extra?.zh) return extra
+  if (isValidChineseExample(overlay?.example)) return overlay.example
+  const extras = extraExamples.get(word)
+  if (extras?.length) {
+    const matching = extras.find((ex) => !!blankExampleWith(ex, word))
+    if (matching) return matching
+    return extras[0]
+  }
   const cached = exampleCache.get(word)
   if (cached !== undefined) return cached
   let best: Example | null = null
   const consider = (e: Example) => {
+    if (!isValidChineseExample(e)) return
     if (!hasWordToken(e.zh, word)) return
     if (!best || e.zh.length < best.zh.length) best = e
   }
@@ -239,8 +355,29 @@ export function exampleFor(word: string, lesson?: number): Example | null {
     for (const g of l.grammar) for (const ex of g.examples) consider(ex)
     for (const sc of l.extras.same_char) for (const ex of sc.examples) consider(ex)
   }
+  if (!best) for (const line of extraLines) consider(line)
   exampleCache.set(word, best)
   return best
+}
+
+/** All registered non-proper words across HSK 4A, Jiaocheng, and Kerja for disambiguation and synonym feedback. */
+export function corpusPeers(): Vocab[] {
+  return [...byZh.values()].filter((v) => v.en && !/proper|pr\.? ?n|专名/i.test(v.pos))
+}
+
+/** Fill missing POS / when / usage from the shared course lexicon and overlays without leaking into display. */
+export function enrichVocab(word: Vocab, lesson?: number): Vocab {
+  const reg = byZh.get(word.zh)
+  const ov = overlayWord(word.zh, lesson)
+  return {
+    ...word,
+    pinyin: word.pinyin || reg?.pinyin || ov?.pinyin || '',
+    pos: word.pos || reg?.pos || ov?.pos || '',
+    en: word.en || reg?.en || ov?.en || '',
+    note: word.note || reg?.note || '',
+    when: word.when || ov?.when || reg?.when || '',
+    usage: word.usage || ov?.usage || reg?.usage || '',
+  }
 }
 
 /** The character a lesson's handwriting step and character-of-the-day use. */
@@ -312,16 +449,16 @@ export function teachableVocab(l: Lesson): Vocab[] {
     seen.add(keep.zh)
     out.push(keep)
   }
-  for (const v of l.vocab) add(v)
+  for (const v of l.vocab) add(enrichVocab(v, l.lesson))
   for (const v of vocabIndex) {
     if (v.lesson !== l.lesson || v.tag !== 'known-char') continue
-    add({
+    add(enrichVocab({
       zh: v.zh,
       pinyin: v.pinyin,
       pos: v.pos,
       en: v.en,
       note: v.related ? `补充生词 · ${v.related}` : '补充生词',
-    })
+    }, l.lesson))
   }
   return out
 }

@@ -1,7 +1,7 @@
 import type { ExerciseStep } from './exercises'
 import { buildRecheck } from './dialogue-check'
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
-import { registerVocab, type Example } from './content'
+import { isValidChineseExample, registerExamples, registerVocab, type Example } from './content'
 import { getLang, t } from './i18n.ts'
 import { applyOverlay, type Overlay } from './localize'
 import type { TeachPhase, WordHook } from './teach'
@@ -178,6 +178,8 @@ export function toVocab(w: KerjaWord): Vocab {
     pos: w.pos ?? '',
     en: w.en ?? '',
     note: w.note ?? '',
+    when: w.when ?? '',
+    usage: w.usage ?? '',
   }
 }
 
@@ -197,7 +199,7 @@ export function toLessonText(d: KerjaDialogue): LessonText {
 }
 
 export function wordExample(w: KerjaWord): Example | null {
-  if (!w.example?.zh?.trim()) return null
+  if (!isValidChineseExample(w.example)) return null
   return { zh: w.example.zh, pinyin: w.example.pinyin ?? '', en: w.example.en ?? '' }
 }
 
@@ -437,11 +439,13 @@ export function nodeLabelKerja(node: KerjaNode): { en: string; zh: string } {
   return BEAT_LABEL[node]
 }
 
-interface KerjaPersisted {
+export interface KerjaPersisted {
   pathDone: Record<string, KerjaNode[]>
+  skippedChapters: number[]
+  unlockedChapter?: number
 }
 
-const emptyProgress: KerjaPersisted = { pathDone: {} }
+const emptyProgress: KerjaPersisted = { pathDone: {}, skippedChapters: [] }
 
 /**
  * Expand legacy `t1` (one big words level) into every word-chunk for that chapter
@@ -469,13 +473,25 @@ function loadProgress(): KerjaPersisted {
   try {
     const raw = localStorage.getItem(PROGRESS_KEY)
     if (!raw) return emptyProgress
-    const parsed = JSON.parse(raw) as Partial<{ pathDone: Record<string, unknown> }>
-    if (!parsed?.pathDone || typeof parsed.pathDone !== 'object') return emptyProgress
+    const parsed = JSON.parse(raw) as Partial<{
+      pathDone: Record<string, unknown>
+      skippedChapters: unknown
+      unlockedChapter: unknown
+    }>
     const pathDone: Record<string, KerjaNode[]> = {}
-    for (const [key, nodes] of Object.entries(parsed.pathDone)) {
-      pathDone[key] = migrateChapterNodes(key, nodes)
+    if (parsed?.pathDone && typeof parsed.pathDone === 'object') {
+      for (const [key, nodes] of Object.entries(parsed.pathDone)) {
+        pathDone[key] = migrateChapterNodes(key, nodes)
+      }
     }
-    return { pathDone }
+    const skippedChapters = Array.isArray(parsed?.skippedChapters)
+      ? [...new Set(parsed.skippedChapters.filter((n): n is number => typeof n === 'number' && Number.isFinite(n)))]
+      : []
+    const unlockedChapter =
+      typeof parsed?.unlockedChapter === 'number' && Number.isFinite(parsed.unlockedChapter) && parsed.unlockedChapter >= 1
+        ? parsed.unlockedChapter
+        : undefined
+    return { pathDone, skippedChapters, ...(unlockedChapter ? { unlockedChapter } : {}) }
   } catch {
     return emptyProgress
   }
@@ -507,6 +523,97 @@ function getProgressSnapshot() {
   return progressCache
 }
 
+export function isKerjaChapterComplete(state: KerjaPersisted, chapterIndex: number): boolean {
+  const ch = getKerjaChapter(chapterIndex)
+  if (!ch) return false
+  const doneNodes = state.pathDone[String(chapterIndex)] ?? []
+  return nodesForChapter(ch).every((n) => doneNodes.includes(n))
+}
+
+export function isKerjaChapterSkipped(state: KerjaPersisted, chapterIndex: number): boolean {
+  return state.skippedChapters.includes(chapterIndex) && !isKerjaChapterComplete(state, chapterIndex)
+}
+
+export function computeKerjaNextPlayable(state: KerjaPersisted): { chapter: number; node: KerjaNode } {
+  for (const ch of kerjaChapters) {
+    if (isKerjaChapterSkipped(state, ch.index)) continue
+    const doneNodes = state.pathDone[String(ch.index)] ?? []
+    for (const node of nodesForChapter(ch)) {
+      if (!doneNodes.includes(node)) return { chapter: ch.index, node }
+    }
+  }
+  const last = kerjaChapters[kerjaChapters.length - 1]
+  return last ? { chapter: last.index, node: 'wrap' as KerjaNode } : { chapter: 1, node: 'w0' as KerjaNode }
+}
+
+export function isKerjaNodePlayable(state: KerjaPersisted, chapterIndex: number, node: KerjaNode): boolean {
+  const ch = getKerjaChapter(chapterIndex)
+  if (!ch) return false
+  const nodes = nodesForChapter(ch)
+  if (!nodes.includes(node)) return false
+  const doneNodes = state.pathDone[String(chapterIndex)] ?? []
+  if (doneNodes.includes(node)) return true
+  if (isKerjaChapterSkipped(state, chapterIndex)) return true
+  if (state.unlockedChapter && chapterIndex === state.unlockedChapter) {
+    const firstOpen = nodes.find((n) => !doneNodes.includes(n))
+    if (firstOpen === node) return true
+  }
+  const next = computeKerjaNextPlayable(state)
+  return next.chapter === chapterIndex && next.node === node
+}
+
+export function isKerjaChapterReached(state: KerjaPersisted, chapterIndex: number): boolean {
+  if (kerjaChapters.length === 0) return false
+  const ch = getKerjaChapter(chapterIndex)
+  if (!ch) return false
+  const next = computeKerjaNextPlayable(state)
+  const highest = Math.max(next.chapter, state.unlockedChapter ?? 1)
+  if (chapterIndex <= highest || isKerjaChapterSkipped(state, chapterIndex)) return true
+  const doneNodes = state.pathDone[String(chapterIndex)] ?? []
+  return doneNodes.length > 0
+}
+
+export interface KerjaSkipSpec {
+  course: 'kerja'
+  lesson: number
+  title: string
+  words: { zh: string }[]
+  grammarPoints: string[]
+}
+
+export function applyKerjaSkip(
+  state: KerjaPersisted,
+  targetChapter: number,
+): { nextState: KerjaPersisted; skippedSpecs: KerjaSkipSpec[] } {
+  const skippedSpecs: KerjaSkipSpec[] = []
+  const nextSkipped = new Set(state.skippedChapters)
+  for (const ch of kerjaChapters) {
+    if (ch.index >= targetChapter) continue
+    if (isKerjaChapterComplete(state, ch.index)) continue
+    nextSkipped.add(ch.index)
+    skippedSpecs.push({
+      course: 'kerja',
+      lesson: ch.index,
+      title: ch.titleEn || ch.titleZh || `Chapter ${ch.index}`,
+      words: ch.words.filter((w) => w.zh.trim() && w.en.trim()).map((w) => ({ zh: w.zh })),
+      grammarPoints: ch.notes.map((n) => n.title).filter(Boolean),
+    })
+  }
+  const nextState: KerjaPersisted = {
+    pathDone: state.pathDone,
+    skippedChapters: [...nextSkipped].sort((a, b) => a - b),
+    unlockedChapter: Math.max(state.unlockedChapter ?? 1, targetChapter),
+  }
+  return { nextState, skippedSpecs }
+}
+
+export function applyKerjaUnskip(state: KerjaPersisted, chapterIndex: number): KerjaPersisted {
+  return {
+    ...state,
+    skippedChapters: state.skippedChapters.filter((n) => n !== chapterIndex),
+  }
+}
+
 export function useKerjaProgress() {
   const state = useSyncExternalStore(subscribeProgress, getProgressSnapshot, getProgressSnapshot)
 
@@ -515,53 +622,56 @@ export function useKerjaProgress() {
     [state.pathDone],
   )
 
+  const isChapterSkipped = useCallback(
+    (chapter: number) => isKerjaChapterSkipped(state, chapter),
+    [state],
+  )
+
   const markNodeDone = useCallback((chapter: number, node: KerjaNode) => {
     const key = String(chapter)
     const prev = progressCache.pathDone[key] ?? []
     if (prev.includes(node)) return
-    writeProgress({
+    const nextState: KerjaPersisted = {
+      ...progressCache,
       pathDone: { ...progressCache.pathDone, [key]: [...prev, node] },
-    })
+    }
+    if (isKerjaChapterComplete(nextState, chapter)) {
+      nextState.skippedChapters = nextState.skippedChapters.filter((n) => n !== chapter)
+    }
+    writeProgress(nextState)
   }, [])
 
-  const nextPlayable = useMemo(() => {
-    for (const ch of kerjaChapters) {
-      for (const node of nodesForChapter(ch)) {
-        if (!isNodeDone(ch.index, node)) return { chapter: ch.index, node }
-      }
-    }
-    const last = kerjaChapters[kerjaChapters.length - 1]
-    return last
-      ? { chapter: last.index, node: 'wrap' as KerjaNode }
-      : { chapter: 1, node: 'w0' as KerjaNode }
-  }, [isNodeDone, state.pathDone])
+  const skipToChapter = useCallback((targetChapter: number): KerjaSkipSpec[] => {
+    const { nextState, skippedSpecs } = applyKerjaSkip(progressCache, targetChapter)
+    writeProgress(nextState)
+    return skippedSpecs
+  }, [])
+
+  const unskipChapter = useCallback((chapter: number) => {
+    writeProgress(applyKerjaUnskip(progressCache, chapter))
+  }, [])
+
+  const nextPlayable = useMemo(() => computeKerjaNextPlayable(state), [state])
 
   const isNodePlayable = useCallback(
-    (chapter: number, node: KerjaNode) => {
-      const ch = getKerjaChapter(chapter)
-      if (!ch || !nodesForChapter(ch).includes(node)) return false
-      if (isNodeDone(chapter, node)) return true
-      return nextPlayable.chapter === chapter && nextPlayable.node === node
-    },
-    [isNodeDone, nextPlayable],
+    (chapter: number, node: KerjaNode) => isKerjaNodePlayable(state, chapter, node),
+    [state],
   )
 
   const isChapterReached = useCallback(
-    (chapter: number) => {
-      if (kerjaChapters.length === 0) return false
-      const ch = getKerjaChapter(chapter)
-      if (!ch) return false
-      return (
-        chapter <= nextPlayable.chapter || nodesForChapter(ch).some((n) => isNodeDone(chapter, n))
-      )
-    },
-    [isNodeDone, nextPlayable.chapter],
+    (chapter: number) => isKerjaChapterReached(state, chapter),
+    [state],
   )
 
   return {
     pathDone: state.pathDone,
+    skippedChapters: state.skippedChapters,
+    unlockedChapter: state.unlockedChapter ?? 1,
     isNodeDone,
+    isChapterSkipped,
     markNodeDone,
+    skipToChapter,
+    unskipChapter,
     nextPlayable,
     isNodePlayable,
     isChapterReached,
@@ -581,4 +691,6 @@ for (const ch of kerjaChapters) {
   for (const w of ch.words) {
     registerVocab(toVocab(w), wordExample(w))
   }
+  for (const d of ch.dialogues) registerExamples(d.lines)
+  for (const n of ch.notes) if (n.example) registerExamples([n.example])
 }

@@ -1,6 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
-import { coreMeaning, otherMeanings, sameText, type Exercise, type ExerciseStep, type ExSentence, type ExWord } from '../lib/exercises'
+import { blankedExample, corpusPeers, enrichVocab } from '../lib/content'
+import { buildRecallPromptContext } from '../lib/recallContext'
+import { coreMeaning, sameText, type Exercise, type ExerciseStep, type ExSentence, type ExWord } from '../lib/exercises'
 import { t } from '../lib/i18n'
 import { rng, seedOf, shuffle } from '../lib/seeded'
 import { haptic, playAdvance, playCorrect, playHint, playListen, playTick, playWrong } from '../lib/sfx'
@@ -131,14 +133,45 @@ function Kicker({ kind }: { kind: Exercise['kind'] }) {
 }
 
 /** The meaning as Richie wants it: the plain word first, the rest quietly below. */
-function Meaning({ gloss, big }: { gloss: string; big?: boolean }) {
-  const core = coreMeaning(gloss)
-  const rest = otherMeanings(gloss)
+function Meaning({ core, rest, big }: { core: string; rest?: string; big?: boolean }) {
   return (
     <span className={`duo-meaning${big ? ' duo-meaning-big' : ''}`}>
       <strong>{core}</strong>
       {rest && <small>{rest}</small>}
     </span>
+  )
+}
+
+function PromptContext({ word, hiddenPeers = [], showSentence = true }: { word: ExWord; hiddenPeers?: readonly string[]; showSentence?: boolean }) {
+  const enriched = enrichVocab({ zh: word.zh, pinyin: word.pinyin, pos: word.pos ?? '', en: word.en, note: '' })
+  const peers = corpusPeers()
+  const blanked = showSentence ? blankedExample(enriched.zh) : null
+  const ctx = buildRecallPromptContext({ word: enriched, blanked, peers, hiddenPeers })
+  return (
+    <div className="duo-prompt duo-prompt-meaning">
+      {(ctx.posLabel || ctx.charCountLabel) && (
+        <div className="recall-meta-pills duo-meta-pills">
+          {ctx.posLabel && <span className="recall-pos-pill">{ctx.posLabel}</span>}
+          <span className="recall-slot-pill">
+            {ctx.charCountLabel}
+            <span className="recall-slots-preview zh" lang="zh-CN" aria-hidden="true">{ctx.slots}</span>
+          </span>
+        </div>
+      )}
+      <Meaning core={ctx.coreMeaning || word.en} rest={ctx.otherMeanings} big />
+      {ctx.sentence && (
+        <div className="recall-context duo-context-inline">
+          <p className="zh" lang="zh-CN">{ctx.sentence.zh}</p>
+          {ctx.sentence.en && <p className="recall-context-translation">{ctx.sentence.en}</p>}
+        </div>
+      )}
+      {(ctx.whenCue || ctx.disambiguation) && (
+        <div className="recall-cue-note duo-cue-inline">
+          {ctx.whenCue && <p className="recall-when-cue"><span>{t('Usage cue')}</span> {ctx.whenCue}</p>}
+          {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
+        </div>
+      )}
+    </div>
   )
 }
 
@@ -154,6 +187,15 @@ function Pick({ exercise, judge }: { exercise: PickExercise; judge: Judge }) {
   const mode: EvidenceMode = 'recognition'
   const done = judge.verdict !== null
   const byMeaning = exercise.kind === 'meaning-pick'
+  const clozeCtx =
+    exercise.kind === 'cloze'
+      ? buildRecallPromptContext({
+          word: enrichVocab({ zh: word.zh, pinyin: word.pinyin, pos: word.pos ?? '', en: word.en, note: '' }),
+          blanked: null,
+          peers: corpusPeers(),
+          hiddenPeers: options.map((o) => o.zh),
+        })
+      : null
 
   function choose(option: ExWord) {
     if (done) return
@@ -166,13 +208,19 @@ function Pick({ exercise, judge }: { exercise: PickExercise; judge: Judge }) {
       <Kicker kind={exercise.kind} />
       {exercise.kind === 'meaning-pick' && <WordPrompt word={word} pinyin={prefs.showPinyin} />}
       {exercise.kind === 'hanzi-pick' && (
-        <div className="duo-prompt duo-prompt-meaning"><Meaning gloss={word.en} big /></div>
+        <PromptContext word={word} hiddenPeers={options.map((o) => o.zh)} />
       )}
       {exercise.kind === 'listen-pick' && (
         <ListenPrompt word={word} showPinyin={showPinyin || done} onPinyin={() => { judge.help(); setShowPinyin(true) }} />
       )}
       {exercise.kind === 'cloze' && (
         <div className="duo-prompt duo-sentence">
+          {clozeCtx && (clozeCtx.posLabel || clozeCtx.charCountLabel) && (
+            <div className="recall-meta-pills duo-meta-pills">
+              {clozeCtx.posLabel && <span className="recall-pos-pill">{clozeCtx.posLabel}</span>}
+              <span className="recall-slot-pill">{clozeCtx.charCountLabel}</span>
+            </div>
+          )}
           <p className="zh" lang="zh-CN">
             {exercise.before}
             <span className="duo-blank" data-filled={!!picked || undefined} data-tone={done ? (judge.verdict ? 'right' : 'wrong') : undefined}>
@@ -343,7 +391,7 @@ function CharBuild({ exercise, judge }: { exercise: Extract<Exercise, { kind: 'c
   return (
     <>
       <Kicker kind="char-build" />
-      <div className="duo-prompt duo-prompt-meaning"><Meaning gloss={exercise.word.en} big /></div>
+      <PromptContext word={exercise.word} />
       <div className="duo-slots" aria-live="polite">
         {exercise.answer.map((_, slot) => {
           const index = tiles.placed[slot]
@@ -512,7 +560,7 @@ function Feedback({ exercise, right, mixed, attemptKey, onNext }: { exercise: Ex
         ) : word ? (
           <div className="duo-feedback-answer duo-feedback-word">
             <p><span className="zh" lang="zh-CN">{word.zh}</span> <span className="duo-feedback-pinyin">{word.pinyin}</span></p>
-            <Meaning gloss={word.en} />
+            <Meaning core={coreMeaning(word.en)} rest={word.en.replace(coreMeaning(word.en), '').replace(/^[\s;,]+/, '')} />
             <HearButton text={word.zh} label={t('Hear the word')} />
           </div>
         ) : null}

@@ -2,7 +2,7 @@ import type { ExerciseStep } from './exercises'
 import { buildRecheck } from './dialogue-check'
 import { applyOverlay, type Overlay } from './localize'
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
-import { registerVocab, type Example } from './content'
+import { isValidChineseExample, registerExamples, registerVocab, type Example } from './content'
 import { getLang, t } from './i18n.ts'
 import type { TeachPhase, WordHook } from './teach'
 import type { LessonText, TextLine, Vocab } from './types'
@@ -175,6 +175,8 @@ export function toVocab(w: JiaochengWord): Vocab {
     pos: w.pos ?? '',
     en: w.en ?? '',
     note: w.note ?? '',
+    when: w.when ?? '',
+    usage: w.usage ?? '',
   }
 }
 
@@ -194,7 +196,7 @@ export function toLessonText(d: JiaochengDialogue): LessonText {
 }
 
 export function wordExample(w: JiaochengWord): Example | null {
-  if (!w.example?.zh?.trim()) return null
+  if (!isValidChineseExample(w.example)) return null
   return { zh: w.example.zh, pinyin: w.example.pinyin ?? '', en: w.example.en ?? '' }
 }
 
@@ -415,19 +417,30 @@ export function nodeCaptionJiaocheng(
   return { ...label, hint: t('Check') }
 }
 
-interface JiaochengPersisted {
+export interface JiaochengPersisted {
   pathDone: Record<string, PathNode[]>
+  skippedLessons: number[]
+  unlockedLesson?: number
 }
 
-const emptyProgress: JiaochengPersisted = { pathDone: {} }
+const emptyProgress: JiaochengPersisted = { pathDone: {}, skippedLessons: [] }
 
 function loadProgress(): JiaochengPersisted {
   try {
     const raw = localStorage.getItem(PROGRESS_KEY)
     if (!raw) return emptyProgress
     const parsed = JSON.parse(raw) as Partial<JiaochengPersisted>
-    if (!parsed?.pathDone || typeof parsed.pathDone !== 'object') return emptyProgress
-    return { pathDone: parsed.pathDone }
+    const pathDone = parsed?.pathDone && typeof parsed.pathDone === 'object' && !Array.isArray(parsed.pathDone)
+      ? parsed.pathDone
+      : {}
+    const skippedLessons = Array.isArray(parsed?.skippedLessons)
+      ? [...new Set(parsed.skippedLessons.filter((n): n is number => typeof n === 'number' && Number.isFinite(n)))]
+      : []
+    const unlockedLesson =
+      typeof parsed?.unlockedLesson === 'number' && Number.isFinite(parsed.unlockedLesson) && parsed.unlockedLesson >= 1
+        ? parsed.unlockedLesson
+        : undefined
+    return { pathDone, skippedLessons, ...(unlockedLesson ? { unlockedLesson } : {}) }
   } catch {
     return emptyProgress
   }
@@ -459,6 +472,95 @@ function getProgressSnapshot() {
   return progressCache
 }
 
+export function isJiaochengLessonComplete(state: JiaochengPersisted, lessonIndex: number): boolean {
+  const unit = getJiaochengLesson(lessonIndex)
+  if (!unit) return false
+  const doneNodes = state.pathDone[String(lessonIndex)] ?? []
+  return nodesForLesson(unit).every((n) => doneNodes.includes(n))
+}
+
+export function isJiaochengLessonSkipped(state: JiaochengPersisted, lessonIndex: number): boolean {
+  return state.skippedLessons.includes(lessonIndex) && !isJiaochengLessonComplete(state, lessonIndex)
+}
+
+export function computeJiaochengNextPlayable(state: JiaochengPersisted): { lesson: number; node: PathNode } {
+  for (const lesson of jiaochengLessons) {
+    if (isJiaochengLessonSkipped(state, lesson.index)) continue
+    const doneNodes = state.pathDone[String(lesson.index)] ?? []
+    for (const node of nodesForLesson(lesson)) {
+      if (!doneNodes.includes(node)) return { lesson: lesson.index, node }
+    }
+  }
+  const last = jiaochengLessons[jiaochengLessons.length - 1]
+  return last ? { lesson: last.index, node: 'wrap' as PathNode } : { lesson: 1, node: 't1' as PathNode }
+}
+
+export function isJiaochengNodePlayable(state: JiaochengPersisted, lessonIndex: number, node: PathNode): boolean {
+  const unit = getJiaochengLesson(lessonIndex)
+  if (!unit) return false
+  const nodes = nodesForLesson(unit)
+  if (!nodes.includes(node)) return false
+  const doneNodes = state.pathDone[String(lessonIndex)] ?? []
+  if (doneNodes.includes(node)) return true
+  if (isJiaochengLessonSkipped(state, lessonIndex)) return true
+  if (state.unlockedLesson && lessonIndex === state.unlockedLesson) {
+    const firstOpen = nodes.find((n) => !doneNodes.includes(n))
+    if (firstOpen === node) return true
+  }
+  const next = computeJiaochengNextPlayable(state)
+  return next.lesson === lessonIndex && next.node === node
+}
+
+export function isJiaochengLessonReached(state: JiaochengPersisted, lessonIndex: number): boolean {
+  if (jiaochengLessons.length === 0) return false
+  const next = computeJiaochengNextPlayable(state)
+  const highest = Math.max(next.lesson, state.unlockedLesson ?? 1)
+  if (lessonIndex <= highest || isJiaochengLessonSkipped(state, lessonIndex)) return true
+  const doneNodes = state.pathDone[String(lessonIndex)] ?? []
+  return doneNodes.length > 0
+}
+
+export interface JiaochengSkipSpec {
+  course: 'jiaocheng'
+  lesson: number
+  title: string
+  words: { zh: string }[]
+  grammarPoints: string[]
+}
+
+export function applyJiaochengSkip(
+  state: JiaochengPersisted,
+  targetLesson: number,
+): { nextState: JiaochengPersisted; skippedSpecs: JiaochengSkipSpec[] } {
+  const skippedSpecs: JiaochengSkipSpec[] = []
+  const nextSkipped = new Set(state.skippedLessons)
+  for (const lesson of jiaochengLessons) {
+    if (lesson.index >= targetLesson) continue
+    if (isJiaochengLessonComplete(state, lesson.index)) continue
+    nextSkipped.add(lesson.index)
+    skippedSpecs.push({
+      course: 'jiaocheng',
+      lesson: lesson.index,
+      title: lesson.titleEn || lesson.titleZh || `Lesson ${lesson.index}`,
+      words: lesson.words.filter((w) => w.zh.trim() && w.en.trim()).map((w) => ({ zh: w.zh })),
+      grammarPoints: lesson.notes.map((n) => n.title).filter(Boolean),
+    })
+  }
+  const nextState: JiaochengPersisted = {
+    pathDone: state.pathDone,
+    skippedLessons: [...nextSkipped].sort((a, b) => a - b),
+    unlockedLesson: Math.max(state.unlockedLesson ?? 1, targetLesson),
+  }
+  return { nextState, skippedSpecs }
+}
+
+export function applyJiaochengUnskip(state: JiaochengPersisted, lessonIndex: number): JiaochengPersisted {
+  return {
+    ...state,
+    skippedLessons: state.skippedLessons.filter((n) => n !== lessonIndex),
+  }
+}
+
 export function useJiaochengProgress() {
   const state = useSyncExternalStore(subscribeProgress, getProgressSnapshot, getProgressSnapshot)
 
@@ -467,47 +569,57 @@ export function useJiaochengProgress() {
     [state.pathDone],
   )
 
+  const isLessonSkipped = useCallback(
+    (lesson: number) => isJiaochengLessonSkipped(state, lesson),
+    [state],
+  )
+
   const markNodeDone = useCallback((lesson: number, node: PathNode) => {
     const key = String(lesson)
     const prev = progressCache.pathDone[key] ?? []
     if (prev.includes(node)) return
-    writeProgress({
-      pathDone: { ...progressCache.pathDone, [key]: [...prev, node] },
-    })
+    const nextPathDone = { ...progressCache.pathDone, [key]: [...prev, node] }
+    const nextState: JiaochengPersisted = {
+      ...progressCache,
+      pathDone: nextPathDone,
+    }
+    if (isJiaochengLessonComplete(nextState, lesson)) {
+      nextState.skippedLessons = nextState.skippedLessons.filter((n) => n !== lesson)
+    }
+    writeProgress(nextState)
   }, [])
 
-  const nextPlayable = useMemo(() => {
-    for (const lesson of jiaochengLessons) {
-      for (const node of nodesForLesson(lesson)) {
-        if (!isNodeDone(lesson.index, node)) return { lesson: lesson.index, node }
-      }
-    }
-    const last = jiaochengLessons[jiaochengLessons.length - 1]
-    return last ? { lesson: last.index, node: 'wrap' as PathNode } : { lesson: 1, node: 't1' as PathNode }
-  }, [isNodeDone, state.pathDone])
+  const skipToLesson = useCallback((targetLesson: number): JiaochengSkipSpec[] => {
+    const { nextState, skippedSpecs } = applyJiaochengSkip(progressCache, targetLesson)
+    writeProgress(nextState)
+    return skippedSpecs
+  }, [])
+
+  const unskipLesson = useCallback((lesson: number) => {
+    writeProgress(applyJiaochengUnskip(progressCache, lesson))
+  }, [])
+
+  const nextPlayable = useMemo(() => computeJiaochengNextPlayable(state), [state])
 
   const isNodePlayable = useCallback(
-    (lesson: number, node: PathNode) => {
-      const unit = getJiaochengLesson(lesson)
-      if (!unit || !nodesForLesson(unit).includes(node)) return false
-      if (isNodeDone(lesson, node)) return true
-      return nextPlayable.lesson === lesson && nextPlayable.node === node
-    },
-    [isNodeDone, nextPlayable],
+    (lesson: number, node: PathNode) => isJiaochengNodePlayable(state, lesson, node),
+    [state],
   )
 
   const isLessonReached = useCallback(
-    (lesson: number) => {
-      if (jiaochengLessons.length === 0) return false
-      return lesson <= nextPlayable.lesson || JIAOCHENG_NODES.some((n) => isNodeDone(lesson, n))
-    },
-    [isNodeDone, nextPlayable.lesson],
+    (lesson: number) => isJiaochengLessonReached(state, lesson),
+    [state],
   )
 
   return {
     pathDone: state.pathDone,
+    skippedLessons: state.skippedLessons,
+    unlockedLesson: state.unlockedLesson ?? 1,
     isNodeDone,
+    isLessonSkipped,
     markNodeDone,
+    skipToLesson,
+    unskipLesson,
     nextPlayable,
     isNodePlayable,
     isLessonReached,
@@ -527,4 +639,6 @@ for (const lesson of jiaochengLessons) {
   for (const w of lesson.words) {
     registerVocab(toVocab(w), wordExample(w))
   }
+  for (const d of lesson.dialogues) registerExamples(d.lines)
+  for (const n of lesson.notes) if (n.example) registerExamples([n.example])
 }

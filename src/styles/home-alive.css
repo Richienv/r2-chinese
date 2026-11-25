@@ -51,3 +51,30 @@ summary.atlas-header::-webkit-details-marker { display:none; }
 .learning-atlas[open] .atlas-chevron { transform:rotate(180deg); }
 .learning-atlas-home .atlas-title { font-size:22px; }
 .learning-atlas-home .atlas-header { padding-bottom:12px; }
+.atlas-kicker { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.atlas-skipped-badge { font-style:normal; font-size:10px; letter-spacing:.04em; text-transform:none; padding:2px 8px; border-radius:999px; background:#f7e5be; color:#8a5a12; }
+.atlas-unit-actions { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px; }
+.atlas-unskip-btn { min-height:36px; padding:5px 11px; border:1px solid var(--line); border-radius:999px; background:var(--paper); color:var(--ink); font:inherit; font-size:12px; font-weight:600; cursor:pointer; }
+.atlas-progress-marks [data-state=skipped] { background:#d49428; }
+.atlas-plaque-skipped { border-style:dashed; border-color:#d49428; background:#fffaf0; }
+.atlas-plaque-skipped .atlas-step-seal { color:#8a5a12; background:#f7e5be; font-weight:700; }
+.atlas-skipped-hint { font-size:11px; font-weight:650; color:#8a5a12; margin-top:2px; }
+.learning-atlas-skipped { border:1px solid #e7cf98; }
+.skip-level-card { display:grid; gap:10px; padding:16px; border-radius:var(--radius); background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow-card); }
+.skip-level-head { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.skip-level-head strong { font-size:15px; }
+.skip-level-head small { color:var(--muted); font-size:12px; }
+.skip-level-actions { display:flex; flex-wrap:wrap; gap:8px; }
+.skip-level-btn { min-height:40px; padding:8px 13px; border-radius:999px; border:1px solid var(--accent-line); background:var(--accent-soft); color:var(--accent); font:inherit; font-size:13px; font-weight:650; cursor:pointer; }
+.skip-level-btn-secondary { border-color:var(--line); background:var(--paper); color:var(--ink); }
+.skip-modal-backdrop { position:fixed; inset:0; z-index:90; display:grid; place-items:center; padding:18px; background:rgba(24,22,18,.52); backdrop-filter:blur(4px); }
+.skip-modal { width:min(460px, 100%); max-height:90vh; overflow:auto; display:grid; gap:14px; padding:22px; border-radius:var(--radius); background:var(--paper); color:var(--ink); border:1px solid var(--line); box-shadow:0 20px 50px rgba(0,0,0,.22); }
+.skip-modal h2 { margin:0; font-size:20px; }
+.skip-modal label { display:grid; gap:6px; font-size:13px; font-weight:600; }
+.skip-modal select { min-height:42px; padding:8px 10px; border-radius:12px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; }
+.skip-modal-rules { margin:0; padding:12px 14px 12px 28px; border-radius:14px; background:var(--surface); border:1px solid var(--line); display:grid; gap:6px; font-size:13px; line-height:1.5; color:var(--ink); }
+.skip-modal-footer { display:flex; justify-content:flex-end; gap:8px; flex-wrap:wrap; }
+.exam-home-card { display:grid; gap:6px; width:100%; padding:16px 18px; border:1px solid var(--accent-line); border-radius:var(--radius); background:linear-gradient(135deg, var(--surface), var(--paper)); box-shadow:var(--shadow-card); text-align:left; cursor:pointer; color:var(--ink); }
+.exam-home-card .kicker { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); }
+.exam-home-card strong { font-size:17px; }
+.exam-home-card span:last-child { font-size:13px; color:var(--muted); line-height:1.45; }
