@@ -17,3 +17,4 @@ createRoot(document.getElementById('root')!).render(
 
 import './styles/overhaul.css'
 import './styles/design-system.css'
+import './styles/desktop.css'

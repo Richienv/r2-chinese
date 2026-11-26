@@ -16,6 +16,13 @@ function write(next: EnglishPrepProgress) {
   cache = next
   try { localStorage.setItem(JIAYIN_ENGLISH_KEY, JSON.stringify(next)) } catch { /* Keep this session usable if device storage is unavailable. */ }
   for (const listener of listeners) listener()
+  if (typeof window !== 'undefined') window.dispatchEvent(new Event('yulu:local-progress'))
+}
+if (typeof window !== 'undefined') {
+  window.addEventListener('yulu:cloud-hydrated', () => {
+    cache = load()
+    for (const listener of listeners) listener()
+  })
 }
 export function useJiayinEnglishProgress() {
   return {

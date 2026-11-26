@@ -261,7 +261,15 @@ function Shell() {
         </Suspense>
       </main>
 
-      <BottomNav ref={navRef} tab={tab} onTabChange={setTab} />
+      <BottomNav
+        ref={navRef}
+        tab={tab}
+        onTabChange={setTab}
+        syncStatus={store.syncStatus}
+        onSyncNow={() => {
+          void store.syncNow()
+        }}
+      />
       <AudioStatus />
       <Suspense
         fallback={

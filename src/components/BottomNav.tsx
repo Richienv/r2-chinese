@@ -22,8 +22,13 @@ const DESTINATIONS = [
 /** A flow-layout dock: measured spring motion never changes the navigation semantics. */
 export const BottomNav = forwardRef<
   HTMLElement,
-  { tab: NavigationTab; onTabChange: (tab: NavigationTab) => void }
->(function BottomNav({ tab, onTabChange }, navRef) {
+  {
+    tab: NavigationTab
+    onTabChange: (tab: NavigationTab) => void
+    syncStatus?: string
+    onSyncNow?: () => void
+  }
+>(function BottomNav({ tab, onTabChange, syncStatus = 'saved', onSyncNow }, navRef) {
   const dock = useRef<HTMLDivElement>(null)
   const indicator = useRef<HTMLSpanElement>(null)
   const buttons = useRef<Partial<Record<NavigationTab, HTMLButtonElement>>>({})
@@ -138,28 +143,58 @@ export const BottomNav = forwardRef<
     onTabChange(next)
   }
 
+  const syncLabel =
+    syncStatus === 'saved'
+      ? t('Synced · Laptop ↔ iPhone')
+      : syncStatus === 'pending'
+        ? t('Syncing…')
+        : syncStatus === 'offline'
+          ? t('Offline · local')
+          : t('Local device')
+
   return (
     <nav ref={navRef} className="bottom-nav" aria-label={t('Main')}>
-      <div ref={dock} className="bottom-nav-dock">
-        <span ref={indicator} className="bottom-nav-marker" aria-hidden="true" />
-        {DESTINATIONS.map(({ key, label, Icon }) => (
-          <button
-            key={key}
-            ref={(button) => {
-              if (button) buttons.current[key] = button
-              else delete buttons.current[key]
-            }}
-            type="button"
-            className="bottom-nav-item"
-            aria-current={tab === key ? 'page' : undefined}
-            onClick={() => select(key)}
-          >
-            <span className="bottom-nav-icon" aria-hidden="true">
-              <Icon size={21} />
-            </span>
-            <span className="bottom-nav-label">{label}</span>
-          </button>
-        ))}
+      <div className="desktop-nav-top">
+        <div className="desktop-nav-brand">
+          <span className="desktop-nav-logo" aria-hidden="true">语</span>
+          <div>
+            <strong>Yulu</strong>
+            <small>Mandarin HSK</small>
+          </div>
+        </div>
+        <div ref={dock} className="bottom-nav-dock">
+          <span ref={indicator} className="bottom-nav-marker" aria-hidden="true" />
+          {DESTINATIONS.map(({ key, label, Icon }) => (
+            <button
+              key={key}
+              ref={(button) => {
+                if (button) buttons.current[key] = button
+                else delete buttons.current[key]
+              }}
+              type="button"
+              className="bottom-nav-item"
+              aria-current={tab === key ? 'page' : undefined}
+              onClick={() => select(key)}
+            >
+              <span className="bottom-nav-icon" aria-hidden="true">
+                <Icon size={21} />
+              </span>
+              <span className="bottom-nav-label">{label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="desktop-nav-footer">
+        <button
+          type="button"
+          className={`desktop-sync-pill is-${syncStatus}`}
+          onClick={onSyncNow}
+          disabled={!onSyncNow || syncStatus === 'pending'}
+          title={syncLabel}
+        >
+          <span className="desktop-sync-dot" aria-hidden="true" />
+          <span>{syncLabel}</span>
+        </button>
       </div>
     </nav>
   )

@@ -1,42 +1,33 @@
 /**
- * Production Service Worker registration with single-reload update safety.
- * First-time visitors never experience a flash reload when the SW claims the page.
+ * Background cleanup for retired Service Workers and cached shells.
+ * iOS Safari Home Screen apps (display: standalone) work natively from
+ * manifest.webmanifest + meta tags without intercepting fetch() in a SW.
  */
 export function registerServiceWorker(): void {
-  if (
-    !import.meta.env.PROD ||
-    typeof window === 'undefined' ||
-    !('serviceWorker' in navigator)
-  ) {
-    return
-  }
+  if (typeof window === 'undefined') return
 
-  const hadController = Boolean(navigator.serviceWorker.controller)
-  let reloaded = false
-
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (!hadController || reloaded) return
-    reloaded = true
-    window.location.reload()
-  })
-
-  const register = () => {
-    void navigator.serviceWorker
-      .register('/sw.js', { scope: '/' })
-      .then((reg) => {
-        const checkUpdate = () => {
-          if (document.visibilityState === 'visible') {
-            void reg.update().catch(() => {})
-          }
-        }
-        document.addEventListener('visibilitychange', checkUpdate)
-      })
-      .catch(() => {})
+  const cleanup = () => {
+    if ('serviceWorker' in navigator) {
+      void navigator.serviceWorker
+        .getRegistrations()
+        .then((regs) => Promise.all(regs.map((reg) => reg.unregister().catch(() => false))))
+        .catch(() => {})
+    }
+    if ('caches' in window) {
+      void window.caches
+        .keys()
+        .then((keys) =>
+          Promise.all(
+            keys.filter((key) => key.startsWith('yulu-')).map((key) => window.caches.delete(key)),
+          ),
+        )
+        .catch(() => {})
+    }
   }
 
   if (document.readyState === 'complete') {
-    register()
+    cleanup()
   } else {
-    window.addEventListener('load', register, { once: true })
+    window.addEventListener('load', cleanup, { once: true })
   }
 }

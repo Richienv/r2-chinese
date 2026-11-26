@@ -139,6 +139,7 @@ export function createBookJournalStore(storage?: JournalStorage) {
     }
     snapshot = { entries, saveStatus }
     notify()
+    if (typeof window !== 'undefined') window.dispatchEvent(new Event('yulu:local-progress'))
   }
   function refresh() {
     const current = getSnapshot(), latest = read()
@@ -159,7 +160,10 @@ function journalStore() {
     let storage: JournalStorage | undefined
     try { if (typeof localStorage !== 'undefined') storage = localStorage } catch { /* The session remains writable in memory. */ }
     defaultStore = createBookJournalStore(storage)
-    if (typeof window !== 'undefined') window.addEventListener('storage', (event) => { if (event.key === BOOK_JOURNAL_KEY) defaultStore?.refresh() })
+    if (typeof window !== 'undefined') {
+      window.addEventListener('storage', (event) => { if (event.key === BOOK_JOURNAL_KEY) defaultStore?.refresh() })
+      window.addEventListener('yulu:cloud-hydrated', () => defaultStore?.refresh())
+    }
   }
   return defaultStore
 }

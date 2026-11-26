@@ -120,7 +120,7 @@ test('public/manifest.webmanifest, public/sw.js, index.html, and icon assets are
   assert.equal(manifest.name, 'Yulu · Mandarin HSK')
   assert.equal(manifest.short_name, 'Yulu')
   assert.equal(manifest.display, 'standalone')
-  assert.equal(manifest.start_url, '/?source=pwa')
+  assert.equal(manifest.start_url, '/')
   assert.equal(manifest.background_color, '#edf3ef')
   assert.equal(manifest.theme_color, '#edf3ef')
   assert.deepEqual(
@@ -161,11 +161,19 @@ test('public/manifest.webmanifest, public/sw.js, index.html, and icon assets are
   const swPath = path.join(root, 'public', 'sw.js')
   assert.equal(fs.existsSync(swPath), true)
   const sw = fs.readFileSync(swPath, 'utf8')
-  assert.match(sw, /v2-yulu-pwa/)
+  assert.match(sw, /v3-yulu-cleanup/)
   assert.match(sw, /skipWaiting/)
-  assert.match(sw, /clients\.claim/)
-  assert.match(sw, /\/api\//)
+  assert.match(sw, /unregister/)
   assert.match(sw, /skip-waiting/)
+  assert.doesNotMatch(sw, /addEventListener\(["']fetch["']/)
+  assert.doesNotMatch(sw, /clients\.claim/)
+
+  const pwaTs = fs.readFileSync(path.join(root, 'src', 'lib', 'pwa.ts'), 'utf8')
+  assert.match(pwaTs, /getRegistrations/)
+  assert.doesNotMatch(pwaTs, /location\.reload/)
+
+  const desktopCss = fs.readFileSync(path.join(root, 'src', 'styles', 'desktop.css'), 'utf8')
+  assert.match(desktopCss, /@media \(min-width: 960px\)/)
 
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8')
   assert.match(html, /rel="manifest"\s+href="\/manifest\.webmanifest"/)

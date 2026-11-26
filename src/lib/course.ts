@@ -109,6 +109,16 @@ export function CourseProvider({ children }: { children: ReactNode }) {
     }
   }, [course])
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const onHydrated = () => {
+      setCourseState(readCourse())
+      setEntered(hasSavedCourse())
+    }
+    window.addEventListener('yulu:cloud-hydrated', onHydrated)
+    return () => window.removeEventListener('yulu:cloud-hydrated', onHydrated)
+  }, [])
+
   const setCourse = useCallback((id: CourseId) => {
     setCourseState(id)
     setEntered(true)
@@ -116,6 +126,9 @@ export function CourseProvider({ children }: { children: ReactNode }) {
       localStorage.setItem(ENTERED_KEY, '1')
     } catch {
       /* ignore */
+    }
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new Event('yulu:local-progress'))
     }
   }, [])
 

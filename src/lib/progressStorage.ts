@@ -31,12 +31,173 @@ const DEVICE_KEYS = new Set([
   'yulu.lang.v1',
 ])
 
+const MERGEABLE_JSON_KEYS = new Set([
+  'yulu.jiaocheng.v1',
+  'yulu.kerja.v1',
+  'yulu.magang.v1',
+  'yulu.interview.v1',
+  'yulu.books.v1',
+  'yulu.books.journal.v1',
+  'yulu.jiayin.v1',
+  'yulu.jiayin.english.v1',
+  'yulu.history.v1',
+  'yulu.learning-checkpoints.v1',
+])
+
 function accountSuffixForKey(key: string): string {
   return key === PROGRESS_KEY ? 'local' : key.slice(PROGRESS_KEY.length + 1)
 }
 
 function isPlainRecord(v: unknown): v is Record<string, unknown> {
   return Boolean(v) && typeof v === 'object' && !Array.isArray(v)
+}
+
+function tryParseJson(raw: unknown): unknown {
+  if (typeof raw !== 'string') return raw
+  try {
+    return JSON.parse(raw)
+  } catch {
+    return null
+  }
+}
+
+function mergeJsonArrays(left: unknown[], right: unknown[]): unknown[] {
+  const out: unknown[] = []
+  const seen = new Set<string>()
+  for (const item of [...left, ...right]) {
+    const token =
+      item === null || typeof item !== 'object' ? `${typeof item}:${String(item)}` : JSON.stringify(item)
+    if (seen.has(token)) continue
+    seen.add(token)
+    out.push(item)
+  }
+  return out.length > 400 ? out.slice(-400) : out
+}
+
+function mergeJsonRecords(
+  left: Record<string, unknown>,
+  right: Record<string, unknown>,
+): Record<string, unknown> {
+  const out: Record<string, unknown> = {}
+  for (const k of new Set([...Object.keys(left), ...Object.keys(right)])) {
+    const a = left[k]
+    const b = right[k]
+    if (a === undefined) {
+      out[k] = b
+      continue
+    }
+    if (b === undefined) {
+      out[k] = a
+      continue
+    }
+    if (Array.isArray(a) && Array.isArray(b)) {
+      out[k] = mergeJsonArrays(a, b)
+    } else if (isPlainRecord(a) && isPlainRecord(b)) {
+      out[k] = mergeJsonRecords(a, b)
+    } else if (typeof a === 'number' && typeof b === 'number' && Number.isFinite(a) && Number.isFinite(b)) {
+      out[k] = Math.max(a, b)
+    } else if (typeof a === 'boolean' && typeof b === 'boolean') {
+      out[k] = a || b
+    } else if (typeof b === 'string' && b.length === 0 && typeof a === 'string' && a.length > 0) {
+      out[k] = a
+    } else {
+      out[k] = b
+    }
+  }
+  return out
+}
+
+function scoreDeviceJson(val: unknown): number {
+  if (Array.isArray(val)) return val.length * 10
+  if (!isPlainRecord(val)) return 0
+  let score = 0
+  for (const [k, v] of Object.entries(val)) {
+    if (k === 'version' || k === 'updatedAt') continue
+    if (k === 'unlockedLesson' || k === 'unlockedChapter') {
+      if (typeof v === 'number' && Number.isFinite(v) && v > 1) score += (v - 1) * 15
+      continue
+    }
+    if (Array.isArray(v)) {
+      score += v.length * 10
+    } else if (isPlainRecord(v)) {
+      for (const nested of Object.values(v)) {
+        if (Array.isArray(nested)) score += nested.length * 10
+        else if (isPlainRecord(nested)) score += Object.keys(nested).length * 10
+        else if (typeof nested === 'string' && nested.trim()) score += 10
+        else if (typeof nested === 'number' && nested > 0) score += 5
+      }
+    } else if (typeof v === 'string' && v.trim()) {
+      score += 10
+    } else if (typeof v === 'number' && Number.isFinite(v) && v > 0 && k !== 'currentLesson') {
+      score += 5
+    } else if (typeof v === 'number' && k === 'currentLesson' && v > 1) {
+      score += 10
+    }
+  }
+  return score
+}
+
+/**
+ * Score how much real study activity a Yulu backup JSON carries so an empty
+ * browser/PWA can never overwrite real progress on another device.
+ */
+export function computeBackupActivityScore(rawOrParsed: string | Record<string, unknown>): number {
+  const parsed = typeof rawOrParsed === 'string' ? tryParseJson(rawOrParsed) : rawOrParsed
+  if (!isPlainRecord(parsed)) return 0
+  let entries: Record<string, unknown> | null = null
+  if (parsed.format === 'yulu-progress-backup' && isPlainRecord(parsed.entries)) {
+    entries = parsed.entries
+  } else if ('cards' in parsed || 'lessonsDone' in parsed || 'xp' in parsed) {
+    entries = { [PROGRESS_KEY]: parsed }
+  }
+  if (!entries) return 0
+
+  let total = 0
+  for (const [k, rawVal] of Object.entries(entries)) {
+    if (isMainProgressKey(k)) {
+      const p = tryParseJson(rawVal)
+      if (!isPlainRecord(p)) continue
+      const xp = typeof p.xp === 'number' && Number.isFinite(p.xp) ? Math.max(0, Math.round(p.xp)) : 0
+      const lessons = Array.isArray(p.lessonsDone) ? p.lessonsDone.length : 0
+      const cards = isPlainRecord(p.cards) ? Object.keys(p.cards).length : 0
+      const mastery = isPlainRecord(p.mastery) ? Object.keys(p.mastery).length : 0
+      const events =
+        isPlainRecord(p.learning) && isPlainRecord(p.learning.events)
+          ? Object.keys(p.learning.events).length
+          : 0
+      const pathDone = isPlainRecord(p.pathDone) ? Object.keys(p.pathDone).length : 0
+      const starred = Array.isArray(p.starred) ? p.starred.length : 0
+      const graphNodes =
+        isPlainRecord(p.learnerGraph) && isPlainRecord(p.learnerGraph.nodes)
+          ? Object.keys(p.learnerGraph.nodes).length
+          : 0
+      const unlocked =
+        typeof p.unlockedLesson === 'number' && Number.isFinite(p.unlockedLesson) && p.unlockedLesson > 1
+          ? (p.unlockedLesson - 1) * 15
+          : 0
+      total +=
+        xp +
+        lessons * 100 +
+        cards * 20 +
+        mastery * 10 +
+        events * 15 +
+        pathDone * 25 +
+        starred * 5 +
+        graphNodes * 10 +
+        unlocked
+      continue
+    }
+
+    if (k === 'yulu.learner-graph.v1' || MERGEABLE_JSON_KEYS.has(k) || k.startsWith('yulu.hsk-writing.v1:')) {
+      total += scoreDeviceJson(tryParseJson(rawVal))
+      continue
+    }
+
+    if (k === 'yulu.course-entered.v1' && rawVal === '1') {
+      total += 1
+    }
+  }
+  return total
 }
 
 function isMainProgressKey(k: string): boolean {
@@ -200,7 +361,14 @@ export function importLearningStorage(
     }
 
     if (k.startsWith('yulu.hsk-writing.v1:')) {
-      const strVal = typeof rawVal === 'string' ? rawVal : JSON.stringify(rawVal)
+      const incomingParsed = tryParseJson(rawVal)
+      const existingParsed = tryParseJson(storage.getItem(writingDestKey))
+      const strVal =
+        isPlainRecord(existingParsed) && isPlainRecord(incomingParsed)
+          ? JSON.stringify(mergeJsonRecords(existingParsed, incomingParsed))
+          : typeof rawVal === 'string'
+            ? rawVal
+            : JSON.stringify(rawVal)
       if (typeof strVal === 'string' && strVal.length > 0) {
         storage.setItem(writingDestKey, strVal)
         restoredKeys++
@@ -209,7 +377,18 @@ export function importLearningStorage(
     }
 
     if (DEVICE_KEYS.has(k)) {
-      const strVal = typeof rawVal === 'string' ? rawVal : JSON.stringify(rawVal)
+      let strVal = typeof rawVal === 'string' ? rawVal : JSON.stringify(rawVal)
+      if (MERGEABLE_JSON_KEYS.has(k)) {
+        const incomingParsed = tryParseJson(rawVal)
+        const existingParsed = tryParseJson(storage.getItem(k))
+        if (isPlainRecord(existingParsed) && isPlainRecord(incomingParsed)) {
+          strVal = JSON.stringify(mergeJsonRecords(existingParsed, incomingParsed))
+        } else if (Array.isArray(existingParsed) && Array.isArray(incomingParsed)) {
+          strVal = JSON.stringify(mergeJsonArrays(existingParsed, incomingParsed))
+        }
+      } else if (k === 'yulu.course-entered.v1') {
+        strVal = storage.getItem(k) === '1' || strVal === '1' ? '1' : strVal
+      }
       if (typeof strVal === 'string' && strVal.length > 0) {
         storage.setItem(k, strVal)
         restoredKeys++

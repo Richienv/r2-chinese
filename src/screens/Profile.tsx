@@ -11,8 +11,39 @@ export function Profile() {
   const s = useStore()
   const { user, signOut } = useAuth()
   const [confirmReset, setConfirmReset] = useState(false)
+  const [syncingNow, setSyncingNow] = useState(false)
   const [importStatus, setImportStatus] = useState<{ kind: 'ok' | 'err'; text: string } | null>(null)
   const importInputRef = useRef<HTMLInputElement>(null)
+
+  async function handleSyncNow() {
+    if (syncingNow) return
+    setSyncingNow(true)
+    setImportStatus(null)
+    try {
+      const res = await s.syncNow()
+      if (res === 'saved') {
+        setImportStatus({
+          kind: 'ok',
+          text: t('Synced across your devices ({xp} XP, {words} words)!', {
+            xp: s.xp.toLocaleString(),
+            words: s.learningTrail.length,
+          }),
+        })
+      } else if (res === 'offline') {
+        setImportStatus({
+          kind: 'err',
+          text: t('Could not reach cloud sync right now. Your progress is safe on this device.'),
+        })
+      } else {
+        setImportStatus({
+          kind: 'ok',
+          text: t('Saved on this device'),
+        })
+      }
+    } finally {
+      setSyncingNow(false)
+    }
+  }
 
   async function handleBackupFile(e: ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
@@ -158,12 +189,20 @@ export function Profile() {
           </div>
         </div>
         <p className="profile-section-sub">
-          {t('Save a .json backup or restore it after adding Yulu to your Home Screen.')}
+          {t('Progress syncs automatically between Safari, your iPhone Home Screen app, and your laptop. You can also export or import a .json backup anytime.')}
         </p>
         <div className="profile-data-buttons">
           <button
             type="button"
             className="btn"
+            disabled={syncingNow || s.syncStatus === 'pending'}
+            onClick={handleSyncNow}
+          >
+            {syncingNow || s.syncStatus === 'pending' ? t('Syncing progress…') : t('Sync now')}
+          </button>
+          <button
+            type="button"
+            className="btn btn-ghost"
             onClick={() => importInputRef.current?.click()}
           >
             {t('Import progress backup')}
@@ -190,11 +229,11 @@ export function Profile() {
         )}
         <p className="sub" role="status">
           {s.syncStatus === 'saved'
-            ? t('Progress synced')
+            ? t('Auto-synced to cloud')
             : s.syncStatus === 'offline'
-              ? t('Saved on this device. Sync will retry.')
+              ? t('Saved on this device. Cloud sync will retry.')
               : s.syncStatus === 'pending'
-                ? t('Saving progress…')
+                ? t('Syncing progress…')
                 : t('Saved on this device')}
         </p>
         <details className="profile-reset-disclosure"><summary>{t('Start over')}</summary>

@@ -2,7 +2,7 @@ import { progressAction } from '../lib/practiceExperience'
 import { recommendedWords } from '../lib/learningEngine'
 import { graphSummary } from '../lib/learnerGraph'
 import '../styles/usability.css'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { MasteryTracker } from '../components/MasteryTracker'
 import { getLesson, isCoreBookVocab, lessons } from '../lib/content'
 import { COURSE_META } from '../lib/course'
@@ -278,6 +278,16 @@ export function Progress({
 }) {
   const s = useStore()
   const [showHistory, setShowHistory] = useState(false)
+  const [syncTick, setSyncTick] = useState(0)
+  useEffect(() => {
+    const bump = () => setSyncTick((n) => n + 1)
+    window.addEventListener('yulu:cloud-hydrated', bump)
+    window.addEventListener('yulu:local-progress', bump)
+    return () => {
+      window.removeEventListener('yulu:cloud-hydrated', bump)
+      window.removeEventListener('yulu:local-progress', bump)
+    }
+  }, [])
   const week = weekActivity(s.log)
   const due = dueCards(s.cardList).filter((c) => isCoreBookVocab(c.zh))
   const hardWords = recommendedWords(
@@ -304,11 +314,11 @@ export function Progress({
       jiaochengCourse(jiaochengDone),
       booksCourse(booksDone),
     ]
-  }, [s.pathDone, s.lessonsDone])
+  }, [s.pathDone, s.lessonsDone, syncTick])
 
   const history = useMemo(
     () => readHistory().filter((event) => !['magang', 'interview', 'jiayin'].includes(event.course)),
-    [s.pathDone, s.log, s.xp, s.cards],
+    [s.pathDone, s.log, s.xp, s.cards, syncTick],
   )
   const visibleHistory = showHistory ? history : history.slice(0, 5)
 

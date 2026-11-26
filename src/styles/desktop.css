@@ -1,0 +1,376 @@
+/* Laptop / MacBook Pro 16" responsive workspace (>= 960px and >= 1280px).
+ * Mobile (< 960px) retains its single-column phone ergonomics untouched. */
+.home-col-primary,
+.home-col-side {
+  display: contents;
+}
+
+@media (min-width: 960px) {
+  html,
+  body {
+    background: var(--bg);
+  }
+
+  body .app {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 256px minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    box-shadow: none;
+  }
+
+  .app > .safe-top {
+    display: none;
+  }
+
+  .app > main.scroll {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    padding: 32px clamp(32px, 4vw, 60px) 56px;
+  }
+
+  /* Left Navigation Rail */
+  .app > .bottom-nav {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 26px 16px 22px;
+    background: var(--surface);
+    border-top: 0;
+    border-right: 1px solid var(--line);
+    box-shadow: none;
+  }
+
+  .desktop-nav-top {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .desktop-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 10px;
+  }
+
+  .desktop-nav-logo {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #2b7169, #1f534e);
+    color: #f6efe2;
+    font-family: var(--serif-sc);
+    font-size: 21px;
+    font-weight: 700;
+    box-shadow: 0 6px 14px -8px rgba(31, 83, 78, 0.45);
+  }
+
+  .desktop-nav-brand strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .desktop-nav-brand small {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 1px;
+  }
+
+  body .bottom-nav .bottom-nav-dock {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .bottom-nav .bottom-nav-marker {
+    display: none !important;
+  }
+
+  .bottom-nav .bottom-nav-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    min-height: 46px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 14.5px;
+    transition: background-color 150ms var(--ease), color 150ms var(--ease);
+  }
+
+  .bottom-nav .bottom-nav-item:hover {
+    background: var(--paper);
+  }
+
+  .bottom-nav .bottom-nav-item[aria-current='page'] {
+    background: var(--accent-soft);
+    color: var(--accent);
+    box-shadow: inset 0 0 0 1px var(--accent-line);
+  }
+
+  .bottom-nav .bottom-nav-label {
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+
+  .desktop-nav-footer {
+    display: block;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+
+  .desktop-sync-pill {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 150ms var(--ease), border-color 150ms var(--ease);
+  }
+
+  .desktop-sync-pill:hover:not(:disabled) {
+    background: var(--accent-soft);
+    border-color: var(--accent-line);
+  }
+
+  .desktop-sync-dot {
+    width: 8px;
+    height: 8px;
+    flex: none;
+    border-radius: 50%;
+    background: var(--ok);
+  }
+
+  .desktop-sync-pill.is-pending .desktop-sync-dot {
+    background: var(--warn);
+  }
+
+  .desktop-sync-pill.is-offline .desktop-sync-dot,
+  .desktop-sync-pill.is-local .desktop-sync-dot {
+    background: var(--muted);
+  }
+
+  /* Page Max-Widths */
+  .home-page,
+  .path-page,
+  .progress-page,
+  .profile-page,
+  .stack-page {
+    max-width: 1080px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  /* Course Chooser Grid */
+  .minimal-library {
+    max-width: 1040px;
+    padding: 20px 4px 36px;
+  }
+
+  body .minimal-course-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .course-library .course-gate-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  /* Fullscreen Study Overlays centered cleanly on wide viewports */
+  .app > .overlay {
+    max-width: none;
+    width: 100%;
+  }
+
+  .overlay:not(.recall-focus) .overlay-head,
+  .overlay:not(.recall-focus) .overlay-body,
+  .overlay:not(.recall-focus) .overlay-foot {
+    padding-inline: max(32px, calc((100% - 820px) / 2));
+  }
+
+  .overlay.recall-focus .focus-head,
+  .overlay.recall-focus .focus-progress,
+  .overlay.recall-focus .focus-body,
+  .overlay.recall-focus .focus-foot {
+    padding-inline: max(32px, calc((100% - 760px) / 2));
+  }
+
+  .overlay.recall-focus .focus-prompt,
+  .overlay.recall-focus .focus-answer,
+  .overlay.recall-focus .focus-form,
+  .overlay.recall-focus .focus-actions,
+  .overlay.recall-focus .focus-ratings,
+  .overlay.recall-focus .focus-continue,
+  .overlay.recall-focus .focus-writing {
+    max-width: 560px;
+  }
+
+  .overlay.jiaocheng-midterm .jiaocheng-midterm-head,
+  .overlay.jiaocheng-midterm .jiaocheng-midterm-setup,
+  .overlay.jiaocheng-midterm .jiaocheng-midterm-foot {
+    padding-inline: max(32px, calc((100% - 860px) / 2));
+  }
+
+  .overlay.jiaocheng-midterm .jiaocheng-midterm-body {
+    max-width: 860px;
+    padding-inline: 32px;
+  }
+
+  /* Dialogs centered comfortably on desktop */
+  .sheet-backdrop {
+    align-items: center;
+    padding: 28px;
+  }
+
+  .sheet-backdrop > .sheet {
+    max-width: 540px;
+    width: 100%;
+    border-radius: 24px;
+  }
+}
+
+@media (min-width: 1080px) {
+  /* Home 2-Column Workspace */
+  .home-page.home-alive:not(:has(.course-gate)) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.85fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: 28px;
+    row-gap: 18px;
+    align-items: start;
+  }
+
+  .home-page.home-alive:not(:has(.course-gate)) > .home-topbar {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .home-page.home-alive:not(:has(.course-gate)) > .duo-hud {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+  }
+
+  .home-page.home-alive:not(:has(.course-gate)) > .home-col-primary {
+    grid-column: 1;
+    grid-row: 2 / span 3;
+    display: grid;
+    gap: 18px;
+    min-width: 0;
+    align-content: start;
+  }
+
+  .home-page.home-alive:not(:has(.course-gate)) > .home-col-side {
+    grid-column: 2;
+    grid-row: 3;
+    display: grid;
+    gap: 18px;
+    min-width: 0;
+    align-content: start;
+  }
+
+  /* Materials / Learn Multi-Column Curriculum Grid */
+  .path-page.path-alive:has(.learning-atlas) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+  }
+
+  .path-page.path-alive > .course-back,
+  .path-page.path-alive > .page-heading,
+  .path-page.path-alive > .skip-level-card,
+  .path-page.path-alive > .hsk-practice-entry,
+  .path-page.path-alive > .jiaocheng-exam-hub,
+  .path-page.path-alive > .exam-home-card {
+    grid-column: 1 / -1;
+  }
+
+  .path-page.path-alive > .learning-atlas[open] {
+    grid-column: 1 / -1;
+  }
+
+  /* Progress Dashboard 2-Column Cards */
+  .progress-page .progress-courses {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  /* Profile 2-Column Grid */
+  .profile-page {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+  }
+
+  .profile-header,
+  .profile-source-note,
+  .profile-signout {
+    grid-column: 1 / -1;
+  }
+
+  .profile-language,
+  .profile-settings,
+  .profile-data {
+    margin-top: 0;
+  }
+
+  .profile-data-buttons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1400px) {
+  body .app {
+    grid-template-columns: 272px minmax(0, 1fr);
+  }
+
+  .home-page,
+  .path-page,
+  .progress-page,
+  .profile-page,
+  .stack-page {
+    max-width: 1200px;
+  }
+
+  .minimal-library {
+    max-width: 1180px;
+  }
+
+  body .minimal-course-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

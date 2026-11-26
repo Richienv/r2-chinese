@@ -20,6 +20,13 @@ function write(next: JiayinProgress) {
   cache = next
   try { localStorage.setItem(JIAYIN_PROGRESS_KEY, JSON.stringify(next)) } catch { /* Session remains usable if storage is full. */ }
   for (const listener of listeners) listener()
+  if (typeof window !== 'undefined') window.dispatchEvent(new Event('yulu:local-progress'))
+}
+if (typeof window !== 'undefined') {
+  window.addEventListener('yulu:cloud-hydrated', () => {
+    cache = load()
+    for (const listener of listeners) listener()
+  })
 }
 export function useJiayinProgress() {
   const progress = useSyncExternalStore(subscribe, snapshot, snapshot)

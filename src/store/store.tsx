@@ -47,6 +47,12 @@ import {
   exportLearningStorage,
   importLearningStorage,
 } from '../lib/progressStorage'
+import {
+  CLOUD_HYDRATED_EVENT,
+  LOCAL_PROGRESS_EVENT,
+  pushToCloudIfChanged,
+  syncWithCloud,
+} from '../lib/autoSync'
 import { isCoreBookVocab } from '../lib/content'
 import { t } from '../lib/i18n'
 
@@ -235,6 +241,7 @@ function streakOf(days: string[]): number {
 interface Store extends Persisted {
   storageProblem: boolean
   syncStatus: string
+  syncNow: () => Promise<'saved' | 'offline' | 'local'>
   exportProgress: () => void
   importProgress: (
     rawJson: string,
@@ -320,8 +327,25 @@ export function StoreProvider({
   })
   const latest = useRef(state)
   const [storageProblem, setStorageProblem] = useState(false)
-  const [syncStatus, setSyncStatus] = useState(userId ? 'pending' : 'local')
+  const [syncStatus, setSyncStatus] = useState(userId ? 'pending' : 'pending')
+  const initialPullDoneRef = useRef(false)
+  const cloudSyncRunningRef = useRef(false)
+  const dirtySincePullRef = useRef(false)
   const key = progressKey(userId)
+  const applyCloudHydration = useCallback(() => {
+    const next = load(userId)
+    const storedGraph = getLearnerGraphSnapshot()
+    const hydrated =
+      !initial &&
+      (Object.keys(storedGraph.nodes).length || Object.keys(storedGraph.edges).length)
+        ? { ...next, learnerGraph: mergeLearnerGraphs(next.learnerGraph, storedGraph) }
+        : next
+    latest.current = hydrated
+    setReactState(hydrated)
+    if (!initial) replaceLearnerGraph(hydrated.learnerGraph)
+    setStorageProblem(false)
+  }, [userId, initial])
+
   const setState = useCallback(
     (update: (s: Persisted) => Persisted): boolean => {
       const next = update(latest.current)
@@ -340,6 +364,7 @@ export function StoreProvider({
       }
       setReactState(saved)
       setStorageProblem(false)
+      if (initialPullDoneRef.current) dirtySincePullRef.current = true
       return true
     },
     [key, initial],
@@ -405,6 +430,153 @@ export function StoreProvider({
     window.addEventListener('storage', receive)
     return () => window.removeEventListener('storage', receive)
   }, [key, setState])
+  const syncNow = useCallback(async (): Promise<'saved' | 'offline' | 'local'> => {
+    if (userId) {
+      setSyncStatus('pending')
+      try {
+        const merged = await saveProgress(userId, latest.current, (a, b) =>
+          mergeProgress(normalize(a), normalize(b)),
+        )
+        if (merged) {
+          const combined = mergeProgress(latest.current, merged)
+          if (JSON.stringify(combined) !== JSON.stringify(latest.current)) setState(() => combined)
+        }
+        setSyncStatus('saved')
+        return 'saved'
+      } catch {
+        setSyncStatus('offline')
+        return 'offline'
+      }
+    }
+    if (initial || typeof window === 'undefined') return 'local'
+    setSyncStatus('pending')
+    const res = await syncWithCloud({
+      storage: localStorage,
+      key,
+      onHydrated: applyCloudHydration,
+    })
+    initialPullDoneRef.current = true
+    setSyncStatus(res.status)
+    return res.status === 'pending' ? 'offline' : res.status
+  }, [userId, initial, key, applyCloudHydration, setState])
+
+  // Bidirectional automatic cloud sync when Supabase auth is inactive (default on yulu.trolive.id).
+  useEffect(() => {
+    if (userId || initial || typeof window === 'undefined') return
+    let cancelled = false
+    let pushTimer: ReturnType<typeof setTimeout> | undefined
+
+    const runPull = async () => {
+      if (cancelled || cloudSyncRunningRef.current) return
+      cloudSyncRunningRef.current = true
+      try {
+        const res = await syncWithCloud({
+          storage: localStorage,
+          key,
+          onHydrated: applyCloudHydration,
+        })
+        initialPullDoneRef.current = true
+        dirtySincePullRef.current = false
+        if (!cancelled) setSyncStatus(res.status)
+      } catch {
+        initialPullDoneRef.current = true
+        if (!cancelled) setSyncStatus('offline')
+      } finally {
+        cloudSyncRunningRef.current = false
+      }
+    }
+
+    const runPush = async (keepalive = false) => {
+      if (cancelled || !initialPullDoneRef.current) return
+      if (cloudSyncRunningRef.current && !keepalive) return
+      if (!keepalive) cloudSyncRunningRef.current = true
+      try {
+        const res = await pushToCloudIfChanged({
+          storage: localStorage,
+          key,
+          onHydrated: applyCloudHydration,
+          keepalive,
+        })
+        dirtySincePullRef.current = false
+        if (!cancelled) setSyncStatus(res.status)
+      } catch {
+        if (!cancelled) setSyncStatus('offline')
+      } finally {
+        if (!keepalive) cloudSyncRunningRef.current = false
+      }
+    }
+
+    const schedulePush = () => {
+      if (cancelled || !initialPullDoneRef.current) return
+      clearTimeout(pushTimer)
+      pushTimer = setTimeout(() => {
+        void runPush(false)
+      }, 1800)
+    }
+
+    const onVisibility = () => {
+      if (document.visibilityState === 'hidden') {
+        clearTimeout(pushTimer)
+        void runPush(true)
+      } else if (document.visibilityState === 'visible') {
+        void runPull()
+      }
+    }
+
+    const onPageHide = () => {
+      clearTimeout(pushTimer)
+      void runPush(true)
+    }
+
+    const onOnline = () => {
+      void runPull()
+    }
+
+    const onLocalProgress = () => {
+      dirtySincePullRef.current = true
+      schedulePush()
+    }
+
+    const onCloudHydrated = () => {
+      applyCloudHydration()
+    }
+
+    void runPull()
+    const periodic = setInterval(() => {
+      if (document.visibilityState === 'visible') void runPush(false)
+    }, 30_000)
+
+    document.addEventListener('visibilitychange', onVisibility)
+    window.addEventListener('pagehide', onPageHide)
+    window.addEventListener('online', onOnline)
+    window.addEventListener(LOCAL_PROGRESS_EVENT, onLocalProgress)
+    window.addEventListener(CLOUD_HYDRATED_EVENT, onCloudHydrated)
+
+    return () => {
+      cancelled = true
+      clearTimeout(pushTimer)
+      clearInterval(periodic)
+      document.removeEventListener('visibilitychange', onVisibility)
+      window.removeEventListener('pagehide', onPageHide)
+      window.removeEventListener('online', onOnline)
+      window.removeEventListener(LOCAL_PROGRESS_EVENT, onLocalProgress)
+      window.removeEventListener(CLOUD_HYDRATED_EVENT, onCloudHydrated)
+    }
+  }, [userId, initial, key, applyCloudHydration])
+
+  useEffect(() => {
+    if (userId || initial || typeof window === 'undefined') return
+    if (!initialPullDoneRef.current || !dirtySincePullRef.current) return
+    const timer = setTimeout(() => {
+      void pushToCloudIfChanged({
+        storage: localStorage,
+        key,
+        onHydrated: applyCloudHydration,
+      }).then((res) => setSyncStatus(res.status))
+    }, 1800)
+    return () => clearTimeout(timer)
+  }, [userId, initial, key, state, applyCloudHydration])
+
   useEffect(() => {
     if (!userId) return
     let cancelled = false,
@@ -840,6 +1012,7 @@ export function StoreProvider({
       ...state,
       storageProblem,
       syncStatus,
+      syncNow,
       exportProgress,
       importProgress,
       reviewWord,
@@ -882,6 +1055,7 @@ export function StoreProvider({
     state,
     storageProblem,
     syncStatus,
+    syncNow,
     exportProgress,
     importProgress,
     reviewWord,

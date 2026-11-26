@@ -79,6 +79,7 @@ export function Home({
         </div>
       </div>
       <TodayHud onOpen={onProgress} />
+      <div className="home-col-primary">
       {course === 'jiayin' ? (
         <JiayinPath onPlay={onJiayinSession} />
       ) : course === 'kerja' ? (
@@ -139,6 +140,8 @@ export function Home({
           />
         </>
       )}
+      </div>
+      <div className="home-col-side">
       {languageCourse && <MemoryHorizon onReview={onReview} onPlacement={onPlacement} />}
       <StudyMusic />
       <div className="home-shortcuts">
@@ -146,6 +149,7 @@ export function Home({
         {languageCourse && <button type="button" className="home-dock-button" data-home-trail onClick={onTrail}><span>{t('My words')}{recentWords.length > 0 && <small lang="zh-CN">{recentWords.join(' · ')}</small>}</span><span aria-hidden>→</span></button>}
       </div>
       <InstallCard variant="home" />
+      </div>
     </div>
   )
 }

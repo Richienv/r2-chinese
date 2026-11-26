@@ -3,7 +3,7 @@
   "name": "Yulu · Mandarin HSK",
   "short_name": "Yulu",
   "description": "Latihan aktif HSK 4 & Jiaocheng dengan Active Recall, menulis Hanzi, dan simulasi ujian.",
-  "start_url": "/?source=pwa",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",

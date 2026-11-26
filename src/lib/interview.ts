@@ -362,6 +362,14 @@ function writeProgress(next: InterviewPersisted) {
     /* ignore */
   }
   emitProgress()
+  if (typeof window !== 'undefined') window.dispatchEvent(new Event('yulu:local-progress'))
+}
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('yulu:cloud-hydrated', () => {
+    progressCache = loadProgress()
+    emitProgress()
+  })
 }
 
 function subscribeProgress(cb: () => void) {
