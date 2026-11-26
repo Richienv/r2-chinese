@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Yulu">
+  <defs>
+    <linearGradient id="jade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f544e" />
+      <stop offset="50%" stop-color="#27665f" />
+      <stop offset="100%" stop-color="#163d39" />
+    </linearGradient>
+    <radialGradient id="glow" cx="26%" cy="22%" r="65%">
+      <stop offset="0%" stop-color="#e7d7b9" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#e7d7b9" stop-opacity="0" />
+    </radialGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#091f1d" flood-opacity="0.48" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#jade)" />
+  <rect width="512" height="512" rx="116" fill="url(#glow)" />
+  <circle cx="256" cy="256" r="192" fill="none" stroke="#e7d7b9" stroke-opacity="0.86" stroke-width="3.5" />
+  <circle cx="256" cy="256" r="182" fill="none" stroke="#ffffff" stroke-opacity="0.34" stroke-width="1.25" />
+  <text
+    x="256"
+    y="264"
+    text-anchor="middle"
+    dominant-baseline="central"
+    fill="#fbfdfb"
+    filter="url(#shadow)"
+    font-family="'Songti SC', 'Noto Serif SC', 'STSong', 'PingFang SC', serif"
+    font-weight="700"
+    font-size="258"
+  >语</text>
+</svg>

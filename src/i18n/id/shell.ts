@@ -134,6 +134,31 @@ const entries: Record<string, string> = {
   'Your next step': 'Langkah berikutnya',
   'Ready to revisit': 'Siap diulang',
   'Learning path': 'Jalur belajar',
+
+  // ---- PWA install card ----
+  'Add Yulu to Home Screen': 'Pasang Yulu di Home Screen',
+  'iPhone: Tap Share → Add to Home Screen': 'iPhone: Ketuk Bagikan → Tambah ke Layar Utama',
+  'Open this page in Safari to install': 'Buka halaman ini di Safari untuk memasang',
+  'One-tap install for full-screen study': 'Pasang sekali ketuk untuk belajar layar penuh',
+  'Open browser menu → Install app': 'Buka menu browser → Pasang aplikasi',
+  'Install': 'Pasang',
+  'Hide': 'Tutup',
+  'Guide': 'Panduan',
+  'Dismiss install prompt': 'Tutup ajakan pasang aplikasi',
+  'Tap the Share icon at the bottom of Safari': 'Ketuk ikon Bagikan di bagian bawah Safari',
+  'Scroll down and choose Add to Home Screen': 'Gulir ke bawah lalu pilih Tambah ke Layar Utama',
+  'Tap Add to launch Yulu full-screen': 'Ketuk Tambah agar Yulu terbuka layar penuh',
+  'In-app browsers and Chrome on iPhone cannot add apps directly. Open this link in Safari, then tap Share → Add to Home Screen.': 'Browser dalam aplikasi dan Chrome di iPhone belum bisa memasang langsung. Buka tautan ini di Safari, lalu ketuk Bagikan → Tambah ke Layar Utama.',
+  'Link copied': 'Tautan disalin',
+  'Copy Yulu link': 'Salin tautan Yulu',
+  'Home Screen app': 'Aplikasi Home Screen',
+  'APP EXPERIENCE': 'PENGALAMAN APLIKASI',
+  'Already installed on Home Screen': 'Sudah terpasang di Home Screen',
+  'You are running Yulu in full-screen app mode.': 'Kamu lagi menjalankan Yulu dalam mode aplikasi layar penuh.',
+  'Launch Yulu like a native app without browser bars.': 'Jalankan Yulu seperti aplikasi asli tanpa bilah browser.',
+  'Open in Safari first': 'Buka di Safari dulu',
+  'Install Yulu app': 'Pasang aplikasi Yulu',
+  'Open your browser menu and select Install app or Add to Home Screen.': 'Buka menu browser kamu lalu pilih Pasang aplikasi atau Tambah ke Layar Utama.',
 }
 
 export default entries

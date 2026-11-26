@@ -121,6 +121,18 @@ function Shell() {
   useOverlayLock(open)
   useEdgeSwipeClose(open, closeOverlay)
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const action = new URLSearchParams(window.location.search).get('action')
+    if (action === 'review') {
+      setOverlay({ kind: 'review' })
+      window.history.replaceState({}, '', window.location.pathname)
+    } else if (action === 'exam') {
+      setOverlay({ kind: 'jiaocheng-midterm' })
+      window.history.replaceState({}, '', window.location.pathname)
+    }
+  }, [])
+
   function setTab(next: Tab) {
     setTabState(next)
     store.setLastTab(next)
@@ -141,17 +153,25 @@ function Shell() {
     if (!open) return
     const trigger = document.activeElement as HTMLElement | null
     let focused = false
+    let observer: MutationObserver | null = null
     const focusOverlay = () => {
       if (focused) return
       const first = document.querySelector<HTMLElement>('.app>.overlay button:not([disabled])')
       if (first) {
         first.focus({ preventScroll: true })
         focused = true
+        observer?.disconnect()
+        observer = null
       }
     }
-    const observer = new MutationObserver(focusOverlay)
-    observer.observe(document.querySelector('.app')!, { childList: true, subtree: true })
     focusOverlay()
+    if (!focused) {
+      const appEl = document.querySelector('.app')
+      if (appEl) {
+        observer = new MutationObserver(focusOverlay)
+        observer.observe(appEl, { childList: true, subtree: true })
+      }
+    }
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeOverlay()
       if (e.key === 'Tab') {
@@ -178,7 +198,7 @@ function Shell() {
     document.addEventListener('keydown', onKey)
     return () => {
       document.removeEventListener('keydown', onKey)
-      observer.disconnect()
+      observer?.disconnect()
       if (main) main.inert = false
       if (nav) nav.inert = false
       trigger?.focus({ preventScroll: true })

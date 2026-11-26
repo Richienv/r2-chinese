@@ -1,0 +1,36 @@
+{
+  "id": "/",
+  "name": "Yulu · Mandarin HSK",
+  "short_name": "Yulu",
+  "description": "Latihan aktif HSK 4 & Jiaocheng dengan Active Recall, menulis Hanzi, dan simulasi ujian.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#edf3ef",
+  "theme_color": "#edf3ef",
+  "lang": "id",
+  "dir": "ltr",
+  "categories": ["education", "books"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Active Recall",
+      "short_name": "Recall",
+      "description": "Mulai sesi latihan ingatan harian",
+      "url": "/?action=review",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Simulasi Ujian",
+      "short_name": "Ujian",
+      "description": "Buka simulasi HSK 4 & Jiaocheng",
+      "url": "/?action=exam",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

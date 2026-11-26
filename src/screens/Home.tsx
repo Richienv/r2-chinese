@@ -1,4 +1,5 @@
 import { StudyMusic } from '../components/StudyMusic'
+import { InstallCard } from '../components/InstallCard'
 import { lazy } from 'react'
 import { MemoryHorizon } from '../components/MemoryHorizon'
 import { TodayHud } from '../components/TodayHud'
@@ -144,6 +145,7 @@ export function Home({
         <button type="button" className="home-dock-button" onClick={onBrowse}><span>{t('Browse materials')}</span><span aria-hidden>→</span></button>
         {languageCourse && <button type="button" className="home-dock-button" data-home-trail onClick={onTrail}><span>{t('My words')}{recentWords.length > 0 && <small lang="zh-CN">{recentWords.join(' · ')}</small>}</span><span aria-hidden>→</span></button>}
       </div>
+      <InstallCard variant="home" />
     </div>
   )
 }

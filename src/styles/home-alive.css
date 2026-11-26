@@ -67,8 +67,8 @@ summary.atlas-header::-webkit-details-marker { display:none; }
 .skip-level-actions { display:flex; flex-wrap:wrap; gap:8px; }
 .skip-level-btn { min-height:40px; padding:8px 13px; border-radius:999px; border:1px solid var(--accent-line); background:var(--accent-soft); color:var(--accent); font:inherit; font-size:13px; font-weight:650; cursor:pointer; }
 .skip-level-btn-secondary { border-color:var(--line); background:var(--paper); color:var(--ink); }
-.skip-modal-backdrop { position:fixed; inset:0; z-index:90; display:grid; place-items:center; padding:18px; background:rgba(24,22,18,.52); backdrop-filter:blur(4px); }
-.skip-modal { width:min(460px, 100%); max-height:90vh; overflow:auto; display:grid; gap:14px; padding:22px; border-radius:var(--radius); background:var(--paper); color:var(--ink); border:1px solid var(--line); box-shadow:0 20px 50px rgba(0,0,0,.22); }
+.skip-modal-backdrop { position:fixed; inset:0; z-index:90; display:grid; place-items:center; padding:18px; background:rgba(20,32,30,.54); }
+.skip-modal { width:min(460px, 100%); max-height:90dvh; overflow:auto; display:grid; gap:14px; padding:22px; border-radius:var(--radius); background:var(--paper); color:var(--ink); border:1px solid var(--line); box-shadow:0 20px 50px rgba(0,0,0,.22); }
 .skip-modal h2 { margin:0; font-size:20px; }
 .skip-modal label { display:grid; gap:6px; font-size:13px; font-weight:600; }
 .skip-modal select { min-height:42px; padding:8px 10px; border-radius:12px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; }

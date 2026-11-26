@@ -1,5 +1,5 @@
 /* One calm field, a stable action shelf and no animated blur. */
-.overlay.recall-focus{--focus-ink:#eff9fa;--focus-muted:#c3d9dd;display:flex;flex-direction:column;height:100%;height:100dvh;max-height:100dvh;background:radial-gradient(ellipse at 12% 100%,#276e77 0%,transparent 64%),linear-gradient(155deg,#253c55,#244951 76%);color:var(--focus-ink);overflow:hidden;padding:0;isolation:isolate}
+.overlay.recall-focus{--focus-ink:#eff9fa;--focus-muted:#c3d9dd;display:flex;flex-direction:column;height:100%;height:100dvh;max-height:100dvh;background:radial-gradient(ellipse at 12% 100%,#276e77 0%,transparent 64%),linear-gradient(155deg,#253c55,#244951 76%);color:var(--focus-ink);overflow:hidden;padding:env(safe-area-inset-top,0px) 0 0;isolation:isolate}
 .recall-focus button{font:inherit;touch-action:manipulation;color:inherit}
 .focus-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex:none;min-height:72px;padding:16px 24px 8px;font-size:13px;letter-spacing:.025em}
 .focus-head>span:nth-child(2){opacity:.85}
@@ -9,7 +9,7 @@
 .focus-count{font-variant-numeric:tabular-nums;font-size:12px}
 .focus-progress{height:2px;flex:none;margin:0 26px;background:#ffffff18;overflow:hidden}
 .focus-progress i{display:block;height:100%;background:#c6f0ed;transform-origin:left center;transition:transform 280ms cubic-bezier(.2,.7,.2,1)}
-.focus-body{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:clamp(28px,7vh,68px) 28px 24px;scrollbar-width:thin;animation:focus-arrive 280ms cubic-bezier(.2,.7,.2,1) both;text-align:center}
+.focus-body{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:clamp(28px,7dvh,68px) 28px 24px;scrollbar-width:thin;animation:focus-arrive 280ms cubic-bezier(.2,.7,.2,1) both;text-align:center}
 .focus-prompt{max-width:540px;margin:0 auto 28px}
 .focus-eyebrow{text-transform:uppercase;font-size:10px;font-weight:650;letter-spacing:.16em;color:var(--focus-muted);line-height:1.65;margin:0 0 20px}
 .focus-prompt h1{font-size:clamp(25px,6.4vw,40px);font-weight:450;line-height:1.35;letter-spacing:-.025em;text-wrap:balance;margin:0}
@@ -30,7 +30,7 @@
 .focus-answer details{border-top:1px solid #ffffff20;margin:24px auto 0;padding:12px 0;font-size:13px;line-height:1.8;color:#e2f0f1}
 .focus-why{font-size:11px;color:var(--focus-muted);line-height:1.8;max-width:400px;margin:28px auto 0}
 .focus-why summary,.focus-answer summary{cursor:pointer;min-height:36px;padding:8px}
-.focus-foot{padding:14px 18px calc(16px + env(safe-area-inset-bottom,0px));flex:none;position:relative;z-index:2;background:rgba(21,47,50,.94);backdrop-filter:blur(10px);border-top:1px solid #ffffff22}
+.focus-foot{padding:14px 18px calc(16px + env(safe-area-inset-bottom,0px));flex:none;position:relative;z-index:2;background:rgba(21,47,50,.98);border-top:1px solid #ffffff22}
 .focus-ratings{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:530px;margin:auto}
 .focus-ratings button{display:flex;flex-direction:column;align-items:center;gap:8px;min-height:66px;padding:12px 4px;background:#ffffff0b;border:1px solid #ffffff28;border-radius:17px;transition:transform 150ms ease,background-color 150ms ease,opacity 150ms ease}
 .focus-ratings strong{font-size:12px;font-weight:550}
@@ -39,7 +39,7 @@
 .focus-ratings [data-rating=again]{color:#ffcebe}
 .focus-ratings button:disabled{opacity:.32;cursor:default}
 .focus-foot>p{font-size:10px;line-height:1.6;text-align:center;margin:14px auto 0;max-width:400px;color:var(--focus-muted)}
-.focus-complete{max-width:390px;margin:auto;padding-top:5vh}
+.focus-complete{max-width:390px;margin:auto;padding-top:5dvh}
 .focus-glyph{font-family:var(--serif-sc);font-size:80px;font-weight:300;color:#ddfaf0;margin-bottom:32px}
 .focus-complete h1{font-weight:450;font-size:30px;line-height:1.25}
 .focus-complete>p{color:var(--focus-muted);font-size:14px;line-height:1.85}
@@ -55,7 +55,7 @@
 .focus-repaired{display:block;width:100%;max-width:400px;margin:auto}
 
 /* Centered stage: prompt, answer and help sit cleanly with Safari-safe scroll clearance. */
-.overlay.recall-focus .focus-body{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:clamp(16px,3vh,36px) 22px calc(36px + env(safe-area-inset-bottom,0px))}
+.overlay.recall-focus .focus-body{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:clamp(16px,3dvh,36px) 22px calc(36px + env(safe-area-inset-bottom,0px))}
 .focus-stage{margin:auto 0;width:100%;display:flex;flex-direction:column;align-items:stretch;padding-bottom:24px}
 .focus-stage[data-revealed=true] .focus-where{margin-bottom:18px}
 .focus-where{display:flex;flex-direction:column;align-items:center;gap:10px;margin:0 auto 28px}

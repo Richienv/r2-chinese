@@ -1,5 +1,5 @@
 :root{--bg:#edf3f2;--paper:#f5f8f6;--red:#236b70;--red-mid:#36828a;--red-deep:#24545d;--warm:#4f8b89;--link:#286f77;--link-hover:#174f57;--muted:#647a7e;--ink:#203a40;--line:#dfe8e5;--line-2:#e2eae6;--metal-base:linear-gradient(145deg,#4f9297,#2c646e 58%,#244650);--metal-sheen:linear-gradient(170deg,#ffffff20,transparent 60%);--metal-emboss:0 16px 34px -20px #143e4c55,inset 0 1px 0 #ffffff30;--metal-emboss-sm:0 8px 20px -15px #143e4c66;--ease:cubic-bezier(.2,.7,.2,1)}
-html,body{background:#dde8e8}
+html,body{background:var(--bg)}
 button,a,input,summary{-webkit-tap-highlight-color:transparent}
 button{touch-action:manipulation}
 button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #267b83;outline-offset:4px}
@@ -8,7 +8,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #26
 .app[data-closing=true]>.overlay{animation:overlay-leave 180ms ease-in both;pointer-events:none}
 @keyframes overlay-enter{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
 @keyframes overlay-leave{from{opacity:1;transform:translate3d(0,0,0)}to{opacity:0;transform:translate3d(0,12px,0)}}
-.route-loading{display:grid;flex:1;place-items:center;min-height:60vh;color:var(--muted);font-size:13px}
+.route-loading{display:grid;flex:1;place-items:center;min-height:60dvh;color:var(--muted);font-size:13px}
 .memory-horizon{margin:14px 0 24px;padding:26px 24px;border-radius:28px;background:radial-gradient(ellipse at 10% 100%,#3e7a7d,transparent 70%),linear-gradient(145deg,#30465d,#254d56);color:#effaf7;box-shadow:0 16px 35px -27px #193e4b77;overflow:hidden}
 .memory-horizon-top{display:flex;justify-content:space-between;gap:15px;font-size:10px;line-height:1.7;letter-spacing:.08em;color:#d0e4e6}
 .memory-horizon-top [lang]{font-family:var(--serif-sc);font-size:14px;white-space:nowrap}

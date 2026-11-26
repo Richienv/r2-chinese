@@ -1,4 +1,5 @@
 import { StudyMusic } from '../components/StudyMusic'
+import { InstallCard } from '../components/InstallCard'
 import { useState } from 'react'
 import { useAuth } from '../auth/AuthProvider'
 import { LANGUAGES, getLang, setLang, t } from '../lib/i18n'
@@ -114,6 +115,8 @@ export function Profile() {
           {t('Hide a hint when you want a cleaner view or a stronger recall challenge.')}
         </div>
       </section>
+
+      <InstallCard variant="profile" />
 
       <section className="profile-data card">
         <div className="profile-section-heading">
