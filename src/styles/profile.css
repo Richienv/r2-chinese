@@ -32,6 +32,11 @@
 .profile-language-option small { font-size:12px; line-height:1.5; }
 .profile-language-option[aria-pressed=true] { background:var(--surface); color:var(--accent); box-shadow:var(--shadow-card); }
 .profile-data>.btn { margin-top:18px; }
+.profile-data-buttons { display:grid; gap:10px; margin-top:14px; }
+.profile-data-buttons .btn { width:100%; }
+.profile-file-input { display:none; }
+.profile-import-status { margin:10px 0 0; padding:10px 12px; border-radius:12px; background:var(--ok-bg); border:1px solid var(--ok-line); color:var(--ok); font-size:13px; font-weight:600; line-height:1.5; }
+.profile-import-status.is-error { background:var(--err-bg); border-color:var(--err-line); color:var(--err); }
 .profile-data>.sub { font-size:12px; line-height:1.6; }
 .profile-reset-disclosure { border-top:1px solid var(--line); margin-top:16px; }
 .profile-reset-disclosure>summary { min-height:48px; padding:14px 0; cursor:pointer; color:var(--muted); font-size:13px; }

@@ -161,7 +161,7 @@ test('public/manifest.webmanifest, public/sw.js, index.html, and icon assets are
   const swPath = path.join(root, 'public', 'sw.js')
   assert.equal(fs.existsSync(swPath), true)
   const sw = fs.readFileSync(swPath, 'utf8')
-  assert.match(sw, /v1-yulu-pwa/)
+  assert.match(sw, /v2-yulu-pwa/)
   assert.match(sw, /skipWaiting/)
   assert.match(sw, /clients\.claim/)
   assert.match(sw, /\/api\//)

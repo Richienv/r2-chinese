@@ -61,6 +61,16 @@ const overhaul: Record<string, string> = {
   'Your previous progress is safe. Free some storage before continuing.':
     'Progres sebelumnya tetap tersimpan. Kosongkan sebagian penyimpanan sebelum lanjut.',
   'Export progress backup': 'Unduh cadangan progres',
+  'Import progress backup': 'Impor cadangan progres',
+  'Save a .json backup or restore it after adding Yulu to your Home Screen.':
+    'Simpan file cadangan .json atau muat kembali setelah memasang Yulu di Home Screen.',
+  'Restore progress from a backup file (.json)': 'Pulihkan progres dari file cadangan (.json)',
+  'Progress restored ({xp} XP, {words} words)! Reloading…':
+    'Progres dipulihkan ({xp} XP, {words} kata)! Memuat ulang…',
+  'Invalid backup file. Choose a yulu-progress-backup.json file exported from Yulu.':
+    'File cadangan tidak valid. Pilih file yulu-progress-backup.json hasil ekspor Yulu.',
+  'Could not read that file. Try choosing the .json backup again.':
+    'File gagal dibaca. Coba pilih file cadangan .json lagi.',
   'Try saving again': 'Coba simpan lagi',
   'Bring back the word': 'Ingat kembali katanya',
   'Read and remember': 'Baca dan ingat',

@@ -1,4 +1,4 @@
-const VERSION = "v1-yulu-pwa";
+const VERSION = "v2-yulu-pwa";
 const STATIC_CACHE = `yulu-static-${VERSION}`;
 const PAGES_CACHE = `yulu-pages-${VERSION}`;
 const MAX_STATIC_ENTRIES = 300;

@@ -1,6 +1,6 @@
 import { StudyMusic } from '../components/StudyMusic'
 import { InstallCard } from '../components/InstallCard'
-import { useState } from 'react'
+import { useRef, useState, type ChangeEvent } from 'react'
 import { useAuth } from '../auth/AuthProvider'
 import { LANGUAGES, getLang, setLang, t } from '../lib/i18n'
 import { isAuthEnabled } from '../lib/supabase'
@@ -11,6 +11,38 @@ export function Profile() {
   const s = useStore()
   const { user, signOut } = useAuth()
   const [confirmReset, setConfirmReset] = useState(false)
+  const [importStatus, setImportStatus] = useState<{ kind: 'ok' | 'err'; text: string } | null>(null)
+  const importInputRef = useRef<HTMLInputElement>(null)
+
+  async function handleBackupFile(e: ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    e.target.value = ''
+    if (!file) return
+    try {
+      const text = await file.text()
+      const res = s.importProgress(text)
+      if (!res.ok) {
+        setImportStatus({
+          kind: 'err',
+          text: t('Invalid backup file. Choose a yulu-progress-backup.json file exported from Yulu.'),
+        })
+        return
+      }
+      setImportStatus({
+        kind: 'ok',
+        text: t('Progress restored ({xp} XP, {words} words)! Reloading…', {
+          xp: res.xp.toLocaleString(),
+          words: res.words,
+        }),
+      })
+      window.setTimeout(() => window.location.reload(), 650)
+    } catch {
+      setImportStatus({
+        kind: 'err',
+        text: t('Could not read that file. Try choosing the .json backup again.'),
+      })
+    }
+  }
 
   const email = user?.email ?? ''
   const name = email ? email.split('@')[0] : t('Learner')
@@ -125,9 +157,37 @@ export function Profile() {
             <h2>{t('Your progress belongs to you')}</h2>
           </div>
         </div>
-        <button type="button" className="btn btn-ghost" onClick={s.exportProgress}>
-          {t('Export progress backup')}
-        </button>
+        <p className="profile-section-sub">
+          {t('Save a .json backup or restore it after adding Yulu to your Home Screen.')}
+        </p>
+        <div className="profile-data-buttons">
+          <button
+            type="button"
+            className="btn"
+            onClick={() => importInputRef.current?.click()}
+          >
+            {t('Import progress backup')}
+          </button>
+          <button type="button" className="btn btn-ghost" onClick={s.exportProgress}>
+            {t('Export progress backup')}
+          </button>
+        </div>
+        <input
+          ref={importInputRef}
+          type="file"
+          accept=".json,application/json"
+          className="profile-file-input"
+          aria-label={t('Restore progress from a backup file (.json)')}
+          onChange={handleBackupFile}
+        />
+        {importStatus && (
+          <p
+            className={`profile-import-status${importStatus.kind === 'err' ? ' is-error' : ''}`}
+            role={importStatus.kind === 'err' ? 'alert' : 'status'}
+          >
+            {importStatus.text}
+          </p>
+        )}
         <p className="sub" role="status">
           {s.syncStatus === 'saved'
             ? t('Progress synced')

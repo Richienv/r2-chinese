@@ -45,6 +45,7 @@ import {
   persistProgress,
   mergeProgress,
   exportLearningStorage,
+  importLearningStorage,
 } from '../lib/progressStorage'
 import { isCoreBookVocab } from '../lib/content'
 import { t } from '../lib/i18n'
@@ -235,6 +236,9 @@ interface Store extends Persisted {
   storageProblem: boolean
   syncStatus: string
   exportProgress: () => void
+  importProgress: (
+    rawJson: string,
+  ) => { ok: true; restoredKeys: number; xp: number; words: number } | { ok: false; error: string }
   reviewWord: (
     zh: string,
     rating: Rating,
@@ -363,6 +367,22 @@ export function StoreProvider({
     anchor.click()
     setTimeout(() => URL.revokeObjectURL(url), 1000)
   }, [key])
+  const importProgress = useCallback(
+    (rawJson: string) => {
+      const res = importLearningStorage(localStorage, key, rawJson)
+      if (!res.ok) return res
+      const next = load(userId)
+      setState(() => next)
+      if (!initial) replaceLearnerGraph(next.learnerGraph)
+      return {
+        ok: true as const,
+        restoredKeys: res.restoredKeys,
+        xp: next.xp,
+        words: Object.keys(next.cards).length,
+      }
+    },
+    [key, userId, setState, initial],
+  )
   // Import is non-destructive: account caches and pre-migration snapshots stay separate.
   useEffect(() => {
     try {
@@ -821,6 +841,7 @@ export function StoreProvider({
       storageProblem,
       syncStatus,
       exportProgress,
+      importProgress,
       reviewWord,
       undoReview,
       learningTrail: Object.values(state.mastery)
@@ -862,6 +883,7 @@ export function StoreProvider({
     storageProblem,
     syncStatus,
     exportProgress,
+    importProgress,
     reviewWord,
     undoReview,
     finishLesson,
