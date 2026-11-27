@@ -1,0 +1,178 @@
+/* Couple Account Login Gate (`arci`) — zero backdrop-filter & dvh-safe */
+
+.ca-gate {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: calc(20px + env(safe-area-inset-top, 0px)) 16px calc(24px + env(safe-area-inset-bottom, 0px));
+  background: radial-gradient(circle at 50% 18%, #e6f4f1 0%, #f8fafc 52%, #fce7f3 100%);
+  color: #0f172a;
+}
+
+.ca-card {
+  width: min(100%, 440px);
+  border-radius: 26px;
+  padding: 22px 18px 20px;
+  background: #ffffff;
+  border: 1.5px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 22px 54px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ca-head {
+  text-align: center;
+}
+
+.ca-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f0fdfa;
+  color: #0f766e;
+}
+
+.ca-head h1 {
+  margin: 8px 0 4px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.ca-head p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.ca-accounts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ca-account-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 10px;
+  border-radius: 18px;
+  border: 2px solid #e2e8f0;
+  background: #f8fafc;
+  color: #0f172a;
+  cursor: pointer;
+  transition: transform 0.14s ease, border-color 0.14s ease, background-color 0.14s ease;
+}
+
+.ca-account-btn:active {
+  transform: scale(0.97);
+}
+
+.ca-account-btn.is-selected[data-member='richie'] {
+  border-color: #0f766e;
+  background: #f0fdfa;
+}
+
+.ca-account-btn.is-selected[data-member='renita'] {
+  border-color: #db2777;
+  background: #fdf2f8;
+}
+
+.ca-avatar-frame {
+  width: 96px;
+  height: 112px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.ca-avatar-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ca-account-name {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.ca-account-track {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.ca-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ca-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #334155;
+}
+
+.ca-input {
+  min-height: 46px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.ca-input:focus {
+  outline: none;
+  border-color: #0f766e;
+}
+
+.ca-error {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.ca-submit {
+  min-height: 48px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.ca-submit[data-member='renita'] {
+  background: linear-gradient(135deg, #be185d 0%, #ec4899 100%);
+}

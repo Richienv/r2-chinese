@@ -78,3 +78,10 @@ summary.atlas-header::-webkit-details-marker { display:none; }
 .exam-home-card .kicker { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); }
 .exam-home-card strong { font-size:17px; }
 .exam-home-card span:last-child { font-size:13px; color:var(--muted); line-height:1.45; }
+
+/* Compact floating quick-action bar directly below Trainer+Partner showcase */
+.home-float-strip { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; padding:4px 2px; }
+.home-float-pill { display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:7px 13px; border-radius:999px; border:1px solid var(--line, rgba(20, 23, 21, 0.1)); background:var(--surface, #ffffff); color:var(--ink, #141715); font:inherit; font-size:12.5px; font-weight:700; box-shadow:0 6px 14px rgba(15, 23, 42, 0.06); cursor:pointer; white-space:nowrap; transition:transform 140ms var(--ease), border-color 140ms var(--ease), box-shadow 140ms var(--ease); }
+.home-float-pill:active { transform:scale(.95); }
+.home-float-pill-accent { border-color:var(--accent-line); background:linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%); color:#0f766e; }
+@media(hover:hover) { .home-float-pill:hover { border-color:var(--accent-line); box-shadow:0 8px 18px rgba(15, 118, 110, 0.12); } }

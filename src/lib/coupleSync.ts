@@ -44,6 +44,8 @@ export interface PartnerSnapshot {
   masteredWords: number
   hsk1UnitsDone: number
   todayCards: number
+  yesterdayCards: number
+  retentionPct: number
   updatedAt: number
 }
 
@@ -132,6 +134,7 @@ export async function fetchPartnerSnapshot(
 
     const nowMs = Date.now()
     const todayKey = localDayKey(nowMs)
+    const yestKey = localDayKey(nowMs - 86_400_000)
     const cards = main.cards && typeof main.cards === 'object' ? main.cards : {}
     const mastery = normalizeMastery(main.mastery, cards, main.starred ?? [], nowMs)
     const log = main.log && typeof main.log === 'object' ? main.log : {}
@@ -167,6 +170,8 @@ export async function fetchPartnerSnapshot(
       masteredWords: evalRes.metrics.unaidedTotalWords,
       hsk1UnitsDone: evalRes.metrics.hsk1UnitsDoneCount,
       todayCards: log[todayKey]?.cards ?? 0,
+      yesterdayCards: log[yestKey]?.cards ?? 0,
+      retentionPct: evalRes.retentionPct,
       updatedAt: Number(data.updatedAt ?? 0),
     }
   } catch {

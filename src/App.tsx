@@ -65,6 +65,8 @@ const Hsk1ToneLabOverlay = lazy(() =>
   import('./screens/Hsk1').then((m) => ({ default: m.Hsk1ToneLabOverlay })),
 )
 import { CourseProvider } from './lib/course'
+import { CoupleAuthGate } from './components/CoupleAuthGate'
+import { useCoupleGate } from './lib/coupleAuth'
 import { useCoupleProfile } from './lib/coupleProfile'
 import { load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
 import { AuthProvider, useAuth } from './auth/AuthProvider'
@@ -440,6 +442,10 @@ function Root({ cloudProfile }: { cloudProfile: string }) {
 
 export default function App() {
   const { activeId, member } = useCoupleProfile()
+  const gateUnlocked = useCoupleGate()
+  if (!isAuthEnabled && !gateUnlocked) {
+    return <CoupleAuthGate />
+  }
   return (
     <AuthProvider>
       <CourseProvider key={`course-${activeId}`}>

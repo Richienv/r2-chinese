@@ -1,4 +1,5 @@
-// HSK 6-Variable Gamification & 24-Stage Dual-Track Legendary Beast Evolution Engine.
+// HSK 6-Variable Gamification & 24-Level (8 Species × 3 Stages: Bayi -> Matang -> Dewa)
+// Dual-Track Evolution Engine for Trainer Richie (HSK 4) & Trainer Renita (HSK 1 Dari Nol).
 // Pure zero-DOM module so Node tests and browser UI share exact calculations.
 import {
   BEAST_STAGES,
@@ -12,45 +13,56 @@ import type { MasteryRecord } from './mastery.ts'
 import type { Card } from './srs.ts'
 
 export type BeastTrack = 'hsk4' | 'hsk1'
+export type EvolutionStage = 'bayi' | 'matang' | 'dewa'
 
 export type BeastId =
-  | 'egg'
-  | 'qilin'
-  | 'koi'
-  | 'crane'
-  | 'rabbit'
-  | 'fox'
-  | 'deer'
-  | 'pixiu'
-  | 'monkey'
-  | 'baihu'
-  | 'baize'
-  | 'jiaolong'
-  | 'zhuque'
-  | 'qingluan'
-  | 'fireqilin'
-  | 'xuanwu'
-  | 'baxia'
-  | 'xiezhi'
-  | 'dapeng'
-  | 'qinglong'
-  | 'yinglong'
-  | 'zhulong'
-  | 'fenghuang'
-  | 'sovereign'
+  | 'qilin_bayi'
+  | 'qilin_matang'
+  | 'qilin_dewa'
+  | 'fox_bayi'
+  | 'fox_matang'
+  | 'fox_dewa'
+  | 'baihu_bayi'
+  | 'baihu_matang'
+  | 'baihu_dewa'
+  | 'phoenix_bayi'
+  | 'phoenix_matang'
+  | 'phoenix_dewa'
+  | 'koi_bayi'
+  | 'koi_matang'
+  | 'koi_dewa'
+  | 'xuanwu_bayi'
+  | 'xuanwu_matang'
+  | 'xuanwu_dewa'
+  | 'qinglong_bayi'
+  | 'qinglong_matang'
+  | 'qinglong_dewa'
+  | 'sovereign_bayi'
+  | 'sovereign_matang'
+  | 'sovereign_dewa'
 
 export interface LegendaryBeastTier {
   level: number
   id: BeastId
+  speciesIndex: number
+  speciesId: string
+  speciesName: string
+  speciesZh: string
+  stage: EvolutionStage
+  stageLabel: 'Bayi' | 'Matang' | 'Dewa'
   zhName: string
   pinyin: string
   name: string
   title: string
+  trainerTitle: string
+  trainerOutfit: string
+  trainerAccessory: string
   element: string
   rarity: BeastRarity
   minPower: number
   minPowerByTrack: Record<BeastTrack, number>
   imageSrc: string
+  imageByMember: Record<'richie' | 'renita', string>
   accentHex: string
   lore: string
   quotes: readonly string[]
@@ -66,406 +78,491 @@ const HSK1_THRESHOLDS = [
   8700, 9750, 10850, 12000, 13200, 14450, 15750, 17100, 18500, 19950, 21450, 23000,
 ] as const
 
-type BeastSeed = Omit<LegendaryBeastTier, 'level' | 'minPower' | 'minPowerByTrack'>
+interface CycleDefinition {
+  speciesIndex: number
+  speciesId: string
+  speciesZh: string
+  pinyin: string
+  speciesName: string
+  element: string
+  accentHex: string
+  lore: string
+  stages: {
+    bayi: {
+      zhName: string
+      name: string
+      title: string
+      trainerTitle: string
+      trainerOutfit: string
+      trainerAccessory: string
+      quotes: readonly string[]
+    }
+    matang: {
+      zhName: string
+      name: string
+      title: string
+      trainerTitle: string
+      trainerOutfit: string
+      trainerAccessory: string
+      quotes: readonly string[]
+    }
+    dewa: {
+      zhName: string
+      name: string
+      title: string
+      trainerTitle: string
+      trainerOutfit: string
+      trainerAccessory: string
+      quotes: readonly string[]
+    }
+  }
+}
 
-const BEAST_SEEDS: readonly BeastSeed[] = [
+const CYCLES: readonly CycleDefinition[] = [
   {
-    id: 'egg',
-    zhName: '灵蛋',
-    pinyin: 'Língdàn',
-    name: 'Spirit Jade Egg',
-    title: 'Benih Naga Giok Awal',
-    element: 'Jade Spirit',
-    rarity: 'rare',
-    imageSrc: '/beasts/v1/beast-01-egg.webp',
-    accentHex: '#0f766e',
-    lore: 'Telur giok suci yang berdetak saat kosakata dan tata bahasa mulai dikuasai secara nyata.',
-    quotes: [
-      '千里之行，始于足下！Selesaikan nada dasar atau kuasai kata pertamamu hari ini!',
-      'Bukan sekadar melihat sekilas — membuktikan ingatan lewat ujian membuat cangkangku bercahaya.',
-      'Pelan tapi pasti setiap hari, dari telur giok kecil kita akan menetas jadi legenda!',
-    ],
-  },
-  {
-    id: 'qilin',
-    zhName: '玉麒麟',
+    speciesIndex: 1,
+    speciesId: 'qilin',
+    speciesZh: '玉麒麟',
     pinyin: 'Yù Qílín',
-    name: 'Baby Jade Qilin',
-    title: 'Penjaga Fondasi Mandarin',
-    element: 'Emerald Wind',
-    rarity: 'rare',
-    imageSrc: '/beasts/v1/beast-02-qilin.webp',
-    accentHex: '#059669',
-    lore: 'Anak Qilin pembawa berkah yang bangkit saat fondasi nada, kosakata inti, dan kalimat awal teruji.',
-    quotes: [
-      '温故而知新！Mengulang kata lama di Active Recall membuatku tumbuh paling cepat!',
-      'Tanduk giokku menyala tiap kali kamu lolos kuis tanpa menebak atau pakai hint.',
-      'Ayo terus kumpulkan penguasaan kata nyata — 22 wujud mitologi berikutnya menantimu!',
-    ],
+    speciesName: 'Jade Qilin',
+    element: 'Jade Spirit',
+    accentHex: '#0f766e',
+    lore: 'Siklus 1 · Roh Qilin Giok pembawa langkah awal penguasaan nyata.',
+    stages: {
+      bayi: {
+        zhName: '玉麟幼仔',
+        name: 'Baby Jade Qilin',
+        title: 'Wujud Bayi · Siklus 1',
+        trainerTitle: 'Rookie Scholar',
+        trainerOutfit: 'Jaket Kasual Giok',
+        trainerAccessory: 'Anting Giok & Kacamata Bulat',
+        quotes: [
+          '千里之行，始于足下！Mulai kuasai kata pertamamu lewat recall aktif hari ini!',
+          'Aku masih wujud bayi — capai target master nyata untuk membangkitkan wujud Matang!',
+        ],
+      },
+      matang: {
+        zhName: '战甲玉麒',
+        name: 'Armored Jade Qilin',
+        title: 'Wujud Matang · Siklus 1',
+        trainerTitle: 'Jade Adept Trainer',
+        trainerOutfit: 'Mantel Giok Berlapis',
+        trainerAccessory: 'Charm Kacamata + Gelang Giok',
+        quotes: [
+          '温故而知新！Ingatan aktifmu sudah jauh lebih tajam dari sekadar membaca!',
+          'Sedikit lagi menuju wujud Dewa Siklus 1 sebelum berganti pasangan baru!',
+        ],
+      },
+      dewa: {
+        zhName: '天尊玉麟',
+        name: 'Celestial Jade Qilin',
+        title: 'Wujud Dewa · Siklus 1',
+        trainerTitle: 'Jade Envoy',
+        trainerOutfit: 'Jubah Sarjana Giok Bersinar',
+        trainerAccessory: 'Mahkota Halo Giok & Ujung Rambut Zamrud',
+        quotes: [
+          'Puncak Wujud Dewa Siklus 1 tercapai! Setelah ini petualangan membuka Nine-Tail Fox!',
+          'Tanduk kristal giokku bersinar terang sebagai bukti fondasi Mandarinmu!',
+        ],
+      },
+    },
   },
   {
-    id: 'koi',
-    zhName: '锦鲤灵',
-    pinyin: 'Jǐnlǐ Líng',
-    name: 'Celestial Jade Koi',
-    title: 'Ikan Keberuntungan Giok',
-    element: 'Lotus Water',
-    rarity: 'rare',
-    imageSrc: '/beasts/v1/beast-03-koi.webp',
-    accentHex: '#0d9488',
-    lore: 'Ikan koi giok bermahkota emas yang melompati gerbang arus bahasa Mandarin dengan lincah.',
-    quotes: [
-      '鲤鱼跃龙门！Setiap lompatan dari ragu ke yakin mengantarkanmu lebih dekat ke gerbang naga.',
-      'Dengarkan intonasi nada secara jernih sebelum memilih — telinga tajam menghemat separuh usaha!',
-    ],
-  },
-  {
-    id: 'crane',
-    zhName: '仙鹤雏',
-    pinyin: 'Xiānhè Chú',
-    name: 'Cloud Crane Spirit',
-    title: 'Bangau Awan Pengirim Kabar',
-    element: 'Sky Feather',
-    rarity: 'rare',
-    imageSrc: '/beasts/v1/beast-04-crane.webp',
-    accentHex: '#0284c7',
-    lore: 'Bangau awan bermahkota merah yang membawa kejernihan nada dan ketenangan saat membaca Hanzi.',
-    quotes: [
-      '鹤立鸡群！Disiplin kecil berdua setiap hari membuat progres kalian tak tertandingi.',
-      'Sayapku membentang saat kalimat sederhanamu mulai mengalir natural tanpa terjemahan!',
-    ],
-  },
-  {
-    id: 'rabbit',
-    zhName: '灵兔月',
-    pinyin: 'Língtù Yuè',
-    name: 'Moon Jade Rabbit',
-    title: 'Kelinci Rembulan Penjaga Kata',
-    element: 'Lunar Pearl',
-    rarity: 'rare',
-    imageSrc: '/beasts/v1/beast-05-rabbit.webp',
-    accentHex: '#d97706',
-    lore: 'Kelinci putih giok peracik ramuan ingatan di bawah sinar rembulan yang menjaga daya ingat tetap segar.',
-    quotes: [
-      '月满则亮！Jangan biarkan kartu review menumpuk terlalu lama supaya aura retensimu tetap +15%!',
-      'Kirim semangat ke pasanganmu — belajar berdua jauh lebih ringan dan seru!',
-    ],
-  },
-  {
-    id: 'fox',
-    zhName: '九尾灵狐',
+    speciesIndex: 2,
+    speciesId: 'fox',
+    speciesZh: '九尾灵狐',
     pinyin: 'Jiǔwěi Línghú',
-    name: 'Nine-Tails Spirit Fox',
-    title: 'Rubah Api Sembilan Ekor',
-    element: 'Celestial Flame',
-    rarity: 'epic',
-    imageSrc: '/beasts/v1/beast-03-fox.webp',
-    accentHex: '#0284c7',
-    lore: 'Roh rubah giok-perak cerdas yang piawai membedakan kata-kata mirip dan nuansa konteks kalimat.',
-    quotes: [
-      '举一反三！Kuasai satu pola tata bahasa, pahami sepuluh kalimat baru sekaligus.',
-      'Ekor sembilanku menyala saat kamu menaklukkan pasangan kata yang dulunya sering tertukar!',
-    ],
+    speciesName: 'Astral Nine-Tail Fox',
+    element: 'Astral Illusion',
+    accentHex: '#6366f1',
+    lore: 'Siklus 2 · Rubah bintang sembilan ekor penajam beda kata mirip.',
+    stages: {
+      bayi: {
+        zhName: '星狐宝宝',
+        name: 'Baby Spirit Fox',
+        title: 'Wujud Bayi · Siklus 2',
+        trainerTitle: 'Starlit Traveller',
+        trainerOutfit: 'Capelet Berlapis Indigo-Sakura',
+        trainerAccessory: 'Topi Baret Bintang & Ear-Cuff Perak',
+        quotes: [
+          'Rubah baru lahir di sisimu! Mari taklukkan lebih banyak kuis tanpa bantuan hint.',
+          'Desain baret dan ear-cuff baruku siap menemani siklus kedua ini!',
+        ],
+      },
+      matang: {
+        zhName: '五尾星狐',
+        name: 'Astral 5-Tail Fox',
+        title: 'Wujud Matang · Siklus 2',
+        trainerTitle: 'Astral Tactician',
+        trainerOutfit: 'Mantel Bintang Pita Perak',
+        trainerAccessory: 'Baret Kristal + Highlight Rambut Lavender',
+        quotes: [
+          '举一反三！Lima ekorku sudah tumbuh seiring bertambahnya kosakata murnimu!',
+          'Ayo jaga streak harian agar wujud Dewa 9-Ekor segera turun ke arena!',
+        ],
+      },
+      dewa: {
+        zhName: '九尾星神',
+        name: '9-Tail Celestial Fox',
+        title: 'Wujud Dewa · Siklus 2',
+        trainerTitle: 'Arch-Astrologer',
+        trainerOutfit: 'Kimono-Trench Pita Kosmik',
+        trainerAccessory: 'Topi Kompas Bintang & Mata Ungu Bercahaya',
+        quotes: [
+          'Kesembilan ekor astral terbuka penuh! Kamu sudah melewati dua siklus evolusi penuh!',
+          'Berikutnya: kebangkitan Macan Petir Putih Baihu di Siklus 3!',
+        ],
+      },
+    },
   },
   {
-    id: 'deer',
-    zhName: '祥云瑞鹿',
-    pinyin: 'Xiángyún Ruìlù',
-    name: 'Auspicious Cloud Deer',
-    title: 'Rusa Sembilan Warna Giok',
-    element: 'Prism Silk',
-    rarity: 'epic',
-    imageSrc: '/beasts/v1/beast-07-deer.webp',
-    accentHex: '#7c3aed',
-    lore: 'Rusa suci sembilan warna pembawa harmoni yang muncul saat grammar dan kosakata berpadu rapi.',
-    quotes: [
-      '步步生莲！Setiap unit dan bab yang tuntas menambah cahaya baru pada tandukku.',
-      'Susunan kata S + Waktu + Tempat + V adalah kunci keindahan kalimat Mandarin.',
-    ],
-  },
-  {
-    id: 'pixiu',
-    zhName: '辟邪貔貅',
-    pinyin: 'Bìxié Píxiū',
-    name: 'Golden Pixiu Guardian',
-    title: 'Singa Naga Penarik Harta Ilmu',
-    element: 'Imperial Gold',
-    rarity: 'epic',
-    imageSrc: '/beasts/v1/beast-08-pixiu.webp',
-    accentHex: '#b45309',
-    lore: 'Penjaga emas kekaisaran yang menelan pengetahuan Mandarin tanpa pernah melepaskannya lagi.',
-    quotes: [
-      '日进斗金！Setiap kata yang lulus tes aktif menjadi koin emas abadi di ingatanmu.',
-      'Tidak apa mengulang kata sulit 3 kali — justru di situlah penguasaan sejati terbentuk!',
-    ],
-  },
-  {
-    id: 'monkey',
-    zhName: '雷电灵猴',
-    pinyin: 'Léidiàn Línghóu',
-    name: 'Thunder Spirit Monkey',
-    title: 'Kera Petir Penguasa Aksi',
-    element: 'Thunder Staff',
-    rarity: 'epic',
-    imageSrc: '/beasts/v1/beast-09-monkey.webp',
-    accentHex: '#eab308',
-    lore: 'Kera awan berlapis zirah emas dengan tongkat giok petir yang cekatan menjawab kuis cepat.',
-    quotes: [
-      '齐天大圣！Kecepatan mengingat lahir dari pemahaman makna dan bunyi sekaligus!',
-      'Ayo kalahkan target harian 12 kartu hari ini sebelum malam berakhir!',
-    ],
-  },
-  {
-    id: 'baihu',
-    zhName: '星辉白虎',
+    speciesIndex: 3,
+    speciesId: 'baihu',
+    speciesZh: '星辉白虎',
     pinyin: 'Xīnghuī Báihǔ',
-    name: 'Astral White Tiger',
-    title: 'Harimau Putih Penjaga Barat',
+    speciesName: 'Thunder White Tiger',
     element: 'Thunder Steel',
-    rarity: 'epic',
-    imageSrc: '/beasts/v1/beast-04-baihu.webp',
-    accentHex: '#4f46e5',
-    lore: 'Penguasa barat bermahkota taring petir yang mengoyak lupa dalam sesi recall murni.',
-    quotes: [
-      '百炼成钢！Ingatan tajam ditempa lewat uji tulis, ucap, dan dengar tanpa bantuan hint.',
-      'Streak belajarmu sudah jadi kebiasaan kuat — jaga api ini tetap menyala!',
-    ],
-  },
-  {
-    id: 'baize',
-    zhName: '霜雪白泽',
-    pinyin: 'Shuāngxuě Báizé',
-    name: 'Frost Sage Baize',
-    title: 'Resi Salju Bermata Tiga',
-    element: 'Ice Wisdom',
-    rarity: 'gold',
-    imageSrc: '/beasts/v1/beast-11-baize.webp',
-    accentHex: '#0ea5e9',
-    lore: 'Makhluk bijak bermata safir yang mengetahui rahasia 10.000 aksara dan nuansa gramatika halus.',
-    quotes: [
-      '博学笃志！Mata ketigaku melihat jelas pola pikir Mandarin yang kini mulai alami bagimu.',
-      'Bandingkan progresmu bersama pasangan — saling dukung membawa keduanya jauh lebih tinggi!',
-    ],
-  },
-  {
-    id: 'jiaolong',
-    zhName: '沧海蛟龙',
-    pinyin: 'Cānghǎi Jiāolóng',
-    name: 'Ocean Flood Dragon',
-    title: 'Naga Samudra Penjaga Mutiara',
-    element: 'Abyssal Tide',
-    rarity: 'gold',
-    imageSrc: '/beasts/v1/beast-12-jiaolong.webp',
-    accentHex: '#0369a1',
-    lore: 'Naga laut giok-safir yang mengumpulkan mutiara dialog alami dan ketepatan bacaan.',
-    quotes: [
-      '乘风破浪！Kalimat panjang pun kini sanggup kamu baca dengan tenang dan percaya diri.',
-      'Terus asah kalimat lisan dan tulisan — mutiara naga sejati lahir dari praktik aktif!',
-    ],
-  },
-  {
-    id: 'zhuque',
-    zhName: '烈焰朱雀',
-    pinyin: 'Lièyàn Zhūquè',
-    name: 'Vermilion Phoenix',
-    title: 'Burung Api Kebangkitan Selatan',
-    element: 'Solar Blaze',
-    rarity: 'gold',
-    imageSrc: '/beasts/v1/beast-05-zhuque.webp',
-    accentHex: '#dc2626',
-    lore: 'Phoenix api emas yang terlahir kembali lebih megah setiap kali retensi kata jatuh tempo bersih.',
-    quotes: [
-      '浴火重生！Kata yang sempat lupa lalu berhasil kamu ingat kembali kini tertanam dua kali lebih kuat!',
-      'Kebangkitanmu luar biasa — separuh jalan menuju takhta tertinggi sudah terlewati!',
-    ],
-  },
-  {
-    id: 'qingluan',
-    zhName: '翠羽青鸾',
-    pinyin: 'Cuìyǔ Qīngluán',
-    name: 'Emerald Luan Bird',
-    title: 'Burung Suci Bulu Zamrud',
-    element: 'Jade Plume',
-    rarity: 'gold',
-    imageSrc: '/beasts/v1/beast-14-qingluan.webp',
-    accentHex: '#10b981',
-    lore: 'Burung suci kembar keharmonisan melodi bahasa yang hanya menampakkan diri pada pembelajar tekun.',
-    quotes: [
-      '凤凰于飞！Nada bicara Mandarinmu terdengar makin harmonis dan berirama!',
-      'Jangan ragu membaca keras dialog setiap bab untuk melatih otot lidah dan telinga.',
-    ],
-  },
-  {
-    id: 'fireqilin',
-    zhName: '熔岩火麒',
-    pinyin: 'Róngyán Huǒqí',
-    name: 'Magma Flame Qilin',
-    title: 'Qilin Api Zirah Vulkanik',
-    element: 'Molten Gold',
-    rarity: 'gold',
-    imageSrc: '/beasts/v1/beast-15-fireqilin.webp',
-    accentHex: '#ea580c',
-    lore: 'Qilin perang berzirah obsidian retakan magma emas, simbol kegigihan menembus ribuan karakter.',
-    quotes: [
-      '真金不怕火炼！Ujian tata bahasa seberat apa pun tak lagi membuatmu goyah!',
-      'Energi tempur HSK-mu membara — sebentar lagi memasuki jajaran empat penjuru tertinggi!',
-    ],
-  },
-  {
-    id: 'xuanwu',
-    zhName: '玄武星龟',
-    pinyin: 'Xuánwǔ Xīngguī',
-    name: 'Starlight Xuanwu',
-    title: 'Penjaga Bintang Utara Abadi',
-    element: 'Astral Earth',
-    rarity: 'gold',
-    imageSrc: '/beasts/v1/beast-06-xuanwu.webp',
-    accentHex: '#6d28d9',
-    lore: 'Kura-kura bintang & ular kosmik penjaga utara yang menopang benteng kokoh perbendaharaan HSK.',
-    quotes: [
-      '水滴石穿！Konsistensi harianmu telah menembus batu keras Mandarin yang dulu terasa mustahil!',
-      'Perisai bintangku menjaga ratusan kosakata dan struktur tata bahasa di memorimu.',
-    ],
-  },
-  {
-    id: 'baxia',
-    zhName: '镇山霸下',
-    pinyin: 'Zhènshān Bàxià',
-    name: 'Mountain Titan Baxia',
-    title: 'Putra Naga Pemikul Prasasti',
-    element: 'Titan Jade',
-    rarity: 'gold',
-    imageSrc: '/beasts/v1/beast-17-baxia.webp',
-    accentHex: '#047857',
-    lore: 'Putra naga pemikul prasasti aksara kuno yang menjaga rekam jejak panjang setiap bab pelajaran.',
-    quotes: [
-      '稳如泰山！Fondasi belajarmu sekokoh gunung suci — siap menampung level HSK berikutnya.',
-      'Prasasti giok ini mencatat setiap kata yang berhasil kamu taklukkan tanpa hint.',
-    ],
-  },
-  {
-    id: 'xiezhi',
-    zhName: '紫微獬豸',
-    pinyin: 'Zǐwēi Xièzhì',
-    name: 'Astral Justice Xiezhi',
-    title: 'Tanduk Kebenaran Bintang Ungu',
-    element: 'Nebula Horn',
-    rarity: 'legendary',
-    imageSrc: '/beasts/v1/beast-18-xiezhi.webp',
-    accentHex: '#7c3aed',
-    lore: 'Makhluk mitologi penegak kebenaran kalimat yang langsung mendeteksi kalimat keliru dalam tryout.',
-    quotes: [
-      '明察秋毫！Sekilas melihat soal 病句 (kalimat salah), intuisimu langsung menangkap letak kesalahannya!',
-      'Bintang ungu bersinar terang saat akurasi ujianmu melampaui 75%!',
-    ],
-  },
-  {
-    id: 'dapeng',
-    zhName: '九天金鹏',
-    pinyin: 'Jiǔtiān Jīnpéng',
-    name: 'Golden Roc Dapeng',
-    title: 'Rajawali Emas Sembilan Langit',
-    element: 'Solar Wing',
-    rarity: 'legendary',
-    imageSrc: '/beasts/v1/beast-19-dapeng.webp',
-    accentHex: '#d97706',
-    lore: 'Burung garuda raksasa sayap emas penjelajah cakrawala yang melampaui batas ribuan mil dalam sekali kepak.',
-    quotes: [
-      '鹏程万里！Masa depan bahasa Mandarinmu terbuka seluas sembilan langit!',
-      'Kepakkan sayap bersama pasanganmu dan jadilah inspirasi konsistensi berdua!',
-    ],
-  },
-  {
-    id: 'qinglong',
-    zhName: '苍穹青龙',
-    pinyin: 'Cāngqióng Qīnglóng',
-    name: 'Azure Sky Dragon',
-    title: 'Naga Giok Penguasa Timur',
-    element: 'Storm Azure',
-    rarity: 'legendary',
-    imageSrc: '/beasts/v1/beast-07-qinglong.webp',
-    accentHex: '#0ea5e9',
-    lore: 'Naga suci penguasa timur pembawa hujan rahmat kefasihan bacaan, dengar, dan tulis.',
-    quotes: [
-      '飞龙在天！Bahasa Mandarin kini mengalir alami bersama cara berpikirmu!',
-      'Empat langkah tersisa menuju puncak kedaulatan para dewa naga!',
-    ],
-  },
-  {
-    id: 'yinglong',
-    zhName: '应龙雷尊',
-    pinyin: 'Yìnglóng Léizūn',
-    name: 'Winged Storm Yinglong',
-    title: 'Naga Bersayap Pengendali Badai',
-    element: 'Lightning Wing',
-    rarity: 'legendary',
-    imageSrc: '/beasts/v1/beast-21-yinglong.webp',
-    accentHex: '#2563eb',
-    lore: 'Naga leluhur bersayap biru kosmik pengendali guntur dan awan hujan.',
-    quotes: [
-      '风云际会！Kefasihan HSK-mu memanggil badai petir dan awan kejayaan!',
-      'Setiap review hari ini menajamkan kendalimu atas kalimat kompleks.',
-    ],
-  },
-  {
-    id: 'zhulong',
-    zhName: '烛龙星曜',
-    pinyin: 'Zhúlóng Xīngyào',
-    name: 'Cosmic Torch Zhulong',
-    title: 'Naga Obor Matahari & Malam',
-    element: 'Solar Starlight',
-    rarity: 'legendary',
-    imageSrc: '/beasts/v1/beast-22-zhulong.webp',
-    accentHex: '#e11d48',
-    lore: 'Naga pembawa cahaya bintang dari Gunung Zhong — matanya membuka siang, terpejam menghadirkan malam.',
-    quotes: [
-      '光照万物！Ketekunanmu menerangi setiap karakter Mandarin yang dulu tampak gelap!',
-      'Tinggal dua anak tangga lagi menuju puncak nirwana Phoenix & Naga Kaisar!',
-    ],
-  },
-  {
-    id: 'fenghuang',
-    zhName: '凤凰涅槃',
-    pinyin: 'Fènghuáng Nièpán',
-    name: 'Nirvana Solar Fenghuang',
-    title: 'Maharani Phoenix Cahaya Surgawi',
-    element: 'Rainbow Crown',
-    rarity: 'legendary',
-    imageSrc: '/beasts/v1/beast-23-fenghuang.webp',
-    accentHex: '#db2777',
-    lore: 'Maharani segala unggas bercahaya pelangi emas-giok — pertanda sempurnanya harmoni bahasa.',
-    quotes: [
-      '百鸟朝凤！Keindahan bunyi, aksara, dan tata bahasa menyatu sempurna di tanganmu!',
-      'Satu langkah puncak lagi: 至尊金龙 telah menyalakan takhta abadi untukmu!',
-    ],
-  },
-  {
-    id: 'sovereign',
-    zhName: '至尊金龙',
-    pinyin: 'Zhìzūn Jīnlóng',
-    name: 'Sovereign Golden Dragon',
-    title: 'Naga Emas Kekaisaran Abadi',
-    element: 'Imperial Cosmos',
-    rarity: 'legendary',
-    imageSrc: '/beasts/v1/beast-08-sovereign.webp',
     accentHex: '#eab308',
-    lore: 'Wujud paripurna ke-24 — Kaisar Naga Emas kosmik pemegang mutiara penguasaan paripurna.',
-    quotes: [
-      '天道酬勤！Selamat menaklukkan puncak level 24 — penguasaan penuh dari nol hingga mahir!',
-      'Pertahankan Api Abadi dan terus jaga koneksi belajar berdua yang luar biasa ini!',
-    ],
+    lore: 'Siklus 3 · Harimau petir barat penempa kecepatan recall aktif.',
+    stages: {
+      bayi: {
+        zhName: '雷虎幼崽',
+        name: 'Spark Tiger Cub',
+        title: 'Wujud Bayi · Siklus 3',
+        trainerTitle: 'Volt Striker',
+        trainerOutfit: 'Windbreaker Taktis Kobalt-Emas',
+        trainerAccessory: 'Visor Kuning & Anting Rumbai Petir',
+        quotes: [
+          'Anak macan petir siap berlari! Latih kecepatan mengingat kata kerja dan benda.',
+          'Visor petir ini aktif tiap kali kamu menuntaskan sesi tanpa menyerah!',
+        ],
+      },
+      matang: {
+        zhName: '雷铠白虎',
+        name: 'Storm-Armored Tiger',
+        title: 'Wujud Matang · Siklus 3',
+        trainerTitle: 'Storm Marshal',
+        trainerOutfit: 'Trench Coat Zirah Bahu Emas',
+        trainerAccessory: 'Half-Visor Menyala & Ujung Rambut Emas',
+        quotes: [
+          'Zirah petir terkunci! Jawabanmu di Active Recall makin jarang ragu.',
+          'Tinggal satu lompatan menuju Dewa Harimau Petir!',
+        ],
+      },
+      dewa: {
+        zhName: '雷皇白虎',
+        name: 'Thunder Emperor Baihu',
+        title: 'Wujud Dewa · Siklus 3',
+        trainerTitle: 'Electro Archon',
+        trainerOutfit: 'Jubah Perang Listrik Berkilat',
+        trainerAccessory: 'Pupil Amber Menyala & Lingkar Petir',
+        quotes: [
+          'Auman Kaisar Petir menggema! Tujuh besar siklus berikutnya menunggu di depan!',
+          'Jangan lupa kirim semangat ke pasanganmu supaya ikut naik level!',
+        ],
+      },
+    },
+  },
+  {
+    speciesIndex: 4,
+    speciesId: 'phoenix',
+    speciesZh: '烈焰朱雀',
+    pinyin: 'Lièyàn Zhūquè',
+    speciesName: 'Vermilion Phoenix',
+    element: 'Solar Blaze',
+    accentHex: '#e11d48',
+    lore: 'Siklus 4 · Phoenix matahari simbol kebangkitan retensi ingatan.',
+    stages: {
+      bayi: {
+        zhName: '火雀雏鸟',
+        name: 'Ember Phoenix Chick',
+        title: 'Wujud Bayi · Siklus 4',
+        trainerTitle: 'Flame Apprentice',
+        trainerOutfit: 'Haori Merah-Gading Modern',
+        trainerAccessory: 'Jepit Bulu Phoenix & Anting Rubi',
+        quotes: [
+          'Cicit api kecil menyala! Kata yang dulu lupa kini hidup kembali lewat FSRS.',
+          'Jaga kartu review jatuh tempo tetap bersih supaya retensi tetap hijau!',
+        ],
+      },
+      matang: {
+        zhName: '炽翼朱雀',
+        name: 'Blazing Sunbird',
+        title: 'Wujud Matang · Siklus 4',
+        trainerTitle: 'Vermilion Duelist',
+        trainerOutfit: 'Mantel Brokat Merah-Emas',
+        trainerAccessory: 'Pin Api Emas & Rambut Gradasi Senja',
+        quotes: [
+          'Sayap api mengembang! Kemampuan menyusun kalimat alamimu terasa jauh lebih luwes.',
+          'Bersiaplah menyaksikan kebangkitan Nirvana Phoenix!',
+        ],
+      },
+      dewa: {
+        zhName: '涅槃凤皇',
+        name: 'Nirvana Solar Fenghuang',
+        title: 'Wujud Dewa · Siklus 4',
+        trainerTitle: 'Solar Demi-God',
+        trainerOutfit: 'Busana Dewa Api Pita Sutra',
+        trainerAccessory: 'Circlet Matahari & Mata Rubi Menyala',
+        quotes: [
+          '浴火重生！Kebangkitan Maharani Phoenix menandai separuh puncak perjalananmu!',
+          'Kostum semi-dewa ini hanya terbuka bagi pelajar berdisiplin tinggi!',
+        ],
+      },
+    },
+  },
+  {
+    speciesIndex: 5,
+    speciesId: 'koi',
+    speciesZh: '沧海蛟龙',
+    pinyin: 'Cānghǎi Jiāolóng',
+    speciesName: 'Abyssal Dragon-Koi',
+    element: 'Hydro Tide',
+    accentHex: '#0284c7',
+    lore: 'Siklus 5 · Naga koi samudra penjaga kelancaran bacaan & dialog.',
+    stages: {
+      bayi: {
+        zhName: '碧海锦鲤',
+        name: 'Baby Hydro Koi',
+        title: 'Wujud Bayi · Siklus 5',
+        trainerTitle: 'Tide Navigator',
+        trainerOutfit: 'Jas Laksamana Safir-Aqua',
+        trainerAccessory: 'Monokel Kristal & Anting Mutiara',
+        quotes: [
+          'Koi giok berenang lincah! Mulailah membiasakan membaca dialog panjang.',
+          'Monokel safir siap mengintai kesalahan partikel dan nada!',
+        ],
+      },
+      matang: {
+        zhName: '澜涛蛟龙',
+        name: 'Ocean Tide Jiaolong',
+        title: 'Wujud Matang · Siklus 5',
+        trainerTitle: 'Hydro Commander',
+        trainerOutfit: 'Jubah Panjang Gelombang Sutra',
+        trainerAccessory: 'Topi Laksamana Safir & Rambut Biru Es',
+        quotes: [
+          'Arus samudra mengikuti kalimatmu! Dialog Mandarin terasa makin mengalir.',
+          'Terus tambah kosakata terkuasai penuh menuju Naga Samudra!',
+        ],
+      },
+      dewa: {
+        zhName: '沧渊龙尊',
+        name: 'Abyssal Dragon Sovereign',
+        title: 'Wujud Dewa · Siklus 5',
+        trainerTitle: 'Hydro Archon',
+        trainerOutfit: 'Vestmen Dewa Air Pita Ombak',
+        trainerAccessory: 'Pupil Aqua Bercahaya & Rambut Perak-Biru',
+        quotes: [
+          'Penguasa Samudra hadir! Lima siklus evolusi penuh sudah di dalam genggamanmu!',
+          'Berikutnya kita memasuki konstelasi bintang bersama Xuanwu!',
+        ],
+      },
+    },
+  },
+  {
+    speciesIndex: 6,
+    speciesId: 'xuanwu',
+    speciesZh: '玄武星龟',
+    pinyin: 'Xuánwǔ Xīngguī',
+    speciesName: 'Nebula Xuanwu',
+    element: 'Astral Earth',
+    accentHex: '#7c3aed',
+    lore: 'Siklus 6 · Perisai bintang utara penopang ratusan struktur HSK.',
+    stages: {
+      bayi: {
+        zhName: '星壳幼玄',
+        name: 'Baby Starlight Xuanwu',
+        title: 'Wujud Bayi · Siklus 6',
+        trainerTitle: 'Star Seeker',
+        trainerOutfit: 'Velvet Coat Astronom Ungu',
+        trainerAccessory: 'Topi Penyihir Lebar & Anting Bulan Sabit',
+        quotes: [
+          'Kura-kura bintang kecil membawa perisai memori barumu!',
+          'Cek grafik jenis kata di halaman Progress untuk melihat bagian mana yang perlu dipoles.',
+        ],
+      },
+      matang: {
+        zhName: '星阵玄武',
+        name: 'Constellation Xuanwu',
+        title: 'Wujud Matang · Siklus 6',
+        trainerTitle: 'Astral Warden',
+        trainerOutfit: 'Mantel Peta Bintang & Cincin Astrolab',
+        trainerAccessory: 'Topi Bintang Kristal & Ujung Rambut Nebula',
+        quotes: [
+          'Peta rasi bintang terbuka! Ketahanan ingatan jangka panjangmu sudah luar biasa.',
+          'Selangkah lagi menuju Pelindung Galaksi Xuanwu!',
+        ],
+      },
+      dewa: {
+        zhName: '银河玄尊',
+        name: 'Galaxy Guardian Xuanwu',
+        title: 'Wujud Dewa · Siklus 6',
+        trainerTitle: 'Cosmic Oracle',
+        trainerOutfit: 'Jubah Peramal Kosmik Semi-Dewa',
+        trainerAccessory: 'Topi Kerudung Nebula & Halo Rasi Bintang',
+        quotes: [
+          'Kubah galaksi berpendar! Tinggal dua siklus legenda naga tertinggi tersisa!',
+          'Ketekunan kalian berdua di Yulu benar-benar mengagumkan.',
+        ],
+      },
+    },
+  },
+  {
+    speciesIndex: 7,
+    speciesId: 'qinglong',
+    speciesZh: '苍穹青龙',
+    pinyin: 'Cāngqióng Qīnglóng',
+    speciesName: 'Storm Sky Dragon',
+    element: 'Sky Azure',
+    accentHex: '#0ea5e9',
+    lore: 'Siklus 7 · Naga biru penguasa angin timur dan kefasihan alami.',
+    stages: {
+      bayi: {
+        zhName: '青云小龙',
+        name: 'Baby Sky Dragonling',
+        title: 'Wujud Bayi · Siklus 7',
+        trainerTitle: 'Skyborne Adept',
+        trainerOutfit: 'Zirah Angin Putih-Sian Semi-Dewa',
+        trainerAccessory: 'Anting Kristal Langit & Rambut Sian Panjang',
+        quotes: [
+          'Naga langit kecil melingkar di bahumu! Kefasihanmu sudah memasuki tingkat elit.',
+          'Rambut dan aura trainermu kini resmi bertransformasi menuju semi-dewa!',
+        ],
+      },
+      matang: {
+        zhName: '御风青龙',
+        name: 'Winged Cloud Qinglong',
+        title: 'Wujud Matang · Siklus 7',
+        trainerTitle: 'Cloud Templar',
+        trainerOutfit: 'Mantel Templar Awan Filigri Perak',
+        trainerAccessory: 'Halo Giok Mengambang & Rambut Putih-Teal',
+        quotes: [
+          'Naga sayap awan melesat cepat! Soal tata bahasa kompleks kini terasa natural.',
+          'Satu langkah menuju Naga Penguasa Sembilan Langit!',
+        ],
+      },
+      dewa: {
+        zhName: '九天青帝',
+        name: 'Nine-Heavens Dragon',
+        title: 'Wujud Dewa · Siklus 7',
+        trainerTitle: 'Sky Demi-God',
+        trainerOutfit: 'Busana Perang Dewa Langit Bersayap Sutra',
+        trainerAccessory: 'Mahkota Circlet Giok-Emas & Mata Sian Menyala',
+        quotes: [
+          '飞龙在天！Naga langit sembilan penjuru tunduk bersama kefasihanmu!',
+          'SIKLUS TERAKHIR (Lv 22–24): Naga Kaisar Kosmik sudah menunggu!',
+        ],
+      },
+    },
+  },
+  {
+    speciesIndex: 8,
+    speciesId: 'sovereign',
+    speciesZh: '至尊金龙',
+    pinyin: 'Zhìzūn Jīnlóng',
+    speciesName: 'Imperial Sovereign Dragon',
+    element: 'Imperial Cosmos',
+    accentHex: '#f59e0b',
+    lore: 'Siklus 8 · Puncak paripurna Naga Emas Kekaisaran & Ascended Archon.',
+    stages: {
+      bayi: {
+        zhName: '金辰幼龙',
+        name: 'Imperial Hatchling',
+        title: 'Wujud Bayi · Siklus 8',
+        trainerTitle: 'Celestial Heir',
+        trainerOutfit: 'Tunik Kekaisaran Putih-Emas',
+        trainerAccessory: 'Klip Mahkota Emas & Anting Berlian',
+        quotes: [
+          'Telur terakhir telah retak menjadi Kaisar Naga Kecil! Puncak tinggal di depan mata!',
+          'Tak banyak yang sanggup menembus siklus ke-8 — pertahankan ritmemu!',
+        ],
+      },
+      matang: {
+        zhName: '星耀金龙',
+        name: 'Star-Forged Imperial Dragon',
+        title: 'Wujud Matang · Siklus 8',
+        trainerTitle: 'Celestial Sovereign',
+        trainerOutfit: 'Regalia Putih-Emas Bersayap Transparan',
+        trainerAccessory: 'Mahkota Tiga Permata & Mata Emas Menyala',
+        quotes: [
+          'Zirah bintang emas menyelimuti naga & trainer! Tinggal satu tahap terakhir ke Lv 24!',
+          'Bersiaplah membuka wujud puncak Agung Sepanjang Masa!',
+        ],
+      },
+      dewa: {
+        zhName: '太古金皇龙',
+        name: 'Supreme Sovereign Dragon',
+        title: 'Wujud Dewa Paripurna · Lv 24',
+        trainerTitle: 'Ascended Archon Deity',
+        trainerOutfit: 'Zirah Agung Dewa Putih-Emas Prismatik & Sayap Cahaya',
+        trainerAccessory: 'Mahkota Kaisar Kosmik, Roda Matahari & Rambut Putih-Emas Mengalir',
+        quotes: [
+          '天道酬勤！SELAMAT MENAKLUKKAN PUNCAK LEVEL 24 — MASTER SEJATI MANDARIN!',
+          'Trainer & Naga telah mencapai wujud Dewa Tertinggi bersama pasangan tercinta!',
+        ],
+      },
+    },
   },
 ]
 
-export const LEGENDARY_BEASTS: readonly LegendaryBeastTier[] = BEAST_SEEDS.map((seed, idx) => ({
-  ...seed,
-  level: idx + 1,
-  minPower: HSK4_THRESHOLDS[idx],
-  minPowerByTrack: {
-    hsk4: HSK4_THRESHOLDS[idx],
-    hsk1: HSK1_THRESHOLDS[idx],
-  },
-}))
+const STAGE_ORDER: readonly EvolutionStage[] = ['bayi', 'matang', 'dewa']
+const STAGE_LABELS: Record<EvolutionStage, 'Bayi' | 'Matang' | 'Dewa'> = {
+  bayi: 'Bayi',
+  matang: 'Matang',
+  dewa: 'Dewa',
+}
+const STAGE_RARITY: Record<EvolutionStage, Record<number, BeastRarity>> = {
+  bayi: { 1: 'rare', 2: 'rare', 3: 'epic', 4: 'epic', 5: 'gold', 6: 'gold', 7: 'legendary', 8: 'legendary' },
+  matang: { 1: 'rare', 2: 'epic', 3: 'epic', 4: 'gold', 5: 'gold', 6: 'legendary', 7: 'legendary', 8: 'legendary' },
+  dewa: { 1: 'epic', 2: 'epic', 3: 'gold', 4: 'gold', 5: 'legendary', 6: 'legendary', 7: 'legendary', 8: 'legendary' },
+}
+
+export const LEGENDARY_BEASTS: readonly LegendaryBeastTier[] = CYCLES.flatMap((cyc) =>
+  STAGE_ORDER.map((stage, stageOffset) => {
+    const level = (cyc.speciesIndex - 1) * 3 + stageOffset + 1
+    const lvPad = String(level).padStart(2, '0')
+    const st = cyc.stages[stage]
+    return {
+      level,
+      id: `${cyc.speciesId}_${stage}` as BeastId,
+      speciesIndex: cyc.speciesIndex,
+      speciesId: cyc.speciesId,
+      speciesName: cyc.speciesName,
+      speciesZh: cyc.speciesZh,
+      stage,
+      stageLabel: STAGE_LABELS[stage],
+      zhName: st.zhName,
+      pinyin: cyc.pinyin,
+      name: st.name,
+      title: st.title,
+      trainerTitle: st.trainerTitle,
+      trainerOutfit: st.trainerOutfit,
+      trainerAccessory: st.trainerAccessory,
+      element: cyc.element,
+      rarity: STAGE_RARITY[stage][cyc.speciesIndex],
+      minPower: HSK4_THRESHOLDS[level - 1],
+      minPowerByTrack: {
+        hsk4: HSK4_THRESHOLDS[level - 1],
+        hsk1: HSK1_THRESHOLDS[level - 1],
+      },
+      imageSrc: `/trainers/richie/lv-${lvPad}.webp`,
+      imageByMember: {
+        richie: `/trainers/richie/lv-${lvPad}.webp`,
+        renita: `/trainers/renita/lv-${lvPad}.webp`,
+      },
+      accentHex: cyc.accentHex,
+      lore: cyc.lore,
+      quotes: st.quotes,
+    }
+  }),
+)
+
+export function getTrainerAssetSrc(
+  beast: LegendaryBeastTier,
+  memberId: 'richie' | 'renita' = 'richie',
+): string {
+  return beast.imageByMember[memberId] ?? beast.imageSrc
+}
 
 export function getBeastMinPower(beast: LegendaryBeastTier, track: BeastTrack = 'hsk4'): number {
   return beast.minPowerByTrack[track]
@@ -641,7 +738,7 @@ export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluat
       ? Math.max(masteredWords + activeUnaidedWords, hsk1ProvenCount)
       : masteredWords + activeUnaidedWords
 
-  // 1) Unaided mastery (passive exposure yields ZERO Spirit Power)
+  // 1) Unaided mastery (passive browsing yields ZERO Spirit Power)
   const var1Power =
     track === 'hsk1'
       ? masteredWords * 55 + hsk1ProvenCount * 25 + activeUnaidedWords * 12
@@ -732,7 +829,7 @@ export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluat
   const spiritPower = Math.round(rawPower * retentionMultiplier)
   const retentionBonusPower = Math.max(0, spiritPower - rawPower)
 
-  // Evolve current & next Legendary Beast across all 24 levels using track-specific scaling
+  // Evolve current & next across all 24 levels (8 species × 3 stages)
   let currentBeast = LEGENDARY_BEASTS[0]
   for (const tier of LEGENDARY_BEASTS) {
     if (spiritPower >= getBeastMinPower(tier, track)) currentBeast = tier
@@ -816,7 +913,6 @@ export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluat
           },
         ]
 
-  // Achievement-Unlocked Card Stages
   const unlockedAchievementKeys: string[] = []
   if (unaidedTotalWords >= (track === 'hsk1' ? 8 : 15)) unlockedAchievementKeys.push('unaided_15')
   if (streak >= 3) unlockedAchievementKeys.push('streak_3')
@@ -951,8 +1047,8 @@ export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluat
 
   const benchmarkHint =
     track === 'hsk1'
-      ? 'Track HSK 1 Dari Nol · Lulus 4 Nada/Pinyin + 6–10 kata terbukti → Lv 2'
-      : 'Track HSK 4 · Kuasai penuh ~50 kata di ujian/recall + grammar → Lv 2'
+      ? 'HSK 1 · Lulus 4 Nada + 6–10 kata → Evolusi Matang'
+      : 'HSK 4 · ~50 kata dikuasai + grammar → Evolusi Matang'
 
   return {
     track,

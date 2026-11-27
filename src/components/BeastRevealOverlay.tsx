@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
-import type { LegendaryBeastTier } from '../lib/beastEngine'
+import { getTrainerAssetSrc, type LegendaryBeastTier } from '../lib/beastEngine'
+import { useCoupleProfile } from '../lib/coupleProfile'
 import { playBeastRevealSound, playBeastTapChime } from '../lib/beastSound'
 import { RARITY_TAG, type BeastStageMeta } from '../lib/beastStages'
 import '../styles/beast-reveal.css'
@@ -35,6 +36,7 @@ export function BeastRevealOverlay({
   onToggleMute: () => void
   onClose: () => void
 }) {
+  const { activeId } = useCoupleProfile()
   const [phase, setPhase] = useState<'charging' | 'burst' | 'revealed'>('charging')
   const [quoteIdx, setQuoteIdx] = useState(0)
   const [showQuote, setShowQuote] = useState(false)
@@ -89,6 +91,7 @@ export function BeastRevealOverlay({
   if (!payload) return null
 
   const { beast, stage, reason, headline, spiritPower } = payload
+  const spriteSrc = getTrainerAssetSrc(beast, activeId)
   const reasonLabel =
     reason === 'evolution'
       ? 'EVOLUSI SHENSHOU BARU'
@@ -136,7 +139,7 @@ export function BeastRevealOverlay({
           <div className="lr-charge-scene">
             <div className="lr-orbit-ring" />
             <div className="lr-orbit-ring inner" />
-            <img className="lr-silhouette" src={beast.imageSrc} alt="" />
+            <img className="lr-silhouette" src={spriteSrc} alt="" />
             <p className="lr-charge-label">Menghimpun 灵力 Giok...</p>
           </div>
         ) : (
@@ -159,7 +162,7 @@ export function BeastRevealOverlay({
               <div className="lr-card-header">
                 <div className="lr-card-lvl">
                   <span className="lr-rarity-pill">{RARITY_TAG[stage.rarity]}</span>
-                  <span>Lv {beast.level} · {beast.element}</span>
+                  <span>Lv {beast.level}/24 · {beast.stageLabel} · {beast.element}</span>
                 </div>
                 <span className="lr-power-chip">⚡ {spiritPower.toLocaleString()} 灵力</span>
               </div>
@@ -184,7 +187,7 @@ export function BeastRevealOverlay({
                 aria-label={`Sentuh ${beast.name}`}
               >
                 <div className="lr-pedestal-glow" aria-hidden="true" />
-                <img className="lr-beast-art" src={beast.imageSrc} alt={`${beast.zhName} ${beast.name}`} />
+                <img className="lr-beast-art" src={spriteSrc} alt={`${beast.zhName} ${beast.name}`} />
               </div>
 
               {showQuote && (
@@ -195,10 +198,12 @@ export function BeastRevealOverlay({
                 <div className="lr-zh-title" lang="zh-CN">{beast.zhName}</div>
                 <div className="lr-sub-title">{beast.pinyin} · {beast.name}</div>
                 <div className="lr-meta-row">
-                  <span className="lr-stage-chip">{stage.cardCode} {stage.badgeLabel}</span>
-                  <span>{beast.title}</span>
+                  <span className="lr-stage-chip">{stage.cardCode} {beast.stageLabel.toUpperCase()}</span>
+                  <span>{beast.trainerTitle}</span>
                 </div>
-                <p className="lr-lore">{beast.lore}</p>
+                <p className="lr-lore">
+                  {beast.trainerOutfit} · {beast.trainerAccessory}. {beast.lore}
+                </p>
               </div>
             </div>
           </article>

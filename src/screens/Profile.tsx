@@ -2,6 +2,7 @@ import { StudyMusic } from '../components/StudyMusic'
 import { InstallCard } from '../components/InstallCard'
 import { useRef, useState, type ChangeEvent } from 'react'
 import { useAuth } from '../auth/AuthProvider'
+import { lockCoupleGate } from '../lib/coupleAuth'
 import {
   COUPLE_MEMBERS,
   setCoupleMemberName,
@@ -122,6 +123,13 @@ export function Profile() {
               </button>
             )
           })}
+          <button
+            type="button"
+            className="btn btn-ghost"
+            onClick={() => lockCoupleGate()}
+          >
+            🔐 Kunci / Layar Masuk
+          </button>
         </div>
         <form
           onSubmit={(e) => {

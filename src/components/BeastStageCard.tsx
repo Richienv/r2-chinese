@@ -3,13 +3,11 @@ import { CLOUD_HYDRATED_EVENT, LOCAL_PROGRESS_EVENT } from '../lib/autoSync'
 import {
   evaluateBeastProgress,
   getBeastMinPower,
+  getTrainerAssetSrc,
   LEGENDARY_BEASTS,
   type BeastTrack,
   type Hsk1ProgressInput,
 } from '../lib/beastEngine'
-import { useCoupleProfile } from '../lib/coupleProfile'
-import { postCoupleEvent } from '../lib/coupleSync'
-import { readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
 import {
   readBeastPrefs,
   subscribeBeastPrefs,
@@ -23,6 +21,9 @@ import {
   RARITY_TAG,
   type BeastStageId,
 } from '../lib/beastStages'
+import { useCoupleProfile } from '../lib/coupleProfile'
+import { postCoupleEvent } from '../lib/coupleSync'
+import { readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
 import { readHistory, type HistoryEvent } from '../lib/history'
 import { dayKey, useStore } from '../store/store'
 import { BeastRevealOverlay, type BeastRevealPayload } from './BeastRevealOverlay'
@@ -51,7 +52,7 @@ export function BeastStageCard({
   const [peekLevel, setPeekLevel] = useState<number | null>(null)
   const [bubbleText, setBubbleText] = useState<string | null>(null)
   const [quoteCycle, setQuoteCycle] = useState(0)
-  const [showVars, setShowVars] = useState(false)
+  const [drawer, setDrawer] = useState<'none' | 'quests' | 'vars'>('none')
   const [pickerOpen, setPickerOpen] = useState(false)
   const [revealPayload, setRevealPayload] = useState<BeastRevealPayload | null>(null)
 
@@ -101,19 +102,16 @@ export function BeastStageCard({
     ],
   )
 
-  // Ensure selected stage is valid & unlocked; otherwise fall back cleanly to default
   const activeStageId: BeastStageId = evalRes.unlockedStageIds.includes(prefs.stageId)
     ? prefs.stageId
     : BEAST_STAGES[0].id
   const activeStage = getBeastStage(activeStageId)
 
-  // Auto-trigger Legendary Reveal on level-up OR newly earned card unlock
   useEffect(() => {
     const newAchievement = evalRes.unlockedAchievementKeys.find(
       (k) => !prefs.earnedAchievementKeys.includes(k),
     )
     if (evalRes.level > prefs.lastSeenLevel) {
-      const upgradedStage = activeStage
       writeBeastPrefs({
         lastSeenLevel: evalRes.level,
         earnedAchievementKeys: evalRes.unlockedAchievementKeys,
@@ -121,15 +119,15 @@ export function BeastStageCard({
       void postCoupleEvent({
         from: activeId,
         kind: 'evolution',
-        text: `Berevolusi ke Lv ${evalRes.level}/24: ${evalRes.beast.zhName} (${evalRes.beast.name})!`,
+        text: `Naik Lv ${evalRes.level}/24 (${evalRes.beast.stageLabel}): ${evalRes.beast.zhName}!`,
         beastLevel: evalRes.level,
         names,
       })
       setRevealPayload({
         beast: evalRes.beast,
-        stage: upgradedStage,
+        stage: activeStage,
         reason: 'evolution',
-        headline: `EVOLUSI LV ${evalRes.level}/24: ${evalRes.beast.zhName}`,
+        headline: `EVOLUSI LV ${evalRes.level}/24 · ${evalRes.beast.stageLabel.toUpperCase()}`,
         spiritPower: evalRes.spiritPower,
       })
       return
@@ -149,6 +147,8 @@ export function BeastStageCard({
       })
     }
   }, [
+    activeId,
+    names,
     evalRes.level,
     evalRes.beast,
     evalRes.spiritPower,
@@ -161,6 +161,7 @@ export function BeastStageCard({
   const shownLevel = peekLevel ?? evalRes.level
   const shownBeast = LEGENDARY_BEASTS[Math.max(0, Math.min(LEGENDARY_BEASTS.length - 1, shownLevel - 1))]
   const isLockedPreview = shownBeast.level > evalRes.level
+  const assetSrc = getTrainerAssetSrc(shownBeast, activeId)
 
   const quickSwatches = useMemo(() => {
     const unlockedExtras = BEAST_STAGES.filter(
@@ -175,8 +176,9 @@ export function BeastStageCard({
       ({
         '--stage-foil': activeStage.foilGradient,
         '--stage-bg': activeStage.previewGradient,
+        '--stage-accent-soft': `${shownBeast.accentHex}33`,
       }) as CSSProperties,
-    [activeStage],
+    [activeStage, shownBeast.accentHex],
   )
 
   function handleBeastTap() {
@@ -184,7 +186,7 @@ export function BeastStageCard({
     if (isLockedPreview) {
       const req = getBeastMinPower(shownBeast, resolvedTrack)
       setBubbleText(
-        `Siluet Lv ${shownBeast.level} · ${shownBeast.zhName} (${shownBeast.name}) terbuka di ${req.toLocaleString()} 灵力!`,
+        `Lv ${shownBeast.level} (${shownBeast.stageLabel}) · ${shownBeast.zhName} terbuka di ${req.toLocaleString()} 灵力!`,
       )
       return
     }
@@ -193,32 +195,24 @@ export function BeastStageCard({
     setBubbleText(q)
   }
 
-  function handleQuestClick(action: 'review' | 'learn' | 'exam') {
-    if (action === 'review') onReview?.()
-    else if (action === 'exam') onExam?.()
-    else onLearn?.()
-  }
-
   return (
-    <section className="beast-stage-wrap" aria-label="Pendamping Naga HSK">
+    <section className="beast-stage-wrap" aria-label="Arena Trainer dan Beast">
       <div className="beast-card-shell" data-foil={activeStage.foilStyle} style={cardVars}>
         <div className="beast-card-canvas">
           <div className="beast-card-texture" aria-hidden="true" />
 
           <div className="beast-hud-bar">
             <div className="beast-hud-left">
-              <span className="beast-lvl-tag">LV {evalRes.level}/24 · {evalRes.beast.element}</span>
+              <span className="beast-lvl-tag">
+                LV {evalRes.level}/24 · {evalRes.beast.stageLabel}
+              </span>
               <span className="beast-flame-pill" data-tier={evalRes.flame.tier}>
-                {evalRes.flame.badge} {evalRes.flame.label}
+                {evalRes.flame.badge}
               </span>
             </div>
             <div className="beast-hud-actions">
-              <button
-                type="button"
-                className="beast-chip-btn"
-                onClick={() => setPickerOpen(true)}
-              >
-                Kartu ({evalRes.unlockedStageIds.length}/9)
+              <button type="button" className="beast-chip-btn" onClick={() => setPickerOpen(true)}>
+                🎴 {evalRes.unlockedStageIds.length}/9
               </button>
               <button
                 type="button"
@@ -237,111 +231,130 @@ export function BeastStageCard({
             </div>
           </div>
 
-          <div className="beast-stage-grid">
-            <div className="beast-arena-box">
-              <div className="beast-peek-row">
-                <button
-                  type="button"
-                  className="beast-nav-btn"
-                  disabled={shownBeast.level <= 1}
-                  onClick={() => {
-                    setBubbleText(null)
-                    setPeekLevel(Math.max(1, shownBeast.level - 1))
+          <div className="beast-arena-box">
+            <div className="beast-peek-row">
+              <button
+                type="button"
+                className="beast-nav-btn"
+                disabled={shownBeast.level <= 1}
+                onClick={() => {
+                  setBubbleText(null)
+                  setPeekLevel(Math.max(1, shownBeast.level - 1))
+                }}
+                aria-label="Evolusi sebelumnya"
+              >
+                ‹
+              </button>
+
+              <button
+                type="button"
+                className="beast-figure-hit"
+                onClick={handleBeastTap}
+                aria-label={`Sentuh ${member.name} & ${shownBeast.name}`}
+              >
+                <div className="beast-aura-halo" aria-hidden="true" />
+                <div className="beast-pedestal" aria-hidden="true" />
+                <img
+                  className={`beast-figure-img${isLockedPreview ? ' is-locked' : ''}`}
+                  src={assetSrc}
+                  alt={isLockedPreview ? `Siluet ${shownBeast.name}` : `${member.name} · ${shownBeast.name}`}
+                  onError={(e) => {
+                    e.currentTarget.src = '/beasts/v1/beast-02-qilin.webp'
                   }}
-                  aria-label="Evolusi sebelumnya"
-                >
-                  ‹
-                </button>
+                />
+                {isLockedPreview && (
+                  <span className="beast-lock-pill">
+                    Butuh {getBeastMinPower(shownBeast, resolvedTrack).toLocaleString()} 灵力
+                  </span>
+                )}
+              </button>
 
-                <button
-                  type="button"
-                  className="beast-figure-hit"
-                  onClick={handleBeastTap}
-                  aria-label={`Sentuh ${shownBeast.name}`}
-                >
-                  <div className="beast-pedestal" aria-hidden="true" />
-                  <img
-                    className={`beast-figure-img${isLockedPreview ? ' is-locked' : ''}`}
-                    src={shownBeast.imageSrc}
-                    alt={isLockedPreview ? `Siluet ${shownBeast.name}` : `${shownBeast.zhName} ${shownBeast.name}`}
-                  />
-                  {isLockedPreview && (
-                    <span className="beast-lock-pill">
-                      Butuh {getBeastMinPower(shownBeast, resolvedTrack).toLocaleString()} 灵力
-                    </span>
-                  )}
-                </button>
-
-                <button
-                  type="button"
-                  className="beast-nav-btn"
-                  disabled={shownBeast.level >= LEGENDARY_BEASTS.length}
-                  onClick={() => {
-                    setBubbleText(null)
-                    setPeekLevel(Math.min(LEGENDARY_BEASTS.length, shownBeast.level + 1))
-                  }}
-                  aria-label="Evolusi berikutnya"
-                >
-                  ›
-                </button>
-              </div>
-
-              {bubbleText && <div className="beast-bubble">{bubbleText}</div>}
+              <button
+                type="button"
+                className="beast-nav-btn"
+                disabled={shownBeast.level >= LEGENDARY_BEASTS.length}
+                onClick={() => {
+                  setBubbleText(null)
+                  setPeekLevel(Math.min(LEGENDARY_BEASTS.length, shownBeast.level + 1))
+                }}
+                aria-label="Evolusi berikutnya"
+              >
+                ›
+              </button>
             </div>
 
-            <div className="beast-info-panel">
-              <div className="beast-name-line">
-                <div>
-                  <span className="beast-zh-big" lang="zh-CN">{shownBeast.zhName}</span>{' '}
-                  <span className="beast-en-sub">{shownBeast.pinyin} · {shownBeast.name}</span>
-                </div>
-                <span className="beast-badge-code">
-                  {activeStage.cardCode} {RARITY_TAG[activeStage.rarity]}
+            {bubbleText && <div className="beast-bubble">{bubbleText}</div>}
+          </div>
+
+          <div className="beast-info-panel">
+            <div className="beast-name-line">
+              <div>
+                <span className="beast-zh-big" lang="zh-CN">{shownBeast.zhName}</span>{' '}
+                <span className="beast-en-sub">{shownBeast.name}</span>
+              </div>
+              <span className="beast-tier-pill">
+                Siklus {shownBeast.speciesIndex}/8 · {shownBeast.stageLabel.toUpperCase()}
+              </span>
+            </div>
+
+            <div className="beast-trainer-meta">
+              {member.name}: <strong>{shownBeast.trainerTitle}</strong> · {shownBeast.trainerAccessory}
+            </div>
+
+            <div>
+              <div className="beast-power-meta">
+                <span>⚡ {evalRes.spiritPower.toLocaleString()} 灵力</span>
+                <span>
+                  {evalRes.nextBeast
+                    ? `-${evalRes.powerToNext.toLocaleString()} → ${evalRes.nextBeast.zhName}`
+                    : 'Puncak Lv 24'}
                 </span>
               </div>
-
-              <div>
-                <div className="beast-power-meta">
-                  <span>⚡ {evalRes.spiritPower.toLocaleString()} 灵力</span>
-                  <span>
-                    {evalRes.nextBeast
-                      ? `-${evalRes.powerToNext.toLocaleString()} menuju ${evalRes.nextBeast.zhName}`
-                      : 'Puncak 至尊金龙 Tercapai'}
-                  </span>
-                </div>
-                <div className="beast-power-track" aria-label="Progress Spirit Power">
-                  <div className="beast-power-fill" style={{ width: `${evalRes.progressPct}%` }} />
-                </div>
-                <div className="beast-retention-row">
-                  <span>{evalRes.retentionLabel}</span>
-                  <span>Retensi {evalRes.retentionPct}% ({evalRes.retentionMultiplier.toFixed(2)}×)</span>
-                </div>
-                <div style={{ fontSize: 11, color: '#475569', marginTop: 2 }}>
-                  {evalRes.benchmarkHint}
-                </div>
+              <div className="beast-power-track" aria-label="Progress Spirit Power">
+                <div className="beast-power-fill" style={{ width: `${evalRes.progressPct}%` }} />
               </div>
+            </div>
 
-              <div className="beast-swatches-row" aria-label="Pilih Latar Kartu">
-                {quickSwatches.map((st) => (
+            <div className="beast-compact-tools">
+              <div className="beast-tool-tabs">
+                <button
+                  type="button"
+                  className={`beast-tool-btn${drawer === 'quests' ? ' is-active' : ''}`}
+                  onClick={() => setDrawer((d) => (d === 'quests' ? 'none' : 'quests'))}
+                >
+                  🎯 Misi {evalRes.questsDoneCount}/3
+                </button>
+                <button
+                  type="button"
+                  className={`beast-tool-btn${drawer === 'vars' ? ' is-active' : ''}`}
+                  onClick={() => setDrawer((d) => (d === 'vars' ? 'none' : 'vars'))}
+                >
+                  📊 6 Variabel ({evalRes.retentionPct}%)
+                </button>
+              </div>
+              <div className="beast-swatches-mini" aria-label="Pilih Latar Kartu">
+                {quickSwatches.slice(0, 5).map((st) => (
                   <button
                     key={st.id}
                     type="button"
-                    className={`beast-swatch${activeStage.id === st.id ? ' is-active' : ''}`}
+                    title={st.name}
+                    aria-label={st.name}
+                    className={`beast-dot-btn${activeStage.id === st.id ? ' is-active' : ''}`}
+                    style={{ background: st.previewGradient }}
                     onClick={() => writeBeastPrefs({ stageId: st.id })}
-                  >
-                    <span className="beast-swatch-dot" style={{ background: st.previewGradient }} />
-                    <span>{st.name}</span>
-                  </button>
+                  />
                 ))}
               </div>
+            </div>
 
+            {drawer === 'quests' && (
               <div className="beast-quests-list">
                 {evalRes.quests.map((q) => (
                   <button
                     key={q.id}
                     type="button"
                     className={`beast-quest-btn${q.done ? ' is-done' : ''}`}
-                    onClick={() => handleQuestClick(q.action)}
+                    onClick={() => (q.action === 'review' ? onReview?.() : q.action === 'exam' ? onExam?.() : onLearn?.())}
                   >
                     <span className="beast-quest-title">
                       {q.done ? '✓ ' : '○ '}
@@ -353,31 +366,21 @@ export function BeastStageCard({
                   </button>
                 ))}
               </div>
+            )}
 
-              <button
-                type="button"
-                className="beast-drawer-toggle"
-                aria-expanded={showVars}
-                onClick={() => setShowVars((v) => !v)}
-              >
-                {showVars ? '▾ Sembunyikan 6 Variabel HSK' : '▸ Lihat Detail 6 Variabel Penentu Level HSK'}
-              </button>
-
-              {showVars && (
-                <div className="beast-vars-grid">
-                  {evalRes.variables.map((v) => (
-                    <div key={v.key} className="beast-var-card">
-                      <div className="beast-var-top">
-                        <span>{v.label}</span>
-                        <span>+{v.power} 灵力</span>
-                      </div>
-                      <div className="beast-var-val">{v.valueText}</div>
-                      <div className="beast-var-sub">{v.subText}</div>
+            {drawer === 'vars' && (
+              <div className="beast-vars-grid">
+                {evalRes.variables.map((v) => (
+                  <div key={v.key} className="beast-var-card">
+                    <div className="beast-var-top">
+                      <span>{v.label}</span>
+                      <span>+{v.power} 灵力</span>
                     </div>
-                  ))}
-                </div>
-              )}
-            </div>
+                    <div className="beast-var-val">{v.valueText}</div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -395,7 +398,7 @@ export function BeastStageCard({
               <div>
                 <strong>Koleksi Kartu Stage ({evalRes.unlockedStageIds.length}/9)</strong>
                 <div style={{ fontSize: 12, color: '#64748b' }}>
-                  3 kartu starter langsung aktif · 6 kartu terbuka otomatis lewat pencapaian HSK
+                  3 starter aktif · 6 kartu terbuka dari pencapaian HSK nyata
                 </div>
               </div>
               <button type="button" className="beast-chip-btn" onClick={() => setPickerOpen(false)}>
@@ -419,7 +422,7 @@ export function BeastStageCard({
                   >
                     <div className="beast-stage-preview" style={{ background: st.previewGradient }}>
                       <span>{st.cardCode}</span>
-                      <span>{unlocked ? RARITY_TAG[st.rarity] : '🔒 TERKUNCI'}</span>
+                      <span>{unlocked ? RARITY_TAG[st.rarity] : '🔒'}</span>
                     </div>
                     <div className="beast-stage-name">{st.name}</div>
                     <div className="beast-stage-desc">{st.tagline}</div>

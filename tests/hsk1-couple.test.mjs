@@ -13,6 +13,18 @@ import {
   getActiveCoupleId,
   switchCoupleWorkspace,
 } from '../src/lib/coupleProfile.ts'
+import {
+  COUPLE_GATE_KEY,
+  isCoupleGateUnlocked,
+  lockCoupleGate,
+  unlockCoupleGate,
+  verifyCouplePasscode,
+} from '../src/lib/coupleAuth.ts'
+import {
+  classifyLexicalCategory,
+  computeCategoryBreakdown,
+  computeDailyComparison,
+} from '../src/lib/progressAnalytics.ts'
 
 function makeMemoryStorage() {
   const map = new Map()
@@ -113,4 +125,74 @@ test('mergeCoupleEvents deduplicates by id and keeps newest events first', () =>
   ]
   const merged = mergeCoupleEvents(left, right)
   assert.deepEqual(merged.map((e) => e.id), ['e2', 'e3', 'e1'])
+})
+
+test('couple passcode gate validates arci case-insensitively and switches selected profile', () => {
+  const storage = makeMemoryStorage()
+  assert.equal(verifyCouplePasscode('arci'), true)
+  assert.equal(verifyCouplePasscode('  ARCI '), true)
+  assert.equal(verifyCouplePasscode('wrong'), false)
+  assert.equal(isCoupleGateUnlocked(storage), false)
+
+  unlockCoupleGate('renita', storage)
+  assert.equal(isCoupleGateUnlocked(storage), true)
+  assert.equal(storage.getItem(COUPLE_GATE_KEY), 'unlocked')
+  assert.equal(getActiveCoupleId(storage), 'renita')
+  assert.equal(storage.getItem('yulu.course.v1'), 'hsk1')
+
+  lockCoupleGate(storage)
+  assert.equal(isCoupleGateUnlocked(storage), false)
+})
+
+test('progress analytics computes yesterday vs today deltas, 7-day trend, and lexical categories', () => {
+  const cmp = computeDailyComparison(
+    {
+      '2026-11-26': { cards: 14, lessons: 1 },
+      '2026-11-27': { cards: 22, lessons: 2 },
+    },
+    '2026-11-27',
+  )
+  assert.equal(cmp.yesterdayCards, 14)
+  assert.equal(cmp.todayCards, 22)
+  assert.equal(cmp.deltaCards, 8)
+  assert.equal(cmp.series7Days.length, 7)
+  assert.equal(cmp.series7Days[5].cards, 14)
+  assert.equal(cmp.series7Days[6].isToday, true)
+
+  assert.equal(classifyLexicalCategory('吃饭', 'v.'), 'verb')
+  assert.equal(classifyLexicalCategory('医院', 'n.'), 'place')
+  assert.equal(classifyLexicalCategory('昨天', 'n.'), 'time')
+  assert.equal(classifyLexicalCategory('虽然', 'conj.'), 'particle')
+  assert.equal(classifyLexicalCategory('漂亮', 'adj.'), 'adj')
+
+  const breakdown = computeCategoryBreakdown(
+    {
+      学习: {
+        zh: '学习',
+        lesson: 1,
+        state: 'mastered',
+        encounters: 3,
+        attempts: 3,
+        successes: 3,
+        hints: 0,
+        unaidedSuccesses: 3,
+        successDays: ['2026-11-26', '2026-11-27'],
+        lastSeen: 1000,
+        lastPractice: 1000,
+        modes: {
+          listening: { attempts: 0, successes: 0 },
+          recognition: { attempts: 1, successes: 1 },
+          recall: { attempts: 2, successes: 2 },
+          speaking: { attempts: 0, successes: 0 },
+          writing: { attempts: 0, successes: 0 },
+        },
+      },
+    },
+    ['漂亮', '今天'],
+    (zh) => (zh === '学习' ? 'v.' : undefined),
+  )
+  const verbRow = breakdown.find((r) => r.category === 'verb')
+  const adjRow = breakdown.find((r) => r.category === 'adj')
+  assert.equal(verbRow?.mastered, 1)
+  assert.equal(adjRow?.mastered, 1)
 })

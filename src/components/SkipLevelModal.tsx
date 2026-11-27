@@ -17,12 +17,14 @@ export function SkipLevelControl({
   recommendedLesson,
   options,
   onSkipTo,
+  compact = false,
 }: {
   courseLabel: string
   currentLesson: number
   recommendedLesson?: number
   options: SkipLessonOption[]
   onSkipTo: (targetLesson: number) => void
+  compact?: boolean
 }) {
   const selectable = options.filter((o) => o.lesson > 1)
   const [open, setOpen] = useState(false)
@@ -48,34 +50,44 @@ export function SkipLevelControl({
 
   return (
     <>
-      <section className="skip-level-card" aria-label={t('Skip to lesson')}>
-        <div className="skip-level-head">
-          <div>
-            <strong>{t('Already ahead in class?')}</strong>
+      {compact ? (
+        <button
+          type="button"
+          className="home-float-pill"
+          onClick={() => openWith(recommendedLesson && currentLesson < recommendedLesson ? recommendedLesson : defaultTarget)}
+        >
+          ⏭️ {t('Skip to lesson…')}
+        </button>
+      ) : (
+        <section className="skip-level-card" aria-label={t('Skip to lesson')}>
+          <div className="skip-level-head">
             <div>
-              <small>{t('Jump straight to your lesson and carry earlier words into Active Recall.')}</small>
+              <strong>{t('Already ahead in class?')}</strong>
+              <div>
+                <small>{t('Jump straight to your lesson and carry earlier words into Active Recall.')}</small>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="skip-level-actions">
-          {showQuickJump && (
+          <div className="skip-level-actions">
+            {showQuickJump && (
+              <button
+                type="button"
+                className="skip-level-btn"
+                onClick={() => openWith(recommendedLesson!)}
+              >
+                {t('Jump to Lesson {n}', { n: recommendedLesson! })}
+              </button>
+            )}
             <button
               type="button"
-              className="skip-level-btn"
-              onClick={() => openWith(recommendedLesson!)}
+              className={showQuickJump ? 'skip-level-btn skip-level-btn-secondary' : 'skip-level-btn'}
+              onClick={() => openWith(defaultTarget)}
             >
-              {t('Jump to Lesson {n}', { n: recommendedLesson! })}
+              {t('Skip to lesson…')}
             </button>
-          )}
-          <button
-            type="button"
-            className={showQuickJump ? 'skip-level-btn skip-level-btn-secondary' : 'skip-level-btn'}
-            onClick={() => openWith(defaultTarget)}
-          >
-            {t('Skip to lesson…')}
-          </button>
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {open && (
         <div

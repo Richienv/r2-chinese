@@ -4,13 +4,15 @@ import { graphSummary } from '../lib/learnerGraph'
 import '../styles/usability.css'
 import { useEffect, useMemo, useState } from 'react'
 import { BeastRevealOverlay, type BeastRevealPayload } from '../components/BeastRevealOverlay'
+import { CoupleComparePanel } from '../components/CoupleComparePanel'
 import { MasteryTracker } from '../components/MasteryTracker'
-import { evaluateBeastProgress, getBeastMinPower, LEGENDARY_BEASTS } from '../lib/beastEngine'
+import { evaluateBeastProgress, getBeastMinPower, getTrainerAssetSrc, LEGENDARY_BEASTS } from '../lib/beastEngine'
 import { readBeastPrefs, subscribeBeastPrefs, writeBeastPrefs } from '../lib/beastPrefs'
 import { getBeastStage } from '../lib/beastStages'
 import { useCoupleProfile } from '../lib/coupleProfile'
 import { readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
-import { getLesson, isCoreBookVocab, lessons } from '../lib/content'
+import { getLesson, isCoreBookVocab, lessons, lookup } from '../lib/content'
+import { computeCategoryBreakdown, computeDailyComparison } from '../lib/progressAnalytics'
 import { COURSE_META } from '../lib/course'
 import { readHistory, type HistoryCourse, type HistoryEvent } from '../lib/history'
 import { getLang, t } from '../lib/i18n'
@@ -284,7 +286,7 @@ export function Progress({
   onLearn: () => void
 }) {
   const s = useStore()
-  const { member } = useCoupleProfile()
+  const { activeId, member } = useCoupleProfile()
   const [showHistory, setShowHistory] = useState(false)
   const [syncTick, setSyncTick] = useState(0)
   const [beastPrefs, setBeastPrefs] = useState(readBeastPrefs)
@@ -304,6 +306,15 @@ export function Progress({
     }
   }, [])
   const week = weekActivity(s.log)
+  const dailyComparison = useMemo(
+    () => computeDailyComparison(s.log, dayKey(), Date.now()),
+    [s.log, syncTick],
+  )
+  const categoryBreakdown = useMemo(
+    () => computeCategoryBreakdown(s.mastery, hsk1Progress.provenWords, (zh) => lookup(zh)?.pos),
+    [s.mastery, hsk1Progress.provenWords, syncTick],
+  )
+  const max7DayCards = Math.max(DAILY_GOAL, ...dailyComparison.series7Days.map((p) => p.cards))
   const due = dueCards(s.cardList).filter((c) => isCoreBookVocab(c.zh))
   const hardWords = recommendedWords(
     s,
@@ -442,6 +453,101 @@ export function Progress({
         </div>
       </section>
 
+      <section className="card progress-section progress-analytics-card" aria-label="Perbandingan Harian Kemarin dan Hari Ini">
+        <div className="progress-section-heading">
+          <div>
+            <div className="progress-eyebrow">PROGRES HARIAN · KEMARIN VS HARI INI</div>
+            <h2>Perbandingan & Tren 7 Hari</h2>
+          </div>
+          <span
+            className={`progress-delta-pill${
+              dailyComparison.deltaCards > 0
+                ? ' is-up'
+                : dailyComparison.deltaCards < 0
+                  ? ' is-down'
+                  : ''
+            }`}
+          >
+            {dailyComparison.deltaCards > 0
+              ? `▲ +${dailyComparison.deltaCards} vs kemarin`
+              : dailyComparison.deltaCards < 0
+                ? `▼ ${dailyComparison.deltaCards} vs kemarin`
+                : '= Sama dengan kemarin'}
+          </span>
+        </div>
+
+        <div className="progress-yday-today">
+          <div className="progress-yday-box">
+            <small>Kemarin</small>
+            <strong>{dailyComparison.yesterdayCards}</strong>
+            <span>langkah · {dailyComparison.yesterdayLessons} sesi</span>
+          </div>
+          <div className="progress-yday-box is-today">
+            <small>Hari Ini</small>
+            <strong>{dailyComparison.todayCards}</strong>
+            <span>langkah · {dailyComparison.todayLessons} sesi</span>
+          </div>
+        </div>
+
+        <div className="progress-trend-bars" role="img" aria-label="Grafik 7 hari belajar">
+          {dailyComparison.series7Days.map((pt) => {
+            const hPct = pt.cards > 0 ? Math.max(14, Math.round((pt.cards / max7DayCards) * 100)) : 6
+            return (
+              <div
+                key={pt.key}
+                className={`progress-trend-col${pt.isToday ? ' is-today' : ''}${pt.cards > 0 ? ' is-active' : ''}`}
+              >
+                <span className="progress-trend-num">{pt.cards || '0'}</span>
+                <div className="progress-trend-track">
+                  <i style={{ height: `${hPct}%` }} />
+                </div>
+                <span className="progress-trend-lbl">{pt.label}</span>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      <section className="card progress-section progress-cat-card" aria-label="Grafik Pemahaman Jenis Kata">
+        <div className="progress-section-heading">
+          <div>
+            <div className="progress-eyebrow">PEMAHAMAN KATEGORI KATA</div>
+            <h2>Peta Penguasaan Jenis Kata</h2>
+          </div>
+          <span className="progress-course-total">6 kategori</span>
+        </div>
+        <p className="progress-section-sub">
+          Distribusi kata yang benar-benar dikuasai vs masih dilatih berdasarkan Verb, Noun, Adjektiva, Lokasi, Waktu/Angka, dan Partikel/Grammar.
+        </p>
+        <div className="progress-cat-list">
+          {categoryBreakdown.map((cat) => {
+            const learningPct = cat.total > 0 ? Math.round(((cat.mastered + cat.learning) / cat.total) * 100) : 0
+            return (
+              <div key={cat.category} className="progress-cat-row">
+                <div className="progress-cat-top">
+                  <strong>{cat.label}</strong>
+                  <span>
+                    {cat.mastered} kuasai{cat.learning > 0 ? ` · ${cat.learning} latih` : ''} · <b>{cat.pct}%</b>
+                  </span>
+                </div>
+                <div className="progress-cat-bar" aria-hidden="true">
+                  <i
+                    className="progress-cat-fill-learn"
+                    style={{ width: `${learningPct}%`, backgroundColor: cat.accentHex }}
+                  />
+                  <i
+                    className="progress-cat-fill-master"
+                    style={{ width: `${cat.pct}%`, backgroundColor: cat.accentHex }}
+                  />
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      <CoupleComparePanel />
+
       <details className="progress-activity-details">
         <summary>{t('Practice over time')}</summary>
       <section className="progress-stats" aria-label={t('Learning totals')}>
@@ -544,10 +650,10 @@ export function Progress({
         )}
       </section>
 
-      <section className="card progress-section progress-beast-section" aria-label="Koleksi Legendary Beast">
+      <section className="card progress-section progress-beast-section" aria-label="Koleksi Evolusi Trainer dan Partner">
         <div className="progress-section-heading">
           <div>
-            <div className="progress-eyebrow">神兽殿 · KOLEKSI SHENSHOU</div>
+            <div className="progress-eyebrow">8 SIKLUS × 3 TAHAP (BAYI → MATANG → DEWA)</div>
             <h2>
               <span lang="zh-CN">{beastEval.beast.zhName}</span> · {beastEval.beast.name}
             </h2>
@@ -557,9 +663,10 @@ export function Progress({
           </span>
         </div>
         <p className="progress-section-sub">
+          Gelar aktif: <strong>{beastEval.beast.trainerTitle}</strong> ({beastEval.beast.stageLabel} · Siklus {beastEval.beast.speciesIndex}/8).{' '}
           {beastEval.nextBeast
-            ? `Butuh ${beastEval.powerToNext.toLocaleString()} 灵力 lagi untuk berevolusi ke ${beastEval.nextBeast.zhName} (${beastEval.nextBeast.name}). ${beastEval.benchmarkHint}`
-            : 'Seluruh 24 bentuk Legendary Beast telah terbuka penuh!'}
+            ? `Butuh ${beastEval.powerToNext.toLocaleString()} 灵力 lagi untuk berevolusi ke ${beastEval.nextBeast.zhName} (${beastEval.nextBeast.name}).`
+            : 'Seluruh 24 evolusi Trainer & Mythical Partner telah terbuka penuh!'}
         </p>
 
         <div className="progress-beast-vars">
@@ -581,15 +688,19 @@ export function Progress({
           {LEGENDARY_BEASTS.map((tier) => {
             const unlocked = tier.level <= beastEval.level
             const stage = getBeastStage(beastPrefs.stageId)
+            const tierImg = getTrainerAssetSrc(tier, activeId)
             return (
               <div
                 key={tier.id}
                 className={`progress-beast-tile${unlocked ? ' is-unlocked' : ' is-locked'}`}
               >
+                <div className="progress-beast-stage-tag" data-stage={tier.stage}>
+                  Siklus {tier.speciesIndex} · {tier.stageLabel}
+                </div>
                 <div className="progress-beast-thumb-wrap">
                   <img
                     className="progress-beast-thumb"
-                    src={tier.imageSrc}
+                    src={tierImg}
                     alt={unlocked ? `${tier.zhName} ${tier.name}` : `Siluet ${tier.name}`}
                   />
                 </div>

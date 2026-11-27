@@ -3,7 +3,12 @@ import fs from 'node:fs'
 import path from 'node:path'
 import test from 'node:test'
 import { fileURLToPath } from 'node:url'
-import { evaluateBeastProgress, getBeastMinPower, LEGENDARY_BEASTS } from '../src/lib/beastEngine.ts'
+import {
+  evaluateBeastProgress,
+  getBeastMinPower,
+  getTrainerAssetSrc,
+  LEGENDARY_BEASTS,
+} from '../src/lib/beastEngine.ts'
 import {
   BEAST_STAGES,
   FREE_BEAST_STAGE_IDS,
@@ -39,15 +44,21 @@ function makeMastery(zh, state, opts) {
   }
 }
 
-test('all 24 Legendary Beast WebP assets exist on disk with valid sizes and strictly increasing thresholds', () => {
+test('all 24 evolution tiers across 8x3 cycles and all 48 Richie/Renita Trainer+Partner WebPs exist with valid thresholds', () => {
   assert.equal(LEGENDARY_BEASTS.length, 24)
+  const expectedStages = ['bayi', 'matang', 'dewa']
   for (let i = 0; i < LEGENDARY_BEASTS.length; i++) {
     const beast = LEGENDARY_BEASTS[i]
     assert.equal(beast.level, i + 1)
-    const filePath = path.join(rootDir, 'public', beast.imageSrc.replace(/^\//, ''))
-    assert.ok(fs.existsSync(filePath), `missing beast asset ${beast.imageSrc}`)
-    const stat = fs.statSync(filePath)
-    assert.ok(stat.size > 15_000, `expected ${beast.imageSrc} > 15KB, got ${stat.size}`)
+    assert.equal(beast.speciesIndex, Math.floor(i / 3) + 1)
+    assert.equal(beast.stage, expectedStages[i % 3])
+    for (const memberId of ['richie', 'renita']) {
+      const assetPath = getTrainerAssetSrc(beast, memberId)
+      const filePath = path.join(rootDir, 'public', assetPath.replace(/^\//, ''))
+      assert.ok(fs.existsSync(filePath), `missing trainer asset ${assetPath}`)
+      const stat = fs.statSync(filePath)
+      assert.ok(stat.size > 15_000, `expected ${assetPath} > 15KB, got ${stat.size}`)
+    }
     if (i > 0) {
       assert.ok(
         getBeastMinPower(beast, 'hsk4') > getBeastMinPower(LEGENDARY_BEASTS[i - 1], 'hsk4'),
@@ -61,7 +72,7 @@ test('all 24 Legendary Beast WebP assets exist on disk with valid sizes and stri
   }
 })
 
-test('fresh reset progress starts at Lv 1 Spirit Jade Egg with 3 free starter cards on both tracks', () => {
+test('fresh reset progress starts at Lv 1 Baby Jade Qilin with 3 free starter cards on both tracks', () => {
   for (const track of ['hsk4', 'hsk1']) {
     const res = evaluateBeastProgress({
       track,
@@ -78,10 +89,12 @@ test('fresh reset progress starts at Lv 1 Spirit Jade Egg with 3 free starter ca
       nowMs: 1_795_750_000_000,
     })
     assert.equal(res.level, 1)
-    assert.equal(res.beast.id, 'egg')
-    assert.equal(res.beast.zhName, '灵蛋')
+    assert.equal(res.beast.id, 'qilin_bayi')
+    assert.equal(res.beast.stage, 'bayi')
+    assert.equal(res.beast.speciesIndex, 1)
+    assert.equal(res.beast.zhName, '玉麟幼仔')
     assert.equal(res.spiritPower, 0)
-    assert.equal(res.nextBeast?.id, 'qilin')
+    assert.equal(res.nextBeast?.id, 'qilin_matang')
     assert.deepEqual(res.unlockedAchievementKeys, [])
     assert.deepEqual(res.unlockedStageIds, [...FREE_BEAST_STAGE_IDS])
     assert.equal(res.flame.tier, 'cold')
@@ -174,7 +187,8 @@ test('HSK 4 true-mastery track requires ~50 mastered words (not passive browsing
     nowMs: todayNoon,
   })
   assert.equal(peakRes.level, 24)
-  assert.equal(peakRes.beast.id, 'sovereign')
+  assert.equal(peakRes.beast.id, 'sovereign_dewa')
+  assert.equal(peakRes.beast.stage, 'dewa')
   assert.equal(peakRes.unlockedStageIds.length, BEAST_STAGES.length)
 })
 

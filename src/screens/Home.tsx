@@ -68,6 +68,7 @@ export function Home({
   const { course, entered } = useCourse()
   const { member } = useCoupleProfile()
   const [hsk1Progress, setHsk1Progress] = useState(readHsk1Progress)
+  const [coupleSheetOpen, setCoupleSheetOpen] = useState(false)
   useEffect(() => subscribeHsk1Progress(setHsk1Progress), [])
   const skipOpts = { skippedLessons: s.skippedLessons, unlockedLesson: s.unlockedLesson }
   const next = nextPlayable(s.isNodeDone, skipOpts)
@@ -95,7 +96,7 @@ export function Home({
       </div>
       <TodayHud onOpen={onProgress} />
       <div className="home-col-primary">
-      <CoupleHub />
+      <CoupleHub openSheetExternal={coupleSheetOpen} onCloseExternal={() => setCoupleSheetOpen(false)} />
       <BeastStageCard
         track={member.track}
         hsk1Progress={hsk1Progress}
@@ -117,33 +118,28 @@ export function Home({
         }}
         onExam={() => onJiaochengMidterm(course === 'jiaocheng' ? 'jiaocheng' : 'hsk4a', 'mock')}
       />
-      {course === 'jiayin' ? (
-        <JiayinPath onPlay={onJiayinSession} />
-      ) : course === 'hsk1' ? (
-        <Hsk1HomePath
-          onOpenUnit={(unit) => onHsk1Unit?.(unit)}
-          onOpenToneLab={() => onHsk1Tones?.()}
-        />
-      ) : course === 'kerja' ? (
-        <KerjaHomePath onPlay={onKerjaSession} />
-      ) : course === 'jiaocheng' ? (
-        <JiaochengHomePath onPlay={onJiaochengSession} onMidterm={onJiaochengMidterm} />
-      ) : course === 'magang' ? (
-        <MagangHomePath onPlay={onMagangSession} />
-      ) : course === 'interview' ? (
-        <InterviewHomePath onPlay={onInterviewSession} />
-      ) : course === 'books' ? (
-        <BooksHomePath onPlay={onBooksSession} />
-      ) : (
-        <>
-          <div className="exam-home-card">
-            <button type="button" className="jiaocheng-midterm-entry" onClick={() => onJiaochengMidterm('hsk4a', 'mock')}>
-              <span className="kicker">HSK 4 · {t('Exam prep')}</span>
-              <strong>{t('HSK 4 & Final Mock Simulator')}</strong>
-              <span>{t('Mock exam, grammar drill, word order, error spotting & breakdown.')}</span>
-            </button>
-          </div>
+      <div className="home-float-strip" role="toolbar" aria-label="Aksi cepat belajar">
+        {(course === 'hsk4a' || course === 'jiaocheng') && (
+          <button
+            type="button"
+            className="home-float-pill home-float-pill-accent"
+            onClick={() => onJiaochengMidterm(course === 'jiaocheng' ? 'jiaocheng' : 'hsk4a', 'mock')}
+          >
+            📝 Simulator
+          </button>
+        )}
+        {course === 'hsk1' && (
+          <button
+            type="button"
+            className="home-float-pill home-float-pill-accent"
+            onClick={() => onHsk1Tones?.()}
+          >
+            🎵 Lab 4 Nada
+          </button>
+        )}
+        {course === 'hsk4a' && (
           <SkipLevelControl
+            compact
             courseLabel="HSK 4"
             currentLesson={next.lesson}
             options={lessons.map((l) => {
@@ -169,18 +165,51 @@ export function Home({
               s.skipToHskLesson(target, specs)
             }}
           />
-          <LessonPath
-            fill
-            lesson={lesson}
-            current={next}
-            nodeDone={s.isNodeDone}
-            skippedLessons={s.skippedLessons}
-            unlockedLesson={s.unlockedLesson}
-            onUnskip={(lessonNum) => s.unskipHskLesson(lessonNum)}
-            onLesson={onLesson}
-            onPlay={onSession}
-          />
-        </>
+        )}
+        <button type="button" className="home-float-pill" onClick={onReview}>
+          🔁 Recall
+        </button>
+        {onProgress && (
+          <button type="button" className="home-float-pill" onClick={onProgress}>
+            📊 Stats
+          </button>
+        )}
+        <button type="button" className="home-float-pill" onClick={() => setCoupleSheetOpen(true)}>
+          💕 Berdua
+        </button>
+        <button type="button" className="home-float-pill" onClick={onBrowse}>
+          📚 {t('Materials')}
+        </button>
+      </div>
+      {course === 'jiayin' ? (
+        <JiayinPath onPlay={onJiayinSession} />
+      ) : course === 'hsk1' ? (
+        <Hsk1HomePath
+          onOpenUnit={(unit) => onHsk1Unit?.(unit)}
+          onOpenToneLab={() => onHsk1Tones?.()}
+        />
+      ) : course === 'kerja' ? (
+        <KerjaHomePath onPlay={onKerjaSession} />
+      ) : course === 'jiaocheng' ? (
+        <JiaochengHomePath onPlay={onJiaochengSession} onMidterm={onJiaochengMidterm} />
+      ) : course === 'magang' ? (
+        <MagangHomePath onPlay={onMagangSession} />
+      ) : course === 'interview' ? (
+        <InterviewHomePath onPlay={onInterviewSession} />
+      ) : course === 'books' ? (
+        <BooksHomePath onPlay={onBooksSession} />
+      ) : (
+        <LessonPath
+          fill
+          lesson={lesson}
+          current={next}
+          nodeDone={s.isNodeDone}
+          skippedLessons={s.skippedLessons}
+          unlockedLesson={s.unlockedLesson}
+          onUnskip={(lessonNum) => s.unskipHskLesson(lessonNum)}
+          onLesson={onLesson}
+          onPlay={onSession}
+        />
       )}
       </div>
       <div className="home-col-side">
