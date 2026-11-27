@@ -45,6 +45,9 @@ export default defineConfig(({ mode }) => {
             if (norm.includes('/node_modules/hanzi-writer')) {
               return 'vendor-hanzi'
             }
+            if (norm.includes('/src/data/hsk1')) {
+              return 'data-hsk1'
+            }
             if (
               norm.includes('/src/data/hsk4a') ||
               norm.includes('/src/data/teach/') ||

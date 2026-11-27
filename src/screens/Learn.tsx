@@ -23,6 +23,7 @@ const MagangLearn = lazy(() => import('./Magang').then((m) => ({ default: m.Maga
 const BooksLearn = lazy(() => import('./Books').then((m) => ({ default: m.BooksLearn })))
 import type { JiayinOpen } from './Jiayin'
 const JiayinPath = lazy(() => import('./Jiayin').then((m) => ({ default: m.JiayinPath })))
+const Hsk1HomePath = lazy(() => import('./Hsk1').then((m) => ({ default: m.Hsk1HomePath })))
 
 export function LessonPath({
   lesson,
@@ -98,6 +99,8 @@ export function Learn({
   onInterviewPlay,
   onBooksPlay,
   onJiayinPlay,
+  onHsk1Unit,
+  onHsk1Tones,
   onListening,
   onCompose,
   isNodeDone,
@@ -112,6 +115,8 @@ export function Learn({
   onInterviewPlay?: (chapter: number, node: string) => void
   onBooksPlay?: (part: number, index: number) => void
   onJiayinPlay: JiayinOpen
+  onHsk1Unit?: (unit: number) => void
+  onHsk1Tones?: () => void
   onListening: () => void
   onCompose: () => void
   isNodeDone?: (lesson: number, node: PathNode) => boolean
@@ -137,6 +142,11 @@ export function Learn({
       {course === 'hsk4a' && <HskPracticeEntry onListen={onListening} onCompose={onCompose} onExam={onJiaochengMidterm} />}
       {course === 'jiayin' ? (
         <JiayinPath onPlay={onJiayinPlay} />
+      ) : course === 'hsk1' ? (
+        <Hsk1HomePath
+          onOpenUnit={(unit) => onHsk1Unit?.(unit)}
+          onOpenToneLab={() => onHsk1Tones?.()}
+        />
       ) : course === 'kerja' ? (
         <KerjaLearn onPlay={(chapter, node) => onKerjaPlay?.(chapter, node)} />
       ) : course === 'jiaocheng' ? (

@@ -17,11 +17,17 @@ const MagangHomePath = lazy(() => import('./Magang').then((m) => ({ default: m.M
 const BooksHomePath = lazy(() => import('./Books').then((m) => ({ default: m.BooksHomePath })))
 import type { JiayinOpen } from './Jiayin'
 const JiayinPath = lazy(() => import('./Jiayin').then((m) => ({ default: m.JiayinPath })))
+import { useEffect, useState } from 'react'
 import { BeastStageCard } from '../components/BeastStageCard'
+import { CoupleHub } from '../components/CoupleHub'
+import { useCoupleProfile } from '../lib/coupleProfile'
+import { readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
 import { LessonPath } from './Learn'
 import { useStore, type PathNode } from '../store/store'
 import '../styles/home-alive.css'
 import '../styles/jiaocheng-midterm.css'
+
+const Hsk1HomePath = lazy(() => import('./Hsk1').then((m) => ({ default: m.Hsk1HomePath })))
 
 export function Home({
   onSession,
@@ -37,6 +43,8 @@ export function Home({
   onInterviewSession,
   onBooksSession,
   onJiayinSession,
+  onHsk1Unit,
+  onHsk1Tones,
   onProgress,
 }: {
   onSession: (lesson: number, node: PathNode) => void
@@ -52,14 +60,20 @@ export function Home({
   onInterviewSession: (chapter: number, node: string) => void
   onBooksSession: (part: number, index: number) => void
   onJiayinSession: JiayinOpen
+  onHsk1Unit?: (unit: number) => void
+  onHsk1Tones?: () => void
   onProgress?: () => void
 }) {
   const s = useStore()
   const { course, entered } = useCourse()
+  const { member } = useCoupleProfile()
+  const [hsk1Progress, setHsk1Progress] = useState(readHsk1Progress)
+  useEffect(() => subscribeHsk1Progress(setHsk1Progress), [])
   const skipOpts = { skippedLessons: s.skippedLessons, unlockedLesson: s.unlockedLesson }
   const next = nextPlayable(s.isNodeDone, skipOpts)
   const lesson = lessons.find((l) => l.lesson === next.lesson) ?? lessons[0]
-  const languageCourse = course === 'hsk4a' || course === 'kerja' || course === 'jiaocheng'
+  const languageCourse =
+    course === 'hsk4a' || course === 'hsk1' || course === 'kerja' || course === 'jiaocheng'
   const recentWords = s.learningTrail.slice(0, 2)
 
   if (!entered) {
@@ -81,13 +95,35 @@ export function Home({
       </div>
       <TodayHud onOpen={onProgress} />
       <div className="home-col-primary">
+      <CoupleHub />
       <BeastStageCard
+        track={member.track}
+        hsk1Progress={hsk1Progress}
         onReview={onReview}
-        onLearn={() => (course === 'hsk4a' ? onSession(lesson.lesson, next.node) : onBrowse())}
+        onLearn={() => {
+          if (course === 'hsk1') {
+            if (hsk1Progress.tonesPassed < 6) {
+              onHsk1Tones?.()
+            } else {
+              const nextUnit = Array.from({ length: 15 }, (_, i) => i + 1).find(
+                (u) => !hsk1Progress.unitsDone.includes(u),
+              )
+              onHsk1Unit?.(nextUnit ?? 1)
+            }
+            return
+          }
+          if (course === 'hsk4a') onSession(lesson.lesson, next.node)
+          else onBrowse()
+        }}
         onExam={() => onJiaochengMidterm(course === 'jiaocheng' ? 'jiaocheng' : 'hsk4a', 'mock')}
       />
       {course === 'jiayin' ? (
         <JiayinPath onPlay={onJiayinSession} />
+      ) : course === 'hsk1' ? (
+        <Hsk1HomePath
+          onOpenUnit={(unit) => onHsk1Unit?.(unit)}
+          onOpenToneLab={() => onHsk1Tones?.()}
+        />
       ) : course === 'kerja' ? (
         <KerjaHomePath onPlay={onKerjaSession} />
       ) : course === 'jiaocheng' ? (

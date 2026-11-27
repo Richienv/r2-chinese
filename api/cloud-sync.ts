@@ -5,6 +5,7 @@ const PROFILE_PATTERN = /^[a-z0-9_-]{1,40}$/
 const PROGRESS_KEY = 'yulu.hsk4a.v1'
 
 const DEVICE_SCORE_KEYS = new Set([
+  'yulu.hsk1.v1',
   'yulu.jiaocheng.v1',
   'yulu.kerja.v1',
   'yulu.magang.v1',

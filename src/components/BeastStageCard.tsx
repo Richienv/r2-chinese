@@ -2,8 +2,14 @@ import { useEffect, useMemo, useState, type CSSProperties } from 'react'
 import { CLOUD_HYDRATED_EVENT, LOCAL_PROGRESS_EVENT } from '../lib/autoSync'
 import {
   evaluateBeastProgress,
+  getBeastMinPower,
   LEGENDARY_BEASTS,
+  type BeastTrack,
+  type Hsk1ProgressInput,
 } from '../lib/beastEngine'
+import { useCoupleProfile } from '../lib/coupleProfile'
+import { postCoupleEvent } from '../lib/coupleSync'
+import { readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
 import {
   readBeastPrefs,
   subscribeBeastPrefs,
@@ -23,15 +29,23 @@ import { BeastRevealOverlay, type BeastRevealPayload } from './BeastRevealOverla
 import '../styles/beast-stage.css'
 
 export function BeastStageCard({
+  track,
+  hsk1Progress,
   onReview,
   onLearn,
   onExam,
 }: {
+  track?: BeastTrack
+  hsk1Progress?: Hsk1ProgressInput
   onReview?: () => void
   onLearn?: () => void
   onExam?: () => void
 }) {
   const s = useStore()
+  const { activeId, member, names } = useCoupleProfile()
+  const resolvedTrack = track ?? member.track
+  const [localHsk1, setLocalHsk1] = useState(readHsk1Progress)
+  const effectiveHsk1 = hsk1Progress ?? localHsk1
   const [prefs, setPrefs] = useState(readBeastPrefs)
   const [history, setHistory] = useState<HistoryEvent[]>(() => readHistory())
   const [peekLevel, setPeekLevel] = useState<number | null>(null)
@@ -46,16 +60,19 @@ export function BeastStageCard({
     window.addEventListener(LOCAL_PROGRESS_EVENT, refreshHistory)
     window.addEventListener(CLOUD_HYDRATED_EVENT, refreshHistory)
     const unsubPrefs = subscribeBeastPrefs((next) => setPrefs(next))
+    const unsubHsk1 = subscribeHsk1Progress((next) => setLocalHsk1(next))
     return () => {
       window.removeEventListener(LOCAL_PROGRESS_EVENT, refreshHistory)
       window.removeEventListener(CLOUD_HYDRATED_EVENT, refreshHistory)
       unsubPrefs()
+      unsubHsk1()
     }
   }, [])
 
   const evalRes = useMemo(
     () =>
       evaluateBeastProgress({
+        track: resolvedTrack,
         mastery: s.mastery,
         cards: s.cards,
         lessonsDone: s.lessonsDone,
@@ -65,10 +82,23 @@ export function BeastStageCard({
         log: s.log,
         history,
         learnerGraph: s.learnerGraph,
+        hsk1Progress: effectiveHsk1,
         todayKey: dayKey(),
         nowMs: Date.now(),
       }),
-    [s.mastery, s.cards, s.lessonsDone, s.pathDone, s.streak, s.xp, s.log, history, s.learnerGraph],
+    [
+      resolvedTrack,
+      s.mastery,
+      s.cards,
+      s.lessonsDone,
+      s.pathDone,
+      s.streak,
+      s.xp,
+      s.log,
+      history,
+      s.learnerGraph,
+      effectiveHsk1,
+    ],
   )
 
   // Ensure selected stage is valid & unlocked; otherwise fall back cleanly to default
@@ -88,11 +118,18 @@ export function BeastStageCard({
         lastSeenLevel: evalRes.level,
         earnedAchievementKeys: evalRes.unlockedAchievementKeys,
       })
+      void postCoupleEvent({
+        from: activeId,
+        kind: 'evolution',
+        text: `Berevolusi ke Lv ${evalRes.level}/24: ${evalRes.beast.zhName} (${evalRes.beast.name})!`,
+        beastLevel: evalRes.level,
+        names,
+      })
       setRevealPayload({
         beast: evalRes.beast,
         stage: upgradedStage,
         reason: 'evolution',
-        headline: `EVOLUSI LV ${evalRes.level}: ${evalRes.beast.zhName}`,
+        headline: `EVOLUSI LV ${evalRes.level}/24: ${evalRes.beast.zhName}`,
         spiritPower: evalRes.spiritPower,
       })
       return
@@ -145,8 +182,9 @@ export function BeastStageCard({
   function handleBeastTap() {
     if (!prefs.revealMuted) playBeastTapChime()
     if (isLockedPreview) {
+      const req = getBeastMinPower(shownBeast, resolvedTrack)
       setBubbleText(
-        `Siluet ${shownBeast.zhName} (${shownBeast.name}) terbuka saat 灵力 mencapai ${shownBeast.minPower.toLocaleString()}!`,
+        `Siluet Lv ${shownBeast.level} · ${shownBeast.zhName} (${shownBeast.name}) terbuka di ${req.toLocaleString()} 灵力!`,
       )
       return
     }
@@ -169,7 +207,7 @@ export function BeastStageCard({
 
           <div className="beast-hud-bar">
             <div className="beast-hud-left">
-              <span className="beast-lvl-tag">LV {evalRes.level} · {evalRes.beast.element}</span>
+              <span className="beast-lvl-tag">LV {evalRes.level}/24 · {evalRes.beast.element}</span>
               <span className="beast-flame-pill" data-tier={evalRes.flame.tier}>
                 {evalRes.flame.badge} {evalRes.flame.label}
               </span>
@@ -229,7 +267,7 @@ export function BeastStageCard({
                   />
                   {isLockedPreview && (
                     <span className="beast-lock-pill">
-                      Butuh {shownBeast.minPower.toLocaleString()} 灵力
+                      Butuh {getBeastMinPower(shownBeast, resolvedTrack).toLocaleString()} 灵力
                     </span>
                   )}
                 </button>
@@ -277,6 +315,9 @@ export function BeastStageCard({
                 <div className="beast-retention-row">
                   <span>{evalRes.retentionLabel}</span>
                   <span>Retensi {evalRes.retentionPct}% ({evalRes.retentionMultiplier.toFixed(2)}×)</span>
+                </div>
+                <div style={{ fontSize: 11, color: '#475569', marginTop: 2 }}>
+                  {evalRes.benchmarkHint}
                 </div>
               </div>
 

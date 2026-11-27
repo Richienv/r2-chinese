@@ -13,9 +13,9 @@ import { t } from './i18n.ts'
 /** Separate from HSK / Kerja / Jiaocheng / Magang / Interview / Books progress keys so old saves stay untouched. */
 const COURSE_KEY = 'yulu.course.v1'
 
-export type CourseId = 'hsk4a' | 'kerja' | 'jiaocheng' | 'magang' | 'interview' | 'books' | 'jiayin'
+export type CourseId = 'hsk4a' | 'hsk1' | 'kerja' | 'jiaocheng' | 'magang' | 'interview' | 'books' | 'jiayin'
 
-export const COURSE_ORDER: CourseId[] = ['hsk4a', 'jiaocheng', 'kerja']
+export const COURSE_ORDER: CourseId[] = ['hsk4a', 'hsk1', 'jiaocheng', 'kerja']
 
 export const COURSE_META: Record<CourseId, { id: CourseId; title: string; titleZh: string; blurb: string }> =
   {
@@ -24,6 +24,12 @@ export const COURSE_META: Record<CourseId, { id: CourseId; title: string; titleZ
       title: 'HSK 4',
       titleZh: '标准教程 HSK 4上',
       blurb: t('Textbook path · {term} units', { term: '课文' }),
+    },
+    hsk1: {
+      id: 'hsk1',
+      title: 'HSK 1 Dari Nol',
+      titleZh: '零基础 HSK 1 · 150 词',
+      blurb: '4 Nada, Pinyin, 150 kata inti & grammar pemula',
     },
     kerja: {
       id: 'kerja',
@@ -66,7 +72,7 @@ export const COURSE_META: Record<CourseId, { id: CourseId; title: string; titleZ
 function readCourse(): CourseId {
   try {
     const raw = localStorage.getItem(COURSE_KEY)
-    if (raw === 'kerja' || raw === 'hsk4a' || raw === 'jiaocheng' || raw === 'books') {
+    if (raw === 'kerja' || raw === 'hsk4a' || raw === 'hsk1' || raw === 'jiaocheng' || raw === 'books') {
       return raw
     }
   } catch {

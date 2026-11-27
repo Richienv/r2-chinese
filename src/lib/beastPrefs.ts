@@ -34,7 +34,7 @@ function normalizeBeastPrefs(raw: unknown): BeastPrefs {
     : []
   const lastSeenLevel =
     typeof obj.lastSeenLevel === 'number' && Number.isFinite(obj.lastSeenLevel)
-      ? Math.max(1, Math.min(8, Math.floor(obj.lastSeenLevel)))
+      ? Math.max(1, Math.min(24, Math.floor(obj.lastSeenLevel)))
       : 1
   return {
     stageId: isBeastStageId(obj.stageId) ? obj.stageId : DEFAULT_BEAST_STAGE_ID,

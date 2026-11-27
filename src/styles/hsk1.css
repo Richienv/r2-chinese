@@ -1,0 +1,341 @@
+/* HSK 1 Dari Nol Home Path + Interactive Learning & Tone Lab Overlays — zero backdrop-filter & dvh-safe */
+
+.hsk1-home-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hsk1-tonelab-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1.5px solid rgba(190, 24, 93, 0.25);
+  background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 55%, #fdf2f8 100%);
+  color: #0f172a;
+  text-align: left;
+  cursor: pointer;
+}
+
+.hsk1-tonelab-kicker {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #be185d;
+}
+
+.hsk1-tonelab-title {
+  margin-top: 2px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.hsk1-tonelab-sub {
+  margin-top: 3px;
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.hsk1-tonelab-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.hsk1-pill {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #be185d;
+  border: 1px solid rgba(190, 24, 93, 0.22);
+}
+
+.hsk1-phases {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hsk1-phase-card {
+  padding: 14px;
+  border-radius: 18px;
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--line, rgba(15, 23, 42, 0.1));
+}
+
+.hsk1-phase-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink, #0f172a);
+}
+
+.hsk1-unit-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+@media (min-width: 640px) {
+  .hsk1-unit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.hsk1-unit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 13px;
+  border-radius: 14px;
+  border: 1.5px solid var(--line, rgba(15, 23, 42, 0.1));
+  background: var(--paper, #f8fafc);
+  color: var(--ink, #0f172a);
+  text-align: left;
+  cursor: pointer;
+}
+
+.hsk1-unit-btn.is-done {
+  border-color: rgba(15, 118, 110, 0.4);
+  background: #f0fdfa;
+}
+
+.hsk1-unit-num {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 900;
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.hsk1-unit-btn.is-done .hsk1-unit-num {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.hsk1-unit-body {
+  min-width: 0;
+  flex: 1;
+}
+
+.hsk1-unit-zh {
+  font-size: 14.5px;
+  font-weight: 800;
+}
+
+.hsk1-unit-title {
+  font-size: 12px;
+  color: var(--muted, #475569);
+}
+
+.hsk1-unit-score {
+  font-size: 11px;
+  font-weight: 800;
+  color: #0f766e;
+  white-space: nowrap;
+}
+
+/* Session & Tone Lab Fullscreen Overlays */
+.hsk1-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9400;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background: var(--bg, #f8fafc);
+  color: var(--ink, #0f172a);
+}
+
+.hsk1-overlay-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: calc(12px + env(safe-area-inset-top, 0px)) 16px 12px;
+  background: var(--surface, #ffffff);
+  border-bottom: 1px solid var(--line, rgba(15, 23, 42, 0.1));
+}
+
+.hsk1-overlay-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 18px 16px 32px;
+  width: min(100%, 720px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hsk1-stage-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.hsk1-stage-tab {
+  padding: 6px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid var(--line, rgba(15, 23, 42, 0.14));
+  background: var(--surface, #ffffff);
+  color: var(--muted, #475569);
+  cursor: pointer;
+}
+
+.hsk1-stage-tab.is-active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.hsk1-card {
+  border-radius: 18px;
+  padding: 18px;
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--line, rgba(15, 23, 42, 0.1));
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hsk1-big-hanzi {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.hsk1-pinyin-line {
+  font-size: 20px;
+  font-weight: 800;
+  color: #be185d;
+}
+
+.hsk1-meaning-line {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.hsk1-tip-box {
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: #fef9c3;
+  color: #713f12;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.hsk1-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.hsk1-option-list {
+  display: grid;
+  gap: 8px;
+}
+
+.hsk1-option-btn {
+  padding: 13px 14px;
+  border-radius: 14px;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  text-align: left;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hsk1-option-btn.is-right {
+  border-color: #059669;
+  background: #ecfdf5;
+}
+
+.hsk1-option-btn.is-wrong {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+.hsk1-tone-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  gap: 10px;
+}
+
+.hsk1-tone-tile {
+  padding: 13px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hsk1-overlay-foot {
+  padding: 12px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+  background: var(--surface, #ffffff);
+  border-top: 1px solid var(--line, rgba(15, 23, 42, 0.1));
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+.hsk1-btn-primary {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: none;
+  background: #0f766e;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.hsk1-btn-ghost {
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 13.5px;
+  cursor: pointer;
+}

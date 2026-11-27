@@ -5,9 +5,11 @@ import '../styles/usability.css'
 import { useEffect, useMemo, useState } from 'react'
 import { BeastRevealOverlay, type BeastRevealPayload } from '../components/BeastRevealOverlay'
 import { MasteryTracker } from '../components/MasteryTracker'
-import { evaluateBeastProgress, LEGENDARY_BEASTS } from '../lib/beastEngine'
+import { evaluateBeastProgress, getBeastMinPower, LEGENDARY_BEASTS } from '../lib/beastEngine'
 import { readBeastPrefs, subscribeBeastPrefs, writeBeastPrefs } from '../lib/beastPrefs'
 import { getBeastStage } from '../lib/beastStages'
+import { useCoupleProfile } from '../lib/coupleProfile'
+import { readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
 import { getLesson, isCoreBookVocab, lessons } from '../lib/content'
 import { COURSE_META } from '../lib/course'
 import { readHistory, type HistoryCourse, type HistoryEvent } from '../lib/history'
@@ -190,6 +192,7 @@ function weekActivity(log: Record<string, { cards: number }>) {
 
 const COURSE_LABEL: Record<HistoryCourse, string> = {
   hsk4a: COURSE_META.hsk4a.title,
+  hsk1: COURSE_META.hsk1.title,
   kerja: COURSE_META.kerja.title,
   jiaocheng: COURSE_META.jiaocheng.title,
   magang: COURSE_META.magang.title,
@@ -281,19 +284,23 @@ export function Progress({
   onLearn: () => void
 }) {
   const s = useStore()
+  const { member } = useCoupleProfile()
   const [showHistory, setShowHistory] = useState(false)
   const [syncTick, setSyncTick] = useState(0)
   const [beastPrefs, setBeastPrefs] = useState(readBeastPrefs)
+  const [hsk1Progress, setHsk1Progress] = useState(readHsk1Progress)
   const [revealPayload, setRevealPayload] = useState<BeastRevealPayload | null>(null)
   useEffect(() => {
     const bump = () => setSyncTick((n) => n + 1)
     window.addEventListener('yulu:cloud-hydrated', bump)
     window.addEventListener('yulu:local-progress', bump)
     const unsubBeast = subscribeBeastPrefs((next) => setBeastPrefs(next))
+    const unsubHsk1 = subscribeHsk1Progress((next) => setHsk1Progress(next))
     return () => {
       window.removeEventListener('yulu:cloud-hydrated', bump)
       window.removeEventListener('yulu:local-progress', bump)
       unsubBeast()
+      unsubHsk1()
     }
   }, [])
   const week = weekActivity(s.log)
@@ -331,6 +338,7 @@ export function Progress({
   const beastEval = useMemo(
     () =>
       evaluateBeastProgress({
+        track: member.track,
         mastery: s.mastery,
         cards: s.cards,
         lessonsDone: s.lessonsDone,
@@ -340,10 +348,23 @@ export function Progress({
         log: s.log,
         history,
         learnerGraph: s.learnerGraph,
+        hsk1Progress,
         todayKey: dayKey(),
         nowMs: Date.now(),
       }),
-    [s.mastery, s.cards, s.lessonsDone, s.pathDone, s.streak, s.xp, s.log, history, s.learnerGraph],
+    [
+      member.track,
+      s.mastery,
+      s.cards,
+      s.lessonsDone,
+      s.pathDone,
+      s.streak,
+      s.xp,
+      s.log,
+      history,
+      s.learnerGraph,
+      hsk1Progress,
+    ],
   )
   const visibleHistory = showHistory ? history : history.slice(0, 5)
 
@@ -532,13 +553,13 @@ export function Progress({
             </h2>
           </div>
           <span className="progress-course-total">
-            Lv {beastEval.level}/8 · ⚡ {beastEval.spiritPower.toLocaleString()} 灵力
+            Lv {beastEval.level}/24 · ⚡ {beastEval.spiritPower.toLocaleString()} 灵力
           </span>
         </div>
         <p className="progress-section-sub">
           {beastEval.nextBeast
-            ? `Butuh ${beastEval.powerToNext.toLocaleString()} 灵力 lagi untuk berevolusi ke ${beastEval.nextBeast.zhName} (${beastEval.nextBeast.name}).`
-            : 'Seluruh 8 bentuk Legendary Beast telah terbuka penuh!'}
+            ? `Butuh ${beastEval.powerToNext.toLocaleString()} 灵力 lagi untuk berevolusi ke ${beastEval.nextBeast.zhName} (${beastEval.nextBeast.name}). ${beastEval.benchmarkHint}`
+            : 'Seluruh 24 bentuk Legendary Beast telah terbuka penuh!'}
         </p>
 
         <div className="progress-beast-vars">
@@ -577,7 +598,7 @@ export function Progress({
                   {unlocked ? tier.zhName : '???'}
                 </div>
                 <div className="progress-beast-name">
-                  {unlocked ? tier.name : `${tier.minPower.toLocaleString()} 灵力`}
+                  {unlocked ? tier.name : `${getBeastMinPower(tier, member.track).toLocaleString()} 灵力`}
                 </div>
                 {unlocked && (
                   <button

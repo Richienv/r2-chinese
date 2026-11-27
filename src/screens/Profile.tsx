@@ -2,6 +2,13 @@ import { StudyMusic } from '../components/StudyMusic'
 import { InstallCard } from '../components/InstallCard'
 import { useRef, useState, type ChangeEvent } from 'react'
 import { useAuth } from '../auth/AuthProvider'
+import {
+  COUPLE_MEMBERS,
+  setCoupleMemberName,
+  switchCoupleWorkspace,
+  useCoupleProfile,
+} from '../lib/coupleProfile'
+import { postCoupleEvent } from '../lib/coupleSync'
 import { LANGUAGES, getLang, setLang, t } from '../lib/i18n'
 import { isAuthEnabled } from '../lib/supabase'
 import { useStore } from '../store/store'
@@ -10,6 +17,8 @@ import '../styles/profile.css'
 export function Profile() {
   const s = useStore()
   const { user, signOut } = useAuth()
+  const { activeId, member, names } = useCoupleProfile()
+  const [nameDraft, setNameDraft] = useState(member.name)
   const [confirmReset, setConfirmReset] = useState(false)
   const [syncingNow, setSyncingNow] = useState(false)
   const [importStatus, setImportStatus] = useState<{ kind: 'ok' | 'err'; text: string } | null>(null)
@@ -88,6 +97,65 @@ export function Profile() {
       </header>
 
       <StudyMusic />
+      <section className="profile-settings card" aria-label="Profil Berdua & Kurikulum">
+        <div className="profile-section-heading">
+          <div>
+            <div className="profile-eyebrow">RUANG BERDUA · RICHIE & RENITA</div>
+            <h2>Akun & Track Kurikulum</h2>
+          </div>
+        </div>
+        <p className="profile-section-sub">
+          Setiap profil menyimpan progres, jalur materi (HSK 4 atau HSK 1 Dari Nol), dan evolusi Legendary Beast masing-masing di cloud.
+        </p>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
+          {(['richie', 'renita'] as const).map((id) => {
+            const cfg = COUPLE_MEMBERS[id]
+            const active = activeId === id
+            return (
+              <button
+                key={id}
+                type="button"
+                className={`btn${active ? '' : ' btn-ghost'}`}
+                onClick={() => switchCoupleWorkspace(id)}
+              >
+                {names[id]} · {cfg.badge}
+              </button>
+            )
+          })}
+        </div>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            const next = setCoupleMemberName(activeId, nameDraft)
+            void postCoupleEvent({
+              from: activeId,
+              kind: 'session',
+              text: `Memperbarui nama tampilan menjadi ${next[activeId]}`,
+              names: next,
+            })
+          }}
+          style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}
+        >
+          <input
+            type="text"
+            value={nameDraft}
+            maxLength={24}
+            onChange={(e) => setNameDraft(e.target.value)}
+            aria-label="Nama profil aktif"
+            style={{
+              flex: '1 1 180px',
+              minHeight: 40,
+              padding: '8px 12px',
+              borderRadius: 10,
+              border: '1px solid #cbd5e1',
+            }}
+          />
+          <button type="submit" className="btn btn-ghost">
+            Simpan Nama
+          </button>
+        </form>
+      </section>
+
       <section className="profile-identity card" aria-label={t('Learner account')}>
         <div className="profile-avatar" aria-hidden="true">
           语

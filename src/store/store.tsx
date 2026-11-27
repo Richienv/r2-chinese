@@ -312,12 +312,15 @@ export function StoreProvider({
   children,
   userId,
   initial,
+  cloudProfile = 'default',
 }: {
   children: ReactNode
   /** when signed in, namespaces the cache and enables cloud sync */
   userId?: string
   /** server-provided starting state (overrides the local cache on login) */
   initial?: Persisted
+  /** dedicated cloud-sync slot name (e.g. 'default' for Richie, 'renita' for Renita) */
+  cloudProfile?: string
 }) {
   const [state, setReactState] = useState<Persisted>(() => {
     if (initial) return normalize(initial)
@@ -456,12 +459,13 @@ export function StoreProvider({
     const res = await syncWithCloud({
       storage: localStorage,
       key,
+      profile: cloudProfile,
       onHydrated: applyCloudHydration,
     })
     initialPullDoneRef.current = true
     setSyncStatus(res.status)
     return res.status === 'pending' ? 'offline' : res.status
-  }, [userId, initial, key, applyCloudHydration, setState])
+  }, [userId, initial, key, cloudProfile, applyCloudHydration, setState])
 
   // Bidirectional automatic cloud sync when Supabase auth is inactive (default on yulu.trolive.id).
   useEffect(() => {
@@ -476,6 +480,7 @@ export function StoreProvider({
         const res = await syncWithCloud({
           storage: localStorage,
           key,
+          profile: cloudProfile,
           onHydrated: applyCloudHydration,
         })
         initialPullDoneRef.current = true
@@ -497,6 +502,7 @@ export function StoreProvider({
         const res = await pushToCloudIfChanged({
           storage: localStorage,
           key,
+          profile: cloudProfile,
           onHydrated: applyCloudHydration,
           keepalive,
         })
@@ -565,7 +571,7 @@ export function StoreProvider({
       window.removeEventListener(LOCAL_PROGRESS_EVENT, onLocalProgress)
       window.removeEventListener(CLOUD_HYDRATED_EVENT, onCloudHydrated)
     }
-  }, [userId, initial, key, applyCloudHydration])
+  }, [userId, initial, key, cloudProfile, applyCloudHydration])
 
   useEffect(() => {
     if (userId || initial || typeof window === 'undefined') return
@@ -574,11 +580,12 @@ export function StoreProvider({
       void pushToCloudIfChanged({
         storage: localStorage,
         key,
+        profile: cloudProfile,
         onHydrated: applyCloudHydration,
       }).then((res) => setSyncStatus(res.status))
     }, 1800)
     return () => clearTimeout(timer)
-  }, [userId, initial, key, state, applyCloudHydration])
+  }, [userId, initial, key, cloudProfile, state, applyCloudHydration])
 
   useEffect(() => {
     if (!userId) return
@@ -1025,11 +1032,12 @@ export function StoreProvider({
         void forcePushCloudReset({
           storage: localStorage,
           key,
+          profile: cloudProfile,
           onHydrated: applyCloudHydration,
         }).then((res) => setSyncStatus(res.status))
       }
     }
-  }, [key, setState, initial, userId, applyCloudHydration])
+  }, [key, setState, initial, userId, cloudProfile, applyCloudHydration])
 
   const value = useMemo<Store>(() => {
     const cardList = Object.values(state.cards)

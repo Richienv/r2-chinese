@@ -58,7 +58,14 @@ const HskListening = lazy(() => import('./screens/HskListening').then((m) => ({ 
 const HskComposition = lazy(() =>
   import('./screens/HskComposition').then((m) => ({ default: m.HskComposition })),
 )
+const Hsk1SessionOverlay = lazy(() =>
+  import('./screens/Hsk1').then((m) => ({ default: m.Hsk1SessionOverlay })),
+)
+const Hsk1ToneLabOverlay = lazy(() =>
+  import('./screens/Hsk1').then((m) => ({ default: m.Hsk1ToneLabOverlay })),
+)
 import { CourseProvider } from './lib/course'
+import { useCoupleProfile } from './lib/coupleProfile'
 import { load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
 import { AuthProvider, useAuth } from './auth/AuthProvider'
 import { AuthScreen } from './auth/AuthScreen'
@@ -86,6 +93,8 @@ type Overlay =
   | { kind: 'vocab' }
   | { kind: 'listening' }
   | { kind: 'composition' }
+  | { kind: 'hsk1-unit'; unit: number }
+  | { kind: 'hsk1-tones' }
   | null
 
 function Shell() {
@@ -231,6 +240,8 @@ function Shell() {
               onInterviewSession={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
               onBooksSession={(part, index) => setOverlay({ kind: 'books', part, index, node: 'lesson' })}
               onJiayinSession={(unit, stage) => setOverlay({ kind: 'jiayin', unit, stage })}
+              onHsk1Unit={(unit) => setOverlay({ kind: 'hsk1-unit', unit })}
+              onHsk1Tones={() => setOverlay({ kind: 'hsk1-tones' })}
               onProgress={() => setTab('stats')}
             />
           )}
@@ -248,6 +259,8 @@ function Shell() {
               onInterviewPlay={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
               onBooksPlay={(part, index) => setOverlay({ kind: 'books', part, index, node: 'lesson' })}
               onJiayinPlay={(unit, stage) => setOverlay({ kind: 'jiayin', unit, stage })}
+              onHsk1Unit={(unit) => setOverlay({ kind: 'hsk1-unit', unit })}
+              onHsk1Tones={() => setOverlay({ kind: 'hsk1-tones' })}
               isNodeDone={(lesson, node) => store.isNodeDone(lesson, node)}
             />
           )}
@@ -352,6 +365,10 @@ function Shell() {
         {overlay?.kind === 'vocab' && <VocabBrowser onClose={closeOverlay} />}
         {overlay?.kind === 'listening' && <HskListening onClose={closeOverlay} />}
         {overlay?.kind === 'composition' && <HskComposition onClose={closeOverlay} />}
+        {overlay?.kind === 'hsk1-unit' && (
+          <Hsk1SessionOverlay unitNumber={overlay.unit} onClose={closeOverlay} />
+        )}
+        {overlay?.kind === 'hsk1-tones' && <Hsk1ToneLabOverlay onClose={closeOverlay} />}
       </Suspense>
     </div>
   )
@@ -402,12 +419,12 @@ function Splash() {
   )
 }
 
-function Root() {
+function Root({ cloudProfile }: { cloudProfile: string }) {
   const { ready, session } = useAuth()
-  // No Supabase configured → original local-only app, unchanged.
+  // No Supabase configured → original local-only app with couple cloud-sync profile.
   if (!isAuthEnabled) {
     return (
-      <StoreProvider>
+      <StoreProvider cloudProfile={cloudProfile}>
         <Shell />
       </StoreProvider>
     )
@@ -422,10 +439,11 @@ function Root() {
 }
 
 export default function App() {
+  const { activeId, member } = useCoupleProfile()
   return (
     <AuthProvider>
-      <CourseProvider>
-        <Root />
+      <CourseProvider key={`course-${activeId}`}>
+        <Root key={`root-${activeId}`} cloudProfile={member.cloudProfile} />
       </CourseProvider>
     </AuthProvider>
   )

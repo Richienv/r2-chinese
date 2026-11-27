@@ -13,6 +13,7 @@ export function progressKey(userId?: string) {
 type StorageLike = Pick<Storage, 'getItem' | 'setItem' | 'removeItem' | 'key' | 'length'>
 
 const DEVICE_KEYS = new Set([
+  'yulu.hsk1.v1',
   'yulu.jiaocheng.v1',
   'yulu.kerja.v1',
   'yulu.magang.v1',
@@ -33,6 +34,7 @@ const DEVICE_KEYS = new Set([
 ])
 
 const MERGEABLE_JSON_KEYS = new Set([
+  'yulu.hsk1.v1',
   'yulu.jiaocheng.v1',
   'yulu.kerja.v1',
   'yulu.magang.v1',
@@ -575,6 +577,7 @@ export function readProgress(storage: StorageLike, key: string): unknown {
 }
 
 const RESETTABLE_KEYS = [
+  'yulu.hsk1.v1',
   'yulu.jiaocheng.v1',
   'yulu.kerja.v1',
   'yulu.magang.v1',
