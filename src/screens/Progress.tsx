@@ -3,7 +3,11 @@ import { recommendedWords } from '../lib/learningEngine'
 import { graphSummary } from '../lib/learnerGraph'
 import '../styles/usability.css'
 import { useEffect, useMemo, useState } from 'react'
+import { BeastRevealOverlay, type BeastRevealPayload } from '../components/BeastRevealOverlay'
 import { MasteryTracker } from '../components/MasteryTracker'
+import { evaluateBeastProgress, LEGENDARY_BEASTS } from '../lib/beastEngine'
+import { readBeastPrefs, subscribeBeastPrefs, writeBeastPrefs } from '../lib/beastPrefs'
+import { getBeastStage } from '../lib/beastStages'
 import { getLesson, isCoreBookVocab, lessons } from '../lib/content'
 import { COURSE_META } from '../lib/course'
 import { readHistory, type HistoryCourse, type HistoryEvent } from '../lib/history'
@@ -279,13 +283,17 @@ export function Progress({
   const s = useStore()
   const [showHistory, setShowHistory] = useState(false)
   const [syncTick, setSyncTick] = useState(0)
+  const [beastPrefs, setBeastPrefs] = useState(readBeastPrefs)
+  const [revealPayload, setRevealPayload] = useState<BeastRevealPayload | null>(null)
   useEffect(() => {
     const bump = () => setSyncTick((n) => n + 1)
     window.addEventListener('yulu:cloud-hydrated', bump)
     window.addEventListener('yulu:local-progress', bump)
+    const unsubBeast = subscribeBeastPrefs((next) => setBeastPrefs(next))
     return () => {
       window.removeEventListener('yulu:cloud-hydrated', bump)
       window.removeEventListener('yulu:local-progress', bump)
+      unsubBeast()
     }
   }, [])
   const week = weekActivity(s.log)
@@ -319,6 +327,23 @@ export function Progress({
   const history = useMemo(
     () => readHistory().filter((event) => !['magang', 'interview', 'jiayin'].includes(event.course)),
     [s.pathDone, s.log, s.xp, s.cards, syncTick],
+  )
+  const beastEval = useMemo(
+    () =>
+      evaluateBeastProgress({
+        mastery: s.mastery,
+        cards: s.cards,
+        lessonsDone: s.lessonsDone,
+        pathDone: s.pathDone,
+        streak: s.streak,
+        xp: s.xp,
+        log: s.log,
+        history,
+        learnerGraph: s.learnerGraph,
+        todayKey: dayKey(),
+        nowMs: Date.now(),
+      }),
+    [s.mastery, s.cards, s.lessonsDone, s.pathDone, s.streak, s.xp, s.log, history, s.learnerGraph],
   )
   const visibleHistory = showHistory ? history : history.slice(0, 5)
 
@@ -498,6 +523,84 @@ export function Progress({
         )}
       </section>
 
+      <section className="card progress-section progress-beast-section" aria-label="Koleksi Legendary Beast">
+        <div className="progress-section-heading">
+          <div>
+            <div className="progress-eyebrow">神兽殿 · KOLEKSI SHENSHOU</div>
+            <h2>
+              <span lang="zh-CN">{beastEval.beast.zhName}</span> · {beastEval.beast.name}
+            </h2>
+          </div>
+          <span className="progress-course-total">
+            Lv {beastEval.level}/8 · ⚡ {beastEval.spiritPower.toLocaleString()} 灵力
+          </span>
+        </div>
+        <p className="progress-section-sub">
+          {beastEval.nextBeast
+            ? `Butuh ${beastEval.powerToNext.toLocaleString()} 灵力 lagi untuk berevolusi ke ${beastEval.nextBeast.zhName} (${beastEval.nextBeast.name}).`
+            : 'Seluruh 8 bentuk Legendary Beast telah terbuka penuh!'}
+        </p>
+
+        <div className="progress-beast-vars">
+          {beastEval.variables.map((v) => (
+            <div key={v.key} className="progress-beast-var">
+              <div className="progress-beast-var-head">
+                <strong>{v.label}</strong>
+                <span>+{v.power} 灵力</span>
+              </div>
+              <div className="progress-beast-var-val">{v.valueText}</div>
+              <div className="progress-beast-var-bar">
+                <i style={{ width: `${Math.round(v.ratio * 100)}%` }} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="progress-beast-grid">
+          {LEGENDARY_BEASTS.map((tier) => {
+            const unlocked = tier.level <= beastEval.level
+            const stage = getBeastStage(beastPrefs.stageId)
+            return (
+              <div
+                key={tier.id}
+                className={`progress-beast-tile${unlocked ? ' is-unlocked' : ' is-locked'}`}
+              >
+                <div className="progress-beast-thumb-wrap">
+                  <img
+                    className="progress-beast-thumb"
+                    src={tier.imageSrc}
+                    alt={unlocked ? `${tier.zhName} ${tier.name}` : `Siluet ${tier.name}`}
+                  />
+                </div>
+                <div className="progress-beast-lvl">Lv {tier.level}</div>
+                <div className="progress-beast-zh" lang="zh-CN">
+                  {unlocked ? tier.zhName : '???'}
+                </div>
+                <div className="progress-beast-name">
+                  {unlocked ? tier.name : `${tier.minPower.toLocaleString()} 灵力`}
+                </div>
+                {unlocked && (
+                  <button
+                    type="button"
+                    className="progress-beast-reveal-btn"
+                    onClick={() =>
+                      setRevealPayload({
+                        beast: tier,
+                        stage,
+                        reason: 'replay',
+                        spiritPower: beastEval.spiritPower,
+                      })
+                    }
+                  >
+                    ✨ Reveal
+                  </button>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
       <section className="card progress-section progress-courses-section">
         <div className="progress-section-heading">
           <div>
@@ -605,6 +708,12 @@ export function Progress({
           </button>
         )}
       </section>
+      <BeastRevealOverlay
+        payload={revealPayload}
+        muted={beastPrefs.revealMuted}
+        onToggleMute={() => writeBeastPrefs({ revealMuted: !beastPrefs.revealMuted })}
+        onClose={() => setRevealPayload(null)}
+      />
     </div>
   )
 }

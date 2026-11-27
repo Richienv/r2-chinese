@@ -238,7 +238,7 @@ export function Profile() {
         </p>
         <details className="profile-reset-disclosure"><summary>{t('Start over')}</summary>
         <p className="profile-section-sub">
-          {t('Reset only when you want to start your learning trail again from zero.')}
+          {t('Reset only when you want to start your learning trail and Legendary Beast (Lv 1) again from zero.')}
         </p>
         {confirmReset ? (
           <div className="profile-reset-confirm" role="alert">
@@ -247,7 +247,7 @@ export function Profile() {
             </div>
             <div className="profile-reset-copy">
               <strong>{t('Erase all learning progress?')}</strong>
-              <span>{t('Your streak, XP, saved words, and review schedule will be cleared.')}</span>
+              <span>{t('Your streak, XP, saved words, review schedule, and Legendary Beast will reset to Lv 1 across devices.')}</span>
             </div>
             <div className="profile-reset-actions">
               <button className="profile-cancel-button" type="button" onClick={() => setConfirmReset(false)}>

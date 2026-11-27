@@ -26,6 +26,7 @@ const DEVICE_KEYS = new Set([
   'yulu.step.v1',
   'yulu.learning-checkpoints.v1',
   'yulu.learner-graph.v1',
+  'yulu.beast.v1',
   'yulu.course.v1',
   'yulu.course-entered.v1',
   'yulu.lang.v1',
@@ -571,4 +572,45 @@ export function readProgress(storage: StorageLike, key: string): unknown {
     next = parse(pending)
   if (next && (!main || (next.updatedAt ?? 0) >= (main.updatedAt ?? 0))) return next
   return main
+}
+
+const RESETTABLE_KEYS = [
+  'yulu.jiaocheng.v1',
+  'yulu.kerja.v1',
+  'yulu.magang.v1',
+  'yulu.interview.v1',
+  'yulu.books.v1',
+  'yulu.books.journal.v1',
+  'yulu.books.selected.v1',
+  'yulu.jiayin.v1',
+  'yulu.jiayin.english.v1',
+  'yulu.history.v1',
+  'yulu.step.v1',
+  'yulu.learning-checkpoints.v1',
+  'yulu.learner-graph.v1',
+  'yulu.beast.v1',
+] as const
+
+/** Clear all course, history, graph, and Beast progress keys cleanly on intentional reset. */
+export function clearAllLearningStorage(storage: StorageLike, mainKey: string): void {
+  const toRemove = new Set<string>([
+    mainKey,
+    `${mainKey}.pending`,
+    `${mainKey}.server-before-v2`,
+    `yulu.hsk-writing.v1:${accountSuffixForKey(mainKey)}`,
+    ...RESETTABLE_KEYS,
+  ])
+  for (let i = 0; i < storage.length; i++) {
+    const k = storage.key(i)
+    if (k && k.startsWith(`${mainKey}.before-`)) {
+      toRemove.add(k)
+    }
+  }
+  for (const k of toRemove) {
+    try {
+      storage.removeItem(k)
+    } catch {
+      /* ignore per-key removal issues */
+    }
+  }
 }

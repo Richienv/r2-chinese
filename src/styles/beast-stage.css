@@ -1,0 +1,536 @@
+/* Collector Card Stage on Home — static showcase by default, crisp on phone & laptop, zero backdrop-filter */
+
+.beast-stage-wrap {
+  margin-bottom: 16px;
+}
+
+.beast-card-shell {
+  position: relative;
+  border-radius: 22px;
+  padding: 10px;
+  background: var(--stage-foil, linear-gradient(135deg, #065f46, #38bdf8));
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.14);
+  overflow: hidden;
+}
+
+.beast-card-canvas {
+  position: relative;
+  border-radius: 15px;
+  padding: 14px 14px 16px;
+  background: var(--stage-bg, linear-gradient(135deg, #047857, #0284c7));
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  overflow: hidden;
+}
+
+.beast-card-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.beast-card-shell[data-foil='unite'] .beast-card-texture {
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.24) 1.5px, transparent 1.5px),
+    linear-gradient(125deg, transparent 44%, rgba(255, 255, 255, 0.18) 51%, transparent 58%);
+  background-size: 12px 12px, 100% 100%;
+}
+
+.beast-card-shell[data-foil='gold'] .beast-card-texture {
+  background-image:
+    repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.13) 0px, rgba(255, 255, 255, 0.13) 2px, transparent 2px, transparent 10px),
+    radial-gradient(circle at 82% 20%, rgba(255, 255, 255, 0.36), transparent 45%);
+}
+
+.beast-card-shell[data-foil='holo'] .beast-card-texture {
+  background-image:
+    linear-gradient(118deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.28) 49%, rgba(125, 211, 252, 0.24) 55%, rgba(255, 255, 255, 0) 76%);
+}
+
+.beast-card-shell[data-foil='prism'] .beast-card-texture {
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.26) 1.3px, transparent 1.3px),
+    conic-gradient(from 45deg at 50% 50%, rgba(244, 114, 182, 0.22), rgba(250, 204, 21, 0.22), rgba(52, 211, 153, 0.22), rgba(96, 165, 250, 0.22), rgba(244, 114, 182, 0.22));
+  background-size: 14px 14px, 100% 100%;
+}
+
+/* Frosted opaque HUD chrome (no backdrop-filter) */
+.beast-hud-bar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.93);
+  color: #0f172a;
+}
+
+.beast-hud-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.beast-lvl-tag {
+  font-size: 11px;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #fde047;
+  letter-spacing: 0.04em;
+}
+
+.beast-flame-pill {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.beast-flame-pill[data-tier='blue'] {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.beast-flame-pill[data-tier='lightning'],
+.beast-flame-pill[data-tier='sovereign'] {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.beast-hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.beast-chip-btn {
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.beast-chip-btn.reveal {
+  background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
+  border-color: transparent;
+}
+
+/* Main Stage Row (Arena + Side Stats on wide desktop/tablet) */
+.beast-stage-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+@media (min-width: 820px) {
+  .beast-stage-grid {
+    grid-template-columns: 1.05fr 1fr;
+    align-items: center;
+    gap: 18px;
+  }
+}
+
+.beast-arena-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 6px 4px;
+}
+
+.beast-peek-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.beast-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(15, 23, 42, 0.65);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.beast-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.beast-figure-hit {
+  position: relative;
+  width: 176px;
+  height: 196px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.beast-pedestal {
+  position: absolute;
+  bottom: 8px;
+  width: 138px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0) 72%);
+}
+
+.beast-figure-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.36));
+  transition: transform 0.14s ease;
+}
+
+.beast-figure-hit:active .beast-figure-img {
+  transform: scale(0.96);
+}
+
+.beast-figure-img.is-locked {
+  filter: brightness(0) opacity(0.74) drop-shadow(0 10px 14px rgba(0, 0, 0, 0.42));
+}
+
+.beast-lock-pill {
+  position: absolute;
+  z-index: 3;
+  bottom: 16px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #fde047;
+  font-size: 11px;
+  font-weight: 800;
+  border: 1px solid rgba(253, 224, 71, 0.4);
+}
+
+.beast-bubble {
+  margin-top: 6px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  font-size: 12.5px;
+  line-height: 1.45;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+}
+
+.beast-info-panel {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.beast-name-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.beast-zh-big {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.beast-en-sub {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.beast-badge-code {
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.beast-power-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.beast-power-track {
+  height: 9px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.beast-power-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0f766e 0%, #f59e0b 100%);
+  transition: width 0.35s ease;
+}
+
+.beast-retention-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #334155;
+  font-weight: 700;
+}
+
+/* Quick Card Swatches */
+.beast-swatches-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.beast-swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.beast-swatch.is-active {
+  border-color: #0f172a;
+  background: #fef9c3;
+}
+
+.beast-swatch-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+/* Daily Quests */
+.beast-quests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.beast-quest-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #0f172a;
+  text-align: left;
+  cursor: pointer;
+}
+
+.beast-quest-btn.is-done {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.beast-quest-title {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.beast-quest-prog {
+  font-size: 11.5px;
+  font-weight: 900;
+  color: #0f766e;
+  white-space: nowrap;
+}
+
+/* Expandable Drawer: 6 HSK Gamification Variables & All 9 Cards */
+.beast-drawer-toggle {
+  border: none;
+  background: transparent;
+  padding: 2px 0;
+  font-size: 12px;
+  font-weight: 800;
+  color: #0f766e;
+  text-align: left;
+  cursor: pointer;
+}
+
+.beast-vars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 480px) {
+  .beast-vars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.beast-var-card {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.beast-var-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 800;
+}
+
+.beast-var-val {
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.beast-var-sub {
+  margin-top: 1px;
+  font-size: 10.5px;
+  color: #64748b;
+}
+
+/* Stage Picker Modal Sheet (zero backdrop-filter, dvh-safe) */
+.beast-picker-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9500;
+  background: rgba(2, 6, 23, 0.8);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100dvh;
+}
+
+@media (min-width: 680px) {
+  .beast-picker-backdrop {
+    align-items: center;
+    padding: 20px;
+  }
+}
+
+.beast-picker-sheet {
+  width: min(100%, 560px);
+  max-height: 86dvh;
+  overflow-y: auto;
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 22px 22px 0 0;
+  padding: 18px 16px calc(22px + env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 680px) {
+  .beast-picker-sheet {
+    border-radius: 22px;
+    padding: 20px;
+  }
+}
+
+.beast-picker-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.beast-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.beast-stage-option {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 14px;
+  padding: 8px;
+  border: 2px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.beast-stage-option.is-active {
+  border-color: #0f766e;
+  background: #f0fdfa;
+}
+
+.beast-stage-option.is-locked {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.beast-stage-preview {
+  height: 62px;
+  border-radius: 9px;
+  padding: 6px 8px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 900;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.beast-stage-name {
+  margin-top: 6px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.beast-stage-desc {
+  margin-top: 2px;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #475569;
+}

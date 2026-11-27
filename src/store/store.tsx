@@ -40,6 +40,7 @@ import {
   type LearnerGraphState,
 } from '../lib/learnerGraph'
 import {
+  clearAllLearningStorage,
   progressKey,
   readProgress,
   persistProgress,
@@ -49,10 +50,12 @@ import {
 } from '../lib/progressStorage'
 import {
   CLOUD_HYDRATED_EVENT,
+  forcePushCloudReset,
   LOCAL_PROGRESS_EVENT,
   pushToCloudIfChanged,
   syncWithCloud,
 } from '../lib/autoSync'
+import { resetBeastPrefs } from '../lib/beastPrefs'
 import { isCoreBookVocab } from '../lib/content'
 import { t } from '../lib/i18n'
 
@@ -994,16 +997,39 @@ export function StoreProvider({
   }, [])
 
   const reset = useCallback(() => {
-    try {
-      localStorage.setItem(key + '.before-reset.' + Date.now(), JSON.stringify(latest.current))
-    } catch {
-      setStorageProblem(true)
-      return
-    }
     const freshGraph = createEmptyGraph(Date.now())
-    if (!initial) replaceLearnerGraph(freshGraph)
-    setState(() => ({ ...empty, learnerGraph: freshGraph, resetAt: Date.now(), learning: initLearning(empty) }))
-  }, [key, setState, initial])
+    const freshState: Persisted = {
+      ...empty,
+      learnerGraph: freshGraph,
+      resetAt: Date.now(),
+      learning: initLearning(empty),
+    }
+    if (!initial) {
+      clearAllLearningStorage(localStorage, key)
+      replaceLearnerGraph(freshGraph)
+      resetBeastPrefs()
+      try {
+        persistProgress(localStorage, key, freshState)
+      } catch {
+        setStorageProblem(true)
+        return
+      }
+    }
+    dirtySincePullRef.current = false
+    latest.current = freshState
+    setState(() => freshState)
+    if (!initial && typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent(LOCAL_PROGRESS_EVENT))
+      if (!userId) {
+        setSyncStatus('pending')
+        void forcePushCloudReset({
+          storage: localStorage,
+          key,
+          onHydrated: applyCloudHydration,
+        }).then((res) => setSyncStatus(res.status))
+      }
+    }
+  }, [key, setState, initial, userId, applyCloudHydration])
 
   const value = useMemo<Store>(() => {
     const cardList = Object.values(state.cards)

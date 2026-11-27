@@ -6,13 +6,7 @@
 export function registerServiceWorker(): void {
   if (typeof window === 'undefined') return
 
-  const cleanup = () => {
-    if ('serviceWorker' in navigator) {
-      void navigator.serviceWorker
-        .getRegistrations()
-        .then((regs) => Promise.all(regs.map((reg) => reg.unregister().catch(() => false))))
-        .catch(() => {})
-    }
+  const purgeCaches = () => {
     if ('caches' in window) {
       void window.caches
         .keys()
@@ -24,6 +18,20 @@ export function registerServiceWorker(): void {
         .catch(() => {})
     }
   }
+
+  const cleanup = () => {
+    if ('serviceWorker' in navigator) {
+      void navigator.serviceWorker
+        .getRegistrations()
+        .then((regs) => Promise.all(regs.map((reg) => reg.unregister().catch(() => false))))
+        .catch(() => {})
+    }
+    purgeCaches()
+  }
+
+  window.addEventListener('vite:preloadError', () => {
+    purgeCaches()
+  })
 
   if (document.readyState === 'complete') {
     cleanup()

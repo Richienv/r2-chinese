@@ -1,4 +1,5 @@
 import {
+  clearAllLearningStorage,
   computeBackupActivityScore,
   exportLearningStorage,
   importLearningStorage,
@@ -31,6 +32,25 @@ export type SyncResult = {
   status: CloudSyncStatus
   hydrated: boolean
   updatedAt: number
+}
+
+function extractBackupResetAt(
+  backup: Record<string, unknown> | null | undefined,
+  key: string,
+): number {
+  if (!backup || typeof backup !== 'object') return 0
+  const entries = (backup as { entries?: unknown }).entries
+  if (!entries || typeof entries !== 'object' || Array.isArray(entries)) return 0
+  const raw = (entries as Record<string, unknown>)[key]
+  if (typeof raw !== 'string' || !raw) return 0
+  try {
+    const parsed = JSON.parse(raw) as { resetAt?: unknown } | null
+    return parsed && typeof parsed.resetAt === 'number' && Number.isFinite(parsed.resetAt)
+      ? parsed.resetAt
+      : 0
+  } catch {
+    return 0
+  }
 }
 
 function readMeta(storage: StorageLike): CloudSyncMeta {
@@ -218,6 +238,21 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
 
   let hydrated = false
   let remoteFp = remoteBackup ? fingerprintBackup(remoteBackup) : ''
+
+  const remoteResetAt = extractBackupResetAt(remoteBackup, opts.key)
+  const localResetAt = extractBackupResetAt(localObj, opts.key)
+  if (remoteBackup && remoteResetAt > localResetAt) {
+    clearAllLearningStorage(opts.storage, opts.key)
+    importLearningStorage(opts.storage, opts.key, JSON.stringify(remoteBackup))
+    opts.onHydrated?.()
+    dispatchCloudHydrated()
+    writeMeta(opts.storage, {
+      updatedAt: remoteUpdatedAt,
+      fingerprint: remoteFp,
+      activityScore: remoteScore,
+    })
+    return { status: 'saved', hydrated: true, updatedAt: remoteUpdatedAt }
+  }
 
   if (remoteBackup && (remoteScore > 0 || computeBackupActivityScore(remoteBackup) > 0)) {
     if (localScore === 0 || remoteFp !== localFp) {
@@ -451,4 +486,14 @@ export async function pushToCloudIfChanged(opts: SyncOptions): Promise<SyncResul
   } catch {
     return { status: 'offline', hydrated, updatedAt: meta.updatedAt }
   }
+}
+
+/** Force-push an intentional full reset snapshot so cloud backup restarts cleanly at Lv 1. */
+export async function forcePushCloudReset(opts: SyncOptions): Promise<SyncResult> {
+  try {
+    opts.storage.removeItem(CLOUD_META_KEY)
+  } catch {
+    /* ignore storage cleanup errors */
+  }
+  return pushToCloudIfChanged({ ...opts, force: true })
 }

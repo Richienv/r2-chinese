@@ -17,6 +17,7 @@ const MagangHomePath = lazy(() => import('./Magang').then((m) => ({ default: m.M
 const BooksHomePath = lazy(() => import('./Books').then((m) => ({ default: m.BooksHomePath })))
 import type { JiayinOpen } from './Jiayin'
 const JiayinPath = lazy(() => import('./Jiayin').then((m) => ({ default: m.JiayinPath })))
+import { BeastStageCard } from '../components/BeastStageCard'
 import { LessonPath } from './Learn'
 import { useStore, type PathNode } from '../store/store'
 import '../styles/home-alive.css'
@@ -80,6 +81,11 @@ export function Home({
       </div>
       <TodayHud onOpen={onProgress} />
       <div className="home-col-primary">
+      <BeastStageCard
+        onReview={onReview}
+        onLearn={() => (course === 'hsk4a' ? onSession(lesson.lesson, next.node) : onBrowse())}
+        onExam={() => onJiaochengMidterm(course === 'jiaocheng' ? 'jiaocheng' : 'hsk4a', 'mock')}
+      />
       {course === 'jiayin' ? (
         <JiayinPath onPlay={onJiayinSession} />
       ) : course === 'kerja' ? (

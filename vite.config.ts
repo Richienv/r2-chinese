@@ -31,5 +31,33 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), localApi(mode)],
     server: { port: Number(process.env.PORT) || 5174 },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            const norm = id.replace(/\\/g, '/')
+            if (norm.includes('/node_modules/react/') || norm.includes('/node_modules/react-dom/')) {
+              return 'vendor-react'
+            }
+            if (norm.includes('/node_modules/@supabase/')) {
+              return 'vendor-supabase'
+            }
+            if (norm.includes('/node_modules/hanzi-writer')) {
+              return 'vendor-hanzi'
+            }
+            if (
+              norm.includes('/src/data/hsk4a') ||
+              norm.includes('/src/data/teach/') ||
+              norm.includes('/src/data/jiayin-audio')
+            ) {
+              return 'data-hsk'
+            }
+            if (norm.includes('/src/data/i18n/') || norm.includes('/src/i18n/')) {
+              return 'data-i18n'
+            }
+          },
+        },
+      },
+    },
   }
 })

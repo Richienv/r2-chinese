@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { CloseIcon } from '../components/Icons'
 import { StudyMusic } from '../components/StudyMusic'
 import { getLang, t } from '../lib/i18n'
+import { LOCAL_PROGRESS_EVENT } from '../lib/autoSync'
+import { recordHistory } from '../lib/history'
 import { weakGrammarPoints } from '../lib/learnerGraph'
 import {
   availableGrammarTags,
@@ -80,6 +82,7 @@ export function JiaochengMidterm({
   const [scores, setScores] = useState<Record<string, number>>({})
   const [sessionMissedWords, setSessionMissedWords] = useState<string[]>([])
   const bodyRef = useRef<HTMLElement>(null)
+  const loggedFinishRef = useRef<string>('')
 
   const done = index >= parts.length
   const part = parts[index]
@@ -87,6 +90,27 @@ export function JiaochengMidterm({
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 })
   }, [index, course, mode, focusTag, retryIds])
+
+  useEffect(() => {
+    if (!done || parts.length === 0) return
+    const totalPts = parts.reduce((sum, item) => sum + partPoints(item), 0)
+    const earnedPts = Object.values(scores).reduce((sum, n) => sum + n, 0)
+    const sig = `${course}:${mode}:${focusTag}:${parts.length}:${earnedPts}`
+    if (loggedFinishRef.current === sig) return
+    loggedFinishRef.current = sig
+    const pct = totalPts > 0 ? Math.round((earnedPts / totalPts) * 100) : 0
+    recordHistory({
+      course: course === 'jiaocheng' ? 'jiaocheng' : 'hsk4a',
+      kind: 'quiz',
+      lesson: 0,
+      title: course === 'hsk4a' ? 'HSK 4 Mock' : course === 'mixed' ? 'Mixed Final Mock' : 'Jiaocheng Mock',
+      correct: pct >= 75,
+      xp: pct,
+    })
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent(LOCAL_PROGRESS_EVENT))
+    }
+  }, [done, parts, scores, course, mode, focusTag])
 
   useEffect(() => {
     if (!timed || done) return
@@ -103,6 +127,7 @@ export function JiaochengMidterm({
   }, [timed, done, parts.length])
 
   function resetSessionState(nextRetry: string[] | null = null) {
+    loggedFinishRef.current = ''
     setRetryIds(nextRetry)
     setIndex(0)
     setFills({})
