@@ -899,7 +899,7 @@ export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluat
             progress: Math.min(1, todaySessions + (hsk1.tonesPassed > 0 && todayCards > 0 ? 1 : 0)),
             target: 1,
             done: todaySessions >= 1,
-            rewardText: '+140 灵力 Unit',
+            rewardText: '+140 XP Unit',
             action: 'learn',
           },
           {
@@ -937,7 +937,7 @@ export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluat
             progress: Math.min(5, todayUnaidedWords),
             target: 5,
             done: todayUnaidedWords >= 5,
-            rewardText: '+Spirit Power Murni',
+            rewardText: '+XP Murni',
             action: 'review',
           },
           {
@@ -1121,5 +1121,114 @@ export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluat
       hsk1ProvenCount,
       hsk1UnitsDoneCount,
     },
+  }
+}
+
+export interface BeastUnlockDisplay {
+  isLocked: boolean
+  isMaxLevel: boolean
+  isPeekingPast: boolean
+  targetLevel: number
+  currentXp: number
+  targetXp: number
+  remainingXp: number
+  progressPct: number
+  counterLabel: string
+  statusTag: string
+  headlineSentence: string
+  howToEarnTips: ReadonlyArray<{ label: string; reward: string }>
+}
+
+/**
+ * Single-State Truth formatter for whatever evolution level (`shownBeast`) is on screen.
+ * Prevents contradictory copy such as showing "-450 -> Lv 2" beneath a locked Lv 14 preview.
+ */
+export function describeBeastUnlockState(
+  evalRes: BeastEvaluation,
+  shownBeast: LegendaryBeastTier,
+): BeastUnlockDisplay {
+  const fmt = (n: number) => n.toLocaleString('id-ID')
+  const currentXp = evalRes.spiritPower
+  const avgSessionXp = evalRes.track === 'hsk1' ? 140 : 150
+
+  const howToEarnTips: ReadonlyArray<{ label: string; reward: string }> =
+    evalRes.track === 'hsk1'
+      ? [
+          { label: 'Selesaikan 1 Unit HSK 1', reward: '+140 XP' },
+          { label: 'Recall aktif kata tanpa petunjuk', reward: '+25–55 XP / kata' },
+          { label: 'Lulus latihan 4 Nada & Pinyin', reward: '+65 XP / soal' },
+          { label: 'Jaga streak belajar harian', reward: '+45 XP / hari' },
+        ]
+      : [
+          { label: 'Selesaikan 1 pelajaran HSK 4', reward: '+150 XP' },
+          { label: 'Kuasai kosakata lewat Recall murni', reward: '+40 XP / kata' },
+          { label: 'Lulus simulasi tryout (>= 75%)', reward: '+250 XP' },
+          { label: 'Jaga streak belajar harian', reward: '+45 XP / hari' },
+        ]
+
+  // Case 1: Previewing a locked future evolution — always bind bar & text to `shownBeast`.
+  if (shownBeast.level > evalRes.level) {
+    const targetXp = getBeastMinPower(shownBeast, evalRes.track)
+    const remainingXp = Math.max(0, targetXp - currentXp)
+    const progressPct = Math.max(0, Math.min(100, Math.round((currentXp / Math.max(1, targetXp)) * 100)))
+    return {
+      isLocked: true,
+      isMaxLevel: false,
+      isPeekingPast: false,
+      targetLevel: shownBeast.level,
+      currentXp,
+      targetXp,
+      remainingXp,
+      progressPct,
+      counterLabel: `${fmt(currentXp)} / ${fmt(targetXp)} XP`,
+      statusTag: `Terkunci · Lv ${shownBeast.level}`,
+      headlineSentence: `Terkunci · Lv ${shownBeast.level} — Butuh ${fmt(remainingXp)} XP lagi (Kamu saat ini Lv ${evalRes.level} · ${fmt(currentXp)} XP)`,
+      howToEarnTips,
+    }
+  }
+
+  // Case 2: All 24 evolutions unlocked.
+  if (!evalRes.nextBeast) {
+    return {
+      isLocked: false,
+      isMaxLevel: true,
+      isPeekingPast: shownBeast.level < evalRes.level,
+      targetLevel: LEGENDARY_BEASTS.length,
+      currentXp,
+      targetXp: currentXp,
+      remainingXp: 0,
+      progressPct: 100,
+      counterLabel: `${fmt(currentXp)} XP · Puncak Lv 24`,
+      statusTag: 'Semua Evolusi Terbuka',
+      headlineSentence: 'Seluruh 24 evolusi telah terbuka penuh!',
+      howToEarnTips,
+    }
+  }
+
+  // Case 3: Viewing current unlocked stage (or earlier unlocked stage) while progressing to `nextBeast`.
+  const targetLevel = evalRes.nextBeast.level
+  const prevThreshold = getBeastMinPower(evalRes.beast, evalRes.track)
+  const targetXp = getBeastMinPower(evalRes.nextBeast, evalRes.track)
+  const remainingXp = Math.max(0, targetXp - currentXp)
+  const span = Math.max(1, targetXp - prevThreshold)
+  const progressPct = Math.max(0, Math.min(100, Math.round(((currentXp - prevThreshold) / span) * 100)))
+  const estSessions = Math.max(1, Math.ceil(remainingXp / avgSessionXp))
+  const isPeekingPast = shownBeast.level < evalRes.level
+
+  return {
+    isLocked: false,
+    isMaxLevel: false,
+    isPeekingPast,
+    targetLevel,
+    currentXp,
+    targetXp,
+    remainingXp,
+    progressPct,
+    counterLabel: `${fmt(currentXp)} / ${fmt(targetXp)} XP`,
+    statusTag: isPeekingPast ? `Terbuka · Wujud Lv ${shownBeast.level}` : `Menuju Lv ${targetLevel}`,
+    headlineSentence: isPeekingPast
+      ? `Wujud Lv ${shownBeast.level} sudah terbuka · Kamu saat ini Lv ${evalRes.level} (${fmt(currentXp)} / ${fmt(targetXp)} XP menuju Lv ${targetLevel})`
+      : `Butuh ${fmt(remainingXp)} XP lagi (~${estSessions} sesi belajar) untuk membuka Wujud Lv ${targetLevel}`,
+    howToEarnTips,
   }
 }

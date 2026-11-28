@@ -391,18 +391,22 @@ test('Home SSR as Renita stays locked to HSK 1 Dari Nol & Sakura Pink even with 
   assert.match(html, /Renita/)
   assert.match(html, /Pondasi/)
   assert.match(html, /Goresan/)
-  assert.match(html, /aria-label="Unite Sakura" class="beast-dot-btn is-active"/)
-  assert.match(html, /⚡ 0 灵力/)
+  assert.match(html, /data-stage-id="sakura-unite"/)
+  assert.match(html, /0 \/ 450 XP/)
+  assert.match(html, /Butuh 450 XP lagi/)
+  assert.equal(html.includes('灵力'), false)
+  assert.equal(html.includes('home-float-strip'), false)
   assert.equal(html.includes('Simulator'), false)
   assert.equal(html.includes('Skip to lesson'), false)
   assert.equal(html.includes('Simple Love'), false)
   assert.equal(html.includes('简单的爱情'), false)
 
-  // Verify Richie home stays vibrant HSK 4 emerald identity without leaking Sakura default
+  // Verify Richie home stays vibrant HSK 4 emerald identity without leaking Sakura default or 灵力
   const richieHtml = renderSurface('home', 'richie')
   assert.match(richieHtml, /Richie/)
   assert.match(richieHtml, /HSK 4/)
-  assert.match(richieHtml, /aria-label="Unite Jade" class="beast-dot-btn is-active"/)
+  assert.match(richieHtml, /data-stage-id="unite-jade"/)
+  assert.equal(richieHtml.includes('灵力'), false)
 
   // Verify ReviewFlow obeys Active Recall BAN 3 & BAN 5 (zero upfront sentence translation + icon-only Check)
   const reviewHtml = renderSurface('review', 'richie')

@@ -29,6 +29,19 @@
   to { stroke-dashoffset: 0; }
 }
 
+.hsk1-title-icon {
+  color: var(--accent, #0f766e);
+  flex: none;
+  vertical-align: middle;
+}
+
+.hsk1-srs-title-row,
+.hsk1-summary-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .hsk1-home-wrap {
   display: flex;
   flex-direction: column;

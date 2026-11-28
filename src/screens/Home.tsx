@@ -4,6 +4,7 @@ import { lazy, Suspense } from 'react'
 import { MemoryHorizon } from '../components/MemoryHorizon'
 import { TodayHud } from '../components/TodayHud'
 import { CourseBack, CourseGate, LanguageChip } from '../components/CourseChooser'
+import { AwardIcon, HelpCircleIcon, PencilIcon, RefreshIcon, UsersIcon } from '../components/Icons'
 import { COURSE_META, useCourse } from '../lib/course'
 import { t } from '../lib/i18n'
 import { lessons, teachableVocab } from '../lib/content'
@@ -20,7 +21,6 @@ const JiayinPath = lazy(() => import('./Jiayin').then((m) => ({ default: m.Jiayi
 import { useEffect, useState } from 'react'
 import { BeastStageCard } from '../components/BeastStageCard'
 import { CoupleHub } from '../components/CoupleHub'
-import { MemberBadge } from '../components/MemberBadge'
 import { useCoupleProfile } from '../lib/coupleProfile'
 import { nextPlayableHsk1Unit, readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
 import type { Hsk1NodeId } from '../lib/hsk1Srs'
@@ -82,6 +82,18 @@ export function Home({
   const hsk4Surface = course === 'hsk4a' || course === 'kerja' || course === 'jiaocheng'
   const recentWords = s.learningTrail.slice(0, 2)
 
+  const primaryCtaLabel = (() => {
+    if (course === 'hsk1') {
+      if (hsk1Progress.tonesPassed < 7) return 'Mulai Pondasi 4 Nada (+140 XP)'
+      if (hsk1Progress.pinyinPassed < 6) return 'Lanjut Bunyi Pinyin (+140 XP)'
+      if (hsk1Progress.strokesPassed < 5) return 'Lanjut Arti 8 Goresan (+140 XP)'
+      const target = nextPlayableHsk1Unit(hsk1Progress)
+      return `Lanjut Unit ${target.unit} (+140 XP)`
+    }
+    if (course === 'hsk4a') return `Mulai Sesi: Pelajaran ${lesson.lesson} (+150 XP)`
+    return `Buka ${COURSE_META[course].title}`
+  })()
+
   if (!entered) {
     return (
       <div className="home-page home-alive">
@@ -94,10 +106,13 @@ export function Home({
     <div className="home-page home-alive">
       <div className="home-topbar">
         <CourseBack />
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-          <MemberBadge compact />
-          <h1>{COURSE_META[course].title}</h1>
-          <LanguageChip />
+        <div className="home-topbar-actions">
+          {onOpenOnboarding && (
+            <button type="button" className="home-guide-btn" onClick={onOpenOnboarding}>
+              <HelpCircleIcon size={15} />
+              <span>Panduan</span>
+            </button>
+          )}
         </div>
       </div>
       <TodayHud onOpen={onProgress} />
@@ -106,6 +121,7 @@ export function Home({
       <BeastStageCard
         track={member.track}
         hsk1Progress={hsk1Progress}
+        primaryCtaLabel={primaryCtaLabel}
         onReview={() => {
           if (course === 'hsk1' && onHsk1Recall) onHsk1Recall()
           else onReview()
@@ -132,33 +148,16 @@ export function Home({
           else onJiaochengMidterm(course === 'jiaocheng' ? 'jiaocheng' : 'hsk4a', 'mock')
         }}
       />
-      <div className="home-float-strip" role="toolbar" aria-label="Aksi cepat belajar">
+      <div className="home-secondary-actions" role="toolbar" aria-label="Aksi sekunder">
         {(course === 'hsk4a' || course === 'jiaocheng') && (
           <button
             type="button"
-            className="home-float-pill home-float-pill-accent"
+            className="home-quiet-pill home-quiet-accent"
             onClick={() => onJiaochengMidterm(course === 'jiaocheng' ? 'jiaocheng' : 'hsk4a', 'mock')}
           >
-            📝 Simulator
+            <AwardIcon size={15} />
+            <span>Simulasi Ujian</span>
           </button>
-        )}
-        {course === 'hsk1' && (
-          <>
-            <button
-              type="button"
-              className="home-float-pill home-float-pill-accent"
-              onClick={() => onHsk1Tones?.('tones')}
-            >
-              🎵 Pondasi
-            </button>
-            <button
-              type="button"
-              className="home-float-pill"
-              onClick={() => onHsk1Tones?.('strokes')}
-            >
-              ✍️ Goresan
-            </button>
-          </>
         )}
         {course === 'hsk4a' && (
           <SkipLevelControl
@@ -191,30 +190,29 @@ export function Home({
         )}
         <button
           type="button"
-          className="home-float-pill"
+          className={`home-quiet-pill${course === 'hsk1' ? ' home-quiet-accent' : ''}`}
           onClick={() => {
             if (course === 'hsk1' && onHsk1Recall) onHsk1Recall()
             else onReview()
           }}
         >
-          🔁 Recall
+          <RefreshIcon size={15} />
+          <span>Latihan Ingatan</span>
         </button>
-        {onProgress && (
-          <button type="button" className="home-float-pill" onClick={onProgress}>
-            📊 Stats
+        {course === 'hsk1' && (
+          <button
+            type="button"
+            className="home-quiet-pill"
+            onClick={() => onHsk1Tones?.('strokes')}
+          >
+            <PencilIcon size={15} />
+            <span>8 Goresan</span>
           </button>
         )}
-        <button type="button" className="home-float-pill" onClick={() => setCoupleSheetOpen(true)}>
-          💕 Berdua
+        <button type="button" className="home-quiet-pill" onClick={() => setCoupleSheetOpen(true)}>
+          <UsersIcon size={15} />
+          <span>Ruang Berdua</span>
         </button>
-        <button type="button" className="home-float-pill" onClick={onBrowse}>
-          📚 {t('Materials')}
-        </button>
-        {onOpenOnboarding && (
-          <button type="button" className="home-float-pill" onClick={onOpenOnboarding}>
-            ❓ Panduan
-          </button>
-        )}
       </div>
       <Suspense fallback={null}>
         {course === 'jiayin' ? (
@@ -253,22 +251,14 @@ export function Home({
       <div className="home-col-side">
       {hsk4Surface && <MemoryHorizon onReview={onReview} onPlacement={onPlacement} />}
       <StudyMusic />
-      <div className="home-shortcuts">
-        <button type="button" className="home-dock-button" onClick={onBrowse}><span>{t('Browse materials')}</span><span aria-hidden>→</span></button>
-        {course === 'hsk1' ? (
-          <button type="button" className="home-dock-button" onClick={() => onHsk1Recall?.()}>
-            <span>🔁 Recall FSRS HSK 1</span>
+      {hsk4Surface && (
+        <div className="home-shortcuts">
+          <button type="button" className="home-dock-button" data-home-trail onClick={onTrail}>
+            <span>{t('My words')}{recentWords.length > 0 && <small lang="zh-CN">{recentWords.join(' · ')}</small>}</span>
             <span aria-hidden>→</span>
           </button>
-        ) : (
-          hsk4Surface && (
-            <button type="button" className="home-dock-button" data-home-trail onClick={onTrail}>
-              <span>{t('My words')}{recentWords.length > 0 && <small lang="zh-CN">{recentWords.join(' · ')}</small>}</span>
-              <span aria-hidden>→</span>
-            </button>
-          )
-        )}
-      </div>
+        </div>
+      )}
       <InstallCard variant="home" />
       </div>
     </div>

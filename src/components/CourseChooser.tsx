@@ -51,7 +51,7 @@ export function CourseBack() {
   if (activeId === 'renita') {
     return (
       <span className="course-back library-back" style={{ cursor: 'default' }}>
-        🌸 HSK 1 Dari Nol
+        HSK 1 Dari Nol
       </span>
     )
   }

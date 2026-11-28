@@ -13,6 +13,7 @@ import { readHsk1Progress } from '../lib/hsk1'
 import { readHistory } from '../lib/history'
 import { dayKey, useStore } from '../store/store'
 import { CoupleComparePanel } from './CoupleComparePanel'
+import { LockIcon } from './Icons'
 import '../styles/couple-hub.css'
 
 export function CoupleHub({ openSheetExternal, onCloseExternal }: { openSheetExternal?: boolean; onCloseExternal?: () => void }) {
@@ -115,7 +116,7 @@ export function CoupleHub({ openSheetExternal, onCloseExternal }: { openSheetExt
           aria-label="Kunci dan Ganti Akun"
           onClick={() => lockCoupleGate()}
         >
-          🔐
+          <LockIcon size={15} />
         </button>
       </div>
 

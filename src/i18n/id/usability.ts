@@ -21,7 +21,7 @@ export default {
   'Continue learning': 'Lanjut belajar',
   'All caught up. Continue a lesson when you feel like it.': 'Semua beres. Lanjutkan materi kalau kamu mau.',
   'practice steps': 'langkah latihan',
-  'Practice over time': 'Riwayat latihan',
+  'Practice over time': 'Ringkasan & Tren 7 Hari',
   'Search my words': 'Cari kata saya',
   'Show words': 'Tampilkan kata',
   'No matching words': 'Tidak ada kata yang cocok',

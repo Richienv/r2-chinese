@@ -152,7 +152,72 @@ export const HeartIcon = ({ size = 16, filled = true }: P & { filled?: boolean }
 )
 
 export const FlameGlyph = ({ size = 16, className }: P) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
     <path d="M12.6 2c.5 3-1.3 4.3-2.8 5.8C8.1 9.5 7 11 7 13.4A5.6 5.6 0 0 0 12.6 19a5.4 5.4 0 0 0 5.4-5.6c0-4-2.4-5.6-3.4-8.2-.4-1.1-1.4-2.4-2-3.2z" />
+  </svg>
+)
+
+export const ChevronDown = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className} aria-hidden="true">
+    <path d="m6 9 6 6 6-6" />
+  </svg>
+)
+
+export const TrendingUpIcon = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className} aria-hidden="true">
+    <path d="m3 17 6-6 4 4 8-8" />
+    <path d="M15 7h6v6" />
+  </svg>
+)
+
+export const UsersIcon = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className} aria-hidden="true">
+    <circle cx="9" cy="8.5" r="3" />
+    <path d="M3.5 19a5.5 5.5 0 0 1 11 0" />
+    <circle cx="16.5" cy="9.5" r="2.2" />
+    <path d="M16.5 14a4 4 0 0 1 4 5" />
+  </svg>
+)
+
+export const AwardIcon = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className} aria-hidden="true">
+    <circle cx="12" cy="9" r="5" />
+    <path d="M9 13.5 7.5 21l4.5-2.2L16.5 21 15 13.5" />
+  </svg>
+)
+
+export const SparklesIcon = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className} aria-hidden="true">
+    <path d="M12 3 13.8 8.2 19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8Z" />
+    <path d="M19 4v3M20.5 5.5h-3M5 16v3M6.5 17.5h-3" />
+  </svg>
+)
+
+export const CompassIcon = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className} aria-hidden="true">
+    <circle cx="12" cy="12" r="9" />
+    <polygon points="10 10 15.5 8.5 14 14 8.5 15.5" />
+  </svg>
+)
+
+export const HeadphonesIcon = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className} aria-hidden="true">
+    <path d="M4 14v-2a8 8 0 0 1 16 0v2" />
+    <rect x="3" y="13" width="4" height="7" rx="1.6" />
+    <rect x="17" y="13" width="4" height="7" rx="1.6" />
+  </svg>
+)
+
+export const MessageCircleIcon = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className} aria-hidden="true">
+    <path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 20.5l1.6-4.7A8.5 8.5 0 1 1 21 11.5z" />
+  </svg>
+)
+
+export const HelpCircleIcon = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className} aria-hidden="true">
+    <circle cx="12" cy="12" r="9" />
+    <path d="M9.6 9.3a2.6 2.6 0 0 1 4.9.9c0 1.7-2.5 2.2-2.5 3.8" />
+    <circle cx="12" cy="17.2" r="0.6" fill="currentColor" stroke="none" />
   </svg>
 )

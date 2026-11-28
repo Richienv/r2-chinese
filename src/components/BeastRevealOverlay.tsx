@@ -140,7 +140,7 @@ export function BeastRevealOverlay({
             <div className="lr-orbit-ring" />
             <div className="lr-orbit-ring inner" />
             <img className="lr-silhouette" src={spriteSrc} alt="" />
-            <p className="lr-charge-label">Menghimpun 灵力 Giok...</p>
+            <p className="lr-charge-label">Menghimpun XP Evolusi…</p>
           </div>
         ) : (
           <article className="lr-card" data-foil={stage.foilStyle}>
@@ -164,7 +164,7 @@ export function BeastRevealOverlay({
                   <span className="lr-rarity-pill">{RARITY_TAG[stage.rarity]}</span>
                   <span>Lv {beast.level}/24 · {beast.stageLabel} · {beast.element}</span>
                 </div>
-                <span className="lr-power-chip">⚡ {spiritPower.toLocaleString()} 灵力</span>
+                <span className="lr-power-chip">{spiritPower.toLocaleString('id-ID')} XP</span>
               </div>
 
               <div
@@ -211,10 +211,10 @@ export function BeastRevealOverlay({
 
         <div className="lr-actions">
           <button type="button" className="lr-btn-secondary" onClick={replay}>
-            ⚡ Putar Ulang
+            Putar Ulang
           </button>
           <button type="button" className="lr-btn-secondary" onClick={onToggleMute}>
-            {muted ? '🔇 Bisu' : '🔊 Suara'}
+            {muted ? 'Suara Bisu' : 'Suara Aktif'}
           </button>
           <button type="button" className="lr-btn-primary" onClick={onClose}>
             Masuk Arena ›

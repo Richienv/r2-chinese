@@ -5,10 +5,17 @@ import '../styles/usability.css'
 import { useEffect, useMemo, useState } from 'react'
 import { BeastRevealOverlay, type BeastRevealPayload } from '../components/BeastRevealOverlay'
 import { CoupleComparePanel } from '../components/CoupleComparePanel'
+import { CardsIcon, ChevronDown, SparklesIcon, TrendingUpIcon, UsersIcon } from '../components/Icons'
 import { MasteryTracker } from '../components/MasteryTracker'
 import { MemberBadge } from '../components/MemberBadge'
 import { SealedBeastSilhouette } from '../components/SealedBeastSilhouette'
-import { evaluateBeastProgress, getBeastMinPower, getTrainerAssetSrc, LEGENDARY_BEASTS } from '../lib/beastEngine'
+import {
+  describeBeastUnlockState,
+  evaluateBeastProgress,
+  getBeastMinPower,
+  getTrainerAssetSrc,
+  LEGENDARY_BEASTS,
+} from '../lib/beastEngine'
 import { readBeastPrefs, subscribeBeastPrefs, writeBeastPrefs } from '../lib/beastPrefs'
 import { getBeastStage } from '../lib/beastStages'
 import { useCoupleProfile } from '../lib/coupleProfile'
@@ -197,25 +204,6 @@ function hsk1Course(hsk1: Hsk1ProgressState): CourseRow {
   return { name: COURSE_META.hsk1.title, stepsDone: done, stepsTotal: total, units }
 }
 
-/** Rolling last-7-days card counts, oldest → newest, labelled by weekday. */
-function weekActivity(log: Record<string, { cards: number }>) {
-  const out: { label: string; cards: number; today: boolean; date: number }[] = []
-  const now = new Date()
-  const todayKey = dayKey(now)
-  for (let i = 6; i >= 0; i--) {
-    const d = new Date(now)
-    d.setDate(now.getDate() - i)
-    const key = dayKey(d)
-    out.push({
-      label: d.toLocaleDateString(DATE_LOCALE, { weekday: 'short' }),
-      cards: log[key]?.cards ?? 0,
-      today: key === todayKey,
-      date: d.getDate(),
-    })
-  }
-  return out
-}
-
 const COURSE_LABEL: Record<HistoryCourse, string> = {
   hsk4a: COURSE_META.hsk4a.title,
   hsk1: COURSE_META.hsk1.title,
@@ -335,7 +323,6 @@ export function Progress({
       unsubHsk1()
     }
   }, [])
-  const week = weekActivity(s.log)
   const dailyComparison = useMemo(
     () => computeDailyComparison(s.log, dayKey(), Date.now()),
     [s.log, syncTick],
@@ -362,8 +349,6 @@ export function Progress({
     s.learnerGraph,
   )
   const graphInfo = useMemo(() => graphSummary(s.learnerGraph), [s.learnerGraph])
-  const weekCards = week.reduce((sum, day) => sum + day.cards, 0)
-  const activeDays = week.filter((day) => day.cards > 0).length
   const todayProgress = Math.min(100, Math.round((s.today.cards / DAILY_GOAL) * 100))
 
   const hsk1Memory = useMemo(
@@ -423,6 +408,7 @@ export function Progress({
       hsk1Progress,
     ],
   )
+  const unlockInfo = describeBeastUnlockState(beastEval, beastEval.beast)
   const visibleHistory = showHistory ? history : history.slice(0, 5)
 
   const effectiveDueCount = isHsk1Track ? hsk1Memory.dueCount : due.length
@@ -508,14 +494,27 @@ export function Progress({
         </div>
       </section>
 
-      <details className="progress-fold">
+      <details className="progress-activity-details">
         <summary>
-          <span>📈 Tren 7 Hari & Perbandingan Harian</span>
+          <span className="progress-fold-title">
+            <TrendingUpIcon size={17} />
+            <span>{t('Practice over time')}</span>
+          </span>
           <span className="progress-fold-meta">
             Kemarin {dailyComparison.yesterdayCards} · Hari ini {dailyComparison.todayCards} ▾
           </span>
         </summary>
         <div className="progress-fold-body">
+          <section className="progress-stats" aria-label={t('Learning totals')}>
+            <Glance value={s.streak} label={t('day streak')} detail={t('show up again')} />
+            <Glance value={beastEval.spiritPower} label="XP Evolusi" detail="total poin belajar" />
+            <Glance
+              value={isHsk1Track ? hsk1Progress.provenWords.length : s.learningTrail.length}
+              label={t('words met')}
+              detail={t('kept in your trail')}
+            />
+          </section>
+
           <div className="progress-section-heading">
             <div>
               <div className="progress-eyebrow">PROGRES HARIAN · KEMARIN VS HARI INI</div>
@@ -531,10 +530,10 @@ export function Progress({
               }`}
             >
               {dailyComparison.deltaCards > 0
-                ? `▲ +${dailyComparison.deltaCards} vs kemarin`
+                ? `+${dailyComparison.deltaCards} vs kemarin`
                 : dailyComparison.deltaCards < 0
-                  ? `▼ ${dailyComparison.deltaCards} vs kemarin`
-                  : '= Sama dengan kemarin'}
+                  ? `${dailyComparison.deltaCards} vs kemarin`
+                  : 'Sama dengan kemarin'}
             </span>
           </div>
 
@@ -573,12 +572,15 @@ export function Progress({
 
       <details className="progress-fold">
         <summary>
-          <span>🧩 Peta Kategori Kata & Memori</span>
+          <span className="progress-fold-title">
+            <CardsIcon size={17} />
+            <span>Peta Kategori Kata & Memori</span>
+          </span>
           <span className="progress-fold-meta">
             {isHsk1Track ? `${hsk1Memory.avgRetentionPct}% retensi FSRS` : '6 kategori kata'} ▾
           </span>
         </summary>
-        <div className="progress-fold-body" style={{ display: 'grid', gap: 16 }}>
+        <div className="progress-fold-body">
           <div>
             <div className="progress-section-heading">
               <div>
@@ -623,7 +625,7 @@ export function Progress({
                 <h2>{isHsk1Track ? 'Rekap Memori HSK 1' : t('What stays with you')}</h2>
               </div>
               <span className="progress-mastery-spark" aria-hidden="true">
-                ✳
+                <SparklesIcon size={16} />
               </span>
             </div>
             {isHsk1Track ? (
@@ -676,7 +678,10 @@ export function Progress({
 
       <details className="progress-fold">
         <summary>
-          <span>💕 Progres Berdua: Richie vs Renita</span>
+          <span className="progress-fold-title">
+            <UsersIcon size={17} />
+            <span>Progres Berdua: Richie vs Renita</span>
+          </span>
           <span className="progress-fold-meta">Buka & beri semangat ▾</span>
         </summary>
         <div className="progress-fold-body">
@@ -684,160 +689,118 @@ export function Progress({
         </div>
       </details>
 
-      <details className="progress-activity-details">
-        <summary>{t('Practice over time')}</summary>
-      <section className="progress-stats" aria-label={t('Learning totals')}>
-        <Glance value={s.streak} label={t('day streak')} detail={t('show up again')} />
-        <Glance value={s.xp} label={t('XP earned')} detail={t('practice adds up')} />
-        <Glance value={s.learningTrail.length} label={t('words met')} detail={t('kept in your trail')} />
-      </section>
-
-      <section className="card progress-section progress-week-section">
-        <div className="progress-section-heading">
-          <div>
-            <div className="progress-eyebrow">{t('THE LAST 7 DAYS')}</div>
-            <h2>{t('Build a learning rhythm')}</h2>
-          </div>
-          <div className="progress-week-summary">
-            <strong>{activeDays}</strong>
-            <span>{t('active days')}</span>
-          </div>
-        </div>
-        <p className="progress-section-sub">
-          {weekCards === 1
-            ? t(
-                '{n} practice step across the week. Returning to a word later is how recognition becomes recall.',
-                { n: weekCards },
-              )
-            : t(
-                '{n} practice steps across the week. Returning to a word later is how recognition becomes recall.',
-                { n: weekCards },
-              )}
-        </p>
-        <div className="progress-week-grid">
-          {week.map((d, i) => {
-            const height = d.cards
-              ? Math.max(
-                  12,
-                  Math.min(100, (d.cards / Math.max(DAILY_GOAL, ...week.map((day) => day.cards))) * 100),
-                )
-              : 5
-            return (
-              <div
-                key={`${d.date}-${i}`}
-                className="progress-week-day"
-                data-today={d.today ? 'true' : 'false'}
-                data-on={d.cards > 0 ? 'true' : 'false'}
-                title={
-                  d.cards === 1
-                    ? t('{n} practice step', { n: d.cards })
-                    : t('{n} practice steps', { n: d.cards })
-                }
-              >
-                <div className="progress-week-bar-wrap">
-                  <i style={{ height: `${height}%` }} />
-                </div>
-                <span className="progress-week-cards">{d.cards || '·'}</span>
-                <span className="progress-week-label">{d.label}</span>
-              </div>
-            )
-          })}
-        </div>
-        <div className="progress-week-foot">
-          <span>
-            {t('Practice is evidence of effort; mastery comes from unaided recall on separate days.')}
+      <details className="progress-fold">
+        <summary>
+          <span className="progress-fold-title">
+            <SparklesIcon size={17} />
+            <span>Koleksi 24 Evolusi & 6 Pilar XP</span>
           </span>
-        </div>
-      </section>
-
-      </details>
-
-      <section className="card progress-section progress-beast-section" aria-label="Koleksi Evolusi Trainer dan Partner">
-        <div className="progress-section-heading">
-          <div>
-            <div className="progress-eyebrow">8 SIKLUS × 3 TAHAP (BAYI → MATANG → DEWA)</div>
-            <h2>
-              <span lang="zh-CN">{beastEval.beast.zhName}</span> · {beastEval.beast.name}
-            </h2>
-          </div>
-          <span className="progress-course-total">
-            Lv {beastEval.level}/24 · ⚡ {beastEval.spiritPower.toLocaleString()} 灵力
+          <span className="progress-fold-meta">
+            Lv {beastEval.level}/24 · {beastEval.spiritPower.toLocaleString('id-ID')} XP ▾
           </span>
-        </div>
-        <p className="progress-section-sub">
-          Gelar aktif: <strong>{beastEval.beast.trainerTitle}</strong> ({beastEval.beast.stageLabel} · Siklus {beastEval.beast.speciesIndex}/8).{' '}
-          {beastEval.nextBeast
-            ? `Butuh ${beastEval.powerToNext.toLocaleString()} 灵力 lagi untuk membuka Wujud Rahasia Lv ${beastEval.nextBeast.level} (${beastEval.nextBeast.stageLabel}).`
-            : 'Seluruh 24 evolusi Trainer & Mythical Partner telah terbuka penuh!'}
-        </p>
-
-        <div className="progress-beast-vars">
-          {beastEval.variables.map((v) => (
-            <div key={v.key} className="progress-beast-var">
-              <div className="progress-beast-var-head">
-                <strong>{v.label}</strong>
-                <span>+{v.power} 灵力</span>
-              </div>
-              <div className="progress-beast-var-val">{v.valueText}</div>
-              <div className="progress-beast-var-bar">
-                <i style={{ width: `${Math.round(v.ratio * 100)}%` }} />
-              </div>
+        </summary>
+        <div className="progress-fold-body">
+          <div className="progress-section-heading">
+            <div>
+              <div className="progress-eyebrow">8 SIKLUS × 3 TAHAP (BAYI → MATANG → DEWA)</div>
+              <h2>
+                <span lang="zh-CN">{beastEval.beast.zhName}</span> · {beastEval.beast.name}
+              </h2>
             </div>
-          ))}
-        </div>
+            <span className="progress-course-total">
+              Lv {beastEval.level}/24
+            </span>
+          </div>
 
-        <div className="progress-beast-grid">
-          {LEGENDARY_BEASTS.map((tier) => {
-            const unlocked = tier.level <= beastEval.level
-            const stage = getBeastStage(beastPrefs.stageId)
-            const tierImg = getTrainerAssetSrc(tier, activeId)
-            return (
-              <div
-                key={tier.id}
-                className={`progress-beast-tile${unlocked ? ' is-unlocked' : ' is-locked'}`}
-              >
-                <div className="progress-beast-stage-tag" data-stage={tier.stage}>
-                  Siklus {tier.speciesIndex} · {tier.stageLabel}
+          <div className="progress-evolution-bar-wrap">
+            <div className="progress-evolution-bar-head">
+              <span>{beastEval.beast.trainerTitle} ({beastEval.beast.stageLabel})</span>
+              <span>{unlockInfo.counterLabel}</span>
+            </div>
+            <div className="progress-evolution-bar" aria-hidden="true">
+              <i style={{ width: `${unlockInfo.progressPct}%` }} />
+            </div>
+            <p className="progress-section-sub" style={{ marginTop: 2 }}>
+              {unlockInfo.headlineSentence}
+            </p>
+          </div>
+
+          <div className="progress-beast-vars">
+            {beastEval.variables.map((v) => (
+              <div key={v.key} className="progress-beast-var">
+                <div className="progress-beast-var-head">
+                  <strong>{v.label}</strong>
+                  <span>+{v.power} XP</span>
                 </div>
-                <div className="progress-beast-thumb-wrap">
-                  {unlocked ? (
-                    <img
-                      className="progress-beast-thumb"
-                      src={tierImg}
-                      alt={`${tier.zhName} ${tier.name}`}
-                    />
-                  ) : (
-                    <SealedBeastSilhouette src={tierImg} level={tier.level} compact />
+                <div className="progress-beast-var-val">{v.valueText}</div>
+                <div className="progress-beast-var-bar">
+                  <i style={{ width: `${Math.round(v.ratio * 100)}%` }} />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="progress-beast-grid">
+            {LEGENDARY_BEASTS.map((tier) => {
+              const unlocked = tier.level <= beastEval.level
+              const stage = getBeastStage(beastPrefs.stageId)
+              const tierImg = getTrainerAssetSrc(tier, activeId)
+              const requiredXp = getBeastMinPower(tier, member.track)
+              return (
+                <div
+                  key={tier.id}
+                  className={`progress-beast-tile${unlocked ? ' is-unlocked' : ' is-locked'}`}
+                >
+                  <div className="progress-beast-stage-tag" data-stage={tier.stage}>
+                    Siklus {tier.speciesIndex} · {tier.stageLabel}
+                  </div>
+                  <div className="progress-beast-thumb-wrap">
+                    {unlocked ? (
+                      <img
+                        className="progress-beast-thumb"
+                        src={tierImg}
+                        alt={`${tier.zhName} ${tier.name}`}
+                      />
+                    ) : (
+                      <SealedBeastSilhouette
+                        src={tierImg}
+                        level={tier.level}
+                        memberId={activeId}
+                        accentHex={tier.accentHex}
+                        compact
+                      />
+                    )}
+                  </div>
+                  <div className="progress-beast-lvl">Lv {tier.level}</div>
+                  <div className="progress-beast-zh" lang="zh-CN">
+                    {unlocked ? tier.zhName : 'Rahasia'}
+                  </div>
+                  <div className="progress-beast-name">
+                    {unlocked ? tier.name : `${requiredXp.toLocaleString('id-ID')} XP`}
+                  </div>
+                  {unlocked && (
+                    <button
+                      type="button"
+                      className="progress-beast-reveal-btn"
+                      onClick={() =>
+                        setRevealPayload({
+                          beast: tier,
+                          stage,
+                          reason: 'replay',
+                          spiritPower: beastEval.spiritPower,
+                        })
+                      }
+                    >
+                      <SparklesIcon size={12} />
+                      <span>Reveal</span>
+                    </button>
                   )}
                 </div>
-                <div className="progress-beast-lvl">Lv {tier.level}</div>
-                <div className="progress-beast-zh" lang="zh-CN">
-                  {unlocked ? tier.zhName : '???'}
-                </div>
-                <div className="progress-beast-name">
-                  {unlocked ? tier.name : `${getBeastMinPower(tier, member.track).toLocaleString()} 灵力`}
-                </div>
-                {unlocked && (
-                  <button
-                    type="button"
-                    className="progress-beast-reveal-btn"
-                    onClick={() =>
-                      setRevealPayload({
-                        beast: tier,
-                        stage,
-                        reason: 'replay',
-                        spiritPower: beastEval.spiritPower,
-                      })
-                    }
-                  >
-                    ✨ Reveal
-                  </button>
-                )}
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
-      </section>
+      </details>
 
       <section className="card progress-section progress-courses-section">
         <div className="progress-section-heading">
@@ -879,7 +842,7 @@ export function Progress({
                   </div>
                 </div>
                 <span className="progress-course-chevron" aria-hidden="true">
-                  ⌄
+                  <ChevronDown size={16} />
                 </span>
               </summary>
               <div className="progress-lesson-list">

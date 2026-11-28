@@ -48,6 +48,18 @@ import { SLOW_RATE, VOICE, WORD_RATE } from '../lib/voices'
 import type { Rating } from '../lib/srs'
 import { dayKey, useStore } from '../store/store'
 import { MemberBadge } from '../components/MemberBadge'
+import {
+  AwardIcon,
+  BookIcon,
+  CheckIcon,
+  CompassIcon,
+  HeadphonesIcon,
+  MessageCircleIcon,
+  PencilIcon,
+  RefreshIcon,
+  SparklesIcon,
+  TargetIcon,
+} from '../components/Icons'
 import { BasicStrokeSvg, HanziTracePad, ToneWaveSvg } from '../components/Hsk1Visuals'
 import '../styles/duo.css'
 import '../styles/hsk1.css'
@@ -182,16 +194,25 @@ export function Hsk1HomePath({
   const strokesOk = progress.strokesPassed >= 5
   const foundationDone = tonesOk && pinyinOk && strokesOk
 
-  const foundationItems: Array<{
-    key: 'tones' | 'pinyin' | 'strokes'
-    emoji: string
-    label: string
-    scoreText: string
-    done: boolean
-  }> = [
-    { key: 'tones', emoji: '🎵', label: '4 Nada', scoreText: `${progress.tonesPassed}/12`, done: tonesOk },
-    { key: 'pinyin', emoji: '🗣️', label: 'Bunyi Pinyin', scoreText: `${progress.pinyinPassed}/10`, done: pinyinOk },
-    { key: 'strokes', emoji: '✍️', label: '8 Goresan', scoreText: `${progress.strokesPassed}/8`, done: strokesOk },
+  const renderNodeGlyph = (nodeId: Hsk1NodeId) => {
+    switch (nodeId) {
+      case 'kenali':
+        return <SparklesIcon size={20} />
+      case 'goresan':
+        return <PencilIcon size={20} />
+      case 'dengar':
+        return <HeadphonesIcon size={20} />
+      case 'kalimat':
+        return <CompassIcon size={20} />
+      case 'bos':
+        return <AwardIcon size={20} />
+    }
+  }
+
+  const foundationItems = [
+    { key: 'tones' as const, icon: <HeadphonesIcon size={20} />, label: '4 Nada', scoreText: `${progress.tonesPassed}/12`, done: tonesOk },
+    { key: 'pinyin' as const, icon: <MessageCircleIcon size={20} />, label: 'Bunyi Pinyin', scoreText: `${progress.pinyinPassed}/10`, done: pinyinOk },
+    { key: 'strokes' as const, icon: <PencilIcon size={20} />, label: '8 Goresan', scoreText: `${progress.strokesPassed}/8`, done: strokesOk },
   ]
   const currentFoundation = foundationItems.find((f) => !f.done)?.key
 
@@ -201,10 +222,18 @@ export function Hsk1HomePath({
         <section className="hsk1-srs-banner" aria-label="Jadwal Ulasan Ingatan FSRS-6">
           <div className="hsk1-srs-copy">
             <div className="hsk1-kicker-pink">SPACED REPETITION · FSRS-6</div>
-            <strong>
-              {memory.dueCount > 0
-                ? `🎯 ${memory.dueCount} kata siap disegarkan hari ini`
-                : '🧠 Semua ingatanmu masih hangat!'}
+            <strong className="hsk1-srs-title-row">
+              {memory.dueCount > 0 ? (
+                <>
+                  <TargetIcon size={17} className="hsk1-title-icon" />
+                  <span>{memory.dueCount} kata siap disegarkan hari ini</span>
+                </>
+              ) : (
+                <>
+                  <SparklesIcon size={17} className="hsk1-title-icon" />
+                  <span>Semua ingatanmu masih hangat</span>
+                </>
+              )}
             </strong>
             <div className="hsk1-srs-stats">
               <span>{memory.totalTracked} kata dilacak</span>
@@ -225,7 +254,8 @@ export function Hsk1HomePath({
               onOpenRecall?.()
             }}
           >
-            🔁 Recall
+            <RefreshIcon size={16} />
+            <span>Latihan Ingatan</span>
           </button>
         </section>
       )}
@@ -262,7 +292,7 @@ export function Hsk1HomePath({
                       onOpenToneLab(item.key)
                     }}
                   >
-                    {item.done ? '✓' : item.emoji}
+                    {item.done ? <CheckIcon size={20} /> : item.icon}
                   </button>
                   <span className="duo-node-label">
                     {item.label} · {item.scoreText}
@@ -286,7 +316,7 @@ export function Hsk1HomePath({
                   onOpenToneLab(item.key)
                 }}
               >
-                {item.emoji} {item.label}
+                {item.icon} <span>{item.label}</span>
               </button>
             ))}
           </div>
@@ -336,7 +366,7 @@ export function Hsk1HomePath({
                     onOpenUnit(activeUnit.unit, nodeId)
                   }}
                 >
-                  {isDone ? '✓' : meta.emoji}
+                  {isDone ? <CheckIcon size={20} /> : renderNodeGlyph(nodeId)}
                 </button>
                 <span className="duo-node-label">
                   {meta.label} · <span lang="zh-CN">{meta.shortZh}</span>
@@ -354,13 +384,16 @@ export function Hsk1HomePath({
             onOpenUnit(activeUnit.unit, nextActive.node)
           }}
         >
-          {HSK1_NODE_META[nextActive.node].emoji} Lanjut: {HSK1_NODE_META[nextActive.node].label} ›
+          <span>Lanjut: {HSK1_NODE_META[nextActive.node].label}</span>
         </button>
       </section>
 
       <details className="hsk1-all-units">
         <summary>
-          <span>🗺️ Lihat Semua 15 Unit HSK 1</span>
+          <span className="hsk1-summary-title">
+            <BookIcon size={16} className="hsk1-title-icon" />
+            <span>Lihat Semua 15 Unit HSK 1</span>
+          </span>
           <span className="hsk1-pill-count">{progress.unitsDone.length}/15 tuntas</span>
         </summary>
         <div className="hsk1-phases">

@@ -21,7 +21,8 @@ function detect(): Lang {
   try {
     const saved = localStorage.getItem(KEY)
     if (saved === 'en' || saved === 'id') return saved
-    return typeof navigator !== 'undefined' && navigator.language?.toLowerCase().startsWith('id') ? 'id' : 'en'
+    // Real browser sessions default to unified Bahasa Indonesia unless user explicitly switches to EN in Profile.
+    return typeof window !== 'undefined' ? 'id' : 'en'
   } catch { return 'en' }
 }
 

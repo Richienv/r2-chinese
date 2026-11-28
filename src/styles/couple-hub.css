@@ -92,11 +92,13 @@
 }
 
 .ch-lock-btn {
+  display: grid;
+  place-items: center;
   width: 36px;
   height: 36px;
   border-radius: 999px;
   border: 1px solid var(--line, rgba(15, 23, 42, 0.12));
-  background: #ffffff;
-  font-size: 14px;
+  background: var(--surface, #ffffff);
+  color: var(--ink, #0f172a);
   cursor: pointer;
 }

@@ -196,9 +196,9 @@ export function CoupleComparePanel({ markReadOnMount = false }: { markReadOnMoun
       {richieSide && renitaSide && (
         <div className="cc-stat-rows" aria-label="Perbandingan Richie vs Renita">
           <div className="cc-stat-row">
-            <span>{richieSide.spiritPower.toLocaleString()}</span>
-            <small>灵力 Power</small>
-            <span>{renitaSide.spiritPower.toLocaleString()}</span>
+            <span>{richieSide.spiritPower.toLocaleString('id-ID')}</span>
+            <small>Total XP Evolusi</small>
+            <span>{renitaSide.spiritPower.toLocaleString('id-ID')}</span>
           </div>
           <div className="cc-stat-row">
             <span>{richieSide.masteredWords}</span>

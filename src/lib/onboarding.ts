@@ -93,7 +93,7 @@ export function getOnboardingSlides(
         icon: '🐉',
         kicker: 'EVOLUSI 24 LEVEL & RUANG BERDUA',
         title: 'Naikkan Level & Saling Semangati',
-        body: 'Progres belajar nyata mengisi 灵力 untuk membuka 8 Siklus × 3 Tahap (Bayi → Matang → Dewa). Semua wujud di atas levelmu tetap rahasia!',
+        body: 'Progres belajar nyata mengisi XP Evolusi untuk membuka 24 tahap evolusi (Bayi → Matang → Dewa). Semua wujud di atas levelmu tetap rahasia!',
         highlights: [
           '🔒 Evolusi terkunci tampil sebagai siluet rahasia — bebas spoiler',
           '🔥 Jaga streak mingguan agar api berubah warna jadi biru, petir & emas',

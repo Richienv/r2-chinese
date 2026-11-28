@@ -4,6 +4,7 @@ import path from 'node:path'
 import test from 'node:test'
 import { fileURLToPath } from 'node:url'
 import {
+  describeBeastUnlockState,
   evaluateBeastProgress,
   getBeastMinPower,
   getTrainerAssetSrc,
@@ -226,4 +227,49 @@ test('stage lookup & validation fall back cleanly for unknown ids', () => {
   assert.equal(isBeastStageId('unknown-card'), false)
   assert.equal(getBeastStage('unknown-card').id, 'unite-jade')
   assert.equal(getBeastStage('vmax-celestial').rarity, 'legendary')
+})
+
+test('describeBeastUnlockState binds counter, progressPct, and copy strictly to shown evolution', () => {
+  const freshHsk1 = evaluateBeastProgress({
+    track: 'hsk1',
+    mastery: {},
+    cards: {},
+    lessonsDone: [],
+    pathDone: {},
+    streak: 0,
+    xp: 0,
+    log: {},
+    history: [],
+    learnerGraph: createEmptyGraph(0),
+    hsk1Progress: { tonesPassed: 0, pinyinPassed: 0, strokesPassed: 0, unitsDone: [], provenWords: [], grammarPassed: 0 },
+    todayKey: '2026-11-28',
+    nowMs: Date.now(),
+  })
+
+  // Case 1: Active unlocked Lv 1
+  const lv1Info = describeBeastUnlockState(freshHsk1, freshHsk1.beast)
+  assert.equal(lv1Info.isLocked, false)
+  assert.equal(lv1Info.counterLabel, '0 / 450 XP')
+  assert.equal(lv1Info.progressPct, 0)
+  assert.match(lv1Info.headlineSentence, /Butuh 450 XP lagi .* untuk membuka Wujud Lv 2/)
+
+  // Case 2: Peeking locked Lv 14 must NOT display -450 or Lv 2
+  const lv14 = LEGENDARY_BEASTS[13]
+  const lv14Info = describeBeastUnlockState(freshHsk1, lv14)
+  assert.equal(lv14Info.isLocked, true)
+  assert.equal(lv14Info.targetLevel, 14)
+  const expectedTarget = getBeastMinPower(lv14, 'hsk1')
+  assert.equal(lv14Info.targetXp, expectedTarget)
+  assert.equal(lv14Info.counterLabel, `0 / ${expectedTarget.toLocaleString('id-ID')} XP`)
+  assert.match(lv14Info.headlineSentence, /Terkunci · Lv 14 — Butuh .* XP lagi \(Kamu saat ini Lv 1 · 0 XP\)/)
+  assert.equal(lv14Info.headlineSentence.includes('-450'), false)
+  assert.equal(lv14Info.headlineSentence.includes('Lv 2'), false)
+
+  // Case 3: Peeking Lv 24 when maxed
+  const lv24 = LEGENDARY_BEASTS[23]
+  const maxedEval = { ...freshHsk1, level: 24, spiritPower: getBeastMinPower(lv24, 'hsk1') + 200, beast: lv24, nextBeast: null }
+  const maxInfo = describeBeastUnlockState(maxedEval, lv24)
+  assert.equal(maxInfo.isLocked, false)
+  assert.equal(maxInfo.isMaxLevel, true)
+  assert.equal(maxInfo.progressPct, 100)
 })
