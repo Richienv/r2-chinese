@@ -12,7 +12,10 @@ export function registerServiceWorker(): void {
         .keys()
         .then((keys) =>
           Promise.all(
-            keys.filter((key) => key.startsWith('yulu-')).map((key) => window.caches.delete(key)),
+            // Preserve offline study-music audio storage across HTML/SW cleanup passes.
+            keys
+              .filter((key) => key.startsWith('yulu-') && !key.startsWith('yulu-music-'))
+              .map((key) => window.caches.delete(key)),
           ),
         )
         .catch(() => {})

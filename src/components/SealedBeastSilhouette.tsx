@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 
 /**
- * Ultra-HD Sculpted Frosted Obsidian-Pearl Silhouette renderer for locked evolutions.
- * Zero-leak guarantee: never renders a DOM <img> pointing at the unrevealed artwork URL.
- * Draws ONLY the alpha channel onto a full Retina-resolution canvas (576×768 / 240×320),
- * replaces 100% of RGB channels via `source-in`, and adds a crisp studio rim-light + frosted sheen.
+ * Razor-Sharp Sculpted Silhouette Renderer ("Who's That Pokémon?" style).
+ * - ZERO fog orb or foreground circle covering any pixel of the body.
+ * - Full Retina resolution (576×768 / 240×320), pure alpha extraction (`zero` RGB leaks).
+ * - Deep velvety plum-slate (Renita) / deep emerald-obsidian (Richie) body with
+ *   clean contour rim-light + subtle rear-only edge backlight (`destination-over`).
  */
 export function SealedBeastSilhouette({
   src,
@@ -13,6 +14,7 @@ export function SealedBeastSilhouette({
   accentHex,
   className = '',
   compact = false,
+  animateFloat = false,
 }: {
   src: string
   level: number
@@ -20,11 +22,11 @@ export function SealedBeastSilhouette({
   accentHex?: string
   className?: string
   compact?: boolean
+  animateFloat?: boolean
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
 
-  // Native 2x Retina resolution matching 576×768 portrait sprites cleanly (never blurry)
   const width = compact ? 240 : 576
   const height = compact ? 320 : 768
 
@@ -54,8 +56,8 @@ export function SealedBeastSilhouette({
         const rimCtx = rimCanvas.getContext('2d')
 
         const scale = Math.min(
-          (width * 0.88) / (img.naturalWidth || width),
-          (height * 0.88) / (img.naturalHeight || height),
+          (width * 0.9) / (img.naturalWidth || width),
+          (height * 0.9) / (img.naturalHeight || height),
         )
         const drawW = (img.naturalWidth || width) * scale
         const drawH = (img.naturalHeight || height) * scale
@@ -63,56 +65,43 @@ export function SealedBeastSilhouette({
         const dy = (height - drawH) / 2
 
         const isRenita = memberId === 'renita'
-        const glowColor = accentHex || (isRenita ? 'rgba(244, 114, 182, 0.55)' : 'rgba(52, 211, 153, 0.5)')
+        const glowColor = accentHex || (isRenita ? 'rgba(244, 114, 182, 0.5)' : 'rgba(16, 185, 129, 0.45)')
 
         if (maskCtx && rimCtx) {
-          // 1. Capture pure silhouette shape into offscreen mask (alpha only -> zero RGB leaks)
+          // 1. Extract 100% pure alpha mask into offscreen buffer (zero RGB channels leaked)
           maskCtx.drawImage(img, dx, dy, drawW, drawH)
           maskCtx.globalCompositeOperation = 'source-in'
-          maskCtx.fillStyle = isRenita ? '#2b1630' : '#0f2723'
+          maskCtx.fillStyle = isRenita ? '#25102d' : '#0b221e'
           maskCtx.fillRect(0, 0, width, height)
           maskCtx.globalCompositeOperation = 'source-over'
 
-          // 2. Soft luminous outer contour glow against backdrop
-          ctx.save()
-          ctx.shadowColor = glowColor
-          ctx.shadowBlur = compact ? 14 : 34
+          // 2. Razor-sharp base silhouette clipped cleanly to mask
           ctx.drawImage(maskCanvas, 0, 0)
-          ctx.restore()
-
-          // 3. Sculpted obsidian-pearl interior gradient clipped cleanly to alpha
-          ctx.save()
           ctx.globalCompositeOperation = 'source-in'
-          const bodyGrad = ctx.createLinearGradient(0, dy, width * 0.85, dy + drawH)
+          const bodyGrad = ctx.createLinearGradient(0, dy, width * 0.75, dy + drawH)
           if (isRenita) {
-            bodyGrad.addColorStop(0, '#4a254d')
-            bodyGrad.addColorStop(0.45, '#2b1632')
-            bodyGrad.addColorStop(1, '#1a0e21')
+            bodyGrad.addColorStop(0, '#3a1a46')
+            bodyGrad.addColorStop(0.5, '#25102f')
+            bodyGrad.addColorStop(1, '#14081a')
           } else {
-            bodyGrad.addColorStop(0, '#1e4a41')
-            bodyGrad.addColorStop(0.45, '#112d28')
-            bodyGrad.addColorStop(1, '#091b18')
+            bodyGrad.addColorStop(0, '#18443b')
+            bodyGrad.addColorStop(0.5, '#0d2924')
+            bodyGrad.addColorStop(1, '#061513')
           }
           ctx.fillStyle = bodyGrad
           ctx.fillRect(0, 0, width, height)
 
-          // Soft internal frosted pearl highlight along upper torso/head
-          const sheenGrad = ctx.createRadialGradient(
-            width * 0.42,
-            height * 0.28,
-            width * 0.04,
-            width * 0.5,
-            height * 0.48,
-            width * 0.55,
-          )
-          sheenGrad.addColorStop(0, isRenita ? 'rgba(255, 228, 242, 0.28)' : 'rgba(209, 250, 229, 0.25)')
-          sheenGrad.addColorStop(0.55, 'rgba(255, 255, 255, 0.05)')
-          sheenGrad.addColorStop(1, 'rgba(0, 0, 0, 0.22)')
-          ctx.fillStyle = sheenGrad
+          // 3. Subtle sculpted top-left gloss strictly ON TOP of dark body (source-atop keeps silhouette crisp)
+          ctx.globalCompositeOperation = 'source-atop'
+          const sculptSheen = ctx.createLinearGradient(dx, dy, dx + drawW, dy + drawH * 0.7)
+          sculptSheen.addColorStop(0, isRenita ? 'rgba(244, 114, 182, 0.16)' : 'rgba(52, 211, 153, 0.14)')
+          sculptSheen.addColorStop(0.45, 'rgba(255, 255, 255, 0.02)')
+          sculptSheen.addColorStop(1, 'rgba(0, 0, 0, 0.14)')
+          ctx.fillStyle = sculptSheen
           ctx.fillRect(0, 0, width, height)
 
-          // 4. Razor-sharp edge rim highlight computed purely from shifted alpha difference
-          const shift = compact ? 2.5 : 4.5
+          // 4. Crisp anti-aliased edge rim highlight via shifted alpha difference
+          const shift = compact ? 2 : 3.8
           rimCtx.drawImage(maskCanvas, 0, 0)
           rimCtx.globalCompositeOperation = 'destination-out'
           rimCtx.drawImage(maskCanvas, shift, shift)
@@ -122,13 +111,22 @@ export function SealedBeastSilhouette({
 
           ctx.globalCompositeOperation = 'source-atop'
           ctx.drawImage(rimCanvas, 0, 0)
+
+          // 5. Contour backlight ONLY behind silhouette edge (never covers interior body pixels)
+          ctx.save()
+          ctx.globalCompositeOperation = 'destination-over'
+          ctx.shadowColor = glowColor
+          ctx.shadowBlur = compact ? 8 : 18
+          ctx.drawImage(maskCanvas, 0, 0)
           ctx.restore()
+
+          ctx.globalCompositeOperation = 'source-over'
         } else {
           ctx.drawImage(img, dx, dy, drawW, drawH)
           ctx.globalCompositeOperation = 'source-in'
           const grad = ctx.createLinearGradient(0, 0, 0, height)
-          grad.addColorStop(0, isRenita ? '#3c1e41' : '#163b35')
-          grad.addColorStop(1, isRenita ? '#1c0f22' : '#0a1c19')
+          grad.addColorStop(0, isRenita ? '#34173e' : '#12342e')
+          grad.addColorStop(1, isRenita ? '#15081b' : '#081815')
           ctx.fillStyle = grad
           ctx.fillRect(0, 0, width, height)
           ctx.globalCompositeOperation = 'source-over'
@@ -148,27 +146,33 @@ export function SealedBeastSilhouette({
 
     return () => {
       cancelled = true
-      img.onload = null
-      img.onerror = null
     }
-  }, [src, width, height, memberId, accentHex, compact])
+  }, [src, width, height, compact, memberId, accentHex])
 
   return (
     <div
-      className={`sealed-silhouette-wrap${compact ? ' is-compact' : ''}${className ? ` ${className}` : ''}`}
-      aria-label={`Wujud Rahasia Lv ${level}`}
+      className={`sealed-silhouette-wrap${animateFloat ? ' is-floating' : ''} ${className}`.trim()}
       data-status={status}
+      aria-label={`Siluet Rahasia Level ${level}`}
     >
       <canvas
         ref={canvasRef}
         width={width}
         height={height}
         className="sealed-silhouette-canvas"
-        aria-hidden="true"
       />
       {status !== 'ready' && (
         <div className="sealed-silhouette-mystery" aria-hidden="true">
-          <svg width={compact ? 22 : 34} height={compact ? 22 : 34} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width={compact ? 26 : 42}
+            height={compact ? 26 : 42}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <rect x="5" y="10.5" width="14" height="10" rx="2.4" />
             <path d="M8.2 10.5V8a3.8 3.8 0 0 1 7.6 0v2.5" />
           </svg>

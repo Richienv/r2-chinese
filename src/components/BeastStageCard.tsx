@@ -10,6 +10,7 @@ import {
 } from '../lib/beastEngine'
 import {
   readBeastPrefs,
+  requestBeastReveal,
   subscribeBeastPrefs,
   writeBeastPrefs,
 } from '../lib/beastPrefs'
@@ -22,11 +23,9 @@ import {
   type BeastStageId,
 } from '../lib/beastStages'
 import { useCoupleProfile } from '../lib/coupleProfile'
-import { postCoupleEvent } from '../lib/coupleSync'
 import { readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
 import { readHistory, type HistoryEvent } from '../lib/history'
 import { dayKey, useStore } from '../store/store'
-import { BeastRevealOverlay, type BeastRevealPayload } from './BeastRevealOverlay'
 import { ChevronDown, ChevronLeft, ChevronRight, SparklesIcon } from './Icons'
 import { SealedBeastSilhouette } from './SealedBeastSilhouette'
 import '../styles/beast-stage.css'
@@ -47,7 +46,7 @@ export function BeastStageCard({
   onExam?: () => void
 }) {
   const s = useStore()
-  const { activeId, member, names } = useCoupleProfile()
+  const { activeId, member } = useCoupleProfile()
   const resolvedTrack = track ?? member.track
   const [localHsk1, setLocalHsk1] = useState(readHsk1Progress)
   const effectiveHsk1 = hsk1Progress ?? localHsk1
@@ -59,7 +58,6 @@ export function BeastStageCard({
   const [drawerTab, setDrawerTab] = useState<'tips' | 'quests' | 'vars'>('tips')
   const [quoteCycle, setQuoteCycle] = useState(0)
   const [pickerOpen, setPickerOpen] = useState(false)
-  const [revealPayload, setRevealPayload] = useState<BeastRevealPayload | null>(null)
 
   useEffect(() => {
     setPeekLevel(null)
@@ -120,57 +118,6 @@ export function BeastStageCard({
     ? prefs.stageId
     : BEAST_STAGES[0].id
   const activeStage = getBeastStage(activeStageId)
-
-  useEffect(() => {
-    const newAchievement = evalRes.unlockedAchievementKeys.find(
-      (k) => !prefs.earnedAchievementKeys.includes(k),
-    )
-    if (evalRes.level > prefs.lastSeenLevel) {
-      writeBeastPrefs({
-        lastSeenLevel: evalRes.level,
-        earnedAchievementKeys: evalRes.unlockedAchievementKeys,
-      })
-      void postCoupleEvent({
-        from: activeId,
-        kind: 'evolution',
-        text: `Naik Lv ${evalRes.level}/24 (${evalRes.beast.stageLabel}): ${evalRes.beast.zhName}!`,
-        beastLevel: evalRes.level,
-        names,
-      })
-      setRevealPayload({
-        beast: evalRes.beast,
-        stage: activeStage,
-        reason: 'evolution',
-        headline: `EVOLUSI LV ${evalRes.level}/24 · ${evalRes.beast.stageLabel.toUpperCase()}`,
-        spiritPower: evalRes.spiritPower,
-      })
-      return
-    }
-    if (newAchievement) {
-      const unlockedStage = BEAST_STAGES.find((st) => st.achievementKey === newAchievement) ?? activeStage
-      writeBeastPrefs({
-        earnedAchievementKeys: evalRes.unlockedAchievementKeys,
-        stageId: unlockedStage.id,
-      })
-      setRevealPayload({
-        beast: evalRes.beast,
-        stage: unlockedStage,
-        reason: 'card',
-        headline: `KARTU BARU: ${unlockedStage.name}`,
-        spiritPower: evalRes.spiritPower,
-      })
-    }
-  }, [
-    activeId,
-    names,
-    evalRes.level,
-    evalRes.beast,
-    evalRes.spiritPower,
-    evalRes.unlockedAchievementKeys,
-    prefs.lastSeenLevel,
-    prefs.earnedAchievementKeys,
-    activeStage,
-  ])
 
   const shownLevel = peekLevel ?? evalRes.level
   const shownBeast = LEGENDARY_BEASTS[Math.max(0, Math.min(LEGENDARY_BEASTS.length - 1, shownLevel - 1))]
@@ -240,11 +187,12 @@ export function BeastStageCard({
                   type="button"
                   className="beast-chip-btn reveal"
                   onClick={() =>
-                    setRevealPayload({
+                    requestBeastReveal({
                       beast: shownBeast,
                       stage: activeStage,
                       reason: 'replay',
                       spiritPower: evalRes.spiritPower,
+                      nextTargetXp: evalRes.nextBeast ? evalRes.powerToNext : 0,
                     })
                   }
                 >
@@ -280,7 +228,19 @@ export function BeastStageCard({
                 onClick={handleBeastTap}
                 aria-label={isLockedPreview ? `Wujud Rahasia Lv ${shownBeast.level}` : `Sentuh ${member.name} & ${shownBeast.name}`}
               >
-                <div className="beast-aura-halo" aria-hidden="true" />
+                {isLockedPreview ? (
+                  <>
+                    <div className="beast-locked-backlight" aria-hidden="true" />
+                    <div className="beast-locked-sparkles" aria-hidden="true">
+                      <i />
+                      <i />
+                      <i />
+                      <i />
+                    </div>
+                  </>
+                ) : (
+                  <div className="beast-aura-halo" aria-hidden="true" />
+                )}
                 <div className="beast-pedestal" aria-hidden="true" />
                 {isLockedPreview ? (
                   <SealedBeastSilhouette
@@ -290,6 +250,7 @@ export function BeastStageCard({
                     memberId={activeId}
                     accentHex={shownBeast.accentHex}
                     className="beast-figure-canvas"
+                    animateFloat
                   />
                 ) : (
                   <img
@@ -521,13 +482,6 @@ export function BeastStageCard({
           </div>
         </div>
       )}
-
-      <BeastRevealOverlay
-        payload={revealPayload}
-        muted={prefs.revealMuted}
-        onToggleMute={() => writeBeastPrefs({ revealMuted: !prefs.revealMuted })}
-        onClose={() => setRevealPayload(null)}
-      />
     </section>
   )
 }

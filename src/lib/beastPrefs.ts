@@ -1,21 +1,39 @@
 // Client preferences & unlock tracking for Yulu's Legendary Beast & TCG card stages.
 // Persists in localStorage (`yulu.beast.v1`) and participates in automatic cloud sync.
 import { CLOUD_HYDRATED_EVENT, LOCAL_PROGRESS_EVENT } from './autoSync.ts'
+import type { LegendaryBeastTier } from './beastEngine.ts'
 import {
   BEAST_STORAGE_KEY,
   defaultBeastStageForMember,
   isBeastStageId,
   type BeastStageId,
+  type BeastStageMeta,
 } from './beastStages.ts'
 
 export const BEAST_PREFS_EVENT = 'yulu:beast-prefs'
+export const BEAST_REVEAL_REQUEST_EVENT = 'yulu:beast-reveal-request'
 
 export interface BeastPrefs {
   stageId: BeastStageId
   lastSeenLevel: number
+  revealedLevels: number[]
   earnedAchievementKeys: string[]
   revealMuted: boolean
   updatedAt: number
+}
+
+export interface GlobalRevealRequest {
+  beast: LegendaryBeastTier
+  stage: BeastStageMeta
+  reason: 'evolution' | 'card' | 'replay'
+  headline?: string
+  spiritPower: number
+  nextTargetXp?: number
+}
+
+export function requestBeastReveal(payload: GlobalRevealRequest): void {
+  if (typeof window === 'undefined') return
+  window.dispatchEvent(new CustomEvent<GlobalRevealRequest>(BEAST_REVEAL_REQUEST_EVENT, { detail: payload }))
 }
 
 function activeDefaultStageId(): BeastStageId {
@@ -31,6 +49,7 @@ function makeDefaultPrefs(): BeastPrefs {
   return {
     stageId: activeDefaultStageId(),
     lastSeenLevel: 1,
+    revealedLevels: [1],
     earnedAchievementKeys: [],
     revealMuted: false,
     updatedAt: 0,
@@ -48,9 +67,17 @@ function normalizeBeastPrefs(raw: unknown): BeastPrefs {
     typeof obj.lastSeenLevel === 'number' && Number.isFinite(obj.lastSeenLevel)
       ? Math.max(1, Math.min(24, Math.floor(obj.lastSeenLevel)))
       : 1
+
+  // Migrate legacy prefs without ambushing on already-seen levels, while recording every revealed tier explicitly.
+  const rawRevealed = Array.isArray(obj.revealedLevels)
+    ? obj.revealedLevels.filter((n): n is number => typeof n === 'number' && Number.isFinite(n) && n >= 1 && n <= 24)
+    : Array.from({ length: lastSeenLevel }, (_, i) => i + 1)
+  const revealedLevels = [...new Set([1, ...rawRevealed])].sort((a, b) => a - b)
+
   return {
     stageId: isBeastStageId(obj.stageId) ? obj.stageId : fallbackStage,
     lastSeenLevel,
+    revealedLevels,
     earnedAchievementKeys: earned,
     revealMuted: Boolean(obj.revealMuted),
     updatedAt: typeof obj.updatedAt === 'number' && Number.isFinite(obj.updatedAt) ? obj.updatedAt : 0,

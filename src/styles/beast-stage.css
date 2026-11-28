@@ -143,11 +143,58 @@
 
 .beast-aura-halo {
   position: absolute;
-  width: 210px;
-  height: 210px;
+  width: 224px;
+  height: 224px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.92) 0%, var(--stage-accent-soft, rgba(16, 185, 129, 0.16)) 52%, transparent 76%);
+  background: radial-gradient(circle, var(--stage-accent-soft, rgba(16, 185, 129, 0.14)) 0%, rgba(255, 255, 255, 0.28) 42%, transparent 72%);
   pointer-events: none;
+}
+
+/* Clean behind-silhouette aura & ambient sparkle dots — ZERO foreground fog covering silhouette */
+.beast-locked-backlight {
+  position: absolute;
+  z-index: 0;
+  width: 230px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 48%, var(--stage-accent-soft, rgba(16, 185, 129, 0.18)) 0%, transparent 72%);
+  pointer-events: none;
+}
+
+.beast-locked-sparkles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.beast-locked-sparkles i {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent, #0f766e);
+  opacity: 0.45;
+  animation: beastSparklePulse 2.4s ease-in-out infinite alternate;
+}
+
+.beast-locked-sparkles i:nth-child(1) { top: 14%; left: 16%; animation-delay: 0ms; }
+.beast-locked-sparkles i:nth-child(2) { top: 22%; right: 14%; width: 5px; height: 5px; animation-delay: 600ms; }
+.beast-locked-sparkles i:nth-child(3) { bottom: 26%; left: 12%; width: 4px; height: 4px; animation-delay: 1100ms; }
+.beast-locked-sparkles i:nth-child(4) { bottom: 32%; right: 18%; animation-delay: 1700ms; }
+
+@keyframes beastSparklePulse {
+  0% { opacity: 0.22; transform: scale(0.8); }
+  100% { opacity: 0.72; transform: scale(1.25); }
+}
+
+.sealed-silhouette-wrap.is-floating {
+  animation: beastSilhouetteFloat 3.6s ease-in-out infinite;
+}
+
+@keyframes beastSilhouetteFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 .beast-pedestal {

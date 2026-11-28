@@ -3,7 +3,6 @@ import { recommendedWords } from '../lib/learningEngine'
 import { graphSummary } from '../lib/learnerGraph'
 import '../styles/usability.css'
 import { useEffect, useMemo, useState } from 'react'
-import { BeastRevealOverlay, type BeastRevealPayload } from '../components/BeastRevealOverlay'
 import { CoupleComparePanel } from '../components/CoupleComparePanel'
 import { CardsIcon, ChevronDown, SparklesIcon, TrendingUpIcon, UsersIcon } from '../components/Icons'
 import { MasteryTracker } from '../components/MasteryTracker'
@@ -16,7 +15,7 @@ import {
   getTrainerAssetSrc,
   LEGENDARY_BEASTS,
 } from '../lib/beastEngine'
-import { readBeastPrefs, subscribeBeastPrefs, writeBeastPrefs } from '../lib/beastPrefs'
+import { readBeastPrefs, requestBeastReveal, subscribeBeastPrefs } from '../lib/beastPrefs'
 import { getBeastStage } from '../lib/beastStages'
 import { useCoupleProfile } from '../lib/coupleProfile'
 import { HSK1_UNITS } from '../data/hsk1'
@@ -309,7 +308,6 @@ export function Progress({
   const [syncTick, setSyncTick] = useState(0)
   const [beastPrefs, setBeastPrefs] = useState(readBeastPrefs)
   const [hsk1Progress, setHsk1Progress] = useState(readHsk1Progress)
-  const [revealPayload, setRevealPayload] = useState<BeastRevealPayload | null>(null)
   useEffect(() => {
     const bump = () => setSyncTick((n) => n + 1)
     window.addEventListener('yulu:cloud-hydrated', bump)
@@ -783,11 +781,12 @@ export function Progress({
                       type="button"
                       className="progress-beast-reveal-btn"
                       onClick={() =>
-                        setRevealPayload({
+                        requestBeastReveal({
                           beast: tier,
                           stage,
                           reason: 'replay',
                           spiritPower: beastEval.spiritPower,
+                          nextTargetXp: beastEval.nextBeast ? beastEval.powerToNext : 0,
                         })
                       }
                     >
@@ -909,12 +908,6 @@ export function Progress({
           </button>
         )}
       </section>
-      <BeastRevealOverlay
-        payload={revealPayload}
-        muted={beastPrefs.revealMuted}
-        onToggleMute={() => writeBeastPrefs({ revealMuted: !beastPrefs.revealMuted })}
-        onClose={() => setRevealPayload(null)}
-      />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { t } from '../lib/i18n'
+import { ChevronRight } from './Icons'
 import '../styles/home-alive.css'
 
 export interface SkipLessonOption {
@@ -53,10 +54,11 @@ export function SkipLevelControl({
       {compact ? (
         <button
           type="button"
-          className="home-float-pill"
+          className="home-quiet-pill"
           onClick={() => openWith(recommendedLesson && currentLesson < recommendedLesson ? recommendedLesson : defaultTarget)}
         >
-          ⏭️ {t('Skip to lesson…')}
+          <ChevronRight size={15} />
+          <span>{t('Skip to lesson…')}</span>
         </button>
       ) : (
         <section className="skip-level-card" aria-label={t('Skip to lesson')}>

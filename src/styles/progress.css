@@ -662,6 +662,7 @@
   border: 1.5px solid var(--line, #e2e8f0);
   box-shadow: var(--shadow-card);
   padding: 14px 16px;
+  margin: 0;
 }
 
 .progress-fold > summary,
@@ -672,9 +673,17 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  width: 100%;
+  font-size: 15px;
   font-weight: 800;
   color: var(--ink);
   min-height: 36px;
+}
+
+.progress-activity-details > summary::after,
+.progress-activity-details[open] > summary::after {
+  content: none;
+  display: none;
 }
 
 .progress-fold > summary::-webkit-details-marker,

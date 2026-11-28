@@ -10,6 +10,7 @@ import {
   getTrainerAssetSrc,
   LEGENDARY_BEASTS,
 } from '../src/lib/beastEngine.ts'
+import { readBeastPrefs, resetBeastPrefs, writeBeastPrefs } from '../src/lib/beastPrefs.ts'
 import {
   BEAST_STAGES,
   FREE_BEAST_STAGE_IDS,
@@ -272,4 +273,35 @@ test('describeBeastUnlockState binds counter, progressPct, and copy strictly to 
   assert.equal(maxInfo.isLocked, false)
   assert.equal(maxInfo.isMaxLevel, true)
   assert.equal(maxInfo.progressPct, 100)
+})
+
+test('readBeastPrefs migrates legacy lastSeenLevel into revealedLevels cleanly and preserves new reveals', () => {
+  const prevStorage = globalThis.localStorage
+  const store = new Map()
+  globalThis.localStorage = {
+    getItem: (k) => store.get(k) ?? null,
+    setItem: (k, v) => store.set(k, String(v)),
+    removeItem: (k) => store.delete(k),
+    clear: () => store.clear(),
+    key: () => null,
+    length: 0,
+  }
+  try {
+    // Legacy record without revealedLevels at lastSeenLevel: 2 seeds [1, 2]
+    store.set('yulu.beast.v1', JSON.stringify({ stageId: 'sakura-unite', lastSeenLevel: 2, earnedAchievementKeys: [] }))
+    const migrated = readBeastPrefs()
+    assert.deepEqual(migrated.revealedLevels, [1, 2])
+
+    // Advancing to Lv 3 appends explicitly
+    const updated = writeBeastPrefs({ lastSeenLevel: 3, revealedLevels: [...migrated.revealedLevels, 3] })
+    assert.deepEqual(updated.revealedLevels, [1, 2, 3])
+
+    // Reset reverts cleanly to [1]
+    const reset = resetBeastPrefs()
+    assert.equal(reset.lastSeenLevel, 1)
+    assert.deepEqual(reset.revealedLevels, [1])
+  } finally {
+    if (prevStorage === undefined) delete globalThis.localStorage
+    else globalThis.localStorage = prevStorage
+  }
 })

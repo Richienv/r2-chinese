@@ -96,9 +96,47 @@
   place-items: center;
   width: 36px;
   height: 36px;
+  flex: none;
   border-radius: 999px;
   border: 1px solid var(--line, rgba(15, 23, 42, 0.12));
   background: var(--surface, #ffffff);
   color: var(--ink, #0f172a);
   cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .ch-bar {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .ch-pill {
+    min-height: 32px;
+    padding: 3px 8px;
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .ch-pill small {
+    font-size: 9px;
+    padding: 1px 5px;
+  }
+
+  .ch-partner-chip {
+    min-height: 32px;
+    padding: 2px 8px 2px 5px;
+    font-size: 11px;
+    gap: 5px;
+    white-space: nowrap;
+  }
+
+  .ch-mini-sprite {
+    width: 20px;
+    height: 24px;
+  }
+
+  .ch-lock-btn {
+    width: 32px;
+    height: 32px;
+  }
 }

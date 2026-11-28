@@ -2,6 +2,21 @@ import './lib/studyMusic'
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { BottomNav } from './components/BottomNav'
 import { AudioStatus } from './components/AudioStatus'
+import { BeastRevealOverlay, type BeastRevealPayload } from './components/BeastRevealOverlay'
+import { GlobalMusicPill } from './components/StudyMusic'
+import { CLOUD_HYDRATED_EVENT, LOCAL_PROGRESS_EVENT } from './lib/autoSync'
+import { evaluateBeastProgress } from './lib/beastEngine'
+import {
+  BEAST_REVEAL_REQUEST_EVENT,
+  readBeastPrefs,
+  subscribeBeastPrefs,
+  writeBeastPrefs,
+  type GlobalRevealRequest,
+} from './lib/beastPrefs'
+import { BEAST_STAGES, getBeastStage, type BeastStageId } from './lib/beastStages'
+import { postCoupleEvent } from './lib/coupleSync'
+import { readHsk1Progress, subscribeHsk1Progress } from './lib/hsk1'
+import { readHistory } from './lib/history'
 import { stopSpeech } from './lib/speech'
 import { t } from './lib/i18n'
 const CharacterOverlay = lazy(() =>
@@ -74,7 +89,7 @@ import { OnboardingModal } from './components/OnboardingModal'
 import { useCoupleGate } from './lib/coupleAuth'
 import { useCoupleProfile } from './lib/coupleProfile'
 import { isOnboardingDone, markOnboardingDone } from './lib/onboarding'
-import { load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
+import { dayKey, load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
 import { AuthProvider, useAuth } from './auth/AuthProvider'
 import { AuthScreen } from './auth/AuthScreen'
 import { isAuthEnabled } from './lib/supabase'
@@ -108,11 +123,17 @@ type Overlay =
 
 function Shell() {
   const store = useStore()
-  const { activeId, member } = useCoupleProfile()
+  const { activeId, member, names } = useCoupleProfile()
   // Every launch starts on Home: the day's ring and the next session are the first thing seen.
   const [tab, setTabState] = useState<Tab>('home')
   const [overlay, setOverlay] = useState<Overlay>(null)
   const [onboardingOpen, setOnboardingOpen] = useState(false)
+  const [beastPrefs, setBeastPrefs] = useState(readBeastPrefs)
+  const [hsk1Progress, setHsk1Progress] = useState(readHsk1Progress)
+  const [evolutionTick, setEvolutionTick] = useState(0)
+  const [revealPayload, setRevealPayload] = useState<BeastRevealPayload | null>(null)
+  const revealOpenRef = useRef(false)
+  revealOpenRef.current = revealPayload !== null
   const mainRef = useRef<HTMLElement>(null)
   const navRef = useRef<HTMLElement>(null)
   const open = overlay !== null
@@ -123,7 +144,122 @@ function Shell() {
     } else {
       setOnboardingOpen(false)
     }
+    setRevealPayload(null)
+    setBeastPrefs(readBeastPrefs())
+    setHsk1Progress(readHsk1Progress())
   }, [activeId])
+
+  useEffect(() => {
+    const bump = () => setEvolutionTick((n) => n + 1)
+    const onRevealRequest = (ev: Event) => {
+      const detail = (ev as CustomEvent<GlobalRevealRequest>).detail
+      if (!detail?.beast || !detail?.stage) return
+      stopSpeech()
+      setRevealPayload(detail)
+    }
+    window.addEventListener(LOCAL_PROGRESS_EVENT, bump)
+    window.addEventListener(CLOUD_HYDRATED_EVENT, bump)
+    window.addEventListener(BEAST_REVEAL_REQUEST_EVENT, onRevealRequest)
+    const unsubPrefs = subscribeBeastPrefs(setBeastPrefs)
+    const unsubHsk1 = subscribeHsk1Progress(setHsk1Progress)
+    return () => {
+      window.removeEventListener(LOCAL_PROGRESS_EVENT, bump)
+      window.removeEventListener(CLOUD_HYDRATED_EVENT, bump)
+      window.removeEventListener(BEAST_REVEAL_REQUEST_EVENT, onRevealRequest)
+      unsubPrefs()
+      unsubHsk1()
+    }
+  }, [])
+
+  // Sudden Pokémon-style reveal mid-study whenever earned XP crosses a new level threshold
+  useEffect(() => {
+    if (onboardingOpen) return
+    const evalRes = evaluateBeastProgress({
+      track: member.track,
+      mastery: store.mastery,
+      cards: store.cards,
+      lessonsDone: store.lessonsDone,
+      pathDone: store.pathDone,
+      streak: store.streak,
+      xp: store.xp,
+      log: store.log,
+      history: readHistory(),
+      learnerGraph: store.learnerGraph,
+      hsk1Progress,
+      todayKey: dayKey(),
+      nowMs: Date.now(),
+    })
+
+    const currentPrefs = readBeastPrefs()
+    const activeStageId: BeastStageId = evalRes.unlockedStageIds.includes(currentPrefs.stageId)
+      ? currentPrefs.stageId
+      : BEAST_STAGES[0].id
+    const activeStage = getBeastStage(activeStageId)
+
+    const shouldRevealEvolution =
+      evalRes.level > 1 &&
+      (evalRes.level > currentPrefs.lastSeenLevel || !currentPrefs.revealedLevels.includes(evalRes.level))
+    const newAchievement = evalRes.unlockedAchievementKeys.find(
+      (k) => !currentPrefs.earnedAchievementKeys.includes(k),
+    )
+
+    if (shouldRevealEvolution) {
+      stopSpeech()
+      writeBeastPrefs({
+        lastSeenLevel: evalRes.level,
+        revealedLevels: [...new Set([...currentPrefs.revealedLevels, evalRes.level])],
+        earnedAchievementKeys: evalRes.unlockedAchievementKeys,
+      })
+      void postCoupleEvent({
+        from: activeId,
+        kind: 'evolution',
+        text: `Naik Lv ${evalRes.level}/24 (${evalRes.beast.stageLabel}): ${evalRes.beast.zhName}!`,
+        beastLevel: evalRes.level,
+        names,
+      })
+      setRevealPayload({
+        beast: evalRes.beast,
+        stage: activeStage,
+        reason: 'evolution',
+        headline: `✨ SELAMAT! WUJUD BARU LV ${evalRes.level}/24 TERBUKA!`,
+        spiritPower: evalRes.spiritPower,
+        nextTargetXp: evalRes.nextBeast ? evalRes.powerToNext : 0,
+      })
+      return
+    }
+
+    if (newAchievement) {
+      const unlockedStage = BEAST_STAGES.find((st) => st.achievementKey === newAchievement) ?? activeStage
+      writeBeastPrefs({
+        earnedAchievementKeys: evalRes.unlockedAchievementKeys,
+        stageId: unlockedStage.id,
+      })
+      stopSpeech()
+      setRevealPayload({
+        beast: evalRes.beast,
+        stage: unlockedStage,
+        reason: 'card',
+        headline: `✨ KARTU BARU TERBUKA: ${unlockedStage.name}`,
+        spiritPower: evalRes.spiritPower,
+        nextTargetXp: evalRes.nextBeast ? evalRes.powerToNext : 0,
+      })
+    }
+  }, [
+    onboardingOpen,
+    activeId,
+    names,
+    member.track,
+    store.mastery,
+    store.cards,
+    store.lessonsDone,
+    store.pathDone,
+    store.streak,
+    store.xp,
+    store.log,
+    store.learnerGraph,
+    hsk1Progress,
+    evolutionTick,
+  ])
   const [closing, setClosing] = useState(false)
   const exitTimer = useRef<ReturnType<typeof setTimeout>>()
   const closeOverlay = useCallback(() => {
@@ -201,7 +337,10 @@ function Shell() {
       }
     }
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeOverlay()
+      if (e.key === 'Escape') {
+        if (revealOpenRef.current) return
+        closeOverlay()
+      }
       if (e.key === 'Tab') {
         const panel = document.querySelector('.app>.overlay')
         const nodes = Array.from(
@@ -411,6 +550,13 @@ function Shell() {
           markOnboardingDone(activeId)
           setOnboardingOpen(false)
         }}
+      />
+      <GlobalMusicPill hidden={revealPayload !== null} />
+      <BeastRevealOverlay
+        payload={revealPayload}
+        muted={beastPrefs.revealMuted}
+        onToggleMute={() => writeBeastPrefs({ revealMuted: !beastPrefs.revealMuted })}
+        onClose={() => setRevealPayload(null)}
       />
     </div>
   )

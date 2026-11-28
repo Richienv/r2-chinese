@@ -1,8 +1,10 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent } from 'react'
 import { getTrainerAssetSrc, type LegendaryBeastTier } from '../lib/beastEngine'
-import { useCoupleProfile } from '../lib/coupleProfile'
 import { playBeastRevealSound, playBeastTapChime } from '../lib/beastSound'
-import { RARITY_TAG, type BeastStageMeta } from '../lib/beastStages'
+import { type BeastStageMeta } from '../lib/beastStages'
+import { useCoupleProfile } from '../lib/coupleProfile'
+import { studyMusicPlayer } from '../lib/studyMusic'
+import { SealedBeastSilhouette } from './SealedBeastSilhouette'
 import '../styles/beast-reveal.css'
 
 export interface BeastRevealPayload {
@@ -11,17 +13,20 @@ export interface BeastRevealPayload {
   reason: 'evolution' | 'card' | 'replay'
   headline?: string
   spiritPower: number
+  nextTargetXp?: number
 }
 
-const SPARKS = Array.from({ length: 28 }, (_, idx) => {
-  const angle = (idx / 28) * Math.PI * 2 + (idx % 3) * 0.14
-  const dist = 105 + (idx % 5) * 34
-  const palette = ['#fde047', '#38bdf8', '#34d399', '#f472b6', '#fb923c']
+const SPARKS = Array.from({ length: 34 }, (_, idx) => {
+  const angle = (idx / 34) * Math.PI * 2 + (idx % 3) * 0.12
+  const dist = 110 + (idx % 6) * 32
+  const palette = ['#fde047', '#f472b6', '#34d399', '#38bdf8', '#fb923c', '#ffffff']
   return {
     id: idx,
     tx: `${Math.round(Math.cos(angle) * dist)}px`,
     ty: `${Math.round(Math.sin(angle) * dist)}px`,
+    rot: `${(idx * 47) % 360}deg`,
     color: palette[idx % palette.length],
+    petal: idx % 3 === 0,
   }
 })
 
@@ -41,10 +46,12 @@ export function BeastRevealOverlay({
   const [quoteIdx, setQuoteIdx] = useState(0)
   const [showQuote, setShowQuote] = useState(false)
   const [runSeed, setRunSeed] = useState(0)
+  const [tilt, setTilt] = useState({ rx: 0, ry: 0, gx: 50, gy: 35 })
   const stopAudioRef = useRef<(() => void) | null>(null)
 
   const replay = useCallback(() => {
     setShowQuote(false)
+    setTilt({ rx: 0, ry: 0, gx: 50, gy: 35 })
     setRunSeed((n) => n + 1)
   }, [])
 
@@ -53,18 +60,28 @@ export function BeastRevealOverlay({
     setPhase('charging')
     setShowQuote(false)
     setQuoteIdx(0)
+    setTilt({ rx: 0, ry: 0, gx: 50, gy: 35 })
+
+    // Duck study music smoothly while reveal fanfare plays so SFX + celebration shine clearly
+    const music = studyMusicPlayer()
+    music.duckSource('reveal', true)
 
     stopAudioRef.current?.()
     if (!muted) {
       stopAudioRef.current = playBeastRevealSound(payload.stage.rarity)
     }
 
-    const burstTimer = window.setTimeout(() => setPhase('burst'), 1120)
-    const revealTimer = window.setTimeout(() => setPhase('revealed'), 1480)
+    const burstTimer = window.setTimeout(() => setPhase('burst'), 1240)
+    const revealTimer = window.setTimeout(() => setPhase('revealed'), 2000)
+    const releaseDuckTimer = window.setTimeout(() => {
+      music.duckSource('reveal', false)
+    }, 3600)
 
     return () => {
       window.clearTimeout(burstTimer)
       window.clearTimeout(revealTimer)
+      window.clearTimeout(releaseDuckTimer)
+      music.duckSource('reveal', false)
       stopAudioRef.current?.()
       stopAudioRef.current = null
     }
@@ -85,23 +102,47 @@ export function BeastRevealOverlay({
       '--card-foil': payload.stage.foilGradient,
       '--card-bg': payload.stage.previewGradient,
       '--reveal-accent': payload.beast.accentHex,
+      '--tilt-x': `${tilt.rx.toFixed(2)}deg`,
+      '--tilt-y': `${tilt.ry.toFixed(2)}deg`,
+      '--glare-x': `${tilt.gx.toFixed(1)}%`,
+      '--glare-y': `${tilt.gy.toFixed(1)}%`,
     } as CSSProperties
-  }, [payload])
+  }, [payload, tilt])
+
+  const handleCardPointerMove = (e: PointerEvent<HTMLElement>) => {
+    if (phase === 'charging') return
+    const rect = e.currentTarget.getBoundingClientRect()
+    if (!rect.width || !rect.height) return
+    const px = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width))
+    const py = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height))
+    setTilt({
+      rx: (0.5 - py) * 14,
+      ry: (px - 0.5) * 16,
+      gx: px * 100,
+      gy: py * 100,
+    })
+  }
+
+  const handleCardPointerLeave = () => {
+    setTilt({ rx: 0, ry: 0, gx: 50, gy: 35 })
+  }
 
   if (!payload) return null
 
-  const { beast, stage, reason, headline, spiritPower } = payload
+  const { beast, stage, reason, headline, spiritPower, nextTargetXp } = payload
   const spriteSrc = getTrainerAssetSrc(beast, activeId)
-  const reasonLabel =
-    reason === 'evolution'
-      ? 'EVOLUSI SHENSHOU BARU'
+  const bannerText =
+    headline ||
+    (reason === 'evolution'
+      ? '✨ SELAMAT! WUJUD BARU TERBUKA!'
       : reason === 'card'
-        ? 'KARTU KOLEKTOR TERBUKA'
-        : 'LEGENDARY SHOWCASE'
+        ? '✨ KARTU KOLEKTOR TERBUKA!'
+        : '✨ KARTU KOLEKSI LEGENDA')
 
   return (
     <div
       className={`lr-overlay phase-${phase}`}
+      data-member={activeId}
       role="dialog"
       aria-modal="true"
       aria-label={`${beast.zhName} ${beast.name}`}
@@ -115,11 +156,12 @@ export function BeastRevealOverlay({
         {SPARKS.map((sp) => (
           <span
             key={sp.id}
-            className="lr-spark"
+            className={`lr-spark${sp.petal ? ' is-petal' : ''}`}
             style={
               {
                 '--tx': sp.tx,
                 '--ty': sp.ty,
+                '--spark-rot': sp.rot,
                 '--spark-color': sp.color,
               } as CSSProperties
             }
@@ -129,7 +171,7 @@ export function BeastRevealOverlay({
 
       <div className="lr-stage-shell">
         <div className="lr-topbar">
-          <span className="lr-top-tag">{headline || reasonLabel}</span>
+          <span className="lr-top-tag">{bannerText}</span>
           <button type="button" className="lr-close-x" onClick={onClose} aria-label="Tutup">
             ✕
           </button>
@@ -137,76 +179,95 @@ export function BeastRevealOverlay({
 
         {phase === 'charging' ? (
           <div className="lr-charge-scene">
-            <div className="lr-orbit-ring" />
-            <div className="lr-orbit-ring inner" />
-            <img className="lr-silhouette" src={spriteSrc} alt="" />
-            <p className="lr-charge-label">Menghimpun XP Evolusi…</p>
+            <div className="lr-mystery-card">
+              <div className="lr-mystery-holo" aria-hidden="true" />
+              <div className="lr-orbit-ring" aria-hidden="true" />
+              <div className="lr-orbit-ring inner" aria-hidden="true" />
+              <div className="lr-mystery-silhouette">
+                <SealedBeastSilhouette
+                  src={spriteSrc}
+                  level={beast.level}
+                  memberId={activeId}
+                  accentHex={beast.accentHex}
+                  animateFloat
+                />
+              </div>
+              <div className="lr-mystery-footer">SIAPKAN KARTU BARU · LV {beast.level}</div>
+            </div>
+            <p className="lr-charge-label">Menghimpun Energi Evolusi…</p>
           </div>
         ) : (
-          <article className="lr-card" data-foil={stage.foilStyle}>
-            <div className="lr-card-inner">
-              <div className="lr-card-texture" aria-hidden="true" />
-              {stage.foilStyle === 'gold' && (
-                <svg className="lr-gold-bolts" viewBox="0 0 320 420" preserveAspectRatio="none" aria-hidden="true">
-                  <path
-                    d="M28 48 L72 95 L56 105 L96 156 M292 78 L250 124 L268 134 L224 190 M36 330 L84 282 L70 272 L114 232"
-                    fill="none"
-                    stroke="#fef08a"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              )}
+          <div
+            className="lr-card-perspective"
+            onPointerMove={handleCardPointerMove}
+            onPointerLeave={handleCardPointerLeave}
+          >
+            <article className="lr-card" data-foil={stage.foilStyle}>
+              <div className="lr-card-inner">
+                <div className="lr-card-texture" aria-hidden="true" />
+                <div className="lr-holo-sweep" aria-hidden="true" />
+                <div className="lr-card-glare" aria-hidden="true" />
 
-              <div className="lr-card-header">
-                <div className="lr-card-lvl">
-                  <span className="lr-rarity-pill">{RARITY_TAG[stage.rarity]}</span>
-                  <span>Lv {beast.level}/24 · {beast.stageLabel} · {beast.element}</span>
+                <div className="lr-card-header">
+                  <div className="lr-card-lvl">
+                    <span className="lr-rarity-pill">
+                      LV {beast.level} · {beast.stageLabel.toUpperCase()}
+                      {reason === 'evolution' ? ' · BARU!' : ''}
+                    </span>
+                  </div>
+                  <span className="lr-power-chip">{spiritPower.toLocaleString('id-ID')} XP</span>
                 </div>
-                <span className="lr-power-chip">{spiritPower.toLocaleString('id-ID')} XP</span>
-              </div>
 
-              <div
-                className="lr-beast-frame"
-                role="button"
-                tabIndex={0}
-                onClick={() => {
-                  if (!muted) playBeastTapChime()
-                  setShowQuote(true)
-                  setQuoteIdx((n) => (n + 1) % beast.quotes.length)
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
+                <div
+                  className="lr-beast-frame"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => {
                     if (!muted) playBeastTapChime()
                     setShowQuote(true)
                     setQuoteIdx((n) => (n + 1) % beast.quotes.length)
-                  }
-                }}
-                aria-label={`Sentuh ${beast.name}`}
-              >
-                <div className="lr-pedestal-glow" aria-hidden="true" />
-                <img className="lr-beast-art" src={spriteSrc} alt={`${beast.zhName} ${beast.name}`} />
-              </div>
-
-              {showQuote && (
-                <div className="lr-quote-pop">{beast.quotes[quoteIdx]}</div>
-              )}
-
-              <div className="lr-nameplate">
-                <div className="lr-zh-title" lang="zh-CN">{beast.zhName}</div>
-                <div className="lr-sub-title">{beast.pinyin} · {beast.name}</div>
-                <div className="lr-meta-row">
-                  <span className="lr-stage-chip">{stage.cardCode} {beast.stageLabel.toUpperCase()}</span>
-                  <span>{beast.trainerTitle}</span>
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      if (!muted) playBeastTapChime()
+                      setShowQuote(true)
+                      setQuoteIdx((n) => (n + 1) % beast.quotes.length)
+                    }
+                  }}
+                  aria-label={`Sentuh ${beast.name}`}
+                >
+                  <div className="lr-pedestal-glow" aria-hidden="true" />
+                  <img className="lr-beast-art" src={spriteSrc} alt={`${beast.zhName} ${beast.name}`} />
                 </div>
-                <p className="lr-lore">
-                  {beast.trainerOutfit} · {beast.trainerAccessory}. {beast.lore}
-                </p>
+
+                {showQuote && <div className="lr-quote-pop">{beast.quotes[quoteIdx]}</div>}
+
+                <div className="lr-nameplate">
+                  <div className="lr-zh-title" lang="zh-CN">
+                    {beast.zhName}
+                  </div>
+                  <div className="lr-sub-title">
+                    {beast.pinyin} · {beast.name}
+                  </div>
+                  <div className="lr-meta-row">
+                    <span className="lr-stage-chip">{stage.cardCode} {beast.element}</span>
+                    <span>{beast.trainerTitle}</span>
+                  </div>
+                  <p className="lr-lore">
+                    {beast.trainerOutfit} · {beast.trainerAccessory}.
+                  </p>
+                  {typeof nextTargetXp === 'number' && (
+                    <div className="lr-next-goal">
+                      {nextTargetXp > 0
+                        ? `Target selanjutnya: butuh ${nextTargetXp.toLocaleString('id-ID')} XP lagi menuju Lv ${beast.level + 1}`
+                        : 'Seluruh 24 evolusi Legenda telah terbuka penuh!'}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
         )}
 
         <div className="lr-actions">
@@ -217,7 +278,7 @@ export function BeastRevealOverlay({
             {muted ? 'Suara Bisu' : 'Suara Aktif'}
           </button>
           <button type="button" className="lr-btn-primary" onClick={onClose}>
-            Masuk Arena ›
+            Keren! Lanjut Belajar →
           </button>
         </div>
       </div>

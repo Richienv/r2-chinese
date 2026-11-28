@@ -113,3 +113,55 @@ test('browser interruption shows paused and blocked AudioContext can be retried'
   const denied = fixture({}, true); const blocked = denied.player.play(true); denied.pending.shift().resolve(); await blocked
   assert.equal(denied.player.snapshot().error, true); assert.equal(denied.audio.paused, true); denied.player.dispose()
 })
+
+test('native background HTML5 mode supports MediaSession controls, stacked speech+reveal ducking, and auto-next on ended', async () => {
+  const writes = new Map()
+  const events = new Map()
+  const mediaCalls = []
+  let resolvePlay
+  const audio = {
+    paused: true,
+    loop: false,
+    src: '',
+    preload: '',
+    id: '',
+    volume: 0.4,
+    duration: 120,
+    currentTime: 10,
+    addEventListener(name, fn) { events.set(name, fn) },
+    play() { return new Promise((r) => { resolvePlay = () => { this.paused = false; r() } }) },
+    pause() { this.paused = true; events.get('pause')?.() },
+    load() {},
+  }
+  const player = createStudyMusicPlayer(STUDY_TRACKS, {
+    audio: () => audio,
+    storage: { getItem: (k) => writes.get(k), setItem: (k, v) => writes.set(k, v) },
+    resolveSrcSync: (t) => `blob:offline-${t.id}`,
+    syncMediaSession: (info) => mediaCalls.push(info),
+  })
+
+  player.volume(0.5)
+  const p = player.play(true)
+  assert.equal(audio.src, 'blob:offline-lofi')
+  resolvePlay()
+  await p
+
+  assert.equal(player.snapshot().on, true)
+  assert.equal(audio.volume, 0.5)
+  assert.ok(mediaCalls.some((c) => c.playing === true && c.track.id === 'lofi'))
+
+  // Stacked ducking: reveal + speech must keep ducked until BOTH release
+  player.duckSource('speech', true)
+  assert.equal(player.snapshot().ducked, true)
+  player.duckSource('reveal', true)
+  assert.equal(player.snapshot().ducked, true)
+  player.duckSource('speech', false)
+  assert.equal(player.snapshot().ducked, true)
+  player.duckSource('reveal', false)
+  assert.equal(player.snapshot().ducked, false)
+
+  // Background track ended automatically advances & syncs MediaSession
+  events.get('ended')?.()
+  assert.equal(player.snapshot().trackId, STUDY_TRACKS[1].id)
+  player.dispose()
+})
