@@ -47,6 +47,14 @@ export function CourseGate({ corner }: { corner?: ReactNode }) {
 
 export function CourseBack() {
   const { leaveCourse } = useCourse()
+  const { activeId } = useCoupleProfile()
+  if (activeId === 'renita') {
+    return (
+      <span className="course-back library-back" style={{ cursor: 'default' }}>
+        🌸 HSK 1 Dari Nol
+      </span>
+    )
+  }
   return (
     <button type="button" className="course-back library-back tap44" onClick={leaveCourse}>
       <span aria-hidden>←</span> {t('Courses')}

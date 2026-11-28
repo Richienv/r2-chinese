@@ -1,14 +1,14 @@
 /* This footer reserves its own space. The paper dock floats visually, never over content. */
-.app > .bottom-nav { position: relative; flex: none; width: 100%; padding: 9px 16px calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 40; background: linear-gradient(180deg, rgba(237, 243, 242, 0), var(--bg) 65%); }
+.app > .bottom-nav { position: relative; flex: none; width: 100%; padding: 9px 16px calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 40; background: linear-gradient(180deg, rgba(236, 253, 245, 0), var(--bg) 65%); }
 .desktop-nav-brand,
 .desktop-nav-footer { display: none; }
 .desktop-nav-top { display: contents; }
-.bottom-nav .bottom-nav-dock { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: stretch; padding: 5px; max-width: 392px; margin: 0 auto; border: 1px solid #cbdcda; border-radius: 23px; background: linear-gradient(155deg, #f6faf7, #f0f6f2); box-shadow: 0 7px 24px -10px rgba(91, 60, 32, .24), inset 0 1px 0 #fffefa; isolation: isolate; }
-.bottom-nav .bottom-nav-marker { position: absolute; top: 5px; left: 0; bottom: 5px; z-index: 0; width: 0; opacity: 0; border: 1px solid rgba(178, 139, 97, .15); border-radius: 17px; background: linear-gradient(140deg, #e2eee7, #d8e7de); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 2px 5px rgba(108, 65, 30, .04); pointer-events: none; transform-origin: left center; will-change: transform; }
+.bottom-nav .bottom-nav-dock { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: stretch; padding: 5px; max-width: 392px; margin: 0 auto; border: 1px solid #a7f3d0; border-radius: 23px; background: linear-gradient(155deg, #f4fff9, #e7faef); box-shadow: 0 7px 24px -10px rgba(4, 120, 87, .24), inset 0 1px 0 #ffffff; isolation: isolate; }
+.bottom-nav .bottom-nav-marker { position: absolute; top: 5px; left: 0; bottom: 5px; z-index: 0; width: 0; opacity: 0; border: 1px solid rgba(5, 150, 105, .18); border-radius: 17px; background: linear-gradient(140deg, #d1fae5, #a7f3d0); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 2px 5px rgba(5, 150, 105, .08); pointer-events: none; transform-origin: left center; will-change: transform; }
 .bottom-nav .bottom-nav-marker[data-ready='true'] { opacity: 1; }
-.bottom-nav .bottom-nav-marker i { position: absolute; bottom: 4px; left: calc(50% - 5px); width: 10px; height: 2px; border-radius: 4px; background: #af4930; box-shadow: 0 1px 2px rgba(140, 62, 33, .1); }
-.bottom-nav .bottom-nav-item { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 44px; min-height: 52px; padding: 4px 3px 7px; gap: 4px; border: 0; border-radius: 17px; background: transparent; color: #607c75; font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: color 170ms ease; }
-.bottom-nav .bottom-nav-item[aria-current='page'] { color: #24564a; }
+.bottom-nav .bottom-nav-marker i { position: absolute; bottom: 4px; left: calc(50% - 5px); width: 10px; height: 2px; border-radius: 4px; background: #059669; box-shadow: 0 1px 2px rgba(5, 150, 105, .25); }
+.bottom-nav .bottom-nav-item { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 44px; min-height: 52px; padding: 4px 3px 7px; gap: 4px; border: 0; border-radius: 17px; background: transparent; color: #3d7564; font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: color 170ms ease; }
+.bottom-nav .bottom-nav-item[aria-current='page'] { color: #047857; }
 .bottom-nav .bottom-nav-icon { display: grid; place-items: center; width: 25px; height: 24px; transform-origin: 50% 70%; }
 .bottom-nav .bottom-nav-icon svg { display: block; stroke-width: 1.65; }
 .bottom-nav .bottom-nav-label { display: block; font-size: 10.5px; font-weight: 650; line-height: 1.2; letter-spacing: .01em; }
@@ -24,3 +24,11 @@
   .bottom-nav .bottom-nav-item:active .bottom-nav-icon { transform: none; }
   .bottom-nav .bottom-nav-marker { will-change: auto; }
 }
+
+[data-member='renita'] .app > .bottom-nav { background: linear-gradient(180deg, rgba(253, 242, 248, 0), var(--bg) 65%); }
+[data-member='renita'] .bottom-nav .bottom-nav-dock { border-color: #f5c2dc; background: linear-gradient(155deg, #fff9fc, #fdf2f8); }
+[data-member='renita'] .bottom-nav .bottom-nav-marker { background: linear-gradient(140deg, #fce7f3, #fbcfe8); border-color: rgba(219, 39, 119, 0.16); }
+[data-member='renita'] .bottom-nav .bottom-nav-marker i { background: #db2777; }
+[data-member='renita'] .bottom-nav .bottom-nav-item { color: #9d5c7c; }
+[data-member='renita'] .bottom-nav .bottom-nav-item[aria-current='page'] { color: #be185d; }
+[data-member='renita'] .bottom-nav .bottom-nav-item:focus-visible { outline: 2px solid #db2777; outline-offset: 1px; }

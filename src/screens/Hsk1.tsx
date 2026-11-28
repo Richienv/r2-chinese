@@ -42,10 +42,11 @@ import {
 } from '../lib/hsk1Srs'
 import { recordHistory } from '../lib/history'
 import { readHsk1Progress as _readHsk1ForBeast } from '../lib/hsk1'
-import { playAdvance, playCombo, playComplete, playCorrect, playHint, playListen, playStart, playWrong } from '../lib/sfx'
+import { playAdvance, playCombo, playComplete, playCorrect, playHint, playListen, playReveal, playStart, playWrong } from '../lib/sfx'
 import { speak, stopSpeech } from '../lib/speech'
 import type { Rating } from '../lib/srs'
 import { dayKey, useStore } from '../store/store'
+import { MemberBadge } from '../components/MemberBadge'
 import { BasicStrokeSvg, HanziTracePad, ToneWaveSvg } from '../components/Hsk1Visuals'
 import '../styles/duo.css'
 import '../styles/hsk1.css'
@@ -68,6 +69,21 @@ function speakNormal(text: string) {
 function speakSlow(text: string) {
   playListen()
   void speak(text, { rate: -32 })
+}
+
+function Hsk1SoundToggle({ soundOn, onToggle }: { soundOn: boolean; onToggle: () => void }) {
+  return (
+    <button
+      type="button"
+      className="hsk1-sound-btn"
+      onClick={onToggle}
+      aria-label={soundOn ? 'Bisukan efek suara' : 'Nyalakan efek suara'}
+      aria-pressed={soundOn}
+      title={soundOn ? 'Suara aktif' : 'Suara bisu'}
+    >
+      {soundOn ? '🔊' : '🔇'}
+    </button>
+  )
 }
 
 function useChampionArt() {
@@ -451,6 +467,7 @@ export function Hsk1ToneLabOverlay({
   const [firstPassCorrect, setFirstPassCorrect] = useState<Record<string, boolean>>({})
   const [playingWave, setPlayingWave] = useState(false)
   const [strokePlayKey, setStrokePlayKey] = useState(0)
+  const [labRevealOpen, setLabRevealOpen] = useState(false)
   const [finished, setFinished] = useState(false)
 
   useEffect(() => () => stopSpeech(), [])
@@ -465,6 +482,7 @@ export function Hsk1ToneLabOverlay({
     setBestCombo(0)
     setXpGain(0)
     setFirstPassCorrect({})
+    setLabRevealOpen(false)
     setFinished(false)
   }
 
@@ -498,6 +516,7 @@ export function Hsk1ToneLabOverlay({
     stopSpeech()
     setPickedOpt(null)
     setPlayingWave(false)
+    setLabRevealOpen(false)
     if (stepIdx + 1 < deck.length) {
       playAdvance()
       setStepIdx((i) => i + 1)
@@ -566,12 +585,14 @@ export function Hsk1ToneLabOverlay({
         <button type="button" className="hsk1-icon-close" onClick={onClose} aria-label="Tutup">
           ✕
         </button>
+        <Hsk1SoundToggle soundOn={s.prefs.soundOn} onToggle={() => s.setPref('soundOn', !s.prefs.soundOn)} />
         <div className="hsk1-top-progress" aria-label={`Progres ${progressPct}%`}>
           <i style={{ width: `${progressPct}%` }} />
         </div>
         <div className="hsk1-hud-badges">
           {combo >= 2 && <span className="hsk1-combo-pill">🔥 {combo}×</span>}
           <span className="hsk1-xp-pill">+{xpGain} XP</span>
+          <MemberBadge compact />
         </div>
       </header>
 
@@ -639,9 +660,6 @@ export function Hsk1ToneLabOverlay({
                 <div className="hsk1-hero-pinyin" style={{ color: tone.colorHex }}>
                   {tone.sampleSyllable} · {tone.sampleMeaning}
                 </div>
-                <div className="hsk1-analogy-box">
-                  <strong>{tone.label}:</strong> {tone.howTo}
-                </div>
                 <div className="hsk1-audio-pair">
                   <button
                     type="button"
@@ -665,6 +683,22 @@ export function Hsk1ToneLabOverlay({
                     🐢 Pelan
                   </button>
                 </div>
+                <button
+                  type="button"
+                  className="hsk1-reveal-chip"
+                  aria-expanded={labRevealOpen}
+                  onClick={() => {
+                    playReveal()
+                    setLabRevealOpen((v) => !v)
+                  }}
+                >
+                  💡 {labRevealOpen ? 'Tutup cara ucap ▴' : 'Cara ucap & pengingat nada ▾'}
+                </button>
+                {labRevealOpen && (
+                  <div className="hsk1-analogy-box reveal-fade-in">
+                    <strong>{tone.label}:</strong> {tone.howTo}
+                  </div>
+                )}
               </div>
             )
           })()
@@ -722,7 +756,6 @@ export function Hsk1ToneLabOverlay({
                 </span>
                 <h2 className="hsk1-card-title">{grp.title}</h2>
                 <div className="hsk1-symbol-hero">{grp.symbols}</div>
-                <div className="hsk1-analogy-box">{grp.tipId}</div>
                 <div className="hsk1-chip-row">
                   {grp.examples.map((ex) => (
                     <button
@@ -738,6 +771,18 @@ export function Hsk1ToneLabOverlay({
                     </button>
                   ))}
                 </div>
+                <button
+                  type="button"
+                  className="hsk1-reveal-chip"
+                  aria-expanded={labRevealOpen}
+                  onClick={() => {
+                    playReveal()
+                    setLabRevealOpen((v) => !v)
+                  }}
+                >
+                  💡 {labRevealOpen ? 'Tutup tips posisi lidah ▴' : 'Tips posisi lidah & bibir ▾'}
+                </button>
+                {labRevealOpen && <div className="hsk1-analogy-box reveal-fade-in">{grp.tipId}</div>}
               </div>
             )
           })()
@@ -799,9 +844,6 @@ export function Hsk1ToneLabOverlay({
                 <div className="hsk1-hero-pinyin" style={{ color: stroke.colorHex }}>
                   {stroke.nameId} — {stroke.metaphorId}
                 </div>
-                <div className="hsk1-analogy-box">
-                  <strong>Makna & Arah:</strong> {stroke.meaningRoleId} {stroke.directionHint}
-                </div>
                 <div className="hsk1-chip-row">
                   <button
                     type="button"
@@ -810,20 +852,40 @@ export function Hsk1ToneLabOverlay({
                   >
                     ↻ Putar Goresan
                   </button>
-                  {stroke.examples.map((ex) => (
-                    <button
-                      key={ex.zh}
-                      type="button"
-                      className="hsk1-sound-bubble"
-                      onClick={() => speakNormal(ex.zh)}
-                    >
-                      <strong lang="zh-CN">🔊 {ex.zh}</strong>
-                      <span>
-                        {ex.pinyin} · {ex.meaningId}
-                      </span>
-                    </button>
-                  ))}
+                  <button
+                    type="button"
+                    className="hsk1-reveal-chip"
+                    aria-expanded={labRevealOpen}
+                    onClick={() => {
+                      playReveal()
+                      setLabRevealOpen((v) => !v)
+                    }}
+                  >
+                    💡 {labRevealOpen ? 'Tutup arti & contoh ▴' : 'Lihat arti & contoh huruf ▾'}
+                  </button>
                 </div>
+                {labRevealOpen && (
+                  <div className="reveal-fade-in" style={{ width: '100%', display: 'grid', gap: 10 }}>
+                    <div className="hsk1-analogy-box">
+                      <strong>Makna & Arah:</strong> {stroke.meaningRoleId} {stroke.directionHint}
+                    </div>
+                    <div className="hsk1-chip-row">
+                      {stroke.examples.map((ex) => (
+                        <button
+                          key={ex.zh}
+                          type="button"
+                          className="hsk1-sound-bubble"
+                          onClick={() => speakNormal(ex.zh)}
+                        >
+                          <strong lang="zh-CN">🔊 {ex.zh}</strong>
+                          <span>
+                            {ex.pinyin} · {ex.meaningId}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )
           })()
@@ -971,6 +1033,10 @@ export function Hsk1SessionOverlay({
   const [xpGain, setXpGain] = useState(0)
   const [pickedZh, setPickedZh] = useState<string | null>(null)
   const [selectedRadicalStory, setSelectedRadicalStory] = useState<string | null>(null)
+  const [revealRadicals, setRevealRadicals] = useState(false)
+  const [revealExample, setRevealExample] = useState(false)
+  const [revealFormulaExamples, setRevealFormulaExamples] = useState(false)
+  const [bossExampleOpen, setBossExampleOpen] = useState(false)
 
   // Node 2 (goresan) tracing state
   const traceTargets = useMemo(() => pickTraceTargets(unit.words, 4), [unit.words])
@@ -1053,6 +1119,10 @@ export function Hsk1SessionOverlay({
     setNodeDoneView(false)
     setPickedZh(null)
     setSelectedRadicalStory(null)
+    setRevealRadicals(false)
+    setRevealExample(false)
+    setRevealFormulaExamples(false)
+    setBossExampleOpen(false)
     setMatchLeftSel(null)
     setMatchRightSel(null)
     setMatchedZh([])
@@ -1197,6 +1267,10 @@ export function Hsk1SessionOverlay({
     stopSpeech()
     setPickedZh(null)
     setSelectedRadicalStory(null)
+    setRevealRadicals(false)
+    setRevealExample(false)
+    setRevealFormulaExamples(false)
+    setBossExampleOpen(false)
     setMatchLeftSel(null)
     setMatchRightSel(null)
     setMatchedZh([])
@@ -1290,12 +1364,14 @@ export function Hsk1SessionOverlay({
         <button type="button" className="hsk1-icon-close" onClick={onClose} aria-label="Tutup">
           ✕
         </button>
+        <Hsk1SoundToggle soundOn={s.prefs.soundOn} onToggle={() => s.setPref('soundOn', !s.prefs.soundOn)} />
         <div className="hsk1-top-progress" aria-label={`Progres ${progressPct}%`}>
           <i style={{ width: `${progressPct}%` }} />
         </div>
         <div className="hsk1-hud-badges">
           {combo >= 2 && <span className="hsk1-combo-pill">🔥 {combo}×</span>}
           <span className="hsk1-xp-pill">+{xpGain} XP</span>
+          <MemberBadge compact />
         </div>
       </header>
 
@@ -1386,43 +1462,72 @@ export function Hsk1SessionOverlay({
                     </button>
                   </div>
 
-                  <div className="hsk1-puzzle-box">
-                    <div className="hsk1-puzzle-title">🧩 Akar Pembentuk Aksara (tap untuk lihat cerita)</div>
-                    {decomp.characters.map((ch) => (
-                      <div key={ch.char} className="hsk1-puzzle-char-row">
-                        <span className="hsk1-puzzle-glyph" lang="zh-CN">
-                          {ch.char}
-                        </span>
-                        <span className="hsk1-puzzle-eq">=</span>
-                        <div className="hsk1-puzzle-parts">
-                          {ch.parts.map((pt, pi) => (
-                            <button
-                              key={`${ch.char}-${pt.glyph}-${pi}`}
-                              type="button"
-                              className="hsk1-part-chip"
-                              onClick={() => setSelectedRadicalStory(`${pt.emoji} ${pt.glyph}: ${pt.meaningId} — ${ch.storyId}`)}
-                            >
-                              {pt.emoji} <b lang="zh-CN">{pt.glyph}</b> ({pt.meaningId})
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                    <p className="hsk1-puzzle-story">
-                      {selectedRadicalStory ?? decomp.characters[0]?.storyId ?? step.word.literalTip}
-                    </p>
+                  <div className="hsk1-reveal-row">
+                    <button
+                      type="button"
+                      className="hsk1-reveal-chip"
+                      aria-expanded={revealRadicals}
+                      onClick={() => {
+                        playReveal()
+                        setRevealRadicals((v) => !v)
+                      }}
+                    >
+                      🧩 {revealRadicals ? 'Tutup akar aksara ▴' : 'Bongkar akar aksara ▾'}
+                    </button>
+                    <button
+                      type="button"
+                      className="hsk1-reveal-chip"
+                      aria-expanded={revealExample}
+                      onClick={() => {
+                        playReveal()
+                        setRevealExample((v) => !v)
+                      }}
+                    >
+                      💬 {revealExample ? 'Tutup contoh ▴' : 'Contoh kalimat ▾'}
+                    </button>
                   </div>
 
-                  <details className="hsk1-example-toggle">
-                    <summary>Lihat contoh kalimat sehari-hari</summary>
-                    <div className="hsk1-example-inner">
+                  {revealRadicals && (
+                    <div className="hsk1-puzzle-box reveal-fade-in">
+                      <div className="hsk1-puzzle-title">🧩 Akar Pembentuk Aksara (tap bagian untuk cerita)</div>
+                      {decomp.characters.map((ch) => (
+                        <div key={ch.char} className="hsk1-puzzle-char-row">
+                          <span className="hsk1-puzzle-glyph" lang="zh-CN">
+                            {ch.char}
+                          </span>
+                          <span className="hsk1-puzzle-eq">=</span>
+                          <div className="hsk1-puzzle-parts">
+                            {ch.parts.map((pt, pi) => (
+                              <button
+                                key={`${ch.char}-${pt.glyph}-${pi}`}
+                                type="button"
+                                className="hsk1-part-chip"
+                                onClick={() => {
+                                  playReveal()
+                                  setSelectedRadicalStory(`${pt.emoji} ${pt.glyph}: ${pt.meaningId} — ${ch.storyId}`)
+                                }}
+                              >
+                                {pt.emoji} <b lang="zh-CN">{pt.glyph}</b> ({pt.meaningId})
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                      <p className="hsk1-puzzle-story">
+                        {selectedRadicalStory ?? decomp.characters[0]?.storyId ?? step.word.literalTip}
+                      </p>
+                    </div>
+                  )}
+
+                  {revealExample && (
+                    <div className="hsk1-analogy-box reveal-fade-in">
                       <div lang="zh-CN" style={{ fontWeight: 800, fontSize: 16 }}>
                         {step.word.exampleZh}
                       </div>
                       <div style={{ color: '#be185d', fontWeight: 700, fontSize: 13 }}>
                         {step.word.examplePinyin}
                       </div>
-                      <div style={{ color: '#475569', fontSize: 13 }}>{step.word.exampleId}</div>
+                      <div style={{ color: '#475569', fontSize: 13, marginBottom: 6 }}>{step.word.exampleId}</div>
                       <button
                         type="button"
                         className="hsk1-mini-pill"
@@ -1431,7 +1536,7 @@ export function Hsk1SessionOverlay({
                         🔊 Putar Kalimat
                       </button>
                     </div>
-                  </details>
+                  )}
                 </div>
               )
             }
@@ -1659,21 +1764,35 @@ export function Hsk1SessionOverlay({
                   <p style={{ margin: 0, fontSize: 14, lineHeight: 1.55, color: '#334155' }}>
                     {unit.grammar.explainId}
                   </p>
-                  <div className="hsk1-option-list">
-                    {unit.grammar.examples.slice(0, 2).map((ex, i) => (
-                      <button
-                        key={i}
-                        type="button"
-                        className="hsk1-sound-bubble"
-                        onClick={() => speakNormal(ex.zh)}
-                      >
-                        <strong lang="zh-CN">🔊 {ex.zh}</strong>
-                        <span>
-                          {ex.pinyin} — {ex.id}
-                        </span>
-                      </button>
-                    ))}
-                  </div>
+                  <button
+                    type="button"
+                    className="hsk1-reveal-chip"
+                    style={{ alignSelf: 'flex-start' }}
+                    aria-expanded={revealFormulaExamples}
+                    onClick={() => {
+                      playReveal()
+                      setRevealFormulaExamples((v) => !v)
+                    }}
+                  >
+                    💬 {revealFormulaExamples ? 'Tutup contoh kalimat ▴' : 'Lihat contoh kalimat ▾'}
+                  </button>
+                  {revealFormulaExamples && (
+                    <div className="hsk1-option-list reveal-fade-in">
+                      {unit.grammar.examples.slice(0, 2).map((ex, i) => (
+                        <button
+                          key={i}
+                          type="button"
+                          className="hsk1-sound-bubble"
+                          onClick={() => speakNormal(ex.zh)}
+                        >
+                          <strong lang="zh-CN">🔊 {ex.zh}</strong>
+                          <span>
+                            {ex.pinyin} — {ex.id}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )
             }
@@ -1958,9 +2077,29 @@ export function Hsk1SessionOverlay({
                 </div>
 
                 {pickedZh !== null && (
-                  <div className="hsk1-tip-box">
-                    <strong lang="zh-CN">{bItem.word.zh}</strong> ({bItem.word.pinyin}) = {bItem.word.meaningId} · Contoh:{' '}
-                    <span lang="zh-CN">{bItem.word.exampleZh}</span>
+                  <div style={{ display: 'grid', gap: 8 }}>
+                    <div className="hsk1-tip-box reveal-fade-in">
+                      <strong lang="zh-CN">{bItem.word.zh}</strong> ({bItem.word.pinyin}) = {bItem.word.meaningId}
+                    </div>
+                    <button
+                      type="button"
+                      className="hsk1-reveal-chip"
+                      style={{ alignSelf: 'flex-start' }}
+                      aria-expanded={bossExampleOpen}
+                      onClick={() => {
+                        playReveal()
+                        setBossExampleOpen((v) => !v)
+                      }}
+                    >
+                      📖 {bossExampleOpen ? 'Tutup contoh ▴' : 'Contoh & arti kalimat ▾'}
+                    </button>
+                    {bossExampleOpen && (
+                      <div className="hsk1-analogy-box reveal-fade-in">
+                        <div lang="zh-CN" style={{ fontWeight: 700 }}>{bItem.word.exampleZh}</div>
+                        <div style={{ fontSize: 12.5, color: '#be185d', fontWeight: 700 }}>{bItem.word.examplePinyin}</div>
+                        <div style={{ fontSize: 12.5, color: '#475569' }}>{bItem.word.exampleId}</div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -2014,6 +2153,8 @@ export function Hsk1RecallOverlay({ onClose }: { onClose: () => void }) {
   const [srsCardsDraft, setSrsCardsDraft] = useState(progress.srsCards)
   const [reviews, setReviews] = useState<Record<string, Rating>>({})
   const [lastIntervalBadge, setLastIntervalBadge] = useState<string | null>(null)
+  const [postExampleOpen, setPostExampleOpen] = useState(false)
+  const [postMemoryOpen, setPostMemoryOpen] = useState(false)
   const [done, setDone] = useState(false)
 
   useEffect(() => () => stopSpeech(), [])
@@ -2066,6 +2207,8 @@ export function Hsk1RecallOverlay({ onClose }: { onClose: () => void }) {
     setPickedZh(null)
     setHintTier(0)
     setLastIntervalBadge(null)
+    setPostExampleOpen(false)
+    setPostMemoryOpen(false)
     if (idx + 1 < deck.length) {
       playAdvance()
       setIdx((i) => i + 1)
@@ -2103,12 +2246,14 @@ export function Hsk1RecallOverlay({ onClose }: { onClose: () => void }) {
         <button type="button" className="hsk1-icon-close" onClick={onClose} aria-label="Tutup">
           ✕
         </button>
+        <Hsk1SoundToggle soundOn={s.prefs.soundOn} onToggle={() => s.setPref('soundOn', !s.prefs.soundOn)} />
         <div className="hsk1-top-progress">
           <i style={{ width: `${pct}%` }} />
         </div>
         <div className="hsk1-hud-badges">
           {combo >= 2 && <span className="hsk1-combo-pill">🔥 {combo}×</span>}
           <span className="hsk1-xp-pill">+{xpGain} XP</span>
+          <MemberBadge compact />
         </div>
       </header>
 
@@ -2140,10 +2285,12 @@ export function Hsk1RecallOverlay({ onClose }: { onClose: () => void }) {
 
             {cur.kind === 'cloze' ? (
               <>
+                <div className="hsk1-hero-meaning" style={{ textAlign: 'left' }}>
+                  Lengkapi kata yang hilang
+                </div>
                 <div className="hsk1-sentence-box" lang="zh-CN">
                   {clozeSentence}
                 </div>
-                <p style={{ margin: 0, fontSize: 14, color: '#475569' }}>"{cur.word.exampleId}"</p>
                 <button
                   type="button"
                   className="hsk1-mini-pill"
@@ -2227,12 +2374,62 @@ export function Hsk1RecallOverlay({ onClose }: { onClose: () => void }) {
             </div>
 
             {pickedZh !== null && (
-              <div className="hsk1-tip-box" style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 6 }}>
-                <span>
-                  <strong lang="zh-CN">{cur.word.zh}</strong> ({cur.word.pinyin}) = {cur.word.meaningId}
-                </span>
-                {lastIntervalBadge && (
-                  <strong style={{ color: '#0f766e' }}>📅 Diulang lagi: {lastIntervalBadge}</strong>
+              <div style={{ display: 'grid', gap: 8 }}>
+                <div className="hsk1-tip-box reveal-fade-in" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+                  <span>
+                    <strong lang="zh-CN">{cur.word.zh}</strong> ({cur.word.pinyin}) = {cur.word.meaningId}
+                  </span>
+                  <button
+                    type="button"
+                    className="hsk1-mini-pill"
+                    onClick={() => speakNormal(cur.word.zh)}
+                  >
+                    🔊 Dengar
+                  </button>
+                </div>
+                <div className="hsk1-reveal-row" style={{ justifyContent: 'flex-start' }}>
+                  <button
+                    type="button"
+                    className="hsk1-reveal-chip"
+                    aria-expanded={postExampleOpen}
+                    onClick={() => {
+                      playReveal()
+                      setPostExampleOpen((v) => !v)
+                    }}
+                  >
+                    📖 {postExampleOpen ? 'Tutup kalimat ▴' : 'Contoh & arti kalimat ▾'}
+                  </button>
+                  <button
+                    type="button"
+                    className="hsk1-reveal-chip"
+                    aria-expanded={postMemoryOpen}
+                    onClick={() => {
+                      playReveal()
+                      setPostMemoryOpen((v) => !v)
+                    }}
+                  >
+                    🧩 {postMemoryOpen ? 'Tutup info memori ▴' : 'Akar kata & jadwal FSRS ▾'}
+                  </button>
+                </div>
+                {postExampleOpen && (
+                  <div className="hsk1-analogy-box reveal-fade-in">
+                    <div lang="zh-CN" style={{ fontWeight: 700 }}>{cur.word.exampleZh}</div>
+                    <div style={{ fontSize: 12.5, color: '#be185d', fontWeight: 700 }}>{cur.word.examplePinyin}</div>
+                    <div style={{ fontSize: 12.5, color: '#475569' }}>{cur.word.exampleId}</div>
+                  </div>
+                )}
+                {postMemoryOpen && (
+                  <div className="hsk1-analogy-box reveal-fade-in">
+                    <div>
+                      <strong>Akar aksara:</strong>{' '}
+                      {decomp?.characters[0]?.parts.map((p) => `${p.emoji} ${p.meaningId}`).join(' + ') || cur.word.literalTip}
+                    </div>
+                    {lastIntervalBadge && (
+                      <div style={{ marginTop: 4, fontWeight: 800, color: '#be185d' }}>
+                        📅 Dijadwalkan ulang: {lastIntervalBadge}
+                      </div>
+                    )}
+                  </div>
                 )}
               </div>
             )}

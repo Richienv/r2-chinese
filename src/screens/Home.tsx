@@ -1,6 +1,6 @@
 import { StudyMusic } from '../components/StudyMusic'
 import { InstallCard } from '../components/InstallCard'
-import { lazy } from 'react'
+import { lazy, Suspense } from 'react'
 import { MemoryHorizon } from '../components/MemoryHorizon'
 import { TodayHud } from '../components/TodayHud'
 import { CourseBack, CourseGate, LanguageChip } from '../components/CourseChooser'
@@ -20,6 +20,7 @@ const JiayinPath = lazy(() => import('./Jiayin').then((m) => ({ default: m.Jiayi
 import { useEffect, useState } from 'react'
 import { BeastStageCard } from '../components/BeastStageCard'
 import { CoupleHub } from '../components/CoupleHub'
+import { MemberBadge } from '../components/MemberBadge'
 import { useCoupleProfile } from '../lib/coupleProfile'
 import { nextPlayableHsk1Unit, readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
 import type { Hsk1NodeId } from '../lib/hsk1Srs'
@@ -93,7 +94,8 @@ export function Home({
     <div className="home-page home-alive">
       <div className="home-topbar">
         <CourseBack />
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+          <MemberBadge compact />
           <h1>{COURSE_META[course].title}</h1>
           <LanguageChip />
         </div>
@@ -214,37 +216,39 @@ export function Home({
           </button>
         )}
       </div>
-      {course === 'jiayin' ? (
-        <JiayinPath onPlay={onJiayinSession} />
-      ) : course === 'hsk1' ? (
-        <Hsk1HomePath
-          onOpenUnit={(unit, node) => onHsk1Unit?.(unit, node)}
-          onOpenToneLab={(track) => onHsk1Tones?.(track)}
-          onOpenRecall={onHsk1Recall}
-        />
-      ) : course === 'kerja' ? (
-        <KerjaHomePath onPlay={onKerjaSession} />
-      ) : course === 'jiaocheng' ? (
-        <JiaochengHomePath onPlay={onJiaochengSession} onMidterm={onJiaochengMidterm} />
-      ) : course === 'magang' ? (
-        <MagangHomePath onPlay={onMagangSession} />
-      ) : course === 'interview' ? (
-        <InterviewHomePath onPlay={onInterviewSession} />
-      ) : course === 'books' ? (
-        <BooksHomePath onPlay={onBooksSession} />
-      ) : (
-        <LessonPath
-          fill
-          lesson={lesson}
-          current={next}
-          nodeDone={s.isNodeDone}
-          skippedLessons={s.skippedLessons}
-          unlockedLesson={s.unlockedLesson}
-          onUnskip={(lessonNum) => s.unskipHskLesson(lessonNum)}
-          onLesson={onLesson}
-          onPlay={onSession}
-        />
-      )}
+      <Suspense fallback={null}>
+        {course === 'jiayin' ? (
+          <JiayinPath onPlay={onJiayinSession} />
+        ) : course === 'hsk1' ? (
+          <Hsk1HomePath
+            onOpenUnit={(unit, node) => onHsk1Unit?.(unit, node)}
+            onOpenToneLab={(track) => onHsk1Tones?.(track)}
+            onOpenRecall={onHsk1Recall}
+          />
+        ) : course === 'kerja' ? (
+          <KerjaHomePath onPlay={onKerjaSession} />
+        ) : course === 'jiaocheng' ? (
+          <JiaochengHomePath onPlay={onJiaochengSession} onMidterm={onJiaochengMidterm} />
+        ) : course === 'magang' ? (
+          <MagangHomePath onPlay={onMagangSession} />
+        ) : course === 'interview' ? (
+          <InterviewHomePath onPlay={onInterviewSession} />
+        ) : course === 'books' ? (
+          <BooksHomePath onPlay={onBooksSession} />
+        ) : (
+          <LessonPath
+            fill
+            lesson={lesson}
+            current={next}
+            nodeDone={s.isNodeDone}
+            skippedLessons={s.skippedLessons}
+            unlockedLesson={s.unlockedLesson}
+            onUnskip={(lessonNum) => s.unskipHskLesson(lessonNum)}
+            onLesson={onLesson}
+            onPlay={onSession}
+          />
+        )}
+      </Suspense>
       </div>
       <div className="home-col-side">
       {hsk4Surface && <MemoryHorizon onReview={onReview} onPlacement={onPlacement} />}

@@ -1,6 +1,6 @@
 // Couple profile isolation, workspace switching, and editable names for Richie (HSK 4) & Renita (HSK 1).
 import { useEffect, useState } from 'react'
-import { CLOUD_META_KEY, LOCAL_PROGRESS_EVENT, pushToCloudIfChanged } from './autoSync.ts'
+import { CLOUD_META_KEY, pushToCloudIfChanged } from './autoSync.ts'
 import type { BeastTrack } from './beastEngine.ts'
 import type { CourseId } from './course.ts'
 import {
@@ -9,6 +9,7 @@ import {
   importLearningStorage,
   PROGRESS_KEY,
 } from './progressStorage.ts'
+import { sanitizeRenitaStorage } from './renitaIsolation.ts'
 
 export type CoupleMemberId = 'richie' | 'renita'
 
@@ -190,6 +191,7 @@ export function switchCoupleWorkspace(
     clearAllLearningStorage(storage, PROGRESS_KEY)
     try {
       storage.removeItem(CLOUD_META_KEY)
+      storage.setItem(COUPLE_ACTIVE_KEY, targetId)
     } catch {
       /* ignore */
     }
@@ -199,7 +201,9 @@ export function switchCoupleWorkspace(
     try {
       const cached = storage.getItem(`${COUPLE_CACHE_PREFIX}${targetId}`)
       if (cached) {
-        const res = importLearningStorage(storage, PROGRESS_KEY, cached)
+        const res = importLearningStorage(storage, PROGRESS_KEY, cached, {
+          profile: targetMeta.cloudProfile,
+        })
         restored = res.ok
       }
     } catch {
@@ -214,16 +218,8 @@ export function switchCoupleWorkspace(
         /* ignore */
       }
     } else if (targetId === 'renita') {
-      // Ensure Renita opens her HSK 1 track cleanly whenever course is unset/empty
-      try {
-        const curCourse = storage.getItem('yulu.course.v1')?.trim()
-        if (!curCourse) {
-          storage.setItem('yulu.course.v1', 'hsk1')
-        }
-        storage.setItem('yulu.course-entered.v1', '1')
-      } catch {
-        /* ignore */
-      }
+      // Ensure Renita ALWAYS stays strictly on HSK 1 Dari Nol with zero HSK 4 contamination
+      sanitizeRenitaStorage(storage, PROGRESS_KEY)
     } else {
       try {
         if (!storage.getItem('yulu.course.v1')?.trim()) {
@@ -234,13 +230,17 @@ export function switchCoupleWorkspace(
       }
     }
   } else {
-    try {
-      if (!storage.getItem('yulu.course.v1')?.trim()) {
-        storage.setItem('yulu.course.v1', targetMeta.defaultCourse)
+    if (targetId === 'renita') {
+      sanitizeRenitaStorage(storage, PROGRESS_KEY)
+    } else {
+      try {
+        if (!storage.getItem('yulu.course.v1')?.trim()) {
+          storage.setItem('yulu.course.v1', targetMeta.defaultCourse)
+        }
+        storage.setItem('yulu.course-entered.v1', '1')
+      } catch {
+        /* ignore */
       }
-      storage.setItem('yulu.course-entered.v1', '1')
-    } catch {
-      /* ignore */
     }
   }
 
@@ -252,7 +252,6 @@ export function switchCoupleWorkspace(
 
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new CustomEvent(COUPLE_CHANGED_EVENT))
-    window.dispatchEvent(new CustomEvent(LOCAL_PROGRESS_EVENT))
   }
   return targetId
 }

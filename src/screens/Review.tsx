@@ -3,7 +3,8 @@ import { StudyMusic } from '../components/StudyMusic'
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { HearButton } from '../components/Hear'
 import { ListenCue } from '../components/ListenCue'
-import { CloseIcon } from '../components/Icons'
+import { CheckIcon, CloseIcon } from '../components/Icons'
+import { MemberBadge } from '../components/MemberBadge'
 import { blankedExample, corpusPeers, enrichVocab, exampleFor, isCoreBookVocab, lessonOf, lookup, vocabIndex } from '../lib/content'
 import { getLang, t } from '../lib/i18n'
 import { matchesHanzi } from '../lib/mastery'
@@ -15,13 +16,12 @@ import {
   prioritizeWords,
   priorityScore,
   skippedWordsForRecall,
-  wordNodeId,
 } from '../lib/learnerGraph'
 import { DAY, dueCards, newCard, recallChance, schedule, whenText, type Card, type Skill } from '../lib/srs'
 import { BOOK_STYLE, bookOf, recallChoices, timelinePosition, type RecallChoice } from '../lib/recallPlan'
 import { prefetch, stopSpeech } from '../lib/speech'
 import { bundledDictionaryEntry } from '../lib/dictionary'
-import { playCorrect, playHint, playRate, playReveal, playWrong } from '../lib/sfx'
+import { playCombo, playComplete, playCorrect, playHint, playRate, playReveal, playWrong } from '../lib/sfx'
 import { useStagedReveal } from '../components/useStagedReveal'
 import { DAILY_GOAL, useStore } from '../store/store'
 import '../styles/recall-focus.css'
@@ -184,6 +184,9 @@ export function ReviewFlow({
     [hadMiss, setHadMiss] = useState(false),
     [gaveUp, setGaveUp] = useState(false)
   const [hint, setHint] = useState(0)
+  const [combo, setCombo] = useState(0)
+  const [openExample, setOpenExample] = useState(false)
+  const [openDetails, setOpenDetails] = useState(false)
   const [focusKey, setFocusKey] = useState<RecallChoice['key'] | null>(null)
   const [synonymMatch, setSynonymMatch] = useState<NearSynonymMatch | null>(null)
   const triedSynonyms = useRef(new Set<string>())
@@ -238,6 +241,8 @@ export function ReviewFlow({
     setHadMiss(false)
     setGaveUp(false)
     setHint(0)
+    setOpenExample(false)
+    setOpenDetails(false)
     setFocusKey(null)
     setSynonymMatch(null)
     triedSynonyms.current.clear()
@@ -282,9 +287,16 @@ export function ReviewFlow({
     setSynonymMatch(null)
     setTried(answer.trim())
     setChecked(correct)
-    if (!correct) setHadMiss(true)
-    if (correct) playCorrect()
-    else playWrong()
+    if (!correct) {
+      setHadMiss(true)
+      setCombo(0)
+      playWrong()
+    } else {
+      const nextCombo = combo + 1
+      setCombo(nextCombo)
+      if (nextCombo >= 2) playCombo(nextCombo)
+      else playCorrect()
+    }
     reveal()
   }
   function dontKnow() {
@@ -353,6 +365,7 @@ export function ReviewFlow({
           <StudyMusic compact />
         </div>
         <span className="focus-head-title">{placement ? t('Quick placement') : (title ?? t('Recall'))}</span>
+        <MemberBadge compact />
         {undo ? (
           <button type="button" className="focus-link" onClick={undoLast}>
             {t('Undo')}
@@ -385,38 +398,9 @@ export function ReviewFlow({
           </div>
         ) : (
           <div className="focus-stage" data-verdict={revealed ? verdict : 'asking'} data-revealed={revealed || undefined} data-style={style}>
-            <div className="focus-where" aria-label={t('Where this word is')}>
-              <div className="focus-chips">
-                {bookLabel && <span className="focus-lesson">{bookLabel}</span>}
-                {zh && graph.nodes[wordNodeId(zh)]?.skippedPending && (
-                  <span className="focus-skipped-pill">{t('Skipped · Active recall')}</span>
-                )}
-                {chance !== null && (
-                  <span className="focus-chance" data-level={chance >= 0.8 ? 'high' : chance >= 0.5 ? 'mid' : 'low'} title={t('Chance you still remember it now')}>
-                    <i style={{ ['--chance' as string]: chance }} aria-hidden="true" />
-                    {t('Memory {n}%', { n: Math.round(chance * 100) })}
-                  </span>
-                )}
-                {history.total > 0 && <span className="focus-history">{t('{right} of {total} right', history)}</span>}
-              </div>
-              <ol className="focus-ladder" aria-label={t('Memory stage')}>
-                {MEMORY_STEPS.map((label, step) => (
-                  <li key={label} data-state={step < stage ? 'past' : step === stage ? 'now' : 'next'} aria-current={step === stage ? 'step' : undefined}><i /><span>{label}</span></li>
-                ))}
-              </ol>
-            </div>
             <div className="focus-card">
               {!revealed && (
                 <div className="focus-prompt">
-                  {ctx && (ctx.posLabel || ctx.charCountLabel) && (
-                    <div className="recall-meta-pills focus-meta-pills">
-                      {ctx.posLabel && <span className="recall-pos-pill">{ctx.posLabel}</span>}
-                      <span className="recall-slot-pill">
-                        {ctx.charCountLabel}
-                        <span className="recall-slots-preview zh" lang="zh-CN" aria-hidden="true">{ctx.slots}</span>
-                      </span>
-                    </div>
-                  )}
                   {hideMeaning ? (
                     <>
                       <ListenCue text={zh} />
@@ -431,13 +415,6 @@ export function ReviewFlow({
                       {ctx?.sentence && (
                         <div className="focus-sentence">
                           <p lang="zh-CN">{ctx.sentence.zh}</p>
-                          {ctx.sentence.en && <p className="focus-sentence-translation">{ctx.sentence.en}</p>}
-                        </div>
-                      )}
-                      {(ctx?.whenCue || ctx?.disambiguation) && (
-                        <div className="focus-cue-note">
-                          {ctx.whenCue && <p className="recall-when-cue"><span>{t('Usage cue')}</span> {ctx.whenCue}</p>}
-                          {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
                         </div>
                       )}
                     </>
@@ -451,10 +428,17 @@ export function ReviewFlow({
                     word={word}
                     onAttempt={(correct, assisted) => {
                       setChecked(correct)
-                      if (!correct) setHadMiss(true)
+                      if (!correct) {
+                        setHadMiss(true)
+                        setCombo(0)
+                        playWrong()
+                      } else {
+                        const nc = combo + 1
+                        setCombo(nc)
+                        if (nc >= 2) playCombo(nc)
+                        else playCorrect()
+                      }
                       setHelped(assisted)
-                      if (correct) playCorrect()
-                      else playWrong()
                       reveal()
                     }}
                     onType={() => setSkillOverride('recall')}
@@ -472,21 +456,32 @@ export function ReviewFlow({
                   <label className="sr-only" htmlFor="recall-answer">
                     {t('Your answer')}
                   </label>
-                  <input
-                    ref={answerInputRef}
-                    id="recall-answer"
-                    value={answer}
-                    onChange={(e) => setAnswer(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' && (e.nativeEvent.isComposing || e.keyCode === 229))
-                        e.preventDefault()
-                    }}
-                    placeholder={t('Type the Hanzi here')}
-                    autoComplete="off"
-                    autoCorrect="off"
-                    spellCheck={false}
-                    lang="zh-CN"
-                  />
+                  <div className="focus-input-row">
+                    <input
+                      ref={answerInputRef}
+                      id="recall-answer"
+                      value={answer}
+                      onChange={(e) => setAnswer(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' && (e.nativeEvent.isComposing || e.keyCode === 229))
+                          e.preventDefault()
+                      }}
+                      placeholder={t('Type the Hanzi here')}
+                      autoComplete="off"
+                      autoCorrect="off"
+                      spellCheck={false}
+                      lang="zh-CN"
+                    />
+                    <button
+                      type="submit"
+                      className="focus-check-icon-btn"
+                      disabled={!answer.trim()}
+                      aria-label={t('Check')}
+                      title={t('Check')}
+                    >
+                      <CheckIcon size={20} />
+                    </button>
+                  </div>
                   {synonymMatch && (
                     <div className="recall-synonym-feedback focus-synonym-feedback" role="status" aria-live="polite">
                       <strong>{t('Close match — different nuance')}</strong>
@@ -505,30 +500,51 @@ export function ReviewFlow({
                       ))}
                     </div>
                   )}
-                  <div className="focus-actions">
-                    <button type="button" className="focus-secondary" onClick={nextHint}>
-                      {hint >= hintSteps.length ? t('Show answer') : t('Hint')}
+                  <div className="focus-micro-bar">
+                    <button type="button" className="focus-hint-mini" onClick={nextHint}>
+                      💡 {hint >= hintSteps.length ? t('Show answer') : t('Hint')}
                       <span className="focus-hint-steps" aria-hidden="true">
-                        {[0, 1, 2].map((step) => <i key={step} data-on={step < hint} />)}
+                        {[0, 1].map((step) => <i key={step} data-on={step < hint} />)}
                       </span>
                     </button>
-                    <button type="submit" className="focus-primary" disabled={!answer.trim()}>
-                      {t('Check')}
-                    </button>
-                  </div>
-                  <div className="focus-card-subfoot">
-                    {ifRight && (
-                      <p className="focus-forecast" key={hint} data-hinted={hint > 0}>
-                        <CalendarGlyph />
-                        {hint > 0
-                          ? t('With this hint: back {when}', { when: whenText(ifRight.due, now) })
-                          : t('Right without a hint: back {when}', { when: whenText(ifRight.due, now) })}
-                      </p>
-                    )}
                     <button type="button" className="focus-dunno" onClick={dontKnow}>
                       {t("I don't know")}
                     </button>
                   </div>
+                  <details className="focus-info-disclosure">
+                    <summary>ℹ️ Detail kata & tahap memori</summary>
+                    <div className="focus-info-body reveal-fade-in">
+                      <div className="focus-chips">
+                        {bookLabel && <span className="focus-lesson">{bookLabel}</span>}
+                        {ctx && (ctx.posLabel || ctx.charCountLabel) && (
+                          <div className="recall-meta-pills focus-meta-pills">
+                            {ctx.posLabel && <span className="recall-pos-pill">{ctx.posLabel}</span>}
+                            <span className="recall-slot-pill">
+                              {ctx.charCountLabel}
+                              <span className="recall-slots-preview zh" lang="zh-CN" aria-hidden="true">{ctx.slots}</span>
+                            </span>
+                          </div>
+                        )}
+                        {chance !== null && (
+                          <span className="focus-chance" data-level={chance >= 0.8 ? 'high' : chance >= 0.5 ? 'mid' : 'low'}>
+                            <i style={{ ['--chance' as string]: chance }} aria-hidden="true" />
+                            {t('Memory {n}%', { n: Math.round(chance * 100) })}
+                          </span>
+                        )}
+                      </div>
+                      <ol className="focus-ladder" aria-label={t('Memory stage')}>
+                        {MEMORY_STEPS.map((label, step) => (
+                          <li key={label} data-state={step < stage ? 'past' : step === stage ? 'now' : 'next'} aria-current={step === stage ? 'step' : undefined}><i /><span>{label}</span></li>
+                        ))}
+                      </ol>
+                      {(ctx?.whenCue || ctx?.disambiguation) && (
+                        <div className="focus-cue-note">
+                          {ctx.whenCue && <p className="recall-when-cue"><span>{t('Usage cue')}</span> {ctx.whenCue}</p>}
+                          {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
+                        </div>
+                      )}
+                    </div>
+                  </details>
                 </form>
               )}
               {!revealed && selfMode && (
@@ -557,11 +573,64 @@ export function ReviewFlow({
                     <HearButton text={zh} label={t('Hear the word')} />
                   </div>
                   <p className="focus-meaning" data-reveal={answerReveal.at(1)}>{word?.en}</p>
-                  {example && (
-                    <div className="focus-example" data-reveal={answerReveal.at(2)}>
+
+                  <div className="focus-post-toggles" data-reveal={answerReveal.at(2)}>
+                    {example && (
+                      <button
+                        type="button"
+                        className="focus-reveal-toggle"
+                        aria-expanded={openExample}
+                        onClick={() => {
+                          playReveal()
+                          setOpenExample((v) => !v)
+                        }}
+                      >
+                        📖 {openExample ? 'Tutup contoh kalimat ▴' : 'Lihat contoh & arti kalimat ▾'}
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      className="focus-reveal-toggle"
+                      aria-expanded={openDetails}
+                      onClick={() => {
+                        playReveal()
+                        setOpenDetails((v) => !v)
+                      }}
+                    >
+                      💡 {openDetails ? 'Tutup catatan & memori ▴' : 'Catatan & jadwal memori ▾'}
+                    </button>
+                  </div>
+
+                  {example && openExample && (
+                    <div className="focus-example reveal-fade-in">
                       <p lang="zh-CN">{example.zh}</p>
                       {example.en && <p>{example.en}</p>}
                       <HearButton text={example.zh} label={t('Hear the line')} />
+                    </div>
+                  )}
+
+                  {openDetails && (
+                    <div className="focus-details-box reveal-fade-in">
+                      <div className="focus-chips">
+                        {bookLabel && <span className="focus-lesson">{bookLabel}</span>}
+                        {history.total > 0 && <span className="focus-history">{t('{right} of {total} right', history)}</span>}
+                        {ifRight && (
+                          <span className="focus-lesson">
+                            📅 {whenText(ifRight.due, now)}
+                          </span>
+                        )}
+                      </div>
+                      <ol className="focus-ladder" aria-label={t('Memory stage')}>
+                        {MEMORY_STEPS.map((label, step) => (
+                          <li key={label} data-state={step < stage ? 'past' : step === stage ? 'now' : 'next'}><i /><span>{label}</span></li>
+                        ))}
+                      </ol>
+                      {(ctx?.whenCue || ctx?.disambiguation) && (
+                        <div className="focus-cue-note">
+                          {ctx.whenCue && <p className="recall-when-cue"><span>{t('Usage cue')}</span> {ctx.whenCue}</p>}
+                          {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
+                        </div>
+                      )}
                     </div>
                   )}
                 </section>
@@ -624,21 +693,12 @@ export function ReviewFlow({
   )
 }
 
-function CalendarGlyph() {
-  return (
-    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="4" y="5" width="16" height="15" rx="3" />
-      <path d="M8 3v4M16 3v4M4 10h16" />
-    </svg>
-  )
-}
-
-
 /** The review ends on the same win as a lesson: streak and today's ring. */
 function ReviewWin() {
   const store = useStore()
   const [burst, setBurst] = useState(0)
   useEffect(() => {
+    playComplete()
     const timer = window.setTimeout(() => setBurst(1), 240)
     return () => window.clearTimeout(timer)
   }, [])

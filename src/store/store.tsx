@@ -56,6 +56,7 @@ import {
   syncWithCloud,
 } from '../lib/autoSync'
 import { resetBeastPrefs } from '../lib/beastPrefs'
+import { COUPLE_MEMBERS, getActiveCoupleId } from '../lib/coupleProfile'
 import { isCoreBookVocab } from '../lib/content'
 import { t } from '../lib/i18n'
 
@@ -472,9 +473,10 @@ export function StoreProvider({
     if (userId || initial || typeof window === 'undefined') return
     let cancelled = false
     let pushTimer: ReturnType<typeof setTimeout> | undefined
+    const isActiveProfile = () => COUPLE_MEMBERS[getActiveCoupleId()].cloudProfile === cloudProfile
 
     const runPull = async () => {
-      if (cancelled || cloudSyncRunningRef.current) return
+      if (cancelled || cloudSyncRunningRef.current || !isActiveProfile()) return
       cloudSyncRunningRef.current = true
       try {
         const res = await syncWithCloud({
@@ -495,7 +497,7 @@ export function StoreProvider({
     }
 
     const runPush = async (keepalive = false) => {
-      if (cancelled || !initialPullDoneRef.current) return
+      if (cancelled || !initialPullDoneRef.current || !isActiveProfile()) return
       if (cloudSyncRunningRef.current && !keepalive) return
       if (!keepalive) cloudSyncRunningRef.current = true
       try {
@@ -516,7 +518,7 @@ export function StoreProvider({
     }
 
     const schedulePush = () => {
-      if (cancelled || !initialPullDoneRef.current) return
+      if (cancelled || !initialPullDoneRef.current || !isActiveProfile()) return
       clearTimeout(pushTimer)
       pushTimer = setTimeout(() => {
         void runPush(false)
@@ -524,6 +526,7 @@ export function StoreProvider({
     }
 
     const onVisibility = () => {
+      if (!isActiveProfile()) return
       if (document.visibilityState === 'hidden') {
         clearTimeout(pushTimer)
         void runPush(true)
@@ -533,26 +536,30 @@ export function StoreProvider({
     }
 
     const onPageHide = () => {
+      if (!isActiveProfile()) return
       clearTimeout(pushTimer)
       void runPush(true)
     }
 
     const onOnline = () => {
+      if (!isActiveProfile()) return
       void runPull()
     }
 
     const onLocalProgress = () => {
+      if (!isActiveProfile()) return
       dirtySincePullRef.current = true
       schedulePush()
     }
 
     const onCloudHydrated = () => {
+      if (!isActiveProfile()) return
       applyCloudHydration()
     }
 
     void runPull()
     const periodic = setInterval(() => {
-      if (document.visibilityState === 'visible') void runPush(false)
+      if (document.visibilityState === 'visible' && isActiveProfile()) void runPush(false)
     }, 30_000)
 
     document.addEventListener('visibilitychange', onVisibility)
@@ -575,8 +582,10 @@ export function StoreProvider({
 
   useEffect(() => {
     if (userId || initial || typeof window === 'undefined') return
+    if (COUPLE_MEMBERS[getActiveCoupleId()].cloudProfile !== cloudProfile) return
     if (!initialPullDoneRef.current || !dirtySincePullRef.current) return
     const timer = setTimeout(() => {
+      if (COUPLE_MEMBERS[getActiveCoupleId()].cloudProfile !== cloudProfile) return
       void pushToCloudIfChanged({
         storage: localStorage,
         key,

@@ -2,9 +2,9 @@
    Sage and teal from design-system.css; wins are green, misses a warm coral.
    Motion is transform/opacity only; the global reduced-motion rule flattens it. */
 :root {
-  --duo-good: #2f8a57; --duo-good-ink: #1f6b42; --duo-good-bg: #e2f3e7; --duo-good-line: #a9d8b8;
-  --duo-bad: #c4573f; --duo-bad-ink: #9b3d29; --duo-bad-bg: #fcebe5; --duo-bad-line: #efbfb1;
-  --duo-gold: #e8a33a; --duo-gold-ink: #94570f; --duo-gold-bg: #fff3dc;
+  --duo-good: #10b981; --duo-good-ink: #065f46; --duo-good-bg: #d1fae5; --duo-good-line: #6ee7b7;
+  --duo-bad: #e11d48; --duo-bad-ink: #9f1239; --duo-bad-bg: #ffe4e6; --duo-bad-line: #fda4af;
+  --duo-gold: #f59e0b; --duo-gold-ink: #92400e; --duo-gold-bg: #fef3c7;
   --duo-press: 4px;
 }
 
@@ -155,7 +155,10 @@ body .btn.duo-next { width:100%; }
 .duo-week li[data-future] .duo-week-dot { background:var(--paper); border:1.5px dashed var(--line); }
 .duo-week-letter { font-size:11px; color:var(--muted); }
 .duo-week li[data-today] .duo-week-letter { color:var(--ink); font-weight:750; }
-.duo-hud-line { margin:12px 2px 0; font-size:13px; line-height:1.5; color:var(--muted); }
+.duo-hud-foot { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:10px; flex-wrap:wrap; }
+.duo-hud-line { margin:0 2px; font-size:13px; line-height:1.5; color:var(--muted); }
+.duo-week-toggle { border:1px solid var(--accent-line); background:var(--accent-soft); color:var(--accent); border-radius:999px; padding:4px 10px; font:inherit; font-size:11.5px; font-weight:750; cursor:pointer; transition:transform 120ms ease; }
+.duo-week-toggle:active { transform:scale(.96); }
 
 /* Course position and the winding path on Home */
 .duo-course-progress { display:grid; grid-template-columns:auto 1fr; align-items:center; gap:10px; margin-bottom:12px; font-size:12px; font-weight:700; color:var(--accent); }
@@ -166,7 +169,7 @@ body .btn.duo-next { width:100%; }
 .duo-node { display:grid; place-items:center; width:66px; height:60px; border-radius:50%; border:0; color:#fff; background:var(--accent); box-shadow:0 6px 0 var(--red-deep); font-size:20px; font-weight:800; transition:transform 120ms var(--ease), box-shadow 120ms var(--ease); }
 .duo-node:active:not(:disabled) { transform:translateY(5px); box-shadow:0 1px 0 var(--red-deep); }
 .duo-node[data-state=done] { background:var(--duo-gold); box-shadow:0 6px 0 #b77812; }
-.duo-node[data-state=current] { width:76px; height:70px; background:var(--duo-good); box-shadow:0 7px 0 #1f6b42, 0 0 0 8px var(--duo-good-bg); animation:duo-node-glow 2.2s ease-in-out infinite; }
+.duo-node[data-state=current] { width:76px; height:70px; background:var(--duo-good); box-shadow:0 7px 0 var(--red-deep), 0 0 0 8px var(--duo-good-bg); animation:duo-node-glow 2.2s ease-in-out infinite; }
 .duo-node[data-state=locked] { background:var(--line); color:var(--muted); box-shadow:0 6px 0 #c9d6cd; }
 .duo-node:disabled { cursor:default; }
 .duo-node-label { font-size:11px; color:var(--muted); }
@@ -174,12 +177,12 @@ body .btn.duo-next { width:100%; }
 .duo-path-tip { position:absolute; bottom:calc(100% + 4px); padding:6px 12px; border-radius:12px; background:var(--surface); color:var(--duo-good-ink); border:2px solid var(--duo-good-line); font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; animation:duo-bob 1.6s ease-in-out infinite; }
 .duo-path-tip::after { content:''; position:absolute; left:50%; top:100%; width:10px; height:10px; background:var(--surface); border-right:2px solid var(--duo-good-line); border-bottom:2px solid var(--duo-good-line); transform:translate(-50%, -55%) rotate(45deg); }
 .learning-atlas-home .duo-path + .atlas-track { margin-top:10px; }
-@keyframes duo-node-glow { 50% { box-shadow:0 7px 0 #1f6b42, 0 0 0 13px rgba(47,138,87,.13); } }
+@keyframes duo-node-glow { 50% { box-shadow:0 7px 0 var(--red-deep), 0 0 0 13px var(--accent-soft); } }
 @keyframes duo-bob { 50% { transform:translateY(-5px); } }
 
 /* Victory */
 .duo-victory { display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px; padding:18px 0 10px; }
-.duo-victory-badge { display:grid; place-items:center; width:92px; height:92px; border-radius:50%; color:#fff; background:var(--duo-good); box-shadow:0 8px 0 #1f6b42, 0 0 0 12px var(--duo-good-bg); animation:duo-badge .7s var(--spring) both; }
+.duo-victory-badge { display:grid; place-items:center; width:92px; height:92px; border-radius:50%; color:#fff; background:var(--duo-good); box-shadow:0 8px 0 var(--red-deep), 0 0 0 12px var(--duo-good-bg); animation:duo-badge .7s var(--spring) both; }
 .duo-victory-kicker { margin:18px 0 0; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:700; }
 .duo-victory-title { margin:0; font-size:28px; line-height:1.25; letter-spacing:-.03em; font-weight:800; color:var(--ink); animation:duo-rise .45s var(--spring) .15s both; }
 .duo-victory-sub { margin:0; font-size:15px; color:var(--muted); }
@@ -244,3 +247,11 @@ body .btn.duo-next { width:100%; }
 .duo-cue-inline { max-width:none; margin:8px 0 10px; }
 .scaffold-meta-pills { justify-content:flex-start; margin:6px 0 4px; }
 .scaffold-disambiguation { margin-top:4px; }
+
+/* Renita Sakura Pink map/HUD accents */
+[data-member='renita'] {
+  --duo-good: #db2777;
+  --duo-good-ink: #9d174d;
+  --duo-good-bg: #fce7f3;
+  --duo-good-line: #f9a8d4;
+}

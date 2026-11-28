@@ -7,8 +7,26 @@
   align-items: center;
   justify-content: center;
   padding: calc(20px + env(safe-area-inset-top, 0px)) 16px calc(24px + env(safe-area-inset-bottom, 0px));
-  background: radial-gradient(circle at 50% 18%, #e6f4f1 0%, #f8fafc 52%, #fce7f3 100%);
+  background: radial-gradient(circle at 50% 18%, #d1fae5 0%, #f0fdf6 58%, #ffffff 100%);
   color: #0f172a;
+  transition: background 220ms ease;
+}
+
+.ca-gate[data-member='renita'] {
+  background: radial-gradient(circle at 50% 18%, #fbcfe8 0%, #fff1f6 58%, #ffffff 100%);
+}
+
+.ca-card[data-member='renita'] {
+  border-color: #f9a8d4;
+}
+
+.ca-card[data-member='renita'] .ca-badge {
+  background: #fce7f3;
+  color: #be185d;
+}
+
+.ca-card[data-member='renita'] .ca-input:focus {
+  border-color: #db2777;
 }
 
 .ca-card {

@@ -174,3 +174,11 @@
 .cc-feed-msg.is-mine {
   background: #f0fdfa;
 }
+
+[data-member='renita'] .cc-chat-send {
+  background: #db2777;
+}
+
+[data-member='renita'] .cc-feed-msg.is-mine {
+  background: #fdf2f8;
+}

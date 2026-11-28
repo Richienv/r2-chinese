@@ -6,6 +6,7 @@ export type BeastFoilStyle = 'unite' | 'gold' | 'holo' | 'prism'
 
 export type BeastStageId =
   | 'unite-jade'
+  | 'sakura-unite'
   | 'gold-imperial'
   | 'vmax-celestial'
   | 'ink-scroll'
@@ -32,8 +33,13 @@ export type BeastStageMeta = {
 export const BEAST_STORAGE_KEY = 'yulu.beast.v1'
 export const DEFAULT_BEAST_STAGE_ID: BeastStageId = 'unite-jade'
 
+export function defaultBeastStageForMember(memberId?: string | null): BeastStageId {
+  return memberId === 'renita' ? 'sakura-unite' : 'unite-jade'
+}
+
 export const FREE_BEAST_STAGE_IDS: readonly BeastStageId[] = [
   'unite-jade',
+  'sakura-unite',
   'gold-imperial',
   'vmax-celestial',
 ]
@@ -60,6 +66,19 @@ export const BEAST_STAGES: readonly BeastStageMeta[] = [
     badgeLabel: 'UNITE JADE',
   },
   {
+    id: 'sakura-unite',
+    name: 'Unite Sakura',
+    tagline: 'Kartu arena sakura-merah muda khusus Trainer Renita dengan pola halftone tajam',
+    achievementKey: null,
+    previewGradient: 'linear-gradient(135deg, #9d174d 0%, #db2777 40%, #f472b6 76%, #fce7f3 100%)',
+    foilGradient: 'linear-gradient(135deg, #831843 0%, #ec4899 48%, #fbcfe8 100%)',
+    accent: '#be185d',
+    cardCode: '#02',
+    rarity: 'rare',
+    foilStyle: 'unite',
+    badgeLabel: 'UNITE SAKURA',
+  },
+  {
     id: 'gold-imperial',
     name: 'Imperial Gold',
     tagline: 'Kartu logam emas kekaisaran dengan kilau metalik & percikan petir emas',
@@ -67,7 +86,7 @@ export const BEAST_STAGES: readonly BeastStageMeta[] = [
     previewGradient: 'linear-gradient(135deg, #92400e 0%, #d97706 38%, #fde047 72%, #fef9c3 100%)',
     foilGradient: 'linear-gradient(135deg, #78350f 0%, #f59e0b 45%, #fef08a 100%)',
     accent: '#b45309',
-    cardCode: '#02',
+    cardCode: '#03',
     rarity: 'gold',
     foilStyle: 'gold',
     badgeLabel: 'IMPERIAL GOLD',
@@ -81,7 +100,7 @@ export const BEAST_STAGES: readonly BeastStageMeta[] = [
       'linear-gradient(135deg, #ec4899 0%, #f59e0b 26%, #10b981 52%, #3b82f6 76%, #8b5cf6 100%)',
     foilGradient: 'linear-gradient(135deg, #db2777 0%, #eab308 32%, #06b6d4 66%, #7c3aed 100%)',
     accent: '#6d28d9',
-    cardCode: '#03',
+    cardCode: '#04',
     rarity: 'legendary',
     foilStyle: 'prism',
     badgeLabel: 'VMAX CELESTIAL',
@@ -94,7 +113,7 @@ export const BEAST_STAGES: readonly BeastStageMeta[] = [
     previewGradient: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 48%, #7dd3fc 100%)',
     foilGradient: 'linear-gradient(135deg, #1e40af 0%, #38bdf8 55%, #e0f2fe 100%)',
     accent: '#1d4ed8',
-    cardCode: '#04',
+    cardCode: '#05',
     rarity: 'rare',
     foilStyle: 'holo',
     badgeLabel: 'INK SCROLL',
@@ -107,7 +126,7 @@ export const BEAST_STAGES: readonly BeastStageMeta[] = [
     previewGradient: 'linear-gradient(135deg, #7c2d12 0%, #ea580c 46%, #fde047 100%)',
     foilGradient: 'linear-gradient(135deg, #9a3412 0%, #fb923c 50%, #fef08a 100%)',
     accent: '#c2410c',
-    cardCode: '#05',
+    cardCode: '#06',
     rarity: 'epic',
     foilStyle: 'gold',
     badgeLabel: 'THUNDER DOJO',
@@ -120,7 +139,7 @@ export const BEAST_STAGES: readonly BeastStageMeta[] = [
     previewGradient: 'linear-gradient(135deg, #881337 0%, #e11d48 50%, #fda4af 100%)',
     foilGradient: 'linear-gradient(135deg, #9f1239 0%, #f43f5e 52%, #fecdd3 100%)',
     accent: '#be123c',
-    cardCode: '#06',
+    cardCode: '#07',
     rarity: 'epic',
     foilStyle: 'unite',
     badgeLabel: 'CRIMSON LANTERN',
@@ -133,7 +152,7 @@ export const BEAST_STAGES: readonly BeastStageMeta[] = [
     previewGradient: 'linear-gradient(135deg, #064e3b 0%, #059669 45%, #5eead4 100%)',
     foilGradient: 'linear-gradient(135deg, #065f46 0%, #10b981 50%, #99f6e4 100%)',
     accent: '#047857',
-    cardCode: '#07',
+    cardCode: '#08',
     rarity: 'gold',
     foilStyle: 'holo',
     badgeLabel: 'JADE PALACE',
@@ -146,7 +165,7 @@ export const BEAST_STAGES: readonly BeastStageMeta[] = [
     previewGradient: 'linear-gradient(135deg, #713f12 0%, #eab308 48%, #fef08a 100%)',
     foilGradient: 'linear-gradient(135deg, #854d0e 0%, #facc15 50%, #fef9c3 100%)',
     accent: '#a16207',
-    cardCode: '#08',
+    cardCode: '#09',
     rarity: 'gold',
     foilStyle: 'gold',
     badgeLabel: 'EXAM COLOSSEUM',
@@ -159,7 +178,7 @@ export const BEAST_STAGES: readonly BeastStageMeta[] = [
     previewGradient: 'linear-gradient(135deg, #312e81 0%, #7c3aed 45%, #f472b6 78%, #fde047 100%)',
     foilGradient: 'linear-gradient(135deg, #4338ca 0%, #a855f7 45%, #f59e0b 100%)',
     accent: '#5b21b6',
-    cardCode: '#09',
+    cardCode: '#10',
     rarity: 'legendary',
     foilStyle: 'prism',
     badgeLabel: 'ASTRAL EMPEROR',

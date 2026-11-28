@@ -8,7 +8,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import { COUPLE_MEMBERS, getActiveCoupleId } from './coupleProfile.ts'
+import { COUPLE_CHANGED_EVENT, COUPLE_MEMBERS, getActiveCoupleId } from './coupleProfile.ts'
 import { t } from './i18n.ts'
 
 /** Separate from HSK / Kerja / Jiaocheng / Magang / Interview / Books progress keys so old saves stay untouched. */
@@ -73,6 +73,8 @@ export const COURSE_META: Record<CourseId, { id: CourseId; title: string; titleZ
 export function readCourse(
   storage: Pick<Storage, 'getItem'> | null = typeof localStorage === 'undefined' ? null : localStorage,
 ): CourseId {
+  const activeId = getActiveCoupleId(storage as Storage | null)
+  if (activeId === 'renita') return 'hsk1'
   try {
     const raw = storage?.getItem(COURSE_KEY)
     if (raw === 'kerja' || raw === 'hsk4a' || raw === 'hsk1' || raw === 'jiaocheng' || raw === 'books') {
@@ -81,13 +83,14 @@ export function readCourse(
   } catch {
     /* ignore */
   }
-  return COUPLE_MEMBERS[getActiveCoupleId(storage as Storage | null)].defaultCourse
+  return COUPLE_MEMBERS[activeId].defaultCourse
 }
 
 const ENTERED_KEY = 'yulu.course-entered.v1'
 
 /** True once the learner has picked a course themselves (the default course is saved on first load). */
 function hasSavedCourse(): boolean {
+  if (getActiveCoupleId() === 'renita') return true
   try {
     return localStorage.getItem(ENTERED_KEY) === '1'
   } catch {
@@ -111,8 +114,9 @@ export function CourseProvider({ children }: { children: ReactNode }) {
   const [entered, setEntered] = useState(() => hasSavedCourse())
 
   useEffect(() => {
+    const persistedCourse: CourseId = getActiveCoupleId() === 'renita' ? 'hsk1' : course
     try {
-      localStorage.setItem(COURSE_KEY, course)
+      localStorage.setItem(COURSE_KEY, persistedCourse)
     } catch {
       /* ignore */
     }
@@ -120,18 +124,24 @@ export function CourseProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-    const onHydrated = () => {
+    const syncCourse = () => {
       setCourseState(readCourse())
       setEntered(hasSavedCourse())
     }
-    window.addEventListener('yulu:cloud-hydrated', onHydrated)
-    return () => window.removeEventListener('yulu:cloud-hydrated', onHydrated)
+    window.addEventListener('yulu:cloud-hydrated', syncCourse)
+    window.addEventListener(COUPLE_CHANGED_EVENT, syncCourse)
+    return () => {
+      window.removeEventListener('yulu:cloud-hydrated', syncCourse)
+      window.removeEventListener(COUPLE_CHANGED_EVENT, syncCourse)
+    }
   }, [])
 
   const setCourse = useCallback((id: CourseId) => {
-    setCourseState(id)
+    const resolved: CourseId = getActiveCoupleId() === 'renita' ? 'hsk1' : id
+    setCourseState(resolved)
     setEntered(true)
     try {
+      localStorage.setItem(COURSE_KEY, resolved)
       localStorage.setItem(ENTERED_KEY, '1')
     } catch {
       /* ignore */
@@ -142,6 +152,11 @@ export function CourseProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const leaveCourse = useCallback(() => {
+    if (getActiveCoupleId() === 'renita') {
+      setCourseState('hsk1')
+      setEntered(true)
+      return
+    }
     setEntered(false)
   }, [])
 

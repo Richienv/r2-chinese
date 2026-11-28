@@ -234,7 +234,7 @@ function Shell() {
   }, [open, closeOverlay])
 
   return (
-    <div className="app" data-closing={closing}>
+    <div className="app" data-member={activeId} data-closing={closing}>
       <div className="safe-top" />
       <main className="scroll" ref={mainRef}>
         <Suspense
@@ -483,6 +483,11 @@ function Root({ cloudProfile }: { cloudProfile: string }) {
 export default function App() {
   const { activeId, member } = useCoupleProfile()
   const gateUnlocked = useCoupleGate()
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    document.documentElement.dataset.member = activeId
+    document.body.dataset.member = activeId
+  }, [activeId])
   if (!isAuthEnabled && !gateUnlocked) {
     return <CoupleAuthGate />
   }

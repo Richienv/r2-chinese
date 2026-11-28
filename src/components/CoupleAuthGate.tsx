@@ -24,8 +24,8 @@ export function CoupleAuthGate({ onUnlocked }: { onUnlocked?: () => void }) {
   }
 
   return (
-    <div className="ca-gate" role="main" aria-label="Pilih Akun Yulu Berdua">
-      <div className="ca-card">
+    <div className="ca-gate" data-member={selected} role="main" aria-label="Pilih Akun Yulu Berdua">
+      <div className="ca-card" data-member={selected}>
         <div className="ca-head">
           <span className="ca-badge">语路 YULU · COUPLE EDITION</span>
           <h1>Siapa yang belajar sekarang?</h1>

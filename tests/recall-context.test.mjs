@@ -372,7 +372,8 @@ test('sepasang / 对, confusing pairs, near-synonym feedback, and rendered recal
       assert.match(recallHtml, /Kata bantu bilangan/)
       assert.match(recallHtml, /1 karakter/)
       assert.match(recallHtml, /recall-slots-preview/)
-      assert.match(recallHtml, /recall-context-translation/)
+      assert.doesNotMatch(recallHtml, /recall-context-translation/)
+      assert.doesNotMatch(recallHtml, /recall-sentence-translation/)
       assert.match(recallHtml, /recall-disambiguation/)
       assert.doesNotMatch(recallHtml, /对|duì/i)
 
@@ -389,6 +390,8 @@ test('sepasang / 对, confusing pairs, near-synonym feedback, and rendered recal
       assert.match(reviewHtml, /Kata bantu bilangan/)
       assert.match(reviewHtml, /1 karakter/)
       assert.match(reviewHtml, /focus-meta-pills/)
+      assert.doesNotMatch(reviewHtml, /focus-sentence-translation/)
+      assert.match(reviewHtml, /focus-check-icon-btn/)
       assert.doesNotMatch(reviewHtml, /对|duì/i)
 
       const exCtx = { pool: peers, segment: (zh) => Array.from(zh), seed: 'recall-test' }

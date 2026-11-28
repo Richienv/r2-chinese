@@ -162,7 +162,6 @@ function PromptContext({ word, hiddenPeers = [], showSentence = true }: { word: 
       {ctx.sentence && (
         <div className="recall-context duo-context-inline">
           <p className="zh" lang="zh-CN">{ctx.sentence.zh}</p>
-          {ctx.sentence.en && <p className="recall-context-translation">{ctx.sentence.en}</p>}
         </div>
       )}
       {(ctx.whenCue || ctx.disambiguation) && (

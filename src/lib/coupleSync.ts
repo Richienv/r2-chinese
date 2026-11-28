@@ -6,7 +6,7 @@ import {
   type FlameMeta,
   type LegendaryBeastTier,
 } from './beastEngine.ts'
-import { getBeastStage, type BeastStageMeta } from './beastStages.ts'
+import { defaultBeastStageForMember, getBeastStage, type BeastStageMeta } from './beastStages.ts'
 import {
   COUPLE_MEMBERS,
   getCoupleNames,
@@ -162,7 +162,7 @@ export async function fetchPartnerSnapshot(
       badge: meta.badge,
       accent: meta.accent,
       beast: evalRes.beast,
-      stage: getBeastStage(beastRaw?.stageId),
+      stage: getBeastStage(beastRaw?.stageId ?? defaultBeastStageForMember(partnerId)),
       level: evalRes.level,
       spiritPower: evalRes.spiritPower,
       streak,

@@ -971,13 +971,14 @@
 }
 
 .hsk1-sentence-box {
-  padding: 14px 16px;
-  border-radius: 16px;
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
-  font-size: 21px;
-  font-weight: 850;
-  color: #0f172a;
+  padding: 11px 14px;
+  border-radius: 14px;
+  background: var(--paper, #f8fafc);
+  border: 1px solid var(--line, #e2e8f0);
+  font-size: 16.5px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: #475569;
 }
 
 .hsk1-tile-tray {
@@ -1147,4 +1148,144 @@
   .hsk1-stroke-anim-path {
     animation: none;
   }
+}
+
+/* Sakura Pink theme for Renita across Home path, Pondasi Lab, Goresan, Grammar & Recall */
+[data-member='renita'] .hsk1-kicker-jade,
+[data-member='renita'] .hsk1-unit-title strong,
+[data-member='renita'] .hsk1-unit-sub,
+[data-member='renita'] .hsk1-phase-head h3,
+[data-member='renita'] .hsk1-step-tag,
+[data-member='renita'] .hsk1-word-pinyin,
+[data-member='renita'] .hsk1-tone-badge {
+  color: #be185d;
+}
+
+[data-member='renita'] .hsk1-srs-banner {
+  background: linear-gradient(135deg, #fdf2f8 0%, #ffffff 72%);
+  border-color: rgba(219, 39, 119, 0.28);
+  box-shadow: 0 8px 20px rgba(219, 39, 119, 0.08);
+}
+
+[data-member='renita'] .hsk1-retention-bar i {
+  background: linear-gradient(90deg, #db2777 0%, #f472b6 100%);
+}
+
+[data-member='renita'] .hsk1-progress-line i {
+  background: linear-gradient(90deg, #db2777 0%, #f59e0b 100%);
+}
+
+[data-member='renita'] .hsk1-stage-bar-fill {
+  background: linear-gradient(90deg, #f472b6 0%, #db2777 65%, #f59e0b 100%);
+}
+
+[data-member='renita'] .hsk1-btn-3d-jade,
+[data-member='renita'] .hsk1-map-node.is-current .hsk1-node-btn,
+[data-member='renita'] .hsk1-node-pill.is-active {
+  background: #db2777;
+  box-shadow: 0 4px 0 #9d174d;
+  color: #ffffff;
+}
+
+[data-member='renita'] .hsk1-btn-3d-jade:active:not(:disabled),
+[data-member='renita'] .hsk1-map-node.is-current .hsk1-node-btn:active:not(:disabled) {
+  box-shadow: 0 1px 0 #9d174d;
+}
+
+[data-member='renita'] .hsk1-btn-3d-jade:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  box-shadow: 0 4px 0 #94a3b8;
+}
+
+[data-member='renita'] .hsk1-foundation-chip,
+[data-member='renita'] .hsk1-example-chip,
+[data-member='renita'] .hsk1-forecast-chip,
+[data-member='renita'] .hsk1-path-unit-head,
+[data-member='renita'] .hsk1-map-node.is-done .hsk1-node-btn {
+  background: #fdf2f8;
+  border-color: rgba(219, 39, 119, 0.28);
+  color: #be185d;
+}
+
+[data-member='renita'] .hsk1-lab-tab.is-active,
+[data-member='renita'] .hsk1-option-btn.is-picked,
+[data-member='renita'] .hsk1-tile-btn.is-picked,
+[data-member='renita'] .hsk1-match-tile.is-selected,
+[data-member='renita'] .hsk1-word-chip.is-placed {
+  border-color: #db2777;
+  background: #fdf2f8;
+  color: #9d174d;
+  box-shadow: 0 3px 0 #f9a8d4;
+}
+
+.hsk1-sound-btn {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: 999px;
+  border: 1px solid var(--line, #cbd5e1);
+  background: var(--surface, #ffffff);
+  font-size: 15px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.hsk1-reveal-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.hsk1-reveal-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  border: 1.5px solid var(--accent-line, #f9a8d4);
+  background: var(--accent-soft, #fce7f3);
+  color: var(--ink, #3b0f24);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 120ms ease;
+}
+
+.hsk1-reveal-chip:active {
+  transform: scale(0.96);
+}
+
+[data-member='renita'] .hsk1-xp-pill,
+[data-member='renita'] .hsk1-track-pill.is-done,
+[data-member='renita'] .hsk1-quiz-char-badge,
+[data-member='renita'] .hsk1-unit-btn.is-done {
+  background: #fdf2f8;
+  border-color: #f9a8d4;
+  color: #be185d;
+}
+
+[data-member='renita'] .hsk1-track-pill.is-active,
+[data-member='renita'] .hsk1-unit-btn.is-done .hsk1-unit-num,
+[data-member='renita'] .hsk1-audio-btn {
+  background: #db2777;
+  border-color: #db2777;
+  color: #ffffff;
+  box-shadow: 0 3px 0 #9d174d;
+}
+
+[data-member='renita'] .hsk1-top-progress i {
+  background: linear-gradient(90deg, #f472b6 0%, #db2777 65%, #f59e0b 100%);
+}
+
+[data-member='renita'] .hsk1-sound-bubble strong,
+[data-member='renita'] .hsk1-speaker-lbl,
+[data-member='renita'] .hsk1-unit-score,
+[data-member='renita'] .hsk1-example-toggle summary {
+  color: #be185d;
 }

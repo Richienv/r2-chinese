@@ -4,6 +4,7 @@ import {
   exportLearningStorage,
   importLearningStorage,
 } from './progressStorage.ts'
+import { sanitizeRenitaStorage } from './renitaIsolation.ts'
 
 export const CLOUD_HYDRATED_EVENT = 'yulu:cloud-hydrated'
 export const LOCAL_PROGRESS_EVENT = 'yulu:local-progress'
@@ -231,6 +232,10 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
   const remoteScore = Number(getRes.data.activityScore ?? 0)
   const remoteBackup = getRes.data.backup ?? null
 
+  if (opts.profile === 'renita') {
+    sanitizeRenitaStorage(opts.storage, opts.key)
+  }
+
   const localRaw = exportLearningStorage(opts.storage, opts.key)
   const localObj = JSON.parse(localRaw) as Record<string, unknown>
   const localScore = computeBackupActivityScore(localObj)
@@ -243,7 +248,9 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
   const localResetAt = extractBackupResetAt(localObj, opts.key)
   if (remoteBackup && remoteResetAt > localResetAt) {
     clearAllLearningStorage(opts.storage, opts.key)
-    importLearningStorage(opts.storage, opts.key, JSON.stringify(remoteBackup))
+    importLearningStorage(opts.storage, opts.key, JSON.stringify(remoteBackup), {
+      profile: opts.profile,
+    })
     opts.onHydrated?.()
     dispatchCloudHydrated()
     writeMeta(opts.storage, {
@@ -256,13 +263,17 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
 
   if (remoteBackup && (remoteScore > 0 || computeBackupActivityScore(remoteBackup) > 0)) {
     if (localScore === 0 || remoteFp !== localFp) {
-      const imported = importLearningStorage(opts.storage, opts.key, JSON.stringify(remoteBackup))
+      const imported = importLearningStorage(opts.storage, opts.key, JSON.stringify(remoteBackup), {
+        profile: opts.profile,
+      })
       if (imported.ok) {
         hydrated = true
         opts.onHydrated?.()
         dispatchCloudHydrated()
       }
     }
+    const strippedForeignRenita =
+      opts.profile === 'renita' ? sanitizeRenitaStorage(opts.storage, opts.key) : false
 
     const afterRaw = exportLearningStorage(opts.storage, opts.key)
     const afterObj = JSON.parse(afterRaw) as Record<string, unknown>
@@ -274,6 +285,24 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
       fingerprint: remoteFp || afterFp,
       activityScore: Math.max(remoteScore, afterScore),
     })
+
+    // Heal poisoned Renita cloud backup if it only held foreign HSK 4 data
+    if (opts.profile === 'renita' && strippedForeignRenita && afterFp !== remoteFp) {
+      try {
+        const healRes = await postBackup(fetchImpl, endpoint, afterObj, remoteUpdatedAt, { force: true })
+        if (healRes.ok && healRes.data?.action === 'saved') {
+          const healAt = Number(healRes.data.updatedAt ?? Date.now())
+          writeMeta(opts.storage, {
+            updatedAt: healAt,
+            fingerprint: afterFp,
+            activityScore: Number(healRes.data.activityScore ?? afterScore),
+          })
+          return { status: 'saved', hydrated: true, updatedAt: healAt }
+        }
+      } catch {
+        /* fallback to local clean workspace */
+      }
+    }
 
     // If local held additional progress that wasn't on cloud yet, push the merged superset back.
     if (afterScore > 0 && afterFp !== remoteFp) {
@@ -297,6 +326,7 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
               opts.storage,
               opts.key,
               JSON.stringify(pushRes.data.backup),
+              { profile: opts.profile },
             )
             if (reimported.ok) {
               hydrated = true
@@ -363,6 +393,7 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
           opts.storage,
           opts.key,
           JSON.stringify(pushRes.data.backup),
+          { profile: opts.profile },
         )
         if (imported.ok) {
           hydrated = true
@@ -409,6 +440,10 @@ export async function pushToCloudIfChanged(opts: SyncOptions): Promise<SyncResul
   const endpoint = defaultEndpoint(opts.profile)
   const meta = readMeta(opts.storage)
 
+  if (opts.profile === 'renita') {
+    sanitizeRenitaStorage(opts.storage, opts.key)
+  }
+
   const localRaw = exportLearningStorage(opts.storage, opts.key)
   const localObj = JSON.parse(localRaw) as Record<string, unknown>
   const localScore = computeBackupActivityScore(localObj)
@@ -450,6 +485,7 @@ export async function pushToCloudIfChanged(opts: SyncOptions): Promise<SyncResul
         opts.storage,
         opts.key,
         JSON.stringify(pushRes.data.backup),
+        { profile: opts.profile },
       )
       if (imported.ok) {
         hydrated = true

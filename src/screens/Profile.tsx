@@ -1,5 +1,6 @@
 import { StudyMusic } from '../components/StudyMusic'
 import { InstallCard } from '../components/InstallCard'
+import { MemberBadge } from '../components/MemberBadge'
 import { useEffect, useRef, useState, type ChangeEvent } from 'react'
 import { useAuth } from '../auth/AuthProvider'
 import { lockCoupleGate } from '../lib/coupleAuth'
@@ -95,7 +96,10 @@ export function Profile({ onOpenOnboarding }: { onOpenOnboarding?: () => void } 
   return (
     <div className="stack-page profile-page">
       <header className="profile-header">
-        <div className="profile-eyebrow">{t('YOUR LEARNING SPACE')}</div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, flexWrap: 'wrap' }}>
+          <div className="profile-eyebrow">{t('YOUR LEARNING SPACE')}</div>
+          <MemberBadge compact />
+        </div>
         <h1 className="h2">{t('Profile')}</h1>
         <p className="sub">{t('Set up the way you like to learn.')}</p>
       </header>

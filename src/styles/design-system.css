@@ -1,25 +1,26 @@
 /* Yulu's shared vocabulary. Legacy token names remain aliases, so course and
    exercise components share the palette without changing learning behaviour. */
 :root {
-  --bg:#edf3ef; --surface:#fbfdfb; --paper:#f4f8f5; --card:#f4f8f5;
-  --ink:#233e39; --muted:#597269; --muted-2:#667d75; --muted-3:#667d75;
-  --accent:#27665f; --accent-soft:#e0eee6; --accent-line:#b6d2c5;
-  --line:#dce7df; --line-2:#dce7df; --line-3:#dce7df; --guide:#dce7df;
-  --red:var(--accent); --red-mid:var(--accent); --red-deep:#1c514c;
-  --warm:var(--accent); --warm-hot:var(--accent); --link:var(--accent); --link-hover:#1c514c;
-  --ok:#286346; --ok-bg:#e4f1e6; --ok-line:#b8d7bf;
-  --err:#9b493b; --err-bg:#fbede6; --err-line:#e4bbad;
-  --warn:#87602e; --warn-bg:#f8f1e1; --warn-line:#decba8;
-  --info:#326b73; --info-bg:#e7f1f2; --info-line:#bed4d7;
-  --on-red:#fff; --on-red-2:#e2eee8; --on-red-3:#d1e3da;
-  --metal-base:linear-gradient(135deg,#326f67,#255c57); --metal-sheen:linear-gradient(transparent,transparent);
-  --metal-emboss:0 6px 18px -12px #173f3650; --metal-emboss-sm:0 4px 14px -10px #173f3640;
-  --shadow-card:0 0 0 1px #284c3510,0 5px 18px -14px #284c3530;
-  --shadow-float:0 12px 36px -18px #183e3b35; --shadow-press:0 2px 10px -7px #183e3b30;
-  --radius:24px; --radius-sm:14px; --ease:cubic-bezier(.2,.7,.2,1); --spring:var(--ease);
+  --bg:#ecfdf5; --surface:#ffffff; --paper:#f6fffb; --card:#f6fff9;
+  --ink:#0f2922; --muted:#4b6d62; --muted-2:#567a6d; --muted-3:#5f8376;
+  --accent:#059669; --accent-soft:#d1fae5; --accent-line:#6ee7b7;
+  --line:#c7ebd8; --line-2:#d2efe0; --line-3:#d2efe0; --guide:#cbead9;
+  --red:var(--accent); --red-mid:var(--accent); --red-deep:#047857;
+  --warm:var(--accent); --warm-hot:var(--accent); --link:var(--accent); --link-hover:#047857;
+  --ok:#047857; --ok-bg:#d1fae5; --ok-line:#6ee7b7;
+  --err:#be123c; --err-bg:#ffe4e6; --err-line:#fda4af;
+  --warn:#b45309; --warn-bg:#fef3c7; --warn-line:#fcd34d;
+  --info:#0284c7; --info-bg:#e0f2fe; --info-line:#7dd3fc;
+  --on-red:#fff; --on-red-2:#ecfdf5; --on-red-3:#d1fae5;
+  --metal-base:linear-gradient(135deg,#10b981,#047857); --metal-sheen:linear-gradient(transparent,transparent);
+  --metal-emboss:0 6px 18px -12px #04785755; --metal-emboss-sm:0 4px 14px -10px #04785745;
+  --shadow-card:0 2px 10px -4px rgba(5, 150, 105, 0.1), 0 0 0 1px rgba(5, 150, 105, 0.08);
+  --shadow-float:0 12px 32px -14px rgba(4, 120, 87, 0.22); --shadow-press:0 2px 10px -7px rgba(4, 120, 87, 0.25);
+  --radius:24px; --radius-sm:14px; --ease:cubic-bezier(.2,.7,.2,1); --spring:cubic-bezier(.34,1.28,.46,1);
 }
-html,body { background:var(--bg); }
-@media (min-width:700px) { html,body { background:#dfe9e3; } }
+html,body { background:var(--bg); transition:background-color 220ms ease, color 220ms ease; }
+@media (min-width:700px) { html,body { background:#d4f3e2; } }
+@media (min-width:700px) { html[data-member='renita'],body[data-member='renita'] { background:#ffe0ed; } }
 body .app { box-shadow:0 0 0 1px #284c3512; }
 h1,h2,h3 { text-wrap:balance; }
 p { text-wrap:pretty; }
@@ -65,7 +66,7 @@ body .library-back { padding:6px 0; min-height:44px; color:var(--accent); backgr
 .language-chip-option { min-width:44px; min-height:44px; padding:0 10px; border-radius:999px; font-size:12px; font-weight:650; color:var(--muted); transition:background-color 160ms var(--ease),color 160ms var(--ease); }
 .language-chip-option[aria-pressed=true] { background:var(--accent-soft); color:var(--accent); }
 body .memory-horizon { margin:0; padding:20px; border-radius:var(--radius); background:var(--accent-soft); color:var(--ink); box-shadow:none; }
-body .memory-horizon[data-due=true] { background:#285e59; color:#fff; }
+body .memory-horizon[data-due=true] { background:linear-gradient(135deg, #059669 0%, #047857 100%); color:#fff; }
 body .memory-horizon-top { font-size:12px; letter-spacing:0; color:inherit; opacity:.85; }
 body .memory-horizon h2 { max-width:none; font-size:21px; line-height:1.4; font-weight:600; letter-spacing:-.025em; margin:12px 0 7px; }
 body .memory-horizon>p { margin:0; font-size:13px; color:inherit; max-width:none; line-height:1.65; }
@@ -209,3 +210,72 @@ body .books-home { padding-bottom:0; }
 body .books-library-selector { background:var(--surface); border-color:var(--line); box-shadow:var(--shadow-card); }
 body .books-library-tabs button { min-height:44px; background:var(--paper); border-color:var(--line); color:var(--muted); }
 body .books-library-tabs button[aria-pressed=true] { background:var(--accent-soft); border-color:var(--accent-line); color:var(--accent); }
+
+/* Renita Sakura Pink theme palette */
+[data-member='renita'] {
+  --bg: #fff0f6;
+  --paper: #fff7fb;
+  --card: #fff7fb;
+  --surface: #ffffff;
+  --ink: #3b0f24;
+  --muted: #7a4861;
+  --muted-2: #89556f;
+  --muted-3: #915e77;
+  --accent: #db2777;
+  --accent-soft: #fce7f3;
+  --accent-line: #f9a8d4;
+  --line: #f6cce0;
+  --line-2: #f8d7e7;
+  --line-3: #f8d7e7;
+  --guide: #f4bfd8;
+  --red-deep: #be185d;
+  --link-hover: #be185d;
+  --shadow-card: 0 2px 12px -4px rgba(219, 39, 119, 0.14), 0 0 0 1px rgba(219, 39, 119, 0.1);
+}
+[data-member='renita'] .memory-horizon[data-due=true] {
+  background: linear-gradient(135deg, #db2777 0%, #9d174d 100%);
+  color: #fff;
+}
+body[data-member='renita'] .overlay.recall-focus,
+[data-member='renita'] .overlay.recall-focus {
+  background: linear-gradient(180deg, #fff1f6 0%, #ffe4ef 100%);
+}
+
+/* Account Identity Pill */
+.member-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 800;
+  white-space: nowrap;
+  flex: none;
+  letter-spacing: 0.01em;
+}
+.member-badge-pill[data-member='richie'] {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #065f46;
+  border: 1px solid #34d399;
+}
+.member-badge-pill[data-member='renita'] {
+  background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+  color: #9d174d;
+  border: 1px solid #f472b6;
+}
+.member-badge-pill.is-compact {
+  min-height: 26px;
+  padding: 2px 9px;
+  font-size: 11px;
+}
+
+/* Shared Progressive Disclosure Animation */
+@keyframes reveal-fade-slide {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal-fade-in {
+  animation: reveal-fade-slide 220ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}

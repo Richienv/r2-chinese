@@ -6,6 +6,7 @@ import {
   type LearningState,
 } from './learningEngine.ts'
 import { mergeLearnerGraphs, normalizeLearnerGraph, type LearnerGraphState } from './learnerGraph.ts'
+import { sanitizeRenitaStorage } from './renitaIsolation.ts'
 export const PROGRESS_KEY = 'yulu.hsk4a.v1'
 export function progressKey(userId?: string) {
   return userId ? PROGRESS_KEY + '.' + userId : PROGRESS_KEY
@@ -292,6 +293,7 @@ export function importLearningStorage(
   storage: StorageLike,
   targetKey: string,
   rawJson: string,
+  opts?: { profile?: string },
 ): ImportResult {
   let parsed: unknown
   try {
@@ -426,6 +428,13 @@ export function importLearningStorage(
   }
 
   if (restoredKeys === 0) return { ok: false, error: 'no-valid-entries' }
+  if (opts?.profile === 'renita' || storage.getItem('yulu.active-profile.v1') === 'renita') {
+    sanitizeRenitaStorage(storage, targetKey)
+    const cleanMain = readProgress(storage, targetKey)
+    if (isPlainRecord(cleanMain)) {
+      persistedMain = cleanMain
+    }
+  }
   return { ok: true, restoredKeys, mainProgress: persistedMain }
 }
 type Progress = LearningData & {

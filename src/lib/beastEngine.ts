@@ -10,6 +10,7 @@ import {
 import type { HistoryEvent } from './history.ts'
 import type { LearnerGraphState } from './learnerGraph.ts'
 import type { MasteryRecord } from './mastery.ts'
+import { HSK1_WORD_SET } from './renitaIsolation.ts'
 import type { Card } from './srs.ts'
 
 export type BeastTrack = 'hsk4' | 'hsk1'
@@ -600,9 +601,12 @@ export interface DailyQuest {
 export interface Hsk1ProgressInput {
   tonesPassed: number
   pinyinPassed: number
+  strokesPassed?: number
   unitsDone: number[]
   provenWords: string[]
   grammarPassed: number
+  nodeDone?: Record<string, string[]>
+  srsCards?: Record<string, Card>
 }
 
 export interface BeastEvaluation {
@@ -689,19 +693,38 @@ function startOfDayTimestamp(todayKey: string, nowMs: number): number {
 
 export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluation {
   const track: BeastTrack = input.track === 'hsk1' ? 'hsk1' : 'hsk4'
-  const masteryList = Object.values(input.mastery ?? {})
-  const cardsList = Object.values(input.cards ?? {})
-  const lessonsDone = Array.isArray(input.lessonsDone) ? input.lessonsDone : []
-  const pathEntries = Object.entries(input.pathDone ?? {})
-  const history = Array.isArray(input.history) ? input.history : []
-  const streak = Math.max(0, Math.floor(input.streak || 0))
   const hsk1 = input.hsk1Progress ?? {
     tonesPassed: 0,
     pinyinPassed: 0,
+    strokesPassed: 0,
     unitsDone: [],
     provenWords: [],
     grammarPassed: 0,
+    nodeDone: {},
+    srsCards: {},
   }
+  const masteryList = Object.entries(input.mastery ?? {})
+    .filter(([zh]) => (track === 'hsk1' ? HSK1_WORD_SET.has(zh) : true))
+    .map(([, rec]) => rec)
+  const cardsList =
+    track === 'hsk1'
+      ? Object.values({
+          ...Object.fromEntries(
+            Object.entries(input.cards ?? {}).filter(([zh]) => HSK1_WORD_SET.has(zh)),
+          ),
+          ...(hsk1.srsCards ?? {}),
+        })
+      : Object.values(input.cards ?? {})
+  const lessonsDone =
+    track === 'hsk1' ? [] : Array.isArray(input.lessonsDone) ? input.lessonsDone : []
+  const pathEntries =
+    track === 'hsk1'
+      ? Object.entries(hsk1.nodeDone ?? {})
+      : Object.entries(input.pathDone ?? {})
+  const rawHistory = Array.isArray(input.history) ? input.history : []
+  const history =
+    track === 'hsk1' ? rawHistory.filter((ev) => ev && ev.course === 'hsk1') : rawHistory
+  const streak = Math.max(0, Math.floor(input.streak || 0))
 
   let masteredWords = 0
   let activeUnaidedWords = 0
@@ -744,10 +767,12 @@ export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluat
       ? masteredWords * 55 + hsk1ProvenCount * 25 + activeUnaidedWords * 12
       : masteredWords * 40 + activeUnaidedWords * 8
 
-  // 2) Production, Tones/Pinyin (HSK 1) & Writing Hanzi (HSK 4)
+  // 2) Production, Tones/Pinyin/Strokes (HSK 1) & Writing Hanzi (HSK 4)
+  const strokesPassed = Math.max(0, hsk1.strokesPassed ?? 0)
   const var2Power =
     track === 'hsk1'
       ? (Math.min(12, hsk1.tonesPassed) + Math.min(10, hsk1.pinyinPassed)) * 65 +
+        Math.min(10, strokesPassed) * 55 +
         productionWords * 18 +
         writingWords * 14
       : productionWords * 16 + writingWords * 14
@@ -759,22 +784,34 @@ export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluat
     if (!Array.isArray(nodes)) continue
     nodesCount += nodes.length
     const lessonNum = Number(lessonStr)
-    if (Number.isFinite(lessonNum) && nodes.includes('wrap')) {
+    if (track === 'hsk4' && Number.isFinite(lessonNum) && nodes.includes('wrap')) {
       wrappedLessons.add(lessonNum)
     }
   }
   const wrapsCount = wrappedLessons.size + (track === 'hsk1' ? hsk1UnitsDoneCount : 0)
   const var3Power =
     track === 'hsk1'
-      ? hsk1UnitsDoneCount * 140 + wrappedLessons.size * 120 + nodesCount * 15
+      ? hsk1UnitsDoneCount * 140 + nodesCount * 20
       : wrappedLessons.size * 120 + nodesCount * 16
 
   // 4) Consistency Flame Streak
-  const activeDaysCount = Object.values(input.log ?? {}).filter(
-    (entry) => entry && (entry.cards > 0 || entry.lessons > 0),
-  ).length
-  const flame = resolveFlameMeta(streak)
-  const var4Power = streak * 45 + activeDaysCount * 12
+  const hasHsk1Signal =
+    track !== 'hsk1' ||
+    hsk1UnitsDoneCount > 0 ||
+    hsk1ProvenCount > 0 ||
+    hsk1.tonesPassed > 0 ||
+    hsk1.pinyinPassed > 0 ||
+    strokesPassed > 0 ||
+    hsk1.grammarPassed > 0 ||
+    nodesCount > 0 ||
+    cardsList.length > 0 ||
+    history.length > 0
+  const activeDaysCount = hasHsk1Signal
+    ? Object.values(input.log ?? {}).filter((entry) => entry && (entry.cards > 0 || entry.lessons > 0)).length
+    : 0
+  const effectiveStreak = hasHsk1Signal ? streak : 0
+  const flame = resolveFlameMeta(effectiveStreak)
+  const var4Power = effectiveStreak * 45 + activeDaysCount * 12
 
   // 5) Grammar & Exam Proof
   const quizEvents = history.filter((ev) => ev.kind === 'quiz')
@@ -787,6 +824,7 @@ export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluat
   let totalGrammarStruggle = 0
   for (const node of graphNodes) {
     if (!node || node.kind !== 'grammar_point') continue
+    if (track === 'hsk1' && !String(node.id).startsWith('hsk1')) continue
     totalGrammarClean += node.cleanCount || 0
     totalGrammarStruggle += node.struggleCount || 0
     if ((node.cleanCount || 0) > (node.struggleCount || 0)) {

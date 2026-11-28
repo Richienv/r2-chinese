@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { t } from '../lib/i18n'
+import { playReveal } from '../lib/sfx'
 import { DAILY_GOAL, dayKey, useStore } from '../store/store'
 import { Flame } from './Flame'
 import '../styles/duo.css'
@@ -89,6 +90,7 @@ export function WeekStrip() {
  */
 export function TodayHud({ onOpen }: { onOpen?: () => void }) {
   const s = useStore()
+  const [showWeek, setShowWeek] = useState(false)
   const cards = s.today.cards
   const left = Math.max(0, DAILY_GOAL - cards)
   const line = cards === 0
@@ -115,8 +117,24 @@ export function TodayHud({ onOpen }: { onOpen?: () => void }) {
           <small>{t('today')}</small>
         </span>
       </button>
-      <WeekStrip />
-      <p className="duo-hud-line">{line}</p>
+      {showWeek && (
+        <div className="reveal-fade-in">
+          <WeekStrip />
+        </div>
+      )}
+      <div className="duo-hud-foot">
+        <p className="duo-hud-line">{line}</p>
+        <button
+          type="button"
+          className="duo-week-toggle"
+          onClick={() => {
+            playReveal()
+            setShowWeek((v) => !v)
+          }}
+        >
+          {showWeek ? 'Tutup 7 hari ▴' : '📅 7 hari ▾'}
+        </button>
+      </div>
     </section>
   )
 }

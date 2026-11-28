@@ -2,6 +2,7 @@ import '../styles/compact-session.css'
 import { RepairEditor } from './RepairEditor'
 import { useEffect, useId, useRef, useState } from 'react'
 import { RecallFeedback } from './LearningMotion'
+import { CheckIcon } from './Icons'
 import { HearButton } from './Hear'
 import { useHandwritingWordAssessment } from './HandwritingPad'
 import { HanziDrawing, type DrawingResult } from './HanziDrawing'
@@ -146,18 +147,20 @@ function RecallContextDetails({ ctx, hidden }: { ctx: RecallPromptContext; hidde
         <div className="recall-context">
           <p className="recall-context-label">{t('In a sentence')}</p>
           <p className="zh" lang="zh-CN">{ctx.sentence.zh}</p>
-          {ctx.sentence.en && <p className="recall-context-translation">{ctx.sentence.en}</p>}
         </div>
       )}
       {(ctx.whenCue || ctx.disambiguation) && (
-        <div className="recall-cue-note">
-          {ctx.whenCue && (
-            <p className="recall-when-cue">
-              <span>{t('Usage cue')}</span> {ctx.whenCue}
-            </p>
-          )}
-          {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
-        </div>
+        <details className="recall-cue-fold">
+          <summary>{t('Usage cue')}</summary>
+          <div className="recall-cue-note">
+            {ctx.whenCue && (
+              <p className="recall-when-cue">
+                <span>{t('Usage cue')}</span> {ctx.whenCue}
+              </p>
+            )}
+            {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
+          </div>
+        </details>
       )}
     </>
   )
@@ -305,16 +308,18 @@ function TypedRecall({
         <RecallMetaPills ctx={ctx} />
         {sentenceMode && ctx.sentence ? (
           <>
+            {ctx.coreMeaning && <MeaningHeading core={ctx.coreMeaning} other={ctx.otherMeanings} />}
             <div className="recall-sentence">
               <p className="zh" lang="zh-CN">{ctx.sentence.zh}</p>
-              {ctx.sentence.en && <p className="recall-sentence-translation">{ctx.sentence.en}</p>}
             </div>
-            {ctx.coreMeaning && <MeaningHeading core={ctx.coreMeaning} other={ctx.otherMeanings} />}
             {!solved && !revealed && (ctx.whenCue || ctx.disambiguation) && (
-              <div className="recall-cue-note">
-                {ctx.whenCue && <p className="recall-when-cue"><span>{t('Usage cue')}</span> {ctx.whenCue}</p>}
-                {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
-              </div>
+              <details className="recall-cue-fold">
+                <summary>{t('Usage cue')}</summary>
+                <div className="recall-cue-note">
+                  {ctx.whenCue && <p className="recall-when-cue"><span>{t('Usage cue')}</span> {ctx.whenCue}</p>}
+                  {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
+                </div>
+              </details>
             )}
           </>
         ) : (
@@ -400,26 +405,37 @@ function TypedRecall({
           }}
         >
           <label className="sr-only" htmlFor={inputId}>{t('Your word')}</label>
-          <input
-            ref={inputRef}
-            id={inputId}
-            className="production-input zh"
-            lang="zh-CN"
-            value={answer}
-            onChange={(event) => {
-              setAnswer(event.target.value)
-              setFeedback(null)
-            }}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter' && (event.nativeEvent.isComposing || event.keyCode === 229))
-                event.preventDefault()
-            }}
-            placeholder={t('Type the Hanzi here')}
-            autoComplete="off"
-            autoCapitalize="off"
-            spellCheck={false}
-            aria-describedby={`${inputId}-feedback`}
-          />
+          <div className="recall-input-row">
+            <input
+              ref={inputRef}
+              id={inputId}
+              className="production-input zh"
+              lang="zh-CN"
+              value={answer}
+              onChange={(event) => {
+                setAnswer(event.target.value)
+                setFeedback(null)
+              }}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' && (event.nativeEvent.isComposing || event.keyCode === 229))
+                  event.preventDefault()
+              }}
+              placeholder={t('Type the Hanzi here')}
+              autoComplete="off"
+              autoCapitalize="off"
+              spellCheck={false}
+              aria-describedby={`${inputId}-feedback`}
+            />
+            <button
+              className="recall-check-icon-btn"
+              type="submit"
+              disabled={!answer.trim()}
+              aria-label={t('Check')}
+              title={t('Check')}
+            >
+              <CheckIcon size={20} />
+            </button>
+          </div>
           {synonymMatch && (
             <div className="recall-synonym-feedback" role="status" aria-live="polite">
               <strong>{t('Close match — different nuance')}</strong>
@@ -429,9 +445,6 @@ function TypedRecall({
           <HintStack steps={ladder.slice(0, hint)} word={word} safeMeaning={safeMeaning} />
           <div className="recall-row">
             {hintButton}
-            <button className="btn" type="submit" disabled={!answer.trim()}>
-              {t('Check')}
-            </button>
           </div>
         </form>
       )}

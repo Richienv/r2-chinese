@@ -68,12 +68,12 @@
     width: 40px;
     height: 40px;
     border-radius: 13px;
-    background: linear-gradient(145deg, #2b7169, #1f534e);
-    color: #f6efe2;
+    background: linear-gradient(145deg, #10b981, #047857);
+    color: #ffffff;
     font-family: var(--serif-sc);
     font-size: 21px;
     font-weight: 700;
-    box-shadow: 0 6px 14px -8px rgba(31, 83, 78, 0.45);
+    box-shadow: 0 6px 14px -8px rgba(5, 150, 105, 0.45);
   }
 
   .desktop-nav-brand strong {
@@ -373,4 +373,9 @@
   body .minimal-course-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+[data-member='renita'] .desktop-nav-logo {
+  background: linear-gradient(145deg, #db2777, #9d174d);
+  box-shadow: 0 6px 14px -8px rgba(190, 24, 93, 0.45);
 }

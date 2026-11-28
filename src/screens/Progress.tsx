@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { BeastRevealOverlay, type BeastRevealPayload } from '../components/BeastRevealOverlay'
 import { CoupleComparePanel } from '../components/CoupleComparePanel'
 import { MasteryTracker } from '../components/MasteryTracker'
+import { MemberBadge } from '../components/MemberBadge'
 import { SealedBeastSilhouette } from '../components/SealedBeastSilhouette'
 import { evaluateBeastProgress, getBeastMinPower, getTrainerAssetSrc, LEGENDARY_BEASTS } from '../lib/beastEngine'
 import { readBeastPrefs, subscribeBeastPrefs, writeBeastPrefs } from '../lib/beastPrefs'
@@ -447,7 +448,10 @@ export function Progress({
     <div className="stack-page progress-page">
       <header className="progress-header">
         <div>
-          <div className="progress-eyebrow">{t('YOUR LEARNING, OVER TIME')}</div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, flexWrap: 'wrap' }}>
+            <div className="progress-eyebrow">{t('YOUR LEARNING, OVER TIME')}</div>
+            <MemberBadge compact />
+          </div>
           <h1 className="h2">{t('Progress')}</h1>
           <div className="sub">
             {t('Your practice, memory, and completed lessons.')}
@@ -504,100 +508,181 @@ export function Progress({
         </div>
       </section>
 
-      <section className="card progress-section progress-analytics-card" aria-label="Perbandingan Harian Kemarin dan Hari Ini">
-        <div className="progress-section-heading">
-          <div>
-            <div className="progress-eyebrow">PROGRES HARIAN · KEMARIN VS HARI INI</div>
-            <h2>Perbandingan & Tren 7 Hari</h2>
-          </div>
-          <span
-            className={`progress-delta-pill${
-              dailyComparison.deltaCards > 0
-                ? ' is-up'
-                : dailyComparison.deltaCards < 0
-                  ? ' is-down'
-                  : ''
-            }`}
-          >
-            {dailyComparison.deltaCards > 0
-              ? `▲ +${dailyComparison.deltaCards} vs kemarin`
-              : dailyComparison.deltaCards < 0
-                ? `▼ ${dailyComparison.deltaCards} vs kemarin`
-                : '= Sama dengan kemarin'}
+      <details className="progress-fold">
+        <summary>
+          <span>📈 Tren 7 Hari & Perbandingan Harian</span>
+          <span className="progress-fold-meta">
+            Kemarin {dailyComparison.yesterdayCards} · Hari ini {dailyComparison.todayCards} ▾
           </span>
-        </div>
-
-        <div className="progress-yday-today">
-          <div className="progress-yday-box">
-            <small>Kemarin</small>
-            <strong>{dailyComparison.yesterdayCards}</strong>
-            <span>langkah · {dailyComparison.yesterdayLessons} sesi</span>
+        </summary>
+        <div className="progress-fold-body">
+          <div className="progress-section-heading">
+            <div>
+              <div className="progress-eyebrow">PROGRES HARIAN · KEMARIN VS HARI INI</div>
+              <h2>Perbandingan & Tren 7 Hari</h2>
+            </div>
+            <span
+              className={`progress-delta-pill${
+                dailyComparison.deltaCards > 0
+                  ? ' is-up'
+                  : dailyComparison.deltaCards < 0
+                    ? ' is-down'
+                    : ''
+              }`}
+            >
+              {dailyComparison.deltaCards > 0
+                ? `▲ +${dailyComparison.deltaCards} vs kemarin`
+                : dailyComparison.deltaCards < 0
+                  ? `▼ ${dailyComparison.deltaCards} vs kemarin`
+                  : '= Sama dengan kemarin'}
+            </span>
           </div>
-          <div className="progress-yday-box is-today">
-            <small>Hari Ini</small>
-            <strong>{dailyComparison.todayCards}</strong>
-            <span>langkah · {dailyComparison.todayLessons} sesi</span>
-          </div>
-        </div>
 
-        <div className="progress-trend-bars" role="img" aria-label="Grafik 7 hari belajar">
-          {dailyComparison.series7Days.map((pt) => {
-            const hPct = pt.cards > 0 ? Math.max(14, Math.round((pt.cards / max7DayCards) * 100)) : 6
-            return (
-              <div
-                key={pt.key}
-                className={`progress-trend-col${pt.isToday ? ' is-today' : ''}${pt.cards > 0 ? ' is-active' : ''}`}
-              >
-                <span className="progress-trend-num">{pt.cards || '0'}</span>
-                <div className="progress-trend-track">
-                  <i style={{ height: `${hPct}%` }} />
+          <div className="progress-yday-today">
+            <div className="progress-yday-box">
+              <small>Kemarin</small>
+              <strong>{dailyComparison.yesterdayCards}</strong>
+              <span>langkah · {dailyComparison.yesterdayLessons} sesi</span>
+            </div>
+            <div className="progress-yday-box is-today">
+              <small>Hari Ini</small>
+              <strong>{dailyComparison.todayCards}</strong>
+              <span>langkah · {dailyComparison.todayLessons} sesi</span>
+            </div>
+          </div>
+
+          <div className="progress-trend-bars" role="img" aria-label="Grafik 7 hari belajar">
+            {dailyComparison.series7Days.map((pt) => {
+              const hPct = pt.cards > 0 ? Math.max(14, Math.round((pt.cards / max7DayCards) * 100)) : 6
+              return (
+                <div
+                  key={pt.key}
+                  className={`progress-trend-col${pt.isToday ? ' is-today' : ''}${pt.cards > 0 ? ' is-active' : ''}`}
+                >
+                  <span className="progress-trend-num">{pt.cards || '0'}</span>
+                  <div className="progress-trend-track">
+                    <i style={{ height: `${hPct}%` }} />
+                  </div>
+                  <span className="progress-trend-lbl">{pt.label}</span>
                 </div>
-                <span className="progress-trend-lbl">{pt.label}</span>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
-      </section>
+      </details>
 
-      <section className="card progress-section progress-cat-card" aria-label="Grafik Pemahaman Jenis Kata">
-        <div className="progress-section-heading">
+      <details className="progress-fold">
+        <summary>
+          <span>🧩 Peta Kategori Kata & Memori</span>
+          <span className="progress-fold-meta">
+            {isHsk1Track ? `${hsk1Memory.avgRetentionPct}% retensi FSRS` : '6 kategori kata'} ▾
+          </span>
+        </summary>
+        <div className="progress-fold-body" style={{ display: 'grid', gap: 16 }}>
           <div>
-            <div className="progress-eyebrow">PEMAHAMAN KATEGORI KATA</div>
-            <h2>Peta Penguasaan Jenis Kata</h2>
+            <div className="progress-section-heading">
+              <div>
+                <div className="progress-eyebrow">PEMAHAMAN KATEGORI KATA</div>
+                <h2>Peta Penguasaan Jenis Kata</h2>
+              </div>
+              <span className="progress-course-total">6 kategori</span>
+            </div>
+            <div className="progress-cat-list">
+              {categoryBreakdown.map((cat) => {
+                const learningPct = cat.total > 0 ? Math.round(((cat.mastered + cat.learning) / cat.total) * 100) : 0
+                return (
+                  <div key={cat.category} className="progress-cat-row">
+                    <div className="progress-cat-top">
+                      <strong>{cat.label}</strong>
+                      <span>
+                        {cat.mastered} kuasai{cat.learning > 0 ? ` · ${cat.learning} latih` : ''} · <b>{cat.pct}%</b>
+                      </span>
+                    </div>
+                    <div className="progress-cat-bar" aria-hidden="true">
+                      <i
+                        className="progress-cat-fill-learn"
+                        style={{ width: `${learningPct}%`, backgroundColor: cat.accentHex }}
+                      />
+                      <i
+                        className="progress-cat-fill-master"
+                        style={{ width: `${cat.pct}%`, backgroundColor: cat.accentHex }}
+                      />
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
           </div>
-          <span className="progress-course-total">6 kategori</span>
-        </div>
-        <p className="progress-section-sub">
-          Distribusi kata yang benar-benar dikuasai vs masih dilatih berdasarkan Verb, Noun, Adjektiva, Lokasi, Waktu/Angka, dan Partikel/Grammar.
-        </p>
-        <div className="progress-cat-list">
-          {categoryBreakdown.map((cat) => {
-            const learningPct = cat.total > 0 ? Math.round(((cat.mastered + cat.learning) / cat.total) * 100) : 0
-            return (
-              <div key={cat.category} className="progress-cat-row">
-                <div className="progress-cat-top">
-                  <strong>{cat.label}</strong>
-                  <span>
-                    {cat.mastered} kuasai{cat.learning > 0 ? ` · ${cat.learning} latih` : ''} · <b>{cat.pct}%</b>
-                  </span>
+
+          <div className="progress-mastery-section">
+            <div className="progress-section-heading">
+              <div>
+                <div className="progress-eyebrow">
+                  {isHsk1Track ? 'INGATAN FSRS-6 · HSK 1 DARI NOL' : t('BEYOND FINISHING A LESSON')}
                 </div>
-                <div className="progress-cat-bar" aria-hidden="true">
-                  <i
-                    className="progress-cat-fill-learn"
-                    style={{ width: `${learningPct}%`, backgroundColor: cat.accentHex }}
-                  />
-                  <i
-                    className="progress-cat-fill-master"
-                    style={{ width: `${cat.pct}%`, backgroundColor: cat.accentHex }}
-                  />
+                <h2>{isHsk1Track ? 'Rekap Memori HSK 1' : t('What stays with you')}</h2>
+              </div>
+              <span className="progress-mastery-spark" aria-hidden="true">
+                ✳
+              </span>
+            </div>
+            {isHsk1Track ? (
+              <div className="progress-hsk1-memory-grid" aria-label="Ringkasan Memori FSRS-6 HSK 1">
+                <Glance
+                  value={hsk1Memory.totalTracked}
+                  label="kata dilacak"
+                  detail={`dari ${HSK1_WORD_SET.size} kata HSK 1`}
+                />
+                <Glance
+                  value={hsk1Memory.strongCount}
+                  label="kata kuat"
+                  detail="diingat stabil"
+                />
+                <Glance
+                  value={hsk1Memory.dueCount}
+                  label="jatuh tempo"
+                  detail="siap disegarkan"
+                />
+                <div className="progress-glance-cell">
+                  <div className="progress-glance-value">{hsk1Memory.avgRetentionPct}%</div>
+                  <div className="progress-glance-label">retensi</div>
+                  <div className="progress-glance-detail">rata-rata FSRS-6</div>
                 </div>
               </div>
-            )
-          })}
+            ) : (
+              <>
+                <MasteryTracker words={s.learningTrail} />
+                {(graphInfo.skippedPendingCount > 0 || graphInfo.weakGrammarCount > 0 || graphInfo.confusionPairCount > 0) && (
+                  <details className="progress-graph-details" style={{ marginTop: 12 }}>
+                    <summary>{t('Active recall priorities from your graph')}</summary>
+                    <div style={{ display: 'grid', gap: 6, marginTop: 8, fontSize: 13 }}>
+                      {graphInfo.skippedPendingCount > 0 && (
+                        <span>{t('{n} words from skipped lessons queued for active recall', { n: graphInfo.skippedPendingCount })}</span>
+                      )}
+                      {graphInfo.weakGrammar.length > 0 && (
+                        <span>{t('Weak grammar')}: {graphInfo.weakGrammar.map((g) => g.point).join(' · ')}</span>
+                      )}
+                      {graphInfo.confusions.length > 0 && (
+                        <span>{t('Confused pairs')}: {graphInfo.confusions.map((c) => c.label).join(' · ')}</span>
+                      )}
+                    </div>
+                  </details>
+                )}
+              </>
+            )}
+          </div>
         </div>
-      </section>
+      </details>
 
-      <CoupleComparePanel />
+      <details className="progress-fold">
+        <summary>
+          <span>💕 Progres Berdua: Richie vs Renita</span>
+          <span className="progress-fold-meta">Buka & beri semangat ▾</span>
+        </summary>
+        <div className="progress-fold-body">
+          <CoupleComparePanel />
+        </div>
+      </details>
 
       <details className="progress-activity-details">
         <summary>{t('Practice over time')}</summary>
@@ -666,71 +751,6 @@ export function Progress({
       </section>
 
       </details>
-
-      <section className="card progress-section progress-mastery-section">
-        <div className="progress-section-heading">
-          <div>
-            <div className="progress-eyebrow">
-              {isHsk1Track ? 'INGATAN FSRS-6 · HSK 1 DARI NOL' : t('BEYOND FINISHING A LESSON')}
-            </div>
-            <h2>{isHsk1Track ? 'Rekap Memori HSK 1' : t('What stays with you')}</h2>
-          </div>
-          <span className="progress-mastery-spark" aria-hidden="true">
-            ✳
-          </span>
-        </div>
-        <p className="progress-section-sub">
-          {isHsk1Track
-            ? 'Memori diukur lewat Active Recall FSRS-6 dari 150 kata resmi HSK 1 tanpa bantuan hint.'
-            : t(
-                'Mastery means retrieving a word without help on more than one day. A completed lesson is only the beginning.',
-              )}
-        </p>
-        {isHsk1Track ? (
-          <div className="progress-hsk1-memory-grid" aria-label="Ringkasan Memori FSRS-6 HSK 1">
-            <Glance
-              value={hsk1Memory.totalTracked}
-              label="kata dilacak"
-              detail={`dari ${HSK1_WORD_SET.size} kata HSK 1`}
-            />
-            <Glance
-              value={hsk1Memory.strongCount}
-              label="kata kuat"
-              detail="diingat stabil"
-            />
-            <Glance
-              value={hsk1Memory.dueCount}
-              label="jatuh tempo"
-              detail="siap disegarkan"
-            />
-            <div className="progress-glance-cell">
-              <div className="progress-glance-value">{hsk1Memory.avgRetentionPct}%</div>
-              <div className="progress-glance-label">retensi</div>
-              <div className="progress-glance-detail">rata-rata FSRS-6</div>
-            </div>
-          </div>
-        ) : (
-          <>
-            <MasteryTracker words={s.learningTrail} />
-            {(graphInfo.skippedPendingCount > 0 || graphInfo.weakGrammarCount > 0 || graphInfo.confusionPairCount > 0) && (
-              <details className="progress-graph-details" style={{ marginTop: 12 }}>
-                <summary>{t('Active recall priorities from your graph')}</summary>
-                <div style={{ display: 'grid', gap: 6, marginTop: 8, fontSize: 13 }}>
-                  {graphInfo.skippedPendingCount > 0 && (
-                    <span>{t('{n} words from skipped lessons queued for active recall', { n: graphInfo.skippedPendingCount })}</span>
-                  )}
-                  {graphInfo.weakGrammar.length > 0 && (
-                    <span>{t('Weak grammar')}: {graphInfo.weakGrammar.map((g) => g.point).join(' · ')}</span>
-                  )}
-                  {graphInfo.confusions.length > 0 && (
-                    <span>{t('Confused pairs')}: {graphInfo.confusions.map((c) => c.label).join(' · ')}</span>
-                  )}
-                </div>
-              </details>
-            )}
-          </>
-        )}
-      </section>
 
       <section className="card progress-section progress-beast-section" aria-label="Koleksi Evolusi Trainer dan Partner">
         <div className="progress-section-heading">

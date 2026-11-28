@@ -86,8 +86,9 @@ test('all-caught-up progress continues learning instead of opening an empty revi
 })
 test('scheduled review offers a hint ladder, its lesson and memory stage, without a skip or the answer',()=>{
  const html=ui.render('review',{words:['法律']})
- assert.doesNotMatch(html,/Skip for now|Show answer|Bring back the word|Type the Hanzi without a hint/)
+ assert.doesNotMatch(html,/Skip for now|Show answer|Bring back the word|Type the Hanzi without a hint|focus-sentence-translation/)
  assert.match(html,/Hint/)
+ assert.match(html,/aria-label="Check"/)
  assert.match(html,/Lesson 1/)
  assert.match(html,/aria-current="step"><i><\/i><span>New<\/span>/)
  assert.doesNotMatch(html,/>法律<|I need to see it/)

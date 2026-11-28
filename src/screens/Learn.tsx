@@ -2,6 +2,7 @@ import { lazy } from 'react'
 import { CourseBack, CourseGate } from '../components/CourseChooser'
 import { LearningPath } from '../components/LearningPath'
 import { HskPracticeEntry } from '../components/HskPracticeEntry'
+import { MemberBadge } from '../components/MemberBadge'
 import { SkipLevelControl } from '../components/SkipLevelModal'
 import { COURSE_META, useCourse } from '../lib/course'
 import { t } from '../lib/i18n'
@@ -140,7 +141,10 @@ export function Learn({
 
   return (
     <div className="path-page path-alive">
-      <CourseBack />
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
+        <CourseBack />
+        <MemberBadge compact />
+      </div>
       <header className="page-heading"><p>{COURSE_META[course].title}</p><h1>{t('Materials')}</h1><span>{t('Lessons and practice, in one place.')}</span></header>
       {course === 'hsk4a' && <HskPracticeEntry onListen={onListening} onCompose={onCompose} onExam={onJiaochengMidterm} />}
       {course === 'jiayin' ? (

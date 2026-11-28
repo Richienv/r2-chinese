@@ -568,3 +568,15 @@
   line-height: 1.35;
   color: #475569;
 }
+
+[data-member='renita'] .beast-power-fill {
+  background: linear-gradient(90deg, #db2777 0%, #f472b6 56%, #f59e0b 100%);
+}
+
+[data-member='renita'] .beast-var-top span:last-child {
+  color: #be185d;
+}
+
+[data-member='renita'] .beast-stage-option.is-active {
+  border-color: #db2777;
+}

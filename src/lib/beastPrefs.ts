@@ -3,7 +3,7 @@
 import { CLOUD_HYDRATED_EVENT, LOCAL_PROGRESS_EVENT } from './autoSync.ts'
 import {
   BEAST_STORAGE_KEY,
-  DEFAULT_BEAST_STAGE_ID,
+  defaultBeastStageForMember,
   isBeastStageId,
   type BeastStageId,
 } from './beastStages.ts'
@@ -18,16 +18,28 @@ export interface BeastPrefs {
   updatedAt: number
 }
 
-const DEFAULT_PREFS: BeastPrefs = {
-  stageId: DEFAULT_BEAST_STAGE_ID,
-  lastSeenLevel: 1,
-  earnedAchievementKeys: [],
-  revealMuted: false,
-  updatedAt: 0,
+function activeDefaultStageId(): BeastStageId {
+  try {
+    const active = typeof localStorage === 'undefined' ? null : localStorage.getItem('yulu.active-profile.v1')
+    return defaultBeastStageForMember(active)
+  } catch {
+    return defaultBeastStageForMember(null)
+  }
+}
+
+function makeDefaultPrefs(): BeastPrefs {
+  return {
+    stageId: activeDefaultStageId(),
+    lastSeenLevel: 1,
+    earnedAchievementKeys: [],
+    revealMuted: false,
+    updatedAt: 0,
+  }
 }
 
 function normalizeBeastPrefs(raw: unknown): BeastPrefs {
-  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return { ...DEFAULT_PREFS }
+  const fallbackStage = activeDefaultStageId()
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return makeDefaultPrefs()
   const obj = raw as Record<string, unknown>
   const earned = Array.isArray(obj.earnedAchievementKeys)
     ? [...new Set(obj.earnedAchievementKeys.filter((k): k is string => typeof k === 'string' && k.length > 0))]
@@ -37,7 +49,7 @@ function normalizeBeastPrefs(raw: unknown): BeastPrefs {
       ? Math.max(1, Math.min(24, Math.floor(obj.lastSeenLevel)))
       : 1
   return {
-    stageId: isBeastStageId(obj.stageId) ? obj.stageId : DEFAULT_BEAST_STAGE_ID,
+    stageId: isBeastStageId(obj.stageId) ? obj.stageId : fallbackStage,
     lastSeenLevel,
     earnedAchievementKeys: earned,
     revealMuted: Boolean(obj.revealMuted),
@@ -46,13 +58,13 @@ function normalizeBeastPrefs(raw: unknown): BeastPrefs {
 }
 
 export function readBeastPrefs(): BeastPrefs {
-  if (typeof localStorage === 'undefined') return { ...DEFAULT_PREFS }
+  if (typeof localStorage === 'undefined') return makeDefaultPrefs()
   try {
     const raw = localStorage.getItem(BEAST_STORAGE_KEY)
-    if (!raw) return { ...DEFAULT_PREFS }
+    if (!raw) return makeDefaultPrefs()
     return normalizeBeastPrefs(JSON.parse(raw))
   } catch {
-    return { ...DEFAULT_PREFS }
+    return makeDefaultPrefs()
   }
 }
 
@@ -78,7 +90,7 @@ export function writeBeastPrefs(patch: Partial<BeastPrefs>): BeastPrefs {
 }
 
 export function resetBeastPrefs(): BeastPrefs {
-  const next: BeastPrefs = { ...DEFAULT_PREFS, updatedAt: Date.now() }
+  const next: BeastPrefs = { ...makeDefaultPrefs(), updatedAt: Date.now() }
   if (typeof localStorage !== 'undefined') {
     try {
       localStorage.setItem(BEAST_STORAGE_KEY, JSON.stringify(next))

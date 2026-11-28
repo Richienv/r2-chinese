@@ -62,6 +62,8 @@ export function BeastStageCard({
     setBubbleText(null)
     setDrawer('none')
     setPickerOpen(false)
+    setPrefs(readBeastPrefs())
+    setHistory(readHistory())
   }, [activeId])
 
   useEffect(() => {
@@ -220,7 +222,7 @@ export function BeastStageCard({
             </div>
             <div className="beast-hud-actions">
               <button type="button" className="beast-chip-btn" onClick={() => setPickerOpen(true)}>
-                🎴 {evalRes.unlockedStageIds.length}/9
+                🎴 {evalRes.unlockedStageIds.length}/{BEAST_STAGES.length}
               </button>
               {isLockedPreview ? (
                 <button
@@ -437,9 +439,12 @@ export function BeastStageCard({
           <div className="beast-picker-sheet" onClick={(e) => e.stopPropagation()}>
             <div className="beast-picker-head">
               <div>
-                <strong>Koleksi Kartu Stage ({evalRes.unlockedStageIds.length}/9)</strong>
+                <strong>
+                  Koleksi Kartu Stage ({evalRes.unlockedStageIds.length}/{BEAST_STAGES.length})
+                </strong>
                 <div style={{ fontSize: 12, color: '#64748b' }}>
-                  3 starter aktif · 6 kartu terbuka dari pencapaian HSK nyata
+                  {FREE_BEAST_STAGE_IDS.length} starter aktif ·{' '}
+                  {BEAST_STAGES.length - FREE_BEAST_STAGE_IDS.length} kartu terbuka dari pencapaian HSK nyata
                 </div>
               </div>
               <button type="button" className="beast-chip-btn" onClick={() => setPickerOpen(false)}>
