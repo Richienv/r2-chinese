@@ -253,3 +253,21 @@ export function playStart(): void {
 export function playComplete(): void {
   sample('complete', synth.complete)
 }
+
+/** Ascending pentatonic chime scaled gently with active streak combo (1..8). */
+export function playCombo(streak: number): void {
+  const tier = Math.max(0, Math.min(8, Math.floor(streak)))
+  const root = 523.25 * Math.pow(1.06, tier)
+  play(
+    [
+      { frequency: root, duration: 0.14, gain: 0.22 },
+      { frequency: root * 1.25, offset: 0.045, duration: 0.16, gain: 0.18 },
+      { frequency: root * 1.5, offset: 0.09, duration: 0.22, gain: 0.15 },
+      ...(tier >= 3
+        ? [{ frequency: root * 2, offset: 0.135, duration: 0.2, gain: 0.09, wave: 'triangle' as OscillatorType }]
+        : []),
+    ],
+    0.22,
+  )
+  if (tier >= 3) haptic('streak')
+}

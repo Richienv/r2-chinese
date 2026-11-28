@@ -22,6 +22,7 @@ const InterviewLearn = lazy(() => import('./Interview').then((m) => ({ default: 
 const MagangLearn = lazy(() => import('./Magang').then((m) => ({ default: m.MagangLearn })))
 const BooksLearn = lazy(() => import('./Books').then((m) => ({ default: m.BooksLearn })))
 import type { JiayinOpen } from './Jiayin'
+import type { Hsk1NodeId } from '../lib/hsk1Srs'
 const JiayinPath = lazy(() => import('./Jiayin').then((m) => ({ default: m.JiayinPath })))
 const Hsk1HomePath = lazy(() => import('./Hsk1').then((m) => ({ default: m.Hsk1HomePath })))
 
@@ -101,6 +102,7 @@ export function Learn({
   onJiayinPlay,
   onHsk1Unit,
   onHsk1Tones,
+  onHsk1Recall,
   onListening,
   onCompose,
   isNodeDone,
@@ -115,8 +117,9 @@ export function Learn({
   onInterviewPlay?: (chapter: number, node: string) => void
   onBooksPlay?: (part: number, index: number) => void
   onJiayinPlay: JiayinOpen
-  onHsk1Unit?: (unit: number) => void
-  onHsk1Tones?: () => void
+  onHsk1Unit?: (unit: number, node?: Hsk1NodeId) => void
+  onHsk1Tones?: (track?: 'tones' | 'pinyin' | 'strokes') => void
+  onHsk1Recall?: () => void
   onListening: () => void
   onCompose: () => void
   isNodeDone?: (lesson: number, node: PathNode) => boolean
@@ -144,8 +147,9 @@ export function Learn({
         <JiayinPath onPlay={onJiayinPlay} />
       ) : course === 'hsk1' ? (
         <Hsk1HomePath
-          onOpenUnit={(unit) => onHsk1Unit?.(unit)}
-          onOpenToneLab={() => onHsk1Tones?.()}
+          onOpenUnit={(unit, node) => onHsk1Unit?.(unit, node)}
+          onOpenToneLab={(track) => onHsk1Tones?.(track)}
+          onOpenRecall={onHsk1Recall}
         />
       ) : course === 'kerja' ? (
         <KerjaLearn onPlay={(chapter, node) => onKerjaPlay?.(chapter, node)} />

@@ -64,6 +64,10 @@ const Hsk1SessionOverlay = lazy(() =>
 const Hsk1ToneLabOverlay = lazy(() =>
   import('./screens/Hsk1').then((m) => ({ default: m.Hsk1ToneLabOverlay })),
 )
+const Hsk1RecallOverlay = lazy(() =>
+  import('./screens/Hsk1').then((m) => ({ default: m.Hsk1RecallOverlay })),
+)
+import type { Hsk1NodeId } from './lib/hsk1Srs'
 import { CourseProvider } from './lib/course'
 import { CoupleAuthGate } from './components/CoupleAuthGate'
 import { useCoupleGate } from './lib/coupleAuth'
@@ -95,8 +99,9 @@ type Overlay =
   | { kind: 'vocab' }
   | { kind: 'listening' }
   | { kind: 'composition' }
-  | { kind: 'hsk1-unit'; unit: number }
-  | { kind: 'hsk1-tones' }
+  | { kind: 'hsk1-unit'; unit: number; node?: Hsk1NodeId }
+  | { kind: 'hsk1-tones'; track?: 'tones' | 'pinyin' | 'strokes' }
+  | { kind: 'hsk1-recall' }
   | null
 
 function Shell() {
@@ -242,8 +247,9 @@ function Shell() {
               onInterviewSession={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
               onBooksSession={(part, index) => setOverlay({ kind: 'books', part, index, node: 'lesson' })}
               onJiayinSession={(unit, stage) => setOverlay({ kind: 'jiayin', unit, stage })}
-              onHsk1Unit={(unit) => setOverlay({ kind: 'hsk1-unit', unit })}
-              onHsk1Tones={() => setOverlay({ kind: 'hsk1-tones' })}
+              onHsk1Unit={(unit, node) => setOverlay({ kind: 'hsk1-unit', unit, node })}
+              onHsk1Tones={(track) => setOverlay({ kind: 'hsk1-tones', track })}
+              onHsk1Recall={() => setOverlay({ kind: 'hsk1-recall' })}
               onProgress={() => setTab('stats')}
             />
           )}
@@ -261,8 +267,9 @@ function Shell() {
               onInterviewPlay={(chapter, node) => setOverlay({ kind: 'interview', chapter, node })}
               onBooksPlay={(part, index) => setOverlay({ kind: 'books', part, index, node: 'lesson' })}
               onJiayinPlay={(unit, stage) => setOverlay({ kind: 'jiayin', unit, stage })}
-              onHsk1Unit={(unit) => setOverlay({ kind: 'hsk1-unit', unit })}
-              onHsk1Tones={() => setOverlay({ kind: 'hsk1-tones' })}
+              onHsk1Unit={(unit, node) => setOverlay({ kind: 'hsk1-unit', unit, node })}
+              onHsk1Tones={(track) => setOverlay({ kind: 'hsk1-tones', track })}
+              onHsk1Recall={() => setOverlay({ kind: 'hsk1-recall' })}
               isNodeDone={(lesson, node) => store.isNodeDone(lesson, node)}
             />
           )}
@@ -368,9 +375,21 @@ function Shell() {
         {overlay?.kind === 'listening' && <HskListening onClose={closeOverlay} />}
         {overlay?.kind === 'composition' && <HskComposition onClose={closeOverlay} />}
         {overlay?.kind === 'hsk1-unit' && (
-          <Hsk1SessionOverlay unitNumber={overlay.unit} onClose={closeOverlay} />
+          <Hsk1SessionOverlay
+            key={`h1u-${overlay.unit}-${overlay.node ?? 'kenali'}`}
+            unitNumber={overlay.unit}
+            initialNode={overlay.node}
+            onClose={closeOverlay}
+          />
         )}
-        {overlay?.kind === 'hsk1-tones' && <Hsk1ToneLabOverlay onClose={closeOverlay} />}
+        {overlay?.kind === 'hsk1-tones' && (
+          <Hsk1ToneLabOverlay
+            key={`h1t-${overlay.track ?? 'tones'}`}
+            initialTrack={overlay.track}
+            onClose={closeOverlay}
+          />
+        )}
+        {overlay?.kind === 'hsk1-recall' && <Hsk1RecallOverlay onClose={closeOverlay} />}
       </Suspense>
     </div>
   )

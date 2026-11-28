@@ -25,6 +25,22 @@ import {
   computeCategoryBreakdown,
   computeDailyComparison,
 } from '../src/lib/progressAnalytics.ts'
+import {
+  decomposeHsk1Word,
+  HSK1_BASIC_STROKES,
+  HSK1_STROKE_QUIZ,
+} from '../src/data/hsk1Strokes.ts'
+import {
+  applyHsk1NodeDone,
+  nextPlayableHsk1Unit,
+  normalizeHsk1Progress,
+} from '../src/lib/hsk1.ts'
+import {
+  buildSentenceTiles,
+  buildVocabWaves,
+  reviewHsk1Card,
+  selectHsk1RecallQueue,
+} from '../src/lib/hsk1Srs.ts'
 
 function makeMemoryStorage() {
   const map = new Map()
@@ -195,4 +211,77 @@ test('progress analytics computes yesterday vs today deltas, 7-day trend, and le
   const adjRow = breakdown.find((r) => r.category === 'adj')
   assert.equal(verbRow?.mastered, 1)
   assert.equal(adjRow?.mastered, 1)
+})
+
+test('HSK 1 stroke semantics and radical decomposition cover all 150 words cleanly', () => {
+  assert.equal(HSK1_BASIC_STROKES.length, 8)
+  for (const s of HSK1_BASIC_STROKES) {
+    assert.ok(s.svgPath.trim().length > 5)
+    assert.ok(s.examples.length >= 3)
+  }
+  assert.equal(HSK1_STROKE_QUIZ.length, 8)
+  for (const q of HSK1_STROKE_QUIZ) {
+    assert.ok(q.options[q.answerIndex], `invalid stroke quiz option in ${q.id}`)
+  }
+  for (const w of ALL_HSK1_WORDS) {
+    const dec = decomposeHsk1Word(w)
+    assert.ok(dec.characters.length >= 1, `missing decomposition for ${w.zh}`)
+    for (const ch of dec.characters) {
+      assert.ok(ch.parts.length >= 1, `missing parts for ${ch.char}`)
+      assert.ok(ch.strokeGuides.length >= 1, `missing stroke guides for ${ch.char}`)
+    }
+  }
+})
+
+test('HSK 1 micro-waves, sentence tiles, FSRS-6 scheduling, and node progression work cohesively', () => {
+  const unit1 = HSK1_UNITS[0]
+  const waves = buildVocabWaves(unit1.words, 3)
+  assert.equal(waves.length, 3)
+  assert.deepEqual(
+    waves.map((w) => w.introWords.length),
+    [3, 3, 4],
+  )
+  for (const wv of waves) {
+    assert.equal(wv.microChecks.length, wv.introWords.length)
+  }
+
+  const tiled = buildSentenceTiles('你好！谢谢你！', unit1.words)
+  assert.equal(tiled.answerTokens.join(''), tiled.cleanSentence)
+  assert.ok(tiled.bankTokens.length >= tiled.answerTokens.length + 2)
+
+  // FSRS-6 card progression: 'good' pushes due date into the future; 'again' drops interval
+  const now = 1_795_800_000_000
+  const goodRes = reviewHsk1Card({}, '好', 1, 'good', now)
+  assert.ok(goodRes.updated.due > now)
+  const mature = reviewHsk1Card(goodRes.nextCards, '好', 1, 'easy', now + 86_400_000)
+  assert.ok(mature.updated.interval > goodRes.updated.interval)
+  const lapsed = reviewHsk1Card(mature.nextCards, '好', 1, 'again', now + 2 * 86_400_000)
+  assert.ok(lapsed.updated.interval < mature.updated.interval)
+
+  // Queue prioritizes overdue cards first
+  const q = selectHsk1RecallQueue(
+    {
+      谢谢: { zh: '谢谢', lesson: 901, ease: 2.5, interval: 1, due: now - 3_600_000, reps: 1, lastReview: now - 90_000_000 },
+      好: { zh: '好', lesson: 901, ease: 2.5, interval: 5, due: now + 5 * 86_400_000, reps: 2, lastReview: now },
+    },
+    ['您'],
+    ALL_HSK1_WORDS,
+    now,
+    5,
+  )
+  assert.equal(q[0].zh, '谢谢')
+
+  // Node progression advances cleanly through kenali -> goresan -> dengar -> kalimat -> bos -> Unit 2
+  let state = normalizeHsk1Progress({})
+  assert.deepEqual(nextPlayableHsk1Unit(state), { unit: 1, node: 'kenali' })
+  state = applyHsk1NodeDone(state, 1, 'kenali')
+  assert.deepEqual(nextPlayableHsk1Unit(state), { unit: 1, node: 'goresan' })
+  state = applyHsk1NodeDone(state, 1, 'goresan')
+  assert.deepEqual(nextPlayableHsk1Unit(state), { unit: 1, node: 'dengar' })
+  state = applyHsk1NodeDone(state, 1, 'dengar')
+  assert.deepEqual(nextPlayableHsk1Unit(state), { unit: 1, node: 'kalimat' })
+  state = applyHsk1NodeDone(state, 1, 'kalimat')
+  assert.deepEqual(nextPlayableHsk1Unit(state), { unit: 1, node: 'bos' })
+  state = applyHsk1NodeDone(state, 1, 'bos', ['好'])
+  assert.deepEqual(nextPlayableHsk1Unit(state), { unit: 2, node: 'kenali' })
 })

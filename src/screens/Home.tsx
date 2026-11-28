@@ -21,7 +21,8 @@ import { useEffect, useState } from 'react'
 import { BeastStageCard } from '../components/BeastStageCard'
 import { CoupleHub } from '../components/CoupleHub'
 import { useCoupleProfile } from '../lib/coupleProfile'
-import { readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
+import { nextPlayableHsk1Unit, readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
+import type { Hsk1NodeId } from '../lib/hsk1Srs'
 import { LessonPath } from './Learn'
 import { useStore, type PathNode } from '../store/store'
 import '../styles/home-alive.css'
@@ -45,6 +46,7 @@ export function Home({
   onJiayinSession,
   onHsk1Unit,
   onHsk1Tones,
+  onHsk1Recall,
   onProgress,
 }: {
   onSession: (lesson: number, node: PathNode) => void
@@ -60,8 +62,9 @@ export function Home({
   onInterviewSession: (chapter: number, node: string) => void
   onBooksSession: (part: number, index: number) => void
   onJiayinSession: JiayinOpen
-  onHsk1Unit?: (unit: number) => void
-  onHsk1Tones?: () => void
+  onHsk1Unit?: (unit: number, node?: Hsk1NodeId) => void
+  onHsk1Tones?: (track?: 'tones' | 'pinyin' | 'strokes') => void
+  onHsk1Recall?: () => void
   onProgress?: () => void
 }) {
   const s = useStore()
@@ -100,16 +103,21 @@ export function Home({
       <BeastStageCard
         track={member.track}
         hsk1Progress={hsk1Progress}
-        onReview={onReview}
+        onReview={() => {
+          if (course === 'hsk1' && onHsk1Recall) onHsk1Recall()
+          else onReview()
+        }}
         onLearn={() => {
           if (course === 'hsk1') {
-            if (hsk1Progress.tonesPassed < 6) {
-              onHsk1Tones?.()
+            if (hsk1Progress.tonesPassed < 7) {
+              onHsk1Tones?.('tones')
+            } else if (hsk1Progress.pinyinPassed < 6) {
+              onHsk1Tones?.('pinyin')
+            } else if (hsk1Progress.strokesPassed < 5) {
+              onHsk1Tones?.('strokes')
             } else {
-              const nextUnit = Array.from({ length: 15 }, (_, i) => i + 1).find(
-                (u) => !hsk1Progress.unitsDone.includes(u),
-              )
-              onHsk1Unit?.(nextUnit ?? 1)
+              const target = nextPlayableHsk1Unit(hsk1Progress)
+              onHsk1Unit?.(target.unit, target.node)
             }
             return
           }
@@ -129,13 +137,22 @@ export function Home({
           </button>
         )}
         {course === 'hsk1' && (
-          <button
-            type="button"
-            className="home-float-pill home-float-pill-accent"
-            onClick={() => onHsk1Tones?.()}
-          >
-            🎵 Lab 4 Nada
-          </button>
+          <>
+            <button
+              type="button"
+              className="home-float-pill home-float-pill-accent"
+              onClick={() => onHsk1Tones?.('tones')}
+            >
+              🎵 Pondasi
+            </button>
+            <button
+              type="button"
+              className="home-float-pill"
+              onClick={() => onHsk1Tones?.('strokes')}
+            >
+              ✍️ Goresan
+            </button>
+          </>
         )}
         {course === 'hsk4a' && (
           <SkipLevelControl
@@ -166,7 +183,14 @@ export function Home({
             }}
           />
         )}
-        <button type="button" className="home-float-pill" onClick={onReview}>
+        <button
+          type="button"
+          className="home-float-pill"
+          onClick={() => {
+            if (course === 'hsk1' && onHsk1Recall) onHsk1Recall()
+            else onReview()
+          }}
+        >
           🔁 Recall
         </button>
         {onProgress && (
@@ -185,8 +209,9 @@ export function Home({
         <JiayinPath onPlay={onJiayinSession} />
       ) : course === 'hsk1' ? (
         <Hsk1HomePath
-          onOpenUnit={(unit) => onHsk1Unit?.(unit)}
-          onOpenToneLab={() => onHsk1Tones?.()}
+          onOpenUnit={(unit, node) => onHsk1Unit?.(unit, node)}
+          onOpenToneLab={(track) => onHsk1Tones?.(track)}
+          onOpenRecall={onHsk1Recall}
         />
       ) : course === 'kerja' ? (
         <KerjaHomePath onPlay={onKerjaSession} />
