@@ -92,9 +92,39 @@ test('HSK 1 4-Tones guide and Pinyin contrast drills are complete and valid', ()
 
   for (const d of HSK1_TONE_DRILLS) {
     assert.ok(d.options[d.answerIndex], `missing valid answerIndex in ${d.id}`)
+    assert.equal(
+      /\(Nada|datar|naik|rendah|menukik|jatuh|55|35|214|51|bertanya/i.test(d.promptHint),
+      false,
+      `Tone drill ${d.id} promptHint leaked tone answer: ${d.promptHint}`,
+    )
+    for (const opt of d.options) {
+      assert.equal(
+        /\(Nada|datar|naik|rendah|menukik|jatuh/i.test(`${opt.zh} ${opt.pinyin}`),
+        false,
+        `Tone drill ${d.id} option leaked tone clue: ${opt.zh}`,
+      )
+    }
   }
   for (const d of HSK1_PINYIN_DRILLS) {
     assert.ok(d.options[d.answerIndex], `missing valid answerIndex in ${d.id}`)
+    const ansOpt = d.options[d.answerIndex]
+    const cleanMeaningWords = ansOpt.meaning
+      .toLowerCase()
+      .replace(/\([^)]*\)/g, '')
+      .split(/[\s/·,]+/)
+      .filter((w) => w.length >= 3)
+    for (const mw of cleanMeaningWords) {
+      assert.equal(
+        d.questionId.toLowerCase().includes(mw),
+        false,
+        `Pinyin drill ${d.id} leaked meaning word "${mw}" in prompt: ${d.questionId}`,
+      )
+    }
+    assert.equal(
+      d.questionId.toLowerCase().includes(ansOpt.pinyin.toLowerCase()),
+      false,
+      `Pinyin drill ${d.id} leaked target pinyin in prompt: ${d.questionId}`,
+    )
   }
 })
 
@@ -222,6 +252,13 @@ test('HSK 1 stroke semantics and radical decomposition cover all 150 words clean
   assert.equal(HSK1_STROKE_QUIZ.length, 8)
   for (const q of HSK1_STROKE_QUIZ) {
     assert.ok(q.options[q.answerIndex], `invalid stroke quiz option in ${q.id}`)
+    for (const opt of q.options) {
+      assert.equal(
+        q.promptId.toLowerCase().includes(opt.hintId.toLowerCase()),
+        false,
+        `Stroke quiz ${q.id} prompt matched hintId verbatim: ${q.promptId}`,
+      )
+    }
   }
   for (const w of ALL_HSK1_WORDS) {
     const dec = decomposeHsk1Word(w)

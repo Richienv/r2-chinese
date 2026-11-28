@@ -1,9 +1,7 @@
 import { useAutoSpeak, useSpeechActive } from './Hear'
 import { t } from '../lib/i18n'
 import { speak, stopSpeech, unlockSpeech } from '../lib/speech'
-import { VOICE, WORD_RATE } from '../lib/voices'
-
-const SLOW_RATE = -38
+import { SLOW_RATE, VOICE, WORD_RATE } from '../lib/voices'
 
 /**
  * The cue for a listening round. The word plays on its own when the round opens

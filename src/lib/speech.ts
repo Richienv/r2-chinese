@@ -217,6 +217,16 @@ function cancellable<T>(work: Promise<T>, mine: number): Promise<T | undefined> 
     )
   })
 }
+/**
+ * Maps TTS rate offsets to real playback tempo:
+ * - normal (>= -18): 1.0x natural clarity
+ * - gently slower (-30 .. -19): 0.78x
+ * - unmistakably slow pelan (< -30): 0.58x (with preservesPitch = true)
+ */
+export function playbackSpeedForRate(rate: number): number {
+  return rate >= -18 ? 1 : rate >= -30 ? 0.85 : 0.58
+}
+
 async function playNeural(
   text: string,
   voice: string,
@@ -225,12 +235,18 @@ async function playNeural(
   mine: number,
   base: SpeechSnapshot,
 ): Promise<boolean> {
-  const clip = await cancellable(load(text, voice, rate, tracked), mine)
+  // For genuine slow pelan (< -25), fetch clear native-contour audio (-8) and slow it via preservesPitch
+  // so Mandarin tone pitch contours stay natural and undistorted while stretching duration to 0.58x.
+  const playbackSpeed = playbackSpeedForRate(rate)
+  const synthRate = rate < -25 ? -8 : rate
+  const clip = await cancellable(load(text, voice, synthRate, tracked), mine)
   if (!clip || mine !== seq) return false
   const a = element()
   a.src = clip.url
   a.currentTime = 0
-  a.playbackRate = 1
+  a.defaultPlaybackRate = playbackSpeed
+  a.playbackRate = playbackSpeed
+  a.preservesPitch = true
   return new Promise<boolean>((resolve, reject) => {
     let frame = 0
     let finished = false
@@ -270,15 +286,17 @@ async function playNeural(
       .play()
       .then(() => {
         if (finished || mine !== seq) return
+        a.playbackRate = playbackSpeed
+        a.preservesPitch = true
         publish({ ...base, status: 'playing', timing: clip.words.length ? 'words' : 'line' })
         follow()
       })
       .catch((err) => finish(false, err))
   })
 }
-/** The TTS speed scale maps to the recording's tempo: normal, a little slower, much slower. */
+/** The TTS speed scale maps to the recording's tempo: normal, a little slower, genuinely slow pelan. */
 function recordedSpeed(rate: number) {
-  return rate >= -14 ? 1 : rate >= -30 ? 0.85 : 0.7
+  return playbackSpeedForRate(rate)
 }
 function sameTrack(a: HTMLAudioElement, url: string) {
   return !!a.src && (a.src === url || a.src.endsWith(url))
@@ -343,7 +361,8 @@ function playWebSpeech(text: string, rate: number, mine: number, base: SpeechSna
       return reject(new Error('speech unavailable'))
     const utterance = new SpeechSynthesisUtterance(text)
     utterance.lang = 'zh-CN'
-    utterance.rate = Math.max(0.5, 1 + rate / 100)
+    const speed = playbackSpeedForRate(rate)
+    utterance.rate = Math.max(0.5, speed < 1 ? speed : 1 + rate / 150)
     const voice = mandarinVoice(window.speechSynthesis.getVoices())
     if (voice) utterance.voice = voice
     const finish = (done: boolean) => {

@@ -57,7 +57,7 @@ test.before(async () => {
         import { Home } from './src/screens/Home';
         import { Progress } from './src/screens/Progress';
         import { ReviewFlow } from './src/screens/Review';
-        import { Hsk1HomePath, Hsk1RecallOverlay } from './src/screens/Hsk1';
+        import { Hsk1HomePath, Hsk1RecallOverlay, Hsk1ToneLabOverlay } from './src/screens/Hsk1';
 
         export function render(which, activeProfile = 'richie', extraEntries = []) {
           const store = new Map([
@@ -87,6 +87,8 @@ test.before(async () => {
               content = <Hsk1RecallOverlay onClose={noop} />;
             } else if (which === 'hsk1path') {
               content = <Hsk1HomePath onOpenUnit={noop} onOpenToneLab={noop} onOpenRecall={noop} />;
+            } else if (which === 'tonelab') {
+              content = <Hsk1ToneLabOverlay initialTrack="tones" onClose={noop} />;
             } else if (which === 'home') {
               content = (
                 <Home
@@ -443,5 +445,41 @@ test('Home SSR as Renita stays locked to HSK 1 Dari Nol & Sakura Pink even with 
   } finally {
     if (prevStorage) globalThis.localStorage = prevStorage
     else delete globalThis.localStorage
+  }
+
+  // Verify HSK 1 Tone Guide header renders clear title & no pink bottom shadow clash
+  const toneGuideHtml = renderSurface('tonelab', 'renita')
+  assert.match(toneGuideHtml, /Nada 1 · Datar &amp; Tinggi|Nada 1 · Datar & Tinggi/)
+  assert.match(toneGuideHtml, /55 · Datar Tinggi/)
+  assert.match(toneGuideHtml, /--hsk1-audio-shadow/)
+})
+
+test('Audio hygiene & Muted-Speaker audit hold across HSK 1 and HSK 4', () => {
+  const hsk1Src = readFileSync(join(root, 'src/screens/Hsk1.tsx'), 'utf8')
+  const exSrc = readFileSync(join(root, 'src/components/Exercises.tsx'), 'utf8')
+  assert.equal(hsk1Src.includes('playListen('), false, 'Hsk1 speech triggers must not play UI SFX')
+  assert.equal(exSrc.includes('playListen('), false, 'Exercises ListenPrompt must not play UI SFX')
+  assert.match(hsk1Src, /useHsk1AutoSpeak\(/, 'Hsk1 overlays must auto-play Mandarin audio on card entry')
+
+  // Verify every radical micro-check across all 150 HSK 1 words leaks neither translation words nor = trails
+  for (const unit of HSK1_UNITS) {
+    const waves = buildVocabWaves(unit.words, 3)
+    for (const wave of waves) {
+      for (const chk of wave.microChecks) {
+        if (chk.kind !== 'radical') continue
+        assert.equal(/=\s*[^.!?;]+/.test(chk.promptId), false, `Radical clue leaked '= answer' in ${chk.target.zh}: ${chk.promptId}`)
+        const meaningWords = chk.target.meaningId
+          .toLowerCase()
+          .split(/[\s/(),;!?]+/)
+          .filter((w) => w.length >= 3)
+        for (const mw of meaningWords) {
+          assert.equal(
+            new RegExp(`(?<![a-z])${mw}(?![a-z])`, 'i').test(chk.promptId),
+            false,
+            `Radical clue for ${chk.target.zh} (${chk.target.meaningId}) leaked "${mw}": ${chk.promptId}`,
+          )
+        }
+      }
+    }
   }
 })

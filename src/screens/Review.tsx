@@ -1,7 +1,7 @@
 import { reviewRatings } from '../lib/practiceExperience'
 import { StudyMusic } from '../components/StudyMusic'
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
-import { HearButton } from '../components/Hear'
+import { HearButton, useAutoSpeak } from '../components/Hear'
 import { ListenCue } from '../components/ListenCue'
 import { CheckIcon, CloseIcon } from '../components/Icons'
 import { MemberBadge } from '../components/MemberBadge'
@@ -225,6 +225,8 @@ export function ReviewFlow({
     return { right: events.filter((e) => e.rating !== 'again').length, total: events.length }
   }, [store.learning, zh])
   const ifRight = card && !selfMode ? schedule(card, hint ? 'hard' : 'good', now, placement && !hint, hint >= 2 ? 1 : undefined) : null
+  // Delay post-answer auto-play cleanly (440ms) so UI feedback SFX never collides with Mandarin speech onset.
+  useAutoSpeak(revealed && !hideMeaning && zh ? zh : '', undefined, undefined, 440)
   const activeKey = focusKey && choices.some((c) => c.key === focusKey) ? focusKey : (choices.find((c) => c.key === 'good' || c.key === 'fuzzy') ?? choices[0])?.key
   const bookLabel =
     book === 'kerja'

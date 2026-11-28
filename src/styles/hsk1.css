@@ -527,6 +527,13 @@
   font-weight: 850;
 }
 
+.hsk1-guide-subtitle {
+  margin: -4px 0 4px;
+  font-size: 13px;
+  font-weight: 750;
+  color: #64748b;
+}
+
 .hsk1-hero-hanzi {
   font-size: clamp(46px, 12vw, 68px);
   font-weight: 900;
@@ -587,13 +594,13 @@
   font: inherit;
   font-size: 14px;
   font-weight: 850;
-  box-shadow: 0 3px 0 #115e59;
+  box-shadow: 0 3px 0 var(--hsk1-audio-shadow, #115e59);
   cursor: pointer;
 }
 
 .hsk1-audio-btn:active {
   transform: translateY(2px);
-  box-shadow: 0 1px 0 #115e59;
+  box-shadow: 0 1px 0 var(--hsk1-audio-shadow, #115e59);
 }
 
 .hsk1-chip-row {
@@ -1271,12 +1278,18 @@
 }
 
 [data-member='renita'] .hsk1-track-pill.is-active,
-[data-member='renita'] .hsk1-unit-btn.is-done .hsk1-unit-num,
-[data-member='renita'] .hsk1-audio-btn {
+[data-member='renita'] .hsk1-unit-btn.is-done .hsk1-unit-num {
   background: #db2777;
   border-color: #db2777;
   color: #ffffff;
   box-shadow: 0 3px 0 #9d174d;
+}
+
+[data-member='renita'] .hsk1-audio-btn {
+  background: #db2777;
+  border-color: #db2777;
+  color: #ffffff;
+  box-shadow: 0 3px 0 var(--hsk1-audio-shadow, #9d174d);
 }
 
 [data-member='renita'] .hsk1-top-progress i {

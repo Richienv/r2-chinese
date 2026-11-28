@@ -51,7 +51,7 @@ export function useSpeechSnapshot() {
 }
 
 /** Prefetch + autoplay one Chinese phrase when `text` becomes the current beat. */
-export function useAutoSpeak(text: string, voice: string = VOICE.xiaoxiao, rate?: number) {
+export function useAutoSpeak(text: string, voice: string = VOICE.xiaoxiao, rate?: number, delayMs = 280) {
   const trimmed = text.trim()
   const resolvedRate = rate ?? (trimmed ? rateForChinese(trimmed) : WORD_RATE)
   useEffect(() => {
@@ -60,12 +60,12 @@ export function useAutoSpeak(text: string, voice: string = VOICE.xiaoxiao, rate?
     prefetch(trimmed, { voice, rate: resolvedRate, trackWords: true })
     const timer = window.setTimeout(() => {
       void speak(trimmed, { voice, rate: resolvedRate, key, trackWords: true })
-    }, 280)
+    }, delayMs)
     return () => {
       window.clearTimeout(timer)
       stopSpeech()
     }
-  }, [trimmed, voice, resolvedRate])
+  }, [trimmed, voice, resolvedRate, delayMs])
 }
 
 /** Prefetch + autoplay several short Chinese items (e.g. quiz choices) in order. */

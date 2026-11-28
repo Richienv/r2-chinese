@@ -145,7 +145,7 @@ test('the listening speed setting slows the recording instead of switching voice
   try {
     setClipResolver(createClipResolver(sample, '/audio/hsk4a/'))
     for (const rate of [-6, -22, -38]) await speak('法律', { rate })
-    assert.deepEqual(env.played.map((play) => play.rate), [1, 0.85, 0.7])
+    assert.deepEqual(env.played.map((play) => play.rate), [1, 0.85, 0.58])
     assert.deepEqual(env.played.map((play) => play.from), [59.5, 59.5, 59.5])
   } finally { env.restore() }
 })

@@ -192,7 +192,7 @@ export default async function handler(req: any, res: any) {
     const voiceParam = params.get('voice') ?? DEFAULT_VOICE
     const voice = ALLOWED_VOICES.has(voiceParam) ? voiceParam : DEFAULT_VOICE
     const rawRate = Number(params.get('rate') ?? -8)
-    const rateNum = Math.max(-40, Math.min(20, Number.isFinite(rawRate) ? rawRate : -8))
+    const rateNum = Math.max(-55, Math.min(20, Number.isFinite(rawRate) ? rawRate : -8))
     const rate = `${rateNum >= 0 ? '+' : ''}${rateNum}%`
     const timings = params.get('timings') === '1'
 

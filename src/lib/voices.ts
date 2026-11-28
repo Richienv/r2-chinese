@@ -7,7 +7,8 @@ export const VOICE = {
 } as const
 
 /** Clear enough to hear the tones, still conversational. */
-export const WORD_RATE = -12
+export const WORD_RATE = -8
+export const SLOW_RATE = -42
 export const LINE_RATE = -6
 
 const VOICE_BY_SPEAKER: Record<string, string> = {

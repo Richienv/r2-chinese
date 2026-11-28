@@ -5,7 +5,7 @@ import { buildRecallPromptContext } from '../lib/recallContext'
 import { coreMeaning, sameText, type Exercise, type ExerciseStep, type ExSentence, type ExWord } from '../lib/exercises'
 import { t } from '../lib/i18n'
 import { rng, seedOf, shuffle } from '../lib/seeded'
-import { haptic, playAdvance, playCorrect, playHint, playListen, playTick, playWrong } from '../lib/sfx'
+import { haptic, playAdvance, playCorrect, playHint, playTick, playWrong } from '../lib/sfx'
 import { speak, unlockSpeech } from '../lib/speech'
 import { useStore } from '../store/store'
 import { HearButton, rateForChinese, useAutoSpeak } from './Hear'
@@ -286,7 +286,6 @@ function ListenPrompt({ word, showPinyin, onPinyin }: { word: ExWord; showPinyin
         aria-label={t('Play the sound again')}
         onPointerDown={() => unlockSpeech()}
         onClick={() => {
-          playListen()
           setPulse((n) => n + 1)
           void speak(word.zh, { rate, key: `duo-listen|${word.zh}|${pulse}` })
         }}

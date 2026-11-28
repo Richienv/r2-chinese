@@ -22,11 +22,28 @@ function escapeRegExp(s: string): string {
 const PINYIN_BOUNDARY_PREFIX = '(?<![A-Za-zÀ-ÿ\\u0100-\\u01FF])'
 const PINYIN_BOUNDARY_SUFFIX = '(?![A-Za-zÀ-ÿ\\u0100-\\u01FF])'
 
+const DIGIT_MEANING_WORDS: Record<string, string[]> = {
+  一: ['satu', '1'],
+  二: ['dua', '2'],
+  三: ['tiga', '3'],
+  四: ['empat', '4'],
+  五: ['lima', '5'],
+  六: ['enam', '6'],
+  七: ['tujuh', '7'],
+  八: ['delapan', '8'],
+  九: ['sembilan', '9'],
+  十: ['sepuluh', '10'],
+}
+
 /**
- * Redacts any occurrence of the target Hanzi or Pinyin inside a hint/radical clue
- * so micro-checks and Boss Recall Hints never leak the answer.
+ * Redacts any occurrence of the target Hanzi, Pinyin, or optional Indonesian meaning words inside
+ * a hint or radical clue so micro-checks and Boss Recall Hints never leak the answer.
  */
-export function maskHsk1Hint(text: string, word: Pick<Hsk1Word, 'zh' | 'pinyin'>): string {
+export function maskHsk1Hint(
+  text: string,
+  word: Pick<Hsk1Word, 'zh' | 'pinyin'> & { meaningId?: string },
+  opts?: { maskMeaning?: boolean },
+): string {
   let out = text || ''
   if (!out || !word?.zh) return out
   out = out.split(word.zh).join('___')
@@ -44,11 +61,9 @@ export function maskHsk1Hint(text: string, word: Pick<Hsk1Word, 'zh' | 'pinyin'>
         if (clean) candidates.add(clean)
       }
     }
-    if (chars.length === 1) {
-      for (const tok of pyRaw.split(/[\s/·,]+/)) {
-        const clean = tok.trim()
-        if (clean.length >= 2) candidates.add(clean)
-      }
+    for (const tok of pyRaw.split(/[\s/·,]+/)) {
+      const clean = tok.trim()
+      if (clean.length >= 2) candidates.add(clean)
     }
     const sorted = [...candidates].sort((a, b) => b.length - a.length)
     for (const cand of sorted) {
@@ -59,7 +74,29 @@ export function maskHsk1Hint(text: string, word: Pick<Hsk1Word, 'zh' | 'pinyin'>
       out = out.replace(pattern, '___')
     }
   }
-  return out
+
+  if (opts?.maskMeaning) {
+    // Never leave `= Anjing` / `= Angka 2` translation trailers inside quiz clues.
+    out = out.replace(/\s*=\s*[^.!?;]+[.!?]*$/gu, '')
+    const meaningTokens = new Set<string>(
+      (word.meaningId ?? '')
+        .toLowerCase()
+        .split(/[\s/(),;!?]+/)
+        .map((t) => t.trim())
+        .filter((t) => t.length >= 3),
+    )
+    for (const extra of DIGIT_MEANING_WORDS[word.zh] ?? []) {
+      meaningTokens.add(extra)
+    }
+    for (const tok of [...meaningTokens].sort((a, b) => b.length - a.length)) {
+      const pat = new RegExp(
+        `${PINYIN_BOUNDARY_PREFIX}${escapeRegExp(tok)}${PINYIN_BOUNDARY_SUFFIX}`,
+        'giu',
+      )
+      out = out.replace(pat, '___')
+    }
+  }
+  return out.replace(/(?:___\s*){2,}/g, '___').trim()
 }
 
 export function formatHsk1Interval(due: number, now = Date.now()): string {
@@ -242,24 +279,34 @@ export function buildVocabWaves(words: readonly Hsk1Word[], waveSize = 3): Vocab
       const candidate = pool[(Math.max(0, idx) + step * 2) % pool.length]
       if (candidate && !chosen.some((c) => c.zh === candidate.zh)) chosen.push(candidate)
     }
-    return [target, ...chosen].sort((a, b) => a.zh.localeCompare(b.zh))
+    return [target, ...chosen]
+      .map((item) => ({ item, k: hashOrder(`wave-opt:${target.zh}:${item.zh}`) }))
+      .sort((a, b) => a.k - b.k)
+      .map((x) => x.item)
   }
 
   const getRadicalClue = (word: Hsk1Word): string => {
+    const clean = (raw: string) => maskHsk1Hint(raw, word, { maskMeaning: true })
     for (const ch of Array.from(word.zh)) {
       const info = HSK1_CHAR_BREAKDOWN[ch]
       if (info && info.parts.length > 0) {
         const partLabels = info.parts
           .map((p) => HSK1_RADICALS[p])
           .filter(Boolean)
-          .map((r) => `${r.emoji} ${r.glyph} (${r.meaningId})`)
-        if (partLabels.length > 0) {
-          return maskHsk1Hint(`Petunjuk komponen ${partLabels.join(' + ')} → "${word.literalTip}"`, word)
-        }
-        return maskHsk1Hint(info.storyId, word)
+          .map((r) => `${r.emoji} ${clean(r.glyph)} (${clean(r.meaningId)})`)
+        const tipBody = clean(word.literalTip)
+        const base =
+          partLabels.length > 0
+            ? tipBody && !/^___[.!?]*$/.test(tipBody)
+              ? `Petunjuk komponen ${partLabels.join(' + ')} → "${tipBody}"`
+              : `Aksara mana yang dibentuk dari komponen ${partLabels.join(' + ')}?`
+            : clean(info.storyId)
+        return clean(base)
       }
     }
-    return maskHsk1Hint(word.literalTip, word)
+    const fallback = clean(word.literalTip)
+    if (fallback && !/^___[.!?]*$/.test(fallback)) return fallback
+    return 'Pilih aksara yang paling sesuai dengan petunjuk komponen unit ini!'
   }
 
   return chunks.map((introWords, wi) => {

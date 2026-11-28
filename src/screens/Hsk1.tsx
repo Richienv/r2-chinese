@@ -42,8 +42,9 @@ import {
 } from '../lib/hsk1Srs'
 import { recordHistory } from '../lib/history'
 import { readHsk1Progress as _readHsk1ForBeast } from '../lib/hsk1'
-import { playAdvance, playCombo, playComplete, playCorrect, playHint, playListen, playReveal, playStart, playWrong } from '../lib/sfx'
-import { speak, stopSpeech } from '../lib/speech'
+import { playAdvance, playCombo, playComplete, playCorrect, playHint, playReveal, playStart, playWrong } from '../lib/sfx'
+import { getSpeechSnapshot, prefetch, speak, speakLines, stopSpeech, subscribeSpeech, unlockSpeech } from '../lib/speech'
+import { SLOW_RATE, VOICE, WORD_RATE } from '../lib/voices'
 import type { Rating } from '../lib/srs'
 import { dayKey, useStore } from '../store/store'
 import { MemberBadge } from '../components/MemberBadge'
@@ -61,14 +62,47 @@ const PHASES: Array<{ phase: 1 | 2 | 3 | 4 | 5; title: string }> = [
 
 const WIND_5 = [0, 32, 46, 26, 0]
 
+/** Pure Mandarin speech triggers — zero UI SFX before, during, or overlapping audio. */
 function speakNormal(text: string) {
-  playListen()
-  void speak(text)
+  unlockSpeech()
+  void speak(text, { voice: VOICE.xiaoxiao, rate: WORD_RATE })
 }
 
 function speakSlow(text: string) {
-  playListen()
-  void speak(text, { rate: -32 })
+  unlockSpeech()
+  void speak(text, { voice: VOICE.xiaoxiao, rate: SLOW_RATE })
+}
+
+function useHsk1AutoSpeak(text: string, enabled: boolean, rate = WORD_RATE, delayMs = 260) {
+  const trimmed = text.trim()
+  useEffect(() => {
+    if (!enabled || !trimmed) return
+    prefetch(trimmed, { voice: VOICE.xiaoxiao, rate })
+    const timer = window.setTimeout(() => {
+      void speak(trimmed, { voice: VOICE.xiaoxiao, rate })
+    }, delayMs)
+    return () => {
+      window.clearTimeout(timer)
+      stopSpeech()
+    }
+  }, [trimmed, enabled, rate, delayMs])
+}
+
+function useHsk1AutoSpeakLines(lines: readonly string[], enabled: boolean, rate = WORD_RATE, delayMs = 280) {
+  const cleanLines = lines.map((l) => l.trim()).filter(Boolean)
+  const joined = cleanLines.join('\u0001')
+  useEffect(() => {
+    if (!enabled || cleanLines.length === 0) return
+    cleanLines.slice(0, 2).forEach((text) => prefetch(text, { voice: VOICE.xiaoxiao, rate }))
+    const timer = window.setTimeout(() => {
+      void speakLines(cleanLines.map((text) => ({ text, voice: VOICE.xiaoxiao, rate })))
+    }, delayMs)
+    return () => {
+      window.clearTimeout(timer)
+      stopSpeech()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [joined, enabled, rate, delayMs])
 }
 
 function Hsk1SoundToggle({ soundOn, onToggle }: { soundOn: boolean; onToggle: () => void }) {
@@ -394,21 +428,29 @@ type ToneLabCard =
 
 function buildFoundationDeck(track: 'tones' | 'pinyin' | 'strokes'): ToneLabCard[] {
   if (track === 'tones') {
-    const usedDrills = new Set<number>()
-    const cards: ToneLabCard[] = []
-    HSK1_TONES.forEach((tGuide, tIdx) => {
-      cards.push({ kind: 'tone-teach', id: `tt-${tGuide.tone}`, toneIdx: tIdx })
-      const dIdx = HSK1_TONE_DRILLS.findIndex((d, i) => !usedDrills.has(i) && d.targetTone === tGuide.tone)
-      if (dIdx >= 0) {
-        usedDrills.add(dIdx)
+    // Teach Nada 1 & 2 -> mixed discrimination wave (NOT 1-then-2 predictable),
+    // then teach Nada 3, 4 & Netral -> full scrambled tone mix across all 12 drills.
+    const cards: ToneLabCard[] = [
+      { kind: 'tone-teach', id: 'tt-1', toneIdx: 0 },
+      { kind: 'tone-teach', id: 'tt-2', toneIdx: 1 },
+    ]
+    const firstWaveIndices = [1, 0, 5, 4] // targets: 2, 1, 2, 1 (ma2, ma1, cha2, ba1)
+    for (const dIdx of firstWaveIndices) {
+      if (HSK1_TONE_DRILLS[dIdx]) {
         cards.push({ kind: 'tone-quiz', id: `tq-${HSK1_TONE_DRILLS[dIdx].id}`, drillIdx: dIdx })
       }
-    })
-    HSK1_TONE_DRILLS.forEach((d, i) => {
-      if (!usedDrills.has(i)) {
-        cards.push({ kind: 'tone-quiz', id: `tq-${d.id}`, drillIdx: i })
+    }
+    cards.push(
+      { kind: 'tone-teach', id: 'tt-3', toneIdx: 2 },
+      { kind: 'tone-teach', id: 'tt-4', toneIdx: 3 },
+      { kind: 'tone-teach', id: 'tt-0', toneIdx: 4 },
+    )
+    const finalWaveIndices = [3, 2, 10, 6, 8, 7, 11, 9] // targets: 4, 3, 0, 3, 1, 4, 0, 2
+    for (const dIdx of finalWaveIndices) {
+      if (HSK1_TONE_DRILLS[dIdx]) {
+        cards.push({ kind: 'tone-quiz', id: `tq-${HSK1_TONE_DRILLS[dIdx].id}`, drillIdx: dIdx })
       }
-    })
+    }
     return cards
   }
 
@@ -417,32 +459,28 @@ function buildFoundationDeck(track: 'tones' | 'pinyin' | 'strokes'): ToneLabCard
     HSK1_PINYIN_GROUPS.forEach((grp, gIdx) => {
       cards.push({ kind: 'pinyin-teach', id: `pt-${grp.id}`, grpIdx: gIdx })
       const startDrill = gIdx * 2
-      if (HSK1_PINYIN_DRILLS[startDrill]) {
-        cards.push({ kind: 'pinyin-quiz', id: `pq-${HSK1_PINYIN_DRILLS[startDrill].id}`, drillIdx: startDrill })
-      }
-      if (HSK1_PINYIN_DRILLS[startDrill + 1]) {
-        cards.push({
-          kind: 'pinyin-quiz',
-          id: `pq-${HSK1_PINYIN_DRILLS[startDrill + 1].id}`,
-          drillIdx: startDrill + 1,
-        })
+      const pair = gIdx % 2 === 1 ? [startDrill + 1, startDrill] : [startDrill, startDrill + 1]
+      for (const dIdx of pair) {
+        if (HSK1_PINYIN_DRILLS[dIdx]) {
+          cards.push({ kind: 'pinyin-quiz', id: `pq-${HSK1_PINYIN_DRILLS[dIdx].id}`, drillIdx: dIdx })
+        }
       }
     })
     return cards
   }
 
-  // Strokes: interleave 2 stroke guides + 2 stroke quizzes so learning never feels like a textbook
+  // Strokes: interleave 2 stroke guides + swapped 2 stroke quizzes so quiz order never copies guide order
   const cards: ToneLabCard[] = []
   for (let i = 0; i < HSK1_BASIC_STROKES.length; i += 2) {
     cards.push({ kind: 'stroke-teach', id: `st-${HSK1_BASIC_STROKES[i].id}`, strokeIdx: i })
     if (HSK1_BASIC_STROKES[i + 1]) {
       cards.push({ kind: 'stroke-teach', id: `st-${HSK1_BASIC_STROKES[i + 1].id}`, strokeIdx: i + 1 })
     }
-    if (HSK1_STROKE_QUIZ[i]) {
-      cards.push({ kind: 'stroke-quiz', id: `sq-${HSK1_STROKE_QUIZ[i].id}`, quizIdx: i })
-    }
     if (HSK1_STROKE_QUIZ[i + 1]) {
       cards.push({ kind: 'stroke-quiz', id: `sq-${HSK1_STROKE_QUIZ[i + 1].id}`, quizIdx: i + 1 })
+    }
+    if (HSK1_STROKE_QUIZ[i]) {
+      cards.push({ kind: 'stroke-quiz', id: `sq-${HSK1_STROKE_QUIZ[i].id}`, quizIdx: i })
     }
   }
   return cards
@@ -488,6 +526,29 @@ export function Hsk1ToneLabOverlay({
 
   const card = deck[stepIdx]
   const progressPct = finished ? 100 : Math.round(((stepIdx + 1) / Math.max(1, deck.length)) * 100)
+
+  const labAutoSpeechText = finished || !card
+    ? ''
+    : card.kind === 'tone-teach'
+      ? HSK1_TONES[card.toneIdx]?.sampleZh ?? ''
+      : card.kind === 'tone-quiz'
+        ? HSK1_TONE_DRILLS[card.drillIdx]?.promptAudio ?? ''
+        : card.kind === 'pinyin-teach'
+          ? HSK1_PINYIN_GROUPS[card.grpIdx]?.examples[0]?.zh ?? ''
+          : card.kind === 'pinyin-quiz'
+            ? HSK1_PINYIN_DRILLS[card.drillIdx]?.promptAudio ?? ''
+            : card.kind === 'stroke-teach'
+              ? HSK1_BASIC_STROKES[card.strokeIdx]?.examples[0]?.zh ?? ''
+              : ''
+
+  useHsk1AutoSpeak(labAutoSpeechText, s.prefs.soundOn)
+
+  useEffect(() => {
+    if (!card || card.kind !== 'tone-teach' || finished) return
+    return subscribeSpeech(() => {
+      setPlayingWave(getSpeechSnapshot().status !== 'idle')
+    })
+  }, [card, finished])
 
   function handleQuizPick(optIdx: number, answerIdx: number, cardId: string, retryCard: ToneLabCard) {
     if (pickedOpt !== null) return
@@ -580,7 +641,13 @@ export function Hsk1ToneLabOverlay({
   const canContinue = finished || !isQuizCard || pickedOpt !== null
 
   return (
-    <div className="hsk1-overlay" role="dialog" aria-modal="true" aria-label="Pondasi Dari Nol">
+    <div
+      className="hsk1-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Pondasi Dari Nol"
+      onPointerDown={() => unlockSpeech()}
+    >
       <header className="hsk1-session-topbar">
         <button type="button" className="hsk1-icon-close" onClick={onClose} aria-label="Tutup">
           ✕
@@ -653,6 +720,10 @@ export function Hsk1ToneLabOverlay({
                 <span className="hsk1-step-tag" style={{ color: tone.colorHex }}>
                   PANDUAN NADA · {card.toneIdx + 1}/{HSK1_TONES.length}
                 </span>
+                <h2 className="hsk1-card-title" style={{ color: tone.colorHex }}>
+                  {tone.label}
+                </h2>
+                <div className="hsk1-guide-subtitle">{tone.contour}</div>
                 <ToneWaveSvg tone={tone.tone} colorHex={tone.colorHex} playing={playingWave} size={184} />
                 <div className="hsk1-hero-hanzi" lang="zh-CN">
                   {tone.sampleZh}
@@ -664,7 +735,10 @@ export function Hsk1ToneLabOverlay({
                   <button
                     type="button"
                     className="hsk1-audio-btn"
-                    style={{ background: tone.colorHex }}
+                    style={{
+                      background: tone.colorHex,
+                      ['--hsk1-audio-shadow' as string]: 'rgba(15, 23, 42, 0.28)',
+                    }}
                     onClick={() => {
                       setPlayingWave(true)
                       speakNormal(tone.sampleZh)
@@ -705,6 +779,7 @@ export function Hsk1ToneLabOverlay({
         ) : card?.kind === 'tone-quiz' ? (
           (() => {
             const drill = HSK1_TONE_DRILLS[card.drillIdx]
+            const answered = pickedOpt !== null
             return (
               <div key={card.id} className="hsk1-stage-card">
                 <span className="hsk1-step-tag">
@@ -721,28 +796,34 @@ export function Hsk1ToneLabOverlay({
                 </div>
                 <div className="hsk1-option-list">
                   {drill.options.map((opt, idx) => {
-                    const answered = pickedOpt !== null
                     const right = answered && idx === drill.answerIndex
                     const wrong = answered && pickedOpt === idx && idx !== drill.answerIndex
                     return (
                       <button
-                        key={opt.zh}
+                        key={`${opt.zh}-${opt.tone}`}
                         type="button"
                         disabled={answered}
                         className={`hsk1-option-btn${right ? ' is-right' : ''}${wrong ? ' is-wrong' : ''}`}
                         onClick={() => handleQuizPick(idx, drill.answerIndex, card.id, card)}
                       >
-                        <span className="hsk1-opt-zh" lang="zh-CN">
-                          {opt.zh}
-                        </span>
+                        <span className="hsk1-opt-zh">{opt.zh}</span>
                         <span className="hsk1-opt-meta">
-                          {opt.pinyin} — {opt.meaning}
+                          {opt.pinyin}
+                          {answered && opt.meaning ? ` · ${opt.meaning}` : ''}
                         </span>
                       </button>
                     )
                   })}
                 </div>
-                {pickedOpt !== null && <div className="hsk1-tip-box">{drill.explainId}</div>}
+                {answered && (
+                  <div className="hsk1-tip-box reveal-fade-in">
+                    <div style={{ marginBottom: 4 }}>
+                      <strong lang="zh-CN">{drill.promptAudio}</strong> ({drill.targetPinyin}) ={' '}
+                      <strong>{drill.targetMeaning}</strong>
+                    </div>
+                    {drill.explainId}
+                  </div>
+                )}
               </div>
             )
           })()
@@ -789,6 +870,7 @@ export function Hsk1ToneLabOverlay({
         ) : card?.kind === 'pinyin-quiz' ? (
           (() => {
             const drill = HSK1_PINYIN_DRILLS[card.drillIdx]
+            const answered = pickedOpt !== null
             return (
               <div key={card.id} className="hsk1-stage-card">
                 <span className="hsk1-step-tag">
@@ -805,7 +887,6 @@ export function Hsk1ToneLabOverlay({
                 </div>
                 <div className="hsk1-option-list">
                   {drill.options.map((opt, idx) => {
-                    const answered = pickedOpt !== null
                     const right = answered && idx === drill.answerIndex
                     const wrong = answered && pickedOpt === idx && idx !== drill.answerIndex
                     return (
@@ -817,14 +898,16 @@ export function Hsk1ToneLabOverlay({
                         onClick={() => handleQuizPick(idx, drill.answerIndex, card.id, card)}
                       >
                         <span className="hsk1-opt-zh">{opt.pinyin}</span>
-                        <span className="hsk1-opt-meta">
-                          {opt.zh} · {opt.meaning}
-                        </span>
+                        {answered && (
+                          <span className="hsk1-opt-meta">
+                            {opt.zh} · {opt.meaning}
+                          </span>
+                        )}
                       </button>
                     )
                   })}
                 </div>
-                {pickedOpt !== null && <div className="hsk1-tip-box">{drill.explainId}</div>}
+                {answered && <div className="hsk1-tip-box reveal-fade-in">{drill.explainId}</div>}
               </div>
             )
           })()
@@ -836,6 +919,9 @@ export function Hsk1ToneLabOverlay({
                 <span className="hsk1-step-tag" style={{ color: stroke.colorHex }}>
                   GORESAN DASAR · {card.strokeIdx + 1}/{HSK1_BASIC_STROKES.length}
                 </span>
+                <h2 className="hsk1-card-title" style={{ color: stroke.colorHex }}>
+                  {stroke.zh} — {stroke.nameId}
+                </h2>
                 <BasicStrokeSvg stroke={stroke} playKey={strokePlayKey} size={146} />
                 <div className="hsk1-stroke-title-row">
                   <span lang="zh-CN">{stroke.zh}</span>
@@ -924,7 +1010,8 @@ export function Hsk1ToneLabOverlay({
                           {opt.zh}
                         </span>
                         <span className="hsk1-opt-meta">
-                          {opt.nameId} · {opt.hintId}
+                          {opt.nameId}
+                          {answered ? ` · ${opt.hintId}` : ''}
                         </span>
                       </button>
                     )
@@ -965,7 +1052,18 @@ function buildDistractorOptions(unit: Hsk1Unit, target: Hsk1Word, count = 4): Hs
     const candidate = pool[(i * step) % pool.length]
     if (candidate && !chosen.some((w) => w.zh === candidate.zh)) chosen.push(candidate)
   }
-  return chosen.sort((a, b) => a.zh.localeCompare(b.zh))
+  const hash = (s: string) => {
+    let h = 2166136261
+    for (let i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i)
+      h = Math.imul(h, 16777619)
+    }
+    return h >>> 0
+  }
+  return chosen
+    .map((item) => ({ item, k: hash(`u${unit.unit}:${target.zh}:${item.zh}`) }))
+    .sort((a, b) => a.k - b.k)
+    .map((x) => x.item)
 }
 
 function pickTraceTargets(words: readonly Hsk1Word[], limit = 4): Array<{ char: string; sourceWord: Hsk1Word }> {
@@ -1166,6 +1264,30 @@ export function Hsk1SessionOverlay({
 
   const progressPct = nodeDoneView ? 100 : Math.round(((stepIdx + 1) / Math.max(1, totalStepsInNode)) * 100)
 
+  const sessionAutoSpeechText = nodeDoneView
+    ? ''
+    : node === 'kenali'
+      ? kenaliDeck[stepIdx]?.kind === 'intro'
+        ? kenaliDeck[stepIdx].word.zh
+        : kenaliDeck[stepIdx]?.kind === 'check' && kenaliDeck[stepIdx].checkKind === 'audio'
+          ? kenaliDeck[stepIdx].target.zh
+          : ''
+      : node === 'goresan'
+        ? traceTargets[stepIdx]?.sourceWord.zh ?? ''
+        : node === 'dengar' && dengarSteps[stepIdx]?.kind === 'ear'
+          ? dengarSteps[stepIdx].target.zh
+          : node === 'bos' && bossDeck[stepIdx]?.mode === 'audio'
+            ? bossDeck[stepIdx].word.zh
+            : ''
+
+  const sessionAutoDialogueLines =
+    !nodeDoneView && node === 'kalimat' && kalimatDeck[stepIdx]?.kind === 'dialogue'
+      ? unit.dialogue.map((l) => l.zh)
+      : []
+
+  useHsk1AutoSpeak(sessionAutoSpeechText, s.prefs.soundOn)
+  useHsk1AutoSpeakLines(sessionAutoDialogueLines, s.prefs.soundOn)
+
   function finishCurrentNode() {
     stopSpeech()
     if (node === 'kenali') {
@@ -1359,7 +1481,13 @@ export function Hsk1SessionOverlay({
   }
 
   return (
-    <div className="hsk1-overlay" role="dialog" aria-modal="true" aria-label={`HSK 1 Unit ${unit.unit}`}>
+    <div
+      className="hsk1-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`HSK 1 Unit ${unit.unit}`}
+      onPointerDown={() => unlockSpeech()}
+    >
       <header className="hsk1-session-topbar">
         <button type="button" className="hsk1-icon-close" onClick={onClose} aria-label="Tutup">
           ✕
@@ -2160,6 +2288,8 @@ export function Hsk1RecallOverlay({ onClose }: { onClose: () => void }) {
   useEffect(() => () => stopSpeech(), [])
 
   const cur = deck[idx]
+  // Delay post-answer pronunciation slightly so correct/wrong chimes never overlap speech onset.
+  useHsk1AutoSpeak(pickedZh !== null && !done && cur ? cur.word.zh : '', s.prefs.soundOn, WORD_RATE, 440)
   const options = useMemo(() => {
     if (!cur) return []
     const others = ALL_HSK1_WORDS.filter((w) => w.zh !== cur.word.zh)
@@ -2241,7 +2371,13 @@ export function Hsk1RecallOverlay({ onClose }: { onClose: () => void }) {
   const decomp = cur ? decomposeHsk1Word(cur.word) : null
 
   return (
-    <div className="hsk1-overlay" role="dialog" aria-modal="true" aria-label="HSK 1 Recall Terjadwal">
+    <div
+      className="hsk1-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="HSK 1 Recall Terjadwal"
+      onPointerDown={() => unlockSpeech()}
+    >
       <header className="hsk1-session-topbar">
         <button type="button" className="hsk1-icon-close" onClick={onClose} aria-label="Tutup">
           ✕
