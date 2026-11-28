@@ -8,7 +8,21 @@ import {
   exportLearningStorage,
   importLearningStorage,
 } from '../src/lib/progressStorage.ts'
-import { pushToCloudIfChanged, syncWithCloud } from '../src/lib/autoSync.ts'
+import { pushToCloudIfChanged, syncWithCloud, forcePushCloudReset } from '../src/lib/autoSync.ts'
+import {
+  RENITA_EPOCH_STORAGE_KEY,
+  RENITA_PROFILE_CACHE_KEY,
+  RENITA_RESET_EPOCH,
+  resetRenitaWorkspaceToPureZero,
+} from '../src/lib/renitaIsolation.ts'
+import {
+  assertCloudWriteSafe,
+  isQaSandboxMode,
+  QA_SANDBOX_SESSION_KEY,
+  resolveSafeCloudProfile,
+} from '../src/lib/qaSandbox.ts'
+import { switchCoupleWorkspace } from '../src/lib/coupleProfile.ts'
+import { postCoupleEvent } from '../src/lib/coupleSync.ts'
 
 function memoryStorage(initial = {}) {
   const map = new Map(Object.entries(initial))
@@ -322,4 +336,154 @@ test('autoSync seamlessly syncs laptop <-> empty iPhone PWA and merges concurren
   assert.deepEqual(JSON.parse(laptopStorage.getItem('yulu.jiaocheng.v1')).pathDone['2'], ['t1', 'wrap'])
   assert.deepEqual(JSON.parse(laptopStorage.getItem(PROGRESS_KEY)).lessonsDone, [1, 2, 3])
   assert.ok(JSON.parse(exportLearningStorage(laptopStorage, PROGRESS_KEY)).entries['yulu.jiaocheng.v1'])
+})
+
+test('renita resetEpoch wipes stale Lv 6 / 129 XP phone cache on boot & server rejects pre-epoch overwrites', async () => {
+  const { rows, handler, fetchImpl } = makeMemoryCloud()
+
+  // 1) Admin resets cloud snapshot for `renita` cleanly to pure Lv 1 · 0 XP with clean resetEpoch
+  const cleanDevice = memoryStorage({
+    'yulu.active-profile.v1': 'renita',
+    [RENITA_EPOCH_STORAGE_KEY]: RENITA_RESET_EPOCH,
+  })
+  resetRenitaWorkspaceToPureZero(cleanDevice, PROGRESS_KEY, { wipeActiveKeys: true })
+  const adminReset = await forcePushCloudReset({
+    storage: cleanDevice,
+    key: PROGRESS_KEY,
+    profile: 'renita',
+    fetchImpl,
+  })
+  assert.equal(adminReset.status, 'saved')
+  assert.equal(rows.get('yulu:renita').activityScore, 0)
+  assert.equal(rows.get('yulu:renita').payload.resetEpoch, RENITA_RESET_EPOCH)
+
+  // 2) An old unrefreshed client still sends stale Lv 6 / 2.987 XP without resetEpoch -> server rejects overwrite
+  const staleRawPost = await invokeHandler(handler, {
+    method: 'POST',
+    url: '/api/cloud-sync?profile=renita',
+    body: {
+      expectedUpdatedAt: 0,
+      backup: {
+        format: 'yulu-progress-backup',
+        version: 2,
+        entries: {
+          'yulu.hsk1.v1': JSON.stringify({ unitsDone: [1, 2], tonesPassed: 12, provenWords: ['好', '你'] }),
+          [PROGRESS_KEY]: JSON.stringify({ xp: 129, log: { '2026-11-28': { cards: 12, lessons: 0 } } }),
+        },
+      },
+    },
+  })
+  assert.equal(staleRawPost.status, 200)
+  assert.equal(staleRawPost.json.action, 'pulled')
+  assert.equal(staleRawPost.json.activityScore, 0)
+  assert.equal(rows.get('yulu:renita').activityScore, 0)
+
+  // 3) Renita's phone had stale Lv 6 + 129 XP + polluted profile-cache cached locally (no resetEpoch yet)
+  const phoneStorage = memoryStorage({
+    'yulu.active-profile.v1': 'renita',
+    'yulu.course.v1': 'hsk1',
+    'yulu.hsk1.v1': JSON.stringify({ unitsDone: [1, 2], tonesPassed: 12, provenWords: ['好'] }),
+    [PROGRESS_KEY]: JSON.stringify({
+      xp: 129,
+      lessonsDone: [1],
+      cards: {},
+      mastery: {},
+      pathDone: {},
+      starred: [],
+      log: { '2026-11-28': { cards: 12, lessons: 0 } },
+    }),
+    'yulu.beast.v1': JSON.stringify({
+      stageId: 'sakura-unite',
+      lastSeenLevel: 6,
+      revealedLevels: [1, 2, 3, 4, 5, 6],
+      earnedAchievementKeys: ['unaided_15'],
+    }),
+    [RENITA_PROFILE_CACHE_KEY]: JSON.stringify({
+      format: 'yulu-progress-backup',
+      version: 2,
+      entries: { [PROGRESS_KEY]: JSON.stringify({ xp: 999 }) },
+    }),
+  })
+
+  const bootSync = await syncWithCloud({
+    storage: phoneStorage,
+    key: PROGRESS_KEY,
+    profile: 'renita',
+    fetchImpl,
+  })
+  assert.equal(bootSync.status, 'saved')
+  assert.equal(phoneStorage.getItem(RENITA_EPOCH_STORAGE_KEY), RENITA_RESET_EPOCH)
+  assert.equal(phoneStorage.getItem(RENITA_PROFILE_CACHE_KEY), null)
+  assert.equal(JSON.parse(phoneStorage.getItem(PROGRESS_KEY)).xp, 0)
+  assert.deepEqual(JSON.parse(phoneStorage.getItem('yulu.hsk1.v1')).unitsDone, [])
+  assert.deepEqual(JSON.parse(phoneStorage.getItem('yulu.beast.v1')).revealedLevels, [1])
+  assert.equal(rows.get('yulu:renita').activityScore, 0)
+
+  // 4) Switching from Richie with a stale pre-epoch cache cannot revive old Lv 6 either
+  const sharedDevice = memoryStorage({
+    'yulu.active-profile.v1': 'richie',
+    'yulu.course.v1': 'hsk4a',
+    [PROGRESS_KEY]: JSON.stringify({ xp: 200, lessonsDone: [1], cards: {}, mastery: {}, pathDone: {}, starred: [], log: {} }),
+    [RENITA_PROFILE_CACHE_KEY]: JSON.stringify({
+      format: 'yulu-progress-backup',
+      version: 2,
+      entries: {
+        [PROGRESS_KEY]: JSON.stringify({ xp: 500 }),
+        'yulu.beast.v1': JSON.stringify({ lastSeenLevel: 6, revealedLevels: [1, 2, 3, 4, 5, 6] }),
+      },
+    }),
+  })
+  switchCoupleWorkspace('renita', sharedDevice, { syncPush: false })
+  const switchedMain = sharedDevice.getItem(PROGRESS_KEY)
+  assert.equal(switchedMain ? JSON.parse(switchedMain).xp : 0, 0)
+  assert.equal(sharedDevice.getItem(RENITA_PROFILE_CACHE_KEY), null)
+  assert.equal(sharedDevice.getItem('yulu.course.v1'), 'hsk1')
+
+  // 5) Future real Renita progress AFTER clean epoch syncs normally without getting wiped!
+  const realHsk1 = JSON.parse(phoneStorage.getItem('yulu.hsk1.v1'))
+  realHsk1.tonesPassed = 4
+  realHsk1.provenWords = ['好', '你']
+  phoneStorage.setItem('yulu.hsk1.v1', JSON.stringify(realHsk1))
+  const realPush = await pushToCloudIfChanged({
+    storage: phoneStorage,
+    key: PROGRESS_KEY,
+    profile: 'renita',
+    fetchImpl,
+  })
+  assert.equal(realPush.status, 'saved')
+  assert.ok(rows.get('yulu:renita').activityScore > 0)
+  assert.equal(rows.get('yulu:renita').payload.resetEpoch, RENITA_RESET_EPOCH)
+})
+
+test('QA Sandbox guardrail blocks all writes to production renita, default, and couple profiles', async () => {
+  const session = memoryStorage()
+  assert.equal(isQaSandboxMode({ search: '?profile=qa_sandbox', sessionStorage: session }), true)
+  assert.equal(session.getItem(QA_SANDBOX_SESSION_KEY), '1')
+  assert.equal(resolveSafeCloudProfile('renita', { sessionStorage: session }), 'qa_sandbox')
+  assert.equal(resolveSafeCloudProfile('default', { sessionStorage: session }), 'qa_sandbox')
+
+  assert.throws(() => assertCloudWriteSafe('renita', { sessionStorage: session, operation: 'qa-test' }))
+  assert.throws(() => assertCloudWriteSafe('default', { sessionStorage: session, operation: 'qa-test' }))
+  assert.throws(() => assertCloudWriteSafe('couple', { sessionStorage: session, operation: 'qa-test' }))
+
+  // Simulate global sessionStorage in qa_sandbox and assert zero fetch calls escape
+  const prevSession = globalThis.sessionStorage
+  globalThis.sessionStorage = session
+  let fetchCalled = 0
+  const spyFetch = async () => {
+    fetchCalled++
+    throw new Error('Production cloud fetch MUST NEVER fire in QA Sandbox')
+  }
+  try {
+    const qaStorage = memoryStorage({ 'yulu.active-profile.v1': 'renita', 'yulu.course.v1': 'hsk1' })
+    const sRes = await syncWithCloud({ storage: qaStorage, key: PROGRESS_KEY, profile: 'renita', fetchImpl: spyFetch })
+    const pRes = await pushToCloudIfChanged({ storage: qaStorage, key: PROGRESS_KEY, profile: 'renita', fetchImpl: spyFetch })
+    await postCoupleEvent({ from: 'renita', kind: 'evolution', text: 'QA test' }, spyFetch)
+    assert.equal(sRes.status, 'local')
+    assert.equal(pRes.status, 'local')
+    assert.equal(fetchCalled, 0)
+  } finally {
+    if (prevSession === undefined) delete globalThis.sessionStorage
+    else globalThis.sessionStorage = prevSession
+  }
 })

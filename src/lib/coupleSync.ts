@@ -17,6 +17,7 @@ import { normalizeHsk1Progress, type Hsk1ProgressState } from './hsk1.ts'
 import type { HistoryEvent } from './history.ts'
 import { createEmptyGraph, normalizeLearnerGraph } from './learnerGraph.ts'
 import { normalizeMastery, type MasteryRecord } from './mastery.ts'
+import { shouldBlockProdCloudSync } from './qaSandbox.ts'
 import type { Card } from './srs.ts'
 
 export type CoupleEventKind = 'evolution' | 'milestone' | 'session' | 'cheer'
@@ -104,6 +105,7 @@ export async function fetchPartnerSnapshot(
   fetchImpl: typeof fetch = fetch,
 ): Promise<PartnerSnapshot | null> {
   const meta = COUPLE_MEMBERS[partnerId]
+  if (shouldBlockProdCloudSync(meta.cloudProfile)) return null
   const names = getCoupleNames()
   try {
     const res = await fetchImpl(`/api/cloud-sync?profile=${encodeURIComponent(meta.cloudProfile)}`)
@@ -182,6 +184,7 @@ export async function fetchPartnerSnapshot(
 export async function fetchCoupleFeed(
   fetchImpl: typeof fetch = fetch,
 ): Promise<{ events: CoupleEvent[]; names: Partial<Record<CoupleMemberId, string>> }> {
+  if (shouldBlockProdCloudSync('couple')) return { events: [], names: {} }
   try {
     const res = await fetchImpl('/api/cloud-sync?profile=couple')
     if (!res.ok) return { events: [], names: {} }
@@ -216,6 +219,9 @@ export async function postCoupleEvent(
     text: input.text,
     beastLevel: input.beastLevel,
     at: Date.now(),
+  }
+  if (shouldBlockProdCloudSync('couple')) {
+    return [newEv]
   }
   try {
     const current = await fetchCoupleFeed(fetchImpl)

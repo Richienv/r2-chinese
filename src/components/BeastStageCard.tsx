@@ -3,6 +3,7 @@ import { CLOUD_HYDRATED_EVENT, LOCAL_PROGRESS_EVENT } from '../lib/autoSync'
 import {
   describeBeastUnlockState,
   evaluateBeastProgress,
+  getBeastForMember,
   getTrainerAssetSrc,
   LEGENDARY_BEASTS,
   type BeastTrack,
@@ -120,7 +121,10 @@ export function BeastStageCard({
   const activeStage = getBeastStage(activeStageId)
 
   const shownLevel = peekLevel ?? evalRes.level
-  const shownBeast = LEGENDARY_BEASTS[Math.max(0, Math.min(LEGENDARY_BEASTS.length - 1, shownLevel - 1))]
+  const shownBeast = getBeastForMember(
+    LEGENDARY_BEASTS[Math.max(0, Math.min(LEGENDARY_BEASTS.length - 1, shownLevel - 1))],
+    activeId,
+  )
   const isLockedPreview = shownBeast.level > evalRes.level
   const assetSrc = getTrainerAssetSrc(shownBeast, activeId)
   const unlockState = useMemo(() => describeBeastUnlockState(evalRes, shownBeast), [evalRes, shownBeast])

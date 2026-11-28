@@ -3,6 +3,7 @@ import { neon } from '@neondatabase/serverless'
 const MAX_BODY_BYTES = 2_500_000
 const PROFILE_PATTERN = /^[a-z0-9_-]{1,40}$/
 const PROGRESS_KEY = 'yulu.hsk4a.v1'
+export const RENITA_RESET_EPOCH = '2026-11-28-clean-v1'
 
 const DEVICE_SCORE_KEYS = new Set([
   'yulu.hsk1.v1',
@@ -224,12 +225,17 @@ export function createCloudSyncHandler(adapterOrFactory: CloudSyncAdapter | (() 
     try {
       if (req.method === 'GET') {
         const existing = await adapter.read(syncId)
+        const existingEpoch =
+          isPlainRecord(existing?.payload) && typeof existing.payload.resetEpoch === 'string'
+            ? existing.payload.resetEpoch
+            : undefined
         return send(res, 200, {
           ok: true,
           enabled: true,
           backup: existing?.payload ?? null,
           updatedAt: Number(existing?.updatedAt ?? 0),
           activityScore: Number(existing?.activityScore ?? 0),
+          ...(rawProfile === 'renita' ? { resetEpoch: existingEpoch || RENITA_RESET_EPOCH } : {}),
         })
       }
 
@@ -261,6 +267,31 @@ export function createCloudSyncHandler(adapterOrFactory: CloudSyncAdapter | (() 
       const existing = await adapter.read(syncId)
       const existingScore = Number(existing?.activityScore ?? 0)
       const existingUpdatedAt = Number(existing?.updatedAt ?? 0)
+      const existingEpoch =
+        isPlainRecord(existing?.payload) && typeof existing.payload.resetEpoch === 'string'
+          ? existing.payload.resetEpoch
+          : ''
+      const incomingEpoch = typeof backup.resetEpoch === 'string' ? backup.resetEpoch : ''
+
+      // Authoritative epoch guard for Renita: reject any stale pre-reset phone/PWA upload
+      // and force-pull the clean epoch snapshot back down to the device.
+      if (
+        rawProfile === 'renita' &&
+        existing &&
+        existingEpoch === RENITA_RESET_EPOCH &&
+        incomingEpoch !== RENITA_RESET_EPOCH &&
+        !force
+      ) {
+        return send(res, 200, {
+          ok: true,
+          enabled: true,
+          action: 'pulled',
+          resetEpoch: existingEpoch,
+          backup: existing.payload,
+          updatedAt: existingUpdatedAt,
+          activityScore: existingScore,
+        })
+      }
 
       // Anti-loss guard #1: never let an empty device erase real saved cloud progress.
       if (existing && existingScore > 0 && incomingScore === 0 && !force) {
@@ -271,6 +302,7 @@ export function createCloudSyncHandler(adapterOrFactory: CloudSyncAdapter | (() 
           backup: existing.payload,
           updatedAt: existingUpdatedAt,
           activityScore: existingScore,
+          ...(rawProfile === 'renita' && existingEpoch ? { resetEpoch: existingEpoch } : {}),
         })
       }
 
@@ -283,13 +315,22 @@ export function createCloudSyncHandler(adapterOrFactory: CloudSyncAdapter | (() 
           backup: existing.payload,
           updatedAt: existingUpdatedAt,
           activityScore: existingScore,
+          ...(rawProfile === 'renita' && existingEpoch ? { resetEpoch: existingEpoch } : {}),
         })
       }
+
+      const payloadToStore =
+        rawProfile === 'renita'
+          ? {
+              ...backup,
+              resetEpoch: incomingEpoch || existingEpoch || RENITA_RESET_EPOCH,
+            }
+          : backup
 
       const now = Math.max(Date.now(), existingUpdatedAt + 1)
       await adapter.write({
         syncId,
-        payload: backup,
+        payload: payloadToStore,
         activityScore: incomingScore,
         updatedAt: now,
       })
@@ -300,6 +341,7 @@ export function createCloudSyncHandler(adapterOrFactory: CloudSyncAdapter | (() 
         action: 'saved',
         updatedAt: now,
         activityScore: incomingScore,
+        ...(rawProfile === 'renita' ? { resetEpoch: payloadToStore.resetEpoch } : {}),
       })
     } catch {
       return send(res, 503, { ok: false, error: 'cloud_sync_unavailable' })

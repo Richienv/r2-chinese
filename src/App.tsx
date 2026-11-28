@@ -87,7 +87,9 @@ import { CourseProvider } from './lib/course'
 import { CoupleAuthGate } from './components/CoupleAuthGate'
 import { OnboardingModal } from './components/OnboardingModal'
 import { useCoupleGate } from './lib/coupleAuth'
-import { useCoupleProfile } from './lib/coupleProfile'
+import { switchCoupleWorkspace, useCoupleProfile } from './lib/coupleProfile'
+import { isQaSandboxMode, readQaSandboxTrackOverride } from './lib/qaSandbox'
+import { enforceRenitaResetEpoch } from './lib/renitaIsolation'
 import { isOnboardingDone, markOnboardingDone } from './lib/onboarding'
 import { dayKey, load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
 import { AuthProvider, useAuth } from './auth/AuthProvider'
@@ -627,6 +629,21 @@ function Root({ cloudProfile }: { cloudProfile: string }) {
 }
 
 export default function App() {
+  const bootInitRef = useRef(false)
+  if (!bootInitRef.current) {
+    bootInitRef.current = true
+    if (typeof localStorage !== 'undefined') {
+      enforceRenitaResetEpoch(localStorage, progressKey())
+      if (isQaSandboxMode()) {
+        const trackOverride = readQaSandboxTrackOverride()
+        if (trackOverride) {
+          switchCoupleWorkspace(trackOverride === 'hsk1' ? 'renita' : 'richie', localStorage, {
+            syncPush: false,
+          })
+        }
+      }
+    }
+  }
   const { activeId, member } = useCoupleProfile()
   const gateUnlocked = useCoupleGate()
   useEffect(() => {

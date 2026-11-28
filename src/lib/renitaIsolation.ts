@@ -3,6 +3,30 @@
 import { HSK1_UNITS } from '../data/hsk1.ts'
 import { BEAST_STORAGE_KEY, isBeastStageId } from './beastStages.ts'
 
+export const RENITA_RESET_EPOCH = '2026-11-28-clean-v1'
+export const RENITA_EPOCH_STORAGE_KEY = 'yulu.reset-epoch.v1.renita'
+export const RENITA_PROFILE_CACHE_KEY = 'yulu.profile-cache.v1.renita'
+
+const RENITA_WIPED_KEYS = [
+  'yulu.hsk1.v1',
+  'yulu.jiaocheng.v1',
+  'yulu.kerja.v1',
+  'yulu.magang.v1',
+  'yulu.interview.v1',
+  'yulu.books.v1',
+  'yulu.books.journal.v1',
+  'yulu.books.selected.v1',
+  'yulu.jiayin.v1',
+  'yulu.jiayin.english.v1',
+  'yulu.history.v1',
+  'yulu.step.v1',
+  'yulu.learning-checkpoints.v1',
+  'yulu.learner-graph.v1',
+  'yulu.cloud-sync-meta.v1',
+  'yulu.course-entered.v1',
+  BEAST_STORAGE_KEY,
+] as const
+
 export const HSK1_WORD_SET: ReadonlySet<string> = new Set(
   HSK1_UNITS.flatMap((u) => u.words.map((w) => w.zh)),
 )
@@ -11,7 +35,8 @@ export function isHsk1Word(zh: string): boolean {
   return HSK1_WORD_SET.has(zh)
 }
 
-type StorageLike = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>
+type StorageLike = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'> &
+  Partial<Pick<Storage, 'key' | 'length'>>
 
 function isRecord(v: unknown): v is Record<string, unknown> {
   return Boolean(v) && typeof v === 'object' && !Array.isArray(v)
@@ -68,9 +93,6 @@ export function sanitizeRenitaStorage(
     if (curCourse !== 'hsk1') {
       storage.setItem('yulu.course.v1', 'hsk1')
       cleaned = true
-    }
-    if (storage.getItem('yulu.course-entered.v1') !== '1') {
-      storage.setItem('yulu.course-entered.v1', '1')
     }
   } catch {
     /* ignore storage errors */
@@ -227,4 +249,130 @@ export function sanitizeRenitaStorage(
   }
 
   return cleaned
+}
+
+/**
+ * Hard-reset Renita's active local workspace (if active or forced) and remove her cached
+ * profile snapshot so she starts cleanly at Lv 1 (Bayi) · 0 XP · 0 streak · 0/12.
+ */
+export function resetRenitaWorkspaceToPureZero(
+  storage: StorageLike,
+  mainKey = 'yulu.hsk4a.v1',
+  opts?: { wipeActiveKeys?: boolean; targetEpoch?: string },
+): void {
+  const targetEpoch = opts?.targetEpoch?.trim() || RENITA_RESET_EPOCH
+  try {
+    storage.removeItem(RENITA_PROFILE_CACHE_KEY)
+  } catch {
+    /* ignore */
+  }
+
+  let isRenitaActive = Boolean(opts?.wipeActiveKeys)
+  if (!isRenitaActive) {
+    try {
+      isRenitaActive = storage.getItem('yulu.active-profile.v1') === 'renita'
+    } catch {
+      isRenitaActive = false
+    }
+  }
+
+  if (isRenitaActive) {
+    const keysToRemove = new Set<string>([
+      mainKey,
+      `${mainKey}.pending`,
+      `${mainKey}.server-before-v2`,
+      ...RENITA_WIPED_KEYS,
+    ])
+    if (typeof storage.length === 'number' && typeof storage.key === 'function') {
+      for (let i = 0; i < storage.length; i++) {
+        const k = storage.key(i)
+        if (k && (k.startsWith(`${mainKey}.before-`) || k.startsWith('yulu.hsk-writing.v1:'))) {
+          keysToRemove.add(k)
+        }
+      }
+    }
+    for (const k of keysToRemove) {
+      try {
+        storage.removeItem(k)
+      } catch {
+        /* ignore */
+      }
+    }
+    try {
+      storage.setItem('yulu.course.v1', 'hsk1')
+      storage.setItem(
+        mainKey,
+        JSON.stringify({
+          version: 2,
+          xp: 0,
+          lessonsDone: [],
+          starred: [],
+          pathDone: {},
+          log: {},
+          cards: {},
+          mastery: {},
+          updatedAt: 0,
+        }),
+      )
+      storage.setItem(
+        'yulu.hsk1.v1',
+        JSON.stringify({
+          tonesPassed: 0,
+          pinyinPassed: 0,
+          strokesPassed: 0,
+          unitsDone: [],
+          provenWords: [],
+          grammarPassed: 0,
+          nodeDone: {},
+          srsCards: {},
+          updatedAt: 0,
+        }),
+      )
+      storage.setItem(
+        BEAST_STORAGE_KEY,
+        JSON.stringify({
+          stageId: 'sakura-unite',
+          lastSeenLevel: 1,
+          revealedLevels: [1],
+          earnedAchievementKeys: [],
+          revealMuted: false,
+          updatedAt: 0,
+        }),
+      )
+    } catch {
+      /* ignore quota issues */
+    }
+  }
+
+  try {
+    storage.setItem(RENITA_EPOCH_STORAGE_KEY, targetEpoch)
+  } catch {
+    /* ignore */
+  }
+}
+
+/**
+ * Authoritative client-side `resetEpoch` guard for Renita: runs synchronously BEFORE initial
+ * state load or autoSync so cached Lv 6 / stale XP on her phone/browser is wiped cleanly once
+ * and cannot re-upload old XP back to cloud.
+ */
+export function enforceRenitaResetEpoch(
+  storage: StorageLike | null | undefined,
+  mainKey = 'yulu.hsk4a.v1',
+  opts?: { remoteEpoch?: string; forceWipeActive?: boolean },
+): boolean {
+  if (!storage) return false
+  const targetEpoch = opts?.remoteEpoch?.trim() || RENITA_RESET_EPOCH
+  let currentEpoch = ''
+  try {
+    currentEpoch = storage.getItem(RENITA_EPOCH_STORAGE_KEY) ?? ''
+  } catch {
+    currentEpoch = ''
+  }
+  if (currentEpoch === targetEpoch) return false
+  resetRenitaWorkspaceToPureZero(storage, mainKey, {
+    wipeActiveKeys: opts?.forceWipeActive,
+    targetEpoch,
+  })
+  return true
 }

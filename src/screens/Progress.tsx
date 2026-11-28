@@ -11,6 +11,7 @@ import { SealedBeastSilhouette } from '../components/SealedBeastSilhouette'
 import {
   describeBeastUnlockState,
   evaluateBeastProgress,
+  getBeastForMember,
   getBeastMinPower,
   getTrainerAssetSrc,
   LEGENDARY_BEASTS,
@@ -739,7 +740,8 @@ export function Progress({
           </div>
 
           <div className="progress-beast-grid">
-            {LEGENDARY_BEASTS.map((tier) => {
+            {LEGENDARY_BEASTS.map((rawTier) => {
+              const tier = getBeastForMember(rawTier, activeId)
               const unlocked = tier.level <= beastEval.level
               const stage = getBeastStage(beastPrefs.stageId)
               const tierImg = getTrainerAssetSrc(tier, activeId)

@@ -4,7 +4,12 @@ import {
   exportLearningStorage,
   importLearningStorage,
 } from './progressStorage.ts'
-import { sanitizeRenitaStorage } from './renitaIsolation.ts'
+import { assertCloudWriteSafe, shouldBlockProdCloudSync } from './qaSandbox.ts'
+import {
+  enforceRenitaResetEpoch,
+  RENITA_RESET_EPOCH,
+  sanitizeRenitaStorage,
+} from './renitaIsolation.ts'
 
 export const CLOUD_HYDRATED_EVENT = 'yulu:cloud-hydrated'
 export const LOCAL_PROGRESS_EVENT = 'yulu:local-progress'
@@ -25,6 +30,7 @@ export interface CloudSyncResponse {
   backup?: Record<string, unknown> | null
   updatedAt?: number
   activityScore?: number
+  resetEpoch?: string
 }
 
 export type CloudSyncStatus = 'pending' | 'saved' | 'offline' | 'local'
@@ -181,10 +187,15 @@ async function postBackup(
   endpoint: string,
   backupObj: Record<string, unknown>,
   expectedUpdatedAt: number,
-  options?: { force?: boolean; keepalive?: boolean },
+  options?: { force?: boolean; keepalive?: boolean; profile?: string },
 ): Promise<{ ok: boolean; data: CloudSyncResponse | null }> {
+  assertCloudWriteSafe(options?.profile ?? 'default', { operation: 'postBackup' })
+  const payloadBackup =
+    options?.profile === 'renita'
+      ? { ...backupObj, resetEpoch: RENITA_RESET_EPOCH }
+      : backupObj
   const payloadStr = JSON.stringify({
-    backup: backupObj,
+    backup: payloadBackup,
     expectedUpdatedAt,
     ...(options?.force ? { force: true } : {}),
   })
@@ -210,9 +221,20 @@ async function postBackup(
  * 3) Pushes merged superset back if local has newer/additional progress.
  */
 export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
+  if (shouldBlockProdCloudSync(opts.profile)) {
+    return { status: 'local', hydrated: false, updatedAt: 0 }
+  }
   const fetchImpl = opts.fetchImpl ?? fetch
   const endpoint = defaultEndpoint(opts.profile)
   const meta = readMeta(opts.storage)
+
+  if (opts.profile === 'renita') {
+    const preWiped = enforceRenitaResetEpoch(opts.storage, opts.key, { forceWipeActive: true })
+    if (preWiped) {
+      opts.onHydrated?.()
+      dispatchCloudHydrated()
+    }
+  }
 
   let getRes: { ok: boolean; status: number; data: CloudSyncResponse | null }
   try {
@@ -232,7 +254,23 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
   const remoteScore = Number(getRes.data.activityScore ?? 0)
   const remoteBackup = getRes.data.backup ?? null
 
+  let hydrated = false
   if (opts.profile === 'renita') {
+    const remoteEpoch =
+      typeof getRes.data.resetEpoch === 'string'
+        ? getRes.data.resetEpoch
+        : remoteBackup && typeof (remoteBackup as Record<string, unknown>).resetEpoch === 'string'
+          ? String((remoteBackup as Record<string, unknown>).resetEpoch)
+          : undefined
+    const wipedByEpoch = enforceRenitaResetEpoch(opts.storage, opts.key, {
+      remoteEpoch,
+      forceWipeActive: true,
+    })
+    if (wipedByEpoch) {
+      hydrated = true
+      opts.onHydrated?.()
+      dispatchCloudHydrated()
+    }
     sanitizeRenitaStorage(opts.storage, opts.key)
   }
 
@@ -241,7 +279,6 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
   const localScore = computeBackupActivityScore(localObj)
   const localFp = fingerprintBackup(localObj)
 
-  let hydrated = false
   let remoteFp = remoteBackup ? fingerprintBackup(remoteBackup) : ''
 
   const remoteResetAt = extractBackupResetAt(remoteBackup, opts.key)
@@ -289,7 +326,10 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
     // Heal poisoned Renita cloud backup if it only held foreign HSK 4 data
     if (opts.profile === 'renita' && strippedForeignRenita && afterFp !== remoteFp) {
       try {
-        const healRes = await postBackup(fetchImpl, endpoint, afterObj, remoteUpdatedAt, { force: true })
+        const healRes = await postBackup(fetchImpl, endpoint, afterObj, remoteUpdatedAt, {
+          force: true,
+          profile: opts.profile,
+        })
         if (healRes.ok && healRes.data?.action === 'saved') {
           const healAt = Number(healRes.data.updatedAt ?? Date.now())
           writeMeta(opts.storage, {
@@ -307,7 +347,9 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
     // If local held additional progress that wasn't on cloud yet, push the merged superset back.
     if (afterScore > 0 && afterFp !== remoteFp) {
       try {
-        const pushRes = await postBackup(fetchImpl, endpoint, afterObj, remoteUpdatedAt)
+        const pushRes = await postBackup(fetchImpl, endpoint, afterObj, remoteUpdatedAt, {
+          profile: opts.profile,
+        })
         if (pushRes.ok && pushRes.data?.enabled) {
           if (pushRes.data.action === 'saved') {
             const nextAt = Number(pushRes.data.updatedAt ?? remoteUpdatedAt)
@@ -339,7 +381,9 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
             const conflictAt = Number(pushRes.data.updatedAt ?? remoteUpdatedAt)
             remoteFp = fingerprintBackup(pushRes.data.backup)
             if (mergedFp !== remoteFp && computeBackupActivityScore(mergedObj) > 0) {
-              const retryRes = await postBackup(fetchImpl, endpoint, mergedObj, conflictAt)
+              const retryRes = await postBackup(fetchImpl, endpoint, mergedObj, conflictAt, {
+                profile: opts.profile,
+              })
               if (retryRes.ok && retryRes.data?.action === 'saved') {
                 const retryAt = Number(retryRes.data.updatedAt ?? conflictAt)
                 writeMeta(opts.storage, {
@@ -369,7 +413,9 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
   // Cloud is currently empty — upload local progress if we have real study activity.
   if (localScore > 0) {
     try {
-      const pushRes = await postBackup(fetchImpl, endpoint, localObj, remoteUpdatedAt)
+      const pushRes = await postBackup(fetchImpl, endpoint, localObj, remoteUpdatedAt, {
+        profile: opts.profile,
+      })
       if (!pushRes.ok || !pushRes.data) {
         return { status: 'offline', hydrated: false, updatedAt: remoteUpdatedAt }
       }
@@ -406,7 +452,9 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
         >
         const mergedFp = fingerprintBackup(mergedObj)
         const serverAt = Number(pushRes.data.updatedAt ?? 0)
-        const retryRes = await postBackup(fetchImpl, endpoint, mergedObj, serverAt)
+        const retryRes = await postBackup(fetchImpl, endpoint, mergedObj, serverAt, {
+          profile: opts.profile,
+        })
         const finalAt =
           retryRes.ok && retryRes.data?.action === 'saved'
             ? Number(retryRes.data.updatedAt ?? serverAt)
@@ -436,11 +484,19 @@ export async function syncWithCloud(opts: SyncOptions): Promise<SyncResult> {
  * cloud-synced fingerprint. Never allows an empty client to overwrite non-empty cloud data.
  */
 export async function pushToCloudIfChanged(opts: SyncOptions): Promise<SyncResult> {
+  if (shouldBlockProdCloudSync(opts.profile)) {
+    return { status: 'local', hydrated: false, updatedAt: 0 }
+  }
   const fetchImpl = opts.fetchImpl ?? fetch
   const endpoint = defaultEndpoint(opts.profile)
   const meta = readMeta(opts.storage)
 
   if (opts.profile === 'renita') {
+    const preWiped = enforceRenitaResetEpoch(opts.storage, opts.key, { forceWipeActive: true })
+    if (preWiped) {
+      opts.onHydrated?.()
+      dispatchCloudHydrated()
+    }
     sanitizeRenitaStorage(opts.storage, opts.key)
   }
 
@@ -461,6 +517,7 @@ export async function pushToCloudIfChanged(opts: SyncOptions): Promise<SyncResul
     const pushRes = await postBackup(fetchImpl, endpoint, localObj, meta.updatedAt, {
       force: opts.force,
       keepalive: opts.keepalive,
+      profile: opts.profile,
     })
     if (!pushRes.ok || !pushRes.data) {
       return { status: 'offline', hydrated: false, updatedAt: meta.updatedAt }
@@ -500,7 +557,9 @@ export async function pushToCloudIfChanged(opts: SyncOptions): Promise<SyncResul
       const mergedFp = fingerprintBackup(mergedObj)
       const serverFp = fingerprintBackup(pushRes.data.backup)
       if (!opts.keepalive && mergedFp !== serverFp && computeBackupActivityScore(mergedObj) > 0) {
-        const retryRes = await postBackup(fetchImpl, endpoint, mergedObj, serverAt)
+        const retryRes = await postBackup(fetchImpl, endpoint, mergedObj, serverAt, {
+          profile: opts.profile,
+        })
         if (retryRes.ok && retryRes.data?.action === 'saved') {
           const retryAt = Number(retryRes.data.updatedAt ?? serverAt)
           writeMeta(opts.storage, {

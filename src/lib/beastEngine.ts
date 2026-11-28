@@ -162,7 +162,7 @@ const CYCLES: readonly CycleDefinition[] = [
         trainerOutfit: 'Jubah Sarjana Giok Bersinar',
         trainerAccessory: 'Mahkota Halo Giok & Ujung Rambut Zamrud',
         quotes: [
-          'Puncak Wujud Dewa Siklus 1 tercapai! Setelah ini petualangan membuka Nine-Tail Fox!',
+          'Puncak Wujud Dewa Siklus 1 tercapai! Setelah ini petualangan membuka sahabat Siklus 2!',
           'Tanduk kristal giokku bersinar terang sebagai bukti fondasi Mandarinmu!',
         ],
       },
@@ -518,11 +518,73 @@ const STAGE_RARITY: Record<EvolutionStage, Record<number, BeastRarity>> = {
   dewa: { 1: 'epic', 2: 'epic', 3: 'gold', 4: 'gold', 5: 'legendary', 6: 'legendary', 7: 'legendary', 8: 'legendary' },
 }
 
+const RENITA_TIER_OVERRIDES: Partial<
+  Record<
+    number,
+    Partial<
+      Pick<
+        LegendaryBeastTier,
+        | 'zhName'
+        | 'pinyin'
+        | 'name'
+        | 'title'
+        | 'trainerTitle'
+        | 'trainerOutfit'
+        | 'trainerAccessory'
+        | 'element'
+        | 'lore'
+        | 'quotes'
+        | 'accentHex'
+        | 'imageSrc'
+      >
+    >
+  >
+> = {
+  5: {
+    zhName: '月辉云兔',
+    pinyin: 'Yuèhuī Yúntù',
+    name: 'Crescent Cloud Hare',
+    title: 'Wujud Matang · Kelinci Awan Bulan',
+    trainerTitle: 'Moonlit Blossom Weaver',
+    trainerOutfit: 'Jaket Chinoiserie Sakura-Krim & Rok Kelopak Mawar',
+    trainerAccessory: 'Kipas Lentera Bulan, Kepang Kembar Sakura & Anting Mutiara',
+    element: 'Lunar Blossom',
+    accentHex: '#ec4899',
+    lore: 'Siklus 2 (Wujud Matang) · Roh Kelinci Awan Bulan penajam ingatan nada & arti HSK 1.',
+    quotes: [
+      '月满花开！Lentera bulan dan kelinci awan giok menerangi langkahmu di Siklus 2!',
+      'Terus kumpulkan XP murni — wujud Dewi Rembulan di Level 6 menunggumu!',
+    ],
+  },
+  6: {
+    zhName: '广寒月神兔',
+    pinyin: 'Guǎnghán Yuèshén',
+    name: 'Celestial Moon Goddess Hare',
+    title: 'Wujud Dewa · Dewi Kelinci Rembulan',
+    trainerTitle: 'Celestial Moon Empress',
+    trainerOutfit: 'Hanfu Dewi Bulan Sakura-Emas & Pita Sutra Melayang',
+    trainerAccessory: 'Mahkota Sabit Emas, Ear-Cuff Mutiara & Rambut Ombré Lavender',
+    element: 'Celestial Moonlight',
+    accentHex: '#db2777',
+    lore: 'Siklus 2 (Puncak Dewa) · Dewi Kelinci Rembulan berlingkar sabit emas penguasa penuh Siklus 2.',
+    quotes: [
+      '明月入怀！Cahaya Dewi Rembulan bersinar penuh — dua siklus evolusi telah terbuka gemilang!',
+      'Berikutnya di Level 7: kebangkitan Macan Petir Putih Baihu di Siklus 3!',
+    ],
+  },
+}
+
+const RENITA_ASSET_OVERRIDES: Record<number, string> = {
+  5: '/trainers/renita/lv-05-moon.webp',
+  6: '/trainers/renita/lv-06-moon.webp',
+}
+
 export const LEGENDARY_BEASTS: readonly LegendaryBeastTier[] = CYCLES.flatMap((cyc) =>
   STAGE_ORDER.map((stage, stageOffset) => {
     const level = (cyc.speciesIndex - 1) * 3 + stageOffset + 1
     const lvPad = String(level).padStart(2, '0')
     const st = cyc.stages[stage]
+    const renitaImg = RENITA_ASSET_OVERRIDES[level] ?? `/trainers/renita/lv-${lvPad}.webp`
     return {
       level,
       id: `${cyc.speciesId}_${stage}` as BeastId,
@@ -549,7 +611,7 @@ export const LEGENDARY_BEASTS: readonly LegendaryBeastTier[] = CYCLES.flatMap((c
       imageSrc: `/trainers/richie/lv-${lvPad}.webp`,
       imageByMember: {
         richie: `/trainers/richie/lv-${lvPad}.webp`,
-        renita: `/trainers/renita/lv-${lvPad}.webp`,
+        renita: renitaImg,
       },
       accentHex: cyc.accentHex,
       lore: cyc.lore,
@@ -557,6 +619,16 @@ export const LEGENDARY_BEASTS: readonly LegendaryBeastTier[] = CYCLES.flatMap((c
     }
   }),
 )
+
+export function getBeastForMember(
+  beast: LegendaryBeastTier,
+  memberId: 'richie' | 'renita' = 'richie',
+): LegendaryBeastTier {
+  if (memberId !== 'renita') return beast
+  const ov = RENITA_TIER_OVERRIDES[beast.level]
+  if (!ov) return beast
+  return { ...beast, ...ov }
+}
 
 export function getTrainerAssetSrc(
   beast: LegendaryBeastTier,
@@ -868,12 +940,15 @@ export function evaluateBeastProgress(input: BeastEvaluationInput): BeastEvaluat
   const retentionBonusPower = Math.max(0, spiritPower - rawPower)
 
   // Evolve current & next across all 24 levels (8 species × 3 stages)
-  let currentBeast = LEGENDARY_BEASTS[0]
+  const memberId: 'richie' | 'renita' = track === 'hsk1' ? 'renita' : 'richie'
+  let currentBeastRaw = LEGENDARY_BEASTS[0]
   for (const tier of LEGENDARY_BEASTS) {
-    if (spiritPower >= getBeastMinPower(tier, track)) currentBeast = tier
+    if (spiritPower >= getBeastMinPower(tier, track)) currentBeastRaw = tier
   }
-  const nextBeast =
-    currentBeast.level < LEGENDARY_BEASTS.length ? LEGENDARY_BEASTS[currentBeast.level] : null
+  const nextBeastRaw =
+    currentBeastRaw.level < LEGENDARY_BEASTS.length ? LEGENDARY_BEASTS[currentBeastRaw.level] : null
+  const currentBeast = getBeastForMember(currentBeastRaw, memberId)
+  const nextBeast = nextBeastRaw ? getBeastForMember(nextBeastRaw, memberId) : null
   const currentThreshold = getBeastMinPower(currentBeast, track)
   const nextThreshold = nextBeast ? getBeastMinPower(nextBeast, track) : currentThreshold
   const powerToNext = nextBeast ? Math.max(0, nextThreshold - spiritPower) : 0

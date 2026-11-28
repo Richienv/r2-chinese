@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent } from 'react'
-import { getTrainerAssetSrc, type LegendaryBeastTier } from '../lib/beastEngine'
+import { getBeastForMember, getTrainerAssetSrc, type LegendaryBeastTier } from '../lib/beastEngine'
 import { playBeastRevealSound, playBeastTapChime } from '../lib/beastSound'
 import { type BeastStageMeta } from '../lib/beastStages'
 import { useCoupleProfile } from '../lib/coupleProfile'
@@ -129,7 +129,8 @@ export function BeastRevealOverlay({
 
   if (!payload) return null
 
-  const { beast, stage, reason, headline, spiritPower, nextTargetXp } = payload
+  const { beast: rawBeast, stage, reason, headline, spiritPower, nextTargetXp } = payload
+  const beast = getBeastForMember(rawBeast, activeId)
   const spriteSrc = getTrainerAssetSrc(beast, activeId)
   const bannerText =
     headline ||

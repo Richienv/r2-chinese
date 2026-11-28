@@ -57,6 +57,8 @@ import {
 } from '../lib/autoSync'
 import { resetBeastPrefs } from '../lib/beastPrefs'
 import { COUPLE_MEMBERS, getActiveCoupleId } from '../lib/coupleProfile'
+import { isQaSandboxMode, resolveSafeCloudProfile } from '../lib/qaSandbox'
+import { enforceRenitaResetEpoch } from '../lib/renitaIsolation'
 import { isCoreBookVocab } from '../lib/content'
 import { t } from '../lib/i18n'
 
@@ -323,8 +325,12 @@ export function StoreProvider({
   /** dedicated cloud-sync slot name (e.g. 'default' for Richie, 'renita' for Renita) */
   cloudProfile?: string
 }) {
+  const effectiveCloudProfile = resolveSafeCloudProfile(cloudProfile)
   const [state, setReactState] = useState<Persisted>(() => {
     if (initial) return normalize(initial)
+    if (!userId && typeof localStorage !== 'undefined') {
+      enforceRenitaResetEpoch(localStorage, progressKey())
+    }
     const loaded = load(userId)
     const storedGraph = getLearnerGraphSnapshot()
     if (Object.keys(storedGraph.nodes).length || Object.keys(storedGraph.edges).length) {
@@ -455,25 +461,26 @@ export function StoreProvider({
         return 'offline'
       }
     }
-    if (initial || typeof window === 'undefined') return 'local'
+    if (initial || typeof window === 'undefined' || isQaSandboxMode()) return 'local'
     setSyncStatus('pending')
     const res = await syncWithCloud({
       storage: localStorage,
       key,
-      profile: cloudProfile,
+      profile: effectiveCloudProfile,
       onHydrated: applyCloudHydration,
     })
     initialPullDoneRef.current = true
     setSyncStatus(res.status)
     return res.status === 'pending' ? 'offline' : res.status
-  }, [userId, initial, key, cloudProfile, applyCloudHydration, setState])
+  }, [userId, initial, key, effectiveCloudProfile, applyCloudHydration, setState])
 
   // Bidirectional automatic cloud sync when Supabase auth is inactive (default on yulu.trolive.id).
   useEffect(() => {
-    if (userId || initial || typeof window === 'undefined') return
+    if (userId || initial || typeof window === 'undefined' || isQaSandboxMode()) return
     let cancelled = false
     let pushTimer: ReturnType<typeof setTimeout> | undefined
-    const isActiveProfile = () => COUPLE_MEMBERS[getActiveCoupleId()].cloudProfile === cloudProfile
+    const isActiveProfile = () =>
+      !isQaSandboxMode() && COUPLE_MEMBERS[getActiveCoupleId()].cloudProfile === cloudProfile
 
     const runPull = async () => {
       if (cancelled || cloudSyncRunningRef.current || !isActiveProfile()) return
@@ -482,7 +489,7 @@ export function StoreProvider({
         const res = await syncWithCloud({
           storage: localStorage,
           key,
-          profile: cloudProfile,
+          profile: effectiveCloudProfile,
           onHydrated: applyCloudHydration,
         })
         initialPullDoneRef.current = true
@@ -504,7 +511,7 @@ export function StoreProvider({
         const res = await pushToCloudIfChanged({
           storage: localStorage,
           key,
-          profile: cloudProfile,
+          profile: effectiveCloudProfile,
           onHydrated: applyCloudHydration,
           keepalive,
         })
@@ -578,23 +585,23 @@ export function StoreProvider({
       window.removeEventListener(LOCAL_PROGRESS_EVENT, onLocalProgress)
       window.removeEventListener(CLOUD_HYDRATED_EVENT, onCloudHydrated)
     }
-  }, [userId, initial, key, cloudProfile, applyCloudHydration])
+  }, [userId, initial, key, cloudProfile, effectiveCloudProfile, applyCloudHydration])
 
   useEffect(() => {
-    if (userId || initial || typeof window === 'undefined') return
+    if (userId || initial || typeof window === 'undefined' || isQaSandboxMode()) return
     if (COUPLE_MEMBERS[getActiveCoupleId()].cloudProfile !== cloudProfile) return
     if (!initialPullDoneRef.current || !dirtySincePullRef.current) return
     const timer = setTimeout(() => {
-      if (COUPLE_MEMBERS[getActiveCoupleId()].cloudProfile !== cloudProfile) return
+      if (COUPLE_MEMBERS[getActiveCoupleId()].cloudProfile !== cloudProfile || isQaSandboxMode()) return
       void pushToCloudIfChanged({
         storage: localStorage,
         key,
-        profile: cloudProfile,
+        profile: effectiveCloudProfile,
         onHydrated: applyCloudHydration,
       }).then((res) => setSyncStatus(res.status))
     }, 1800)
     return () => clearTimeout(timer)
-  }, [userId, initial, key, cloudProfile, state, applyCloudHydration])
+  }, [userId, initial, key, cloudProfile, effectiveCloudProfile, state, applyCloudHydration])
 
   useEffect(() => {
     if (!userId) return

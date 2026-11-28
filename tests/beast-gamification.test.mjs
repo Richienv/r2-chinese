@@ -305,3 +305,42 @@ test('readBeastPrefs migrates legacy lastSeenLevel into revealedLevels cleanly a
     else globalThis.localStorage = prevStorage
   }
 })
+
+test('Renita Lv 5 and Lv 6 use brand-new cache-busted Crescent/Celestial Moon Hare artwork and metadata (zero fox spoiler)', () => {
+  const lv5Raw = LEGENDARY_BEASTS[4]
+  const lv6Raw = LEGENDARY_BEASTS[5]
+  assert.equal(getTrainerAssetSrc(lv5Raw, 'renita'), '/trainers/renita/lv-05-moon.webp')
+  assert.equal(getTrainerAssetSrc(lv6Raw, 'renita'), '/trainers/renita/lv-06-moon.webp')
+  assert.equal(getTrainerAssetSrc(lv5Raw, 'richie'), '/trainers/richie/lv-05.webp')
+  assert.equal(getTrainerAssetSrc(lv6Raw, 'richie'), '/trainers/richie/lv-06.webp')
+
+  // Evaluate Renita at Lv 5 & Lv 6 power on HSK 1 track
+  const lv5Eval = evaluateBeastProgress({
+    track: 'hsk1',
+    mastery: {},
+    cards: {},
+    lessonsDone: [],
+    pathDone: {},
+    streak: 5,
+    xp: 0,
+    log: { '2026-11-28': { cards: 12, lessons: 1 } },
+    history: [],
+    learnerGraph: createEmptyGraph(0),
+    hsk1Progress: {
+      tonesPassed: 12,
+      pinyinPassed: 10,
+      strokesPassed: 8,
+      unitsDone: [1, 2, 3, 4],
+      provenWords: ['我', '你', '他', '好', '吗', '呢', '是', '不', '在', '有', '看', '听', '说', '读', '写', '吃', '喝', '去', '来', '做'],
+      grammarPassed: 6,
+    },
+    todayKey: '2026-11-28',
+    nowMs: Date.now(),
+  })
+  assert.ok(lv5Eval.level >= 5, `expected >= 5, got ${lv5Eval.level}`)
+  if (lv5Eval.level === 5) {
+    assert.equal(lv5Eval.beast.zhName, '月辉云兔')
+    assert.equal(lv5Eval.beast.name, 'Crescent Cloud Hare')
+    assert.equal(lv5Eval.nextBeast?.zhName, '广寒月神兔')
+  }
+})

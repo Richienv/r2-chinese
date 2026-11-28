@@ -9,7 +9,12 @@ import {
   importLearningStorage,
   PROGRESS_KEY,
 } from './progressStorage.ts'
-import { sanitizeRenitaStorage } from './renitaIsolation.ts'
+import { shouldBlockProdCloudSync } from './qaSandbox.ts'
+import {
+  enforceRenitaResetEpoch,
+  RENITA_RESET_EPOCH,
+  sanitizeRenitaStorage,
+} from './renitaIsolation.ts'
 
 export type CoupleMemberId = 'richie' | 'renita'
 
@@ -164,21 +169,34 @@ export function switchCoupleWorkspace(
   opts?: { syncPush?: boolean },
 ): CoupleMemberId {
   if (!storage) return targetId
+  enforceRenitaResetEpoch(storage, PROGRESS_KEY)
   const currentId = getActiveCoupleId(storage)
   const targetMeta = COUPLE_MEMBERS[targetId]
 
   if (currentId !== targetId) {
     // 1) Snapshot current user workspace locally before switching
-    const currentSnapshot = exportLearningStorage(storage, PROGRESS_KEY)
+    let currentSnapshot = exportLearningStorage(storage, PROGRESS_KEY)
+    if (currentId === 'renita') {
+      try {
+        const parsed = JSON.parse(currentSnapshot) as Record<string, unknown>
+        currentSnapshot = JSON.stringify({ ...parsed, resetEpoch: RENITA_RESET_EPOCH })
+      } catch {
+        /* keep string */
+      }
+    }
     try {
       storage.setItem(`${COUPLE_CACHE_PREFIX}${currentId}`, currentSnapshot)
     } catch {
       /* ignore quota issues */
     }
 
-    // 2) Fire background keepalive sync for outgoing partner if enabled in browser
-    if (typeof window !== 'undefined' && opts?.syncPush !== false) {
-      const currentMeta = COUPLE_MEMBERS[currentId]
+    // 2) Fire background keepalive sync for outgoing partner if enabled in browser (never in QA Sandbox)
+    const currentMeta = COUPLE_MEMBERS[currentId]
+    if (
+      typeof window !== 'undefined' &&
+      opts?.syncPush !== false &&
+      !shouldBlockProdCloudSync(currentMeta.cloudProfile)
+    ) {
       void pushToCloudIfChanged({
         storage,
         key: PROGRESS_KEY,
@@ -201,10 +219,25 @@ export function switchCoupleWorkspace(
     try {
       const cached = storage.getItem(`${COUPLE_CACHE_PREFIX}${targetId}`)
       if (cached) {
-        const res = importLearningStorage(storage, PROGRESS_KEY, cached, {
-          profile: targetMeta.cloudProfile,
-        })
-        restored = res.ok
+        let staleRenitaCache = false
+        if (targetId === 'renita') {
+          try {
+            const parsed = JSON.parse(cached) as { resetEpoch?: unknown } | null
+            if (parsed?.resetEpoch !== RENITA_RESET_EPOCH) {
+              staleRenitaCache = true
+              storage.removeItem(`${COUPLE_CACHE_PREFIX}renita`)
+            }
+          } catch {
+            staleRenitaCache = true
+            storage.removeItem(`${COUPLE_CACHE_PREFIX}renita`)
+          }
+        }
+        if (!staleRenitaCache) {
+          const res = importLearningStorage(storage, PROGRESS_KEY, cached, {
+            profile: targetMeta.cloudProfile,
+          })
+          restored = res.ok
+        }
       }
     } catch {
       restored = false
