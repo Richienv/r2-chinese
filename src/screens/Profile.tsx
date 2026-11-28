@@ -1,6 +1,6 @@
 import { StudyMusic } from '../components/StudyMusic'
 import { InstallCard } from '../components/InstallCard'
-import { useRef, useState, type ChangeEvent } from 'react'
+import { useEffect, useRef, useState, type ChangeEvent } from 'react'
 import { useAuth } from '../auth/AuthProvider'
 import { lockCoupleGate } from '../lib/coupleAuth'
 import {
@@ -15,11 +15,14 @@ import { isAuthEnabled } from '../lib/supabase'
 import { useStore } from '../store/store'
 import '../styles/profile.css'
 
-export function Profile() {
+export function Profile({ onOpenOnboarding }: { onOpenOnboarding?: () => void } = {}) {
   const s = useStore()
   const { user, signOut } = useAuth()
   const { activeId, member, names } = useCoupleProfile()
   const [nameDraft, setNameDraft] = useState(member.name)
+  useEffect(() => {
+    setNameDraft(member.name)
+  }, [member.name])
   const [confirmReset, setConfirmReset] = useState(false)
   const [syncingNow, setSyncingNow] = useState(false)
   const [importStatus, setImportStatus] = useState<{ kind: 'ok' | 'err'; text: string } | null>(null)
@@ -86,7 +89,7 @@ export function Profile() {
   }
 
   const email = user?.email ?? ''
-  const name = email ? email.split('@')[0] : t('Learner')
+  const name = email ? email.split('@')[0] : member.name
   const language = getLang()
 
   return (
@@ -130,6 +133,15 @@ export function Profile() {
           >
             🔐 Kunci / Layar Masuk
           </button>
+          {onOpenOnboarding && (
+            <button
+              type="button"
+              className="btn btn-ghost"
+              onClick={onOpenOnboarding}
+            >
+              ❓ Buka Panduan Belajar
+            </button>
+          )}
         </div>
         <form
           onSubmit={(e) => {
@@ -360,10 +372,12 @@ export function Profile() {
       )}
 
       <p className="profile-source-note">
-        {t(
-          'Content and audio recordings from {book} (HSK Standard Course 4A), © Beijing Language and Culture University Press. Used here for personal study only, not for sale.',
-          { book: '标准教程 HSK 4上' },
-        )}
+        {member.track === 'hsk1'
+          ? 'Kurikulum pemula HSK 1 (150 kosakata dasar, 4 nada, Pinyin & goresan) disusun khusus untuk belajar pribadi di Yulu.'
+          : t(
+              'Content and audio recordings from {book} (HSK Standard Course 4A), © Beijing Language and Culture University Press. Used here for personal study only, not for sale.',
+              { book: '标准教程 HSK 4上' },
+            )}
       </p>
     </div>
   )

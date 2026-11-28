@@ -70,8 +70,10 @@ const Hsk1RecallOverlay = lazy(() =>
 import type { Hsk1NodeId } from './lib/hsk1Srs'
 import { CourseProvider } from './lib/course'
 import { CoupleAuthGate } from './components/CoupleAuthGate'
+import { OnboardingModal } from './components/OnboardingModal'
 import { useCoupleGate } from './lib/coupleAuth'
 import { useCoupleProfile } from './lib/coupleProfile'
+import { isOnboardingDone, markOnboardingDone } from './lib/onboarding'
 import { load, normalize, useStore, StoreProvider, type Persisted, type PathNode } from './store/store'
 import { AuthProvider, useAuth } from './auth/AuthProvider'
 import { AuthScreen } from './auth/AuthScreen'
@@ -106,12 +108,22 @@ type Overlay =
 
 function Shell() {
   const store = useStore()
+  const { activeId, member } = useCoupleProfile()
   // Every launch starts on Home: the day's ring and the next session are the first thing seen.
   const [tab, setTabState] = useState<Tab>('home')
   const [overlay, setOverlay] = useState<Overlay>(null)
+  const [onboardingOpen, setOnboardingOpen] = useState(false)
   const mainRef = useRef<HTMLElement>(null)
   const navRef = useRef<HTMLElement>(null)
   const open = overlay !== null
+
+  useEffect(() => {
+    if (!isOnboardingDone(activeId)) {
+      setOnboardingOpen(true)
+    } else {
+      setOnboardingOpen(false)
+    }
+  }, [activeId])
   const [closing, setClosing] = useState(false)
   const exitTimer = useRef<ReturnType<typeof setTimeout>>()
   const closeOverlay = useCallback(() => {
@@ -141,13 +153,13 @@ function Shell() {
     if (typeof window === 'undefined') return
     const action = new URLSearchParams(window.location.search).get('action')
     if (action === 'review') {
-      setOverlay({ kind: 'review' })
+      setOverlay(member.track === 'hsk1' ? { kind: 'hsk1-recall' } : { kind: 'review' })
       window.history.replaceState({}, '', window.location.pathname)
     } else if (action === 'exam') {
-      setOverlay({ kind: 'jiaocheng-midterm' })
+      setOverlay(member.track === 'hsk1' ? { kind: 'hsk1-tones', track: 'tones' } : { kind: 'jiaocheng-midterm' })
       window.history.replaceState({}, '', window.location.pathname)
     }
-  }, [])
+  }, [member.track])
 
   function setTab(next: Tab) {
     setTabState(next)
@@ -251,6 +263,7 @@ function Shell() {
               onHsk1Tones={(track) => setOverlay({ kind: 'hsk1-tones', track })}
               onHsk1Recall={() => setOverlay({ kind: 'hsk1-recall' })}
               onProgress={() => setTab('stats')}
+              onOpenOnboarding={() => setOnboardingOpen(true)}
             />
           )}
           {tab === 'learn' && (
@@ -277,9 +290,10 @@ function Shell() {
             <Progress
               onLearn={() => setTab('learn')}
               onReview={(words, title) => setOverlay({ kind: 'review', words, title })}
+              onHsk1Recall={() => setOverlay({ kind: 'hsk1-recall' })}
             />
           )}
-          {tab === 'profile' && <Profile />}
+          {tab === 'profile' && <Profile onOpenOnboarding={() => setOnboardingOpen(true)} />}
         </Suspense>
       </main>
 
@@ -391,6 +405,13 @@ function Shell() {
         )}
         {overlay?.kind === 'hsk1-recall' && <Hsk1RecallOverlay onClose={closeOverlay} />}
       </Suspense>
+      <OnboardingModal
+        open={onboardingOpen && !open}
+        onClose={() => {
+          markOnboardingDone(activeId)
+          setOnboardingOpen(false)
+        }}
+      />
     </div>
   )
 }

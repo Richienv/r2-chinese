@@ -214,18 +214,30 @@ export function switchCoupleWorkspace(
         /* ignore */
       }
     } else if (targetId === 'renita') {
-      // Ensure Renita opens her HSK 1 track cleanly unless she explicitly picked another
+      // Ensure Renita opens her HSK 1 track cleanly whenever course is unset/empty
       try {
-        if (!storage.getItem('yulu.course.v1')) {
+        const curCourse = storage.getItem('yulu.course.v1')?.trim()
+        if (!curCourse) {
           storage.setItem('yulu.course.v1', 'hsk1')
         }
         storage.setItem('yulu.course-entered.v1', '1')
       } catch {
         /* ignore */
       }
+    } else {
+      try {
+        if (!storage.getItem('yulu.course.v1')?.trim()) {
+          storage.setItem('yulu.course.v1', targetMeta.defaultCourse)
+        }
+      } catch {
+        /* ignore */
+      }
     }
   } else {
     try {
+      if (!storage.getItem('yulu.course.v1')?.trim()) {
+        storage.setItem('yulu.course.v1', targetMeta.defaultCourse)
+      }
       storage.setItem('yulu.course-entered.v1', '1')
     } catch {
       /* ignore */

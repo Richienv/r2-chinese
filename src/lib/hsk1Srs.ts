@@ -15,6 +15,53 @@ export const HSK1_NODE_META: Record<Hsk1NodeId, { label: string; shortZh: string
   bos: { label: 'Bos Recall', shortZh: '挑战', emoji: '🏆' },
 }
 
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+const PINYIN_BOUNDARY_PREFIX = '(?<![A-Za-zÀ-ÿ\\u0100-\\u01FF])'
+const PINYIN_BOUNDARY_SUFFIX = '(?![A-Za-zÀ-ÿ\\u0100-\\u01FF])'
+
+/**
+ * Redacts any occurrence of the target Hanzi or Pinyin inside a hint/radical clue
+ * so micro-checks and Boss Recall Hints never leak the answer.
+ */
+export function maskHsk1Hint(text: string, word: Pick<Hsk1Word, 'zh' | 'pinyin'>): string {
+  let out = text || ''
+  if (!out || !word?.zh) return out
+  out = out.split(word.zh).join('___')
+  const chars = Array.from(word.zh)
+  if (chars.length === 1 && chars[0]) {
+    out = out.split(chars[0]).join('___')
+  }
+
+  const pyRaw = (word.pinyin ?? '').trim()
+  if (pyRaw) {
+    const candidates = new Set<string>([pyRaw])
+    if (pyRaw.includes('/')) {
+      for (const part of pyRaw.split('/')) {
+        const clean = part.trim()
+        if (clean) candidates.add(clean)
+      }
+    }
+    if (chars.length === 1) {
+      for (const tok of pyRaw.split(/[\s/·,]+/)) {
+        const clean = tok.trim()
+        if (clean.length >= 2) candidates.add(clean)
+      }
+    }
+    const sorted = [...candidates].sort((a, b) => b.length - a.length)
+    for (const cand of sorted) {
+      const pattern = new RegExp(
+        `${PINYIN_BOUNDARY_PREFIX}${escapeRegExp(cand)}${PINYIN_BOUNDARY_SUFFIX}`,
+        'giu',
+      )
+      out = out.replace(pattern, '___')
+    }
+  }
+  return out
+}
+
 export function formatHsk1Interval(due: number, now = Date.now()): string {
   const minutes = Math.max(1, Math.round((due - now) / 60_000))
   if (minutes < 60) return `${minutes} menit lagi`
@@ -207,12 +254,12 @@ export function buildVocabWaves(words: readonly Hsk1Word[], waveSize = 3): Vocab
           .filter(Boolean)
           .map((r) => `${r.emoji} ${r.glyph} (${r.meaningId})`)
         if (partLabels.length > 0) {
-          return `Petunjuk komponen ${partLabels.join(' + ')} → "${word.literalTip}"`
+          return maskHsk1Hint(`Petunjuk komponen ${partLabels.join(' + ')} → "${word.literalTip}"`, word)
         }
-        return info.storyId
+        return maskHsk1Hint(info.storyId, word)
       }
     }
-    return word.literalTip
+    return maskHsk1Hint(word.literalTip, word)
   }
 
   return chunks.map((introWords, wi) => {

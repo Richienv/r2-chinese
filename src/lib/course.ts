@@ -8,6 +8,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
+import { COUPLE_MEMBERS, getActiveCoupleId } from './coupleProfile.ts'
 import { t } from './i18n.ts'
 
 /** Separate from HSK / Kerja / Jiaocheng / Magang / Interview / Books progress keys so old saves stay untouched. */
@@ -69,16 +70,18 @@ export const COURSE_META: Record<CourseId, { id: CourseId; title: string; titleZ
     },
   }
 
-function readCourse(): CourseId {
+export function readCourse(
+  storage: Pick<Storage, 'getItem'> | null = typeof localStorage === 'undefined' ? null : localStorage,
+): CourseId {
   try {
-    const raw = localStorage.getItem(COURSE_KEY)
+    const raw = storage?.getItem(COURSE_KEY)
     if (raw === 'kerja' || raw === 'hsk4a' || raw === 'hsk1' || raw === 'jiaocheng' || raw === 'books') {
       return raw
     }
   } catch {
     /* ignore */
   }
-  return 'hsk4a'
+  return COUPLE_MEMBERS[getActiveCoupleId(storage as Storage | null)].defaultCourse
 }
 
 const ENTERED_KEY = 'yulu.course-entered.v1'

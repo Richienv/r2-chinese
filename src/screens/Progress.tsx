@@ -6,11 +6,14 @@ import { useEffect, useMemo, useState } from 'react'
 import { BeastRevealOverlay, type BeastRevealPayload } from '../components/BeastRevealOverlay'
 import { CoupleComparePanel } from '../components/CoupleComparePanel'
 import { MasteryTracker } from '../components/MasteryTracker'
+import { SealedBeastSilhouette } from '../components/SealedBeastSilhouette'
 import { evaluateBeastProgress, getBeastMinPower, getTrainerAssetSrc, LEGENDARY_BEASTS } from '../lib/beastEngine'
 import { readBeastPrefs, subscribeBeastPrefs, writeBeastPrefs } from '../lib/beastPrefs'
 import { getBeastStage } from '../lib/beastStages'
 import { useCoupleProfile } from '../lib/coupleProfile'
-import { readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
+import { HSK1_UNITS } from '../data/hsk1'
+import { getHsk1MemorySummary, HSK1_NODE_ORDER } from '../lib/hsk1Srs'
+import { readHsk1Progress, subscribeHsk1Progress, type Hsk1ProgressState } from '../lib/hsk1'
 import { getLesson, isCoreBookVocab, lessons, lookup } from '../lib/content'
 import { computeCategoryBreakdown, computeDailyComparison } from '../lib/progressAnalytics'
 import { COURSE_META } from '../lib/course'
@@ -36,6 +39,7 @@ import '../styles/progress.css'
 const KERJA_KEY = 'yulu.kerja.v1'
 const JIAOCHENG_KEY = 'yulu.jiaocheng.v1'
 const BOOKS_KEY = BOOKS_PROGRESS_KEY
+const HSK1_WORD_SET = new Set(HSK1_UNITS.flatMap((u) => u.words.map((w) => w.zh)))
 
 /** Weekday and clock text follow the app language, not the browser's. */
 const DATE_LOCALE = getLang() === 'id' ? 'id-ID' : undefined
@@ -173,6 +177,25 @@ function booksCourse(pathDone: PathDoneMap): CourseRow {
   return { name: COURSE_META.books.title, stepsDone: done, stepsTotal: total, units }
 }
 
+function hsk1Course(hsk1: Hsk1ProgressState): CourseRow {
+  let done = 0
+  const total = HSK1_UNITS.length * HSK1_NODE_ORDER.length
+  const units = HSK1_UNITS.map((u) => {
+    const finished = hsk1.nodeDone[String(u.unit)] ?? []
+    const isUnitDone = hsk1.unitsDone.includes(u.unit) || finished.length >= HSK1_NODE_ORDER.length
+    const sittingsDone = isUnitDone ? HSK1_NODE_ORDER.length : finished.length
+    done += sittingsDone
+    return {
+      key: `hsk1-${u.unit}`,
+      title: `Unit ${u.unit}: ${u.titleZh} · ${u.titleId}`,
+      done: isUnitDone,
+      sittingsDone,
+      sittingsTotal: HSK1_NODE_ORDER.length,
+    }
+  })
+  return { name: COURSE_META.hsk1.title, stepsDone: done, stepsTotal: total, units }
+}
+
 /** Rolling last-7-days card counts, oldest → newest, labelled by weekday. */
 function weekActivity(log: Record<string, { cards: number }>) {
   const out: { label: string; cards: number; today: boolean; date: number }[] = []
@@ -224,6 +247,10 @@ function historyDetail(ev: HistoryEvent): string {
   const course = COURSE_LABEL[ev.course]
   if (ev.course === 'jiayin')
     return `${course} · ${jiayinUnits.find((u) => u.id === ev.lesson)?.title ?? 'Simulasi / pengulangan'}${ev.node ? ` · ${ev.node}` : ''}`
+  if (ev.course === 'hsk1') {
+    const u = HSK1_UNITS.find((x) => x.unit === ev.lesson)
+    return `${course} · ${u ? `Unit ${u.unit}: ${u.titleId}` : 'Pondasi 4 Nada / Goresan'}`
+  }
   if (ev.kind === 'drill') {
     const xp = typeof ev.xp === 'number' ? ` · ${ev.xp} XP` : ''
     return `${course}${xp}`
@@ -281,9 +308,11 @@ function formatWhen(when: number): string {
 export function Progress({
   onReview,
   onLearn,
+  onHsk1Recall,
 }: {
   onReview: (words?: string[], title?: string) => void
   onLearn: () => void
+  onHsk1Recall?: () => void
 }) {
   const s = useStore()
   const { activeId, member } = useCoupleProfile()
@@ -310,10 +339,16 @@ export function Progress({
     () => computeDailyComparison(s.log, dayKey(), Date.now()),
     [s.log, syncTick],
   )
-  const categoryBreakdown = useMemo(
-    () => computeCategoryBreakdown(s.mastery, hsk1Progress.provenWords, (zh) => lookup(zh)?.pos),
-    [s.mastery, hsk1Progress.provenWords, syncTick],
-  )
+  const isHsk1Track = member.track === 'hsk1'
+  const categoryBreakdown = useMemo(() => {
+    if (isHsk1Track) {
+      const hsk1Mastery = Object.fromEntries(
+        Object.entries(s.mastery ?? {}).filter(([zh]) => HSK1_WORD_SET.has(zh)),
+      )
+      return computeCategoryBreakdown(hsk1Mastery, hsk1Progress.provenWords, (zh) => lookup(zh)?.pos)
+    }
+    return computeCategoryBreakdown(s.mastery, [], (zh) => lookup(zh)?.pos)
+  }, [isHsk1Track, s.mastery, hsk1Progress.provenWords, syncTick])
   const max7DayCards = Math.max(DAILY_GOAL, ...dailyComparison.series7Days.map((p) => p.cards))
   const due = dueCards(s.cardList).filter((c) => isCoreBookVocab(c.zh))
   const hardWords = recommendedWords(
@@ -330,7 +365,14 @@ export function Progress({
   const activeDays = week.filter((day) => day.cards > 0).length
   const todayProgress = Math.min(100, Math.round((s.today.cards / DAILY_GOAL) * 100))
 
+  const hsk1Memory = useMemo(
+    () => getHsk1MemorySummary(hsk1Progress.srsCards, hsk1Progress.provenWords),
+    [hsk1Progress.srsCards, hsk1Progress.provenWords],
+  )
   const courses = useMemo(() => {
+    if (isHsk1Track) {
+      return [hsk1Course(hsk1Progress)]
+    }
     const kerjaDone = readPathDone(KERJA_KEY)
     const jiaochengDone = readPathDone(JIAOCHENG_KEY)
     const booksDone = readPathDone(BOOKS_KEY)
@@ -340,11 +382,14 @@ export function Progress({
       jiaochengCourse(jiaochengDone),
       booksCourse(booksDone),
     ]
-  }, [s.pathDone, s.lessonsDone, syncTick])
+  }, [isHsk1Track, hsk1Progress, s.pathDone, s.lessonsDone, syncTick])
 
   const history = useMemo(
-    () => readHistory().filter((event) => !['magang', 'interview', 'jiayin'].includes(event.course)),
-    [s.pathDone, s.log, s.xp, s.cards, syncTick],
+    () =>
+      readHistory().filter((event) =>
+        isHsk1Track ? event.course === 'hsk1' : !['magang', 'interview', 'jiayin'].includes(event.course),
+      ),
+    [isHsk1Track, s.pathDone, s.log, s.xp, s.cards, syncTick],
   )
   const beastEval = useMemo(
     () =>
@@ -379,16 +424,22 @@ export function Progress({
   )
   const visibleHistory = showHistory ? history : history.slice(0, 5)
 
-  const nextAction = progressAction(due.length, hardWords.length)
+  const effectiveDueCount = isHsk1Track ? hsk1Memory.dueCount : due.length
+  const nextAction = progressAction(effectiveDueCount, isHsk1Track ? 0 : hardWords.length)
   function startReview() {
+    if (isHsk1Track) {
+      if (effectiveDueCount > 0 && onHsk1Recall) onHsk1Recall()
+      else onLearn()
+      return
+    }
     if (nextAction === 'due') onReview()
     else if (nextAction === 'hard') onReview(hardWords.slice(0, 8), t('Strengthen hard words'))
     else onLearn()
   }
 
-  const reviewLabel = due.length
+  const reviewLabel = effectiveDueCount
     ? t('Review due words')
-    : hardWords.length
+    : !isHsk1Track && hardWords.length
       ? t('Practice hard words')
       : t('Continue learning')
 
@@ -429,11 +480,11 @@ export function Progress({
             <span aria-hidden="true">→</span>
           </button>
           <span className="progress-focus-note">
-            {due.length
-              ? t('{n} ready to revisit', { n: due.length })
-              : hardWords.length
+            {effectiveDueCount
+              ? t('{n} ready to revisit', { n: effectiveDueCount })
+              : !isHsk1Track && hardWords.length
                 ? t('{n} words are asking for another try', { n: hardWords.length })
-                : s.cardList.some((c) => isCoreBookVocab(c.zh))
+                : (isHsk1Track ? hsk1Memory.totalTracked > 0 : s.cardList.some((c) => isCoreBookVocab(c.zh)))
                   ? t('All caught up. Continue a lesson when you feel like it.')
                   : t('Start with a lesson you like.')}
           </span>
@@ -619,34 +670,65 @@ export function Progress({
       <section className="card progress-section progress-mastery-section">
         <div className="progress-section-heading">
           <div>
-            <div className="progress-eyebrow">{t('BEYOND FINISHING A LESSON')}</div>
-            <h2>{t('What stays with you')}</h2>
+            <div className="progress-eyebrow">
+              {isHsk1Track ? 'INGATAN FSRS-6 · HSK 1 DARI NOL' : t('BEYOND FINISHING A LESSON')}
+            </div>
+            <h2>{isHsk1Track ? 'Rekap Memori HSK 1' : t('What stays with you')}</h2>
           </div>
           <span className="progress-mastery-spark" aria-hidden="true">
             ✳
           </span>
         </div>
         <p className="progress-section-sub">
-          {t(
-            'Mastery means retrieving a word without help on more than one day. A completed lesson is only the beginning.',
-          )}
+          {isHsk1Track
+            ? 'Memori diukur lewat Active Recall FSRS-6 dari 150 kata resmi HSK 1 tanpa bantuan hint.'
+            : t(
+                'Mastery means retrieving a word without help on more than one day. A completed lesson is only the beginning.',
+              )}
         </p>
-        <MasteryTracker words={s.learningTrail} />
-        {(graphInfo.skippedPendingCount > 0 || graphInfo.weakGrammarCount > 0 || graphInfo.confusionPairCount > 0) && (
-          <details className="progress-graph-details" style={{ marginTop: 12 }}>
-            <summary>{t('Active recall priorities from your graph')}</summary>
-            <div style={{ display: 'grid', gap: 6, marginTop: 8, fontSize: 13 }}>
-              {graphInfo.skippedPendingCount > 0 && (
-                <span>{t('{n} words from skipped lessons queued for active recall', { n: graphInfo.skippedPendingCount })}</span>
-              )}
-              {graphInfo.weakGrammar.length > 0 && (
-                <span>{t('Weak grammar')}: {graphInfo.weakGrammar.map((g) => g.point).join(' · ')}</span>
-              )}
-              {graphInfo.confusions.length > 0 && (
-                <span>{t('Confused pairs')}: {graphInfo.confusions.map((c) => c.label).join(' · ')}</span>
-              )}
+        {isHsk1Track ? (
+          <div className="progress-hsk1-memory-grid" aria-label="Ringkasan Memori FSRS-6 HSK 1">
+            <Glance
+              value={hsk1Memory.totalTracked}
+              label="kata dilacak"
+              detail={`dari ${HSK1_WORD_SET.size} kata HSK 1`}
+            />
+            <Glance
+              value={hsk1Memory.strongCount}
+              label="kata kuat"
+              detail="diingat stabil"
+            />
+            <Glance
+              value={hsk1Memory.dueCount}
+              label="jatuh tempo"
+              detail="siap disegarkan"
+            />
+            <div className="progress-glance-cell">
+              <div className="progress-glance-value">{hsk1Memory.avgRetentionPct}%</div>
+              <div className="progress-glance-label">retensi</div>
+              <div className="progress-glance-detail">rata-rata FSRS-6</div>
             </div>
-          </details>
+          </div>
+        ) : (
+          <>
+            <MasteryTracker words={s.learningTrail} />
+            {(graphInfo.skippedPendingCount > 0 || graphInfo.weakGrammarCount > 0 || graphInfo.confusionPairCount > 0) && (
+              <details className="progress-graph-details" style={{ marginTop: 12 }}>
+                <summary>{t('Active recall priorities from your graph')}</summary>
+                <div style={{ display: 'grid', gap: 6, marginTop: 8, fontSize: 13 }}>
+                  {graphInfo.skippedPendingCount > 0 && (
+                    <span>{t('{n} words from skipped lessons queued for active recall', { n: graphInfo.skippedPendingCount })}</span>
+                  )}
+                  {graphInfo.weakGrammar.length > 0 && (
+                    <span>{t('Weak grammar')}: {graphInfo.weakGrammar.map((g) => g.point).join(' · ')}</span>
+                  )}
+                  {graphInfo.confusions.length > 0 && (
+                    <span>{t('Confused pairs')}: {graphInfo.confusions.map((c) => c.label).join(' · ')}</span>
+                  )}
+                </div>
+              </details>
+            )}
+          </>
         )}
       </section>
 
@@ -665,7 +747,7 @@ export function Progress({
         <p className="progress-section-sub">
           Gelar aktif: <strong>{beastEval.beast.trainerTitle}</strong> ({beastEval.beast.stageLabel} · Siklus {beastEval.beast.speciesIndex}/8).{' '}
           {beastEval.nextBeast
-            ? `Butuh ${beastEval.powerToNext.toLocaleString()} 灵力 lagi untuk berevolusi ke ${beastEval.nextBeast.zhName} (${beastEval.nextBeast.name}).`
+            ? `Butuh ${beastEval.powerToNext.toLocaleString()} 灵力 lagi untuk membuka Wujud Rahasia Lv ${beastEval.nextBeast.level} (${beastEval.nextBeast.stageLabel}).`
             : 'Seluruh 24 evolusi Trainer & Mythical Partner telah terbuka penuh!'}
         </p>
 
@@ -698,11 +780,15 @@ export function Progress({
                   Siklus {tier.speciesIndex} · {tier.stageLabel}
                 </div>
                 <div className="progress-beast-thumb-wrap">
-                  <img
-                    className="progress-beast-thumb"
-                    src={tierImg}
-                    alt={unlocked ? `${tier.zhName} ${tier.name}` : `Siluet ${tier.name}`}
-                  />
+                  {unlocked ? (
+                    <img
+                      className="progress-beast-thumb"
+                      src={tierImg}
+                      alt={`${tier.zhName} ${tier.name}`}
+                    />
+                  ) : (
+                    <SealedBeastSilhouette src={tierImg} level={tier.level} compact />
+                  )}
                 </div>
                 <div className="progress-beast-lvl">Lv {tier.level}</div>
                 <div className="progress-beast-zh" lang="zh-CN">

@@ -1,10 +1,14 @@
 import { type ReactNode } from 'react'
-import { COURSE_META, COURSE_ORDER, useCourse } from '../lib/course'
+import { useCoupleProfile } from '../lib/coupleProfile'
+import { COURSE_META, COURSE_ORDER, useCourse, type CourseId } from '../lib/course'
 import { LANGUAGES, getLang, setLang, t } from '../lib/i18n'
 import '../styles/course-gate.css'
 
 export function CourseGate({ corner }: { corner?: ReactNode }) {
   const { setCourse } = useCourse()
+  const { member } = useCoupleProfile()
+  const orderedCourses: readonly CourseId[] =
+    member.track === 'hsk1' ? ['hsk1', 'hsk4a', 'jiaocheng', 'kerja'] : COURSE_ORDER
   return (
     <div className="course-gate minimal-library">
       <div className="minimal-library-top">
@@ -17,7 +21,7 @@ export function CourseGate({ corner }: { corner?: ReactNode }) {
         <p>{t('Choose a course. Continue at your own pace.')}</p>
       </header>
       <div className="minimal-course-list" role="group" aria-label={t('Courses')}>
-        {COURSE_ORDER.map((id, index) => (
+        {orderedCourses.map((id, index) => (
           <button
             key={id}
             className="minimal-course"

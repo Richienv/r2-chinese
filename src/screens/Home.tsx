@@ -48,6 +48,7 @@ export function Home({
   onHsk1Tones,
   onHsk1Recall,
   onProgress,
+  onOpenOnboarding,
 }: {
   onSession: (lesson: number, node: PathNode) => void
   onLesson: (lesson: number) => void
@@ -66,6 +67,7 @@ export function Home({
   onHsk1Tones?: (track?: 'tones' | 'pinyin' | 'strokes') => void
   onHsk1Recall?: () => void
   onProgress?: () => void
+  onOpenOnboarding?: () => void
 }) {
   const s = useStore()
   const { course, entered } = useCourse()
@@ -76,8 +78,7 @@ export function Home({
   const skipOpts = { skippedLessons: s.skippedLessons, unlockedLesson: s.unlockedLesson }
   const next = nextPlayable(s.isNodeDone, skipOpts)
   const lesson = lessons.find((l) => l.lesson === next.lesson) ?? lessons[0]
-  const languageCourse =
-    course === 'hsk4a' || course === 'hsk1' || course === 'kerja' || course === 'jiaocheng'
+  const hsk4Surface = course === 'hsk4a' || course === 'kerja' || course === 'jiaocheng'
   const recentWords = s.learningTrail.slice(0, 2)
 
   if (!entered) {
@@ -124,7 +125,10 @@ export function Home({
           if (course === 'hsk4a') onSession(lesson.lesson, next.node)
           else onBrowse()
         }}
-        onExam={() => onJiaochengMidterm(course === 'jiaocheng' ? 'jiaocheng' : 'hsk4a', 'mock')}
+        onExam={() => {
+          if (course === 'hsk1') onHsk1Tones?.('tones')
+          else onJiaochengMidterm(course === 'jiaocheng' ? 'jiaocheng' : 'hsk4a', 'mock')
+        }}
       />
       <div className="home-float-strip" role="toolbar" aria-label="Aksi cepat belajar">
         {(course === 'hsk4a' || course === 'jiaocheng') && (
@@ -204,6 +208,11 @@ export function Home({
         <button type="button" className="home-float-pill" onClick={onBrowse}>
           📚 {t('Materials')}
         </button>
+        {onOpenOnboarding && (
+          <button type="button" className="home-float-pill" onClick={onOpenOnboarding}>
+            ❓ Panduan
+          </button>
+        )}
       </div>
       {course === 'jiayin' ? (
         <JiayinPath onPlay={onJiayinSession} />
@@ -238,11 +247,23 @@ export function Home({
       )}
       </div>
       <div className="home-col-side">
-      {languageCourse && <MemoryHorizon onReview={onReview} onPlacement={onPlacement} />}
+      {hsk4Surface && <MemoryHorizon onReview={onReview} onPlacement={onPlacement} />}
       <StudyMusic />
       <div className="home-shortcuts">
         <button type="button" className="home-dock-button" onClick={onBrowse}><span>{t('Browse materials')}</span><span aria-hidden>→</span></button>
-        {languageCourse && <button type="button" className="home-dock-button" data-home-trail onClick={onTrail}><span>{t('My words')}{recentWords.length > 0 && <small lang="zh-CN">{recentWords.join(' · ')}</small>}</span><span aria-hidden>→</span></button>}
+        {course === 'hsk1' ? (
+          <button type="button" className="home-dock-button" onClick={() => onHsk1Recall?.()}>
+            <span>🔁 Recall FSRS HSK 1</span>
+            <span aria-hidden>→</span>
+          </button>
+        ) : (
+          hsk4Surface && (
+            <button type="button" className="home-dock-button" data-home-trail onClick={onTrail}>
+              <span>{t('My words')}{recentWords.length > 0 && <small lang="zh-CN">{recentWords.join(' · ')}</small>}</span>
+              <span aria-hidden>→</span>
+            </button>
+          )
+        )}
       </div>
       <InstallCard variant="home" />
       </div>

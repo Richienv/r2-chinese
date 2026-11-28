@@ -15,7 +15,7 @@ import {
   HSK1_STROKE_QUIZ,
 } from '../data/hsk1Strokes'
 import { evaluateBeastProgress, getTrainerAssetSrc } from '../lib/beastEngine'
-import { getActiveCoupleId, getCoupleNames } from '../lib/coupleProfile'
+import { getActiveCoupleId, getCoupleNames, useCoupleProfile } from '../lib/coupleProfile'
 import { postCoupleEvent } from '../lib/coupleSync'
 import {
   nextPlayableHsk1Unit,
@@ -35,6 +35,7 @@ import {
   getHsk1MemorySummary,
   HSK1_NODE_META,
   HSK1_NODE_ORDER,
+  maskHsk1Hint,
   reviewHsk1Card,
   selectHsk1RecallQueue,
   type Hsk1NodeId,
@@ -69,13 +70,14 @@ function speakSlow(text: string) {
   void speak(text, { rate: -32 })
 }
 
-function useRenitaChampionArt() {
+function useChampionArt() {
   const s = useStore()
+  const { activeId, member } = useCoupleProfile()
   const [hsk1, setHsk1] = useState(_readHsk1ForBeast)
   useEffect(() => subscribeHsk1Progress(setHsk1), [])
   return useMemo(() => {
     const evalRes = evaluateBeastProgress({
-      track: 'hsk1',
+      track: member.track,
       mastery: s.mastery,
       cards: s.cards,
       lessonsDone: s.lessonsDone,
@@ -90,11 +92,12 @@ function useRenitaChampionArt() {
       nowMs: Date.now(),
     })
     return {
-      src: getTrainerAssetSrc(evalRes.beast, 'renita'),
+      src: getTrainerAssetSrc(evalRes.beast, activeId),
       beastName: evalRes.beast.name,
       trainerTitle: evalRes.beast.trainerTitle,
+      memberName: member.name,
     }
-  }, [s.mastery, s.cards, s.lessonsDone, s.pathDone, s.streak, s.xp, s.log, s.learnerGraph, hsk1])
+  }, [activeId, member.name, member.track, s.mastery, s.cards, s.lessonsDone, s.pathDone, s.streak, s.xp, s.log, s.learnerGraph, hsk1])
 }
 
 /* ============================================================================
@@ -437,7 +440,7 @@ export function Hsk1ToneLabOverlay({
   onClose: () => void
 }) {
   const s = useStore()
-  const champion = useRenitaChampionArt()
+  const champion = useChampionArt()
   const [track, setTrack] = useState<'tones' | 'pinyin' | 'strokes'>(initialTrack)
   const [deck, setDeck] = useState<ToneLabCard[]>(() => buildFoundationDeck(initialTrack))
   const [stepIdx, setStepIdx] = useState(0)
@@ -601,7 +604,7 @@ export function Hsk1ToneLabOverlay({
           <div className="hsk1-stage-card hsk1-victory-card">
             <img className="hsk1-victory-art" src={champion.src} alt={champion.trainerTitle} />
             <div className="hsk1-kicker-jade">PONDASI SELESAI!</div>
-            <h2>Luar Biasa, Renita! 🎉</h2>
+            <h2>Luar Biasa, {champion.memberName}! 🎉</h2>
             <p className="hsk1-victory-sub">
               Skor bersih: <strong>{Object.values(firstPassCorrect).filter(Boolean).length}</strong> · Kombo
               tertinggi: <strong>{bestCombo}×</strong> · Tambahan <strong>+{Math.max(20, xpGain)} XP</strong>
@@ -952,7 +955,7 @@ export function Hsk1SessionOverlay({
   onClose: () => void
 }) {
   const s = useStore()
-  const champion = useRenitaChampionArt()
+  const champion = useChampionArt()
   const unit = useMemo(
     () => HSK1_UNITS.find((u) => u.unit === unitNumber) ?? HSK1_UNITS[0],
     [unitNumber],
@@ -1321,7 +1324,7 @@ export function Hsk1SessionOverlay({
             <div className="hsk1-kicker-jade">
               {node === 'bos' ? `UNIT ${unit.unit} DITUNTASKAN!` : `SIMPUL "${HSK1_NODE_META[node].label.toUpperCase()}" SELESAI!`}
             </div>
-            <h2>{node === 'bos' ? `Skor ${bossScorePct}% · Hebat Renita! 🏆` : 'Mulus & Lancar! ✨'}</h2>
+            <h2>{node === 'bos' ? `Skor ${bossScorePct}% · Hebat ${champion.memberName}! 🏆` : 'Mulus & Lancar! ✨'}</h2>
             <p className="hsk1-victory-sub">
               Kombo terbaik: <strong>{bestCombo}×</strong> · Total <strong>+{xpGain} XP</strong>
             </p>
@@ -1884,7 +1887,8 @@ export function Hsk1SessionOverlay({
                 )}
                 {hintTier >= 1 && (
                   <div className="hsk1-tip-box">
-                    <strong>Akar Kata:</strong> {radicalClue} — {bItem.word.literalTip}
+                    <strong>Akar Kata:</strong>{' '}
+                    {maskHsk1Hint(`${radicalClue} — ${bItem.word.literalTip}`, bItem.word)}
                     {hintTier === 1 && pickedZh === null && (
                       <div style={{ marginTop: 6 }}>
                         <button
@@ -1987,7 +1991,7 @@ export function Hsk1SessionOverlay({
 
 export function Hsk1RecallOverlay({ onClose }: { onClose: () => void }) {
   const s = useStore()
-  const champion = useRenitaChampionArt()
+  const champion = useChampionArt()
   const [progress] = useState(readHsk1Progress)
   const initialQueue = useMemo(
     () => selectHsk1RecallQueue(progress.srsCards, progress.provenWords, ALL_HSK1_WORDS, Date.now(), 10),
@@ -2171,8 +2175,10 @@ export function Hsk1RecallOverlay({ onClose }: { onClose: () => void }) {
             {hintTier >= 1 && (
               <div className="hsk1-tip-box">
                 <strong>Akar Kata:</strong>{' '}
-                {decomp?.characters[0]?.parts.map((p) => `${p.emoji} ${p.meaningId}`).join(' + ')} —{' '}
-                {cur.word.literalTip}
+                {maskHsk1Hint(
+                  `${decomp?.characters[0]?.parts.map((p) => `${p.emoji} ${p.meaningId}`).join(' + ') ?? ''} — ${cur.word.literalTip}`,
+                  cur.word,
+                )}
                 {hintTier === 1 && pickedZh === null && (
                   <div style={{ marginTop: 6 }}>
                     <button
@@ -2231,7 +2237,21 @@ export function Hsk1RecallOverlay({ onClose }: { onClose: () => void }) {
               </div>
             )}
           </div>
-        ) : null}
+        ) : (
+          <div className="hsk1-stage-card hsk1-victory-card">
+            <img className="hsk1-victory-art" src={champion.src} alt={champion.trainerTitle} />
+            <div className="hsk1-kicker-jade">BELUM ADA KARTU JATUH TEMPO</div>
+            <h2>Semua kosakata aman tersimpan!</h2>
+            <p className="hsk1-victory-sub">
+              Selesaikan dulu minimal 1 unit di peta HSK 1 agar FSRS-6 mulai menjadwalkan ulasan ingatanmu.
+            </p>
+            <div className="hsk1-victory-actions">
+              <button type="button" className="hsk1-btn-3d-jade" onClick={onClose}>
+                Kembali ke Peta Belajar ›
+              </button>
+            </div>
+          </div>
+        )}
       </main>
 
       {!done && (

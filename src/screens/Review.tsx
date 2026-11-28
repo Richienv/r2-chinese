@@ -346,12 +346,15 @@ export function ReviewFlow({
       aria-label={t('Recall')}
     >
       <header className="focus-head">
-        <button className="focus-icon" onClick={onClose} aria-label={t('Close review')}>
-          <CloseIcon />
-        </button><StudyMusic compact />
-        <span>{placement ? t('Quick placement') : (title ?? t('Recall'))}</span>
+        <div className="focus-head-left">
+          <button type="button" className="focus-icon" onClick={onClose} aria-label={t('Close review')}>
+            <CloseIcon />
+          </button>
+          <StudyMusic compact />
+        </div>
+        <span className="focus-head-title">{placement ? t('Quick placement') : (title ?? t('Recall'))}</span>
         {undo ? (
-          <button className="focus-link" onClick={undoLast}>
+          <button type="button" className="focus-link" onClick={undoLast}>
             {t('Undo')}
           </button>
         ) : (
@@ -362,7 +365,7 @@ export function ReviewFlow({
       </header>
       {!loading && !empty && !done && (
         <div className="focus-progress" aria-label={t('Session progress')}>
-          <i style={{ transform: `scaleX(${index / list.length})` }} />
+          <i style={{ transform: `scaleX(${Math.max(0.03, index / list.length)})` }} />
         </div>
       )}
       <main className="focus-body" key={index}>
@@ -376,7 +379,7 @@ export function ReviewFlow({
             <h1>{empty ? t('Nothing is due.') : t('Enough for today.')}</h1>
             {done && <p>{t('{n} words reviewed. Your next dates are saved.', { n: completed })}</p>}
             {done && completed > 0 && <ReviewWin />}
-            <button className="focus-primary" onClick={onClose}>
+            <button type="button" className="focus-primary focus-complete-btn" onClick={onClose}>
               {t('Back to learning')}
             </button>
           </div>
@@ -398,172 +401,172 @@ export function ReviewFlow({
               </div>
               <ol className="focus-ladder" aria-label={t('Memory stage')}>
                 {MEMORY_STEPS.map((label, step) => (
-                  <li key={label} data-state={step < stage ? 'past' : step === stage ? 'now' : 'next'} aria-current={step === stage ? 'step' : undefined}>
-                    <i />
-                    <span>{label}</span>
-                  </li>
+                  <li key={label} data-state={step < stage ? 'past' : step === stage ? 'now' : 'next'} aria-current={step === stage ? 'step' : undefined}><i /><span>{label}</span></li>
                 ))}
               </ol>
             </div>
-            {!revealed && (
-              <div className="focus-prompt">
-                {ctx && (ctx.posLabel || ctx.charCountLabel) && (
-                  <div className="recall-meta-pills focus-meta-pills">
-                    {ctx.posLabel && <span className="recall-pos-pill">{ctx.posLabel}</span>}
-                    <span className="recall-slot-pill">
-                      {ctx.charCountLabel}
-                      <span className="recall-slots-preview zh" lang="zh-CN" aria-hidden="true">{ctx.slots}</span>
-                    </span>
-                  </div>
-                )}
-                {hideMeaning ? (
-                  <>
-                    <ListenCue text={zh} />
-                    <p className="focus-prompt-note">{t('Write the word you hear')}</p>
-                  </>
-                ) : skill === 'reading' ? (
-                  <h1 lang="zh-CN">{zh}</h1>
-                ) : (
-                  <>
-                    <h1>{ctx?.coreMeaning || word?.en}</h1>
-                    {ctx?.otherMeanings && <p className="recall-other-meanings">{ctx.otherMeanings}</p>}
-                    {ctx?.sentence && (
-                      <div className="focus-sentence">
-                        <p lang="zh-CN">{ctx.sentence.zh}</p>
-                        {ctx.sentence.en && <p className="focus-sentence-translation">{ctx.sentence.en}</p>}
-                      </div>
-                    )}
-                    {(ctx?.whenCue || ctx?.disambiguation) && (
-                      <div className="focus-cue-note">
-                        {ctx.whenCue && <p className="recall-when-cue"><span>{t('Usage cue')}</span> {ctx.whenCue}</p>}
-                        {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
-                      </div>
-                    )}
-                  </>
-                )}
-              </div>
-            )}
-            {!revealed && skill === 'writing' && word && (
-              <Suspense fallback={<p role="status">{t('Loading…')}</p>}>
-                <WritingRecall
-                  word={word}
-                  onAttempt={(correct, assisted) => {
-                    setChecked(correct)
-                    if (!correct) setHadMiss(true)
-                    setHelped(assisted)
-                    if (correct) playCorrect()
-                    else playWrong()
-                    reveal()
-                  }}
-                  onType={() => setSkillOverride('recall')}
-                />
-              </Suspense>
-            )}
-            {!revealed && !selfMode && skill !== 'writing' && (
-              <form
-                className="focus-form"
-                onSubmit={(e) => {
-                  e.preventDefault()
-                  check()
-                }}
-              >
-                <label className="sr-only" htmlFor="recall-answer">
-                  {t('Your answer')}
-                </label>
-                <input
-                  ref={answerInputRef}
-                  id="recall-answer"
-                  value={answer}
-                  onChange={(e) => setAnswer(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' && (e.nativeEvent.isComposing || e.keyCode === 229))
-                      e.preventDefault()
-                  }}
-                  placeholder={t('Type the Hanzi here')}
-                  autoComplete="off"
-                  autoCorrect="off"
-                  spellCheck={false}
-                  lang="zh-CN"
-                />
-                {synonymMatch && (
-                  <div className="recall-synonym-feedback focus-synonym-feedback" role="status" aria-live="polite">
-                    <strong>{t('Close match — different nuance')}</strong>
-                    <p>{synonymMatch.message}</p>
-                  </div>
-                )}
-                {hint > 0 && word && (
-                  <div className="focus-hints" aria-live="polite">
-                    {hintSteps.slice(0, hint).map((step) => (
-                      <div className="focus-hint" key={step}>
-                        <span>{step === 'pinyin' ? t('Pinyin') : step === 'meaning' ? t('Meaning') : t('First character')}</span>
-                        <strong lang={step === 'first' ? 'zh-CN' : undefined}>
-                          {step === 'pinyin' ? word.pinyin : step === 'meaning' ? (safeMeaning || word.en) : `${first[0]}${'＿'.repeat(Math.max(0, first.length - 1))}`}
-                        </strong>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                <div className="focus-actions">
-                  <button type="button" className="focus-secondary" onClick={nextHint}>
-                    {hint >= hintSteps.length ? t('Show answer') : t('Hint')}
-                    <span className="focus-hint-steps" aria-hidden="true">
-                      {[0, 1, 2].map((step) => <i key={step} data-on={step < hint} />)}
-                    </span>
-                  </button>
-                  <button type="submit" className="focus-primary" disabled={!answer.trim()}>
-                    {t('Check')}
-                  </button>
+            <div className="focus-card">
+              {!revealed && (
+                <div className="focus-prompt">
+                  {ctx && (ctx.posLabel || ctx.charCountLabel) && (
+                    <div className="recall-meta-pills focus-meta-pills">
+                      {ctx.posLabel && <span className="recall-pos-pill">{ctx.posLabel}</span>}
+                      <span className="recall-slot-pill">
+                        {ctx.charCountLabel}
+                        <span className="recall-slots-preview zh" lang="zh-CN" aria-hidden="true">{ctx.slots}</span>
+                      </span>
+                    </div>
+                  )}
+                  {hideMeaning ? (
+                    <>
+                      <ListenCue text={zh} />
+                      <p className="focus-prompt-note">{t('Write the word you hear')}</p>
+                    </>
+                  ) : skill === 'reading' ? (
+                    <h1 lang="zh-CN">{zh}</h1>
+                  ) : (
+                    <>
+                      <h1>{ctx?.coreMeaning || word?.en}</h1>
+                      {ctx?.otherMeanings && <p className="recall-other-meanings">{ctx.otherMeanings}</p>}
+                      {ctx?.sentence && (
+                        <div className="focus-sentence">
+                          <p lang="zh-CN">{ctx.sentence.zh}</p>
+                          {ctx.sentence.en && <p className="focus-sentence-translation">{ctx.sentence.en}</p>}
+                        </div>
+                      )}
+                      {(ctx?.whenCue || ctx?.disambiguation) && (
+                        <div className="focus-cue-note">
+                          {ctx.whenCue && <p className="recall-when-cue"><span>{t('Usage cue')}</span> {ctx.whenCue}</p>}
+                          {ctx.disambiguation && <p className="recall-disambiguation">{ctx.disambiguation}</p>}
+                        </div>
+                      )}
+                    </>
+                  )}
                 </div>
-                {ifRight && (
-                  <p className="focus-forecast" key={hint} data-hinted={hint > 0}>
-                    <CalendarGlyph />
-                    {hint > 0
-                      ? t('With this hint: back {when}', { when: whenText(ifRight.due, now) })
-                      : t('Right without a hint: back {when}', { when: whenText(ifRight.due, now) })}
-                  </p>
-                )}
-              </form>
-            )}
-            {!revealed && selfMode && (
-              <div className="focus-actions">
-                <button className="focus-primary" onClick={() => { playReveal(); reveal() }}>{t('Show answer')}</button>
-              </div>
-            )}
-            {!revealed && !selfMode && (
-              <button type="button" className="focus-dunno" onClick={dontKnow}>
-                {t("I don't know")}
-              </button>
-            )}
-            {revealed && (
-              <section className="focus-answer" aria-live="polite">
-                {verdict !== 'self' && (
-                  <p className="focus-verdict" data-verdict={verdict}>
-                    <span aria-hidden="true">{verdict === 'correct' ? '✓' : verdict === 'wrong' ? '✕' : verdict === 'unknown' ? '?' : '•'}</span>
-                    {verdict === 'correct'
-                      ? t('Correct')
-                      : verdict === 'wrong'
-                        ? t('Not quite')
-                        : verdict === 'unknown'
-                          ? t('Not remembered yet')
-                          : t('With a hint')}
-                    {verdict === 'wrong' && tried && <s lang="zh-CN">{tried}</s>}
-                  </p>
-                )}
-                <div data-reveal={answerReveal.at(0)} data-reveal-kind="hanzi">
-                  <h2 lang="zh-CN">{zh}</h2>
-                  <p className="focus-pinyin">{word?.pinyin}</p>
-                  <HearButton text={zh} label={t('Hear the word')} />
-                </div>
-                <p className="focus-meaning" data-reveal={answerReveal.at(1)}>{word?.en}</p>
-                {example && (
-                  <div className="focus-example" data-reveal={answerReveal.at(2)}>
-                    <p lang="zh-CN">{example.zh}</p>
-                    {example.en && <p>{example.en}</p>}
-                    <HearButton text={example.zh} label={t('Hear the line')} />
+              )}
+              {!revealed && skill === 'writing' && word && (
+                <Suspense fallback={<p role="status">{t('Loading…')}</p>}>
+                  <WritingRecall
+                    key={`${index}:${zh}`}
+                    word={word}
+                    onAttempt={(correct, assisted) => {
+                      setChecked(correct)
+                      if (!correct) setHadMiss(true)
+                      setHelped(assisted)
+                      if (correct) playCorrect()
+                      else playWrong()
+                      reveal()
+                    }}
+                    onType={() => setSkillOverride('recall')}
+                  />
+                </Suspense>
+              )}
+              {!revealed && !selfMode && skill !== 'writing' && (
+                <form
+                  className="focus-form"
+                  onSubmit={(e) => {
+                    e.preventDefault()
+                    check()
+                  }}
+                >
+                  <label className="sr-only" htmlFor="recall-answer">
+                    {t('Your answer')}
+                  </label>
+                  <input
+                    ref={answerInputRef}
+                    id="recall-answer"
+                    value={answer}
+                    onChange={(e) => setAnswer(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && (e.nativeEvent.isComposing || e.keyCode === 229))
+                        e.preventDefault()
+                    }}
+                    placeholder={t('Type the Hanzi here')}
+                    autoComplete="off"
+                    autoCorrect="off"
+                    spellCheck={false}
+                    lang="zh-CN"
+                  />
+                  {synonymMatch && (
+                    <div className="recall-synonym-feedback focus-synonym-feedback" role="status" aria-live="polite">
+                      <strong>{t('Close match — different nuance')}</strong>
+                      <p>{synonymMatch.message}</p>
+                    </div>
+                  )}
+                  {hint > 0 && word && (
+                    <div className="focus-hints" aria-live="polite">
+                      {hintSteps.slice(0, hint).map((step) => (
+                        <div className="focus-hint" key={step}>
+                          <span>{step === 'pinyin' ? t('Pinyin') : step === 'meaning' ? t('Meaning') : t('First character')}</span>
+                          <strong lang={step === 'first' ? 'zh-CN' : undefined}>
+                            {step === 'pinyin' ? word.pinyin : step === 'meaning' ? (safeMeaning || word.en) : `${first[0]}${'＿'.repeat(Math.max(0, first.length - 1))}`}
+                          </strong>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <div className="focus-actions">
+                    <button type="button" className="focus-secondary" onClick={nextHint}>
+                      {hint >= hintSteps.length ? t('Show answer') : t('Hint')}
+                      <span className="focus-hint-steps" aria-hidden="true">
+                        {[0, 1, 2].map((step) => <i key={step} data-on={step < hint} />)}
+                      </span>
+                    </button>
+                    <button type="submit" className="focus-primary" disabled={!answer.trim()}>
+                      {t('Check')}
+                    </button>
                   </div>
-                )}
-              </section>
-            )}
+                  <div className="focus-card-subfoot">
+                    {ifRight && (
+                      <p className="focus-forecast" key={hint} data-hinted={hint > 0}>
+                        <CalendarGlyph />
+                        {hint > 0
+                          ? t('With this hint: back {when}', { when: whenText(ifRight.due, now) })
+                          : t('Right without a hint: back {when}', { when: whenText(ifRight.due, now) })}
+                      </p>
+                    )}
+                    <button type="button" className="focus-dunno" onClick={dontKnow}>
+                      {t("I don't know")}
+                    </button>
+                  </div>
+                </form>
+              )}
+              {!revealed && selfMode && (
+                <div className="focus-actions focus-actions-single">
+                  <button type="button" className="focus-primary" onClick={() => { playReveal(); reveal() }}>{t('Show answer')}</button>
+                </div>
+              )}
+              {revealed && (
+                <section className="focus-answer" aria-live="polite">
+                  {verdict !== 'self' && (
+                    <p className="focus-verdict" data-verdict={verdict}>
+                      <span aria-hidden="true">{verdict === 'correct' ? '✓' : verdict === 'wrong' ? '✕' : verdict === 'unknown' ? '?' : '•'}</span>
+                      {verdict === 'correct'
+                        ? t('Correct')
+                        : verdict === 'wrong'
+                          ? t('Not quite')
+                          : verdict === 'unknown'
+                            ? t('Not remembered yet')
+                            : t('With a hint')}
+                      {verdict === 'wrong' && tried && <s lang="zh-CN">{tried}</s>}
+                    </p>
+                  )}
+                  <div data-reveal={answerReveal.at(0)} data-reveal-kind="hanzi">
+                    <h2 lang="zh-CN">{zh}</h2>
+                    <p className="focus-pinyin">{word?.pinyin}</p>
+                    <HearButton text={zh} label={t('Hear the word')} />
+                  </div>
+                  <p className="focus-meaning" data-reveal={answerReveal.at(1)}>{word?.en}</p>
+                  {example && (
+                    <div className="focus-example" data-reveal={answerReveal.at(2)}>
+                      <p lang="zh-CN">{example.zh}</p>
+                      {example.en && <p>{example.en}</p>}
+                      <HearButton text={example.zh} label={t('Hear the line')} />
+                    </div>
+                  )}
+                </section>
+              )}
+            </div>
           </div>
         )}
       </main>

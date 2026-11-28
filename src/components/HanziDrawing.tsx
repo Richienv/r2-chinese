@@ -55,6 +55,20 @@ export function HanziDrawing({ word, task, handwriting, solved, onChecked, onAss
   const [attempt, setAttempt] = useState(0)
   const [outcome, setOutcome] = useState<DrawingResult['outcome'] | null>(null)
 
+  useEffect(() => {
+    setDrawings(blankWordInk(Array.from(word).length))
+    setPosition(0)
+    setPhase('draw')
+    setFixing(null)
+    setDiagnosis(null)
+    setReview(null)
+    setComparison(null)
+    setShown([])
+    setError('')
+    setAttempt(0)
+    setOutcome(null)
+  }, [word])
+
   const root = useRef<HTMLDivElement>(null)
   useEffect(() => {
     // A new phase starts at its own top: the report from its headline, the pad from the task line.

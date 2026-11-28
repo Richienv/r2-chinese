@@ -27,6 +27,7 @@ import { readHsk1Progress, subscribeHsk1Progress } from '../lib/hsk1'
 import { readHistory, type HistoryEvent } from '../lib/history'
 import { dayKey, useStore } from '../store/store'
 import { BeastRevealOverlay, type BeastRevealPayload } from './BeastRevealOverlay'
+import { SealedBeastSilhouette } from './SealedBeastSilhouette'
 import '../styles/beast-stage.css'
 
 export function BeastStageCard({
@@ -55,6 +56,13 @@ export function BeastStageCard({
   const [drawer, setDrawer] = useState<'none' | 'quests' | 'vars'>('none')
   const [pickerOpen, setPickerOpen] = useState(false)
   const [revealPayload, setRevealPayload] = useState<BeastRevealPayload | null>(null)
+
+  useEffect(() => {
+    setPeekLevel(null)
+    setBubbleText(null)
+    setDrawer('none')
+    setPickerOpen(false)
+  }, [activeId])
 
   useEffect(() => {
     const refreshHistory = () => setHistory(readHistory())
@@ -186,7 +194,7 @@ export function BeastStageCard({
     if (isLockedPreview) {
       const req = getBeastMinPower(shownBeast, resolvedTrack)
       setBubbleText(
-        `Lv ${shownBeast.level} (${shownBeast.stageLabel}) · ${shownBeast.zhName} terbuka di ${req.toLocaleString()} 灵力!`,
+        `🔒 Wujud Rahasia Lv ${shownBeast.level} (${shownBeast.stageLabel}) terbuka di ${req.toLocaleString()} 灵力!`,
       )
       return
     }
@@ -214,20 +222,33 @@ export function BeastStageCard({
               <button type="button" className="beast-chip-btn" onClick={() => setPickerOpen(true)}>
                 🎴 {evalRes.unlockedStageIds.length}/9
               </button>
-              <button
-                type="button"
-                className="beast-chip-btn reveal"
-                onClick={() =>
-                  setRevealPayload({
-                    beast: isLockedPreview ? evalRes.beast : shownBeast,
-                    stage: activeStage,
-                    reason: 'replay',
-                    spiritPower: evalRes.spiritPower,
-                  })
-                }
-              >
-                ✨ Reveal
-              </button>
+              {isLockedPreview ? (
+                <button
+                  type="button"
+                  className="beast-chip-btn"
+                  onClick={() => {
+                    setPeekLevel(null)
+                    setBubbleText(null)
+                  }}
+                >
+                  ↩ Kembali Lv {evalRes.level}
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="beast-chip-btn reveal"
+                  onClick={() =>
+                    setRevealPayload({
+                      beast: shownBeast,
+                      stage: activeStage,
+                      reason: 'replay',
+                      spiritPower: evalRes.spiritPower,
+                    })
+                  }
+                >
+                  ✨ Reveal
+                </button>
+              )}
             </div>
           </div>
 
@@ -250,21 +271,31 @@ export function BeastStageCard({
                 type="button"
                 className="beast-figure-hit"
                 onClick={handleBeastTap}
-                aria-label={`Sentuh ${member.name} & ${shownBeast.name}`}
+                aria-label={isLockedPreview ? `Wujud Rahasia Lv ${shownBeast.level}` : `Sentuh ${member.name} & ${shownBeast.name}`}
               >
                 <div className="beast-aura-halo" aria-hidden="true" />
                 <div className="beast-pedestal" aria-hidden="true" />
-                <img
-                  className={`beast-figure-img${isLockedPreview ? ' is-locked' : ''}`}
-                  src={assetSrc}
-                  alt={isLockedPreview ? `Siluet ${shownBeast.name}` : `${member.name} · ${shownBeast.name}`}
-                  onError={(e) => {
-                    e.currentTarget.src = '/beasts/v1/beast-02-qilin.webp'
-                  }}
-                />
+                {isLockedPreview ? (
+                  <SealedBeastSilhouette
+                    key={`locked-${activeId}-${shownBeast.level}`}
+                    src={assetSrc}
+                    level={shownBeast.level}
+                    className="beast-figure-canvas"
+                  />
+                ) : (
+                  <img
+                    key={`unlocked-${activeId}-${shownBeast.level}`}
+                    className="beast-figure-img"
+                    src={assetSrc}
+                    alt={`${member.name} · ${shownBeast.name}`}
+                    onError={(e) => {
+                      e.currentTarget.src = '/beasts/v1/beast-02-qilin.webp'
+                    }}
+                  />
+                )}
                 {isLockedPreview && (
                   <span className="beast-lock-pill">
-                    Butuh {getBeastMinPower(shownBeast, resolvedTrack).toLocaleString()} 灵力
+                    🔒 Butuh {getBeastMinPower(shownBeast, resolvedTrack).toLocaleString()} 灵力
                   </span>
                 )}
               </button>
@@ -289,8 +320,12 @@ export function BeastStageCard({
           <div className="beast-info-panel">
             <div className="beast-name-line">
               <div>
-                <span className="beast-zh-big" lang="zh-CN">{shownBeast.zhName}</span>{' '}
-                <span className="beast-en-sub">{shownBeast.name}</span>
+                <span className="beast-zh-big" lang={isLockedPreview ? undefined : 'zh-CN'}>
+                  {isLockedPreview ? '???' : shownBeast.zhName}
+                </span>{' '}
+                <span className="beast-en-sub">
+                  {isLockedPreview ? `Wujud Rahasia Lv ${shownBeast.level}` : shownBeast.name}
+                </span>
               </div>
               <span className="beast-tier-pill">
                 Siklus {shownBeast.speciesIndex}/8 · {shownBeast.stageLabel.toUpperCase()}
@@ -298,7 +333,13 @@ export function BeastStageCard({
             </div>
 
             <div className="beast-trainer-meta">
-              {member.name}: <strong>{shownBeast.trainerTitle}</strong> · {shownBeast.trainerAccessory}
+              {isLockedPreview ? (
+                'Kostum & Aksesori Trainer Terkunci · Naikkan 灵力 untuk membuka!'
+              ) : (
+                <>
+                  {member.name}: <strong>{shownBeast.trainerTitle}</strong> · {shownBeast.trainerAccessory}
+                </>
+              )}
             </div>
 
             <div>
@@ -306,7 +347,7 @@ export function BeastStageCard({
                 <span>⚡ {evalRes.spiritPower.toLocaleString()} 灵力</span>
                 <span>
                   {evalRes.nextBeast
-                    ? `-${evalRes.powerToNext.toLocaleString()} → ${evalRes.nextBeast.zhName}`
+                    ? `-${evalRes.powerToNext.toLocaleString()} → Rahasia Lv ${evalRes.nextBeast.level}`
                     : 'Puncak Lv 24'}
                 </span>
               </div>
