@@ -4,7 +4,7 @@
 .music-cover{width:44px;height:44px;display:grid;place-items:center;flex:none;border-radius:14px;background:var(--accent-soft);color:var(--accent)}
 .music-launch{position:relative;flex:none}.music-launch[data-on=true]{color:var(--accent);background:var(--accent-soft)}.music-launch i{position:absolute;bottom:6px;right:7px;width:5px;height:5px;border-radius:50%;background:currentColor}
 .music-panel{color:var(--ink);padding:12px 2px 16px}.music-panel h2{font-size:27px;letter-spacing:-.8px;line-height:1.15;margin:10px 34px 8px 0;text-wrap:balance}.music-note{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 24px}
-.music-cache-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.music-cache-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-right:44px}
 .music-cache-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:750;background:var(--paper);border:1px solid var(--line);color:var(--muted)}
 .music-cache-badge.is-ready{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent)}
 .music-cache-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
@@ -28,8 +28,8 @@ button.music-play{width:48px;height:48px;display:grid;place-items:center;flex:no
 [data-member='renita'] .music-eq i{background:#db2777}
 @keyframes music-eq-bounce{0%{transform:scaleY(.35)}100%{transform:scaleY(1)}}
 
-/* Persistent Global 1-Tap Mini-Pill visible across ALL screens & overlays */
-.global-music-pill{position:fixed;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 80px);z-index:65;display:inline-flex;align-items:center;height:38px;border-radius:999px;border:1px solid var(--accent-line,rgba(15,118,110,.26));background:var(--surface,#ffffff);color:var(--ink,#0f172a);box-shadow:0 8px 22px -6px rgba(15,23,42,.18);overflow:hidden;transition:transform 140ms ease,border-color 140ms ease}
+/* Persistent Global 1-Tap Mini-Pill visible across ALL screens & overlays (above .hsk1-overlay 9400, below sheets 9600 & reveal 9999) */
+.global-music-pill{position:fixed;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 84px);z-index:9450;display:inline-flex;align-items:center;height:38px;border-radius:999px;border:1px solid var(--accent-line,rgba(15,118,110,.26));background:var(--surface,#ffffff);color:var(--ink,#0f172a);box-shadow:0 8px 22px -6px rgba(15,23,42,.18);overflow:hidden;transition:transform 140ms ease,border-color 140ms ease}
 .global-music-pill.is-playing{border-color:var(--accent);box-shadow:0 10px 24px -6px rgba(15,23,42,.22)}
 [data-member='renita'] .global-music-pill{border-color:rgba(219,39,119,.26);background:#fffafb}
 [data-member='renita'] .global-music-pill.is-playing{border-color:#db2777;background:#fff1f5}

@@ -185,7 +185,7 @@ function Shell() {
       log: store.log,
       history: readHistory(),
       learnerGraph: store.learnerGraph,
-      hsk1Progress,
+      hsk1Progress: readHsk1Progress(),
       todayKey: dayKey(),
       nowMs: Date.now(),
     })

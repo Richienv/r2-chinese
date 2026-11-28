@@ -1,4 +1,4 @@
-.backdrop.dictionary-backdrop { z-index: 220; padding: 16px; align-items: center; overscroll-behavior: none; }
+.backdrop.dictionary-backdrop { z-index: 9600; padding: 16px; align-items: center; overscroll-behavior: none; }
 .sheet.dictionary-sheet { position: relative; width: min(440px, 100%); padding: 0; border-radius: 24px; max-height: calc(100dvh - 32px); overflow: hidden; box-shadow: 0 24px 80px #26180c3b; }
 .dictionary-scroll { overflow-y: auto; max-height: min(760px, calc(100dvh - 32px)); padding: 24px var(--pad) calc(24px + env(safe-area-inset-bottom, 0px)); overscroll-behavior: contain; scrollbar-gutter: stable; }
 .dictionary-sheet > .dictionary-close { position: absolute; top: 12px; right: 12px; z-index: 3; background: var(--bg); box-shadow: 0 2px 8px #3828180a; }
