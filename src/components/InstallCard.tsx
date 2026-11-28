@@ -122,13 +122,9 @@ export function InstallCard({ variant }: { variant: 'home' | 'profile' }) {
     return (
       <section className="install-card-home" aria-label={t('Add Yulu to Home Screen')}>
         <div className="install-card-home-row">
-          <img
-            src="/icons/icon-192.png"
-            alt=""
-            className="install-card-icon"
-            width={44}
-            height={44}
-          />
+          <span className="install-card-brand" aria-hidden="true">
+            语
+          </span>
           <div className="install-card-home-copy">
             <strong>{t('Add Yulu to Home Screen')}</strong>
             <span>{subtitle}</span>
@@ -190,13 +186,9 @@ export function InstallCard({ variant }: { variant: 'home' | 'profile' }) {
   return (
     <section className="card install-card-profile" aria-label={t('Home Screen app')}>
       <div className="install-card-profile-head">
-        <img
-          src="/icons/icon-192.png"
-          alt=""
-          className="install-card-icon"
-          width={44}
-          height={44}
-        />
+        <span className="install-card-brand" aria-hidden="true">
+          语
+        </span>
         <div>
           <div className="profile-eyebrow">{t('APP EXPERIENCE')}</div>
           <h2>{t('Add Yulu to Home Screen')}</h2>

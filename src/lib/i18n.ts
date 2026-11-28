@@ -16,12 +16,14 @@ export const LANGUAGES: ReadonlyArray<{ id: Lang; name: string; hint: string }> 
 ]
 
 const KEY = 'yulu.lang.v1'
+const EXPLICIT_KEY = 'yulu.lang-explicit.v2'
 
 function detect(): Lang {
   try {
-    const saved = localStorage.getItem(KEY)
-    if (saved === 'en' || saved === 'id') return saved
-    // Real browser sessions default to unified Bahasa Indonesia unless user explicitly switches to EN in Profile.
+    const explicit = localStorage.getItem(EXPLICIT_KEY)
+    if (explicit === 'en' || explicit === 'id') return explicit
+    // Real browser sessions stay in unified Bahasa Indonesia unless user explicitly picks EN in Profile,
+    // ignoring legacy cloud-synced 'yulu.lang.v1': 'en' entries.
     return typeof window !== 'undefined' ? 'id' : 'en'
   } catch { return 'en' }
 }
@@ -33,7 +35,10 @@ export function getLang(): Lang { return current }
 /** Switch language. Reloads, so every module rebuilds its data in the new language. */
 export function setLang(next: Lang): void {
   if (next === current) return
-  try { localStorage.setItem(KEY, next) } catch { /* the choice just will not persist */ }
+  try {
+    localStorage.setItem(EXPLICIT_KEY, next)
+    localStorage.setItem(KEY, next)
+  } catch { /* the choice just will not persist */ }
   current = next
   if (typeof location !== 'undefined') location.reload()
 }
